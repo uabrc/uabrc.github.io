@@ -1,0 +1,6 @@
+site_name: My Docs
+theme: readthedocs
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
