@@ -1,17 +1,8 @@
-# Welcome to MkDocs
+# Welcome to UAB Research Computing Docs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+UAB Research Computing (RC) is a group of IT and data scientists
+dedicated technical support for researchers at UAB, specifically related
+to cloud and cluster computing. The main resources run by UAB RC are the
+[Cheaha cluster computing platform](rc.uab.edu) and UAB Cloud (coming
+soon!). Both of these resources are freely available to use by any
+researcher or instructor at UAB.
