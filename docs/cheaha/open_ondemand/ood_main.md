@@ -1,6 +1,6 @@
 # Homepage
 
-Navigating to [https://rc.uab.edu] will take you to the OOD homepage:
+Navigating to [rc.uab.edu](https://rc.uab.edu) will take you to the OOD homepage:
 
 ![Landing page for Open OnDemand](images/ood_homepage.png){: .center}
 
@@ -18,10 +18,10 @@ To access all of the features OOD has to offer, use the toolbar at the top of th
 
 In it, you will find options to:
 
-1. `Directly access your files on Cheaha <ood_files.rst>`
-2. `View currently running jobs <ood_jobs.rst>`
+1. Directly access your files on Cheaha
+2. View currently running jobs
 3. Interface with Cheaha via a shell terminal
-4. `Request interactive sessions <ood_interactive.rst>`
+4. Request interactive sessions
 
 To use a shell terminal in Cheaha through OOD, click `Clusters >> >_Cheaha Shell Access`. You can use this exactly like a standard `ssh` tunnel.
 

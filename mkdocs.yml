@@ -14,6 +14,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - attr_list
 
 nav:
   - Home: 'index.md'
@@ -34,7 +35,8 @@ nav:
       - 'cheaha/open_ondemand/ood_interactive.md'
       - 'cheaha/open_ondemand/ood_files.md'
       - 'cheaha/open_ondemand/ood_jobs.md'
-    - SLURM:
+    - SLURM: 
+      - Introduction: 'cheaha/slurm/index.md'
       - 'cheaha/slurm/sbatch_usage.md'
       - 'cheaha/slurm/gpu.md'
       - 'cheaha/slurm/job_management.md'
