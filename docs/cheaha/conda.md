@@ -1,26 +1,16 @@
----
-title: Anaconda
----
+# Anaconda
 
-Python is a high level programming language that is widely used in many
-branches of science. The scientific python ecosystem is available to
-researchers as Anaconda modules on Cheaha. Modules for both python 2 and
-python 3 are installed. In order to see the different versions of each,
-use:
+Python is a high level programming language that is widely used in many branches of science. The scientific python ecosystem is available to researchers as Anaconda modules on Cheaha. Modules for both python 2 and python 3 are installed. In order to see the different versions of each, use:
 
-``` 
+``` bash
 module spider Anaconda
 ```
 
-# Loading Anaconda
+## Loading Anaconda
 
-When planning a project, you should have an idea of which python version
-you need to use. Python 3 is the current standard and is used by the
-Anaconda3 modules. After loading one of the modules, use
-`python --version` to check the version number.
+When planning a project, you should have an idea of which python version you need to use. Python 3 is the current standard and is used by the Anaconda3 modules. After loading one of the modules, use `python --version` to check the version number.
 
-Anaconda modules and their corresponding python versions can be seen in
-the table below:
+Anaconda modules and their corresponding python versions can be seen in the table below:
 
 | Module            | Python Version |
 |-------------------|----------------|
@@ -37,57 +27,37 @@ the table below:
 | Anaconda3/2020.07 | 3.8.3          |
 | Anaconda3/2020.11 | 3.8.5          |
 
-Python Versions
+If a necessary version is not required, choose the most recent version, `Anaconda3/2020.11`. Alternatively, the necessary python version can specified when creating a virtual environment and will be downloaded and installed regardless of if it is currently installed on the cluster.
 
-If a necessary version is not required, choose the most recent version,
-`Anaconda3/2020.11`. Alternatively, the necessary python version can
-specified when creating a virtual environment and will be downloaded and
-installed regardless of if it is currently installed on the cluster.
+## Libraries and Virtual Environments
 
-# Libraries and Virtual Environments
+Anaconda virtual environments are self-contained environments with necessary packages for specific projects. It is recommended to have a separate environment for each project you have. This solves cases where different projects have dependencies on different versions of the same package.
 
-Anaconda virtual environments are self-contained environments with
-necessary packages for specific projects. It is recommended to have a
-separate environment for each project you have. This solves cases where
-different projects have dependencies on different versions of the same
-package.
+New virtual environments include a few very common libraries such as scikit-learn, pandas, numpy, and scipy by default. However, most projects will need to install some external libraries as well using `pip` or `conda`.
 
-New virtual environments include a few very common libraries such as
-scikit-learn, pandas, numpy, and scipy by default. However, most
-projects will need to install some external libraries as well using
-`pip` or `conda`.
+Here, we will go through instructions for creating and managing Anaconda environments including installing new libraries. More complete information on this process can be found at the [Anaconda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#).
 
-Here, we will go through instructions for creating and managing Anaconda
-environments including installing new libraries. More complete
-information on this process can be found at the [Anaconda
-documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#).
+### Create an Environment
 
-## Create an Environment
-
-In order to create a basic environment with the default packages, use
-the `conda create` command:
+In order to create a basic environment with the default packages, use the `conda create` command:
 
 ``` bash
 # create a base environment. Replace <env> with an environment name
 conda create -n <env>
 ```
 
-If you are trying to replicate a pipeline or analysis from another
-person, you can also recreate an environment using a YAML file, if they
-have provided one. To replicate an environment using a YAML file, use:
+If you are trying to replicate a pipeline or analysis from another person, you can also recreate an environment using a YAML file, if they have provided one. To replicate an environment using a YAML file, use:
 
 ``` bash
 # replicate an environment from a YAML file named env.yml
 conda create -n <env> -f <path/to/env.yml>
 ```
 
-By default, all of your conda environments are stored in
-`/home/<user>/.conda/envs`.
+By default, all of your conda environments are stored in `/home/<user>/.conda/envs`.
 
-## Activate an Environment
+### Activate an Environment
 
-From here, you can activate the environment using either `source` or
-`conda`:
+From here, you can activate the environment using either `source` or `conda`:
 
 ``` bash
 # activate the virtual environment using source
@@ -103,78 +73,55 @@ To know your environment has loaded, the command line should look like:
 (<env>) [blazerid@c0XXX ~]$
 ```
 
-Once the environment is activated, you are allowed to install whichever
-python libraries you need for your analysis.
+Once the environment is activated, you are allowed to install whichever python libraries you need for your analysis.
 
-## Install Libraries
+### Install Libraries
 
-The base package manager for python is `pip`. The basic way to use `pip`
-is (replace \<package> with the package name, omitting \<\>):
+The base package manager for python is `pip`. The basic way to use `pip` is (replace \<package\> with the package name, omitting \<\>):
 
 ``` bash
 # install most recent version of a package
-pip install <package>
+pip install \<package\>
 
 # install a specific version
-pip install <package>==version
+pip install \<package\>==version
 
 # install a list of pacakges from a text file
 pip install -r packages.txt
 ```
 
-`pip` searches various package indexes like [PyPi](https://pypi.org/) or
-local project directories. If the package you need isn't found there, it
-may be available in an online Anaconda channel (same as index). To
-install from there, use the `conda install` command.
+`pip` searches various package indexes like [PyPi](https://pypi.org/) or local project directories. If the package you need isn't found there, it may be available in an online Anaconda channel (same as index). To install from there, use the `conda install` command.
 
 ``` bash
 # install most recent version of a package
-conda install <package>
+conda install \<package\>
 
 # install a specific version
-conda install <package>=version
+conda install \<package\>=version
 
 # install from a specific conda channel
-conda install -c <channel> <package>
+conda install -c \<channel\> \<package\>
 ```
 
-Generally, if a package needs to be downloaded from a specific conda
-channel, it will mention that in its installation instructions.
+Generally, if a package needs to be downloaded from a specific conda channel, it will mention that in its installation instructions.
 
-## Running Command-Line Python
+### Running Command-Line Python
 
-Python code can be run an individual commands from the command line. In
-order to access a python terminal, use the `python` or `python3` command
-in the terminal window. The prompt will be replaced with `>>>`. Execute
-any commands here. `exit()` will return you to the normal command line.
+Python code can be run an individual commands from the command line. In order to access a python terminal, use the `python` or `python3` command in the terminal window. The prompt will be replaced with `>>>`. Execute any commands here. `exit()` will return you to the normal command line.
 
-Executing scripts is the more common use case than executing individual
-commands interactively. To execute a script from the command line:
+Executing scripts is the more common use case than executing individual commands interactively. To execute a script from the command line:
 
 ``` bash
-python <script.py>
+python \<script.py\>
 ```
 
-Any optional inputs the script has can be listed after the name of the
-script.
+Any optional inputs the script has can be listed after the name of the script.
 
-<div class="note">
+!!! note
 
-<div class="title">
+   When Anaconda3 is loaded in your environment, the `python` and `python3` commands both refer to Python version 3.X.X (whatever minor version is loaded). However, when Anaconda3 is not loaded, `python` will refer to the base Python 2.7.5 instead. Be sure to load Anaconda3 before running `python`, or always use `python3` for disambiguation.
 
-Note
-
-</div>
-
-When Anaconda3 is loaded in your environment, the `python` and `python3`
-commands both refer to Python version 3.X.X (whatever minor version is
-loaded). However, when Anaconda3 is not loaded, `python` will refer to
-the base Python 2.7.5 instead. Be sure to load Anaconda3 before running
-`python`, or always use `python3` for disambiguation.
-
-</div>
-
-## Deactivating an Environment
+### Deactivating an Environment
 
 An environment can be deactivated using either `source` or `conda`:
 
@@ -186,21 +133,18 @@ source deactivate
 conda deactivate
 ```
 
-Anaconda may say that using `source deactivate` is deprecated, but
-environment will still be deactivated.
+Anaconda may say that using `source deactivate` is deprecated, but environment will still be deactivated.
 
 Closing the terminal will also close out the environment.
 
-## Exporting an Environment
+### Exporting an Environment
 
-To easily share environments with other researchers or replicate it on a
-new machine, it is useful to create an environment YAML file. You can do
-this using:
+To easily share environments with other researchers or replicate it on a new machine, it is useful to create an environment YAML file. You can do this using:
 
 ``` bash
 # activate the environment if it is not active already
-conda activate <env>
+conda activate \<env\>
 
 # export the environment to a YAML file
-conda env export > env.yml
+conda env export \> env.yml
 ```
