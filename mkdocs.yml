@@ -29,7 +29,7 @@ nav:
       - 'data_management/transfer/globus.md'
       - 'data_management/transfer/filezilla.md'
   - Cheaha User Guide:
-    - Detailed Hardware Information: 'cheaha/hardware.md'
+    - Hardware: 'cheaha/hardware.md'
     - Open OnDemand:
       - 'cheaha/open_ondemand/ood_main.md'
       - 'cheaha/open_ondemand/ood_interactive.md'
