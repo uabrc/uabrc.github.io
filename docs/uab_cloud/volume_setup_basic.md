@@ -139,7 +139,7 @@ Mounting a volume needs to be done once per instance it will be attached to. It 
 
     ![image](./images/persistent_volumes_007.png)
 
-7. Verify <span class="title-ref">fstab</span> was modified correctly by soft rebooting the instance and verifying the mount again using `df -h | egrep "<pmount>"`.
+7. Verify _fstab_ was modified correctly by soft rebooting the instance and verifying the mount again using `df -h | egrep "<pmount>"`.
 
     ![image](./images/persistent_volumes_008.png)
 
