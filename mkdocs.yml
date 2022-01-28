@@ -48,3 +48,8 @@ nav:
       - 'cheaha/slurm/job_management.md'
     - 'cheaha/lmod.md'
     - 'cheaha/conda.md'
+  - UAB Cloud:
+    - Introduction: 'uab_cloud/index.md'
+    - 'uab_cloud/network_setup_basic.md'
+    - 'uab_cloud/instance_setup_basic.md'
+    - 'uab_cloud/volume_setup_basic.md'
