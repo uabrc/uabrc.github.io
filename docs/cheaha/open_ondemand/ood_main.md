@@ -25,6 +25,6 @@ In it, you will find options to:
 
 To use a shell terminal in Cheaha through OOD, click `Clusters >> >_Cheaha Shell Access`. You can use this exactly like a standard `ssh` tunnel.
 
-!!! warning
+??? warning
 
-   Using the shell terminal in this way puts you on the login node. Do not run any compute tasks on the login node. Request a compute node first!
+    Using the shell terminal in this way puts you on the login node. Do not run any compute tasks on the login node. Request a compute node first!

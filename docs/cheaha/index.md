@@ -1,6 +1,4 @@
----
-title: Cheaha User Guide
----
+# Cheaha
 
 Cheaha is a campus HPC resource dedicated to enhancing research
 computing productivity at UAB. Cheaha is managed by UAB Information
@@ -23,11 +21,3 @@ auditors, and passed a security assessment for HIPAA alignment.
 In addition UAB researchers also have access to regional and national
 HPC resources such as Alabama Supercomputer Authority (ASA), XSEDE and
 Open Science Grid (OSG).
-
-<div class="toctree" maxdepth="2">
-
-/cheaha/open_ondemand/index
-
-/cheaha/hardware /cheaha/slurm/index /cheaha/lmod /cheaha/conda
-
-</div>

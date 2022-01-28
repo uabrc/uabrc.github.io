@@ -36,7 +36,7 @@ For batch jobs, directives are typically included as comments at the top of the 
 
 ## Slurm Partitions
 
-Add in the slurm partition table here later
+{{ read_csv('cheaha/slurm/partition.csv') }}
 
 Notes:
 

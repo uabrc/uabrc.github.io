@@ -16,6 +16,11 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
 
+plugins:
+  - search
+  - table-reader:
+      data_path: 'docs'
+
 nav:
   - Home: 'index.md'
   - Account Management:
@@ -29,6 +34,7 @@ nav:
       - 'data_management/transfer/globus.md'
       - 'data_management/transfer/filezilla.md'
   - Cheaha User Guide:
+    - 'cheaha/index.md'
     - Hardware: 'cheaha/hardware.md'
     - Open OnDemand:
       - 'cheaha/open_ondemand/ood_main.md'
