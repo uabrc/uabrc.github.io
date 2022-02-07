@@ -23,6 +23,9 @@ plugins:
 
 nav:
   - Home: 'index.md'
+  - Welcome:
+    - 'welcome/welcome.md'
+    - 'welcome/rc_days.md'
   - Account Management:
     - 'account_management/uab_user.md'
     - 'account_management/xias_users.md'
