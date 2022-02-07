@@ -7,5 +7,4 @@ to cloud and cluster computing. The main resources run by UAB RC are the
 soon!). Both of these resources are freely available to use by any
 researcher or instructor at UAB.
 
-
 Checking to see if auto-deploy works
