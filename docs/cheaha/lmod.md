@@ -35,7 +35,8 @@ module load module1 module2 ...
 ```
 
 !!! note
-   If you only specify a module name without an accompanying version tag, the most recently installed version will be loaded into the workspace. If your scripts depend on specific versions of software being used, explicitly load the module version you need.
+
+    If you only specify a module name without an accompanying version tag, the most recently installed version will be loaded into the workspace. If your scripts depend on specific versions of software being used, explicitly load the module version you need.
 
 To unload packages, run:
 

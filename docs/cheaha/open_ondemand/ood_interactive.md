@@ -18,11 +18,11 @@ There will be basic information about the number of cores and nodes as well as t
 
 !!! note
 
-   For HPC Desktop, you do not need to request resources after you open the Desktop. You are already on a compute node. Any tasks you run will use the resources you requested when initializing the job.
+    For HPC Desktop, you do not need to request resources after you open the Desktop. You are already on a compute node. Any tasks you run will use the resources you requested when initializing the job.
 
 !!! note
 
-   You can request another interactive session in a terminal in HPC Desktop. Only the terminal you requested the other interactive session in will have access to the new resources. Everything else in the HPC Desktop will run with the resources you requested when creating the initial job.
+    You can request another interactive session in a terminal in HPC Desktop. Only the terminal you requested the other interactive session in will have access to the new resources. Everything else in the HPC Desktop will run with the resources you requested when creating the initial job.
 
 These interactive jobs can be stopped early by clicking `Delete` on the right side of the job card.
 
@@ -32,7 +32,7 @@ As shown earlier, some software can be run outside of the VNC session. Setup for
 
 !!! note
 
-   Versions in OOD and versions seen when loading modules in a terminal may not match. If you need a specific version available in OOD, submit a support ticket at \<support@listserv.uab.edu\>
+    Versions in OOD and versions seen when loading modules in a terminal may not match. If you need a specific version available in OOD, submit a support ticket at \<support@listserv.uab.edu\>
 
 ## Jupyter
 
@@ -51,7 +51,7 @@ Submitting the job will bring you to the `My Interactive Jobs` window while the 
 
 !!! note
 
-   If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
+    If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
 
 The Jupyter Home Page will look like:
 
@@ -75,10 +75,10 @@ To create a new environment, click the `+` button at the top of the `Current env
 
 !!! note
 
-   If a package is not available using the `conda` command directly, it will not be listed as an available package. Use a terminal window to install the package as necessary.
+    If a package is not available using the `conda` command directly, it will not be listed as an available package. Use a terminal window to install the package as necessary.
 
 !!! note
 
-   In order to use an environment with Jupyter, the `ipykernel` library is necessary. Creating an environment in the Conda tab will autoinstall this library. If using the terminal, use `conda install ipykernel` to install it.
+    In order to use an environment with Jupyter, the `ipykernel` library is necessary. Creating an environment in the Conda tab will autoinstall this library. If using the terminal, use `conda install ipykernel` to install it.
 
 After successfully creating your environment, navigate to the Files tab. You can create a new notebook using the `New` dropdown menu in the top right. Select your virtual environment of choice, and a notebook will be created and opened.
