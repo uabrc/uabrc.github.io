@@ -67,7 +67,7 @@ The `Conda` has the following layout:
 
 ![image](images/ood_jupyter_create_conda_env.png){: .center}
 
-1. Current environments (red): a listing of the current existing environments in your `$USER_HOME/.conda/envs` folder.
+1. Current environments (red): a listing of the current existing environments in your `$HOME/.conda/envs` folder.
 2. Available packages (green): a list of all packages available to install from conda sources.
 3. Installed packages (blue): a list of the packages installed in the currently selected environment.
 
