@@ -57,12 +57,16 @@ associated with a site.
 
 ### Revoking User Privileges
 
-*THIS INFORMATION IS PENDING TESTING*
+!!! warning
+
+    THIS INFORMATION IS PENDING TESTING
 
 Users cannot have their XIAS account deleted. However, privileges may be revoked. To revoke user privileges, follow the instructions for managing
 users by site. Update the desired user(s)' end date to a date earlier
 than the current date.
 
-*If you need to urgently revoke privileges* please also notify UAB IT by
+#### If you need to urgently revoke privileges
+
+please also notify UAB IT by
 emailing <AskIT@uab.edu> as soon as possible. Please be clear about what
 is needed and when.
