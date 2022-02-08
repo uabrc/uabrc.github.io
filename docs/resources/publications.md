@@ -1,7 +1,3 @@
----
-title: Information for Grants and Publications
----
-
 # Grant Descriptions
 
 ## Short
@@ -16,9 +12,11 @@ title: Information for Grants and Publications
 
 ## Detailed
 
-*Under Construction*
+!!! note
 
-# Acknoweldgement in Publications
+    Under construction.
+
+## Acknoweldgement in Publications
 
 To acknowledge the use of Cheaha in published work, for compute time or
 substantial technical assistance, please consider adding the following
@@ -41,7 +39,7 @@ publication:
 > National Science Foundation or the University of Alabama at
 > Birmingham.
 
-# Detailed Hardware Information
+## Detailed Hardware Information
 
 For more detailed information on compute hardware please see:
 `Hardware <hardware>`.

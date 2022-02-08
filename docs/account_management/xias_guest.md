@@ -36,7 +36,7 @@ These instructions are for guests who have been registered by UAB faculty and st
 
     ![](./images/xias_guest_009.png)
 
-Following this step, your account registration is complete and you
+    Following this step, your account registration is complete and you
 should be able to access the resources you have been granted permission
 to use. Most internal UAB systems use a Single Sign-On (SSO) to simplify
 and standardize logging in. For those sites that don't you will need to
