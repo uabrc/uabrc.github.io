@@ -1,5 +1,5 @@
 site_name: UABRC Docs
-repo_url: https://github.com/uabrc/researcher_facing_MkDocs
+repo_url: https://github.com/uabrc/researcher-facing-MkDocs
 
 theme:
   name: 'material'
