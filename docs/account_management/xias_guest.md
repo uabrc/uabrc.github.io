@@ -36,7 +36,7 @@ These instructions are for guests who have been registered by UAB faculty and st
 
     ![](./images/xias_guest_009.png)
 
-Following this step, your account registration is complete and you
+    Following this step, your account registration is complete and you
 should be able to access the resources you have been granted permission
 to use. Most internal UAB systems use a Single Sign-On (SSO) to simplify
 and standardize logging in. For those sites that don't you will need to
@@ -52,7 +52,7 @@ To change your password, or recover your account in case of a lost
 password, please click the "Change XIAS Password" link in the left hand
 panel of the main page. Once there, follow the instructions on the form.
 
-    ![](./images/xias_guest_change_password.png)
+![](./images/xias_guest_change_password.png)
 
 ## Resend Invite Code
 
@@ -60,11 +60,11 @@ If your invite code has expired, you can have a new invite code sent to
 you by clicking the "Resend Invite Code" link in the left hand panel of
 the main page. Once there, follow the instructions on the form.
 
-    ![](./images/xias_guest_resend.png)
+![](./images/xias_guest_resend.png)
 
 ## Guest IT Info
 
 For more information on UAB IT policies and other useful and helpful
 information, please click the "UABIT Guest User info" link.
 
-    ![](./images/xias_guest_it_info.png)
+![](./images/xias_guest_it_info.png)
