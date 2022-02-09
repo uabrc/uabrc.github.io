@@ -67,7 +67,7 @@ After a job is completed, look at how well resources were used using `seff`. For
 
 ## Single Batch Job
 
-An example script using some of the listed directives can be seen below: 
+An example script using some of the listed directives can be seen below:
 
 ``` bash
 #!/bin/bash
