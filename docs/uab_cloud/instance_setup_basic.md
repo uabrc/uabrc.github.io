@@ -269,3 +269,17 @@ ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
 ```
 
 ![image](./images/instances_020.png)
+
+!!! note
+
+    Reusing a floating IP for a new instance can result in a "host key changed" error. To resolve this issue, please use the command below with the hostname given by the error, which should be the affected floating IP.
+
+    ```
+    ssh-keygen -R <hostname>
+    ```
+
+    ![image showing host key changed error at terminal](images/instances_ssh_host_key_error.png)
+
+!!! danger
+
+    Using the above command is potentially dangerous when connecting to machines or instances controlled by other people. Be absolutely certain you trust the source of the key change before using the command above.
