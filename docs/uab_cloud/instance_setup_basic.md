@@ -8,11 +8,11 @@ Floating IPs are required if you want an instance to talk to devices on the inte
 
 1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
-    ![image](./images/networks_000.png)
+    ![!image](./images/networks_000.png)
 
 2. Click "Floating IPs".
 
-    ![image](./images/floating_ips_001.png)
+    ![!image](./images/floating_ips_001.png)
 
 3. Click "Allocate IP to Project" to open a dialog box.
 
@@ -23,14 +23,14 @@ Floating IPs are required if you want an instance to talk to devices on the inte
     3. Leave "DNS Domain" empty.
     4. Leave "DNS Name" empty.
 
-    ![image](./images/floating_ips_002.png)
+    ![!image](./images/floating_ips_002.png)
 
 5. Click "Allocate IP".
 
     1. Redirects to the "Floating IPs" page.
     2. There should be a new entry in the table.
 
-    ![image](./images/floating_ips_003.png)
+    ![!image](./images/floating_ips_003.png)
 
 ## Creating a Key Pair
 
@@ -42,11 +42,11 @@ Good practice is to only use one key pair per person and per local machine. So i
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![image](./images/key_pairs_000.png)
+    ![!image](./images/key_pairs_000.png)
 
 2. Click "Key Pairs".
 
-    ![image](./images/key_pairs_001.png)
+    ![!image](./images/key_pairs_001.png)
 
 3. Click "+ Create Key Pair" to open a dialog box.
 
@@ -55,7 +55,7 @@ Good practice is to only use one key pair per person and per local machine. So i
     1. Enter a "Key Pair Name".
     2. Select "SSH Key" in the "Key Type" drop down box.
 
-        ![image](./images/key_pairs_002.png)
+        ![!image](./images/key_pairs_002.png)
 
 5. Click "+ Create Key Pair"
 
@@ -63,12 +63,12 @@ Good practice is to only use one key pair per person and per local machine. So i
     2. Download the `pem` file. For security reasons this will be your only chance to ever obtain the private key from OpenStack.
     3. Failing to download the `pem` file now means a new key pair will need to be created.
 
-        ![image](./images/key_pairs_003.png)
+        ![!image](./images/key_pairs_003.png)
 
     4. Redirects to the "Key Pairs" page.
     5. There should be a new entry in the table.
 
-        ![image](./images/key_pairs_004.png)
+        ![!image](./images/key_pairs_004.png)
 
 6. To use the private key on your local machine.
 
@@ -77,7 +77,7 @@ Good practice is to only use one key pair per person and per local machine. So i
     3. `ssh-add <pem_file>` to add the private key to the ssh keyring for use by ssh.
     4. `ssh-add -d <pem_file>` to remove the key.
 
-        ![image](./images/key_pairs_005.png)
+        ![!image](./images/key_pairs_005.png)
 
 !!! note
 
@@ -93,7 +93,7 @@ Good practice is to only use one key pair per person and per local machine. So i
             key pair **OR** copy-paste the content of that key file into the
             "Public Key" box.
 
-            ![image](./images/key_pairs_alt_002.png)
+            ![!image](./images/key_pairs_alt_002.png)
 
 ## Creating an Instance
 
@@ -104,17 +104,17 @@ These instructions require that you've set up a `network<network_setup_basic>` a
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![image](./images/key_pairs_000.png)
+    ![!image](./images/key_pairs_000.png)
 
 2. Click "Instances".
 
-    ![image](./images/instances_001.png)
+    ![!image](./images/instances_001.png)
 
 3. Click "Launch Instance" to open a dialog box.
 
 4. Fill out the dialog box completely. There are several tabs that will need to be completed.
 
-    ![image](./images/instances_002.png)
+    ![!image](./images/instances_002.png)
 
 5. "Details" tab.
 
@@ -133,14 +133,14 @@ These instructions require that you've set up a `network<network_setup_basic>` a
         1. "Yes" is a good choice if the OS volume will be reused.
         2. "No" is a good choice if you don't care about reusing the OS.
 
-        ![image](./images/instances_003.png)
+        ![!image](./images/instances_003.png)
 
     5. Pick an image from the list under the "Available" section.
         1. Use the search box to help find the image that best suits your research needs.
         2. When you find the best image, click the button with an up arrow next to the image.
         3. The image will move to the "Allocated" section above the "Available" section.
 
-        ![image](./images/instances_004.png)
+        ![!image](./images/instances_004.png)
 
     6. Click "Next \>" to move to the "Flavor" tab.
 
@@ -151,7 +151,7 @@ These instructions require that you've set up a `network<network_setup_basic>` a
         2. When you find the best flavor, click the button with an up arrow next to the flavor.
         3. The flavor will move to the "Allocated" section above the "Available" section.
 
-        ![image](./images/instances_005.png)
+        ![!image](./images/instances_005.png)
 
     2. Click "Next \>" to move to the "Networks" tab.
 
@@ -163,7 +163,7 @@ These instructions require that you've set up a `network<network_setup_basic>` a
         3. When you find the best Network, click the button with an up arrow next to the Network.
         4. The Network will move to the "Allocated" section above the "available" section.
 
-        ![image](./images/instances_006.png)
+        ![!image](./images/instances_006.png)
 
     2. Click "Next \>" to move to the "Network Ports" tab.
 
@@ -171,7 +171,7 @@ These instructions require that you've set up a `network<network_setup_basic>` a
 
     1. Leave this tab empty.
 
-        ![image](./images/instances_007.png)
+        ![!image](./images/instances_007.png)
 
     2. Click "Next \>" to move to the "Security Groups" tab.
 
@@ -185,7 +185,7 @@ These instructions require that you've set up a `network<network_setup_basic>` a
     2. The "default" Security Group should already be in the
         "Allocated" section.
 
-        ![image](./images/instances_008.png)
+        ![!image](./images/instances_008.png)
 
     3. Click "Next \>" to move to the "Key Pair" tab.
 
@@ -205,7 +205,7 @@ These instructions require that you've set up a `network<network_setup_basic>` a
         4. The Key Pair(s) will move to the "Allocated" section above
             the "Available" section.
 
-        ![image](./images/instances_009.png)
+        ![!image](./images/instances_009.png)
 
     2. Click "Next \>" to move to the "Configuration" tab.
 
@@ -233,12 +233,12 @@ These instructions require that you've set up a `network<network_setup_basic>` a
     1. Redirects to the "Instances" page.
     2. There should be a new entry in the table.
 
-        ![image](./images/instances_014.png)
+        ![!image](./images/instances_014.png)
 
     3. The instance will take some time to build and boot. When the
         Status column entry says "Active" please move to the next steps.
 
-        ![image](./images/instances_015.png)
+        ![!image](./images/instances_015.png)
 
 17. Associate Floating IP.
 
@@ -250,7 +250,7 @@ These instructions require that you've set up a `network<network_setup_basic>` a
     5. Click "Associate" to return to the "Instances" page and
         associate the selected IP.
 
-        ![image](./images/instances_017.png)
+        ![!image](./images/instances_017.png)
 
 At this stage you should be able to SSH into your instance from on
 campus or on the UAB VPN.
