@@ -20,7 +20,7 @@ If you are a collaborator with a XIAS account you'll need to follow a different 
 6. Fill out the `Password` field with your XIAS account password.
 7. Click `Sign in`.
 
-![gitlab login pane with ldap tab selected](images/gitlab_user_standard.png)
+![gitlab login pane with standard tab selected](images/gitlab_user_standard.png)
 
 !!! warning
 
