@@ -83,9 +83,9 @@ Good practice is to only use one key pair per person and per local machine. So i
 
     It is alternately possible to use a custom key pair created on your local machine. We assume you know how to create a key pair on your local machine and have already done so. To upload a key pair, replace steps 3 and 4 above with the following, perform step 5 from above, and skip step 6.
 
-    3. Click "Import Public Key" to open a dialog box.
+    3\. Click "Import Public Key" to open a dialog box.
 
-    4. Fill out the dialog box.
+    4\. Fill out the dialog box.
 
         1. Enter a "Key Pair Name".
         2. Select "SSH Key" in the "Key Type" drop-down box.

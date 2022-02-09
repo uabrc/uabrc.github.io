@@ -117,4 +117,4 @@ The job had poor CPU efficiency, requesting 2 CPUs which were only busy for 30% 
 
 !!! note
 
-    Do not aim for 100% memory efficiency for a given job. Having a couple of GB extra is recommended to prevent jobs being cancelled due to insufficient resources
+    Do not aim for 100% memory efficiency for a given job. Having a couple of GB extra is recommended to prevent jobs being cancelled due to insufficient resources.
