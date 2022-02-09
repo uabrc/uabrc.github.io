@@ -4,11 +4,11 @@ XIAS Project/Sites, or simply sites, tie external users to specific resources at
 
 1. To start go to the [UAB XIAS Project/Site Management Webpage](https://idm.uab.edu/cgi-cas/xrmi/sites).
 
-    ![](./images/xias_sites_add_000.png)
+    ![!](./images/xias_sites_add_000.png)
 
 2. Click "New" to open a form for creating a new Project/Site.
 
-    ![](./images/xias_sites_add_001.png)
+    ![!](./images/xias_sites_add_001.png)
 
 3. Fill in the form. All fields are required.
 
@@ -18,12 +18,12 @@ XIAS Project/Sites, or simply sites, tie external users to specific resources at
     4. **End date** - An expiration date for the project or site.
     5. **URIs** - One or more uniform resource locators (URIs) associated with the site, to increase accountability.
 
-    ![](./images/xias_sites_add_002.png)
+    ![!](./images/xias_sites_add_002.png)
 
 4. Click "Add" to submit the form. You should be taken to a page summarizing the created Project/Site.
 
-    ![](./images/xias_sites_add_003.png)
+    ![!](./images/xias_sites_add_003.png)
 
 5. When you visit the "Manage Projects/Sites" page in the future, you will see a table with the newly created Project/Site listed. Click "View" to return to the page seen in the previous step. Click "Edit" to return to the form from \[link\]. Click "Users" to manage users for this site.
 
-    ![](./images/xias_sites_add_004.png)
+    ![!](./images/xias_sites_add_004.png)

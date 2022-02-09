@@ -6,13 +6,13 @@ Currently, the available standalone programs are IGV, Matlab, RStudio, SAS, and 
 
 All of the interactive apps have similar setup pages. For instance, if we click HPC Desktop, the following screen will appear:
 
-![image](images/ood_interactive_hpc_vnc.png){: .center}
+![!image](images/ood_interactive_hpc_vnc.png){: .center}
 
 This will allow to choose the number of hours, partition, number of cpus, and memory per cpu needed for the job. These fields are common to all interactive apps and are required. Not all partitions are available when creating an interactive job in OOD. For instance, if you need to use the `largemem` partition, request those resources in a terminal session for an interactive job or submit a batch job.
 
 Once you've selected the compute resources you need, Launch the job. This will bring you to the My Interactive Sessions page. This page looks like:
 
-![image](images/ood_interactive_sessions.png){: .center}
+![!image](images/ood_interactive_sessions.png){: .center}
 
 There will be basic information about the number of cores and nodes as well as the job ID in the top part of the job card. The amount of time remaining in the job is included in the card as well as a quick link to the file browser in the `Session ID` field. Click `Launch Desktop in new tab` to open your interactive VNC session.
 
@@ -39,7 +39,7 @@ As shown earlier, some software can be run outside of the VNC session. Setup for
 Jupyter notebooks are available for use in OOD, but some extra setup is
 required. The extra fields you need to fill out are seen below:
 
-![image](images/ood_jupyter.png){: .center}
+![!image](images/ood_jupyter.png){: .center}
 
 At the bottom of the `Environment Setup` field, you will need to place a `module load` command to load the version of Anaconda your Jupyter job will be running. View the list of Anaconda modules installed on Cheaha in a terminal session using `module spider Anaconda`.
 
@@ -55,7 +55,7 @@ Submitting the job will bring you to the `My Interactive Jobs` window while the 
 
 The Jupyter Home Page will look like:
 
-![image](images/ood_jupyter_home.png){: .center}
+![!image](images/ood_jupyter_home.png){: .center}
 
 From here, you can navigate to and select an existing notebook, or you can create a new one using one of your existing virtual environments or the base environment.
 
@@ -65,7 +65,7 @@ To run Jupyter with specific libraries and packages outside of the base install,
 
 The `Conda` has the following layout:
 
-![image](images/ood_jupyter_create_conda_env.png){: .center}
+![!image](images/ood_jupyter_create_conda_env.png){: .center}
 
 1. Current environments (red): a listing of the current existing environments in your `$HOME/.conda/envs` folder.
 2. Available packages (green): a list of all packages available to install from conda sources.
