@@ -28,7 +28,7 @@ Additionally, when requesting a job using `sbatch`, you will need to include a S
 
 !!! note
 
-   It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at `how to manage jobs<job_management>` for more information.
+    It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at `how to manage jobs<job_management>` for more information.
 
 ### Open OnDemand
 
