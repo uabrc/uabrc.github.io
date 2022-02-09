@@ -2,8 +2,7 @@
 
 ## How Do I Create a Support Ticket?
 
-To Create a support ticket, send a descriptive email to <span
-class="title-ref">support@listserv.uab.edu</span>\_\_ to create a
+To Create a support ticket, send a descriptive email to support@listserv.uab.edu to create a
 ticket. Bonus points for including the following details.
 
 ### General Issues
@@ -54,10 +53,4 @@ information, depending on what you need.
 
 ## Office Hours
 
-Office hours are held virtually via Zoom. Please see below for our
-current weekly times.
-
-Mondays 10:00 AM to 12:00 PM:
-[Zoom](https://uab.zoom.us/j/84019898491?pwd=bWlYaldMWUoyY0lCcGhuT3dmZjZLQT09)
-Thursdays 10:00 AM to 12:00 PM:
-[Zoom](https://uab.zoom.us/j/96229651103?pwd=RmpsWG1NYkxjclgxTThXb1h2bVBndz09)
+For our office hours links please see [Contact Us](../welcome/welcome.md#contact-us)
