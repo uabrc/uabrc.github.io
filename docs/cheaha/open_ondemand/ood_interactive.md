@@ -6,23 +6,23 @@ Currently, the available standalone programs are IGV, Matlab, RStudio, SAS, and 
 
 All of the interactive apps have similar setup pages. For instance, if we click HPC Desktop, the following screen will appear:
 
-![image](images/ood_interactive_hpc_vnc.png){: .center}
+![!image](images/ood_interactive_hpc_vnc.png){: .center}
 
 This will allow to choose the number of hours, partition, number of cpus, and memory per cpu needed for the job. These fields are common to all interactive apps and are required. Not all partitions are available when creating an interactive job in OOD. For instance, if you need to use the `largemem` partition, request those resources in a terminal session for an interactive job or submit a batch job.
 
 Once you've selected the compute resources you need, Launch the job. This will bring you to the My Interactive Sessions page. This page looks like:
 
-![image](images/ood_interactive_sessions.png){: .center}
+![!image](images/ood_interactive_sessions.png){: .center}
 
 There will be basic information about the number of cores and nodes as well as the job ID in the top part of the job card. The amount of time remaining in the job is included in the card as well as a quick link to the file browser in the `Session ID` field. Click `Launch Desktop in new tab` to open your interactive VNC session.
 
 !!! note
 
-   For HPC Desktop, you do not need to request resources after you open the Desktop. You are already on a compute node. Any tasks you run will use the resources you requested when initializing the job.
+    For HPC Desktop, you do not need to request resources after you open the Desktop. You are already on a compute node. Any tasks you run will use the resources you requested when initializing the job.
 
 !!! note
 
-   You can request another interactive session in a terminal in HPC Desktop. Only the terminal you requested the other interactive session in will have access to the new resources. Everything else in the HPC Desktop will run with the resources you requested when creating the initial job.
+    You can request another interactive session in a terminal in HPC Desktop. Only the terminal you requested the other interactive session in will have access to the new resources. Everything else in the HPC Desktop will run with the resources you requested when creating the initial job.
 
 These interactive jobs can be stopped early by clicking `Delete` on the right side of the job card.
 
@@ -32,14 +32,14 @@ As shown earlier, some software can be run outside of the VNC session. Setup for
 
 !!! note
 
-   Versions in OOD and versions seen when loading modules in a terminal may not match. If you need a specific version available in OOD, submit a support ticket at \<support@listserv.uab.edu\>
+    Versions in OOD and versions seen when loading modules in a terminal may not match. If you need a specific version available in OOD, submit a support ticket at \<support@listserv.uab.edu\>
 
 ## Jupyter
 
 Jupyter notebooks are available for use in OOD, but some extra setup is
 required. The extra fields you need to fill out are seen below:
 
-![image](images/ood_jupyter.png){: .center}
+![!image](images/ood_jupyter.png){: .center}
 
 At the bottom of the `Environment Setup` field, you will need to place a `module load` command to load the version of Anaconda your Jupyter job will be running. View the list of Anaconda modules installed on Cheaha in a terminal session using `module spider Anaconda`.
 
@@ -51,11 +51,11 @@ Submitting the job will bring you to the `My Interactive Jobs` window while the 
 
 !!! note
 
-   If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
+    If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
 
 The Jupyter Home Page will look like:
 
-![image](images/ood_jupyter_home.png){: .center}
+![!image](images/ood_jupyter_home.png){: .center}
 
 From here, you can navigate to and select an existing notebook, or you can create a new one using one of your existing virtual environments or the base environment.
 
@@ -65,7 +65,7 @@ To run Jupyter with specific libraries and packages outside of the base install,
 
 The `Conda` has the following layout:
 
-![image](images/ood_jupyter_create_conda_env.png){: .center}
+![!image](images/ood_jupyter_create_conda_env.png){: .center}
 
 1. Current environments (red): a listing of the current existing environments in your `$HOME/.conda/envs` folder.
 2. Available packages (green): a list of all packages available to install from conda sources.
@@ -75,10 +75,10 @@ To create a new environment, click the `+` button at the top of the `Current env
 
 !!! note
 
-   If a package is not available using the `conda` command directly, it will not be listed as an available package. Use a terminal window to install the package as necessary.
+    If a package is not available using the `conda` command directly, it will not be listed as an available package. Use a terminal window to install the package as necessary.
 
 !!! note
 
-   In order to use an environment with Jupyter, the `ipykernel` library is necessary. Creating an environment in the Conda tab will autoinstall this library. If using the terminal, use `conda install ipykernel` to install it.
+    In order to use an environment with Jupyter, the `ipykernel` library is necessary. Creating an environment in the Conda tab will autoinstall this library. If using the terminal, use `conda install ipykernel` to install it.
 
 After successfully creating your environment, navigate to the Files tab. You can create a new notebook using the `New` dropdown menu in the top right. Select your virtual environment of choice, and a notebook will be created and opened.

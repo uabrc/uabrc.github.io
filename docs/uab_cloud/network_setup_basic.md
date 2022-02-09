@@ -9,14 +9,14 @@ to maximize security.
 
 1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
-    ![image](./images/networks_000.png)
+    ![!image](./images/networks_000.png)
 
 2. Click "Networks" in the fold-out menu.
 
     1. The "Networks" page will open.
     2. The "uab_campus" network entry should already be in the table.
 
-        ![image](./images/networks_001.png)
+        ![!image](./images/networks_001.png)
 
 3. Click "+ Create Network" to open a dialog box.
 
@@ -28,21 +28,21 @@ to maximize security.
     3. Uncheck "Create Subnet". We will do this as a separate step. The other tabs should be removed.
     4. Leave the "Availability Zone Hints" box empty.
 
-        ![image](./images/networks_003.png)
+        ![!image](./images/networks_003.png)
 
 5. Click "Create".
 
     1. Redirects to the "Networks" page.
     2. There should be a new entry in the table with the name given in (4.a)
 
-        ![image](./images/networks_004.png)
+        ![!image](./images/networks_004.png)
 
 ## Creating a Subnet
 
 1. Click "Network" in the left-hand navigation pane to open the
     fold-out menu.
 
-    ![image](./images/networks_000.png)
+    ![!image](./images/networks_000.png)
 
 2. Click "Networks" in the fold-out menu.
 
@@ -50,11 +50,11 @@ to maximize security.
     2. The "uab_campus" network should already be an entry in the table.
     3. At least one other entry must be in the table. See `Creating a Network`.
 
-        ![image](./images/networks_004.png)
+        ![!image](./images/networks_004.png)
 
 3. Under the "Actions" column, select the drop-down triangle button in the row corresponding to the network you want to add a subnet to.
 
-    ![image](./images/subnet_002.png)
+    ![!image](./images/subnet_002.png)
 
 4. Click "Create Subnet" in the drop-down to open a dialog box.
 
@@ -69,7 +69,7 @@ to maximize security.
         5. Leave "Disable Gateway" unchecked.
         6. Click the "Next \>\>" button to move to the "Subnet Details" tab.
 
-            ![image](./images/subnet_003.png)
+            ![!image](./images/subnet_003.png)
 
     2. The "Subnet Details" tab.
 
@@ -78,17 +78,17 @@ to maximize security.
         3. Leave "DNS Name Servers" empty.
         4. Leave "Host Routes" empty.
 
-            ![image](./images/subnet_004.png)
+            ![!image](./images/subnet_004.png)
 
 6. Click "Create".
 
     1. Redirects to the "Overview" page for the network the subnet was added to.
 
-        ![image](./images/subnet_005.png)
+        ![!image](./images/subnet_005.png)
 
     2. Click the "Subnets" tab next to "Overview" to verify the subnet was added to the table for this network.
 
-        ![image](./images/subnet_006.png)
+        ![!image](./images/subnet_006.png)
 
 ## Creating a Router
 
@@ -96,11 +96,11 @@ To follow these directions for creating a router, a `network<Creating a Network>
 
 1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
-    ![image](./images/networks_000.png)
+    ![!image](./images/networks_000.png)
 
 2. Click "Routers" in the fold-out menu.
 
-    ![image](./images/routers_001.png)
+    ![!image](./images/routers_001.png)
 
 3. Click "+ Create Router" to open a dialog box.
 
@@ -111,22 +111,22 @@ To follow these directions for creating a router, a `network<Creating a Network>
     3. Select "uab-campus" in the "External Network" drop down box.
     4. Leave the "Availability Zone Hints" box empty.
 
-    ![image](./images/routers_002.png)
+    ![!image](./images/routers_002.png)
 
 5. Click "Create Router".
 
     1. Redirects to the "Routers" page.
     2. There should be a new entry in the table with the name given in (4.a)
 
-    ![image](./images/routers_003.png)
+    ![!image](./images/routers_003.png)
 
 6. Now we need to connect the router to our subnet. Click the name of the new entry under the "Name" column to open the router "Overview" page.
 
-    ![image](./images/routers_004.png)
+    ![!image](./images/routers_004.png)
 
 7. Click the "Interfaces" tab.
 
-    ![image](./images/routers_005.png)
+    ![!image](./images/routers_005.png)
 
 8. Click "+ Add Interface" to open a dialog box.
 
@@ -135,14 +135,14 @@ To follow these directions for creating a router, a `network<Creating a Network>
     1. Select an existing network-subnet pair in the "Subnet" drop down box.
     2. If this is your only router on the selected subnet, leave "IP Address" empty to use the subnet gateway.
 
-    ![image](./images/routers_006.png)
+    ![!image](./images/routers_006.png)
 
 10. Click "Submit"
 
     1. Redirects to the "Interfaces" page for the router.
     2. There should be a new entry in the table.
 
-    ![image](./images/routers_007.png)
+    ![!image](./images/routers_007.png)
 
 ## Creating a Security Group
 
@@ -150,11 +150,11 @@ These instructions show you how to prepare to use SSH with your instances. Secur
 
 1. Click "Networks" in the left-hand navigation pane to open the fold-out menu.
 
-    ![image](./images/networks_000.png)
+    ![!image](./images/networks_000.png)
 
 2. Click "Security Groups" in the fold out menu.
 
-    ![image](./images/security_groups_001.png)
+    ![!image](./images/security_groups_001.png)
 
 3. Click "+ Create Security Group" to open a dialog box.
 
@@ -163,14 +163,14 @@ These instructions show you how to prepare to use SSH with your instances. Secur
     1. Under "Name" enter `ssh`.
     2. Leave "Description" empty.
 
-    ![image](./images/security_groups_002.png)
+    ![!image](./images/security_groups_002.png)
 
 5. Click "Create Security Group".
 
     1. Redirects to the "Manage Security Group Rules: ssh" page.
     2. There should be an entry for "Egress IPv4" and "Egress IPv6". Leave these alone.
 
-    ![image](./images/security_groups_003.png)
+    ![!image](./images/security_groups_003.png)
 
 6. Click "+ Add Rule" to open a dialog box.
 
@@ -179,11 +179,11 @@ These instructions show you how to prepare to use SSH with your instances. Secur
     3. Select "CIDR" in the "Remote" drop down box.
     4. Type `0.0.0.0/0` in the "CIDR" box. **WARNING!** This is **NOT** good practice! For your research instances, you'll want to constrain the CIDR value further to a narrower range of IP addresses. The rule we have shown here leaves the SSH port open to all IP addresses world-wide.
 
-    ![image](./images/security_groups_004.png)
+    ![!image](./images/security_groups_004.png)
 
 7. Click "Add".
 
     1. Redirects to the "Manage Security Group Rules: ssh" page.
     2. There should be a new entry in the table.
 
-    ![image](./images/security_groups_005.png)
+    ![!image](./images/security_groups_005.png)
