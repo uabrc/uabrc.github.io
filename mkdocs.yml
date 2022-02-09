@@ -1,4 +1,5 @@
-site_name: UABRC Docs
+site_name: UAB Research Computing
+repo_url: https://github.com/uabrc/researcher-facing-MkDocs
 
 theme:
   name: 'material'
@@ -6,6 +7,7 @@ theme:
   search_index_only: true
   feature:
     tabs: true
+  custom_dir: 'theme'
 
 extra_css:
   - stylesheets/extra.css
@@ -15,6 +17,9 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - attr_list
+  - lightgallery:
+      show_description_in_lightgallery: true
+      show_description_as_inline_caption: false
 
 plugins:
   - search
