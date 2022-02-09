@@ -9,15 +9,15 @@ wish to add users to, as well as expiration dates for each user.
 
 1. To start go to the [UAB XIAS User Management Webpage](https://idm.uab.edu/cgi-cas/xrmi/sites).
 
-    ![](./images/xias_users_add_000.png)
+    ![!](./images/xias_users_add_000.png)
 
 2. Select the Project/Site you wish to add users to from the drop down box.
 
-    ![](./images/xias_users_add_001.png)
+    ![!](./images/xias_users_add_001.png)
 
 3. Click "Register" to open a form for adding new users.
 
-    ![](./images/xias_users_add_002.png)
+    ![!](./images/xias_users_add_002.png)
 
 4. Fill in the form. All fields are required.
 
@@ -25,19 +25,19 @@ wish to add users to, as well as expiration dates for each user.
     2. **End date** - An expiration date for the users being added. Cannot be longer than the end date for the selected Project/Site.
     3. **Text box** - Enter a list of e-mail addresses for users to add.
 
-    ![](./images/xias_users_add_003.png)
+    ![!](./images/xias_users_add_003.png)
 
 5. Click "Submit" to move to a confirmation page.
 
-    ![](./images/xias_users_add_004.png)
+    ![!](./images/xias_users_add_004.png)
 
 6. Check the emails are correct and click "Add" to submit the information Emails will be sent to all email addresses for next steps. You will be redirected to the UAB XIAS User Management Webpage, which should now have the text "Registration successful." near the top.
 
-    ![](./images/xias_users_add_005.png)
+    ![!](./images/xias_users_add_005.png)
 
 7. To complete their registration, please direct your external collaborators to the [UAB XIAS Guest Users page](https://idm.uab.edu/xias/top). When they have completed their registration, you should receive an email like the following.
 
-    ![](./images/xias_users_add_006.png)
+    ![!](./images/xias_users_add_006.png)
 
 ## Discovering and Managing Users
 
@@ -49,11 +49,11 @@ associated with a site.
 
 1. To locate users by e-mail address: type their email into the "Locate specific user(s) by e-mail address" text field on the "Manage Users" page.
 
-    ![](./images/xias_users_list_000.png)
+    ![!](./images/xias_users_list_000.png)
 
 2. To manage users by site: select the site from the drop-down box and click the "List" button. The page will reload with a table containing name, email, and start and end dates. The end date is when the XIAS user registration expires. To change the end date for user(s), click the "Sel" checkbox next to their names, enter a date in the "Change end date for selected users to" text field, and click "Update".
 
-    ![](./images/xias_users_list_001.png)
+    ![!](./images/xias_users_list_001.png)
 
 ### Revoking User Privileges
 
