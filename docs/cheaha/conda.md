@@ -10,24 +10,7 @@ module spider Anaconda
 
 When planning a project, you should have an idea of which python version you need to use. Python 3 is the current standard and is used by the Anaconda3 modules. After loading one of the modules, use `python --version` to check the version number.
 
-Anaconda modules and their corresponding python versions can be seen in the table below:
-
-| Module            | Python Version |
-|-------------------|----------------|
-| Anaconda2/4.0.0   | 2.7.11         |
-| Anaconda2/4.2.0   | 2.7.12         |
-| Anaconda3/4.4.0   | 3.6.1          |
-| Anaconda3/5.0.1   | 3.6.3          |
-| Anaconda3/5.1.0   | 3.6.4          |
-| Anaconda3/5.2.0   | 3.6.5          |
-| Anaconda3/5.3.0   | 3.7.2          |
-| Anaconda3/5.3.1   | 3.7.4          |
-| Anaconda3/2019.10 | 3.7.4          |
-| Anaconda3/2020.02 | 3.7.6          |
-| Anaconda3/2020.07 | 3.8.3          |
-| Anaconda3/2020.11 | 3.8.5          |
-
-If a necessary version is not required, choose the most recent version, `Anaconda3/2020.11`. Alternatively, the necessary python version can specified when creating a virtual environment and will be downloaded and installed regardless of if it is currently installed on the cluster.
+To see all of the Anaconda versions installed on Cheaha, use the command `module spider Anaconda`. Specific versions of Python can be installed in virtual environments regardless of the version of Python in the Anaconda module.
 
 ## Libraries and Virtual Environments
 
