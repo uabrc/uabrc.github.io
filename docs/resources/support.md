@@ -53,4 +53,4 @@ information, depending on what you need.
 
 ## Office Hours
 
-For our office hours links please see [Contact Us](../welcome/welcome.md#contact-us)
+For our office hours links please see [Contact Us](../index.md#contact-us)
