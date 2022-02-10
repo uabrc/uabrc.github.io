@@ -69,6 +69,7 @@ After a job is completed, look at how well resources were used using `seff`. For
 
 An example script using some of the listed directives can be seen below:
 
+<!-- markdownlint-disable-next-line -->
 ``` bash
 #!/bin/bash
 #
@@ -87,6 +88,7 @@ This script requests 1 core on 1 node with 1 GB of RAM on the express partition 
 
 If the script is saved as `$HOME/example.sh`, it can be submitted using the following command from the command line:
 
+<!-- markdownlint-disable-next-line -->
 ``` bash
 sbatch $HOME/example.sh
 ```
@@ -97,6 +99,7 @@ For some analyses, you will want to perform the same operations on different inp
 
 Array jobs can use a Slurm environmental variable, `$SLURM_ARRAY_TASK_ID`, as an index for inputs. For example, if we have a script that looks like:
 
+<!-- markdownlint-disable-next-line -->
 ``` bash
 #!/bin/bash
 #
@@ -113,6 +116,7 @@ echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 
 In this script, the %A and %a values in the output file name refer to the overall job ID and array task ID, respectively. We can submit the script (named array.sh) using the following command:
 
+<!-- markdownlint-disable-next-line -->
 ``` bash
 sbatch --array=0-15 array.sh
 ```
@@ -125,6 +129,7 @@ This will cause 16 jobs to be created with array IDs from 0 to 15. Each job will
 
 If you do not want to submit a full array, the `--array` directive can take a variety of inputs:
 
+<!-- markdownlint-disable-next-line -->
 ``` bash
 # submit jobs with index 0, 3, and 7
 sbatch --array=0,3,7 array.sh
@@ -143,6 +148,7 @@ It is highly suggested to use the Cheaha `Open OnDemand` web portal for interact
 
 If you choose to use a standard ssh connection and VNC for your interactive job, you will need to request resources for your job from the command line after opening the VNC. You can do this using the following command:
 
+<!-- markdownlint-disable-next-line -->
 ``` bash
 srun --ntasks=1 --cpus-per-task=1 --mem-per-cpu=4G --time=1:00:00 --partition=express --pty /bin/bash
 ```

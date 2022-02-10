@@ -40,6 +40,7 @@ You will need to load a CUDA toolkit module for relevant commands to access the 
 
 Several CUDA toolkit versions have been installed as modules on Cheaha. To see which CUDA toolkits are available, use:
 
+<!-- markdownlint-disable-next-line -->
 ``` bash
 module -r spider 'cuda.*toolkit'
 ```
