@@ -14,7 +14,7 @@ squeue -u $USER
 
 The output of `squeue` will look like:
 
-![image](images/squeue_output.png)
+![!Output from squeue.](images/squeue_output.png)
 
 This gives the job id, name, run time, partition, user, job status, and number of nodes used for each job a user has submitted.
 
@@ -111,7 +111,7 @@ seff \<jobid\>
 
 The output will look like:
 
-![image](images/seff_output.png)
+![!SLURM Job Efficiency](images/seff_output.png)
 
 The job had poor CPU efficiency, requesting 2 CPUs which were only busy for 30% of runtime. It also had poor memory efficiency, using less than 1 GB total memory of the requested 16 GB (5.73%). For subsequent jobs using a similar analysis and dataset size, decreasing the requested memory and using a single CPU would be appropriate.
 
