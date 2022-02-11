@@ -5,7 +5,7 @@
 Currently, the Cheaha cluster has 18 nodes dedicated to GPU use under the `pascalnodes` partition family. Each node contains 4 individual NVIDIA P100 GPUs. These GPUs have the following specifications:
 
 |                              |                                          |
-|------------------------------|------------------------------------------|
+| ---------------------------- | ---------------------------------------- |
 | GPU Architecture             | **NVIDIA Pascal**                        |
 | NVIDIA CUDA Cores            | **3584**                                 |
 | GPU Memory                   | **16GB CoWoS HBM2 at 732 GB/s**          |
@@ -20,7 +20,7 @@ For more information on these nodes, see `Detailed Hardware Information`.
 To successfully request access to GPUs, you will need to set the partition to one of the `pascalnodes` family of partitions depending on how much time you need for the job.
 
 | Partition          | Time Limit |
-|--------------------|------------|
+| ------------------ | ---------- |
 | pascalnodes        | 12 hours   |
 | pascalnodes-medium | 50 hours   |
 
@@ -28,7 +28,7 @@ Additionally, when requesting a job using `sbatch`, you will need to include a S
 
 !!! note
 
-    It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at `how to manage jobs<job_management>` for more information.
+    It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at [Managing Jobs](job_management.md#managing-jobs) for more information.
 
 ### Open OnDemand
 
