@@ -60,7 +60,8 @@ From here your pull request will go through a review process. The following crit
 1. No linting errors
 2. Correct formatting
 3. Image alternate text (alt text)
-4. Valid internal and external links
+4. Images must use the gallery functionality, formatted as `![!alttext](path/to/file)`. Note the leading `!` in the alttext.
+5. Valid internal and external links
 
 We will also make an attempt to check your information for accuracy, as well as proofread the text. Bear in mind our time is limited and we are not infallible, so please double-check your pull requests!
 
