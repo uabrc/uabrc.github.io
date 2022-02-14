@@ -105,6 +105,6 @@ Color vision deficiency checker: <https://www.toptal.com/designers/colorfilter/>
 
 ### Branding Guidance
 
-- Brand main page: https://www.uab.edu/toolkit/branding
-- Brand colors: https://www.uab.edu/toolkit/brand-basics/colors
-- Copyright guidance: https://www.uab.edu/toolkit/trademarks-licensing/uab-trademarks
+- Brand main page: <https://www.uab.edu/toolkit/branding>
+- Brand colors: <https://www.uab.edu/toolkit/brand-basics/colors>
+- Copyright guidance: <https://www.uab.edu/toolkit/trademarks-licensing/uab-trademarks>
