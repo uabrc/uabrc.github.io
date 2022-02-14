@@ -10,7 +10,7 @@ If you are a UAB affiliated user and have a BlazerId, you may create an account 
     
     You must use your BlazerID and BlazerID password. UABMC credentials are a completely separate password database not accessible by central UAB services. Therefore, UABMC credentials will not work for RC GitLab or any other Research Computing services.
 
-![gitlab login pane with ldap tab selected](images/gitlab_user_ldap.png)
+![!gitlab login pane with ldap tab selected](images/gitlab_user_ldap.png)
 
 ## XIAS Collaborators
 
