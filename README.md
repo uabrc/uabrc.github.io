@@ -6,16 +6,19 @@ Our documentation is available at <https://uabrc.github.io/>.
 
 ### Prerequisites
 
-We are using Visual Studio Code (VSCode) for development with the following extensions installed. VSCode may be obtained from https://code.visualstudio.com/. The extensions may be obtained by searching the Extensions Menu in VSCode by pressing `ctrl + shift + x`.
+We are using Visual Studio Code (VSCode) for development with the following extensions installed. While VSCode is not required, it can help with automating formatting, linting and Anaconda environment management. VSCode may be obtained from [Visual Studio Code](https://code.visualstudio.com/) and documentation is available at [VSCode: Docs](https://code.visualstudio.com/docs).
+
+Several extensions are useful for this project and are listed below. Extensions may be obtained by searching the Extensions Menu in VSCode by pressing `ctrl + shift + x`. More information on managing extensions is available at [VSCode: Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-marketplace).
 
 - Python [`ms-python.python`] (for Anaconda environment management)
 - Markdown All in One [`yzhang.markdown-all-in-one`]
 - markdownlint [`DavidAnson.vscode-markdownlint`]
 - Prettier - Code formatter [`esbenp.prettier-vscode`]
 
-Please add the following to your `settings.json` file. These changes can be made:
-1. Within the VSCode project file in the `.vscode` folder.
-2. Globally.  To change the global file, press `ctrl + shift + p` to open the Command Palette, then search for `Preferences: Open Settings (JSON)` and append the following content.
+To make the best use of formatting extensions for this project, please add the following block to your `settings.json` file. These changes can be made:
+
+  1. Within the VSCode project file in the `.vscode` folder, affecting only this project *--OR--*
+  2. To the global VSCode settings file, affecting all projects. To change the global file, press `ctrl + shift + p` to open the Command Palette, then search for `Preferences: Open Settings (JSON)` and append the following content.
 
 ```json
   "[html]": {
@@ -29,7 +32,9 @@ Please add the following to your `settings.json` file. These changes can be made
   }
 ```
 
-Fork the repository in GitHub to your personal account. The repository is located at `https://github.com/uabrc/uabrc.github.io`. When the fork has been created, clone the repo using the Command Palette (`ctrl + shift + p`) and `Git: Clone...` in VSCode, or at the command line.
+Before you can get started working on contributions, you'll need a copy of the repository. The first step, done only once, is to fork the repository in GitHub to your personal account. The repository is located at <https://github.com/uabrc/uabrc.github.io>. More in-depth documentation on forking can be found at [GitHub: Fork a Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+
+Once the fork has been created, you can clone your fork using the Command Palette (`ctrl + shift + p`) and `Git: Clone...` in VSCode, or at the command line. More information on cloning can be found at [GitHub: Cloning a Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
 ### Local Machine Setup
 
