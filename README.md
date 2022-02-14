@@ -13,7 +13,9 @@ We are using Visual Studio Code (VSCode) for development with the following exte
 - markdownlint [`DavidAnson.vscode-markdownlint`]
 - Prettier - Code formatter [`esbenp.prettier-vscode`]
 
-Please add the following to your `settings.json` file. These changes can be made globally, or to the project file in the `.vscode` folder. To change the global file, press `ctrl + shift + p` to open the Command Palette, then search for `Preferences: Open Settings (JSON)` and append the following content.
+Please add the following to your `settings.json` file. These changes can be made:
+1. Within the VSCode project file in the `.vscode` folder.
+2. Globally.  To change the global file, press `ctrl + shift + p` to open the Command Palette, then search for `Preferences: Open Settings (JSON)` and append the following content.
 
 ```json
   "[html]": {
