@@ -50,7 +50,7 @@ Activate the environment in VSCode by clicking the currently activated environme
 
 ### GitHub Setup
 
-To view your changes as the would appear on the documentation website, you'll need to set up GitHub Pages in your fork. Navigate to your fork repository URL and click the "Settings" tab. Click "Pages" under "Code and automation". Follow the instructions here to set up a source: <https://github.com/wwarriner/uabrc.github.io/settings/pages>.
+To view your changes as they would appear on the official documentation website, you'll need to set up GitHub Pages in your fork. Navigate to your fork repository URL and click the "Settings" tab. Click "Pages" under "Code and automation". Follow the instructions here to set up a source: [GitHub Pages Docs](https://docs.github.com/en/pages).
 
 ### Workflow
 
