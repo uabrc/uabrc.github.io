@@ -1,0 +1,12 @@
+Partition,Nodes,Nodes Per User,Time Limit,Priority Tier,Core Count Quota,Memory (GB) Quota
+interactive,52,1, 2 hours,20,48,
+express,52,UNLIMITED, 2 hours,20,264,3072
+short,52,44,12 hours,16,264,3072
+pascalnodes,18,UNLIMITED,12 hours,16,56,500
+pascalnodes-medium,7,UNLIMITED,"2 days,  0 hours",15,56,500
+medium,52,44,"2 days,  2 hours",12,264,3072
+long,52,5,"6 days,  6 hours",8,264,3072
+intel-dcb,21,5,"6 days,  6 hours",8,264,3072
+amd-hdr100,33,5,"6 days,  6 hours",8,264,3072
+largemem,14,10,"2 days,  2 hours",6,290,7168
+largemem-long,5,10,"6 days,  6 hours",6,290,7168
