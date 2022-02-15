@@ -2,7 +2,7 @@
 
 Navigating to [rc.uab.edu](https://rc.uab.edu) will take you to the OOD homepage:
 
-![Landing page for Open OnDemand](images/ood_homepage.png)
+![!Landing page for Open OnDemand.](images/ood_homepage.png)
 
 You will find system-wide messages from admins at the tope of the page (red outline). These will always include links to the Research Computing Office Hours on Zoom. This will also be the place to see information about ongoing maintenance.
 
@@ -14,7 +14,7 @@ Lastly, there is a table with a list of available SLURM partitions on Cheaha wit
 
 To access all of the features OOD has to offer, use the toolbar at the top of the page that looks like:
 
-![image](images/ood_toolbar.png)
+![!Toolbar for Open OnDemand.](images/ood_toolbar.png)
 
 In it, you will find options to:
 

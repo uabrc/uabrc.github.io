@@ -8,11 +8,11 @@ Floating IPs are required if you want an instance to talk to devices on the inte
 
 1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!image](./images/networks_000.png)
+    ![!OpenStack Overview page with Networks selected in the Network Topology fold-out menu in the left-hand navigation pane.](./images/networks_000.png)
 
 2. Click "Floating IPs".
 
-    ![!image](./images/floating_ips_001.png)
+    ![!OpenStack Floating IPs page. The Floating IPs table is empty.](./images/floating_ips_001.png)
 
 3. Click "Allocate IP to Project" to open a dialog box.
 
@@ -23,14 +23,14 @@ Floating IPs are required if you want an instance to talk to devices on the inte
     3. Leave "DNS Domain" empty.
     4. Leave "DNS Name" empty.
 
-    ![!image](./images/floating_ips_002.png)
+    ![!Allocate Floating IP dialog. The dialog form is empty.](./images/floating_ips_002.png)
 
 5. Click "Allocate IP".
 
     1. Redirects to the "Floating IPs" page.
     2. There should be a new entry in the table.
 
-    ![!image](./images/floating_ips_003.png)
+    ![!Floating IPs page. The table has one entry.](./images/floating_ips_003.png)
 
 ## Creating a Key Pair
 
@@ -42,11 +42,11 @@ Good practice is to only use one key pair per person and per local machine. So i
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!image](./images/key_pairs_000.png)
+    ![!OpenStack Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane.](./images/key_pairs_000.png)
 
 2. Click "Key Pairs".
 
-    ![!image](./images/key_pairs_001.png)
+    ![!Key Pairs page. The Key Pairs table is empty.](./images/key_pairs_001.png)
 
 3. Click "+ Create Key Pair" to open a dialog box.
 
@@ -55,7 +55,7 @@ Good practice is to only use one key pair per person and per local machine. So i
     1. Enter a "Key Pair Name".
     2. Select "SSH Key" in the "Key Type" drop down box.
 
-        ![!image](./images/key_pairs_002.png)
+        ![!Create Key pair dialog. The dialog form is filled out. The Key Pair Name is set to my_key_pair.](./images/key_pairs_002.png)
 
 5. Click "+ Create Key Pair"
 
@@ -63,12 +63,12 @@ Good practice is to only use one key pair per person and per local machine. So i
     2. Download the `pem` file. For security reasons this will be your only chance to ever obtain the private key from OpenStack.
     3. Failing to download the `pem` file now means a new key pair will need to be created.
 
-        ![!image](./images/key_pairs_003.png)
+        ![!Download File dialog on Firefox for Windows. The file being downloaded is my_key_pair.pem.](./images/key_pairs_003.png)
 
     4. Redirects to the "Key Pairs" page.
     5. There should be a new entry in the table.
 
-        ![!image](./images/key_pairs_004.png)
+        ![!Key Pairs page. The Key Pairs table has one entry labeled my_key_pair.](./images/key_pairs_004.png)
 
 6. To use the private key on your local machine.
 
@@ -77,7 +77,7 @@ Good practice is to only use one key pair per person and per local machine. So i
     3. `ssh-add <pem_file>` to add the private key to the ssh keyring for use by ssh.
     4. `ssh-add -d <pem_file>` to remove the key.
 
-        ![!image](./images/key_pairs_005.png)
+        ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent.](./images/key_pairs_005.png)
 
 !!! note
 
@@ -93,7 +93,7 @@ Good practice is to only use one key pair per person and per local machine. So i
             key pair **OR** copy-paste the content of that key file into the
             "Public Key" box.
 
-            ![!image](./images/key_pairs_alt_002.png)
+            ![!Import Public Key dialog. The dialog form is empty.](./images/key_pairs_alt_002.png)
 
 ## Creating an Instance
 
@@ -104,17 +104,17 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!image](./images/key_pairs_000.png)
+    ![!OpenStack Overview page.](./images/key_pairs_000.png)
 
 2. Click "Instances".
 
-    ![!image](./images/instances_001.png)
+    ![!OpenStack Instances page. The Instances table is empty.](./images/instances_001.png)
 
 3. Click "Launch Instance" to open a dialog box.
 
 4. Fill out the dialog box completely. There are several tabs that will need to be completed.
 
-    ![!image](./images/instances_002.png)
+    ![!Launch Instance dialog. The dialog form has multiple tabs on the left menu. The Details tab is selected. The Details dialog form is empty except the Instance Name is set to my_instance.](./images/instances_002.png)
 
 5. "Details" tab.
 
@@ -133,14 +133,14 @@ These instructions require that you've set up a [Network](network_setup_basic.md
         1. "Yes" is a good choice if the OS volume will be reused.
         2. "No" is a good choice if you don't care about reusing the OS.
 
-        ![!image](./images/instances_003.png)
+        ![!Launch Instance dialog. The Source tab is selected.](./images/instances_003.png)
 
     5. Pick an image from the list under the "Available" section.
         1. Use the search box to help find the image that best suits your research needs.
         2. When you find the best image, click the button with an up arrow next to the image.
         3. The image will move to the "Allocated" section above the "Available" section.
 
-        ![!image](./images/instances_004.png)
+        ![!Launch Instance dialog. The Source tab is selected. An Ubuntu 20.04 image has been moved up from the available images list to the allocated images list.](./images/instances_004.png)
 
     6. Click "Next \>" to move to the "Flavor" tab.
 
@@ -151,7 +151,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
         2. When you find the best flavor, click the button with an up arrow next to the flavor.
         3. The flavor will move to the "Allocated" section above the "Available" section.
 
-        ![!image](./images/instances_005.png)
+        ![!Launch Instance dialog. The Flavor tab is selected.](./images/instances_005.png)
 
     2. Click "Next \>" to move to the "Networks" tab.
 
@@ -163,7 +163,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
         3. When you find the best Network, click the button with an up arrow next to the Network.
         4. The Network will move to the "Allocated" section above the "available" section.
 
-        ![!image](./images/instances_006.png)
+        ![!Launch Instance dialog. The Networks tab is selected.](./images/instances_006.png)
 
     2. Click "Next \>" to move to the "Network Ports" tab.
 
@@ -171,7 +171,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
     1. Leave this tab empty.
 
-        ![!image](./images/instances_007.png)
+        ![!Launch Instance dialog. The Network Ports tab is selected. The dialog form has been left empty.](./images/instances_007.png)
 
     2. Click "Next \>" to move to the "Security Groups" tab.
 
@@ -185,7 +185,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
     2. The "default" Security Group should already be in the
         "Allocated" section.
 
-        ![!image](./images/instances_008.png)
+        ![!Launch Instance dialog. The Security Groups tab is selected. The ssh security group has been moved up from the available list to the allocated list.](./images/instances_008.png)
 
     3. Click "Next \>" to move to the "Key Pair" tab.
 
@@ -205,7 +205,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
         4. The Key Pair(s) will move to the "Allocated" section above
             the "Available" section.
 
-        ![!image](./images/instances_009.png)
+        ![!Launch Instance dialog. The Key Pair tab is selected. The Key Pair my_key_pair has been moved up from the available list to the allocated list.](./images/instances_009.png)
 
     2. Click "Next \>" to move to the "Configuration" tab.
 
@@ -233,12 +233,12 @@ These instructions require that you've set up a [Network](network_setup_basic.md
     1. Redirects to the "Instances" page.
     2. There should be a new entry in the table.
 
-        ![!image](./images/instances_014.png)
+        ![!OpenStack Instances page. The Instances table has one entry labeled my_instance. The task column has an indeterminate progress bar indicating the instance is being set up.](./images/instances_014.png)
 
     3. The instance will take some time to build and boot. When the
         Status column entry says "Active" please move to the next steps.
 
-        ![!image](./images/instances_015.png)
+        ![!The task column of the Instances table reads none indicating the instance is ready for use.](./images/instances_015.png)
 
 17. Associate Floating IP.
 
@@ -250,7 +250,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
     5. Click "Associate" to return to the "Instances" page and
         associate the selected IP.
 
-        ![!image](./images/instances_017.png)
+        ![!Manage Floating IP Associations dialog. The form is filled out. The Floating IP Address created earlier is selected under IP Address. The port from the Instance my_instance is selected under Port to be Associated.](./images/instances_017.png)
 
 At this stage you should be able to SSH into your instance from on
 campus or on the UAB VPN.
@@ -268,7 +268,7 @@ appropriate.
 ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
 ```
 
-![image](./images/instances_020.png)
+![!MINGW64 terminal on Windows. The ssh command has been used to login to the Floating IP Address using the -i command with the locally stored private key my_key_pair.pem. Login was successful. A banner page has been shown and a terminal prompt is waiting for input.](./images/instances_020.png)
 
 !!! note
 
