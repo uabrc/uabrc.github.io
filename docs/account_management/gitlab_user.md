@@ -1,4 +1,4 @@
-# UAB User Instructions
+# UAB GitLab Registration Instructions
 
 Our GitLab instance may be found at <https://gitlab.rc.uab.edu>.
 
@@ -12,7 +12,7 @@ If you are a UAB affiliated user and have a BlazerId, you may create an account 
 
 ![!gitlab login pane with ldap tab selected](images/gitlab_user_ldap.png)
 
-## XIAS Collaborators
+## XIAS External Collaborators
 
 If you are a collaborator with a XIAS account you'll need to follow a different procedure.
 
