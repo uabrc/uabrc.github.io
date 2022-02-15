@@ -99,8 +99,10 @@ Please do not use these to silence all linter warnings, only for fixing known is
 
 #### Silence Linter Warning for a Single Line
 
+We encourage denoting the warning being silenced here by filling out the `<lint warning code>`, though it isn't required for the single line case.
+
 ```markdown
-<!-- markdownlint-disable-next-line -->
+<!-- markdownlint-disable-next-line <lint warning code> -->
 `linter error here just for this line`
 ```
 
