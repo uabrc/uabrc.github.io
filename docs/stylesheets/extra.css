@@ -5,3 +5,7 @@
 .md-grid {
   max-width: 100%;
 }
+
+html .md-footer-meta.md-typeset a.supportemail {
+  color: #aaaaff;
+}

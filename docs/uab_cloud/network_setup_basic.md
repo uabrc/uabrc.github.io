@@ -71,6 +71,17 @@ to maximize security.
 
             ![!Create Subnet dialog box. The Subnet tab is selected. The form has not been filled out beyond default values. The Subnet Name has been set to my_subnet.](./images/subnet_003.png)
 
+        !!! note
+
+            If you receive an error like
+
+            ```
+            Failed to create subnet `192.168.0.0/24`...
+            Invalid input for operation: Gateway is not valid on a subnet.
+            ```
+
+            Try changing the gateway IP address to `192.168.0.1` and trying again.
+
     2. The "Subnet Details" tab.
 
         1. Leave "Enable DHCP" checked.
@@ -92,7 +103,7 @@ to maximize security.
 
 ## Creating a Router
 
-To follow these directions for creating a router, a `network<Creating a Network>` and `subnet<Creating a Subnet>` must already exist.
+To follow these directions for creating a router, a [Network](#creating-a-network) and [Subnet](#creating-a-subnet) must already exist.
 
 1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
