@@ -45,6 +45,14 @@ At the bottom of the `Environment Setup` field, you will need to place a `module
 
 In addition, if you are using the CUDA cores for GPU-enabled machine learning, you will need to load the corresponding CUDA module here. Use `module spider cuda` to view the list of CUDA modules.
 
+!!! tip
+
+   You do not need `module load Anaconda3` in the `Environment Setup` field, it is loaded automatically.
+
+!!! warning
+
+   Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure.
+
 In the `Extra Jupyter Arguments` field, you will need to add a path to the directory with your jupyter notebooks. For instance, if your notebooks are stored in your user directory, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`.
 
 Submitting the job will bring you to the `My Interactive Jobs` window while the Jupyter job is initialized. Click `Connect to Jupyter` to open the Jupyter Home Page.
@@ -57,7 +65,15 @@ The Jupyter Home Page will look like:
 
 ![!image](images/ood_jupyter_home.png){: .center}
 
-From here, you can navigate to and select an existing notebook, or you can create a new one using one of your existing virtual environments or the base environment.
+From here, you can navigate to and select an existing notebook, or you can create a new one using one of your existing virtual environments or the base environment. Once inside a Jupyter notebook, you can use the `Kernel --> Change kernel` menu to select your preferred Anaconda environment.
+
+!!! note
+
+   The `ipykernel` package must be installed in your preferred environment for it to appear in the `Change kernel` menu.
+
+!!! tip
+
+   Anaconda environments used with Open OnDemand Jupyter do not need the `jupyter` package installed. The server software is already taken care of.
 
 ### Python Libraries and Virtual Environments
 
