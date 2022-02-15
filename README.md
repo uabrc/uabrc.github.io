@@ -20,6 +20,8 @@ To make the best use of formatting extensions for this project, please add the f
   1. Within the VSCode project file in the `.vscode` folder, affecting only this project *--OR--*
   2. To the global VSCode settings file, affecting all projects. To change the global file, press `ctrl + shift + p` to open the Command Palette, then search for `Preferences: Open Settings (JSON)` and append the following content.
 
+#### VSCode `settings.json` Additions
+
 ```json
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -29,6 +31,9 @@ To make the best use of formatting extensions for this project, please add the f
   },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "markdownlint.config": {
+    "MD046": { "style": "fenced" }
   }
 ```
 
@@ -72,15 +77,17 @@ From here your pull request will go through a review process. The following crit
 
 We will also make an attempt to check your information for accuracy, as well as proofread the text. Bear in mind our time is limited and we are not infallible, so please double-check your pull requests!
 
-#### File Organization
+### File Organization
 
 To Be Determined
 
-#### Linting Known Issues
+### Linting Known Issues
 
 There are known issues with the markdown linter and some of our non-standard plugins, especially admonitions (specifically a conflict involving fenced vs indented code blocks). To fix these cases please use one of the following methods. The `<lint warning code>` can be found by hovering over the yellow squiggles in VSCode to bring up the warning lens.
 
-To silence a linter warning for a block:
+Please do not use these to silence all linter warnings, only for fixing known issues. Please read the warning lenses given by VSCode to identify the cause of the warning.
+
+#### Silence Linter Warning for a Block
 
 ```markdown
 <!-- markdownlint-disable <lint warning code> -->
@@ -90,14 +97,20 @@ To silence a linter warning for a block:
 <!-- markdownlint-enable <lint warning code> -->
 ```
 
-Or for a single line:
+#### Silence Linter Warning for a Single Line
 
 ```markdown
 <!-- markdownlint-disable-next-line -->
 `linter error here just for this line`
 ```
 
-Please do not use these to silence all linter warnings, only for fixing known issues. Please read the warning lenses given by VSCode to identify the cause of the warning.
+#### False Positive Lint Warnings from Admonitions
+
+We allow and encourage the use of [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types) in our documentation, where appropriate. Because these are created using a plugin and are "non-standard" `markdown`, the VSCode `markdownlint` extension does not recognize admonitions and may produce a false positive warning about inconsistent code block styles.
+
+Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. This is enforced by adding an entry to the [VSCode `settings.json` file](#vscode-settingsjson-additions). Now all admonitions will be consistently assigned the warning `MD046`, which can be disabled by [silencing linter warning for a single line](#silence-linter-warning-for-a-single-line).
+
+The workaround is needed because `markdownlint` has no plans to add support for admonitions. There is no `markdownlint` plugin for that support either, and we don't have the ability to develop such a plugin.
 
 ### Accessibility
 
