@@ -81,6 +81,7 @@ Good practice is to only use one key pair per person and per local machine. So i
 
 !!! note
 
+<!-- markdownlint-disable-next-line -->
     It is alternately possible to use a custom key pair created on your local machine. We assume you know how to create a key pair on your local machine and have already done so. To upload a key pair, replace steps 3 and 4 above with the following, perform step 5 from above, and skip step 6.
 
     3\. Click "Import Public Key" to open a dialog box.
@@ -264,7 +265,6 @@ following command If you are using a different operating system, such as
 CentOS, replace the user `ubuntu` with `centos` or whatever is
 appropriate.
 
-<!-- markdownlint-disable-next-line -->
 ``` bash
 ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
 ```
@@ -273,6 +273,7 @@ ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
 
 !!! note
 
+<!-- markdownlint-disable-next-line -->
     Reusing a floating IP for a new instance can result in a "host key changed" error. To resolve this issue, please use the command below with the hostname given by the error, which should be the affected floating IP.
 
     ```
@@ -283,4 +284,5 @@ ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
 
 !!! danger
 
+<!-- markdownlint-disable-next-line -->
     Using the above command is potentially dangerous when connecting to machines or instances controlled by other people. Be absolutely certain you trust the source of the key change before using the command above.
