@@ -6,13 +6,13 @@ Using the Jobs dropdown menu in the toolbar, you can view the status of your cur
 
 Click `Jobs > Active Jobs`. This will open a new window with you current active jobs that looks like:
 
-![!image](images/ood_active_jobs.png){: .center}
+![!List of current active jobs.](images/ood_active_jobs.png)
 
 There are fields such as job ID, job name, time spent active, and the queue or partition. You can sort your job list by any of these fields and can filter for specific jobs using the Filter option at the top right.
 
 Additionally, you can view more detailed information about a job by clicking the arrow to the left of the job ID. The resulting table will look like:
 
-![!image](images/ood_job_details.png){: .center}
+![!Job details.](images/ood_job_details.png)
 
 This table shows extra information such as the total number of nodes, CPUs, time limit, and memory requested for the job. The path to the output file for the job created by SLURM will also be listed. You can open the file location in a file browser or in a terminal here.
 
@@ -22,7 +22,7 @@ You can end a currently running job by pressing Delete at the bottom right of th
 
 The job composer allows you to create SLURM jobs directly in the web interface without having to create a VNC session. Clicking `Jobs > Job Composer` will bring up a new window:
 
-![!image](images/ood_base_composer.png){: .center}
+![!Job composer page with no jobs.](images/ood_base_composer.png)
 
 To create a job:
 
