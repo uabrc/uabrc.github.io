@@ -79,6 +79,7 @@ Note that `$LOCAL_SCRATCH` is only useful for jobs in which all processes run on
 
 The following is an array job example that uses `$LOCAL_SCRATCH` by transferring the inputs into `$LOCAL_SCRATCH` at the beginning of the script and the result out of `$LOCAL_SCRATCH` at the end of the script.
 
+<!-- markdownlint-disable-next-line -->
 ``` bash
 
 #!/bin/bash

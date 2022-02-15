@@ -264,6 +264,7 @@ following command If you are using a different operating system, such as
 CentOS, replace the user `ubuntu` with `centos` or whatever is
 appropriate.
 
+<!-- markdownlint-disable-next-line -->
 ``` bash
 ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
 ```
