@@ -46,25 +46,6 @@ Notes:
 - Each user has a maximum amount of requestable resources across all jobs. Submitted jobs beyond this resource limit will be kept in the queue until a user's prior jobs have completed. This will appear as `QOSMaxResourceLimit` in your `squeue` list.
 - If a script finishes executing before the requested time limit, the job will automatically close and resources will be released. However requesting the max amount of time will cause scheduler priority to decrease.
 
-## Estimating Compute Resources
-
-Being able to estimate how many resources a job will need is critical. Requesting many more resources than necessary bottlenecks the cluster by reserving unused resources for an inefficient job preventing other jobs from using them. However, requesting too few resources will slow down the job or cause it to error.
-
-Questions to ask yourself when requesting job resources:
-
-1. Can my scripts take advantage of multiple CPUs?
-    1. For instance, RStudio only works on a single thread (outside of very specific cases). Requesting more than 1 CPU here would not improve performance.
-2. How large is the data I'm working with?
-3. Do my pipelines keep large amounts of data in memory?
-4. How long should my job take?
-    1. For example, do not request 50 hours time for a 15 hour process. Have a reasonable buffer included to account for unexpected processing delays, but do not request the maximum time on a partition if that's unnecessary.
-
-!!! note
-
-    Reasonable overestimation of resources is better than underestimation. However, gross overestimation may cause admins to contact you about adjusting resources for future jobs.
-
-After a job is completed, look at how well resources were used using `seff`. For more information, read `job-efficiency`.
-
 ## Single Batch Job
 
 An example script using some of the listed directives can be seen below:

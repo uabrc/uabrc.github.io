@@ -98,24 +98,3 @@ sacct -j [jobid] -o jobid,start,end,state,alloccpu,reqmem
 ```
 
 This command will output the job ID, the start time, end time, the state, the number of allocated CPUs, and the requested memory for the specified job. All potential output fields can be seen using `sacct --helpformat`. Their descriptions can be found on the [sacct documentation](https://slurm.schedmd.com/sacct.html) under Job Accounting Fields.
-
-## Evaluating Job Efficiency
-
-It's important to evaluate the efficiency of your job in terms of resource usage after it completes. Remember that Cheaha is a shared resource, so requesting resources that sit unused during a job prevents others from using those resources. As well, because each user has a maximum amount of resources they can use at a given time, having inefficient jobs can increase analysis runtime across many jobs.
-
-In order to look at job efficieny, use the `seff` command.
-
-``` bash
-seff \<jobid\>
-```
-
-The output will look like:
-
-![!SLURM Job Efficiency](images/seff_output.png)
-
-The job had poor CPU efficiency, requesting 2 CPUs which were only busy for 30% of runtime. It also had poor memory efficiency, using less than 1 GB total memory of the requested 16 GB (5.73%). For subsequent jobs using a similar analysis and dataset size, decreasing the requested memory and using a single CPU would be appropriate.
-
-!!! note
-
-<!-- markdownlint-disable-next-line -->
-    Do not aim for 100% memory efficiency for a given job. Having a couple of GB extra is recommended to prevent jobs being cancelled due to insufficient resources.
