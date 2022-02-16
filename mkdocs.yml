@@ -56,7 +56,7 @@ nav:
       - 'cheaha/open_ondemand/ood_files.md'
       - 'cheaha/open_ondemand/ood_jobs.md'
     - SLURM: 
-      - Introduction: 'cheaha/slurm/index.md'
+      - Introduction: 'cheaha/slurm/introduction.md'
       - 'cheaha/slurm/sbatch_usage.md'
       - 'cheaha/slurm/gpu.md'
       - 'cheaha/slurm/job_management.md'
