@@ -48,6 +48,11 @@ More information on options to cancel jobs can be seen using `man scancel`.
 
 If you are planning a new set of jobs and are estimating resource requests, it is useful to review similar jobs that have already completed. To list past jobs for a user, use the `sacct` command.
 
+!!! tip
+
+<!-- markdownlint-disable-next-line -->
+    To minimize queue wait times and make best use of resources, please review job efficiency using `seff`. See our [Job Efficiency](../job_efficiency.md) page for more information.
+
 ### Review With Job ID
 
 The basic form is to use `-j` along with a job ID to list information about that job.

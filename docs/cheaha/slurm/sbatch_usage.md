@@ -5,7 +5,12 @@ in an available shell language on Cheaha, typically bash, and should
 include the appropriate Slurm directives at the top of the script
 telling the scheduler the requested resources. Common Slurm directives
 can be seen below along with simple examples for both single batch jobs
-and array batch jobs
+and array batch jobs.
+
+!!! tip
+
+<!-- markdownlint-disable-next-line -->
+    Please see our page on [Job Efficiency](../job_efficiency.md) for more information on making the best use of cluster resources and minimizing queue wait times.
 
 ## Common Slurm Terminology
 
