@@ -35,7 +35,7 @@ The portal features a [file browser](open_ondemand/ood_files.md), [job composer]
 
 ## Slurm
 
-Slurm is our job queueing software, and we have documentation [further in](slurm/index.md). More complete documentation is available at <https://slurm.schedmd.com/>.
+Slurm is our job queueing software, and we have documentation [further in](slurm/introduction.md). More complete documentation is available at <https://slurm.schedmd.com/>.
 
 !!! important
 
