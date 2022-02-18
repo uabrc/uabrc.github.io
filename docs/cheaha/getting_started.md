@@ -30,13 +30,13 @@ This section will cover steps to configure Windows, Linux and Mac OS X clients t
 
 The official DNS name of Cheaha's frontend machine is *cheaha.rc.uab.edu*. If you want to refer to the machine as *cheaha*, you'll have to either add the "rc.uab.edu" to you computer's DNS search path. On Unix-derived systems (Linux, Mac) you can edit your computers /etc/resolv.conf as follows (you'll need administrator access to edit this file)
 
-```
+```bash
 search rc.uab.edu
 ```
 
 Or you can customize your SSH configuration to use the short name "cheaha" as a connection name. On systems using OpenSSH you can add the following to your ~/.ssh/config file
 
-```
+```bash
 Host cheaha
  Hostname cheaha.rc.uab.edu
 ```
@@ -48,7 +48,7 @@ Linux systems, regardless of the flavor (RedHat, SuSE, Ubuntu, etc...), should a
 1. Start a terminal (on RedHat click Applications -> Accessories -> Terminal, on Ubuntu Ctrl+Alt+T)
 2. At the prompt, enter the following command to connect to Cheaha (**Replace blazerid with your Cheaha userid**)
 
-```
+```bash
 ssh blazerid@cheaha.rc.uab.edu
 ```
 
@@ -59,7 +59,7 @@ Mac OS X is a Unix operating system (BSD) and has a built in ssh client.
 1. Start a terminal (click Finder, type Terminal and double click on Terminal under the Applications category)
 2. At the prompt, enter the following command to connect to Cheaha (**Replace blazerid with your Cheaha userid**)
 
-```
+```bash
 ssh blazerid@cheaha.rc.uab.edu
 ```
 
@@ -139,7 +139,7 @@ No matter which client you use to connect to the Cheaha, the first time you conn
 
 - After successfully logging in for the first time, You may see the following message **just press ENTER for the next three prompts, don't type any passphrases!**
 
-```
+```bash
 It doesn't appear that you have set up your ssh key.
 This process will make the files:
      /home/joeuser/.ssh/id_rsa.pub
@@ -154,7 +154,7 @@ Enter file in which to save the key (/home/joeuser/.ssh/id_rsa):
   - Enter passphrase (empty for no passphrase):**Press Enter**
   - Enter same passphrase again:**Press Enter**
 
-```
+```bash
 Your identification has been saved in /home/joeuser/.ssh/id_rsa.
 Your public key has been saved in /home/joeuser/.ssh/id_rsa.pub.
 The key fingerprint is:
@@ -165,7 +165,7 @@ f6:xx:xx:xx:xx:dd:9a:79:7b:83:xx:f9:d7:a7:d6:27 joeuser@cheaha.rc.uab.edu
 
 - If you were issued a temporary password, enter it (Passwords are CaSE SensitivE!!!) You should see a message similar to this
 
-```
+```bash
 You are required to change your password immediately (password aged)
 WARNING: Your password has expired.
 You must change your password now and login again!
@@ -268,7 +268,7 @@ Request a specific partition for the resource allocation. Available partitions a
 
 Batch Jobs are submitted on Cheaha by using the "sbatch" command. The full manual for sbtach is available by running the following command
 
-```
+```bash
 man sbatch
 ```
 
@@ -290,7 +290,7 @@ The lines below that begin with $ are commands, the $ represents the command pro
 
 The dos2unix program can be used to convert Windows text files to UNIX files with a simple command. After you have copied the file to your home directory on the cluster, you can identify that the file is a Windows file by executing the following (Windows uses CR LF as the line terminator, where UNIX uses only LF and Mac uses only CR):
 
-```
+```bash
 $ file testfile.txt
  
 testfile.txt: ASCII text, with CRLF line terminators
@@ -298,7 +298,7 @@ testfile.txt: ASCII text, with CRLF line terminators
 
 Now, convert the file to UNIX
 
-```
+```bash
 $ dos2unix testfile.txt
  
 dos2unix: converting file testfile.txt to UNIX format ...
@@ -306,7 +306,7 @@ dos2unix: converting file testfile.txt to UNIX format ...
 
 Verify the conversion using the file command
 
-```
+```bash
 $ file testfile.txt
  
 testfile.txt: ASCII text
@@ -326,7 +326,7 @@ A shared cluster environment like Cheaha uses a job scheduler to run tasks on th
 
 **Note:**Jobs **must request** the appropriate partition (ex: *--partition=short*) to satisfy the jobs resource request (maximum runtime, number of compute nodes, etc...)
 
-```
+```bash
 #!/bin/bash
 #
 #SBATCH --job-name=test
@@ -350,7 +350,7 @@ Lines starting with '#SBATCH' have a special meaning in the Slurm world. Slurm s
 
 We can submit above job script using sbatch command:
 
-```
+```bash
 $ sbatch HelloCheaha.sh
 Submitted batch job 52707
 ```
@@ -365,7 +365,7 @@ Interactive resources are requested by submitting an "interactive" job to the sc
 
 Interactive jobs, that can be run on command line, are requested with the **srun** command.
 
-```
+```bash
 srun --ntasks=1 --cpus-per-task=4 --mem-per-cpu=4096 --time=08:00:00 --partition=medium --job-name=JOB_NAME --pty /bin/bash
 ```
 
@@ -375,7 +375,7 @@ More advanced interactive scenarios to support graphical applications are availa
 
 Interactive jobs that requires running a graphical application, are requested with the **sinteractive** command, via **Terminal** on your VNC window.
 
-```
+```bash
 sinteractive --ntasks=1 --cpus-per-task=4 --mem-per-cpu=4096 --time=08:00:00 --partition=medium --job-name=JOB_NAME
 ```
 
@@ -400,9 +400,9 @@ These permissions are the default configuration. While it is possible to modify 
 
 Additional background on Linux file system permissions can be found here:
 
-- https://its.unc.edu/research-computing/techdocs/how-to-use-unix-and-linux-file-permissions/
-- https://www.rc.fas.harvard.edu/resources/documentation/linux/unix-permissions/
-- https://hpc.nih.gov/storage/permissions.html
+- <https://its.unc.edu/research-computing/techdocs/how-to-use-unix-and-linux-file-permissions/>
+- <https://www.rc.fas.harvard.edu/resources/documentation/linux/unix-permissions/>
+- <https://hpc.nih.gov/storage/permissions.html>
 
 ### No Automatic Backups
 
@@ -452,7 +452,7 @@ Note that $LOCAL_SCRATCH is only useful for jobs in which all processes run on t
 
 The following is an array job example that uses $LOCAL_SCRATCH by transferring the inputs into $LOCAL_SCRATCH at the beginning of the script and the result out of $LOCAL_SCRATCH at the end of the script.
 
-```
+```bash
 #!/bin/bash
 #SBATCH --array=1-10
 #SBATCH --share
@@ -523,7 +523,7 @@ If you find that specific software does not have a module, please submit a [help
 
 - Cheaha supports bash completion for the module command. For example, type 'module' and press the TAB key twice to see a list of options:
 
-```
+```bash
 module TAB TAB
 
 add          display      initlist     keyword      refresh      switch       use          
@@ -534,7 +534,7 @@ clear        initclear    initswitch   purge        swap         update
 
 - To see the list of available modulefiles on the cluster, run the **module avail** command (note the example list below may not be complete!) or **module load** followed by two tab key presses:
 
-```
+```bash
 module avail
  
 ----------------------------------------------------------------------------------------- /cm/shared/modulefiles -----------------------------------------------------------------------------------------
@@ -593,13 +593,13 @@ Some modules, when loaded, will actually load other modules. For example, the *G
 
 - To load a module, ex: for a GROMACS job, use the following **module load** command in your job script:
 
-```
+```bash
 module load  GROMACS/5.0.5-intel-2015b-hybrid 
 ```
 
 - To see a list of the modules that you currently have loaded use the **module list** command
 
-```
+```bash
 module list
  
 Currently Loaded Modulefiles:
@@ -615,13 +615,13 @@ Currently Loaded Modulefiles:
 
 - A module can be removed from your environment by using the **module unload** command:
 
-```
+```bash
 module unload GROMACS/5.0.5-intel-2015b-hybrid
 ```
 
 - The definition of a module can also be viewed using the **module show** command, revealing what a specific module will do to your environment:
 
-```
+```bash
 module show GROMACS/5.0.5-intel-2015b-hybrid 
 -------------------------------------------------------------------
 /share/apps/rc/modules/all/GROMACS/5.0.5-intel-2015b-hybrid:
@@ -645,7 +645,7 @@ setenv     EBDEVELGROMACS /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybr
 
 If you are using modules and the command your job executes runs fine from the command line but fails when you run it from the job, you may be having an issue with the script initialization. If you see this error in your job error output file
 
-```
+```bash
 -bash: module: line 1: syntax error: unexpected end of file
 -bash: error importing function definition for `BASH_FUNC_module'
 ```
@@ -668,40 +668,40 @@ Here we show how to create job script for one simple command. Running more than 
 
 1. Create the file:
 
-```
-$ vim helloworld.sh
+```bash
+vim helloworld.sh
 ```
 
 2. Write into "helloworld.sh" file (To write in vim editor: press **shift + I** )
 
-```
+```bash
 #!/bin/bash
 echo Hello from `hostname`
 ```
 
 3. Save the file by pressing the **esc** key, type the following
 
-```
+```bash
 :wq
 ```
 
 4. Need to give permission the "helloworld.sh" file
 
-```
-$ chmod +x helloworld.sh
+```bash
+chmod +x helloworld.sh
 ```
 
 - Create the Slurm job script that will request 256 MB RAM and a maximum runtime of 10 minutes.
 
 1. Create the JOB file:
 
-```
-$ vim helloworld.job
+```bash
+vim helloworld.job
 ```
 
 2. Write into "helloworld.job" file (To write in vim editor: press **shift + I** )
 
-```
+```bash
 #!/bin/bash
 #SBATCH --share
 #SBATCH --partition=express
@@ -731,20 +731,20 @@ $ vim helloworld.job
 
 3. Save the file by pressing the **esc** key, type the following
 
-```
+```bash
 :wq
 ```
 
 - Submit the job to Slurm scheduler and check the status using squeue
 
-```
+```bash
 $ sbatch helloworld.job
 Submitted batch job 52888
 ```
 
 - When the job completes, you should have output files named helloworld.out and helloworld.err
 
-```
+```bash
 $ cat helloworld.out 
 Hello from c0003
 ```
@@ -757,14 +757,14 @@ Here is a simple parallel Slurm job script for running commands the rely on MPI.
 
 - First, create a directory for the Hello World jobs
 
-```
-$ mkdir -p ~/jobs/helloworld
-$ cd ~/jobs/helloworld
+```bash
+mkdir -p ~/jobs/helloworld
+cd ~/jobs/helloworld
 ```
 
 - Create the Hello World code written in C (this example of MPI enabled Hello World includes a 3 minute sleep to ensure the job runs for several minutes, a normal hello world example would run in a matter of seconds).
 
-```
+```bash
 $ vi helloworld-mpi.c
 #include <stdio.h>
 #include <mpi.h>
@@ -792,17 +792,17 @@ main(int argc, char **argv)
 
 - Compile the code, first purging any modules you may have loaded followed by loading the module for OpenMPI GNU. The mpicc command will compile the code and produce a binary named helloworld_gnu_openmpi
 
-```
-$ module purge
-$ module load DefaultModules
-$ module load OpenMPI/4.0.1-GCC-8.3.0-2.32
+```bash
+module purge
+module load DefaultModules
+module load OpenMPI/4.0.1-GCC-8.3.0-2.32
 
-$ mpicc helloworld-mpi.c -o helloworld_gnu_openmpi
+mpicc helloworld-mpi.c -o helloworld_gnu_openmpi
 ```
 
 - Create the Slurm job script that will request 8 cpu slots and a maximum runtime of 10 minutes
 
-```
+```bash
 $ vi helloworld.job
 #!/bin/bash
 #SBATCH --share
@@ -834,7 +834,7 @@ mpirun -np $SLURM_NTASKS helloworld_gnu_openmpi
 
 - Submit the job to Slurm scheduler and check the status using squeue -u $USER
 
-```
+```bash
 $ sbatch helloworld.job
 
 Submitted batch job 52893
@@ -846,7 +846,7 @@ $ squeue -u BLAZERID
 
 - When the job completes, you should have output files named helloworld_mpi.out and helloworld_mpi.err
 
-```
+```bash
 $ cat helloworld_mpi.out
 
 Hello World from process 1 of 8.
@@ -869,27 +869,27 @@ If the first line of a file is #!/bin/bash and that file is executable, the shel
 
 Copy the serial helloworld.job script to a new file, add a the special #!/bin/bash as the first line, and make it executable with the following command (note: those are single quotes in the echo command):
 
-```
+```bash
 echo '#!/bin/bash' | cat helloworld.job > helloworld ; chmod +x helloworld
 ```
 
 Our sbatch script has now become a regular command. We can now execute the command with the simple prefix "./helloworld", which means "execute this file in the current directory":
 
-```
+```bash
 ./helloworld
 Hello from login001
 ```
 
 Or if we want to run the command on a compute node, replace the "./" prefix with "sbatch ":
 
-```
+```bash
 $ sbatch helloworld
 Submitted batch job 53001
 ```
 
 And when the cluster run is complete you can look at the content of the output:
 
-```
+```bash
 $ $ cat helloworld.out 
 Hello from c0003
 ```
@@ -900,7 +900,7 @@ To avoid having to use the "./" prefix, just add the current directory to your P
 
 ### Gromacs
 
-```
+```bash
 #!/bin/bash
 #SBATCH --partition=short
 #
@@ -946,7 +946,7 @@ The following is an example job script that will use an array of 10 tasks (--arr
 
 Create a working directory and the job submission script
 
-```
+```bash
 $ mkdir -p ~/jobs/ArrayExample
 $ cd ~/jobs/ArrayExample
 $ vi R-example-array.job
@@ -982,16 +982,16 @@ srun R CMD BATCH rscript.R
 
 Submit the job to the Slurm scheduler and check the status of the job using the squeue command
 
-```
-$ sbatch R-example-array.job
-$ squeue -u $USER
+```bash
+sbatch R-example-array.job
+squeue -u $USER
 ```
 
 ### Array Job Parameterization
 
 Suppose you need to submit thousands of jobs. While you could do this in a for loop, the global limit on jobs in the SLURM queue is 10,000. The limit is in place for performance reasons and the jobs may be rejected with the following error message and an incomplete set of tasks.
 
-```
+```bash
 sbatch: error: Slurm temporarily unable to accept job, sleeping and retrying
 ```
 
@@ -999,7 +999,7 @@ The preferred way to handle this scenario is to allow SLURM to schedule the jobs
 
 An example using $SLURM_ARRAY_TASK_ID to load input files and create output files is shown below. Suppose you have a short script called my_processing_script that needs to be run on 20,000 separate files. Suppose each instance only needs 1 cpu and 2 GB of RAM and finishes in 5 minutes. Submitting these files all at once won't work and at least half of them will be rejected by SLURM. Instead we can use the sbatch array flag. Note that some other useful flags have been omitted for brevity.
 
-```
+```bash
 #! /bin/bash
 #SBATCH --partition=express
 #SBATCH --ntasks=1
@@ -1021,7 +1021,7 @@ my_processing_script --input="$INPUT_FILE" --output="$OUTPUT_FILE"
 
 A Graphics processing unit (GPU) is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device. Create a math.sh file as:
 
-```
+```bash
 $vim math.sh
 #!/bin/bash
 (e=5)
@@ -1034,13 +1034,13 @@ $vim math.sh
 
 Give File permissions for script as follows:
 
-```
+```bash
 $chmod +x math.sh
 ```
 
 Create Job submission script file:
 
-```
+```bash
 $vi math.job
 #!/bin/bash
 #SBATCH --share
@@ -1070,13 +1070,13 @@ $vi math.job
 
 Submitting batch script to Slurm scheduler
 
-```
+```bash
 $sbatch math.job
 ```
 
 We can also request GPU's on cluster as:
 
-```
+```bash
 $sinteractive --ntasks=1 --time=00:10:00 --exclusive --partition=pascalnodes -N2 --gres=gpu:2
 ```
 
@@ -1088,7 +1088,7 @@ An example of an GPU job with MPI can be found by visiting [this link](https://g
 
 Be sure to request the appropiate amount of gpu resources for your job:
 
-```
+```bash
 sinteractive --ntasks=8 --time=08:00:00 --exclusive --partition=pascalnodes -N2 --gres=gpu:4
 ```
 
@@ -1096,7 +1096,7 @@ sinteractive --ntasks=8 --time=08:00:00 --exclusive --partition=pascalnodes -N2 
 
 Singularity is designed so that you can use it within SLURM jobs and it does not violate security constraints on the cluster. Singularity was built keeping HPC in mind, i.e a shared environment. Using Singularity container with SLURM job script is very easy, as the containers run as a process on the host machine, just like any other command in a batch script. You just need to load Singularity in your job script and run the command via a singularity process. Here's an example job script below:
 
-```
+```bash
 #!/bin/bash
 #
 #SBATCH --job-name=test-singularity
