@@ -1,6 +1,6 @@
-# GettingStarted
+# Getting Started
 
-Cheaha is a cluster computing environment for UAB researchers. Information about the history and future plans for Cheaha is available on the [Cheaha](https://docs.uabgrid.uab.edu/wiki/Cheaha) page.
+Cheaha is a cluster computing environment for UAB researchers. Information about the history and future plans for Cheaha is available on the [Cheaha](/Cheaha) page.
 
 ## Access (Cluster Account Request)
 
@@ -12,7 +12,7 @@ If you don't already have an account, you will be prompted to create one the fir
 
 ### External Collaborator
 
-To request an account for an external collaborator, please follow the steps [here.](https://docs.uabgrid.uab.edu/wiki/Collaborator_Account)
+To request an account for an external collaborator, please follow the steps [here.](/Collaborator_Account)
 
 ## Login
 
@@ -133,15 +133,7 @@ No matter which client you use to connect to the Cheaha, the first time you conn
 
 - Connect to Cheaha using one of the methods listed above
 
-- Answer
-
-   
-
-  Yes
-
-   
-
-  to import the cluster's public key
+- Answer **Yes** to import the cluster's public key
 
   - Enter your BlazerID password
 
@@ -158,7 +150,7 @@ Generating public/private rsa key pair.
 Enter file in which to save the key (/home/joeuser/.ssh/id_rsa):
 ```
 
-- - Enter file in which to save the key (/home/joeuser/.ssh/id_rsa):**Press Enter**
+- Enter file in which to save the key (/home/joeuser/.ssh/id_rsa):**Press Enter**
   - Enter passphrase (empty for no passphrase):**Press Enter**
   - Enter same passphrase again:**Press Enter**
 
@@ -171,7 +163,7 @@ f6:xx:xx:xx:xx:dd:9a:79:7b:83:xx:f9:d7:a7:d6:27 joeuser@cheaha.rc.uab.edu
 
 #### Users without a blazerid (collaborators from other universities)
 
-- - If you were issued a temporary password, enter it (Passwords are CaSE SensitivE!!!) You should see a message similar to this
+- If you were issued a temporary password, enter it (Passwords are CaSE SensitivE!!!) You should see a message similar to this
 
 ```
 You are required to change your password immediately (password aged)
@@ -182,17 +174,17 @@ Changing password for joeuser
 (current) UNIX password:
 ```
 
-- - - (current) UNIX password: **Enter your temporary password at this prompt and press enter**
-    - New UNIX password: **Enter your new strong password and press enter**
-    - Retype new UNIX password: **Enter your new strong password again and press enter**
-    - After you enter your new password for the second time and press enter, the shell may exit automatically. If it doesn't, type exit and press enter
-    - Log in again, this time use your new password
+- (current) UNIX password: **Enter your temporary password at this prompt and press enter**
+  - New UNIX password: **Enter your new strong password and press enter**
+  - Retype new UNIX password: **Enter your new strong password again and press enter**
+  - After you enter your new password for the second time and press enter, the shell may exit automatically. If it doesn't, type exit and press enter
+  - Log in again, this time use your new password
 
 Congratulations, you should now have a command prompt and be ready to start [submitting jobs](https://docs.uabgrid.uab.edu/wiki/Cheaha_GettingStarted#Example_Batch_Job_Script)!!!
 
 ## Hardware
 
-See [Resources](https://docs.uabgrid.uab.edu/wiki/Resources) for more information.
+See [Hardware](/Hardware) for more information.
 
 ## Cluster Software
 
@@ -218,7 +210,7 @@ All work on Cheaha must be submitted to **our queuing system ([Slurm](https://do
   - Torque
   - LSF (load sharing facility)
 
-[Slurm](http://slurm.schedmd.com/) is a queue management system and stands for Simple Linux Utility for Resource Management. Slurm was developed at the Lawrence Livermore National Lab and currently runs some of the largest compute clusters in the world. **[Slurm](https://docs.uabgrid.uab.edu/wiki/Slurm)** is now the primary job manager on Cheaha, it replaces SUN Grid Engine ([[SGE](https://docs.uabgrid.uab.edu/wiki/Cheaha_GettingStarted_deprecated)]) the job manager used earlier. Instructions of using SLURM and writing SLURM scripts for jobs submission on Cheaha can be found **[here](https://docs.uabgrid.uab.edu/wiki/Slurm)**.
+[Slurm](http://slurm.schedmd.com/) is a queue management system and stands for Simple Linux Utility for Resource Management. Slurm was developed at the Lawrence Livermore National Lab and currently runs some of the largest compute clusters in the world. **[Slurm](https://docs.uabgrid.uab.edu/wiki/Slurm)** is now the primary job manager on Cheaha, it replaces SUN Grid Engine ([[SGE](https://docs.uabgrid.uab.edu/wiki/Cheaha_GettingStarted_deprecated)]) the job manager used earlier. Instructions of using SLURM and writing SLURM scripts for jobs submission on Cheaha can be found **[here](/Slurm)**.
 
 ### Typical Workflow
 
@@ -674,26 +666,26 @@ Here we show how to create job script for one simple command. Running more than 
 
 - Create your hello world application. Run this command to create a script, turn it into to a command, and run the command (just copy and past the following on to the command line).
 
-\1. Create the file:
+1. Create the file:
 
 ```
 $ vim helloworld.sh
 ```
 
-\2. Write into "helloworld.sh" file (To write in vim editor: press **shift + I** )
+2. Write into "helloworld.sh" file (To write in vim editor: press **shift + I** )
 
 ```
 #!/bin/bash
 echo Hello from `hostname`
 ```
 
-\3. Save the file by pressing the **esc** key, type the following
+3. Save the file by pressing the **esc** key, type the following
 
 ```
 :wq
 ```
 
-\4. Need to give permission the "helloworld.sh" file
+4. Need to give permission the "helloworld.sh" file
 
 ```
 $ chmod +x helloworld.sh
@@ -701,13 +693,13 @@ $ chmod +x helloworld.sh
 
 - Create the Slurm job script that will request 256 MB RAM and a maximum runtime of 10 minutes.
 
-\1. Create the JOB file:
+1. Create the JOB file:
 
 ```
 $ vim helloworld.job
 ```
 
-\2. Write into "helloworld.job" file (To write in vim editor: press **shift + I** )
+2. Write into "helloworld.job" file (To write in vim editor: press **shift + I** )
 
 ```
 #!/bin/bash
@@ -737,7 +729,7 @@ $ vim helloworld.job
 ./helloworld.sh
 ```
 
-\3. Save the file by pressing the **esc** key, type the following
+3. Save the file by pressing the **esc** key, type the following
 
 ```
 :wq
@@ -1139,4 +1131,4 @@ For [a more comprehensive introduction please see this tutorial](https://gitlab.
 
 ## Installed Software
 
-A partial list of installed software with additional instructions for their use is available on the [Cheaha Software](https://docs.uabgrid.uab.edu/wiki/Cheaha_Software) page.
+A partial list of installed software with additional instructions for their use is available on the [Cheaha Software](/Cheaha_Software) page.
