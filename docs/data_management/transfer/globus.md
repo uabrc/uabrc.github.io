@@ -70,7 +70,7 @@ To verify your installation is complete, please visit <https://app.globus.org> a
 
 Between the two "Start" buttons on the "File Manager" page is a "Transfer & Sync Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options are...
 
-    ![!Transfer and Sync Options pane showing multiple options.](./images/globus_040_transfer_and_sync_options.png)
+![!Transfer and Sync Options pane showing multiple options.](./images/globus_040_transfer_and_sync_options.png)
 
 1. sync - Sync files only, rather than create new files.
 2. delete files - Delete any files on the target that are not on the source. Useful for forcing identical filesystems when syncing.
@@ -93,11 +93,11 @@ A [Globus FAQ](https://docs.globus.org/faq/globus-connect-endpoints/) is availab
 
 To save a bookmark, use the File Manager interface to select an endpoint and navigate to a path on that endpoint. Then click the bookmark button as shown below.
 
-    ![!Globus File Manager interface with mouse pointer hovering over Bookmark icon.](./images/globus_060_create_bookmark.png)
+![!Globus File Manager interface with mouse pointer hovering over Bookmark icon.](./images/globus_060_create_bookmark.png)
 
 To manage bookmarks, click "Bookmarks" in the left-hand navigation pane. Click the "Pencil" icon to edit a bookmark. Click the "Trash Bin" icon to delete a bookmark.
 
-    ![!Globus Bookmarks interface showing four bookmarks.](./images/globus_061_manage_bookmarks.png)
+![!Globus Bookmarks interface showing four bookmarks.](./images/globus_061_manage_bookmarks.png)
 
 ## Managing Shared Collections from a Globus Connect Personal Endpoint
 

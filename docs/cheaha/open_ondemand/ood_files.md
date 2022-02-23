@@ -13,6 +13,7 @@ This page has a few parts to it:
 
     !!! danger
 
+    <!-- markdownlint-disable-next-line -->
         Be careful deleting files here. They will be gone forever!
 
 5. **User Commands (orange):** A list of commands for navigating in the file browser, file or folder creation, and opening a terminal.

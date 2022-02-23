@@ -33,6 +33,7 @@ A user is limited to 5 TB of data across both their home directory (see above)an
 
 !!! note
 
+<!-- markdownlint-disable-next-line -->
     The home and user data directories are mirrored across storage locations to allow for emergency backup in case some of the drives fail. This is not meant to be a long-term backup solution as any data deleted by a user is deleted on the main drive and the mirrored drive.
 
     The mirrored system technically allows for over 5 TB of data to be stored but data cannot be recovered in case of an emergency storage failure. For data safety, do not store over 5 TB of data across user data and home directories.
@@ -57,6 +58,7 @@ Two types of scratch space are provided for analyses currently being ran, networ
 
 !!! note
 
+<!-- markdownlint-disable-next-line -->
     Scratch space (network and local) **is not backed up**.
 
 #### Network Scratch
@@ -67,6 +69,7 @@ Network scratch is available on the login node and each compute node. This stora
 
 !!! warning
 
+<!-- markdownlint-disable-next-line -->
     Research Computing expects each user to keep their scratch areas clean. **The cluster scratch areas are not to be used for archiving data.** In order to keep scratch clear and usable for everyone, files older than 28 days will be automatically deleted.
 
 #### Local Scratch
@@ -79,7 +82,6 @@ Note that `$LOCAL_SCRATCH` is only useful for jobs in which all processes run on
 
 The following is an array job example that uses `$LOCAL_SCRATCH` by transferring the inputs into `$LOCAL_SCRATCH` at the beginning of the script and the result out of `$LOCAL_SCRATCH` at the end of the script.
 
-<!-- markdownlint-disable-next-line -->
 ``` bash
 
 #!/bin/bash

@@ -59,6 +59,7 @@ associated with a site.
 
 !!! warning
 
+<!-- markdownlint-disable-next-line -->
     THIS INFORMATION IS PENDING TESTING
 
 Users cannot have their XIAS account deleted. However, privileges may be revoked. To revoke user privileges, follow the instructions for managing

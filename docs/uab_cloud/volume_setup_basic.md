@@ -126,7 +126,7 @@ Mounting a volume needs to be done once per instance it will be attached to. It 
 
 5. Verify the volume is mounted using `df -h | egrep <pmount>`
 
-    <!-- markdownlint-disable-next-line -->
+    <!-- markdownlint-disable-next-line MD033 -->
     ![!MINGW64 terminal. The command mkdir /mnt/my-volume has been used to create a mount point. The command sudo mount -U <UUID> /mnt/my-volume has been used to mount the volume to the mount point. The command df -h | egrep "vdb1" has been used to verify mounting.](./images/persistent_volumes_006.png)
 
 6. Edit the `fstab` file to make mounting persistent across instance reboots.
