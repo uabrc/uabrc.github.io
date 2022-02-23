@@ -1,8 +1,10 @@
-# UAB GitLab Overview
+# UAB GitLab Overview and Registration
 
 Welcome to UAB GitLab! This is a UAB-specific [GitLab](https://about.gitlab.com/). GitLab is similar to [GitHub](https://github.com/), but hosted here at UAB on secure servers. 
 
-### Researcher GitLab Use Cases
+## GitLab Use Cases
+
+### For Researchers
 GitLab can be used:
 
    - For reproducibility 
@@ -16,14 +18,14 @@ GitLab can be used:
      - Unlimited private repositories for internal code projects.
      - Set behind UAB authentication.
 
-### Software Developers (and Researchers!) GitLab Use Cases
+### For Software Developers (and Researchers!)
 UAB GitLab is useful for software developers. It is a single application for the entire software development lifecycle. From project planning and source code management to continuous integration (CI) and continuous deployment (CD), monitoring, and security.
 
 Our GitLab instance may be found at <https://gitlab.rc.uab.edu>.
 
-# UAB GitLab Registration
+## UAB GitLab Registration
 
-## UAB-Affiliated Researchers
+### UAB-Affiliated Researcher Registration
 
 If you are a UAB affiliated researcher and have a BlazerId, you may create an account by logging in at the site above using the `ldap` tab. Please use your single sign-on (SSO) credentials.
 
@@ -33,10 +35,11 @@ If you are a UAB affiliated researcher and have a BlazerId, you may create an ac
 
 ![!gitlab login pane with ldap tab selected](images/gitlab_user_ldap.png)
 
-## UABMC Researchers
+## UABMC Researcher Registration
+
 Please use your BlazerID and BlazerID credentials to sign in following the directions for UAB-Affiliated Researchers. UABMC credentials should not be used for UAB GitLab.
 
-## XIAS External Collaborators
+## XIAS External Collaborator Registration
 
 If you are a collaborator with a XIAS account you'll need to follow a different procedure.
 

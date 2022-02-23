@@ -73,6 +73,7 @@ to maximize security.
 
         !!! note
 
+        <!-- markdownlint-disable-next-line -->
             If you receive an error like
 
             ```

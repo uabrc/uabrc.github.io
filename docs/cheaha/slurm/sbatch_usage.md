@@ -5,7 +5,12 @@ in an available shell language on Cheaha, typically bash, and should
 include the appropriate Slurm directives at the top of the script
 telling the scheduler the requested resources. Common Slurm directives
 can be seen below along with simple examples for both single batch jobs
-and array batch jobs
+and array batch jobs.
+
+!!! tip
+
+<!-- markdownlint-disable-next-line -->
+    Please see our page on [Job Efficiency](../job_efficiency.md) for more information on making the best use of cluster resources and minimizing queue wait times.
 
 ## Common Slurm Terminology
 
@@ -61,15 +66,16 @@ Questions to ask yourself when requesting job resources:
 
 !!! note
 
+<!-- markdownlint-disable-next-line -->
     Reasonable overestimation of resources is better than underestimation. However, gross overestimation may cause admins to contact you about adjusting resources for future jobs.
 
 After a job is completed, look at how well resources were used using `seff`. For more information, read `job-efficiency`.
+
 
 ## Single Batch Job
 
 An example script using some of the listed directives can be seen below:
 
-<!-- markdownlint-disable-next-line -->
 ``` bash
 #!/bin/bash
 #
@@ -88,7 +94,6 @@ This script requests 1 core on 1 node with 1 GB of RAM on the express partition 
 
 If the script is saved as `$HOME/example.sh`, it can be submitted using the following command from the command line:
 
-<!-- markdownlint-disable-next-line -->
 ``` bash
 sbatch $HOME/example.sh
 ```
@@ -99,7 +104,6 @@ For some analyses, you will want to perform the same operations on different inp
 
 Array jobs can use a Slurm environmental variable, `$SLURM_ARRAY_TASK_ID`, as an index for inputs. For example, if we have a script that looks like:
 
-<!-- markdownlint-disable-next-line -->
 ``` bash
 #!/bin/bash
 #
@@ -116,20 +120,19 @@ echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 
 In this script, the %A and %a values in the output file name refer to the overall job ID and array task ID, respectively. We can submit the script (named array.sh) using the following command:
 
-<!-- markdownlint-disable-next-line -->
 ``` bash
 sbatch --array=0-15 array.sh
 ```
 
 !!! note
 
+<!-- markdownlint-disable-next-line -->
     It is crucial to note that arrays use 0-based indexing. Array number 0 corresponds to the first job you're running. The `SLURM_ARRAY_TASK_ID` variable will also be 0 in this case.
 
 This will cause 16 jobs to be created with array IDs from 0 to 15. Each job will write out the line "My SLURM_ARRAY_TASK_ID: " followed by the ID number. Scripts can be written to take advantage of this indexing environmental variable. For example, a project could have a list of participants that should be processed in the same way, and the analysis script uses the array task ID as an index to say which participant is processed in each individual job. Bash, python, MATLAB, and most languages have specific ways of interacting with environmental variables.
 
 If you do not want to submit a full array, the `--array` directive can take a variety of inputs:
 
-<!-- markdownlint-disable-next-line -->
 ``` bash
 # submit jobs with index 0, 3, and 7
 sbatch --array=0,3,7 array.sh
@@ -148,7 +151,6 @@ It is highly suggested to use the Cheaha `Open OnDemand` web portal for interact
 
 If you choose to use a standard ssh connection and VNC for your interactive job, you will need to request resources for your job from the command line after opening the VNC. You can do this using the following command:
 
-<!-- markdownlint-disable-next-line -->
 ``` bash
 srun --ntasks=1 --cpus-per-task=1 --mem-per-cpu=4G --time=1:00:00 --partition=express --pty /bin/bash
 ```
@@ -157,4 +159,5 @@ Resources should be changed to fit the job's needs. An interactive job will then
 
 !!! warning
 
+<!-- markdownlint-disable-next-line -->
     If your terminal says `[blazerid@loginXXX ~]`, you are on the login node. NO COMPUTE JOBS SHOULD BE RUN ON THE LOGIN NODE. If jobs are being run on the login node, they will be deleted and the user will be warned. Multiple warnings will result in account suspension.

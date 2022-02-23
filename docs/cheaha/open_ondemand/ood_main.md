@@ -27,4 +27,5 @@ To use a shell terminal in Cheaha through OOD, click `Clusters >> >_Cheaha Shell
 
 ??? warning
 
+<!-- markdownlint-disable-next-line -->
     Using the shell terminal in this way puts you on the login node. Do not run any compute tasks on the login node. Request a compute node first!
