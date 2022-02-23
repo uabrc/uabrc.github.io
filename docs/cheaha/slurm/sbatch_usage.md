@@ -5,7 +5,12 @@ in an available shell language on Cheaha, typically bash, and should
 include the appropriate Slurm directives at the top of the script
 telling the scheduler the requested resources. Common Slurm directives
 can be seen below along with simple examples for both single batch jobs
-and array batch jobs
+and array batch jobs.
+
+!!! tip
+
+<!-- markdownlint-disable-next-line -->
+    Please see our page on [Job Efficiency](../job_efficiency.md) for more information on making the best use of cluster resources and minimizing queue wait times.
 
 ## Common Slurm Terminology
 
@@ -65,6 +70,7 @@ Questions to ask yourself when requesting job resources:
     Reasonable overestimation of resources is better than underestimation. However, gross overestimation may cause admins to contact you about adjusting resources for future jobs.
 
 After a job is completed, look at how well resources were used using `seff`. For more information, read `job-efficiency`.
+
 
 ## Single Batch Job
 
