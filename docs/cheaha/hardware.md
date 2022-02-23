@@ -6,10 +6,10 @@ The current HPC cluster is comprised of 8192 compute cores connected by low-late
 
 A description of the different hardware generations are summarized in the following table:
 
-{{ read_csv('resources/data/hardware_short_df.csv', keep_default_na=False) }}
+{{ read_csv('cheaha/res/hardware_short_df.csv', keep_default_na=False) }}
 
 ## TFLOPS
 
 The table below is a theoretical analysis based on processor instructions and core counts, and is not a reflection of efficiency in practice.
 
-{{ read_csv('resources/data/tflops_df.csv', keep_default_na=False) }}
+{{ read_csv('cheaha/res/tflops_df.csv', keep_default_na=False) }}

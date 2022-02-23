@@ -28,6 +28,7 @@ Additionally, when requesting a job using `sbatch`, you will need to include a S
 
 !!! note
 
+<!-- markdownlint-disable-next-line -->
     It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at [Managing Jobs](job_management.md#managing-jobs) for more information.
 
 ### Open OnDemand
@@ -40,7 +41,6 @@ You will need to load a CUDA toolkit module for relevant commands to access the 
 
 Several CUDA toolkit versions have been installed as modules on Cheaha. To see which CUDA toolkits are available, use:
 
-<!-- markdownlint-disable-next-line -->
 ``` bash
 module -r spider 'cuda.*toolkit'
 ```

@@ -2,12 +2,12 @@ site_name: UAB Research Computing
 repo_url: https://github.com/uabrc/researcher-facing-MkDocs
 
 theme:
-  name: 'material'
+  name: material
   include_search_page: true
   search_index_only: true
   feature:
     tabs: true
-  custom_dir: 'theme'
+  custom_dir: theme
 
 extra_css:
   - stylesheets/extra.css
@@ -28,27 +28,27 @@ markdown_extensions:
 plugins:
   - search
   - table-reader:
-      data_path: 'docs'
+      data_path: docs
 
 nav:
-  - Home: 'index.md'
+  - Home: index.md
   - Welcome:
-    - 'welcome/welcome.md'
-    - 'welcome/rc_days.md'
+      - welcome/welcome.md
+      - welcome/rc_days.md
   - Account Management:
-    - 'account_management/uab_user.md'
-    - External Collaborators (XIAS):
-      - 'account_management/xias_users.md'
-      - 'account_management/xias_sites.md'
-      - 'account_management/xias_guest.md'
-    - 'account_management/gitlab_user.md'
+      - account_management/uab_user.md
+      - External Collaborators (XIAS):
+          - account_management/xias_users.md
+          - account_management/xias_sites.md
+          - account_management/xias_guest.md
+      - account_management/gitlab_user.md
   - Data Management:
-    - 'data_management/storage.md'
-    - File Transfer:
-      - 'data_management/transfer/globus.md'
-      - 'data_management/transfer/filezilla.md'
+      - data_management/storage.md
+      - File Transfer:
+          - data_management/transfer/globus.md
+          - data_management/transfer/filezilla.md
   - Cheaha User Guide:
-    - 'cheaha/index.md'
+    - 'cheaha/introduction.md'
     - Hardware: 'cheaha/hardware.md'
     - Open OnDemand:
       - 'cheaha/open_ondemand/ood_main.md'
@@ -56,14 +56,14 @@ nav:
       - 'cheaha/open_ondemand/ood_files.md'
       - 'cheaha/open_ondemand/ood_jobs.md'
     - SLURM: 
-      - Introduction: 'cheaha/slurm/index.md'
+      - Introduction: 'cheaha/slurm/introduction.md'
       - 'cheaha/slurm/sbatch_usage.md'
       - 'cheaha/slurm/gpu.md'
       - 'cheaha/slurm/job_management.md'
     - 'cheaha/lmod.md'
     - 'cheaha/conda.md'
   - UAB Cloud:
-    - Introduction: 'uab_cloud/index.md'
+    - Introduction: 'uab_cloud/introduction.md'
     - 'uab_cloud/network_setup_basic.md'
     - 'uab_cloud/instance_setup_basic.md'
     - 'uab_cloud/volume_setup_basic.md'

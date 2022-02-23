@@ -7,7 +7,8 @@ Our GitLab instance may be found at <https://gitlab.rc.uab.edu>.
 If you are a UAB affiliated user and have a BlazerId, you may create an account by logging in at the site above using the `ldap` tab. Please use your single sign-on (SSO) credentials.
 
 !!! note "UABMC Credentials Will Not Work"
-    
+
+<!-- markdownlint-disable-next-line -->
     You must use your BlazerID and BlazerID password. UABMC credentials are a completely separate password database not accessible by central UAB services. Therefore, UABMC credentials will not work for RC GitLab or any other Research Computing services.
 
 ![!gitlab login pane with ldap tab selected](images/gitlab_user_ldap.png)
@@ -28,4 +29,5 @@ If you are a collaborator with a XIAS account you'll need to follow a different 
 
 !!! warning
 
+<!-- markdownlint-disable-next-line -->
     XIAS users can only be granted access if their sponsor adds the GitLab URL to the list of approved URIs. Please see [XIAS Sites](xias_sites.md) for more information.
