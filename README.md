@@ -41,7 +41,7 @@ Before you can get started working on contributions, you'll need a copy of the r
 
 Once the fork has been created, you can clone your fork using the Command Palette (`ctrl + shift + p`) and `Git: Clone...` in VSCode, or at the command line. More information on cloning can be found at [GitHub: Cloning a Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
-### Local Machine Setup (laptop/desktop)
+### Local Machine Setup (Laptop/Desktop)
 
 The Python extension will activate when you open any Python file. The file `test.py` has been added for convenience, simply open that file to activate the extension. The extension will show the currently activated environment near the bottom-left corner of the VSCode window.
 
