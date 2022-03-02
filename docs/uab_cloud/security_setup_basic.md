@@ -1,6 +1,6 @@
 # Basic Security Setup
 
-Security Groups can and should be added as needed. 
+Using SSH with your instances requires following the steps on this page. At a minimum, an SSH security group and at least one keypair must be created. Other security groups can and should be added as needed.
 
 ## Creating a Security Group
 
