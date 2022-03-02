@@ -38,7 +38,7 @@ To verify your installation is complete, please visit <https://app.globus.org> a
 
         ![!Globus Collection Search Bookmarks tab showing four bookmarks.](./images/globus_006_bookmarks_tab.png)
 
-    4. The "Your Collections" tab shows all endpoints owned by you. For most users this will be one or more Globus Connect Personal endpoints.
+    4. The "Your Collections" tab shows all endpoints owned by you. For most researchers this will be one or more Globus Connect Personal endpoints.
 
         ![!Globus Collection Search Your Collections tab showing one endpoint.](./images/globus_007_your_collections_tab.png)
 
@@ -83,7 +83,7 @@ Between the two "Start" buttons on the "File Manager" page is a "Transfer & Sync
 ### Common Errors
 
 1. File Not Found - This may mean that a file was not readable by Globus. Check that the file hasn't moved or changed names during the transfer. It is recommended to not modify files while they are being transferred by Globus.
-2. Permission Denied - Globus is not able to access the files because permissions do not allow it. For Globus Connect Personal, be sure the containing folder is on the "Accessible Folders" list. Be sure that your user account has access to read the file.
+2. Permission Denied - Globus is not able to access the files because permissions do not allow it. For Globus Connect Personal, be sure the containing folder is on the "Accessible Folders" list. Be sure that your Cheaha account has access to read the file.
 
 ### More Information
 
