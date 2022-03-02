@@ -38,7 +38,7 @@ A Key Pair is required for SSH access to OpenStack instances for security reason
 
 Using a password protected Key Pair is highly recommended for additional security, as it buys time to revoke a key if it is compromised by an attacker. Currently, this is only possible by uploading a custom public key generated on your local machine.
 
-Good practice is to only use one key pair per person and per local machine. So if you have two computers, each one will need its own key pair. If you have two users, each will need their own key pair. Private keys are secrets and should not be passed around. Copying the key increases the risk of the system being compromised by an attacker.
+Good practice is to only use one key pair per person and per local machine. So if you have two computers, each one will need its own key pair. If you have two collaborators, each will need their own key pair. Private keys are secrets and should not be passed around. Copying the key increases the risk of the system being compromised by an attacker.
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 

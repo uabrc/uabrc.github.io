@@ -15,12 +15,12 @@ and array batch jobs.
 ## Common Slurm Terminology
 
 - Node: A subdivision of the cluster that contains multiple cores.
-  - Login nodes: Controls user access to Cheaha. Low count and shared among all users. DO NOT RUN JOBS ON THE LOGIN NODE
-  - Compute nodes: Dedicated nodes for running user jobs.
+  - Login nodes: Controls researcher access to Cheaha. Low count and shared among all researchers. DO NOT RUN JOBS ON THE LOGIN NODE
+  - Compute nodes: Dedicated nodes for running researcher jobs.
 - Core: A single CPU
 - Partition: A job queue to submit your job to. Different partitions have different resource limits and priority.
 - Job: Any single or combination of commands that require computational resources to perform. Can be interactive or submitted to the scheduler.
-- Batch jobs: Scripts to submit to the SLURM scheduler. Should run with no user input or graphical user interface (GUI). Replicates commands in an order you would run them on the command line.
+- Batch jobs: Scripts to submit to the SLURM scheduler. Should run with no researcher input or graphical user interface (GUI). Replicates commands in an order you would run them on the command line.
 
 ## Basic Slurm Directives
 
@@ -48,7 +48,7 @@ Notes:
 - Express jobs are highest priority in scheduling meaning they will be scheduled faster
 - Most partitions have a max amount of requestable memory per node at 175 GB. Largemem has a maximum memory limit of 1.5 TB.
 - Pascalnodes are specifically used for access to GPUs
-- Each user has a maximum amount of requestable resources across all jobs. Submitted jobs beyond this resource limit will be kept in the queue until a user's prior jobs have completed. This will appear as `QOSMaxResourceLimit` in your `squeue` list.
+- Each researcher has a maximum amount of requestable resources across all jobs. Submitted jobs beyond this resource limit will be kept in the queue until a researcher's prior jobs have completed. This will appear as `QOSMaxResourceLimit` in your `squeue` list.
 - If a script finishes executing before the requested time limit, the job will automatically close and resources will be released. However requesting the max amount of time will cause scheduler priority to decrease.
 
 ## Estimating Compute Resources
@@ -100,7 +100,7 @@ sbatch $HOME/example.sh
 
 ## Array Jobs
 
-For some analyses, you will want to perform the same operations on different inputs. However, instead of creating individual scripts for each different input, you can create an array job instead. These array jobs duplicate the SBATCH parameters as well as the commands of the script and apply them to different inputs specified by the user.
+For some analyses, you will want to perform the same operations on different inputs. However, instead of creating individual scripts for each different input, you can create an array job instead. These array jobs duplicate the SBATCH parameters as well as the commands of the script and apply them to different inputs specified by the researcher.
 
 Array jobs can use a Slurm environmental variable, `$SLURM_ARRAY_TASK_ID`, as an index for inputs. For example, if we have a script that looks like:
 
@@ -145,7 +145,7 @@ Additionally, the `--array` directive can be included with the rest of the SBATC
 
 ## Interactive Jobs
 
-Batch jobs are meant to be submitted and not interacted with during execution. However, some jobs need user input during execution or need to use a GUI. Interactive jobs are meant to be used for these situations.
+Batch jobs are meant to be submitted and not interacted with during execution. However, some jobs need researcher input during execution or need to use a GUI. Interactive jobs are meant to be used for these situations.
 
 It is highly suggested to use the Cheaha `Open OnDemand` web portal for interactive jobs. Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha.
 
@@ -160,4 +160,4 @@ Resources should be changed to fit the job's needs. An interactive job will then
 !!! warning
 
 <!-- markdownlint-disable-next-line -->
-    If your terminal says `[blazerid@loginXXX ~]`, you are on the login node. NO COMPUTE JOBS SHOULD BE RUN ON THE LOGIN NODE. If jobs are being run on the login node, they will be deleted and the user will be warned. Multiple warnings will result in account suspension.
+    If your terminal says `[blazerid@loginXXX ~]`, you are on the login node. NO COMPUTE JOBS SHOULD BE RUN ON THE LOGIN NODE. If jobs are being run on the login node, they will be deleted and the researcher will be warned. Multiple warnings will result in account suspension.

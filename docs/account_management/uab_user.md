@@ -1,6 +1,6 @@
-# UAB User Instructions
+# UAB Researcher Instructions
 
-These instructions are for users at UAB to request their own accounts on Cheaha using the Open OnDemand web portal.
+These instructions are for researchers at UAB to request their own accounts on Cheaha using the Open OnDemand web portal.
 
 Navigate to <https://rc.uab.edu>, authenticate with your UAB credentials, and if you do not have a Cheaha account, you will see the page shown below:
 

@@ -1,10 +1,10 @@
 # Cheaha
 
-Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing. We offer a user-friendly portal website [Open OnDemand](#open-ondemand) with graphical interfaces to the most common features, all in one place.
+Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing. We offer a researcher-friendly portal website [Open OnDemand](#open-ondemand) with graphical interfaces to the most common features, all in one place.
 
 ## Etiquette
 
-[Quotas](slurm/sbatch_usage.md#slurm-partitions) are in place to ensure any one user can't monopolize all resources.
+[Quotas](slurm/sbatch_usage.md#slurm-partitions) are in place to ensure any one researcher can't monopolize all resources.
 
 All expensive compute tasks must be run on compute nodes. Tasks running on the login node slow down processes for everyone, and in extreme cases can cause service outages, affecting your work and the work of many of your colleagues. We will contact you if we find processes on the login node. Don't worry, we're happy to help get your tasks running in the right place with the most efficient resources.
 

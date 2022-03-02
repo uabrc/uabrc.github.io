@@ -1,6 +1,6 @@
 # Job Efficiency
 
-Efficient jobs save you time. Many factors go into queue wait time, but you can control your job requests. Optimizing queue wait times relies on getting resource requests close to actual resource usage. For example, if your task runs as fast with 2 cores as with 4 cores, requesting 4 cores will increase your wait time for no benefit. Other users time will be wasted due to locked up, unused resources. So please read this page to learn how to increase your efficiency and save time.
+Efficient jobs save you time. Many factors go into queue wait time, but you can control your job requests. Optimizing queue wait times relies on getting resource requests close to actual resource usage. For example, if your task runs as fast with 2 cores as with 4 cores, requesting 4 cores will increase your wait time for no benefit. Other researchers time will be wasted due to locked up, unused resources. So please read this page to learn how to increase your efficiency and save time.
 
 As with any new skill, developing an intuition for efficiency and resource estimation requires experimentation, practice, and feedback.
 
@@ -62,7 +62,7 @@ Use `seff` to verify that your code is as efficient as possible.
 
 ## Verifying Job Efficiency
 
-It's important to evaluate the efficiency of your job in terms of resource usage after it completes. Remember that Cheaha is a shared resource, so requesting resources that sit unused during a job prevents others from using those resources. As well, because each user has a maximum amount of resources they can use at a given time, having inefficient jobs can increase analysis runtime across many jobs, and increase queue wait times.
+It's important to evaluate the efficiency of your job in terms of resource usage after it completes. Remember that Cheaha is a shared resource, so requesting resources that sit unused during a job prevents others from using those resources. As well, because each researcher has a maximum amount of resources they can use at a given time, having inefficient jobs can increase analysis runtime across many jobs, and increase queue wait times.
 
 In order to look at job efficieny, use the `seff` command.
 
