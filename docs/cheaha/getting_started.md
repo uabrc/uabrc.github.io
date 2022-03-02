@@ -163,7 +163,7 @@ f6:xx:xx:xx:xx:dd:9a:79:7b:83:xx:f9:d7:a7:d6:27 joeuser@cheaha.rc.uab.edu
 
 #### Users without a blazerid (collaborators from other universities)
 
-- If you were issued a temporary password, enter it (Passwords are CaSE SensitivE!!!) You should see a message similar to this
+- If you were issued a temporary password, enter it (Passwords are CaSE SensitivE) You should see a message similar to this
 
 ```bash
 You are required to change your password immediately (password aged)
@@ -180,7 +180,7 @@ Changing password for joeuser
   - After you enter your new password for the second time and press enter, the shell may exit automatically. If it doesn't, type exit and press enter
   - Log in again, this time use your new password
 
-Congratulations, you should now have a command prompt and be ready to start [submitting jobs](https://docs.uabgrid.uab.edu/wiki/Cheaha_GettingStarted#Example_Batch_Job_Script)!!!
+Congratulations, you should now have a command prompt and be ready to start [submitting jobs](https://docs.uabgrid.uab.edu/wiki/Cheaha_GettingStarted#Example_Batch_Job_Script)!
 
 ## Hardware
 
@@ -292,7 +292,7 @@ The dos2unix program can be used to convert Windows text files to UNIX files wit
 
 ```bash
 $ file testfile.txt
- 
+
 testfile.txt: ASCII text, with CRLF line terminators
 ```
 
@@ -300,7 +300,7 @@ Now, convert the file to UNIX
 
 ```bash
 $ dos2unix testfile.txt
- 
+
 dos2unix: converting file testfile.txt to UNIX format ...
 ```
 
@@ -308,7 +308,7 @@ Verify the conversion using the file command
 
 ```bash
 $ file testfile.txt
- 
+
 testfile.txt: ASCII text
 ```
 
@@ -526,9 +526,9 @@ If you find that specific software does not have a module, please submit a [help
 ```bash
 module TAB TAB
 
-add          display      initlist     keyword      refresh      switch       use          
-apropos      help         initprepend  list         rm           unload       whatis       
-avail        initadd      initrm       load         show         unuse        
+add          display      initlist     keyword      refresh      switch       use
+apropos      help         initprepend  list         rm           unload       whatis
+avail        initadd      initrm       load         show         unuse
 clear        initclear    initswitch   purge        swap         update
 ```
 
@@ -536,7 +536,7 @@ clear        initclear    initswitch   purge        swap         update
 
 ```bash
 module avail
- 
+
 ----------------------------------------------------------------------------------------- /cm/shared/modulefiles -----------------------------------------------------------------------------------------
 acml/gcc/64/5.3.1                    acml/open64-int64/mp/fma4/5.3.1      fftw2/openmpi/gcc/64/float/2.1.5     intel-cluster-runtime/ia32/3.8       netcdf/gcc/64/4.3.3.1
 acml/gcc/fma4/5.3.1                  blacs/openmpi/gcc/64/1.1patch03      fftw2/openmpi/open64/64/double/2.1.5 intel-cluster-runtime/intel64/3.8    netcdf/open64/64/4.3.3.1
@@ -571,7 +571,7 @@ ATLAS/3.10.1-gompi-1.5.12-LAPACK-3.4.2                    guile/1.8.8-GNU-4.9.3-
 Autoconf/2.69-foss-2016a                                  HAPGEN2/2.2.0                                             ncurses/5.9-GCC-4.8.4
 Autoconf/2.69-GCC-4.8.4                                   HarfBuzz/1.2.7-intel-2016a                                ncurses/5.9-GNU-4.9.3-2.25
 Autoconf/2.69-GNU-4.9.3-2.25                              HDF5/1.8.15-patch1-intel-2015b                            ncurses/5.9-goolf-1.4.10
- . 
+ .
  .
  .
  .
@@ -594,14 +594,14 @@ Some modules, when loaded, will actually load other modules. For example, the *G
 - To load a module, ex: for a GROMACS job, use the following **module load** command in your job script:
 
 ```bash
-module load  GROMACS/5.0.5-intel-2015b-hybrid 
+module load  GROMACS/5.0.5-intel-2015b-hybrid
 ```
 
 - To see a list of the modules that you currently have loaded use the **module list** command
 
 ```bash
 module list
- 
+
 Currently Loaded Modulefiles:
   1) slurm/15.08.6                                       9) impi/5.0.3.048-iccifort-2015.3.187-GNU-4.9.3-2.25  17) Tcl/8.6.3-intel-2015b
   2) rc-base                                            10) iimpi/7.3.5-GNU-4.9.3-2.25                         18) SQLite/3.8.8.1-intel-2015b
@@ -622,22 +622,22 @@ module unload GROMACS/5.0.5-intel-2015b-hybrid
 - The definition of a module can also be viewed using the **module show** command, revealing what a specific module will do to your environment:
 
 ```bash
-module show GROMACS/5.0.5-intel-2015b-hybrid 
+module show GROMACS/5.0.5-intel-2015b-hybrid
 -------------------------------------------------------------------
 /share/apps/rc/modules/all/GROMACS/5.0.5-intel-2015b-hybrid:
 
 module-whatis  GROMACS is a versatile package to perform molecular dynamics,
- i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles. - Homepage: http://www.gromacs.org 
-conflict   GROMACS 
-prepend-path   CPATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/include 
-prepend-path   LD_LIBRARY_PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/lib64 
-prepend-path   LIBRARY_PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/lib64 
-prepend-path   MANPATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/share/man 
-prepend-path   PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/bin 
-prepend-path   PKG_CONFIG_PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/lib64/pkgconfig 
-setenv     EBROOTGROMACS /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid 
-setenv     EBVERSIONGROMACS 5.0.5 
-setenv     EBDEVELGROMACS /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/easybuild/GROMACS-5.0.5-intel-2015b-hybrid-easybuild-devel 
+ i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles. - Homepage: http://www.gromacs.org
+conflict   GROMACS
+prepend-path   CPATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/include
+prepend-path   LD_LIBRARY_PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/lib64
+prepend-path   LIBRARY_PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/lib64
+prepend-path   MANPATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/share/man
+prepend-path   PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/bin
+prepend-path   PKG_CONFIG_PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/lib64/pkgconfig
+setenv     EBROOTGROMACS /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid
+setenv     EBVERSIONGROMACS 5.0.5
+setenv     EBDEVELGROMACS /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/easybuild/GROMACS-5.0.5-intel-2015b-hybrid-easybuild-devel
 -------------------------------------------------------------------
 ```
 
@@ -745,7 +745,7 @@ Submitted batch job 52888
 - When the job completes, you should have output files named helloworld.out and helloworld.err
 
 ```bash
-$ cat helloworld.out 
+$ cat helloworld.out
 Hello from c0003
 ```
 
@@ -890,7 +890,7 @@ Submitted batch job 53001
 And when the cluster run is complete you can look at the content of the output:
 
 ```bash
-$ $ cat helloworld.out 
+$ $ cat helloworld.out
 Hello from c0003
 ```
 
@@ -926,7 +926,7 @@ To avoid having to use the "./" prefix, just add the current directory to your P
 
 module load OpenMPI/1.8.8-GNU-4.9.3-2.25
 
-module load GROMACS/5.0.5-intel-2015b-hybrid 
+module load GROMACS/5.0.5-intel-2015b-hybrid
 
 # Change directory to the job working directory if not already there
 cd ${USER_SCRATCH}/jobs/gromacs
@@ -975,7 +975,7 @@ $ vi R-example-array.job
 #SBATCH --mail-type=FAIL
 #SBATCH --mail-user=YOUR_EMAIL_ADDRESS
 
-module load R/3.2.0-goolf-1.7.20 
+module load R/3.2.0-goolf-1.7.20
 cd ~/jobs/ArrayExample/rep$SLURM_ARRAY_TASK_ID
 srun R CMD BATCH rscript.R
 ```
@@ -1110,10 +1110,10 @@ Singularity is designed so that you can use it within SLURM jobs and it does not
 # Time format = HH:MM:SS, DD-HH:MM:SS
 #SBATCH --time=10:00
 #
-# Number of CPUs allocated to each task. 
+# Number of CPUs allocated to each task.
 #SBATCH --cpus-per-task=1
 #
-# Mimimum memory required per allocated  CPU  in  MegaBytes. 
+# Mimimum memory required per allocated  CPU  in  MegaBytes.
 #SBATCH --mem-per-cpu=100
 #
 # Send mail to the email address when the job fails

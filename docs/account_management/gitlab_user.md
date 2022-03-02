@@ -1,13 +1,13 @@
 # UAB GitLab Overview and Registration
 
-Welcome to UAB GitLab! This is a UAB-specific [GitLab](https://about.gitlab.com/). GitLab is similar to [GitHub](https://github.com/), but hosted here at UAB on secure servers. 
+Welcome to UAB GitLab! This is a UAB-specific [GitLab](https://about.gitlab.com/). GitLab is similar to [GitHub](https://github.com/), but hosted here at UAB on secure servers.
 
 ## GitLab Use Cases
 
 ### For Researchers
 GitLab can be used:
 
-   - For reproducibility 
+   - For reproducibility
      - Analysis and software code can be kept in one, central repository everyone can use instead of spread across multiple computers/places.
      - Code can be versioned and tracked as it changes over time.
      - Software versions can be recorded, virtual environments can be documented, and containers can be recorded to help future-proof analyses.
@@ -29,11 +29,13 @@ Our GitLab instance may be found at <https://gitlab.rc.uab.edu>.
 
 If you are a UAB affiliated researcher and have a BlazerId, you may create an account by logging in at the site above using the `ldap` tab. Please use your single sign-on (SSO) credentials.
 
+<!-- markdownlint-disable MD046 -->
 !!! note "Please use BlazerID and password instead of UABMC credentials"
-    
+
     Please use your BlazerID and BlazerID password for UAB GitLab. UABMC credentials are a different sign in system and will likely not work. Central IT groups like Research Computing do not have a way to access UABMC credentials.
 
 ![!gitlab login pane with ldap tab selected](images/gitlab_user_ldap.png)
+<!-- markdownlint-enable MD046 -->
 
 ## UABMC Researcher Registration
 
@@ -55,6 +57,8 @@ If you are a collaborator with a XIAS account you'll need to follow a different 
 
 ![!gitlab login pane with standard tab selected](images/gitlab_user_standard.png)
 
+<!-- markdownlint-disable MD046 -->
 !!! warning
 
     XIAS account researchers can only be granted access if their sponsor adds the GitLab URL to the list of approved URIs. Please see [XIAS Sites](xias_sites.md) for more information.
+<!-- markdownlint-enable MD046 -->

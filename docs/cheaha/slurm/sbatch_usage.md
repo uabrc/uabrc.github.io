@@ -7,10 +7,11 @@ telling the scheduler the requested resources. Common Slurm directives
 can be seen below along with simple examples for both single batch jobs
 and array batch jobs.
 
+<!-- markdownlint-disable MD046 -->
 !!! tip
 
-<!-- markdownlint-disable-next-line -->
     Please see our page on [Job Efficiency](../job_efficiency.md) for more information on making the best use of cluster resources and minimizing queue wait times.
+<!-- markdownlint-disable MD046 -->
 
 ## Common Slurm Terminology
 
@@ -64,10 +65,11 @@ Questions to ask yourself when requesting job resources:
 4. How long should my job take?
     1. For example, do not request 50 hours time for a 15 hour process. Have a reasonable buffer included to account for unexpected processing delays, but do not request the maximum time on a partition if that's unnecessary.
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     Reasonable overestimation of resources is better than underestimation. However, gross overestimation may cause admins to contact you about adjusting resources for future jobs.
+<!-- markdownlint-disable MD046 -->
 
 After a job is completed, look at how well resources were used using `seff`. For more information, read `job-efficiency`.
 
@@ -124,10 +126,11 @@ In this script, the %A and %a values in the output file name refer to the overal
 sbatch --array=0-15 array.sh
 ```
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     It is crucial to note that arrays use 0-based indexing. Array number 0 corresponds to the first job you're running. The `SLURM_ARRAY_TASK_ID` variable will also be 0 in this case.
+<!-- markdownlint-disable MD046 -->
 
 This will cause 16 jobs to be created with array IDs from 0 to 15. Each job will write out the line "My SLURM_ARRAY_TASK_ID: " followed by the ID number. Scripts can be written to take advantage of this indexing environmental variable. For example, a project could have a list of participants that should be processed in the same way, and the analysis script uses the array task ID as an index to say which participant is processed in each individual job. Bash, python, MATLAB, and most languages have specific ways of interacting with environmental variables.
 
@@ -157,7 +160,8 @@ srun --ntasks=1 --cpus-per-task=1 --mem-per-cpu=4G --time=1:00:00 --partition=ex
 
 Resources should be changed to fit the job's needs. An interactive job will then start on a compute node. You can tell if you are on a compute node by looking at the command line. It should have the form: `[blazerid@c0XXX ~]` where XXX is a number.
 
+<!-- markdownlint-disable MD046 -->
 !!! warning
 
-<!-- markdownlint-disable-next-line -->
     If your terminal says `[blazerid@loginXXX ~]`, you are on the login node. NO COMPUTE JOBS SHOULD BE RUN ON THE LOGIN NODE. If jobs are being run on the login node, they will be deleted and the user will be warned. Multiple warnings will result in account suspension.
+<!-- markdownlint-disable MD046 -->

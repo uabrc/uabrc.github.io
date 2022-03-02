@@ -79,9 +79,9 @@ Good practice is to only use one key pair per person and per local machine. So i
 
         ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent.](./images/key_pairs_005.png)
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     It is alternately possible to use a custom key pair created on your local machine. We assume you know how to create a key pair on your local machine and have already done so. To upload a key pair, replace steps 3 and 4 above with the following, perform step 5 from above, and skip step 6.
 
     3\. Click "Import Public Key" to open a dialog box.
@@ -95,6 +95,7 @@ Good practice is to only use one key pair per person and per local machine. So i
             "Public Key" box.
 
             ![!Import Public Key dialog. The dialog form is empty.](./images/key_pairs_alt_002.png)
+<!-- markdownlint-disable MD046 -->
 
 ## Creating an Instance
 
@@ -271,9 +272,9 @@ ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
 
 ![!MINGW64 terminal on Windows. The ssh command has been used to login to the Floating IP Address using the -i command with the locally stored private key my_key_pair.pem. Login was successful. A banner page has been shown and a terminal prompt is waiting for input.](./images/instances_020.png)
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     Reusing a floating IP for a new instance can result in a "host key changed" error. To resolve this issue, please use the command below with the hostname given by the error, which should be the affected floating IP.
 
     ```
@@ -281,8 +282,10 @@ ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
     ```
 
     ![image showing host key changed error at terminal](images/instances_ssh_host_key_error.png)
+<!-- markdownlint-disable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
 !!! danger
 
-<!-- markdownlint-disable-next-line -->
     Using the above command is potentially dangerous when connecting to machines or instances controlled by other people. Be absolutely certain you trust the source of the key change before using the command above.
+<!-- markdownlint-disable MD046 -->

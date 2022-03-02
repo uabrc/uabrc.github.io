@@ -12,10 +12,11 @@
 
 ## Detailed
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     Under construction.
+<!-- markdownlint-disable MD046 -->
 
 ## Acknoweldgement in Publications
 

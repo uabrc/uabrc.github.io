@@ -11,10 +11,11 @@ This page has a few parts to it:
 3. **File List (black):** A list of all file and folders in the working directory along with select information. Hidden files and file permissions can be shown using the radio button in Command Bar at the top right (orange).
 4. **File Commands (blue):** A list of commands to perform to a file or directory.
 
+    <!-- markdownlint-disable MD046 -->
     !!! danger
 
-    <!-- markdownlint-disable-next-line -->
         Be careful deleting files here. They will be gone forever!
+    <!-- markdownlint-disable MD046 -->
 
 5. **User Commands (orange):** A list of commands for navigating in the file browser, file or folder creation, and opening a terminal.
 

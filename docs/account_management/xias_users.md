@@ -57,10 +57,11 @@ associated with a site.
 
 ### Revoking User Privileges
 
+<!-- markdownlint-disable MD046 -->
 !!! warning
 
-<!-- markdownlint-disable-next-line -->
     THIS INFORMATION IS PENDING TESTING
+<!-- markdownlint-disable MD046 -->
 
 Users cannot have their XIAS account deleted. However, privileges may be revoked. To revoke user privileges, follow the instructions for managing
 users by site. Update the desired user(s)' end date to a date earlier

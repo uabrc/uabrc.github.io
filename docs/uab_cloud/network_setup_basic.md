@@ -71,9 +71,9 @@ to maximize security.
 
             ![!Create Subnet dialog box. The Subnet tab is selected. The form has not been filled out beyond default values. The Subnet Name has been set to my_subnet.](./images/subnet_003.png)
 
+        <!-- markdownlint-disable MD046 -->
         !!! note
 
-        <!-- markdownlint-disable-next-line -->
             If you receive an error like
 
             ```
@@ -82,6 +82,7 @@ to maximize security.
             ```
 
             Try changing the gateway IP address to `192.168.0.1` and trying again.
+        <!-- markdownlint-disable MD046 -->
 
     2. The "Subnet Details" tab.
 

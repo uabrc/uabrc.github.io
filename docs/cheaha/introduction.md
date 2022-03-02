@@ -37,9 +37,10 @@ The portal features a [file browser](open_ondemand/ood_files.md), [job composer]
 
 Slurm is our job queueing software, and we have documentation [further in](slurm/introduction.md). More complete documentation is available at <https://slurm.schedmd.com/>.
 
+<!-- markdownlint-disable MD046 -->
 !!! important
 
-<!-- markdownlint-disable-next-line -->
     Expensive compute tasks  should only be run on compute nodes. If your task will take longer than
 
     For more information please see our [Sbatch Documentation](slurm/sbatch_usage.md).
+<!-- markdownlint-disable MD046 -->
