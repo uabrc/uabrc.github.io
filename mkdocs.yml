@@ -65,5 +65,6 @@ nav:
   - UAB Cloud:
     - Introduction: 'uab_cloud/introduction.md'
     - 'uab_cloud/network_setup_basic.md'
+    - 'uab_cloud/security_setup_basic.md'
     - 'uab_cloud/instance_setup_basic.md'
     - 'uab_cloud/volume_setup_basic.md'
