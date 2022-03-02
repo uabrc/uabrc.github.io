@@ -61,7 +61,7 @@ In addition, if you are using the CUDA cores for GPU-enabled machine learning, y
 
    Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure.
 
-In the `Extra Jupyter Arguments` field, you will need to add a path to the directory with your jupyter notebooks. For instance, if your notebooks are stored in your user directory, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`.
+In the `Extra Jupyter Arguments` field, you will need to add a path to the directory with your jupyter notebooks. For instance, suppose your notebooks are stored in your `/data/user/$USER` directory, also known as the `$USER_DATA` directory. Then you would put `--notebook-dir=$USER_DATA` in the `Extra Jupyter Arguments` field. You will be able to navigate to any notebook as long as it is in a subdirectory of `notebook-dir`.
 
 Submitting the job will bring you to the `My Interactive Jobs` window while the Jupyter job is initialized. Click `Connect to Jupyter` to open the Jupyter Home Page.
 
