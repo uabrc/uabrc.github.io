@@ -21,6 +21,12 @@ Once you've selected the compute resources you need, Launch the job. This will b
 
 There will be basic information about the number of cores and nodes as well as the job ID in the top part of the job card. The amount of time remaining in the job is included in the card as well as a quick link to the file browser in the `Session ID` field. Click `Launch Desktop in new tab` to open your interactive VNC session.
 
+<!-- markdownlint-disable MD046 -->
+!!! bug
+
+    If your job fails to launch, please see our [FAQ](/docs/help/faq.md) for possible solutions, or [contact us](/docs/index.md#contact-us).
+<!-- markdownlint-disable MD046 -->
+
 !!! note
 
 <!-- markdownlint-disable-next-line -->
