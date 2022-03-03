@@ -40,7 +40,7 @@ As shown earlier, some software can be run outside of the VNC session. Setup for
 !!! note
 
 <!-- markdownlint-disable-next-line -->
-    Versions in OOD and versions seen when loading modules in a terminal may not match. If you need a specific version available in OOD, submit a support ticket at \<support@listserv.uab.edu\>
+    Versions shown in the OOD form may not line up with versions available in modules. If you need a version not available in OOD, please feel free to [send in a ticket](../../index.md#contact-us).
 
 ### RStudio Server
 
