@@ -38,15 +38,15 @@ A user is limited to 5 TB of data across both their home directory (see above)an
 
     The mirrored system technically allows for over 5 TB of data to be stored but data cannot be recovered in case of an emergency storage failure. For data safety, do not store over 5 TB of data across user data and home directories.
 
-### Project Directory
+### Project Space
 
-Shared data can be stored in a `/data/project/<project_name>` directory. The default storage size for a new project is 50TB. As with user scratch, this area **is not backed up**!
+Shared data can be stored in a `/data/project/<project_name>` directory. The default storage size for a new project is 50TB. If you need less than 5TB or your need for shared space is short term, please request a [Sloss space](#sloss)instead. Project storage can be helpful for teams of researchers who need access to the same data.
 
-This is helpful if a team of researchers must access the same data. A PI can open a help desk ticket to request a project directory under `/data/project`.
+All project spaces must be owned by a principal investigator (PI) who is an employee of UAB with a legitimate research interest. The PI takes responsibility for data in the space, as well as access control of all files and directories under the parent directory. As with all data on Cheaha, backups and archival services are not provided, and are the responsibility of the respective data owners.
 
-In order to add or remove a user's access to a project directory, the PI who requested the project space must create a support ticket.
+The PI and all members with access to the project directory can read, write/delete, and list files within the top-level directory, and all other subdirectories by default. Other people on the system have no ability to access the project space. Access control for directories and files within the project space can be implemented via access control lists. Please see the bash commands [setfacl](https://linux.die.net/man/1/setfacl) and [getfacl](https://linux.die.net/man/1/getfacl)) for more information. Access control within the project directory are the responsibility of the project owner. However, we respect that access control lists can be tricky, so please feel free to [contact us](/docs/index.md#contact-us) for assistance.
 
-The PI and all members of the dedicated collaboration group have can read, write/delete, and list files. No privileges are granted to other users of the system. Additional controls can be implemented via access control lists (see the bash commands [setfacl](https://linux.die.net/man/1/setfacl) and [getfacl](https://linux.die.net/man/1/getfacl)). The PI/requestor can modify the ACLs to allow additional access to specific users.
+To create a project directory, or change access to or ownership of a project directory, the PI should follow the instructions at [How Do I Request Or Change A Project Space?](../resources/support.md#how-do-i-request-or-change-a-project-space).
 
 #### Sloss
 
