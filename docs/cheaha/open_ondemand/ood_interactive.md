@@ -52,6 +52,12 @@ To adjust the environment, please use the Environment Setup box to load modules 
 
 ![!RStudio Server job request form Environment Setup box.](images/ood_rstudio_server_env_setup_box.png)
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    We have recently changed the way we deploy RStudio on OOD. There are now two versions available, and one is marked with the text `(deprecated)`. The version without the deprecation notice is the new deployment method and is preferred for use. It is more flexible and more robust, and will allow us to support you more quickly and easily. The version with the deprecation notice is the previous containerized version. Because it is deprecated, we will not provide additional support for that version. Please move your workflows to the newer version.
+<!-- markdownlint-disable MD046 -->
+
 ### Jupyter Notebook
 
 Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
