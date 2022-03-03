@@ -54,7 +54,13 @@ To adjust the environment, please use the Environment Setup box to load modules 
 
 ### Jupyter Notebook
 
-In addition, if you are using the CUDA cores for GPU-enabled machine learning, you will need to load the corresponding CUDA module here. Use `module spider cuda` to view the list of CUDA modules.
+Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
+
+![!Jupyter Notebook job request form.](images/ood_jupyter_notebook_form.png)
+
+To adjust the environment, please use the Environment Setup box to load modules. For GPU applications it is generally necessary to load one of our `cuda##.#/toolkit` modules, and possibly a `cuDNN` module. These are required for `tensorflow`, `keras` and `pytorch`. Use `module spider cuda` and `module spider cudnn` to view the list of appropriate modules. An example is shown below.
+
+![!Jupyter Notebook job request form Environment Setup box.](images/ood_jupyter_notebook_env_setup_box.png)
 
 !!! tip
 
@@ -62,9 +68,11 @@ In addition, if you are using the CUDA cores for GPU-enabled machine learning, y
 
 !!! warning
 
-   Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure.
+   Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Please do not activate conda environments in the Environment Setup field.
 
-In the `Extra Jupyter Arguments` field, you will need to add a path to the directory with your jupyter notebooks. For instance, if your notebooks are stored in your user directory, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`.
+The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
+
+![!Jupyter Notebook job request form Extra jupyter arguments box.](images/ood_jupyter_notebook_extra_args_box.png)
 
 Submitting the job will bring you to the `My Interactive Jobs` window while the Jupyter job is initialized. Click `Connect to Jupyter` to open the Jupyter Home Page.
 
@@ -73,9 +81,11 @@ Submitting the job will bring you to the `My Interactive Jobs` window while the 
 <!-- markdownlint-disable-next-line -->
     If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
 
-The Jupyter Home Page will look like:
+#### The Jupyter Server Home Page
 
-![!Home page for jupyter notebooks.](images/ood_jupyter_home.png)
+The Jupyter Server Home Page will look like the following
+
+![!Home page for jupyter notebooks.](images/ood_jupyter_notebook_home.png)
 
 From here, you can navigate to and select an existing notebook, or you can create a new one using one of your existing virtual environments or the base environment. Once inside a Jupyter notebook, you can use the `Kernel --> Change kernel` menu to select your preferred Anaconda environment.
 
@@ -93,7 +103,7 @@ To run Jupyter with specific libraries and packages outside of the base install,
 
 The `Conda` has the following layout:
 
-![!Creating and managing environments in Jupyter.](images/ood_jupyter_create_conda_env.png){: .center}
+![!Creating and managing environments in Jupyter.](images/ood_jupyter_notebook_create_conda_env.png){: .center}
 
 1. Current environments (red): a listing of the current existing environments in your `$HOME/.conda/envs` folder.
 2. Available packages (green): a list of all packages available to install from conda sources.
