@@ -50,7 +50,7 @@ To create a project directory, or change access to or ownership of a project dir
 
 #### Sloss
 
-A special location under `/data/project/sloss` to store projects that are, at most, a few TB large for access across multiple researchers. Essentially a foundry for project spaces that start small but may grow and graduate into a full-fledged project space.
+A special location under `/data/project/sloss` to store projects that are at most 5 TB. In keeping with the name [Sloss](https://www.slossfurnaces.com/), these spaces are intended as a foundry for experimental or temporary project spaces that have potential to grow. Otherwise, they are treated like any other project space.
 
 ### Scratch
 
