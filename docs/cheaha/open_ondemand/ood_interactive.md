@@ -42,14 +42,17 @@ As shown earlier, some software can be run outside of the VNC session. Setup for
 <!-- markdownlint-disable-next-line -->
     Versions in OOD and versions seen when loading modules in a terminal may not match. If you need a specific version available in OOD, submit a support ticket at \<support@listserv.uab.edu\>
 
-## Jupyter
+### RStudio Server
 
-Jupyter notebooks are available for use in OOD, but some extra setup is
-required. The extra fields you need to fill out are seen below:
+RStudio is available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. You'll also need to select both the version of RStudio you wish to use, and the version of R you wish to use. The job creation form is shown below.
 
-![!Environment setup for Jupyter notebooks.](images/ood_jupyter.png)
+![!RStudio Server job request form.](images/ood_rstudio_server_form.png)
 
-At the bottom of the `Environment Setup` field, you will need to place a `module load` command to load the version of Anaconda your Jupyter job will be running. View the list of Anaconda modules installed on Cheaha in a terminal session using `module spider Anaconda`.
+To adjust the environment, please use the Environment Setup box to load modules or Anaconda environments. A common strategy when there is difficulty building R packages is to search for it on [Anaconda](../conda.md), create an Anaconda environment with that package already built, and load the environment in the Environment Setup box. An example is shown below.
+
+![!RStudio Server job request form Environment Setup box.](images/ood_rstudio_server_env_setup_box.png)
+
+### Jupyter Notebook
 
 In addition, if you are using the CUDA cores for GPU-enabled machine learning, you will need to load the corresponding CUDA module here. Use `module spider cuda` to view the list of CUDA modules.
 
@@ -84,7 +87,7 @@ From here, you can navigate to and select an existing notebook, or you can creat
 
    Anaconda environments used with Open OnDemand Jupyter do not need the `jupyter` package installed. The server software is already taken care of.
 
-### Python Libraries and Virtual Environments
+#### Python Libraries and Virtual Environments
 
 To run Jupyter with specific libraries and packages outside of the base install, you will need to create a virtual environment first. You can do this either in an HPC Desktop job or in the `Conda` tab of the Jupyter homepage.
 
