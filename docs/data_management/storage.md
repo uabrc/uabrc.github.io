@@ -1,5 +1,11 @@
 # Storage
 
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](/docs/index.md#contact-us).
+<!-- markdownlint-disable MD046 -->
+
 ## Privacy
 
 **Do not store sensitive information on this filesystem. It is not encrypted.** Note that your data will be stored on the cluster filesystem, and while not accessible to ordinary users, it could be accessible to the cluster administrator(s).
