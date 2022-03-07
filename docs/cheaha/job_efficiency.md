@@ -18,40 +18,40 @@ Questions to ask yourself before requesting resources:
 
 1. Can my scripts take advantage of multiple cores?
 
-   - If yes, then request more cores.
-   - If no, then request only one core.
-   - Example: RStudio generally runs on a single thread. Any cores beyond the first will go unused and unusable.
+    - If yes, then request more cores.
+    - If no, then request only one core.
+    - Example: RStudio generally runs on a single thread. Any cores beyond the first will go unused and unusable.
 
 2. How large is the data I'm working with?
 
-   - Start by requesting memory equal to double the size of one file, no less than 2 GB per core.
-   - If that isn't enough, increase the request by 50% until there are no more memory errors.
-   - Example: If your data file is 4 GB, try starting out by requesting 8 GB of memory, then 12 GB, 16 GB, etc.
+    - Start by requesting memory equal to double the size of one file, no less than 2 GB per core.
+    - If that isn't enough, increase the request by 50% until there are no more memory errors.
+    - Example: If your data file is 4 GB, try starting out by requesting 8 GB of memory, then 12 GB, 16 GB, etc.
 
 3. Do my pipelines keep large amounts of data in memory?
 
-   - If yes, you may need to request even more memory than above.
-   - Example: Without careful programming, MATLAB code will often make and retain copies of data until finished.
+    - If yes, you may need to request even more memory than above.
+    - Example: Without careful programming, MATLAB code will often make and retain copies of data until finished.
 
 4. How long should my job take?
 
-   - Example: If my laptop is able to run the code on one data file in 2 hours, it will take about that long on Cheaha.
-   - Example: Requesting 50 hours of time for a 15 hour process will lengthen the queue time.
-   - Don't request too little! Include a buffer to account for scheduler and network issues.
+    - Example: If my laptop is able to run the code on one data file in 2 hours, it will take about that long on Cheaha.
+    - Example: Requesting 50 hours of time for a 15 hour process will lengthen the queue time.
+    - Don't request too little! Include a buffer to account for scheduler and network issues.
 
 5. How is the software I'm using programmed?
 
-   - Can it use a GPU? Request one.
-   - Can it use multiple cores? Request more than one core.
-   - Is it single-threaded? Request only one core.
-   - Does it use MPI? Request multiple nodes.
-   - Be sure to check all of the flags, configuration, and options for the software, or these changes may not work.
+    - Can it use a GPU? Request one.
+    - Can it use multiple cores? Request more than one core.
+    - Is it single-threaded? Request only one core.
+    - Does it use MPI? Request multiple nodes.
+    - Be sure to check all of the flags, configuration, and options for the software, or these changes may not work.
 
 6. Which partition is most appropriate?
 
-   - More than 40 GB memory and queue wait times are long? Try `largemem*`.
-   - Need a GPU? Use `pascalnodes*`.
-   - Software works with AMD? Try `amd-hdr100`.
+    - More than 40 GB memory and queue wait times are long? Try `largemem*`.
+    - Need a GPU? Use `pascalnodes*`.
+    - Software works with AMD? Try `amd-hdr100`.
 
 !!! note
 
