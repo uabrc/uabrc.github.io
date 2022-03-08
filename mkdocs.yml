@@ -48,7 +48,7 @@ nav:
           - data_management/transfer/globus.md
           - data_management/transfer/filezilla.md
   - Cheaha User Guide:
-    - 'cheaha/introduction.md'
+    - Getting Started: 'cheaha/getting_started.md'
     - Hardware: 'cheaha/hardware.md'
     - Open OnDemand:
       - 'cheaha/open_ondemand/ood_main.md'
@@ -65,5 +65,6 @@ nav:
   - UAB Cloud:
     - Introduction: 'uab_cloud/introduction.md'
     - 'uab_cloud/network_setup_basic.md'
+    - 'uab_cloud/security_setup_basic.md'
     - 'uab_cloud/instance_setup_basic.md'
     - 'uab_cloud/volume_setup_basic.md'

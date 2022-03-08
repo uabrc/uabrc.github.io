@@ -1,7 +1,6 @@
 # Basic Network Setup
 
-Networking setup should be a one-time setup. Security Groups can and
-should be added as needed. While Floating IPs fall under the Networking
+Networking setup should be a one-time setup. While Floating IPs fall under the Networking
 fold-out, they should be allocated and released together with instances
 to maximize security.
 
@@ -156,46 +155,32 @@ To follow these directions for creating a router, a [Network](#creating-a-networ
 
     ![!my_router overview page. The Instances tab is selected. The table has one entry with a random UUID string as name. ><](./images/routers_007.png)
 
-## Creating a Security Group
+## Creating a Floating IP
 
-These instructions show you how to prepare to use SSH with your instances. Security Groups are used to set rules for how external devices can connect to our instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. The method used can be applied to other types of Security Groups as well.
+Floating IPs are required if you want an instance to talk to devices on the internet. These IPs are a shared resource, so they must be allocated when needed and released when no longer needed.
 
-1. Click "Networks" in the left-hand navigation pane to open the fold-out menu.
+1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page. Security Groups is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
+    ![!OpenStack Overview page with Networks selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
 
-2. Click "Security Groups" in the fold out menu.
+2. Click "Floating IPs".
 
-    ![!OpenStack Security Groups page. The Security Groups table has one entry, the default, persistent entry labeled default. ><](./images/security_groups_001.png)
+    ![!OpenStack Floating IPs page. The Floating IPs table is empty. ><](./images/floating_ips_001.png)
 
-3. Click "+ Create Security Group" to open a dialog box.
+3. Click "Allocate IP to Project" to open a dialog box.
 
 4. Fill out the dialog box.
 
-    1. Under "Name" enter `ssh`.
-    2. Leave "Description" empty.
+    1. Select "uab-campus" in the "Pool" drop down box.
+    2. Enter a "Description".
+    3. Leave "DNS Domain" empty.
+    4. Leave "DNS Name" empty.
 
-    ![!Create Security Group dialog. The dialog has been filled out with the name set as ssh. ><](./images/security_groups_002.png)
+    ![!Allocate Floating IP dialog. The dialog form is empty. ><](./images/floating_ips_002.png)
 
-5. Click "Create Security Group".
+5. Click "Allocate IP".
 
-    1. Redirects to the "Manage Security Group Rules: ssh" page.
-    2. There should be an entry for "Egress IPv4" and "Egress IPv6". Leave these alone.
-
-    ![!Manage Security Group Rules for ssh. The Table has two entries, both Egress direction. One is for IPv4 and the other for IPv6. Both have no IP restrictions. ><](./images/security_groups_003.png)
-
-6. Click "+ Add Rule" to open a dialog box.
-
-    1. Select "SSH" in the "Rule" drop down box. This will change the remaining fields.
-    2. Leave "Description" empty.
-    3. Select "CIDR" in the "Remote" drop down box.
-    4. Type `0.0.0.0/0` in the "CIDR" box. **WARNING!** This is **NOT** good practice! For your research instances, you'll want to constrain the CIDR value further to a narrower range of IP addresses. The rule we have shown here leaves the SSH port open to all IP addresses world-wide.
-
-    ![!Add Rule dialog box. The dialog box is filled out. The rule is set to SSH. ><](./images/security_groups_004.png)
-
-7. Click "Add".
-
-    1. Redirects to the "Manage Security Group Rules: ssh" page.
+    1. Redirects to the "Floating IPs" page.
     2. There should be a new entry in the table.
 
-    ![!Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs. ><](./images/security_groups_005.png)
+    ![!Floating IPs page. The table has one entry. ><](./images/floating_ips_003.png)
