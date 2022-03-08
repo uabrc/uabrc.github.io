@@ -18,12 +18,15 @@ The full table can be downloaded [here](res/partition.csv).
 
 The current HPC cluster is comprised of 8192 compute cores connected by low-latency Fourteen Data Rate (FDR) and Enhanced Data Rate (EDR) InfiniBand networks. In addition to the basic compute cores, there are also 72 NVIDIA Tesla P100 GPUs available. There is a total of just under 49 TB of memory across the cluster. A description of the different available hardware generations are summarized in the following table. For much more detailed information see [Hardware Details](#hardware-details).
 
-A description of the different hardware generations are summarized in the following table:
-
 {{ read_csv('cheaha/res/hardware_short_df.csv', keep_default_na=False) }}
+
+The full table can be downloaded [here](res/hardware_short_df.csv).
 
 ## TFLOPS
 
 The table below is a theoretical analysis based on processor instructions and core counts, and is not a reflection of efficiency in practice.
 
 {{ read_csv('cheaha/res/tflops_df.csv', keep_default_na=False) }}
+
+The full table can be downloaded [here](res/tflops_df.csv).
+
