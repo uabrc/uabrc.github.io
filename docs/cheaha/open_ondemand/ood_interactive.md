@@ -26,7 +26,9 @@ There will be basic information about the number of cores and nodes as well as t
 !!! note
 
     For HPC Desktop, you do not need to request resources after you open the Desktop. You are already on a compute node. Any tasks you run will use the resources you requested when initializing the job.
+<!-- markdownlint-disable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
     You can request another interactive session in a terminal in HPC Desktop. Only the terminal you requested the other interactive session in will have access to the new resources. Everything else in the HPC Desktop will run with the resources you requested when creating the initial job.
@@ -59,7 +61,9 @@ In addition, if you are using the CUDA cores for GPU-enabled machine learning, y
 !!! tip
 
     You do not need `module load Anaconda3` in the `Environment Setup` field, it is loaded automatically.
+<!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
 !!! warning
 
     Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure.
@@ -85,7 +89,9 @@ From here, you can navigate to and select an existing notebook, or you can creat
 !!! note
 
     The `ipykernel` package must be installed in your preferred environment for it to appear in the `Change kernel` menu.
+<!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
 !!! tip
 
     Anaconda environments used with Open OnDemand Jupyter do not need the `jupyter` package installed. The server software is already taken care of.
@@ -109,7 +115,9 @@ To create a new environment, click the `+` button at the top of the `Current env
 !!! note
 
     If a package is not available using the `conda` command directly, it will not be listed as an available package. Use a terminal window to install the package as necessary.
+<!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
     In order to use an environment with Jupyter, the `ipykernel` library is necessary. Creating an environment in the Conda tab will autoinstall this library. If using the terminal, use `conda install ipykernel` to install it.

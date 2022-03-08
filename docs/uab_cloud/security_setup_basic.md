@@ -93,19 +93,18 @@ Good practice is to only use one key pair per person and per local machine. So i
 
         ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent. ><](./images/key_pairs_005.png)
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     It is alternately possible to use a custom key pair created on your local machine. We assume you know how to create a key pair on your local machine and have already done so. To upload a key pair, replace steps 3 and 4 above with the following, perform step 5 from above, and skip step 6.
 
     3\. Click "Import Public Key" to open a dialog box.
 
     4\. Fill out the dialog box.
 
-        1. Enter a "Key Pair Name".
-        2. Select "SSH Key" in the "Key Type" drop-down box.
-        3. Click "Browse..." to upload a public key file from your custom
-            key pair **OR** copy-paste the content of that key file into the
-            "Public Key" box.
+    - Enter a "Key Pair Name".
+    - Select "SSH Key" in the "Key Type" drop-down box.
+    - Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
 
-            ![!Import Public Key dialog. The dialog form is empty. ><](./images/key_pairs_alt_002.png)
+    ![!Import Public Key dialog. The dialog form is empty. ><](./images/key_pairs_alt_002.png)
+<!-- markdownlint-disable MD046 -->
