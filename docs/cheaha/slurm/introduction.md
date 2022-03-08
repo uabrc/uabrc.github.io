@@ -6,7 +6,7 @@ Slurm is software that gives users fair allocation of the cluster's resources. I
 
 The main Slurm documentation can be found at [the Slurm site](https://slurm.schedmd.com/). The [Slurm Quickstart](https://slurm.schedmd.com/quickstart.html) can also be helpful for orienting users new to queueing systems on the cluster.
 
-The basic workflow for non-interactive jobs follows:
+## Batch Job Workflow
 
 1. Stage data to `$USER_DATA`, `$USER_SCRATCH`, or a project directory.
 2. Research how to run your directives in 'batch' mode. In other words, how to run your analysis pipeline from the command line, with no GUIs or user input.
