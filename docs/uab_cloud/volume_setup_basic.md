@@ -8,6 +8,8 @@ These instructions are intended for users who want to setup a persistent volume 
 
     ![!OpenStack Overview page. The Volumes fold-out is opened. The Volumes link in the fold-out is highlighted.](./images/volumes_000.png)
 
+    
+
 2. Click "Volumes" within the fold-out to open the "Volumes" table page.
 
     ![!Volumes page. The Volumes table is empty.](./images/volumes_001.png)
@@ -26,6 +28,8 @@ These instructions are intended for users who want to setup a persistent volume 
 
     ![!Create Volume dialog. The dialog is filled out. The volume name is set to my_volume.](./images/volumes_002.png)
 
+    
+
 5. Click "Create Volume"
 
     1. Returns to the "Volumes" table page.
@@ -43,11 +47,15 @@ To attach a volume you must have already created at least one using the OpenStac
 
     ![!OpenStack Instances Page. The table has one entry labeled my_instance. The drop-down box under the Actions column is open revealing many options. The Attach Volume option is highlighted.](./images/instances_018.png)
 
+    
+
 3. A dialog box will open.
 
 4. Select a volume in the "Volume ID" drop down box.
 
     ![!Attach Volume dialog box. The Volume ID is set to my_volume.](./images/instances_019.png)
+
+    
 
 5. Click "Attach Volume".
 
@@ -62,6 +70,8 @@ To format a volume, you must have created a volume and attached it to an instanc
 2. Scroll down to "Volumes Attached" and make note of the `<mount>` part of `<volume-name> on <mount>` for your attached volume as it will be used in later steps.
 
     ![!my_instance overview page. The page has been scrolled to the bottom. The mouse is pointing to a label under the Volumes Attached heading. The mouse is pointing to the Attached To label reading my_volume on /dev/vdb.](./images/persistent_volumes_000.png)
+
+    
 
 3. SSH into the instance from your local machine or from Cheaha.
 
@@ -99,7 +109,7 @@ To format a volume, you must have created a volume and attached it to an instanc
     Superblock backups stored on blocks:
           32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 654208,
           4096000, 7962624, 11239424, 20480000, 23887872
-
+    
     Allocating group tables: done
     Writing inode tables: done
     Creating journal (131072 blocks): done
