@@ -30,3 +30,10 @@ The table below is a theoretical analysis based on processor instructions and co
 
 The full table can be downloaded [here](res/tflops_df.csv).
 
+## Hardware Details
+
+Detailed hardware information including processor and GPU makes and models, core clock frequencies, and other information for current and deprecated hardware. See the "Retired" column to determine if hardware is current.
+
+{{ read_csv('cheaha/res/hardware_detailed.csv', keep_default_na=False) }}
+
+The full table can be downloaded [here](res/hardware_detailed.csv).
