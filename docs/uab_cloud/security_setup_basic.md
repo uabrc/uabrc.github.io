@@ -102,11 +102,9 @@ Good practice is to only use one key pair per person and per local machine. So i
 
     4\. Fill out the dialog box.
 
-        1. Enter a "Key Pair Name".
-        2. Select "SSH Key" in the "Key Type" drop-down box.
-        3. Click "Browse..." to upload a public key file from your custom
-            key pair **OR** copy-paste the content of that key file into the
-            "Public Key" box.
+    - Enter a "Key Pair Name".
+    - Select "SSH Key" in the "Key Type" drop-down box.
+    - Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
 
-            ![!Import Public Key dialog. The dialog form is empty. ><](./images/key_pairs_alt_002.png)
-<!-- markdownlint-enable MD046 -->
+    ![!Import Public Key dialog. The dialog form is empty. ><](./images/key_pairs_alt_002.png)
+<!-- markdownlint-disable MD046 -->
