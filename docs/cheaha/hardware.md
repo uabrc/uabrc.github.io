@@ -12,6 +12,8 @@ Notes:
 - Each user has a maximum amount of requestable resources across all jobs. Submitted jobs beyond this resource limit will be kept in the queue until a user's prior jobs have completed. This will appear as `QOSMaxResourceLimit` in your `squeue` list.
 - If a script finishes executing before the requested time limit, the job will automatically close and resources will be released. However requesting the max amount of time will cause scheduler priority to decrease.
 
+The full table can be downloaded [here](res/partition.csv).
+
 ## Node Summary
 
 The current HPC cluster is comprised of 8192 compute cores connected by low-latency Fourteen Data Rate (FDR) and Enhanced Data Rate (EDR) InfiniBand networks. In addition to the basic compute cores, there are also 72 NVIDIA Tesla P100 GPUs available.
