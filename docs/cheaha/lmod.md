@@ -20,10 +20,10 @@ If there is specific software you want to search for, you can use the `spider` s
 
 ``` bash
 # list modules containing string
-module spider \<string\>
+module spider <string>
 
 # list modules matching a regular expression
-module -r spider \<regex\>
+module -r spider <regex>
 ```
 
 ## Loading Modules
@@ -34,10 +34,11 @@ To load modules, run:
 module load module1 module2 ...
 ```
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     If you only specify a module name without an accompanying version tag, the most recently installed version will be loaded into the workspace. If your scripts depend on specific versions of software being used, explicitly load the module version you need.
+<!-- markdownlint-enable MD046 -->
 
 To unload packages, run:
 
