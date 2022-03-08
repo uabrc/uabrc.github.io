@@ -144,8 +144,22 @@ It is NOT RECOMMENDED to make Globus Connect Personal endpoints public as this i
     2. Select who to share with.
         1. User - One or more users.
         2. Group - All members of a group.
-        3. All Users - All globus users. **Warning! This exposes data publicly!**
-    3. Search for users to add, or a group, depending on your choice above. You should be able to find any globus user using the search box. **Warning! Be certain of which user you are selecting! Check the email domain!**
+        3. All Users - All globus users.
+
+            <!-- markdownlint-disable MD046 -->
+            !!! danger
+
+                This will expose information to everyone on Globus!
+            <!-- markdownlint-disable MD046 -->
+
+    3. Search for users to add, or a group, depending on your choice above. You should be able to find any globus user using the search box.
+
+        <!-- markdownlint-disable MD046 -->
+        !!! warning
+
+            Be certain of which user you are selecting! Check the email address domain.
+        <!-- markdownlint-disable MD046 -->
+
     4. If adding users, optionally enter a message so they know why they are being added.
     5. Select permissions. Read is automatically selected and cannot be changed. Write permissions are optional.
 

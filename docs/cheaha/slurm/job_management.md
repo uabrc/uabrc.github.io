@@ -40,7 +40,11 @@ scancel -p <partition>
 scancel -u $USER
 ```
 
-Keep in mind, cancelling all jobs will also cancel the interactive jobs created on the Open OnDemand portal.
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Cancelling all jobs will also cancel the interactive jobs created on the Open OnDemand portal.
+<!-- markdownlint-disable MD046 -->
 
 More information on options to cancel jobs can be seen using `man scancel`.
 
