@@ -34,7 +34,8 @@ To make the best use of formatting extensions for this project, please add the f
   },
   "markdownlint.config": {
     "MD046": { "style": "fenced" }
-  }
+  },
+  "markdown.extension.list.indentationSize": "inherit"
 ```
 
 Before you can get started working on contributions, you'll need a copy of the repository. The first step, done only once, is to fork the repository in GitHub to your personal account. The repository is located at <https://github.com/uabrc/uabrc.github.io>. More in-depth documentation on forking can be found at [GitHub: Fork a Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
@@ -80,6 +81,10 @@ We will also make an attempt to check your information for accuracy, as well as 
 ### File Organization
 
 To Be Determined
+
+### Formatting
+
+All markdown indentation must be four spaces.
 
 ### Linting Known Issues
 
