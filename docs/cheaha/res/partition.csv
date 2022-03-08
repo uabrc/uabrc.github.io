@@ -1,4 +1,4 @@
-Partition,Nodes,Nodes Per User,Time Limit,Priority Tier,Core Count Quota,Memory (GB) Quota
+Partition,Nodes,Nodes Per Researcher,Time Limit,Priority Tier,Core Count Quota,Memory (GB) Quota
 interactive,52,1, 2 hours,20,48,
 express,52,UNLIMITED, 2 hours,20,264,3072
 short,52,44,12 hours,16,264,3072

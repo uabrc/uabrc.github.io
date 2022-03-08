@@ -21,7 +21,7 @@ and array batch jobs.
 - Core: A single CPU
 - Partition: A job queue to submit your job to. Different partitions have different resource limits and priority.
 - Job: Any single or combination of commands that require computational resources to perform. Can be interactive or submitted to the scheduler.
-- Batch jobs: Scripts to submit to the SLURM scheduler. Should run with no user input or graphical user interface (GUI). Replicates commands in an order you would run them on the command line.
+- Batch jobs: Scripts to submit to the SLURM scheduler. Should run with no researcher input or graphical user interface (GUI). Replicates commands in an order you would run them on the command line.
 
 ## Basic Slurm Directives
 
@@ -93,7 +93,7 @@ sbatch $HOME/example.sh
 
 ## Array Jobs
 
-For some analyses, you will want to perform the same operations on different inputs. However, instead of creating individual scripts for each different input, you can create an array job instead. These array jobs duplicate the SBATCH parameters as well as the commands of the script and apply them to different inputs specified by the user.
+For some analyses, you will want to perform the same operations on different inputs. However, instead of creating individual scripts for each different input, you can create an array job instead. These array jobs duplicate the SBATCH parameters as well as the commands of the script and apply them to different inputs specified by the researcher.
 
 Array jobs can use a Slurm environmental variable, `$SLURM_ARRAY_TASK_ID`, as an index for inputs. For example, if we have a script that looks like:
 
@@ -139,7 +139,7 @@ Additionally, the `--array` directive can be included with the rest of the SBATC
 
 ## Interactive Jobs
 
-Batch jobs are meant to be submitted and not interacted with during execution. However, some jobs need user input during execution or need to use a GUI. Interactive jobs are meant to be used for these situations.
+Batch jobs are meant to be submitted and not interacted with during execution. However, some jobs need researcher input during execution or need to use a GUI. Interactive jobs are meant to be used for these situations.
 
 It is highly suggested to use the Cheaha `Open OnDemand` web portal for interactive jobs. Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha.
 
