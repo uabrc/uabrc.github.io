@@ -6,8 +6,8 @@ Instances are the basic unit of compute on OpenStack. Requesting an instance inv
 
 Creating an instance is possibly a step you'll perform often, depending on your workflow. There are many smaller steps to create an instance, so please take care to check all the fields when you create an instance.
 
-These instructions require that you've set up a [Network](network_setup_basic.md) and followed all of the instructions on the linked page. You should have a Network, Subnet, outer and SSH Security Group. You will also need to setup a
-[Key Pair](#creating-a-key-pair) and a [Floating IP](#creating-a-floating-ip).
+These instructions require that you've set up a [Network](network_setup_basic.md) and followed all of the instructions on the linked page. You should have a Network, Subnet, Router and Floating IP. You will also need to setup a
+[Key Pair](security_setup_basic.md#creating-a-key-pair) and an [SSH Security Group](security_setup_basic.md#creating-a-security-group).
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
