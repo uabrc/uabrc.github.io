@@ -2,7 +2,7 @@
 
 ## Partitions
 
-{{ read_csv('cheaha/slurm/partition.csv', keep_default_na=False) }}
+{{ read_csv('cheaha/res/partition.csv', keep_default_na=False) }}
 
 Notes:
 
