@@ -43,19 +43,34 @@ As shown earlier, some software can be run outside of the VNC session. Setup for
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Versions in OOD and versions seen when loading modules in a terminal may not match. If you need a specific version available in OOD, submit a support ticket at \<support@listserv.uab.edu\>
+    Versions shown in the OOD form may not line up with versions available in modules. If you need a version not available in OOD, please feel free to [send in a ticket](../../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
 
-## Jupyter
+### RStudio Server
 
-Jupyter notebooks are available for use in OOD, but some extra setup is
-required. The extra fields you need to fill out are seen below:
+RStudio is available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. You'll also need to select both the version of RStudio you wish to use, and the version of R you wish to use. The job creation form is shown below.
 
-![!Environment setup for Jupyter notebooks. ><](images/ood_jupyter.png)
+![!RStudio Server job request form. ><](images/ood_rstudio_server_form.png)
 
-At the bottom of the `Environment Setup` field, you will need to place a `module load` command to load the version of Anaconda your Jupyter job will be running. View the list of Anaconda modules installed on Cheaha in a terminal session using `module spider Anaconda`.
+To adjust the environment, please use the Environment Setup box to load modules or Anaconda environments. A common strategy when there is difficulty building R packages is to search for it on [Anaconda](../conda.md), create an Anaconda environment with that package already built, and load the environment in the Environment Setup box. An example is shown below.
 
-In addition, if you are using the CUDA cores for GPU-enabled machine learning, you will need to load the corresponding CUDA module here. Use `module spider cuda` to view the list of CUDA modules.
+![!RStudio Server job request form Environment Setup box. ><](images/ood_rstudio_server_env_setup_box.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    We have recently changed the way we deploy RStudio on OOD. There are now two versions available, and one is marked with the text `(deprecated)`. The version without the deprecation notice is the new deployment method and is preferred for use. It is more flexible and more robust, and will allow us to support you more quickly and easily. The version with the deprecation notice is the previous containerized version. Because it is deprecated, we will not provide additional support for that version. Please move your workflows to the newer version.
+<!-- markdownlint-disable MD046 -->
+
+### Jupyter Notebook
+
+Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
+
+![!Jupyter Notebook job request form. ><](images/ood_jupyter_notebook_form.png)
+
+To adjust the environment, please use the Environment Setup box to load modules. For GPU applications it is generally necessary to load one of our `cuda##.#/toolkit` modules, and possibly a `cuDNN` module. These are required for `tensorflow`, `keras` and `pytorch`. Use `module spider cuda` and `module spider cudnn` to view the list of appropriate modules. An example is shown below.
+
+![!Jupyter Notebook job request form Environment Setup box. ><](images/ood_jupyter_notebook_env_setup_box.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! tip
@@ -66,10 +81,12 @@ In addition, if you are using the CUDA cores for GPU-enabled machine learning, y
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure.
+   Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Please do not activate conda environments in the Environment Setup field.
 <!-- markdownlint-enable MD046 -->
 
-In the `Extra Jupyter Arguments` field, you will need to add a path to the directory with your jupyter notebooks. For instance, if your notebooks are stored in your user directory, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`.
+The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
+
+![!Jupyter Notebook job request form Extra jupyter arguments box. ><](images/ood_jupyter_notebook_extra_args_box.png)
 
 Submitting the job will bring you to the `My Interactive Jobs` window while the Jupyter job is initialized. Click `Connect to Jupyter` to open the Jupyter Home Page.
 
@@ -79,9 +96,11 @@ Submitting the job will bring you to the `My Interactive Jobs` window while the 
     If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
 <!-- markdownlint-enable MD046 -->
 
-The Jupyter Home Page will look like:
+#### The Jupyter Server Home Page
 
-![!Home page for jupyter notebooks. ><](images/ood_jupyter_home.png)
+The Jupyter Server Home Page will look like the following
+
+![!Home page for jupyter notebooks. ><](images/ood_jupyter_notebook_home.png)
 
 From here, you can navigate to and select an existing notebook, or you can create a new one using one of your existing virtual environments or the base environment. Once inside a Jupyter notebook, you can use the `Kernel --> Change kernel` menu to select your preferred Anaconda environment.
 
@@ -97,7 +116,7 @@ From here, you can navigate to and select an existing notebook, or you can creat
     Anaconda environments used with Open OnDemand Jupyter do not need the `jupyter` package installed. The server software is already taken care of.
 <!-- markdownlint-enable MD046 -->
 
-### Python Libraries and Virtual Environments
+#### Python Libraries and Virtual Environments
 
 To run Jupyter with specific libraries and packages outside of the base install, you will need to create a virtual environment first. You can do this either in an HPC Desktop job or in the `Conda` tab of the Jupyter homepage.
 
