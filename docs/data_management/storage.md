@@ -43,7 +43,7 @@ A user is limited to 5 TB of data across both their home directory (see above)an
     The home and user data directories are mirrored across storage locations to allow for emergency backup in case some of the drives fail. This is not meant to be a long-term backup solution as any data deleted by a user is deleted on the main drive and the mirrored drive.
 <!-- markdownlint-enable MD046 -->
 
-### Project Space
+### Project Directory
 
 Shared data can be stored in a `/data/project/<project_name>` directory. The default storage size for a new project is 50TB. If you need less than 5TB or your need for shared space is short term, please request a [Sloss space](#sloss) instead. Project storage can be helpful for teams of researchers who need access to the same data.
 
