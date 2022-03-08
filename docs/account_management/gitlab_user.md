@@ -9,15 +9,15 @@ Welcome to UAB GitLab! This is a UAB-specific [GitLab](https://about.gitlab.com/
 GitLab can be used:
 
 - For reproducibility
-  - Analysis and software code can be kept in one, central repository everyone can use instead of spread across multiple computers/places.
-  - Code can be versioned and tracked as it changes over time.
-  - Software versions can be recorded, virtual environments can be documented, and containers can be recorded to help future-proof analyses.
+    - Analysis and software code can be kept in one, central repository everyone can use instead of spread across multiple computers/places.
+    - Code can be versioned and tracked as it changes over time.
+    - Software versions can be recorded, virtual environments can be documented, and containers can be recorded to help future-proof analyses.
 - Collaboration
-  - GitLab is a central place to create code, edit, and track needed code changes (issues) with your lab and collaborators.
-  - Multiple people can use, modify, and merge changes in code while communicating with the broader team all along the way.
+    - GitLab is a central place to create code, edit, and track needed code changes (issues) with your lab and collaborators.
+    - Multiple people can use, modify, and merge changes in code while communicating with the broader team all along the way.
 - Security
-  - Unlimited private repositories for internal code projects.
-  - Set behind UAB authentication.
+    - Unlimited private repositories for internal code projects.
+    - Set behind UAB authentication.
 
 ### For Software Developers (and Researchers!)
 
@@ -29,13 +29,15 @@ Our GitLab instance may be found at <https://gitlab.rc.uab.edu>.
 
 ### UAB-Affiliated Researcher Registration
 
-If you are a UAB affiliated researcher and have a BlazerId, you may create an account by logging in at the site above using the `ldap` tab. Please use your single sign-on (SSO) credentials.
+If you are a UAB affiliated researcher and have a BlazerID, you may create an account by logging in at the site above using the `ldap` tab. Please use your single sign-on (SSO) credentials.
 
+<!-- markdownlint-disable MD046 -->
 !!! note "Please use BlazerID and password instead of UABMC credentials"
 
     Please use your BlazerID and BlazerID password for UAB GitLab. UABMC credentials are a different sign in system and will likely not work. Central IT groups like Research Computing do not have a way to access UABMC credentials.
+<!-- markdownlint-enable MD046 -->
 
-![!gitlab login pane with ldap tab selected](images/gitlab_user_ldap.png)
+![!gitlab login pane with ldap tab selected ><](images/gitlab_user_ldap.png)
 
 ## UABMC Researcher Registration
 
@@ -55,8 +57,10 @@ If you are a collaborator with a XIAS account you'll need to follow a different 
 8. Fill out the `Password` field with the GitLab password you created in Step #4.
 9. Click `Sign in`.
 
-![!gitlab login pane with standard tab selected](images/gitlab_user_standard.png)
+![!gitlab login pane with standard tab selected ><](images/gitlab_user_standard.png)
 
+<!-- markdownlint-disable MD046 -->
 !!! warning
 
     XIAS account researchers can only be granted access if their sponsor adds the GitLab URL to the list of approved URIs. Please see [XIAS Sites](xias_sites.md) for more information.
+<!-- markdownlint-enable MD046 -->
