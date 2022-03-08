@@ -14,7 +14,7 @@ squeue -u $USER
 
 The output of `squeue` will look like:
 
-![!Output from squeue.](images/squeue_output.png)
+![!Output from squeue. ><](images/squeue_output.png)
 
 By default the fields displayed are `jobid`, `partition`, `jobname` as `name`, blazerid as `user`, job state as `st`, total run time as `time`, number of nodes as `node`, and the list of nodes as `nodelist`, used for each job a researcher has submitted.
 
@@ -28,19 +28,23 @@ Cancelling queued and currently running jobs can be done using the `scancel` com
 
 ``` bash
 # cancel a single job or an entire job array
-scancel \<jobid\>
+scancel <jobid>
 
 # cancel specific job array IDs, specified as single number or a range
-scancel \<jobid_arrayid\>
+scancel <jobid_arrayid>
 
-# cancel all jobs on a partition for the researcher
-scancel -p \<partition\>
+# cancel all jobs on a partition for the user
+scancel -p <partition>
 
 # cancel all jobs for a researcher
 scancel -u $USER
 ```
 
-Keep in mind, cancelling all jobs will also cancel the interactive jobs created on the Open OnDemand portal.
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Cancelling all jobs will also cancel the interactive jobs created on the Open OnDemand portal.
+<!-- markdownlint-disable MD046 -->
 
 More information on options to cancel jobs can be seen using `man scancel`.
 
@@ -48,10 +52,11 @@ More information on options to cancel jobs can be seen using `man scancel`.
 
 If you are planning a new set of jobs and are estimating resource requests, it is useful to review similar jobs that have already completed. To list past jobs for a researcher, use the `sacct` command.
 
+<!-- markdownlint-disable MD046 -->
 !!! tip
 
-<!-- markdownlint-disable-next-line -->
     To minimize queue wait times and make best use of resources, please review job efficiency using `seff`. See our [Job Efficiency](../job_efficiency.md) page for more information.
+<!-- markdownlint-enable MD046 -->
 
 ### Review With Job ID
 
