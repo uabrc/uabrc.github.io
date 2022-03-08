@@ -6,7 +6,7 @@ Currently, the available standalone programs are IGV, Matlab, RStudio, SAS, and 
 
 All of the interactive apps have similar setup pages. For instance, if we click HPC Desktop, the following screen will appear:
 
-![!Setup for HPC Desktop session.](images/ood_interactive_hpc_vnc.png)
+![!Setup for HPC Desktop session. ><](images/ood_interactive_hpc_vnc.png)
 
 This will allow to choose the number of hours, partition, number of cpus, and memory per cpu needed for the job. These fields are common to all interactive apps and are required. Not all partitions are available when creating an interactive job in OOD. For instance, if you need to use the `largemem` partition, request those resources in a terminal session for an interactive job or submit a batch job.
 
@@ -14,11 +14,11 @@ This will allow to choose the number of hours, partition, number of cpus, and me
 !!! tip
 
     You can decrease wait time in the queue by choosing resources carefully. The closer your request is to actual usage, the more optimal your wait time will be. Please see our section on [Job Efficiency](../job_efficiency.md) for more information.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 Once you've selected the compute resources you need, Launch the job. This will bring you to the My Interactive Sessions page. This page looks like:
 
-![!List of interactive sessions.](images/ood_interactive_sessions.png)
+![!List of interactive sessions. ><](images/ood_interactive_sessions.png)
 
 There will be basic information about the number of cores and nodes as well as the job ID in the top part of the job card. The amount of time remaining in the job is included in the card as well as a quick link to the file browser in the `Session ID` field. Click `Launch Desktop in new tab` to open your interactive VNC session.
 
@@ -32,7 +32,7 @@ There will be basic information about the number of cores and nodes as well as t
 !!! note
 
     You can request another interactive session in a terminal in HPC Desktop. Only the terminal you requested the other interactive session in will have access to the new resources. Everything else in the HPC Desktop will run with the resources you requested when creating the initial job.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 These interactive jobs can be stopped early by clicking `Delete` on the right side of the job card.
 
@@ -44,14 +44,14 @@ As shown earlier, some software can be run outside of the VNC session. Setup for
 !!! note
 
     Versions in OOD and versions seen when loading modules in a terminal may not match. If you need a specific version available in OOD, submit a support ticket at \<support@listserv.uab.edu\>
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 ## Jupyter
 
 Jupyter notebooks are available for use in OOD, but some extra setup is
 required. The extra fields you need to fill out are seen below:
 
-![!Environment setup for Jupyter notebooks.](images/ood_jupyter.png)
+![!Environment setup for Jupyter notebooks. ><](images/ood_jupyter.png)
 
 At the bottom of the `Environment Setup` field, you will need to place a `module load` command to load the version of Anaconda your Jupyter job will be running. View the list of Anaconda modules installed on Cheaha in a terminal session using `module spider Anaconda`.
 
@@ -60,14 +60,14 @@ In addition, if you are using the CUDA cores for GPU-enabled machine learning, y
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-   You do not need `module load Anaconda3` in the `Environment Setup` field, it is loaded automatically.
-<!-- markdownlint-disable MD046 -->
+    You do not need `module load Anaconda3` in the `Environment Setup` field, it is loaded automatically.
+<!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-   Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure.
-<!-- markdownlint-disable MD046 -->
+    Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure.
+<!-- markdownlint-enable MD046 -->
 
 In the `Extra Jupyter Arguments` field, you will need to add a path to the directory with your jupyter notebooks. For instance, if your notebooks are stored in your user directory, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`.
 
@@ -77,25 +77,25 @@ Submitting the job will bring you to the `My Interactive Jobs` window while the 
 !!! note
 
     If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 The Jupyter Home Page will look like:
 
-![!Home page for jupyter notebooks.](images/ood_jupyter_home.png)
+![!Home page for jupyter notebooks. ><](images/ood_jupyter_home.png)
 
 From here, you can navigate to and select an existing notebook, or you can create a new one using one of your existing virtual environments or the base environment. Once inside a Jupyter notebook, you can use the `Kernel --> Change kernel` menu to select your preferred Anaconda environment.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-   The `ipykernel` package must be installed in your preferred environment for it to appear in the `Change kernel` menu.
-<!-- markdownlint-disable MD046 -->
+    The `ipykernel` package must be installed in your preferred environment for it to appear in the `Change kernel` menu.
+<!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-   Anaconda environments used with Open OnDemand Jupyter do not need the `jupyter` package installed. The server software is already taken care of.
-<!-- markdownlint-disable MD046 -->
+    Anaconda environments used with Open OnDemand Jupyter do not need the `jupyter` package installed. The server software is already taken care of.
+<!-- markdownlint-enable MD046 -->
 
 ### Python Libraries and Virtual Environments
 
@@ -103,7 +103,7 @@ To run Jupyter with specific libraries and packages outside of the base install,
 
 The `Conda` has the following layout:
 
-![!Creating and managing environments in Jupyter.](images/ood_jupyter_create_conda_env.png){: .center}
+![!Creating and managing environments in Jupyter. ><](images/ood_jupyter_create_conda_env.png)
 
 1. Current environments (red): a listing of the current existing environments in your `$HOME/.conda/envs` folder.
 2. Available packages (green): a list of all packages available to install from conda sources.
@@ -115,12 +115,12 @@ To create a new environment, click the `+` button at the top of the `Current env
 !!! note
 
     If a package is not available using the `conda` command directly, it will not be listed as an available package. Use a terminal window to install the package as necessary.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
     In order to use an environment with Jupyter, the `ipykernel` library is necessary. Creating an environment in the Conda tab will autoinstall this library. If using the terminal, use `conda install ipykernel` to install it.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 After successfully creating your environment, navigate to the Files tab. You can create a new notebook using the `New` dropdown menu in the top right. Select your virtual environment of choice, and a notebook will be created and opened.

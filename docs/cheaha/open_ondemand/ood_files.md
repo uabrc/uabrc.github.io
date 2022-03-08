@@ -2,7 +2,7 @@
 
 OOD provides an web-based file browser for your files on Cheaha. In order to access it, in the toolbar click `Files --> <dir>`, where `<dir>` is one of the choices of your `$HOME`, `$USER_SCRATCH`, or `$USER_DATA` directories. This will open up the following page:
 
-![!Basic file browser for OOD.](images/file_browser.png)
+![!Basic file browser for OOD. ><](images/file_browser.png)
 
 This page has a few parts to it:
 
@@ -15,7 +15,7 @@ This page has a few parts to it:
     !!! danger
 
         Be careful deleting files here. They will be gone forever!
-    <!-- markdownlint-disable MD046 -->
+    <!-- markdownlint-enable MD046 -->
 
 5. **User Commands (orange):** A list of commands for navigating in the file browser, file or folder creation, and opening a terminal.
 

@@ -37,7 +37,7 @@ A user is limited to 5 TB of data across both their home directory (see above)an
     The home and user data directories are mirrored across storage locations to allow for emergency backup in case some of the drives fail. This is not meant to be a long-term backup solution as any data deleted by a user is deleted on the main drive and the mirrored drive.
 
     The mirrored system technically allows for over 5 TB of data to be stored but data cannot be recovered in case of an emergency storage failure. For data safety, do not store over 5 TB of data across user data and home directories.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 ### Project Directory
 
@@ -61,7 +61,7 @@ Two types of scratch space are provided for analyses currently being ran, networ
 !!! note
 
     Scratch space (network and local) **is not backed up**.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 #### Network Scratch
 
@@ -73,7 +73,7 @@ Network scratch is available on the login node and each compute node. This stora
 !!! warning
 
     Research Computing expects each user to keep their scratch areas clean. **The cluster scratch areas are not to be used for archiving data.** In order to keep scratch clear and usable for everyone, files older than 28 days will be automatically deleted.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 #### Local Scratch
 

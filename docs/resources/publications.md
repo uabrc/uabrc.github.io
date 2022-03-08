@@ -16,7 +16,7 @@
 !!! note
 
     Under construction.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 ## Acknoweldgement in Publications
 

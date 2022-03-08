@@ -11,13 +11,13 @@ and array batch jobs.
 !!! tip
 
     Please see our page on [Job Efficiency](../job_efficiency.md) for more information on making the best use of cluster resources and minimizing queue wait times.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 ## Common Slurm Terminology
 
 - Node: A subdivision of the cluster that contains multiple cores.
-  - Login nodes: Controls user access to Cheaha. Low count and shared among all users. DO NOT RUN JOBS ON THE LOGIN NODE
-  - Compute nodes: Dedicated nodes for running user jobs.
+    - Login nodes: Controls user access to Cheaha. Low count and shared among all users. DO NOT RUN JOBS ON THE LOGIN NODE
+    - Compute nodes: Dedicated nodes for running user jobs.
 - Core: A single CPU
 - Partition: A job queue to submit your job to. Different partitions have different resource limits and priority.
 - Job: Any single or combination of commands that require computational resources to perform. Can be interactive or submitted to the scheduler.
@@ -69,10 +69,9 @@ Questions to ask yourself when requesting job resources:
 !!! note
 
     Reasonable overestimation of resources is better than underestimation. However, gross overestimation may cause admins to contact you about adjusting resources for future jobs.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 After a job is completed, look at how well resources were used using `seff`. For more information, read `job-efficiency`.
-
 
 ## Single Batch Job
 
@@ -130,7 +129,7 @@ sbatch --array=0-15 array.sh
 !!! note
 
     It is crucial to note that arrays use 0-based indexing. Array number 0 corresponds to the first job you're running. The `SLURM_ARRAY_TASK_ID` variable will also be 0 in this case.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 This will cause 16 jobs to be created with array IDs from 0 to 15. Each job will write out the line "My SLURM_ARRAY_TASK_ID: " followed by the ID number. Scripts can be written to take advantage of this indexing environmental variable. For example, a project could have a list of participants that should be processed in the same way, and the analysis script uses the array task ID as an index to say which participant is processed in each individual job. Bash, python, MATLAB, and most languages have specific ways of interacting with environmental variables.
 
@@ -164,4 +163,4 @@ Resources should be changed to fit the job's needs. An interactive job will then
 !!! warning
 
     If your terminal says `[blazerid@loginXXX ~]`, you are on the login node. NO COMPUTE JOBS SHOULD BE RUN ON THE LOGIN NODE. If jobs are being run on the login node, they will be deleted and the user will be warned. Multiple warnings will result in account suspension.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
