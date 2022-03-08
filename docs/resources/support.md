@@ -40,6 +40,12 @@ Projects are collaborative data and code storage spaces with controlled access. 
 1. What is the name of the project?
 2. How much additional or total space will be needed?
 
+### How do I request new software installed?
+
+Before making a request for new software on Cheaha, please try searching our [modules](../cheaha/lmod.md) or searching for packages on [Anaconda](../cheaha/conda.md).
+
+If you are not able to find a suitable module or package and would like a new piece of software installed on Cheaha, please [create a ticket](#how-do-i-create-a-support-ticket) with the name of the software, the version number, and a link to the installation instructions.
+
 ## Office Hours
 
 For our office hours links please see [Contact Us](../index.md#contact-us).
