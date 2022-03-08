@@ -20,6 +20,14 @@ Notes:
 
 The full table can be downloaded [here](res/partition.csv).
 
+## Quality of Service (QoS) Limits
+
+Quality of Service (QoS) allows us to balance usage across the cluster, so that no single researcher can consume all of the resources. Each set of QoS limits is applied to one or more partitions according to the table below. Each limit is applied to every researcher on Cheaha. The partitions within a group all share the same limits, so that a researcher can use 1.5 TB on both `express` and `short`, but can't use 2 TB on both at the same time.
+
+{{ read_csv('cheaha/res/qos.csv', keep_default_na=False) }}
+
+The full table can be downloaded [here](res/qos.csv).
+
 ## Node Summary
 
 The current HPC cluster is comprised of 8192 compute cores connected by low-latency Fourteen Data Rate (FDR) and Enhanced Data Rate (EDR) InfiniBand networks. In addition to the basic compute cores, there are also 72 NVIDIA Tesla P100 GPUs available. There is a total of just under 49 TB of memory across the cluster. A description of the different available hardware generations are summarized in the following table. For much more detailed information see [Hardware Details](#hardware-details).
