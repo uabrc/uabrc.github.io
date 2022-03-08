@@ -100,9 +100,11 @@ python \<script.py\>
 
 Any optional inputs the script has can be listed after the name of the script.
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-   When Anaconda3 is loaded in your environment, the `python` and `python3` commands both refer to Python version 3.X.X (whatever minor version is loaded). However, when Anaconda3 is not loaded, `python` will refer to the base Python 2.7.5 instead. Be sure to load Anaconda3 before running `python`, or always use `python3` for disambiguation.
+    When Anaconda3 is loaded in your environment, the `python` and `python3` commands both refer to Python version 3.X.X (whatever minor version is loaded). However, when Anaconda3 is not loaded, `python` will refer to the base Python 2.7.5 instead. Be sure to load Anaconda3 before running `python`, or always use `python3` for disambiguation.
+<!-- markdownlint-enable MD046 -->
 
 ### Deactivating an Environment
 
@@ -126,8 +128,8 @@ To easily share environments with other researchers or replicate it on a new mac
 
 ``` bash
 # activate the environment if it is not active already
-conda activate \<env\>
+conda activate <env>
 
 # export the environment to a YAML file
-conda env export \> env.yml
+conda env export > env.yml
 ```

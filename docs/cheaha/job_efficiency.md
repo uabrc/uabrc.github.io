@@ -53,10 +53,11 @@ Questions to ask yourself before requesting resources:
     - Need a GPU? Use `pascalnodes*`.
     - Software works with AMD? Try `amd-hdr100`.
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     Reasonable overestimation of resources is better than underestimation. However, gross overestimation may cause admins to contact you about adjusting resources for future jobs. We are happy to help guide you to an efficient usage of the cluster.
+<!-- markdownlint-enable MD046 -->
 
 Use `seff` to verify that your code is as efficient as possible.
 
@@ -72,11 +73,12 @@ seff <jobid>
 
 The output will look like:
 
-![!SLURM Job Efficiency](images/seff_output.png)
+![!SLURM Job Efficiency ><](images/seff_output.png)
 
 The job had poor CPU efficiency, requesting 2 CPUs which were only busy for 30% of runtime. Requesting only a single core may have made more sense here. The job also had poor memory efficiency, using less than 1 GB total memory of the requested 16 GB (5.73%). For subsequent jobs using a similar analysis and dataset size, decreasing the requested memory to about 1200 MB and a single CPU would be more efficient, and get the job queued faster.
 
+<!-- markdownlint-disable MD046 -->
 !!! tip
 
-<!-- markdownlint-disable-next-line -->
     Aim for between 75% and 90% memory efficiency. Lower than that is a waste of resources, but too close to 100% could result in job failure due to an unexpected out-of-memory issue.
+<!-- markdownlint-enable MD046 -->

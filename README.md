@@ -115,7 +115,29 @@ We encourage denoting the warning being silenced here by filling out the `<lint 
 
 We allow and encourage the use of [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types) in our documentation, where appropriate. Because these are created using a plugin and are "non-standard" `markdown`, the VSCode `markdownlint` extension does not recognize admonitions and may produce a false positive warning about inconsistent code block styles.
 
-Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. This is enforced by adding an entry to the [VSCode `settings.json` file](#vscode-settingsjson-additions). Now all admonitions will be consistently assigned the warning `MD046`, which can be disabled by [silencing linter warning for a single line](#silence-linter-warning-for-a-single-line).
+Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. This is enforced by adding an entry to the [VSCode `settings.json` file](#vscode-settingsjson-additions). Now all admonitions will be consistently assigned the warning `MD046`, which can be disabled by placing all admonitions in between the following lines.
+
+```markdown
+<!-- markdownlint-disable MD046 -->
+
+<!-- markdownlint-enable MD046 -->
+```
+
+The process can be simplified in VSCode using snippets. Bring up the command palette and type `snippets` and open `Preferences: Configure User Snippets`. Then type `markdown` and open it. A `json` file will be opened. Add the following content between the outermost braces and then save the file.
+
+```json
+  "Disable Markdown Lint MD046 for a Block": {
+    "prefix": "md046 disable",
+    "body": [
+      "<!-- markdownlint-disable MD046 -->",
+      "$TM_SELECTED_TEXT",
+      "<!-- markdownlint-disable MD046 -->"
+    ],
+    "description": "Disables warning Markdown Lint MD046 for the selected block."
+  }
+```
+
+The snippet will surround selected text with the appropriate linter disable fencing for MD046. To use the snippet, opne the IntelliSense lens using `ctrl + space` (or `cmd + space`), then type `md046` until the `prefix` shows up as the first entry in the list. Then press `tab`.
 
 The workaround is needed because `markdownlint` has no plans to add support for admonitions. There is no `markdownlint` plugin for that support either, and we don't have the ability to develop such a plugin.
 
