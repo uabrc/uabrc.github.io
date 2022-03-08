@@ -4,7 +4,7 @@
 !!! warning
 
     The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](/docs/index.md#contact-us).
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 ## Privacy
 
@@ -37,12 +37,11 @@ Each user has another directory found at `/data/user/$USER` (or `$USER_DATA`) th
 
 A user is limited to 5 TB of data across both their home directory (see above)and their user data directory.
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     The home and user data directories are mirrored across storage locations to allow for emergency backup in case some of the drives fail. This is not meant to be a long-term backup solution as any data deleted by a user is deleted on the main drive and the mirrored drive.
-
-    The mirrored system technically allows for over 5 TB of data to be stored but data cannot be recovered in case of an emergency storage failure. For data safety, do not store over 5 TB of data across user data and home directories.
+<!-- markdownlint-enable MD046 -->
 
 ### Project Space
 
@@ -62,10 +61,11 @@ A special location under `/data/project/sloss` to store projects that are at mos
 
 Two types of scratch space are provided for analyses currently being ran, network-mounted and local. These are spaces shared across users (though one user still cannot access another user's files without permission) and as such, data should be moved out of scratch when the analysis is finished.
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     Scratch space (network and local) **is not backed up**.
+<!-- markdownlint-enable MD046 -->
 
 #### Network Scratch
 
@@ -73,10 +73,11 @@ All users have access to a large, temporary, work-in-progress directory for stor
 
 Network scratch is available on the login node and each compute node. This storage is a GPFS high performance file system providing roughly 1 PB of network scratch storage. If using scratch, this should be your jobs' primary working directory, unless the job would benefit from local scratch (see below).
 
+<!-- markdownlint-disable MD046 -->
 !!! warning
 
-<!-- markdownlint-disable-next-line -->
     Research Computing expects each user to keep their scratch areas clean. **The cluster scratch areas are not to be used for archiving data.** In order to keep scratch clear and usable for everyone, files older than 28 days will be automatically deleted.
+<!-- markdownlint-enable MD046 -->
 
 #### Local Scratch
 
