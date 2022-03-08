@@ -18,6 +18,10 @@ XIAS Project/Sites, or simply sites, tie external users to specific resources at
     4. **End date** - An expiration date for the project or site.
     5. **URIs** - One or more uniform resource locators (URIs) associated with the site, to increase accountability.
 
+        1. Cheaha URI: `https://rc.uab.edu`
+        2. Cloud URI: `https://cloud.rc.uab.edu`
+        3. GitLab URI: `https://gitlab.rc.uab.edu`
+
     ![!Filled UAB XIAS Project/Site creation form.](images/xias_sites_add_002.png)
 
 4. Click "Add" to submit the form. You should be taken to a page summarizing the created Project/Site.
