@@ -1,4 +1,10 @@
-# Detailed Hardware Information
+# Hardware Information
+
+<!-- markdownlint-disable MD046 -->
+!!! tip
+
+    The tables in this section are wide and can be scrolled horizontally to display more information.
+<!-- markdownlint-enable MD046 -->
 
 ## Partitions
 
