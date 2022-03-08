@@ -9,7 +9,7 @@ researcher or instructor at UAB.
 
 ## Contact Us
 
-To create a support ticket please reach out to us via email at support@listserv.uab.edu.
+To create a support ticket please reach out to us via email at <support@listserv.uab.edu>.
 
 You can also visit us in our Zoom office hours held weekly:
 

@@ -36,19 +36,19 @@ nav:
       - welcome/welcome.md
       - welcome/rc_days.md
   - Account Management:
-      - account_management/uab_user.md
+      - account_management/uab_researcher.md
       - External Collaborators (XIAS):
           - account_management/xias_users.md
           - account_management/xias_sites.md
           - account_management/xias_guest.md
-      - account_management/gitlab_user.md
+      - account_management/gitlab_researcher.md
   - Data Management:
       - data_management/storage.md
       - File Transfer:
           - data_management/transfer/globus.md
           - data_management/transfer/filezilla.md
   - Cheaha User Guide:
-    - 'cheaha/introduction.md'
+    - Getting Started: 'cheaha/getting_started.md'
     - Hardware: 'cheaha/hardware.md'
     - Open OnDemand:
       - 'cheaha/open_ondemand/ood_main.md'

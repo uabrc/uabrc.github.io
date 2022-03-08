@@ -6,8 +6,8 @@ Instances are the basic unit of compute on OpenStack. Requesting an instance inv
 
 Creating an instance is possibly a step you'll perform often, depending on your workflow. There are many smaller steps to create an instance, so please take care to check all the fields when you create an instance.
 
-These instructions require that you've set up a [Network](network_setup_basic.md) and followed all of the instructions on the linked page. You should have a Network, Subnet, outer and SSH Security Group. You will also need to setup a
-[Key Pair](#creating-a-key-pair) and a [Floating IP](#creating-a-floating-ip).
+These instructions require that you've set up a [Network](network_setup_basic.md) and followed all of the instructions on the linked page. You should have a Network, Subnet, Router and Floating IP. You will also need to setup a
+[Key Pair](security_setup_basic.md#creating-a-key-pair) and an [SSH Security Group](security_setup_basic.md#creating-a-security-group).
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
@@ -49,7 +49,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
         ![!Launch Instance dialog. The Source tab is selected. An Ubuntu 20.04 image has been moved up from the available images list to the allocated images list. ><](./images/instances_004.png)
 
-    6. Click "Next \>" to move to the "Flavor" tab.
+    6. Click "Next >" to move to the "Flavor" tab.
 
 7. "Flavor" tab. Flavors determine what hardware will be available to your instance, including cpus, memory and gpus.
 
@@ -60,7 +60,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
         ![!Launch Instance dialog. The Flavor tab is selected. ><](./images/instances_005.png)
 
-    2. Click "Next \>" to move to the "Networks" tab.
+    2. Click "Next >" to move to the "Networks" tab.
 
 8. "Networks" tab. Networks determine how your instance will talk to the internet and other instances. See [Network](network_setup_basic.md) for more information.
 
@@ -72,7 +72,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
         ![!Launch Instance dialog. The Networks tab is selected. ><](./images/instances_006.png)
 
-    2. Click "Next \>" to move to the "Network Ports" tab.
+    2. Click "Next >" to move to the "Network Ports" tab.
 
 9. "Network Ports" tab. *Coming Soon!*
 
@@ -80,7 +80,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
         ![!Launch Instance dialog. The Network Ports tab is selected. The dialog form has been left empty. ><](./images/instances_007.png)
 
-    2. Click "Next \>" to move to the "Security Groups" tab.
+    2. Click "Next >" to move to the "Security Groups" tab.
 
 10. "Security Groups tab. Security Groups allow for fine-grained control
     over external access to your instance. For more information see
@@ -94,7 +94,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
         ![!Launch Instance dialog. The Security Groups tab is selected. The ssh security group has been moved up from the available list to the allocated list. ><](./images/instances_008.png)
 
-    3. Click "Next \>" to move to the "Key Pair" tab.
+    3. Click "Next >" to move to the "Key Pair" tab.
 
 11. "Key Pair" tab. Key Pairs allow individual access rights to the
     instance via SSH. For more information see `Creating a Key Pair`.
@@ -114,22 +114,22 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
         ![!Launch Instance dialog. The Key Pair tab is selected. The Key Pair my_key_pair has been moved up from the available list to the allocated list. ><](./images/instances_009.png)
 
-    2. Click "Next \>" to move to the "Configuration" tab.
+    2. Click "Next >" to move to the "Configuration" tab.
 
 12. "Configuration" tab. *Coming Soon!*
 
     1. Skip this tab.
-    2. Click "Next \>" to move to the "Server Groups" tab.
+    2. Click "Next >" to move to the "Server Groups" tab.
 
 13. "Server Groups" tab. *Coming Soon!*
 
     1. Skip this tab.
-    2. Click "Next \>" to move to the "Scheduler Hints" tab.
+    2. Click "Next >" to move to the "Scheduler Hints" tab.
 
 14. "Scheduler Hints" tab. *Coming Soon!*
 
     1. Skip this tab.
-    2. Click "Next \>" to move to the "Metadata" tab.
+    2. Click "Next >" to move to the "Metadata" tab.
 
 15. "Metadata" tab. *Coming Soon!*
 
@@ -177,18 +177,20 @@ ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
 
 ![!MINGW64 terminal on Windows. The ssh command has been used to login to the Floating IP Address using the -i command with the locally stored private key my_key_pair.pem. Login was successful. A banner page has been shown and a terminal prompt is waiting for input. ><](./images/instances_020.png)
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     Reusing a floating IP for a new instance can result in a "host key changed" error. To resolve this issue, please use the command below with the hostname given by the error, which should be the affected floating IP.
+<!-- markdownlint-enable MD046 -->
 
-    ```
-    ssh-keygen -R <hostname>
-    ```
+``` bash
+ssh-keygen -R <hostname>
+```
 
-    ![image showing host key changed error at terminal](images/instances_ssh_host_key_error.png)
+![! image showing host key changed error at terminal ><](images/instances_ssh_host_key_error.png)
 
+<!-- markdownlint-disable MD046 -->
 !!! danger
 
-<!-- markdownlint-disable-next-line -->
     Using the above command is potentially dangerous when connecting to machines or instances controlled by other people. Be absolutely certain you trust the source of the key change before using the command above.
+<!-- markdownlint-enable MD046 -->

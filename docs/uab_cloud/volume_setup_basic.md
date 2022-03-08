@@ -1,14 +1,12 @@
 # Basic Volume Setup
 
-These instructions are intended for users who want to setup a persistent volume for use across instances. To follow these instructions you'll need to have already setup an [Instance](instance_setup_basic.md).
+These instructions are intended for researchers who want to setup a persistent volume for use across instances. To follow these instructions you'll need to have already setup an [Instance](instance_setup_basic.md).
 
 ## Creating a Volume
 
 1. Click the "Volumes" fold-out in the left-hand navigation pane - the fold-out should open.
 
     ![!OpenStack Overview page. The Volumes fold-out is opened. The Volumes link in the fold-out is highlighted. ><](./images/volumes_000.png)
-
-    
 
 2. Click "Volumes" within the fold-out to open the "Volumes" table page.
 
@@ -28,8 +26,6 @@ These instructions are intended for users who want to setup a persistent volume 
 
     ![!Create Volume dialog. The dialog is filled out. The volume name is set to my_volume. ><](./images/volumes_002.png)
 
-    
-
 5. Click "Create Volume"
 
     1. Returns to the "Volumes" table page.
@@ -47,15 +43,11 @@ To attach a volume you must have already created at least one using the OpenStac
 
     ![!OpenStack Instances Page. The table has one entry labeled my_instance. The drop-down box under the Actions column is open revealing many options. The Attach Volume option is highlighted. ><](./images/instances_018.png)
 
-    
-
 3. A dialog box will open.
 
 4. Select a volume in the "Volume ID" drop down box.
 
     ![!Attach Volume dialog box. The Volume ID is set to my_volume. ><](./images/instances_019.png)
-
-    
 
 5. Click "Attach Volume".
 

@@ -10,8 +10,6 @@ to maximize security.
 
     ![!OpenStack Overview page. Networks is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
 
-    
-
 2. Click "Networks" in the fold-out menu.
 
     1. The "Networks" page will open.
@@ -31,11 +29,9 @@ to maximize security.
     3. Uncheck "Create Subnet". We will do this as a separate step. The other tabs should be removed.
     
     4. Leave the "Availability Zone Hints" box empty.
-    
+   
         ![!Create Network dialog. The dialog form is empty except Network Name has been set to my_network. ><](./images/networks_003.png)
-        
-        
-    
+
 5. Click "Create".
 
     1. Redirects to the "Networks" page.
@@ -61,8 +57,6 @@ to maximize security.
     3. At least one other entry must be in the table. See `Creating a Network`.
 
         ![!OpenStack Networks page. There are two entries in the table. One is the default, persistent uab-campus network. The other is my_network. ><](./images/networks_004.png)
-        
-        
 
 3. Under the "Actions" column, select the drop-down triangle button in the row corresponding to the network you want to add a subnet to.
 
@@ -87,12 +81,10 @@ to maximize security.
         6. Click the "Next \>\>" button to move to the "Subnet Details" tab.
 
             ![!Create Subnet dialog box. The Subnet tab is selected. The form has not been filled out beyond default values. The Subnet Name has been set to my_subnet. ><](./images/subnet_003.png)
-            
-            
 
+        <!-- markdownlint-disable MD046 -->
         !!! note
 
-        <!-- markdownlint-disable-next-line -->
             If you receive an error like
 
             ```
@@ -101,6 +93,7 @@ to maximize security.
             ```
             
             Try changing the gateway IP address to `192.168.0.1` and trying again.
+        <!-- markdownlint-disable MD046 -->
 
     2. The "Subnet Details" tab.
 
@@ -131,7 +124,7 @@ To follow these directions for creating a router, a [Network](#creating-a-networ
 
 2. Click "Routers" in the fold-out menu.
 
-    ![!OpenStack Router page. The Routers table is empty. ><](./images/routers_001.png)
+    ![!OpenStack Router page. The Routers table is empty.><](./images/routers_001.png)
 
 3. Click "+ Create Router" to open a dialog box.
 
