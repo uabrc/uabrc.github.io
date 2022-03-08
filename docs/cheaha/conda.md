@@ -6,6 +6,12 @@ Python is a high level programming language that is widely used in many branches
 module spider Anaconda
 ```
 
+<!-- markdownlint-disable MD046 -->
+!!! danger
+
+   Do not use `conda init` on Cheaha! Anaconda is managed as a [module](/docs/cheaha/lmod.md), including script setup. Using `conda init` can cause hard-to-diagnose issues with [Open OnDemand Interactive Jobs](/docs/cheaha/open_ondemand/ood_interactive.md). Please see our [FAQ](../help/faq.md#why-do-i-get-an-error-when-i-try-to-launch-an-hpc-interactive-session) for how to undo what `conda init` does.
+<!-- markdownlint-disable MD046 -->
+
 ## Loading Anaconda
 
 When planning a project, you should have an idea of which python version you need to use. Python 3 is the current standard and is used by the Anaconda3 modules. After loading one of the modules, use `python --version` to check the version number.
@@ -133,3 +139,5 @@ conda activate <env>
 # export the environment to a YAML file
 conda env export > env.yml
 ```
+
+### More Information
