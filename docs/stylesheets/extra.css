@@ -15,7 +15,7 @@ html .md-footer-meta.md-typeset a.supportemail {
 }
   
 
-.lightgallery > img[alt$="<"] {
+.lightgallery > a > img[alt$="<"] {
   display:flex;
   justify-content:left;
 }
