@@ -17,10 +17,12 @@ img {
 
 img[alt$=">"] {
     float: right;
+    clear: both;
   }
   
 img[alt$="<"] {
     float: left;
+    clear:both;
   }
   
 img[alt$="><"] {
@@ -29,4 +31,5 @@ img[alt$="><"] {
     height: auto;
     margin: auto;
     float: none!important;
+    clear:both;
   }
