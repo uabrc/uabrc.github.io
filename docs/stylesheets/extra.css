@@ -9,9 +9,8 @@
 html .md-footer-meta.md-typeset a.supportemail {
   color: #aaaaff;
 }
-
-.lightbox {
-  diplay:flex;
+.lightgallery {
+  display:flex;
   align:center;
 }
   
