@@ -9,6 +9,7 @@
 html .md-footer-meta.md-typeset a.supportemail {
   color: #aaaaff;
 }
+
 .lightgallery {
   display:flex;
   justify-content:center;
@@ -21,11 +22,17 @@ img {
 }
 
 img[alt$=">"] {
-    justify-content: right;
+    float: right;
   }
   
+img[alt$="<"] {
+    float: left;
+  }
   
 img[alt$="><"] {
+    display: block;
     max-width: 100%;
-    justify-content:center;
+    height: auto;
+    margin: auto;
+    float: none!important;
   }
