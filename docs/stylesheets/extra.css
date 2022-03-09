@@ -10,23 +10,23 @@ html .md-footer-meta.md-typeset a.supportemail {
   color: #aaaaff;
 }
 
-.lightgallery {
-  display:flex;
-}
-
 img {
   border-radius: 0.25rem;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
-  
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%); 
 }
 
 img[alt$=">"] {
-  justify-content:right;
-}
+    float: right;
+  }
   
 img[alt$="<"] {
-  justify-content:left;}
+    float: left;
+  }
   
 img[alt$="><"] {
-  justify-content:center
-}
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    float: none!important;
+  }
