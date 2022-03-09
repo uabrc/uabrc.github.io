@@ -11,7 +11,7 @@ html .md-footer-meta.md-typeset a.supportemail {
 }
 .lightgallery {
   display:flex;
-  align:center;
+  align-content:center;
 }
   
 img {
@@ -21,11 +21,11 @@ img {
 }
 
 img[alt$=">"] {
-    align: right;
+    align-content: right;
   }
   
 img[alt$="<"] {
-    align: left;
+    align-content: left;
   }
   
 img[alt$="><"] {
