@@ -15,7 +15,7 @@ To verify your installation is complete, please visit <https://app.globus.org> a
 
 2. Click File Manager in the left-hand navigation pane.
 
-    ![!Navigation pane with File Manager selected. <](./images/globus_002_nav_pane_file_manager.png)
+    ![!Navigation pane with File Manager selected. ><](./images/globus_002_nav_pane_file_manager.png)
 
 3. Ensure the center icon for the "Panels" selection is picked.
 
