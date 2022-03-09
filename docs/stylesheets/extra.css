@@ -12,7 +12,6 @@ html .md-footer-meta.md-typeset a.supportemail {
 
 .lightgallery {
   display:flex;
-  justify-content:center;
 }
 
 img {
@@ -22,17 +21,12 @@ img {
 }
 
 img[alt$=">"] {
-    float: right;
-  }
+  justify-content:right;
+}
   
 img[alt$="<"] {
-    float: left;
-  }
+  justify-content:left;}
   
 img[alt$="><"] {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: auto;
-    float: none!important;
-  }
+  justify-content:center
+}
