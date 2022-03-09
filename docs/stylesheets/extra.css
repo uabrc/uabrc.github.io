@@ -30,9 +30,6 @@ img[alt$=">"] {
     justify-content: right;
   }
   
-img[alt$="<"] {
-    justify-content: left;
-  }
   
 img[alt$="><"] {
     max-width: 100%;
