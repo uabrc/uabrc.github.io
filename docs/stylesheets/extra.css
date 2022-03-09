@@ -10,24 +10,26 @@ html .md-footer-meta.md-typeset a.supportemail {
   color: #aaaaff;
 }
 
+.lightbox {
+  diplay:flex;
+  align:center;
+}
+  
 img {
   border-radius: 0.25rem;
   border: 0.1rem solid #e5e7eb;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+  
 }
 
 img[alt$=">"] {
-    float: right;
+    align: right;
   }
   
 img[alt$="<"] {
-    float: left;
+    align: left;
   }
   
 img[alt$="><"] {
-    display: block;
     max-width: 100%;
-    height: auto;
-    margin: auto;
-    float: none!important;
   }
