@@ -77,3 +77,13 @@ If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login a
 ![!File browser bar with Show Dotfiles checked.](images/faq_odd_show_dotfiles.png)
 
 If you are using the terminal, you'll need to use `cd` to navigate to the appropriate directory and enter use `ls` with the `-a` flag to list all files and directories, including hidden ones.
+
+### What is a segfault error?
+
+A segfault, or segmentation fault, often causes unexpected termination of software. These errors are caused by software attempting to access memory that it isn't allowed to access. An error typically includes a long string of hexadecimal characters like `0x000055ea4064c135`, but with different values, and one or more of `segmentation fault`, `segfault` and/or `SIGSEGV`.
+
+These issues are most commonly caused by programming errors, but can be related to out-of-memory errors. If you encounter a segmentation fault, first try increasing the memory requested for the job. It may help to learn more about [SLURM](/docs/cheaha/slurm/introduction.md) and [job efficiency](/docs/cheaha/job_efficiency.md).
+
+### What is a bus error?
+
+A bus error is almost always related to a process requesting more memory than is available. In other words, the job ran out of memory. The simplest solution is to increase the requested memory for the job. It may help to learn more about [SLURM](/docs/cheaha/slurm/introduction.md) and [job efficiency](/docs/cheaha/job_efficiency.md).
