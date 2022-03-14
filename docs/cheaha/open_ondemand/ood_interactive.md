@@ -128,7 +128,7 @@ To run Jupyter with specific libraries and packages outside of the base install,
 
 The `Conda` has the following layout:
 
-![!Creating and managing environments in Jupyter. ><](images/ood_jupyter_create_conda_env.png)
+![!Creating and managing environments in Jupyter. ><](images/ood_jupyter_notebook_create_conda_env.png)
 
 1. Current environments (red): a listing of the current existing environments in your `$HOME/.conda/envs` folder.
 2. Available packages (green): a list of all packages available to install from conda sources.

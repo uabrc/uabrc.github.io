@@ -131,7 +131,7 @@ The process can be simplified in VSCode using snippets. Bring up the command pal
     "body": [
       "<!-- markdownlint-disable MD046 -->",
       "$TM_SELECTED_TEXT",
-      "<!-- markdownlint-disable MD046 -->"
+      "<!-- markdownlint-enable MD046 -->"
     ],
     "description": "Disables warning Markdown Lint MD046 for the selected block."
   }
