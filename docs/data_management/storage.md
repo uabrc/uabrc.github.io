@@ -1,5 +1,11 @@
 # Storage
 
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](/docs/index.md#contact-us).
+<!-- markdownlint-enable MD046 -->
+
 ## Privacy
 
 **Do not store sensitive information on this filesystem. It is not encrypted.** Note that your data will be stored on the cluster filesystem, and while not accessible to ordinary users, it could be accessible to the cluster administrator(s).
@@ -31,35 +37,35 @@ Each user has another directory found at `/data/user/$USER` (or `$USER_DATA`) th
 
 A user is limited to 5 TB of data across both their home directory (see above)and their user data directory.
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     The home and user data directories are mirrored across storage locations to allow for emergency backup in case some of the drives fail. This is not meant to be a long-term backup solution as any data deleted by a user is deleted on the main drive and the mirrored drive.
-
-    The mirrored system technically allows for over 5 TB of data to be stored but data cannot be recovered in case of an emergency storage failure. For data safety, do not store over 5 TB of data across user data and home directories.
+<!-- markdownlint-enable MD046 -->
 
 ### Project Directory
 
-Shared data can be stored in a `/data/project/<project_name>` directory. The default storage size for a new project is 50TB. As with user scratch, this area **is not backed up**!
+Shared data can be stored in a `/data/project/<project_name>` directory. The default storage size for a new project is 50TB. If you need less than 5TB or your need for shared space is short term, please request a [Sloss space](#sloss) instead. Project storage can be helpful for teams of researchers who need access to the same data.
 
-This is helpful if a team of researchers must access the same data. A PI can open a help desk ticket to request a project directory under `/data/project`.
+All project spaces must be owned by a principal investigator (PI) who is an employee of UAB with a legitimate research interest. The PI takes responsibility for data in the space, as well as access control of all files and directories under the parent directory. As with all data on Cheaha, backups and archival services are not provided, and are the responsibility of the respective data owners.
 
-In order to add or remove a user's access to a project directory, the PI who requested the project space must create a support ticket.
+The PI and all members with access to the project directory can read, write/delete, and list files within the top-level directory, and all other subdirectories by default. Other people on the system have no ability to access the project space. Access control for directories and files within the project space can be implemented via access control lists. Please see the bash commands [setfacl](https://linux.die.net/man/1/setfacl) and [getfacl](https://linux.die.net/man/1/getfacl)) for more information. Access control within the project directory are the responsibility of the project owner. However, we respect that access control lists can be tricky, so please feel free to [contact us](/docs/index.md#contact-us) for assistance.
 
-The PI and all members of the dedicated collaboration group have can read, write/delete, and list files. No privileges are granted to other users of the system. Additional controls can be implemented via access control lists (see the bash commands [setfacl](https://linux.die.net/man/1/setfacl) and [getfacl](https://linux.die.net/man/1/getfacl)). The PI/requestor can modify the ACLs to allow additional access to specific users.
+To create a project directory, or change access to or ownership of a project directory, the PI should follow the instructions at [How Do I Request Or Change A Project Space?](/docs/help/support.md#how-do-i-request-or-change-a-project-space)
 
 #### Sloss
 
-A special location under `/data/project/sloss` to store projects that are, at most, a few TB large for access across multiple researchers. Essentially a foundry for project spaces that start small but may grow and graduate into a full-fledged project space.
+A special location under `/data/project/sloss` to store projects that are at most 5 TB. In keeping with the name [Sloss](https://www.slossfurnaces.com/), these spaces are intended as a foundry for experimental or temporary project spaces that have potential to grow. Otherwise, they are treated like any other project space.
 
 ### Scratch
 
 Two types of scratch space are provided for analyses currently being ran, network-mounted and local. These are spaces shared across users (though one user still cannot access another user's files without permission) and as such, data should be moved out of scratch when the analysis is finished.
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     Scratch space (network and local) **is not backed up**.
+<!-- markdownlint-enable MD046 -->
 
 #### Network Scratch
 
@@ -67,10 +73,11 @@ All users have access to a large, temporary, work-in-progress directory for stor
 
 Network scratch is available on the login node and each compute node. This storage is a GPFS high performance file system providing roughly 1 PB of network scratch storage. If using scratch, this should be your jobs' primary working directory, unless the job would benefit from local scratch (see below).
 
+<!-- markdownlint-disable MD046 -->
 !!! warning
 
-<!-- markdownlint-disable-next-line -->
     Research Computing expects each user to keep their scratch areas clean. **The cluster scratch areas are not to be used for archiving data.** In order to keep scratch clear and usable for everyone, files older than 28 days will be automatically deleted.
+<!-- markdownlint-enable MD046 -->
 
 #### Local Scratch
 
