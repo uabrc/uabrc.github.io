@@ -72,6 +72,8 @@ See [here](#why-do-i-get-a-gray-screen-for-a-long-time-after-launching-my-ood-rs
 
 ### How do I locate hidden dot files on Cheaha?
 
+Dot files are files or directories that start with the character `.` as in the file `.bashrc` or the `.conda` directory.
+
 If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [OOD Files](/docs/cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
 
 ![!File browser bar with Show Dotfiles checked.](images/faq_odd_show_dotfiles.png)
