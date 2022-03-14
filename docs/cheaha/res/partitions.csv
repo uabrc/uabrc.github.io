@@ -1,0 +1,12 @@
+Partition,Nodes,Nodes Per Researcher,Time Limit,Priority Tier
+interactive,52,1, 2 hours,20
+express,52,UNLIMITED, 2 hours,20
+short,52,44,12 hours,16
+pascalnodes,18,UNLIMITED,12 hours,16
+pascalnodes-medium,7,UNLIMITED,"2 days,  0 hours",15
+medium,52,44,"2 days,  2 hours",12
+long,52,5,"6 days,  6 hours",8
+intel-dcb,21,5,"6 days,  6 hours",8
+amd-hdr100,33,5,"6 days,  6 hours",8
+largemem,14,10,"2 days,  2 hours",6
+largemem-long,5,10,"6 days,  6 hours",6

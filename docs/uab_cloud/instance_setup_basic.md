@@ -35,7 +35,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
     1. Select "Image" in the "Select Boot Source" drop down box.
     2. Select "Yes" under "Create New Volume".
-    3. Choose an appropriate "Volume Size" in `GiB`. Note that for many single-use instances, `20 GiB` is more than enough. If you need more because you have persistent data, please create a `persistent volume<volume_setup_basic>`.
+    3. Choose an appropriate "Volume Size" in `GB`. Note that for many single-use instances, `20 GB` is more than enough. If you need more because you have persistent data, please create a `persistent volume<volume_setup_basic>`.
     4. Select "Yes" or "No" under "Delete Volume on Instance Delete"
         1. "Yes" is a good choice if the OS volume will be reused.
         2. "No" is a good choice if you don't care about reusing the OS.
