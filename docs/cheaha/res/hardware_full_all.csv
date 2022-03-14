@@ -1,0 +1,20 @@
+Generation,Compute Type,Partition,Total Cores,Total Memory Gb,Total Gpus,Cores Per Node,Cores Per Die,Dies Per Node,Die Brand,Die Name,Die Frequency Ghz,Memory Per Node Gb,Gpu Per Node,Gpu Brand,Gpu Name,Gpu Memory Gb,Nodes
+1,cpu,,128,1024,,2,1,2,AMD,Opteron 242,1.6,16,,,,,64
+2,cpu,,192,1152,,8,4,2,Intel,Xeon E5450,3.0,48,,,,,24
+3,cpu,,384,1536,,12,6,2,Intel,Xeon X5650,2.66,48,,,,,32
+3,cpu,,192,1536,,12,6,2,Intel,Xeon X5650,2.66,96,,,,,16
+4,cpu,,48,1152,,16,8,2,Intel,Xeon X5650,2.7,384,,,,,3
+5,cpu,,192,1152,,16,8,2,Intel,Xeon E2650,2.0,96,,,,,12
+6,cpu,cpu,336,5376,,24,12,2,Intel,Xeon E5-2680 v3,2.5,384,,,,,14
+6,cpu,cpu,912,9728,,24,12,2,Intel,Xeon E5-2680 v3,2.5,256,,,,,38
+6,cpu,cpu,1056,5632,,24,12,2,Intel,Xeon E5-2680 v3,2.5,128,,,,,44
+7,gpu,pascalnodes,504,4608,72,28,14,2,Intel,Xeon E5-2680 v4,2.4,256,4,NVIDIA,Tesla P100,16,18
+8,cpu,cpu,504,4032,,24,12,2,Intel,Xeon E5-2680 v4,2.5,192,,,,,21
+8,high memory,largemem,240,7680,,24,12,2,Intel,Xeon E5-2680 v4,2.5,768,,,,,10
+8,high memory,largemem,96,6144,,24,12,2,Intel,Xeon E5-2680 v4,2.5,1536,,,,,4
+9,cpu,cpu,2496,9984,,48,24,2,Intel,Xeon Gold 6248R,3.0,192,,,,,52
+10,cpu,cpu,4352,17408,,128,64,2,AMD,Epyc 7713 Milan,2.0,512,,,,,34
+1,cpu,,240,960,,48,12,4,Intel,Xeon Gold 6248R,3.0,192,,,,,5
+1,gpu,,512,4096,32,128,64,2,AMD,Epyc 7742 Rome,2.25,1024,8,NVIDIA,A100,40,4
+1,cpu,,144,576,,48,12,4,Intel,Xeon Gold 6248R,3.0,192,,,,,3
+1,gpu,,512,4096,32,128,64,2,AMD,Epyc 7742 Rome,2.25,1024,8,NVIDIA,A100,40,4
