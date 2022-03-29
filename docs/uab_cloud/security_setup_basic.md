@@ -101,6 +101,18 @@ Using a password protected Key Pair is highly recommended for additional securit
 
         ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent. ><](./images/key_pairs_005.png)
 
+<!-- markdownlint-disable MD046 -->
+!!! bug
+
+    For Linux users and [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) on Windows users. If you experience a `Warning: Unprotected Private Key File` error when using `ssh-add`, your `ssh` file and directory permissions may be incorrect. To fix, please use the following commands.
+
+    ```
+    sudo chmod 600 ~/.ssh/<private_key_file>
+    sudo chmod 644 ~/.ssh/known_hosts
+    sudo chmod 755 ~/.ssh
+    ```
+<!-- markdownlint-enable MD046 -->
+
 ### Generating a Key Pair Locally
 
 It is alternately possible to use a custom key pair created on your local machine. The details of creating a key pair are beyond the scope of this documentation. Some options are available for instructions:
