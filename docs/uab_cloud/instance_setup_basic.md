@@ -164,15 +164,10 @@ campus or on the UAB VPN.
 
 ## SSH Into the Instance
 
-If you are following the steps from top to bottom, then at this stage
-you should be able to SSH into your instance from on campus or on the
-UAB VPN. To do so be sure your local machine has ssh and then use the
-following command If you are using a different operating system, such as
-CentOS, replace the user `ubuntu` with `centos` or whatever is
-appropriate.
+If you are following the steps from top to bottom, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. To do so be sure your local machine has ssh and then use the following command If you are using a different operating system, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip), and the value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
 
 ``` bash
-ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
+ssh ubuntu@<floating ip> -i ~/.ssh/<private_key_file>
 ```
 
 ![!MINGW64 terminal on Windows. The ssh command has been used to login to the Floating IP Address using the -i command with the locally stored private key my_key_pair.pem. Login was successful. A banner page has been shown and a terminal prompt is waiting for input. ><](./images/instances_020.png)
