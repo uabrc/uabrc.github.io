@@ -126,3 +126,18 @@ To upload a key pair, perform steps 1 and 2 in [Generating a Key Pair on cloud.r
     Do not upload your private key file! The private key file must stay secret to ensure proper security, and it should never leave the computer it was generated on.
 <!-- markdownlint-enable MD046 -->
 
+### Revoking a Key Pair
+
+Revoking a key pair from cloud.rc is simple. First, log on to the interface.
+
+1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
+
+    ![!OpenStack Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
+
+2. Click "Key Pairs".
+
+    ![!Key Pairs page. The Key Pairs table has one entry. ><](./images/key_pairs_004.png)
+
+3. Find the key pair you wish to revoke and click the "Delete Key Pair" button in that row.
+
+4. Optionally, delete the relevant private key file on your local machine. This step is not necessary, but can help maintain a clean environment.
