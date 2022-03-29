@@ -84,7 +84,7 @@ To Be Determined
 
 ### Formatting
 
-All markdown indentation must be four spaces.
+- All internal links must be relative. For example, use `./file.md` not `/docs/file.md`.
 
 ### Linting Known Issues
 
@@ -150,3 +150,11 @@ Color vision deficiency checker: <https://www.toptal.com/designers/colorfilter/>
 - Brand main page: <https://www.uab.edu/toolkit/branding>
 - Brand colors: <https://www.uab.edu/toolkit/brand-basics/colors>
 - Copyright guidance: <https://www.uab.edu/toolkit/trademarks-licensing/uab-trademarks>
+
+## Developer Notes
+
+### Useful Regex
+
+#### Checking Internal Links are Relative
+
+There is no way to fix this automatically, so we rely on checking and reporting. A useful regex is is `\[.+\]\(/[a-zA-Z]+\)`. It searches for square brackets with text inside, followed by parentheses with text inside. The text inside the parentheses must start with a slash followed by letters. Another useful regex is similar `\[.+\]\([a-zA-Z]+(?!https)\)`. It searches for the same as before, but instead of a slash followed by letters, it starts with any letters except the string `https`, since https links are external.
