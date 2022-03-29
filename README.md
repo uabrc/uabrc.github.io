@@ -84,7 +84,7 @@ To Be Determined
 
 ### Formatting
 
-All markdown indentation must be four spaces.
+- All markdown indentation must be four spaces per indentation level.
 
 ### Linting Known Issues
 
@@ -150,3 +150,11 @@ Color vision deficiency checker: <https://www.toptal.com/designers/colorfilter/>
 - Brand main page: <https://www.uab.edu/toolkit/branding>
 - Brand colors: <https://www.uab.edu/toolkit/brand-basics/colors>
 - Copyright guidance: <https://www.uab.edu/toolkit/trademarks-licensing/uab-trademarks>
+
+## Developer Notes
+
+### Useful Regex
+
+#### Checking Indentation
+
+Currently Prettier bulleted list indenting is wonky for markdown. In addition to indenting list markers, it pads out spaces after the marker. Please see [this issue](https://github.com/prettier/prettier/issues/5019) for more details. As a result, we can't automatically format markdown documents, so we need to rely on spotting incorrect indents. Use the following regex `^[ ]{1,3}[^ ]`. It will search for one to three spaces followed by a not-space character.
