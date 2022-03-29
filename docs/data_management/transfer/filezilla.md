@@ -25,7 +25,7 @@ You can easily connect to a remote site using the QuickConnect bar near the top 
 
 Click `Quickconnect` and you will be connected to the remote storage system. The window should now look like:
 
-![!Remote connection showing on the right side of the FileZilla window.](images/filezilla_connected.png)
+![!Remote connection showing on the right side of the FileZilla window.](./images/filezilla_connected.png)
 
 When connecting in the future, you will be able to select the connection from the dropdown arrow next to the Quickconnect button.
 

@@ -16,8 +16,8 @@ If possible, you can move ahead in the queue by canceling and resubmitting your 
 
 Double check our resource limits for various situations:
 
-- Requesting many jobs at once? Our [Partitions](/docs/cheaha/hardware.md#partitions) table lists global quotas for each partition. When these limits are reached, no more jobs will be started until some resources are freed from other jobs.
-- Requesting jobs on a single node? Our [Node Summary](/docs/cheaha/hardware.md#node-summary) table lists resource limits for each partition. These are physical limits of available hardware, and can't be exceeded.
+- Requesting many jobs at once? Our [Partitions](../cheaha/hardware.md#partitions) table lists global quotas for each partition. When these limits are reached, no more jobs will be started until some resources are freed from other jobs.
+- Requesting jobs on a single node? Our [Node Summary](../cheaha/hardware.md#node-summary) table lists resource limits for each partition. These are physical limits of available hardware, and can't be exceeded.
 
 #### There is a system outage
 
@@ -31,7 +31,7 @@ Double check our resource limits for various situations:
 
 If you are seeing an error like the following when launching an HPC Interactive job, please read on for the most likely solution.
 
-![!HPC Interactive error dialog.](images/faq_ood_hpc_interactive_conda_init_error.png)
+![!HPC Interactive error dialog.](./images/faq_ood_hpc_interactive_conda_init_error.png)
 
 The most common cause is that the command `conda init` was used, creating a block in your `.bashrc` file that looks like the following section. [Anaconda](../cheaha/conda.md) is managed as a [module](../cheaha/lmod.md), so it is not necessary to use `conda init`. To avoid the issue reoccurring, please do not use `conda init`.
 
@@ -54,13 +54,13 @@ unset __conda_setup
 
 To resolve this issue, you'll need to [locate the hidden file](#how-do-i-locate-hidden-dot-files-on-cheaha) `.bashrc` in the file browser pane and select it.
 
-![!Home files list with Show Dotfiles check and .bashrc highlighted.](images/faq_ood_file_browser_bashrc.png)
+![!Home files list with Show Dotfiles check and .bashrc highlighted.](./images/faq_ood_file_browser_bashrc.png)
 
 Click the "Edit" button. In the new tab that opens, delete the section shown above and click "Save".
 
-![!Edit tab with highlighted section.](images/faq_ood_editor_conda_init.png)
+![!Edit tab with highlighted section.](./images/faq_ood_editor_conda_init.png)
 
-Please try to launch your job again. If it still doesn't work, please [contact us](/docs/index.md#contact-us)
+Please try to launch your job again. If it still doesn't work, please [contact us](../index.md#contact-us)
 
 ### Why do I get a gray screen for a long time after launching my OOD RStudio Server session?
 
@@ -74,9 +74,9 @@ See [here](#why-do-i-get-a-gray-screen-for-a-long-time-after-launching-my-ood-rs
 
 Dot files are files or directories that start with the character `.` as in the file `.bashrc` or the `.conda` directory.
 
-If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [OOD Files](/docs/cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
+If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [OOD Files](../cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
 
-![!File browser bar with Show Dotfiles checked.](images/faq_odd_show_dotfiles.png)
+![!File browser bar with Show Dotfiles checked.](./images/faq_odd_show_dotfiles.png)
 
 If you are using the terminal, you'll need to use `cd` to navigate to the appropriate directory and enter use `ls` with the `-a` flag to list all files and directories, including hidden ones.
 
@@ -84,8 +84,8 @@ If you are using the terminal, you'll need to use `cd` to navigate to the approp
 
 A segfault, or segmentation fault, often causes unexpected termination of software. These errors are caused by software attempting to access memory that it isn't allowed to access. An error typically includes a long string of hexadecimal characters like `0x000055ea4064c135`, but with different values, and one or more of `segmentation fault`, `segfault` and/or `SIGSEGV`.
 
-These issues are most commonly caused by programming errors, but can be related to out-of-memory errors. If you encounter a segmentation fault, first try increasing the memory requested for the job. It may help to learn more about [SLURM](/docs/cheaha/slurm/introduction.md) and [job efficiency](/docs/cheaha/job_efficiency.md).
+These issues are most commonly caused by programming errors, but can be related to out-of-memory errors. If you encounter a segmentation fault, first try increasing the memory requested for the job. It may help to learn more about [SLURM](../cheaha/slurm/introduction.md) and [job efficiency](../cheaha/job_efficiency.md).
 
 ### What is a bus error?
 
-A bus error is almost always related to a process requesting more memory than is available. In other words, the job ran out of memory. The simplest solution is to increase the requested memory for the job. It may help to learn more about [SLURM](/docs/cheaha/slurm/introduction.md) and [job efficiency](/docs/cheaha/job_efficiency.md).
+A bus error is almost always related to a process requesting more memory than is available. In other words, the job ran out of memory. The simplest solution is to increase the requested memory for the job. It may help to learn more about [SLURM](../cheaha/slurm/introduction.md) and [job efficiency](../cheaha/job_efficiency.md).
