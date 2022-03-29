@@ -82,14 +82,13 @@ Using a password protected Key Pair is highly recommended for additional securit
 
 5. Click "+ Create Key Pair"
 
-    1. Opens a download file dialog box in your browser to download a `pem` file containing the secret private key.
-    2. Download the `pem` file. For security reasons this will be your only chance to ever obtain the private key from OpenStack.
-    3. Failing to download the `pem` file now means a new key pair will need to be created.
+    1. Opens a download file dialog box in your browser to download a file containing the secret private key. The file may have extension `.pem` or `.crt` depending on your operating system.
+    2. Download the private key file. For security reasons this will be your only chance to ever obtain the private key from cloud.rc. If you lose this file you will have to generate a new Key Pair.
 
         ![!Download File dialog on Firefox for Windows. The file being downloaded is my_key_pair.pem. ><](./images/key_pairs_003.png)
 
-    4. Redirects to the "Key Pairs" page.
-    5. There should be a new entry in the table.
+    3. Redirects to the "Key Pairs" page.
+    4. There should be a new entry in the table.
 
         ![!Key Pairs page. The Key Pairs table has one entry labeled my_key_pair. ><](./images/key_pairs_004.png)
 
