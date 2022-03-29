@@ -61,6 +61,8 @@ Good practice is to only use one key pair per person and per local machine. So i
 
 Using a password protected Key Pair is highly recommended for additional security, as it buys time to revoke a key if it is compromised by an attacker. Currently, this is only possible by uploading a custom public key generated on your local machine.
 
+### Generating a Key Pair on cloud.rc
+
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
     ![!OpenStack Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
