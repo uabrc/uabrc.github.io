@@ -87,10 +87,8 @@ These instructions require that you've set up a [Network](network_setup_basic.md
     [Creating a Security Group](network_setup_basic.md#creating-a-security-group) for more
     information.
 
-    1. Pick the "ssh" Security Group from the "Available" section by
-        pressing the up arrow next to it.
-    2. The "default" Security Group should already be in the
-        "Allocated" section.
+    1. Pick the "ssh" Security Group from the "Available" section by pressing the up arrow next to it.
+    2. The "default" Security Group should already be in the "Allocated" section.
 
         ![!Launch Instance dialog. The Security Groups tab is selected. The ssh security group has been moved up from the available list to the allocated list. ><](./images/instances_008.png)
 
@@ -101,16 +99,10 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
     1. Pick one or more key pairs from the list under the "Available"
         section.
-        1. A Key Pair may already be picked in the "Allocated" section.
-            If this is not the correct "Key Pair", use the down arrow
-            next to it to remove it form the "Allocated" section. If the
-            Key Pair is correct, skip (ii.) through (iv.).
-        2. Use the search box to help find the Key Pair that best suits
-            your needs.
-        3. When you find the best Key Pair(s), click the button with an
-            up arrow next to the Key Pair(s).
-        4. The Key Pair(s) will move to the "Allocated" section above
-            the "Available" section.
+        1. A Key Pair may already be picked in the "Allocated" section. If this is not the correct "Key Pair", use the down arrow next to it to remove it form the "Allocated" section. If the Key Pair is correct, skip (ii.) through (iv.).
+        2. Use the search box to help find the Key Pair that best suits your needs.
+        3. When you find the best Key Pair(s), click the button with an up arrow next to the Key Pair(s).
+        4. The Key Pair(s) will move to the "Allocated" section above the "Available" section.
 
         ![!Launch Instance dialog. The Key Pair tab is selected. The Key Pair my_key_pair has been moved up from the available list to the allocated list. ><](./images/instances_009.png)
 
@@ -164,12 +156,7 @@ campus or on the UAB VPN.
 
 ## SSH Into the Instance
 
-If you are following the steps from top to bottom, then at this stage
-you should be able to SSH into your instance from on campus or on the
-UAB VPN. To do so be sure your local machine has ssh and then use the
-following command If you are using a different operating system, such as
-CentOS, replace the user `ubuntu` with `centos` or whatever is
-appropriate.
+If you are following the steps from top to bottom, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. To do so be sure your local machine has ssh and then use the following command If you are using a different operating system, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip), and the value `<keypair_name>` should be whatever your keypair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
 
 ``` bash
 ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
@@ -180,17 +167,17 @@ ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Reusing a floating IP for a new instance can result in a "host key changed" error. To resolve this issue, please use the command below with the hostname given by the error, which should be the affected floating IP.
+    Reusing a floating IP for a new instance can result in a "host key changed" error. To resolve this issue, please use the command below with the value `<hostname>` replaced by the value given in error. When dealing with cloud.rc, this value should be the affected floating IP.
+
+    ``` bash
+    ssh-keygen -R <hostname>
+    ```
+
+    ![! image showing host key changed error at terminal ><](./images/instances_ssh_host_key_error.png)
 <!-- markdownlint-enable MD046 -->
-
-``` bash
-ssh-keygen -R <hostname>
-```
-
-![! image showing host key changed error at terminal ><](images/instances_ssh_host_key_error.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Using the above command is potentially dangerous when connecting to machines or instances controlled by other people. Be absolutely certain you trust the source of the key change before using the command above.
+    Using the command `ssh-keygen -R <hostname>` is potentially dangerous when connecting to machines or instances controlled by other people. Be absolutely certain you trust the source of the key change before using the command above.
 <!-- markdownlint-enable MD046 -->
