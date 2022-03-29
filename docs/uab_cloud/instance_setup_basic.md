@@ -82,15 +82,10 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
     2. Click "Next >" to move to the "Security Groups" tab.
 
-10. "Security Groups tab. Security Groups allow for fine-grained control
-    over external access to your instance. For more information see
-    [Creating a Security Group](network_setup_basic.md#creating-a-security-group) for more
-    information.
+10. "Security Groups tab. Security Groups allow for fine-grained control over external access to your instance. For more information see [Creating a Security Group](network_setup_basic.md#creating-a-security-group) for more information.
 
-    1. Pick the "ssh" Security Group from the "Available" section by
-        pressing the up arrow next to it.
-    2. The "default" Security Group should already be in the
-        "Allocated" section.
+    1. Pick the "ssh" Security Group from the "Available" section by pressing the up arrow next to it.
+    2. The "default" Security Group should already be in the "Allocated" section.
 
         ![!Launch Instance dialog. The Security Groups tab is selected. The ssh security group has been moved up from the available list to the allocated list. ><](./images/instances_008.png)
 
@@ -101,16 +96,10 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
     1. Pick one or more key pairs from the list under the "Available"
         section.
-        1. A Key Pair may already be picked in the "Allocated" section.
-            If this is not the correct "Key Pair", use the down arrow
-            next to it to remove it form the "Allocated" section. If the
-            Key Pair is correct, skip (ii.) through (iv.).
-        2. Use the search box to help find the Key Pair that best suits
-            your needs.
-        3. When you find the best Key Pair(s), click the button with an
-            up arrow next to the Key Pair(s).
-        4. The Key Pair(s) will move to the "Allocated" section above
-            the "Available" section.
+        1. A Key Pair may already be picked in the "Allocated" section. If this is not the correct "Key Pair", use the down arrow next to it to remove it form the "Allocated" section. If the Key Pair is correct, skip (ii.) through (iv.).
+        2. Use the search box to help find the Key Pair that best suits your needs.
+        3. When you find the best Key Pair(s), click the button with an up arrow next to the Key Pair(s).
+        4. The Key Pair(s) will move to the "Allocated" section above the "Available" section.
 
         ![!Launch Instance dialog. The Key Pair tab is selected. The Key Pair my_key_pair has been moved up from the available list to the allocated list. ><](./images/instances_009.png)
 
@@ -149,13 +138,11 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
 17. Associate Floating IP.
 
-    1. In the "Actions" column entry, click the drop down triangle and
-        select "Associate Floating IP".
+    1. In the "Actions" column entry, click the drop down triangle and select "Associate Floating IP".
     2. A dialog box will open.
     3. Select an IP address in the "IP Address" drop down box.
     4. Select a port in the "Port to be associated" drop down box.
-    5. Click "Associate" to return to the "Instances" page and
-        associate the selected IP.
+    5. Click "Associate" to return to the "Instances" page and associate the selected IP.
 
         ![!Manage Floating IP Associations dialog. The form is filled out. The Floating IP Address created earlier is selected under IP Address. The port from the Instance my_instance is selected under Port to be Associated. ><](./images/instances_017.png)
 
