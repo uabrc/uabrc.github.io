@@ -176,3 +176,18 @@ ssh-keygen -R <hostname>
 
     Using the above command is potentially dangerous when connecting to machines or instances controlled by other people. Be absolutely certain you trust the source of the key change before using the command above.
 <!-- markdownlint-enable MD046 -->
+
+### Streamlining SSH
+
+To avoid needing to repeatedly type the username and the `-i` flag shown in [SSH Into the Instance](#ssh-into-the-instance), it is possible to set up a local `ssh_config` file. On your local machine, navigate to your `.ssh` directory. Create a new plain text file called `config` with no extension. Open the file and add content like the following
+
+```ssh_config
+Host <name>
+  HostName <floating_ip>
+  User <user>
+  IdentityFile <path_to_private_key_file>
+```
+
+Be sure to give a meaningful name under `<name>` so you can easily refer back to this config later. Only letters, numbers, dashes and underscores are allowed, and it must start with a letter. The value `<floating_ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip). The value `<user>` should be whatever is appropriate for the instance operating system, `ubuntu` or `centos` are typical. The value `<path_to_private_key_file>` is the absolute path to the private key file, i.e. the path to your `.ssh` folder followed by the `<private_key_file>` file name.
+
+Save the file. Start a new terminal and use the command `ssh <floating_ip>`, with no other flags, to test.
