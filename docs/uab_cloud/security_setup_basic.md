@@ -126,6 +126,10 @@ To upload a key pair, perform steps 1 and 2 in [Generating a Key Pair on cloud.r
     Do not upload your private key file! The private key file must stay secret to ensure proper security, and it should never leave the computer it was generated on.
 <!-- markdownlint-enable MD046 -->
 
+### Using the Key Pair
+
+Please see [SSH Into the Instance](./instance_setup_basic.md#ssh-into-the-instance) for more information on using the Key Pair.
+
 ### Revoking a Key Pair
 
 Revoking a key pair from cloud.rc is simple. First, log on to the interface.
