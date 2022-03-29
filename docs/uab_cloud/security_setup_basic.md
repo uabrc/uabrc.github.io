@@ -48,7 +48,12 @@ These instructions show you how to prepare to use SSH with your instances. Secur
 
 ## Creating a Key Pair
 
-A Key Pair is required for SSH access to OpenStack instances for security reasons.
+A Key Pair is required for SSH access to OpenStack instances for security reasons. Key Pairs are security devices used to authenticate and connect to a remote machine, like Cheaha or cloud.rc instances, and use [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) to encrypt the connection. As the name suggests, there are two parts: a public key which is placed on the remote machine, and a private key which is kept secret on your personal machine.
+
+There are two ways to create a key pair:
+
+1. [Use the cloud.rc interface to generate a key pair remotely and download the private key file](#generating-a-key-pair-on-cloudrc).
+2. [Use your personal computer to generate a key pair locally and upload the public key file.](#generating-a-key-pair-locally)
 
 ### Good Practices
 
