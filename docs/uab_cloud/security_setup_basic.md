@@ -101,18 +101,28 @@ Using a password protected Key Pair is highly recommended for additional securit
 
         ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent. ><](./images/key_pairs_005.png)
 
-<!-- markdownlint-disable MD046 -->
-!!! note
+### Generating a Key Pair Locally
 
-    It is alternately possible to use a custom key pair created on your local machine. We assume you know how to create a key pair on your local machine and have already done so. To upload a key pair, replace steps 3 and 4 above with the following, perform step 5 from above, and skip step 6.
+It is alternately possible to use a custom key pair created on your local machine. The details of creating a key pair are beyond the scope of this documentation. Some options are available for instructions:
 
-    3\. Click "Import Public Key" to open a dialog box.
+- [GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). These docs assume you have installed Git Bash on Windows. They work fine on most Linux systems without needing to install any software.
+- [Windows OpenSSH Docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement). These docs assume you have installed [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) in Windows.
 
-    4\. Fill out the dialog box.
+To upload a key pair, perform steps 1 and 2 in [Generating a Key Pair on cloud.rc](#generating-a-key-pair-on-cloudrc). Then perform the following steps to upload your generated public key.
 
-    - Enter a "Key Pair Name".
-    - Select "SSH Key" in the "Key Type" drop-down box.
-    - Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
+1. Click "Import Public Key" to open a dialog box.
+
+2. Fill out the dialog box.
+
+    1. Enter a "Key Pair Name".
+    2. Select "SSH Key" in the "Key Type" drop-down box.
+    3. Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
 
     ![!Import Public Key dialog. The dialog form is empty. ><](./images/key_pairs_alt_002.png)
+
 <!-- markdownlint-disable MD046 -->
+!!! danger
+
+    Do not upload your private key file! The private key file must stay secret to ensure proper security, and it should never leave the computer it was generated on.
+<!-- markdownlint-enable MD046 -->
+
