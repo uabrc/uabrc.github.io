@@ -94,10 +94,10 @@ Using a password protected Key Pair is highly recommended for additional securit
 
 6. To use the private key on your local machine.
 
-    1. `mv` the `pem` file to the `.ssh` directory under your home directory. If you are on a Windows machine, you'll need to install ssh by one of various means.
+    1. `mv` the private key file to the `.ssh` directory under your home directory. If you are on a Windows machine, you'll first need to install an SSH client software like [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse).
     2. `cd` to the `.ssh` directory under your home directory.
-    3. `ssh-add <pem_file>` to add the private key to the ssh keyring for use by ssh.
-    4. `ssh-add -d <pem_file>` to remove the key.
+    3. Start the `ssh-agent` by running the command ``eval `ssh-agent``.
+    4. `ssh-add <priate_key_file>` to add the private key to the ssh keyring for use by ssh.
 
         ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent. ><](./images/key_pairs_005.png)
 
