@@ -1,10 +1,10 @@
 # Basic Security Setup
 
-Using SSH with your instances requires following the steps on this page. At a minimum, an SSH security group and at least one keypair must be created. Other security groups can and should be added as needed.
+These instructions show you how to prepare to use SSH with your instances. At a minimum, an SSH security group and at least one key pair must be created. Other security groups can and should be added as needed for additional services.
 
 ## Creating a Security Group
 
-These instructions show you how to prepare to use SSH with your instances. Security Groups are used to set rules for how external devices can connect to our instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. The method used can be applied to other types of Security Groups as well.
+Security Groups are used to set rules for how external devices can connect to your instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. Security groups may be reused across multiple instances.
 
 1. Click "Networks" in the left-hand navigation pane to open the fold-out menu.
 
@@ -61,9 +61,11 @@ There are two ways to create a key pair:
 
 ### Good Practices
 
-Good practice is to only use one key pair per person and per local machine. So if you have two computers, each one will need its own key pair. If you have two users, each will need their own key pair. Private keys are secrets and should not be passed around. Copying the key increases the risk of the system being compromised by an attacker.
+Good practice is to only use one key pair per person and per local machine. So if you have two computers, each will need its own key pair. Using the same key pair for multiple machines means that they all become compromised when that key is compromised. Using different key pairs for each means only one machine becomes compromised.
 
-Using a password protected Key Pair is highly recommended for additional security, as it buys time to revoke a key if it is compromised by an attacker. Currently, this is only possible by uploading a custom public key generated on your local machine.
+If you have two people, each will need their own key pair. Private keys are secrets and should not be passed between people, because there is no way to control it once it has been shared with even one other person. Copying the key increases the risk of the system being compromised by an attacker. If the key has to be revoked, you revoke access for every user at once. If you must share access, create a key pair for each additional person to increase security and convenience.
+
+Using a password protected Key Pair is highly recommended for additional security, as it buys time to [revoke a key pair](#revoking-a-key-pair) if it is compromised by an attacker. Currently, this is only possible by uploading a custom public key generated on your local machine.
 
 ### Generating a Key Pair on cloud.rc
 
