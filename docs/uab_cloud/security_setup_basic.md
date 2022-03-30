@@ -48,7 +48,11 @@ These instructions show you how to prepare to use SSH with your instances. Secur
 
 ## Creating a Key Pair
 
-A Key Pair is required for SSH access to OpenStack instances for security reasons. Key Pairs are security devices used to authenticate and connect to a remote machine, like Cheaha or cloud.rc instances, and use [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) to encrypt the connection. As the name suggests, there are two parts: a public key which is placed on the remote machine, and a private key which is kept secret on your personal machine.
+A Key Pair is required for SSH access to OpenStack instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) on your local machine.
+
+Key Pairs are security devices used to authenticate and connect to a remote machine, like Cheaha or cloud.rc instances, and use [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) to encrypt the connection. As the name suggests, there are two parts: a public key which is placed on the remote machine, and a private key which is kept secret on your personal machine.
+
+While key pairs can be reused between instances, we highly recommend using a new key pair with each instance to minimize risk if a private key becomes compromised. See [Good Practices](#good-practices) for more information.
 
 There are two ways to create a key pair:
 
@@ -92,35 +96,11 @@ Using a password protected Key Pair is highly recommended for additional securit
 
         ![!Key Pairs page. The Key Pairs table has one entry labeled my_key_pair. ><](./images/key_pairs_004.png)
 
-6. To use the private key on your local machine.
-
-    1. `mv` the private key file to the `.ssh` directory under your home directory. If you are on a Windows machine, you'll first need to install an SSH client software like [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse).
-    2. `cd` to the `.ssh` directory under your home directory.
-    3. Start the `ssh-agent` by running the command ``eval `ssh-agent``.
-    4. `ssh-add <priate_key_file>` to add the private key to the ssh keyring for use by ssh.
-
-        ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent. ><](./images/key_pairs_005.png)
-
-<!-- markdownlint-disable MD046 -->
-!!! bug
-
-    For Linux users and [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) on Windows users. If you experience a `Warning: Unprotected Private Key File` error when using `ssh-add`, your `ssh` file and directory permissions may be incorrect. To fix, please use the following commands.
-
-    ```
-    sudo chmod 600 ~/.ssh/<private_key_file>
-    sudo chmod 644 ~/.ssh/known_hosts
-    sudo chmod 755 ~/.ssh
-    ```
-<!-- markdownlint-enable MD046 -->
+6. To add the private key on your local machine please see "Add key" under [Managing Private Keys](./cloud_remote_access.md#managing-private-keys).
 
 ### Generating a Key Pair Locally
 
-It is alternately possible to use a custom key pair created on your local machine. The details of creating a key pair are beyond the scope of this documentation. Some options are available for instructions:
-
-- [GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). These docs assume you have installed Git Bash on Windows. They work fine on most Linux systems without needing to install any software.
-- [Windows OpenSSH Docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement). These docs assume you have installed [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) in Windows.
-
-To upload a key pair, perform steps 1 and 2 in [Generating a Key Pair on cloud.rc](#generating-a-key-pair-on-cloudrc). Then perform the following steps to upload your generated public key.
+To generate a key pair, see instructions located at [Generating Key Pairs](./cloud_remote_access.md#generating-key-pairs).
 
 1. Click "Import Public Key" to open a dialog box.
 
@@ -156,4 +136,4 @@ Revoking a key pair from cloud.rc is simple. First, log on to the interface.
 
 3. Find the key pair you wish to revoke and click the "Delete Key Pair" button in that row.
 
-4. Optionally, delete the relevant private key file on your local machine. This step is not necessary, but can help maintain a clean environment.
+4. Optionally, [Remove the Private Key](./cloud_remote_access.md#remove-a-private-key) from your local machine. This step is not necessary to ensure security, but can help maintain a clean environment.
