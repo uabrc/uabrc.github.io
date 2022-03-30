@@ -150,3 +150,16 @@ Color vision deficiency checker: <https://www.toptal.com/designers/colorfilter/>
 - Brand main page: <https://www.uab.edu/toolkit/branding>
 - Brand colors: <https://www.uab.edu/toolkit/brand-basics/colors>
 - Copyright guidance: <https://www.uab.edu/toolkit/trademarks-licensing/uab-trademarks>
+
+## Developer Notes
+
+### Generating Partition and QoS tables
+
+The repo for generating these files is located at <https://github.com/wwarriner/slurm_status_tools/>.
+
+To use, install the conda environment and run the following commands.
+
+```bash
+python -u sstatus.py -c partitions > partitions.csv
+python -u sstatus.py -c qos > qos.csv
+```
