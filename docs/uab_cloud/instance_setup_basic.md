@@ -151,7 +151,7 @@ campus or on the UAB VPN.
 
 ## SSH Into the Instance
 
-If you are following the steps from top to bottom, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. To do so be sure your local machine has ssh and then use the following command If you are using a different operating system, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip), and the value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
+If you are following the steps from top to bottom, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) To do so be sure your local machine has ssh and then use the following command If you are using a different operating system, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip), and the value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
 
 ``` bash
 ssh ubuntu@<floating ip> -i ~/.ssh/<private_key_file>
@@ -179,15 +179,4 @@ ssh-keygen -R <hostname>
 
 ### Streamlining SSH
 
-To avoid needing to repeatedly type the username and the `-i` flag shown in [SSH Into the Instance](#ssh-into-the-instance), it is possible to set up a local `ssh_config` file. On your local machine, navigate to your `.ssh` directory. Create a new plain text file called `config` with no extension. Open the file and add content like the following
-
-```ssh_config
-Host <name>
-  HostName <floating_ip>
-  User <user>
-  IdentityFile <path_to_private_key_file>
-```
-
-Be sure to give a meaningful name under `<name>` so you can easily refer back to this config later. Only letters, numbers, dashes and underscores are allowed, and it must start with a letter. The value `<floating_ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip). The value `<user>` should be whatever is appropriate for the instance operating system, `ubuntu` or `centos` are typical. The value `<path_to_private_key_file>` is the absolute path to the private key file, i.e. the path to your `.ssh` folder followed by the `<private_key_file>` file name.
-
-Save the file. Start a new terminal and use the command `ssh <floating_ip>`, with no other flags, to test.
+Refer to [Setting up a Configuration File](./cloud_remote_access.md#setting-up-a-configuration-file) in [Cloud Remote Access](./cloud_remote_access.md).
