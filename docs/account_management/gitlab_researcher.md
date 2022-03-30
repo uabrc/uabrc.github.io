@@ -62,5 +62,5 @@ If you are a collaborator with a XIAS account you'll need to follow a different 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    XIAS account researchers can only be granted access if their sponsor adds the GitLab URL to the list of approved URIs. Please see [XIAS Sites](xias_sites.md) for more information.
+    XIAS account researchers can only be granted access if their sponsor adds the GitLab URL to the list of approved URIs. Please see [XIAS Sites](./xias_sites.md) for more information.
 <!-- markdownlint-enable MD046 -->

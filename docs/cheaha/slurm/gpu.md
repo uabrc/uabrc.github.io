@@ -29,7 +29,7 @@ Additionally, when requesting a job using `sbatch`, you will need to include a S
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at [Managing Jobs](job_management.md#managing-jobs) for more information.
+    It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at [Managing Jobs](./job_management.md#managing-jobs) for more information.
 <!-- markdownlint-enable MD046 -->
 
 ### Open OnDemand

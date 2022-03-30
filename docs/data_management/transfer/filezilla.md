@@ -10,7 +10,7 @@ To download the program, go to [the FileZilla site](https://filezilla-project.or
 
 Once FileZilla is installed and you open it, you will see the following window
 
-![!FileZilla window.](images/filezilla_on_startup.png)
+![!FileZilla window.](./images/filezilla_on_startup.png)
 
 A file browser for the local machine FileZilla is running on is on the left while the file system for the remote site will be shown on the right once a remote site has been connected.
 

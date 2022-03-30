@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](/docs/index.md#contact-us).
+    The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
 
 ## Privacy

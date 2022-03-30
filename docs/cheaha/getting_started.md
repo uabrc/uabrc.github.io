@@ -72,7 +72,7 @@ You are on the login node if:
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you are doing more than minor file management, you will need to use a compute node. Please request an interactive session at [https://rc.uab.edu](https://rc.uab.edu) or through a job submitted using [Slurm](slurm/introduction.md).
+    If you are doing more than minor file management, you will need to use a compute node. Please request an interactive session at [https://rc.uab.edu](https://rc.uab.edu) or through a job submitted using [Slurm](./slurm/introduction.md).
 <!-- markdownlint-enable MD046 -->
 
 ## Slurm

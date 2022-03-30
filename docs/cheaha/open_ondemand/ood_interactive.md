@@ -25,7 +25,7 @@ There will be basic information about the number of cores and nodes as well as t
 <!-- markdownlint-disable MD046 -->
 !!! bug
 
-    If your job fails to launch, please see our [FAQ](/docs/help/faq.md) for possible solutions, or [contact us](/docs/index.md#contact-us).
+    If your job fails to launch, please see our [FAQ](../../help/faq.md) for possible solutions, or [contact us](../../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
