@@ -2,11 +2,15 @@
 
 Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing. We offer a user-friendly portal website [Open OnDemand](#open-ondemand) with graphical interfaces to the most common features, all in one place.
 
+## Getting Help
+
+Please [Contact Us](/docs/index.md#contact-us) with requests for support. Tips on getting effective support are [here](/docs/help/support.md), and our frequently asked questions are [here](/docs/help/faq.md).
+
 ## Account Creation
 
 ### UAB Users
 
-Please visit [https://rc.uab.edu](https://rc.uab.edu) to create an account. More information can be found [here](../account_management/uab_user.md).
+Please visit [https://rc.uab.edu](https://rc.uab.edu) to create an account. More information can be found [here](../account_management/uab_researcher.md).
 
 ### Outside Collaborator
 
@@ -79,7 +83,7 @@ Slurm is our job queueing software used for submitting any number of job scripts
 
 A large variety of software is available on Cheaha as modules. To view and use these modules see [the following documentation](lmod.md).
 
-If you would like a new piece of software installed on Cheaha, please send an email to [support@listserv.uab.edu](support@listserv.uab.edu) with the name of the software, the version number, and a link to the installation instructions.
+For new software installation, please try searching [Anaconda](conda.md) for packages first. If you still need help, please [send a support ticket](/docs/help/support.md)
 
 ### Conda Packages
 
