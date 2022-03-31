@@ -6,6 +6,23 @@
   max-width: 100%;
 }
 
+.md-content a {
+  color: revert;
+}
+
+.md-content a:visited {
+  color: revert;
+}
+
+.md-content a:hover {
+  color: revert;
+  border-bottom: 1px solid;
+}
+
+.md-typeset .headerlink:hover {
+  border-bottom: none;
+}
+
 html .md-footer-meta.md-typeset a.supportemail {
   color: #aaaaff;
 }

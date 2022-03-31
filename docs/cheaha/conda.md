@@ -2,14 +2,14 @@
 
 Python is a high level programming language that is widely used in many branches of science. The scientific python ecosystem is available to researchers as Anaconda modules on Cheaha. Modules for both python 2 and python 3 are installed. In order to see the different versions of each, use:
 
-``` bash
+```bash
 module spider Anaconda
 ```
 
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-   Do not use `conda init` on Cheaha! Anaconda is managed as a [module](/docs/cheaha/lmod.md), including script setup. Using `conda init` can cause hard-to-diagnose issues with [Open OnDemand Interactive Jobs](/docs/cheaha/open_ondemand/ood_interactive.md). Please see our [FAQ](../help/faq.md#why-do-i-get-an-error-when-i-try-to-launch-an-hpc-interactive-session) for how to undo what `conda init` does.
+    Do not use `conda init` on Cheaha! Anaconda is managed as a [module](/docs/cheaha/lmod.md), including script setup. Using `conda init` can cause hard-to-diagnose issues with [Open OnDemand Interactive Jobs](/docs/cheaha/open_ondemand/ood_interactive.md). Please see our [FAQ](../help/faq.md#why-do-i-get-an-error-when-i-try-to-launch-an-hpc-interactive-session) for how to undo what `conda init` does.
 <!-- markdownlint-disable MD046 -->
 
 ## Loading Anaconda
@@ -30,14 +30,14 @@ Here, we will go through instructions for creating and managing Anaconda environ
 
 In order to create a basic environment with the default packages, use the `conda create` command:
 
-``` bash
+```bash
 # create a base environment. Replace <env> with an environment name
 conda create -n <env>
 ```
 
 If you are trying to replicate a pipeline or analysis from another person, you can also recreate an environment using a YAML file, if they have provided one. To replicate an environment using a YAML file, use:
 
-``` bash
+```bash
 # replicate an environment from a YAML file named env.yml
 conda create -n <env> -f <path/to/env.yml>
 ```
@@ -48,7 +48,7 @@ By default, all of your conda environments are stored in `/home/<user>/.conda/en
 
 From here, you can activate the environment using either `source` or `conda`:
 
-``` bash
+```bash
 # activate the virtual environment using source
 source activate <env>
 
@@ -58,7 +58,7 @@ conda activate <env>
 
 To know your environment has loaded, the command line should look like:
 
-``` text
+```text
 (<env>) [blazerid@c0XXX ~]$
 ```
 
@@ -68,7 +68,7 @@ Once the environment is activated, you are allowed to install whichever python l
 
 The base package manager for python is `pip`. The basic way to use `pip` is (replace \<package\> with the package name, omitting \<\>):
 
-``` bash
+```bash
 # install most recent version of a package
 pip install \<package\>
 
@@ -81,7 +81,7 @@ pip install -r packages.txt
 
 `pip` searches various package indexes like [PyPi](https://pypi.org/) or local project directories. If the package you need isn't found there, it may be available in an online Anaconda channel (same as index). To install from there, use the `conda install` command.
 
-``` bash
+```bash
 # install most recent version of a package
 conda install \<package\>
 
@@ -100,7 +100,7 @@ Python code can be run an individual commands from the command line. In order to
 
 Executing scripts is the more common use case than executing individual commands interactively. To execute a script from the command line:
 
-``` bash
+```bash
 python \<script.py\>
 ```
 
@@ -116,7 +116,7 @@ Any optional inputs the script has can be listed after the name of the script.
 
 An environment can be deactivated using either `source` or `conda`:
 
-``` bash
+```bash
 # Using source
 source deactivate
 
@@ -132,7 +132,7 @@ Closing the terminal will also close out the environment.
 
 To easily share environments with other researchers or replicate it on a new machine, it is useful to create an environment YAML file. You can do this using:
 
-``` bash
+```bash
 # activate the environment if it is not active already
 conda activate <env>
 

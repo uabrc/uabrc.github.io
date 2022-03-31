@@ -60,7 +60,7 @@ Click the "Edit" button. In the new tab that opens, delete the section shown abo
 
 ![!Edit tab with highlighted section. ><](images/faq_ood_editor_conda_init.png)
 
-Please try to launch your job again. If it still doesn't work, please [contact us](/docs/index.md#contact-us)
+Please try to launch your job again. If it still doesn't work, please [contact us](../index.md#contact-us)
 
 #### Why do I get a gray screen after launching my OOD RStudio Server session?
 
@@ -79,7 +79,7 @@ See [here](#why-do-i-get-a-gray-screen-for-a-long-time-after-launching-my-ood-rs
 
 Dot files are files or directories that start with the character `.` as in the file `.bashrc` or the `.conda` directory.
 
-If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [OOD Files](/docs/cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
+If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [OOD Files](../cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
 
 ![!File browser bar with Show Dotfiles checked. ><](images/faq_odd_show_dotfiles.png)
 
@@ -89,7 +89,7 @@ If you are using the terminal, you'll need to use `cd` to navigate to the approp
 
 A segfault, or segmentation fault, often causes unexpected termination of software. These errors are caused by software attempting to access memory that it isn't allowed to access. An error typically includes a long string of hexadecimal characters like `0x000055ea4064c135`, but with different values, and one or more of `segmentation fault`, `segfault` and/or `SIGSEGV`.
 
-These issues are most commonly caused by programming errors, but can be related to out-of-memory errors. If you encounter a segmentation fault, first try increasing the memory requested for the job. It may help to learn more about [SLURM](/docs/cheaha/slurm/introduction.md) and [job efficiency](/docs/cheaha/job_efficiency.md).
+These issues are most commonly caused by programming errors, but can be related to out-of-memory errors. If you encounter a segmentation fault, first try increasing the memory requested for the job. It may help to learn more about [SLURM](../cheaha/slurm/introduction.md) and [job efficiency](../cheaha/job_efficiency.md).
 
 #### What is a bus error?
 
