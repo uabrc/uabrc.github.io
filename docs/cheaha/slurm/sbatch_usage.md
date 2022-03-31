@@ -42,7 +42,7 @@ For batch jobs, directives are typically included as comments at the top of the 
 
 ## Available Slurm Partitions
 
-Please see [Partitions](docs/cheaha/hardware.md#partitions) page for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
+Please see [Partitions](../hardware.md#partitions) page for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
 
 ## Estimating Compute Resources
 
