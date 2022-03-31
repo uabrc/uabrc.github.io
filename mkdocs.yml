@@ -68,3 +68,4 @@ nav:
     - 'uab_cloud/security_setup_basic.md'
     - 'uab_cloud/instance_setup_basic.md'
     - 'uab_cloud/volume_setup_basic.md'
+  - Frequently Asked Questions: 'help/faq.md'
