@@ -9,7 +9,7 @@ module spider Anaconda
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-   Do not use `conda init` on Cheaha! Anaconda is managed as a [module](./lmod.md), including script setup. Using `conda init` can cause hard-to-diagnose issues with [Open OnDemand Interactive Jobs](./open_ondemand/ood_interactive.md). Please see our [FAQ](../help/faq.md#why-do-i-get-an-error-when-i-try-to-launch-an-hpc-interactive-session) for how to undo what `conda init` does.
+    Do not use `conda init` on Cheaha! Anaconda is managed as a [module](/docs/cheaha/lmod.md), including script setup. Using `conda init` can cause hard-to-diagnose issues with [Open OnDemand Interactive Jobs](/docs/cheaha/open_ondemand/ood_interactive.md). Please see our [FAQ](../help/faq.md#why-do-i-get-an-error-when-i-try-to-launch-an-hpc-interactive-session) for how to undo what `conda init` does.
 <!-- markdownlint-disable MD046 -->
 
 ## Loading Anaconda
