@@ -1,6 +1,6 @@
 # Basic Volume Setup
 
-These instructions are intended for researchers who want to setup a persistent volume for use across instances. To follow these instructions you'll need to have already setup an [Instance](instance_setup_basic.md).
+These instructions are intended for researchers who want to setup a persistent volume for use across instances. To follow these instructions you'll need to have already setup an [Instance](./instance_setup_basic.md).
 
 ## Creating a Volume
 
