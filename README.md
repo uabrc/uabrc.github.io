@@ -144,6 +144,7 @@ The workaround is needed because `markdownlint` has no plans to add support for 
 ### Accessibility
 
 Color vision deficiency checker: <https://www.toptal.com/designers/colorfilter/>
+Contrast checker: <https://webaim.org/resources/contrastchecker/>
 
 ### Branding Guidance
 
