@@ -14,8 +14,8 @@ There are a few common reasons why a job can take a long time to start. These ap
 
 2. Your job is requesting more resources than are available or allowed. Double check our resource limits for various situations:
 
-    - Requesting many jobs at once? Our [Partitions](/docs/cheaha/hardware.md#partitions) table lists global quotas for each partition. When these limits are reached, no more jobs will be started until some resources are freed from other jobs.
-    - Requesting jobs on a single node? Our [Node Summary](/docs/cheaha/hardware.md#node-summary) table lists resource limits for each partition. These are physical limits of available hardware, and can't be exceeded.
+    - Requesting many jobs at once? Our [Partitions](../cheaha/hardware.md#partitions) table lists global quotas for each partition. When these limits are reached, no more jobs will be started until some resources are freed from other jobs.
+    - Requesting jobs on a single node? Our [Node Summary](../cheaha/hardware.md#node-summary) table lists resource limits for each partition. These are physical limits of available hardware, and can't be exceeded.
 
 3. There is a system outage. If this is the case, information will be distributed by Research Computing.
 
