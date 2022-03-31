@@ -37,7 +37,7 @@ If you are a UAB affiliated researcher and have a BlazerID, you may create an ac
     Please use your BlazerID and BlazerID password for UAB GitLab. UABMC credentials are a different sign in system and will likely not work. Central IT groups like Research Computing do not have a way to access UABMC credentials.
 <!-- markdownlint-enable MD046 -->
 
-![!gitlab login pane with ldap tab selected ><](images/gitlab_researcher_ldap.png)
+![!gitlab login pane with ldap tab selected ><](./images/gitlab_researcher_ldap.png)
 
 ## UABMC Researcher Registration
 
@@ -57,10 +57,10 @@ If you are a collaborator with a XIAS account you'll need to follow a different 
 8. Fill out the `Password` field with the GitLab password you created in Step #4.
 9. Click `Sign in`.
 
-![!gitlab login pane with standard tab selected ><](images/gitlab_researcher_standard.png)
+![!gitlab login pane with standard tab selected ><](./images/gitlab_researcher_standard.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    XIAS account researchers can only be granted access if their sponsor adds the GitLab URL to the list of approved URIs. Please see [XIAS Sites](xias_sites.md) for more information.
+    XIAS account researchers can only be granted access if their sponsor adds the GitLab URL to the list of approved URIs. Please see [XIAS Sites](./xias_sites.md) for more information.
 <!-- markdownlint-enable MD046 -->

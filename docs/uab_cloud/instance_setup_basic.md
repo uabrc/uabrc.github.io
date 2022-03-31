@@ -1,13 +1,13 @@
 # Basic Instance Setup
 
-Instances are the basic unit of compute on OpenStack. Requesting an instance involves a number of steps, and requires that a [Network](network_setup_basic.md) has already been setup. It is also possible to attach persistent reusable [Volumes](volume_setup_basic.md) to instances.
+Instances are the basic unit of compute on OpenStack. Requesting an instance involves a number of steps, and requires that a [Network](./network_setup_basic.md) has already been setup. It is also possible to attach persistent reusable [Volumes](./volume_setup_basic.md) to instances.
 
 ## Creating an Instance
 
 Creating an instance is possibly a step you'll perform often, depending on your workflow. There are many smaller steps to create an instance, so please take care to check all the fields when you create an instance.
 
-These instructions require that you've set up a [Network](network_setup_basic.md) and followed all of the instructions on the linked page. You should have a Network, Subnet, Router and Floating IP. You will also need to setup a
-[Key Pair](security_setup_basic.md#creating-a-key-pair) and an [SSH Security Group](security_setup_basic.md#creating-a-security-group).
+These instructions require that you've set up a [Network](./network_setup_basic.md) and followed all of the instructions on the linked page. You should have a Network, Subnet, Router and Floating IP. You will also need to setup a
+[Key Pair](./security_setup_basic.md#creating-a-key-pair) and an [SSH Security Group](./security_setup_basic.md#creating-a-security-group).
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
@@ -62,7 +62,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
     2. Click "Next >" to move to the "Networks" tab.
 
-8. "Networks" tab. Networks determine how your instance will talk to the internet and other instances. See [Network](network_setup_basic.md) for more information.
+8. "Networks" tab. Networks determine how your instance will talk to the internet and other instances. See [Network](./network_setup_basic.md) for more information.
 
     1. Pick a network from the list under the "Available' section.
         1. A Network may already be picked in the "Allocated" section. If this is not the correct Network, use the down arrow next to it to remove it from the "Allocated" section. If the Network is correct, skip (ii.) through (iv.).
@@ -84,7 +84,7 @@ These instructions require that you've set up a [Network](network_setup_basic.md
 
 10. "Security Groups tab. Security Groups allow for fine-grained control
     over external access to your instance. For more information see
-    [Creating a Security Group](network_setup_basic.md#creating-a-security-group) for more
+    [Creating a Security Group](./network_setup_basic.md#creating-a-security-group) for more
     information.
 
     1. Pick the "ssh" Security Group from the "Available" section by
@@ -187,7 +187,7 @@ ssh ubuntu@<floating ip> -i ~/.ssh/<keypair_name>.pem
 ssh-keygen -R <hostname>
 ```
 
-![! image showing host key changed error at terminal ><](images/instances_ssh_host_key_error.png)
+![! image showing host key changed error at terminal ><](./images/instances_ssh_host_key_error.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! danger

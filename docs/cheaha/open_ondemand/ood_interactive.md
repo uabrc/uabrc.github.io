@@ -6,7 +6,7 @@ Currently, the available standalone programs are IGV, Matlab, RStudio, SAS, and 
 
 All of the interactive apps have similar setup pages. For instance, if we click HPC Desktop, the following screen will appear:
 
-![!Setup for HPC Desktop session. ><](images/ood_interactive_hpc_vnc.png)
+![!Setup for HPC Desktop session. ><](./images/ood_interactive_hpc_vnc.png)
 
 This will allow to choose the number of hours, partition, number of cpus, and memory per cpu needed for the job. These fields are common to all interactive apps and are required. Not all partitions are available when creating an interactive job in OOD. For instance, if you need to use the `largemem` partition, request those resources in a terminal session for an interactive job or submit a batch job.
 
@@ -18,14 +18,14 @@ This will allow to choose the number of hours, partition, number of cpus, and me
 
 Once you've selected the compute resources you need, Launch the job. This will bring you to the My Interactive Sessions page. This page looks like:
 
-![!List of interactive sessions. ><](images/ood_interactive_sessions.png)
+![!List of interactive sessions. ><](./images/ood_interactive_sessions.png)
 
 There will be basic information about the number of cores and nodes as well as the job ID in the top part of the job card. The amount of time remaining in the job is included in the card as well as a quick link to the file browser in the `Session ID` field. Click `Launch Desktop in new tab` to open your interactive VNC session.
 
 <!-- markdownlint-disable MD046 -->
 !!! bug
 
-    If your job fails to launch, please see our [FAQ](/docs/help/faq.md) for possible solutions, or [contact us](/docs/index.md#contact-us).
+    If your job fails to launch, please see our [FAQ](../../help/faq.md) for possible solutions, or [contact us](../../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
@@ -56,11 +56,11 @@ As shown earlier, some software can be run outside of the VNC session. Setup for
 
 RStudio is available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. You'll also need to select both the version of RStudio you wish to use, and the version of R you wish to use. The job creation form is shown below.
 
-![!RStudio Server job request form. ><](images/ood_rstudio_server_form.png)
+![!RStudio Server job request form. ><](./images/ood_rstudio_server_form.png)
 
 To adjust the environment, please use the Environment Setup box to load modules or Anaconda environments. A common strategy when there is difficulty building R packages is to search for it on [Anaconda](../conda.md), create an Anaconda environment with that package already built, and load the environment in the Environment Setup box. An example is shown below.
 
-![!RStudio Server job request form Environment Setup box. ><](images/ood_rstudio_server_env_setup_box.png)
+![!RStudio Server job request form Environment Setup box. ><](./images/ood_rstudio_server_env_setup_box.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -72,11 +72,11 @@ To adjust the environment, please use the Environment Setup box to load modules 
 
 Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
 
-![!Jupyter Notebook job request form. ><](images/ood_jupyter_notebook_form.png)
+![!Jupyter Notebook job request form. ><](./images/ood_jupyter_notebook_form.png)
 
 To adjust the environment, please use the Environment Setup box to load modules. For GPU applications it is generally necessary to load one of our `cuda##.#/toolkit` modules, and possibly a `cuDNN` module. These are required for `tensorflow`, `keras` and `pytorch`. Use `module spider cuda` and `module spider cudnn` to view the list of appropriate modules. An example is shown below.
 
-![!Jupyter Notebook job request form Environment Setup box. ><](images/ood_jupyter_notebook_env_setup_box.png)
+![!Jupyter Notebook job request form Environment Setup box. ><](./images/ood_jupyter_notebook_env_setup_box.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! tip
@@ -92,7 +92,7 @@ To adjust the environment, please use the Environment Setup box to load modules.
 
 The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
 
-![!Jupyter Notebook job request form Extra jupyter arguments box. ><](images/ood_jupyter_notebook_extra_args_box.png)
+![!Jupyter Notebook job request form Extra jupyter arguments box. ><](./images/ood_jupyter_notebook_extra_args_box.png)
 
 Submitting the job will bring you to the `My Interactive Jobs` window while the Jupyter job is initialized. Click `Connect to Jupyter` to open the Jupyter Home Page.
 
@@ -106,7 +106,7 @@ Submitting the job will bring you to the `My Interactive Jobs` window while the 
 
 The Jupyter Server Home Page will look like the following
 
-![!Home page for jupyter notebooks. ><](images/ood_jupyter_notebook_home.png)
+![!Home page for jupyter notebooks. ><](./images/ood_jupyter_notebook_home.png)
 
 From here, you can navigate to and select an existing notebook, or you can create a new one using one of your existing virtual environments or the base environment. Once inside a Jupyter notebook, you can use the `Kernel --> Change kernel` menu to select your preferred Anaconda environment.
 
@@ -128,7 +128,7 @@ To run Jupyter with specific libraries and packages outside of the base install,
 
 The `Conda` has the following layout:
 
-![!Creating and managing environments in Jupyter. ><](images/ood_jupyter_notebook_create_conda_env.png)
+![!Creating and managing environments in Jupyter. ><](./images/ood_jupyter_notebook_create_conda_env.png)
 
 1. Current environments (red): a listing of the current existing environments in your `$HOME/.conda/envs` folder.
 2. Available packages (green): a list of all packages available to install from conda sources.
