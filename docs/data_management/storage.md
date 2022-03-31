@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](/docs/index.md#contact-us).
+    The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
 
 ## Privacy
@@ -49,9 +49,9 @@ Shared data can be stored in a `/data/project/<project_name>` directory. The def
 
 All project spaces must be owned by a principal investigator (PI) who is an employee of UAB with a legitimate research interest. The PI takes responsibility for data in the space, as well as access control of all files and directories under the parent directory. As with all data on Cheaha, backups and archival services are not provided, and are the responsibility of the respective data owners.
 
-The PI and all members with access to the project directory can read, write/delete, and list files within the top-level directory, and all other subdirectories by default. Other people on the system have no ability to access the project space. Access control for directories and files within the project space can be implemented via access control lists. Please see the bash commands [setfacl](https://linux.die.net/man/1/setfacl) and [getfacl](https://linux.die.net/man/1/getfacl)) for more information. Access control within the project directory are the responsibility of the project owner. However, we respect that access control lists can be tricky, so please feel free to [contact us](/docs/index.md#contact-us) for assistance.
+The PI and all members with access to the project directory can read, write/delete, and list files within the top-level directory, and all other subdirectories by default. Other people on the system have no ability to access the project space. Access control for directories and files within the project space can be implemented via access control lists. Please see the bash commands [setfacl](https://linux.die.net/man/1/setfacl) and [getfacl](https://linux.die.net/man/1/getfacl)) for more information. Access control within the project directory are the responsibility of the project owner. However, we respect that access control lists can be tricky, so please feel free to [contact us](../index.md#contact-us) for assistance.
 
-To create a project directory, or change access to or ownership of a project directory, the PI should follow the instructions at [How Do I Request Or Change A Project Space?](/docs/help/support.md#how-do-i-request-or-change-a-project-space)
+To create a project directory, or change access to or ownership of a project directory, the PI should follow the instructions at [How Do I Request Or Change A Project Space?](../help/support.md#how-do-i-request-or-change-a-project-space)
 
 #### Sloss
 
