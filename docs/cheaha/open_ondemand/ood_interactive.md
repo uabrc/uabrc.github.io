@@ -16,7 +16,11 @@ This will allow to choose the number of hours, partition, number of cpus, and me
     You can decrease wait time in the queue by choosing resources carefully. The closer your request is to actual usage, the more optimal your wait time will be. Please see our section on [Job Efficiency](../job_efficiency.md) for more information.
 <!-- markdownlint-enable MD046 -->
 
-Once you've selected the compute resources you need, Launch the job. This will bring you to the My Interactive Sessions page. This page looks like:
+Once you've selected the compute resources you need, Launch the job. This will bring you to the My Interactive Sessions page, and read on.
+
+## My Interactive Sessions
+
+The My Interactive Sessions page looks like:
 
 ![!List of interactive sessions. ><](./images/ood_interactive_sessions.png)
 
