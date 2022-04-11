@@ -180,3 +180,7 @@ ssh-keygen -R <hostname>
 ### Streamlining SSH
 
 Refer to [Setting up a Configuration File](./cloud_remote_access.md#setting-up-a-configuration-file) in [Cloud Remote Access](./cloud_remote_access.md).
+
+## Next Steps
+
+Now you are ready to [Install Software](./installing_software.md) and, optionally, [Create a Persistent Volume](./volume_setup_basic.md).
