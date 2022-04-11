@@ -73,7 +73,7 @@ Most commonly, delays in launching OOD RStudio Server are caused by a large quan
 
 #### Why is my OOD RStudio Server session giving me a 502 or 503 error?
 
-See [here](#why-do-i-get-a-gray-screen-for-a-long-time-after-launching-my-ood-rstudio-server-session)
+See [here](#why-do-i-get-a-gray-screen-after-launching-my-ood-rstudio-server-session).
 
 #### How do I locate hidden dot files on Cheaha?
 
