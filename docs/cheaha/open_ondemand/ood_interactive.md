@@ -22,9 +22,11 @@ Once you've selected the compute resources you need, Launch the job. This will b
 
 The My Interactive Sessions page looks like:
 
-![!List of interactive sessions. ><](./images/ood_interactive_sessions.png)
+![!List of interactive sessions shown as job cards. ><](./images/ood_interactive_sessions.png)
 
-There will be basic information about the number of cores and nodes as well as the job ID in the top part of the job card. The amount of time remaining in the job is included in the card as well as a quick link to the file browser in the `Session ID` field. Click `Launch Desktop in new tab` to open your interactive VNC session.
+For each job running via Open OnDemand, there will be a card listed on this page. Each card has basic information about the number of cores, nodes, and time remaining for the job. Also shown are the Job ID in the top-left part of the job card, and a Session ID link near the center of the card. The Job ID and Session ID are important for diagnosing issues you may encounter on Cheaha while using Open OnDemand. The Session ID link points to a folder in your home directory with information we may ask for.
+
+Click the `Launch Desktop in new tab` button to open your interactive VNC session. You may have to wait for the card to change from blue to green to launch the job.
 
 <!-- markdownlint-disable MD046 -->
 !!! bug
