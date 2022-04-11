@@ -64,9 +64,10 @@ The instructions are the same for all operating systems with one small exception
 
         For Linux users and [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) on Windows users. If you experience a `Warning: Unprotected Private Key File` error when using `ssh-add`, your `ssh` file and directory permissions may be incorrect. To fix, please use the following commands.
 
-        ```
+        ```bash
         sudo chmod 600 ~/.ssh/<private_key_file>
-        sudo chmod 644 ~/.ssh/known_hosts
+        sudo chmod 644 ~/.ssh/known_hosts  # if you have ever connected to a remote machine
+        sudo chmod 644 ~/.ssh/config  # if you have a config file
         sudo chmod 755 ~/.ssh
         ```
     <!-- markdownlint-enable MD046 -->
