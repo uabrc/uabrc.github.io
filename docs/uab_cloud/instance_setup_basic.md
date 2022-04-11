@@ -1,6 +1,6 @@
 # Basic Instance Setup
 
-Instances are the basic unit of compute on OpenStack. Requesting an instance involves a number of steps, and requires that a [Network](./network_setup_basic.md) has already been setup. It is also possible to attach persistent reusable [Volumes](./volume_setup_basic.md) to instances.
+Instances are the basic unit of compute on cloud.rc. Requesting an instance involves a number of steps, and requires that a [Network](./network_setup_basic.md) has already been setup. It is also possible to attach persistent reusable [Volumes](./volume_setup_basic.md) to instances.
 
 ## Creating an Instance
 
@@ -11,11 +11,11 @@ These instructions require that you've set up a [Network](./network_setup_basic.
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page. ><](./images/key_pairs_000.png)
+    ![!cloud.rc Overview page. ><](./images/key_pairs_000.png)
 
 2. Click "Instances".
 
-    ![!OpenStack Instances page. The Instances table is empty. ><](./images/instances_001.png)
+    ![!cloud.rc Instances page. The Instances table is empty. ><](./images/instances_001.png)
 
 3. Click "Launch Instance" to open a dialog box.
 
@@ -129,7 +129,7 @@ These instructions require that you've set up a [Network](./network_setup_basic.
     1. Redirects to the "Instances" page.
     2. There should be a new entry in the table.
 
-        ![!OpenStack Instances page. The Instances table has one entry labeled my_instance. The task column has an indeterminate progress bar indicating the instance is being set up. ><](./images/instances_014.png)
+        ![!cloud.rc Instances page. The Instances table has one entry labeled my_instance. The task column has an indeterminate progress bar indicating the instance is being set up. ><](./images/instances_014.png)
 
     3. The instance will take some time to build and boot. When the
         Status column entry says "Active" please move to the next steps.
