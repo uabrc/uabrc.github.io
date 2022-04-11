@@ -148,6 +148,20 @@ All jobs submitted to Slurm on Cheaha are assigned a unique identifier called th
 
     - Otherwise contact [Support](../help/support.md) for assistance.
 
+#### How do I find my Open OnDemand Session Information?
+
+All jobs created using Open OnDemand will create a folder in your home directory containing diagnostic information about those jobs. This information can be helpful for diagnosing issues when using Open OnDemand. To review the folder contents, click the Session ID link in the job card under the [My Interactive Sessions](../cheaha/open_ondemand/ood_interactive.md#my-interactive-sessions) of Open OnDemand.
+
+If asked, the simplest way to give us the information is the following. Please visit the [File Browser](../cheaha/open_ondemand/ood_files.md) page for a visual guide to the features of the Open OnDemand File Browser, which will help with the following instructions. Please also visit the [My Interactive Sessions](../cheaha/open_ondemand/ood_interactive.md#my-interactive-sessions) page to familiarize yourself with job cards.
+
+1. Find the card for the appropriate job.
+2. Click the Session ID link of the card from (1) to open the [File Browser](../cheaha/open_ondemand/ood_files.md). Make note of the Session ID value, which should be something like `bbd7ad60-a37c-47aa-a8fb-d7ca6cf39b3c` but with different characters.
+3. In the "Working Directory" section of the interface, click the parent folder name to go up one directory level.
+4. In the "File List" locate the folder with the matching Session ID from step (2).
+5. Click that folder once to select it.
+6. Click the "Download" button in the "File Command Menu" to download a zipped copy of the folder and its contents.
+7. Pass the downloaded Zip file to [Support](support.md).
+
 ## UAB Cloud
 
 ### Why is my instance returning an error of "Host not found"
