@@ -37,8 +37,8 @@ These instructions require that you've set up a [Network](./network_setup_basic.
     2. Select "Yes" under "Create New Volume".
     3. Choose an appropriate "Volume Size" in `GB`. Note that for many single-use instances, `20 GB` is more than enough. If you need more because you have persistent data, please create a `persistent volume<volume_setup_basic>`.
     4. Select "Yes" or "No" under "Delete Volume on Instance Delete"
-        1. "Yes" is a good choice if the OS volume will be reused.
-        2. "No" is a good choice if you don't care about reusing the OS.
+        1. "Yes" is a good choice if you don't care about reusing the OS.
+        2. "No" is a good choice if the OS volume will be reused.
 
         ![!Launch Instance dialog. The Source tab is selected. ><](./images/instances_003.png)
 

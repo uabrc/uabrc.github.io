@@ -14,7 +14,7 @@ squeue -u $USER
 
 The output of `squeue` will look like:
 
-![!Output from squeue. ><](images/squeue_output.png)
+![!Output from squeue. ><](./images/squeue_output.png)
 
 By default the fields displayed are `jobid`, `partition`, `jobname` as `name`, blazerid as `user`, job state as `st`, total run time as `time`, number of nodes as `node`, and the list of nodes as `nodelist`, used for each job a researcher has submitted.
 
