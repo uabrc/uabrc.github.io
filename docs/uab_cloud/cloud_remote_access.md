@@ -92,7 +92,7 @@ Run `ssh-keygen -R <hostname>` where `<hostname>` is the URL or IP address of th
 
 ### Setting up a Configuration File
 
-SSH configuration files help streamline the process of logging in to remote terminals by storing commonly-used arguments and flags for each host. To create a configuration file, navigate to your `.ssh` directory. Create a new plain text file called `config` with no extension. Open the file and add content like the following. Note that indent matters.
+SSH configuration files help streamline the process of logging in to remote terminals by storing commonly-used arguments and flags for each host. To create a configuration file, navigate to your `.ssh` directory. Create a new plain text file called `config` with no extension. Open the file and add content like the following. Note that indent matters. Variable values in `<>` will be replaced with appropriate values before saving.
 
 ```ssh-config
 Host <name>
@@ -101,19 +101,24 @@ Host <name>
   IdentityFile <absolute_path_to_private_key_file>
 ```
 
-Be sure to give a meaningful name under `<name>` so you can easily refer back to this config later. Only letters, numbers, dashes and underscores are allowed, and it must start with a letter. The value `<remote_ip>` can be any remote machine relevant to your work. For cloud.rc it should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip). The value `<user>` should be whatever user name you will log in as. For cloud.rc, `ubuntu` or `centos` are typical, depending on instance operating system. The value `<path_to_private_key_file>` is the absolute path to the private key file, e.g. the path to your `.ssh` folder followed by the `<private_key_file>` file name.
+- Be sure to give a meaningful name under `<name>` so you can easily refer back to this config later and for ease of typing when using `ssh` with this configuration. Only letters, numbers, dashes and underscores are allowed, and it must start with a letter.
+- The value `<remote_ip>` can be any remote machine relevant to your work. For cloud.rc it should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip).
+- The value `<user>` should be whatever user name you will log in as. For cloud.rc, `ubuntu` or `centos` are typical, depending on instance operating system.
+- The value `<path_to_private_key_file>` is the absolute path to the private key file, e.g. the path to your `.ssh` folder followed by the `<private_key_file>` file name. For cloud.rc this will be whatever private key file was generated in [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
 
-Save the file. Start a new terminal and use the command `ssh <name>`, with no other flags, to test.
+Save the `config` file. Start a new terminal and use the command `ssh <name>`, with no other flags, to test.
 
 ### SSH Client Usage
 
-If you've [Set up a Configuration File](#setting-up-a-configuration-file), simply use `ssh <remote_ip>` to connect.
+If you've [Set up a Configuration File](#setting-up-a-configuration-file), simply use `ssh <name>`, using the configuration name, to connect.
 
 If you haven't set up a configuration file, use the following.
 
 ```bash
-ssh user@<remote_ip> -i <private_key_file>
+ssh <user>@<remote_ip> -i <private_key_file>
 ```
+
+Where `user` is the remote username, `remote_ip` is the IP address of the remote machine, and `<private_key_file>` is the private key file used for access the remote machine. See [Generating Key Pairs](#generating-key-pairs) for general instructions on creating a key pair, or [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair) for cloud.rc specific instructions.
 
 ## Graphical Interface
 
