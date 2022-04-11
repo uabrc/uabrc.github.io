@@ -81,15 +81,17 @@ Run `ssh-add -d <path/to/private_key_file>`
 
 #### Remove an Invalid Host Fingerprint
 
-This command should **only** be run when reusing a floating IP for a new instance in a cloud context.
-
-Run `ssh-keygen -R <hostname>` where `<hostname>` is the URL or IP address of the server.
-
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Using the command `ssh-keygen -R` is risky when connecting to machines or instances controlled by other people. Be _absolutely certain_ you trust that the current fingerprint is invalid before removing it and accepting a new fingerprint!
+    The following command should **only** be run when reusing a floating IP for a new instance in a cloud context. Using it arbitrarily for remote machines you do not control can result in a security breach. Be absolutely certain you trust the source of the key change.
 <!-- markdownlint-enable MD046 -->
+
+A "Remote Host Identification Has Changed" error can be resolved by using the following command. It looks like the image below.
+
+Run `ssh-keygen -R <hostname>` where `<hostname>` is the URL or IP address of the remote machine.
+
+![!image showing remote host identification has changed error ><](./images/instances_ssh_host_key_error.png)
 
 ### Setting up a Configuration File
 
