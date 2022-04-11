@@ -140,7 +140,7 @@ All jobs submitted to Slurm on Cheaha are assigned a unique identifier called th
     - Job not running?
         - Use the final bullet point `sacct` usage.
 - How to use `sacct` to find a job.
-    - If you know the date of the job, use the following command at the terminal. The date following `-s` is the start date, choose the same day the job was submitted. The following `-e` is the end date, choose the day after `-s`. You will be provided with a list of jobs run that day, and can sift through them to find your job.
+    - If you know the date of the job, use the following command at the terminal. The date following `-s` is the start date, choose the same day the job was submitted. The following `-e` is the end date, choose the day after `-s`. You will be provided with a list of jobs run on the `-s` day, and can sift through them to find your job.
 
         ```bash
         sacct -u $USER -s YYYY-MM-DD -e YYYY-MM-DD
