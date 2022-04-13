@@ -19,6 +19,14 @@ Instance snapshots are a helpful way to store the state of an instance for later
 
     ![!images page showing new snapshot](./images/create_snapshot_003.png)
 
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+
+        Notice the snapshot has size of zero bytes. The instance snapshot is a convenience pointer to the underlying volume snapshot, so it has no size itself. To see the size of the underlying volume snapshot, click "Volumes" and then "Snapshots" in the left hand navigation menu.
+
+        Don't worry, you'll still be able to create an instance from this snapshot later.
+    <!-- markdownlint-enable MD046 -->
+
 ## Creating an Instance from an Instance Snapshot
 
 To create an instance from an instance snapshot, follow the directions below, assuming you have [Created an Instance Snapshot](#creating-an-instance-snapshot).
@@ -37,6 +45,14 @@ To create an instance from an instance snapshot, follow the directions below, as
 6. Press the up arrow in the appropriate row of the "Available" table to move that instance snapshot to the "Allocated" table.
 
     ![!launch instance dialog on source tab with snapshot in allocated table](./images/use_snapshot_003.png)
+
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+
+        On the "Flavor" tab, only flavors with large enough disk capacity to hold the snapshot will be allowed. Flavors that are too small will show a yellow triangular caution symbol. Examples are shown below for a 40 GB instance snapshot.
+
+        ![!example of flavors too small to hold an instance snapshot](./images/use_snapshot_004.png)
+    <!-- markdownlint-enable MD046 -->
 
 7. Continue following the instructions at [Basic Instance Setup](./instance_setup_basic.md) to start the instance.
 
