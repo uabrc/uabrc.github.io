@@ -25,6 +25,14 @@ There are a few common reasons why a job can take a long time to start. These ap
     Under construction.
 <!-- markdownlint-disable MD046 -->
 
+#### Why do I get an error when I try to submit an Open OnDemand interactive job?
+
+If you are seeing a "Failed to submit session" error in a red box when you submit an interactive job on Open OnDemand, like the following, please try reading the error text first. If the cause of the error is not obvious from the text, please read on for some common causes. If none of the below common causes apply, please contact [Support](support.md).
+
+![!failed to submit session error example](./images/faq_ood_disk_quota_exceeded.png)
+
+- If the error text starts with `Disk quota exceeded` then your storage space in `/data/user/$USER` is likely full. Please see [Storage](../data_management/storage.md) for more information on options for alternative storage locations, or contact [Support](support.md).
+
 #### Why do I get an error when I try to launch an OOD HPC Interactive session?
 
 If you are seeing an error like the following when launching an HPC Interactive job, please read on for the most likely solution.
