@@ -39,3 +39,11 @@ To create an instance from an instance snapshot, follow the directions below, as
     ![!launch instance dialog on source tab with snapshot in allocated table](./images/use_snapshot_003.png)
 
 7. Continue following the instructions at [Basic Instance Setup](./instance_setup_basic.md) to start the instance.
+
+## Sharing Snapshots
+
+<!-- markdownlint-disable MD046 -->
+!!! construction
+
+    Under construction.
+<!-- markdownlint-enable MD046 -->
