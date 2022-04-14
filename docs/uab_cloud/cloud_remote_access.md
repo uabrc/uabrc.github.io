@@ -90,12 +90,13 @@ fi
 
 ### Generating Key Pairs
 
-The instructions are identical for all operating systems. [GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) maintains excellent documentation on generating keypairs.
+The instructions for generating key pairs are identical for all operating systems. [GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) maintains excellent documentation on generating key pairs. The gist of those instructions follows.
 
 1. Open a terminal window.
 2. Use the command `ssh-keygen -t ed25519 -C "your_email@example.com"`
 3. You will be prompted to choose a location to store the key, including a file name.
-4. You will be prompted to enter a passphrase to secure the key.
+4. You will be prompted to enter a passphrase to secure the key. It is highly recommended to secure your key pair with a passphrase to minimize risk.
+
 
 ### Managing Private Keys
 
