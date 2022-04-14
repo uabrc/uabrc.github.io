@@ -10,35 +10,83 @@ SSH stands for **S**ecure **SH**ell and is a powerful tool for executing termina
 
 There are two main steps to working with SSH efficiently. The first is to ensure you have an SSH client installed, which will let your local machine communicate with remote machines. The second is to ensure you have `ssh-agent` running in each terminal window to automate management of key files. The `ssh-agent` software comes with most SSH clients, but does not always run automatically. How to start the `ssh-agent` software automatically varies depending on operating system and shell flavor, which we will describe below.
 
-There are several options for installing an SSH client on Windows. The details of installation of SSH on Windows is beyond the scope of this document, but we will detail some tricky parts as needed. Generally, these are listed from least to most complex.
+#### Install an SSH Client  (Linux)
 
-- Git Bash
-    - The fine folks at Git have worked very hard to package everything needed to use Git on Windows into one installer. This includes and Linux command line interface emulator, Bash and SSH. Visit <https://git-scm.com> to download and install.
-    - Follow the installer instructions. It is recommended to use all of the default installation options.
-    - Once installed, locate "Git Bash" on your machine to open the Bash terminal. It should be searchable in the Start Menu.
-- OpenSSH
-    - Follow the instructions [here](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) to install the OpenSSH client.
-    - Only install the OpenSSH server if you need it, otherwise skip that part.
-    - Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent service on your local machine to streamline adding and using keys.
-        - Open the Start Menu and search for "Services", and open the result shown in the image.
-            ![!Searching for services in the start menu. ><](./images/openssh_search_services.png)
-        - Find the "OpenSSH Authentication Agent" service in the list. Double click it, or right-click it and select "Properties".
-            ![!Services list showing OpenSSH Authentication Agent highlighted. ><](./images/openssh_services_list.png)
-        - In the dialog box, under the "General" tab, look for "Startup Type". Click the drop-down menu and select "Automatic (Delayed Start)". Click "Apply" at the bottom-right corner. This will cause the `ssh-agent` service to start when Windows starts.
-        - The "Start" button under the horizontal line should become enabled. Click it to start the `ssh-agent` service now.
-            ![!OpenSSH Authentication Agent Properties dialog box. ><](./images/openssh_ssh_agent_service_dialog.png)
-- Windows Subsystem For Linux (WSL)
-    - Follow the instructions starting [here](https://docs.microsoft.com/en-us/windows/wsl/about) to install Windows Subsystem for Linux.
-    - We will not go into detail on installing or using this as it is quite involved. It is useful if you will be doing substantial Linux development on Windows, or need a full-fledged Linux operating system inside the Windows environment.
+Virtually all Linux distributions come with SSH preinstalled and configured appropriately for ease of use, including automatically starting the `ssh-agent`.
 
-#### MacOS SSH Clients
+### Install an SSH Client  (MacOS)
 
-- MacOS comes with an SSH client installed. If you are on version Leopard `10.5.1` or lower, you may want to have the `ssh-agent` start automatically using the command `sudo touch /var/db/useLS` at a terminal window.
-- Versions newer than Leopard `10.5.1` start the `ssh-agent` automatically.
+MacOS comes with an SSH client installed.
 
-#### Linux SSH Clients
+If you are on version Leopard `10.5.1` or lower, you may want to have the `ssh-agent` start automatically using the command `sudo touch /var/db/useLS` at a terminal window. Versions newer than Leopard `10.5.1` start the `ssh-agent` automatically.
 
-- Virtually all Linux distributions come with SSH preinstalled and configured appropriately for ease of use.
+### Install an SSH Client (Windows)
+
+There are several options for installing an SSH client on Windows, described below. It is highly recommended to install Windows Subsystem for Linux (WSL) as it provides a complete Linux environment within Windows.
+
+#### Windows Subsystem For Linux (WSL)
+
+Follow the instructions starting [here](https://docs.microsoft.com/en-us/windows/wsl/about) to install Windows Subsystem for Linux.
+
+WSL shells do not automatically start or share the `ssh-agent`. To fix this we recommend installing `keychain` to automatically manage the `ssh-agent`. Run the following command depending on your Linux distribution.
+
+- DEB-based (Debian, Ubuntu): `sudo apt install keychain`
+- RPM-based (CentOS, Fedora, openSUSE): `sudo yum install keychain`
+
+Then modify the `.*rc` file for your shell, generally `.bashrc` or `.zshrc`, to automate the `ssh-agent` by adding the following line.
+        - ```eval `keychain -q --eval --agents ssh` ```
+
+<!-- markdownlint-disable MD046 -->
+!!! tip
+
+    You can access WSL files from within Windows in two ways.
+
+    In the WSL terminal, enter `explorer.exe .` to open a File Explorer window in the current directory.
+
+    In Windows, open a File Explorer window, click in the top navigation bar and enter `\\wsl$`. Then select your distribution from the file window to access the filesystem of that WSL operating system.
+<!-- markdownlint-enable MD046 -->
+
+#### OpenSSH for Windows
+
+Follow the instructions [here](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) to install the OpenSSH client. Only install the OpenSSH server if you need it, otherwise skip that part.
+
+Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent service on your local machine to streamline adding and using keys.
+
+- Open the Start Menu and search for "Services", and open the result shown in the image.
+    ![!Searching for services in the start menu. ><](./images/openssh_search_services.png)
+- Find the "OpenSSH Authentication Agent" service in the list. Double click it, or right-click it and select "Properties".
+    ![!Services list showing OpenSSH Authentication Agent highlighted. ><](./images/openssh_services_list.png)
+- In the dialog box, under the "General" tab, look for "Startup Type". Click the drop-down menu and select "Automatic (Delayed Start)". Click "Apply" at the bottom-right corner. This will cause the `ssh-agent` service to start when Windows starts.
+- The "Start" button under the horizontal line should become enabled. Click it to start the `ssh-agent` service now.
+    ![!OpenSSH Authentication Agent Properties dialog box. ><](./images/openssh_ssh_agent_service_dialog.png)
+
+#### Git Bash terminal (Git for Windows)
+
+The fine folks at Git have worked very hard to package everything needed to use Git on Windows into one installer. This includes and Linux command line interface emulator, Bash and SSH. Visit <https://git-scm.com> to download and install. Follow the installer instructions. It is recommended to use all of the default installation options. Once installed, locate "Git Bash" on your machine to open the Bash terminal. It should be searchable in the Start Menu.
+
+To automate running `ssh-agent` add the following block to the file `.bash_profile` in the `~` directory within Git Bash. Then use `source .bash_profile` to start the `ssh-agent`, or open a new terminal.
+
+```bash
+env=~/.ssh/agent.env
+
+agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+
+agent_start () {
+    (umask 077; ssh-agent >| "$env")
+    . "$env" >| /dev/null ; }
+
+agent_load_env
+
+# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
+agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+
+if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+    agent_start
+    ssh-add
+elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+    ssh-add
+fi
+```
 
 ### Generating Key Pairs
 
