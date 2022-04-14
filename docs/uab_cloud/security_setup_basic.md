@@ -98,7 +98,7 @@ Using a password protected Key Pair is highly recommended for additional securit
 
         ![!Key Pairs page. The Key Pairs table has one entry labeled my_key_pair. ><](./images/key_pairs_004.png)
 
-6. To add the private key on your local machine please see "Add key" under [Managing Private Keys](./cloud_remote_access.md#managing-private-keys).
+6. To add the private key on your local machine please see "Add key" under [Add a Private Key](./cloud_remote_access.md#add-a-private-key).
 
 ### Generating a Key Pair Locally
 
