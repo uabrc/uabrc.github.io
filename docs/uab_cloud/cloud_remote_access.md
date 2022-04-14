@@ -4,9 +4,11 @@ All of the access methods described below are built on top of `ssh` and require 
 
 ## Command Line via SSH
 
+SSH stands for **S**ecure **SH**ell and is a powerful tool for executing terminal commands on remote machines. It is widely used and ubiquitous, and a number of other technologies are built on top of SSH, like `sftp` and `scp` for transferring files. It is also the primary mode of command line communication with Research Computing technologies like Cheaha and cloud.rc.
+
 ### Install an SSH Client
 
-#### Windows SSH Clients
+There are two main steps to working with SSH efficiently. The first is to ensure you have an SSH client installed, which will let your local machine communicate with remote machines. The second is to ensure you have `ssh-agent` running in each terminal window to automate management of key files. The `ssh-agent` software comes with most SSH clients, but does not always run automatically. How to start the `ssh-agent` software automatically varies depending on operating system and shell flavor, which we will describe below.
 
 There are several options for installing an SSH client on Windows. The details of installation of SSH on Windows is beyond the scope of this document, but we will detail some tricky parts as needed. Generally, these are listed from least to most complex.
 
