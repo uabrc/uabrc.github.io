@@ -148,6 +148,18 @@ If `ssh-agent` isn't already running and you encounter an error, use the followi
 
 Run `ssh-add -d <path/to/private_key_file>`
 
+#### Push a New Public Key File to a Remote Machine
+
+To push a new public key file to a remote machine, please use the `ssh-copy-id` command. If your `ssh-agent` is running and has a known-good private key added, then the command below will work as expected and add the `<new_public_keyfile>.pub` to the remote machine. You must also have the private key counterpart `<new_private_keyfile>` with the same name as the public key file, without the `.pub` extension.
+
+```bash
+ssh-copy-id -i ~/.ssh/<new_public_keyfile> <user>@<remote_ip>
+```
+
+The value `<user>` should be replaced with the remote user you will login as. The value `<remote_ip>` should be replaced with the IP address of the remote machine.
+
+To verify, use `ssh -i ~/.ssh/<new_private_keyfile>.pub <user>@<remote_ip>`.
+
 #### Remove an Invalid Host Fingerprint
 
 This command should **only** be run when reusing a floating IP for a new instance in a cloud context.
