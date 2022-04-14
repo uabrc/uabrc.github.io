@@ -177,15 +177,15 @@ Run `ssh-keygen -R <hostname>` where `<hostname>` is the URL or IP address of th
 SSH configuration files help streamline the process of logging in to remote terminals by storing commonly-used arguments and flags for each host. To create a configuration file, navigate to your `.ssh` directory. Create a new plain text file called `config` with no extension. Open the file and add content like the following. Note that indent matters.
 
 ```ssh-config
-Host <name>
+Host <host>
   HostName <remote_ip>
   User <user>
   IdentityFile <absolute_path_to_private_key_file>
 ```
 
-Be sure to give a meaningful name under `<name>` so you can easily refer back to this config later. Only letters, numbers, dashes and underscores are allowed, and it must start with a letter. The value `<remote_ip>` can be any remote machine relevant to your work. For cloud.rc it should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip). The value `<user>` should be whatever user name you will log in as. For cloud.rc, `ubuntu` or `centos` are typical, depending on instance operating system. The value `<path_to_private_key_file>` is the absolute path to the private key file, e.g. the path to your `.ssh` folder followed by the `<private_key_file>` file name.
+Be sure to give a meaningful name under `<host>` so you can easily refer back to this config later. Only letters, numbers, dashes and underscores are allowed, and it must start with a letter. The value `<remote_ip>` can be any remote machine relevant to your work. For cloud.rc it should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip). The value `<user>` should be whatever user name you will log in as. For cloud.rc, `ubuntu` or `centos` are typical, depending on instance operating system. The value `<path_to_private_key_file>` is the absolute path to the private key file, e.g. the path to your `.ssh` folder followed by the `<private_key_file>` file name.
 
-Save the file. Start a new terminal and use the command `ssh <name>`, with no other flags, to test.
+Save the file. Start a new terminal and use the command `ssh <host>`, with no other flags, to test. You can also use `<host>` with [SCP](#scp) and [SFTP](#sftp).
 
 ### SSH Client Usage
 
