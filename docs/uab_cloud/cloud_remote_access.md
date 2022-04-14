@@ -97,10 +97,26 @@ The instructions for generating key pairs are identical for all operating system
 3. You will be prompted to choose a location to store the key, including a file name.
 4. You will be prompted to enter a passphrase to secure the key. It is highly recommended to secure your key pair with a passphrase to minimize risk.
 
+### Managing Keys
 
-### Managing Private Keys
+The instructions below are the same for all operating systems with one small exception noted below.
 
-The instructions are the same for all operating systems with one small exception noted below.
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If at any point you encounter an error like below, please check to be sure your `ssh-agent` is running based on how you [Installed your SSH Client](#install-an-ssh-client).
+
+    ```bash
+    Could not open a connection to your authentication agent.
+    ```
+<!-- markdownlint-enable MD046 -->
+
+#### Starting the SSH Agent for a Single Session
+
+If `ssh-agent` isn't already running and you encounter an error, use the following commands to start the `ssh-agent` depending on your environment. It is highly recommended to use the most appropriate method described in [Install an SSH Client](#install-an-ssh-client) to have `ssh-agent` start automatically.
+
+- Linux, MacOS, Git Bash, WSL: `eval $(ssh-agent -s)`
+- Windows OpenSSH: `start-ssh-agent`
 
 #### Add a Private Key
 
