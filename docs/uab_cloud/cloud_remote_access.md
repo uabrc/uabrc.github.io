@@ -209,19 +209,84 @@ ssh user@<remote_ip> -i <private_key_file>
 
 ## Data Transfer
 
-## `scp`
+### SCP
 
-To install, see [Install an SSH Client](#install-an-ssh-client). The format for use is given below.
+SCP stands for **S**ecure **C**o**P**y and works like the `cp` command, but allows transferring files and directories with remote machines. SCP is built on top of SSH and is installed with most SSH Clients. To install SCP, see [Install an SSH Client](#install-an-ssh-client).
 
-**More coming soon!**
+<!-- markdownlint-disable MD046 -->
+!!! warning
 
-## `sftp`
+    The OpenSSH developers recommend using SFTP instead of SCP. Future releases of OpenSSH will have SCP use SFTP protocol.
+<!-- markdownlint-enable MD046 -->
 
-To install, see [Install an SSH Client](#install-an-ssh-client). The format for use is given below.
+The value `<user>` is the user you will login as on the remote machine `<hostname>`. Note that if you are using an [SSH Configuration File](#setting-up-a-configuration-file) with Host `<host>`, then replace all of `<user>@<hostname>` with just `<host>`, as you would with SSH.
 
-**More coming soon!**
+```bash
+scp <source_file> <user>@<hostname>:<destination_file>  # single file
+scp <source_file> <user>@<hostname>:  # retains the file name
 
-## `rclone`
+scp -r <source_directory> <user>@<hostname>:<destination_directory>  # full directory
+scp -r <source_directory> <user>@<hostname>:  # retains the directory name
+```
+
+Examples:
+
+```bash
+# file
+scp script.py cheaha:
+scp script.py user@cheaha.rc.uab.edu:~/existing/shared_script.py
+scp script.py user@<cloud_vm_ip>:
+
+# directory
+scp -r my_scripts/ user@cheaha.rc.uab.edu:
+scp -r my_scripts/ cheaha:my_shared_scripts/
+```
+
+### SFTP
+
+SFTP stands for **S**ecure **F**ile **T**ransfer **P**rotocol and allows transferring files and directories with remote machines. SFTP is built on top of SSH and is installed with most SSH Clients. To install SFTP, see [Install an SSH Client](#install-an-ssh-client).
+
+SFTP works differently from [SCP](#scp), as it has an interactive prompt. When connected to a remote, the prompt `sftp>` will appears and enable use of SFTP commands. SFTP can also be used in batch mode with the `-b <batch_file>` argument. The plaintext `<batch_file>` should contain one SFTP command per line.
+
+To connect, use `sftp <user>@<hostname>` where `<user>` is the user you will login as on the remote machine `<hostname>`. If you are using an [SSH Configuration File](#setting-up-a-configuration-file) with Host `<host>`, you may use `sftp <host>`. You may optionally use `sftp <host>:/path/to/dir` to start in a specific directory.
+
+Some examples of commands are given below. A complete list is available [here](https://linux.die.net/man/1/sftp)
+
+```bash
+# general commands
+sftp> pwd  # remote current directory
+sftp> lpwd  # local current directory
+
+sftp> ls  # contents of remote pwd
+sftp> lls  # contents of local pwd
+
+sftp> mkdir my_dir  # create my_dir on remote
+sftp> lmkdir my_dir  # create my_dir on local
+
+sftp> cd my_dir  # change directory on remote
+sftp> lcd my_dir  # change directory on local
+
+
+# copy to remote
+sftp> put <local_file> <optional_remote_path>
+sftp> put -r <local_directory> <optional_remote_path>
+# if optional remote path is not supplied, uses pwd
+
+# file
+sftp> put script.py  # copies file to pwd, same name
+sftp> put script.py shared_script.py  # copies file to pwd, renames
+sftp> put script.py all_scripts/  # copies to pwd existing subdirectory of pwd
+
+# directory, must use trailing '/' character!
+sftp> put -r my_scripts/  # copies directory to pwd
+sftp> put -r my_scripts/ all_scripts/  # copies to existing subdirectory of pwd
+
+
+# copy from remote, same syntax as put, reversed direction
+sftp> get <remote_file> <optional_local_path>
+sftp> get -r <remote_directory> <optional_local_path>
+# if optional local path is not supplied, uses lpwd
+```
 
 ### RClone
 
