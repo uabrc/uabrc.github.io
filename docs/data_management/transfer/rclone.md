@@ -34,7 +34,7 @@ To instead install natively on Windows, you will need to use the following instr
 6. Click "Path" to select it.
 7. Click the "Edit..." button to open a new dialog.
 8. Click the "New" button.
-9. Type in the folder path to `rclone.exe` as `C:/path/to/rclone.exe`, modified appropriately.
+9. Type in the folder path to `rclone.exe` as `C:/path/to/rclone_folder`, modified appropriately.
 10. Click the "OK" button to confirm and close the dialog box.
 11. Click the "OK" button to confirm and close the Environment Variables dialog box.
 12. Click the "OK" button to confirm and close the System Properties dialog box.
