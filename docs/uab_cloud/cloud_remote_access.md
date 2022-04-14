@@ -138,8 +138,11 @@ If `ssh-agent` isn't already running and you encounter an error, use the followi
         ```
 <!-- markdownlint-enable MD046 -->
 
-- MacOS Only
-    - MacOS allows storing passphrases to the builtin Keychain with a special flag. Use `ssh-add -K <path/to/private_key_file>` to permanently store the passphrase that goes with the key file.
+    <!-- markdownlint-disable MD046 -->
+    !!! tip
+
+        MacOS allows storing passphrases to the builtin Keychain with a special flag. Use `ssh-add -K <path/to/private_key_file>` to permanently store the passphrase that goes with the key file.
+    <!-- markdownlint-enable MD046 -->
 
 #### Remove a Private Key
 
