@@ -220,3 +220,15 @@ Example `rclone copyto "C:\users\Name\My Documents\manuscript.docx" box:manuscri
 To make a destination directory's contents identical to a source directory, use `rclone sync <source:><path> <destination:><path>`
 
 Example: `rclone sync cheaha:"C:\users\Name\My Documents" box:manuscript`.
+
+## Other Helpful Global Flags
+
+Flag used with any RClone command are called global flags. Below are some useful global flags.
+
+- `-C` or `--checksum`: Skip syncing files based on checksum instead of last modified time.
+- `--dry-run`: Show what will happen if the command were executed. No changes are made.
+- `--immutable`: Do not allow any files to be modified. Helpful to avoid unintended deletions and overwrites.
+- `--max-depth <integer>`: Only recurse to `<integer>` depth within directory tree. Using `rclone ls --max-depth 1` means only show top-level files in the current directory.
+- `-P` or `--progress`: Show progress of command as it runs.
+- `--quiet`: Print as little as possible. Useful in scripts.
+- `-u` or `--update`: Skips files that are newer on the remote.
