@@ -6,11 +6,11 @@ RClone requires a modest amount of setup time on local machines, but once setup 
 
 ## Installing
 
-### Cheaha
+### Installing on Cheaha
 
-On Cheaha, RClone is already installed as a [Module](../../cheaha/lmod.md).
+On Cheaha, RClone is already installed as a [Module](../../cheaha/lmod.md). Use `module load rclone` to load it.
 
-### cloud.rc and Linux
+### Installing on Linux and cloud.rc
 
 See [Installing Software](../../uab_cloud/installing_software.md) for general good practice on installing software, then use the following command.
 
@@ -20,7 +20,7 @@ curl https://rclone.org/install.sh | sudo bash
 
 Open a new terminal and enter `rclone` to verify installation.
 
-### Windows
+### Installing on Windows
 
 It is highly recommended to install `rclone` in Windows Subsystem for Linux (WSL).
 
