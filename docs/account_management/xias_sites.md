@@ -30,4 +30,4 @@ XIAS Project/Sites, or simply sites, tie external users to specific resources at
 
 5. When you visit the "Manage Projects/Sites" page in the future, you will see a table with the newly created Project/Site listed. Click "View" to return to the page seen in the previous step. Click "Edit" to return to the form from \[link\]. Click "Users" to manage users for this site.
 
-    ![!Site table with newly created site listed. On that row are three buttons: View, Edit, Users. On the next row is the button New.](./images/xias_sites_add_004.png)
+    ![!Site table with newly created site listed. On that row are three buttons: View, Edit, Users. On the next row is the button New. ><](./images/xias_sites_add_004.png)
