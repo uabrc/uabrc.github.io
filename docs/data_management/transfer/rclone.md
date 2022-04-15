@@ -66,22 +66,108 @@ RClone connects two personal computers or servers using `sftp` which is built on
 
 The official docuemntation for `rclone sftp` is [here](https://rclone.org/sftp/).
 
-### Setting up a UAB Box Remote
+### Setting up UAB Cloud Remotes
 
-RClone also connects to many cloud services. At UAB a vetted service called [Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box) is used.
+The setup process for UAB cloud remotes is generally the same, except for the specifics of authentication. The instruction template is outlined below and will point you to the authentication section specific to each remote when it becomes relevant.
 
-1. At the terminal enter `rclone config`. This will be terminal (1).
-2. Follow the prompts to choose `Box`.
-3. Enter a memorable name for future reference and configuration when prompted `name>`.
-4. Press enter to leave all of the remaining prompts blank until "Use auto config?", then type "no" and press enter. This will be terminal (4)
-5. On a machine with a browser, such as your personal computer, open a terminal and enter `rclone authorize "box"`.
-6. When the browser window opens, authenticate to Box using UAB credentials as usual. You should be asked to grant permission to the RClone software. Allow these permissions if you want the software to work with Box.
-7. Terminal (4) will print a secret token.
-8. Copy and paste the token from the terminal (4) to the terminal (1).
-9. Follow the remaining prompts.
-10. Verify by using `rclone lsd <name>:` in terminal (1).
+As you step through the process, you will ultimately open two terminal windows and a browser window, and will need to copy text between the terminal windows. The first terminal window will be used to setup the RClone cloud remote. The second terminal will be used to authenticate to that cloud service and gain a token that will be passed back to the first terminal. Authentication will happen by logging into the service in a browser window. This setup method is necessary for any machine where a browser is not readily available, such as a cloud.rc virtual machine. To facilitate setup on these machines, the second terminal will be opened on a machine with RClone and a browser. An example of what this setup might look like is given below.
 
-The official documentation for `rclone box` is [here](https://rclone.org/box/) and the official documentation for this style of Remote Setup is [here](https://rclone.org/remote_setup/).
+![!overview of windows used for authenticating cloud remotes via rclone ><](./images/rclone-auth-overview.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you are using RClone in Windows Subsystem for Linux (WSL), you won't be able to open a browser using WSL. Instead, you will need to [Install RClone on Windows](#installing-on-windows) and use the Windows Command Prompt terminal to use `rclone authorize`.
+<!-- markdownlint-enable MD046 -->
+
+1. Open a terminal on the device you wish to authorize to access the chosen cloud service provider using RClone. This terminal will be referred to as terminal-1.
+2. At terminal-1 enter `rclone config`.
+3. Follow the prompts to choose one of the following. The selection here will be used later and will be referred to as `<remote>`.
+   - UAB Box: select `Box`. `<remote>` will be replaced by  `box`.
+   - UAB SharePoint Site: select `Microsoft OneDrive`. `<remote>` will be replaced by `onedrive`.
+   - UAB OneDrive: select `Microsoft OneDrive`. `<remote>` will be replaced by `onedrive`.
+4. Enter a short, memorable name for future reference when prompted with `name>`. Keep this `<name>` in mind as it will be how you access the remote when [Using Commands](#usage).
+5. Press enter to leave all additional prompts blank until "Use auto config?". Type "n", for no, and press enter.
+6. The prompt should now read `config_token>`.
+7. On a machine with a browser, such as your personal computer, open a new terminal and enter `rclone authorize "<remote>"`. Replacing `<remote>` with the value from step (3). This terminal will be referred to as terminal-2.
+8. When the browser window opens, use it to authenticate to your selected service.
+    - [Authenticate to UAB Box](#authenticating-to-uab-box).
+    - [Authenticate to Microsoft OneDrive](#authenticating-to-microsoft-onedrive).
+9. Terminal-2 will print a secret token, which will appear like in the following image. You will need to copy the portion highlighted in the image, between the lines with `--->` and `<---`.
+
+    ![!rclone authentication token sample ><](./images/rclone-auth-token-sample.png)
+
+10. Copy and paste the token from the terminal-2 to terminal-1.
+11. Follow the remaining prompts.
+12. Verify success by using `rclone lsd <name>:` in terminal-1.
+
+### Authenticating to Cloud Remotes
+
+#### Authenticating to UAB Box
+
+1. Click "Use Single Sign On (SSO)".
+
+    ![!box authentication dialog with single sign on highlighted ><](./images/rclone-auth-box-010.png)
+
+2. Type in your UAB email address (not your @uabmc.edu email!).
+3. Click "Authorize".
+
+    ![!box single sign on authentication dialog ><](./images/rclone-auth-box-020.png)
+
+4. You will be redirected to the UAB SSO page.
+5. Authenticate with your blazerid credentials.
+6. You will be asked to grant permission to the RClone software. Click "Grant access to Box" if you want the software to work with Box. If you do not grant permission, you will not be able to use RClone with Box.
+
+    ![!box grant permission request dialog ><](./images/rclone-auth-box-030.png)
+
+7. You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.
+
+    ![!success page ><](./images/rclone-auth-rclone-success.png)
+
+8. Return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Tokens are set to expire after some time of disuse to decrease risk of a data breach. If your token expires, you can [Reconnect to an Existing Remote](#reconnecting-to-an-existing-remote) rather than recreate the remote configuration completely from scratch.
+<!-- markdownlint-enable MD046 -->
+
+#### Authenticating to Microsoft OneDrive
+
+1. Type in your UAB email address (not your @uabmc.edu email!).
+2. Click "Next".
+
+    ![!onedrive authentication dialog ><](./images/rclone-auth-onedrive-010.png)
+
+3. If prompted, click "Work or school account".
+
+    ![!onedrive account selection dialog ><](./images/rclone-auth-onedrive-020.png)
+
+4. You will be asked to grant permission to the RClone software. Click "Accept" if you want the software to work with OneDrive. If you do not grant permission, you will not be able to use RClone with OneDrive.
+
+    ![!onedrive grant permission request dialog ><](./images/rclone-auth-onedrive-030.png)
+
+5. You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.
+
+    ![!success page ><](./images/rclone-auth-rclone-success.png)
+
+6. Next you will return to the general instructions. Before you do, note that you'll be asked to choose which type of OneDrive service to access. The prompt will look like the image below. For UAB, the two relevant selections will be (1) to access your personal OneDrive space and (3) for a SharePoint Site, e.g. for a lab or department.
+
+    ![!rclone selection prompt among list of onedrive services ><](./images/rclone-auth-onedrive-040.png)
+
+7. With your selection in mind, return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
+
+### Reconnecting to an Existing Remote
+
+When your tokens expire, rather than recreate the remote from scratch, simply use the following command with your existing remote `<name>`.
+
+```bash
+rclone config reconnect <name>:
+```
+
+- If you already have a token, you will be asked if you want to refresh it. Choose yes if so, then continue.
+- You will be prompted with `Use auto config?`. If you are on a machine with no access to a browser, respond `n`, as in the original setup.
+- Follow the steps in the appropriate section under [Authenticating to Cloud Remotes](#authenticating-to-cloud-remotes), as in the original setup.
 
 ## Usage
 
