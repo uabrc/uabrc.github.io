@@ -123,13 +123,13 @@ ssh user@<remote_ip> -i <private_key_file>
 
 ## Data Transfer
 
-## `scp`
+## SCP
 
 To install, see [Install an SSH Client](#install-an-ssh-client). The format for use is given below.
 
 **More coming soon!**
 
-## `sftp`
+## SFTP
 
 To install, see [Install an SSH Client](#install-an-ssh-client). The format for use is given below.
 
