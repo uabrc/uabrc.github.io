@@ -47,11 +47,23 @@ Follow the [online instructions](https://rclone.org/install/#macos-installation-
 
 ## Setting up Remotes
 
-RClone is capable of interfacing with many remote cloud services, as well as using `sftp` for connecting two personal computers or servers. We will only cover those relevant to UAB use, so please see their [documentation](https://rclone.org/docs/) for more information.
+RClone is capable of interfacing with many remote cloud services, as well as using `sftp` for connecting two personal computers or servers. We will only cover those [cloud services](https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options) relevant to UAB use. We will not cover how to connect to any other cloud services using RClone. More detailed information is available at the [RClone documentation](https://rclone.org/docs/)
 
-### Setting up `sftp` and `scp` Remotes
+<!-- markdownlint-disable MD046 -->
+!!! important
 
-RClone connects two personal computers or servers using `sftp` which is built on `ssh`, so a lot of these instructions mirror what would be done with an `ssh` configuration.
+    Cloud access tokens are always supplied with an expiration date for security reasons. You will need to repeat the setup process periodically to regain access via RClone.
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    RClone has an unusual user interface, using alternating red and green blocks to differentiate list items. The colors do not convey any particular meaning beyond differentiation.
+<!-- markdownlint-enable MD046 -->
+
+### Setting up an SFTP Remote
+
+RClone connects two personal computers or servers using SFTP which is built on SSH, so a lot of these instructions mirror what would be done with an SSH configuration.
 
 1. [Generate a Key Pair](../../uab_cloud/cloud_remote_access.md#generating-key-pairs) for use with the remote machine.
 2. At the terminal enter `rclone config`.
