@@ -171,9 +171,9 @@ rclone config reconnect <name>:
 
 ## Usage
 
-RClone is a powerful tool with many commands available. We will only cover a small subset of the available commands, as most are beyond typical usage, so please see their [documentation](https://rclone.org/docs/) for more information.
+RClone is a powerful tool with many commands available. We will only cover a small subset of the available commands, as most are beyond typical usage, so please see the [RClone documentation](https://rclone.org/docs/) for more information.
 
-All commands have access to the [global flags](https://rclone.org/flags/). An important global flag is `--dry-run` to show what will happen without actually executing the command, which can be helpful to prevent costly mistakes.
+All commands have access to the [global flags](https://rclone.org/flags/). An important global flag is `--dry-run` to show what will happen without actually executing the command, which can be helpful to prevent costly mistakes. [Other Helpful Global Flags](#other-helpful-global-flags) are also available.
 
 The various remotes each have their own individual page with their own specific flags, and are linked in the relevant [Setting up Remotes](#setting-up-remotes) section above.
 
