@@ -35,9 +35,17 @@ Security Groups are used to set rules for how external devices can connect to yo
     1. Select "SSH" in the "Rule" drop down box. This will change the remaining fields.
     2. Leave "Description" empty.
     3. Select "CIDR" in the "Remote" drop down box.
-    4. Type `0.0.0.0/0` in the "CIDR" box. **WARNING!** This is **NOT** good practice! For your research instances, you'll want to constrain the CIDR value further to a narrower range of IP addresses. The rule we have shown here leaves the SSH port open to all IP addresses world-wide.
+    4. Type `0.0.0.0/0` in the "CIDR" box. For the sake of this tutorial, this value is fine. For properly securing virtual machines, see the "Warning" below for more information on better practice.
 
     ![!Add Rule dialog box. The dialog box is filled out. The rule is set to SSH. ><](./images/security_groups_004.png)
+
+    <!-- markdownlint-disable MD046 -->
+    !!! warning
+
+        Using the value `0.0.0.0/0` for CIDR is short-hand for saying "All possible IP addresses". While cloud.rc is protected from external sources by the UAB firewall, using `0.0.0.0/0` does expose your virtual machine to all machines on the UAB internal network. Using the value `0.0.0.0/0` is the same as saying "I trust the UAB firewall to protect my VM, and I trust UAB faculty, staff and students to not harm my VM".
+
+        Better practice is to limit the CIDR scope to only the IP address ranges that are relevant to your goals. As with all of cybersecurity, there is a security/convenience tradeoff to be made, and properly scoping CIDR will take more work than just using `0.0.0.0/0`. CIDR calculators are available on the internet to assist with calculation, just search for `CIDR Calculator`.
+    <!-- markdownlint-enable MD046 -->
 
 7. Click "Add".
 
