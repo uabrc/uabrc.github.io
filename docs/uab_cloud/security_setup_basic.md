@@ -8,11 +8,11 @@ Security Groups are used to set rules for how external devices can connect to yo
 
 1. Click "Networks" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page. Security Groups is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
+    ![!cloud.rc Overview page. Security Groups is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
 
 2. Click "Security Groups" in the fold out menu.
 
-    ![!OpenStack Security Groups page. The Security Groups table has one entry, the default, persistent entry labeled default. ><](./images/security_groups_001.png)
+    ![!cloud.rc Security Groups page. The Security Groups table has one entry, the default, persistent entry labeled default. ><](./images/security_groups_001.png)
 
 3. Click "+ Create Security Group" to open a dialog box.
 
@@ -56,7 +56,7 @@ Security Groups are used to set rules for how external devices can connect to yo
 
 ## Creating a Key Pair
 
-A Key Pair is required for SSH access to OpenStack instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) on your local machine.
+A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) on your local machine.
 
 Key Pairs are security devices used to authenticate and connect to a remote machine, like Cheaha or cloud.rc instances, and use [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) to encrypt the connection. As the name suggests, there are two parts: a public key which is placed on the remote machine, and a private key which is kept secret on your personal machine.
 
@@ -79,7 +79,7 @@ Using a password protected Key Pair is highly recommended for additional securit
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
+    ![!cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
 
 2. Click "Key Pairs".
 
@@ -138,7 +138,7 @@ Revoking a key pair from cloud.rc is simple. First, log on to the interface.
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
+    ![!cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
 
 2. Click "Key Pairs".
 

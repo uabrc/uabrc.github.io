@@ -115,7 +115,7 @@ We encourage denoting the warning being silenced here by filling out the `<lint 
 
 We allow and encourage the use of [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types) in our documentation, where appropriate. Because these are created using a plugin and are "non-standard" `markdown`, the VSCode `markdownlint` extension does not recognize admonitions and may produce a false positive warning about inconsistent code block styles.
 
-Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. This is enforced by adding an entry to the [VSCode `settings.json` file](#vscode-settingsjson-additions). Now all admonitions will be consistently assigned the warning `MD046`, which can be disabled by placing all admonitions in between the following lines.
+Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. This is enforced by adding an entry to the [VSCode `settings.json` file](#vscode-settingsjson-additions). Now all admonitions will be consistently assigned the warning `MD046`, which can be disabled by placing all admonitions in between the following comment block fences. The comment lines must be indented to the same level as the start of the admonition.
 
 ```markdown
 <!-- markdownlint-disable MD046 -->
@@ -174,4 +174,3 @@ There is no way to fix this automatically, so we rely on checking and reporting.
 #### Checking Indentation
 
 Currently Prettier bulleted list indenting is wonky for markdown. In addition to indenting list markers, it pads out spaces after the marker. Please see [this issue](https://github.com/prettier/prettier/issues/5019) for more details. As a result, we can't automatically format markdown documents, so we need to rely on spotting incorrect indents. Use the following regex `^[ ]{1,3}[^ ]`. It will search for one to three spaces followed by a not-space character.
-
