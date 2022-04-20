@@ -16,11 +16,17 @@ This will allow to choose the number of hours, partition, number of cpus, and me
     You can decrease wait time in the queue by choosing resources carefully. The closer your request is to actual usage, the more optimal your wait time will be. Please see our section on [Job Efficiency](../job_efficiency.md) for more information.
 <!-- markdownlint-enable MD046 -->
 
-Once you've selected the compute resources you need, Launch the job. This will bring you to the My Interactive Sessions page. This page looks like:
+Once you've selected the compute resources you need, Launch the job. This will bring you to the My Interactive Sessions page, and read on.
 
-![!List of interactive sessions. ><](./images/ood_interactive_sessions.png)
+## My Interactive Sessions
 
-There will be basic information about the number of cores and nodes as well as the job ID in the top part of the job card. The amount of time remaining in the job is included in the card as well as a quick link to the file browser in the `Session ID` field. Click `Launch Desktop in new tab` to open your interactive VNC session.
+The My Interactive Sessions page looks like:
+
+![!List of interactive sessions shown as job cards. ><](./images/ood_interactive_sessions.png)
+
+For each job running via Open OnDemand, there will be a card listed on this page. Each card has basic information about the number of cores, nodes, and time remaining for the job. Also shown are the Job ID in the top-left part of the job card, and a Session ID link near the center of the card. The Job ID and Session ID are important for diagnosing issues you may encounter on Cheaha while using Open OnDemand. The Session ID link points to a folder in your home directory with information we may ask for.
+
+Click the `Launch Desktop in new tab` button to open your interactive VNC session. You may have to wait for the card to change from blue to green to launch the job.
 
 <!-- markdownlint-disable MD046 -->
 !!! bug
