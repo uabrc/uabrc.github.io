@@ -165,6 +165,10 @@ python -u sstatus.py -c partitions > partitions.csv
 python -u sstatus.py -c qos > qos.csv
 ```
 
+### Redirects
+
+Redirecting pages is possible using the plugin at <https://github.com/datarobot/mkdocs-redirects>.
+
 ### Useful Regex
 
 #### Checking Internal Links are Relative
