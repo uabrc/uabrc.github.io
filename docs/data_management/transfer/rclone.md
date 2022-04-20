@@ -237,6 +237,12 @@ To make a destination directory's contents identical to a source directory, use 
 
 Example: `rclone sync cheaha:"C:\users\Name\My Documents" box:manuscript`.
 
+<!-- markdownlint-disable MD046 -->
+!!! danger
+
+    `rclone sync` is a destructive operation and cannot be undone! If files exist on the destination that do not exist on the source, then they will be deleted permanently from the destination. To avoid accidental destruction of files use the `--immutable` [flag](#other-helpful-global-flags).
+<!-- markdownlint-enable MD046 -->
+
 ## Other Helpful Global Flags
 
 Flag used with any RClone command are called global flags. Below are some useful global flags.
