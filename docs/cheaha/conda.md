@@ -140,4 +140,18 @@ conda activate <env>
 conda env export > env.yml
 ```
 
-### More Information
+## Speeding Things up with Mamba
+
+[Mamba](https://github.com/mamba-org/mamba#readme) is an alternative to Anaconda that uses `libsolv` and parallel processing to install environments more quickly, sometimes by an order of magnitude. Mamba will also discover conflicts very quickly. Mamba is available as a [package](https://anaconda.org/conda-forge/mamba) via Anaconda. Currently Mamba cannot be installed on Cheaha, only on self-maanged systems like cloud.rc instances. To install use the following.
+
+```bash
+conda activate base
+conda update --all
+conda install -n base -c conda-forge mamba
+```
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Mamba must be installed in the base environment to function correctly!
+<!-- markdownlint-enable MD046 -->

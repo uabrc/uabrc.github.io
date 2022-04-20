@@ -6,7 +6,7 @@ These instructions are intended for researchers who want to setup a persistent v
 
 1. Click the "Volumes" fold-out in the left-hand navigation pane - the fold-out should open.
 
-    ![!OpenStack Overview page. The Volumes fold-out is opened. The Volumes link in the fold-out is highlighted. ><](./images/volumes_000.png)
+    ![!cloud.rc Overview page. The Volumes fold-out is opened. The Volumes link in the fold-out is highlighted. ><](./images/volumes_000.png)
 
 2. Click "Volumes" within the fold-out to open the "Volumes" table page.
 
@@ -35,13 +35,13 @@ These instructions are intended for researchers who want to setup a persistent v
 
 ## Attaching a Volume to a Running Instance
 
-To attach a volume you must have already created at least one using the OpenStack interface. More information can be found in \[link\]
+To attach a volume you must have already created at least one using the cloud.rc interface. More information can be found in \[link\]
 
 1. Open the instances table by clicking "Compute" in the left-hand navigation pane and clicking "Instances".
 
 2. In the "Actions" column entry, click the drop down triangle button and select "Attach Volume".
 
-    ![!OpenStack Instances Page. The table has one entry labeled my_instance. The drop-down box under the Actions column is open revealing many options. The Attach Volume option is highlighted. ><](./images/instances_018.png)
+    ![!cloud.rc Instances Page. The table has one entry labeled my_instance. The drop-down box under the Actions column is open revealing many options. The Attach Volume option is highlighted. ><](./images/instances_018.png)
 
 3. A dialog box will open.
 

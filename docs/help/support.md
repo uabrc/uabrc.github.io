@@ -19,6 +19,10 @@ To Create a support ticket, send a descriptive email to <support@listserv.uab.ed
 2. What were you working on when you noticed the outage?
 3. How were you accessing the cluster? Web Portal, SSH, VNC, etc.?
 
+### Finding Common Information
+
+Please see our [FAQ](faq.md), especially [How To](faq.md#how-to).
+
 ## How Do I Request Or Change A Project Space?
 
 Projects are collaborative data and code storage spaces with controlled access. Any UAB investigator with a legitimate research need can request a project storage space. Please send an email with the following information, depending on what you need.

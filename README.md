@@ -115,7 +115,7 @@ We encourage denoting the warning being silenced here by filling out the `<lint 
 
 We allow and encourage the use of [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types) in our documentation, where appropriate. Because these are created using a plugin and are "non-standard" `markdown`, the VSCode `markdownlint` extension does not recognize admonitions and may produce a false positive warning about inconsistent code block styles.
 
-Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. This is enforced by adding an entry to the [VSCode `settings.json` file](#vscode-settingsjson-additions). Now all admonitions will be consistently assigned the warning `MD046`, which can be disabled by placing all admonitions in between the following lines.
+Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. This is enforced by adding an entry to the [VSCode `settings.json` file](#vscode-settingsjson-additions). Now all admonitions will be consistently assigned the warning `MD046`, which can be disabled by placing all admonitions in between the following comment block fences. The comment lines must be indented to the same level as the start of the admonition.
 
 ```markdown
 <!-- markdownlint-disable MD046 -->
@@ -165,6 +165,10 @@ python -u sstatus.py -c partitions > partitions.csv
 python -u sstatus.py -c qos > qos.csv
 ```
 
+### Redirects
+
+Redirecting pages is possible using the plugin at <https://github.com/datarobot/mkdocs-redirects>.
+
 ### Useful Regex
 
 #### Checking Internal Links are Relative
@@ -182,3 +186,4 @@ Our preference is that images be centered at their indentation level. To do this
 `![!alttext ><](./path/to/image.png)`
 
 To discover images that are missing the centering characters, use regex `!\[.*[^<]\]\(`.
+
