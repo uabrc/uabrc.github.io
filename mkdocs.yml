@@ -44,6 +44,7 @@ nav:
       - account_management/gitlab_researcher.md
   - Data Management:
       - data_management/storage.md
+      - data_management/s3.md
       - File Transfer:
           - data_management/transfer/globus.md
           - data_management/transfer/filezilla.md
