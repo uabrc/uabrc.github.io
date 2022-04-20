@@ -75,16 +75,6 @@ Most commonly, delays in launching OOD RStudio Server are caused by a large quan
 
 See [here](#why-do-i-get-a-gray-screen-after-launching-my-ood-rstudio-server-session).
 
-#### How do I locate hidden dot files on Cheaha?
-
-Dot files are files or directories that start with the character `.` as in the file `.bashrc` or the `.conda` directory.
-
-If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [OOD Files](../cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
-
-![!File browser bar with Show Dotfiles checked. ><](images/faq_odd_show_dotfiles.png)
-
-If you are using the terminal, you'll need to use `cd` to navigate to the appropriate directory and enter use `ls` with the `-a` flag to list all files and directories, including hidden ones.
-
 #### What is a segfault error?
 
 A segfault, or segmentation fault, often causes unexpected termination of software. These errors are caused by software attempting to access memory that it isn't allowed to access. An error typically includes a long string of hexadecimal characters like `0x000055ea4064c135`, but with different values, and one or more of `segmentation fault`, `segfault` and/or `SIGSEGV`.
@@ -118,6 +108,59 @@ When using the RStudio Server app (the non-deprecated version) on [Open OnDemand
     ![!Close the R Terminal ><](images/faq_close_R_terminal.png)
 
 Your R packages should now be available for use.
+
+### How To
+
+#### How do I locate hidden dot files on Cheaha?
+
+Dot files are files or directories that start with the character `.` as in the file `.bashrc` or the `.conda` directory.
+
+If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [OOD Files](../cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
+
+![!File browser bar with Show Dotfiles checked. ><](images/faq_odd_show_dotfiles.png)
+
+If you are using the terminal, you'll need to use `cd` to navigate to the appropriate directory and enter use `ls` with the `-a` flag to list all files and directories, including hidden ones.
+
+#### How do I find my Job ID number?
+
+All jobs submitted to Slurm on Cheaha are assigned a unique identifier called the Job ID or `jobid`.
+
+- Using [Open OnDemand](../cheaha/open_ondemand/ood_main.md)?
+    - If the job is still running see [My Interactive Sessions](../cheaha/open_ondemand/ood_interactive.md#my-interactive-sessions) to locate the Job ID.
+    - If the job is no longer running, or the job card is missing, use the last bullet point for `sacct` usage.
+- Using the terminal?
+    - Just submitted the job?
+        - Using `srun <flags> --pty /bin/bash`?
+            - If you are still in the job context, type `echo $SLURM_JOB_ID`.
+            - Otherwise use the final bullet point for `sacct` usage.
+        - Using `srun` without `--pty`? Use the final bullet point for `sacct` usage.
+        - Using `sbatch`? The Job ID is printed to the command line automatically on submission.
+    - Job still running?
+        - Use `squeue -u $USER` to show all your running jobs.
+    - Job not running?
+        - Use the final bullet point `sacct` usage.
+- How to use `sacct` to find a job.
+    - If you know the date of the job, use the following command at the terminal. The date following `-s` is the start date, choose the same day the job was submitted. The following `-e` is the end date, choose the day after `-s`. You will be provided with a list of jobs run on the `-s` day, and can sift through them to find your job.
+
+        ```bash
+        sacct -u $USER -s YYYY-MM-DD -e YYYY-MM-DD
+        ```
+
+    - Otherwise contact [Support](../help/support.md) for assistance.
+
+#### How do I find my Open OnDemand Session Information?
+
+All jobs created using Open OnDemand will create a folder in your home directory containing diagnostic information about those jobs. This information can be helpful for diagnosing issues when using Open OnDemand. To review the folder contents, click the Session ID link in the job card under the [My Interactive Sessions](../cheaha/open_ondemand/ood_interactive.md#my-interactive-sessions) of Open OnDemand.
+
+If asked, the simplest way to give us the information is the following. Please visit the [File Browser](../cheaha/open_ondemand/ood_files.md) page for a visual guide to the features of the Open OnDemand File Browser, which will help with the following instructions. Please also visit the [My Interactive Sessions](../cheaha/open_ondemand/ood_interactive.md#my-interactive-sessions) page to familiarize yourself with job cards.
+
+1. Find the card for the appropriate job.
+2. Click the Session ID link of the card from (1) to open the [File Browser](../cheaha/open_ondemand/ood_files.md). Make note of the Session ID value, which should be something like `bbd7ad60-a37c-47aa-a8fb-d7ca6cf39b3c` but with different characters.
+3. In the "Working Directory" section of the interface, click the parent folder name to go up one directory level.
+4. In the "File List" locate the folder with the matching Session ID from step (2).
+5. Click that folder once to select it.
+6. Click the "Download" button in the "File Command Menu" to download a zipped copy of the folder and its contents.
+7. Pass the downloaded Zip file to [Support](support.md).
 
 ## UAB Cloud
 
