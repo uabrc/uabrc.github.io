@@ -8,11 +8,11 @@ Security Groups are used to set rules for how external devices can connect to yo
 
 1. Click "Networks" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page. Security Groups is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
+    ![!cloud.rc Overview page. Security Groups is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
 
 2. Click "Security Groups" in the fold out menu.
 
-    ![!OpenStack Security Groups page. The Security Groups table has one entry, the default, persistent entry labeled default. ><](./images/security_groups_001.png)
+    ![!cloud.rc Security Groups page. The Security Groups table has one entry, the default, persistent entry labeled default. ><](./images/security_groups_001.png)
 
 3. Click "+ Create Security Group" to open a dialog box.
 
@@ -35,9 +35,17 @@ Security Groups are used to set rules for how external devices can connect to yo
     1. Select "SSH" in the "Rule" drop down box. This will change the remaining fields.
     2. Leave "Description" empty.
     3. Select "CIDR" in the "Remote" drop down box.
-    4. Type `0.0.0.0/0` in the "CIDR" box. **WARNING!** This is **NOT** good practice! For your research instances, you'll want to constrain the CIDR value further to a narrower range of IP addresses. The rule we have shown here leaves the SSH port open to all IP addresses world-wide.
+    4. Type `0.0.0.0/0` in the "CIDR" box. For the sake of this tutorial, this value is fine. For properly securing virtual machines, see the "Warning" below for more information on better practice.
 
     ![!Add Rule dialog box. The dialog box is filled out. The rule is set to SSH. ><](./images/security_groups_004.png)
+
+    <!-- markdownlint-disable MD046 -->
+    !!! warning
+
+        Using the value `0.0.0.0/0` for CIDR is short-hand for saying "All possible IP addresses". While cloud.rc is protected from external sources by the UAB firewall, using `0.0.0.0/0` does expose your virtual machine to all machines on the UAB internal network. Using the value `0.0.0.0/0` is the same as saying "I trust the UAB firewall to protect my VM, and I trust UAB faculty, staff and students to not harm my VM".
+
+        Better practice is to limit the CIDR scope to only the IP address ranges that are relevant to your goals. As with all of cybersecurity, there is a security/convenience tradeoff to be made, and properly scoping CIDR will take more work than just using `0.0.0.0/0`. CIDR calculators are available on the internet to assist with calculation, just search for `CIDR Calculator`.
+    <!-- markdownlint-enable MD046 -->
 
 7. Click "Add".
 
@@ -48,7 +56,7 @@ Security Groups are used to set rules for how external devices can connect to yo
 
 ## Creating a Key Pair
 
-A Key Pair is required for SSH access to OpenStack instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) on your local machine.
+A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) on your local machine.
 
 Key Pairs are security devices used to authenticate and connect to a remote machine, like Cheaha or cloud.rc instances, and use [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) to encrypt the connection. As the name suggests, there are two parts: a public key which is placed on the remote machine, and a private key which is kept secret on your personal machine.
 
@@ -71,7 +79,7 @@ Using a password protected Key Pair is highly recommended for additional securit
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
+    ![!cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
 
 2. Click "Key Pairs".
 
@@ -130,7 +138,7 @@ Revoking a key pair from cloud.rc is simple. First, log on to the interface.
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
+    ![!cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
 
 2. Click "Key Pairs".
 
