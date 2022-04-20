@@ -131,13 +131,13 @@ Where `user` is the remote username, `remote_ip` is the IP address of the remote
 
 ## Data Transfer
 
-## `scp`
+## SCP
 
 To install, see [Install an SSH Client](#install-an-ssh-client). The format for use is given below.
 
 **More coming soon!**
 
-## `sftp`
+## SFTP
 
 To install, see [Install an SSH Client](#install-an-ssh-client). The format for use is given below.
 

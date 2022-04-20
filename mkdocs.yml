@@ -47,6 +47,7 @@ nav:
       - data_management/s3.md
       - File Transfer:
           - data_management/transfer/globus.md
+          - data_management/transfer/rclone.md
           - data_management/transfer/filezilla.md
   - Cheaha User Guide:
       - Getting Started: cheaha/getting_started.md
