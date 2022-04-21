@@ -25,7 +25,7 @@ As part of the process of building this research computing platform, the UAB IT 
 
 ## Data Backups
 
-Users of Cheaha are solely responsible for backing up their files. This includes files under **/data/user**, **/data/project**, and **/home**. There is no automatic back up of any user data on the cluster in home, data, or scratch. For more information, please see `backups`.
+Researchers on Cheaha are solely responsible for backing up their files. This includes files under `/data/user`, `/data/project`, and `/home`. There is no automatic back up of any researcher data on the cluster in home, data, or scratch. For more information, please see `backups`.
 
 ## Personnel
 

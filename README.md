@@ -34,7 +34,8 @@ To make the best use of formatting extensions for this project, please add the f
   },
   "markdownlint.config": {
     "MD046": { "style": "fenced" }
-  }
+  },
+  "markdown.extension.list.indentationSize": "inherit"
 ```
 
 Before you can get started working on contributions, you'll need a copy of the repository. The first step, done only once, is to fork the repository in GitHub to your personal account. The repository is located at <https://github.com/uabrc/uabrc.github.io>. More in-depth documentation on forking can be found at [GitHub: Fork a Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
@@ -81,6 +82,10 @@ We will also make an attempt to check your information for accuracy, as well as 
 
 To Be Determined
 
+### Formatting
+
+- All internal links must be relative. For example, use `./file.md` not `/docs/file.md`.
+
 ### Linting Known Issues
 
 There are known issues with the markdown linter and some of our non-standard plugins, especially admonitions (specifically a conflict involving fenced vs indented code blocks). To fix these cases please use one of the following methods. The `<lint warning code>` can be found by hovering over the yellow squiggles in VSCode to bring up the warning lens.
@@ -110,16 +115,75 @@ We encourage denoting the warning being silenced here by filling out the `<lint 
 
 We allow and encourage the use of [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types) in our documentation, where appropriate. Because these are created using a plugin and are "non-standard" `markdown`, the VSCode `markdownlint` extension does not recognize admonitions and may produce a false positive warning about inconsistent code block styles.
 
-Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. This is enforced by adding an entry to the [VSCode `settings.json` file](#vscode-settingsjson-additions). Now all admonitions will be consistently assigned the warning `MD046`, which can be disabled by [silencing linter warning for a single line](#silence-linter-warning-for-a-single-line).
+Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. This is enforced by adding an entry to the [VSCode `settings.json` file](#vscode-settingsjson-additions). Now all admonitions will be consistently assigned the warning `MD046`, which can be disabled by placing all admonitions in between the following comment block fences. The comment lines must be indented to the same level as the start of the admonition.
+
+```markdown
+<!-- markdownlint-disable MD046 -->
+
+<!-- markdownlint-enable MD046 -->
+```
+
+The process can be simplified in VSCode using snippets. Bring up the command palette and type `snippets` and open `Preferences: Configure User Snippets`. Then type `markdown` and open it. A `json` file will be opened. Add the following content between the outermost braces and then save the file.
+
+```json
+  "Disable Markdown Lint MD046 for a Block": {
+    "prefix": "md046 disable",
+    "body": [
+      "<!-- markdownlint-disable MD046 -->",
+      "$TM_SELECTED_TEXT",
+      "<!-- markdownlint-enable MD046 -->"
+    ],
+    "description": "Disables warning Markdown Lint MD046 for the selected block."
+  }
+```
+
+The snippet will surround selected text with the appropriate linter disable fencing for MD046. To use the snippet, opne the IntelliSense lens using `ctrl + space` (or `cmd + space`), then type `md046` until the `prefix` shows up as the first entry in the list. Then press `tab`.
 
 The workaround is needed because `markdownlint` has no plans to add support for admonitions. There is no `markdownlint` plugin for that support either, and we don't have the ability to develop such a plugin.
 
 ### Accessibility
 
 Color vision deficiency checker: <https://www.toptal.com/designers/colorfilter/>
+Contrast checker: <https://webaim.org/resources/contrastchecker/>
 
 ### Branding Guidance
 
 - Brand main page: <https://www.uab.edu/toolkit/branding>
 - Brand colors: <https://www.uab.edu/toolkit/brand-basics/colors>
 - Copyright guidance: <https://www.uab.edu/toolkit/trademarks-licensing/uab-trademarks>
+
+## Developer Notes
+
+### Generating Partition and QoS tables
+
+The repo for generating these files is located at <https://github.com/wwarriner/slurm_status_tools/>.
+
+To use, install the conda environment and run the following commands.
+
+```bash
+python -u sstatus.py -c partitions > partitions.csv
+python -u sstatus.py -c qos > qos.csv
+```
+
+### Redirects
+
+Redirecting pages is possible using the plugin at <https://github.com/datarobot/mkdocs-redirects>.
+
+### Useful Regex
+
+#### Checking Internal Links are Relative
+
+There is no way to fix this automatically, so we rely on checking and reporting. A useful regex is is `\[.+\]\(/[a-zA-Z]+.*\)`. It searches for square brackets with text inside, followed by parentheses with text inside. The text inside the parentheses must start with a slash followed by letters. Another useful regex is similar `\[.+\]\((?!https)[a-zA-Z]+.*\)`. It searches for the same as before, but instead of a slash followed by letters, it starts with any letters except the string `https`, since https links are external.
+
+#### Checking Indentation
+
+Currently Prettier bulleted list indenting is wonky for markdown. In addition to indenting list markers, it pads out spaces after the marker. Please see [this issue](https://github.com/prettier/prettier/issues/5019) for more details. As a result, we can't automatically format markdown documents, so we need to rely on spotting incorrect indents. Use the following regex `^[ ]{1,3}[^ ]`. It will search for one to three spaces followed by a not-space character.
+
+#### Checking Images are Centered
+
+Our preference is that images be centered at their indentation level. To do this, we need `><` at the end of the alternate text bracket. An example is shown below.
+
+`![!alttext ><](./path/to/image.png)`
+
+To discover images that are missing the centering characters, use regex `!\[.*[^<]\]\(`.
+

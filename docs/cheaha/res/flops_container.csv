@@ -1,0 +1,4 @@
+Generation,Cpu Tflops Per Node,Gpu Tflops Per Node,Tflops Per Node,Nodes,Tflops
+1,2.30,,2.30,3,6.91
+1,4.61,77.97,82.58,4,330.30
+,,,,,337.21

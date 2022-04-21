@@ -26,10 +26,11 @@ To successfully request access to GPUs, you will need to set the partition to on
 
 Additionally, when requesting a job using `sbatch`, you will need to include a SLURM directive `--gres=gpu:#` where `#` is the number of GPUs you need.
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
-    It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at [Managing Jobs](job_management.md#managing-jobs) for more information.
+    It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at [Managing Jobs](./job_management.md#managing-jobs) for more information.
+<!-- markdownlint-enable MD046 -->
 
 ### Open OnDemand
 

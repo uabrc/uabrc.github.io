@@ -7,20 +7,21 @@ telling the scheduler the requested resources. Common Slurm directives
 can be seen below along with simple examples for both single batch jobs
 and array batch jobs.
 
+<!-- markdownlint-disable MD046 -->
 !!! tip
 
-<!-- markdownlint-disable-next-line -->
     Please see our page on [Job Efficiency](../job_efficiency.md) for more information on making the best use of cluster resources and minimizing queue wait times.
+<!-- markdownlint-enable MD046 -->
 
 ## Common Slurm Terminology
 
 - Node: A subdivision of the cluster that contains multiple cores.
-  - Login nodes: Controls user access to Cheaha. Low count and shared among all users. DO NOT RUN JOBS ON THE LOGIN NODE
-  - Compute nodes: Dedicated nodes for running user jobs.
+    - Login nodes: Controls user access to Cheaha. Low count and shared among all users. DO NOT RUN JOBS ON THE LOGIN NODE
+    - Compute nodes: Dedicated nodes for running user jobs.
 - Core: A single CPU
 - Partition: A job queue to submit your job to. Different partitions have different resource limits and priority.
 - Job: Any single or combination of commands that require computational resources to perform. Can be interactive or submitted to the scheduler.
-- Batch jobs: Scripts to submit to the SLURM scheduler. Should run with no user input or graphical user interface (GUI). Replicates commands in an order you would run them on the command line.
+- Batch jobs: Scripts to submit to the SLURM scheduler. Should run with no researcher input or graphical user interface (GUI). Replicates commands in an order you would run them on the command line.
 
 ## Basic Slurm Directives
 
@@ -39,17 +40,9 @@ a short list of the very common ones are listed here:
 
 For batch jobs, directives are typically included as comments at the top of the script. See examples below. All batch jobs should be submitted using the `sbatch` command. All directives and more information on how to submit jobs can be seen using `man sbatch`.
 
-## Slurm Partitions
+## Available Slurm Partitions
 
-{{ read_csv('cheaha/slurm/partition.csv', keep_default_na=False) }}
-
-Notes:
-
-- Express jobs are highest priority in scheduling meaning they will be scheduled faster
-- Most partitions have a max amount of requestable memory per node at 175 GB. Largemem has a maximum memory limit of 1.5 TB.
-- Pascalnodes are specifically used for access to GPUs
-- Each user has a maximum amount of requestable resources across all jobs. Submitted jobs beyond this resource limit will be kept in the queue until a user's prior jobs have completed. This will appear as `QOSMaxResourceLimit` in your `squeue` list.
-- If a script finishes executing before the requested time limit, the job will automatically close and resources will be released. However requesting the max amount of time will cause scheduler priority to decrease.
+Please see [Partitions](../hardware.md#partitions) page for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
 
 ## Estimating Compute Resources
 
@@ -64,13 +57,13 @@ Questions to ask yourself when requesting job resources:
 4. How long should my job take?
     1. For example, do not request 50 hours time for a 15 hour process. Have a reasonable buffer included to account for unexpected processing delays, but do not request the maximum time on a partition if that's unnecessary.
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     Reasonable overestimation of resources is better than underestimation. However, gross overestimation may cause admins to contact you about adjusting resources for future jobs.
+<!-- markdownlint-enable MD046 -->
 
 After a job is completed, look at how well resources were used using `seff`. For more information, read `job-efficiency`.
-
 
 ## Single Batch Job
 
@@ -100,7 +93,7 @@ sbatch $HOME/example.sh
 
 ## Array Jobs
 
-For some analyses, you will want to perform the same operations on different inputs. However, instead of creating individual scripts for each different input, you can create an array job instead. These array jobs duplicate the SBATCH parameters as well as the commands of the script and apply them to different inputs specified by the user.
+For some analyses, you will want to perform the same operations on different inputs. However, instead of creating individual scripts for each different input, you can create an array job instead. These array jobs duplicate the SBATCH parameters as well as the commands of the script and apply them to different inputs specified by the researcher.
 
 Array jobs can use a Slurm environmental variable, `$SLURM_ARRAY_TASK_ID`, as an index for inputs. For example, if we have a script that looks like:
 
@@ -124,10 +117,11 @@ In this script, the %A and %a values in the output file name refer to the overal
 sbatch --array=0-15 array.sh
 ```
 
+<!-- markdownlint-disable MD046 -->
 !!! note
 
-<!-- markdownlint-disable-next-line -->
     It is crucial to note that arrays use 0-based indexing. Array number 0 corresponds to the first job you're running. The `SLURM_ARRAY_TASK_ID` variable will also be 0 in this case.
+<!-- markdownlint-enable MD046 -->
 
 This will cause 16 jobs to be created with array IDs from 0 to 15. Each job will write out the line "My SLURM_ARRAY_TASK_ID: " followed by the ID number. Scripts can be written to take advantage of this indexing environmental variable. For example, a project could have a list of participants that should be processed in the same way, and the analysis script uses the array task ID as an index to say which participant is processed in each individual job. Bash, python, MATLAB, and most languages have specific ways of interacting with environmental variables.
 
@@ -145,7 +139,7 @@ Additionally, the `--array` directive can be included with the rest of the SBATC
 
 ## Interactive Jobs
 
-Batch jobs are meant to be submitted and not interacted with during execution. However, some jobs need user input during execution or need to use a GUI. Interactive jobs are meant to be used for these situations.
+Batch jobs are meant to be submitted and not interacted with during execution. However, some jobs need researcher input during execution or need to use a GUI. Interactive jobs are meant to be used for these situations.
 
 It is highly suggested to use the Cheaha `Open OnDemand` web portal for interactive jobs. Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha.
 
@@ -157,7 +151,8 @@ srun --ntasks=1 --cpus-per-task=1 --mem-per-cpu=4G --time=1:00:00 --partition=ex
 
 Resources should be changed to fit the job's needs. An interactive job will then start on a compute node. You can tell if you are on a compute node by looking at the command line. It should have the form: `[blazerid@c0XXX ~]` where XXX is a number.
 
+<!-- markdownlint-disable MD046 -->
 !!! warning
 
-<!-- markdownlint-disable-next-line -->
     If your terminal says `[blazerid@loginXXX ~]`, you are on the login node. NO COMPUTE JOBS SHOULD BE RUN ON THE LOGIN NODE. If jobs are being run on the login node, they will be deleted and the user will be warned. Multiple warnings will result in account suspension.
+<!-- markdownlint-enable MD046 -->
