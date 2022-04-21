@@ -61,7 +61,7 @@ To format a volume, you must have created a volume and attached it to an instanc
 
 2. Scroll down to "Volumes Attached" and make note of the `<mount>` part of `<volume-name> on <mount>` for your attached volume as it will be used in later steps.
 
-    ![!my_instance overview page. The page has been scrolled to the bottom. The mouse is pointing to a label under the Volumes Attached heading. The mouse is pointing to the Attached To label reading my_volume on /dev/vdb.](./images/persistent_volumes_000.png)
+    ![!my_instance overview page. The page has been scrolled to the bottom. The mouse is pointing to a label under the Volumes Attached heading. The mouse is pointing to the Attached To label reading my_volume on /dev/vdb. ><](./images/persistent_volumes_000.png)
 
 3. SSH into the instance from your local machine or from Cheaha.
 
@@ -82,7 +82,7 @@ To format a volume, you must have created a volume and attached it to an instanc
     9. Enter `p` to display the partition setup. Note that the partition will be labeled `<mount>1`. This literally whatever `<mount>` was from earlier followed by the numeral `1`. Further steps will refer to this as `<pmount>`
     10. Enter `w` to execute the setup prepared in the previous substeps.
 
-    ![!MINGW64 terminal. The sudo fdisk /dev/vdb command has been entered. Also shown are the various prompts guiding through the process of formatting the disk. The final command was the literal character w, which executed the previously entered commands.](./images/persistent_volumes_002.png)
+    ![!MINGW64 terminal. The sudo fdisk /dev/vdb command has been entered. Also shown are the various prompts guiding through the process of formatting the disk. The final command was the literal character w, which executed the previously entered commands. ><](./images/persistent_volumes_002.png)
 
 6. Verify the volume is not mounted using `sudo mount | egrep "<mount>"`. If there is no output, then move to the next step. If there is some output then use `sudo umount -l "<mount>"` to unmount the volume and verify again.
 
