@@ -29,7 +29,7 @@ There are a few common reasons why a job can take a long time to start. These ap
 
 If you are seeing a "Failed to submit session" error in a red box when you submit an interactive job on Open OnDemand, like the following, please try reading the error text first. If the cause of the error is not obvious from the text, please read on for some common causes. If none of the below common causes apply, please contact [Support](support.md).
 
-![!failed to submit session error example](./images/faq_ood_disk_quota_exceeded.png)
+![!failed to submit session error example ><](./images/faq_ood_disk_quota_exceeded.png)
 
 - If the error text starts with `Disk quota exceeded` then your storage space in `/data/user/$USER` is likely full. Please see [Storage](../data_management/storage.md) for more information on options for alternative storage locations, or contact [Support](support.md).
 
@@ -182,3 +182,21 @@ When your instances are not being used, please suspend them to free resources fo
 
     Under construction
 <!-- markdownlint-enable MD046 -->
+
+## Globus
+
+### Why can't other users access data I transferred to a project space on Cheaha?
+
+When transferring using Globus, file permissions from the source file are not transferred with the file due to limitations purposefully placed by Globus. When transferring to any space on Cheaha, the most likely permission sets are user read and write only with no group permissions. Researchers will need to manually change permissions for the files they transfer using Globus to add group permissions if desired. You can use the `chmod` command for this:
+
+``` bash
+# If you transferred a single file, you can do this
+chmod g+rw <path/to/file>
+
+# If you transferred a directory and need to give permissions to all files in the directory, you can use this
+chmod -R g+rw <path/to/file>
+```
+
+The `g+rw` adds group read and write permissions. You can add only read permissions by omitting the `w` if desired.
+
+For more information on Globus file permissions, you can read [their FAQ entry](https://docs.globus.org/faq/transfer-sharing/#how_do_i_control_file_permissions_during_transfers).
