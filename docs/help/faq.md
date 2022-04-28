@@ -33,7 +33,7 @@ If you are seeing a "Failed to submit session" error in a red box when you submi
 
 - If the error text starts with `Disk quota exceeded` then your storage space in `/data/user/$USER` is likely full. Please see [Storage](../data_management/storage.md) for more information on options for alternative storage locations, or contact [Support](support.md).
 
-#### Why do I get an error when I try to launch an OOD HPC Interactive session?
+#### Why do I get an error when I try to launch an Open OnDemand HPC Interactive session?
 
 If you are seeing an error like the following when launching an HPC Interactive job, please read on for the most likely solution.
 
@@ -70,16 +70,16 @@ Click the "Edit" button. In the new tab that opens, delete the section shown abo
 
 Please try to launch your job again. If it still doesn't work, please [contact us](../index.md#contact-us)
 
-#### Why do I get a gray screen after launching my OOD RStudio Server session?
+#### Why do I get a gray screen after launching my Open OnDemand RStudio Server session?
 
-Most commonly, delays in launching OOD RStudio Server are caused by a large quantities of files referenced in the `.rstudio` directory in the home directory. This can also commonly occur when a large amount of data was loaded in the workspace in your previous RStudio session. To resolve the issue, you'll need to [locate the hidden directory](#how-do-i-locate-hidden-dot-files-on-cheaha) `.rstudio` in your `$HOME` folder. Once you've found it, delete it, then try recreating your job.
+Most commonly, delays in launching Open OnDemand RStudio Server are caused by a large quantities of files referenced in the `.rstudio` directory in the home directory. This can also commonly occur when a large amount of data was loaded in the workspace in your previous RStudio session. To resolve the issue, you'll need to [locate the hidden directory](#how-do-i-locate-hidden-dot-files-on-cheaha) `.rstudio` in your `$HOME` folder. Once you've found it, delete it, then try recreating your job.
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
     Deleting the .rstudio directory will delete the workspace you had open, including any scripts that were unsaved. Saved scripts will be fine.
 
-#### Why is my OOD RStudio Server session giving me a 502 or 503 error?
+#### Why is my Open OnDemand RStudio Server session giving me a 502 or 503 error?
 
 See [here](#why-do-i-get-a-gray-screen-after-launching-my-ood-rstudio-server-session).
 
@@ -92,6 +92,21 @@ These issues are most commonly caused by programming errors, but can be related 
 #### What is a bus error?
 
 A bus error is almost always related to a process requesting more memory than is available. In other words, the job ran out of memory. The simplest solution is to increase the requested memory for the job. It may help to learn more about [SLURM](../cheaha/slurm/introduction.md) and [job efficiency](../cheaha/job_efficiency.md).
+
+#### I copied a script from a Windows machine to Cheaha and am getting a bad interpreter error
+
+Bad interpreter errors usually mean that there are symbols in the script that the shell interpreter cannot read correctly. This is usually due to the difference in newline symbols used in Windows (`\r\n`) and Unix (`\n`). Once these newline symbols are changed, the script should be able to run on Cheaha.
+
+To convert a script written in Windows to be compatible on Linux, use the `dos2unix` command. Just give it the name of the script to convert and it should convert it correctly.
+
+If you are using development tools like [Notepad++](https://notepad-plus-plus.org/downloads/) or [VSCode](https://code.visualstudio.com/), there are built-in ways to remove the carriage returns.
+
+- NP++: Go to Edit >> EOL Conversion >> Unix (LF). This must be done for individual files.
+- VSCode: Open Settings and search for EoL. Change the default EoL character to `\n`. This will be applied globally if changed in your User Options.
+
+#### Why am I seeing an InvalidAccount error when submitting jobs when I could submit jobs fine previously?
+
+If you see this error when submitting jobs, please [contact support](support.md#how-to-request-support). There are a few causes for this error that will need to be investigated.
 
 ### Issues in Progress
 
@@ -117,13 +132,17 @@ When using the RStudio Server app (the non-deprecated version) on [Open OnDemand
 
 Your R packages should now be available for use.
 
+#### My script uses a Singularity container and seems to freeze until it times out
+
+When using Singularity containers in scripts and the amount of memory used by the container exceeds the amount requested for the job, the script will hang until the time limit is reached. Typically, scripts are immediately killed when memory used exceeds memory requested, but that is not the behavior with containers. If your scripts using containers seem to hang and not produce anything until the job ends, use the `seff` command to investigate the memory usage after the job ends (see [it's entry in our docs](../cheaha/job_efficiency.md#verifying-job-efficiency)). If it is using the full amount of memory requested, try upping the amount of memory and submit the job again. To find the job number for past jobs, look [further down](faq.md#how-do-i-find-my-job-id-number).
+
 ### How To
 
 #### How do I locate hidden dot files on Cheaha?
 
 Dot files are files or directories that start with the character `.` as in the file `.bashrc` or the `.conda` directory.
 
-If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [OOD Files](../cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
+If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [Open OnDemand Files](../cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
 
 ![!File browser bar with Show Dotfiles checked. ><](images/faq_odd_show_dotfiles.png)
 
