@@ -34,17 +34,17 @@ div.lightgallery {
     justify-content: center;
 }
  
+/* adding the drop shadow and keeping the images at 100 viewport width for smaller screen sizes */
+.lightgallery img {
+    width: 100vw;
+         box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
+}
+
 /* sizing the images down on desktops */
 @media only screen and (min-width : 992px) {
                     .lightgallery img {
        width: 75vw
             }
-}
- 
-/* adding the drop shadow and keeping the images at 100 viewport width for smaller screen sizes */
-.lightgallery img {
-    width: 100vw;
-         box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
 }
 
 .md-typeset .admonition.construction,
