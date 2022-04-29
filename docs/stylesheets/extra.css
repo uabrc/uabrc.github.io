@@ -1,5 +1,6 @@
 :root {
   --md-primary-fg-color: #1e6b52;
+  --md-primary-fg-color--dark: #1e6b52;
 }
 
 .md-grid {
@@ -27,21 +28,24 @@ html .md-footer-meta.md-typeset a.supportemail {
   color: #aaaaff;
 }
 
-img[alt$=">"] {
-    float: right;
-  }
-  
-img[alt$="<"] {
-    float: left;
-  }
-  
-img[alt$="><"] {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: auto;
-    float: none!important;
-  }
+/* adds a flexbox to the surrounding div */
+div.lightgallery {
+    display: flex;
+    justify-content: center;
+}
+ 
+/* sizing the images down on desktops */
+@media only screen and (min-width : 992px) {
+                    .lightgallery img {
+       width: 75vw
+            }
+}
+ 
+/* adding the drop shadow and keeping the images at 100 viewport width for smaller screen sizes */
+.lightgallery img {
+    width: 100vw;
+         box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
+}
 
 .md-typeset .admonition.construction,
 .md-typeset details.construction {
