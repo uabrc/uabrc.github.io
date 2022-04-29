@@ -34,10 +34,11 @@ div.lightgallery {
     justify-content: center;
 }
  
-/* adding the drop shadow and keeping the images at 100 viewport width for smaller screen sizes */
+/* adding the drop shadow,margin and keeping the images at 50 viewport width
 .lightgallery img {
-    width: 100vw;
-         box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
+    width: 50vw;
+    box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
+    margin-bottom:1rem;
 }
 
 .md-typeset .admonition.construction,
@@ -54,11 +55,4 @@ div.lightgallery {
   background-color: #eed202;
   -webkit-mask-image: var(--md-admonition-icon--warning);
           mask-image: var(--md-admonition-icon--warning);
-}
-
-/* sizing the images down on desktops */
-@media only screen and (min-width : 992px) {
-    .lightgallery img {
-         width: 65vw
-          }
 }
