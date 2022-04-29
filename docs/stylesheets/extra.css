@@ -34,7 +34,7 @@ div.lightgallery {
     justify-content: center;
 }
  
-/* adding the drop shadow,margin and keeping the images at 50 viewport width
+/* adding the drop shadow,margin and keeping the images at 50 viewport width */
 .lightgallery img {
     width: 50vw;
     box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
