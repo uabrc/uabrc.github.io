@@ -53,12 +53,12 @@ Follow the instructions [here](https://docs.microsoft.com/en-us/windows-server/a
 Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent service on your local machine to streamline adding and using keys.
 
 - Open the Start Menu and search for "Services", and open the result shown in the image.
-    ![!Searching for services in the start menu. ><](./images/openssh_search_services.png)
+    ![!Searching for services in the start menu.](./images/openssh_search_services.png)
 - Find the "OpenSSH Authentication Agent" service in the list. Double click it, or right-click it and select "Properties".
-    ![!Services list showing OpenSSH Authentication Agent highlighted. ><](./images/openssh_services_list.png)
+    ![!Services list showing OpenSSH Authentication Agent highlighted.](./images/openssh_services_list.png)
 - In the dialog box, under the "General" tab, look for "Startup Type". Click the drop-down menu and select "Automatic (Delayed Start)". Click "Apply" at the bottom-right corner. This will cause the `ssh-agent` service to start when Windows starts.
 - The "Start" button under the horizontal line should become enabled. Click it to start the `ssh-agent` service now.
-    ![!OpenSSH Authentication Agent Properties dialog box. ><](./images/openssh_ssh_agent_service_dialog.png)
+    ![!OpenSSH Authentication Agent Properties dialog box.](./images/openssh_ssh_agent_service_dialog.png)
 
 #### Git Bash terminal (Git for Windows)
 
@@ -124,7 +124,7 @@ If `ssh-agent` isn't already running and you encounter an error, use the followi
 - Navigate to the `.ssh` folder in a terminal window.
 - Run `ssh-add <private_key_file>`
 
-    ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent. ><](./images/key_pairs_005.png)
+    ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent.](./images/key_pairs_005.png)
 
     <!-- markdownlint-disable MD046 -->
     !!! bug
@@ -173,7 +173,7 @@ A "Remote Host Identification Has Changed" error can be resolved by using the fo
 
 Run `ssh-keygen -R <hostname>` where `<hostname>` is the URL or IP address of the remote machine.
 
-![!image showing remote host identification has changed error ><](./images/instances_ssh_host_key_error.png)
+![!image showing remote host identification has changed error](./images/instances_ssh_host_key_error.png)
 
 ### Setting up a Configuration File
 
