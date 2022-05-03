@@ -8,14 +8,14 @@ to maximize security.
 
 1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page. Networks is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
+    ![!cloud.rc Overview page. Networks is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
 
 2. Click "Networks" in the fold-out menu.
 
     1. The "Networks" page will open.
     2. The "uab_campus" network entry should already be in the table.
 
-        ![!OpenStack Networks page. The Networks table has one entry. The entry is the default, persistent uab-campus network. ><](./images/networks_001.png)
+        ![!cloud.rc Networks page. The Networks table has one entry. The entry is the default, persistent uab-campus network. ><](./images/networks_001.png)
 
 3. Click "+ Create Network" to open a dialog box.
 
@@ -37,14 +37,14 @@ to maximize security.
     1. Redirects to the "Networks" page.
     2. There should be a new entry in the table with the name given in (4.a)
 
-        ![!OpenStack Networks page. There is an additional entry in the table. The new entry is my_network. ><](./images/networks_004.png)
+        ![!cloud.rc Networks page. There is an additional entry in the table. The new entry is my_network. ><](./images/networks_004.png)
 
 ## Creating a Subnet
 
 1. Click "Network" in the left-hand navigation pane to open the
     fold-out menu.
 
-    ![!OpenStack Overview page. Networks is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
+    ![!cloud.rc Overview page. Networks is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
 
     
     
@@ -56,7 +56,7 @@ to maximize security.
 
     3. At least one other entry must be in the table. See `Creating a Network`.
 
-        ![!OpenStack Networks page. There are two entries in the table. One is the default, persistent uab-campus network. The other is my_network. ><](./images/networks_004.png)
+        ![!cloud.rc Networks page. There are two entries in the table. One is the default, persistent uab-campus network. The other is my_network. ><](./images/networks_004.png)
 
 3. Under the "Actions" column, select the drop-down triangle button in the row corresponding to the network you want to add a subnet to.
 
@@ -120,11 +120,11 @@ To follow these directions for creating a router, a [Network](#creating-a-networ
 
 1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page. Routers is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
+    ![!cloud.rc Overview page. Routers is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
 
 2. Click "Routers" in the fold-out menu.
 
-    ![!OpenStack Router page. The Routers table is empty.><](./images/routers_001.png)
+    ![!cloud.rc Router page. The Routers table is empty.><](./images/routers_001.png)
 
 3. Click "+ Create Router" to open a dialog box.
 
@@ -142,7 +142,7 @@ To follow these directions for creating a router, a [Network](#creating-a-networ
     1. Redirects to the "Routers" page.
     2. There should be a new entry in the table with the name given in (4.a)
 
-    ![!OpenStack Routers page. The Routers table has one entry. The entry is the my_router. ><](./images/routers_003.png)
+    ![!cloud.rc Routers page. The Routers table has one entry. The entry is the my_router. ><](./images/routers_003.png)
 
 6. Now we need to connect the router to our subnet. Click the name of the new entry under the "Name" column to open the router "Overview" page.
 
@@ -174,11 +174,11 @@ Floating IPs are required if you want an instance to talk to devices on the inte
 
 1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!OpenStack Overview page with Networks selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
+    ![!cloud.rc Overview page with Networks selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
 
 2. Click "Floating IPs".
 
-    ![!OpenStack Floating IPs page. The Floating IPs table is empty. ><](./images/floating_ips_001.png)
+    ![!cloud.rc Floating IPs page. The Floating IPs table is empty. ><](./images/floating_ips_001.png)
 
 3. Click "Allocate IP to Project" to open a dialog box.
 

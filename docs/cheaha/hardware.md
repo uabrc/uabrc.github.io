@@ -1,6 +1,6 @@
 # Hardware Information
 
-The following hardware summaries may be useful for grant proposal writing. If any information is missing that would be helpful to you, please be sure to [contact us](/docs/index.md#contact-us) or create an issue on our [tracker](https://github.com/uabrc/uabrc.github.io/issues).
+The following hardware summaries may be useful for grant proposal writing. If any information is missing that would be helpful to you, please be sure to [contact us](../index.md#contact-us) or create an issue on our [tracker](https://github.com/uabrc/uabrc.github.io/issues).
 
 <!-- markdownlint-disable MD046 -->
 !!! tip
@@ -14,21 +14,21 @@ The HPC cluster is comprised of 8192 compute cores connected by low-latency Four
 
 {{ read_csv('cheaha/res/hardware_short_hpc.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](res/hardware_short_hpc.csv).
+The full table can be downloaded [here](./res/hardware_short_hpc.csv).
 
 The table below is a theoretical analysis of FLOPS (floating point operations per second) based on processor instructions and core counts, and is not a reflection of efficiency in practice.
 
 {{ read_csv('cheaha/res/flops_hpc.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](res/flops_hpc.csv).
+The full table can be downloaded [here](./res/flops_hpc.csv).
 
-For information on using Cheaha, see our dedicated [section](/docs/cheaha/getting_started.md).
+For information on using Cheaha, see our dedicated [section](./getting_started.md).
 
 ### Partitions
 
 {{ read_csv('cheaha/res/partitions.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](res/partitions.csv).
+The full table can be downloaded [here](./res/partitions.csv).
 
 ### Quality of Service (QoS) Limits
 
@@ -36,7 +36,7 @@ Quality of Service (QoS) allows us to balance usage across the cluster, so that 
 
 {{ read_csv('cheaha/res/qos.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](res/qos.csv).
+The full table can be downloaded [here](./res/qos.csv).
 
 ## Cloud Service at cloud.rc
 
@@ -44,15 +44,15 @@ The Cloud service hardware consists of 5 Intel nodes and 4 DGX-A100 nodes. A des
 
 {{ read_csv('cheaha/res/hardware_short_cloud.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](res/hardware_short_cloud.csv).
+The full table can be downloaded [here](./res/hardware_short_cloud.csv).
 
 The table below is a theoretical analysis of FLOPS (floating point operations per second) based on processor instructions and core counts, and is not a reflection of efficiency in practice.
 
 {{ read_csv('cheaha/res/flops_cloud.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](res/flops_cloud.csv).
+The full table can be downloaded [here](./res/flops_cloud.csv).
 
-For information on using our Cloud service at cloud.rc, see our dedicated [section](/docs/cloud/introduction.md).
+For information on using our Cloud service at cloud.rc, see our dedicated [section](../uab_cloud/introduction.md).
 
 ## Kubernetes Container Service
 
@@ -66,13 +66,13 @@ The Kubernetes container service hardware consists of 5 Intel nodes and 4 DGX-A1
 
 {{ read_csv('cheaha/res/hardware_short_container.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](res/hardware_short_container.csv).
+The full table can be downloaded [here](./res/hardware_short_container.csv).
 
 The table below is a theoretical analysis of FLOPS (floating point operations per second) based on processor instructions and core counts, and is not a reflection of efficiency in practice.
 
 {{ read_csv('cheaha/res/flops_container.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](res/flops_container.csv).
+The full table can be downloaded [here](./res/flops_container.csv).
 
 ## Full Hardware Details
 
@@ -80,4 +80,4 @@ Detailed hardware information including processor and GPU makes and models, core
 
 {{ read_csv('cheaha/res/hardware_full_all.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](res/hardware_full_all.csv).
+The full table can be downloaded [here](./res/hardware_full_all.csv).

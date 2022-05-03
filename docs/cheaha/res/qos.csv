@@ -1,5 +1,5 @@
-Partition,Core Count Quota,Memory (GB) Quota
-"express, short, medium, long, intel-dcb, amd-hdr100",264,3072
-interactive,48,
-"largemem, largemem-long",290,7168
-"pascalnodes, pascalnodes-medium",56,500
+Partition,Core Count Quota,Memory (GB) Quota,GPU Count Quota
+"express, short, medium, long, intel-dcb, amd-hdr100",264,3072,
+interactive,48,,
+"largemem, largemem-long",290,7168,
+"pascalnodes, pascalnodes-medium",56,500,8

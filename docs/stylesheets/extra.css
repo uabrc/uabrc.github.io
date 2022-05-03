@@ -1,15 +1,34 @@
 :root {
   --md-primary-fg-color: #1e6b52;
+  --md-primary-fg-color--dark: #1e6b52;
 }
 
 .md-grid {
   max-width: 100%;
 }
 
+.md-content a {
+  color: revert;
+}
+
+.md-content a:visited {
+  color: revert;
+}
+
+.md-content a:hover {
+  color: revert;
+  border-bottom: 1px solid;
+}
+
+.md-typeset .headerlink:hover {
+  border-bottom: none;
+}
+
 html .md-footer-meta.md-typeset a.supportemail {
   color: #aaaaff;
 }
 
+<<<<<<< HEAD
 
 .lightgallery > a > img {
   border-radius: 0.25rem;
@@ -36,3 +55,38 @@ img[alt$="><"] {
     margin: auto;
     float: none!important;
   }
+=======
+/* adds a flexbox to the surrounding div */
+div.lightgallery {
+    display: flex;
+    justify-content: center;
+}
+ 
+/* adding the drop shadow,margin and keeping the images at 50 viewport width */
+.lightgallery img {
+    max-width: 50vw;
+    box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
+    margin-bottom:1rem;
+}
+/* 100 viewport width on smaller screens */
+@media only screen and (max-width : 600px) {
+      .lightgallery img {
+       width: 100vw
+            }
+}
+.md-typeset .admonition.construction,
+.md-typeset details.construction {
+  border-color: #eed202;
+}
+.md-typeset .construction > .admonition-title,
+.md-typeset .construction > summary {
+  background-color: rgba(238, 210, 2, 0.1);
+  border-color: #eed202;
+}
+.md-typeset .construction > .admonition-title::before,
+.md-typeset .construction > summary::before {
+  background-color: #eed202;
+  -webkit-mask-image: var(--md-admonition-icon--warning);
+          mask-image: var(--md-admonition-icon--warning);
+}
+>>>>>>> ca7117e354653a2a86a7d96fa9926c3abeb9053b
