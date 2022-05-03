@@ -71,7 +71,7 @@ div.lightgallery {
 /* 100 viewport width on smaller screens */
 @media only screen and (max-width : 600px) {
       .lightgallery img {
-       width: 100vw
+       max-width: 100%;
             }
 }
 .md-typeset .admonition.construction,
