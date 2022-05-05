@@ -97,19 +97,6 @@ Using a password protected Key Pair is highly recommended for additional securit
 
 5. Click "+ Create Key Pair"
 
-<<<<<<< HEAD
-    1. Opens a download file dialog box in your browser to download a `pem` file containing the secret private key.
-
-    2. Download the `pem` file. For security reasons this will be your only chance to ever obtain the private key from OpenStack.
-
-    3. Failing to download the `pem` file now means a new key pair will need to be created.
-
-        ![!Download File dialog on Firefox for Windows. The file being downloaded is my_key_pair.pem. ><](./images/key_pairs_003.png)
-
-    4. Redirects to the "Key Pairs" page.
-
-    5. There should be a new entry in the table.
-=======
     1. Opens a download file dialog box in your browser to download a file containing the secret private key. The file may have extension `.pem` or `.crt` depending on your operating system.
     2. Download the private key file. For security reasons this will be your only chance to ever obtain the private key from cloud.rc. If you lose this file you will have to generate a new Key Pair.
 
@@ -117,23 +104,12 @@ Using a password protected Key Pair is highly recommended for additional securit
 
     3. Redirects to the "Key Pairs" page.
     4. There should be a new entry in the table.
->>>>>>> ca7117e354653a2a86a7d96fa9926c3abeb9053b
 
         ![!Key Pairs page. The Key Pairs table has one entry labeled my_key_pair. ><](./images/key_pairs_004.png)
 
 6. To add the private key on your local machine please see "Add key" under [Add a Private Key](./cloud_remote_access.md#add-a-private-key).
 
-<<<<<<< HEAD
-    1. `mv` the `pem` file to the `.ssh` directory under your home directory. If you are on a Windows machine, you'll need to install ssh by one of various means.
-    
-    2. `cd` to the `.ssh` directory under your home directory.
-    
-    3. `ssh-add <pem_file>` to add the private key to the ssh keyring for use by ssh.
-    
-    4. `ssh-add -d <pem_file>` to remove the key.
-=======
 ### Generating a Key Pair Locally
->>>>>>> ca7117e354653a2a86a7d96fa9926c3abeb9053b
 
 To generate a key pair, see instructions located at [Generating Key Pairs](./cloud_remote_access.md#generating-key-pairs).
 
@@ -141,15 +117,6 @@ To generate a key pair, see instructions located at [Generating Key Pairs](./clo
 
 2. Fill out the dialog box.
 
-<<<<<<< HEAD
-    3\. Click "Import Public Key" to open a dialog box.
-    
-    4\. Fill out the dialog box.
-
-    - Enter a "Key Pair Name".
-    - Select "SSH Key" in the "Key Type" drop-down box.
-    - Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
-=======
     1. Enter a "Key Pair Name".
     2. Select "SSH Key" in the "Key Type" drop-down box.
     3. Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
