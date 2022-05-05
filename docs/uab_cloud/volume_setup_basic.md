@@ -62,11 +62,6 @@ To format a volume, you must have created a volume and attached it to an instanc
 2. Scroll down to "Volumes Attached" and make note of the `<mount>` part of `<volume-name> on <mount>` for your attached volume as it will be used in later steps.
 
     ![!my_instance overview page. The page has been scrolled to the bottom. The mouse is pointing to a label under the Volumes Attached heading. The mouse is pointing to the Attached To label reading my_volume on /dev/vdb. ><](./images/persistent_volumes_000.png)
-<<<<<<< HEAD
-
-    
-=======
->>>>>>> ca7117e354653a2a86a7d96fa9926c3abeb9053b
 
 3. SSH into the instance from your local machine or from Cheaha.
 
