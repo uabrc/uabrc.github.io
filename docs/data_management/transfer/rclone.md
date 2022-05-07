@@ -173,6 +173,123 @@ As you step through the process, you will ultimately open two terminal windows a
 
 7. With your selection in mind, return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
 
+### Setting Up an S3 LTS Remote
+
+The full S3 configuration process can be done from a single command line terminal. Open a terminal and enter `rclone config` to begin the configuration process.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The locations where you will need to input either a command or select an option are preceded with a `$` for easier navigation.
+<!-- markdownlint-enable MD046 -->
+
+``` bash
+$ rclone config
+
+2022/02/22 13:02:15 NOTICE: Config file "/home/mdefende/.config/rclone/rclone.conf" not found - using defaults
+No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+
+# select 'n' to create a new remote
+$ n/s/q> n
+
+# name the new remote
+$ name> uablts
+```
+
+At this point, you've created a new remote configuration called uablts. This will be the remote name used in further commands. You can name the remote whatever you would like, but will need to replace uablts in the instructions with whichever name you chose, if you chose a different name.
+
+``` bash
+...
+4 / Amazon Drive
+  \ (amazon cloud drive)
+5 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Lyve Cloud, Minio, RackCorp, SeaweedFS, and Tencent COS
+  \ (s3)
+6 / Backblaze B2
+  \ (b2)
+...
+
+$ Storage> 5
+
+...
+2 / Alibaba Cloud Object Storage System (OSS) formerly Aliyun
+  \ (Alibaba)
+3 / Ceph Object Storage
+  \ (Ceph)
+4 / Digital Ocean Spaces
+  \ (DigitalOcean)
+...
+
+$ provider> 3
+
+Option env_auth.
+Get AWS credentials from runtime (environment variables or EC2/ECS meta data if no env vars).
+Only applies if access_key_id and secret_access_key is blank.
+Choose a number from below, or type in your own boolean value (true or false).
+Press Enter for the default (false).
+ 1 / Enter AWS credentials in the next step.
+   \ (false)
+ 2 / Get AWS credentials from the environment (env vars or IAM).
+   \ (true)
+
+$ env_auth> 1 (or leave blank)
+
+Option access_key_id.
+AWS Access Key ID.
+Leave blank for anonymous access or runtime credentials.
+Enter a value. Press Enter to leave empty.
+
+$ access_key_id> (Enter your access key given to you by research computing)
+
+Option secret_access_key.
+AWS Secret Access Key (password).
+Leave blank for anonymous access or runtime credentials.
+Enter a value. Press Enter to leave empty.
+
+$ secret_access_key> (Enter your secret access key given to you by research computing here)
+
+Option region.
+Region to connect to.
+Leave blank if you are using an S3 clone and you don't have a region.
+Choose a number from below, or type in your own value.
+Press Enter to leave empty.
+   / Use this if unsure.
+ 1 | Will use v4 signatures and an empty region.
+   \ ()
+   / Use this only if v4 signatures don't work.
+ 2 | E.g. pre Jewel/v10 CEPH.
+   \ (other-v2-signature)
+
+$ region> (Leave empty)
+
+Option endpoint.
+Endpoint for S3 API.
+Required when using an S3 clone.
+Enter a value. Press Enter to leave empty.
+
+$ endpoint> s3.lts.rc.uab.edu
+```
+
+From here, press Enter to accept default options until it gives you a summary of your connection
+
+``` bash
+[uablts]
+type = s3
+provider = Ceph
+access_key_id = ****************** # these will be filled in on your screen
+secret_access_key = ********************************
+endpoint = s3.lts.rc.uab.edu
+--------------------
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d>
+```
+
+Make sure everything looks correct here, then press Enter. At this point, it will bring you back to the main configuration menu. You can choose the `Quit Config` option and exit back to a basic terminal.
+
 ### Reconnecting to an Existing Remote
 
 When your tokens expire, rather than recreate the remote from scratch, simply use the following command with your existing remote `<name>`.
@@ -196,7 +313,7 @@ The various remotes each have their own individual page with their own specific 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Remote paths are always prefixed by the name of the remote like `cheaha:/path/to/files`. The color character `:` is required for all remote paths. Local paths have no prefix like `/path/to/local/files`. RClone can thus be used between any two machines that are configured where `rclone` is being used, including from the local machine to itself. In the following instructions, replace `<remote:>` by the appropriate remote name from configuration. To access local files, leave `<remote:>` off entirely.
+    Remote paths are always prefixed by the name of the remote like `cheaha:/path/to/files`. The colon character `:` is required for all remote paths. Local paths have no prefix like `/path/to/local/files`. RClone can thus be used between any two machines that are configured where `rclone` is being used, including from the local machine to itself. In the following instructions, replace `<remote:>` by the appropriate remote name from configuration. To access local files, leave `<remote:>` off entirely.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
