@@ -54,7 +54,7 @@ Security Groups are used to set rules for how external devices can connect to yo
 
     ![!Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs. ><](./images/security_groups_005.png)
 
-## Creating a Key Pair
+## Creating a Key pair
 
 A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) on your local machine.
 
@@ -90,6 +90,7 @@ Using a password protected Key Pair is highly recommended for additional securit
 4. Fill out the dialog box.
 
     1. Enter a "Key Pair Name".
+
     2. Select "SSH Key" in the "Key Type" drop down box.
 
         ![!Create Key pair dialog. The dialog form is filled out. The Key Pair Name is set to my_key_pair. ><](./images/key_pairs_002.png)

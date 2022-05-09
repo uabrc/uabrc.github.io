@@ -99,7 +99,7 @@ To format a volume, you must have created a volume and attached it to an instanc
     Superblock backups stored on blocks:
           32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 654208,
           4096000, 7962624, 11239424, 20480000, 23887872
-
+    
     Allocating group tables: done
     Writing inode tables: done
     Creating journal (131072 blocks): done
