@@ -120,7 +120,6 @@ To generate a key pair, see instructions located at [Generating Key Pairs](./clo
     1. Enter a "Key Pair Name".
     2. Select "SSH Key" in the "Key Type" drop-down box.
     3. Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
->>>>>>> ca7117e354653a2a86a7d96fa9926c3abeb9053b
 
     ![!Import Public Key dialog. The dialog form is empty. ><](./images/key_pairs_alt_002.png)
 
