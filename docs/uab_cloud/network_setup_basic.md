@@ -23,8 +23,11 @@ to maximize security.
     will create a subnet as a separate step.
 
     1. Enter a "Network Name".
+    
     2. Leave "Enable Admin State" checked.
+    
     3. Uncheck "Create Subnet". We will do this as a separate step. The other tabs should be removed.
+    
     4. Leave the "Availability Zone Hints" box empty.
 
         ![!Create Network dialog. The dialog form is empty except Network Name has been set to my_network.](./images/networks_003.png)
@@ -43,10 +46,14 @@ to maximize security.
 
     ![!cloud.rc Overview page. Networks is selected in the Network Topology fold-out menu in the left-hand navigation pane.](./images/networks_000.png)
 
+    
+    
 2. Click "Networks" in the fold-out menu.
 
     1. The "Networks" page will open.
+
     2. The "uab_campus" network should already be an entry in the table.
+
     3. At least one other entry must be in the table. See `Creating a Network`.
 
         ![!cloud.rc Networks page. There are two entries in the table. One is the default, persistent uab-campus network. The other is my_network.](./images/networks_004.png)
@@ -62,10 +69,15 @@ to maximize security.
     1. The "Subnet" tab.
 
         1. Enter a "Subnet Name".
+
         2. Enter `192.168.0.0/24` as the "Network Address". The trailing `/24` allocates the entire range from `192.168.0.0` through `192.168.0.255` to the subnet.
+
         3. Ensure "IPv4" is selected in the "IP Version" drop-down box.
+
         4. Leave "Gateway IP" empty to use the default value of `192.168.0.0`.
+
         5. Leave "Disable Gateway" unchecked.
+
         6. Click the "Next \>\>" button to move to the "Subnet Details" tab.
 
             ![!Create Subnet dialog box. The Subnet tab is selected. The form has not been filled out beyond default values. The Subnet Name has been set to my_subnet.](./images/subnet_003.png)
@@ -79,7 +91,7 @@ to maximize security.
             Failed to create subnet `192.168.0.0/24`...
             Invalid input for operation: Gateway is not valid on a subnet.
             ```
-
+            
             Try changing the gateway IP address to `192.168.0.1` and trying again.
         <!-- markdownlint-disable MD046 -->
 
