@@ -50,7 +50,7 @@ nav:
           - data_management/transfer/rclone.md
           - data_management/transfer/filezilla.md
   - Environment Management:
-      - environment_management/conda_environments.md
+      - Anaconda Environments: environment_management/conda_environment.md
   - Cheaha User Guide:
       - Getting Started: cheaha/getting_started.md
       - Hardware: cheaha/hardware.md
@@ -65,7 +65,7 @@ nav:
           - cheaha/slurm/gpu.md
           - cheaha/slurm/job_management.md
       - cheaha/lmod.md
-      - cheaha/conda.md
+      - Anaconda on Cheaha: cheaha/conda.md
   - UAB Cloud:
       - Introduction: uab_cloud/introduction.md
       - uab_cloud/network_setup_basic.md
