@@ -66,6 +66,12 @@ To verify your installation is complete, please visit <https://app.globus.org> a
 
 9. A green pop-up notification will appear indicating the transfer has started. Click "View details \>" to be taken to the status of the transfer. You can also check on the status of any transfers by clicking the "Activity" button in the left-hand navigation pane.
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    File permissions from the source will not be copied to the destination. Please read more about this in [our FAQ](../../help/faq.md#why-cant-other-users-access-data-i-transferred-to-a-project-space-on-cheaha)
+<!-- markdownlint-enable MD046 -->
+
 ### Transfer and Sync Options
 
 Between the two "Start" buttons on the "File Manager" page is a "Transfer & Sync Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options are...
