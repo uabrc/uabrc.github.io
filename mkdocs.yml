@@ -50,7 +50,7 @@ nav:
           - data_management/transfer/rclone.md
           - data_management/transfer/filezilla.md
   - Environment Management:
-      - environment_management/conda.md
+      - environment_management/conda_environments.md
   - Cheaha User Guide:
       - Getting Started: cheaha/getting_started.md
       - Hardware: cheaha/hardware.md
