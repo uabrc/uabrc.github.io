@@ -166,5 +166,5 @@ conda install -n base -c conda-forge mamba
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Mamba must be installed in the base environment to function correctly!
+    Mamba must be installed in the base environment to function correctly! If you are using Cheaha, and cannot install in the base environment, see our workaround [here](../cheaha/conda.md#using-mamba)
 <!-- markdownlint-enable MD046 -->
