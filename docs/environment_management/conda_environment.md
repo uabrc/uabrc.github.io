@@ -127,7 +127,9 @@ Anaconda may say that using `source deactivate` is deprecated, but environment w
 
 Closing the terminal will also close out the environment.
 
-### Exporting an Environment
+### Working with Environment YAML Files
+
+#### Exporting an Environment
 
 To easily share environments with other researchers or replicate it on a new machine, it is useful to create an environment YAML file. You can do this using:
 
@@ -139,7 +141,7 @@ conda activate <env>
 conda env export > env.yml
 ```
 
-### Creating an Environment from a YAML File
+#### Creating an Environment from a YAML File
 
 To create an environment from a YAML file `env.yml`, use the following command.
 
@@ -147,9 +149,89 @@ To create an environment from a YAML file `env.yml`, use the following command.
 conda env create --file env.yml
 ```
 
-## Good Software Development Practice
+#### Replicability versus Portability
 
-If you've ever lost a lot of hard work by accidentally deleting an important file, or forgetting what changes you've made that need to be rolled back, this section is for you.
+An environment with only `python 3.10.4`, `numpy 1.21.5` and `jinja2 2.11.2` installed will output something like the following file when `conda env export` is used. This file may be used to precisely replicate the environment as it exists on the machine where `conda env export` was run. Note that the versioning for each package contains two `=` signs. The code like `he774522_0` after the second `=` sign contains hyper-specific build information for the compiled libraries for that package. Sharing this exact file with collaborators may result in frustration if they do not have the exact same operating system and hardware as you, and they would not be able to build this environment. We would say that this environment file is not very portable.
+
+There are other portability issues:
+
+- The `prefix: C:\...` line is not used by `conda` in any way and is deprecated. It also shares system information about file locations which is potentially sensitive information.
+- The `channels:` group uses `- defaults`, which may vary depending on how you or your collaborator has customized their Anaconda installation. It may result in packages not being found, resulting in environment creation failure.
+
+```yaml
+name: test-env
+channels:
+  - defaults
+dependencies:
+  - blas=1.0=mkl
+  - bzip2=1.0.8=he774522_0
+  - ca-certificates=2022.4.26=haa95532_0
+  - certifi=2021.5.30=py310haa95532_0
+  - intel-openmp=2021.4.0=haa95532_3556
+  - jinja2=2.11.2=pyhd3eb1b0_0
+  - libffi=3.4.2=h604cdb4_1
+  - markupsafe=2.1.1=py310h2bbff1b_0
+  - mkl=2021.4.0=haa95532_640
+  - mkl-service=2.4.0=py310h2bbff1b_0
+  - mkl_fft=1.3.1=py310ha0764ea_0
+  - mkl_random=1.2.2=py310h4ed8f06_0
+  - numpy=1.21.5=py310h6d2d95c_2
+  - numpy-base=1.21.5=py310h206c741_2
+  - openssl=1.1.1o=h2bbff1b_0
+  - pip=21.2.4=py310haa95532_0
+  - python=3.10.4=hbb2ffb3_0
+  - setuptools=61.2.0=py310haa95532_0
+  - six=1.16.0=pyhd3eb1b0_1
+  - sqlite=3.38.3=h2bbff1b_0
+  - tk=8.6.11=h2bbff1b_1
+  - tzdata=2022a=hda174b7_0
+  - vc=14.2=h21ff451_1
+  - vs2015_runtime=14.27.29016=h5e58377_2
+  - wheel=0.37.1=pyhd3eb1b0_0
+  - wincertstore=0.2=py310haa95532_2
+  - xz=5.2.5=h8cc25b3_1
+  - zlib=1.2.12=h8cc25b3_2
+prefix: C:\Users\user\Anaconda3\envs\test-env
+```
+
+To make this a more portable file, suitable for collaboration, some planning is required. Instead of using `conda env export` we can build our own file. Create a new file called `env.yml` using your favorite text editor and add the following. Note we've only listed exactly the packages we installed, and their version numbers, only. This allows Anaconda the flexibility to choose dependencies which do not conflict and do not contain unusable hyper-specific library build information.
+
+```yaml
+name: test-env
+channels:
+  - anaconda
+dependencies:
+  - jinja2=2.11.2
+  - numpy=1.21.5
+  - python=3.10.4
+```
+
+This is a much more readable and portable file suitable for sharing with collaborators. We aren't quite finished though! Some scientific packages on the `conda-forge` channel, and on other channels, can contain dependency errors. Those packages may accidentally pull a version of a dependency that breaks their code.
+
+For example, the package `markupsafe` made a not-backward-compatible change (a breaking change) to their code between `2.0.1` and `2.1.1`. Dependent packages expected `2.1.1` to be backward compatible, so their packages allowed `2.1.1` as a substitute for `2.0.1`. Since Anaconda chooses the most recent version allowable, package installs broke. To work around this for our environment, we would need to modify the environment to "pin" that package at a specific version, even though we didn't explicitly install it.
+
+```yaml
+name: test-env
+channels:
+  - anaconda
+dependencies:
+  - jinja2=2.11.2
+  - markupsafe=2.0.1
+  - numpy=1.21.5
+  - python=3.10.4
+```
+
+Now we can be sure that the correct versions of the software will be installed on our collaborator's machines.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The example above is provided only for illustration purposes. The error has since been fixed, but the example above really happened and is helpful to explain version pinning.
+<!-- markdownlint-enable MD046 -->
+
+#### Good Software Development Practice
+
+Building on the example above, we can bring in good software development practices to ensure we don't lose track of how our environment is changing as we develop our software or our workflows. If you've ever lost a lot of hard work by accidentally deleting an important file, or forgetting what changes you've made that need to be rolled back, this section is for you.
 
 Efficient software developers live the mantra "Don't repeat yourself". Part of not repeating yourself is keeping a detailed and meticulous record of changes made as your software grows over time. [Git](git.md) is a way to have the computer keep track of those changes digitally. Git can be used to save changes to environment files as they change over time. Remember that each time your environment changes to commit the output of [Exporting your Environment](#exporting-an-environment) to a repository for your project.
 
