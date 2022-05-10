@@ -1,8 +1,8 @@
-# Anaconda
+# Anaconda on Cheaha
 
-This page details specific information for using Anaconda on [Cheaha](../getting_started.md).
+This page details specific information for using Anaconda on [Cheaha](./getting_started.md).
 
-For general information on Anaconda usage, please see our [Environment Management/Anaconda page](../environment_management/conda.md).
+For general information on usage please see [Anaconda Environments](../environment_management/anaconda_environments.md).
 
 ## Loading Anaconda
 
@@ -10,15 +10,13 @@ Anaconda is installed on Cheaha as a family of modules, and does not need to be 
 
 ## Using Anaconda
 
-Anaconda works as expected once the module has been loaded, with a couple of important difference.
-
-- The `base` environment is installed in a shared location and cannot be modified by researchers. Other environments are installed in your home directory by default.
+Anaconda on Cheaha works like it does on any other system, once the module has been loaded, with a couple of important differences in the callouts below.
 
 <!-- markdownlint-disable MD046 -->
-!!! danger
+!!! note
 
-    Do not use `conda init` on Cheaha! Anaconda is managed as a [module](/docs/cheaha/lmod.md), including script setup. Using `conda init` can cause hard-to-diagnose issues with [Open OnDemand Interactive Jobs](/docs/cheaha/open_ondemand/ood_interactive.md). Please see our [FAQ](../help/faq.md#why-do-i-get-an-error-when-i-try-to-launch-an-hpc-interactive-session) for how to undo what `conda init` does.
-<!-- markdownlint-disable MD046 -->
+    The `base` environment is installed in a shared location and cannot be modified by researchers. Other environments are installed in your home directory by default.
+<!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
@@ -26,11 +24,17 @@ Anaconda works as expected once the module has been loaded, with a couple of imp
     The Cheaha operating system has a version of Python installed. This version is used by `python` calls when Anaconda has not been loaded.
 <!-- markdownlint-enable MD046 -->
 
-For more information on usage with examples, see our general [Environment Management/Anaconda page](../environment_management/conda.md).
+<!-- markdownlint-disable MD046 -->
+!!! danger
+
+    Do not use `conda init` on Cheaha! Anaconda is managed as a [module](./lmod.md), including script setup. Using `conda init` can cause hard-to-diagnose issues with [Open OnDemand Interactive Jobs](./open_ondemand/ood_interactive.md). Please see our [FAQ](../help/faq.md#why-do-i-get-an-error-when-i-try-to-launch-an-hpc-interactive-session) for how to undo what `conda init` does.
+<!-- markdownlint-disable MD046 -->
+
+For more information on usage with examples, see [Anaconda Environments]](../environment_management/anaconda_environments.md).
 
 ## Using Mamba
 
-[Mamba](../environment_management/conda.md#speeding-things-up-with-mamba) is not installed in the base environment on Cheaha, and cannot be installed by researchers. We are working on making this change. In the meantime if you need the speed Mamba provides, you can follow these instructions to make it available for yourself.
+[Mamba](../environment_management/anaconda_environments.md#speeding-things-up-with-mamba) is not installed in the base environment on Cheaha, and cannot be installed in the base environment by researchers. We are working on installing Mamba in the base environment as part of our module installation process change. In the meantime if you need the speed Mamba provides, you can follow these instructions to make it available for yourself.
 
 1. `module load Anaconda3`
 2. Create a new environment with only Mamba using `conda create --name mamba -c conda-forge mamba`
