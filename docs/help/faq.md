@@ -29,15 +29,15 @@ There are a few common reasons why a job can take a long time to start. These ap
 
 If you are seeing a "Failed to submit session" error in a red box when you submit an interactive job on Open OnDemand, like the following, please try reading the error text first. If the cause of the error is not obvious from the text, please read on for some common causes. If none of the below common causes apply, please contact [Support](support.md).
 
-![!failed to submit session error example](./images/faq_ood_disk_quota_exceeded.png)
+![!failed to submit session error example ><](./images/faq_ood_disk_quota_exceeded.png)
 
 - If the error text starts with `Disk quota exceeded` then your storage space in `/data/user/$USER` is likely full. Please see [Storage](../data_management/storage.md) for more information on options for alternative storage locations, or contact [Support](support.md).
 
-#### Why do I get an error when I try to launch an OOD HPC Interactive session?
+#### Why do I get an error when I try to launch an Open OnDemand HPC Interactive session?
 
 If you are seeing an error like the following when launching an HPC Interactive job, please read on for the most likely solution.
 
-![!HPC Interactive error dialog. ><](images/faq_ood_hpc_interactive_conda_init_error.png)
+![!HPC Interactive error dialog.](images/faq_ood_hpc_interactive_conda_init_error.png)
 
 The most common cause is that the command `conda init` was used, creating a block in your `.bashrc` file that looks like the following section.
 
@@ -58,28 +58,28 @@ unset __conda_setup
 # <<< conda initialize <<<
 ```
 
-[Anaconda](../cheaha/conda.md) is managed as a [module](../cheaha/lmod.md), so it is not necessary to use `conda init`. To avoid the issue reoccurring, please do not use `conda init`.
+[Anaconda](../cheaha/conda.md) is managed as a [Module](../cheaha/lmod.md) on [Cheaha](../cheaha/getting_started.md), so it is unnecessary to use `conda init`, and can cause issues with [Open OnDemand](../cheaha/open_ondemand/ood_main.md). To avoid the issue reoccurring, please do not use `conda init` on Cheaha.
 
 To resolve this issue, you'll need to [locate the hidden file](#how-do-i-locate-hidden-dot-files-on-cheaha) `.bashrc` in the file browser pane and select it.
 
-![!Home files list with Show Dotfiles check and .bashrc highlighted. ><](images/faq_ood_file_browser_bashrc.png)
+![!Home files list with Show Dotfiles check and .bashrc highlighted.](images/faq_ood_file_browser_bashrc.png)
 
 Click the "Edit" button. In the new tab that opens, delete the section shown above and click "Save".
 
-![!Edit tab with highlighted section. ><](images/faq_ood_editor_conda_init.png)
+![!Edit tab with highlighted section.](images/faq_ood_editor_conda_init.png)
 
 Please try to launch your job again. If it still doesn't work, please [contact us](../index.md#contact-us)
 
-#### Why do I get a gray screen after launching my OOD RStudio Server session?
+#### Why do I get a gray screen after launching my Open OnDemand RStudio Server session?
 
-Most commonly, delays in launching OOD RStudio Server are caused by a large quantities of files referenced in the `.rstudio` directory in the home directory. This can also commonly occur when a large amount of data was loaded in the workspace in your previous RStudio session. To resolve the issue, you'll need to [locate the hidden directory](#how-do-i-locate-hidden-dot-files-on-cheaha) `.rstudio` in your `$HOME` folder. Once you've found it, delete it, then try recreating your job.
+Most commonly, delays in launching Open OnDemand RStudio Server are caused by a large quantities of files referenced in the `.rstudio` directory in the home directory. This can also commonly occur when a large amount of data was loaded in the workspace in your previous RStudio session. To resolve the issue, you'll need to [locate the hidden directory](#how-do-i-locate-hidden-dot-files-on-cheaha) `.rstudio` in your `$HOME` folder. Once you've found it, delete it, then try recreating your job.
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
     Deleting the .rstudio directory will delete the workspace you had open, including any scripts that were unsaved. Saved scripts will be fine.
 
-#### Why is my OOD RStudio Server session giving me a 502 or 503 error?
+#### Why is my Open OnDemand RStudio Server session giving me a 502 or 503 error?
 
 See [here](#why-do-i-get-a-gray-screen-after-launching-my-ood-rstudio-server-session).
 
@@ -93,6 +93,25 @@ These issues are most commonly caused by programming errors, but can be related 
 
 A bus error is almost always related to a process requesting more memory than is available. In other words, the job ran out of memory. The simplest solution is to increase the requested memory for the job. It may help to learn more about [SLURM](../cheaha/slurm/introduction.md) and [job efficiency](../cheaha/job_efficiency.md).
 
+#### I copied a script from a Windows machine to Cheaha and am getting a bad interpreter error
+
+Bad interpreter errors usually mean that there are symbols in the script that the shell interpreter cannot read correctly. This is usually due to the difference in newline symbols used in Windows (`\r\n`) and Unix (`\n`). Once these newline symbols are changed, the script should be able to run on Cheaha.
+
+To convert a script written in Windows to be compatible on Linux, use the `dos2unix` command. Just give it the name of the script to convert and it should convert it correctly.
+
+``` bash
+dos2unix example_script.sh
+```
+
+If you are using development tools like [Notepad++](https://notepad-plus-plus.org/downloads/) or [VSCode](https://code.visualstudio.com/), there are built-in ways to remove the carriage returns.
+
+- NP++: Go to Edit >> EOL Conversion >> Unix (LF). This must be done for individual files.
+- VSCode: Open Settings and search for EoL. Change the default EoL character to `\n`. This will be applied globally if changed in your User Options.
+
+#### Why am I seeing an InvalidAccount error when submitting jobs when I could submit jobs fine previously?
+
+If you see this error when submitting jobs, please [contact support](support.md#how-to-request-support). There are a few causes for this error that will need to be investigated.
+
 ### Issues in Progress
 
 This section gives workarounds for some issues that are currently being investigated by the team. Once the issue has been resolved, the section will be updated with the permanent fix.
@@ -103,7 +122,7 @@ When using the RStudio Server app (the non-deprecated version) on [Open OnDemand
 
 1. Select the Terminal tab next to the Console tab
 
-    ![!Start the RStudio Terminal ><](images/faq_start_RStudio_terminal.png)
+    ![!Start the RStudio Terminal](images/faq_start_RStudio_terminal.png)
 
 2. Load the same R module you loaded when requesting the session using the `module load R/<insert version>` command
 3. Start R using the `R` command
@@ -113,9 +132,13 @@ When using the RStudio Server app (the non-deprecated version) on [Open OnDemand
 
 5. Once your packages are installed, close the terminal by clicking the dropdown and selecting `Close Terminal`. This will free the resources the terminal R session was using for RStudio to be able to use again.
 
-    ![!Close the R Terminal ><](images/faq_close_R_terminal.png)
+    ![!Close the R Terminal](images/faq_close_R_terminal.png)
 
 Your R packages should now be available for use.
+
+#### My script uses a Singularity container and seems to freeze until it times out
+
+When using Singularity containers in scripts and the amount of memory used by the container exceeds the amount requested for the job, the script will hang until the time limit is reached. Typically, scripts are immediately killed when memory used exceeds memory requested, but that is not the behavior with containers. If your scripts using containers seem to hang and not produce anything until the job ends, use the `seff` command to investigate the memory usage after the job ends (see [it's entry in our docs](../cheaha/job_efficiency.md#verifying-job-efficiency)). If it is using the full amount of memory requested, try upping the amount of memory and submit the job again. To find the job number for past jobs, look [further down](faq.md#how-do-i-find-my-job-id-number).
 
 ### How To
 
@@ -123,9 +146,9 @@ Your R packages should now be available for use.
 
 Dot files are files or directories that start with the character `.` as in the file `.bashrc` or the `.conda` directory.
 
-If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [OOD Files](../cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
+If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [Open OnDemand Files](../cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
 
-![!File browser bar with Show Dotfiles checked. ><](images/faq_odd_show_dotfiles.png)
+![!File browser bar with Show Dotfiles checked.](images/faq_odd_show_dotfiles.png)
 
 If you are using the terminal, you'll need to use `cd` to navigate to the appropriate directory and enter use `ls` with the `-a` flag to list all files and directories, including hidden ones.
 
@@ -182,3 +205,21 @@ When your instances are not being used, please suspend them to free resources fo
 
     Under construction
 <!-- markdownlint-enable MD046 -->
+
+## Globus
+
+### Why can't other users access data I transferred to a project space on Cheaha?
+
+When transferring using Globus, file permissions from the source file are not transferred with the file due to limitations purposefully placed by Globus. When transferring to any space on Cheaha, the most likely permission sets are user read and write only with no group permissions. Researchers will need to manually change permissions for the files they transfer using Globus to add group permissions if desired. You can use the `chmod` command for this:
+
+``` bash
+# If you transferred a single file, you can do this
+chmod g+rw <path/to/file>
+
+# If you transferred a directory and need to give permissions to all files in the directory, you can use this
+chmod -R g+rw <path/to/file>
+```
+
+The `g+rw` adds group read and write permissions. You can add only read permissions by omitting the `w` if desired.
+
+For more information on Globus file permissions, you can read [their FAQ entry](https://docs.globus.org/faq/transfer-sharing/#how_do_i_control_file_permissions_during_transfers).

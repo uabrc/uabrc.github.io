@@ -53,18 +53,24 @@ Follow the instructions [here](https://docs.microsoft.com/en-us/windows-server/a
 Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent service on your local machine to streamline adding and using keys.
 
 - Open the Start Menu and search for "Services", and open the result shown in the image.
-    ![!Searching for services in the start menu. ><](./images/openssh_search_services.png)
+    ![!Searching for services in the start menu.](./images/openssh_search_services.png)
 - Find the "OpenSSH Authentication Agent" service in the list. Double click it, or right-click it and select "Properties".
-    ![!Services list showing OpenSSH Authentication Agent highlighted. ><](./images/openssh_services_list.png)
+    ![!Services list showing OpenSSH Authentication Agent highlighted.](./images/openssh_services_list.png)
 - In the dialog box, under the "General" tab, look for "Startup Type". Click the drop-down menu and select "Automatic (Delayed Start)". Click "Apply" at the bottom-right corner. This will cause the `ssh-agent` service to start when Windows starts.
 - The "Start" button under the horizontal line should become enabled. Click it to start the `ssh-agent` service now.
-    ![!OpenSSH Authentication Agent Properties dialog box. ><](./images/openssh_ssh_agent_service_dialog.png)
+    ![!OpenSSH Authentication Agent Properties dialog box.](./images/openssh_ssh_agent_service_dialog.png)
 
 #### Git Bash terminal (Git for Windows)
 
-The fine folks at Git have worked very hard to package everything needed to use Git on Windows into one installer. This includes and Linux command line interface emulator, Bash and SSH. Visit <https://git-scm.com> to download and install. Follow the installer instructions. It is recommended to use all of the default installation options. Once installed, locate "Git Bash" on your machine to open the Bash terminal. It should be searchable in the Start Menu.
+The fine folks at Git have worked very hard to package everything needed to use Git on Windows into one installer. This includes a Linux command line interface emulator, Bash and SSH. Visit <https://git-scm.com> to download and install. Follow the installer instructions. It is recommended to use all of the default installation options. Once installed, locate "Git Bash" on your machine to open the Bash terminal. It should be searchable in the Start Menu.
 
 To automate running `ssh-agent` add the following block to the file `.bash_profile` in the `~` directory within Git Bash. Then use `source .bash_profile` to start the `ssh-agent`, or open a new terminal.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    If such a file does not exist, please add it using `nano .bash_profile` to create a new file in the nano text editor. Copy and paste the block below into the text editor window. The character `^` means `ctrl`. Use `^x` (`ctrl + x`) to exit, and continue following the prompts to save the file.
+<!-- markdownlint-enable MD046 -->
 
 ```bash
 env=~/.ssh/agent.env
@@ -124,7 +130,7 @@ If `ssh-agent` isn't already running and you encounter an error, use the followi
 - Navigate to the `.ssh` folder in a terminal window.
 - Run `ssh-add <private_key_file>`
 
-    ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent. ><](./images/key_pairs_005.png)
+    ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent.](./images/key_pairs_005.png)
 
     <!-- markdownlint-disable MD046 -->
     !!! bug
@@ -173,7 +179,7 @@ A "Remote Host Identification Has Changed" error can be resolved by using the fo
 
 Run `ssh-keygen -R <hostname>` where `<hostname>` is the URL or IP address of the remote machine.
 
-![!image showing remote host identification has changed error ><](./images/instances_ssh_host_key_error.png)
+![!image showing remote host identification has changed error](./images/instances_ssh_host_key_error.png)
 
 ### Setting up a Configuration File
 

@@ -88,7 +88,7 @@ The setup process for UAB cloud remotes is generally the same, except for the sp
 
 As you step through the process, you will ultimately open two terminal windows and a browser window, and will need to copy text between the terminal windows. The first terminal window will be used to setup the RClone cloud remote. The second terminal will be used to authenticate to that cloud service and gain a token that will be passed back to the first terminal. Authentication will happen by logging into the service in a browser window. This setup method is necessary for any machine where a browser is not readily available, such as a cloud.rc virtual machine. To facilitate setup on these machines, the second terminal will be opened on a machine with RClone and a browser. An example of what this setup might look like is given below.
 
-![!overview of windows used for authenticating cloud remotes via rclone ><](./images/rclone-auth-overview.png)
+![!overview of windows used for authenticating cloud remotes via rclone](./images/rclone-auth-overview.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -111,7 +111,7 @@ As you step through the process, you will ultimately open two terminal windows a
     - [Authenticate to Microsoft OneDrive](#authenticating-to-microsoft-onedrive).
 9. Terminal-2 will print a secret token, which will appear like in the following image. You will need to copy the portion highlighted in the image, between the lines with `--->` and `<---`.
 
-    ![!rclone authentication token sample ><](./images/rclone-auth-token-sample.png)
+    ![!rclone authentication token sample](./images/rclone-auth-token-sample.png)
 
 10. Copy and paste the token from the terminal-2 to terminal-1.
 11. Follow the remaining prompts.
@@ -123,22 +123,22 @@ As you step through the process, you will ultimately open two terminal windows a
 
 1. Click "Use Single Sign On (SSO)".
 
-    ![!box authentication dialog with single sign on highlighted ><](./images/rclone-auth-box-010.png)
+    ![!box authentication dialog with single sign on highlighted](./images/rclone-auth-box-010.png)
 
 2. Type in your UAB email address (not your @uabmc.edu email!).
 3. Click "Authorize".
 
-    ![!box single sign on authentication dialog ><](./images/rclone-auth-box-020.png)
+    ![!box single sign on authentication dialog](./images/rclone-auth-box-020.png)
 
 4. You will be redirected to the UAB SSO page.
 5. Authenticate with your blazerid credentials.
 6. You will be asked to grant permission to the RClone software. Click "Grant access to Box" if you want the software to work with Box. If you do not grant permission, you will not be able to use RClone with Box.
 
-    ![!box grant permission request dialog ><](./images/rclone-auth-box-030.png)
+    ![!box grant permission request dialog](./images/rclone-auth-box-030.png)
 
 7. You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.
 
-    ![!success page ><](./images/rclone-auth-rclone-success.png)
+    ![!success page](./images/rclone-auth-rclone-success.png)
 
 8. Return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
 
@@ -153,23 +153,23 @@ As you step through the process, you will ultimately open two terminal windows a
 1. Type in your UAB email address (not your @uabmc.edu email!).
 2. Click "Next".
 
-    ![!onedrive authentication dialog ><](./images/rclone-auth-onedrive-010.png)
+    ![!onedrive authentication dialog](./images/rclone-auth-onedrive-010.png)
 
 3. If prompted, click "Work or school account".
 
-    ![!onedrive account selection dialog ><](./images/rclone-auth-onedrive-020.png)
+    ![!onedrive account selection dialog](./images/rclone-auth-onedrive-020.png)
 
 4. You will be asked to grant permission to the RClone software. Click "Accept" if you want the software to work with OneDrive. If you do not grant permission, you will not be able to use RClone with OneDrive.
 
-    ![!onedrive grant permission request dialog ><](./images/rclone-auth-onedrive-030.png)
+    ![!onedrive grant permission request dialog](./images/rclone-auth-onedrive-030.png)
 
 5. You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.
 
-    ![!success page ><](./images/rclone-auth-rclone-success.png)
+    ![!success page](./images/rclone-auth-rclone-success.png)
 
 6. Next you will return to the general instructions. Before you do, note that you'll be asked to choose which type of OneDrive service to access. The prompt will look like the image below. For UAB, the two relevant selections will be (1) to access your personal OneDrive space and (3) for a SharePoint Site, e.g. for a lab or department.
 
-    ![!rclone selection prompt among list of onedrive services ><](./images/rclone-auth-onedrive-040.png)
+    ![!rclone selection prompt among list of onedrive services](./images/rclone-auth-onedrive-040.png)
 
 7. With your selection in mind, return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
 

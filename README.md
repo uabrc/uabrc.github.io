@@ -178,12 +178,3 @@ There is no way to fix this automatically, so we rely on checking and reporting.
 #### Checking Indentation
 
 Currently Prettier bulleted list indenting is wonky for markdown. In addition to indenting list markers, it pads out spaces after the marker. Please see [this issue](https://github.com/prettier/prettier/issues/5019) for more details. As a result, we can't automatically format markdown documents, so we need to rely on spotting incorrect indents. Use the following regex `^[ ]{1,3}[^ ]`. It will search for one to three spaces followed by a not-space character.
-
-#### Checking Images are Centered
-
-Our preference is that images be centered at their indentation level. To do this, we need `><` at the end of the alternate text bracket. An example is shown below.
-
-`![!alttext ><](./path/to/image.png)`
-
-To discover images that are missing the centering characters, use regex `!\[.*[^<]\]\(`.
-

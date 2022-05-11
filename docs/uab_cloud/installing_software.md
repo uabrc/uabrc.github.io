@@ -59,7 +59,7 @@ We recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.ht
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    Consider installing [Mamba](../cheaha/conda.md#mamba) to speed up environment installation.
+    Consider installing [Mamba](../environment_management/anaconda_environments.md#mamba) to speed up environment installation.
 <!-- markdownlint-enable MD046 -->
 
 #### Installing Singularity
