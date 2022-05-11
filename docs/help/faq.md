@@ -37,7 +37,7 @@ If you are seeing a "Failed to submit session" error in a red box when you submi
 
 If you are seeing an error like the following when launching an HPC Interactive job, please read on for the most likely solution.
 
-![!HPC Interactive error dialog. ><](images/faq_ood_hpc_interactive_conda_init_error.png)
+![!HPC Interactive error dialog.](images/faq_ood_hpc_interactive_conda_init_error.png)
 
 The most common cause is that the command `conda init` was used, creating a block in your `.bashrc` file that looks like the following section.
 
@@ -62,11 +62,11 @@ unset __conda_setup
 
 To resolve this issue, you'll need to [locate the hidden file](#how-do-i-locate-hidden-dot-files-on-cheaha) `.bashrc` in the file browser pane and select it.
 
-![!Home files list with Show Dotfiles check and .bashrc highlighted. ><](images/faq_ood_file_browser_bashrc.png)
+![!Home files list with Show Dotfiles check and .bashrc highlighted.](images/faq_ood_file_browser_bashrc.png)
 
 Click the "Edit" button. In the new tab that opens, delete the section shown above and click "Save".
 
-![!Edit tab with highlighted section. ><](images/faq_ood_editor_conda_init.png)
+![!Edit tab with highlighted section.](images/faq_ood_editor_conda_init.png)
 
 Please try to launch your job again. If it still doesn't work, please [contact us](../index.md#contact-us)
 
@@ -103,7 +103,7 @@ When using the RStudio Server app (the non-deprecated version) on [Open OnDemand
 
 1. Select the Terminal tab next to the Console tab
 
-    ![!Start the RStudio Terminal ><](images/faq_start_RStudio_terminal.png)
+    ![!Start the RStudio Terminal](images/faq_start_RStudio_terminal.png)
 
 2. Load the same R module you loaded when requesting the session using the `module load R/<insert version>` command
 3. Start R using the `R` command
@@ -113,7 +113,7 @@ When using the RStudio Server app (the non-deprecated version) on [Open OnDemand
 
 5. Once your packages are installed, close the terminal by clicking the dropdown and selecting `Close Terminal`. This will free the resources the terminal R session was using for RStudio to be able to use again.
 
-    ![!Close the R Terminal ><](images/faq_close_R_terminal.png)
+    ![!Close the R Terminal](images/faq_close_R_terminal.png)
 
 Your R packages should now be available for use.
 
@@ -125,7 +125,7 @@ Dot files are files or directories that start with the character `.` as in the f
 
 If you are using Open OnDemand, please navigate to `https://rc.uab.edu`, login and click the `Files` dropdown in the top navigation menu. Click "Home Directory". More detailed instructions on the file browser can be found at [OOD Files](../cheaha/open_ondemand/ood_files.md). Once you've opened the file browser, check the checkbox labeled "Show Dotfiles" in the top-right of the page.
 
-![!File browser bar with Show Dotfiles checked. ><](images/faq_odd_show_dotfiles.png)
+![!File browser bar with Show Dotfiles checked.](images/faq_odd_show_dotfiles.png)
 
 If you are using the terminal, you'll need to use `cd` to navigate to the appropriate directory and enter use `ls` with the `-a` flag to list all files and directories, including hidden ones.
 
