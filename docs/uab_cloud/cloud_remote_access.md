@@ -62,9 +62,15 @@ Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent se
 
 #### Git Bash terminal (Git for Windows)
 
-The fine folks at Git have worked very hard to package everything needed to use Git on Windows into one installer. This includes and Linux command line interface emulator, Bash and SSH. Visit <https://git-scm.com> to download and install. Follow the installer instructions. It is recommended to use all of the default installation options. Once installed, locate "Git Bash" on your machine to open the Bash terminal. It should be searchable in the Start Menu.
+The fine folks at Git have worked very hard to package everything needed to use Git on Windows into one installer. This includes a Linux command line interface emulator, Bash and SSH. Visit <https://git-scm.com> to download and install. Follow the installer instructions. It is recommended to use all of the default installation options. Once installed, locate "Git Bash" on your machine to open the Bash terminal. It should be searchable in the Start Menu.
 
 To automate running `ssh-agent` add the following block to the file `.bash_profile` in the `~` directory within Git Bash. Then use `source .bash_profile` to start the `ssh-agent`, or open a new terminal.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    If such a file does not exist, please add it using `nano .bash_profile` to create a new file in the nano text editor. Copy and paste the block below into the text editor window. The character `^` means `ctrl`. Use `^x` (`ctrl + x`) to exit, and continue following the prompts to save the file.
+<!-- markdownlint-enable MD046 -->
 
 ```bash
 env=~/.ssh/agent.env
