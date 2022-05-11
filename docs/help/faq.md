@@ -99,6 +99,10 @@ Bad interpreter errors usually mean that there are symbols in the script that th
 
 To convert a script written in Windows to be compatible on Linux, use the `dos2unix` command. Just give it the name of the script to convert and it should convert it correctly.
 
+``` bash
+dos2unix example_script.sh
+```
+
 If you are using development tools like [Notepad++](https://notepad-plus-plus.org/downloads/) or [VSCode](https://code.visualstudio.com/), there are built-in ways to remove the carriage returns.
 
 - NP++: Go to Edit >> EOL Conversion >> Unix (LF). This must be done for individual files.
