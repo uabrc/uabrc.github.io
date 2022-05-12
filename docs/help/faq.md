@@ -223,3 +223,9 @@ chmod -R g+rw <path/to/file>
 The `g+rw` adds group read and write permissions. You can add only read permissions by omitting the `w` if desired.
 
 For more information on Globus file permissions, you can read [their FAQ entry](https://docs.globus.org/faq/transfer-sharing/#how_do_i_control_file_permissions_during_transfers).
+
+## Long-Term Storage
+
+### Why do I need to add the trailing / to the end of path names in my S3 commands?
+
+In the Unix file system, the `/` is a protected character the specifies a branch in the file tree, and so `/` cannot be used in the name of a file or folder. This is not the case for S3 storage. Everything in S3 storage is stored at the top level of the bucket no matter the source's file and folder structure. However, people have become so used to having a folder structure and how it provides an organization system, so S3 interfaces pretend to have one. When a folder is uploaded, the files in the folder will have that folder name appended to the beginning of the file name along with the `/` separator. Same for if files are uploaded to existing "folders" in S3. These paths are called prefixes in S3 terms. Because `/` is not protected in S3, all of the `/` characters in a path are included with the prefix, so if you want to perform a command on a prefix in S3, you must include the trailing `/` because it is actually a part of the prefix name.

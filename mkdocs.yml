@@ -18,12 +18,15 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
   - attr_list
   - lightgallery:
       show_description_in_lightgallery: true
       show_description_as_inline_caption: false
   - toc:
       permalink: true
+  - tables
 
 plugins:
   - search
@@ -44,7 +47,9 @@ nav:
       - account_management/gitlab_researcher.md
   - Data Management:
       - data_management/storage.md
-      - data_management/s3.md
+      - Long Term Storage:
+          - Introduction: data_management/LTS/lts.md
+          - data_management/LTS/sharing.md
       - File Transfer:
           - data_management/transfer/globus.md
           - data_management/transfer/rclone.md
