@@ -1,18 +1,27 @@
-name: ci 
+name: ci
 
 on:
   push:
     branches:
+      - dev
       - main
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+
+      - name: Install environment
+        uses: mamba-org/provision-with-micromamba@main
         with:
-          python-version: 3.x
-      - run: pip install mkdocs-material 
-      - run: pip install lightgallery
-      - run: pip3 install mkdocs-table-reader-plugin
-      - run: mkdocs gh-deploy --force
+          environment-file: build_env.yml
+          environment-name: build
+          cache-downloads: true
+          cache-env: true
+
+      - name: Build pages
+        shell: bash -l {0}
+        run: |
+          micromamba activate build
+          mkdocs gh-deploy --force
