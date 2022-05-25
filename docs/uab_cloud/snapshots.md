@@ -4,7 +4,7 @@ Snapshots are instances or volumes frozen at a moment in time, able to be used i
 
 ## Creating an Instance Snapshot
 
-Instance snapshots are a helpful way to store the state of an instance for later use. Repeating tedious tasks like [Software Installs](./installing_sfotware.md) can be avoided by taking a snapshot at a known-good point during set up of an instance environment, saving time in the future if something goes wrong. Instance snapshots may also be shared with other users to simplify workflows and onboarding new collaborators. To create an instance snapshot please follow the steps below. We assume you are already logged in at [cloud.rc](./introduction.md)
+Instance snapshots are a helpful way to store the state of an instance for later use. Repeating tedious tasks like [Software Installs](./installing_software.md) can be avoided by taking a snapshot at a known-good point during set up of an instance environment, saving time in the future if something goes wrong. Instance snapshots may also be shared with other users to simplify workflows and onboarding new collaborators. To create an instance snapshot please follow the steps below. We assume you are already logged in at [cloud.rc](./introduction.md)
 
 1. Navigate to "Compute" and then "Instances" in the left-hand navigation menu to open the "Instances" page.
 2. To make a snapshot of a particular instance, click the drop down menu under the "Actions" column in the row of the desired instance. Then click "Create Snapshot".
