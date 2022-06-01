@@ -1,0 +1,1594 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+    
+    
+      
+        <title>Security - UAB Research Computing</title>
+      
+    
+    
+
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+<link rel="stylesheet" href="../../css/lightgallery.min.css" />
+
+    
+
+<script src="../../js/lightgallery.min.js"></script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basic-security-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UAB Research Computing" class="md-header__button md-logo" aria-label="UAB Research Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAB Research Computing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Security
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uabrc/researcher-facing-MkDocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UAB Research Computing" class="md-nav__button md-logo" aria-label="UAB Research Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAB Research Computing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uabrc/researcher-facing-MkDocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Welcome
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Welcome" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Welcome
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/welcome/" class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/rc_days/" class="md-nav__link">
+        UAB Research Computing Day
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Account Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Account Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Account Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/cheaha_account/" class="md-nav__link">
+        Cheaha Account Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          External Collaborators (XIAS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="External Collaborators (XIAS)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          External Collaborators (XIAS)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/xias_users/" class="md-nav__link">
+        Managing UAB XIAS Users
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/xias_sites/" class="md-nav__link">
+        Creating a UAB XIAS Project/Site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/xias_guest/" class="md-nav__link">
+        Guest Instructions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/gitlab_researcher/" class="md-nav__link">
+        UAB GitLab Overview and Registration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Data Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Data Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Long Term Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Long Term Storage" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Long Term Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/LTS/lts/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/LTS/sharing/" class="md-nav__link">
+        Sharing Buckets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          File Transfer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="File Transfer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          File Transfer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/transfer/globus/" class="md-nav__link">
+        Globus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/transfer/rclone/" class="md-nav__link">
+        RClone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/transfer/filezilla/" class="md-nav__link">
+        FileZilla
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Environment Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Environment Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Environment Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment_management/anaconda_environments/" class="md-nav__link">
+        Anaconda
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Cheaha User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheaha User Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Cheaha User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          Open OnDemand
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Open OnDemand" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Open OnDemand
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/open_ondemand/ood_main/" class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/open_ondemand/ood_interactive/" class="md-nav__link">
+        Interactive Apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/open_ondemand/ood_files/" class="md-nav__link">
+        File Browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/open_ondemand/ood_jobs/" class="md-nav__link">
+        Job Viewer and Composer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4">
+          SLURM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SLURM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          SLURM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/slurm/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/slurm/sbatch_usage/" class="md-nav__link">
+        Submitting Jobs with Slurm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/slurm/gpu/" class="md-nav__link">
+        GPUs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/slurm/job_management/" class="md-nav__link">
+        Managing Jobs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/lmod/" class="md-nav__link">
+        Modules and Applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/conda/" class="md-nav__link">
+        Anaconda on Cheaha
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          UAB Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="UAB Cloud" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          UAB Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_setup_basic/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Security
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-security-group" class="md-nav__link">
+    Creating a Security Group
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-key-pair" class="md-nav__link">
+    Creating a Key pair
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a Key pair">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practices" class="md-nav__link">
+    Good Practices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-key-pair-on-cloudrc" class="md-nav__link">
+    Generating a Key Pair on cloud.rc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-key-pair-locally" class="md-nav__link">
+    Generating a Key Pair Locally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-key-pair" class="md-nav__link">
+    Using the Key Pair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revoking-a-key-pair" class="md-nav__link">
+    Revoking a Key Pair
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instance_setup_basic/" class="md-nav__link">
+        Instance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volume_setup_basic/" class="md-nav__link">
+        Volume
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud_remote_access/" class="md-nav__link">
+        Remote Access to Instances
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_software/" class="md-nav__link">
+        Installing Software on Instances
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snapshots/" class="md-nav__link">
+        Working with Snapshots
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Help
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Help" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Help
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/support/" class="md-nav__link">
+        How to Request Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/faq/" class="md-nav__link">
+        Frequently Asked Questions (FAQ)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-security-group" class="md-nav__link">
+    Creating a Security Group
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-key-pair" class="md-nav__link">
+    Creating a Key pair
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a Key pair">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practices" class="md-nav__link">
+    Good Practices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-key-pair-on-cloudrc" class="md-nav__link">
+    Generating a Key Pair on cloud.rc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-key-pair-locally" class="md-nav__link">
+    Generating a Key Pair Locally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-key-pair" class="md-nav__link">
+    Using the Key Pair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revoking-a-key-pair" class="md-nav__link">
+    Revoking a Key Pair
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/uabrc/researcher-facing-MkDocs/edit/master/docs/uab_cloud/security_setup_basic.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="basic-security-setup">Basic Security Setup<a class="headerlink" href="#basic-security-setup" title="Permanent link">&para;</a></h1>
+<p>These instructions show you how to prepare to use SSH with your instances. At a minimum, an SSH security group and at least one key pair must be created. Other security groups can and should be added as needed for additional services.</p>
+<h2 id="creating-a-security-group">Creating a Security Group<a class="headerlink" href="#creating-a-security-group" title="Permanent link">&para;</a></h2>
+<p>Security Groups are used to set rules for how external devices can connect to your instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. Security groups may be reused across multiple instances.</p>
+<ol>
+<li>
+<p>Click "Networks" in the left-hand navigation pane to open the fold-out menu.</p>
+<p><div class="lightgallery"><a data-sub-html="cloud.rc Overview page. Security Groups is selected in the Network Topology fold-out menu in the left-hand navigation pane." href="../images/networks_000.png"><img alt="cloud.rc Overview page. Security Groups is selected in the Network Topology fold-out menu in the left-hand navigation pane." src="../images/networks_000.png" /></a></div></p>
+</li>
+<li>
+<p>Click "Security Groups" in the fold out menu.</p>
+<p><div class="lightgallery"><a data-sub-html="cloud.rc Security Groups page. The Security Groups table has one entry, the default, persistent entry labeled default." href="../images/security_groups_001.png"><img alt="cloud.rc Security Groups page. The Security Groups table has one entry, the default, persistent entry labeled default." src="../images/security_groups_001.png" /></a></div></p>
+</li>
+<li>
+<p>Click "+ Create Security Group" to open a dialog box.</p>
+</li>
+<li>
+<p>Fill out the dialog box.</p>
+<ol>
+<li>Under "Name" enter <code>ssh</code>.</li>
+<li>Leave "Description" empty.</li>
+</ol>
+<p><div class="lightgallery"><a data-sub-html="Create Security Group dialog. The dialog has been filled out with the name set as ssh." href="../images/security_groups_002.png"><img alt="Create Security Group dialog. The dialog has been filled out with the name set as ssh." src="../images/security_groups_002.png" /></a></div></p>
+</li>
+<li>
+<p>Click "Create Security Group".</p>
+<ol>
+<li>Redirects to the "Manage Security Group Rules: ssh" page.</li>
+<li>There should be an entry for "Egress IPv4" and "Egress IPv6". Leave these alone.</li>
+</ol>
+<p><div class="lightgallery"><a data-sub-html="Manage Security Group Rules for ssh. The Table has two entries, both Egress direction. One is for IPv4 and the other for IPv6. Both have no IP restrictions." href="../images/security_groups_003.png"><img alt="Manage Security Group Rules for ssh. The Table has two entries, both Egress direction. One is for IPv4 and the other for IPv6. Both have no IP restrictions." src="../images/security_groups_003.png" /></a></div></p>
+</li>
+<li>
+<p>Click "+ Add Rule" to open a dialog box.</p>
+<ol>
+<li>Select "SSH" in the "Rule" drop down box. This will change the remaining fields.</li>
+<li>Leave "Description" empty.</li>
+<li>Select "CIDR" in the "Remote" drop down box.</li>
+<li>Type <code>0.0.0.0/0</code> in the "CIDR" box. For the sake of this tutorial, this value is fine. For properly securing virtual machines, see the "Warning" below for more information on better practice.</li>
+</ol>
+<p><div class="lightgallery"><a data-sub-html="Add Rule dialog box. The dialog box is filled out. The rule is set to SSH." href="../images/security_groups_004.png"><img alt="Add Rule dialog box. The dialog box is filled out. The rule is set to SSH." src="../images/security_groups_004.png" /></a></div></p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using the value <code>0.0.0.0/0</code> for CIDR is short-hand for saying "All possible IP addresses". While cloud.rc is protected from external sources by the UAB firewall, using <code>0.0.0.0/0</code> does expose your virtual machine to all machines on the UAB internal network. Using the value <code>0.0.0.0/0</code> is the same as saying "I trust the UAB firewall to protect my VM, and I trust UAB faculty, staff and students to not harm my VM".</p>
+<p>Better practice is to limit the CIDR scope to only the IP address ranges that are relevant to your goals. As with all of cybersecurity, there is a security/convenience tradeoff to be made, and properly scoping CIDR will take more work than just using <code>0.0.0.0/0</code>. CIDR calculators are available on the internet to assist with calculation, just search for <code>CIDR Calculator</code>.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+</li>
+<li>
+<p>Click "Add".</p>
+<ol>
+<li>Redirects to the "Manage Security Group Rules: ssh" page.</li>
+<li>There should be a new entry in the table.</li>
+</ol>
+<p><div class="lightgallery"><a data-sub-html="Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs." href="../images/security_groups_005.png"><img alt="Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs." src="../images/security_groups_005.png" /></a></div></p>
+</li>
+</ol>
+<h2 id="creating-a-key-pair">Creating a Key pair<a class="headerlink" href="#creating-a-key-pair" title="Permanent link">&para;</a></h2>
+<p>A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to <a href="../cloud_remote_access/#install-an-ssh-client">Install an SSH Client</a> on your local machine.</p>
+<p>Key Pairs are security devices used to authenticate and connect to a remote machine, like Cheaha or cloud.rc instances, and use <a href="https://en.wikipedia.org/wiki/Public-key_cryptography">Public-key cryptography</a> to encrypt the connection. As the name suggests, there are two parts: a public key which is placed on the remote machine, and a private key which is kept secret on your personal machine.</p>
+<p>While key pairs can be reused between instances, we highly recommend using a new key pair with each instance to minimize risk if a private key becomes compromised. See <a href="#good-practices">Good Practices</a> for more information.</p>
+<p>There are two ways to create a key pair:</p>
+<ol>
+<li><a href="#generating-a-key-pair-on-cloudrc">Use the cloud.rc interface to generate a key pair remotely and download the private key file</a>.</li>
+<li><a href="#generating-a-key-pair-locally">Use your personal computer to generate a key pair locally and upload the public key file.</a></li>
+</ol>
+<h3 id="good-practices">Good Practices<a class="headerlink" href="#good-practices" title="Permanent link">&para;</a></h3>
+<p>Good practice is to only use one key pair per person and per local machine. So if you have two computers, each will need its own key pair. Using the same key pair for multiple machines means that they all become compromised when that key is compromised. Using different key pairs for each means only one machine becomes compromised.</p>
+<p>If you have two people, each will need their own key pair. Private keys are secrets and should not be passed between people, because there is no way to control it once it has been shared with even one other person. Copying the key increases the risk of the system being compromised by an attacker. If the key has to be revoked, you revoke access for every user at once. If you must share access, create a key pair for each additional person to increase security and convenience.</p>
+<p>Using a password protected Key Pair is highly recommended for additional security, as it buys time to <a href="#revoking-a-key-pair">revoke a key pair</a> if it is compromised by an attacker. Currently, this is only possible by uploading a custom public key generated on your local machine.</p>
+<h3 id="generating-a-key-pair-on-cloudrc">Generating a Key Pair on cloud.rc<a class="headerlink" href="#generating-a-key-pair-on-cloudrc" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Click "Compute" in the left-hand navigation pane to open the fold-out menu.</p>
+<p><div class="lightgallery"><a data-sub-html="cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane." href="../images/key_pairs_000.png"><img alt="cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane." src="../images/key_pairs_000.png" /></a></div></p>
+</li>
+<li>
+<p>Click "Key Pairs".</p>
+<p><div class="lightgallery"><a data-sub-html="Key Pairs page. The Key Pairs table is empty." href="../images/key_pairs_001.png"><img alt="Key Pairs page. The Key Pairs table is empty." src="../images/key_pairs_001.png" /></a></div></p>
+</li>
+<li>
+<p>Click "+ Create Key Pair" to open a dialog box.</p>
+</li>
+<li>
+<p>Fill out the dialog box.</p>
+<ol>
+<li>
+<p>Enter a "Key Pair Name".</p>
+</li>
+<li>
+<p>Select "SSH Key" in the "Key Type" drop down box.</p>
+<p><div class="lightgallery"><a data-sub-html="Create Key pair dialog. The dialog form is filled out. The Key Pair Name is set to my_key_pair." href="../images/key_pairs_002.png"><img alt="Create Key pair dialog. The dialog form is filled out. The Key Pair Name is set to my_key_pair." src="../images/key_pairs_002.png" /></a></div></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click "+ Create Key Pair"</p>
+<ol>
+<li>Opens a download file dialog box in your browser to download a file containing the secret private key. The file may have extension <code>.pem</code> or <code>.crt</code> depending on your operating system.</li>
+<li>
+<p>Download the private key file. For security reasons this will be your only chance to ever obtain the private key from cloud.rc. If you lose this file you will have to generate a new Key Pair.</p>
+<p><div class="lightgallery"><a data-sub-html="Download File dialog on Firefox for Windows. The file being downloaded is my_key_pair.pem." href="../images/key_pairs_003.png"><img alt="Download File dialog on Firefox for Windows. The file being downloaded is my_key_pair.pem." src="../images/key_pairs_003.png" /></a></div></p>
+</li>
+<li>
+<p>Redirects to the "Key Pairs" page.</p>
+</li>
+<li>
+<p>There should be a new entry in the table.</p>
+<p><div class="lightgallery"><a data-sub-html="Key Pairs page. The Key Pairs table has one entry labeled my_key_pair." href="../images/key_pairs_004.png"><img alt="Key Pairs page. The Key Pairs table has one entry labeled my_key_pair." src="../images/key_pairs_004.png" /></a></div></p>
+</li>
+</ol>
+</li>
+<li>
+<p>To add the private key on your local machine please see "Add key" under <a href="../cloud_remote_access/#add-a-private-key">Add a Private Key</a>.</p>
+</li>
+</ol>
+<h3 id="generating-a-key-pair-locally">Generating a Key Pair Locally<a class="headerlink" href="#generating-a-key-pair-locally" title="Permanent link">&para;</a></h3>
+<p>To generate a key pair, see instructions located at <a href="../cloud_remote_access/#generating-key-pairs">Generating Key Pairs</a>.</p>
+<ol>
+<li>
+<p>Click "Import Public Key" to open a dialog box.</p>
+</li>
+<li>
+<p>Fill out the dialog box.</p>
+<ol>
+<li>Enter a "Key Pair Name".</li>
+<li>Select "SSH Key" in the "Key Type" drop-down box.</li>
+<li>Click "Browse..." to upload a public key file from your custom key pair <strong>OR</strong> copy-paste the content of that key file into the "Public Key" box.</li>
+</ol>
+<p><div class="lightgallery"><a data-sub-html="Import Public Key dialog. The dialog form is empty." href="../images/key_pairs_alt_002.png"><img alt="Import Public Key dialog. The dialog form is empty." src="../images/key_pairs_alt_002.png" /></a></div></p>
+</li>
+</ol>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not upload your private key file! The private key file must stay secret to ensure proper security, and it should never leave the computer it was generated on.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h3 id="using-the-key-pair">Using the Key Pair<a class="headerlink" href="#using-the-key-pair" title="Permanent link">&para;</a></h3>
+<p>Please see <a href="../instance_setup_basic/#ssh-into-the-instance">SSH Into the Instance</a> for more information on using the Key Pair.</p>
+<h3 id="revoking-a-key-pair">Revoking a Key Pair<a class="headerlink" href="#revoking-a-key-pair" title="Permanent link">&para;</a></h3>
+<p>Revoking a key pair from cloud.rc is simple. First, log on to the interface.</p>
+<ol>
+<li>
+<p>Click "Compute" in the left-hand navigation pane to open the fold-out menu.</p>
+<p><div class="lightgallery"><a data-sub-html="cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane." href="../images/key_pairs_000.png"><img alt="cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane." src="../images/key_pairs_000.png" /></a></div></p>
+</li>
+<li>
+<p>Click "Key Pairs".</p>
+<p><div class="lightgallery"><a data-sub-html="Key Pairs page. The Key Pairs table has one entry." href="../images/key_pairs_004.png"><img alt="Key Pairs page. The Key Pairs table has one entry." src="../images/key_pairs_004.png" /></a></div></p>
+</li>
+<li>
+<p>Find the key pair you wish to revoke and click the "Delete Key Pair" button in that row.</p>
+</li>
+<li>
+<p>Optionally, <a href="../cloud_remote_access/#remove-a-private-key">Remove the Private Key</a> from your local machine. This step is not necessary to ensure security, but can help maintain a clean environment.</p>
+</li>
+</ol>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../network_setup_basic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Network" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Network
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../instance_setup_basic/" class="md-footer__link md-footer__link--next" aria-label="Next: Instance" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Instance
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+
+      <script src="../../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      
+    
+<script>
+  var elements = document.getElementsByClassName("lightgallery");
+  for (var i = 0; i < elements.length; i++) {
+    lightGallery(elements[i]);
+  }
+</script>
+
+  </body>
+</html>

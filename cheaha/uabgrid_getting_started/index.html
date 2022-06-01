@@ -1,0 +1,2468 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+    
+    
+      
+        <title>Getting Started - UAB Research Computing</title>
+      
+    
+    
+
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+<link rel="stylesheet" href="../../css/lightgallery.min.css" />
+
+    
+
+<script src="../../js/lightgallery.min.js"></script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UAB Research Computing" class="md-header__button md-logo" aria-label="UAB Research Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAB Research Computing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uabrc/researcher-facing-MkDocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UAB Research Computing" class="md-nav__button md-logo" aria-label="UAB Research Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAB Research Computing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uabrc/researcher-facing-MkDocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Welcome
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Welcome" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Welcome
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/welcome/" class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/rc_days/" class="md-nav__link">
+        UAB Research Computing Day
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Account Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Account Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Account Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/cheaha_account/" class="md-nav__link">
+        Cheaha Account Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          External Collaborators (XIAS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="External Collaborators (XIAS)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          External Collaborators (XIAS)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/xias_users/" class="md-nav__link">
+        Managing UAB XIAS Users
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/xias_sites/" class="md-nav__link">
+        Creating a UAB XIAS Project/Site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/xias_guest/" class="md-nav__link">
+        Guest Instructions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/gitlab_researcher/" class="md-nav__link">
+        UAB GitLab Overview and Registration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Data Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Data Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Long Term Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Long Term Storage" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Long Term Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/LTS/lts/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/LTS/sharing/" class="md-nav__link">
+        Sharing Buckets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          File Transfer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="File Transfer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          File Transfer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/transfer/globus/" class="md-nav__link">
+        Globus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/transfer/rclone/" class="md-nav__link">
+        RClone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/transfer/filezilla/" class="md-nav__link">
+        FileZilla
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Environment Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Environment Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Environment Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environment_management/anaconda_environments/" class="md-nav__link">
+        Anaconda
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Cheaha User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheaha User Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Cheaha User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          Open OnDemand
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Open OnDemand" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Open OnDemand
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open_ondemand/ood_main/" class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open_ondemand/ood_interactive/" class="md-nav__link">
+        Interactive Apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open_ondemand/ood_files/" class="md-nav__link">
+        File Browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open_ondemand/ood_jobs/" class="md-nav__link">
+        Job Viewer and Composer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4">
+          SLURM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SLURM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          SLURM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm/sbatch_usage/" class="md-nav__link">
+        Submitting Jobs with Slurm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm/gpu/" class="md-nav__link">
+        GPUs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm/job_management/" class="md-nav__link">
+        Managing Jobs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lmod/" class="md-nav__link">
+        Modules and Applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conda/" class="md-nav__link">
+        Anaconda on Cheaha
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          UAB Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="UAB Cloud" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          UAB Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uab_cloud/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uab_cloud/network_setup_basic/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uab_cloud/security_setup_basic/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uab_cloud/instance_setup_basic/" class="md-nav__link">
+        Instance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uab_cloud/volume_setup_basic/" class="md-nav__link">
+        Volume
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uab_cloud/cloud_remote_access/" class="md-nav__link">
+        Remote Access to Instances
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uab_cloud/installing_software/" class="md-nav__link">
+        Installing Software on Instances
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uab_cloud/snapshots/" class="md-nav__link">
+        Working with Snapshots
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Help
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Help" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Help
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/support/" class="md-nav__link">
+        How to Request Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/faq/" class="md-nav__link">
+        Frequently Asked Questions (FAQ)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#access-cluster-account-request" class="md-nav__link">
+    Access (Cluster Account Request)
+  </a>
+  
+    <nav class="md-nav" aria-label="Access (Cluster Account Request)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-collaborator" class="md-nav__link">
+    External Collaborator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    Login
+  </a>
+  
+    <nav class="md-nav" aria-label="Login">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-configuration" class="md-nav__link">
+    Client Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Client Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac-os-x" class="md-nav__link">
+    Mac OS X
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobaxterm" class="md-nav__link">
+    MobaXterm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putty" class="md-nav__link">
+    PuTTY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-secure-shell-client" class="md-nav__link">
+    SSH Secure Shell Client
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-in-to-cheaha" class="md-nav__link">
+    Logging in to Cheaha
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging in to Cheaha">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users-without-a-blazerid-collaborators-from-other-universities" class="md-nav__link">
+    Users without a blazerid (collaborators from other universities)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-software" class="md-nav__link">
+    Cluster Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queuing-system" class="md-nav__link">
+    Queuing System
+  </a>
+  
+    <nav class="md-nav" aria-label="Queuing System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-queuing-system" class="md-nav__link">
+    What is a queuing system?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-workflow" class="md-nav__link">
+    Typical Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-requests" class="md-nav__link">
+    Resource Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mandatory-resource-requests" class="md-nav__link">
+    Mandatory Resource Requests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-common-resource-requests" class="md-nav__link">
+    Other Common Resource Requests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-jobs" class="md-nav__link">
+    Submitting Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-script-file-format" class="md-nav__link">
+    Job Script File Format
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Script File Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#converting-files-to-unix-format" class="md-nav__link">
+    Converting Files to UNIX Format
+  </a>
+  
+    <nav class="md-nav" aria-label="Converting Files to UNIX Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dos2unix-method" class="md-nav__link">
+    Dos2Unix Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-windows-text-editors" class="md-nav__link">
+    Alternative Windows Text Editors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-batch-job-script" class="md-nav__link">
+    Example Batch Job Script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/uabrc/researcher-facing-MkDocs/edit/master/docs/cheaha/uabgrid_getting_started.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<p>Cheaha is a cluster computing environment for UAB researchers. Information about the history and future plans for Cheaha is available on the <a href="/Cheaha">Cheaha</a> page.</p>
+<h2 id="access-cluster-account-request">Access (Cluster Account Request)<a class="headerlink" href="#access-cluster-account-request" title="Permanent link">&para;</a></h2>
+<p>To get started using <a href="https://docs.uabgrid.uab.edu/wiki/Cheaha">Cheaha</a>, simply visit our <a href="https://docs.uabgrid.uab.edu/wiki/Open_OnDemand">Open OnDemand</a> portal at <a href="https://rc.uab.edu/">https://rc.uab.edu</a>. This is the primary entry point for Cheaha and provides access to all cluster services directly from your web browser, including graphical desktops, Jupyter Notebooks, and even the traditional command-line.</p>
+<p>If you don't already have an account, you will be prompted to create one the first time you log into the portal. If you are creating an account, please share some of your interests in using Cheaha as this help us understand the science interests of our users.</p>
+<p><strong>Please note</strong>: Usage of Cheaha is governed by <a href="https://www.uab.edu/policies/content/Pages/UAB-IT-POL-0000004.aspx">UAB's Acceptable Use Policy (AUP)</a> for computer resources.</p>
+<h3 id="external-collaborator">External Collaborator<a class="headerlink" href="#external-collaborator" title="Permanent link">&para;</a></h3>
+<p>To request an account for an external collaborator, please follow the steps <a href="/Collaborator_Account">here.</a></p>
+<h2 id="login">Login<a class="headerlink" href="#login" title="Permanent link">&para;</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<p>Once your account has been created, you'll receive an email containing your user ID, generally your Blazer ID. You can <a href="https://rc.uab.edu/">log into Cheaha via your web browser</a> using the new web-based HPC experience.</p>
+<p>You can also log into Cheaha via a traditional SSH client. Most UAB Windows workstations already have an SSH client installed, possibly named <strong>SSH Secure Shell Client</strong> or <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a>. Linux and Mac OS X systems should have an SSH client installed by default.</p>
+<p>Usage of Cheaha is governed by <a href="https://www.uab.edu/policies/content/Pages/UAB-IT-POL-0000004.aspx">UAB's Acceptable Use Policy (AUP)</a> for computer and network resources.</p>
+<h3 id="client-configuration">Client Configuration<a class="headerlink" href="#client-configuration" title="Permanent link">&para;</a></h3>
+<p>This section will cover steps to configure Windows, Linux and Mac OS X clients to connect to Cheaha.</p>
+<p>The official DNS name of Cheaha's frontend machine is <em>cheaha.rc.uab.edu</em>. If you want to refer to the machine as <em>cheaha</em>, you'll have to either add the "rc.uab.edu" to you computer's DNS search path. On Unix-derived systems (Linux, Mac) you can edit your computers /etc/resolv.conf as follows (you'll need administrator access to edit this file)</p>
+<p><code>bash
+search rc.uab.edu</code></p>
+<p>Or you can customize your SSH configuration to use the short name "cheaha" as a connection name. On systems using OpenSSH you can add the following to your ~/.ssh/config file</p>
+<p><code>bash
+Host cheaha
+ Hostname cheaha.rc.uab.edu</code></p>
+<h4 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h4>
+<p>Linux systems, regardless of the flavor (RedHat, SuSE, Ubuntu, etc...), should already have an SSH client on the system as part of the default install.</p>
+<ol>
+<li>Start a terminal (on RedHat click Applications -&gt; Accessories -&gt; Terminal, on Ubuntu Ctrl+Alt+T)</li>
+<li>At the prompt, enter the following command to connect to Cheaha (<strong>Replace blazerid with your Cheaha userid</strong>)</li>
+</ol>
+<p><code>bash
+ssh blazerid@cheaha.rc.uab.edu</code></p>
+<h4 id="mac-os-x">Mac OS X<a class="headerlink" href="#mac-os-x" title="Permanent link">&para;</a></h4>
+<p>Mac OS X is a Unix operating system (BSD) and has a built in ssh client.</p>
+<ol>
+<li>Start a terminal (click Finder, type Terminal and double click on Terminal under the Applications category)</li>
+<li>At the prompt, enter the following command to connect to Cheaha (<strong>Replace blazerid with your Cheaha userid</strong>)</li>
+</ol>
+<p><code>bash
+ssh blazerid@cheaha.rc.uab.edu</code></p>
+<h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
+<p>There are many SSH clients available for Windows, some commercial and some that are free (GPL). This section will cover two clients that are commonly found on UAB Windows systems.</p>
+<h5 id="mobaxterm">MobaXterm<a class="headerlink" href="#mobaxterm" title="Permanent link">&para;</a></h5>
+<p><a href="http://mobaxterm.mobatek.net/">MobaXterm</a> is a free (also available for a price in a Profession version) suite of SSH tools. Of the Windows clients we've used, MobaXterm is the easiest to use and feature complete. <a href="http://mobaxterm.mobatek.net/features.html">Features</a> include (but not limited to):</p>
+<ul>
+<li>SSH client (in a handy web browser like tabbed interface)</li>
+<li>Embedded Cygwin (which allows Windows users to run many Linux commands like grep, rsync, sed)</li>
+<li>Remote file system browser (graphical SFTP)</li>
+<li>X11 forwarding for remotely displaying graphical content from Cheaha</li>
+<li>Installs without requiring Windows Administrator rights</li>
+</ul>
+<p>Start MobaXterm and click the Session toolbar button (top left). Click SSH for the session type, enter the following information and click OK. Once finished, double click cheaha.rc.uab.edu in the list of Saved sessions under PuTTY sessions:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Cheaha Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Remote host</strong></td>
+<td>cheaha.rc.uab.edu</td>
+</tr>
+<tr>
+<td><strong>Port</strong></td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+<h5 id="putty">PuTTY<a class="headerlink" href="#putty" title="Permanent link">&para;</a></h5>
+<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> is a free suite of SSH and telnet tools written and maintained by <a href="http://www.pobox.com/~anakin/">Simon Tatham</a>. PuTTY supports SSH, secure FTP (SFTP), and X forwarding (XTERM) among other tools.</p>
+<ul>
+<li>Start PuTTY (Click START -&gt; All Programs -&gt; PuTTY -&gt; PuTTY). The 'PuTTY Configuration' window will open</li>
+<li>Use these settings for each of the clusters that you would like to configure</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Cheaha Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Host Name (or IP address)</strong></td>
+<td>cheaha.rc.uab.edu</td>
+</tr>
+<tr>
+<td><strong>Port</strong></td>
+<td>22</td>
+</tr>
+<tr>
+<td><strong>Protocol</strong></td>
+<td>SSH</td>
+</tr>
+<tr>
+<td><strong>Saved Sessions</strong></td>
+<td>cheaha.rc.uab.edu</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Click <strong>Save</strong> to save the configuration, repeat the previous steps for the other clusters</li>
+<li>The next time you start PuTTY, simply double click on the cluster name under the 'Saved Sessions' list</li>
+</ul>
+<h5 id="ssh-secure-shell-client">SSH Secure Shell Client<a class="headerlink" href="#ssh-secure-shell-client" title="Permanent link">&para;</a></h5>
+<p>SSH Secure Shell is a commercial application that is installed on many Windows workstations on campus and can be configured as follows:</p>
+<ul>
+<li>Start the program (Click START -&gt; All Programs -&gt; SSH Secure Shell -&gt; Secure Shell Client). The 'default - SSH Secure Shell' window will open</li>
+<li>Click File -&gt; Profiles -&gt; Add Profile to open the 'Add Profile' window</li>
+<li>Type in the name of the cluster (for example: cheaha) in the field and click 'Add to Profiles'</li>
+<li>Click File -&gt; Profiles -&gt; Edit Profiles to open the 'Profiles' window</li>
+<li>Single click on your new profile name</li>
+<li>Use these settings for the clusters</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Cheaha Settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Host name</strong></td>
+<td>cheaha.rc.uab.edu</td>
+</tr>
+<tr>
+<td><strong>User name</strong></td>
+<td>blazerid (insert your blazerid here)</td>
+</tr>
+<tr>
+<td><strong>Port</strong></td>
+<td>22</td>
+</tr>
+<tr>
+<td><strong>Protocol</strong></td>
+<td>SSH</td>
+</tr>
+<tr>
+<td><strong>Encryption algorithm</strong></td>
+<td><Default></td>
+</tr>
+<tr>
+<td><strong>MAC algorithm</strong></td>
+<td><Default></td>
+</tr>
+<tr>
+<td><strong>Compression</strong></td>
+<td><None></td>
+</tr>
+<tr>
+<td><strong>Terminal answerback</strong></td>
+<td>vt100</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Leave 'Connect through firewall' and 'Request tunnels only' unchecked</li>
+<li>Click <strong>OK</strong> to save the configuration, repeat the previous steps for the other clusters</li>
+<li>The next time you start SSH Secure Shell, click 'Profiles' and click the cluster name</li>
+</ul>
+<h3 id="logging-in-to-cheaha">Logging in to Cheaha<a class="headerlink" href="#logging-in-to-cheaha" title="Permanent link">&para;</a></h3>
+<p>No matter which client you use to connect to the Cheaha, the first time you connect, the SSH client should display a message asking if you would like to import the hosts public key. Answer <strong>Yes</strong> to this question.</p>
+<ul>
+<li>
+<p>Connect to Cheaha using one of the methods listed above</p>
+</li>
+<li>
+<p>Answer <strong>Yes</strong> to import the cluster's public key</p>
+</li>
+<li>
+<p>Enter your BlazerID password</p>
+</li>
+<li>
+<p>After successfully logging in for the first time, You may see the following message <strong>just press ENTER for the next three prompts, don't type any passphrases!</strong></p>
+</li>
+</ul>
+<p>``` text
+It doesn't appear that you have set up your ssh key.
+This process will make the files:
+     /home/joeuser/.ssh/id_rsa.pub
+     /home/joeuser/.ssh/id_rsa
+     /home/joeuser/.ssh/authorized_keys</p>
+<p>Generating public/private rsa key pair.
+Enter file in which to save the key (/home/joeuser/.ssh/id_rsa):
+```</p>
+<ul>
+<li>Enter file in which to save the key (/home/joeuser/.ssh/id_rsa):<strong>Press Enter</strong></li>
+<li>Enter passphrase (empty for no passphrase):<strong>Press Enter</strong></li>
+<li>Enter same passphrase again:<strong>Press Enter</strong></li>
+</ul>
+<p><code>bash
+Your identification has been saved in /home/joeuser/.ssh/id_rsa.
+Your public key has been saved in /home/joeuser/.ssh/id_rsa.pub.
+The key fingerprint is:
+f6:xx:xx:xx:xx:dd:9a:79:7b:83:xx:f9:d7:a7:d6:27 joeuser@cheaha.rc.uab.edu</code></p>
+<h4 id="users-without-a-blazerid-collaborators-from-other-universities">Users without a blazerid (collaborators from other universities)<a class="headerlink" href="#users-without-a-blazerid-collaborators-from-other-universities" title="Permanent link">&para;</a></h4>
+<ul>
+<li>If you were issued a temporary password, enter it (Passwords are CaSE SensitivE!!!) You should see a message similar to this</li>
+</ul>
+<p><code>bash
+You are required to change your password immediately (password aged)
+WARNING: Your password has expired.
+You must change your password now and login again!
+Changing password for user joeuser.
+Changing password for joeuser
+(current) UNIX password:</code></p>
+<ul>
+<li>(current) UNIX password: <strong>Enter your temporary password at this prompt and press enter</strong></li>
+<li>New UNIX password: <strong>Enter your new strong password and press enter</strong></li>
+<li>Retype new UNIX password: <strong>Enter your new strong password again and press enter</strong></li>
+<li>After you enter your new password for the second time and press enter, the shell may exit automatically. If it doesn't, type exit and press enter</li>
+<li>Log in again, this time use your new password</li>
+</ul>
+<p>Congratulations, you should now have a command prompt and be ready to start <a href="https://docs.uabgrid.uab.edu/wiki/Cheaha_GettingStarted#Example_Batch_Job_Script">submitting jobs</a>!!!</p>
+<h2 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h2>
+<p>See <a href="/Hardware">Hardware</a> for more information.</p>
+<h2 id="cluster-software">Cluster Software<a class="headerlink" href="#cluster-software" title="Permanent link">&para;</a></h2>
+<ul>
+<li>BrightCM 7.2</li>
+<li>CentOS 7.2 x86_64</li>
+<li><a href="https://docs.uabgrid.uab.edu/wiki/Slurm">Slurm</a> 15.08</li>
+</ul>
+<h2 id="queuing-system">Queuing System<a class="headerlink" href="#queuing-system" title="Permanent link">&para;</a></h2>
+<p>All work on Cheaha must be submitted to <strong>our queuing system (<a href="https://docs.uabgrid.uab.edu/wiki/Slurm">Slurm</a>)</strong>. A common mistake made by new users is to run 'jobs' on the login node. This section gives a basic overview of what a queuing system is and why we use it.</p>
+<h3 id="what-is-a-queuing-system">What is a queuing system?<a class="headerlink" href="#what-is-a-queuing-system" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Software that gives users fair allocation of the cluster's resources</li>
+<li>Schedules jobs based using resource requests (the following are commonly requested resources, there are many more that are available)</li>
+<li>Number of processors (often referred to as "slots")</li>
+<li>Maximum memory (RAM) required per slot</li>
+<li>Maximum run time</li>
+<li>Common queuing systems:</li>
+<li><strong><a href="https://docs.uabgrid.uab.edu/wiki/Slurm">Slurm</a></strong></li>
+<li>Sun Grid Engine (Also know as SGE, OGE, GE)</li>
+<li>OpenPBS</li>
+<li>Torque</li>
+<li>LSF (load sharing facility)</li>
+</ul>
+<p><a href="http://slurm.schedmd.com/">Slurm</a> is a queue management system and stands for Simple Linux Utility for Resource Management. Slurm was developed at the Lawrence Livermore National Lab and currently runs some of the largest compute clusters in the world. <strong><a href="https://docs.uabgrid.uab.edu/wiki/Slurm">Slurm</a></strong> is now the primary job manager on Cheaha, it replaces SUN Grid Engine ([<a href="https://docs.uabgrid.uab.edu/wiki/Cheaha_GettingStarted_deprecated">SGE</a>]) the job manager used earlier. Instructions of using SLURM and writing SLURM scripts for jobs submission on Cheaha can be found <strong><a href="/Slurm">here</a></strong>.</p>
+<h3 id="typical-workflow">Typical Workflow<a class="headerlink" href="#typical-workflow" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Stage data to $USER_SCRATCH (your scratch directory)</li>
+<li>Research how to run your code in "batch" mode. Batch mode typically means the ability to run it from the command line without requiring any interaction from the user.</li>
+<li>Identify the appropriate resources needed to run the job. The following are mandatory resource requests for all jobs on Cheaha</li>
+<li>Maximum memory (RAM) required per slot</li>
+<li>Maximum runtime</li>
+<li>Write a job script specifying queuing system parameters, resource requests and commands to run program</li>
+<li>Submit script to queuing system (sbatch script.job)</li>
+<li>Monitor job (squeue)</li>
+<li>Review the results and resubmit as necessary</li>
+<li>Clean up the scratch directory by moving or deleting the data off of the cluster</li>
+</ul>
+<h3 id="resource-requests">Resource Requests<a class="headerlink" href="#resource-requests" title="Permanent link">&para;</a></h3>
+<p>Accurate resource requests are extremely important to the health of the over all cluster. In order for Cheaha to operate properly, the queing system must know how much runtime and RAM each job will need.</p>
+<h4 id="mandatory-resource-requests">Mandatory Resource Requests<a class="headerlink" href="#mandatory-resource-requests" title="Permanent link">&para;</a></h4>
+<ul>
+<li>-t, --time=<time></li>
+</ul>
+<p>Set a limit on the total run time of the job allocation. If the requested time limit exceeds the partition's time limit, the job will be left in a PENDING state (possibly indefinitely).</p>
+<ul>
+<li>For Array jobs, this represents the maximum run time for each task</li>
+<li>
+<p>For serial or parallel jobs, this represents the maximum run time for the entire job</p>
+</li>
+<li>
+<p>--mem-per-cpu=<MB></p>
+</li>
+</ul>
+<p>Mimimum memory required per allocated CPU in MegaBytes.</p>
+<h4 id="other-common-resource-requests">Other Common Resource Requests<a class="headerlink" href="#other-common-resource-requests" title="Permanent link">&para;</a></h4>
+<ul>
+<li>-N, --nodes=<minnodes[-maxnodes]></li>
+</ul>
+<p>Request that a minimum of minnodes nodes be allocated to this job. A maximum node count may also be specified with maxnodes. If only one number is specified, this is used as both the minimum and maximum node count.</p>
+<ul>
+<li>-n, --ntasks=<number></li>
+</ul>
+<p>sbatch does not launch tasks, it requests an allocation of resources and submits a batch script. This option advises the Slurm controller that job steps run within the allocation will launch a maximum of number tasks and to provide for sufficient resources. The default is one task per node</p>
+<ul>
+<li>--mem=<MB></li>
+</ul>
+<p>Specify the real memory required per node in MegaBytes.</p>
+<ul>
+<li>-c, --cpus-per-task=<ncpus></li>
+</ul>
+<p>Advise the Slurm controller that ensuing job steps will require ncpus number of processors per task. Without this option, the controller will just try to allocate one processor per task.</p>
+<ul>
+<li>-p, --partition=<partition_names></li>
+</ul>
+<p>Request a specific partition for the resource allocation. Available partitions are: express(max 2 hrs), short(max 12 hrs), medium(max 50 hrs), long(max 150 hrs), sinteractive(0-2 hrs)</p>
+<h3 id="submitting-jobs">Submitting Jobs<a class="headerlink" href="#submitting-jobs" title="Permanent link">&para;</a></h3>
+<p>Batch Jobs are submitted on Cheaha by using the "sbatch" command. The full manual for sbtach is available by running the following command</p>
+<p><code>bash
+man sbatch</code></p>
+<h4 id="job-script-file-format">Job Script File Format<a class="headerlink" href="#job-script-file-format" title="Permanent link">&para;</a></h4>
+<p>To submit a job to the queuing systems, you will first define your job in a script (a text file) and then submit that script to the queuing system.</p>
+<p>The script file needs to be <strong>formatted as a UNIX file</strong>, not a Windows or Mac text file. In geek speak, this means that the end of line (EOL) character should be a line feed (LF) rather than a carriage return line feed (CRLF) for Windows or carriage return (CR) for Mac.</p>
+<p>If you submit a job script formatted as a Windows or Mac text file, your job will likely fail with misleading messages, for example that the path specified does not exist.</p>
+<p>Windows <strong>Notepad</strong> does not have the ability to save files using the UNIX file format. Do NOT use Notepad to create files intended for use on the clusters. Instead use one of the alternative text editors listed in the following section.</p>
+<h5 id="converting-files-to-unix-format">Converting Files to UNIX Format<a class="headerlink" href="#converting-files-to-unix-format" title="Permanent link">&para;</a></h5>
+<h6 id="dos2unix-method">Dos2Unix Method<a class="headerlink" href="#dos2unix-method" title="Permanent link">&para;</a></h6>
+<p>The lines below that begin with $ are commands, the $ represents the command prompt and should not be typed!</p>
+<p>The dos2unix program can be used to convert Windows text files to UNIX files with a simple command. After you have copied the file to your home directory on the cluster, you can identify that the file is a Windows file by executing the following (Windows uses CR LF as the line terminator, where UNIX uses only LF and Mac uses only CR):</p>
+<p>```bash
+$ file testfile.txt</p>
+<p>testfile.txt: ASCII text, with CRLF line terminators
+```</p>
+<p>Now, convert the file to UNIX</p>
+<p>```bash
+$ dos2unix testfile.txt</p>
+<p>dos2unix: converting file testfile.txt to UNIX format ...
+```</p>
+<p>Verify the conversion using the file command</p>
+<p>```bash
+$ file testfile.txt</p>
+<p>testfile.txt: ASCII text
+```</p>
+<h6 id="alternative-windows-text-editors">Alternative Windows Text Editors<a class="headerlink" href="#alternative-windows-text-editors" title="Permanent link">&para;</a></h6>
+<p>There are many good text editors available for Windows that have the capability to save files using the UNIX file format. Here are a few:</p>
+<ul>
+<li>[<a href="http://www.geany.org/">Geany</a>] is an excellent free text editor for Windows and Linux that supports Windows, UNIX and Mac file formats, syntax highlighting and many programming features. To convert from Windows to UNIX click <strong>Document</strong> click <strong>Set Line Endings</strong> and then <strong>Convert and Set to LF (Unix)</strong></li>
+<li>[<a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a>] is a great free Windows text editor that supports Windows, UNIX and Mac file formats, syntax highlighting and many programming features. To convert from Windows to UNIX click <strong>Format</strong> and then click <strong>Convert to UNIX Format</strong></li>
+<li>[<a href="http://www.textpad.com/">TextPad</a>] is another excellent Windows text editor. TextPad is not free, however.</li>
+</ul>
+<h4 id="example-batch-job-script">Example Batch Job Script<a class="headerlink" href="#example-batch-job-script" title="Permanent link">&para;</a></h4>
+<p>A shared cluster environment like Cheaha uses a job scheduler to run tasks on the cluster to provide optimal resource sharing among users. Cheaha uses a job scheduling system call Slurm to schedule and manage jobs. A user needs to tell Slurm about resource requirements (e.g. CPU, memory) so that it can schedule jobs effectively. These resource requirements along with actual application code can be specified in a single file commonly referred as 'Job Script/File'. Following is a simple job script that prints job number and hostname.</p>
+<p><strong>Note:</strong>Jobs <strong>must request</strong> the appropriate partition (ex: <em>--partition=short</em>) to satisfy the jobs resource request (maximum runtime, number of compute nodes, etc...)</p>
+<p>```bash</p>
+<h1 id="binbash">!/bin/bash<a class="headerlink" href="#binbash" title="Permanent link">&para;</a></h1>
+<h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-job-nametest">SBATCH --job-name=test<a class="headerlink" href="#sbatch-job-nametest" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-outputrestxt">SBATCH --output=res.txt<a class="headerlink" href="#sbatch-outputrestxt" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-ntasks1">SBATCH --ntasks=1<a class="headerlink" href="#sbatch-ntasks1" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-partitionexpress">SBATCH --partition=express<a class="headerlink" href="#sbatch-partitionexpress" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-time1000">SBATCH --time=10:00<a class="headerlink" href="#sbatch-time1000" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mem-per-cpu100">SBATCH --mem-per-cpu=100<a class="headerlink" href="#sbatch-mem-per-cpu100" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-typefail">SBATCH --mail-type=FAIL<a class="headerlink" href="#sbatch-mail-typefail" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-useryour_email_address">SBATCH --mail-user=YOUR_EMAIL_ADDRESS<a class="headerlink" href="#sbatch-mail-useryour_email_address" title="Permanent link">&para;</a></h1>
+<p>srun hostname
+srun sleep 60
+```</p>
+<p>Lines starting with '#SBATCH' have a special meaning in the Slurm world. Slurm specific configuration options are specified after the '#SBATCH' characters. Above configuration options are useful for most job scripts and for additional configuration options refer to Slurm commands manual. A job script is submitted to the cluster using Slurm specific commands. There are many commands available, but following three commands are the most common:</p>
+<ul>
+<li>sbatch - to submit job</li>
+<li>scancel - to delete job</li>
+<li>squeue - to view job status</li>
+</ul>
+<p>We can submit above job script using sbatch command:</p>
+<p><code>bash
+$ sbatch HelloCheaha.sh
+Submitted batch job 52707</code></p>
+<p>When the job script is submitted, Slurm queues it up and assigns it a job number (e.g. 52707 in above example). The job number is available inside job script using environment variable $JOB_ID. This variable can be used inside job script to create job related directory structure or file names.</p>
+<h3 id="interactive-resources">Interactive Resources<a class="headerlink" href="#interactive-resources" title="Permanent link">&para;</a></h3>
+<p>Login Node (the host that you connected to when you setup the SSH connection to Cheaha) is supposed to be used for submitting jobs and/or lighter prep work required for the job scripts. <strong>Do not run heavy computations on the login node</strong>. If you have a heavier workload to prepare for a batch job (eg. compiling code or other manipulations of data) or your compute application requires interactive control, you should request a dedicated interactive node for this work.</p>
+<p>Interactive resources are requested by submitting an "interactive" job to the scheduler. Interactive jobs will provide you a command line on a compute resource that you can use just like you would the command line on the login node. The difference is that the scheduler has dedicated the requested resources to your job and you can run your interactive commands without having to worry about impacting other users on the login node.</p>
+<p>Interactive jobs, that can be run on command line, are requested with the <strong>srun</strong> command.</p>
+<p><code>bash
+srun --ntasks=1 --cpus-per-task=4 --mem-per-cpu=4096 --time=08:00:00 --partition=medium --job-name=JOB_NAME --pty /bin/bash</code></p>
+<p>This command requests for 4 cores (--cpus-per-task) for a single task (--ntasks) with each cpu requesting size 4GB of RAM (--mem-per-cpu) for 8 hrs (--time).</p>
+<p>More advanced interactive scenarios to support graphical applications are available using <a href="https://docs.uabgrid.uab.edu/wiki/Setting_Up_VNC_Session">VNC</a> or X11 tunneling <a href="http://www.uab.edu/it/software">X-Win32 2014 for Windows</a></p>
+<p>Interactive jobs that requires running a graphical application, are requested with the <strong>sinteractive</strong> command, via <strong>Terminal</strong> on your VNC window.</p>
+<p><code>bash
+sinteractive --ntasks=1 --cpus-per-task=4 --mem-per-cpu=4096 --time=08:00:00 --partition=medium --job-name=JOB_NAME</code></p>
+<p>Please note, sinteractive starts your shell in a screen session. Screen is a terminal emulator that is designed to make it possible to detach and reattach a session. This feature can mostly be ignored. If you application uses <code>ctrl-a</code> as a special command sequence (e.g. Emacs), however, you may find the application doesn't receive this special character. When using screen, you need to type <code>ctrl-a a</code> (ctrl-a followed by a single "a" key press) to send a ctrl-a to your application. Screen uses ctrl-a as it's own command character, so this special sequence issues the command to screen to "send ctrl-a to my app". Learn more about <a href="https://www.gnu.org/software/screen/manual/html_node/Overview.html#Overview">screen from it's documentation</a>.</p>
+<h2 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h2>
+<h3 id="privacy">Privacy<a class="headerlink" href="#privacy" title="Permanent link">&para;</a></h3>
+<p><strong>Do not store sensitive information on this filesystem. It is not encrypted.</strong> Note that your data will be stored on the cluster filesystem, and while not accessible to ordinary users, it could be accessible to the cluster administrator(s).</p>
+<h3 id="file-and-directory-permissions">File and Directory Permissions<a class="headerlink" href="#file-and-directory-permissions" title="Permanent link">&para;</a></h3>
+<p>The default permissions for all user data storage locations described below are as follows. In these descriptions, the "$USER" variable should be replaced with the user's account name string:</p>
+<ul>
+<li>/home/$USER - the owner ($USER) of the directory can read, write/delete, and list files. No other users or groups have permissions to this directory.</li>
+<li>/data/user/$USER - the owner ($USER) of the directory can read, write/delete, and list files. No other users or groups have permissions to this directory.</li>
+<li>/scratch/$USER - the owner ($USER) of the directory can read, write/delete, and list files. No other users or groups have permissions to this directory.</li>
+<li>/data/projects/<projectname> - a PI can request project space for their lab or specific collaborations. The project directory is created with the PI/requestor as the user-owner and a dedicated collaboration group as the group-owner. The PI and all members of the dedicated collaboration group have can read, write/delete, and list files. No privileges are granted to other users of the system. Additional controls can be implemented via access control lists (ACLs). The PI/requestor can modify the ACLs to allow additional access to specific users.</li>
+</ul>
+<p>These permissions are the default configuration. While it is possible to modify these permissions or change the group owner of a file to any group to which a user belongs, users are encouraged to work within the default configuration and contact support@listserv.uab.edu if the default permissions are not adequate. Setting up a collaboration group and associated project directory can address most collaboration need while keep data access restricted to the minimum necessary users for the collaboration.</p>
+<p>Additional background on Linux file system permissions can be found here:</p>
+<ul>
+<li><a href="https://its.unc.edu/research-computing/techdocs/how-to-use-unix-and-linux-file-permissions/">https://its.unc.edu/research-computing/techdocs/how-to-use-unix-and-linux-file-permissions/</a></li>
+<li><a href="https://www.rc.fas.harvard.edu/resources/documentation/linux/unix-permissions/">https://www.rc.fas.harvard.edu/resources/documentation/linux/unix-permissions/</a></li>
+<li><a href="https://hpc.nih.gov/storage/permissions.html">https://hpc.nih.gov/storage/permissions.html</a></li>
+</ul>
+<h3 id="no-automatic-backups">No Automatic Backups<a class="headerlink" href="#no-automatic-backups" title="Permanent link">&para;</a></h3>
+<p>There is no automatic back up of any user data on the cluster in home, data, or scratch. At this time, all user data back up processes are defined and managed by each user and/or lab. Given that data backup demands vary widely between different users, groups, and research domains, this approach enables those who are most familiar with the data to make appropriate decisions based on their specific needs.</p>
+<p>For example, if a group is working with a large shared data set that is a local copy of a data set maintained authoritatively at a national data bank, maintaining a local backup is unlikely to be a productive use of limited storage resources, since this data could potentially be restored from the authoritative source. If, however, you are maintaining a unique source of data of which yours is the only copy, then maintaining a backup is critical if you value that data set. It's worth noting that while this "uniqueness" criteria may not apply to the data you analyze, it may readily apply to the codes that define your analysis pipelines.</p>
+<p>An often recommended backup policy is the 3-2-1 rule: maintain three copies of data, on two different media, with one copy off-site. You can <a href="https://www.backblaze.com/blog/the-3-2-1-backup-strategy/">read more about the 3-2-1 rule here</a>. In the case of your application codes, using revision control tools during development provides an easy way to maintain a second copy, makes for a good software development process, and can help achieve reproducible research goals.</p>
+<p>Please review the <a href="https://www.uab.edu/it/home/data-storage">data storage options provided by UAB IT</a> for maintaining copies of your data. In choosing among these options, you should also <a href="https://www.uab.edu/it/home/data-classification">be aware of UAB's data classification rules and requirements for security requirements for sensitive and restricted</a> data storage. Given the importance of backup, Research Computing continues to explore options to facilitate data backup workflows from the cluster. Please <a href="mailto:support@listserv.uab.edu">contact us</a> if you have questions or would like to discuss specific data backup scenarios.</p>
+<p>A good guide for thinking about your backup strategy might be: "If you aren't managing a data back up process, then you have no backup data."</p>
+<h3 id="home-directories">Home directories<a class="headerlink" href="#home-directories" title="Permanent link">&para;</a></h3>
+<p>Your home directory on Cheaha is NFS-mounted to the compute nodes as /home/$USER or $HOME. It is acceptable to use your home directory as a location to store job scripts and custom code. You are responsible for keeping your home directory under 10GB in size!</p>
+<p><strong>The home directory must not be used to store large amounts of data.</strong> Please use $USER_SCRATCH for actively used data sets and $USER_DATA for storage of non scratch data.</p>
+<h3 id="scratch">Scratch<a class="headerlink" href="#scratch" title="Permanent link">&para;</a></h3>
+<p>Research Computing policy requires that all bulky input and output must be located on the scratch space. The home directory is intended to store your job scripts, log files, libraries and other supporting files.</p>
+<p><strong>Important Information:</strong></p>
+<ul>
+<li>Scratch space (network and local) <strong>is not backed up</strong>.</li>
+<li>Research Computing expects each user to keep their scratch areas clean. The cluster scratch area are not to be used for archiving data.</li>
+</ul>
+<p>Cheaha has two types of scratch space, network mounted and local.</p>
+<ul>
+<li>Network scratch ($USER_SCRATCH) is available on the login node and each compute node. This storage is a GPFS high performance file system providing roughly 4.7PB of usable storage. This should be your jobs primary working directory, unless the job would benefit from local scratch (see below).</li>
+<li>Local scratch is physically located on each compute node and is not accessible to the other nodes (including the login node). This space is useful if the job performs a lot of file I/O. Most of the jobs that run on our clusters do not fall into this category. Because the local scratch is inaccessible outside the job, it is important to note that you must move any data between local scratch to your network accessible scratch within your job. For example, step 1 in the job could be to copy the input from $USER_SCRATCH to ${USER_SCRATCH}, step 2 code execution, step 3 move the data back to $USER_SCRATCH.</li>
+</ul>
+<h4 id="network-scratch">Network Scratch<a class="headerlink" href="#network-scratch" title="Permanent link">&para;</a></h4>
+<p>Network scratch is available using the environment variable $USER_SCRATCH or directly by /data/scratch/$USER</p>
+<p>It is advisable to use the environment variable whenever possible rather than the hard coded path.</p>
+<h4 id="local-scratch">Local Scratch<a class="headerlink" href="#local-scratch" title="Permanent link">&para;</a></h4>
+<p>Each compute node has a local scratch directory that is accessible via the variable <strong>$LOCAL_SCRATCH</strong>. If your job performs a lot of file I/O, the job should use $LOCAL_SCRATCH rather than $USER_SCRATCH to prevent bogging down the network scratch file system. The amount of scratch space available is approximately 800GB.</p>
+<p>The $LOCAL_SCRATCH is a special temporary directory and it's important to note that this directory is deleted when the job completes, so the job script has to move the results to $USER_SCRATCH or other location prior to the job exiting.</p>
+<p>Note that $LOCAL_SCRATCH is only useful for jobs in which all processes run on the same compute node, so MPI jobs are not candidates for this solution.</p>
+<p>The following is an array job example that uses $LOCAL_SCRATCH by transferring the inputs into $LOCAL_SCRATCH at the beginning of the script and the result out of $LOCAL_SCRATCH at the end of the script.</p>
+<p>```bash</p>
+<h1 id="binbash_1">!/bin/bash<a class="headerlink" href="#binbash_1" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-array1-10">SBATCH --array=1-10<a class="headerlink" href="#sbatch-array1-10" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-share">SBATCH --share<a class="headerlink" href="#sbatch-share" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-partitionexpress_1">SBATCH --partition=express<a class="headerlink" href="#sbatch-partitionexpress_1" title="Permanent link">&para;</a></h1>
+<h1 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h1 id="name-your-job-to-make-it-easier-for-you-to-track">Name your job to make it easier for you to track<a class="headerlink" href="#name-your-job-to-make-it-easier-for-you-to-track" title="Permanent link">&para;</a></h1>
+<h1 id="_3"><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-job-namer_array_job">SBATCH --job-name=R_array_job<a class="headerlink" href="#sbatch-job-namer_array_job" title="Permanent link">&para;</a></h1>
+<h1 id="_4"><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-error-and-output-files">Set your error and output files<a class="headerlink" href="#set-your-error-and-output-files" title="Permanent link">&para;</a></h1>
+<h1 id="_5"><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-errorr_array_joberr">SBATCH --error=R_array_job.err<a class="headerlink" href="#sbatch-errorr_array_joberr" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-outputr_array_jobout">SBATCH --output=R_array_job.out<a class="headerlink" href="#sbatch-outputr_array_jobout" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-ntasks1_1">SBATCH --ntasks=1<a class="headerlink" href="#sbatch-ntasks1_1" title="Permanent link">&para;</a></h1>
+<h1 id="_6"><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
+<h1 id="tell-the-scheduler-only-need-10-minutes-and-the-appropriate-partition">Tell the scheduler only need 10 minutes and the appropriate partition<a class="headerlink" href="#tell-the-scheduler-only-need-10-minutes-and-the-appropriate-partition" title="Permanent link">&para;</a></h1>
+<h1 id="_7"><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-time001000">SBATCH --time=00:10:00<a class="headerlink" href="#sbatch-time001000" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mem-per-cpu256">SBATCH --mem-per-cpu=256<a class="headerlink" href="#sbatch-mem-per-cpu256" title="Permanent link">&para;</a></h1>
+<h1 id="_8"><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails">Set your email address and request notification when you job is complete or if it fails<a class="headerlink" href="#set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails" title="Permanent link">&para;</a></h1>
+<h1 id="_9"><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-typefail_1">SBATCH --mail-type=FAIL<a class="headerlink" href="#sbatch-mail-typefail_1" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-useryour_email_address_1">SBATCH --mail-user=YOUR_EMAIL_ADDRESS<a class="headerlink" href="#sbatch-mail-useryour_email_address_1" title="Permanent link">&para;</a></h1>
+<p>module load R/3.2.0-goolf-1.7.20</p>
+<p>echo "TMPDIR: $LOCAL_SCRATCH"</p>
+<p>cd $LOCAL_SCRATCH</p>
+<h1 id="create-a-working-directory-under-the-special-scheduler-local-scratch-directory">Create a working directory under the special scheduler local scratch directory<a class="headerlink" href="#create-a-working-directory-under-the-special-scheduler-local-scratch-directory" title="Permanent link">&para;</a></h1>
+<h1 id="using-the-array-jobs-taskid">using the array job's taskID<a class="headerlink" href="#using-the-array-jobs-taskid" title="Permanent link">&para;</a></h1>
+<p>mdkir $SLURM_ARRAY_TASK_ID
+cd $SLURM_ARRAY_TASK_ID</p>
+<h1 id="next-copy-the-input-data-to-the-local-scratch">Next copy the input data to the local scratch<a class="headerlink" href="#next-copy-the-input-data-to-the-local-scratch" title="Permanent link">&para;</a></h1>
+<p>echo "Copying input data from network scratch to $LOCAL_SCRATCH/$SLURM_ARRAY_TASK_ID - $(date)</p>
+<h1 id="the-input-data-in-this-case-has-a-numerical-file-extension-that">The input data in this case has a numerical file extension that<a class="headerlink" href="#the-input-data-in-this-case-has-a-numerical-file-extension-that" title="Permanent link">&para;</a></h1>
+<h1 id="matches-slurm_array_task_id">matches $SLURM_ARRAY_TASK_ID<a class="headerlink" href="#matches-slurm_array_task_id" title="Permanent link">&para;</a></h1>
+<p>cp -a $USER_SCRATCH/GeneData/INP*.$SLURM_ARRAY_TASK_ID ./
+echo "copied input data from network scratch to $LOCAL_SCRATCH/$SLURM_ARRAY_TASK_ID - $(date)</p>
+<p>someapp -S 1 -D 10 -i INP*.$SLURM_ARRAY_TASK_ID -o geneapp.out.$SLURM_ARRAY_TASK_ID</p>
+<h1 id="lastly-copy-the-results-back-to-network-scratch">Lastly copy the results back to network scratch<a class="headerlink" href="#lastly-copy-the-results-back-to-network-scratch" title="Permanent link">&para;</a></h1>
+<p>echo "Copying results from local $LOCAL_SCRATCH/$SLURM_ARRAY_TASK_ID to network - $(date)
+cp -a geneapp.out.$SLURM_ARRAY_TASK_ID $USER_SCRATCH/GeneData/
+echo "Copied results from local $LOCAL_SCRATCH/$SLURM_ARRAY_TASK_ID to network - $(date)
+```</p>
+<h3 id="project-storage">Project Storage<a class="headerlink" href="#project-storage" title="Permanent link">&para;</a></h3>
+<p>Cheaha has a location where shared data can be stored called $SHARE_PROJECT. As with user scratch, this area <strong>is not backed up</strong>!</p>
+<p>This is helpful if a team of researchers must access the same data. Please open a help desk ticket to request a project directory under $SHARE_PROJECT.</p>
+<h3 id="uploading-data">Uploading Data<a class="headerlink" href="#uploading-data" title="Permanent link">&para;</a></h3>
+<p><strong>Do not store sensitive information on this filesystem. It is not encrypted.</strong> Note that your data will be stored on the cluster filesystem, and while not accessible to ordinary users, it could be accessible to the cluster administrator(s). Data can be moved onto the cluster (pushed) from a remote client (ie. you desktop) via SCP or SFTP. Data can also be downloaded to the cluster (pulled) by issuing transfer commands once you are logged into the cluster. Common transfer methods are <code>wget &lt;URL&gt;</code>, FTP, or SCP, and depend on how the data is made available from the data provider.</p>
+<p>Large data sets should be staged directly to your $USER_SCRATCH directory so as not to fill up $HOME. If you are working on a data set shared with multiple users, it's preferable to request space in $SHARE_PROJECT rather than duplicating the data for each user.</p>
+<h2 id="environment-modules">Environment Modules<a class="headerlink" href="#environment-modules" title="Permanent link">&para;</a></h2>
+<p><a href="http://modules.sourceforge.net/">Environment Modules</a> is installed on Cheaha and should be used when constructing your job scripts if an applicable module file exists. Using the module command you can easily configure your environment for specific software packages without having to know the specific environment variables and values to set. Modules allows you to dynamically configure your environment without having to logout / login for the changes to take affect.</p>
+<p>If you find that specific software does not have a module, please submit a <a href="http://etlab.eng.uab.edu/">helpdesk ticket</a> to request the module.</p>
+<ul>
+<li>Cheaha supports bash completion for the module command. For example, type 'module' and press the TAB key twice to see a list of options:</li>
+</ul>
+<p>```bash
+module TAB TAB</p>
+<p>add          display      initlist     keyword      refresh      switch       use        <br />
+apropos      help         initprepend  list         rm           unload       whatis     <br />
+avail        initadd      initrm       load         show         unuse      <br />
+clear        initclear    initswitch   purge        swap         update
+```</p>
+<ul>
+<li>To see the list of available modulefiles on the cluster, run the <strong>module avail</strong> command (note the example list below may not be complete!) or <strong>module load</strong> followed by two tab key presses:</li>
+</ul>
+<p>```bash
+module avail</p>
+<p>----------------------------------------------------------------------------------------- /cm/shared/modulefiles -----------------------------------------------------------------------------------------
+acml/gcc/64/5.3.1                    acml/open64-int64/mp/fma4/5.3.1      fftw2/openmpi/gcc/64/float/2.1.5     intel-cluster-runtime/ia32/3.8       netcdf/gcc/64/4.3.3.1
+acml/gcc/fma4/5.3.1                  blacs/openmpi/gcc/64/1.1patch03      fftw2/openmpi/open64/64/double/2.1.5 intel-cluster-runtime/intel64/3.8    netcdf/open64/64/4.3.3.1
+acml/gcc/mp/64/5.3.1                 blacs/openmpi/open64/64/1.1patch03   fftw2/openmpi/open64/64/float/2.1.5  intel-cluster-runtime/mic/3.8        netperf/2.7.0
+acml/gcc/mp/fma4/5.3.1               blas/gcc/64/3.6.0                    fftw3/openmpi/gcc/64/3.3.4           intel-tbb-oss/ia32/44_20160526oss    open64/4.5.2.1
+acml/gcc-int64/64/5.3.1              blas/open64/64/3.6.0                 fftw3/openmpi/open64/64/3.3.4        intel-tbb-oss/intel64/44_20160526oss openblas/dynamic/0.2.15
+acml/gcc-int64/fma4/5.3.1            bonnie++/1.97.1                      gdb/7.9                              iozone/3_434                         openmpi/gcc/64/1.10.1
+acml/gcc-int64/mp/64/5.3.1           cmgui/7.2                            globalarrays/openmpi/gcc/64/5.4      lapack/gcc/64/3.6.0                  openmpi/open64/64/1.10.1
+acml/gcc-int64/mp/fma4/5.3.1         cuda75/blas/7.5.18                   globalarrays/openmpi/open64/64/5.4   lapack/open64/64/3.6.0               pbspro/13.0.2.153173
+acml/open64/64/5.3.1                 cuda75/fft/7.5.18                    hdf5/1.6.10                          mpich/ge/gcc/64/3.2                  puppet/3.8.4
+acml/open64/fma4/5.3.1               cuda75/gdk/352.79                    hdf5_18/1.8.16                       mpich/ge/open64/64/3.2               rc-base
+acml/open64/mp/64/5.3.1              cuda75/nsight/7.5.18                 hpl/2.1                              mpiexec/0.84_432                     scalapack/mvapich2/gcc/64/2.0.2
+acml/open64/mp/fma4/5.3.1            cuda75/profiler/7.5.18               hwloc/1.10.1                         mvapich/gcc/64/1.2rc1                scalapack/openmpi/gcc/64/2.0.2
+acml/open64-int64/64/5.3.1           cuda75/toolkit/7.5.18                intel/compiler/32/15.0/2015.5.223    mvapich/open64/64/1.2rc1             sge/2011.11p1
+acml/open64-int64/fma4/5.3.1         default-environment                  intel/compiler/64/15.0/2015.5.223    mvapich2/gcc/64/2.2b                 slurm/15.08.6
+acml/open64-int64/mp/64/5.3.1        fftw2/openmpi/gcc/64/double/2.1.5    intel-cluster-checker/2.2.2          mvapich2/open64/64/2.2b              torque/6.0.0.1</p>
+<p>---------------------------------------------------------------------------------------- /share/apps/modulefiles -----------------------------------------------------------------------------------------
+rc/BrainSuite/15b                       rc/freesurfer/freesurfer-5.3.0          rc/intel/compiler/64/ps_2016/2016.0.047 rc/matlab/R2015a                        rc/SAS/v9.4
+rc/cmg/2012.116.G                       rc/gromacs-intel/5.1.1                  rc/Mathematica/10.3                     rc/matlab/R2015b
+rc/dsistudio/dsistudio-20151020         rc/gtool/0.7.5                          rc/matlab/R2012a                        rc/MRIConvert/2.0.8</p>
+<p>--------------------------------------------------------------------------------------- /share/apps/rc/modules/all ---------------------------------------------------------------------------------------
+AFNI/linux_openmp_64-goolf-1.7.20-20160616                gperf/3.0.4-intel-2016a                                   MVAPICH2/2.2b-GCC-4.9.3-2.25
+Amber/14-intel-2016a-AmberTools-15-patchlevel-13-13       grep/2.15-goolf-1.4.10                                    NASM/2.11.06-goolf-1.7.20
+annovar/2016Feb01-foss-2015b-Perl-5.22.1                  GROMACS/5.0.5-intel-2015b-hybrid                          NASM/2.11.08-foss-2015b
+ant/1.9.6-Java-1.7.0_80                                   GSL/1.16-goolf-1.7.20                                     NASM/2.11.08-intel-2016a
+APBS/1.4-linux-static-x86_64                              GSL/1.16-intel-2015b                                      NASM/2.12.02-foss-2016a
+ASHS/rev103_20140612                                      GSL/2.1-foss-2015b                                        NASM/2.12.02-intel-2015b
+Aspera-Connect/3.6.1                                      gtool/0.7.5_linux_x86_64                                  NASM/2.12.02-intel-2016a
+ATLAS/3.10.1-gompi-1.5.12-LAPACK-3.4.2                    guile/1.8.8-GNU-4.9.3-2.25                                ncurses/5.9-foss-2015b
+Autoconf/2.69-foss-2016a                                  HAPGEN2/2.2.0                                             ncurses/5.9-GCC-4.8.4
+Autoconf/2.69-GCC-4.8.4                                   HarfBuzz/1.2.7-intel-2016a                                ncurses/5.9-GNU-4.9.3-2.25
+Autoconf/2.69-GNU-4.9.3-2.25                              HDF5/1.8.15-patch1-intel-2015b                            ncurses/5.9-goolf-1.4.10
+ . 
+ .
+ .
+ .
+```</p>
+<p>Some software packages have multiple module files, for example:</p>
+<ul>
+<li>GCC/4.7.2</li>
+<li>GCC/4.8.1</li>
+<li>GCC/4.8.2</li>
+<li>GCC/4.8.4</li>
+<li>GCC/4.9.2</li>
+<li>GCC/4.9.3</li>
+<li>GCC/4.9.3-2.25</li>
+</ul>
+<p>In this case, the GCC module will always load the latest version, so loading this module is equivalent to loading GCC/4.9.3-2.25. If you always want to use the latest version, use this approach. If you want use a specific version, use the module file containing the appropriate version number.</p>
+<p>Some modules, when loaded, will actually load other modules. For example, the <em>GROMACS/5.0.5-intel-2015b-hybrid</em> module will also load <em>intel/2015b</em> and other related tools.</p>
+<ul>
+<li>To load a module, ex: for a GROMACS job, use the following <strong>module load</strong> command in your job script:</li>
+</ul>
+<p><code>bash
+module load  GROMACS/5.0.5-intel-2015b-hybrid</code></p>
+<ul>
+<li>To see a list of the modules that you currently have loaded use the <strong>module list</strong> command</li>
+</ul>
+<p>```bash
+module list</p>
+<p>Currently Loaded Modulefiles:
+  1) slurm/15.08.6                                       9) impi/5.0.3.048-iccifort-2015.3.187-GNU-4.9.3-2.25  17) Tcl/8.6.3-intel-2015b
+  2) rc-base                                            10) iimpi/7.3.5-GNU-4.9.3-2.25                         18) SQLite/3.8.8.1-intel-2015b
+  3) GCC/4.9.3-binutils-2.25                            11) imkl/11.2.3.187-iimpi-7.3.5-GNU-4.9.3-2.25         19) Tk/8.6.3-intel-2015b-no-X11
+  4) binutils/2.25-GCC-4.9.3-binutils-2.25              12) intel/2015b                                        20) Python/2.7.9-intel-2015b
+  5) GNU/4.9.3-2.25                                     13) bzip2/1.0.6-intel-2015b                            21) Boost/1.58.0-intel-2015b-Python-2.7.9
+  6) icc/2015.3.187-GNU-4.9.3-2.25                      14) zlib/1.2.8-intel-2015b                             22) GROMACS/5.0.5-intel-2015b-hybrid
+  7) ifort/2015.3.187-GNU-4.9.3-2.25                    15) ncurses/5.9-intel-2015b
+  8) iccifort/2015.3.187-GNU-4.9.3-2.25                 16) libreadline/6.3-intel-2015b
+```</p>
+<ul>
+<li>A module can be removed from your environment by using the <strong>module unload</strong> command:</li>
+</ul>
+<p><code>bash
+module unload GROMACS/5.0.5-intel-2015b-hybrid</code></p>
+<ul>
+<li>The definition of a module can also be viewed using the <strong>module show</strong> command, revealing what a specific module will do to your environment:</li>
+</ul>
+<p>```bash
+module show GROMACS/5.0.5-intel-2015b-hybrid </p>
+<hr />
+<p>/share/apps/rc/modules/all/GROMACS/5.0.5-intel-2015b-hybrid:</p>
+<p>module-whatis  GROMACS is a versatile package to perform molecular dynamics,
+ i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles. - Homepage: http://www.gromacs.org 
+conflict   GROMACS 
+prepend-path   CPATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/include 
+prepend-path   LD_LIBRARY_PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/lib64 
+prepend-path   LIBRARY_PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/lib64 
+prepend-path   MANPATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/share/man 
+prepend-path   PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/bin 
+prepend-path   PKG_CONFIG_PATH /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/lib64/pkgconfig 
+setenv     EBROOTGROMACS /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid 
+setenv     EBVERSIONGROMACS 5.0.5 
+setenv     EBDEVELGROMACS /share/apps/rc/software/GROMACS/5.0.5-intel-2015b-hybrid/easybuild/GROMACS-5.0.5-intel-2015b-hybrid-easybuild-devel </p>
+<hr />
+<p>```</p>
+<h3 id="error-using-modules-from-a-job-script">Error Using Modules from a Job Script<a class="headerlink" href="#error-using-modules-from-a-job-script" title="Permanent link">&para;</a></h3>
+<p>If you are using modules and the command your job executes runs fine from the command line but fails when you run it from the job, you may be having an issue with the script initialization. If you see this error in your job error output file</p>
+<p><code>bash
+-bash: module: line 1: syntax error: unexpected end of file
+-bash: error importing function definition for `BASH_FUNC_module'</code></p>
+<p>Add the command <code>unset module</code> before calling your module files. The -V job argument will cause a conflict with the module function used in your script.</p>
+<h2 id="sample-job-scripts">Sample Job Scripts<a class="headerlink" href="#sample-job-scripts" title="Permanent link">&para;</a></h2>
+<p>The following are sample job scripts, please be careful to edit these for your environment (i.e. replace YOUR_EMAIL_ADDRESS with your real email address), set the h_rt to an appropriate runtime limit and modify the job name and any other parameters.</p>
+<p><strong>Hello World</strong> is the classic example used throughout programming. We don't want to buck the system, so we'll use it as well to demonstrate jobs submission with one minor variation: our hello world will send us a greeting using the name of whatever machine it runs on. For example, when run on the Cheaha login node, it would print "Hello from login001".</p>
+<h3 id="hello-world-serial">Hello World (serial)<a class="headerlink" href="#hello-world-serial" title="Permanent link">&para;</a></h3>
+<p>A serial job is one that can run independently of other commands, ie. it doesn't depend on the data from other jobs running simultaneously. You can run many serial jobs in any order. This is a common solution to processing lots of data when each command works on a single piece of data. For example, running the same conversion on 100s of images.</p>
+<p>Here we show how to create job script for one simple command. Running more than one command just requires submitting more jobs.</p>
+<ul>
+<li>
+<p>Create your hello world application. Run this command to create a script, turn it into to a command, and run the command (just copy and past the following on to the command line).</p>
+</li>
+<li>
+<p>Create the file:</p>
+</li>
+</ul>
+<p><code>bash
+vim helloworld.sh</code></p>
+<ol>
+<li>Write into "helloworld.sh" file (To write in vim editor: press <strong>shift + I</strong> )</li>
+</ol>
+<p>```bash</p>
+<h1 id="binbash_2">!/bin/bash<a class="headerlink" href="#binbash_2" title="Permanent link">&para;</a></h1>
+<p>echo Hello from <code>hostname</code>
+```</p>
+<ol>
+<li>Save the file by pressing the <strong>esc</strong> key, type the following</li>
+</ol>
+<p><code>bash
+:wq</code></p>
+<ol>
+<li>Need to give permission the "helloworld.sh" file</li>
+</ol>
+<p><code>bash
+chmod +x helloworld.sh</code></p>
+<ul>
+<li>
+<p>Create the Slurm job script that will request 256 MB RAM and a maximum runtime of 10 minutes.</p>
+</li>
+<li>
+<p>Create the JOB file:</p>
+</li>
+</ul>
+<p><code>bash
+vim helloworld.job</code></p>
+<ol>
+<li>Write into "helloworld.job" file (To write in vim editor: press <strong>shift + I</strong> )</li>
+</ol>
+<p>```bash</p>
+<h1 id="binbash_3">!/bin/bash<a class="headerlink" href="#binbash_3" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-share_1">SBATCH --share<a class="headerlink" href="#sbatch-share_1" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-partitionexpress_2">SBATCH --partition=express<a class="headerlink" href="#sbatch-partitionexpress_2" title="Permanent link">&para;</a></h1>
+<h1 id="_10"><a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
+<h1 id="name-your-job-to-make-it-easier-for-you-to-track_1">Name your job to make it easier for you to track<a class="headerlink" href="#name-your-job-to-make-it-easier-for-you-to-track_1" title="Permanent link">&para;</a></h1>
+<h1 id="_11"><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-job-namehelloworld">SBATCH --job-name=helloworld<a class="headerlink" href="#sbatch-job-namehelloworld" title="Permanent link">&para;</a></h1>
+<h1 id="_12"><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-error-and-output-files_1">Set your error and output files<a class="headerlink" href="#set-your-error-and-output-files_1" title="Permanent link">&para;</a></h1>
+<h1 id="_13"><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-errorhelloworlderr">SBATCH --error=helloworld.err<a class="headerlink" href="#sbatch-errorhelloworlderr" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-outputhelloworldout">SBATCH --output=helloworld.out<a class="headerlink" href="#sbatch-outputhelloworldout" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-ntasks1_2">SBATCH --ntasks=1<a class="headerlink" href="#sbatch-ntasks1_2" title="Permanent link">&para;</a></h1>
+<h1 id="_14"><a class="headerlink" href="#_14" title="Permanent link">&para;</a></h1>
+<h1 id="tell-the-scheduler-only-need-10-minutes">Tell the scheduler only need 10 minutes<a class="headerlink" href="#tell-the-scheduler-only-need-10-minutes" title="Permanent link">&para;</a></h1>
+<h1 id="_15"><a class="headerlink" href="#_15" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-time001000_1">SBATCH --time=00:10:00<a class="headerlink" href="#sbatch-time001000_1" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mem-per-cpu256_1">SBATCH --mem-per-cpu=256<a class="headerlink" href="#sbatch-mem-per-cpu256_1" title="Permanent link">&para;</a></h1>
+<h1 id="_16"><a class="headerlink" href="#_16" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails_1">Set your email address and request notification when you job is complete or if it fails<a class="headerlink" href="#set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails_1" title="Permanent link">&para;</a></h1>
+<h1 id="_17"><a class="headerlink" href="#_17" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-typefail_2">SBATCH --mail-type=FAIL<a class="headerlink" href="#sbatch-mail-typefail_2" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-useruseruabedu">SBATCH --mail-user=$USER@uab.edu<a class="headerlink" href="#sbatch-mail-useruseruabedu" title="Permanent link">&para;</a></h1>
+<p>./helloworld.sh
+```</p>
+<ol>
+<li>Save the file by pressing the <strong>esc</strong> key, type the following</li>
+</ol>
+<p><code>bash
+:wq</code></p>
+<ul>
+<li>Submit the job to Slurm scheduler and check the status using squeue</li>
+</ul>
+<p><code>bash
+$ sbatch helloworld.job
+Submitted batch job 52888</code></p>
+<ul>
+<li>When the job completes, you should have output files named helloworld.out and helloworld.err</li>
+</ul>
+<p><code>bash
+$ cat helloworld.out 
+Hello from c0003</code></p>
+<h3 id="hello-world-parallel-with-mpi">Hello World (parallel with MPI)<a class="headerlink" href="#hello-world-parallel-with-mpi" title="Permanent link">&para;</a></h3>
+<p>MPI is used to coordinate the activity of many computations occurring in parallel. It is commonly used in simulation software for molecular dynamics, fluid dynamics, and similar domains where there is significant communication (data) exchanged between cooperating process.</p>
+<p>Here is a simple parallel Slurm job script for running commands the rely on MPI. This example also includes the example of compiling the code and submitting the job script to the Slurm scheduler.</p>
+<ul>
+<li>First, create a directory for the Hello World jobs</li>
+</ul>
+<p><code>bash
+mkdir -p ~/jobs/helloworld
+cd ~/jobs/helloworld</code></p>
+<ul>
+<li>Create the Hello World code written in C (this example of MPI enabled Hello World includes a 3 minute sleep to ensure the job runs for several minutes, a normal hello world example would run in a matter of seconds).</li>
+</ul>
+<p>```bash
+$ vi helloworld-mpi.c</p>
+<h1 id="include">include <stdio.h><a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
+<h1 id="include_1">include <mpi.h><a class="headerlink" href="#include_1" title="Permanent link">&para;</a></h1>
+<p>main(int argc, char **argv)
+{
+   int rank, size;</p>
+<p>int i, j;
+   float f;</p>
+<p>MPI_Init(&amp;argc,&amp;argv);
+   MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
+   MPI_Comm_size(MPI_COMM_WORLD, &amp;size);</p>
+<p>printf("Hello World from process %d of %d.\n", rank, size);
+   sleep(180);
+   for (j=0; j&lt;=100000; j++)
+      for(i=0; i&lt;=100000; i++)
+          f=i<em>2.718281828</em>i+i+i*3.141592654;</p>
+<p>MPI_Finalize();
+}
+```</p>
+<ul>
+<li>Compile the code, first purging any modules you may have loaded followed by loading the module for OpenMPI GNU. The mpicc command will compile the code and produce a binary named helloworld_gnu_openmpi</li>
+</ul>
+<p>```bash
+module purge
+module load DefaultModules
+module load OpenMPI/4.0.1-GCC-8.3.0-2.32</p>
+<p>mpicc helloworld-mpi.c -o helloworld_gnu_openmpi
+```</p>
+<ul>
+<li>Create the Slurm job script that will request 8 cpu slots and a maximum runtime of 10 minutes</li>
+</ul>
+<p>```bash
+$ vi helloworld.job</p>
+<h1 id="binbash_4">!/bin/bash<a class="headerlink" href="#binbash_4" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-share_2">SBATCH --share<a class="headerlink" href="#sbatch-share_2" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-partitionexpress_3">SBATCH --partition=express<a class="headerlink" href="#sbatch-partitionexpress_3" title="Permanent link">&para;</a></h1>
+<h1 id="_18"><a class="headerlink" href="#_18" title="Permanent link">&para;</a></h1>
+<h1 id="name-your-job-to-make-it-easier-for-you-to-track_2">Name your job to make it easier for you to track<a class="headerlink" href="#name-your-job-to-make-it-easier-for-you-to-track_2" title="Permanent link">&para;</a></h1>
+<h1 id="_19"><a class="headerlink" href="#_19" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-job-namehelloworld_mpi">SBATCH --job-name=helloworld_mpi<a class="headerlink" href="#sbatch-job-namehelloworld_mpi" title="Permanent link">&para;</a></h1>
+<h1 id="_20"><a class="headerlink" href="#_20" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-error-and-output-files_2">Set your error and output files<a class="headerlink" href="#set-your-error-and-output-files_2" title="Permanent link">&para;</a></h1>
+<h1 id="_21"><a class="headerlink" href="#_21" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-errorhelloworld_mpierr">SBATCH --error=helloworld_mpi.err<a class="headerlink" href="#sbatch-errorhelloworld_mpierr" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-outputhelloworld_mpiout">SBATCH --output=helloworld_mpi.out<a class="headerlink" href="#sbatch-outputhelloworld_mpiout" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-ntasks8">SBATCH --ntasks=8<a class="headerlink" href="#sbatch-ntasks8" title="Permanent link">&para;</a></h1>
+<h1 id="_22"><a class="headerlink" href="#_22" title="Permanent link">&para;</a></h1>
+<h1 id="tell-the-scheduler-only-need-10-minutes_1">Tell the scheduler only need 10 minutes<a class="headerlink" href="#tell-the-scheduler-only-need-10-minutes_1" title="Permanent link">&para;</a></h1>
+<h1 id="_23"><a class="headerlink" href="#_23" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-time001000_2">SBATCH --time=00:10:00<a class="headerlink" href="#sbatch-time001000_2" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mem-per-cpu256_2">SBATCH --mem-per-cpu=256<a class="headerlink" href="#sbatch-mem-per-cpu256_2" title="Permanent link">&para;</a></h1>
+<h1 id="_24"><a class="headerlink" href="#_24" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails_2">Set your email address and request notification when you job is complete or if it fails<a class="headerlink" href="#set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails_2" title="Permanent link">&para;</a></h1>
+<h1 id="_25"><a class="headerlink" href="#_25" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-typefail_3">SBATCH --mail-type=FAIL<a class="headerlink" href="#sbatch-mail-typefail_3" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-useryour_email_address_2">SBATCH --mail-user=YOUR_EMAIL_ADDRESS<a class="headerlink" href="#sbatch-mail-useryour_email_address_2" title="Permanent link">&para;</a></h1>
+<p>module load OpenMPI/1.8.8-GNU-4.9.3-2.25
+mpirun -np $SLURM_NTASKS helloworld_gnu_openmpi
+```</p>
+<ul>
+<li>Submit the job to Slurm scheduler and check the status using squeue -u $USER</li>
+</ul>
+<p>```bash
+$ sbatch helloworld.job</p>
+<p>Submitted batch job 52893</p>
+<p>$ squeue -u BLAZERID
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+             52893   express hellowor   BLAZERID  R       2:07      2 c[0005-0006]
+```</p>
+<ul>
+<li>When the job completes, you should have output files named helloworld_mpi.out and helloworld_mpi.err</li>
+</ul>
+<p>```bash
+$ cat helloworld_mpi.out</p>
+<p>Hello World from process 1 of 8.
+Hello World from process 3 of 8.
+Hello World from process 4 of 8.
+Hello World from process 7 of 8.
+Hello World from process 5 of 8.
+Hello World from process 6 of 8.
+Hello World from process 0 of 8.
+Hello World from process 2 of 8.
+```</p>
+<h3 id="hello-world-serial-revisited">Hello World (serial) -- revisited<a class="headerlink" href="#hello-world-serial-revisited" title="Permanent link">&para;</a></h3>
+<p>The job submit scripts (sbatch scripts) are actually bash shell scripts in their own right. The reason for using the funky #SBATCH prefix in the scripts is so that bash interprets any such line as a comment and won't execute it. Because the # character starts a comment in bash, we can weave the Slurm scheduler directives (the #SBATCH lines) into standard bash scripts. This lets us build scripts that we can execute locally and then easily run the same script to on a cluster node by calling it with sbatch. This can be used to our advantage to create a more fluid experience in moving between development and production job runs.</p>
+<p>The following example is a simple variation on the serial job above. All we will do is convert our Slurm job script into a command called helloworld that calls the helloworld.sh command.</p>
+<p>If the first line of a file is #!/bin/bash and that file is executable, the shell will automatically run the command as if were any other system command, eg. ls. That is, the ".sh" extension on our HelloWorld.sh script is completely optional and is only meaningful to the user.</p>
+<p>Copy the serial helloworld.job script to a new file, add a the special #!/bin/bash as the first line, and make it executable with the following command (note: those are single quotes in the echo command):</p>
+<p><code>bash
+echo '#!/bin/bash' | cat helloworld.job &gt; helloworld ; chmod +x helloworld</code></p>
+<p>Our sbatch script has now become a regular command. We can now execute the command with the simple prefix "./helloworld", which means "execute this file in the current directory":</p>
+<p><code>bash
+./helloworld
+Hello from login001</code></p>
+<p>Or if we want to run the command on a compute node, replace the "./" prefix with "sbatch ":</p>
+<p><code>bash
+$ sbatch helloworld
+Submitted batch job 53001</code></p>
+<p>And when the cluster run is complete you can look at the content of the output:</p>
+<p><code>bash
+$ $ cat helloworld.out 
+Hello from c0003</code></p>
+<p>You can use this approach of treating you sbatch files as command wrappers to build a collection of commands that can be executed locally or via sbatch. The other examples can be restructured similarly.</p>
+<p>To avoid having to use the "./" prefix, just add the current directory to your PATH. Also, if you plan to do heavy development using this feature on the cluster, please be sure to run <a href="https://docs.uabgrid.uab.edu/wiki/Slurm#Interactive_Session">sinteractive</a> first so you don't load the login node with your development work.</p>
+<h3 id="gromacs">Gromacs<a class="headerlink" href="#gromacs" title="Permanent link">&para;</a></h3>
+<p>```bash</p>
+<h1 id="binbash_5">!/bin/bash<a class="headerlink" href="#binbash_5" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-partitionshort">SBATCH --partition=short<a class="headerlink" href="#sbatch-partitionshort" title="Permanent link">&para;</a></h1>
+<h1 id="_26"><a class="headerlink" href="#_26" title="Permanent link">&para;</a></h1>
+<h1 id="name-your-job-to-make-it-easier-for-you-to-track_3">Name your job to make it easier for you to track<a class="headerlink" href="#name-your-job-to-make-it-easier-for-you-to-track_3" title="Permanent link">&para;</a></h1>
+<h1 id="_27"><a class="headerlink" href="#_27" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-job-nametest_gromacs">SBATCH --job-name=test_gromacs<a class="headerlink" href="#sbatch-job-nametest_gromacs" title="Permanent link">&para;</a></h1>
+<h1 id="_28"><a class="headerlink" href="#_28" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-error-and-output-files_3">Set your error and output files<a class="headerlink" href="#set-your-error-and-output-files_3" title="Permanent link">&para;</a></h1>
+<h1 id="_29"><a class="headerlink" href="#_29" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-errortest_gromacserr">SBATCH --error=test_gromacs.err<a class="headerlink" href="#sbatch-errortest_gromacserr" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-outputtest_gromacsout">SBATCH --output=test_gromacs.out<a class="headerlink" href="#sbatch-outputtest_gromacsout" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-ntasks8_1">SBATCH --ntasks=8<a class="headerlink" href="#sbatch-ntasks8_1" title="Permanent link">&para;</a></h1>
+<h1 id="_30"><a class="headerlink" href="#_30" title="Permanent link">&para;</a></h1>
+<h1 id="tell-the-scheduler-only-need-10-minutes_2">Tell the scheduler only need 10 minutes<a class="headerlink" href="#tell-the-scheduler-only-need-10-minutes_2" title="Permanent link">&para;</a></h1>
+<h1 id="_31"><a class="headerlink" href="#_31" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-time100000">SBATCH --time=10:00:00<a class="headerlink" href="#sbatch-time100000" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mem-per-cpu2048">SBATCH --mem-per-cpu=2048<a class="headerlink" href="#sbatch-mem-per-cpu2048" title="Permanent link">&para;</a></h1>
+<h1 id="_32"><a class="headerlink" href="#_32" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails_3">Set your email address and request notification when you job is complete or if it fails<a class="headerlink" href="#set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails_3" title="Permanent link">&para;</a></h1>
+<h1 id="_33"><a class="headerlink" href="#_33" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-typefail_4">SBATCH --mail-type=FAIL<a class="headerlink" href="#sbatch-mail-typefail_4" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-useryour_email_address_3">SBATCH --mail-user=YOUR_EMAIL_ADDRESS<a class="headerlink" href="#sbatch-mail-useryour_email_address_3" title="Permanent link">&para;</a></h1>
+<p>module load OpenMPI/1.8.8-GNU-4.9.3-2.25</p>
+<p>module load GROMACS/5.0.5-intel-2015b-hybrid </p>
+<h1 id="change-directory-to-the-job-working-directory-if-not-already-there">Change directory to the job working directory if not already there<a class="headerlink" href="#change-directory-to-the-job-working-directory-if-not-already-there" title="Permanent link">&para;</a></h1>
+<p>cd ${USER_SCRATCH}/jobs/gromacs</p>
+<h1 id="single-precision">Single precision<a class="headerlink" href="#single-precision" title="Permanent link">&para;</a></h1>
+<p>MDRUN=mdrun_mpi</p>
+<h1 id="enter-your-tpr-file-over-here">Enter your tpr file over here<a class="headerlink" href="#enter-your-tpr-file-over-here" title="Permanent link">&para;</a></h1>
+<p>export MYFILE=example.tpr</p>
+<p>mpirun -np SLURM_NTASKS $MDRUN -v -s $MYFILE -o $MYFILE -c $MYFILE -x $MYFILE -e $MYFILE -g ${MYFILE}.log
+```</p>
+<h3 id="r-array-job">R (array job)<a class="headerlink" href="#r-array-job" title="Permanent link">&para;</a></h3>
+<p>The following is an example job script that will use an array of 10 tasks (--array=1-10), each task has a max runtime of 2 hours and will use no more than 256 MB of RAM per task. Array's of tasks are useful when you have lots of simple jobs that work on their own separate files or a sub-set of the problem that can be selected by the array task index. For <a href="https://gitlab.rc.uab.edu/rc-training-sessions/Tutorial_parallelism">a more comprehensive introduction please see this tutorial</a>.</p>
+<p>Create a working directory and the job submission script</p>
+<p>```bash
+$ mkdir -p ~/jobs/ArrayExample
+$ cd ~/jobs/ArrayExample
+$ vi R-example-array.job</p>
+<h1 id="binbash_6">!/bin/bash<a class="headerlink" href="#binbash_6" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-array1-10_1">SBATCH --array=1-10<a class="headerlink" href="#sbatch-array1-10_1" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-share_3">SBATCH --share<a class="headerlink" href="#sbatch-share_3" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-partitionexpress_4">SBATCH --partition=express<a class="headerlink" href="#sbatch-partitionexpress_4" title="Permanent link">&para;</a></h1>
+<h1 id="_34"><a class="headerlink" href="#_34" title="Permanent link">&para;</a></h1>
+<h1 id="name-your-job-to-make-it-easier-for-you-to-track_4">Name your job to make it easier for you to track<a class="headerlink" href="#name-your-job-to-make-it-easier-for-you-to-track_4" title="Permanent link">&para;</a></h1>
+<h1 id="_35"><a class="headerlink" href="#_35" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-job-namer_array_job_1">SBATCH --job-name=R_array_job<a class="headerlink" href="#sbatch-job-namer_array_job_1" title="Permanent link">&para;</a></h1>
+<h1 id="_36"><a class="headerlink" href="#_36" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-error-and-output-files_4">Set your error and output files<a class="headerlink" href="#set-your-error-and-output-files_4" title="Permanent link">&para;</a></h1>
+<h1 id="_37"><a class="headerlink" href="#_37" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-errorr_array_joberr_1">SBATCH --error=R_array_job.err<a class="headerlink" href="#sbatch-errorr_array_joberr_1" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-outputr_array_jobout_1">SBATCH --output=R_array_job.out<a class="headerlink" href="#sbatch-outputr_array_jobout_1" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-ntasks1_3">SBATCH --ntasks=1<a class="headerlink" href="#sbatch-ntasks1_3" title="Permanent link">&para;</a></h1>
+<h1 id="_38"><a class="headerlink" href="#_38" title="Permanent link">&para;</a></h1>
+<h1 id="tell-the-scheduler-only-need-10-minutes_3">Tell the scheduler only need 10 minutes<a class="headerlink" href="#tell-the-scheduler-only-need-10-minutes_3" title="Permanent link">&para;</a></h1>
+<h1 id="_39"><a class="headerlink" href="#_39" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-time001000_3">SBATCH --time=00:10:00<a class="headerlink" href="#sbatch-time001000_3" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mem-per-cpu256_3">SBATCH --mem-per-cpu=256<a class="headerlink" href="#sbatch-mem-per-cpu256_3" title="Permanent link">&para;</a></h1>
+<h1 id="_40"><a class="headerlink" href="#_40" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails_4">Set your email address and request notification when you job is complete or if it fails<a class="headerlink" href="#set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails_4" title="Permanent link">&para;</a></h1>
+<h1 id="_41"><a class="headerlink" href="#_41" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-typefail_5">SBATCH --mail-type=FAIL<a class="headerlink" href="#sbatch-mail-typefail_5" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-useryour_email_address_4">SBATCH --mail-user=YOUR_EMAIL_ADDRESS<a class="headerlink" href="#sbatch-mail-useryour_email_address_4" title="Permanent link">&para;</a></h1>
+<p>module load R/3.2.0-goolf-1.7.20 
+cd ~/jobs/ArrayExample/rep$SLURM_ARRAY_TASK_ID
+srun R CMD BATCH rscript.R
+```</p>
+<p>Submit the job to the Slurm scheduler and check the status of the job using the squeue command</p>
+<p><code>bash
+sbatch R-example-array.job
+squeue -u $USER</code></p>
+<h3 id="array-job-parameterization">Array Job Parameterization<a class="headerlink" href="#array-job-parameterization" title="Permanent link">&para;</a></h3>
+<p>Suppose you need to submit thousands of jobs. While you could do this in a for loop, the global limit on jobs in the SLURM queue is 10,000. The limit is in place for performance reasons and the jobs may be rejected with the following error message and an incomplete set of tasks.</p>
+<p><code>bash
+sbatch: error: Slurm temporarily unable to accept job, sleeping and retrying</code></p>
+<p>The preferred way to handle this scenario is to allow SLURM to schedule the jobs for you using the array flag in an sbatch script. This allows many jobs to be submitted as a single entry in the queue, letting SLURM handle the for loop and queueing. It is possible to reference the current loop index, or task id, as $SLURM_ARRAY_TASK_ID.</p>
+<p>An example using $SLURM_ARRAY_TASK_ID to load input files and create output files is shown below. Suppose you have a short script called my_processing_script that needs to be run on 20,000 separate files. Suppose each instance only needs 1 cpu and 2 GB of RAM and finishes in 5 minutes. Submitting these files all at once won't work and at least half of them will be rejected by SLURM. Instead we can use the sbatch array flag. Note that some other useful flags have been omitted for brevity.</p>
+<p>```bash</p>
+<h1 id="binbash_7">! /bin/bash<a class="headerlink" href="#binbash_7" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-partitionexpress_5">SBATCH --partition=express<a class="headerlink" href="#sbatch-partitionexpress_5" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-ntasks1_4">SBATCH --ntasks=1<a class="headerlink" href="#sbatch-ntasks1_4" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-cpus-per-task1">SBATCH --cpus-per-task=1<a class="headerlink" href="#sbatch-cpus-per-task1" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mem-per-cpu2g">SBATCH --mem-per-cpu=2G<a class="headerlink" href="#sbatch-mem-per-cpu2g" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-array1-20000100">SBATCH --array=1-20000%100<a class="headerlink" href="#sbatch-array1-20000100" title="Permanent link">&para;</a></h1>
+<h1 id="this-will-run-tasks-1-through-20000-with-up-to-100-at-a-time">This will run tasks 1 through 20000, with up to 100 at a time.<a class="headerlink" href="#this-will-run-tasks-1-through-20000-with-up-to-100-at-a-time" title="Permanent link">&para;</a></h1>
+<h1 id="it-is-possible-to-provide-any-comma-separated-list-of-intervals">It is possible to provide any comma-separated list of intervals.<a class="headerlink" href="#it-is-possible-to-provide-any-comma-separated-list-of-intervals" title="Permanent link">&para;</a></h1>
+<h1 id="an-example-of-a-valid-subset-is-array125-100037774995-5000100">An example of a valid subset is --array=1,2,5-1000,3777,4995-5000%100<a class="headerlink" href="#an-example-of-a-valid-subset-is-array125-100037774995-5000100" title="Permanent link">&para;</a></h1>
+<p>INPUT_FILE=$USER_DATA/input/file_$SLURM_ARRAY_TASK_ID.txt
+OUTPUT_FILE=$USER_DATA/output/file_$SLURM_ARRAY_TASK_ID.txt</p>
+<p>my_processing_script --input="$INPUT_FILE" --output="$OUTPUT_FILE"
+```</p>
+<h3 id="gpu-job">GPU JOB<a class="headerlink" href="#gpu-job" title="Permanent link">&para;</a></h3>
+<p>A Graphics processing unit (GPU) is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device. Create a math.sh file as:</p>
+<p>```bash
+$vim math.sh</p>
+<h1 id="binbash_8">!/bin/bash<a class="headerlink" href="#binbash_8" title="Permanent link">&para;</a></h1>
+<p>(e=5)
+ echo $e
+ (( e = e + 3 ))
+ echo $e
+ (( e=e+4 ))  # -- spaces or no spaces, it doesn't matter
+ echo $e
+```</p>
+<p>Give File permissions for script as follows:</p>
+<p><code>bash
+$chmod +x math.sh</code></p>
+<p>Create Job submission script file:</p>
+<p>```bash
+$vi math.job</p>
+<h1 id="binbash_9">!/bin/bash<a class="headerlink" href="#binbash_9" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-share_4">SBATCH --share<a class="headerlink" href="#sbatch-share_4" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-partitionpascalnodes">SBATCH --partition=pascalnodes<a class="headerlink" href="#sbatch-partitionpascalnodes" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-gresgpu1">SBATCH --gres=gpu:1<a class="headerlink" href="#sbatch-gresgpu1" title="Permanent link">&para;</a></h1>
+<h1 id="name-your-job-to-make-it-easier-for-you-to-track_5">Name your job to make it easier for you to track<a class="headerlink" href="#name-your-job-to-make-it-easier-for-you-to-track_5" title="Permanent link">&para;</a></h1>
+<h1 id="_42"><a class="headerlink" href="#_42" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-job-namemath">SBATCH --job-name=math<a class="headerlink" href="#sbatch-job-namemath" title="Permanent link">&para;</a></h1>
+<h1 id="_43"><a class="headerlink" href="#_43" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-error-and-output-files_5">Set your error and output files<a class="headerlink" href="#set-your-error-and-output-files_5" title="Permanent link">&para;</a></h1>
+<h1 id="_44"><a class="headerlink" href="#_44" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-errormatherr">SBATCH --error=math.err<a class="headerlink" href="#sbatch-errormatherr" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-outputmathout">SBATCH --output=math.out<a class="headerlink" href="#sbatch-outputmathout" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-ntasks1_5">SBATCH --ntasks=1<a class="headerlink" href="#sbatch-ntasks1_5" title="Permanent link">&para;</a></h1>
+<h1 id="_45"><a class="headerlink" href="#_45" title="Permanent link">&para;</a></h1>
+<h1 id="tell-the-scheduler-only-need-10-minutes_4">Tell the scheduler only need 10 minutes<a class="headerlink" href="#tell-the-scheduler-only-need-10-minutes_4" title="Permanent link">&para;</a></h1>
+<h1 id="_46"><a class="headerlink" href="#_46" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-time001000_4">SBATCH --time=00:10:00<a class="headerlink" href="#sbatch-time001000_4" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mem-per-cpu256_4">SBATCH --mem-per-cpu=256<a class="headerlink" href="#sbatch-mem-per-cpu256_4" title="Permanent link">&para;</a></h1>
+<h1 id="_47"><a class="headerlink" href="#_47" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails_5">Set your email address and request notification when you job is complete or if it fails<a class="headerlink" href="#set-your-email-address-and-request-notification-when-you-job-is-complete-or-if-it-fails_5" title="Permanent link">&para;</a></h1>
+<h1 id="_48"><a class="headerlink" href="#_48" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-typefail_6">SBATCH --mail-type=FAIL<a class="headerlink" href="#sbatch-mail-typefail_6" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-useruseruabedu_1">SBATCH --mail-user=$USER@uab.edu<a class="headerlink" href="#sbatch-mail-useruseruabedu_1" title="Permanent link">&para;</a></h1>
+<p>./math.sh
+```</p>
+<p>Submitting batch script to Slurm scheduler</p>
+<p><code>bash
+$sbatch math.job</code></p>
+<p>We can also request GPU's on cluster as:</p>
+<p><code>bash
+$sinteractive --ntasks=1 --time=00:10:00 --exclusive --partition=pascalnodes -N2 --gres=gpu:2</code></p>
+<h3 id="gpu-job-with-mpi">GPU Job (with MPI)<a class="headerlink" href="#gpu-job-with-mpi" title="Permanent link">&para;</a></h3>
+<p>As mentioned above, MPI is used to coordinate the activity of many computations occurring in parallel. It is commonly used in simulation software for molecular dynamics, fluid dynamics, and similar domains where there is significant communication (data) exchanged between cooperating process.</p>
+<p>An example of an GPU job with MPI can be found by visiting <a href="https://gitlab.rc.uab.edu/wsmonroe/horovod-environment/blob/master/README.md">this link</a>.</p>
+<p>Be sure to request the appropiate amount of gpu resources for your job:</p>
+<p><code>bash
+sinteractive --ntasks=8 --time=08:00:00 --exclusive --partition=pascalnodes -N2 --gres=gpu:4</code></p>
+<h3 id="singularity-container">Singularity Container<a class="headerlink" href="#singularity-container" title="Permanent link">&para;</a></h3>
+<p>Singularity is designed so that you can use it within SLURM jobs and it does not violate security constraints on the cluster. Singularity was built keeping HPC in mind, i.e a shared environment. Using Singularity container with SLURM job script is very easy, as the containers run as a process on the host machine, just like any other command in a batch script. You just need to load Singularity in your job script and run the command via a singularity process. Here's an example job script below:</p>
+<p>```bash</p>
+<h1 id="binbash_10">!/bin/bash<a class="headerlink" href="#binbash_10" title="Permanent link">&para;</a></h1>
+<h1 id="_49"><a class="headerlink" href="#_49" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-job-nametest-singularity">SBATCH --job-name=test-singularity<a class="headerlink" href="#sbatch-job-nametest-singularity" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-outputresout">SBATCH --output=res.out<a class="headerlink" href="#sbatch-outputresout" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-errorreserr">SBATCH --error=res.err<a class="headerlink" href="#sbatch-errorreserr" title="Permanent link">&para;</a></h1>
+<h1 id="_50"><a class="headerlink" href="#_50" title="Permanent link">&para;</a></h1>
+<h1 id="number-of-tasks-needed-for-this-job-generally-used-with-mpi-jobs">Number of tasks needed for this job. Generally, used with MPI jobs<a class="headerlink" href="#number-of-tasks-needed-for-this-job-generally-used-with-mpi-jobs" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-ntasks1_6">SBATCH --ntasks=1<a class="headerlink" href="#sbatch-ntasks1_6" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-partitionexpress_6">SBATCH --partition=express<a class="headerlink" href="#sbatch-partitionexpress_6" title="Permanent link">&para;</a></h1>
+<h1 id="_51"><a class="headerlink" href="#_51" title="Permanent link">&para;</a></h1>
+<h1 id="time-format-hhmmss-dd-hhmmss">Time format = HH:MM:SS, DD-HH:MM:SS<a class="headerlink" href="#time-format-hhmmss-dd-hhmmss" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-time1000_1">SBATCH --time=10:00<a class="headerlink" href="#sbatch-time1000_1" title="Permanent link">&para;</a></h1>
+<h1 id="_52"><a class="headerlink" href="#_52" title="Permanent link">&para;</a></h1>
+<h1 id="number-of-cpus-allocated-to-each-task">Number of CPUs allocated to each task.<a class="headerlink" href="#number-of-cpus-allocated-to-each-task" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-cpus-per-task1_1">SBATCH --cpus-per-task=1<a class="headerlink" href="#sbatch-cpus-per-task1_1" title="Permanent link">&para;</a></h1>
+<h1 id="_53"><a class="headerlink" href="#_53" title="Permanent link">&para;</a></h1>
+<h1 id="mimimum-memory-required-per-allocated-cpu-in-megabytes">Mimimum memory required per allocated  CPU  in  MegaBytes.<a class="headerlink" href="#mimimum-memory-required-per-allocated-cpu-in-megabytes" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mem-per-cpu100_1">SBATCH --mem-per-cpu=100<a class="headerlink" href="#sbatch-mem-per-cpu100_1" title="Permanent link">&para;</a></h1>
+<h1 id="_54"><a class="headerlink" href="#_54" title="Permanent link">&para;</a></h1>
+<h1 id="send-mail-to-the-email-address-when-the-job-fails">Send mail to the email address when the job fails<a class="headerlink" href="#send-mail-to-the-email-address-when-the-job-fails" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-typefail_7">SBATCH --mail-type=FAIL<a class="headerlink" href="#sbatch-mail-typefail_7" title="Permanent link">&para;</a></h1>
+<h1 id="sbatch-mail-useruseruabedu_2">SBATCH --mail-user=$USER@uab.edu<a class="headerlink" href="#sbatch-mail-useruseruabedu_2" title="Permanent link">&para;</a></h1>
+<h1 id="set-your-environment-here">Set your environment here<a class="headerlink" href="#set-your-environment-here" title="Permanent link">&para;</a></h1>
+<p>module load Singularity/2.5.2-GCC-5.4.0-2.26</p>
+<h1 id="run-your-singularity-or-any-other-commands-here">Run your singularity or any other commands here<a class="headerlink" href="#run-your-singularity-or-any-other-commands-here" title="Permanent link">&para;</a></h1>
+<p>singularity exec -B /data/user/$USER /data/user/$USER/rc-training-sessions/neurodebian-neurodebian-master-latest.simg dcm2nii PATH_TO_YOUR_DICOM_FILES
+```</p>
+<p>For <a href="https://gitlab.rc.uab.edu/rc-training-sessions/singularity_containers">a more comprehensive introduction please see this tutorial</a>.</p>
+<h2 id="installed-software">Installed Software<a class="headerlink" href="#installed-software" title="Permanent link">&para;</a></h2>
+<p>A partial list of installed software with additional instructions for their use is available on the <a href="/Cheaha_Software">Cheaha Software</a> page.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+
+      <script src="../../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      
+    
+<script>
+  var elements = document.getElementsByClassName("lightgallery");
+  for (var i = 0; i < elements.length; i++) {
+    lightGallery(elements[i]);
+  }
+</script>
+
+  </body>
+</html>

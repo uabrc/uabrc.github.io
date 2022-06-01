@@ -1,0 +1,1851 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+    
+    
+      
+        <title>RClone - UAB Research Computing</title>
+      
+    
+    
+
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+<link rel="stylesheet" href="../../../css/lightgallery.min.css" />
+
+    
+
+<script src="../../../js/lightgallery.min.js"></script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rclone" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="UAB Research Computing" class="md-header__button md-logo" aria-label="UAB Research Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAB Research Computing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RClone
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uabrc/researcher-facing-MkDocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="UAB Research Computing" class="md-nav__button md-logo" aria-label="UAB Research Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAB Research Computing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uabrc/researcher-facing-MkDocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Welcome
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Welcome" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Welcome
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../welcome/welcome/" class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../welcome/rc_days/" class="md-nav__link">
+        UAB Research Computing Day
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Account Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Account Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Account Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../account_management/cheaha_account/" class="md-nav__link">
+        Cheaha Account Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          External Collaborators (XIAS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="External Collaborators (XIAS)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          External Collaborators (XIAS)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../account_management/xias_users/" class="md-nav__link">
+        Managing UAB XIAS Users
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../account_management/xias_sites/" class="md-nav__link">
+        Creating a UAB XIAS Project/Site
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../account_management/xias_guest/" class="md-nav__link">
+        Guest Instructions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../account_management/gitlab_researcher/" class="md-nav__link">
+        UAB GitLab Overview and Registration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Data Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Data Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Long Term Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Long Term Storage" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Long Term Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LTS/lts/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LTS/sharing/" class="md-nav__link">
+        Sharing Buckets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          File Transfer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="File Transfer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          File Transfer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../globus/" class="md-nav__link">
+        Globus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          RClone
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        RClone
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing" class="md-nav__link">
+    Installing
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-on-cheaha" class="md-nav__link">
+    Installing on Cheaha
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-on-linux-and-cloudrc" class="md-nav__link">
+    Installing on Linux and cloud.rc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-on-windows" class="md-nav__link">
+    Installing on Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    MacOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-remotes" class="md-nav__link">
+    Setting up Remotes
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up Remotes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-an-sftp-remote" class="md-nav__link">
+    Setting up an SFTP Remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-uab-cloud-remotes" class="md-nav__link">
+    Setting up UAB Cloud Remotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticating-to-cloud-remotes" class="md-nav__link">
+    Authenticating to Cloud Remotes
+  </a>
+  
+    <nav class="md-nav" aria-label="Authenticating to Cloud Remotes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authenticating-to-uab-box" class="md-nav__link">
+    Authenticating to UAB Box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticating-to-microsoft-onedrive" class="md-nav__link">
+    Authenticating to Microsoft OneDrive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-an-s3-lts-remote" class="md-nav__link">
+    Setting Up an S3 LTS Remote
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filezilla/" class="md-nav__link">
+        FileZilla
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Environment Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Environment Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Environment Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../environment_management/anaconda_environments/" class="md-nav__link">
+        Anaconda
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Cheaha User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheaha User Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Cheaha User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          Open OnDemand
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Open OnDemand" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Open OnDemand
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/open_ondemand/ood_main/" class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/open_ondemand/ood_interactive/" class="md-nav__link">
+        Interactive Apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/open_ondemand/ood_files/" class="md-nav__link">
+        File Browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/open_ondemand/ood_jobs/" class="md-nav__link">
+        Job Viewer and Composer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4">
+          SLURM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SLURM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          SLURM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/slurm/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/slurm/sbatch_usage/" class="md-nav__link">
+        Submitting Jobs with Slurm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/slurm/gpu/" class="md-nav__link">
+        GPUs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/slurm/job_management/" class="md-nav__link">
+        Managing Jobs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/lmod/" class="md-nav__link">
+        Modules and Applications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheaha/conda/" class="md-nav__link">
+        Anaconda on Cheaha
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          UAB Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="UAB Cloud" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          UAB Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uab_cloud/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uab_cloud/network_setup_basic/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uab_cloud/security_setup_basic/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uab_cloud/instance_setup_basic/" class="md-nav__link">
+        Instance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uab_cloud/volume_setup_basic/" class="md-nav__link">
+        Volume
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uab_cloud/cloud_remote_access/" class="md-nav__link">
+        Remote Access to Instances
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uab_cloud/installing_software/" class="md-nav__link">
+        Installing Software on Instances
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../uab_cloud/snapshots/" class="md-nav__link">
+        Working with Snapshots
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Help
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Help" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Help
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../help/support/" class="md-nav__link">
+        How to Request Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../help/faq/" class="md-nav__link">
+        Frequently Asked Questions (FAQ)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing" class="md-nav__link">
+    Installing
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-on-cheaha" class="md-nav__link">
+    Installing on Cheaha
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-on-linux-and-cloudrc" class="md-nav__link">
+    Installing on Linux and cloud.rc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-on-windows" class="md-nav__link">
+    Installing on Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    MacOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-remotes" class="md-nav__link">
+    Setting up Remotes
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up Remotes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-an-sftp-remote" class="md-nav__link">
+    Setting up an SFTP Remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-uab-cloud-remotes" class="md-nav__link">
+    Setting up UAB Cloud Remotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticating-to-cloud-remotes" class="md-nav__link">
+    Authenticating to Cloud Remotes
+  </a>
+  
+    <nav class="md-nav" aria-label="Authenticating to Cloud Remotes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authenticating-to-uab-box" class="md-nav__link">
+    Authenticating to UAB Box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticating-to-microsoft-onedrive" class="md-nav__link">
+    Authenticating to Microsoft OneDrive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-an-s3-lts-remote" class="md-nav__link">
+    Setting Up an S3 LTS Remote
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/uabrc/researcher-facing-MkDocs/edit/master/docs/data_management/transfer/rclone.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="rclone">RClone<a class="headerlink" href="#rclone" title="Permanent link">&para;</a></h1>
+<p>RClone is a powerful command line tool for transferring and synchronizing files over the internet between various machines, servers and cloud storage services. It is highly recommended for small to moderate amounts of data. For very large amounts of data consider using <a href="../globus/">Globus</a> for increased robustness against failure. Where Globus is not available, <code>rclone</code> is still suitable.</p>
+<p>RClone requires a modest amount of setup time on local machines, but once setup can be used fairly easily. RClone uses the concepts of "remotes", which is an abstract term for any storage service or device that is not physically part of the local machine. Many remotes are offered, including <a href="../../../uab_cloud/cloud_remote_access/#sftp">SFTP</a> and various <a href="https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options">UAB Cloud Storage Solutions</a>. SFTP may be used to access Cheaha, cloud.rc and other laptop and desktop computers.</p>
+<p>To use RClone effectively, you'll need to setup remotes before using the various commands. Most file manipulation commands on Linux can be found in the RClone commands, but may have slightly different names, e.g. <code>cp</code> is <code>rclone copy</code>.</p>
+<p>RClone is very powerful and, as such, has a wide variety of configuration options and flags to fine tune behavior. We will only cover the basics needed to install the software, setup remotes relevant to work at UAB, and some basic usage commands.</p>
+<h2 id="installing">Installing<a class="headerlink" href="#installing" title="Permanent link">&para;</a></h2>
+<h3 id="installing-on-cheaha">Installing on Cheaha<a class="headerlink" href="#installing-on-cheaha" title="Permanent link">&para;</a></h3>
+<p>On Cheaha, RClone is already installed as a <a href="../../../cheaha/lmod/">Module</a>. Use <code>module load rclone</code> to load it.</p>
+<h3 id="installing-on-linux-and-cloudrc">Installing on Linux and cloud.rc<a class="headerlink" href="#installing-on-linux-and-cloudrc" title="Permanent link">&para;</a></h3>
+<p>See <a href="../../../uab_cloud/installing_software/">Installing Software</a> for general good practice on installing software, then use the following command.</p>
+<p><code>bash
+curl https://rclone.org/install.sh | sudo bash</code></p>
+<p>Open a new terminal and enter <code>rclone</code> to verify installation.</p>
+<h3 id="installing-on-windows">Installing on Windows<a class="headerlink" href="#installing-on-windows" title="Permanent link">&para;</a></h3>
+<p>It is highly recommended to install <code>rclone</code> in Windows Subsystem for Linux (WSL).</p>
+<p>To instead install natively on Windows, you will need to use the following instructions.</p>
+<ol>
+<li>Download the appropriate version from the <a href="https://rclone.org/downloads/">downloads</a> page.</li>
+<li>Extract <code>rclone.exe</code> into a memorable folder on your system. Do not put it into <code>Program Files</code>.</li>
+<li>In the Start Menu type <code>env</code> and look for the application "Edit the system Environment Variables" to open the System Properties dialog.</li>
+<li>Click the "Environment Variables..." button.</li>
+<li>Under "User variables for $USER" find the variable "Path".</li>
+<li>Click "Path" to select it.</li>
+<li>Click the "Edit..." button to open a new dialog.</li>
+<li>Click the "New" button.</li>
+<li>Type in the folder path to <code>rclone.exe</code> as <code>C:/path/to/rclone_folder</code>, modified appropriately.</li>
+<li>Click the "OK" button to confirm and close the dialog box.</li>
+<li>Click the "OK" button to confirm and close the Environment Variables dialog box.</li>
+<li>Click the "OK" button to confirm and close the System Properties dialog box.</li>
+<li>Verify the installation by typing "cmd" in the Start Menu and opening the Command Prompt application.</li>
+<li>Type <code>rclone</code> and you should see the <code>rclone</code> help text.</li>
+</ol>
+<h3 id="macos">MacOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
+<p>Follow the <a href="https://rclone.org/install/#macos-installation-with-brew">online instructions</a> for installing with <code>brew</code>.</p>
+<h2 id="setting-up-remotes">Setting up Remotes<a class="headerlink" href="#setting-up-remotes" title="Permanent link">&para;</a></h2>
+<p>RClone is capable of interfacing with many remote cloud services, as well as using <code>sftp</code> for connecting two personal computers or servers. We will only cover those <a href="https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options">cloud services</a> relevant to UAB use. We will not cover how to connect to any other cloud services using RClone. More detailed information is available at the <a href="https://rclone.org/docs/">RClone documentation</a></p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Cloud access tokens are always supplied with an expiration date for security reasons. You will need to repeat the setup process periodically to regain access via RClone.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>RClone has an unusual user interface, using alternating red and green blocks to differentiate list items. The colors do not convey any particular meaning beyond differentiation.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h3 id="setting-up-an-sftp-remote">Setting up an SFTP Remote<a class="headerlink" href="#setting-up-an-sftp-remote" title="Permanent link">&para;</a></h3>
+<p>RClone connects two personal computers or servers using SFTP which is built on SSH, so a lot of these instructions mirror what would be done with an SSH configuration.</p>
+<ol>
+<li><a href="../../../uab_cloud/cloud_remote_access/#generating-key-pairs">Generate a Key Pair</a> for use with the remote machine.</li>
+<li>At the terminal enter <code>rclone config</code>.</li>
+<li>Follow the prompts to choose <code>sftp</code>.</li>
+<li>Enter the following values as they come up, using defaults for other values.<ul>
+<li><code>name&gt;</code> Name of the remote for future reference and configuration</li>
+<li><code>host&gt;</code> Remote IP address or <code>cheaha.rc.uab.edu</code> for Cheaha</li>
+<li><code>user&gt;</code> The user you will log into on the remote machine</li>
+<li><code>key_file&gt;</code> The absolute path to the private key file on the local machine, something like <code>~/.ssh/private_key_ed25519</code></li>
+<li><code>key_file_pass&gt;</code> The passphrase used to secure the private key file (optional, but highly recommended)</li>
+</ul>
+</li>
+<li>Verify by using <code>rclone lsd &lt;name&gt;</code>.</li>
+</ol>
+<p>The official docuemntation for <code>rclone sftp</code> is <a href="https://rclone.org/sftp/">here</a>.</p>
+<h3 id="setting-up-uab-cloud-remotes">Setting up UAB Cloud Remotes<a class="headerlink" href="#setting-up-uab-cloud-remotes" title="Permanent link">&para;</a></h3>
+<p>The setup process for UAB cloud remotes is generally the same, except for the specifics of authentication. The instruction template is outlined below and will point you to the authentication section specific to each remote when it becomes relevant.</p>
+<p>As you step through the process, you will ultimately open two terminal windows and a browser window, and will need to copy text between the terminal windows. The first terminal window will be used to setup the RClone cloud remote. The second terminal will be used to authenticate to that cloud service and gain a token that will be passed back to the first terminal. Authentication will happen by logging into the service in a browser window. This setup method is necessary for any machine where a browser is not readily available, such as a cloud.rc virtual machine. To facilitate setup on these machines, the second terminal will be opened on a machine with RClone and a browser. An example of what this setup might look like is given below.</p>
+<p><div class="lightgallery"><a data-sub-html="overview of windows used for authenticating cloud remotes via rclone" href="../images/rclone-auth-overview.png"><img alt="overview of windows used for authenticating cloud remotes via rclone" src="../images/rclone-auth-overview.png" /></a></div></p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are using RClone in Windows Subsystem for Linux (WSL), you won't be able to open a browser using WSL. Instead, you will need to <a href="#installing-on-windows">Install RClone on Windows</a> and use the Windows Command Prompt terminal to use <code>rclone authorize</code>.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<ol>
+<li>Open a terminal on the device you wish to authorize to access the chosen cloud service provider using RClone. This terminal will be referred to as terminal-1.</li>
+<li>At terminal-1 enter <code>rclone config</code>.</li>
+<li>Follow the prompts to choose one of the following. The selection here will be used later and will be referred to as <code>&lt;remote&gt;</code>.</li>
+<li>UAB Box: select <code>Box</code>. <code>&lt;remote&gt;</code> will be replaced by  <code>box</code>.</li>
+<li>UAB SharePoint Site: select <code>Microsoft OneDrive</code>. <code>&lt;remote&gt;</code> will be replaced by <code>onedrive</code>.</li>
+<li>UAB OneDrive: select <code>Microsoft OneDrive</code>. <code>&lt;remote&gt;</code> will be replaced by <code>onedrive</code>.</li>
+<li>Enter a short, memorable name for future reference when prompted with <code>name&gt;</code>. Keep this <code>&lt;name&gt;</code> in mind as it will be how you access the remote when <a href="#usage">Using Commands</a>.</li>
+<li>Press enter to leave all additional prompts blank until "Use auto config?". Type "n", for no, and press enter.</li>
+<li>The prompt should now read <code>config_token&gt;</code>.</li>
+<li>On a machine with a browser, such as your personal computer, open a new terminal and enter <code>rclone authorize "&lt;remote&gt;"</code>. Replacing <code>&lt;remote&gt;</code> with the value from step (3). This terminal will be referred to as terminal-2.</li>
+<li>When the browser window opens, use it to authenticate to your selected service.<ul>
+<li><a href="#authenticating-to-uab-box">Authenticate to UAB Box</a>.</li>
+<li><a href="#authenticating-to-microsoft-onedrive">Authenticate to Microsoft OneDrive</a>.</li>
+</ul>
+</li>
+<li>
+<p>Terminal-2 will print a secret token, which will appear like in the following image. You will need to copy the portion highlighted in the image, between the lines with <code>---&gt;</code> and <code>&lt;---</code>.</p>
+<p><div class="lightgallery"><a data-sub-html="rclone authentication token sample" href="../images/rclone-auth-token-sample.png"><img alt="rclone authentication token sample" src="../images/rclone-auth-token-sample.png" /></a></div></p>
+</li>
+<li>
+<p>Copy and paste the token from the terminal-2 to terminal-1.</p>
+</li>
+<li>Follow the remaining prompts.</li>
+<li>Verify success by using <code>rclone lsd &lt;name&gt;:</code> in terminal-1.</li>
+</ol>
+<h3 id="authenticating-to-cloud-remotes">Authenticating to Cloud Remotes<a class="headerlink" href="#authenticating-to-cloud-remotes" title="Permanent link">&para;</a></h3>
+<h4 id="authenticating-to-uab-box">Authenticating to UAB Box<a class="headerlink" href="#authenticating-to-uab-box" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Click "Use Single Sign On (SSO)".</p>
+<p><div class="lightgallery"><a data-sub-html="box authentication dialog with single sign on highlighted" href="../images/rclone-auth-box-010.png"><img alt="box authentication dialog with single sign on highlighted" src="../images/rclone-auth-box-010.png" /></a></div></p>
+</li>
+<li>
+<p>Type in your UAB email address (not your @uabmc.edu email!).</p>
+</li>
+<li>
+<p>Click "Authorize".</p>
+<p><div class="lightgallery"><a data-sub-html="box single sign on authentication dialog" href="../images/rclone-auth-box-020.png"><img alt="box single sign on authentication dialog" src="../images/rclone-auth-box-020.png" /></a></div></p>
+</li>
+<li>
+<p>You will be redirected to the UAB SSO page.</p>
+</li>
+<li>Authenticate with your blazerid credentials.</li>
+<li>
+<p>You will be asked to grant permission to the RClone software. Click "Grant access to Box" if you want the software to work with Box. If you do not grant permission, you will not be able to use RClone with Box.</p>
+<p><div class="lightgallery"><a data-sub-html="box grant permission request dialog" href="../images/rclone-auth-box-030.png"><img alt="box grant permission request dialog" src="../images/rclone-auth-box-030.png" /></a></div></p>
+</li>
+<li>
+<p>You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.</p>
+<p><div class="lightgallery"><a data-sub-html="success page" href="../images/rclone-auth-rclone-success.png"><img alt="success page" src="../images/rclone-auth-rclone-success.png" /></a></div></p>
+</li>
+<li>
+<p>Return to <a href="#setting-up-uab-cloud-remotes">Setting up UAB Cloud Remotes</a>.</p>
+</li>
+</ol>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Tokens are set to expire after some time of disuse to decrease risk of a data breach. If your token expires, you can <a href="#reconnecting-to-an-existing-remote">Reconnect to an Existing Remote</a> rather than recreate the remote configuration completely from scratch.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h4 id="authenticating-to-microsoft-onedrive">Authenticating to Microsoft OneDrive<a class="headerlink" href="#authenticating-to-microsoft-onedrive" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Type in your UAB email address (not your @uabmc.edu email!).</li>
+<li>
+<p>Click "Next".</p>
+<p><div class="lightgallery"><a data-sub-html="onedrive authentication dialog" href="../images/rclone-auth-onedrive-010.png"><img alt="onedrive authentication dialog" src="../images/rclone-auth-onedrive-010.png" /></a></div></p>
+</li>
+<li>
+<p>If prompted, click "Work or school account".</p>
+<p><div class="lightgallery"><a data-sub-html="onedrive account selection dialog" href="../images/rclone-auth-onedrive-020.png"><img alt="onedrive account selection dialog" src="../images/rclone-auth-onedrive-020.png" /></a></div></p>
+</li>
+<li>
+<p>You will be asked to grant permission to the RClone software. Click "Accept" if you want the software to work with OneDrive. If you do not grant permission, you will not be able to use RClone with OneDrive.</p>
+<p><div class="lightgallery"><a data-sub-html="onedrive grant permission request dialog" href="../images/rclone-auth-onedrive-030.png"><img alt="onedrive grant permission request dialog" src="../images/rclone-auth-onedrive-030.png" /></a></div></p>
+</li>
+<li>
+<p>You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.</p>
+<p><div class="lightgallery"><a data-sub-html="success page" href="../images/rclone-auth-rclone-success.png"><img alt="success page" src="../images/rclone-auth-rclone-success.png" /></a></div></p>
+</li>
+<li>
+<p>Next you will return to the general instructions. Before you do, note that you'll be asked to choose which type of OneDrive service to access. The prompt will look like the image below. For UAB, the two relevant selections will be (1) to access your personal OneDrive space and (3) for a SharePoint Site, e.g. for a lab or department.</p>
+<p><div class="lightgallery"><a data-sub-html="rclone selection prompt among list of onedrive services" href="../images/rclone-auth-onedrive-040.png"><img alt="rclone selection prompt among list of onedrive services" src="../images/rclone-auth-onedrive-040.png" /></a></div></p>
+</li>
+<li>
+<p>With your selection in mind, return to <a href="#setting-up-uab-cloud-remotes">Setting up UAB Cloud Remotes</a>.</p>
+</li>
+</ol>
+<h3 id="setting-up-an-s3-lts-remote">Setting Up an S3 LTS Remote<a class="headerlink" href="#setting-up-an-s3-lts-remote" title="Permanent link">&para;</a></h3>
+<p>The full S3 configuration process can be done from a single command line terminal. Open a terminal and enter <code>rclone config</code> to begin the configuration process.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The locations where you will need to input either a command or select an option are preceded with a <code>$</code> for easier navigation.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<p>``` bash
+$ rclone config</p>
+<p>2022/02/22 13:02:15 NOTICE: Config file "/home/mdefende/.config/rclone/rclone.conf" not found - using defaults
+No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config</p>
+<h1 id="select-n-to-create-a-new-remote">select 'n' to create a new remote<a class="headerlink" href="#select-n-to-create-a-new-remote" title="Permanent link">&para;</a></h1>
+<p>$ n/s/q&gt; n</p>
+<h1 id="name-the-new-remote">name the new remote<a class="headerlink" href="#name-the-new-remote" title="Permanent link">&para;</a></h1>
+<p>$ name&gt; uablts
+```</p>
+<p>At this point, you've created a new remote configuration called uablts. This will be the remote name used in further commands. You can name the remote whatever you would like, but will need to replace uablts in the instructions with whichever name you chose, if you chose a different name.</p>
+<p>``` bash
+...
+4 / Amazon Drive
+  \ (amazon cloud drive)
+5 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Lyve Cloud, Minio, RackCorp, SeaweedFS, and Tencent COS
+  \ (s3)
+6 / Backblaze B2
+  \ (b2)
+...</p>
+<p>$ Storage&gt; 5</p>
+<p>...
+2 / Alibaba Cloud Object Storage System (OSS) formerly Aliyun
+  \ (Alibaba)
+3 / Ceph Object Storage
+  \ (Ceph)
+4 / Digital Ocean Spaces
+  \ (DigitalOcean)
+...</p>
+<p>$ provider&gt; 3</p>
+<p>Option env_auth.
+Get AWS credentials from runtime (environment variables or EC2/ECS meta data if no env vars).
+Only applies if access_key_id and secret_access_key is blank.
+Choose a number from below, or type in your own boolean value (true or false).
+Press Enter for the default (false).
+ 1 / Enter AWS credentials in the next step.
+   \ (false)
+ 2 / Get AWS credentials from the environment (env vars or IAM).
+   \ (true)</p>
+<p>$ env_auth&gt; 1 (or leave blank)</p>
+<p>Option access_key_id.
+AWS Access Key ID.
+Leave blank for anonymous access or runtime credentials.
+Enter a value. Press Enter to leave empty.</p>
+<p>$ access_key_id&gt; (Enter your access key given to you by research computing)</p>
+<p>Option secret_access_key.
+AWS Secret Access Key (password).
+Leave blank for anonymous access or runtime credentials.
+Enter a value. Press Enter to leave empty.</p>
+<p>$ secret_access_key&gt; (Enter your secret access key given to you by research computing here)</p>
+<p>Option region.
+Region to connect to.
+Leave blank if you are using an S3 clone and you don't have a region.
+Choose a number from below, or type in your own value.
+Press Enter to leave empty.
+   / Use this if unsure.
+ 1 | Will use v4 signatures and an empty region.
+   \ ()
+   / Use this only if v4 signatures don't work.
+ 2 | E.g. pre Jewel/v10 CEPH.
+   \ (other-v2-signature)</p>
+<p>$ region&gt; (Leave empty)</p>
+<p>Option endpoint.
+Endpoint for S3 API.
+Required when using an S3 clone.
+Enter a value. Press Enter to leave empty.</p>
+<p>$ endpoint&gt; s3.lts.rc.uab.edu
+```</p>
+<p>From here, press Enter to accept default options until it gives you a summary of your connection</p>
+<p>``` bash
+[uablts]
+type = s3
+provider = Ceph
+access_key_id = <strong><em>*</em></strong><strong><em>*</em></strong><strong><em>* # these will be filled in on your screen
+secret_access_key = </em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>*
+endpoint = s3.lts.rc.uab.edu</p>
+<hr />
+<p>y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d&gt;
+```</p>
+<p>Make sure everything looks correct here, then press Enter. At this point, it will bring you back to the main configuration menu. You can choose the <code>Quit Config</code> option and exit back to a basic terminal.</p>
+<h3 id="reconnecting-to-an-existing-remote">Reconnecting to an Existing Remote<a class="headerlink" href="#reconnecting-to-an-existing-remote" title="Permanent link">&para;</a></h3>
+<p>When your tokens expire, rather than recreate the remote from scratch, simply use the following command with your existing remote <code>&lt;name&gt;</code>.</p>
+<p><code>bash
+rclone config reconnect &lt;name&gt;:</code></p>
+<ul>
+<li>If you already have a token, you will be asked if you want to refresh it. Choose yes if so, then continue.</li>
+<li>You will be prompted with <code>Use auto config?</code>. If you are on a machine with no access to a browser, respond <code>n</code>, as in the original setup.</li>
+<li>Follow the steps in the appropriate section under <a href="#authenticating-to-cloud-remotes">Authenticating to Cloud Remotes</a>, as in the original setup.</li>
+</ul>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>RClone is a powerful tool with many commands available. We will only cover a small subset of the available commands, as most are beyond typical usage, so please see the <a href="https://rclone.org/docs/">RClone documentation</a> for more information.</p>
+<p>All commands have access to the <a href="https://rclone.org/flags/">global flags</a>. An important global flag is <code>--dry-run</code> to show what will happen without actually executing the command, which can be helpful to prevent costly mistakes. <a href="#other-helpful-global-flags">Other Helpful Global Flags</a> are also available.</p>
+<p>The various remotes each have their own individual page with their own specific flags, and are linked in the relevant <a href="#setting-up-remotes">Setting up Remotes</a> section above.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Remote paths are always prefixed by the name of the remote like <code>cheaha:/path/to/files</code>. The colon character <code>:</code> is required for all remote paths. Local paths have no prefix like <code>/path/to/local/files</code>. RClone can thus be used between any two machines that are configured where <code>rclone</code> is being used, including from the local machine to itself. In the following instructions, replace <code>&lt;remote:&gt;</code> by the appropriate remote name from configuration. To access local files, leave <code>&lt;remote:&gt;</code> off entirely.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Remember to use quotes <code>"</code> around paths with spaces like <code>"path\to\a folder with spaces"</code></p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h3 id="creating-a-directory">Creating a Directory<a class="headerlink" href="#creating-a-directory" title="Permanent link">&para;</a></h3>
+<p>To create a directory use <code>rclone mkdir &lt;remote:&gt;&lt;path&gt;</code>.</p>
+<p>Example: <code>rclone mkdir box:manuscript</code>.</p>
+<h3 id="listing-files-and-directories">Listing Files and Directories<a class="headerlink" href="#listing-files-and-directories" title="Permanent link">&para;</a></h3>
+<p>To list files on a machine use <code>rclone ls &lt;remote:&gt;&lt;path&gt;</code>.</p>
+<p>Example <code>rclone ls box:</code>.</p>
+<p>To list directories on a machine use <code>rclone lsd &lt;remote:&gt;&lt;path&gt;</code>.</p>
+<p>Example: <code>rclone lsd box:</code> should show <code>manuscript</code>.</p>
+<h3 id="copying-files">Copying Files<a class="headerlink" href="#copying-files" title="Permanent link">&para;</a></h3>
+<p>To copy files without changing their name, or to recursively copy directory content, use <code>rclone copy &lt;source:&gt;&lt;path&gt; &lt;destination:&gt;&lt;path&gt;</code>. Note that the directory contents are copied, so when copying a directory, be sure that directory exists on the remote and that you are copying into it.</p>
+<p>Example: <code>rclone copy "C:\users\Name\My Documents" box:manuscript</code></p>
+<p>To copy a single file and change its name, use <code>rclone copyto &lt;source:&gt;&lt;path/oldname&gt; &lt;destination:&gt;&lt;path/newname&gt;</code>.</p>
+<p>Example <code>rclone copyto "C:\users\Name\My Documents\manuscript.docx" box:manuscript\newest.docx</code></p>
+<h3 id="syncing-between-two-devices">Syncing Between Two Devices<a class="headerlink" href="#syncing-between-two-devices" title="Permanent link">&para;</a></h3>
+<p>To make a destination directory's contents identical to a source directory, use <code>rclone sync &lt;source:&gt;&lt;path&gt; &lt;destination:&gt;&lt;path&gt;</code></p>
+<p>Example: <code>rclone sync cheaha:"C:\users\Name\My Documents" box:manuscript</code>.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><code>rclone sync</code> is a destructive operation and cannot be undone! If files exist on the destination that do not exist on the source, then they will be deleted permanently from the destination. To avoid accidental destruction of files use the <code>--immutable</code> <a href="#other-helpful-global-flags">flag</a>.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h2 id="other-helpful-global-flags">Other Helpful Global Flags<a class="headerlink" href="#other-helpful-global-flags" title="Permanent link">&para;</a></h2>
+<p>Flag used with any RClone command are called global flags. Below are some useful global flags.</p>
+<ul>
+<li><code>-C</code> or <code>--checksum</code>: Skip syncing files based on checksum instead of last modified time.</li>
+<li><code>--dry-run</code>: Show what will happen if the command were executed. No changes are made.</li>
+<li><code>--immutable</code>: Do not allow any files to be modified. Helpful to avoid unintended deletions and overwrites.</li>
+<li><code>--max-depth &lt;integer&gt;</code>: Only recurse to <code>&lt;integer&gt;</code> depth within directory tree. Using <code>rclone ls --max-depth 1</code> means only show top-level files in the current directory.</li>
+<li><code>-P</code> or <code>--progress</code>: Show progress of command as it runs.</li>
+<li><code>--quiet</code>: Print as little as possible. Useful in scripts.</li>
+<li><code>-u</code> or <code>--update</code>: Skips files that are newer on the remote.</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../globus/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Globus" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Globus
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../filezilla/" class="md-footer__link md-footer__link--next" aria-label="Next: FileZilla" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              FileZilla
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+
+      <script src="../../../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      
+    
+<script>
+  var elements = document.getElementsByClassName("lightgallery");
+  for (var i = 0; i < elements.length; i++) {
+    lightGallery(elements[i]);
+  }
+</script>
+
+  </body>
+</html>
