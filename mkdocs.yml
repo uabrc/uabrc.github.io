@@ -8,6 +8,7 @@ theme:
   feature:
     tabs: true
   custom_dir: theme
+  language: en
 
 extra_css:
   - stylesheets/extra.css
@@ -32,6 +33,8 @@ plugins:
   - search
   - table-reader:
       data_path: docs
+  - git-revision-date-localized:
+      type: date
 
 nav:
   - Home: index.md

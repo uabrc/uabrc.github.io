@@ -14,3 +14,4 @@ dependencies:
   - pip:
       - lightgallery==0.5
       - mkdocs-redirects==1.0.4
+      - mkdocs-git-revision-date-localized-plugin=1.0.1
