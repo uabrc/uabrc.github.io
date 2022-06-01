@@ -8,6 +8,7 @@ theme:
   feature:
     tabs: true
   custom_dir: theme
+  language: en
 
 extra_css:
   - stylesheets/extra.css
@@ -35,6 +36,8 @@ plugins:
   - redirects:
       redirect_maps:
         account_management/uab_researcher.md: account_management/cheaha_account.md
+  - git-revision-date-localized:
+      type: date
 
 nav:
   - Home: index.md
