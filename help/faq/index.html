@@ -1588,6 +1588,17 @@ sacct -u $USER -s YYYY-MM-DD -e YYYY-MM-DD</code></p>
 <h3 id="why-do-i-need-to-add-the-trailing-to-the-end-of-path-names-in-my-s3-commands">Why do I need to add the trailing / to the end of path names in my S3 commands?<a class="headerlink" href="#why-do-i-need-to-add-the-trailing-to-the-end-of-path-names-in-my-s3-commands" title="Permanent link">&para;</a></h3>
 <p>In the Unix file system, the <code>/</code> is a protected character the specifies a branch in the file tree, and so <code>/</code> cannot be used in the name of a file or folder. This is not the case for S3 storage. Everything in S3 storage is stored at the top level of the bucket no matter the source's file and folder structure. However, people have become so used to having a folder structure and how it provides an organization system, so S3 interfaces pretend to have one. When a folder is uploaded, the files in the folder will have that folder name appended to the beginning of the file name along with the <code>/</code> separator. Same for if files are uploaded to existing "folders" in S3. These paths are called prefixes in S3 terms. Because <code>/</code> is not protected in S3, all of the <code>/</code> characters in a path are included with the prefix, so if you want to perform a command on a prefix in S3, you must include the trailing <code>/</code> because it is actually a part of the prefix name.</p>
 
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 20, 2022</span>
+      
+    
+  </small>
+</div>
+
               
             </article>
           </div>
