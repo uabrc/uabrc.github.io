@@ -10,7 +10,7 @@ Please [Contact Us](../index.md#contact-us) with requests for support. Tips on g
 
 ### UAB Users
 
-Please visit [https://rc.uab.edu](https://rc.uab.edu) to create an account. More information can be found [here](../account_management/uab_researcher.md).
+Please visit [https://rc.uab.edu](https://rc.uab.edu) to create an account. More information can be found [here](../account_management/cheaha_account.md).
 
 ### Outside Collaborator
 
