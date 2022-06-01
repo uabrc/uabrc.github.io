@@ -4,6 +4,16 @@ Below are some common issues, their most common causes, and their most common re
 
 ## Cheaha
 
+### Authentication Issues
+
+#### Why is my account on hold?
+
+There are a number of reasons your account was placed on hold. Please see [Account on Hold](../account_management/uab_researcher.md#account-on-hold) for more information.
+
+#### Why is my account not authorized?
+
+There are a number of reasons your account may not be authorized. Please see [Account Authorization Error](../account_management/uab_researcher.md#authorization-error) for more information.
+
 ### Common Issues
 
 #### Why is my job taking a long time to start?

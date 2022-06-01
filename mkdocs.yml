@@ -35,6 +35,9 @@ plugins:
       data_path: docs
   - git-revision-date-localized:
       type: date
+  - redirects:
+      redirect_maps:
+        account_management/uab_researcher.md: account_management/cheaha_account.md
 
 nav:
   - Home: index.md
@@ -42,7 +45,7 @@ nav:
       - welcome/welcome.md
       - welcome/rc_days.md
   - Account Management:
-      - account_management/uab_researcher.md
+      - account_management/cheaha_account.md
       - External Collaborators (XIAS):
           - account_management/xias_users.md
           - account_management/xias_sites.md
