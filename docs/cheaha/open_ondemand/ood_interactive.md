@@ -117,17 +117,10 @@ The Jupyter Server Home Page will look like the following
 From here, you can navigate to and select an existing notebook, or you can create a new one using one of your existing virtual environments or the base environment. Once inside a Jupyter notebook, you can use the `Kernel --> Change kernel` menu to select your preferred Anaconda environment.
 
 <!-- markdownlint-disable MD046 -->
-!!! note
+!!! important
 
-    The `ipykernel` package must be installed in your preferred environment for it to appear in the `Change kernel` menu.
+    See [Anaconda Environments](../../environment_management/anaconda_environments.md#packages-for-jupyter) for information on Jupyter related packages.
 <!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
-!!! tip
-
-    Anaconda environments used with Open OnDemand Jupyter do not need the `jupyter` package installed. The server software is already taken care of.
-<!-- markdownlint-enable MD046 -->
-
 #### Python Libraries and Virtual Environments
 
 To run Jupyter with specific libraries and packages outside of the base install, you will need to create a virtual environment first. You can do this either in an HPC Desktop job or in the `Conda` tab of the Jupyter homepage.
