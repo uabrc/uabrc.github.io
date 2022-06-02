@@ -69,7 +69,7 @@ To automate running `ssh-agent` add the following block to the file `.bash_profi
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    If such a file does not exist, please add it using `nano .bash_profile` to create a new file in the nano text editor. Copy and paste the block below into the text editor window. The character `^` means `ctrl`. Use `^x` (`ctrl + x`) to exit, and continue following the prompts to save the file.
+    If such a file does not exist, please add it using `nano .bash_profile` to create a new file in the nano text editor. Copy and paste the block below into the text editor window. The character `^` means ++ctrl++. Use `^x` (++ctrl+x++) to exit, and continue following the prompts to save the file, using ++ctrl++ shortcuts as needed.
 <!-- markdownlint-enable MD046 -->
 
 ```bash

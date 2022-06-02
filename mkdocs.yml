@@ -17,6 +17,7 @@ copyright: Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<b
 
 markdown_extensions:
   - admonition
+  - pymdownx.keys
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight:
