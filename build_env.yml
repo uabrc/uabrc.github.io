@@ -4,6 +4,7 @@ channels:
   - conda-forge
 dependencies:
   - jinja2=3.0.3
+  - markdown=3.3.7
   - markupsafe=2.0.1
   - mkdocs=1.2.3
   - mkdocs-material=8.1.6
