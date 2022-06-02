@@ -8,7 +8,7 @@ Below are some common issues, their most common causes, and their most common re
 
 #### Why is my account on hold?
 
-There are a number of reasons your account was placed on hold. Please see [Account on Hold](../account_management/cheaha_account.md#account-on-hold) for more information.
+There are a number of reasons your account was placed on hold. Please see [Account on Hold](../account_management/uab_researcher.md#account-on-hold) for more information.
 
 #### Why is my account not authorized?
 
