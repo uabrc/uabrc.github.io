@@ -1,7 +1,7 @@
 name: mkdocs
 channels:
-  - anaconda
   - conda-forge
+  - anaconda
 dependencies:
   - jinja2=3.0.3
   - markdown=3.3.7
