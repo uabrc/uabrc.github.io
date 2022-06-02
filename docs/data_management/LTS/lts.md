@@ -24,7 +24,7 @@ This documentation will use the standard file and path terms since that's more e
 
 ## Requesting an Account
 
-UAB researchers do not have automatic access to LTS, and currently, single sign on is not enabled. To request access to LTS, please send an email to [support@listserv.uab.edu](support@listserv.uab.edu). You will be then be given an Access Key and a Secret Access Key, both of which will be used later on. Keep track of both of these keys and do not share them with anyone else, these are your login credentials for LTS.
+UAB researchers do not have automatic access to LTS, and currently, single sign on is not enabled. To request access to LTS, please send an email to <support@listserv.uab.edu>. You will be then be given an Access Key and a Secret Access Key, both of which will be used later on. Keep track of both of these keys and do not share them with anyone else, these are your login credentials for LTS.
 
 ## Windows/Mac
 
@@ -55,7 +55,7 @@ The bucket will have the symbol of a hard disk with an Amazon A brand on it. Thi
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage. 
+    Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage.
 <!-- markdownlint-enable MD046 -->
 
 ### Uploading and Downloading Data
@@ -154,10 +154,10 @@ New settings:
   Default Region: US
   S3 Endpoint: s3.lts.rc.uab.edu
   DNS-style bucket+hostname:port template for accessing a bucket: %(bucket).s3.lts.rc.uab.edu
-  Encryption password: 
+  Encryption password:
   Path to GPG program: $HOME/bin/gpg
   Use HTTPS protocol: True
-  HTTP Proxy server name: 
+  HTTP Proxy server name:
   HTTP Proxy server port: 0
 
 Test access with supplied credentials? [Y/n] Y
@@ -242,7 +242,7 @@ Buckets are essentially the root folder of a filesystem where you are storing yo
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage. 
+    Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage.
 <!-- markdownlint-enable MD046 -->
 
 **RClone**:
@@ -425,7 +425,7 @@ aws s3 rm s3://<bucket/path/object> --endpoint-url https://s3.lts.rc.uab.edu [--
 To delete an entire bucket, you will need to use the `s3api` command paired with the `delete-bucket subcommand. An example of this looks like:
 
 ``` bash
-aws s3api delete-bucket --bucket <bucket> --endpoint-url https://s3.lts.rc.uab.edu 
+aws s3api delete-bucket --bucket <bucket> --endpoint-url https://s3.lts.rc.uab.edu
 ```
 
 ### Command Comparison Chart
@@ -436,14 +436,14 @@ aws s3api delete-bucket --bucket <bucket> --endpoint-url https://s3.lts.rc.uab.e
     For brevity, the chart will exclude the `--endpoint-url` option from the AWS CLI commands, but it will need to be included if you choose to use that tool.
 <!-- markdownlint-enable MD046 -->
 
-| Action | rclone | s3cmd | AWS CLI |
-|--------|--------|-------|---------|
-| Make Bucket | `rclone mkdir uablts:<bucket>` | `s3cmd mb s3://<bucket>` | `aws s3api create-bucket --bucket <bucket>` |
-| List Buckets | `rclone lsd uablts:` | `s3cmd ls` | `aws s3 ls` |
-| List Files | `rclone lsf uablts:<bucket/path/>` | `s3cmd ls s3://<bucket/path/>` | `aws s3 ls s3://<bucket/path/>` |
-| Full Upload | `rclone copy <source> uablts:<bucket/destination>` | `s3cmd put <source> s3://<bucket/destination/>` | `aws s3 cp <source> s3://<bucket/destination>` |
-| Download | `rclone copy uablts:<bucket/source/> <destination>` | `s3cmd get s3://<bucket/source/> <destination>` | `aws s3 cp s3://<bucket/source/> <destination>` |
-| Sync | `rclone sync [-i] <source> uablts:<bucket/destination/>` | `s3cmd sync <source> s3://<bucket/destination/>` | `aws s3 sync <source> s3://<bucket/destination/> [--delete]`
-| Delete File | `rclone delete uablts:<bucket/path/file>` | `s3cmd rm s3://<bucket/path/file>` | `aws s3 rm s3://<bucket/path/file>` |
-| Delete Folder | `rclone purge uablts:<bucket/path/>` | `s3cmd rm s3://<bucket/path/> --recursive` | `aws s3 rm s3://<bucket/path/> --recursive` |
-| Delete Bucket | `rclone purge uablts:<bucket>` | `s3cmd rb s3://<bucket>` | `aws s3api delete-bucket --bucket <bucket>` |
+| Action        | rclone                                                   | s3cmd                                            | AWS CLI                                                      |
+| ------------- | -------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ |
+| Make Bucket   | `rclone mkdir uablts:<bucket>`                           | `s3cmd mb s3://<bucket>`                         | `aws s3api create-bucket --bucket <bucket>`                  |
+| List Buckets  | `rclone lsd uablts:`                                     | `s3cmd ls`                                       | `aws s3 ls`                                                  |
+| List Files    | `rclone lsf uablts:<bucket/path/>`                       | `s3cmd ls s3://<bucket/path/>`                   | `aws s3 ls s3://<bucket/path/>`                              |
+| Full Upload   | `rclone copy <source> uablts:<bucket/destination>`       | `s3cmd put <source> s3://<bucket/destination/>`  | `aws s3 cp <source> s3://<bucket/destination>`               |
+| Download      | `rclone copy uablts:<bucket/source/> <destination>`      | `s3cmd get s3://<bucket/source/> <destination>`  | `aws s3 cp s3://<bucket/source/> <destination>`              |
+| Sync          | `rclone sync [-i] <source> uablts:<bucket/destination/>` | `s3cmd sync <source> s3://<bucket/destination/>` | `aws s3 sync <source> s3://<bucket/destination/> [--delete]` |
+| Delete File   | `rclone delete uablts:<bucket/path/file>`                | `s3cmd rm s3://<bucket/path/file>`               | `aws s3 rm s3://<bucket/path/file>`                          |
+| Delete Folder | `rclone purge uablts:<bucket/path/>`                     | `s3cmd rm s3://<bucket/path/> --recursive`       | `aws s3 rm s3://<bucket/path/> --recursive`                  |
+| Delete Bucket | `rclone purge uablts:<bucket>`                           | `s3cmd rb s3://<bucket>`                         | `aws s3api delete-bucket --bucket <bucket>`                  |

@@ -3,7 +3,6 @@ repo_url: https://github.com/uabrc/researcher-facing-MkDocs
 
 theme:
   name: material
-  include_search_page: true
   search_index_only: true
   feature:
     tabs: true
@@ -33,11 +32,11 @@ plugins:
   - search
   - table-reader:
       data_path: docs
+  - git-revision-date-localized:
+      type: date
   - redirects:
       redirect_maps:
         account_management/uab_researcher.md: account_management/cheaha_account.md
-  - git-revision-date-localized:
-      type: date
 
 nav:
   - Home: index.md
