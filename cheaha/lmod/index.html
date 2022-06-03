@@ -929,6 +929,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#loading-modules" class="md-nav__link">
+    Loading Modules
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1232,6 +1239,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#loading-modules" class="md-nav__link">
+    Loading Modules
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1253,22 +1267,22 @@
 <p>Most software available on Cheaha is installed as modules, managed by the Lmod system. This document will provide a basic rundown of using Lmod commands to customize a software environment. <code>module</code> is the main command used to interface with module files in Lmod.</p>
 <h2 id="listing-and-searching-modules">Listing and Searching Modules<a class="headerlink" href="#listing-and-searching-modules" title="Permanent link">&para;</a></h2>
 <p>To begin, all module commands are run from the terminal. To know what software is installed on Cheaha, use the <code>avail</code> command.</p>
-<p><code>bash
-module avail</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module avail
+</code></pre></div>
 <p>If you need to know what software is already loaded in your environment, run:</p>
-<p><code>bash
-module list</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>module list
+</code></pre></div>
 <p>If there is specific software you want to search for, you can use the <code>spider</code> subcommand, and provide a string or regular expression to match against. All modules containing the string (case-insensitive) or matching the regular expression will be returned along with their installed versions.</p>
-<p>``` bash</p>
-<h1 id="list-modules-containing-string">list modules containing string<a class="headerlink" href="#list-modules-containing-string" title="Permanent link">&para;</a></h1>
-<p>module spider <string></p>
-<h1 id="list-modules-matching-a-regular-expression">list modules matching a regular expression<a class="headerlink" href="#list-modules-matching-a-regular-expression" title="Permanent link">&para;</a></h1>
-<p>module -r spider <regex>
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># list modules containing string</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>module spider &lt;string&gt;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># list modules matching a regular expression</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>module -r spider &lt;regex&gt;
+</code></pre></div>
 <h2 id="loading-modules">Loading Modules<a class="headerlink" href="#loading-modules" title="Permanent link">&para;</a></h2>
 <p>To load modules, run:</p>
-<p><code>bash
-module load module1 module2 ...</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>module load module1 module2 ...
+</code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1277,11 +1291,11 @@ module load module1 module2 ...</code></p>
 <!-- markdownlint-enable MD046 -->
 
 <p>To unload packages, run:</p>
-<p><code>bash
-module unload package1 package2 ...</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>module unload package1 package2 ...
+</code></pre></div>
 <p>If you want to revert to the default modules, you can use:</p>
-<p><code>bash
-module reset</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>module reset
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">

@@ -698,8 +698,63 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reconnecting-to-an-existing-remote" class="md-nav__link">
+    Reconnecting to an Existing Remote
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-directory" class="md-nav__link">
+    Creating a Directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-files-and-directories" class="md-nav__link">
+    Listing Files and Directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-files" class="md-nav__link">
+    Copying Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syncing-between-two-devices" class="md-nav__link">
+    Syncing Between Two Devices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-helpful-global-flags" class="md-nav__link">
+    Other Helpful Global Flags
+  </a>
   
 </li>
       
@@ -1419,8 +1474,63 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reconnecting-to-an-existing-remote" class="md-nav__link">
+    Reconnecting to an Existing Remote
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-directory" class="md-nav__link">
+    Creating a Directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-files-and-directories" class="md-nav__link">
+    Listing Files and Directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-files" class="md-nav__link">
+    Copying Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syncing-between-two-devices" class="md-nav__link">
+    Syncing Between Two Devices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-helpful-global-flags" class="md-nav__link">
+    Other Helpful Global Flags
+  </a>
   
 </li>
       
@@ -1451,8 +1561,8 @@
 <p>On Cheaha, RClone is already installed as a <a href="../../../cheaha/lmod/">Module</a>. Use <code>module load rclone</code> to load it.</p>
 <h3 id="installing-on-linux-and-cloudrc">Installing on Linux and cloud.rc<a class="headerlink" href="#installing-on-linux-and-cloudrc" title="Permanent link">&para;</a></h3>
 <p>See <a href="../../../uab_cloud/installing_software/">Installing Software</a> for general good practice on installing software, then use the following command.</p>
-<p><code>bash
-curl https://rclone.org/install.sh | sudo bash</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl https://rclone.org/install.sh <span class="p">|</span> sudo bash
+</code></pre></div>
 <p>Open a new terminal and enter <code>rclone</code> to verify installation.</p>
 <h3 id="installing-on-windows">Installing on Windows<a class="headerlink" href="#installing-on-windows" title="Permanent link">&para;</a></h3>
 <p>It is highly recommended to install <code>rclone</code> in Windows Subsystem for Linux (WSL).</p>
@@ -1618,95 +1728,108 @@ curl https://rclone.org/install.sh | sudo bash</code></p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
-<p>``` bash
-$ rclone config</p>
-<p>2022/02/22 13:02:15 NOTICE: Config file "/home/mdefende/.config/rclone/rclone.conf" not found - using defaults
-No remotes found - make a new one
-n) New remote
-s) Set configuration password
-q) Quit config</p>
-<h1 id="select-n-to-create-a-new-remote">select 'n' to create a new remote<a class="headerlink" href="#select-n-to-create-a-new-remote" title="Permanent link">&para;</a></h1>
-<p>$ n/s/q&gt; n</p>
-<h1 id="name-the-new-remote">name the new remote<a class="headerlink" href="#name-the-new-remote" title="Permanent link">&para;</a></h1>
-<p>$ name&gt; uablts
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ rclone config
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="m">2022</span>/02/22 <span class="m">13</span>:02:15 NOTICE: Config file <span class="s2">&quot;/home/mdefende/.config/rclone/rclone.conf&quot;</span> not found - using defaults
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>No remotes found - make a new one
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>n<span class="o">)</span> New remote
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>s<span class="o">)</span> Set configuration password
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>q<span class="o">)</span> Quit config
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># select &#39;n&#39; to create a new remote</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>$ n/s/q&gt; n
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># name the new remote</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>$ name&gt; uablts
+</code></pre></div>
 <p>At this point, you've created a new remote configuration called uablts. This will be the remote name used in further commands. You can name the remote whatever you would like, but will need to replace uablts in the instructions with whichever name you chose, if you chose a different name.</p>
-<p>``` bash
-...
-4 / Amazon Drive
-  \ (amazon cloud drive)
-5 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Lyve Cloud, Minio, RackCorp, SeaweedFS, and Tencent COS
-  \ (s3)
-6 / Backblaze B2
-  \ (b2)
-...</p>
-<p>$ Storage&gt; 5</p>
-<p>...
-2 / Alibaba Cloud Object Storage System (OSS) formerly Aliyun
-  \ (Alibaba)
-3 / Ceph Object Storage
-  \ (Ceph)
-4 / Digital Ocean Spaces
-  \ (DigitalOcean)
-...</p>
-<p>$ provider&gt; 3</p>
-<p>Option env_auth.
-Get AWS credentials from runtime (environment variables or EC2/ECS meta data if no env vars).
-Only applies if access_key_id and secret_access_key is blank.
-Choose a number from below, or type in your own boolean value (true or false).
-Press Enter for the default (false).
- 1 / Enter AWS credentials in the next step.
-   \ (false)
- 2 / Get AWS credentials from the environment (env vars or IAM).
-   \ (true)</p>
-<p>$ env_auth&gt; 1 (or leave blank)</p>
-<p>Option access_key_id.
-AWS Access Key ID.
-Leave blank for anonymous access or runtime credentials.
-Enter a value. Press Enter to leave empty.</p>
-<p>$ access_key_id&gt; (Enter your access key given to you by research computing)</p>
-<p>Option secret_access_key.
-AWS Secret Access Key (password).
-Leave blank for anonymous access or runtime credentials.
-Enter a value. Press Enter to leave empty.</p>
-<p>$ secret_access_key&gt; (Enter your secret access key given to you by research computing here)</p>
-<p>Option region.
-Region to connect to.
-Leave blank if you are using an S3 clone and you don't have a region.
-Choose a number from below, or type in your own value.
-Press Enter to leave empty.
-   / Use this if unsure.
- 1 | Will use v4 signatures and an empty region.
-   \ ()
-   / Use this only if v4 signatures don't work.
- 2 | E.g. pre Jewel/v10 CEPH.
-   \ (other-v2-signature)</p>
-<p>$ region&gt; (Leave empty)</p>
-<p>Option endpoint.
-Endpoint for S3 API.
-Required when using an S3 clone.
-Enter a value. Press Enter to leave empty.</p>
-<p>$ endpoint&gt; s3.lts.rc.uab.edu
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>...
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="m">4</span> / Amazon Drive
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  <span class="se">\ </span><span class="o">(</span>amazon cloud drive<span class="o">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="m">5</span> / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Lyve Cloud, Minio, RackCorp, SeaweedFS, and Tencent COS
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="se">\ </span><span class="o">(</span>s3<span class="o">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="m">6</span> / Backblaze B2
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  <span class="se">\ </span><span class="o">(</span>b2<span class="o">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>...
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>$ Storage&gt; <span class="m">5</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>...
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="m">2</span> / Alibaba Cloud Object Storage System <span class="o">(</span>OSS<span class="o">)</span> formerly Aliyun
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  <span class="se">\ </span><span class="o">(</span>Alibaba<span class="o">)</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="m">3</span> / Ceph Object Storage
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  <span class="se">\ </span><span class="o">(</span>Ceph<span class="o">)</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="m">4</span> / Digital Ocean Spaces
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>  <span class="se">\ </span><span class="o">(</span>DigitalOcean<span class="o">)</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>...
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>$ provider&gt; <span class="m">3</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>Option env_auth.
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>Get AWS credentials from runtime <span class="o">(</span>environment variables or EC2/ECS meta data <span class="k">if</span> no env vars<span class="o">)</span>.
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>Only applies <span class="k">if</span> access_key_id and secret_access_key is blank.
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own boolean value <span class="o">(</span><span class="nb">true</span> or <span class="nb">false</span><span class="o">)</span>.
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="nb">false</span><span class="o">)</span>.
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a> <span class="m">1</span> / Enter AWS credentials <span class="k">in</span> the next step.
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>   <span class="se">\ </span><span class="o">(</span><span class="nb">false</span><span class="o">)</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a> <span class="m">2</span> / Get AWS credentials from the environment <span class="o">(</span>env vars or IAM<span class="o">)</span>.
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>   <span class="se">\ </span><span class="o">(</span><span class="nb">true</span><span class="o">)</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>$ env_auth&gt; <span class="m">1</span> <span class="o">(</span>or leave blank<span class="o">)</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>Option access_key_id.
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>AWS Access Key ID.
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>Leave blank <span class="k">for</span> anonymous access or runtime credentials.
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>Enter a value. Press Enter to leave empty.
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>$ access_key_id&gt; <span class="o">(</span>Enter your access key given to you by research computing<span class="o">)</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>Option secret_access_key.
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>AWS Secret Access Key <span class="o">(</span>password<span class="o">)</span>.
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>Leave blank <span class="k">for</span> anonymous access or runtime credentials.
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>Enter a value. Press Enter to leave empty.
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>$ secret_access_key&gt; <span class="o">(</span>Enter your secret access key given to you by research computing here<span class="o">)</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>Option region.
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>Region to connect to.
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>Leave blank <span class="k">if</span> you are using an S3 clone and you don<span class="s1">&#39;t have a region.</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="s1">Choose a number from below, or type in your own value.</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="s1">Press Enter to leave empty.</span>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="s1">   / Use this if unsure.</span>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="s1"> 1 | Will use v4 signatures and an empty region.</span>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="s1">   \ ()</span>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="s1">   / Use this only if v4 signatures don&#39;</span>t work.
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a> <span class="m">2</span> <span class="p">|</span> E.g. pre Jewel/v10 CEPH.
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>   <span class="se">\ </span><span class="o">(</span>other-v2-signature<span class="o">)</span>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>$ region&gt; <span class="o">(</span>Leave empty<span class="o">)</span>
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>Option endpoint.
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>Endpoint <span class="k">for</span> S3 API.
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>Required when using an S3 clone.
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>Enter a value. Press Enter to leave empty.
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>$ endpoint&gt; s3.lts.rc.uab.edu
+</code></pre></div>
 <p>From here, press Enter to accept default options until it gives you a summary of your connection</p>
-<p>``` bash
-[uablts]
-type = s3
-provider = Ceph
-access_key_id = <strong><em>*</em></strong><strong><em>*</em></strong><strong><em>* # these will be filled in on your screen
-secret_access_key = </em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>*
-endpoint = s3.lts.rc.uab.edu</p>
-<hr />
-<p>y) Yes this is OK (default)
-e) Edit this remote
-d) Delete this remote
-y/e/d&gt;
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">[</span>uablts<span class="o">]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">type</span> <span class="o">=</span> s3
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">provider</span> <span class="o">=</span> Ceph
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nv">access_key_id</span> <span class="o">=</span> ****************** <span class="c1"># these will be filled in on your screen</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nv">secret_access_key</span> <span class="o">=</span> ********************************
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nv">endpoint</span> <span class="o">=</span> s3.lts.rc.uab.edu
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>--------------------
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>y<span class="o">)</span> Yes this is OK <span class="o">(</span>default<span class="o">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>e<span class="o">)</span> Edit this remote
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>d<span class="o">)</span> Delete this remote
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>y/e/d&gt;
+</code></pre></div>
 <p>Make sure everything looks correct here, then press Enter. At this point, it will bring you back to the main configuration menu. You can choose the <code>Quit Config</code> option and exit back to a basic terminal.</p>
 <h3 id="reconnecting-to-an-existing-remote">Reconnecting to an Existing Remote<a class="headerlink" href="#reconnecting-to-an-existing-remote" title="Permanent link">&para;</a></h3>
 <p>When your tokens expire, rather than recreate the remote from scratch, simply use the following command with your existing remote <code>&lt;name&gt;</code>.</p>
-<p><code>bash
-rclone config reconnect &lt;name&gt;:</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone config reconnect &lt;name&gt;:
+</code></pre></div>
 <ul>
 <li>If you already have a token, you will be asked if you want to refresh it. Choose yes if so, then continue.</li>
 <li>You will be prompted with <code>Use auto config?</code>. If you are on a machine with no access to a browser, respond <code>n</code>, as in the original setup.</li>

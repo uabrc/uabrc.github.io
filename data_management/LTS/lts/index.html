@@ -651,6 +651,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deleting-files-and-directories" class="md-nav__link">
+    Deleting Files and Directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-comparison-chart" class="md-nav__link">
+    Command Comparison Chart
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1475,6 +1489,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deleting-files-and-directories" class="md-nav__link">
+    Deleting Files and Directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-comparison-chart" class="md-nav__link">
+    Command Comparison Chart
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1567,8 +1595,8 @@
 <p>The instructions for setting up a remote connection with rclone can be found in <a href="../../transfer/rclone/#setting-up-an-s3-lts-remote">our main rclone documentation</a>. In the following examples, <code>uablts</code> is used as the name of the remote connection.</p>
 <h4 id="s3cmd">s3cmd<a class="headerlink" href="#s3cmd" title="Permanent link">&para;</a></h4>
 <p>s3cmd can be easily installed via an <a href="../../../environment_management/anaconda_environments/">Anaconda environment</a>. Create the environment, activate it, then install using:</p>
-<p><code>bash
-pip install s3cmd</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install s3cmd
+</code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1577,8 +1605,8 @@ pip install s3cmd</code></p>
 <!-- markdownlint-enable MD046 -->
 
 <p>Once you have s3cmd downloaded, you can start the configuration process like so:</p>
-<p><code>bash
-s3cmd --configure [-c $HOME/profile_name]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>s3cmd --configure <span class="o">[</span>-c <span class="nv">$HOME</span>/profile_name<span class="o">]</span>
+</code></pre></div>
 <p>You can run the configuration either with or without the <code>[-c]</code> option. If you use it, a file named <code>profile_name</code> will be created in your home directory with your login credentials and other information. If you omit the <code>-c</code> option, a file called <code>$HOME/.s3cfg</code> will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform, it's suggested to omit the <code>-c</code> option.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
@@ -1588,49 +1616,57 @@ s3cmd --configure [-c $HOME/profile_name]</code></p>
 <!-- markdownlint-enable MD046 -->
 
 <p>During configuration, you will be asked to enter some information. You can follow the example below, inputting your user-specific information where required. Lines requiring user input are highlighted.</p>
-<p>``` text hl_lines="2 3 4 7 10 13 14 17 20 34 41"
-Access key and Secret key are your identifiers for Amazon S3. Leave them empty for using the env variables.
-Access Key: <access key>
-Secret Key: <secret key>
-Default Region [US]: <leave blank></p>
-<p>Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.
-S3 Endpoint [s3.amazonaws.com]: s3.lts.rc.uab.edu</p>
-<p>Use "%(bucket)s.s3.amazonaws.com" to the target Amazon S3. "%(bucket)s" and "%(location)s" vars can be used if the target S3 system supports dns based buckets.
-DNS-style bucket+hostname:port template for accessing a bucket [%(bucket)s.s3.amazonaws.com]: %(bucket).s3.lts.rc.uab.edu</p>
-<p>Encryption password is used to protect your files from reading by unauthorized persons while in transfer to S3
-Encryption password: <leave blank>
-Path to GPG program [/usr/bin/gpg]: $HOME/bin/gpg</p>
-<p>When using secure HTTPS protocol all communication with Amazon S3 servers is protected from 3rd party eavesdropping. This method is slower than plain HTTP, and can only be proxied with Python 2.7 or newer
-Use HTTPS protocol [Yes]: <leave blank></p>
-<p>On some networks all internet access must go through a HTTP proxy. Try setting it here if you can't connect to S3 directly
-HTTP Proxy server name: <leave blank></p>
-<p>New settings:
-  Access Key: <access key>
-  Secret Key: <secret key>
-  Default Region: US
-  S3 Endpoint: s3.lts.rc.uab.edu
-  DNS-style bucket+hostname:port template for accessing a bucket: %(bucket).s3.lts.rc.uab.edu
-  Encryption password: 
-  Path to GPG program: $HOME/bin/gpg
-  Use HTTPS protocol: True
-  HTTP Proxy server name: 
-  HTTP Proxy server port: 0</p>
-<p>Test access with supplied credentials? [Y/n] Y
-Please wait, attempting to list all buckets...
-Success. Your access key and secret key worked fine :-)</p>
-<p>Now verifying that encryption works...
-Not configured. Never mind.</p>
-<p>Save settings? [y/N] y
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Access key and Secret key are your identifiers for Amazon S3. Leave them empty for using the env variables.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="hll">Access Key: &lt;access key&gt;
+</span><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="hll">Secret Key: &lt;secret key&gt;
+</span><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="hll">Default Region [US]: &lt;leave blank&gt;
+</span><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Use &quot;s3.amazonaws.com&quot; for S3 Endpoint and not modify it to the target Amazon S3.
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="hll">S3 Endpoint [s3.amazonaws.com]: s3.lts.rc.uab.edu
+</span><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Use &quot;%(bucket)s.s3.amazonaws.com&quot; to the target Amazon S3. &quot;%(bucket)s&quot; and &quot;%(location)s&quot; vars can be used if the target S3 system supports dns based buckets.
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="hll">DNS-style bucket+hostname:port template for accessing a bucket [%(bucket)s.s3.amazonaws.com]: %(bucket).s3.lts.rc.uab.edu
+</span><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Encryption password is used to protect your files from reading by unauthorized persons while in transfer to S3
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="hll">Encryption password: &lt;leave blank&gt;
+</span><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="hll">Path to GPG program [/usr/bin/gpg]: $HOME/bin/gpg
+</span><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>When using secure HTTPS protocol all communication with Amazon S3 servers is protected from 3rd party eavesdropping. This method is slower than plain HTTP, and can only be proxied with Python 2.7 or newer
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="hll">Use HTTPS protocol [Yes]: &lt;leave blank&gt;
+</span><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>On some networks all internet access must go through a HTTP proxy. Try setting it here if you can&#39;t connect to S3 directly
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="hll">HTTP Proxy server name: &lt;leave blank&gt;
+</span><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>New settings:
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>  Access Key: &lt;access key&gt;
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>  Secret Key: &lt;secret key&gt;
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  Default Region: US
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>  S3 Endpoint: s3.lts.rc.uab.edu
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>  DNS-style bucket+hostname:port template for accessing a bucket: %(bucket).s3.lts.rc.uab.edu
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>  Encryption password: 
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>  Path to GPG program: $HOME/bin/gpg
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>  Use HTTPS protocol: True
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>  HTTP Proxy server name: 
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>  HTTP Proxy server port: 0
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="hll">Test access with supplied credentials? [Y/n] Y
+</span><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>Please wait, attempting to list all buckets...
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>Success. Your access key and secret key worked fine :-)
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>Now verifying that encryption works...
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>Not configured. Never mind.
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="hll">Save settings? [y/N] y
+</span></code></pre></div>
 <p>If your test access succeeded, you are now ready to use <code>s3cmd</code>.</p>
 <h4 id="aws-cli">AWS CLI<a class="headerlink" href="#aws-cli" title="Permanent link">&para;</a></h4>
 <p>Setting up a remote connection using AWS CLI is fairly straightforward. After loading the <code>awscli</code> module, run <code>aws configure</code> in the terminal.</p>
 <p>It will ask you enter four pieces of information, fill them out as so:</p>
-<p><code>text
-AWS Access Key [none]: &lt;access key&gt;
-AWS Secret Access Key [none]: &lt;secret key&gt;
-Default region name [none]: &lt;Press Enter&gt;
-Default output format [none]: json</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>AWS Access Key [none]: &lt;access key&gt;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>AWS Secret Access Key [none]: &lt;secret key&gt;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Default region name [none]: &lt;Press Enter&gt;
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Default output format [none]: json
+</code></pre></div>
 <p>Your access key and secret key should have been given to you by research computing when you requested your account. Copy-paste these into the terminal when requested.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition important">
@@ -1641,8 +1677,8 @@ Default output format [none]: json</code></p>
 
 <h3 id="general-command-structure">General Command Structure<a class="headerlink" href="#general-command-structure" title="Permanent link">&para;</a></h3>
 <p><strong>RClone</strong>:</p>
-<p><code>bash
-rclone &lt;subcommand&gt; [options] &lt;remote&gt;:&lt;bucket&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone &lt;subcommand&gt; <span class="o">[</span>options<span class="o">]</span> &lt;remote&gt;:&lt;bucket&gt;
+</code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -1652,13 +1688,13 @@ rclone &lt;subcommand&gt; [options] &lt;remote&gt;:&lt;bucket&gt;</code></p>
 
 <p>To see a list of all subcommands available to rclone, you can use <code>rclone --help</code>. You can also use the <code>--help</code> option with any subcommand to see a detailed explanation of what it does plus any options you may want or need to set when calling it.</p>
 <p><strong>s3cmd</strong>:</p>
-<p><code>bash
-s3cmd [-c profile_file] &lt;command&gt; [options] [-n --dry-run]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>s3cmd <span class="o">[</span>-c profile_file<span class="o">]</span> &lt;command&gt; <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>-n --dry-run<span class="o">]</span>
+</code></pre></div>
 <p>As noted previously, the <code>[-c profile_file]</code> is only required if you are NOT using credentials saved in the <code>$HOME/.s3cfg</code> file. Otherwise, you can leave it out.</p>
 <p>To see a list of commands available, use <code>s3cmd --help</code>. Additionally, if you want to test an action without actually running it (i.e. it prints all actions that would be performed), you can add the <code>-n</code> or <code>--dry-run</code> option.</p>
 <p><strong>AWS CLI</strong>:</p>
-<p><code>bash
-aws &lt;command&gt; &lt;subcommand&gt; [options]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>aws &lt;command&gt; &lt;subcommand&gt; <span class="o">[</span>options<span class="o">]</span>
+</code></pre></div>
 <p>The <code>&lt;command&gt;</code> for most commonly used functions will either be <code>s3</code> or <code>s3api</code>. You can use the <code>help</code> option to view available commands, subcommands, and options for AWS.</p>
 <p>Additionally, when running basically any AWS CLI command, you can include the <code>--dryrun</code> option to see the exact actions that will be performed without actually performing them. This is useful for things like deleting files and folders to make sure you are not performing an unwanted action.</p>
 <!-- markdownlint-disable MD046 -->
@@ -1678,43 +1714,43 @@ aws &lt;command&gt; &lt;subcommand&gt; [options]</code></p>
 <!-- markdownlint-enable MD046 -->
 
 <p><strong>RClone</strong>:</p>
-<p><code>bash
-rclone mkdir uablts:&lt;bucket&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>rclone mkdir uablts:&lt;bucket&gt;
+</code></pre></div>
 <p><strong>s3cmd</strong>:</p>
-<p><code>bash
-s3cmd mb s3://&lt;bucket&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>s3cmd mb s3://&lt;bucket&gt;
+</code></pre></div>
 <p><strong>AWS CLI</strong>:</p>
-<p><code>bash
-aws s3api create-bucket --bucket &lt;bucket&gt; --endpoint-url https://s3.lts.rc.uab.edu</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>aws s3api create-bucket --bucket &lt;bucket&gt; --endpoint-url https://s3.lts.rc.uab.edu
+</code></pre></div>
 <h3 id="listing-buckets-and-contents">Listing Buckets and Contents<a class="headerlink" href="#listing-buckets-and-contents" title="Permanent link">&para;</a></h3>
 <p><strong>RClone</strong>:</p>
 <p>To list all buckets you have available, use the <code>lsd</code> subcommand with only the remote specified:</p>
-<p><code>bash
-rclone lsd uablts:</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>rclone lsd uablts:
+</code></pre></div>
 <p>To list all contents inside a bucket, use the <code>ls</code> subcommand with the remote and bucket specified. You can also be specific about the path to the directory you want to list.</p>
-<p><code>bash
-rclone ls uablts:&lt;bucket/path/directory&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>rclone ls uablts:&lt;bucket/path/directory&gt;
+</code></pre></div>
 <p>This outputs all files along with their directory path recursively. So if you only specify the main bucket, it will output every file in the bucket no matter how deep in the directory tree.</p>
 <p>To only list files and folders in a given directory, you can use the <code>lsf</code> subcommand</p>
-<p><code>bash
-rclone lsf uablts:&lt;bucket/path/directory/&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>rclone lsf uablts:&lt;bucket/path/directory/&gt;
+</code></pre></div>
 <p><strong>s3cmd</strong>:</p>
 <p>With s3cmd, you can use the <code>ls</code> command to list both buckets and their contents.</p>
-<p><code>bash
-s3cmd ls &lt;s3://bucket/path/&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>s3cmd ls &lt;s3://bucket/path/&gt;
+</code></pre></div>
 <p>You can add the <code>--recursive</code> option to list all files in the given path. By default, it only lists objects or folders at the top level of the path.</p>
 <p><strong>AWS CLI</strong>:</p>
-<p><code>bash
-aws s3 ls &lt;bucket/path/directory/&gt; --endpoint-url https://s3.lts.rc.uab.edu</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>aws s3 ls &lt;bucket/path/directory/&gt; --endpoint-url https://s3.lts.rc.uab.edu
+</code></pre></div>
 <p>If you would like to list all objects recursively, you can add the <code>--recursive</code> tag. A couple of other helpful options are <code>--summarize</code> and <code>--human-readable</code> that will give a total number of objects and their size and make the size output more easily readable, respectively.</p>
 <h3 id="uploading-files-and-folders">Uploading Files and Folders<a class="headerlink" href="#uploading-files-and-folders" title="Permanent link">&para;</a></h3>
 <p><strong>RClone</strong>:</p>
 <p>Uploading files and folders can be done a couple of ways. The first is by using the <code>copy</code> subcommand. This will add files from the source to the destination.</p>
-<p><code>bash
-rclone copy &lt;source&gt; uablts:&lt;bucket/destination&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>rclone copy &lt;source&gt; uablts:&lt;bucket/destination&gt;
+</code></pre></div>
 <p>The second method is using the <code>sync</code> subcommand. This subcommand makes the destination identical to the source. The <code>-i</code> option can be added to make it interactive, asking you whether to copy or delete each file.</p>
-<p><code>bash
-rclone sync [-i] &lt;source&gt; uablts:&lt;bucket/destination/&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>rclone sync <span class="o">[</span>-i<span class="o">]</span> &lt;source&gt; uablts:&lt;bucket/destination/&gt;
+</code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
@@ -1724,31 +1760,32 @@ rclone sync [-i] &lt;source&gt; uablts:&lt;bucket/destination/&gt;</code></p>
 
 <p><strong>s3cmd</strong>:</p>
 <p>s3cmd disinguishes between moving files between a local source and S3 versus moving files between two S3 locations using 3 different commands.</p>
-<p>``` bash</p>
-<h1 id="transfer-from-local-to-s3">transfer from local to S3<a class="headerlink" href="#transfer-from-local-to-s3" title="Permanent link">&para;</a></h1>
-<p>s3cmd put <source> s3://<bucket/path/destination/></p>
-<h1 id="transfer-from-s3-to-local">transfer from S3 to local<a class="headerlink" href="#transfer-from-s3-to-local" title="Permanent link">&para;</a></h1>
-<p>s3cmd get s3://<bucket/path/source/> <destination></p>
-<h1 id="transfer-between-two-s3-locations">transfer between two S3 locations<a class="headerlink" href="#transfer-between-two-s3-locations" title="Permanent link">&para;</a></h1>
-<p>s3cmd cp s3://<bucket/path/> s3://<bucket/path/>
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># transfer from local to S3</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>s3cmd put &lt;source&gt; s3://&lt;bucket/path/destination/&gt;
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># transfer from S3 to local</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>s3cmd get s3://&lt;bucket/path/source/&gt; &lt;destination&gt;
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># transfer between two S3 locations</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>s3cmd cp s3://&lt;bucket/path/&gt; s3://&lt;bucket/path/&gt;
+</code></pre></div>
 <p>If you are transferring an entire folder from S3 to either another S3 location or a local destination, you will need to add the <code>--recursive</code> option, otherwise you will get an error.</p>
 <p>Like rclone and AWS, there is also a <code>sync</code> command here as well.</p>
-<p>``` bash</p>
-<h1 id="sync-an-s3-location-to-a-local-source">sync an S3 location to a local source<a class="headerlink" href="#sync-an-s3-location-to-a-local-source" title="Permanent link">&para;</a></h1>
-<p>s3cmd sync <source> s3://<bucket/path/destination></p>
-<h1 id="sync-a-local-destination-to-an-s3-location">sync a local destination to an S3 location<a class="headerlink" href="#sync-a-local-destination-to-an-s3-location" title="Permanent link">&para;</a></h1>
-<p>s3cmd sync s3://<bucket/path/source> <destination>
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># sync an S3 location to a local source</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>s3cmd sync &lt;source&gt; s3://&lt;bucket/path/destination&gt;
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># sync a local destination to an S3 location</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>s3cmd sync s3://&lt;bucket/path/source&gt; &lt;destination&gt;
+</code></pre></div>
 <p><strong>AWS CLI</strong>:</p>
 <p>Copying files and directories can be managed using the <code>cp</code> subcommand and has the same behavior as rclone's <code>copy</code>.</p>
-<p><code>bash
-aws s3 cp &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url https://s3.lts.rc.uab.edu [--recursive]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>aws s3 cp &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--recursive<span class="o">]</span>
+</code></pre></div>
 <p>If you are copying a directory, you will need to add the <code>--recursive</code> option.</p>
 <p>If you are wanting to copy data down from LTS to your local machine or Cheaha, just reverse the positions of the source and destination in the function call.</p>
 <p>Like rclone, AWS also has a sync subcommand that performs the same functionality. You can use it like so:</p>
-<p><code>bash
-aws s3 sync &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url https://s3.lts.rc.uab.edu [--delete]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>aws s3 sync &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--delete<span class="o">]</span>
+</code></pre></div>
 <p><code>sync</code> has an added benefit that only files that do not exist in the destination or files that have changed in the source will be transferred whereas <code>cp</code> copies everything no matter if it already exists in the destination. By default, <code>sync</code> DOES NOT cause files in the detination that are not in the source to be deleted like <code>rclone sync</code> does. If you want this functionality, you can add the <code>--delete</code> tag at the end of the function call.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition danger">
@@ -1760,27 +1797,27 @@ aws s3 sync &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url h
 <h3 id="deleting-files-and-directories">Deleting Files and Directories<a class="headerlink" href="#deleting-files-and-directories" title="Permanent link">&para;</a></h3>
 <p><strong>RClone</strong>:</p>
 <p>File deletion is performed using the <code>delete</code> subcommand.</p>
-<p><code>bash
-rclone delete uablts:&lt;bucket/path/file&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>rclone delete uablts:&lt;bucket/path/file&gt;
+</code></pre></div>
 <p>Directory deletion is handled using the <code>purge</code> subcommand. Be very cautious with this, as this deletes all files and subdirectories within the directory as well.</p>
-<p><code>bash
-rclone purge uablts:&lt;bucket/path/&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>rclone purge uablts:&lt;bucket/path/&gt;
+</code></pre></div>
 <p><strong>s3cmd</strong>:</p>
 <p>File and directory deletion is handled by the <code>rm</code> command.</p>
-<p><code>bash
-s3cmd rm s3://&lt;bucket/path/file&gt; [--recursive]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>s3cmd rm s3://&lt;bucket/path/file&gt; <span class="o">[</span>--recursive<span class="o">]</span>
+</code></pre></div>
 <p>If you want to delete a directory, you will need to add the <code>--recursive</code> option.</p>
 <p>To delete an entire bucket, use the <code>rb</code> command.</p>
-<p><code>bash
-s3cmd rb s3://&lt;bucket&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>s3cmd rb s3://&lt;bucket&gt;
+</code></pre></div>
 <p><strong>AWS CLI</strong>:</p>
 <p>The subcommand for deleting files and folders from LTS is <code>rm</code>:</p>
-<p><code>bash
-aws s3 rm s3://&lt;bucket/path/object&gt; --endpoint-url https://s3.lts.rc.uab.edu [--recursive]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>aws s3 rm s3://&lt;bucket/path/object&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--recursive<span class="o">]</span>
+</code></pre></div>
 <p><code>rm</code> can delete both files and folders. If you are wanting to delete a folder and everything in it, you will need to add the <code>--recursive</code> option. Like with <code>sync</code> be very cautious using <code>rm</code> and make sure you know what you are deleting before you do so.</p>
 <p>To delete an entire bucket, you will need to use the <code>s3api</code> command paired with the `delete-bucket subcommand. An example of this looks like:</p>
-<p><code>bash
-aws s3api delete-bucket --bucket &lt;bucket&gt; --endpoint-url https://s3.lts.rc.uab.edu</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>aws s3api delete-bucket --bucket &lt;bucket&gt; --endpoint-url https://s3.lts.rc.uab.edu 
+</code></pre></div>
 <h3 id="command-comparison-chart">Command Comparison Chart<a class="headerlink" href="#command-comparison-chart" title="Permanent link">&para;</a></h3>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">

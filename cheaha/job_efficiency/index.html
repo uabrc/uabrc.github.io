@@ -1287,8 +1287,8 @@
 <h2 id="verifying-job-efficiency">Verifying Job Efficiency<a class="headerlink" href="#verifying-job-efficiency" title="Permanent link">&para;</a></h2>
 <p>It's important to evaluate the efficiency of your job in terms of resource usage after it completes. Remember that Cheaha is a shared resource, so requesting resources that sit unused during a job prevents others from using those resources. As well, because each researcher has a maximum amount of resources they can use at a given time, having inefficient jobs can increase analysis runtime across many jobs, and increase queue wait times.</p>
 <p>In order to look at job efficieny, use the <code>seff</code> command.</p>
-<p><code>bash
-seff &lt;jobid&gt;</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>seff &lt;jobid&gt;
+</code></pre></div>
 <p>The output will look like:</p>
 <p><div class="lightgallery"><a data-sub-html="SLURM Job Efficiency" href="../images/seff_output.png"><img alt="SLURM Job Efficiency" src="../images/seff_output.png" /></a></div></p>
 <p>The job had poor CPU efficiency, requesting 2 CPUs which were only busy for 30% of runtime. Requesting only a single core may have made more sense here. The job also had poor memory efficiency, using less than 1 GB total memory of the requested 16 GB (5.73%). For subsequent jobs using a similar analysis and dataset size, decreasing the requested memory to about 1200 MB and a single CPU would be more efficient, and get the job queued faster.</p>

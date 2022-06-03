@@ -917,6 +917,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reviewing-past-jobs" class="md-nav__link">
+    Reviewing Past Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Reviewing Past Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-with-job-id" class="md-nav__link">
+    Review With Job ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-jobs-submitted-between-specific-timepoints" class="md-nav__link">
+    Review Jobs Submitted Between Specific Timepoints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-output" class="md-nav__link">
+    Customizing the Output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1248,6 +1282,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reviewing-past-jobs" class="md-nav__link">
+    Reviewing Past Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Reviewing Past Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-with-job-id" class="md-nav__link">
+    Review With Job ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-jobs-submitted-between-specific-timepoints" class="md-nav__link">
+    Review Jobs Submitted Between Specific Timepoints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-output" class="md-nav__link">
+    Customizing the Output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1270,8 +1338,8 @@
 <p>In case jobs were submitted by accident or the code was written incorrectly, they can also be cancelled.</p>
 <h2 id="monitoring-jobs">Monitoring Jobs<a class="headerlink" href="#monitoring-jobs" title="Permanent link">&para;</a></h2>
 <p>Currently running jobs can be monitored using the <code>squeue</code> command. The basic command to list all jobs for a specific researcher is:</p>
-<p><code>bash
-squeue -u $USER</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>squeue -u <span class="nv">$USER</span>
+</code></pre></div>
 <p>The output of <code>squeue</code> will look like:</p>
 <p><div class="lightgallery"><a data-sub-html="Output from squeue." href="../images/squeue_output.png"><img alt="Output from squeue." src="../images/squeue_output.png" /></a></div></p>
 <p>By default the fields displayed are <code>jobid</code>, <code>partition</code>, <code>jobname</code> as <code>name</code>, blazerid as <code>user</code>, job state as <code>st</code>, total run time as <code>time</code>, number of nodes as <code>node</code>, and the list of nodes as <code>nodelist</code>, used for each job a researcher has submitted.</p>
@@ -1279,16 +1347,18 @@ squeue -u $USER</code></p>
 <p>Further information about filtering by job name or partition, including information about memory or number of CPUs, and info regarding messages specific to a job's status can be seen using <code>man squeue</code>.</p>
 <h2 id="cancelling-jobs">Cancelling Jobs<a class="headerlink" href="#cancelling-jobs" title="Permanent link">&para;</a></h2>
 <p>Cancelling queued and currently running jobs can be done using the <code>scancel</code> command. Importantly, this will only cancel jobs that were initiated by the researcher running the command. <code>scancel</code> is very flexible in how it behaves:</p>
-<p>``` bash</p>
-<h1 id="cancel-a-single-job-or-an-entire-job-array">cancel a single job or an entire job array<a class="headerlink" href="#cancel-a-single-job-or-an-entire-job-array" title="Permanent link">&para;</a></h1>
-<p>scancel <jobid></p>
-<h1 id="cancel-specific-job-array-ids-specified-as-single-number-or-a-range">cancel specific job array IDs, specified as single number or a range<a class="headerlink" href="#cancel-specific-job-array-ids-specified-as-single-number-or-a-range" title="Permanent link">&para;</a></h1>
-<p>scancel <jobid_arrayid></p>
-<h1 id="cancel-all-jobs-on-a-partition-for-the-user">cancel all jobs on a partition for the user<a class="headerlink" href="#cancel-all-jobs-on-a-partition-for-the-user" title="Permanent link">&para;</a></h1>
-<p>scancel -p <partition></p>
-<h1 id="cancel-all-jobs-for-a-researcher">cancel all jobs for a researcher<a class="headerlink" href="#cancel-all-jobs-for-a-researcher" title="Permanent link">&para;</a></h1>
-<p>scancel -u $USER
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># cancel a single job or an entire job array</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>scancel &lt;jobid&gt;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># cancel specific job array IDs, specified as single number or a range</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>scancel &lt;jobid_arrayid&gt;
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># cancel all jobs on a partition for the user</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>scancel -p &lt;partition&gt;
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># cancel all jobs for a researcher</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>scancel -u <span class="nv">$USER</span>
+</code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1308,19 +1378,19 @@ squeue -u $USER</code></p>
 
 <h3 id="review-with-job-id">Review With Job ID<a class="headerlink" href="#review-with-job-id" title="Permanent link">&para;</a></h3>
 <p>The basic form is to use <code>-j</code> along with a job ID to list information about that job.</p>
-<p><code>bash
-sacct -j [jobid]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sacct -j <span class="o">[</span>jobid<span class="o">]</span>
+</code></pre></div>
 <p>This command will output basic information such as the ID, Name, Partition, Allocated CPUs, and State for the given job ID.</p>
 <p>Jobs can have matching extern and/or batch job entries as well. These are not especially helpful for most researchers. You can remove these entries using:</p>
-<p><code>bash
-sacct -j [jobid] | grep -wv -e extern -e batch</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sacct -j <span class="o">[</span>jobid<span class="o">]</span> <span class="p">|</span> grep -wv -e extern -e batch
+</code></pre></div>
 <h3 id="review-jobs-submitted-between-specific-timepoints">Review Jobs Submitted Between Specific Timepoints<a class="headerlink" href="#review-jobs-submitted-between-specific-timepoints" title="Permanent link">&para;</a></h3>
 <p>If you do not remember the job ID, you can use the <code>-S</code> and <code>-E</code> flags to retrieve jobs submitted between the given start datetime and end datetime. Valid start/end time formats are:</p>
-<p><code>text
-HH:MM[:SS] [AM|PM]
-MMDD[YY] or MM/DD[/YY] or MM.DD[.YY]
-MM/DD[/YY]-HH:MM[:SS]
-YYYY-MM-DD[THH:MM[:SS]]</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>HH:MM[:SS] [AM|PM]
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>MMDD[YY] or MM/DD[/YY] or MM.DD[.YY]
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>MM/DD[/YY]-HH:MM[:SS]
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>YYYY-MM-DD[THH:MM[:SS]]
+</code></pre></div>
 <p>Notes:</p>
 <ul>
 <li>Anything in <code>[]</code> is optional</li>
@@ -1328,14 +1398,14 @@ YYYY-MM-DD[THH:MM[:SS]]</code></p>
 <li>For the last specification, the T itself is inserted, it is not replaced with any value. For example, requesting jobs starting after 12:30 PM on October 5, 2021, the form would be <code>2021-10-05T12:30</code>.</li>
 </ul>
 <p>For example, to retrieve jobs submitted during the month of July 2021, the command could be:</p>
-<p><code>bash
-sacct -S 070121 -E 073121
-sacct -S 07/01/21 -E 07/31/21
-sacct -S 2021-07-01 -E 2021-07-31</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sacct -S <span class="m">070121</span> -E <span class="m">073121</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sacct -S <span class="m">07</span>/01/21 -E <span class="m">07</span>/31/21
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>sacct -S <span class="m">2021</span>-07-01 -E <span class="m">2021</span>-07-31
+</code></pre></div>
 <h3 id="customizing-the-output">Customizing the Output<a class="headerlink" href="#customizing-the-output" title="Permanent link">&para;</a></h3>
 <p>You can add <code>-o</code> with a list of output fields to customize the information you see.</p>
-<p><code>bash
-sacct -j [jobid] -o jobid,start,end,state,alloccpu,reqmem</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sacct -j <span class="o">[</span>jobid<span class="o">]</span> -o jobid,start,end,state,alloccpu,reqmem
+</code></pre></div>
 <p>This command will output the job ID, the start time, end time, the state, the number of allocated CPUs, and the requested memory for the specified job. All potential output fields can be seen using <code>sacct --helpformat</code>. Their descriptions can be found on the <a href="https://slurm.schedmd.com/sacct.html">sacct documentation</a> under Job Accounting Fields.</p>
 
   <hr>

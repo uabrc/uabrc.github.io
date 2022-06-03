@@ -1384,9 +1384,9 @@
 
 <h2 id="before-installing-software">Before Installing Software<a class="headerlink" href="#before-installing-software" title="Permanent link">&para;</a></h2>
 <p>Before installing software, good practice is updating and upgrading operating system packages. For some software this is required. These updates often include critical security and bug fixes. To update the instance operating system, enter the following at the command line.</p>
-<p><code>bash
-sudo apt update
-sudo apt upgrade</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt update
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo apt upgrade
+</code></pre></div>
 <h2 id="installing-software">Installing Software<a class="headerlink" href="#installing-software" title="Permanent link">&para;</a></h2>
 <p>Most common software packages and NVIDIA drivers are available as <code>apt</code> packages. Some packages are available using custom installers. Be sure the website and installer author are trustworthy before installing!</p>
 <h3 id="finding-packages">Finding Packages<a class="headerlink" href="#finding-packages" title="Permanent link">&para;</a></h3>
@@ -1428,39 +1428,39 @@ sudo apt upgrade</code></p>
 <li>Run the commands in <a href="#before-installing-software">Before Installing Software</a>.</li>
 <li>
 <p>Run the following</p>
-<p><code>bash
-sudo apt-get install -y \
-build-essential \
-libseccomp-dev \
-pkg-config \
-squashfs-tools \
-cryptsetup</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo apt-get install -y <span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>build-essential <span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>libseccomp-dev <span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>pkg-config <span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>squashfs-tools <span class="se">\</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>cryptsetup
+</code></pre></div>
 </li>
 <li>
 <p>Install Go language using the following</p>
-<p><code>`bash
-export VERSION=1.17.2 OS=linux ARCH=amd64 &amp;&amp; \  # Replace the values as needed
-wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz &amp;&amp; \ # Downloads the required Go package
-sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz &amp;&amp; \ # Extracts the archive
-rm go$VERSION.$OS-$ARCH.tar.gz    # Deletes the</code>tar`` file</p>
-<p>echo 'export PATH=/usr/local/go/bin:$PATH' &gt;&gt; ~/.bashrc &amp;&amp; \
-source ~/.bashrc
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">export</span> <span class="nv">VERSION</span><span class="o">=</span><span class="m">1</span>.17.2 <span class="nv">OS</span><span class="o">=</span>linux <span class="nv">ARCH</span><span class="o">=</span>amd64 <span class="o">&amp;&amp;</span> <span class="se">\ </span> <span class="c1"># Replace the values as needed</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>wget https://dl.google.com/go/go<span class="nv">$VERSION</span>.<span class="nv">$OS</span>-<span class="nv">$ARCH</span>.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\ </span><span class="c1"># Downloads the required Go package</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo tar -C /usr/local -xzvf go<span class="nv">$VERSION</span>.<span class="nv">$OS</span>-<span class="nv">$ARCH</span>.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\ </span><span class="c1"># Extracts the archive</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>rm go<span class="nv">$VERSION</span>.<span class="nv">$OS</span>-<span class="nv">$ARCH</span>.tar.gz    <span class="c1"># Deletes the ``tar`` file</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">echo</span> <span class="s1">&#39;export PATH=/usr/local/go/bin:$PATH&#39;</span> &gt;&gt; ~/.bashrc <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nb">source</span> ~/.bashrc
+</code></pre></div>
 </li>
 <li>
 <p>Download SingularityCE</p>
-<p><code>bash
-export VERSION=3.9.5 &amp;&amp; # adjust this as necessary \
-wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-ce-${VERSION}.tar.gz &amp;&amp; \
-tar -xzf singularity-ce-${VERSION}.tar.gz &amp;&amp; \
-cd singularity-ce-${VERSION}</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span> <span class="nv">VERSION</span><span class="o">=</span><span class="m">3</span>.9.5 <span class="o">&amp;&amp;</span> <span class="c1"># adjust this as necessary \</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>wget https://github.com/sylabs/singularity/releases/download/v<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>/singularity-ce-<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>tar -xzf singularity-ce-<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">cd</span> singularity-ce-<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>
+</code></pre></div>
 </li>
 <li>
 <p>Compile SingularityCE</p>
-<p><code>bash
-./mconfig &amp;&amp; \
-make -C builddir &amp;&amp; \
-sudo make -C builddir install</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./mconfig <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>make -C builddir <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>sudo make -C builddir install
+</code></pre></div>
 </li>
 </ol>
 <!-- markdownlint-disable MD046 -->
