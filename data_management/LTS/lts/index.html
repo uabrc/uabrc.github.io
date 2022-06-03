@@ -1293,12 +1293,60 @@
       
       
         <label class="md-nav__link" for="__nav_8">
+          Education
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Education" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Education
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../education/courses/" class="md-nav__link">
+        Courses
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
           Help
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Help" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
+        <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Help
         </label>
@@ -1545,7 +1593,7 @@
 <p>In S3, there are no such things as folders and files, just objects. Everything is an object, and there is no standard filesystem where things are physically stored in a heirarchical manner. However, there are certain things that can make it look that way such as prefixes. Prefixes are used in place of a file path to an object, and so can be used to represent a path to an object.</p>
 <p>This documentation will use the standard file and path terms since that's more easily understood by most users. Just be aware that documentation such as <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/index.html">AWS CLI</a> will use terms prefix, object, and others that are not standard in a typical filesystem.</p>
 <h2 id="requesting-an-account">Requesting an Account<a class="headerlink" href="#requesting-an-account" title="Permanent link">&para;</a></h2>
-<p>UAB researchers do not have automatic access to LTS, and currently, single sign on is not enabled. To request access to LTS, please send an email to <a href="support@listserv.uab.edu">support@listserv.uab.edu</a>. You will be then be given an Access Key and a Secret Access Key, both of which will be used later on. Keep track of both of these keys and do not share them with anyone else, these are your login credentials for LTS.</p>
+<p>UAB researchers do not have automatic access to LTS, and currently, single sign on is not enabled. To request access to LTS, please send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;</a>. You will be then be given an Access Key and a Secret Access Key, both of which will be used later on. Keep track of both of these keys and do not share them with anyone else, these are your login credentials for LTS.</p>
 <h2 id="windowsmac">Windows/Mac<a class="headerlink" href="#windowsmac" title="Permanent link">&para;</a></h2>
 <p>To access LTS from Windows and Mac, we suggest using the <a href="https://cyberduck.io/download/">Cyberduck</a> GUI which is free to download.</p>
 <p>Once you have it installed and open, Cyberduck will look like this:</p>
@@ -1562,7 +1610,7 @@
 <!-- markdownlint-disable MD046 -->
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage. </p>
+<p>Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
@@ -1643,10 +1691,10 @@
 <a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  Default Region: US
 <a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>  S3 Endpoint: s3.lts.rc.uab.edu
 <a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>  DNS-style bucket+hostname:port template for accessing a bucket: %(bucket).s3.lts.rc.uab.edu
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>  Encryption password: 
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>  Encryption password:
 <a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>  Path to GPG program: $HOME/bin/gpg
 <a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>  Use HTTPS protocol: True
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>  HTTP Proxy server name: 
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>  HTTP Proxy server name:
 <a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>  HTTP Proxy server port: 0
 <a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
 <a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="hll">Test access with supplied credentials? [Y/n] Y
@@ -1709,7 +1757,7 @@
 <!-- markdownlint-disable MD046 -->
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage. </p>
+<p>Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
@@ -1816,7 +1864,7 @@
 </code></pre></div>
 <p><code>rm</code> can delete both files and folders. If you are wanting to delete a folder and everything in it, you will need to add the <code>--recursive</code> option. Like with <code>sync</code> be very cautious using <code>rm</code> and make sure you know what you are deleting before you do so.</p>
 <p>To delete an entire bucket, you will need to use the <code>s3api</code> command paired with the `delete-bucket subcommand. An example of this looks like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>aws s3api delete-bucket --bucket &lt;bucket&gt; --endpoint-url https://s3.lts.rc.uab.edu 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>aws s3api delete-bucket --bucket &lt;bucket&gt; --endpoint-url https://s3.lts.rc.uab.edu
 </code></pre></div>
 <h3 id="command-comparison-chart">Command Comparison Chart<a class="headerlink" href="#command-comparison-chart" title="Permanent link">&para;</a></h3>
 <!-- markdownlint-disable MD046 -->
@@ -1898,7 +1946,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2022</span>
       
     
   </small>
