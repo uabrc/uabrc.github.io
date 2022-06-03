@@ -93,6 +93,10 @@ Most commonly, delays in launching Open OnDemand RStudio Server are caused by a 
 
 See [here](#why-do-i-get-a-gray-screen-after-launching-my-ood-rstudio-server-session).
 
+#### Why is my Anaconda environment not appearing in my Jupyter Notebook kernels?
+
+See [here](../environment_management/anaconda_environments.md#packages-for-jupyter).
+
 #### What is a segfault error?
 
 A segfault, or segmentation fault, often causes unexpected termination of software. These errors are caused by software attempting to access memory that it isn't allowed to access. An error typically includes a long string of hexadecimal characters like `0x000055ea4064c135`, but with different values, and one or more of `segmentation fault`, `segfault` and/or `SIGSEGV`.

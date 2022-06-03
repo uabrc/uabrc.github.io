@@ -114,6 +114,10 @@ pip install -r packages.txt
 
 You may use the [Anaconda page](https://anaconda.org/) to search for packages on Anaconda, or use Google with something like `<package name> conda`. To find packages in PyPi, either use the [PyPi page](https://pypi.org/) to search, or use Google with something like `<package name> pip`.
 
+#### Packages for Jupyter
+
+If you are using Anaconda with Jupyter, you will need to be sure to install the `ipykernel` package for your environment to be recognized by the [Jupyter Server](../cheaha/open_ondemand/ood_interactive.md#the-jupyter-server-home-page). If you are using Jupyter in [Open OnDemand](../cheaha/open_ondemand/ood_interactive.md#jupyter-notebook) then you do not need to install the `jupyter` package.
+
 ### Deactivating an Environment
 
 An environment can be deactivated using the following command.
