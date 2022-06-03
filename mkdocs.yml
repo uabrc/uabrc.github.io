@@ -16,6 +16,7 @@ copyright: Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<b
 
 markdown_extensions:
   - admonition
+  - pymdownx.keys
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight:
@@ -86,6 +87,8 @@ nav:
       - uab_cloud/cloud_remote_access.md
       - uab_cloud/installing_software.md
       - uab_cloud/snapshots.md
+  - Education:
+      - education/courses.md
   - Help:
       - help/support.md
       - help/faq.md
