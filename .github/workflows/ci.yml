@@ -25,4 +25,4 @@ jobs:
         shell: bash -l {0}
         run: |
           micromamba activate build
-          mkdocs gh-deploy --force
+          mkdocs gh-deploy --force --strict

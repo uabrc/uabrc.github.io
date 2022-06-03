@@ -42,7 +42,7 @@ Before you can get started working on contributions, you'll need a copy of the r
 
 Once the fork has been created, you can clone your fork using the Command Palette (`ctrl + shift + p`) and `Git: Clone...` in VSCode, or at the command line. More information on cloning can be found at [GitHub: Cloning a Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
-### Local Machine Setup (Laptop/Desktop)
+#### Local Machine Setup (Laptop/Desktop)
 
 The Python extension will activate when you open any Python file. The file `test.py` has been added for convenience, simply open that file to activate the extension. The extension will show the currently activated environment near the bottom-left corner of the VSCode window.
 
@@ -54,7 +54,9 @@ conda env create -f build_env.yml
 
 Activate the environment in VSCode by clicking the currently activated environment in the bottom-left of the VSCode window. A menu will appear allowing you to select from discovered environments. You may need to reload VSCode to get the environment to appear if it was just created.
 
-### GitHub Setup
+To build the documentation locally, use `mkdocs build`. Be sure to fix all warnings before submitting a pull request.
+
+#### GitHub Setup
 
 To view your changes as they would appear on the official documentation website, you'll need to set up GitHub Pages in your fork. Navigate to your fork repository URL and click the "Settings" tab. Click "Pages" under "Code and automation". Follow the instructions here to set up a source: [GitHub Pages Docs](https://docs.github.com/en/pages).
 
@@ -84,6 +86,15 @@ To Be Determined
 
 ### Formatting
 
+- Links must be one of the following formats including all punctuation and brackets:
+    - Bare:
+        - `<https://google.com>`
+        - `<support@listserv.uab.edu>`
+    - Named with a schema:
+        - `[website](https://google.com)`
+        - `[email](mailto:support@listserv.uab.edu)` note the `mailto:` schema!
+    - Relative internal
+        - `[relative internal](help/faq.md)`
 - All internal links must be relative. For example, use `./file.md` not `/docs/file.md`.
 
 ### Linting Known Issues
