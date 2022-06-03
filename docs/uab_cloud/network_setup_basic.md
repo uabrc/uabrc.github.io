@@ -1,6 +1,6 @@
 # Basic Network Setup
 
-Networking setup should be a one-time setup. While Floating IPs fall under the Networking
+Networking setup should be a one-time setup. While Floating IPs fall under the Networking fold-out, they should be allocated and released together with instances to maximize security.
 
 ## Networks
 
@@ -23,11 +23,11 @@ Networking setup should be a one-time setup. While Floating IPs fall under the N
     will create a subnet as a separate step.
 
     1. Enter a "Network Name".
-    
+
     2. Leave "Enable Admin State" checked.
-    
+
     3. Uncheck "Create Subnet". We will do this as a separate step. The other tabs should be removed.
-    
+
     4. Leave the "Availability Zone Hints" box empty.
 
         ![!Create Network dialog. The dialog form is empty except Network Name has been set to my_network.](./images/networks_003.png)

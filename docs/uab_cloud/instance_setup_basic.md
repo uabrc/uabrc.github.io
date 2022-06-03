@@ -1,6 +1,6 @@
 # Basic Instance Setup
 
-Instances are the basic unit of compute on cloud.rc. Requesting an instance involves a number of steps, and requires that a [Network](./network_setup_basic.md) has already been setup. It is also possible to attach persistent reusable [Volumes](./volume_setup_basic.md) to instances.
+Instances are the basic unit of compute on cloud.rc. Requesting an instance involves a number of steps, and requires that a [Network](./network_setup_basic.md) has already been setup, along with certain [Security](./security_setup_basic.md) settings and features. It is also possible to attach persistent reusable [Volumes](./volume_setup_basic.md) to instances.
 
 ## Creating an Instance
 
