@@ -174,3 +174,19 @@ Refer to [Setting up a Configuration File](./cloud_remote_access.md#setting-up-a
 ## Next Steps
 
 Now you are ready to [Install Software](./installing_software.md) and, optionally, [Create a Persistent Volume](./volume_setup_basic.md).
+
+## Deleting an Instance
+
+To delete an instance, return to the "Instances" page using the left-hand navigation pane. In the table, find the row with the instance you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Instance" to open a confirmation dialog.
+
+![!Delete instance entry highlighted in table row actions drop down menu.](./images/delete_instance_001.png)
+
+Click "Delete Instance" again to delete the instance permanently.
+
+![!Delete instance confirmation dialog.](./images/delete_instance_002.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! Warning
+
+    It is highly recommended to shut off an instance before deleting it.
+<!-- markdownlint-enable MD046 -->

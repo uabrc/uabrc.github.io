@@ -54,6 +54,16 @@ Security Groups are used to set rules for how external devices can connect to yo
 
     ![!Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs.](./images/security_groups_005.png)
 
+## Deleting a Security Group
+
+To delete a security group, return to the "Security Groups" page using the left-hand navigation pane. In the table, find the row with the security group you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Security Group" to open a confirmation dialog.
+
+![!Delete security group entry highlighted in table row actions drop down menu.](./images/delete_security_group_001.png)
+
+Click "Delete Security Group" again to delete the security group permanently.
+
+![!Delete security group confirmation dialog.](./images/delete_security_group_002.png)
+
 ## Creating a Key pair
 
 A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) on your local machine.

@@ -1,10 +1,10 @@
 # Basic Network Setup
 
 Networking setup should be a one-time setup. While Floating IPs fall under the Networking
-fold-out, they should be allocated and released together with instances
-to maximize security.
 
-## Creating a Network
+## Networks
+
+### Creating a Network
 
 1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
@@ -39,15 +39,30 @@ to maximize security.
 
         ![!cloud.rc Networks page. There is an additional entry in the table. The new entry is my_network.](./images/networks_004.png)
 
-## Creating a Subnet
+### Deleting a Network
 
-1. Click "Network" in the left-hand navigation pane to open the
-    fold-out menu.
+To delete a network, return to the "Networks" page using the left-hand navigation pane. In the table, find the row with the network you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Network" to open a confirmation dialog.
+
+![!Delete network entry highlighted in table row actions drop down menu.](./images/delete_network_001.png)
+
+Click "Delete Network" again to delete the network permanently.
+
+![!Delete network confirmation dialog.](./images/delete_network_002.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    You will not be able to delete the network if it has a [subnet](#subnets) with any connected [routers](#routers) or ports. They will need to be removed or deleted first.
+<!-- markdownlint-enable MD046 -->
+
+## Subnets
+
+### Creating a Subnet
+
+1. Click "Network" in the left-hand navigation pane to open the fold-out menu.
 
     ![!cloud.rc Overview page. Networks is selected in the Network Topology fold-out menu in the left-hand navigation pane.](./images/networks_000.png)
 
-    
-    
 2. Click "Networks" in the fold-out menu.
 
     1. The "Networks" page will open.
@@ -91,7 +106,7 @@ to maximize security.
             Failed to create subnet `192.168.0.0/24`...
             Invalid input for operation: Gateway is not valid on a subnet.
             ```
-            
+
             Try changing the gateway IP address to `192.168.0.1` and trying again.
         <!-- markdownlint-disable MD046 -->
 
@@ -114,7 +129,28 @@ to maximize security.
 
         ![!my_network overview page. The Subnets tab is selected. The table has one entry labeled my_subnet.](./images/subnet_006.png)
 
-## Creating a Router
+### Deleting a Subnet
+
+To delete a subnet, return to the "Networks" page using the left-hand navigation pane. In the table, find the row with the associated subnet, and click the name of the network to go to that network's page.
+
+![!Network page where one entry is associated with the subnet to be deleted.](./images/delete_subnet_001.png)
+
+Click on the "Subnets" tab to go to the subnets table. In the table, find the row with the subnet you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Subnet" to open a confirmation dialog.
+
+![!Delete subnet entry highlighted in table row actions drop down menu.](./images/delete_subnet_001.png)
+
+Click "Delete Subnet" again to delete the subnet permanently.
+
+![!Delete subnet confirmation dialog.](./images/delete_subnet_002.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+    You will not be able to delete the subnet if it is associated with any [routers](#routers) or ports. They will need to be removed or deleted first.
+<!-- markdownlint-enable MD046 -->
+
+## Routers
+
+### Creating a Router
 
 To follow these directions for creating a router, a [Network](#creating-a-network) and [Subnet](#creating-a-subnet) must already exist.
 
@@ -168,7 +204,19 @@ To follow these directions for creating a router, a [Network](#creating-a-networ
 
     ![!my_router overview page. The Instances tab is selected. The table has one entry with a random UUID string as name.](./images/routers_007.png)
 
-## Creating a Floating IP
+### Deleting a Router
+
+To delete a router, return to the "Routers" page using the left-hand navigation pane. In the table, find the row with the router you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Router" to open a confirmation dialog.
+
+![!Delete router entry highlighted in table row actions drop down menu.](./images/delete_router_001.png)
+
+Click "Delete Router" again to delete the router permanently.
+
+![!Delete router confirmation dialog.](./images/delete_router_002.png)
+
+## Floating IPs
+
+### Creating a Floating IP
 
 Floating IPs are required if you want an instance to talk to devices on the internet. These IPs are a shared resource, so they must be allocated when needed and released when no longer needed.
 
@@ -197,3 +245,13 @@ Floating IPs are required if you want an instance to talk to devices on the inte
     2. There should be a new entry in the table.
 
     ![!Floating IPs page. The table has one entry.](./images/floating_ips_003.png)
+
+### Releasing a Floating IP
+
+To release a floating IP, return to the "Floating IPs" page using the left-hand navigation pane. In the table, find the row with the floating IP you wish to release, and click the drop-down arrow under "Actions" in that row. Then click "Release Floating IP" to open a confirmation dialog.
+
+![!Release floating IP entry highlighted in table row actions drop down menu.](./images/release_floating_ip_001.png)
+
+Click "Release Floating IP" again to release the floating IP.
+
+![!Release floating IP confirmation dialog.](./images/release_floating_ip_002.png)
