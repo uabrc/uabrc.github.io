@@ -72,7 +72,7 @@ To delete an image, return to the "Images" page using the left-hand navigation p
 
 ![!Delete image entry highlighted in table row actions drop down menu.](./images/delete_image_001.png)
 
- Click "Delete Image" again to delete the image permanently.
+Click "Delete Image" again to delete the image permanently.
 
 ![!Delete image confirmation dialog.](./images/delete_image_002.png)
 
@@ -114,6 +114,6 @@ To delete a volume snapshot, return to the "Volume Snapshots" page using the lef
 
 ![!Delete volume snapshot entry highlighted in table row actions drop down menu.](./images/delete_volume_snapshot_001.png)
 
- Click "Delete Volume Snapshot" again to delete the volume snapshot permanently.
+Click "Delete Volume Snapshot" again to delete the volume snapshot permanently.
 
 ![!Delete volume snapshot confirmation dialog.](./images/delete_volume_snapshot_002.png)
