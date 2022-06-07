@@ -79,11 +79,11 @@ nav:
       - Anaconda on Cheaha: cheaha/conda.md
   - UAB Cloud:
       - Introduction: uab_cloud/introduction.md
-      - Setup:
-          - Network: uab_cloud/network_setup_basic.md
-          - Security: uab_cloud/security_setup_basic.md
-          - Instance: uab_cloud/instance_setup_basic.md
-          - Volume: uab_cloud/volume_setup_basic.md
+      - Tutorial:
+          - (1) Networks: uab_cloud/network_setup_basic.md
+          - (2) Security Policies: uab_cloud/security_setup_basic.md
+          - (3) Instances: uab_cloud/instance_setup_basic.md
+          - (4) Volumes (optional): uab_cloud/volume_setup_basic.md
       - uab_cloud/cloud_remote_access.md
       - uab_cloud/installing_software.md
       - uab_cloud/snapshots.md

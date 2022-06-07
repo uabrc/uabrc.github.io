@@ -1,6 +1,12 @@
-# Basic Volume Setup
+# Volume Setup and Tutorial
 
 These instructions are intended for researchers who want to setup a persistent volume for use across instances. To follow these instructions you'll need to have already setup an [Instance](./instance_setup_basic.md).
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.
+<!-- markdownlint-enable MD046 -->
 
 ## Creating a Volume
 
@@ -166,6 +172,12 @@ Mounting a volume needs to be done once per instance it will be attached to. It 
 The volume is now mounted to your instance and ready for use and re-use across sessions and reboots.
 
 ## Deleting a Volume
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Deleting a Volume is not part of the tutorial, and is here as a reference.
+<!-- markdownlint-enable MD046 -->
 
 To delete a volume, return to the "Volumes" page using the left-hand navigation pane. In the table, find the row with the volume you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Volume" to open a confirmation dialog.
 

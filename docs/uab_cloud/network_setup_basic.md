@@ -1,6 +1,12 @@
-# Basic Network Setup
+# Network Setup and Tutorial
 
 Networking setup should be a one-time setup. While Floating IPs fall under the Networking fold-out, they should be allocated and released together with instances to maximize security.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.
+<!-- markdownlint-enable MD046 -->
 
 ## Networks
 
@@ -40,6 +46,12 @@ Networking setup should be a one-time setup. While Floating IPs fall under the N
         ![!cloud.rc Networks page. There is an additional entry in the table. The new entry is my_network.](./images/networks_004.png)
 
 ### Deleting a Network
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Deleting Networks is not part of the tutorial, and is here as a reference.
+<!-- markdownlint-enable MD046 -->
 
 To delete a network, return to the "Networks" page using the left-hand navigation pane. In the table, find the row with the network you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Network" to open a confirmation dialog.
 
@@ -131,6 +143,12 @@ Click "Delete Network" again to delete the network permanently.
 
 ### Deleting a Subnet
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Deleting Subnets is not part of the tutorial, and is here as a reference.
+<!-- markdownlint-enable MD046 -->
+
 To delete a subnet, return to the "Networks" page using the left-hand navigation pane. In the table, find the row with the associated subnet, and click the name of the network to go to that network's page.
 
 ![!Network page where one entry is associated with the subnet to be deleted.](./images/delete_subnet_001.png)
@@ -206,6 +224,12 @@ To follow these directions for creating a router, a [Network](#creating-a-networ
 
 ### Deleting a Router
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Deleting Routers is not part of the tutorial, and is here as a reference.
+<!-- markdownlint-enable MD046 -->
+
 To delete a router, return to the "Routers" page using the left-hand navigation pane. In the table, find the row with the router you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Router" to open a confirmation dialog.
 
 ![!Delete router entry highlighted in table row actions drop down menu.](./images/delete_router_001.png)
@@ -248,6 +272,12 @@ Floating IPs are required if you want an instance to talk to devices on the inte
 
 ### Releasing a Floating IP
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Releasing Floating IPs is not part of the tutorial, and is here as a reference.
+<!-- markdownlint-enable MD046 -->
+
 To release a floating IP, return to the "Floating IPs" page using the left-hand navigation pane. In the table, find the row with the floating IP you wish to release, and click the drop-down arrow under "Actions" in that row. Then click "Release Floating IP" to open a confirmation dialog.
 
 ![!Release floating IP entry highlighted in table row actions drop down menu.](./images/release_floating_ip_001.png)
@@ -255,3 +285,7 @@ To release a floating IP, return to the "Floating IPs" page using the left-hand 
 Click "Release Floating IP" again to release the floating IP.
 
 ![!Release floating IP confirmation dialog.](./images/release_floating_ip_002.png)
+
+## Continuing the Tutorial
+
+Now that you have set up a [Network](network_setup_basic.md), the next step is to apply [Security Policies](security_setup_basic.md) to be able to communicate with it. To continue the tutorial, please visit [Security Policies](security_setup_basic.md) next.
