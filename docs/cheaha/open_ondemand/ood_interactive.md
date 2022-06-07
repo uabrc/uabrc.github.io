@@ -121,6 +121,13 @@ From here, you can navigate to and select an existing notebook, or you can creat
 
     See [Anaconda Environments](../../environment_management/anaconda_environments.md#packages-for-jupyter) for information on Jupyter related packages.
 <!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Files deleted within using the Jupyter server interface are not truly deleted. Instead they are moved to `$HOME/.local/share/Trash`. This may cause inflation of personal storage usage on Cheaha.
+<!-- markdownlint-enable MD046 -->
+
 #### Python Libraries and Virtual Environments
 
 To run Jupyter with specific libraries and packages outside of the base install, you will need to create a virtual environment first. You can do this either in an HPC Desktop job or in the `Conda` tab of the Jupyter homepage.
