@@ -1,6 +1,12 @@
-# Basic Security Setup
+# Security Policy Setup and Tutorial
 
 These instructions show you how to prepare to use SSH with your instances. At a minimum, an SSH security group and at least one key pair must be created. Other security groups can and should be added as needed for additional services.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.
+<!-- markdownlint-enable MD046 -->
 
 ## Creating a Security Group
 
@@ -55,6 +61,12 @@ Security Groups are used to set rules for how external devices can connect to yo
     ![!Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs.](./images/security_groups_005.png)
 
 ## Deleting a Security Group
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Deleting Security Groups is not part of the tutorial, and is here as a reference.
+<!-- markdownlint-enable MD046 -->
 
 To delete a security group, return to the "Security Groups" page using the left-hand navigation pane. In the table, find the row with the security group you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Security Group" to open a confirmation dialog.
 
@@ -145,6 +157,12 @@ Please see [SSH Into the Instance](./instance_setup_basic.md#ssh-into-the-instan
 
 ### Revoking a Key Pair
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Revoking Key Pairs is not part of the tutorial, and is here as a reference.
+<!-- markdownlint-enable MD046 -->
+
 Revoking a key pair from cloud.rc is simple. First, log on to the interface.
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
@@ -158,3 +176,7 @@ Revoking a key pair from cloud.rc is simple. First, log on to the interface.
 3. Find the key pair you wish to revoke and click the "Delete Key Pair" button in that row.
 
 4. Optionally, [Remove the Private Key](./cloud_remote_access.md#remove-a-private-key) from your local machine. This step is not necessary to ensure security, but can help maintain a clean environment.
+
+## Continuing the Tutorial
+
+Now that you've set up a [Network](network_setup_basic.md) and [Security Policies](security_setup_basic.md), you're ready to create a virtual machine (VM) [Instance](instance_setup_basic.md) to work with. To continue the tutorial, please visit [Instances](instance_setup_basic.md) next.
