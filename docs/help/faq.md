@@ -88,6 +88,7 @@ Most commonly, delays in launching Open OnDemand RStudio Server are caused by a 
 !!! warning
 
     Deleting the .rstudio directory will delete the workspace you had open, including any scripts that were unsaved. Saved scripts will be fine.
+<!-- markdownlint-enable MD046 -->
 
 #### Why is my Open OnDemand RStudio Server session giving me a 502 or 503 error?
 
@@ -125,6 +126,13 @@ If you are using development tools like [Notepad++](https://notepad-plus-plus.or
 #### Why am I seeing an InvalidAccount error when submitting jobs when I could submit jobs fine previously?
 
 If you see this error when submitting jobs, please [contact support](support.md#how-to-request-support). There are a few causes for this error that will need to be investigated.
+
+#### Why can't Tensorflow find a GPU on Cheaha?
+
+When using Tensorflow on Cheaha, if you see an error like `Not creating XLA devices, tf_xla_enable_xla_devices not set` or are unable to find the GPU, check the following.
+
+- Ensure you are correctly requesting [GPUs](../cheaha/slurm/gpu.md) with the [SLURM](../cheaha/slurm/introduction.md) flag `--gres=gpu:1`. Change `1` to the appropriate number of GPUs needed. Check our [Hardware](../cheaha/hardware.md) page for limits.
+- Ensure you are loading the appropriate CUDA toolkit using e.g. `module load cuda11.2/toolkit/11.1.2`. You can check which modules are available using `module avail toolkit` at the terminal. Be sure you are loading the correct module. To check which module is required for your version of Tensorflow, see the toolkit requirements chart here <https://www.tensorflow.org/install/source#gpu>.
 
 ### Issues in Progress
 
