@@ -13,7 +13,7 @@
     
     
       
-        <title>Job Efficiency - UAB Research Computing</title>
+        <title>UAB Research Computing Day - UAB Research Computing</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#job-efficiency" class="md-skip">
+        <a href="#uab-research-computing-day" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Job Efficiency
+              UAB Research Computing Day
             
           </span>
         </div>
@@ -619,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting_started/" class="md-nav__link">
+      <a href="../../cheaha/getting_started/" class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -633,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hardware/" class="md-nav__link">
+      <a href="../../cheaha/hardware/" class="md-nav__link">
         Hardware
       </a>
     </li>
@@ -673,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open_ondemand/ood_main/" class="md-nav__link">
+      <a href="../../cheaha/open_ondemand/ood_main/" class="md-nav__link">
         Homepage
       </a>
     </li>
@@ -687,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open_ondemand/ood_interactive/" class="md-nav__link">
+      <a href="../../cheaha/open_ondemand/ood_interactive/" class="md-nav__link">
         Interactive Apps
       </a>
     </li>
@@ -701,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open_ondemand/ood_files/" class="md-nav__link">
+      <a href="../../cheaha/open_ondemand/ood_files/" class="md-nav__link">
         File Browser
       </a>
     </li>
@@ -715,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open_ondemand/ood_jobs/" class="md-nav__link">
+      <a href="../../cheaha/open_ondemand/ood_jobs/" class="md-nav__link">
         Job Viewer and Composer
       </a>
     </li>
@@ -762,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slurm/introduction/" class="md-nav__link">
+      <a href="../../cheaha/slurm/introduction/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -776,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slurm/sbatch_usage/" class="md-nav__link">
+      <a href="../../cheaha/slurm/sbatch_usage/" class="md-nav__link">
         Submitting Jobs with Slurm
       </a>
     </li>
@@ -790,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slurm/gpu/" class="md-nav__link">
+      <a href="../../cheaha/slurm/gpu/" class="md-nav__link">
         GPUs
       </a>
     </li>
@@ -804,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slurm/job_management/" class="md-nav__link">
+      <a href="../../cheaha/slurm/job_management/" class="md-nav__link">
         Managing Jobs
       </a>
     </li>
@@ -825,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lmod/" class="md-nav__link">
+      <a href="../../cheaha/lmod/" class="md-nav__link">
         Modules and Applications
       </a>
     </li>
@@ -839,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../conda/" class="md-nav__link">
+      <a href="../../cheaha/conda/" class="md-nav__link">
         Anaconda on Cheaha
       </a>
     </li>
@@ -1066,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../education/courses/" class="md-nav__link">
+      <a href="../courses/" class="md-nav__link">
         Courses
       </a>
     </li>
@@ -1184,15 +1184,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#estimating-compute-resources" class="md-nav__link">
-    Estimating Compute Resources
+  <a href="#background" class="md-nav__link">
+    Background
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifying-job-efficiency" class="md-nav__link">
-    Verifying Job Efficiency
+  <a href="#previous-uab-research-computing-days" class="md-nav__link">
+    Previous UAB Research Computing Days
   </a>
   
 </li>
@@ -1209,103 +1209,35 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/uabrc/researcher-facing-MkDocs/edit/master/docs/cheaha/job_efficiency.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/uabrc/researcher-facing-MkDocs/edit/master/docs/education/rc_days.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="job-efficiency">Job Efficiency<a class="headerlink" href="#job-efficiency" title="Permanent link">&para;</a></h1>
-<p>Efficient jobs save you time. Many factors go into queue wait time, but you can control your job requests. Optimizing queue wait times relies on getting resource requests close to actual resource usage. For example, if your task runs as fast with 2 cores as with 4 cores, requesting 4 cores will increase your wait time for no benefit. Other researchers time will be wasted due to locked up, unused resources. So please read this page to learn how to increase your efficiency and save time.</p>
-<p>As with any new skill, developing an intuition for efficiency and resource estimation requires experimentation, practice, and feedback.</p>
-<p>Please DO:</p>
+<h1 id="uab-research-computing-day">UAB Research Computing Day<a class="headerlink" href="#uab-research-computing-day" title="Permanent link">&para;</a></h1>
+<p>Research Computing Day is a dialog within the UAB research communityabout leveraging the power of computers to grow the depth of our investigation into the nature of the world that surrounds us. The annual event welcomes discussions on science, engineering, the arts and humanities focused on the drive to open new research frontiers with advances in technology.</p>
+<p>Whether computers are used to increase the accuracy of a model, interpret the ever-growing stream of data from new image collections and instruments, or engage with peers around the globe, UAB's status as a leading research community depends on the ability to incorporate these capabilities into the research process. By participating in the dialog of Research Computing Day at UAB, researchers can share how they are using these methods to enhance their research, gain new insights from peers, and contribute their voices to the growth of research at UAB.</p>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>Since 2007, The <a href="https://www.uab.edu/it/home">Office of the Vice President for Information Technology</a> has sponsored an annual dialog on the role of technology in research. These events joined UAB with <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0956272">national dialogs on the role of Cyberinfrastructure in research</a> held at campuses across the country.</p>
+<h2 id="previous-uab-research-computing-days">Previous UAB Research Computing Days<a class="headerlink" href="#previous-uab-research-computing-days" title="Permanent link">&para;</a></h2>
 <ul>
-<li>run subsets of your data with varying resource requests to develop intuition</li>
-<li>make use of <code>seff</code> to validate</li>
-<li>contact us for advice if you're lost</li>
+<li>2007 -- Co-hosted along with the ASA site visit, providing an overview of new services and upcoming launch of the UABgrid pilot. (No web record)</li>
+<li>2008 -- Focus on grid computing and collaboration technologies, in particular the caBIG program with guest speakers from Booz Allen Hamilton who managed the NCI caBIG program and SURA (agenda currently offline)</li>
+<li>2010 -- Featured introduction to Galaxy platform for genetic sequencing by Dell staff scientist (agenda currently offline)</li>
+<li><a href="https://docs.uabgrid.uab.edu/themegarden/2011">2011</a> -- Understanding growth of research computing support at peer institutions UNC and Emory</li>
+<li><a href="https://docs.uabgrid.uab.edu/themegarden/2012">2012</a> -- Growing data sciences at UAB</li>
+<li><a href="https://docs.uabgrid.uab.edu/themegarden/2013">2013</a> -- OpenStack at UAB</li>
+<li><a href="https://docs.uabgrid.uab.edu/themegarden/RCDay2016">2016</a> -- HPC Expansion</li>
+<li><a href="https://docs.uabgrid.uab.edu/themegarden/RCDay2017">2017</a> -- GPU expansion</li>
+<li><em>Research Computing Day 2018</em></li>
 </ul>
-<h2 id="estimating-compute-resources">Estimating Compute Resources<a class="headerlink" href="#estimating-compute-resources" title="Permanent link">&para;</a></h2>
-<p>Being able to estimate the resources a job will need is critical. Requesting substantially more resources than necessary bottlenecks the cluster by preventing jobs from using resources that are reserved, but going unused. Of course requesting too few resources may cause the tasks to perform unacceptably slowly, or to fail altogether.</p>
-<p>Questions to ask yourself before requesting resources:</p>
-<ol>
-<li>
-<p>Can my scripts take advantage of multiple cores?</p>
-<ul>
-<li>If yes, then request more cores.</li>
-<li>If no, then request only one core.</li>
-<li>Example: RStudio generally runs on a single thread. Any cores beyond the first will go unused and unusable.</li>
-</ul>
-</li>
-<li>
-<p>How large is the data I'm working with?</p>
-<ul>
-<li>Start by requesting memory equal to double the size of one file, no less than 2 GB per core.</li>
-<li>If that isn't enough, increase the request by 50% until there are no more memory errors.</li>
-<li>Example: If your data file is 4 GB, try starting out by requesting 8 GB of memory, then 12 GB, 16 GB, etc.</li>
-</ul>
-</li>
-<li>
-<p>Do my pipelines keep large amounts of data in memory?</p>
-<ul>
-<li>If yes, you may need to request even more memory than above.</li>
-<li>Example: Without careful programming, MATLAB code will often make and retain copies of data until finished.</li>
-</ul>
-</li>
-<li>
-<p>How long should my job take?</p>
-<ul>
-<li>Example: If my laptop is able to run the code on one data file in 2 hours, it will take about that long on Cheaha.</li>
-<li>Example: Requesting 50 hours of time for a 15 hour process will lengthen the queue time.</li>
-<li>Don't request too little! Include a buffer to account for scheduler and network issues.</li>
-</ul>
-</li>
-<li>
-<p>How is the software I'm using programmed?</p>
-<ul>
-<li>Can it use a GPU? Request one.</li>
-<li>Can it use multiple cores? Request more than one core.</li>
-<li>Is it single-threaded? Request only one core.</li>
-<li>Does it use MPI? Request multiple nodes.</li>
-<li>Be sure to check all of the flags, configuration, and options for the software, or these changes may not work.</li>
-</ul>
-</li>
-<li>
-<p>Which partition is most appropriate?</p>
-<ul>
-<li>More than 40 GB memory and queue wait times are long? Try <code>largemem*</code>.</li>
-<li>Need a GPU? Use <code>pascalnodes*</code>.</li>
-<li>Software works with AMD? Try <code>amd-hdr100</code>.</li>
-</ul>
-</li>
-</ol>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Reasonable overestimation of resources is better than underestimation. However, gross overestimation may cause admins to contact you about adjusting resources for future jobs. We are happy to help guide you to an efficient usage of the cluster.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
-<p>Use <code>seff</code> to verify that your code is as efficient as possible.</p>
-<h2 id="verifying-job-efficiency">Verifying Job Efficiency<a class="headerlink" href="#verifying-job-efficiency" title="Permanent link">&para;</a></h2>
-<p>It's important to evaluate the efficiency of your job in terms of resource usage after it completes. Remember that Cheaha is a shared resource, so requesting resources that sit unused during a job prevents others from using those resources. As well, because each researcher has a maximum amount of resources they can use at a given time, having inefficient jobs can increase analysis runtime across many jobs, and increase queue wait times.</p>
-<p>In order to look at job efficieny, use the <code>seff</code> command.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>seff &lt;jobid&gt;
-</code></pre></div>
-<p>The output will look like:</p>
-<p><div class="lightgallery"><a data-sub-html="SLURM Job Efficiency" href="../images/seff_output.png"><img alt="SLURM Job Efficiency" src="../images/seff_output.png" /></a></div></p>
-<p>The job had poor CPU efficiency, requesting 2 CPUs which were only busy for 30% of runtime. Requesting only a single core may have made more sense here. The job also had poor memory efficiency, using less than 1 GB total memory of the requested 16 GB (5.73%). For subsequent jobs using a similar analysis and dataset size, decreasing the requested memory to about 1200 MB and a single CPU would be more efficient, and get the job queued faster.</p>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Aim for between 75% and 90% memory efficiency. Lower than that is a waste of resources, but too close to 100% could result in job failure due to an unexpected out-of-memory issue.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 8, 2022</span>
       
     
   </small>
