@@ -149,7 +149,13 @@ These instructions require that you've set up a [Network](./network_setup_basic.
 
         ![!Manage Floating IP Associations dialog. The form is filled out. The Floating IP Address created earlier is selected under IP Address. The port from the Instance my_instance is selected under Port to be Associated.](./images/instances_017.png)
 
-At this stage you should be able to SSH into your instance from on campus or on the UAB VPN.
+At this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You can also [Transfer Data](cloud_remote_access.md#data-transfer) to the instance.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Please be considerate of other users. When you no longer need instances for processing or development, please [delete](#deleting-an-instance) them to free up resources.
+<!-- markdownlint-enable MD046 -->
 
 ## Instances Failing to Start
 
