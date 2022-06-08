@@ -149,8 +149,23 @@ These instructions require that you've set up a [Network](./network_setup_basic.
 
         ![!Manage Floating IP Associations dialog. The form is filled out. The Floating IP Address created earlier is selected under IP Address. The port from the Instance my_instance is selected under Port to be Associated.](./images/instances_017.png)
 
-At this stage you should be able to SSH into your instance from on
-campus or on the UAB VPN.
+At this stage you should be able to SSH into your instance from on campus or on the UAB VPN.
+
+## Instances Failing to Start
+
+There are a number of reasons an instance might fail. We are able to provide direct support for instances which fail to start for reasons outside the instance itself. To help us correct the error, you'll need to have information from the instance page. Below is an example of a failed instance in the "Instances" table, helpfully named `failed_instance`. Note the "Error" label under the "Status" column.
+
+![!failed instance in instances table](images/instance_failed_001.png)
+
+In the "Instances" table, click the name of your failed instance. You should see a page like below, with some basic metadata about the instance as well as a "Fault" section.
+
+![!failed instance overview page showing id and fault reason](images/instance_failed_002.png)
+
+We will need to "ID" and the reason for the fault. In this case, the instance failed because it could not allocate a GPU, as all GPUs were allocated at the time of its creation. It is not possible to diagnose the specifics without consulting us, so please feel free to contact [Support](../help/support.md).
+
+Instances can fail for other reasons as well, please contact [Support](../help/support.md) with the "ID" and "Fault" information.
+
+For instances which fail due to internal reasons, i.e. while using SSH or an application, we are still able to provide support but it will have to be on a case-by-case basis. Be prepared to walk us through the steps you took to set up the instance and any software, as well as any data processing steps, leading up to the failure.
 
 ## SSH Into the Instance
 
