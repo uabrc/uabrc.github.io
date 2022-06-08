@@ -13,7 +13,7 @@
     
     
       
-        <title>Security - UAB Research Computing</title>
+        <title>(2) Security Policies - UAB Research Computing</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-security-setup" class="md-skip">
+        <a href="#security-policy-setup-and-tutorial" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Security
+              (2) Security Policies
             
           </span>
         </div>
@@ -976,14 +976,14 @@
       
       
         <label class="md-nav__link" for="__nav_7_2">
-          Setup
+          Tutorial
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Setup" data-md-level="2">
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
-          Setup
+          Tutorial
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -994,7 +994,7 @@
   
     <li class="md-nav__item">
       <a href="../network_setup_basic/" class="md-nav__link">
-        Network
+        (1) Networks
       </a>
     </li>
   
@@ -1017,12 +1017,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Security
+          (2) Security Policies
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Security
+        (2) Security Policies
       </a>
       
         
@@ -1043,6 +1043,13 @@
         <li class="md-nav__item">
   <a href="#creating-a-security-group" class="md-nav__link">
     Creating a Security Group
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-a-security-group" class="md-nav__link">
+    Deleting a Security Group
   </a>
   
 </li>
@@ -1095,6 +1102,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#continuing-the-tutorial" class="md-nav__link">
+    Continuing the Tutorial
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1111,7 +1125,7 @@
   
     <li class="md-nav__item">
       <a href="../instance_setup_basic/" class="md-nav__link">
-        Instance
+        (3) Instances
       </a>
     </li>
   
@@ -1125,7 +1139,7 @@
   
     <li class="md-nav__item">
       <a href="../volume_setup_basic/" class="md-nav__link">
-        Volume
+        (4) Volumes (optional)
       </a>
     </li>
   
@@ -1331,6 +1345,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#deleting-a-security-group" class="md-nav__link">
+    Deleting a Security Group
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#creating-a-key-pair" class="md-nav__link">
     Creating a Key pair
   </a>
@@ -1378,6 +1399,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#continuing-the-tutorial" class="md-nav__link">
+    Continuing the Tutorial
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1395,10 +1423,17 @@
 </a>
 
 
-<h1 id="basic-security-setup">Basic Security Setup<a class="headerlink" href="#basic-security-setup" title="Permanent link">&para;</a></h1>
+<h1 id="security-policy-setup-and-tutorial">Security Policy Setup and Tutorial<a class="headerlink" href="#security-policy-setup-and-tutorial" title="Permanent link">&para;</a></h1>
 <p>These instructions show you how to prepare to use SSH with your instances. At a minimum, an SSH security group and at least one key pair must be created. Other security groups can and should be added as needed for additional services.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h2 id="creating-a-security-group">Creating a Security Group<a class="headerlink" href="#creating-a-security-group" title="Permanent link">&para;</a></h2>
-<p>Security Groups are used to set rules for how external devices can connect to your instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. Security groups may be reused across multiple instances.</p>
+<p>Security Groups are used to set rules for how external devices can connect to your instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. Applications you develop may need other ports opened, so you may need to create additional security groups to handle those. Security groups may be reused across multiple instances.</p>
 <ol>
 <li>
 <p>Click "Networks" in the left-hand navigation pane to open the fold-out menu.</p>
@@ -1453,6 +1488,18 @@
 <p><div class="lightgallery"><a data-sub-html="Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs." href="../images/security_groups_005.png"><img alt="Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs." src="../images/security_groups_005.png" /></a></div></p>
 </li>
 </ol>
+<h2 id="deleting-a-security-group">Deleting a Security Group<a class="headerlink" href="#deleting-a-security-group" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deleting Security Groups is not part of the tutorial, and is here as a reference.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<p>To delete a security group, return to the "Security Groups" page using the left-hand navigation pane. In the table, find the row with the security group you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Security Group" to open a confirmation dialog.</p>
+<p><div class="lightgallery"><a data-sub-html="Delete security group entry highlighted in table row actions drop down menu." href="../images/delete_security_group_001.png"><img alt="Delete security group entry highlighted in table row actions drop down menu." src="../images/delete_security_group_001.png" /></a></div></p>
+<p>Click "Delete Security Group" again to delete the security group permanently.</p>
+<p><div class="lightgallery"><a data-sub-html="Delete security group confirmation dialog." href="../images/delete_security_group_002.png"><img alt="Delete security group confirmation dialog." src="../images/delete_security_group_002.png" /></a></div></p>
 <h2 id="creating-a-key-pair">Creating a Key pair<a class="headerlink" href="#creating-a-key-pair" title="Permanent link">&para;</a></h2>
 <p>A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to <a href="../cloud_remote_access/#install-an-ssh-client">Install an SSH Client</a> on your local machine.</p>
 <p>Key Pairs are security devices used to authenticate and connect to a remote machine, like Cheaha or cloud.rc instances, and use <a href="https://en.wikipedia.org/wiki/Public-key_cryptography">Public-key cryptography</a> to encrypt the connection. As the name suggests, there are two parts: a public key which is placed on the remote machine, and a private key which is kept secret on your personal machine.</p>
@@ -1483,7 +1530,7 @@
 <p>Fill out the dialog box.</p>
 <ol>
 <li>
-<p>Enter a "Key Pair Name".</p>
+<p>Enter a "Key Pair Name". See <a href="../introduction/#naming-conventions">Naming Conventions</a>.</p>
 </li>
 <li>
 <p>Select "SSH Key" in the "Key Type" drop down box.</p>
@@ -1521,7 +1568,7 @@
 <li>
 <p>Fill out the dialog box.</p>
 <ol>
-<li>Enter a "Key Pair Name".</li>
+<li>Enter a "Key Pair Name". See <a href="../introduction/#naming-conventions">Naming Conventions</a>.</li>
 <li>Select "SSH Key" in the "Key Type" drop-down box.</li>
 <li>Click "Browse..." to upload a public key file from your custom key pair <strong>OR</strong> copy-paste the content of that key file into the "Public Key" box.</li>
 </ol>
@@ -1538,6 +1585,13 @@
 <h3 id="using-the-key-pair">Using the Key Pair<a class="headerlink" href="#using-the-key-pair" title="Permanent link">&para;</a></h3>
 <p>Please see <a href="../instance_setup_basic/#ssh-into-the-instance">SSH Into the Instance</a> for more information on using the Key Pair.</p>
 <h3 id="revoking-a-key-pair">Revoking a Key Pair<a class="headerlink" href="#revoking-a-key-pair" title="Permanent link">&para;</a></h3>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Revoking Key Pairs is not part of the tutorial, and is here as a reference.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <p>Revoking a key pair from cloud.rc is simple. First, log on to the interface.</p>
 <ol>
 <li>
@@ -1555,13 +1609,15 @@
 <p>Optionally, <a href="../cloud_remote_access/#remove-a-private-key">Remove the Private Key</a> from your local machine. This step is not necessary to ensure security, but can help maintain a clean environment.</p>
 </li>
 </ol>
+<h2 id="continuing-the-tutorial">Continuing the Tutorial<a class="headerlink" href="#continuing-the-tutorial" title="Permanent link">&para;</a></h2>
+<p>Now that you've set up a <a href="../network_setup_basic/">Network</a> and <a href="./">Security Policies</a>, you're ready to create a virtual machine (VM) <a href="../instance_setup_basic/">Instance</a> to work with. To continue the tutorial, please visit <a href="../instance_setup_basic/">Instances</a> next.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 8, 2022</span>
       
     
   </small>
@@ -1579,7 +1635,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../network_setup_basic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Network" rel="prev">
+        <a href="../network_setup_basic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: (1) Networks" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1588,20 +1644,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Network
+              (1) Networks
             </div>
           </div>
         </a>
       
       
         
-        <a href="../instance_setup_basic/" class="md-footer__link md-footer__link--next" aria-label="Next: Instance" rel="next">
+        <a href="../instance_setup_basic/" class="md-footer__link md-footer__link--next" aria-label="Next: (3) Instances" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Instance
+              (3) Instances
             </div>
           </div>
           <div class="md-footer__button md-icon">

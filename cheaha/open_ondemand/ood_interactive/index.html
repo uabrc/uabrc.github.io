@@ -1064,14 +1064,14 @@
       
       
         <label class="md-nav__link" for="__nav_7_2">
-          Setup
+          Tutorial
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Setup" data-md-level="2">
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
-          Setup
+          Tutorial
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1082,7 +1082,7 @@
   
     <li class="md-nav__item">
       <a href="../../../uab_cloud/network_setup_basic/" class="md-nav__link">
-        Network
+        (1) Networks
       </a>
     </li>
   
@@ -1096,7 +1096,7 @@
   
     <li class="md-nav__item">
       <a href="../../../uab_cloud/security_setup_basic/" class="md-nav__link">
-        Security
+        (2) Security Policies
       </a>
     </li>
   
@@ -1110,7 +1110,7 @@
   
     <li class="md-nav__item">
       <a href="../../../uab_cloud/instance_setup_basic/" class="md-nav__link">
-        Instance
+        (3) Instances
       </a>
     </li>
   
@@ -1124,7 +1124,7 @@
   
     <li class="md-nav__item">
       <a href="../../../uab_cloud/volume_setup_basic/" class="md-nav__link">
-        Volume
+        (4) Volumes (optional)
       </a>
     </li>
   
@@ -1494,6 +1494,14 @@
 <p>See <a href="../../../environment_management/anaconda_environments/#packages-for-jupyter">Anaconda Environments</a> for information on Jupyter related packages.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Files deleted within using the Jupyter server interface are not truly deleted. Instead they are moved to <code>$HOME/.local/share/Trash</code>. This may cause inflation of personal storage usage on Cheaha.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h4 id="python-libraries-and-virtual-environments">Python Libraries and Virtual Environments<a class="headerlink" href="#python-libraries-and-virtual-environments" title="Permanent link">&para;</a></h4>
 <p>To run Jupyter with specific libraries and packages outside of the base install, you will need to create a virtual environment first. You can do this either in an HPC Desktop job or in the <code>Conda</code> tab of the Jupyter homepage.</p>
 <p>The <code>Conda</code> has the following layout:</p>
@@ -1525,7 +1533,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 7, 2022</span>
       
     
   </small>

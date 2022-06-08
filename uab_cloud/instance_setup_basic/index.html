@@ -13,7 +13,7 @@
     
     
       
-        <title>Instance - UAB Research Computing</title>
+        <title>(3) Instances - UAB Research Computing</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#basic-instance-setup" class="md-skip">
+        <a href="#instance-setup-and-tutorial" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Instance
+              (3) Instances
             
           </span>
         </div>
@@ -976,14 +976,14 @@
       
       
         <label class="md-nav__link" for="__nav_7_2">
-          Setup
+          Tutorial
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Setup" data-md-level="2">
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
-          Setup
+          Tutorial
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -994,7 +994,7 @@
   
     <li class="md-nav__item">
       <a href="../network_setup_basic/" class="md-nav__link">
-        Network
+        (1) Networks
       </a>
     </li>
   
@@ -1008,7 +1008,7 @@
   
     <li class="md-nav__item">
       <a href="../security_setup_basic/" class="md-nav__link">
-        Security
+        (2) Security Policies
       </a>
     </li>
   
@@ -1031,12 +1031,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Instance
+          (3) Instances
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Instance
+        (3) Instances
       </a>
       
         
@@ -1057,6 +1057,13 @@
         <li class="md-nav__item">
   <a href="#creating-an-instance" class="md-nav__link">
     Creating an Instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instances-failing-to-start" class="md-nav__link">
+    Instances Failing to Start
   </a>
   
 </li>
@@ -1088,6 +1095,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#deleting-an-instance" class="md-nav__link">
+    Deleting an Instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuing-the-tutorial" class="md-nav__link">
+    Continuing the Tutorial
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1104,7 +1125,7 @@
   
     <li class="md-nav__item">
       <a href="../volume_setup_basic/" class="md-nav__link">
-        Volume
+        (4) Volumes (optional)
       </a>
     </li>
   
@@ -1310,6 +1331,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instances-failing-to-start" class="md-nav__link">
+    Instances Failing to Start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ssh-into-the-instance" class="md-nav__link">
     SSH Into the Instance
   </a>
@@ -1336,6 +1364,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#deleting-an-instance" class="md-nav__link">
+    Deleting an Instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continuing-the-tutorial" class="md-nav__link">
+    Continuing the Tutorial
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1353,8 +1395,15 @@
 </a>
 
 
-<h1 id="basic-instance-setup">Basic Instance Setup<a class="headerlink" href="#basic-instance-setup" title="Permanent link">&para;</a></h1>
-<p>Instances are the basic unit of compute on cloud.rc. Requesting an instance involves a number of steps, and requires that a <a href="../network_setup_basic/">Network</a> has already been setup. It is also possible to attach persistent reusable <a href="../volume_setup_basic/">Volumes</a> to instances.</p>
+<h1 id="instance-setup-and-tutorial">Instance Setup and Tutorial<a class="headerlink" href="#instance-setup-and-tutorial" title="Permanent link">&para;</a></h1>
+<p>Instances are the basic unit of compute on cloud.rc. Requesting an instance involves a number of steps, and requires that a <a href="../network_setup_basic/">Network</a> has already been setup, along with certain <a href="../security_setup_basic/">Security</a> settings and features. It is also possible to attach persistent reusable <a href="../volume_setup_basic/">Volumes</a> to instances.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h2 id="creating-an-instance">Creating an Instance<a class="headerlink" href="#creating-an-instance" title="Permanent link">&para;</a></h2>
 <p>Creating an instance is possibly a step you'll perform often, depending on your workflow. There are many smaller steps to create an instance, so please take care to check all the fields when you create an instance.</p>
 <p>These instructions require that you've set up a <a href="../network_setup_basic/">Network</a> and followed all of the instructions on the linked page. You should have a Network, Subnet, Router and Floating IP. You will also need to setup a
@@ -1378,7 +1427,7 @@
 <li>
 <p>"Details" tab.</p>
 <ol>
-<li>Enter an "Instance Name".</li>
+<li>Enter an "Instance Name". See <a href="../introduction/#naming-conventions">Naming Conventions</a>.</li>
 <li>Enter a "Description".</li>
 <li>Select "nova" in the "Availability Zone" drop down box.</li>
 <li>Select "1" in the "Count" field.</li>
@@ -1524,10 +1573,7 @@
 <p>Click "Launch Instance" to launch the instance.</p>
 <ol>
 <li>Redirects to the "Instances" page.</li>
-<li>
-<p>There should be a new entry in the table.</p>
-<p><div class="lightgallery"><a data-sub-html="cloud.rc Instances page. The Instances table has one entry labeled my_instance. The task column has an indeterminate progress bar indicating the instance is being set up." href="../images/instances_014.png"><img alt="cloud.rc Instances page. The Instances table has one entry labeled my_instance. The task column has an indeterminate progress bar indicating the instance is being set up." src="../images/instances_014.png" /></a></div></p>
-</li>
+<li>There should be a new entry in the table.</li>
 <li>
 <p>The instance will take some time to build and boot. When the
     Status column entry says "Active" please move to the next steps.</p>
@@ -1549,10 +1595,24 @@
 </ol>
 </li>
 </ol>
-<p>At this stage you should be able to SSH into your instance from on
-campus or on the UAB VPN.</p>
+<p>At this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You can also <a href="../cloud_remote_access/#data-transfer">Transfer Data</a> to the instance.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Please be considerate of other users. When you no longer need instances for processing or development, please <a href="#deleting-an-instance">delete</a> them to free up resources.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h2 id="instances-failing-to-start">Instances Failing to Start<a class="headerlink" href="#instances-failing-to-start" title="Permanent link">&para;</a></h2>
+<p>There are a number of reasons an instance might fail. We are able to provide direct support for instances which fail to start for reasons outside the instance itself. To help us correct the error, you'll need to have information from the instance page. Below is an example of a failed instance in the "Instances" table, helpfully named <code>failed_instance</code>. Note the "Error" label under the "Status" column.</p>
+<p><div class="lightgallery"><a data-sub-html="failed instance in instances table" href="../images/instance_failed_001.png"><img alt="failed instance in instances table" src="../images/instance_failed_001.png" /></a></div></p>
+<p>In the "Instances" table, click the name of your failed instance. You should see a page like below, with some basic metadata about the instance as well as a "Fault" section.</p>
+<p><div class="lightgallery"><a data-sub-html="failed instance overview page showing id and fault reason" href="../images/instance_failed_002.png"><img alt="failed instance overview page showing id and fault reason" src="../images/instance_failed_002.png" /></a></div></p>
+<p>We will need to "ID" and the reason for the fault. In this case, the instance failed because it could not allocate a GPU, as all GPUs were allocated at the time of its creation. It is not possible to diagnose the specifics without consulting us, so please feel free to contact <a href="../../help/support/">Support</a>.</p>
+<p>Instances can fail for other reasons as well, please contact <a href="../../help/support/">Support</a> with the "ID" and "Fault" information.</p>
+<p>For instances which fail due to internal reasons, i.e. while using SSH or an application, we are still able to provide support but it will have to be on a case-by-case basis. Be prepared to walk us through the steps you took to set up the instance and any software, as well as any data processing steps, leading up to the failure.</p>
 <h2 id="ssh-into-the-instance">SSH Into the Instance<a class="headerlink" href="#ssh-into-the-instance" title="Permanent link">&para;</a></h2>
-<p>If you are following the steps from top to bottom, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You will need to <a href="../cloud_remote_access/#install-an-ssh-client">Install an SSH Client</a> To do so be sure your local machine has ssh and then use the following command If you are using a different operating system, such as CentOS, replace the user <code>ubuntu</code> with <code>centos</code> or whatever is appropriate. The value <code>&lt;floating ip&gt;</code> should be whatever IP was assigned in <a href="../network_setup_basic/#creating-a-floating-ip">Creating a Floating IP</a>, and the value <code>&lt;private_key_file&gt;</code> should be whatever your key pair file was named from <a href="../security_setup_basic/#creating-a-key-pair">Creating a Key Pair</a>.</p>
+<p>If you are following the tutorial, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You will need to <a href="../cloud_remote_access/#install-an-ssh-client">Install an SSH Client</a> Once your machine has an ssh client, use the following command. If your image uses an operating system other than Ubuntu, such as CentOS, replace the user <code>ubuntu</code> with <code>centos</code> or whatever is appropriate. The value <code>&lt;floating ip&gt;</code> should be whatever IP was assigned in <a href="../network_setup_basic/#creating-a-floating-ip">Creating a Floating IP</a>, and the value <code>&lt;private_key_file&gt;</code> should be whatever your key pair file was named from <a href="../security_setup_basic/#creating-a-key-pair">Creating a Key Pair</a>.</p>
 <p>You may optionally <a href="./cloud_remote_access.md/#setting-up-a-configuration-file">Set Up a Configuration File</a>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh ubuntu@&lt;floating ip&gt; -i ~/.ssh/&lt;private_key_file&gt;
 </code></pre></div>
@@ -1568,13 +1628,34 @@ campus or on the UAB VPN.</p>
 <p>Refer to <a href="../cloud_remote_access/#setting-up-a-configuration-file">Setting up a Configuration File</a> in <a href="../cloud_remote_access/">Cloud Remote Access</a>.</p>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <p>Now you are ready to <a href="../installing_software/">Install Software</a> and, optionally, <a href="../volume_setup_basic/">Create a Persistent Volume</a>.</p>
+<h2 id="deleting-an-instance">Deleting an Instance<a class="headerlink" href="#deleting-an-instance" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deleting Instances is not part of the tutorial, and is here as a reference.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<p>To delete an instance, return to the "Instances" page using the left-hand navigation pane. In the table, find the row with the instance you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Instance" to open a confirmation dialog.</p>
+<p><div class="lightgallery"><a data-sub-html="Delete instance entry highlighted in table row actions drop down menu." href="../images/delete_instance_001.png"><img alt="Delete instance entry highlighted in table row actions drop down menu." src="../images/delete_instance_001.png" /></a></div></p>
+<p>Click "Delete Instance" again to delete the instance permanently.</p>
+<p><div class="lightgallery"><a data-sub-html="Delete instance confirmation dialog." href="../images/delete_instance_002.png"><img alt="Delete instance confirmation dialog." src="../images/delete_instance_002.png" /></a></div></p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is highly recommended to shut off an instance before deleting it.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h2 id="continuing-the-tutorial">Continuing the Tutorial<a class="headerlink" href="#continuing-the-tutorial" title="Permanent link">&para;</a></h2>
+<p>Now that you have set up a <a href="../network_setup_basic/">Network</a>, <a href="../security_setup_basic/">Security Policies</a> and an <a href="./">Instance</a>, you are done with the tutorial, congratulations! There is one remaining optional step. If you need a persistent data volume to move between instances, please check our <a href="../volume_setup_basic/">Volumes</a> page.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 8, 2022</span>
       
     
   </small>
@@ -1592,7 +1673,7 @@ campus or on the UAB VPN.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../security_setup_basic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Security" rel="prev">
+        <a href="../security_setup_basic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: (2) Security Policies" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1601,20 +1682,20 @@ campus or on the UAB VPN.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Security
+              (2) Security Policies
             </div>
           </div>
         </a>
       
       
         
-        <a href="../volume_setup_basic/" class="md-footer__link md-footer__link--next" aria-label="Next: Volume" rel="next">
+        <a href="../volume_setup_basic/" class="md-footer__link md-footer__link--next" aria-label="Next: (4) Volumes (optional)" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Volume
+              (4) Volumes (optional)
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -972,14 +972,14 @@
       
       
         <label class="md-nav__link" for="__nav_7_2">
-          Setup
+          Tutorial
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Setup" data-md-level="2">
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
-          Setup
+          Tutorial
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -990,7 +990,7 @@
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/network_setup_basic/" class="md-nav__link">
-        Network
+        (1) Networks
       </a>
     </li>
   
@@ -1004,7 +1004,7 @@
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/security_setup_basic/" class="md-nav__link">
-        Security
+        (2) Security Policies
       </a>
     </li>
   
@@ -1018,7 +1018,7 @@
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/instance_setup_basic/" class="md-nav__link">
-        Instance
+        (3) Instances
       </a>
     </li>
   
@@ -1032,7 +1032,7 @@
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/volume_setup_basic/" class="md-nav__link">
-        Volume
+        (4) Volumes (optional)
       </a>
     </li>
   
@@ -1418,8 +1418,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-is-my-instance-returning-an-error-of-host-not-found" class="md-nav__link">
-    Why is my instance returning an error of "Host not found"
+  <a href="#why-is-my-instance-failing-to-start" class="md-nav__link">
+    Why is my instance failing to start?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-my-instance-show-an-error-in-the-instances-table" class="md-nav__link">
+    Why does my instance show an error in the Instances table?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-regain-access-to-an-instance" class="md-nav__link">
+    How do I regain access to an instance?
   </a>
   
 </li>
@@ -1703,8 +1717,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-is-my-instance-returning-an-error-of-host-not-found" class="md-nav__link">
-    Why is my instance returning an error of "Host not found"
+  <a href="#why-is-my-instance-failing-to-start" class="md-nav__link">
+    Why is my instance failing to start?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-my-instance-show-an-error-in-the-instances-table" class="md-nav__link">
+    Why does my instance show an error in the Instances table?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-regain-access-to-an-instance" class="md-nav__link">
+    How do I regain access to an instance?
   </a>
   
 </li>
@@ -1952,16 +1980,21 @@
 <li>Pass the downloaded Zip file to <a href="../support/">Support</a>.</li>
 </ol>
 <h2 id="uab-cloud">UAB Cloud<a class="headerlink" href="#uab-cloud" title="Permanent link">&para;</a></h2>
-<h3 id="why-is-my-instance-returning-an-error-of-host-not-found">Why is my instance returning an error of "Host not found"<a class="headerlink" href="#why-is-my-instance-returning-an-error-of-host-not-found" title="Permanent link">&para;</a></h3>
-<p>The "Host not found" error is typically due to the amount of requested resources not being available when the instance is initializing. This is especially common for instances requesting GPUs, when no GPUs are free.</p>
-<p>When your instances are not being used, please suspend them to free resources for other people who need them.</p>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Under construction</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
+<h3 id="why-is-my-instance-failing-to-start">Why is my instance failing to start?<a class="headerlink" href="#why-is-my-instance-failing-to-start" title="Permanent link">&para;</a></h3>
+<p>Please see <a href="../../uab_cloud/instance_setup_basic/#instances-failing-to-start">Instances Failing to Start</a>.</p>
+<h3 id="why-does-my-instance-show-an-error-in-the-instances-table">Why does my instance show an error in the Instances table?<a class="headerlink" href="#why-does-my-instance-show-an-error-in-the-instances-table" title="Permanent link">&para;</a></h3>
+<p>Please see <a href="../../uab_cloud/instance_setup_basic/#instances-failing-to-start">Instances Failing to Start</a>.</p>
+<h3 id="how-do-i-regain-access-to-an-instance">How do I regain access to an instance?<a class="headerlink" href="#how-do-i-regain-access-to-an-instance" title="Permanent link">&para;</a></h3>
+<p>If you've lose the only copy of your private key for accessing a cloud.rc virtual machine (VM), there are a few options.</p>
+<p>Is your instance volume backed (the default behavior)?</p>
+<ul>
+<li><strong>No</strong>: Then your instance is stateless and can be simply be deleted and restarted.</li>
+<li><strong>Yes</strong>: Will your volume be deleted when the instance is deleted (not default behavior)?<ul>
+<li><strong>Yes</strong>: Take a <a href="../../uab_cloud/snapshots/#creating-an-instance-snapshot">snapshot</a> of your current instance to create an <a href="../../uab_cloud/snapshots/#images-or-instance-snapshots">image</a>, then <a href="../../uab_cloud/instance_setup_basic/#deleting-an-instance">delete your instance</a> and <a href="../../uab_cloud/snapshots/#creating-an-instance-from-an-image">create from image</a>.</li>
+<li><strong>No</strong>: <a href="../../uab_cloud/instance_setup_basic/#deleting-an-instance">Delete your instance</a> and create an instance from the existing volume.</li>
+</ul>
+</li>
+</ul>
 <h2 id="globus">Globus<a class="headerlink" href="#globus" title="Permanent link">&para;</a></h2>
 <h3 id="why-cant-other-users-access-data-i-transferred-to-a-project-space-on-cheaha">Why can't other users access data I transferred to a project space on Cheaha?<a class="headerlink" href="#why-cant-other-users-access-data-i-transferred-to-a-project-space-on-cheaha" title="Permanent link">&para;</a></h3>
 <p>When transferring using Globus, file permissions from the source file are not transferred with the file due to limitations purposefully placed by Globus. When transferring to any space on Cheaha, the most likely permission sets are user read and write only with no group permissions. Researchers will need to manually change permissions for the files they transfer using Globus to add group permissions if desired. You can use the <code>chmod</code> command for this:</p>
@@ -1982,7 +2015,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 3, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 8, 2022</span>
       
     
   </small>
