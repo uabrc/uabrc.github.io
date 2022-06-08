@@ -15,7 +15,7 @@ Images are a helpful way to store the state of an instance for later use. Repeat
 
     ![!instances table with create snapshot button highlighted](./images/create_snapshot_001.png)
 
-3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot".
+3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot". See [Naming Conventions](introduction.md#naming-conventions).
 
     ![!create snapshot dialog](./images/create_snapshot_002.png)
 
@@ -92,7 +92,7 @@ Volume snapshots are a helpful way to store the state of a volume for later use.
 
     ![!instances table with create snapshot button highlighted](./images/create_volume_snapshot_001.png)
 
-3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot".
+3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot". See [Naming Conventions](introduction.md#naming-conventions).
 
     ![!create snapshot dialog](./images/create_volume_snapshot_002.png)
 

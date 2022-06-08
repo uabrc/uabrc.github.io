@@ -22,7 +22,7 @@ These instructions are intended for researchers who want to setup a persistent v
 
 4. Fill out the dialog box.
 
-    1. Enter a "Volume Name".
+    1. Enter a "Volume Name". See [Naming Conventions](introduction.md#naming-conventions).
     2. Enter a "Description".
     3. Select "No source, empty volume" in the "Volume Source" drop-down box to create an empty volume.
     4. Select "\_\_DEFAULT\_\_" in the "Type" drop down box.
