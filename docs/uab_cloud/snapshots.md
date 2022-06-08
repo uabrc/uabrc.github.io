@@ -2,34 +2,36 @@
 
 Snapshots are instances or volumes frozen at a moment in time, able to be used in the future. Think of snapshots as a photograph of the state of an instance or volume. Anything done to an instance or volume after the snapshot is taken won't affect the snapshot. We can also create a new instance or volume from an existing snapshot, and continue from that point in time.
 
-## Creating an Instance Snapshot
+An instance snapshot is referred to as an image. Volume snapshots do not have a special name.
 
-Instance snapshots are a helpful way to store the state of an instance for later use. Repeating tedious tasks like [Software Installs](./installing_software.md) can be avoided by taking a snapshot at a known-good point during set up of an instance environment, saving time in the future if something goes wrong. Instance snapshots may also be shared with other users to simplify workflows and onboarding new collaborators. To create an instance snapshot please follow the steps below. We assume you are already logged in at [cloud.rc](./introduction.md)
+## Images or Instance Snapshots
+
+### Creating an Image
+
+Images are a helpful way to store the state of an instance for later use. Repeating tedious tasks like [Software Installs](./installing_software.md) can be avoided by taking a snapshot at a known-good point during set up of an instance environment, saving time in the future if something goes wrong. Images may also be shared with other users to simplify workflows and onboarding new collaborators. To create an image please follow the steps below. We assume you are already logged in at [cloud.rc](./introduction.md)
 
 1. Navigate to "Compute" and then "Instances" in the left-hand navigation menu to open the "Instances" page.
-2. To make a snapshot of a particular instance, click the drop down menu under the "Actions" column in the row of the desired instance. Then click "Create Snapshot".
+2. To take a snapshot of a particular instance, click the drop down menu under the "Actions" column in the row of the desired instance. Then click "Create Snapshot".
 
     ![!instances table with create snapshot button highlighted](./images/create_snapshot_001.png)
 
-3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot".
+3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot". See [Naming Conventions](introduction.md#naming-conventions).
 
     ![!create snapshot dialog](./images/create_snapshot_002.png)
 
-4. You will be taken to the "Images" page, where you new snapshot will appear in its own row in the table.
+4. You will be taken to the "Images" page, where your new image will appear in its own row in the table.
 
-    ![!images page showing new snapshot](./images/create_snapshot_003.png)
+    ![!images page showing new image](./images/create_snapshot_003.png)
 
     <!-- markdownlint-disable MD046 -->
     !!! note
 
-        Notice the snapshot has size of zero bytes. The instance snapshot is a convenience pointer to the underlying volume snapshot, so it has no size itself. To see the size of the underlying volume snapshot, click "Volumes" and then "Snapshots" in the left hand navigation menu.
-
-        Don't worry, you'll still be able to create an instance from this snapshot later.
+        Notice the image has a size of zero bytes, which is expected and does not affect the ability to create instances. Images are a convenience pointer to the underlying volume snapshot, so they have no size themselves. The underlying volume snapshot does have a fixed size. To see the size of the underlying volume snapshot, click "Volumes" and then "Snapshots" in the left hand navigation menu.
     <!-- markdownlint-enable MD046 -->
 
-## Creating an Instance from an Instance Snapshot
+### Creating an Instance from an Image
 
-To create an instance from an instance snapshot, follow the directions below, assuming you have [Created an Instance Snapshot](#creating-an-instance-snapshot).
+To create an instance from an image, follow the directions below, assuming you have [Created an Image](#creating-an-instance-snapshot).
 
 1. Navigate to "Compute" and then "Instances" in the left-hand navigation menu to open the "Instances" page.
 2. Click the "Launch Instance" button.
@@ -56,10 +58,62 @@ To create an instance from an instance snapshot, follow the directions below, as
 
 7. Continue following the instructions at [Basic Instance Setup](./instance_setup_basic.md) to start the instance.
 
-## Sharing Snapshots
+### Sharing Instance Snapshots
 
 <!-- markdownlint-disable MD046 -->
 !!! construction
 
     Under construction.
 <!-- markdownlint-enable MD046 -->
+
+### Deleting an Image
+
+To delete an image, return to the "Images" page using the left-hand navigation pane. In the table, find the row with the image you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Image" to open a confirmation dialog.
+
+![!Delete image entry highlighted in table row actions drop down menu.](./images/delete_image_001.png)
+
+Click "Delete Image" again to delete the image permanently.
+
+![!Delete image confirmation dialog.](./images/delete_image_002.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+    You will not be able to delete the image if it has an associated [volume snapshot](#volume-snapshots) or [volume](volume_setup_basic.md). They will need to be removed or deleted first.
+<!-- markdownlint-enable MD046 -->
+
+## Volume Snapshots
+
+### Creating a Volume Snapshot
+
+Volume snapshots are a helpful way to store the state of a volume for later use. They are used as the backing for [Images, or Instance Snapshots](#images-or-instance-snapshots), and have the same benefits. Most volume snapshots are created as part of an instance, but to create a volume snapshot directly please follow the steps below. We assume you are already logged in at [cloud.rc](./introduction.md)
+
+1. Navigate to "Volumes" and then "Volumes" in the left-hand navigation menu to open the "Volumes" page.
+2. To take a snapshot of a particular volume, click the drop down menu under the "Actions" column in the row of the desired volume. Then click "Create Snapshot".
+
+    ![!instances table with create snapshot button highlighted](./images/create_volume_snapshot_001.png)
+
+3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot". See [Naming Conventions](introduction.md#naming-conventions).
+
+    ![!create snapshot dialog](./images/create_volume_snapshot_002.png)
+
+4. You will be taken to the "Volume Snapshots" page, where your new snapshot will appear in its own row in the table.
+
+    ![!volume snapshots page showing new snapshot](./images/create_volume_snapshot_003.png)
+
+### Sharing Volume Snapshots
+
+<!-- markdownlint-disable MD046 -->
+!!! construction
+
+    Under construction.
+<!-- markdownlint-enable MD046 -->
+
+### Deleting a Volume Snapshot
+
+To delete a volume snapshot, return to the "Volume Snapshots" page using the left-hand navigation pane. In the table, find the row with the volume snapshot you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Volume Snapshot" to open a confirmation dialog.
+
+![!Delete volume snapshot entry highlighted in table row actions drop down menu.](./images/delete_volume_snapshot_001.png)
+
+Click "Delete Volume Snapshot" again to delete the volume snapshot permanently.
+
+![!Delete volume snapshot confirmation dialog.](./images/delete_volume_snapshot_002.png)

@@ -1,6 +1,12 @@
-# Basic Volume Setup
+# Volume Setup and Tutorial
 
 These instructions are intended for researchers who want to setup a persistent volume for use across instances. To follow these instructions you'll need to have already setup an [Instance](./instance_setup_basic.md).
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.
+<!-- markdownlint-enable MD046 -->
 
 ## Creating a Volume
 
@@ -16,7 +22,7 @@ These instructions are intended for researchers who want to setup a persistent v
 
 4. Fill out the dialog box.
 
-    1. Enter a "Volume Name".
+    1. Enter a "Volume Name". See [Naming Conventions](introduction.md#naming-conventions).
     2. Enter a "Description".
     3. Select "No source, empty volume" in the "Volume Source" drop-down box to create an empty volume.
     4. Select "\_\_DEFAULT\_\_" in the "Type" drop down box.
@@ -99,7 +105,7 @@ To format a volume, you must have created a volume and attached it to an instanc
     Superblock backups stored on blocks:
           32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 654208,
           4096000, 7962624, 11239424, 20480000, 23887872
-    
+
     Allocating group tables: done
     Writing inode tables: done
     Creating journal (131072 blocks): done
@@ -164,3 +170,24 @@ Mounting a volume needs to be done once per instance it will be attached to. It 
     ![!MINGW64 terminal. Access control settings have been verified by creating an empty file in the mount point /mnt/my-volume and listing files.](./images/persistent_volumes_010.png)
 
 The volume is now mounted to your instance and ready for use and re-use across sessions and reboots.
+
+## Deleting a Volume
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Deleting a Volume is not part of the tutorial, and is here as a reference.
+<!-- markdownlint-enable MD046 -->
+
+To delete a volume, return to the "Volumes" page using the left-hand navigation pane. In the table, find the row with the volume you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Volume" to open a confirmation dialog.
+
+![!Delete volume entry highlighted in table row actions drop down menu.](./images/delete_volume_001.png)
+
+Click "Delete Volume" again to delete the volume permanently.
+
+![!Delete volume confirmation dialog.](./images/delete_volume_002.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+    It will not be possible to delete a volume if it has an associated [volume snapshot](snapshots.md). The snapshot will need to be deleted first.
+<!-- markdownlint-enable MD046 -->

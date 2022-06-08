@@ -209,16 +209,24 @@ If asked, the simplest way to give us the information is the following. Please v
 
 ## UAB Cloud
 
-### Why is my instance returning an error of "Host not found"
+### Why is my instance failing to start?
 
-The "Host not found" error is typically due to the amount of requested resources not being available when the instance is initializing. This is especially common for instances requesting GPUs, when no GPUs are free.
+Please see [Instances Failing to Start](../uab_cloud/instance_setup_basic.md#instances-failing-to-start).
 
-When your instances are not being used, please suspend them to free resources for other people who need them.
-<!-- markdownlint-disable MD046 -->
-!!! note
+### Why does my instance show an error in the Instances table?
 
-    Under construction
-<!-- markdownlint-enable MD046 -->
+Please see [Instances Failing to Start](../uab_cloud/instance_setup_basic.md#instances-failing-to-start).
+
+### How do I regain access to an instance?
+
+If you've lose the only copy of your private key for accessing a cloud.rc virtual machine (VM), there are a few options.
+
+Is your instance volume backed (the default behavior)?
+
+- **No**: Then your instance is stateless and can be simply be deleted and restarted.
+- **Yes**: Will your volume be deleted when the instance is deleted (not default behavior)?
+    - **Yes**: Take a [snapshot](../uab_cloud/snapshots.md#creating-an-instance-snapshot) of your current instance to create an [image](../uab_cloud/snapshots.md#images-or-instance-snapshots), then [delete your instance](../uab_cloud/instance_setup_basic.md#deleting-an-instance) and [create from image](../uab_cloud/snapshots.md#creating-an-instance-from-an-image).
+    - **No**: [Delete your instance](../uab_cloud/instance_setup_basic.md#deleting-an-instance) and create an instance from the existing volume.
 
 ## Globus
 
