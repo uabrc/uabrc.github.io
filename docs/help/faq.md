@@ -209,11 +209,13 @@ If asked, the simplest way to give us the information is the following. Please v
 
 ## UAB Cloud
 
-### Why is my instance returning an error of "Host not found"?
+### Why is my instance failing to start?
 
-The "Host not found" error is typically due to the amount of requested resources not being available when the instance is initializing. This is especially common for instances requesting GPUs, when no GPUs are free.
+Please see [Instances Failing to Start](../uab_cloud/instance_setup_basic.md#instances-failing-to-start).
 
-When your instances are not being used, please suspend them to free resources for other people who need them.
+### Why does my instance show an error in the Instances table?
+
+Please see [Instances Failing to Start](../uab_cloud/instance_setup_basic.md#instances-failing-to-start).
 
 ### How do I regain access to an instance?
 
