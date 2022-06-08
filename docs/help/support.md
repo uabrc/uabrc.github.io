@@ -27,6 +27,8 @@ Please see our [FAQ](faq.md), especially [How To](faq.md#how-to).
 
 Projects are collaborative data and code storage spaces with controlled access. Any UAB investigator with a legitimate research need can request a project storage space. Please send an email with the following information, depending on what you need.
 
+For more details on project storage, please see our [Storage](../data_management/storage.md) page.
+
 ### New Projects
 
 1. What is the purpose of the project space?
