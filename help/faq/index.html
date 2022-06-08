@@ -1338,6 +1338,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#why-cant-tensorflow-find-a-gpu-on-cheaha" class="md-nav__link">
+    Why can't Tensorflow find a GPU on Cheaha?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1474,6 +1481,26 @@
           <li class="md-nav__item">
   <a href="#why-do-i-need-to-add-the-trailing-to-the-end-of-path-names-in-my-s3-commands" class="md-nav__link">
     Why do I need to add the trailing / to the end of path names in my S3 commands?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitlab" class="md-nav__link">
+    GitLab
+  </a>
+  
+    <nav class="md-nav" aria-label="GitLab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-am-i-not-able-to-remove-researchers-from-repositories" class="md-nav__link">
+    Why am I not able to remove researchers from repositories?
   </a>
   
 </li>
@@ -1637,6 +1664,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#why-cant-tensorflow-find-a-gpu-on-cheaha" class="md-nav__link">
+    Why can't Tensorflow find a GPU on Cheaha?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1782,6 +1816,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gitlab" class="md-nav__link">
+    GitLab
+  </a>
+  
+    <nav class="md-nav" aria-label="GitLab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-am-i-not-able-to-remove-researchers-from-repositories" class="md-nav__link">
+    Why am I not able to remove researchers from repositories?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1870,6 +1924,8 @@
 <p class="admonition-title">Warning</p>
 <p>Deleting the .rstudio directory will delete the workspace you had open, including any scripts that were unsaved. Saved scripts will be fine.</p>
 </div>
+<!-- markdownlint-enable MD046 -->
+
 <h4 id="why-is-my-open-ondemand-rstudio-server-session-giving-me-a-502-or-503-error">Why is my Open OnDemand RStudio Server session giving me a 502 or 503 error?<a class="headerlink" href="#why-is-my-open-ondemand-rstudio-server-session-giving-me-a-502-or-503-error" title="Permanent link">&para;</a></h4>
 <p>See <a href="#why-do-i-get-a-gray-screen-after-launching-my-ood-rstudio-server-session">here</a>.</p>
 <h4 id="why-is-my-anaconda-environment-not-appearing-in-my-jupyter-notebook-kernels">Why is my Anaconda environment not appearing in my Jupyter Notebook kernels?<a class="headerlink" href="#why-is-my-anaconda-environment-not-appearing-in-my-jupyter-notebook-kernels" title="Permanent link">&para;</a></h4>
@@ -1891,6 +1947,12 @@
 </ul>
 <h4 id="why-am-i-seeing-an-invalidaccount-error-when-submitting-jobs-when-i-could-submit-jobs-fine-previously">Why am I seeing an InvalidAccount error when submitting jobs when I could submit jobs fine previously?<a class="headerlink" href="#why-am-i-seeing-an-invalidaccount-error-when-submitting-jobs-when-i-could-submit-jobs-fine-previously" title="Permanent link">&para;</a></h4>
 <p>If you see this error when submitting jobs, please <a href="../support/#how-to-request-support">contact support</a>. There are a few causes for this error that will need to be investigated.</p>
+<h4 id="why-cant-tensorflow-find-a-gpu-on-cheaha">Why can't Tensorflow find a GPU on Cheaha?<a class="headerlink" href="#why-cant-tensorflow-find-a-gpu-on-cheaha" title="Permanent link">&para;</a></h4>
+<p>When using Tensorflow on Cheaha, if you see an error like <code>Not creating XLA devices, tf_xla_enable_xla_devices not set</code> or are unable to find the GPU, check the following.</p>
+<ul>
+<li>Ensure you are correctly requesting <a href="../../cheaha/slurm/gpu/">GPUs</a> with the <a href="../../cheaha/slurm/introduction/">SLURM</a> flag <code>--gres=gpu:1</code>. Change <code>1</code> to the appropriate number of GPUs needed. Check our <a href="../../cheaha/hardware/">Hardware</a> page for limits.</li>
+<li>Ensure you are loading the appropriate CUDA toolkit using e.g. <code>module load cuda11.2/toolkit/11.1.2</code>. You can check which modules are available using <code>module avail toolkit</code> at the terminal. Be sure you are loading the correct module. To check which module is required for your version of Tensorflow, see the toolkit requirements chart here <a href="https://www.tensorflow.org/install/source#gpu">https://www.tensorflow.org/install/source#gpu</a>.</li>
+</ul>
 <h3 id="issues-in-progress">Issues in Progress<a class="headerlink" href="#issues-in-progress" title="Permanent link">&para;</a></h3>
 <p>This section gives workarounds for some issues that are currently being investigated by the team. Once the issue has been resolved, the section will be updated with the permanent fix.</p>
 <h4 id="why-are-my-r-packages-not-installing-correctly-using-the-rstudio-app">Why are my R Packages Not Installing Correctly Using the RStudio App<a class="headerlink" href="#why-are-my-r-packages-not-installing-correctly-using-the-rstudio-app" title="Permanent link">&para;</a></h4>
@@ -2009,6 +2071,16 @@
 <h2 id="long-term-storage">Long-Term Storage<a class="headerlink" href="#long-term-storage" title="Permanent link">&para;</a></h2>
 <h3 id="why-do-i-need-to-add-the-trailing-to-the-end-of-path-names-in-my-s3-commands">Why do I need to add the trailing / to the end of path names in my S3 commands?<a class="headerlink" href="#why-do-i-need-to-add-the-trailing-to-the-end-of-path-names-in-my-s3-commands" title="Permanent link">&para;</a></h3>
 <p>In the Unix file system, the <code>/</code> is a protected character the specifies a branch in the file tree, and so <code>/</code> cannot be used in the name of a file or folder. This is not the case for S3 storage. Everything in S3 storage is stored at the top level of the bucket no matter the source's file and folder structure. However, people have become so used to having a folder structure and how it provides an organization system, so S3 interfaces pretend to have one. When a folder is uploaded, the files in the folder will have that folder name appended to the beginning of the file name along with the <code>/</code> separator. Same for if files are uploaded to existing "folders" in S3. These paths are called prefixes in S3 terms. Because <code>/</code> is not protected in S3, all of the <code>/</code> characters in a path are included with the prefix, so if you want to perform a command on a prefix in S3, you must include the trailing <code>/</code> because it is actually a part of the prefix name.</p>
+<h2 id="gitlab">GitLab<a class="headerlink" href="#gitlab" title="Permanent link">&para;</a></h2>
+<h3 id="why-am-i-not-able-to-remove-researchers-from-repositories">Why am I not able to remove researchers from repositories?<a class="headerlink" href="#why-am-i-not-able-to-remove-researchers-from-repositories" title="Permanent link">&para;</a></h3>
+<p>If you are not able to remove one or more researchers from a given repository, please check the following. Individual researchers can be members of a group, of a subgroup, of a repository inside groups and subgroups, or any combination. Be aware that GitLab repositories can inherity membership from groups.</p>
+<ul>
+<li>Is the affected repository part of a group or subgroup?<ul>
+<li>If yes, try removing the researcher from the group or subgroup. Work your way up any nested subgroups if it continues to fail.</li>
+<li>If no, please contact <a href="../support/">Support</a>.</li>
+</ul>
+</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
