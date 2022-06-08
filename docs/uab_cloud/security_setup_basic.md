@@ -10,7 +10,7 @@ These instructions show you how to prepare to use SSH with your instances. At a 
 
 ## Creating a Security Group
 
-Security Groups are used to set rules for how external devices can connect to your instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. Security groups may be reused across multiple instances.
+Security Groups are used to set rules for how external devices can connect to your instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. Applications you develop may need other ports opened, so you may need to create additional security groups to handle those. Security groups may be reused across multiple instances.
 
 1. Click "Networks" in the left-hand navigation pane to open the fold-out menu.
 
@@ -111,7 +111,7 @@ Using a password protected Key Pair is highly recommended for additional securit
 
 4. Fill out the dialog box.
 
-    1. Enter a "Key Pair Name".
+    1. Enter a "Key Pair Name". See [Naming Conventions](introduction.md#naming-conventions).
 
     2. Select "SSH Key" in the "Key Type" drop down box.
 
@@ -139,7 +139,7 @@ To generate a key pair, see instructions located at [Generating Key Pairs](./clo
 
 2. Fill out the dialog box.
 
-    1. Enter a "Key Pair Name".
+    1. Enter a "Key Pair Name". See [Naming Conventions](introduction.md#naming-conventions).
     2. Select "SSH Key" in the "Key Type" drop-down box.
     3. Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
 

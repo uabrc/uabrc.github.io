@@ -31,7 +31,7 @@ These instructions require that you've set up a [Network](./network_setup_basic.
 
 5. "Details" tab.
 
-    1. Enter an "Instance Name".
+    1. Enter an "Instance Name". See [Naming Conventions](introduction.md#naming-conventions).
     2. Enter a "Description".
     3. Select "nova" in the "Availability Zone" drop down box.
     4. Select "1" in the "Count" field.

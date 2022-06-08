@@ -18,3 +18,13 @@ Cloud.rc runs on Openstack. If you are new to Openstack or to cloud.rc, it is hi
 4. [Volumes](volume_setup_basic.md) (optional)
 
 The tutorial is intended to be followed in this order. Doing it out of order may result in errors and issues. If you encounter any unexpected issues, unclear instructions or have questions or comments, please contact [Support](../help/support.md). Otherwise, feel free to start the tutorial with [Networks](network_setup_basic.md).
+
+## Naming Conventions
+
+Entities on cloud.rc must be named a certain way or difficult-to-diagnose errors may occur. Entities includes instances, volumes, networks, routers, and anything else that you are allowed to give a name to.
+
+Please use the following rules when naming entities:
+
+- Must: use only letters, numbers, dash `-` and underscore `_`.
+- Must: have the first character in the name be a letter.
+- Should: use short, descriptive, memorable names.
