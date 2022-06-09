@@ -40,6 +40,7 @@ plugins:
         account_management/uab_researcher.md: account_management/cheaha_account.md
         welcome/rc_days.md: education/rc_days.md
         welcome/welcome.md: index.md
+        cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
 
 nav:
   - Home: index.md
