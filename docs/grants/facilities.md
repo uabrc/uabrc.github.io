@@ -1,1 +1,9 @@
+# UAB Cyberinfrastructure Plan and Grant Facilities Document
+
 UAB IT Research Computing maintains high performance compute (HPC) and storage resources for investigators. The Cheaha high performance compute cluster provides 8192 CPU cores and 72 GPUs interconnected via an InfiniBand network, providing over 619 TFLOP/s of aggregate theoretical peak performance. A high-performance, 12PB raw GPFS storage on DDN SFA12KX hardware is also connected to these compute nodes via the Infiniband fabric, available to all UAB investigators.
+
+<!-- markdownlint-disable MD046 -->
+!!! construction
+
+    Under construction.
+<!-- markdownlint-enable MD046 -->

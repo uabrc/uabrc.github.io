@@ -4,8 +4,6 @@ repo_url: https://github.com/uabrc/researcher-facing-MkDocs
 theme:
   name: material
   search_index_only: true
-  feature:
-    tabs: true
   custom_dir: theme
   language: en
 
@@ -40,6 +38,7 @@ plugins:
         account_management/uab_researcher.md: account_management/cheaha_account.md
         welcome/rc_days.md: education/rc_days.md
         welcome/welcome.md: index.md
+        cheaha/lmod.md: cheaha/software/lmod.md
 
 nav:
   - Home: index.md
@@ -59,11 +58,18 @@ nav:
           - data_management/transfer/globus.md
           - data_management/transfer/rclone.md
           - data_management/transfer/filezilla.md
+      - Code Storage: data_management/gitlab_vs_github.md
   - Environment Management:
       - environment_management/anaconda_environments.md
+      - environment_management/getting_containers.md
+      - environment_management/getting_software_from_github_or_gitlab.md
+      - environment_management/workflows_managers.md
   - Cheaha User Guide:
       - Getting Started: cheaha/getting_started.md
       - Hardware: cheaha/hardware.md
+      - Software:
+          - cheaha/software/software.md
+          - cheaha/software/lmod.md
       - Open OnDemand:
           - cheaha/open_ondemand/ood_main.md
           - cheaha/open_ondemand/ood_interactive.md
@@ -74,21 +80,34 @@ nav:
           - cheaha/slurm/sbatch_usage.md
           - cheaha/slurm/gpu.md
           - cheaha/slurm/job_management.md
-      - cheaha/lmod.md
       - Anaconda on Cheaha: cheaha/conda.md
   - UAB Cloud:
       - Introduction: uab_cloud/introduction.md
       - Tutorial:
-          - (1) Networks: uab_cloud/network_setup_basic.md
-          - (2) Security Policies: uab_cloud/security_setup_basic.md
-          - (3) Instances: uab_cloud/instance_setup_basic.md
-          - (4) Volumes (optional): uab_cloud/volume_setup_basic.md
+          - Networks: uab_cloud/network_setup_basic.md
+          - Security Policies: uab_cloud/security_setup_basic.md
+          - Instances: uab_cloud/instance_setup_basic.md
+          - Volumes (optional): uab_cloud/volume_setup_basic.md
       - uab_cloud/cloud_remote_access.md
       - uab_cloud/installing_software.md
       - uab_cloud/snapshots.md
+  - UAB Kubernetes:
+      - kubernetes/startup.md
+  - National Research Computing Cyberinfrastructure:
+      - national_ci/osg.md
+      - national_ci/nsf_access.md
+      - national_ci/nih.md
+  - Grants and Contract Resources:
+      - grants/overview.md
+      - grants/facilities.md
+      - grants/budget_buyin.md
+      - grants/publications.md
   - Education & Outreach:
       - education/courses.md
+      - education/social_media.md
+      - education/rc_days.md
+      - education/case_studies.md
+  - Policies: policies.md
   - Help:
       - help/support.md
       - help/faq.md
-  - contributor_guide.md
