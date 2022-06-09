@@ -1,11 +1,9 @@
 # Software Installation
 
-
-## Open On Demand Sandbox App
-
-
 <!-- markdownlint-disable MD046 -->
 !!! construction
 
-    Under construction.
+    This page is a stub and is under construction.
 <!-- markdownlint-enable MD046 -->
+
+## Open On Demand Sandbox App

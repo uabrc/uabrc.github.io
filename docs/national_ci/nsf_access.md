@@ -1,7 +1,7 @@
-# National Science Foundation Cyberinfrastructure
+# National Science Foundation (NSF) Cyberinfrastructure
 
 <!-- markdownlint-disable MD046 -->
 !!! construction
 
-    Under construction.
+    This page is a stub and is under construction.
 <!-- markdownlint-enable MD046 -->

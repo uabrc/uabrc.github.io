@@ -149,7 +149,7 @@ These instructions require that you've set up a [Network](./network_setup_basic.
 
         ![!Manage Floating IP Associations dialog. The form is filled out. The Floating IP Address created earlier is selected under IP Address. The port from the Instance my_instance is selected under Port to be Associated.](./images/instances_017.png)
 
-At this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You can also [Transfer Data](cloud_remote_access.md#data-transfer) to the instance.
+At this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You can also [Transfer Data](remote_access.md#data-transfer) to the instance.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -175,9 +175,9 @@ For instances which fail due to internal reasons, i.e. while using SSH or an app
 
 ## SSH Into the Instance
 
-If you are following the tutorial, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) Once your machine has an ssh client, use the following command. If your image uses an operating system other than Ubuntu, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip), and the value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
+If you are following the tutorial, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You will need to [Install an SSH Client](./remote_access.md#install-an-ssh-client) Once your machine has an ssh client, use the following command. If your image uses an operating system other than Ubuntu, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip), and the value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
 
-You may optionally [Set Up a Configuration File](./cloud_remote_access.md/#setting-up-a-configuration-file).
+You may optionally [Set Up a Configuration File](./remote_access.md/#setting-up-a-configuration-file).
 
 ``` bash
 ssh ubuntu@<floating ip> -i ~/.ssh/<private_key_file>
@@ -188,12 +188,12 @@ ssh ubuntu@<floating ip> -i ~/.ssh/<private_key_file>
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Reusing a floating IP for a new instance can result in a "Remote Host Identification Has Changed" error, preventing connection. Please see [Remove an Invalid Host Fingerprint](./cloud_remote_access.md#remove-an-invalid-host-fingerprint).
+    Reusing a floating IP for a new instance can result in a "Remote Host Identification Has Changed" error, preventing connection. Please see [Remove an Invalid Host Fingerprint](./remote_access.md#remove-an-invalid-host-fingerprint).
 <!-- markdownlint-enable MD046 -->
 
 ### Streamlining SSH
 
-Refer to [Setting up a Configuration File](./cloud_remote_access.md#setting-up-a-configuration-file) in [Cloud Remote Access](./cloud_remote_access.md).
+Refer to [Setting up a Configuration File](./remote_access.md#setting-up-a-configuration-file) in [Cloud Remote Access](./remote_access.md).
 
 ## Next Steps
 

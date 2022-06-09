@@ -2,7 +2,7 @@
 
 RClone is a powerful command line tool for transferring and synchronizing files over the internet between various machines, servers and cloud storage services. It is highly recommended for small to moderate amounts of data. For very large amounts of data consider using [Globus](globus.md) for increased robustness against failure. Where Globus is not available, `rclone` is still suitable.
 
-RClone requires a modest amount of setup time on local machines, but once setup can be used fairly easily. RClone uses the concepts of "remotes", which is an abstract term for any storage service or device that is not physically part of the local machine. Many remotes are offered, including [SFTP](../../uab_cloud/cloud_remote_access.md#sftp) and various [UAB Cloud Storage Solutions](https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options). SFTP may be used to access Cheaha, cloud.rc and other laptop and desktop computers.
+RClone requires a modest amount of setup time on local machines, but once setup can be used fairly easily. RClone uses the concepts of "remotes", which is an abstract term for any storage service or device that is not physically part of the local machine. Many remotes are offered, including [SFTP](../../uab_cloud/remote_access.md#sftp) and various [UAB Cloud Storage Solutions](https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options). SFTP may be used to access Cheaha, cloud.rc and other laptop and desktop computers.
 
 To use RClone effectively, you'll need to setup remotes before using the various commands. Most file manipulation commands on Linux can be found in the RClone commands, but may have slightly different names, e.g. `cp` is `rclone copy`.
 
@@ -12,7 +12,7 @@ RClone is very powerful and, as such, has a wide variety of configuration option
 
 ### Installing on Cheaha
 
-On Cheaha, RClone is already installed as a [Module](../../cheaha/lmod.md). Use `module load rclone` to load it.
+On Cheaha, RClone is already installed as a [Module](../../cheaha/software/lmod.md). Use `module load rclone` to load it.
 
 ### Installing on Linux and cloud.rc
 
@@ -69,7 +69,7 @@ RClone is capable of interfacing with many remote cloud services, as well as usi
 
 RClone connects two personal computers or servers using SFTP which is built on SSH, so a lot of these instructions mirror what would be done with an SSH configuration.
 
-1. [Generate a Key Pair](../../uab_cloud/cloud_remote_access.md#generating-key-pairs) for use with the remote machine.
+1. [Generate a Key Pair](../../uab_cloud/remote_access.md#generating-key-pairs) for use with the remote machine.
 2. At the terminal enter `rclone config`.
 3. Follow the prompts to choose `sftp`.
 4. Enter the following values as they come up, using defaults for other values.

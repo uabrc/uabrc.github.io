@@ -78,7 +78,7 @@ Click "Delete Security Group" again to delete the security group permanently.
 
 ## Creating a Key pair
 
-A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) on your local machine.
+A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./remote_access.md#install-an-ssh-client) on your local machine.
 
 Key Pairs are security devices used to authenticate and connect to a remote machine, like Cheaha or cloud.rc instances, and use [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) to encrypt the connection. As the name suggests, there are two parts: a public key which is placed on the remote machine, and a private key which is kept secret on your personal machine.
 
@@ -129,11 +129,11 @@ Using a password protected Key Pair is highly recommended for additional securit
 
         ![!Key Pairs page. The Key Pairs table has one entry labeled my_key_pair.](./images/key_pairs_004.png)
 
-6. To add the private key on your local machine please see "Add key" under [Add a Private Key](./cloud_remote_access.md#add-a-private-key).
+6. To add the private key on your local machine please see "Add key" under [Add a Private Key](./remote_access.md#add-a-private-key).
 
 ### Generating a Key Pair Locally
 
-To generate a key pair, see instructions located at [Generating Key Pairs](./cloud_remote_access.md#generating-key-pairs).
+To generate a key pair, see instructions located at [Generating Key Pairs](./remote_access.md#generating-key-pairs).
 
 1. Click "Import Public Key" to open a dialog box.
 
@@ -175,7 +175,7 @@ Revoking a key pair from cloud.rc is simple. First, log on to the interface.
 
 3. Find the key pair you wish to revoke and click the "Delete Key Pair" button in that row.
 
-4. Optionally, [Remove the Private Key](./cloud_remote_access.md#remove-a-private-key) from your local machine. This step is not necessary to ensure security, but can help maintain a clean environment.
+4. Optionally, [Remove the Private Key](./remote_access.md#remove-a-private-key) from your local machine. This step is not necessary to ensure security, but can help maintain a clean environment.
 
 ## Continuing the Tutorial
 
