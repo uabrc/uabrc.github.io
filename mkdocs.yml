@@ -116,7 +116,7 @@ nav:
       - Offered Courses: education/courses.md
       - Social Media: education/social_media.md
   - Policies: policies.md
+  - Contributing To The Docs: contributor_guide.md
   - Help:
       - Support: help/support.md
       - FAQ: help/faq.md
-  - Contributing: contributor_guide.md
