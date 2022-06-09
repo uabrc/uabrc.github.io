@@ -36,7 +36,7 @@ Once you have it installed and open, Cyberduck will look like this:
 
 ### Creating a Connection
 
-First, download the [UAB CyberDuck Connection Profile](UAB_S3_Object_Storage.cyberduckprofile). After it's downloaded, double click the file to open it in Cyberduck. It will open the following connection creation window:
+First, download the [UAB CyberDuck Connection Profile](res/UAB_S3_Object_Storage.cyberduckprofile). After it's downloaded, double click the file to open it in Cyberduck. It will open the following connection creation window:
 
 ![!Cyberduck UAB Connection Creation ><](images/cyberduck-open-connection.png)
 
