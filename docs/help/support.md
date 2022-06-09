@@ -27,6 +27,8 @@ Please see our [FAQ](faq.md), especially [How To](faq.md#how-to).
 
 Projects are collaborative data and code storage spaces with controlled access. Any UAB investigator with a legitimate research need can request a project storage space. Please send an email with the following information, depending on what you need.
 
+For more details on project storage, please see our [Storage](../data_management/storage.md) page.
+
 ### New Projects
 
 1. What is the purpose of the project space?
@@ -46,7 +48,7 @@ Projects are collaborative data and code storage spaces with controlled access. 
 
 ### How do I request new software installed?
 
-Before making a request for new software on Cheaha, please try searching our [modules](../cheaha/lmod.md) or searching for packages on [Anaconda](../environment_management/anaconda_environments.md).
+Before making a request for new software on Cheaha, please try searching our [modules](../cheaha/software/lmod.md) or searching for packages on [Anaconda](../workflow_solutions/using_anaconda.md).
 
 If you are not able to find a suitable module or package and would like a new piece of software installed on Cheaha, please [create a ticket](#how-do-i-create-a-support-ticket) with the name of the software, the version number, and a link to the installation instructions.
 

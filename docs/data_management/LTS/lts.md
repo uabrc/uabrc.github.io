@@ -98,7 +98,7 @@ The instructions for setting up a remote connection with rclone can be found in 
 
 #### s3cmd
 
-s3cmd can be easily installed via an [Anaconda environment](../../environment_management/anaconda_environments.md). Create the environment, activate it, then install using:
+s3cmd can be easily installed via an [Anaconda environment](../../workflow_solutions/using_anaconda.md). Create the environment, activate it, then install using:
 
 ``` bash
 pip install s3cmd

@@ -68,7 +68,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 ```
 
-[Anaconda](../cheaha/conda.md) is managed as a [Module](../cheaha/lmod.md) on [Cheaha](../cheaha/getting_started.md), so it is unnecessary to use `conda init`, and can cause issues with [Open OnDemand](../cheaha/open_ondemand/ood_main.md). To avoid the issue reoccurring, please do not use `conda init` on Cheaha.
+[Anaconda](../cheaha/conda.md) is managed as a [Module](../cheaha/software/lmod.md) on [Cheaha](../cheaha/getting_started.md), so it is unnecessary to use `conda init`, and can cause issues with [Open OnDemand](../cheaha/open_ondemand/ood_main.md). To avoid the issue reoccurring, please do not use `conda init` on Cheaha.
 
 To resolve this issue, you'll need to [locate the hidden file](#how-do-i-locate-hidden-dot-files-on-cheaha) `.bashrc` in the file browser pane and select it.
 
@@ -88,6 +88,7 @@ Most commonly, delays in launching Open OnDemand RStudio Server are caused by a 
 !!! warning
 
     Deleting the .rstudio directory will delete the workspace you had open, including any scripts that were unsaved. Saved scripts will be fine.
+<!-- markdownlint-enable MD046 -->
 
 #### Why is my Open OnDemand RStudio Server session giving me a 502 or 503 error?
 
@@ -95,7 +96,7 @@ See [here](#why-do-i-get-a-gray-screen-after-launching-my-ood-rstudio-server-ses
 
 #### Why is my Anaconda environment not appearing in my Jupyter Notebook kernels?
 
-See [here](../environment_management/anaconda_environments.md#packages-for-jupyter).
+See [here](../workflow_solutions/using_anaconda.md#packages-for-jupyter).
 
 #### What is a segfault error?
 
@@ -125,6 +126,13 @@ If you are using development tools like [Notepad++](https://notepad-plus-plus.or
 #### Why am I seeing an InvalidAccount error when submitting jobs when I could submit jobs fine previously?
 
 If you see this error when submitting jobs, please [contact support](support.md#how-to-request-support). There are a few causes for this error that will need to be investigated.
+
+#### Why can't Tensorflow find a GPU on Cheaha?
+
+When using Tensorflow on Cheaha, if you see an error like `Not creating XLA devices, tf_xla_enable_xla_devices not set` or are unable to find the GPU, check the following.
+
+- Ensure you are correctly requesting [GPUs](../cheaha/slurm/gpu.md) with the [SLURM](../cheaha/slurm/introduction.md) flag `--gres=gpu:1`. Change `1` to the appropriate number of GPUs needed. Check our [Hardware](../cheaha/hardware.md) page for limits.
+- Ensure you are loading the appropriate CUDA toolkit using e.g. `module load cuda11.2/toolkit/11.1.2`. You can check which modules are available using `module avail toolkit` at the terminal. Be sure you are loading the correct module. To check which module is required for your version of Tensorflow, see the toolkit requirements chart here <https://www.tensorflow.org/install/source#gpu>.
 
 ### Issues in Progress
 
@@ -251,3 +259,13 @@ For more information on Globus file permissions, you can read [their FAQ entry](
 ### Why do I need to add the trailing / to the end of path names in my S3 commands?
 
 In the Unix file system, the `/` is a protected character the specifies a branch in the file tree, and so `/` cannot be used in the name of a file or folder. This is not the case for S3 storage. Everything in S3 storage is stored at the top level of the bucket no matter the source's file and folder structure. However, people have become so used to having a folder structure and how it provides an organization system, so S3 interfaces pretend to have one. When a folder is uploaded, the files in the folder will have that folder name appended to the beginning of the file name along with the `/` separator. Same for if files are uploaded to existing "folders" in S3. These paths are called prefixes in S3 terms. Because `/` is not protected in S3, all of the `/` characters in a path are included with the prefix, so if you want to perform a command on a prefix in S3, you must include the trailing `/` because it is actually a part of the prefix name.
+
+## GitLab
+
+### Why am I not able to remove researchers from repositories?
+
+If you are not able to remove one or more researchers from a given repository, please check the following. Individual researchers can be members of a group, of a subgroup, of a repository inside groups and subgroups, or any combination. Be aware that GitLab repositories can inherity membership from groups.
+
+- Is the affected repository part of a group or subgroup?
+    - If yes, try removing the researcher from the group or subgroup. Work your way up any nested subgroups if it continues to fail.
+    - If no, please contact [Support](support.md).
