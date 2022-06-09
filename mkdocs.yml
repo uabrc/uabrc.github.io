@@ -37,7 +37,7 @@ plugins:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
         account_management/uab_researcher.md: account_management/cheaha_account.md
-        cheaha/lmod.md: cheaha/software/lmod.md
+        cheaha/lmod.md: cheaha/software/modules.md
         data_management/LTS/lts.md: data_management/lts/lts.md
         data_management/LTS/sharing.md: data_management/lts/sharing.md
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
@@ -75,7 +75,7 @@ nav:
       - Getting Started: cheaha/getting_started.md
       - Hardware: cheaha/hardware.md
       - Software:
-          - Preinstalled Modules: cheaha/software/lmod.md
+          - Preinstalled Modules: cheaha/software/modules.md
           - Self-Installed Software: cheaha/software/software.md
       - Open OnDemand:
           - Homepage: cheaha/open_ondemand/ood_main.md

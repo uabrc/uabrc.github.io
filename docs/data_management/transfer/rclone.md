@@ -12,7 +12,7 @@ RClone is very powerful and, as such, has a wide variety of configuration option
 
 ### Installing on Cheaha
 
-On Cheaha, RClone is already installed as a [Module](../../cheaha/software/lmod.md). Use `module load rclone` to load it.
+On Cheaha, RClone is already installed as a [Module](../../cheaha/software/modules.md). Use `module load rclone` to load it.
 
 ### Installing on Linux and cloud.rc
 
