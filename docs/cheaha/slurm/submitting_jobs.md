@@ -107,13 +107,7 @@ To test the script below, copy and paste it into a plain text file `testarrayjob
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 ```
 
-This script is very similar to the one above, but will submit 8 jobs to the scheduler that all do slightly different things. Each of the 8 jobs will have the same amount and type of resources allocated, and can run in parallel. The 8 jobs come from `--array=0-7`. The output of each job will be one of the numbers in the set `{0, 1, 2, 3, 4, 5, 6, 7}`, depending on which job is running. The output files will look like `test_$(SLURM_ARRAY_JOB_ID)_$(SLURM_ARRAY_TASK_ID).out` or `.err`. The value of `$(SLURM_ARRAY_JOB_ID)` is the main Job ID given to the entire array submission..
-
-<!-- markdownlint-disable MD046 -->
-!!! note
-
-    It is crucial to note that shell arrays use 0-based indexing, so plan your `--array` flag indices accordingly.
-<!-- markdownlint-enable MD046 -->
+This script is very similar to the one above, but will submit 8 jobs to the scheduler that all do slightly different things. Each of the 8 jobs will have the same amount and type of resources allocated, and can run in parallel. The 8 jobs come from `--array=0-7`. The output of each job will be one of the numbers in the set `{0, 1, 2, 3, 4, 5, 6, 7}`, depending on which job is running. The output files will look like `test_$(SLURM_ARRAY_JOB_ID)_$(SLURM_ARRAY_TASK_ID).out` or `.err`. The value of `$(SLURM_ARRAY_JOB_ID)` is the main Job ID given to the entire array submission.
 
 Scripts can be written to take advantage of the `$SLURM_ARRAY_TASK_ID` variable indexing variable. For example, a project could have a list of participants that should be processed in the same way, and the analysis script uses the array task ID as an index to pull out one entry from that list for each job. Many common programming languages can interact with shell variables like `$SLURM_ARRAY_TASK_ID`, or the values can be passed to a program as an argument.
 
@@ -128,6 +122,12 @@ sbatch --array=0-6:2 array.sh
 ```
 
 For more details on using `sbatch` please see the [official documentation](https://slurm.schedmd.com/sbatch.html).
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    If you are using bash or shell arrays, it is crucial to note they use 0-based indexing. Plan your `--array` flag indices accordingly.
+<!-- markdownlint-enable MD046 -->
 
 ## Interactive Jobs with `srun` at the Terminal
 

@@ -46,6 +46,7 @@ plugins:
         uab_cloud/cloud_remote_access.md: uab_cloud/remote_access.md
         welcome/rc_days.md: education/research_computing_days.md
         welcome/welcome.md: index.md
+        cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
 
 nav:
   - Home: index.md
@@ -84,7 +85,7 @@ nav:
           - Job Composer: cheaha/open_ondemand/ood_jobs.md
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md
-          - Submitting Jobs: cheaha/slurm/sbatch_usage.md
+          - Submitting Jobs: cheaha/slurm/submitting_jobs.md
           - Managing Jobs: cheaha/slurm/job_management.md
           - GPUs: cheaha/slurm/gpu.md
       - Job Efficiency: cheaha/job_efficiency.md
