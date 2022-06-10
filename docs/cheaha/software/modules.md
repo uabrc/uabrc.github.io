@@ -52,6 +52,14 @@ If you want to revert to the default modules, you can use:
 module reset
 ```
 
+## Licensed and Commercial Software Restrictions
+
+The following software have license restrictions that may preclude some researchers or collaborators depending on their departmental or group affiliations. In the table, "affiliated" means employed by, or a student of, unless otherwise noted. External collaborators are not considered affiliated with UAB for the purposes of software licensing and access unless otherwise noted. These software packages may be commercial paid software. If you believe you should have access to software that you do not have access to, please contact [Support](../../help/support.md).
+
+{{ read_csv('cheaha/software/res/restricted_software.csv', keep_default_na=False) }}
+
+Use of these software packages without authorization may be a violation of the [UAB IT Acceptable Use Policy](../../policies.md#acceptable-use-policy-aup).
+
 ## Security Issues
 
 ### IGV
