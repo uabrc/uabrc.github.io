@@ -30,7 +30,7 @@ Anaconda on Cheaha works like it does on any other system, once the module has b
     Do not use `conda init` on Cheaha! Anaconda is managed as a [module](./software/modules.md), including script setup. Using `conda init` can cause hard-to-diagnose issues with [Open OnDemand Interactive Jobs](./open_ondemand/ood_interactive.md). Please see our [FAQ](../help/faq.md#why-do-i-get-an-error-when-i-try-to-launch-an-hpc-interactive-session) for how to undo what `conda init` does.
 <!-- markdownlint-disable MD046 -->
 
-For more information on usage with examples, see [Anaconda Environments]](../workflow_solutions/using_anaconda.md).
+For more information on usage with examples, see [Anaconda Environments](../workflow_solutions/using_anaconda.md).
 
 ## Using Mamba
 
