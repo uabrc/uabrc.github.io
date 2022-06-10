@@ -36,7 +36,7 @@ Once you have it installed and open, Cyberduck will look like this:
 
 ### Creating a Connection
 
-First, download the [UAB CyberDuck Connection Profile](UAB S3 Object Storage.cyberduckprofile). After it's downloaded, double click the file to open it in Cyberduck. It will open the following connection creation window:
+First, download the [UAB CyberDuck Connection Profile](res/UAB_S3_Object_Storage.cyberduckprofile). After it's downloaded, double click the file to open it in Cyberduck. It will open the following connection creation window:
 
 ![!Cyberduck UAB Connection Creation ><](images/cyberduck-open-connection.png)
 
@@ -98,7 +98,7 @@ The instructions for setting up a remote connection with rclone can be found in 
 
 #### s3cmd
 
-s3cmd can be easily installed via an [Anaconda environment](../../environment_management/anaconda_environments.md). Create the environment, activate it, then install using:
+s3cmd can be easily installed via an [Anaconda environment](../../workflow_solutions/using_anaconda.md). Create the environment, activate it, then install using:
 
 ``` bash
 pip install s3cmd
