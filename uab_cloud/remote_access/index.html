@@ -1,0 +1,2361 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+    
+    
+      
+        <title>Remote Access - UAB Research Computing</title>
+      
+    
+    
+
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+<link rel="stylesheet" href="../../css/lightgallery.min.css" />
+
+    
+
+<script src="../../js/lightgallery.min.js"></script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#remote-access-to-instances" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UAB Research Computing" class="md-header__button md-logo" aria-label="UAB Research Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAB Research Computing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Remote Access
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uabrc/researcher-facing-MkDocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UAB Research Computing" class="md-nav__button md-logo" aria-label="UAB Research Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAB Research Computing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uabrc/researcher-facing-MkDocs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Account Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Account Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Account Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/cheaha_account/" class="md-nav__link">
+        Cheaha Account
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          External Collaborator Accounts (XIAS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="External Collaborator Accounts (XIAS)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          External Collaborator Accounts (XIAS)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/xias_users/" class="md-nav__link">
+        Managing Guests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/xias_sites/" class="md-nav__link">
+        Managing Projects & Sites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/xias_guest/" class="md-nav__link">
+        Instructions for Guests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../account_management/gitlab_account/" class="md-nav__link">
+        Gitlab Account
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Data Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/storage/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Long Term Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Long Term Storage" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Long Term Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/lts/lts/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/lts/sharing/" class="md-nav__link">
+        Sharing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Transfer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Transfer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Transfer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/transfer/globus/" class="md-nav__link">
+        Globus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/transfer/rclone/" class="md-nav__link">
+        RClone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/transfer/filezilla/" class="md-nav__link">
+        FileZilla
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_management/code_storage/" class="md-nav__link">
+        Code Storage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Workflow Solutions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Workflow Solutions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Workflow Solutions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow_solutions/using_anaconda/" class="md-nav__link">
+        Using Anaconda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow_solutions/using_workflow_managers/" class="md-nav__link">
+        Using Workflow Managers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow_solutions/getting_containers/" class="md-nav__link">
+        Getting Containers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow_solutions/getting_software_with_git/" class="md-nav__link">
+        Getting Software from GitHub and GitLab
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Cheaha Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheaha Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cheaha Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/software/modules/" class="md-nav__link">
+        Preinstalled Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/software/software/" class="md-nav__link">
+        Self-Installed Software
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4">
+          Open OnDemand
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Open OnDemand" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Open OnDemand
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/open_ondemand/ood_main/" class="md-nav__link">
+        Homepage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/open_ondemand/ood_files/" class="md-nav__link">
+        File Browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/open_ondemand/ood_interactive/" class="md-nav__link">
+        Interactive Apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/open_ondemand/ood_jobs/" class="md-nav__link">
+        Job Composer
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          SLURM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SLURM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          SLURM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/slurm/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/slurm/sbatch_usage/" class="md-nav__link">
+        Submitting Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/slurm/job_management/" class="md-nav__link">
+        Managing Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/slurm/gpu/" class="md-nav__link">
+        GPUs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/job_efficiency/" class="md-nav__link">
+        Job Efficiency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheaha/conda/" class="md-nav__link">
+        Anaconda on Cheaha
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          UAB Cloud (cloud.rc) Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="UAB Cloud (cloud.rc) Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          UAB Cloud (cloud.rc) Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_setup_basic/" class="md-nav__link">
+        (1) Networks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security_setup_basic/" class="md-nav__link">
+        (2) Security Policies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instance_setup_basic/" class="md-nav__link">
+        (3) Instances
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volume_setup_basic/" class="md-nav__link">
+        (4) Volumes (optional)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Remote Access
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Remote Access
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-via-ssh" class="md-nav__link">
+    Command Line via SSH
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Line via SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-an-ssh-client" class="md-nav__link">
+    Install an SSH Client
+  </a>
+  
+    <nav class="md-nav" aria-label="Install an SSH Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-an-ssh-client-linux" class="md-nav__link">
+    Install an SSH Client  (Linux)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-an-ssh-client-macos" class="md-nav__link">
+    Install an SSH Client  (MacOS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-an-ssh-client-windows" class="md-nav__link">
+    Install an SSH Client (Windows)
+  </a>
+  
+    <nav class="md-nav" aria-label="Install an SSH Client (Windows)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-subsystem-for-linux-wsl" class="md-nav__link">
+    Windows Subsystem For Linux (WSL)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openssh-for-windows" class="md-nav__link">
+    OpenSSH for Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-bash-terminal-git-for-windows" class="md-nav__link">
+    Git Bash terminal (Git for Windows)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-key-pairs" class="md-nav__link">
+    Generating Key Pairs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-keys" class="md-nav__link">
+    Managing Keys
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-ssh-agent-for-a-single-session" class="md-nav__link">
+    Starting the SSH Agent for a Single Session
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-private-key" class="md-nav__link">
+    Add a Private Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-a-private-key" class="md-nav__link">
+    Remove a Private Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-a-new-public-key-file-to-a-remote-machine" class="md-nav__link">
+    Push a New Public Key File to a Remote Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-an-invalid-host-fingerprint" class="md-nav__link">
+    Remove an Invalid Host Fingerprint
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-a-configuration-file" class="md-nav__link">
+    Setting up a Configuration File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-client-usage" class="md-nav__link">
+    SSH Client Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphical-interface" class="md-nav__link">
+    Graphical Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphical Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobaxterm" class="md-nav__link">
+    MobaXTerm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-transfer" class="md-nav__link">
+    Data Transfer
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Transfer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    SCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sftp" class="md-nav__link">
+    SFTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rclone" class="md-nav__link">
+    RClone
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_software/" class="md-nav__link">
+        Installing Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snapshots/" class="md-nav__link">
+        Snapshots and Images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          UAB Kubernetes Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="UAB Kubernetes Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          UAB Kubernetes Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kubernetes/startup/" class="md-nav__link">
+        Startup
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          National Research Computing Cyberinfrastructure
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="National Research Computing Cyberinfrastructure" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          National Research Computing Cyberinfrastructure
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../national_ci/osg/" class="md-nav__link">
+        The Open Science Grid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../national_ci/nsf_access/" class="md-nav__link">
+        NSF Cyberinfrastructure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../national_ci/nih/" class="md-nav__link">
+        NIH Cyberinfrastructure
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Grants & Contracts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Grants & Contracts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Grants & Contracts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grants/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grants/facilities/" class="md-nav__link">
+        Facilities and Plan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grants/budgets/" class="md-nav__link">
+        Budgeting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grants/publications/" class="md-nav__link">
+        Descriptions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Education & Outreach
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Education & Outreach" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Education & Outreach
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../education/case_studies/" class="md-nav__link">
+        Case Studies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../education/research_computing_days/" class="md-nav__link">
+        Research Computing Days
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../education/courses/" class="md-nav__link">
+        Offered Courses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../education/social_media/" class="md-nav__link">
+        Social Media
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/" class="md-nav__link">
+        Policies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributor_guide/" class="md-nav__link">
+        Contributing To The Docs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13">
+          Help
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Help" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Help
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-via-ssh" class="md-nav__link">
+    Command Line via SSH
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Line via SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-an-ssh-client" class="md-nav__link">
+    Install an SSH Client
+  </a>
+  
+    <nav class="md-nav" aria-label="Install an SSH Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-an-ssh-client-linux" class="md-nav__link">
+    Install an SSH Client  (Linux)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-an-ssh-client-macos" class="md-nav__link">
+    Install an SSH Client  (MacOS)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-an-ssh-client-windows" class="md-nav__link">
+    Install an SSH Client (Windows)
+  </a>
+  
+    <nav class="md-nav" aria-label="Install an SSH Client (Windows)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-subsystem-for-linux-wsl" class="md-nav__link">
+    Windows Subsystem For Linux (WSL)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openssh-for-windows" class="md-nav__link">
+    OpenSSH for Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-bash-terminal-git-for-windows" class="md-nav__link">
+    Git Bash terminal (Git for Windows)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-key-pairs" class="md-nav__link">
+    Generating Key Pairs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-keys" class="md-nav__link">
+    Managing Keys
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-ssh-agent-for-a-single-session" class="md-nav__link">
+    Starting the SSH Agent for a Single Session
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-private-key" class="md-nav__link">
+    Add a Private Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-a-private-key" class="md-nav__link">
+    Remove a Private Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push-a-new-public-key-file-to-a-remote-machine" class="md-nav__link">
+    Push a New Public Key File to a Remote Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-an-invalid-host-fingerprint" class="md-nav__link">
+    Remove an Invalid Host Fingerprint
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-a-configuration-file" class="md-nav__link">
+    Setting up a Configuration File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-client-usage" class="md-nav__link">
+    SSH Client Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphical-interface" class="md-nav__link">
+    Graphical Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphical Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobaxterm" class="md-nav__link">
+    MobaXTerm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-transfer" class="md-nav__link">
+    Data Transfer
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Transfer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    SCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sftp" class="md-nav__link">
+    SFTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rclone" class="md-nav__link">
+    RClone
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/uabrc/researcher-facing-MkDocs/edit/master/docs/uab_cloud/remote_access.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="remote-access-to-instances">Remote Access to Instances<a class="headerlink" href="#remote-access-to-instances" title="Permanent link">&para;</a></h1>
+<p>All of the access methods described below are built on top of <code>ssh</code> and require completion of the steps in <a href="../security_setup_basic/">Basic Security Setup</a> to use with <code>cloud.rc</code>. Some of these steps are referenced in that document.</p>
+<h2 id="command-line-via-ssh">Command Line via SSH<a class="headerlink" href="#command-line-via-ssh" title="Permanent link">&para;</a></h2>
+<p>SSH stands for <strong>S</strong>ecure <strong>SH</strong>ell and is a powerful tool for executing terminal commands on remote machines. It is widely used and ubiquitous, and a number of other technologies are built on top of SSH, like <code>sftp</code> and <code>scp</code> for transferring files. It is also the primary mode of command line communication with Research Computing technologies like Cheaha and cloud.rc.</p>
+<h3 id="install-an-ssh-client">Install an SSH Client<a class="headerlink" href="#install-an-ssh-client" title="Permanent link">&para;</a></h3>
+<p>There are two main steps to working with SSH efficiently. The first is to ensure you have an SSH client installed, which will let your local machine communicate with remote machines. The second is to ensure you have <code>ssh-agent</code> running in each terminal window to automate management of key files. The <code>ssh-agent</code> software comes with most SSH clients, but does not always run automatically. How to start the <code>ssh-agent</code> software automatically varies depending on operating system and shell flavor, which we will describe below.</p>
+<h4 id="install-an-ssh-client-linux">Install an SSH Client  (Linux)<a class="headerlink" href="#install-an-ssh-client-linux" title="Permanent link">&para;</a></h4>
+<p>Virtually all Linux distributions come with SSH preinstalled and configured appropriately for ease of use, including automatically starting the <code>ssh-agent</code>.</p>
+<h3 id="install-an-ssh-client-macos">Install an SSH Client  (MacOS)<a class="headerlink" href="#install-an-ssh-client-macos" title="Permanent link">&para;</a></h3>
+<p>MacOS comes with an SSH client installed.</p>
+<p>If you are on version Leopard <code>10.5.1</code> or lower, you may want to have the <code>ssh-agent</code> start automatically using the command <code>sudo touch /var/db/useLS</code> at a terminal window. Versions newer than Leopard <code>10.5.1</code> start the <code>ssh-agent</code> automatically.</p>
+<h3 id="install-an-ssh-client-windows">Install an SSH Client (Windows)<a class="headerlink" href="#install-an-ssh-client-windows" title="Permanent link">&para;</a></h3>
+<p>There are several options for installing an SSH client on Windows, described below. It is highly recommended to install Windows Subsystem for Linux (WSL) as it provides a complete Linux environment within Windows.</p>
+<h4 id="windows-subsystem-for-linux-wsl">Windows Subsystem For Linux (WSL)<a class="headerlink" href="#windows-subsystem-for-linux-wsl" title="Permanent link">&para;</a></h4>
+<p>Follow the instructions starting <a href="https://docs.microsoft.com/en-us/windows/wsl/about">here</a> to install Windows Subsystem for Linux.</p>
+<p>WSL shells do not automatically start or share the <code>ssh-agent</code>. To fix this we recommend installing <code>keychain</code> to automatically manage the <code>ssh-agent</code>. Run the following command depending on your Linux distribution.</p>
+<ul>
+<li>DEB-based (Debian, Ubuntu): <code>sudo apt install keychain</code></li>
+<li>RPM-based (CentOS, Fedora, openSUSE): <code>sudo yum install keychain</code></li>
+</ul>
+<p>Then modify the <code>.*rc</code> file for your shell, generally <code>.bashrc</code> or <code>.zshrc</code>, to automate the <code>ssh-agent</code> by adding the following line.
+        - <code>eval `keychain -q --eval --agents ssh`</code></p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can access WSL files from within Windows in two ways.</p>
+<p>In the WSL terminal, enter <code>explorer.exe .</code> to open a File Explorer window in the current directory.</p>
+<p>In Windows, open a File Explorer window, click in the top navigation bar and enter <code>\\wsl$</code>. Then select your distribution from the file window to access the filesystem of that WSL operating system.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h4 id="openssh-for-windows">OpenSSH for Windows<a class="headerlink" href="#openssh-for-windows" title="Permanent link">&para;</a></h4>
+<p>Follow the instructions <a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">here</a> to install the OpenSSH client. Only install the OpenSSH server if you need it, otherwise skip that part.</p>
+<p>Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent service on your local machine to streamline adding and using keys.</p>
+<ul>
+<li>Open the Start Menu and search for "Services", and open the result shown in the image.
+    <div class="lightgallery"><a data-sub-html="Searching for services in the start menu." href="../images/openssh_search_services.png"><img alt="Searching for services in the start menu." src="../images/openssh_search_services.png" /></a></div></li>
+<li>Find the "OpenSSH Authentication Agent" service in the list. Double click it, or right-click it and select "Properties".
+    <div class="lightgallery"><a data-sub-html="Services list showing OpenSSH Authentication Agent highlighted." href="../images/openssh_services_list.png"><img alt="Services list showing OpenSSH Authentication Agent highlighted." src="../images/openssh_services_list.png" /></a></div></li>
+<li>In the dialog box, under the "General" tab, look for "Startup Type". Click the drop-down menu and select "Automatic (Delayed Start)". Click "Apply" at the bottom-right corner. This will cause the <code>ssh-agent</code> service to start when Windows starts.</li>
+<li>The "Start" button under the horizontal line should become enabled. Click it to start the <code>ssh-agent</code> service now.
+    <div class="lightgallery"><a data-sub-html="OpenSSH Authentication Agent Properties dialog box." href="../images/openssh_ssh_agent_service_dialog.png"><img alt="OpenSSH Authentication Agent Properties dialog box." src="../images/openssh_ssh_agent_service_dialog.png" /></a></div></li>
+</ul>
+<h4 id="git-bash-terminal-git-for-windows">Git Bash terminal (Git for Windows)<a class="headerlink" href="#git-bash-terminal-git-for-windows" title="Permanent link">&para;</a></h4>
+<p>The fine folks at Git have worked very hard to package everything needed to use Git on Windows into one installer. This includes a Linux command line interface emulator, Bash and SSH. Visit <a href="https://git-scm.com">https://git-scm.com</a> to download and install. Follow the installer instructions. It is recommended to use all of the default installation options. Once installed, locate "Git Bash" on your machine to open the Bash terminal. It should be searchable in the Start Menu.</p>
+<p>To automate running <code>ssh-agent</code> add the following block to the file <code>.bash_profile</code> in the <code>~</code> directory within Git Bash. Then use <code>source .bash_profile</code> to start the <code>ssh-agent</code>, or open a new terminal.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If such a file does not exist, please add it using <code>nano .bash_profile</code> to create a new file in the nano text editor. Copy and paste the block below into the text editor window. The character <code>^</code> means <span class="keys"><kbd class="key-control">Ctrl</kbd></span>. Use <code>^x</code> (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span>) to exit, and continue following the prompts to save the file, using <span class="keys"><kbd class="key-control">Ctrl</kbd></span> shortcuts as needed.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">env</span><span class="o">=</span>~/.ssh/agent.env
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>agent_load_env <span class="o">()</span> <span class="o">{</span> <span class="nb">test</span> -f <span class="s2">&quot;</span><span class="nv">$env</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> . <span class="s2">&quot;</span><span class="nv">$env</span><span class="s2">&quot;</span> &gt;<span class="p">|</span> /dev/null <span class="p">;</span> <span class="o">}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>agent_start <span class="o">()</span> <span class="o">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="o">(</span><span class="nb">umask</span> <span class="m">077</span><span class="p">;</span> ssh-agent &gt;<span class="p">|</span> <span class="s2">&quot;</span><span class="nv">$env</span><span class="s2">&quot;</span><span class="o">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    . <span class="s2">&quot;</span><span class="nv">$env</span><span class="s2">&quot;</span> &gt;<span class="p">|</span> /dev/null <span class="p">;</span> <span class="o">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>agent_load_env
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nv">agent_run_state</span><span class="o">=</span><span class="k">$(</span>ssh-add -l &gt;<span class="p">|</span> /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span> <span class="nb">echo</span> <span class="nv">$?</span><span class="k">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">if</span> <span class="o">[</span> ! <span class="s2">&quot;</span><span class="nv">$SSH_AUTH_SOCK</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="nv">$agent_run_state</span> <span class="o">=</span> <span class="m">2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    agent_start
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    ssh-add
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">elif</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$SSH_AUTH_SOCK</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="nv">$agent_run_state</span> <span class="o">=</span> <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    ssh-add
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">fi</span>
+</code></pre></div>
+<h3 id="generating-key-pairs">Generating Key Pairs<a class="headerlink" href="#generating-key-pairs" title="Permanent link">&para;</a></h3>
+<p>The instructions for generating key pairs are identical for all operating systems. <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">GitHub</a> maintains excellent documentation on generating key pairs. The gist of those instructions follows.</p>
+<ol>
+<li>Open a terminal window.</li>
+<li>Use the command <code>ssh-keygen -t ed25519 -C "your_email@example.com"</code></li>
+<li>You will be prompted to choose a location to store the key, including a file name.</li>
+<li>You will be prompted to enter a passphrase to secure the key. It is highly recommended to secure your key pair with a passphrase to minimize risk.</li>
+</ol>
+<h3 id="managing-keys">Managing Keys<a class="headerlink" href="#managing-keys" title="Permanent link">&para;</a></h3>
+<p>The instructions below are the same for all operating systems with one small exception noted below.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If at any point you encounter an error like below, please check to be sure your <code>ssh-agent</code> is running based on how you <a href="#install-an-ssh-client">Installed your SSH Client</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Could not open a connection to your authentication agent.
+</code></pre></div>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h4 id="starting-the-ssh-agent-for-a-single-session">Starting the SSH Agent for a Single Session<a class="headerlink" href="#starting-the-ssh-agent-for-a-single-session" title="Permanent link">&para;</a></h4>
+<p>If <code>ssh-agent</code> isn't already running and you encounter an error, use the following commands to start the <code>ssh-agent</code> depending on your environment. It is highly recommended to use the most appropriate method described in <a href="#install-an-ssh-client">Install an SSH Client</a> to have <code>ssh-agent</code> start automatically.</p>
+<ul>
+<li>Linux, MacOS, Git Bash, WSL: <code>eval $(ssh-agent -s)</code></li>
+<li>Windows OpenSSH: <code>start-ssh-agent</code></li>
+</ul>
+<h4 id="add-a-private-key">Add a Private Key<a class="headerlink" href="#add-a-private-key" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Move the key file to the <code>.ssh</code> directory under your home directory.</li>
+<li>Navigate to the <code>.ssh</code> folder in a terminal window.</li>
+<li>
+<p>Run <code>ssh-add &lt;private_key_file&gt;</code></p>
+<p><div class="lightgallery"><a data-sub-html="MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent." href="../images/key_pairs_005.png"><img alt="MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent." src="../images/key_pairs_005.png" /></a></div></p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>For Linux users and <a href="https://docs.microsoft.com/en-us/windows/wsl/about">WSL</a> on Windows users. If you experience a <code>Warning: Unprotected Private Key File</code> error when using <code>ssh-add</code>, your <code>ssh</code> file and directory permissions may be incorrect. To fix, please use the following commands.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo chmod <span class="m">600</span> ~/.ssh/&lt;private_key_file&gt;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo chmod <span class="m">644</span> ~/.ssh/known_hosts  <span class="c1"># if you have ever connected to a remote machine</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo chmod <span class="m">644</span> ~/.ssh/config  <span class="c1"># if you have a config file</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>sudo chmod <span class="m">755</span> ~/.ssh
+</code></pre></div>
+</div>
+<!-- markdownlint-enable MD046 -->
+<!-- markdownlint-disable MD046 -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>MacOS allows storing passphrases to the builtin Keychain with a special flag. Use <code>ssh-add -K &lt;path/to/private_key_file&gt;</code> to permanently store the passphrase that goes with the key file.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+</li>
+</ul>
+<h4 id="remove-a-private-key">Remove a Private Key<a class="headerlink" href="#remove-a-private-key" title="Permanent link">&para;</a></h4>
+<p>Run <code>ssh-add -d &lt;path/to/private_key_file&gt;</code></p>
+<h4 id="push-a-new-public-key-file-to-a-remote-machine">Push a New Public Key File to a Remote Machine<a class="headerlink" href="#push-a-new-public-key-file-to-a-remote-machine" title="Permanent link">&para;</a></h4>
+<p>To push a new public key file to a remote machine, please use the <code>ssh-copy-id</code> command. If your <code>ssh-agent</code> is running and has a known-good private key added, then the command below will work as expected and add the <code>&lt;new_public_keyfile&gt;.pub</code> to the remote machine. You must also have the private key counterpart <code>&lt;new_private_keyfile&gt;</code> with the same name as the public key file, without the <code>.pub</code> extension.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh-copy-id -i ~/.ssh/&lt;new_public_keyfile&gt; &lt;user&gt;@&lt;remote_ip&gt;
+</code></pre></div>
+<p>The value <code>&lt;user&gt;</code> should be replaced with the remote user you will login as. The value <code>&lt;remote_ip&gt;</code> should be replaced with the IP address of the remote machine.</p>
+<p>To verify, use <code>ssh -i ~/.ssh/&lt;new_private_keyfile&gt;.pub &lt;user&gt;@&lt;remote_ip&gt;</code>.</p>
+<h4 id="remove-an-invalid-host-fingerprint">Remove an Invalid Host Fingerprint<a class="headerlink" href="#remove-an-invalid-host-fingerprint" title="Permanent link">&para;</a></h4>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>The following command should <strong>only</strong> be run when reusing a floating IP for a new instance in a cloud context. Using it arbitrarily for remote machines you do not control can result in a security breach. Be absolutely certain you trust the source of the key change.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<p>A "Remote Host Identification Has Changed" error can be resolved by using the following command. It looks like the image below.</p>
+<p>Run <code>ssh-keygen -R &lt;hostname&gt;</code> where <code>&lt;hostname&gt;</code> is the URL or IP address of the remote machine.</p>
+<p><div class="lightgallery"><a data-sub-html="image showing remote host identification has changed error" href="../images/instances_ssh_host_key_error.png"><img alt="image showing remote host identification has changed error" src="../images/instances_ssh_host_key_error.png" /></a></div></p>
+<h3 id="setting-up-a-configuration-file">Setting up a Configuration File<a class="headerlink" href="#setting-up-a-configuration-file" title="Permanent link">&para;</a></h3>
+<p>SSH configuration files help streamline the process of logging in to remote terminals by storing commonly-used arguments and flags for each host. To create a configuration file, navigate to your <code>.ssh</code> directory. Create a new plain text file called <code>config</code> with no extension. Open the file and add content like the following. Note that indent matters. Variable values in <code>&lt;&gt;</code> will be replaced with appropriate values before saving.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Host &lt;host&gt;
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  HostName &lt;remote_ip&gt;
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  User &lt;user&gt;
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  IdentityFile &lt;absolute_path_to_private_key_file&gt;
+</code></pre></div>
+<ul>
+<li>Be sure to give a meaningful name under <code>&lt;host&gt;</code> so you can easily refer back to this config later and for ease of typing when using <code>ssh</code> with this configuration. Only letters, numbers, dashes and underscores are allowed, and it must start with a letter.</li>
+<li>The value <code>&lt;remote_ip&gt;</code> can be any remote machine relevant to your work. For cloud.rc it should be whatever IP was assigned in <a href="../network_setup_basic/#creating-a-floating-ip">Creating a Floating IP</a>.</li>
+<li>The value <code>&lt;user&gt;</code> should be whatever user name you will log in as. For cloud.rc, <code>ubuntu</code> or <code>centos</code> are typical, depending on instance operating system.</li>
+<li>The value <code>&lt;path_to_private_key_file&gt;</code> is the absolute path to the private key file, e.g. the path to your <code>.ssh</code> folder followed by the <code>&lt;private_key_file&gt;</code> file name. For cloud.rc this will be whatever private key file was generated in <a href="../security_setup_basic/#creating-a-key-pair">Creating a Key Pair</a>.</li>
+</ul>
+<p>Save the <code>config</code> file. Start a new terminal and use the command <code>ssh &lt;host&gt;</code>, with no other flags, to test.</p>
+<h3 id="ssh-client-usage">SSH Client Usage<a class="headerlink" href="#ssh-client-usage" title="Permanent link">&para;</a></h3>
+<p>If you've <a href="#setting-up-a-configuration-file">Set up a Configuration File</a>, simply use <code>ssh &lt;host&gt;</code>, using the configuration name, to connect.</p>
+<p>If you haven't set up a configuration file, use the following.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ssh &lt;user&gt;@&lt;remote_ip&gt; -i &lt;private_key_file&gt;
+</code></pre></div>
+<p>Where <code>user</code> is the remote username, <code>remote_ip</code> is the IP address of the remote machine, and <code>&lt;private_key_file&gt;</code> is the private key file used for access the remote machine. See <a href="#generating-key-pairs">Generating Key Pairs</a> for general instructions on creating a key pair, or <a href="../security_setup_basic/#creating-a-key-pair">Creating a Key Pair</a> for cloud.rc specific instructions.</p>
+<h2 id="graphical-interface">Graphical Interface<a class="headerlink" href="#graphical-interface" title="Permanent link">&para;</a></h2>
+<h3 id="mobaxterm">MobaXTerm<a class="headerlink" href="#mobaxterm" title="Permanent link">&para;</a></h3>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition construction">
+<p class="admonition-title">Construction</p>
+<p>Under construction.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h2 id="data-transfer">Data Transfer<a class="headerlink" href="#data-transfer" title="Permanent link">&para;</a></h2>
+<h3 id="scp">SCP<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h3>
+<p>SCP stands for <strong>S</strong>ecure <strong>C</strong>o<strong>P</strong>y and works like the <code>cp</code> command, but allows transferring files and directories with remote machines. SCP is built on top of SSH and is installed with most SSH Clients. To install SCP, see <a href="#install-an-ssh-client">Install an SSH Client</a>.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The OpenSSH developers recommend using SFTP instead of SCP. Future releases of OpenSSH will have SCP use SFTP protocol.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<p>The value <code>&lt;user&gt;</code> is the user you will login as on the remote machine <code>&lt;hostname&gt;</code>. Note that if you are using an <a href="#setting-up-a-configuration-file">SSH Configuration File</a> with Host <code>&lt;host&gt;</code>, then replace all of <code>&lt;user&gt;@&lt;hostname&gt;</code> with just <code>&lt;host&gt;</code>, as you would with SSH.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>scp &lt;source_file&gt; &lt;user&gt;@&lt;hostname&gt;:&lt;destination_file&gt;  <span class="c1"># single file</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>scp &lt;source_file&gt; &lt;user&gt;@&lt;hostname&gt;:  <span class="c1"># retains the file name</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>scp -r &lt;source_directory&gt; &lt;user&gt;@&lt;hostname&gt;:&lt;destination_directory&gt;  <span class="c1"># full directory</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>scp -r &lt;source_directory&gt; &lt;user&gt;@&lt;hostname&gt;:  <span class="c1"># retains the directory name</span>
+</code></pre></div>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># file</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>scp script.py cheaha:
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>scp script.py user@cheaha.rc.uab.edu:~/existing/shared_script.py
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>scp script.py user@&lt;cloud_vm_ip&gt;:
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># directory</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>scp -r my_scripts/ user@cheaha.rc.uab.edu:
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>scp -r my_scripts/ cheaha:my_shared_scripts/
+</code></pre></div>
+<h3 id="sftp">SFTP<a class="headerlink" href="#sftp" title="Permanent link">&para;</a></h3>
+<p>SFTP stands for <strong>S</strong>ecure <strong>F</strong>ile <strong>T</strong>ransfer <strong>P</strong>rotocol and allows transferring files and directories with remote machines. SFTP is built on top of SSH and is installed with most SSH Clients. To install SFTP, see <a href="#install-an-ssh-client">Install an SSH Client</a>.</p>
+<p>SFTP works differently from <a href="#scp">SCP</a>, as it has an interactive prompt. When connected to a remote, the prompt <code>sftp&gt;</code> will appears and enable use of SFTP commands. SFTP can also be used in batch mode with the <code>-b &lt;batch_file&gt;</code> argument. The plaintext <code>&lt;batch_file&gt;</code> should contain one SFTP command per line.</p>
+<p>To connect, use <code>sftp &lt;user&gt;@&lt;hostname&gt;</code> where <code>&lt;user&gt;</code> is the user you will login as on the remote machine <code>&lt;hostname&gt;</code>. If you are using an <a href="#setting-up-a-configuration-file">SSH Configuration File</a> with Host <code>&lt;host&gt;</code>, you may use <code>sftp &lt;host&gt;</code>. You may optionally use <code>sftp &lt;host&gt;:/path/to/dir</code> to start in a specific directory.</p>
+<p>Some examples of commands are given below. A complete list is available <a href="https://linux.die.net/man/1/sftp">here</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># general commands</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sftp&gt; <span class="nb">pwd</span>  <span class="c1"># remote current directory</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sftp&gt; lpwd  <span class="c1"># local current directory</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>sftp&gt; ls  <span class="c1"># contents of remote pwd</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>sftp&gt; lls  <span class="c1"># contents of local pwd</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>sftp&gt; mkdir my_dir  <span class="c1"># create my_dir on remote</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>sftp&gt; lmkdir my_dir  <span class="c1"># create my_dir on local</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>sftp&gt; <span class="nb">cd</span> my_dir  <span class="c1"># change directory on remote</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>sftp&gt; lcd my_dir  <span class="c1"># change directory on local</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="c1"># copy to remote</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>sftp&gt; put &lt;local_file&gt; &lt;optional_remote_path&gt;
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>sftp&gt; put -r &lt;local_directory&gt; &lt;optional_remote_path&gt;
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="c1"># if optional remote path is not supplied, uses pwd</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="c1"># file</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>sftp&gt; put script.py  <span class="c1"># copies file to pwd, same name</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>sftp&gt; put script.py shared_script.py  <span class="c1"># copies file to pwd, renames</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>sftp&gt; put script.py all_scripts/  <span class="c1"># copies to pwd existing subdirectory of pwd</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="c1"># directory, must use trailing &#39;/&#39; character!</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>sftp&gt; put -r my_scripts/  <span class="c1"># copies directory to pwd</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>sftp&gt; put -r my_scripts/ all_scripts/  <span class="c1"># copies to existing subdirectory of pwd</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="c1"># copy from remote, same syntax as put, reversed direction</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>sftp&gt; get &lt;remote_file&gt; &lt;optional_local_path&gt;
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>sftp&gt; get -r &lt;remote_directory&gt; &lt;optional_local_path&gt;
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="c1"># if optional local path is not supplied, uses lpwd</span>
+</code></pre></div>
+<h3 id="rclone">RClone<a class="headerlink" href="#rclone" title="Permanent link">&para;</a></h3>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition construction">
+<p class="admonition-title">Construction</p>
+<p>Under construction.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2022</span>
+      
+    
+  </small>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../volume_setup_basic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: (4) Volumes (optional)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              (4) Volumes (optional)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../installing_software/" class="md-footer__link md-footer__link--next" aria-label="Next: Installing Software" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Installing Software
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+
+      <script src="../../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      
+    
+<script>
+  var elements = document.getElementsByClassName("lightgallery");
+  for (var i = 0; i < elements.length; i++) {
+    lightGallery(elements[i]);
+  }
+</script>
+
+  </body>
+</html>
