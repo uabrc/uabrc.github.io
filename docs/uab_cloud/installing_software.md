@@ -2,7 +2,7 @@
 
 An important part of managing instances is the installation of software. This page assumes you have a working instance and can [SSH](./instance_setup_basic.md#ssh-into-the-instance) into it. This page assumes you are using an Ubuntu image.
 
-We highly recommend building your research software stack into a [Container](../environment_management/containers.md). While there is a learning curve and some setup time, containers make replicating and sharing environments simpler. Everything you develop is packaged into a self-contained unit that can be run on virtually any modern Linux system.
+We highly recommend building your research software stack into a [Container](../workflow_solutions/getting_containers.md). While there is a learning curve and some setup time, containers make replicating and sharing environments simpler. Everything you develop is packaged into a self-contained unit that can be run on virtually any modern Linux system.
 
 A particular command `sudo` will be used extensively. Be warned that `sudo` grants any commands used administrator privileges. If you use `sudo` with untrustworthy software, you may be allowing an attacker to compromise your system.
 
@@ -59,7 +59,7 @@ We recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.ht
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    Consider installing [Mamba](../environment_management/anaconda_environments.md#mamba) to speed up environment installation.
+    Consider installing [Mamba](../workflow_solutions/using_anaconda.md#mamba) to speed up environment installation.
 <!-- markdownlint-enable MD046 -->
 
 #### Installing Singularity

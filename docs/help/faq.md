@@ -68,7 +68,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 ```
 
-[Anaconda](../cheaha/conda.md) is managed as a [Module](../cheaha/lmod.md) on [Cheaha](../cheaha/getting_started.md), so it is unnecessary to use `conda init`, and can cause issues with [Open OnDemand](../cheaha/open_ondemand/ood_main.md). To avoid the issue reoccurring, please do not use `conda init` on Cheaha.
+[Anaconda](../cheaha/conda.md) is managed as a [Module](../cheaha/software/modules.md) on [Cheaha](../cheaha/getting_started.md), so it is unnecessary to use `conda init`, and can cause issues with [Open OnDemand](../cheaha/open_ondemand/ood_main.md). To avoid the issue reoccurring, please do not use `conda init` on Cheaha.
 
 To resolve this issue, you'll need to [locate the hidden file](#how-do-i-locate-hidden-dot-files-on-cheaha) `.bashrc` in the file browser pane and select it.
 
@@ -96,7 +96,7 @@ See [here](#why-do-i-get-a-gray-screen-after-launching-my-ood-rstudio-server-ses
 
 #### Why is my Anaconda environment not appearing in my Jupyter Notebook kernels?
 
-See [here](../environment_management/anaconda_environments.md#packages-for-jupyter).
+See [here](../workflow_solutions/using_anaconda.md#packages-for-jupyter).
 
 #### What is a segfault error?
 
