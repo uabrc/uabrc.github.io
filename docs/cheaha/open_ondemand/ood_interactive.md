@@ -85,6 +85,12 @@ To adjust the environment, please use the Environment Setup box to load modules.
 ![!Jupyter Notebook job request form Environment Setup box.](./images/ood_jupyter_notebook_env_setup_box.png)
 
 <!-- markdownlint-disable MD046 -->
+!!! note
+
+    If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
 !!! tip
 
     You do not need `module load Anaconda3` in the `Environment Setup` field, it is loaded automatically.
@@ -101,6 +107,8 @@ To adjust the environment, please use the Environment Setup box to load modules.
 The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
 
 ![!Jupyter Notebook job request form Extra jupyter arguments box.](./images/ood_jupyter_notebook_extra_args_box.png)
+
+#### Submitting the Jupyter Notebook Job
 
 Submitting the job will bring you to the `My Interactive Jobs` window while the Jupyter job is initialized. Click `Connect to Jupyter` to open the Jupyter Home Page.
 
