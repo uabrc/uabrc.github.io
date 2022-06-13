@@ -12,6 +12,10 @@ All users of UAB IT systems, including UAB Research Computing systems, must agre
 
 The list of policies below are those that may be most relevant to typical use cases on UAB Research Computing systems. The list below is not an exhaustive list, and it is the responsibility of each individual using the system to be aware of and follow all relevant policies, whether listed here or not.
 
-### [Acceptable Use Policy (AUP)](https://secure2.compliancebridge.com/uab/public/index.php?fuseaction=print.preview&docID=786)
+### Acceptable Use Policy (AUP)
 
-### [Data Classification](https://www.uab.edu/it/home/policies/data-classification/classification-overview)
+[Acceptable Use Policy](https://secure2.compliancebridge.com/uab/public/index.php?fuseaction=print.preview&docID=786)
+
+### Data Classification
+
+[Data Classification](https://www.uab.edu/it/home/policies/data-classification/classification-overview)
