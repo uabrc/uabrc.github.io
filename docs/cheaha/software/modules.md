@@ -51,3 +51,21 @@ If you want to revert to the default modules, you can use:
 ``` bash
 module reset
 ```
+
+## Security Issues
+
+### IGV
+
+<!-- markdownlint-disable MD046 -->
+!!! danger
+
+    Versions of IGV prior to `2.11.9` use a compromised version of log4j. Those versions are affected by a serious [remote code execution issue](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44832). Please transition your software to use versions of IGV >= `2.11.9`.
+<!-- markdownlint-enable MD046 -->
+
+### GSEA
+
+<!-- markdownlint-disable MD046 -->
+!!! danger
+
+    Versions of GSEA prior to `4.2.3` use a compromised version of log4j. Those versions are affected by a serious [remote code execution issue](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44832). Please transition your software to use versions of GSEA >= `4.2.3`.
+<!-- markdownlint-enable MD046 -->
