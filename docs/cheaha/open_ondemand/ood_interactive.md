@@ -119,7 +119,7 @@ From here, you can navigate to and select an existing notebook, or you can creat
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    See [Anaconda Environments](../../environment_management/anaconda_environments.md#packages-for-jupyter) for information on Jupyter related packages.
+    See [Anaconda Environments](../../workflow_solutions/using_anaconda.md#packages-for-jupyter) for information on Jupyter related packages.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
