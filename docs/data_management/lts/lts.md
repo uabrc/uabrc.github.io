@@ -11,7 +11,7 @@ UAB Long-term storage (LTS) is an S3 object-storage platform hosted at UAB. This
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Currently, UAB LTS is only accessible using the campus network. If you are off campus and want to access LTS, please use the [UAB VPN](https://www.uab.edu/it/home/tech-solutions/network/vpn). If you are accessing LTS through Cheaha, you do not need to use the VPN even at home.
+    Currently, UAB LTS is only accessible using the UAB Campus Network. If you are off campus and want to access LTS, please use the [UAB Campus VPN](https://www.uab.edu/it/home/tech-solutions/network/vpn). If you are accessing LTS through Cheaha, you do not need to use the VPN, even at home.
 
 <!-- markdownlint-enable MD046 -->
 ## Terminology

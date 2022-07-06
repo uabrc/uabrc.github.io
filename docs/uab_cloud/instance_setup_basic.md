@@ -149,7 +149,7 @@ These instructions require that you've set up a [Network](./network_setup_basic.
 
         ![!Manage Floating IP Associations dialog. The form is filled out. The Floating IP Address created earlier is selected under IP Address. The port from the Instance my_instance is selected under Port to be Associated.](./images/instances_017.png)
 
-At this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You can also [Transfer Data](remote_access.md#data-transfer) to the instance.
+At this stage you should be able to SSH into your instance from the UAB Campus Network or on the UAB Campus VPN. You can also [Transfer Data](remote_access.md#data-transfer) to the instance.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -175,7 +175,7 @@ For instances which fail due to internal reasons, i.e. while using SSH or an app
 
 ## SSH Into the Instance
 
-If you are following the tutorial, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You will need to [Install an SSH Client](./remote_access.md#install-an-ssh-client) Once your machine has an ssh client, use the following command. If your image uses an operating system other than Ubuntu, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip), and the value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
+If you are following the tutorial, then at this stage you should be able to SSH into your instance from on campus or on the UAB Campus VPN. You will need to [Install an SSH Client](./remote_access.md#install-an-ssh-client) Once your machine has an ssh client, use the following command. If your image uses an operating system other than Ubuntu, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip), and the value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
 
 You may optionally [Set Up a Configuration File](./remote_access.md/#setting-up-a-configuration-file).
 
