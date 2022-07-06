@@ -6,6 +6,8 @@ theme:
   search_index_only: true
   custom_dir: theme
   language: en
+  features:
+    - navigation.indexes
 
 extra_css:
   - stylesheets/extra.css
