@@ -8,6 +8,7 @@ theme:
   language: en
   features:
     - navigation.indexes
+    - navigation.instant
 
 extra_css:
   - stylesheets/extra.css
