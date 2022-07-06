@@ -179,3 +179,9 @@ Contrast checker: <https://webaim.org/resources/contrastchecker/>
 - Brand main page: <https://www.uab.edu/toolkit/branding>
 - Brand colors: <https://www.uab.edu/toolkit/brand-basics/colors>
 - Copyright guidance: <https://www.uab.edu/toolkit/trademarks-licensing/uab-trademarks>
+
+## Terminology
+
+- `Research Computing (RC)` for the IT group supporting campus HPC resources.
+- `UAB Campus Network` for the hard-wired network physically located on UAB campus, and the UAB Secure wifi.
+- `UAB Campus VPN` for the VPN to tunnel remote connections through the UAB Campus Network.
