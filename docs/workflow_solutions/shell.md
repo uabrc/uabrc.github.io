@@ -257,6 +257,12 @@ Below are common uses of `ls`, short for "list", used to display directory conte
 
     ![!example usage of ls -al](images/ls-al.png)
 
+### Examine disk usage (`du`)
+
+Use `du` to examine disk usage of files and directories. By default all values are given in bytes, use the [flag](#command-concepts) `-h` to give values in `K`, `M`, `G` and `T` for kilobytes, megabytes, gigabytes and terabytes, respectively. Use the [flag](#command-concepts) `-s` to summarize space used by directories. Below is an example of `du -sh`. Note that only directories with [read permissions](#manage-permissions-of-files-and-directores-chmod) can be examined by `du`.
+
+When culling files to conserve storage space, it helps to find the largest files and directories. To find the ten largest, use the command `du -sh .[^.]* * | sort -hr | head -n10` in the top-level directory of your data. To better understand this command chain, see also [sort](#sort-file-contents-sort), [head](#examine-start-and-end-of-file-head-tail) and [piping](#piping-and-command-chains).
+
 ### Change working directory (`cd`)
 
 - To change to a different directory, use `cd <directory-path>`.
