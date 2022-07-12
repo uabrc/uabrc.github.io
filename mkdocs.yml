@@ -68,6 +68,7 @@ nav:
           - FileZilla: data_management/transfer/filezilla.md
       - Code Storage: data_management/code_storage.md
   - Workflow Solutions:
+      - Using the Shell: workflow_solutions/shell.md
       - Using Anaconda: workflow_solutions/using_anaconda.md
       - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
       - Getting Containers: workflow_solutions/getting_containers.md
