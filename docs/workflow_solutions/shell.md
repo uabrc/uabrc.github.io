@@ -46,6 +46,12 @@ All inputs are separated by the space character ++space++. If you wish to or mus
 
 All commands are run in a process. By default, commands run at the shell prompt are run in the shell process, and wait for execution to stop before returning control to you. It is possible to regain control earlier in a number of ways.
 
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Copying commands from rich-text sources, such as `.pdf`, Microsoft Office and webpages, can result in copying special or invisible unicode characters. These characters can cause commands to behave unexpectedly and can be difficult to diagnose. Instead, please try pasting your command into a plain-text editor, like notepad, before copying to the shell prompt.
+<!-- markdownlint-enable MD046 -->
+
 #### How do I regain control of the prompt while a command is running?
 
 - Running commands may be terminated using ++ctrl+c++. Pressing it once will request a graceful termination of the running command. Pressing it more than one will attempt to immediately kill the program.
