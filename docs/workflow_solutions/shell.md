@@ -386,6 +386,8 @@ Below are two images showing what `less` looks like. Note the last line of each 
 
 ![!example of cat less at the bottom of the text](images/cat_less_2.png)
 
+### Examine start and end of file (`head`, `tail`)
+
 To display only the first two lines use `head -n 2 <file-path>`. Use `tail` instead of `head` for the last two lines.
 
 Below is an image showing the use of `head` and `tail` on a file with four lines. The file was created by [redirecting](#redirects) the [echo command](#test-a-command-echo) to a file, using the [special newline character](#special-escaped-characters) to add line breaks.
