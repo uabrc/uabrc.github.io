@@ -21,14 +21,14 @@ To verify your installation is complete, please visit <https://app.globus.org> a
 
     ![!Panels selection widget with center icon selected. Center icon appears to be two side-by-side panes.](./images/globus_003_panels.png)
 
-4. Click the "Search" icon in the "Collection" text box near the top-left or top-right of the page to locate an endpoint. There are multiple ways to find an endpoint. For some endpoints you may be asked to log in, which is true of all UAB endpoints. Some UAB endpoints may also require that you be on the UAB VPN.
+4. Click the "Search" icon in the "Collection" text box near the top-left or top-right of the page to locate an endpoint. There are multiple ways to find an endpoint. For some endpoints you may be asked to log in, which is true of all UAB endpoints. Some UAB endpoints may also require that you be on the UAB Campus VPN.
 
     ![!Globus File Manager interface with mouse pointer over left-hand Collection Search box.](./images/globus_004_search_bar.png)
 
     1. Begin typing in the box to search for an endpoint. To find UAB-related endpoints, search for "UAB". There are two Cheaha endpoints
 
-        1. Cheaha cluster on-campus (UAB Science DMZ) for machines that are on campus or connected to the VPN.
-        2. Cheaha cluster off-campus (UAB Science DMZ) for machines that are off campus and not on the VPN.
+        1. Cheaha cluster on-campus (UAB Science DMZ) for machines that are either on the UAB Campus Network, or connected to the UAB Campus VPN.
+        2. Cheaha cluster off-campus (UAB Science DMZ) for machines that are _not_ on the UAB Campus Network and _not_ on the UAB Campus VPN.
 
     2. The "Recent" tab shows endpoints that have most recently been used.
 
