@@ -175,15 +175,25 @@ For instances which fail due to internal reasons, i.e. while using SSH or an app
 
 ## SSH Into the Instance
 
-If you are following the tutorial, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. You will need to [Install an SSH Client](./remote_access.md#install-an-ssh-client) Once your machine has an ssh client, use the following command. If your image uses an operating system other than Ubuntu, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip), and the value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
+If you are following the tutorial, then at this stage you should be able to SSH into your instance from on campus or on the UAB VPN. If you haven't done this before, or you need a refresher, the following list will help guide you through setting up SSH connections.
 
-You may optionally [Set Up a Configuration File](./remote_access.md/#setting-up-a-configuration-file).
+1. [Install an SSH Client](./remote_access.md#install-an-ssh-client) to use SSH from your local machine to your cloud instance.
+2. [Manage Your Private Key](./remote_access.md#managing-keys)
+    - [Start the SSH Agent](./remote_access.md#starting-the-ssh-agent-for-a-single-session) to enable your system to remember your private key.
+    - [Add a Private Key](./remote_access.md#add-a-private-key) to the ssh agent to remember it for future use.
+3. [Verify the SSH Client Works](./remote_access.md#ssh-client-usage). Use the following command to connect
 
-``` bash
-ssh ubuntu@<floating ip> -i ~/.ssh/<private_key_file>
-```
+    ``` bash
+    ssh ubuntu@<floating ip> -i ~/.ssh/<private_key_file>
+    ```
 
-![!MINGW64 terminal on Windows. The ssh command has been used to login to the Floating IP Address using the -i command with the locally stored private key my_key_pair.pem. Login was successful. A banner page has been shown and a terminal prompt is waiting for input.](./images/instances_020.png)
+    - If your image uses an operating system other than Ubuntu, such as CentOS, replace the user `ubuntu` with `centos`, or whatever may be appropriate.
+    - The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip).
+    - The value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
+
+    ![!MINGW64 terminal on Windows. The ssh command has been used to login to the Floating IP Address using the -i command with the locally stored private key my_key_pair.pem. Login was successful. A banner page has been shown and a terminal prompt is waiting for input.](./images/instances_020.png)
+
+4. (optional, but helpful) [Set Up a Configuration File](./remote_access.md#setting-up-a-configuration-file) to simplify the command used to make a connection.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
