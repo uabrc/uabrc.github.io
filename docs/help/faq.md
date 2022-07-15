@@ -269,3 +269,18 @@ If you are not able to remove one or more researchers from a given repository, p
 - Is the affected repository part of a group or subgroup?
     - If yes, try removing the researcher from the group or subgroup. Work your way up any nested subgroups if it continues to fail.
     - If no, please contact [Support](support.md).
+
+## Miscellaneous
+
+### Shell Commands
+
+#### Why do my shell commands not work as expected?
+
+There are a number of possible causes for shell commands not working as expected.
+
+- Ensure that you are in the expected environment. Make sure you are using Cheaha, cloud.rc, or your local machine, as appropriate.
+- Ensure that you have any needed modules loaded or environment variables set.
+- Be very careful when copy-pasting commands from rich-text sources. Some sources can have invisible, special formatting characters that can corrupt the pasted command. Be sure to use plain-text editors like Notepad++ or VSCode, instead of rich-text editors, when storing commands for future use. Some examples of rich-text sources include:
+    - Websites and HTML
+    - Word, Excel, PowerPoint, etc.
+    - PDF documents

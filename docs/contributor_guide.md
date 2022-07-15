@@ -114,6 +114,25 @@ plugins:
         account_management/uab_researcher.md: account_management/cheaha_account.md
 ```
 
+## Section Index Pages
+
+To create a section index page:
+
+1. Create a file called `index.md` in a reasonable directory location for that section.
+2. Add something like the following to that section entry under `nav:` in `mkdocs.yml`.
+
+    ```yml
+    nav:
+      ...
+      - Cheaha Guide:
+        - cheaha/index.md  # add the index.md here.
+        - Hardware: ...
+        - ...
+      ...
+    ```
+
+3. When a site visitor clicks `Cheaha Guide` in the nav pane, the page `cheaha/index.md` will be loaded.
+
 ## Linting Known Issues
 
 There are known issues with the markdown linter and some of our non-standard plugins, especially admonitions (specifically a conflict involving fenced vs indented code blocks). To fix these cases please use one of the following methods. The `<lint warning code>` can be found by hovering over the yellow squiggles in VSCode to bring up the warning lens.
@@ -179,3 +198,9 @@ Contrast checker: <https://webaim.org/resources/contrastchecker/>
 - Brand main page: <https://www.uab.edu/toolkit/branding>
 - Brand colors: <https://www.uab.edu/toolkit/brand-basics/colors>
 - Copyright guidance: <https://www.uab.edu/toolkit/trademarks-licensing/uab-trademarks>
+
+## Terminology
+
+- `Research Computing (RC)` for the IT group supporting campus HPC resources.
+- `UAB Campus Network` for the hard-wired network physically located on UAB campus, and the UAB Secure wifi.
+- `UAB Campus VPN` for the VPN to tunnel remote connections through the UAB Campus Network.
