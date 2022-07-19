@@ -69,10 +69,11 @@ To view your changes as they would appear on the official documentation website,
 1. Open the cloned repository in VSCode.
 2. Create a branch with a short but meaningful name for your intended changes.
 3. Make changes to markdown files.
-4. Commit changes to the new branch.
-5. Push the branch to your remote repository on GitHub.
-6. Check your contributions match
-7. Make a pull request to the upstream repository.
+4. Use `mkdocs serve` to build the docs locally and inspect changes.
+5. Commit changes to the new branch.
+6. Push the branch to your remote repository on GitHub.
+7. Check your contributions match
+8. Make a pull request to the upstream repository.
 
 From here your pull request will go through a review process. The following criteria are checked.
 
@@ -83,6 +84,10 @@ From here your pull request will go through a review process. The following crit
 5. Valid internal and external links
 
 We will also make an attempt to check your information for accuracy, as well as proofread the text. Bear in mind our time is limited and we are not infallible, so please double-check your pull requests!
+
+### Serving Docs Locally
+
+When working with Markdown, it's difficult to tell exactly how changes to the raw files will change the website, especially when the only way to build the docs remotely is to push to a main branch of either the main repo or a fork. Instead, you can build the docs locally and inspect how you're changes are rendered before pushing to any remote by using `mkdocs serve`. This will start a local build you can view in your web browser. It will also show warnings and errors if any issues building the docs occur.
 
 ## File Organization
 
