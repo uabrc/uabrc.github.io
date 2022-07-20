@@ -2,11 +2,15 @@
 
 Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing. We offer a user-friendly portal website [Open OnDemand](#open-ondemand) with graphical interfaces to the most common features, all in one place.
 
+## Getting Help
+
+Please [Contact Us](../index.md#contact-us) with requests for support. Tips on getting effective support are [here](../help/support.md), and our frequently asked questions are [here](../help/faq.md).
+
 ## Account Creation
 
 ### UAB Users
 
-Please visit [https://rc.uab.edu](https://rc.uab.edu) to create an account. More information can be found [here](../account_management/uab_user.md).
+Please visit [https://rc.uab.edu](https://rc.uab.edu) to create an account. More information can be found [here](../account_management/cheaha_account.md).
 
 ### Outside Collaborator
 
@@ -23,13 +27,13 @@ For the external collaborator after the sponsor has completed the previous instr
 
 ## Accessing Cheaha
 
-The primary method for accessing Cheaha is through our online portal website, Open OnDemand, available at [https://rc.uab.edu](https://rc.uab.edu). We have more detailed documentation on using Open OnDemand located [further in](open_ondemand/ood_main.md).
+The primary method for accessing Cheaha is through our online portal website, Open OnDemand, available at [https://rc.uab.edu](https://rc.uab.edu). We have more detailed documentation on using Open OnDemand located [further in](./open_ondemand/ood_main.md).
 
-The portal features a [file browser](open_ondemand/ood_files.md), [job composer](open_ondemand/ood_jobs.md) and various [interactive applications](open_ondemand/ood_interactive.md) including a remote desktop, Jupyter, RStudio and MATLAB, among others. There is also a [terminal](open_ondemand/ood_main.md#shell-access) usable directly in the browser for very basic functions such as file management.
+The portal features a [file browser](./open_ondemand/ood_files.md), [job composer](./open_ondemand/ood_jobs.md) and various [interactive applications](./open_ondemand/ood_interactive.md) including a remote desktop, Jupyter, RStudio and MATLAB, among others. There is also a [terminal](./open_ondemand/ood_main.md#shell-access) usable directly in the browser for very basic functions such as file management.
 
 ## Hardware
 
-A full list of the available hardware can be found [furthur in](hardware.md).
+A full list of the available hardware can be found [furthur in](./hardware.md).
 
 ### Storage
 
@@ -49,7 +53,7 @@ In addition to personal storage, Primary Investigators may request additional sh
 
 ### Etiquette
 
-[Quotas](slurm/sbatch_usage.md#slurm-partitions) are in place to ensure any one user can't monopolize all resources.
+[Quotas](./slurm/submitting_jobs.md#slurm-partitions) are in place to ensure any one user can't monopolize all resources.
 
 #### Running Tasks on Compute Nodes
 
@@ -68,21 +72,21 @@ You are on the login node if:
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you are doing more than minor file management, you will need to use a compute node. Please request an interactive session at [https://rc.uab.edu](https://rc.uab.edu) or through a job submitted using [Slurm](slurm/introduction.md).
+    If you are doing more than minor file management, you will need to use a compute node. Please request an interactive session at [https://rc.uab.edu](https://rc.uab.edu) or through a job submitted using [Slurm](./slurm/introduction.md).
 <!-- markdownlint-enable MD046 -->
 
 ## Slurm
 
-Slurm is our job queueing software used for submitting any number of job scripts to run on the cluster. We have documentation on how to set up job scripts and submit them [further in](slurm/introduction.md). More complete documentation is available at <https://slurm.schedmd.com/>.
+Slurm is our job queueing software used for submitting any number of job scripts to run on the cluster. We have documentation on how to set up job scripts and submit them [further in](./slurm/introduction.md). More complete documentation is available at <https://slurm.schedmd.com/>.
 
 ## Software
 
-A large variety of software is available on Cheaha as modules. To view and use these modules see [the following documentation](lmod.md).
+A large variety of software is available on Cheaha as modules. To view and use these modules see [the following documentation](./software/modules.md).
 
-If you would like a new piece of software installed on Cheaha, please send an email to [support@listserv.uab.edu](support@listserv.uab.edu) with the name of the software, the version number, and a link to the installation instructions.
+For new software installation, please try searching [Anaconda](../workflow_solutions/using_anaconda.md) for packages first. If you still need help, please [send a support ticket](../help/support.md)
 
 ### Conda Packages
 
-A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see [the following documentation](conda.md).
+A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see our [Anaconda page](./conda.md).
 
 If the software installation instructions tell you to use either `conda install` or `pip install` commands, the software and its dependencies can be installed using a virtual environment.
