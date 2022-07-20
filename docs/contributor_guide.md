@@ -188,6 +188,12 @@ The snippet will surround selected text with the appropriate linter disable fenc
 
 The workaround is needed because `markdownlint` has no plans to add support for admonitions. There is no `markdownlint` plugin for that support either, and we don't have the ability to develop such a plugin.
 
+## Slurm Hardware, Partitions, QoS Tables
+
+Building hardware tables is a semi-automated script based on a manually curated table. The repository is located here: <https://gitlab.rc.uab.edu/rc-data-science/data-science-internal/cluster-fabric-docs>. Be warned that the scripts may move to a github.com repo in the future.
+
+Building Partition and QoS tables is automated based on `scontrol` output. The repository is located here: <https://github.com/wwarriner/slurm_status_tools>. Be warned the link may change in the future when we fork to the UABRC group that houses the docs repo.
+
 ## Accessibility
 
 Color vision deficiency checker: <https://www.toptal.com/designers/colorfilter/>
