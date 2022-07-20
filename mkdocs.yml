@@ -6,6 +6,9 @@ theme:
   search_index_only: true
   custom_dir: theme
   language: en
+  features:
+    - navigation.indexes
+    - navigation.instant
 
 extra_css:
   - stylesheets/extra.css
@@ -14,18 +17,18 @@ copyright: Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<b
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - lightgallery:
+      show_description_in_lightgallery: true
+      show_description_as_inline_caption: false
   - pymdownx.keys
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
-  - attr_list
-  - lightgallery:
-      show_description_in_lightgallery: true
-      show_description_as_inline_caption: false
+  - tables
   - toc:
       permalink: true
-  - tables
 
 plugins:
   - search

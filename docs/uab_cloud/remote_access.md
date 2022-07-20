@@ -10,11 +10,11 @@ SSH stands for **S**ecure **SH**ell and is a powerful tool for executing termina
 
 There are two main steps to working with SSH efficiently. The first is to ensure you have an SSH client installed, which will let your local machine communicate with remote machines. The second is to ensure you have `ssh-agent` running in each terminal window to automate management of key files. The `ssh-agent` software comes with most SSH clients, but does not always run automatically. How to start the `ssh-agent` software automatically varies depending on operating system and shell flavor, which we will describe below.
 
-#### Install an SSH Client  (Linux)
+### Install an SSH Client (Linux)
 
 Virtually all Linux distributions come with SSH preinstalled and configured appropriately for ease of use, including automatically starting the `ssh-agent`.
 
-### Install an SSH Client  (MacOS)
+### Install an SSH Client (MacOS)
 
 MacOS comes with an SSH client installed.
 
