@@ -4,6 +4,7 @@ channels:
   - anaconda
 dependencies:
   - jinja2=3.0.3
+  - markdown=3.3.7
   - markupsafe=2.0.1
   - mkdocs=1.2.3
   - mkdocs-material=8.1.6
@@ -13,5 +14,5 @@ dependencies:
   - python=3.9.7
   - pip:
       - lightgallery==0.5
-      - mkdocs-redirects==1.0.4
       - mkdocs-git-revision-date-localized-plugin==1.0.1
+      - mkdocs-redirects==1.0.4

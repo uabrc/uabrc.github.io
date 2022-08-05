@@ -4,7 +4,7 @@ Our documentation is available at <https://uabrc.github.io/>.
 
 ## Contributing
 
-Please see <https://uabrc.github.io/contributor_guide.md>.
+Please see <https://uabrc.github.io/contributor_guide/>.
 
 ## Developer Notes
 

@@ -114,6 +114,25 @@ plugins:
         account_management/uab_researcher.md: account_management/cheaha_account.md
 ```
 
+## Section Index Pages
+
+To create a section index page:
+
+1. Create a file called `index.md` in a reasonable directory location for that section.
+2. Add something like the following to that section entry under `nav:` in `mkdocs.yml`.
+
+    ```yml
+    nav:
+      ...
+      - Cheaha Guide:
+        - cheaha/index.md  # add the index.md here.
+        - Hardware: ...
+        - ...
+      ...
+    ```
+
+3. When a site visitor clicks `Cheaha Guide` in the nav pane, the page `cheaha/index.md` will be loaded.
+
 ## Linting Known Issues
 
 There are known issues with the markdown linter and some of our non-standard plugins, especially admonitions (specifically a conflict involving fenced vs indented code blocks). To fix these cases please use one of the following methods. The `<lint warning code>` can be found by hovering over the yellow squiggles in VSCode to bring up the warning lens.
@@ -169,6 +188,12 @@ The snippet will surround selected text with the appropriate linter disable fenc
 
 The workaround is needed because `markdownlint` has no plans to add support for admonitions. There is no `markdownlint` plugin for that support either, and we don't have the ability to develop such a plugin.
 
+## Slurm Hardware, Partitions, QoS Tables
+
+Building hardware tables is a semi-automated script based on a manually curated table. The repository is located here: <https://gitlab.rc.uab.edu/rc-data-science/data-science-internal/cluster-fabric-docs>. Be warned that the scripts may move to a github.com repo in the future.
+
+Building Partition and QoS tables is automated based on `scontrol` output. The repository is located here: <https://github.com/wwarriner/slurm_status_tools>. Be warned the link may change in the future when we fork to the UABRC group that houses the docs repo.
+
 ## Accessibility
 
 Color vision deficiency checker: <https://www.toptal.com/designers/colorfilter/>
@@ -179,3 +204,9 @@ Contrast checker: <https://webaim.org/resources/contrastchecker/>
 - Brand main page: <https://www.uab.edu/toolkit/branding>
 - Brand colors: <https://www.uab.edu/toolkit/brand-basics/colors>
 - Copyright guidance: <https://www.uab.edu/toolkit/trademarks-licensing/uab-trademarks>
+
+## Terminology
+
+- `Research Computing (RC)` for the IT group supporting campus HPC resources.
+- `UAB Campus Network` for the hard-wired network physically located on UAB campus, and the UAB Secure wifi.
+- `UAB Campus VPN` for the VPN to tunnel remote connections through the UAB Campus Network.

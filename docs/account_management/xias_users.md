@@ -1,6 +1,6 @@
 # Managing UAB XIAS Users
 
-UAB XIAS User management allow UAB faculty and staff to grant external collaborators access to specific resources on the internal UAB network. All XIAS users must be connected with at least one site, so you'll need to create one at the [UAB XIAS User Management Webpage](https://idm.uab.edu/cgi-cas/xrmi/sites). All XIAS Users must also have an expiration date.
+UAB XIAS User management allow UAB faculty and staff to grant external collaborators access to specific resources on the internal UAB Campus Network. All XIAS users must be connected with at least one site, so you'll need to create one at the [UAB XIAS User Management Webpage](https://idm.uab.edu/cgi-cas/xrmi/sites). All XIAS Users must also have an expiration date.
 
 ## Adding Users
 
