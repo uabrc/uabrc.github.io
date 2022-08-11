@@ -14,21 +14,20 @@ We are using Visual Studio Code (VSCode) for development with the following exte
 
 Several extensions are useful for this project and are listed below. Extensions may be obtained by searching the Extensions Menu in VSCode by pressing ++ctrl+shift+x++. More information on managing extensions is available at [VSCode: Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-marketplace).
 
-### Required Software
+### Required VSCode Extensions
 
-- Python [`ms-python.python`] (for Anaconda environment management)
-- Markdown All in One [`yzhang.markdown-all-in-one`]
-- markdownlint [`DavidAnson.vscode-markdownlint`]
-- Prettier - Code formatter [`esbenp.prettier-vscode`]
+- Python: `ms-python.python` (for Anaconda environment management)
+- Markdown All in One: `yzhang.markdown-all-in-one`
+- markdownlint: `DavidAnson.vscode-markdownlint`
+- Prettier - Code formatter: `esbenp.prettier-vscode`
 
 ### Handy VSCode Hotkeys
-- Open a terminal to run a command:
-   - Windows/MacOS: ++ctrl+shift+`++
-- Find in all files:
-   - Windows/MacOS: ++ctrl+shift+F++
-- Comment out code
-   - Comment a line: nothing highlighted, ++ctrl+/++
-   - Comment a block: highlight a section, ++ctrl+/++ 
+
+- Open new terminal: ++ctrl+shift+grave++
+- Find in all files: ++ctrl+shift+f++
+- Commenting and uncommenting code using ++ctrl+slash++
+    - For a single line, click anywhere on that line to place the caret, then press ++ctrl+slash++
+    - For commenting a block of text, select the block, then press ++ctrl+slash++
 
 ### VSCode `settings.json` Additions
 
@@ -36,7 +35,6 @@ To make the best use of formatting extensions for this project, please add the f
 
   1. Within the VSCode project file in the `.vscode` folder, affecting only this project *--OR--*
   2. To the global VSCode settings file, affecting all projects. To change the global file, press ++ctrl+shift+p++ to open the Command Palette, then search for `Preferences: Open Settings (JSON)` and append the following content.
-
 
 ```json
   "[html]": {
@@ -96,7 +94,7 @@ The workflow below assumes you are using VSCode as described above, and wish to 
     1. Activate your conda environment.
         1. Open the file `test.py` to start the Python extension.
         2. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
-    2. Open a VSCode terminal using ++ctrl+shift+`++.
+    2. Open a VSCode terminal using ++ctrl+shift+grave++.
     3. Execute the command `mkdocs serve`
     4. If a new browser tab does not open automatically, use your browser to navigate to `http://localhost:8000`.
     5. Verify your changes look and function as expected.
@@ -123,7 +121,7 @@ From here your pull request will go through a review process. The following crit
 5. Valid internal and external links.
 6. Quality, organization and accuracy of contribution.
 
-We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date! 
+We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date!
 
 ### Verifying Changes Using GitHub Pages
 
@@ -142,13 +140,13 @@ It is always a good idea to verify your changes before making them available to 
 Please do not use any markdown preview software to verify changes. The pages will look substantially different when rendered as HTML, and some features are not understood by preview software, such as admonitions.
 
 ## File Organization General Principles
-- Main headings are based on [UAB Research Computing services](https://www.uab.edu/it/home/research-computing/research-digital-marketplace)
-- Favor placing new pages and information into an existing section over creating 
-- Approach documentation from a problem solving angle rather than a technology. Examples:
-   - Section title "Installing Software Yourself with Anaconda" vs "Anaconda"
-   - Section title "Running Analysis Jobs" vs "SLURM"
-- Put redirects for any page moves in case someone has bookmarked a page (see Redirect section below)
 
+- Main headings are based on [UAB Research Computing services](https://www.uab.edu/it/home/research-computing/research-digital-marketplace)
+- Favor placing new pages and information into an existing section over creating
+- Approach documentation from a problem solving angle rather than a technology. Examples:
+    - Section title "Installing Software Yourself with Anaconda" vs "Anaconda"
+    - Section title "Running Analysis Jobs" vs "SLURM"
+- Put redirects for any page moves in case someone has bookmarked a page (see Redirect section below)
 
 ## Formatting
 
