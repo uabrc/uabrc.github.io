@@ -1,5 +1,11 @@
 # Creating a UAB XIAS Project/Site
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    These instructions are intended for use by UAB-employed PIs to organize external collaborators, also known as guests. Please direct guests [here](xias_guest.md).
+<!-- markdownlint-enable MD046 -->
+
 XIAS Project/Sites, or simply sites, tie external users to specific resources at UAB. By connecting people to the resource they use, UAB can maintain security and accountability. Creating a site is the first step to giving access to external collaborators, and the process can be thought of as "create once, use many times". All sites must have an expiration date for security reasons. To create a site you'll need at least one Uniform Resource Identifier (URI) relating to resources used by the site. If you aren't sure what URI(s) to list for your site, please contact <UserServices@uab.edu>.
 
 1. To start go to the [UAB XIAS Project/Site Management Webpage](https://idm.uab.edu/cgi-cas/xrmi/sites).

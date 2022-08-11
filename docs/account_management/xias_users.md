@@ -1,5 +1,11 @@
 # Managing UAB XIAS Users
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    These instructions are intended for use by UAB-employed PIs to organize external collaborators, also known as guests. Please direct guests [here](xias_guest.md).
+<!-- markdownlint-enable MD046 -->
+
 UAB XIAS User management allow UAB faculty and staff to grant external collaborators access to specific resources on the internal UAB Campus Network. All XIAS users must be connected with at least one site, so you'll need to create one at the [UAB XIAS User Management Webpage](https://idm.uab.edu/cgi-cas/xrmi/sites). All XIAS Users must also have an expiration date.
 
 ## Adding Users
