@@ -14,23 +14,29 @@ We are using Visual Studio Code (VSCode) for development with the following exte
 
 Several extensions are useful for this project and are listed below. Extensions may be obtained by searching the Extensions Menu in VSCode by pressing ++ctrl+shift+x++. More information on managing extensions is available at [VSCode: Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-marketplace).
 
-Required:
+### Required Software
 
 - Python [`ms-python.python`] (for Anaconda environment management)
 - Markdown All in One [`yzhang.markdown-all-in-one`]
 - markdownlint [`DavidAnson.vscode-markdownlint`]
 - Prettier - Code formatter [`esbenp.prettier-vscode`]
 
-Optional but helpful:
+### Handy VSCode Hotkeys
+- Open a terminal to run a command:
+   - Windows/MacOS: ++ctrl+shift+`++
+- Find in all files:
+   - Windows/MacOS: ++ctrl+shift+F++
+- Comment out code
+   - Comment a line: nothing highlighted, ++ctrl+/++
+   - Comment a block: highlight a section, ++ctrl+/++ 
 
--
+### VSCode `settings.json` Additions
 
 To make the best use of formatting extensions for this project, please add the following block to your `settings.json` file. These changes can be made:
 
   1. Within the VSCode project file in the `.vscode` folder, affecting only this project *--OR--*
   2. To the global VSCode settings file, affecting all projects. To change the global file, press ++ctrl+shift+p++ to open the Command Palette, then search for `Preferences: Open Settings (JSON)` and append the following content.
 
-### VSCode `settings.json` Additions
 
 ```json
   "[html]": {
@@ -60,7 +66,7 @@ Once the fork has been created, you can clone your fork using the Command Palett
 
 The Python extension will activate when you open any Python file. The file `test.py` has been added for convenience, simply open that file to activate the extension. The extension will show the currently activated environment near the bottom-left corner of the VSCode window.
 
-Please create an Anaconda environment using `build_env.yml` using the following.
+Please create an Anaconda environment using `build_env.yml` using the following in the VSCode terminal.
 
 ```shell
 conda env create -f build_env.yml
@@ -68,7 +74,7 @@ conda env create -f build_env.yml
 
 Activate the environment in VSCode by clicking the currently activated environment in the bottom-left of the VSCode window. A menu will appear allowing you to select from discovered environments. You may need to reload VSCode to get the environment to appear if it was just created.
 
-To build the documentation locally, use `mkdocs build`. Be sure to fix all warnings before submitting a pull request.
+To build the documentation locally, use `mkdocs build` in the VSCode terminal. Be sure to fix all warnings before submitting a pull request.
 
 ## Workflow for Contributing
 
@@ -79,7 +85,7 @@ The workflow below assumes you are using VSCode as described above, and wish to 
     2. Give the branch a short but meaningful name for your intended changes.
     3. For bug fixes use names like `fix-broken-link` or `fix-page-formatting`.
     4. For new features or pages, use names like `feat-lts-page` or `feat-accessibility-improvement`.
-    5. Command: `git checkout -b <name>`.
+    5. Command to use to pull the new branch to local machine in VSCode terminal: `git checkout -b <name>`.
 2. Add, delete and modify files as necessary to implement your intended changes.
     1. Stage and commit changes in small units as you go. Be sure you are on the branch you made earlier!
     2. VSCode facilitates staging and committing files and it is highly recommended.
@@ -90,12 +96,12 @@ The workflow below assumes you are using VSCode as described above, and wish to 
     1. Activate your conda environment.
         1. Open the file `test.py` to start the Python extension.
         2. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
-    2. Open a new terminal using ++ctrl+shift+`++.
-    3. Execute the command `mkdocs serve`.
+    2. Open a VSCode terminal using ++ctrl+shift+`++.
+    3. Execute the command `mkdocs serve`
     4. If a new browser tab does not open automatically, use your browser to navigate to `http://localhost:8000`.
     5. Verify your changes look and function as expected.
 4. Make a pull request.
-    1. Push your working branch to your remote repository using `git push`.
+    1. Push your local working branch to your GitHub remote repository using `git push`.
     2. Navigate to the upstream repository at <https://github.com/uabrc/uabrc.github.io>.
     3. Click the "Pull requests" tab.
     4. Click the "New pull request" button.
@@ -117,7 +123,7 @@ From here your pull request will go through a review process. The following crit
 5. Valid internal and external links.
 6. Quality, organization and accuracy of contribution.
 
-We will do our best to check information for accuracy, as well as proofread the text. Bear in mind our time is limited and we are not infallible, so please double-check your pull requests! Bear in mind your audience is not only us, but your colleagues at UAB and beyond, and possibly even you at a future date, so be sure you are committing your best work.
+We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date! 
 
 ### Verifying Changes Using GitHub Pages
 
@@ -135,9 +141,14 @@ It is always a good idea to verify your changes before making them available to 
 
 Please do not use any markdown preview software to verify changes. The pages will look substantially different when rendered as HTML, and some features are not understood by preview software, such as admonitions.
 
-## File Organization
+## File Organization General Principles
+- Main headings are based on [UAB Research Computing services](https://www.uab.edu/it/home/research-computing/research-digital-marketplace)
+- Favor placing new pages and information into an existing section over creating 
+- Approach documentation from a problem solving angle rather than a technology. Examples:
+   - Section title "Installing Software Yourself with Anaconda" vs "Anaconda"
+   - Section title "Running Analysis Jobs" vs "SLURM"
+- Put redirects for any page moves in case someone has bookmarked a page (see Redirect section below)
 
-To Be Determined
 
 ## Formatting
 
