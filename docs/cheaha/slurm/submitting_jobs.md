@@ -20,20 +20,12 @@ Slurm is simple to use to submit batch jobs. Scripts should be written in an ava
 - Job ID: The unique number representing the job, returned by `srun` and `sbatch`. Stored in `$SLURM_JOB_ID` within a job.
 - Job Index Number: For array jobs, the index of the currently running job within the array. Stored in `$SLURM_ARRAY_TASK_ID` within a job.
 
-## Slurm Flags
+## Slurm Flags and Environment Variables
 
-Slurm has many flags a researcher can use when creating a job, but a short list of the most important ones are listed here. It is highly recommended to explicitly use all of these flags in every job you submit.
+Slurm has many flags a researcher can use when creating a job, but a short list of the most important ones for are described below. It is highly recommended to be as explicit as possible with flags and not rely on system defaults. Explicitly using the flags below makes your scripts more portable, shareable and reproducible.
 
-1. `--job-name`: The name of your job to be stored in job accounting records and visible in `squeue`.
-2. `--nodes`: The number of nodes a job needs. If your job does not require MPI, set this to `1`.
-3. `--ntasks`: The number of tasks you plan to execute on each node, used mostly for bookkeeping and computing total cpus for each node. If unsure, set to `1`.
-4. `--cpus-per-task`: The number of cores to request for each task. Total cpus fore each node equals `ntasks` times `cpus-per-task`.
-5. `--partition`: The partition to submit the job to. Partition details can be seen below.
-6. `--time`: Amount of time the job is estimated to run for. Acceptable time formats include `mm`, `mm:ss`, `hh:mm:ss`, `d-hh`, `d-hh:mm` and `d-hh:mm:ss`.
-7. `--mem`: Amount of RAM in MB needed per node. Can specify 16 GB with either 16000 or 16G.
-8. `--output`: Path to a file storing the text output of the job commands.
-9. `--error`: Path to an output file if the script errors.
-10. `--array`: A comma-separated list of array tasks to run. We will explain in more detail further down.
+{{ read_csv('cheaha/res/slurm_flags.csv', keep_default_na=False) }}
+
 
 For batch jobs, directives are typically included as comments at the top of the script. See examples below. All batch jobs should be submitted using the `sbatch` command. All flags and more information on how to submit jobs can be seen using `man sbatch`. For a complete list, see [Slurm sbatch Documentation](https://slurm.schedmd.com/sbatch.html).
 
