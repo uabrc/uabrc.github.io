@@ -12,9 +12,9 @@ Research Computing provides services to researchers in these core areas:
 
 ## Contact Us
 
-To create a support ticket please reach out to us via email at <support@listserv.uab.edu>.
+Please reach out to us via email at <support@listserv.uab.edu> to create a support ticket.
 
-You can also visit us in our Zoom office hours held weekly:
+For face-to-face support please visit us in our Zoom office hours held weekly:
 
 - Mondays 10:00 AM to 12:00 PM:
 [Zoom](https://uab.zoom.us/j/84019898491?pwd=bWlYaldMWUoyY0lCcGhuT3dmZjZLQT09)
