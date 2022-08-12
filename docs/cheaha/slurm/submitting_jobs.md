@@ -26,21 +26,40 @@ Slurm has many flags a researcher can use when creating a job, but a short list 
 
 {{ read_csv('cheaha/res/slurm_flags.csv', keep_default_na=False) }}
 
+### Available Partitions for `--partition`
 
-For batch jobs, directives are typically included as comments at the top of the script. See examples below. All batch jobs should be submitted using the `sbatch` command. All flags and more information on how to submit jobs can be seen using `man sbatch`. For a complete list, see [Slurm sbatch Documentation](https://slurm.schedmd.com/sbatch.html).
+Please see the [Partitions page](../hardware.md#partitions) for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
 
-The `--output` and `--error` flags can use other information as part of the name:
+### Requesting GPUs
+
+Please see the [GPUs page](gpu.md) for more information.
+
+### Dynamic `--output` and `--error` File Names
+
+The `--output` and `--error` flags can use dynamic job information as part of the name:
 
 - `%j` is the Job ID, equal to `$SLURM_JOB_ID`.
 - `%A` is the main Array Job ID, equal to `$SLURM_ARRAY_JOB_ID`.
 - `%a` is the Array job index number, equal to `$SLURM_ARRAY_TASK_ID`.
 - `%x` is the `--job-name`, equal to `$SLURM_JOB_NAME`.
 
-## Available Partitions for `--partition`
+For example if using `--job-name=my-job`, then to create an output file like `my-job-12345678` use `--output=%x-%j`.
 
-Please see [Partitions](../hardware.md#partitions) page for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
+If also using `--array=0-4`, then to create an output file like `my-job-12345678-0` use `--output=%x-%A-%a`.
 
-## A Batch Job with `sbatch`
+## Batch Jobs with `sbatch`
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    The following examples assume familiarity with the Linux terminal. If you are unfamiliar with the terminal then please see our [Shell page](../../workflow_solutions/shell.md) for more information and educational resources.
+<!-- markdownlint-enable MD046 -->
+
+Batch jobs are typically submitted using scripts with `sbatch`. Using `sbatch` this way is the preferred method for submitting jobs to Slurm on Cheaha. It is more portable, shareable, reproducible and scripts can be version controlled using [Git](../../workflow_solutions/getting_software_with_git.md).
+
+For batch jobs, flags are typically included as directive comments at the top of the script like `#SBATCH --job-name=my-job`. Read on to see examples of batch jobs using `sbatch`.
+
+### Batch Job
 
 Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
 
@@ -75,12 +94,11 @@ There is a lot going on in the above script, so let's break it down. There are t
 
 3. Lines 13 and 14 are the payload, or tasks to be run. They will be executed in order from top to bottom just like any shell script. In this case, it is simply writing "Hello World" to the `--output` file and "Hello Error" to the `--error` file. The `1>&2` Means redirect a copy (`>&`) of `stdout` to `stderr`.
 
-## An Array Job with `sbatch`
+### Batch Array Jobs With Known Indices
 
 Building on the job script above, below is an array job. Array jobs are useful when you need to perform the same analysis on slightly different inputs with no interaction between those analyses. We call this situation "pleasingly parallel". We can take advantage of an array job using the variable `$SLURM_ARRAY_TASK_ID`, which will have an integer in the set of values we give to the `--array` flag.
 
 To test the script below, copy and paste it into a plain text file `testarrayjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testarrayjob.sh`. Momentarily, 16 text files with `.out` and `.err` suffixes will be produced in your home directory.
-
 
 ``` bash
 #!/bin/bash
@@ -94,12 +112,12 @@ To test the script below, copy and paste it into a plain text file `testarrayjob
 #SBATCH --time=00:10:00
 #SBATCH --output=%x_%A_%a.out
 #SBATCH --error=%x_%A_%a.err
-#SBATCH --array=0-5,7,9
+#SBATCH --array=0-9
 
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 ```
 
-This script is very similar to the one above, but will submit 8 jobs to the scheduler that all do slightly different things. Each of the 8 jobs will have the same amount and type of resources allocated, and can run in parallel. The 8 jobs come from `--array=0-7`. The output of each job will be one of the numbers in the set `{0, 1, 2, 3, 4, 5, 6, 7}`, depending on which job is running. The output files will look like `test_$(SLURM_ARRAY_JOB_ID)_$(SLURM_ARRAY_TASK_ID).out` or `.err`. The value of `$(SLURM_ARRAY_JOB_ID)` is the main Job ID given to the entire array submission.
+This script is very similar to the one above, but will submit 10 jobs to the scheduler that all do slightly different things. Each of the 10 jobs will have the same amount and type of resources allocated, and can run in parallel. The 10 jobs come from `--array=0-9`. The output of each job will be one of the numbers in the set `{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}`, depending on which job is running. The output files will look like `test_$(SLURM_ARRAY_JOB_ID)_$(SLURM_ARRAY_TASK_ID).out` or `.err`. The value of `$(SLURM_ARRAY_JOB_ID)` is the main Job ID given to the entire array submission.
 
 Scripts can be written to take advantage of the `$SLURM_ARRAY_TASK_ID` variable indexing variable. For example, a project could have a list of participants that should be processed in the same way, and the analysis script uses the array task ID as an index to pull out one entry from that list for each job. Many common programming languages can interact with shell variables like `$SLURM_ARRAY_TASK_ID`, or the values can be passed to a program as an argument.
 
