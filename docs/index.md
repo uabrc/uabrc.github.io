@@ -22,6 +22,8 @@ You can also visit us in our Zoom office hours held weekly:
 - Thursdays 10:00 AM to 12:00 PM:
 [Zoom](https://uab.zoom.us/j/96229651103?pwd=RmpsWG1NYkxjclgxTThXb1h2bVBndz09)
 
+**New!** Please visit our [status page](https://uabstatus.statuscast.com/#!/incidentlist?componentId=34990).
+
 For additional information about support please see [Support](./help/support.md).
 
 ## Support and Development

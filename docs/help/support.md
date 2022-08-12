@@ -55,3 +55,11 @@ If you are not able to find a suitable module or package and would like a new pi
 ## Office Hours
 
 For our office hours links please see [Contact Us](../index.md#contact-us).
+
+## Status Updates
+
+For status updates affecting our systems or services please visit <https://uabstatus.statuscast.com/#!/incidentlist?componentId=34990>.
+
+At this page you can subscribe to notifications using the bell icon next to the name "Research Computing" near the top-left of the page.
+
+![!subscribe button on status update page](images/support_status_update_subscribe.png)
