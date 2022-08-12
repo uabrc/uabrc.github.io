@@ -1,11 +1,13 @@
 # Submitting Jobs with Slurm
 
-Slurm is simple to use to submit batch jobs. Scripts should be written in an available shell language on Cheaha, typically bash, and should include the appropriate Slurm directives at the top of the script telling the scheduler the requested resources. Common Slurm directives can be seen below along with simple examples for both single batch jobs and array batch jobs.
+Processing computational tasks with Cheaha at the terminal requires submitting jobs to the Slurm scheduler. Slurm offers two commands to submit jobs: `sbatch` and `srun`. Always use `sbatch` to submit jobs to the scheduler, unless you need an [interactive terminal](#interactive-jobs-with-srun). Otherwise only use `srun` within `sbatch` for submitting job steps within an [`sbatch` script](#batch-jobs-with-sbatch) context.
+
+The command `sbatch` accepts script files as input. Scripts should be written in an available shell language on Cheaha, typically bash, and should include the appropriate Slurm directives at the top of the script telling the scheduler the requested resources. Read on to learn more about how to use Slurm effectively.
 
 <!-- markdownlint-disable MD046 -->
-!!! tip
+!!! important
 
-    Please see our page on [Job Efficiency](../job_efficiency.md) for more information on making the best use of cluster resources and minimizing queue wait times.
+    Much of the information and examples on this page require a working knowledge of terminal commands and the shell. If you are unfamiliar with the terminal then please see our [Shell page](../../workflow_solutions/shell.md) for more information and educational resources.
 <!-- markdownlint-enable MD046 -->
 
 ## Common Slurm Terminology
@@ -212,3 +214,7 @@ Questions to ask yourself when requesting job resources:
 <!-- markdownlint-enable MD046 -->
 
 To get the most out of your Cheaha experience and ensure your jobs get through the queue as fast as possible, please read about [Job Efficiency](../job_efficiency.md).
+
+## Faster Queuing with Job Efficiency
+
+Please see our page on [Job Efficiency](../job_efficiency.md) for more information on making the best use of cluster resources to minimize your queue wait times.
