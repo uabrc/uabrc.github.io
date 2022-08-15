@@ -74,6 +74,25 @@ To adjust the environment, please use the Environment Setup box to load modules 
     We have recently changed the way we deploy RStudio on OOD. There are now two versions available, and one is marked with the text `(deprecated)`. The version without the deprecation notice is the new deployment method and is preferred for use. It is more flexible and more robust, and will allow us to support you more quickly and easily. The version with the deprecation notice is the previous containerized version. Because it is deprecated, we will not provide additional support for that version. Please move your workflows to the newer version.
 <!-- markdownlint-disable MD046 -->
 
+#### Using Pandoc and `knitr` within RStudio
+
+Pandoc is a tool for transforming various markup and markdown formatted documents into one another. RStudio uses `knitr`, which depends on Pandoc, to build reports and documents from notebooks. Pandoc cannot be installed on our system via RStudio. An alternative method is to use [Anaconda](../../workflow_solutions/using_anaconda.md), following the instructions below.
+
+1. [Create an environment](../../workflow_solutions/using_anaconda.md#create-an-environment) called `pandoc` with the package `pandoc` using the following command.
+
+    ```bash
+    conda create --name pandoc -c conda-forge pandoc
+    ```
+
+2. In the [RStudio job form](#rstudio-server), in the Enviroment Setup box, add the following.
+
+    ```bash
+    module load Anaconda3
+    conda activate pandoc
+    ```
+
+3. Start the job and use RStudio and `knitr` as expected.
+
 ### Jupyter Notebook
 
 Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
