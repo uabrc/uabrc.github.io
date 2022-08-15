@@ -12,6 +12,12 @@ A particular command `sudo` will be used extensively. Be warned that `sudo` gran
     The `sudo` command should be used carefully and judiciously, as it creates security risks. Use with caution.
 <!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Much of the information and examples on this page require a working knowledge of terminal commands and the shell. If you are unfamiliar with the terminal then please see our [Shell page](../workflow_solutions/shell.md) for more information and educational resources.
+<!-- markdownlint-enable MD046 -->
+
 ## Before Installing Software
 
 Before installing software, good practice is updating and upgrading operating system packages. For some software this is required. These updates often include critical security and bug fixes. To update the instance operating system, enter the following at the command line.
