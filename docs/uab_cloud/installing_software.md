@@ -127,9 +127,10 @@ The setup process for [cloud.rc](introduction.md) is more involved than for [Che
 
 To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our [Introduction](introduction.md) and follow the tutorial completely.
 
-1. A [Cloud Instance](instance_setup_basic.md) with attached [Floating IP](network_setup_basic.md#floating-ips).
-2. A [Security Group](security_setup_basic.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
-3. [Miniconda installed](#installing-miniconda) on the instance. Miniconda is a lightweight version of Anaconda.
+1. Run the commands in [Before Installing Software](#before-installing-software).
+2. A [Cloud Instance](instance_setup_basic.md) with attached [Floating IP]network_setup_basic.md#floating-ips).
+3. A [Security Group](security_setup_basic.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
+4. [Miniconda installed](#installing-miniconda) on the instance. Miniconda is a lightweight version of Anaconda.
 
 Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_anaconda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_anaconda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#>.
 
@@ -165,21 +166,36 @@ Once the prerequisites are complete, the following steps must be performed to in
             When you connect to your Jupyter Server, your browser will warn you that the connection may be insecure. This is because self-signed certificates are not trusted by your operating system's root certificates. It is possible to fix this with some additional work using notes at the [official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication). Generally the security warning can be bypassed without issue _in this case_.
         <!-- markdownlint-enable MD046 -->
 
-3. Configure the notebook server by finding, uncommenting and updating the following lines in `~/.jupyter/jupyter_notebook_config.py`, created in the first step. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#running-a-public-notebook-server)]
+3. Configure the notebook server by locating lines like the following in `~/.jupyter/jupyter_notebook_config.py` and updating them with the right-hand side of each variable assignment (equals sign `=`). This file was created as part of the first step of these instructions. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#running-a-public-notebook-server)]
+
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+
+        If you used `jupyter notebook password` the hashed password will be located in `jupyter_notebook_config.json` instead of `.py`.
+    <!-- markdownlint-enable MD046 -->
+
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+
+        The lines below may not appear together depending on the version of Jupyter installed. The file `jupyter_notebook_config.py` contains over a thousand lines. You may need to search using a text editor search or find feature. If you are using `nano` please visit our [nano page](../workflow_solutions/shell.md#searching-for-text-in-nano) to learn how to search.
+    <!-- markdownlint-enable MD046 -->
 
     ```python
-    # Set options for certfile, ip, password, and toggle off
-    # browser auto-opening
     c.NotebookApp.certfile = u'/absolute/path/to/your/certificate/mycert.pem'
     c.NotebookApp.keyfile = u'/absolute/path/to/your/certificate/mykey.key'
-    # Set ip to '*' to bind on all interfaces (ips) for the public server
     c.NotebookApp.ip = '*'
-    c.NotebookApp.password = u'sha1:bcd259ccf...<your hashed password here>'  # this may already be set by `jupyter notebook password`
+    c.NotebookApp.password = u'sha1:bcd259ccf...<your hashed password here>'
     c.NotebookApp.open_browser = False
 
     # It is a good idea to set a known, fixed port for server access
     c.NotebookApp.port = 9999
     ```
 
-4. Start the server with `jupyter notebook --certfile=mycert.pem --keyfile mykey.key` to use SSL.
+4. Start the server with `jupyter notebook`.
 5. Access the server with the browser on your local machine by navigating to `https://<floating-ip>:<port>`. In this case the port was set to be `9999`, and `<floating-ip>` comes from the prerequisites for this section. The port must match that used for the security group to allow traffic between your local machine and the cloud instance. You must also be on the UAB Campus VPN.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Some browsers may default to using `http` instead of `https` when given a raw IP address. Make sure to fully type out `https://<floating-ip>:<port>`.
+<!-- markdownlint-enable MD046 -->
