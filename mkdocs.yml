@@ -1,5 +1,6 @@
 site_name: UAB Research Computing
-repo_url: https://github.com/uabrc/researcher-facing-MkDocs
+repo_url: https://github.com/uabrc/uabrc.github.io/
+edit_uri: edit/main/docs/
 
 theme:
   name: material
