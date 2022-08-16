@@ -1,168 +1,287 @@
 # Software Containers
 
-Containers helps to manage software installations and all its dependencies in a single large image.
+Containers help to manage software installations and all their dependencies in a single large image.
 
-Docker is an open source plaform to build, deploy, run, update, and manage containers.
+Docker is an open-source platform for building, deploying, running, updating, and managing containers.
 
 ## Fantastic Containers and Where to Find Them
 
 Docker containers are available in <https://hub.docker.com/>. This docker hub repository allows to share containers and use pre-existing docker images.
 
-![!Docker hub webiste.](./images/docker_hub_website.png)
+![!Containers docker hub website.](./images/containers docker_hub_website.png)
 
 ## Using Containers on UAB RC Cloud (cloud.rc)
 
-To access docker containers, install `Docker` in your system. To install docker desktop on your computer follow this link: [Docker Desktop Page](https://www.docker.com/products/docker-desktop/).
+To access docker containers, install `Docker` in your system. To install docker desktop on your computer, follow this link: [Docker Desktop Page](https://www.docker.com/products/docker-desktop/).
 
-### Installation
+### Docker installation on UAB RC Cloud
 
-Following are the installation instructions to install `Docker` on UAB RC Coud with Ubuntu operating system. The installation was tested on Ubuntu 20.04.
+Following are the installation instructions to install `Docker` on UAB RC Cloud with Ubuntu operating system. Tested the installation on Ubuntu 20.04. Setting up UAB RC Cloud account can be found in [UAB RC Cloud](../uab_cloud/introduction.md).
 
 ```bash
 sudo apt-get update
 sudo apt install docker.io
 ```
 
-### Use existing Docker
+### Use Docker container from Docker hub
 
-We can start with pulling an sample container named `Alpine`. Search for the docker container `Alpine` in docker hub, copy the pull command, and paste it in your terminal.
+We can start pulling a container named `alpine` from the Docker hub. `alpine` is a general-purpose Linux distribution. Look for the container `alpine` in the docker hub, copy the pull command, and paste it into your terminal.
 
-![!Pull docker from dockerhub.](./images/pull_docker_from_dockerhub.png)
+![!Containers pull docker from dockerhub.](./images/containers_pull_docker_from_dockerhub.png)
 
 ```bash
 sudo docker pull alpine
 ```
 
-![!Docker pull alpine.](./images/docker_pull_alpine.png)
+![!Containers docker pull alpine.](./images/containers_docker_pull_alpine.png)
 
-<!--  ## Create your own Docker container -->
-<!--  ## Fetching particular version of docker container (testing) -->
-
-<!-- Hyperlink [test](using_anaconda.md)-->
-
-If there exist no direct pull command for a particular version of container, you may create your own `Dockerfile` and build it.
-
-Here is an example to build `Alpine` or fetch the Dockerfile content from Dockerhub or any other repositories like Github, Gitlab, etc.
-
-1. Create a directory `alpine`.
-
-    ```bash
-    mkdir alpine
-    ```
-
-2. Create a `Dockerfile` witin the `alpine` directory. The file name `Dockerfile` is case sensitive.
-
-3. Fetch the Dockerfile content of a desired version of `Alpine`.
-
-![!Dockerfile links alpine.](./images/dockerfile_links_alpine.png)
-
-Clicking any one of the Dockerfile links redirects to the Dockerfile content page, and copy this content, and paste in  `alpine/Dockerfile`.
-
-![!Alpine dockerfile.](./images/alpine_dockerfile.png)
-
-To build Alpine docker container, use the below syntax.
-
-```bash
-$sudo docker build -t repository_name:tag .
-```
-
-Here the given repository_name is `alpine`, and the tag is `latest`.
-
-```bash
-$sudo docker build -t alpine:latest .
-```
-
-This may lead to an error `alpine-minirootfs-3.16.0-x86_64.tar.gz file not found`. You can download the repo within `alpine` directory from the github repo where you fetched the Dockerfile content, and build again.
-
-![!Build alpine error.](./images/build_alpine_error.png)
-
-![!Alpine dependnecy fix.](./images/alpine_dependency_fix.png)
-
-![!Alpine directory.](./images/alpine_directory.png)
-
-![!Alpine successful build.](./images/alpine_successful_build.png)
-
-Once the built is successful. You can verify if the image exists.
-
-![!Alpine image.](./images/alpine_image.png)
-
-## Sharing containers using UAB GitLab Container Registry
-
-To Create container registry in Gitlab, following are the requirements: <!-- cross reference for Gitlab account -->
-
-<!-- (i) Create an Gitlab account with UAB email ID
-
-(ii) Create a new_project in Gitlab
-
-(iii) Create an access token in gitlab to push/pull the docker container in the container registry (Secure token, and guidelines to follow are below)  -->
-
-### Create New Project
-
-Create a new project in Gitlab. Once you create the `new_project` -> Click Package and Registries -> Click Container Registry.  
-
-Initially the container registry looks empty.  
-
-![!Container registry.](./images/container_registry.png)
-
-Initially there exists no container images in the container registry. Note, copy this CLI commands for future reference. This contains commands (1) to login to your project gitlab container registry (2) Add an image to the registry using push/build command. We will use `push` command as we have the existing container in our system already.  
-
-### Push Alpine Container from Ubuntu system to Gitlab container registry
-
-Here is an example of pushing `alpine` image to container registry from your ubuntu system.  
-
-List the docker images using the below command. Here `alpine` image exists already, and we will learn how to push this image to gitlab container registry. 
+Once the image is pulled, you can verify if the image exists using the below command. Note that if you do not specify the tag/version of the container, the recent version is built, and the tag is listed as `latest`.
 
 ```bash
 sudo docker images
 ```
 
-![!Docker image.](./images/docker_image.png)
+![!Containers alpine image.](./images/containers_alpine_image.png)
 
-## Tag alpine to push in Gitlab registry
+If you prefer to pull a particular version of the `alpine` container, you need to mention the tag details in your pull command. You can see the available tags/versions of `alpine` from the Docker hub.
 
-We need to have gitlab registry name to push. It will show the default command in the container registry page. Copy these commands for future reference. Tag is `test` here.
+![!Containers dockerfile links alpine.](./images/containers_dockerfile_links_alpine.png)
+
+To pull particular version of `alpine` container, use the below syntax.
+
+```bash
+sudo docker pull container_name:tag
+```
+
+Here the container_name is `alpine`, and the tag is `3.14`.
+
+```bash
+sudo docker pull alpine:3.14
+```
+
+The existing image looks like,
+
+![!Containers docker alpine tag image.](./images/containers_docker_alpine_tag_image.png)
+
+### Create your own Docker container
+
+You can create your own Docker container, build it, and upload/share them in the Docker hub or Gitlab container registry.
+
+Let us take a synthetic python code and formulate the packages/dependencies required to build your software container. Below is a python script that requires packages, namely, numpy, scipy, and matplotlib. Next, the steps to create a `Dockerfile` is illustrated. Let us name this script `python_test.py`.
+
+```bash
+import numpy as np
+import matplotlib
+import pylab
+import matplotlib.pylab as plt
+import scipy.integrate as integrate
+
+a = np.array([0, 10, 20, 30, 40])
+print(a)
+
+b = np.arange(-5, 5, 0.5)
+print(b)
+
+t = np.arange(0,20.5,0.5)
+print(t)
+
+result = integrate.quad(np.sin, 0, np.pi)
+print(result)
+
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+plt.show()
+plt.savefig('testing.png')
+```
+
+### Create a Dockerfile for installing Miniconda
+
+We require numpy, scipy, and matplotlib libraries to execute the above Python script. Following are the steps to create a specification file and build a container image.
+
+1. Create an empty directory `miniconda`.
+2. Create a `Dockerfile` within the `miniconda` directory with the following contents. The file name `Dockerfile` is case-sensitive.
+
+    ```bash
+    # You may start with a base image
+    # Always use a specific tag like "4.10.3", never "latest"!
+    # The version referenced by "latest" can change, so the build will be 
+    # more stable when building from a specific version tag. 
+    FROM continuumio/miniconda3:4.12.0
+
+    #Use RUN to execute commands inside the miniconda image
+    RUN conda install -y numpy
+
+    #RUN multiple commands together
+    #Last two lines are cleaning out the local repository and removing the state information for installed package
+    RUN apt-get update \
+    && conda install -y scipy \
+    && conda install -y matplotlib \
+    && apt-get --yes clean \
+    && rm -rf /var/lib/apt/lists/*
+    ```
+
+    This is the specification file, and provides Docker with the information it need to build our new container with necessary dependencies. See the Docker Container documentation for several other options <https://docs.docker.com/engine/reference/builder/>.
+
+3. We start with an existing container `continuumio/miniconda3:4.12.0`. This container is obtained from Dockerhub; here, the `continuumio` is the producer, and the repo name is `continuumio/miniconda3`. You may specify the required version from the `Tag` list. Here the tag/version is `4.12.0`.
+
+    ![!Containers dockerhub miniconda.](./images/containers_dockerhub_miniconda.png)
+
+    To access the base container of a particular version, use the below syntax.
+
+    ```bash
+    container_name:version_tag
+    ```
+
+4. To build your container, change the directory to `miniconda` and use the below syntax to build the `Dockerfile`.
+
+    ```bash
+    sudo docker build -t repository_name:tag .
+    ```
+
+5. Here the repository_name is `py3-miniconda` and the tag is `2022-08`.
+
+    ```bash
+    cd miniconda
+    sudo docker build -t py3-miniconda:2022-08 .
+    ```
+
+    Note the . at the end of the command! This indicates that we're using the current directory as our build environment, including the Dockerfile inside. Also, you may rename the `repository_name` and `tag` as you prefer.
+
+    ```bash
+    sudo docker images
+    ```
+
+![!Containers miniconda docker image.](./images/containers_miniconda_docker_image.png)
+
+### Run Docker interactively
+
+To run docker interactively and execute commands inside the container, use the below syntax. Here `run` executes the command in a new container, and `-it` starts an interactive shell inside the container. After executing this command, the command prompt will change and move into the bash shell.
+
+```bash
+sudo docker run -it repository_name:tag /bin/bash
+```
+
+To execute your container `py3-miniconda` interactively, run this command with the tag `2022-08'.
+
+```bash
+sudo docker run -it py3-miniconda:2022-08 /bin/bash
+cd /opt/conda/bin/
+```
+
+The `python` executables to execute our synthetic python script are within the directory structure `/opt/conda/bin`.
+
+![!Docker interactive.](./images/containers_docker_interactive.png)
+
+![!Python executable.](./images/containers_python_executable.png)
+
+Remember you initially created the python script `python_test.py` when creating your own container. Move `python_test.py` within `miniconda` directory. Now you have your `miniconda/python_test.py` outside the container. To access the files outside the container you should mount the file path along with the `docker run` command.
+
+To mount a host directory into your docker container, use the `-v` flag.
+
+```bash
+sudo docker run -v /host/directory/:/container/directory  -other-options
+```
+
+So the command for our example will be,
+
+```bash
+sudo docker run -v /home/ubuntu/:/home  -it py3-miniconda:2022-08 /bin/sh
+```
+
+Here we are mounting the $HOME directory `/home/ubuntu` from a host into containers' $HOME directory. Note that you may mount a particular directory according to your preference. The following shows the list of files in containers' $HOME directory with and without mounting.
+
+Before mounting, there are no files found within the $HOME directory.
+
+![!Containers before mounting.](./images/containers_before_mounting.png)
+
+After mounting using `-v` flag, files show up within the $HOME directory. The highlighted `miniconda` is our working directory with python script.
+
+![!Containers after mounting.](./images/containers_after_mounting.png)
+
+We can now execute the script, python_test.py using this command.
+
+```bash
+python python_test.py
+```
+
+![!Containers python script execution.](./images/containers_python_script_execution.png)
+
+More lessons on Docker can be found in this link: [Introduction to Docker](https://christinalk.github.io/docker-introduction/) and [Docker Documentation](https://docs.docker.com/engine/reference/builder/).
+
+## Sharing containers using UAB GitLab Container Registry
+
+If you prefer to share your container with a particular team/group, then the GitLab container registry is the best and most secure option.
+
+The following steps help you to create a container registry in Gitlab.
+
+### Create a Gitlab account
+
+To create a gitlab account follow the guidelines from the [UAB Gitlab page](../../docs/account_management/gitlab_account.md).
+
+### Create New Project
+
+Create a new project in Gitlab. Once you create the `new_project`, click Package and Registries, and then go to Container Registry. Initially, the container registry looks empty.  
+
+![!Containers registry.](./images/containers_registry.png)
+
+Initially, there exists no container images in the container registry. Note, copy these CLI commands for future reference. It contains commands (1) to login to your project GitLab container registry (2) Add an image to the registry using the push/build command. We will use the `push` command as we already have the existing container in our system.  
+
+### Push Alpine Container from Ubuntu system to Gitlab container registry
+
+Here is an example of pushing `alpine` image to the container registry from your ubuntu system.  
+
+List the docker images using the below command. Here `alpine` image exists already, and we will learn how to push this image to the gitlab container registry.
+
+```bash
+sudo docker images
+```
+
+![!Containers docker image.](./images/containers_docker_image.png)
+
+#### Tag alpine to push in Gitlab registry
+
+We need to have the GitLab registry name to push. It will show the default command on the container registry page. Copy these commands for future reference. The tag is `test` here.
 
 ```bash
 $sudo docker tag alpine:latest gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
 ```
 
-You can see the tag `test` associated with the `alpine` image,  
+You can see the tag `test` associated with the `alpine` image.  
 
 ```bash
 sudo docker images
 ```
 
-![!Docker test image.](./images/docker_test_image.png)
+![!Containers docker test image.](./images/containers_docker_test_image.png)
 
-## Login to gitlab registry
+#### Login to gitlab registry
 
-Use your registry name:ID to login to gitlab registry.
+Use your `registry_name:ID` to log in to the GitLab registry.
 
 ```bash
 sudo docker login gitlab.rc.uab.edu:4567
 ```
 
-Note: For securing concern use access token to login. Creating access token is shown below.
+Note: For securing concerns, use an access token to log in. Create an access token in GitLab to push/pull the docker container in the container registry (Secure token and guidelines to follow are shown next).
 
 ```bash
 sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token 
 ```
 
-### Create an Access token
+#### Create an Access token
 
-From the gitlab page you can create an access token instead of using password to login to gitlab registry. Goto Edit profile -> Click `Access Tokens`. Then enter, 1.Token name 2. Expiry date 3. Under select scopes, check read and write registry  (to push images to registry) -> Then click `create personal access token`.
+From the GitLab page, you can create an access token instead of using a password to log in to the GitLab registry. Goto Edit profile -> Click `Access Tokens`. Then enter 1. Token name 2. Expiry date 3. Under select scopes, check read and write registry  (to push images to the registry) -> Then click `create personal access token`.
 
-Once you create the token. Copy the new personal access token, since it’s a one-time step, and hard to retrieve after a refresh. Use the personal access token for login.
+Once you create the token, copy the new personal access token since it’s a one-time step and hard to retrieve after a refresh. Use the personal access token for login.
 
-![!Create access token.](./images/create_access_token.png)
+![!Containers create access token.](./images/containers_create_access_token.png)
 
-![!Personal access token.](./images/personal_access_token.png)
+![!Containers personal access token.](./images/containers_personal_access_token.png)
 
-![!Gitlab login success.](./images/gitlab_login_success.png)
+![!Containers gitlab login success.](./images/containers_gitlab_login_success.png)
 
-## To push docker container in gitlab registry
+#### To push docker container in gitlab registry
 
-The below first command is the command to push docker image to gitlab container registry. The second command is an example of pushing docker image to gitlab container registry.
+The below first command is the command to push the Docker image to the GitLab container registry. The second command is an example of pushing a Docker image to the GitLab container registry.
 
 ```bash
 sudo docker push gitlab_registry_name:ID/gitlab_group_name/project_name:tag
@@ -170,19 +289,19 @@ sudo docker push gitlab_registry_name:ID/gitlab_group_name/project_name:tag
 sudo docker push gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
 ```
 
-![!Docker push gitlab.](./images/docker_push_gitlab.png)
+![!Containers docker push gitlab.](./images/containers_docker_push_gitlab.png)
 
-![!Alpine gitlab.](./images/alpine_gitlab.png)
+![!Containers alpine gitlab.](./images/containers_alpine_gitlab.png)
 
-Removing the previous image from the system which has `test` tag already to avoid discrepancies.
+Remove the previous image from the system, which already has a `test` tag, to avoid discrepancies.
 
 ```bash
 sudo docker rmi -f 5274064a8e18
 ```
 
-![!Docker rmi.](./images/docker_rmi.png)
+![!Containers docker rmi.](./images/containers_docker_rmi.png)
 
-![!Test gitlab registry.](./images/test_gitlab_registry.png)
+![!Containers test gitlab registry.](./images/containers_test_gitlab_registry.png)
 
  Copy the pull command from the `test` container registry, and use it to pull the docker container to your system. You can see the image is reflected in the image list.
 
@@ -190,6 +309,4 @@ sudo docker rmi -f 5274064a8e18
 sudo docker pull gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test 
 ```
 
-![!Gitlab pull.](./images/gitlab_pull.png)
-
-<!-- Sharing containers public<https://rc.uab.edu> -->
+![!Containers gitlab pull.](./images/containers_gitlab_pull.png)
