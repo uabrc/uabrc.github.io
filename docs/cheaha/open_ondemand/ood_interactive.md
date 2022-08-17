@@ -74,6 +74,25 @@ To adjust the environment, please use the Environment Setup box to load modules 
     We have recently changed the way we deploy RStudio on OOD. There are now two versions available, and one is marked with the text `(deprecated)`. The version without the deprecation notice is the new deployment method and is preferred for use. It is more flexible and more robust, and will allow us to support you more quickly and easily. The version with the deprecation notice is the previous containerized version. Because it is deprecated, we will not provide additional support for that version. Please move your workflows to the newer version.
 <!-- markdownlint-disable MD046 -->
 
+#### Using Pandoc and `knitr` within RStudio
+
+Pandoc is a tool for transforming various markup and markdown formatted documents into one another. RStudio uses `knitr`, which depends on Pandoc, to build reports and documents from notebooks. Pandoc cannot be installed on our system via RStudio. An alternative method is to use [Anaconda](../../workflow_solutions/using_anaconda.md), following the instructions below.
+
+1. [Create an environment](../../workflow_solutions/using_anaconda.md#create-an-environment) called `pandoc` with the package `pandoc` using the following command.
+
+    ```bash
+    conda create --name pandoc -c conda-forge pandoc
+    ```
+
+2. In the [RStudio job form](#rstudio-server), in the Enviroment Setup box, add the following.
+
+    ```bash
+    module load Anaconda3
+    conda activate pandoc
+    ```
+
+3. Start the job and use RStudio and `knitr` as expected.
+
 ### Jupyter Notebook
 
 Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
@@ -165,3 +184,36 @@ To create a new environment, click the `+` button at the top of the `Current env
 <!-- markdownlint-enable MD046 -->
 
 After successfully creating your environment, navigate to the Files tab. You can create a new notebook using the `New` dropdown menu in the top right. Select your virtual environment of choice, and a notebook will be created and opened.
+
+### Matlab
+
+Matlab is available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
+
+![!Matlab job request form.](./images/ood_matlab_form.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+Matlab tends to consume substantial memory at startup. You may experience difficulty with job errors below 20 GB of total memory.
+<!-- markdownlint-enable MD046 -->
+
+#### Using Anaconda Python from within Matlab
+
+Matlab has the ability to interoperate with Python from within Matlab. The official documentation for this featuer may be found at <https://www.mathworks.com/help/matlab/call-python-libraries.html>.
+
+This section is dedicated to using this feature with Anaconda on Cheaha. To use Python contained in an Anaconda Environment within Matlab, please use the following steps.
+
+1. Create an [HPC Interactive Desktop Job](#interactive-apps) using [Open OnDemand](ood_main.md).
+2. Open a terminal in that job. The following steps should all be run in this terminal unless otherwise specified.
+3. [Load the Anaconda Module](../conda.md#loading-anaconda).
+4. [Create an Environment](../../workflow_solutions/using_anaconda.md#using-anaconda) in Anaconda with the packages needed.
+5. [Activate the Environment](../../workflow_solutions/using_anaconda.md#activate-an-environment),
+6. Load the Matlab [Module](../software/modules.md).
+7. Start Matlab by entering the command `matlab`.
+8. Verify success by entering `pyenv` at the Matlab prompt (not the terminal window). Multiple lines of text will be returned at the prompt. Among them you should see a line like the following, with your environment name in place of `<env_name>`.
+
+    ```text
+    Executable: /home/$USER/.conda/envs/<env_name>/bin/python
+    ```
+
+You may optionally verify that Python works correctly by entering `py.list(["hello", "world"])`. A python list object should appear in the workspace.
