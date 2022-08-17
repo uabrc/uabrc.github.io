@@ -16,7 +16,7 @@ There are multiple locations for data storage both on and off Cheaha each with a
 
 Each user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`). These two locations are meant to store general data long-term and can be used during active analysis or for archiving small projects. Traditionally, `$HOME` is meant to store scripts and supporting files and toolboxes such as Anaconda virtual environments or R packages while `$USER_DATA` can store datasets and results for a user's projects.
 
-The owner (`$USER`) of both directories can read, write/delete, and list files. No other users or groups have permissions to this directory.
+The owner (`$USER`) of both directories can read, write/delete, and list files. No other users or groups have permissions to this directory. While it is possible to share files in your personal space with other users, a more practical solution may be to use a [project directory](#project-directory) instead.
 
 A user is limited to 5 TB of data across both `$HOME` and `$USER_DATA` combined.
 
@@ -26,7 +26,7 @@ A user is limited to 5 TB of data across both `$HOME` and `$USER_DATA` combined.
     The home and user data directories are mirrored across storage locations to allow for emergency backup in case some of the drives fail. This is not meant to be a long-term backup solution as any data deleted by a user is deleted on the main drive and the mirrored drive.
 <!-- markdownlint-enable MD046 -->
 
-### Project Directory
+## Project Directory
 
 Shared data can be stored in a `/data/project/<project_name>` directory. The default storage size for a new project is 50TB. If you need less than 5TB or your need for shared space is short term, please request a [Sloss space](#sloss) instead. Project storage can be helpful for teams of researchers who need access to the same data.
 
@@ -44,7 +44,7 @@ A special location under `/data/project/sloss` to store projects that are at mos
 
 Two types of scratch space are provided for analyses currently being ran, network-mounted and local. These are spaces shared across users (though one user still cannot access another user's files without permission) and as such, data should be moved out of scratch when the analysis is finished.
 
-### Network Scratch
+### User Scratch
 
 All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in `/data/scratch/$USER` or `$USER_SCRATCH`. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.
 
@@ -60,12 +60,19 @@ Network scratch is available on the login node and each compute node. This stora
 
 Each compute node has a local scratch directory that is accessible via the variable `$LOCAL_SCRATCH`. If your job performs a lot of file I/O, the job should use `$LOCAL_SCRATCH` rather than `$USER_SCRATCH` to prevent bogging down the network scratch file system. It's important to recognize that most jobs run on the cluster do not fall under this category.
 
-Note that `$LOCAL_SCRATCH` is only useful for jobs in which all processes run on the same compute node, so MPI jobs are not candidates for this solution. Use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node.
-
-The following is an array job example that uses `$LOCAL_SCRATCH` by transferring the inputs into `$LOCAL_SCRATCH` at the beginning of the script and the result out of `$LOCAL_SCRATCH` at the end of the script.
+<!-- markdownlint-disable MD046 -->
+!!! important
 
     `$LOCAL_SCRATCH` is only useful for jobs in which all processes run on the same compute node, so MPI jobs are not candidates for this solution. Use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node.
 <!-- markdownlint-enable MD046 -->
+
+## How much space do I have left?
+
+To check how much space you have left in `/data/user/$USER` and `/scratch/$USER` please enter the command `quota-report`. This report is automatically displayed each time you log in.
+
+For space in `/data/project/<project>` please enter the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name.
+
+Both quota reports are updated nightly.
 
 ## Data Policies
 
