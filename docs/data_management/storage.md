@@ -6,6 +6,14 @@
     The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
 
+## How much space do I have left?
+
+To check how much space you have left in `/data/user/$USER` and `/scratch/$USER` please enter the command `quota-report`. This report is automatically displayed each time you log in.
+
+For space in `/data/project/<project>` please enter the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name.
+
+Both quota reports are updated nightly.
+
 ## Privacy
 
 **Do not store sensitive information on this filesystem. It is not encrypted.** Note that your data will be stored on the cluster filesystem, and while not accessible to ordinary users, it could be accessible to the cluster administrator(s).
