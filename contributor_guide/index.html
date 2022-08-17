@@ -1680,6 +1680,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#required-vscode-extensions" class="md-nav__link">
+    Required VSCode Extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handy-vscode-hotkeys" class="md-nav__link">
+    Handy VSCode Hotkeys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#vscode-settingsjson-additions" class="md-nav__link">
     VSCode settings.json Additions
   </a>
@@ -1693,29 +1707,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#github-setup" class="md-nav__link">
-    GitHub Setup
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow" class="md-nav__link">
-    Workflow
+  <a href="#workflow-for-contributing" class="md-nav__link">
+    Workflow for Contributing
   </a>
   
-    <nav class="md-nav" aria-label="Workflow">
+    <nav class="md-nav" aria-label="Workflow for Contributing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#serving-docs-locally" class="md-nav__link">
-    Serving Docs Locally
+  <a href="#verifying-changes-using-github-pages" class="md-nav__link">
+    Verifying Changes Using GitHub Pages
   </a>
   
 </li>
@@ -1726,8 +1733,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#file-organization" class="md-nav__link">
-    File Organization
+  <a href="#file-organization-general-principles" class="md-nav__link">
+    File Organization General Principles
   </a>
   
 </li>
@@ -1926,6 +1933,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#required-vscode-extensions" class="md-nav__link">
+    Required VSCode Extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handy-vscode-hotkeys" class="md-nav__link">
+    Handy VSCode Hotkeys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#vscode-settingsjson-additions" class="md-nav__link">
     VSCode settings.json Additions
   </a>
@@ -1939,29 +1960,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#github-setup" class="md-nav__link">
-    GitHub Setup
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow" class="md-nav__link">
-    Workflow
+  <a href="#workflow-for-contributing" class="md-nav__link">
+    Workflow for Contributing
   </a>
   
-    <nav class="md-nav" aria-label="Workflow">
+    <nav class="md-nav" aria-label="Workflow for Contributing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#serving-docs-locally" class="md-nav__link">
-    Serving Docs Locally
+  <a href="#verifying-changes-using-github-pages" class="md-nav__link">
+    Verifying Changes Using GitHub Pages
   </a>
   
 </li>
@@ -1972,8 +1986,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#file-organization" class="md-nav__link">
-    File Organization
+  <a href="#file-organization-general-principles" class="md-nav__link">
+    File Organization General Principles
   </a>
   
 </li>
@@ -2089,54 +2103,107 @@
 
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>We are using Visual Studio Code (VSCode) for development with the following extensions installed. While VSCode is not required, it can help with automating formatting, linting and Anaconda environment management. VSCode may be obtained from <a href="https://code.visualstudio.com/">Visual Studio Code</a> and documentation is available at <a href="https://code.visualstudio.com/docs">VSCode: Docs</a>.</p>
-<p>Several extensions are useful for this project and are listed below. Extensions may be obtained by searching the Extensions Menu in VSCode by pressing <code>ctrl + shift + x</code>. More information on managing extensions is available at <a href="https://code.visualstudio.com/docs/editor/extension-marketplace">VSCode: Extension Marketplace</a>.</p>
+<p>Several extensions are useful for this project and are listed below. Extensions may be obtained by searching the Extensions Menu in VSCode by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-x">X</kbd></span>. More information on managing extensions is available at <a href="https://code.visualstudio.com/docs/editor/extension-marketplace">VSCode: Extension Marketplace</a>.</p>
+<h3 id="required-vscode-extensions">Required VSCode Extensions<a class="headerlink" href="#required-vscode-extensions" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Python [<code>ms-python.python</code>] (for Anaconda environment management)</li>
-<li>Markdown All in One [<code>yzhang.markdown-all-in-one</code>]</li>
-<li>markdownlint [<code>DavidAnson.vscode-markdownlint</code>]</li>
-<li>Prettier - Code formatter [<code>esbenp.prettier-vscode</code>]</li>
+<li>Python: <code>ms-python.python</code> (for Anaconda environment management)</li>
+<li>Markdown All in One: <code>yzhang.markdown-all-in-one</code></li>
+<li>markdownlint: <code>DavidAnson.vscode-markdownlint</code></li>
+<li>Prettier - Code formatter: <code>esbenp.prettier-vscode</code></li>
 </ul>
+<h3 id="handy-vscode-hotkeys">Handy VSCode Hotkeys<a class="headerlink" href="#handy-vscode-hotkeys" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Open new terminal: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-grave">`</kbd></span></li>
+<li>Find in all files: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f">F</kbd></span></li>
+<li>Commenting and uncommenting code using <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-slash">/</kbd></span><ul>
+<li>For a single line, click anywhere on that line to place the caret, then press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-slash">/</kbd></span></li>
+<li>For commenting a block of text, select the block, then press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-slash">/</kbd></span></li>
+</ul>
+</li>
+</ul>
+<h3 id="vscode-settingsjson-additions">VSCode <code>settings.json</code> Additions<a class="headerlink" href="#vscode-settingsjson-additions" title="Permanent link">&para;</a></h3>
 <p>To make the best use of formatting extensions for this project, please add the following block to your <code>settings.json</code> file. These changes can be made:</p>
 <ol>
 <li>Within the VSCode project file in the <code>.vscode</code> folder, affecting only this project <em>--OR--</em></li>
-<li>To the global VSCode settings file, affecting all projects. To change the global file, press <code>ctrl + shift + p</code> to open the Command Palette, then search for <code>Preferences: Open Settings (JSON)</code> and append the following content.</li>
+<li>To the global VSCode settings file, affecting all projects. To change the global file, press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> to open the Command Palette, then search for <code>Preferences: Open Settings (JSON)</code> and append the following content.</li>
 </ol>
-<h3 id="vscode-settingsjson-additions">VSCode <code>settings.json</code> Additions<a class="headerlink" href="#vscode-settingsjson-additions" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">  </span><span class="nt">&quot;[html]&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;editor.defaultFormatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;esbenp.prettier-vscode&quot;</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;editor.defaultFormatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vscode.html-language-features&quot;</span><span class="w"></span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;[markdown]&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;editor.defaultFormatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;yzhang.markdown-all-in-one&quot;</span><span class="w"></span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;[yaml]&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;editor.defaultFormatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;esbenp.prettier-vscode&quot;</span><span class="w"></span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&quot;markdownlint.config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;MD046&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fenced&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">&quot;markdown.extension.list.indentationSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;inherit&quot;</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;editor.defaultFormatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;yzhang.markdown-all-in-one&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;editor.detectIndentation&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;editor.insertSpaces&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;editor.tabSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;editor.wordWrap&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;on&quot;</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">&quot;[yaml]&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">&quot;editor.defaultFormatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;esbenp.prettier-vscode&quot;</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nt">&quot;markdown.extension.list.indentationSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;inherit&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">&quot;markdownlint.config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">&quot;MD046&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fenced&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Before you can get started working on contributions, you'll need a copy of the repository. The first step, done only once, is to fork the repository in GitHub to your personal account. The repository is located at <a href="https://github.com/uabrc/uabrc.github.io">https://github.com/uabrc/uabrc.github.io</a>. More in-depth documentation on forking can be found at <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">GitHub: Fork a Repo</a>.</p>
-<p>Once the fork has been created, you can clone your fork using the Command Palette (<code>ctrl + shift + p</code>) and <code>Git: Clone...</code> in VSCode, or at the command line. More information on cloning can be found at <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">GitHub: Cloning a Repository</a>.</p>
+<p>Once the fork has been created, you can clone your fork using the Command Palette (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span>) and <code>Git: Clone...</code> in VSCode, or at the command line. More information on cloning can be found at <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">GitHub: Cloning a Repository</a>.</p>
 <h3 id="local-machine-setup-laptopdesktop">Local Machine Setup (Laptop/Desktop)<a class="headerlink" href="#local-machine-setup-laptopdesktop" title="Permanent link">&para;</a></h3>
 <p>The Python extension will activate when you open any Python file. The file <code>test.py</code> has been added for convenience, simply open that file to activate the extension. The extension will show the currently activated environment near the bottom-left corner of the VSCode window.</p>
-<p>Please create an Anaconda environment using <code>build_env.yml</code> using the following.</p>
+<p>Please create an Anaconda environment using <code>build_env.yml</code> using the following in the VSCode terminal.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda env create -f build_env.yml
 </code></pre></div>
 <p>Activate the environment in VSCode by clicking the currently activated environment in the bottom-left of the VSCode window. A menu will appear allowing you to select from discovered environments. You may need to reload VSCode to get the environment to appear if it was just created.</p>
-<p>To build the documentation locally, use <code>mkdocs build</code>. Be sure to fix all warnings before submitting a pull request.</p>
-<h3 id="github-setup">GitHub Setup<a class="headerlink" href="#github-setup" title="Permanent link">&para;</a></h3>
-<p>To view your changes as they would appear on the official documentation website, you'll need to set up GitHub Pages in your fork. Navigate to your fork repository URL and click the "Settings" tab. Click "Pages" under "Code and automation". Follow the instructions here to set up a source: <a href="https://docs.github.com/en/pages">GitHub Pages Docs</a>.</p>
-<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
+<p>To build the documentation locally, use <code>mkdocs build</code> in the VSCode terminal. Be sure to fix all warnings before submitting a pull request.</p>
+<h2 id="workflow-for-contributing">Workflow for Contributing<a class="headerlink" href="#workflow-for-contributing" title="Permanent link">&para;</a></h2>
+<p>The workflow below assumes you are using VSCode as described above, and wish to use <code>mkdocs serve</code> to verify your changes. You may alternately verify changes using <a href="#verifying-changes-using-github-pages">GitHub Pages</a>.</p>
 <ol>
-<li>Open the cloned repository in VSCode.</li>
-<li>Create a branch with a short but meaningful name for your intended changes.</li>
-<li>Make changes to markdown files.</li>
-<li>Use <code>mkdocs serve</code> to build the docs locally and inspect changes.</li>
-<li>Commit changes to the new branch.</li>
-<li>Push the branch to your remote repository on GitHub.</li>
-<li>Check your contributions match</li>
-<li>Make a pull request to the upstream repository.</li>
+<li>Create and checkout a new branch on your local machine (the working branch)<ol>
+<li>A branch should be created to resolve an issue, and lives only until the issue is resolved.</li>
+<li>Give the branch a short but meaningful name for your intended changes.</li>
+<li>For bug fixes use names like <code>fix-broken-link</code> or <code>fix-page-formatting</code>.</li>
+<li>For new features or pages, use names like <code>feat-lts-page</code> or <code>feat-accessibility-improvement</code>.</li>
+<li>Command to use to pull the new branch to local machine in VSCode terminal: <code>git checkout -b &lt;name&gt;</code>.</li>
+</ol>
+</li>
+<li>Add, delete and modify files as necessary to implement your intended changes.<ol>
+<li>Stage and commit changes in small units as you go. Be sure you are on the branch you made earlier!</li>
+<li>VSCode facilitates staging and committing files and it is highly recommended.</li>
+<li>Stage/commit commands may be found below:<ol>
+<li>Stage: <a href="https://github.com/git-guides/git-add">https://github.com/git-guides/git-add</a></li>
+<li>Commit: <a href="https://github.com/git-guides/git-commit">https://github.com/git-guides/git-commit</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Verify your changes work as expected.<ol>
+<li>Activate your conda environment.<ol>
+<li>Open the file <code>test.py</code> to start the Python extension.</li>
+<li>Select the interpreter using <a href="https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment">https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment</a></li>
+</ol>
+</li>
+<li>Open a VSCode terminal using <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-grave">`</kbd></span>.</li>
+<li>Execute the command <code>mkdocs serve</code></li>
+<li>If a new browser tab does not open automatically, use your browser to navigate to <code>http://localhost:8000</code>.</li>
+<li>Verify your changes look and function as expected.</li>
+</ol>
+</li>
+<li>Make a pull request.<ol>
+<li>Push your local working branch to your GitHub remote repository using <code>git push</code>.</li>
+<li>Navigate to the upstream repository at <a href="https://github.com/uabrc/uabrc.github.io">https://github.com/uabrc/uabrc.github.io</a>.</li>
+<li>Click the "Pull requests" tab.</li>
+<li>Click the "New pull request" button.</li>
+<li>Click the link "compare across forks".</li>
+<li>There are four drop-down menus.<ol>
+<li>The left two drop-down menus are for the base repository and should say <code>uabrc/uabrc.github.io</code> and <code>main</code> by default. Be sure that they do.</li>
+<li>In the third drop-down menu, select your fork.</li>
+<li>In the fourth drop-down menu, select your working branch.</li>
+</ol>
+</li>
+<li>Click the "Create pull request" button.</li>
+<li>Give your pull request a concise and informative name. The name should describe what the pull request changes at a high level.</li>
+<li>In the description box, give details about what was changed at a conceptual level. The actual details of the changes can be viewed in the "Commits" and "Files changed" tabs.</li>
+</ol>
+</li>
 </ol>
 <p>From here your pull request will go through a review process. The following criteria are checked.</p>
 <ol>
@@ -2144,13 +2211,37 @@
 <li>Correct formatting</li>
 <li>Image alternate text (alt text)</li>
 <li>Images must use the gallery functionality, formatted as <code>![!alttext](path/to/file)</code>. Note the leading <code>!</code> in the alttext.</li>
-<li>Valid internal and external links</li>
+<li>Valid internal and external links.</li>
+<li>Quality, organization and accuracy of contribution.</li>
 </ol>
-<p>We will also make an attempt to check your information for accuracy, as well as proofread the text. Bear in mind our time is limited and we are not infallible, so please double-check your pull requests!</p>
-<h3 id="serving-docs-locally">Serving Docs Locally<a class="headerlink" href="#serving-docs-locally" title="Permanent link">&para;</a></h3>
-<p>When working with Markdown, it's difficult to tell exactly how changes to the raw files will change the website, especially when the only way to build the docs remotely is to push to a main branch of either the main repo or a fork. Instead, you can build the docs locally and inspect how you're changes are rendered before pushing to any remote by using <code>mkdocs serve</code>. This will start a local build you can view in your web browser. It will also show warnings and errors if any issues building the docs occur.</p>
-<h2 id="file-organization">File Organization<a class="headerlink" href="#file-organization" title="Permanent link">&para;</a></h2>
-<p>To Be Determined</p>
+<p>We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date!</p>
+<h3 id="verifying-changes-using-github-pages">Verifying Changes Using GitHub Pages<a class="headerlink" href="#verifying-changes-using-github-pages" title="Permanent link">&para;</a></h3>
+<p>It is always a good idea to verify your changes before making them available to the general public. There are two ways to do so, and we've covered how to do verify using your local machine. Your fork's GitHub Pages may also be used to verify your changes. To view your changes online using GitHub Pages, you'll need to set it up for your fork.</p>
+<ol>
+<li>Navigate to your fork in the browser and click the "Settings" tab.</li>
+<li>Click "Pages" under "Code and automation" in the left hand navigation menu.</li>
+<li>Under "Build and deployment"...<ol>
+<li>Source should have "Deploy from a branch" selected in the drop-down menu.</li>
+<li>Branch should have "gh-pages" selected in the first drop-down menu.</li>
+<li>A new drop-down menu will appear, make sure "/ (root)" is selected.</li>
+<li>Click save next to the previous two drop-down menus.</li>
+</ol>
+</li>
+<li>Now any commits pushed to your <code>main</code> or <code>dev</code> branches will trigger continuous integration and deploy those changes to your fork.</li>
+<li>A small panel near the top of the "Pages" page should show the URL where your version of the site is served.</li>
+</ol>
+<p>Please do not use any markdown preview software to verify changes. The pages will look substantially different when rendered as HTML, and some features are not understood by preview software, such as admonitions.</p>
+<h2 id="file-organization-general-principles">File Organization General Principles<a class="headerlink" href="#file-organization-general-principles" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Main headings are based on <a href="https://www.uab.edu/it/home/research-computing/research-digital-marketplace">UAB Research Computing services</a></li>
+<li>Favor placing new pages and information into an existing section over creating</li>
+<li>Approach documentation from a problem solving angle rather than a technology. Examples:<ul>
+<li>Section title "Installing Software Yourself with Anaconda" vs "Anaconda"</li>
+<li>Section title "Running Analysis Jobs" vs "SLURM"</li>
+</ul>
+</li>
+<li>Put redirects for any page moves in case someone has bookmarked a page (see Redirect section below)</li>
+</ul>
 <h2 id="formatting">Formatting<a class="headerlink" href="#formatting" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Links must be one of the following formats including all punctuation and brackets:<ul>
@@ -2258,7 +2349,7 @@ Contrast checker: <a href="https://webaim.org/resources/contrastchecker/">https:
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 11, 2022</span>
       
     
   </small>
