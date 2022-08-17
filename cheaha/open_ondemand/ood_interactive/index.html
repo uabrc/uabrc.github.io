@@ -1016,6 +1016,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#matlab" class="md-nav__link">
+    Matlab
+  </a>
+  
+    <nav class="md-nav" aria-label="Matlab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-anaconda-python-from-within-matlab" class="md-nav__link">
+    Using Anaconda Python from within Matlab
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1908,6 +1928,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#matlab" class="md-nav__link">
+    Matlab
+  </a>
+  
+    <nav class="md-nav" aria-label="Matlab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-anaconda-python-from-within-matlab" class="md-nav__link">
+    Using Anaconda Python from within Matlab
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2073,13 +2113,41 @@
 <!-- markdownlint-enable MD046 -->
 
 <p>After successfully creating your environment, navigate to the Files tab. You can create a new notebook using the <code>New</code> dropdown menu in the top right. Select your virtual environment of choice, and a notebook will be created and opened.</p>
+<h3 id="matlab">Matlab<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h3>
+<p>Matlab is available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.</p>
+<p><div class="lightgallery"><a data-sub-html="Matlab job request form." href="../images/ood_matlab_form.png"><img alt="Matlab job request form." src="../images/ood_matlab_form.png" /></a></div></p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
+<p>Matlab tends to consume substantial memory at startup. You may experience difficulty with job errors below 20 GB of total memory.</p>
+<!-- markdownlint-enable MD046 -->
+
+<h4 id="using-anaconda-python-from-within-matlab">Using Anaconda Python from within Matlab<a class="headerlink" href="#using-anaconda-python-from-within-matlab" title="Permanent link">&para;</a></h4>
+<p>Matlab has the ability to interoperate with Python from within Matlab. The official documentation for this featuer may be found at <a href="https://www.mathworks.com/help/matlab/call-python-libraries.html">https://www.mathworks.com/help/matlab/call-python-libraries.html</a>.</p>
+<p>This section is dedicated to using this feature with Anaconda on Cheaha. To use Python contained in an Anaconda Environment within Matlab, please use the following steps.</p>
+<ol>
+<li>Create an <a href="#interactive-apps">HPC Interactive Desktop Job</a> using <a href="../ood_main/">Open OnDemand</a>.</li>
+<li>Open a terminal in that job. The following steps should all be run in this terminal unless otherwise specified.</li>
+<li><a href="../../conda/#loading-anaconda">Load the Anaconda Module</a>.</li>
+<li><a href="../../../workflow_solutions/using_anaconda/#using-anaconda">Create an Environment</a> in Anaconda with the packages needed.</li>
+<li><a href="../../../workflow_solutions/using_anaconda/#activate-an-environment">Activate the Environment</a>,</li>
+<li>Load the Matlab <a href="../../software/modules/">Module</a>.</li>
+<li>Start Matlab by entering the command <code>matlab</code>.</li>
+<li>
+<p>Verify success by entering <code>pyenv</code> at the Matlab prompt (not the terminal window). Multiple lines of text will be returned at the prompt. Among them you should see a line like the following, with your environment name in place of <code>&lt;env_name&gt;</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Executable: /home/$USER/.conda/envs/&lt;env_name&gt;/bin/python
+</code></pre></div>
+</li>
+</ol>
+<p>You may optionally verify that Python works correctly by entering <code>py.list(["hello", "world"])</code>. A python list object should appear in the workspace.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2022</span>
       
     
   </small>
