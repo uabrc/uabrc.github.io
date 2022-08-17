@@ -1285,6 +1285,19 @@
     Install an SSH Client
   </a>
   
+    <nav class="md-nav" aria-label="Install an SSH Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-multiplexers" class="md-nav__link">
+    Terminal Multiplexers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1979,6 +1992,19 @@
     Install an SSH Client
   </a>
   
+    <nav class="md-nav" aria-label="Install an SSH Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-multiplexers" class="md-nav__link">
+    Terminal Multiplexers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2180,6 +2206,12 @@
 <p>SSH stands for <strong>S</strong>ecure <strong>SH</strong>ell and is a powerful tool for executing terminal commands on remote machines. It is widely used and ubiquitous, and a number of other technologies are built on top of SSH, like <code>sftp</code> and <code>scp</code> for transferring files. It is also the primary mode of command line communication with Research Computing technologies like Cheaha and cloud.rc.</p>
 <h3 id="install-an-ssh-client">Install an SSH Client<a class="headerlink" href="#install-an-ssh-client" title="Permanent link">&para;</a></h3>
 <p>There are two main steps to working with SSH efficiently. The first is to ensure you have an SSH client installed, which will let your local machine communicate with remote machines. The second is to ensure you have <code>ssh-agent</code> running in each terminal window to automate management of key files. The <code>ssh-agent</code> software comes with most SSH clients, but does not always run automatically. How to start the <code>ssh-agent</code> software automatically varies depending on operating system and shell flavor, which we will describe below.</p>
+<h4 id="terminal-multiplexers">Terminal Multiplexers<a class="headerlink" href="#terminal-multiplexers" title="Permanent link">&para;</a></h4>
+<p>Terminal multiplexers are software that aggregate multiple SSH client sessions into one location. They often have the added benefit of keeping sessions alive on the remote machine, so short internet outages won't require you to log in again.</p>
+<ul>
+<li>For Linux, try using <code>tmux</code>: <a href="https://github.com/tmux/tmux/wiki/Installing">https://github.com/tmux/tmux/wiki/Installing</a></li>
+<li>For Windows, try using Windows Terminal: <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701">https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701</a></li>
+</ul>
 <h3 id="install-an-ssh-client-linux">Install an SSH Client (Linux)<a class="headerlink" href="#install-an-ssh-client-linux" title="Permanent link">&para;</a></h3>
 <p>Virtually all Linux distributions come with SSH preinstalled and configured appropriately for ease of use, including automatically starting the <code>ssh-agent</code>.</p>
 <h3 id="install-an-ssh-client-macos">Install an SSH Client (MacOS)<a class="headerlink" href="#install-an-ssh-client-macos" title="Permanent link">&para;</a></h3>
@@ -2247,6 +2279,13 @@
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    ssh-add
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">fi</span>
 </code></pre></div>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Git Bash can also be used with <a href="#terminal-multiplexers">Windows Terminal</a> using this stackoverflow answer: <a href="https://stackoverflow.com/a/57369284">https://stackoverflow.com/a/57369284</a>.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h3 id="generating-key-pairs">Generating Key Pairs<a class="headerlink" href="#generating-key-pairs" title="Permanent link">&para;</a></h3>
 <p>The instructions for generating key pairs are identical for all operating systems. <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">GitHub</a> maintains excellent documentation on generating key pairs. The gist of those instructions follows.</p>
 <ol>
@@ -2425,7 +2464,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2022</span>
       
     
   </small>
