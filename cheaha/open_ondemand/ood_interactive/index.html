@@ -973,6 +973,19 @@
     RStudio Server
   </a>
   
+    <nav class="md-nav" aria-label="RStudio Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-pandoc-and-knitr-within-rstudio" class="md-nav__link">
+    Using Pandoc and knitr within RStudio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1885,6 +1898,19 @@
     RStudio Server
   </a>
   
+    <nav class="md-nav" aria-label="RStudio Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-pandoc-and-knitr-within-rstudio" class="md-nav__link">
+    Using Pandoc and knitr within RStudio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2032,6 +2058,24 @@
 </div>
 <!-- markdownlint-disable MD046 -->
 
+<h4 id="using-pandoc-and-knitr-within-rstudio">Using Pandoc and <code>knitr</code> within RStudio<a class="headerlink" href="#using-pandoc-and-knitr-within-rstudio" title="Permanent link">&para;</a></h4>
+<p>Pandoc is a tool for transforming various markup and markdown formatted documents into one another. RStudio uses <code>knitr</code>, which depends on Pandoc, to build reports and documents from notebooks. Pandoc cannot be installed on our system via RStudio. An alternative method is to use <a href="../../../workflow_solutions/using_anaconda/">Anaconda</a>, following the instructions below.</p>
+<ol>
+<li>
+<p><a href="../../../workflow_solutions/using_anaconda/#create-an-environment">Create an environment</a> called <code>pandoc</code> with the package <code>pandoc</code> using the following command.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda create --name pandoc -c conda-forge pandoc
+</code></pre></div>
+</li>
+<li>
+<p>In the <a href="#rstudio-server">RStudio job form</a>, in the Enviroment Setup box, add the following.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>module load Anaconda3
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>conda activate pandoc
+</code></pre></div>
+</li>
+<li>
+<p>Start the job and use RStudio and <code>knitr</code> as expected.</p>
+</li>
+</ol>
 <h3 id="jupyter-notebook">Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permanent link">&para;</a></h3>
 <p>Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.</p>
 <p><div class="lightgallery"><a data-sub-html="Jupyter Notebook job request form." href="../images/ood_jupyter_notebook_form.png"><img alt="Jupyter Notebook job request form." src="../images/ood_jupyter_notebook_form.png" /></a></div></p>
@@ -2136,7 +2180,7 @@
 <li>Start Matlab by entering the command <code>matlab</code>.</li>
 <li>
 <p>Verify success by entering <code>pyenv</code> at the Matlab prompt (not the terminal window). Multiple lines of text will be returned at the prompt. Among them you should see a line like the following, with your environment name in place of <code>&lt;env_name&gt;</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Executable: /home/$USER/.conda/envs/&lt;env_name&gt;/bin/python
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Executable: /home/$USER/.conda/envs/&lt;env_name&gt;/bin/python
 </code></pre></div>
 </li>
 </ol>
@@ -2147,7 +2191,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2022</span>
       
     
   </small>
