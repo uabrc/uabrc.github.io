@@ -53,7 +53,7 @@ In addition to personal storage, Primary Investigators may request additional sh
 
 ### Etiquette
 
-[Quotas](./slurm/submitting_jobs.md#slurm-partitions) are in place to ensure any one user can't monopolize all resources.
+[Quotas](hardware.md#quality-of-service-qos-limits) are in place to ensure any one user can't monopolize all resources.
 
 #### Running Tasks on Compute Nodes
 
