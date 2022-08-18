@@ -215,6 +215,14 @@ If asked, the simplest way to give us the information is the following. Please v
 6. Click the "Download" button in the "File Command Menu" to download a zipped copy of the folder and its contents.
 7. Pass the downloaded Zip file to [Support](support.md).
 
+#### How do I see how much space is left in my personal storage?
+
+Please see our [Storage page](../data_management/storage.md#how-much-space-do-i-have-left).
+
+#### How do I see how much space is left in my project storage?
+
+Please see our [Storage page](../data_management/storage.md#how-much-space-do-i-have-left).
+
 ## UAB Cloud
 
 ### Why is my instance failing to start?
