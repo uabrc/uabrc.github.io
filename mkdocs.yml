@@ -51,6 +51,7 @@ plugins:
         welcome/rc_days.md: education/research_computing_days.md
         welcome/welcome.md: index.md
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
+        contributor_guide.md: contributing/contributor_guide.md
 
 nav:
   - Home: index.md
@@ -122,7 +123,7 @@ nav:
       - Offered Courses: education/courses.md
       - Social Media: education/social_media.md
   - Policies: policies.md
-  - Contributing To The Docs: contributor_guide.md
+  - Contributing To The Docs: contributing/contributor_guide.md
   - Help:
       - Support: help/support.md
       - FAQ: help/faq.md
