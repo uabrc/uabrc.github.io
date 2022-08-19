@@ -76,7 +76,7 @@ To build the documentation locally, use `mkdocs build` in the VSCode terminal. B
 
 ## Workflow for Contributing
 
-The workflow below assumes you are using VSCode as described above, and wish to use `mkdocs serve` to verify your changes. You may alternately verify changes using [GitHub Pages](#verifying-changes-using-github-pages).
+The workflow below assumes you are using VSCode as described above, and wish to use [`mkdocs serve`](#mkdocs-serve) to verify your changes. You may alternately verify changes using [GitHub Pages](#verifying-changes-using-github-pages).
 
 1. Create and checkout a new branch on your local machine (the working branch)
     1. A branch should be created to resolve an issue, and lives only until the issue is resolved.
@@ -122,6 +122,16 @@ From here your pull request will go through a review process. The following crit
 6. Quality, organization and accuracy of contribution.
 
 We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date!
+
+### mkdocs serve
+
+MkDocs has a built-in method for rendering documentation locally through the command `mkdocs serve`. This will create a local host with a rendered version of your documentation and will update each time any file is saved. Importantly, this can render docs on branches other than the main branch which is not possible using Github Pages. After executing `mkdocs serve`, open `http://127.0.0.1:8000/` in your web browser to see the docs.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    `mkdocs serve` will create a complete copy of the docs project in a temporary directory. If you are adding large files to the docs, this will cause local rendering to become very slow. This will not affect a remote build after the files are added to the remote repository.
+<!-- markdownlint-enable MD046 -->
 
 ### Verifying Changes Using GitHub Pages
 
