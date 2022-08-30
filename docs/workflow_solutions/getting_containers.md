@@ -65,7 +65,7 @@ The existing image looks like,
 
 ### Create your own Docker container
 
-You can create your own Docker container, build it, and upload/share them in the Docker hub or Gitlab container registry.
+You can create your own Docker container, build it, and upload/share them in the Docker hub or UAB GitLab container registry.
 
 Let us take a synthetic python code and formulate the packages/dependencies required to build your software container. Below is a python script that requires packages, namely, numpy, scipy, and matplotlib. Next, the steps to create a `Dockerfile` is illustrated. Let us name this script `python_test.py`.
 
@@ -209,27 +209,27 @@ More lessons on Docker can be found in this link: [Introduction to Docker](https
 
 ## Sharing containers using UAB GitLab Container Registry
 
-If you prefer to share your container with a particular team/group, then the GitLab container registry is the best and most secure option.
+If you prefer to share your container with a particular team/group, then the UAB GitLab container registry is the best and most secure option.
 
-The following steps help you to create a container registry in Gitlab.
+The following steps help you to create a container registry in UAB Gitlab.
 
-### Create a Gitlab account
+### Create a UAB Gitlab account
 
-To create a gitlab account follow the guidelines from the [UAB Gitlab page](../../docs/account_management/gitlab_account.md).
+To create a UAB GitLab account follow the guidelines from the [UAB Gitlab page](../../docs/account_management/gitlab_account.md).
 
 ### Create New Project
 
-Create a new project in Gitlab. Once you create the `new_project`, click Package and Registries, and then go to Container Registry. Initially, the container registry looks empty.  
+Create a new project in UAB GitLab. Once you create the `new_project`, click Package and Registries, and then go to Container Registry. Initially, the container registry looks empty.  
 
 ![!Containers registry.](./images/containers_registry.png)
 
-Initially, there exists no container images in the container registry. Note, copy these CLI commands for future reference. It contains commands (1) to login to your project GitLab container registry (2) Add an image to the registry using the push/build command. We will use the `push` command as we already have the existing container in our system.  
+Initially, there exists no container images in the container registry. Note, copy these CLI commands for future reference. It contains commands (1) to login to your project UAB GitLab container registry (2) Add an image to the registry using the push/build command. We will use the `push` command as we already have the existing container in our system.  
 
-### Push Alpine Container from Ubuntu system to Gitlab container registry
+### Push Alpine Container from Ubuntu system to UAB GitLab container registry
 
 Here is an example of pushing `alpine` image to the container registry from your ubuntu system.  
 
-List the docker images using the below command. Here `alpine` image exists already, and we will learn how to push this image to the gitlab container registry.
+List the docker images using the below command. Here `alpine` image exists already, and we will learn how to push this image to the UAB GitLab container registry.
 
 ```bash
 sudo docker images
@@ -237,9 +237,9 @@ sudo docker images
 
 ![!Containers docker image.](./images/containers_docker_image.png)
 
-#### Tag alpine to push in Gitlab registry
+#### Tag alpine to push in UAB GitLab registry
 
-We need to have the GitLab registry name to push. It will show the default command on the container registry page. Copy these commands for future reference. The tag is `test` here.
+We need to have the UAB GitLab registry name to push. It will show the default command on the container registry page. Copy these commands for future reference. The tag is `test` here.
 
 ```bash
 $sudo docker tag alpine:latest gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
@@ -253,15 +253,15 @@ sudo docker images
 
 ![!Containers docker test image.](./images/containers_docker_test_image.png)
 
-#### Login to gitlab registry
+#### Login to UAB GitLab registry
 
-Use your `registry_name:ID` to log in to the GitLab registry.
+Use your `registry_name:ID` to log in to the UAB GitLab registry.
 
 ```bash
 sudo docker login gitlab.rc.uab.edu:4567
 ```
 
-Note: For securing concerns, use an access token to log in. Create an access token in GitLab to push/pull the docker container in the container registry (Secure token and guidelines to follow are shown next).
+Note: For securing concerns, use an access token to log in. Create an access token in UAB GitLab to push/pull the docker container in the container registry (Secure token and guidelines to follow are shown next).
 
 ```bash
 sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token 
@@ -269,7 +269,7 @@ sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token
 
 #### Create an Access token
 
-From the GitLab page, you can create an access token instead of using a password to log in to the GitLab registry. Goto Edit profile -> Click `Access Tokens`. Then enter 1. Token name 2. Expiry date 3. Under select scopes, check read and write registry  (to push images to the registry) -> Then click `create personal access token`.
+From the UAB GitLab page, you can create an access token instead of using a password to log in to the UAB GitLab registry. Goto Edit profile -> Click `Access Tokens`. Then enter 1. Token name 2. Expiry date 3. Under select scopes, check read and write registry  (to push images to the registry) -> Then click `create personal access token`.
 
 Once you create the token, copy the new personal access token since it’s a one-time step and hard to retrieve after a refresh. Use the personal access token for login.
 
@@ -279,9 +279,9 @@ Once you create the token, copy the new personal access token since it’s a one
 
 ![!Containers gitlab login success.](./images/containers_gitlab_login_success.png)
 
-#### To push docker container in gitlab registry
+#### To push docker container in UAB GitLab registry
 
-The below first command is the command to push the Docker image to the GitLab container registry. The second command is an example of pushing a Docker image to the GitLab container registry.
+The below first command is the command to push the Docker image to the UAB GitLab container registry. The second command is an example of pushing a Docker image to the UAB GitLab container registry.
 
 ```bash
 sudo docker push gitlab_registry_name:ID/gitlab_group_name/project_name:tag
