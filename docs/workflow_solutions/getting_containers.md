@@ -213,7 +213,7 @@ python python_test.py
 
 More lessons on Docker can be found in this link: [Introduction to Docker](https://christinalk.github.io/docker-introduction/) and [Docker Documentation](https://docs.docker.com/engine/reference/builder/).
 
-## Sharing containers using UAB GitLab Container Registry
+## Sharing Containers Using UAB GitLab Container Registry
 
 If you prefer to share your container with a particular team/group, then the UAB GitLab container registry is the best and most secure option.
 
@@ -229,20 +229,17 @@ The following steps help you to create a container registry in UAB GitLab:
 
 3. Push Alpine Container from Ubuntu system to UAB GitLab container registry.
 
-???+ example
-   Here is an example of pushing `alpine` image to the container registry from your ubuntu system.  
+<!-- markdownlint-disable MD046 -->
 
-   List the docker images using the below command. Here `alpine` image exists already, and we will learn how to push this image to the UAB GitLab container registry.
-
-   ```bash
-   sudo docker images
-   ```
+???+ example "Pushing an `alpine` image to the UAB GitLab container registry from an Ubuntu Linux computer"
+   - List the docker images on your local computer using the `docker images` command. An `alpine` image exists already on this computer. Your container will likely have a different name.
+```bash
+sudo docker images
+```
 
 ![!Containers docker image.](./images/containers_docker_image.png)
 
-#### Tag alpine to push in UAB GitLab registry
-
-We need to have the UAB GitLab registry name to push. It will show the default command on the container registry page. Copy these commands for future reference. The tag is `test` here.
+   - Tag `alpine` to push in UAB GitLab registry. We need to have the UAB GitLab registry name to push. It will show the default command on the container registry page. Copy these commands for future reference. The tag is `test` here.
 
 ```bash
 $sudo docker tag alpine:latest gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
@@ -256,7 +253,9 @@ sudo docker images
 
 ![!Containers docker test image.](./images/containers_docker_test_image.png)
 
-#### Login to UAB GitLab registry
+<!-- markdownlint-enable MD046 -->
+
+## Login to UAB GitLab registry
 
 Use your `registry_name:ID` to log in to the UAB GitLab registry.
 
@@ -272,7 +271,10 @@ sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token
 
 #### Create an Access token
 
-From the UAB GitLab page, you can create an access token instead of using a password to log in to the UAB GitLab registry. Goto Edit profile -> Click `Access Tokens`. Then enter 1. Token name 2. Expiry date 3. Under select scopes, check read and write registry  (to push images to the registry) -> Then click `create personal access token`.
+From the UAB GitLab page, you can create an access token instead of using a password to log in to the UAB GitLab registry. Goto Edit profile -> Click `Access Tokens`. Then enter:
+   1. **Token name.** Suggestion: "container"_"repository-name"
+   2. **Expiry date.** Suggestion: 3 months from the date you are making it.
+   3. Under select scopes, check read and write registry  (to push images to the registry) -> Then click `create personal access token`.
 
 Once you create the token, copy the new personal access token since it’s a one-time step and hard to retrieve after a refresh. Use the personal access token for login.
 
