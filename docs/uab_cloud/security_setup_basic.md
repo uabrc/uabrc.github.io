@@ -84,6 +84,8 @@ Key Pairs are security devices used to authenticate and connect to a remote mach
 
 While key pairs can be reused between instances, we highly recommend using a new key pair with each instance to minimize risk if a private key becomes compromised. See [Good Practices](#good-practices) for more information.
 
+There are a number of pitfalls and potential issues that can arise during this process. For information on these pitfalls and for more information on managing key pairs, see [Managing Keys](remote_access.md#managing-keys).
+
 There are two ways to create a key pair:
 
 1. [Use the cloud.rc interface to generate a key pair remotely and download the private key file](#generating-a-key-pair-on-cloudrc).
