@@ -8,7 +8,7 @@ Docker is an open-source platform for building, deploying, running, updating, an
 
 Docker containers are available in <https://hub.docker.com/>. This docker hub repository allows to share containers and use pre-existing docker images.
 
-![!Containers docker hub website.](./images/containers docker_hub_website.png)
+![!Containers docker hub website.](./images/containers_docker_hub_website.png)
 
 ## Using Containers on UAB RC Cloud (cloud.rc.uab.edu)
 
@@ -62,7 +62,6 @@ sudo docker pull alpine:3.14
 The existing image looks like,
 
 ![!Containers docker alpine tag image.](./images/containers_docker_alpine_tag_image.png)
-
 
 ## Create Your Own Docker Container
 
@@ -122,17 +121,12 @@ We require numpy, scipy, and matplotlib libraries to execute the above Python sc
 
     This is the specification file. It provides Docker with the software information it needs to build our new container. See the Docker Container documentation for more information <https://docs.docker.com/engine/reference/builder/>.
 
-<!-- markdownlint-disable MD046 -->
 !!! note "Containers and Reproducibiliy"
-
     Always include version numbers for Anaconda, package managers, software you are installing, and the dependencies for those software. Containers are not by nature scientifically reproducible, but if you include versions for as much software in the container as possible, they can be reproducible years later.
-<!-- markdownlint-enable MD046 -->
-
 
 1. We start with an existing container `continuumio/miniconda3:4.12.0`. This container is obtained from Dockerhub; here, `continuumio` is the producer, and the repo name is `continuumio/miniconda3`. You may specify the required version from the `Tag` list. Here the tag/version is `4.12.0`.
 
     ![!Containers dockerhub miniconda.](./images/containers_dockerhub_miniconda.png)
-
 
 2. To build your container, change the directory to `miniconda` and use the below syntax to build the `Dockerfile`. Here we use `.` to say "current directory." This will only work if you are in the directory with the `Dockerfile`.
 
@@ -147,13 +141,12 @@ We require numpy, scipy, and matplotlib libraries to execute the above Python sc
     sudo docker build -t py3-miniconda:2022-08 .
     ```
 
-!!! note 
-
+!!! note
     The `.` at the end of the command! This indicates that we're using the current directory as our build environment, including the Dockerfile inside. Also, you may rename the `repository_name` and `tag` as you prefer.
 
-    ```bash
-    sudo docker images
-    ```
+```bash
+sudo docker images
+```
 
 ![!Containers miniconda docker image.](./images/containers_miniconda_docker_image.png)
 
@@ -181,6 +174,7 @@ The `python` executables to execute our synthetic python script are within the d
 Remember you initially created the python script `python_test.py` when creating your own container. Move `python_test.py` within `miniconda` directory. Now you have your `miniconda/python_test.py` outside the container. To access the files outside the container you should mount the file path along with the `docker run` command.
 
 ### Mounting Data Onto a Container
+
 To mount a host directory into your docker container, use the `-v` flag.
 
 ```bash
@@ -222,24 +216,24 @@ The following steps help you to create a container registry in UAB GitLab:
 1. Create a UAB Gitlab account following the guidelines from the [UAB Gitlab page](../../docs/account_management/gitlab_account.md).
 2. Create a `new_project` on UAB GitLab and click `Package and Registries`, and then go to Container Registry. Initially, the container registry looks empty because there are no container images in the registry.  
 
-![!Containers registry.](./images/containers_registry.png)
+    ![!Containers registry.](./images/containers_registry.png)
 
-!!! note
-    Copy these CLI commands for future reference. It contains commands (1) to login to your project UAB GitLab container registry (2) Add an image to the registry using the push/build command. We will use the `push` command as we already have the existing container in our system.  
+    !!! note
+        Copy these CLI commands for future reference. It contains commands (1) to login to your project UAB GitLab container registry (2) Add an image to the registry using the push/build command. We will use the `push` command as we already have the existing container in our system.  
 
 3. Push Alpine Container from Ubuntu system to UAB GitLab container registry.
 
-<!-- markdownlint-disable MD046 -->
-
 ???+ example "Pushing an `alpine` image to the UAB GitLab container registry from an Ubuntu Linux computer"
-   - List the docker images on your local computer using the `docker images` command. An `alpine` image exists already on this computer. Your container will likely have a different name.
+
+- List the docker images on your local computer using the `docker images` command. An `alpine` image exists already on this computer. Your container will likely have a different name.
+  
 ```bash
 sudo docker images
 ```
 
 ![!Containers docker image.](./images/containers_docker_image.png)
 
-   - Tag `alpine` to push in UAB GitLab registry. We need to have the UAB GitLab registry name to push. It will show the default command on the container registry page. Copy these commands for future reference. The tag is `test` here.
+- Tag `alpine` to push in UAB GitLab registry. We need to have the UAB GitLab registry name to push. It will show the default command on the container registry page. Copy these commands for future reference. The tag is `test` here.
 
 ```bash
 $sudo docker tag alpine:latest gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
@@ -253,9 +247,7 @@ sudo docker images
 
 ![!Containers docker test image.](./images/containers_docker_test_image.png)
 
-<!-- markdownlint-enable MD046 -->
-
-## Login to UAB GitLab registry
+## Login to UAB GitLab Registry
 
 Use your `registry_name:ID` to log in to the UAB GitLab registry.
 
@@ -269,9 +261,10 @@ Note: For securing concerns, use an access token to log in. Create an access tok
 sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token 
 ```
 
-#### Create an Access token
+### Create an Access Token
 
 From the UAB GitLab page, you can create an access token instead of using a password to log in to the UAB GitLab registry. Goto Edit profile -> Click `Access Tokens`. Then enter:
+
    1. **Token name.** Suggestion: "container"_"repository-name"
    2. **Expiry date.** Suggestion: 3 months from the date you are making it.
    3. Under select scopes, check read and write registry  (to push images to the registry) -> Then click `create personal access token`.
@@ -284,7 +277,7 @@ Once you create the token, copy the new personal access token since it’s a one
 
 ![!Containers gitlab login success.](./images/containers_gitlab_login_success.png)
 
-#### To push docker container in UAB GitLab registry
+#### To Push Docker Container into UAB GitLab Registry
 
 The below first command is the command to push the Docker image to the UAB GitLab container registry. The second command is an example of pushing a Docker image to the UAB GitLab container registry.
 
