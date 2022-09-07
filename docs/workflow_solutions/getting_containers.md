@@ -226,7 +226,7 @@ If you prefer to share your container with a particular team/group, then the UAB
 
 The following steps help you to create a container registry in UAB GitLab:
 
-1. Create a UAB Gitlab account following the guidelines from the [UAB Gitlab page](../../docs/account_management/gitlab_account.md).
+1. Create a UAB Gitlab account following the guidelines from the [UAB GitLab page](../account_management/gitlab_account.md).
 2. Create a `new_project` on UAB GitLab and click `Package and Registries`, and then go to Container Registry. Initially, the container registry looks empty because there are no container images in the registry.  
 
     ![!Containers registry.](./images/containers_registry.png)
