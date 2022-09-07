@@ -98,7 +98,14 @@ plt.savefig('testing.png')
 We require numpy, scipy, and matplotlib libraries to execute the above Python script. Following are the steps to create a specification file and build a container image.
 
 1. Create an empty directory `miniconda`.
+
+    ```bash
+    mkdir miniconda
+    ```
+
 2. Create a `Dockerfile` within the `miniconda` directory with the following contents. The file name `Dockerfile` is case-sensitive.
+
+    ![!Containers create dockerfile.](./images/containers_create_dockerfile.png)
 
     ```bash
     # You may start with a base image
@@ -108,38 +115,42 @@ We require numpy, scipy, and matplotlib libraries to execute the above Python sc
     FROM continuumio/miniconda3:4.12.0
 
     #Use RUN to execute commands inside the miniconda image
-    RUN conda install -y numpy
+    RUN conda install -y numpy">=1.16.5, <1.23.0"
 
     #RUN multiple commands together
     #Last two lines are cleaning out the local repository and removing the state information for installed package
     RUN apt-get update \
-    && conda install -y scipy \
-    && conda install -y matplotlib \
+    && conda install -y scipy=1.7.3 \
+    && conda install -y matplotlib=3.5.1 \
     && apt-get --yes clean \
     && rm -rf /var/lib/apt/lists/*
     ```
 
-    This is the specification file. It provides Docker with the software information it needs to build our new container. See the Docker Container documentation for more information <https://docs.docker.com/engine/reference/builder/>.
+    This is the specification file. It provides Docker with the software information, and versions, it needs to build our new container. See the Docker Container documentation for more information <https://docs.docker.com/engine/reference/builder/>.
 
-!!! note "Containers and Reproducibiliy"
-    Always include version numbers for Anaconda, package managers, software you are installing, and the dependencies for those software. Containers are not by nature scientifically reproducible, but if you include versions for as much software in the container as possible, they can be reproducible years later.
-
-1. We start with an existing container `continuumio/miniconda3:4.12.0`. This container is obtained from Dockerhub; here, `continuumio` is the producer, and the repo name is `continuumio/miniconda3`. You may specify the required version from the `Tag` list. Here the tag/version is `4.12.0`.
+    In the Dockerfile, we start with an existing container `continuumio/miniconda3:4.12.0`. This container is obtained from Dockerhub; here, `continuumio` is the producer, and the repo name is `continuumio/miniconda3`.
 
     ![!Containers dockerhub miniconda.](./images/containers_dockerhub_miniconda.png)
 
-2. To build your container, change the directory to `miniconda` and use the below syntax to build the `Dockerfile`. Here we use `.` to say "current directory." This will only work if you are in the directory with the `Dockerfile`.
+    You may specify the required version from the `Tag` list. Here the tag/version is `4.12.0`. Also its a very good practice to specify the version of packages for numpy, scipy, and matplotlib for better reproducibility.
+
+    !!! note "Containers and Reproducibiliy"
+        Always include version numbers for Anaconda, package managers, software you are installing, and the dependencies for those software. Containers are not by nature scientifically reproducible, but if you include versions for as much software in the container as possible, they can be reproducible years later.
+
+3. To build your container, change the directory to `miniconda` and use the below syntax to build the `Dockerfile`. Here we use `.` to say "current directory." This will only work if you are in the directory with the `Dockerfile`.
 
     ```bash
     sudo docker build -t repository_name:tag .
     ```
 
-3. Here the repository_name is `py3-miniconda` and the tag is `2022-08`.
+    Here the repository_name is `py3-miniconda` and the tag is `2022-08`.
 
     ```bash
     cd miniconda
     sudo docker build -t py3-miniconda:2022-08 .
     ```
+
+    ![!Containers build docker.](./images/containers_build_docker.png)
 
 !!! note
     The `.` at the end of the command! This indicates that we're using the current directory as our build environment, including the Dockerfile inside. Also, you may rename the `repository_name` and `tag` as you prefer.
@@ -150,7 +161,7 @@ sudo docker images
 
 ![!Containers miniconda docker image.](./images/containers_miniconda_docker_image.png)
 
-### Running the Built Docker Container Interactively
+### Running the Built Miniconda Docker Container Interactively
 
 To run docker interactively and execute commands inside the container, use the below syntax. Here `run` executes the command in a new container, and `-it` starts an interactive shell inside the container. After executing this command, the command prompt will change and move into the bash shell.
 
@@ -171,9 +182,11 @@ The `python` executables to execute our synthetic python script are within the d
 
 ![!Python executable.](./images/containers_python_executable.png)
 
-Remember you initially created the python script `python_test.py` when creating your own container. Move `python_test.py` within `miniconda` directory. Now you have your `miniconda/python_test.py` outside the container. To access the files outside the container you should mount the file path along with the `docker run` command.
-
 ### Mounting Data Onto a Container
+
+Before we mount data onto a container, remember you initially created the python script `python_test.py` when creating your own container. Move `python_test.py` within `miniconda` directory. Now you have your `miniconda/python_test.py` outside the container. To access the files outside the container you should mount the file path along with the `docker run` command.
+
+![!Containers python script.](./images/containers_python_script.png)
 
 To mount a host directory into your docker container, use the `-v` flag.
 
