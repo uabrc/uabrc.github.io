@@ -10,6 +10,13 @@ SSH stands for **S**ecure **SH**ell and is a powerful tool for executing termina
 
 There are two main steps to working with SSH efficiently. The first is to ensure you have an SSH client installed, which will let your local machine communicate with remote machines. The second is to ensure you have `ssh-agent` running in each terminal window to automate management of key files. The `ssh-agent` software comes with most SSH clients, but does not always run automatically. How to start the `ssh-agent` software automatically varies depending on operating system and shell flavor, which we will describe below.
 
+#### Terminal Multiplexers
+
+Terminal multiplexers are software that aggregate multiple SSH client sessions into one location. They often have the added benefit of keeping sessions alive on the remote machine, so short internet outages won't require you to log in again.
+
+- For Linux, try using `tmux`: <https://github.com/tmux/tmux/wiki/Installing>
+- For Windows, try using Windows Terminal: <https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701>
+
 ### Install an SSH Client (Linux)
 
 Virtually all Linux distributions come with SSH preinstalled and configured appropriately for ease of use, including automatically starting the `ssh-agent`.
@@ -93,6 +100,12 @@ elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
     ssh-add
 fi
 ```
+
+<!-- markdownlint-disable MD046 -->
+!!! tip
+
+    Git Bash can also be used with [Windows Terminal](#terminal-multiplexers) using this stackoverflow answer: <https://stackoverflow.com/a/57369284>.
+<!-- markdownlint-enable MD046 -->
 
 ### Generating Key Pairs
 
