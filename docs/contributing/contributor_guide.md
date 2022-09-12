@@ -12,7 +12,7 @@ We welcome contributions from our community. To ensure a high-quality documentat
 
 We are using Visual Studio Code (VSCode) for development with the following extensions installed. While VSCode is not required, it can help with automating formatting, linting and Anaconda environment management. VSCode may be obtained from [Visual Studio Code](https://code.visualstudio.com/) and documentation is available at [VSCode: Docs](https://code.visualstudio.com/docs).
 
-Several extensions are useful for this project and are listed below. Extensions may be obtained by searching the Extensions Menu in VSCode by pressing ++ctrl+shift+x++. More information on managing extensions is available at [VSCode: Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-marketplace).
+It is assumed you have Anaconda installed on your local machine. See <https://docs.anaconda.com/anaconda/install/> for more information on installing Anaconda.
 
 ### Required VSCode Extensions
 
@@ -21,8 +21,14 @@ Several extensions are useful for this project and are listed below. Extensions 
 - markdownlint: `DavidAnson.vscode-markdownlint`
 - Prettier - Code formatter: `esbenp.prettier-vscode`
 
+Search for and install extensions using the extension menu (keyboard shortcut: ++ctrl+shift+x++). More information on managing extensions is available at [VSCode: Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-marketplace).
+
+![!extension menu searching for Prettier extension](images/contrib-vscode-search-extension.png)
+
 ### Handy VSCode Hotkeys
 
+- Open command palette: ++ctrl+shift+p++
+- Open extensions: ++ctrl+shift+x++
 - Open new terminal: ++ctrl+shift+grave++
 - Find in all files: ++ctrl+shift+f++
 - Commenting and uncommenting code using ++ctrl+slash++
@@ -33,7 +39,7 @@ Several extensions are useful for this project and are listed below. Extensions 
 
 To make the best use of formatting extensions for this project, please add the following block to your `settings.json` file. These changes can be made:
 
-  1. Within the VSCode project file in the `.vscode` folder, affecting only this project *--OR--*
+  1. Within the VSCode project file in the `.vscode` folder, affecting only this project. To make these changes find or create the file `.vscode/settings.json` *--OR--*
   2. To the global VSCode settings file, affecting all projects. To change the global file, press ++ctrl+shift+p++ to open the Command Palette, then search for `Preferences: Open Settings (JSON)` and append the following content.
 
 ```json
@@ -56,15 +62,17 @@ To make the best use of formatting extensions for this project, please add the f
   }
 ```
 
+### Obtaining a Working Copy of the Code
+
 Before you can get started working on contributions, you'll need a copy of the repository. The first step, done only once, is to fork the repository in GitHub to your personal account. The repository is located at <https://github.com/uabrc/uabrc.github.io>. More in-depth documentation on forking can be found at [GitHub: Fork a Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
-Once the fork has been created, you can clone your fork using the Command Palette (++ctrl+shift+p++) and `Git: Clone...` in VSCode, or at the command line. More information on cloning can be found at [GitHub: Cloning a Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+Once the fork has been created, you can clone your fork using the Command Palette (++ctrl+shift+p++) and `Git: Clone...` in VSCode, or at the command line. More information on cloning can be found at [GitHub: Cloning a Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). More information on using git can be found at our [git page](../workflow_solutions/getting_software_with_git.md).
 
 ### Local Machine Setup (Laptop/Desktop)
 
-The Python extension will activate when you open any Python file. The file `test.py` has been added for convenience, simply open that file to activate the extension. The extension will show the currently activated environment near the bottom-left corner of the VSCode window.
+The Python extension will activate when you open any Python file. The file `test.py` has been added for convenience, simply open that file to activate the extension. The extension will show the currently activated environment near the bottom-left corner of the VSCode window. There is no other known way to activate the Python extension at this time.
 
-Please create an Anaconda environment using `build_env.yml` using the following in the VSCode terminal.
+Please [create an Anaconda environment](../workflow_solutions/using_anaconda.md#create-an-environment) using `build_env.yml` using the following in the VSCode terminal.
 
 ```shell
 conda env create -f build_env.yml
@@ -78,39 +86,71 @@ To build the documentation locally, use `mkdocs build` in the VSCode terminal. B
 
 The workflow below assumes you are using VSCode as described above, and wish to use [`mkdocs serve`](#mkdocs-serve) to verify your changes. You may alternately verify changes using [GitHub Pages](#verifying-changes-using-github-pages).
 
-1. Create and checkout a new branch on your local machine (the working branch)
-    1. A branch should be created to resolve an issue, and lives only until the issue is resolved.
-    2. Give the branch a short but meaningful name for your intended changes.
-    3. For bug fixes use names like `fix-broken-link` or `fix-page-formatting`.
-    4. For new features or pages, use names like `feat-lts-page` or `feat-accessibility-improvement`.
-    5. Command to use to pull the new branch to local machine in VSCode terminal: `git checkout -b <name>`.
-2. Add, delete and modify files as necessary to implement your intended changes.
-    1. Stage and commit changes in small units as you go. Be sure you are on the branch you made earlier!
-    2. VSCode facilitates staging and committing files and it is highly recommended.
-    3. Stage/commit commands may be found below:
-        1. Stage: <https://github.com/git-guides/git-add>
-        2. Commit: <https://github.com/git-guides/git-commit>
-3. Verify your changes work as expected.
-    1. Activate your conda environment.
-        1. Open the file `test.py` to start the Python extension.
-        2. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
-    2. Open a VSCode terminal using ++ctrl+shift+grave++.
-    3. Execute the command `mkdocs serve`
-    4. If a new browser tab does not open automatically, use your browser to navigate to `http://localhost:8000`.
-    5. Verify your changes look and function as expected.
-4. Make a pull request.
-    1. Push your local working branch to your GitHub remote repository using `git push`.
-    2. Navigate to the upstream repository at <https://github.com/uabrc/uabrc.github.io>.
-    3. Click the "Pull requests" tab.
-    4. Click the "New pull request" button.
-    5. Click the link "compare across forks".
-    6. There are four drop-down menus.
-        1. The left two drop-down menus are for the base repository and should say `uabrc/uabrc.github.io` and `main` by default. Be sure that they do.
-        2. In the third drop-down menu, select your fork.
-        3. In the fourth drop-down menu, select your working branch.
-    7. Click the "Create pull request" button.
-    8. Give your pull request a concise and informative name. The name should describe what the pull request changes at a high level.
-    9. In the description box, give details about what was changed at a conceptual level. The actual details of the changes can be viewed in the "Commits" and "Files changed" tabs.
+### Create a working branch
+
+You'll need to create a new branch on your local machine (the working branch). The purpose of a branch is to encapsulate a coherent set of changes to add or deprecate a feature, or fix a bug. Typically each bug is associated with one issue, or a set of very closely-related issues. See our [Issue Tracker](https://github.com/uabrc/uabrc.github.io/issues) for available issues.
+
+- A branch should be created to resolve an issue, and lives only until the issue is resolved.
+- Give the branch a short but meaningful name for your intended changes.
+- For bug fixes use names like `fix-broken-link` or `fix-page-formatting`.
+- For new features or pages, use names like `feat-lts-page` or `feat-accessibility-improvement`.
+- Command to create new branch in terminal: `git checkout -b <name>`.
+
+### Implement your changes
+
+You'll need to add, remove or otherwise modify files as appropriate to implement the changes you intend.
+
+- Stage and commit changes in small units as you go.
+- Be sure you are on the correct branch, i.e. your working branch!
+- VSCode facilitates staging and committing files and it is highly recommended.
+
+    ![!stages and changes in vscode](images/contrib-workflow-vscode-stage-commit.png)
+
+- Alternatively, stage/commit shell commands documentation may be found at:
+    1. Stage: <https://github.com/git-guides/git-add>
+    2. Commit: <https://github.com/git-guides/git-commit>
+
+### Verify your changes
+
+1. Activate your conda environment.
+    1. Open the file `test.py` in the repository to start the Python extension.
+    2. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
+2. Open a VSCode terminal using ++ctrl+shift+grave++.
+3. Execute the command `mkdocs serve`
+
+    ![!example mkdocs serve usage](images/contrib-workflow-mkdocs-serve.png)
+
+4. If a new browser tab does not open automatically, use your browser to navigate to `http://localhost:8000`.
+5. Verify your changes look and function as expected.
+
+    ![!browser with changes made](images/contrib-workflow-verify-changes-in-browser.png)
+
+### Make a pull request
+
+1. Push your local working branch to your GitHub remote repository using `git push`.
+2. Navigate to the upstream repository at <https://github.com/uabrc/uabrc.github.io>.
+3. Click the "Pull requests" tab and click the "New pull request" button.
+
+    ![!new pull request button at pull request tab](images/contrib-workflow-github-new-pull-request.png)
+
+4. Click the link "compare across forks".
+
+    ![!compare across forks link](images/contrib-workflow-github-compare-across-forks.png)
+
+5. There are four drop-down menus.
+    1. The left two drop-down menus are for the base repository and should say `uabrc/uabrc.github.io` and `main` by default. Be sure that they do.
+    2. In the third drop-down menu, select your fork.
+    3. In the fourth drop-down menu, select your working branch.
+
+    ![!four drop down menus comparing changes while creating pull request](images/contrib-workflow-github-comparing-changes-drop-downs.png)
+
+6. Click the "Create pull request" button to open the pull request creation form.
+    1. Give your pull request a concise and informative name. The name should describe what the pull request changes at a high level.
+    2. In the description box, give details about what was changed at a conceptual level. The actual details of the changes can be viewed in the "Commits" and "Files changed" tabs.
+
+    ![!pull request creation form](images/contributor-workflow-github-open-pull-request-form.png)
+
+### Wait for review
 
 From here your pull request will go through a review process. The following criteria are checked.
 
@@ -123,33 +163,7 @@ From here your pull request will go through a review process. The following crit
 
 We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date!
 
-### mkdocs serve
-
-MkDocs has a built-in method for rendering documentation locally through the command `mkdocs serve`. This will create a local host with a rendered version of your documentation and will update each time any file is saved. Importantly, this can render docs on branches other than the main branch which is not possible using Github Pages. After executing `mkdocs serve`, open `http://127.0.0.1:8000/` in your web browser to see the docs.
-
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    `mkdocs serve` will create a complete copy of the docs project in a temporary directory. If you are adding large files to the docs, this will cause local rendering to become very slow. This will not affect a remote build after the files are added to the remote repository.
-<!-- markdownlint-enable MD046 -->
-
-### Verifying Changes Using GitHub Pages
-
-It is always a good idea to verify your changes before making them available to the general public. There are two ways to do so, and we've covered how to do verify using your local machine. Your fork's GitHub Pages may also be used to verify your changes. To view your changes online using GitHub Pages, you'll need to set it up for your fork.
-
-1. Navigate to your fork in the browser and click the "Settings" tab.
-2. Click "Pages" under "Code and automation" in the left hand navigation menu.
-3. Under "Build and deployment"...
-    1. Source should have "Deploy from a branch" selected in the drop-down menu.
-    2. Branch should have "gh-pages" selected in the first drop-down menu.
-    3. A new drop-down menu will appear, make sure "/ (root)" is selected.
-    4. Click save next to the previous two drop-down menus.
-4. Now any commits pushed to your `main` or `dev` branches will trigger continuous integration and deploy those changes to your fork.
-5. A small panel near the top of the "Pages" page should show the URL where your version of the site is served.
-
-Please do not use any markdown preview software to verify changes. The pages will look substantially different when rendered as HTML, and some features are not understood by preview software, such as admonitions.
-
-## File Organization General Principles
+## File Organization
 
 - Main headings are based on [UAB Research Computing services](https://www.uab.edu/it/home/research-computing/research-digital-marketplace)
 - Favor placing new pages and information into an existing section over creating
@@ -158,7 +172,7 @@ Please do not use any markdown preview software to verify changes. The pages wil
     - Section title "Running Analysis Jobs" vs "SLURM"
 - Put redirects for any page moves in case someone has bookmarked a page (see Redirect section below)
 
-## Formatting
+## Markdown Formatting
 
 - Links must be one of the following formats including all punctuation and brackets:
     - Bare:
