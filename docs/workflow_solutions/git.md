@@ -226,15 +226,35 @@ output/**
 
 ### How do I manage branches?
 
-Checking out existing branches:
+#### Listing branches
 
-- To checkout an existing local branch use `git checkout <branch-name>`.
-- To checkout and track a remote branch use `git checkout --track <remote-name>/<branch-name>`
+To list local branches use `git branch`.
 
-Creating new branches:
+![!git branch example](images/git_branch.png)
 
-- To create a new local branch use `git branch <branch-name>`.
-- To create and checkout a new local branch use `git checkout -b <branch-name>`.
+To list remote branches use `git branch -r`.
+
+![!git branch -r example](images/git_branch_r.png)
+
+#### Checking out existing branches
+
+To checkout an existing local branch use `git checkout <branch-name>`.
+
+![!git checkout local example](images/git_checkout_local.png)
+
+To checkout and track a remote branch use `git checkout --track <remote-name>/<branch-name>`.
+
+![!git checkout remote example](images/git_checkout_track_remote.png)
+
+#### Creating new branches
+
+To create a new local branch use `git branch <branch-name>`.
+
+![!git create new branch example](images/git_branch_new.png)
+
+To create and checkout a new local branch use `git checkout -b <branch-name>`.
+
+![!git create and checkout new branch example](images/git_checkout_new_branch.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! note
