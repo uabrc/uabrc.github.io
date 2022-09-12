@@ -262,9 +262,13 @@ To create and checkout a new local branch use `git checkout -b <branch-name>`.
     Branches are always created from the HEAD.
 <!-- markdownlint-enable MD046 -->
 
+#### Merging branches
+
 To merge branch `A` into branch `B`, first select branch `B` using `git checkout B`, then merge `A` into `B` using `git merge A`.
 
-More information is available at the [official git webbook](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
+Some merges may cause conflicts. Conflict resolution is part art, part science, and beyond the scope of this document. Several strategies exist to minimize conflict frequency and scope. The general gist requires making smaller but more frequent commits of complete units.
+
+More information on merging is available at the [official git webbook](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
 
 ### How do I reset changes?
 
