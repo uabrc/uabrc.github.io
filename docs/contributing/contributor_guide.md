@@ -84,7 +84,7 @@ To build the documentation locally, use `mkdocs build` in the VSCode terminal. B
 
 ## Workflow for Contributing
 
-The workflow below assumes you are using VSCode as described above, and wish to use `mkdocs serve` to verify your changes. You may alternately verify changes using [GitHub Pages](#verifying-changes-using-github-pages).
+The workflow below assumes you are using VSCode as described above, and wish to use [`mkdocs serve`](#mkdocs-serve) to verify your changes. You may alternately verify changes using [GitHub Pages](#verifying-changes-using-github-pages).
 
 ### Create a working branch
 

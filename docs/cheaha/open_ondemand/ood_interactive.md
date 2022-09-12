@@ -64,7 +64,7 @@ RStudio is available for use graphically in your browser via OOD. As with other 
 
 ![!RStudio Server job request form.](./images/ood_rstudio_server_form.png)
 
-To adjust the environment, please use the Environment Setup box to load modules or Anaconda environments. A common strategy when there is difficulty building R packages is to search for it on [Anaconda](../conda.md), create an Anaconda environment with that package already built, and load the environment in the Environment Setup box. An example is shown below.
+To adjust the environment, please use the Environment Setup box to load modules or Anaconda environments. A common strategy when there is difficulty building R packages is to search for it on [Anaconda](../software/software.md#anaconda-on-cheaha), create an Anaconda environment with that package already built, and load the environment in the Environment Setup box. An example is shown below.
 
 ![!RStudio Server job request form Environment Setup box.](./images/ood_rstudio_server_env_setup_box.png)
 
@@ -205,7 +205,7 @@ This section is dedicated to using this feature with Anaconda on Cheaha. To use 
 
 1. Create an [HPC Interactive Desktop Job](#interactive-apps) using [Open OnDemand](ood_main.md).
 2. Open a terminal in that job. The following steps should all be run in this terminal unless otherwise specified.
-3. [Load the Anaconda Module](../conda.md#loading-anaconda).
+3. [Load the Anaconda Module](../software/software.md#anaconda-on-cheaha).
 4. [Create an Environment](../../workflow_solutions/using_anaconda.md#using-anaconda) in Anaconda with the packages needed.
 5. [Activate the Environment](../../workflow_solutions/using_anaconda.md#activate-an-environment),
 6. Load the Matlab [Module](../software/modules.md).
