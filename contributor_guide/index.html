@@ -1721,6 +1721,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#mkdocs-serve" class="md-nav__link">
+    mkdocs serve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#verifying-changes-using-github-pages" class="md-nav__link">
     Verifying Changes Using GitHub Pages
   </a>
@@ -1974,6 +1981,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#mkdocs-serve" class="md-nav__link">
+    mkdocs serve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#verifying-changes-using-github-pages" class="md-nav__link">
     Verifying Changes Using GitHub Pages
   </a>
@@ -2155,7 +2169,7 @@
 <p>Activate the environment in VSCode by clicking the currently activated environment in the bottom-left of the VSCode window. A menu will appear allowing you to select from discovered environments. You may need to reload VSCode to get the environment to appear if it was just created.</p>
 <p>To build the documentation locally, use <code>mkdocs build</code> in the VSCode terminal. Be sure to fix all warnings before submitting a pull request.</p>
 <h2 id="workflow-for-contributing">Workflow for Contributing<a class="headerlink" href="#workflow-for-contributing" title="Permanent link">&para;</a></h2>
-<p>The workflow below assumes you are using VSCode as described above, and wish to use <code>mkdocs serve</code> to verify your changes. You may alternately verify changes using <a href="#verifying-changes-using-github-pages">GitHub Pages</a>.</p>
+<p>The workflow below assumes you are using VSCode as described above, and wish to use <a href="#mkdocs-serve"><code>mkdocs serve</code></a> to verify your changes. You may alternately verify changes using <a href="#verifying-changes-using-github-pages">GitHub Pages</a>.</p>
 <ol>
 <li>Create and checkout a new branch on your local machine (the working branch)<ol>
 <li>A branch should be created to resolve an issue, and lives only until the issue is resolved.</li>
@@ -2215,6 +2229,15 @@
 <li>Quality, organization and accuracy of contribution.</li>
 </ol>
 <p>We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date!</p>
+<h3 id="mkdocs-serve">mkdocs serve<a class="headerlink" href="#mkdocs-serve" title="Permanent link">&para;</a></h3>
+<p>MkDocs has a built-in method for rendering documentation locally through the command <code>mkdocs serve</code>. This will create a local host with a rendered version of your documentation and will update each time any file is saved. Importantly, this can render docs on branches other than the main branch which is not possible using Github Pages. After executing <code>mkdocs serve</code>, open <code>http://127.0.0.1:8000/</code> in your web browser to see the docs.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code>mkdocs serve</code> will create a complete copy of the docs project in a temporary directory. If you are adding large files to the docs, this will cause local rendering to become very slow. This will not affect a remote build after the files are added to the remote repository.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h3 id="verifying-changes-using-github-pages">Verifying Changes Using GitHub Pages<a class="headerlink" href="#verifying-changes-using-github-pages" title="Permanent link">&para;</a></h3>
 <p>It is always a good idea to verify your changes before making them available to the general public. There are two ways to do so, and we've covered how to do verify using your local machine. Your fork's GitHub Pages may also be used to verify your changes. To view your changes online using GitHub Pages, you'll need to set it up for your fork.</p>
 <ol>
@@ -2349,7 +2372,7 @@ Contrast checker: <a href="https://webaim.org/resources/contrastchecker/">https:
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 19, 2022</span>
       
     
   </small>
