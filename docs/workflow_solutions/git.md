@@ -127,10 +127,17 @@ A key part of git's usefulness is facilitating collaboration on code and documen
 
 Fetching changes from remote repositories without incorporating them:
 
-- Check and download changes for a remote using `git fetch <remote-name>`.
 - Check and download changes for all remotes using `git fetch --all`.
 
+    ![!git fetch all example](images/git_fetch_all.png)
+
+- Check and download changes for a remote using `git fetch <remote-name>`.
+
+    ![!git fetch single branch example](images/git_fetch.png)
+
 Pull (fetch and merge) changes from a branch using `git pull <remote-name> <remote-branch-name>.` These changes are merged to the current [HEAD](#glossary), so be sure to [checkout](#how-do-i-manage-branches) the correct branch first.
+
+![!git pull example](images/git_pull.png)
 
 [Full documentation of `git fetch`](https://git-scm.com/docs/git-fetch).
 
@@ -139,6 +146,8 @@ Pull (fetch and merge) changes from a branch using `git pull <remote-name> <remo
 #### Pushing
 
 Push changes to a remote branch on a remote repository using `git push <remote-name> <remote-branch-name>`.
+
+![!git push example](images/git_push.png)
 
 [Full documentation](https://git-scm.com/docs/git-push).
 
