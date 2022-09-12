@@ -53,7 +53,7 @@ To pull particular version of `alpine` container, use the below syntax.
 sudo docker pull container_name:tag
 ```
 
-Here the container_name is `alpine`, and the tag is `3.14`.
+Here the `container_name` is `alpine`, and the tag is `3.14`.
 
 ```bash
 sudo docker pull alpine:3.14
@@ -110,15 +110,16 @@ We require numpy, scipy, and matplotlib libraries to execute the above Python sc
     ```bash
     # You may start with a base image
     # Always use a specific tag like "4.10.3", never "latest"!
-    # The version referenced by "latest" can change, so the build will be 
-    # more stable when building from a specific version tag. 
+    # The version referenced by "latest" can change, so the build will be
+    # more stable when building from a specific version tag.
     FROM continuumio/miniconda3:4.12.0
 
-    #Use RUN to execute commands inside the miniconda image
+    # Use RUN to execute commands inside the miniconda image
     RUN conda install -y numpy">=1.16.5, <1.23.0"
 
-    #RUN multiple commands together
-    #Last two lines are cleaning out the local repository and removing the state information for installed package
+    # RUN multiple commands together
+    # Last two lines are cleaning out the local repository and removing the state
+    # information for installed package
     RUN apt-get update \
     && conda install -y scipy=1.7.3 \
     && conda install -y matplotlib=3.5.1 \
@@ -227,12 +228,12 @@ If you prefer to share your container with a particular team/group, then the UAB
 The following steps help you to create a container registry in UAB GitLab:
 
 1. Create a UAB Gitlab account following the guidelines from the [UAB GitLab page](../account_management/gitlab_account.md).
-2. Create a `new_project` on UAB GitLab and click `Package and Registries`, and then go to Container Registry. Initially, the container registry looks empty because there are no container images in the registry.  
+2. Create a `new_project` on UAB GitLab and click `Package and Registries`, and then go to Container Registry. Initially, the container registry looks empty because there are no container images in the registry.
 
     ![!Containers registry.](./images/containers_registry.png)
 
     !!! note
-        Copy these CLI commands for future reference. It contains commands (1) to login to your project UAB GitLab container registry (2) Add an image to the registry using the push/build command. We will use the `push` command as we already have the existing container in our system.  
+        Copy these CLI commands for future reference. It contains commands (1) to login to your project UAB GitLab container registry (2) Add an image to the registry using the push/build command. We will use the `push` command as we already have the existing container in our system.
 
 3. Login to UAB GitLab Registry using your `registry_name:ID`.
 
@@ -246,7 +247,7 @@ The following steps help you to create a container registry in UAB GitLab:
     Note: For securing concerns, use an access token to log in. Create an access token in UAB GitLab to push/pull the docker container in the container registry (Secure token and guidelines to follow are shown next).
 
     ```bash
-    sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token 
+    sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token
     ```
 
 4. Creating an Access Token: From the UAB GitLab page, you can create an access token instead of using a password to log in to the UAB GitLab registry. Goto Edit profile -> Click `Access Tokens`. Then enter:
@@ -271,7 +272,7 @@ Once you create the token, copy the new personal access token since it’s a one
 ### Push Alpine Container from your System to UAB GitLab Container Registry
 
 - List the docker images on your local computer using the `docker images` command. An `alpine` image exists already on this computer. Your container will likely have a different name.
-  
+
 ```bash
 sudo docker images
 ```
@@ -284,7 +285,7 @@ sudo docker images
 sudo docker tag alpine:latest gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
 ```
 
-You can see the tag `test` associated with the `alpine` image.  
+You can see the tag `test` associated with the `alpine` image.
 
 ```bash
 sudo docker images
@@ -322,7 +323,7 @@ sudo docker rmi -f image_id
  In your GitLab's page container registry, copy the pull command from the `test` container registry, and use it to pull the docker container to your system. You can see the image is reflected in the image list.
 
 ```bash
-sudo docker pull gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test 
+sudo docker pull gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
 ```
 
 ![!Containers gitlab pull.](./images/containers_gitlab_pull.png)
