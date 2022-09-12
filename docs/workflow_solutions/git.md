@@ -262,6 +262,18 @@ To create and checkout a new local branch use `git checkout -b <branch-name>`.
     Branches are always created from the HEAD.
 <!-- markdownlint-enable MD046 -->
 
+#### Deleting branches
+
+To delete a local branch use `git branch --delete <branch-name>`.
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Deleting remote branches can be destructive if active pull requests depend on them. Be sure you are deleting the correct remote branch.
+<!-- markdownlint-enable MD046 -->
+
+To delete a remote branch use `git push <remote-name> --delete <branch-name>`.
+
 #### Merging branches
 
 To merge branch `A` into branch `B`, first select branch `B` using `git checkout B`, then merge `A` into `B` using `git merge A`.
