@@ -106,9 +106,20 @@ A key part of git's usefulness is facilitating collaboration on code and documen
 #### Managing remotes
 
 - Check what remotes are available using `git remote -v`
+
+    ![!git remote -v example](images/git_remote_v.png)
+
 - Add a new remote with `git remote add <remote-name> <remote-url>`
+
+    ![!git remote add example](images/git_remote_add.png)
+
 - Change the url of an existing remote with `git remote set-url <remote-name> <new-remote-url>`
+
+    ![!git remote set-url example](images/git_remote_set_url.png)
+
 - Remove a remote with `git remote remove <remote-name>`
+
+    ![!git remote remove example](images/git_remote_remove.png)
 
 [Full documentation](https://git-scm.com/docs/git-remote).
 
