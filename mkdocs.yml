@@ -63,7 +63,7 @@ nav:
           - "For Guests - Account Creation": account_management/xias_guest.md
       - Gitlab Account: account_management/gitlab_account.md
   - Data Management:
-      - Overview: data_management/storage.md
+      - Cheaha Storage: data_management/storage.md
       - Long Term Storage:
           - Introduction: data_management/lts/lts.md
           - Sharing: data_management/lts/sharing.md
