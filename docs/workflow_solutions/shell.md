@@ -373,6 +373,10 @@ If you opened `nano` using an existing file, or passed in a file path, then the 
 
 ![!ls result of new file saved in nano](images/nano_004.png)
 
+#### Searching for text in `nano`
+
+Use the key combination ++ctrl+w++ to search for text. Follow the prompts as they appear to navigate.
+
 ### Count lines, words and characters (`wc`)
 
 - Lines: `wc -l <file-path>`.

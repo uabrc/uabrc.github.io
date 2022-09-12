@@ -51,6 +51,8 @@ plugins:
         welcome/rc_days.md: education/research_computing_days.md
         welcome/welcome.md: index.md
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
+        cheaha/conda.md: cheaha/software/software.md#anaconda-on-cheaha
+        contributor_guide.md: contributing/contributor_guide.md
 
 nav:
   - Home: index.md
@@ -95,7 +97,6 @@ nav:
           - Managing Jobs: cheaha/slurm/job_management.md
           - GPUs: cheaha/slurm/gpu.md
       - Job Efficiency: cheaha/job_efficiency.md
-      - Anaconda on Cheaha: cheaha/conda.md
   - UAB Cloud (cloud.rc) Guide:
       - Introduction: uab_cloud/introduction.md
       - Tutorial:
@@ -123,7 +124,7 @@ nav:
       - Offered Courses: education/courses.md
       - Social Media: education/social_media.md
   - Policies: policies.md
-  - Contributing To The Docs: contributor_guide.md
+  - Contributing To The Docs: contributing/contributor_guide.md
   - Help:
       - Support: help/support.md
       - FAQ: help/faq.md

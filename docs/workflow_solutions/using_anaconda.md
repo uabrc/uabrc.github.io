@@ -18,7 +18,7 @@ If you are using a local machine or doing general purpose software development, 
 
 If you are using a virtual machine or container, go [here](#installing-miniconda) to install Miniconda.
 
-If you are using Cheaha, go [here](../cheaha/conda.md) for how to use Anaconda on Cheaha.
+If you are using Cheaha, go [here](../cheaha/software/software.md#anaconda-on-cheaha) for how to use Anaconda on Cheaha.
 
 ### Installing Anaconda
 
@@ -252,5 +252,5 @@ conda install -n base -c conda-forge mamba
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Mamba must be installed in the base environment to function correctly! If you are using Cheaha, and cannot install in the base environment, see our workaround [here](../cheaha/conda.md#using-mamba)
+    Mamba must be installed in the base environment to function correctly! If you are using Cheaha, and cannot install in the base environment, see our workaround [here](../cheaha/software/software.md#speedups-using-mamba)
 <!-- markdownlint-enable MD046 -->

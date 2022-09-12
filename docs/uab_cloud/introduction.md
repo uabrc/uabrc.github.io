@@ -10,6 +10,8 @@ To get started using cloud.rc, please navigate to <https://dashboard.cloud.rc.ua
 
 ![!cloud.rc dashboard](images/introduction.png)
 
+To get the most out of cloud.rc, you'll want to make sure you have a working familiarity with the [Linux terminal](../workflow_solutions/shell.md).
+
 Cloud.rc runs on Openstack. If you are new to Openstack or to cloud.rc, it is highly recommended to follow our tutorial to learn how to set up all of the necessary components of a virtual machine (VM) setup. In the tutorial we cover:
 
 1. [Networks](network_setup_basic.md)
