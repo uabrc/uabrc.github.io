@@ -102,13 +102,9 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
 - [Stage and commit](../workflow_solutions/git.md#staging-and-committing-changes) changes in small units as you go.
 - Be sure you are on the correct [branch](../workflow_solutions/git.md#how-do-i-manage-branches), i.e. your working branch!
-- VSCode facilitates staging and committing files and it is highly recommended.
+- VSCode facilitates staging and committing files.
 
     ![!stages and changes in vscode](images/contrib-workflow-vscode-stage-commit.png)
-
-- Alternatively, stage/commit shell commands documentation may be found at:
-    1. Stage: <https://github.com/git-guides/git-add>
-    2. Commit: <https://github.com/git-guides/git-commit>
 
 ### Verify your changes
 
@@ -121,7 +117,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
     ![!example mkdocs serve usage](images/contrib-workflow-mkdocs-serve.png)
 
 4. If a new browser tab does not open automatically, use your browser to navigate to `http://localhost:8000`.
-5. Verify your changes look and function as expected.
+5. Ensure your changes look and function as expected.
 
     ![!browser with changes made](images/contrib-workflow-verify-changes-in-browser.png)
 
