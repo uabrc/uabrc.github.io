@@ -163,6 +163,36 @@ From here your pull request will go through a review process. The following crit
 
 We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date!
 
+## Reviewing Pull Requests
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Currently only RC Data Science staff have permissions to review pull requests.
+<!-- markdownlint-enable MD046 -->
+
+Reviewing a pull request means obtaining a copy of the pull request branch and [Verifying the Changes](#verify-your-changes) on your local machine or on your fork. GitHub provides a facility for obtaining pull request branches directly from the upstream repository.
+
+### Add upstream remote
+
+[Add the Upstream Remote](../workflow_solutions/git.md#managing-remotes) using `git remote add upstream https://github.com/uabrc/uabrc.github.io.git`.
+
+### Pull the pull request
+
+1. [Fetch](../workflow_solutions/git.md#fetching-and-pulling) the pull request with `git fetch upstream pull/<id>/head:<branch-name>`.
+
+    ![!part of github.com page with id number and branch name highlighted](images/contrib-workflow-github-pull-request-page-parts.png)
+
+    1. Replace `<id>` with the pull request id number.
+    2. Replace `<branch-name>` with the branch name from the pull request source.
+
+2. [Checkout](../workflow_solutions/git.md#checking-out-existing-branches) the branch using `git checkout <branch-name>`.
+3. Follow the instructions for [Verifying Changes](#verify-your-changes)
+4. (Optional) make modifications to the pull request.
+    1. Before starting, make sure that the pull request author has allowed edits to their branch.
+    2. [Add the Author's Fork as a Remote](../workflow_solutions/git.md#managing-remotes).
+    3. [Push changes to the Author's Fork](../workflow_solutions/git.md#pushing). Be sure to push to the correct remote!
+
 ## File Organization
 
 - Main headings are based on [UAB Research Computing services](https://www.uab.edu/it/home/research-computing/research-digital-marketplace)
