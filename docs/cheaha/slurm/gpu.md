@@ -48,3 +48,7 @@ module -r spider 'cuda.*toolkit'
 
 If a specific version of the CUDA toolkit is needed but not installed,
 send an install request to [support@listserv.uab.edu].
+
+## Reviewing GPU Jobs
+
+As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct) to review GPU jobs. Quantity of GPUs may be reviewed using the `reqtres` and `alloctres` [fields](job_management.md#sacct-fields).
