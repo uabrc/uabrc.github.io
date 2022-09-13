@@ -12,6 +12,12 @@ A particular command `sudo` will be used extensively. Be warned that `sudo` gran
     The `sudo` command should be used carefully and judiciously, as it creates security risks. Use with caution.
 <!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Much of the information and examples on this page require a working knowledge of terminal commands and the shell. If you are unfamiliar with the terminal then please see our [Shell page](../workflow_solutions/shell.md) for more information and educational resources.
+<!-- markdownlint-enable MD046 -->
+
 ## Before Installing Software
 
 Before installing software, good practice is updating and upgrading operating system packages. For some software this is required. These updates often include critical security and bug fixes. To update the instance operating system, enter the following at the command line.
@@ -111,4 +117,85 @@ Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quic
 !!! note
 
     For other versions of the Singularity documentation, visit <https://sylabs.io/docs/>.
+<!-- markdownlint-enable MD046 -->
+
+#### Installing Jupyter Notebook Server
+
+Jupyter Notebooks are a staple of modern research computing, especially when developing new workflows or evaluating the usefulness of software packages.
+
+The setup process for [cloud.rc](introduction.md) is more involved than for [Cheaha](../cheaha/getting_started.md). Before using cloud.rc for Jupyter Notebooks, be sure that [Open OnDemand on Cheaha](../cheaha/open_ondemand/ood_interactive.md#jupyter-notebook) does not meet your needs.
+
+To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our [Introduction](introduction.md) and follow the tutorial completely.
+
+1. Run the commands in [Before Installing Software](#before-installing-software).
+2. A [Cloud Instance](instance_setup_basic.md) with attached [Floating IP]network_setup_basic.md#floating-ips).
+3. A [Security Group](security_setup_basic.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
+4. [Miniconda installed](#installing-miniconda) on the instance. Miniconda is a lightweight version of Anaconda.
+
+Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_anaconda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_anaconda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#>.
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Leaving your Jupyter Notebook Server unsecured may mean that other people on the UAB Campus Network are able to access your notebooks and other files stored on that cloud instance.
+<!-- markdownlint-enable MD046 -->
+
+1. [Install](../workflow_solutions/using_anaconda.md#install-packages) Jupyter Notebook Server using [Miniconda](../workflow_solutions/using_anaconda.md). You will need the following packages.
+
+    - `conda-forge` channel
+        - `notebook`
+        - `nb_conda_kernels`
+        - [Optional] `jupyter_contrib_nbextensions`
+    - `anaconda` channel
+        - `ipykernel` for python users
+        - `r-irkernel` for R users
+        - [Optional] `pip`
+
+2. Because floating IPs are, by default, reachable by anyone on the campus network, you'll need to secure the server using the steps below.
+    1. Generate a notebook config file using `jupyter notebook --generate-config`. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#prerequisite-a-notebook-configuration-file)]
+    2. Prepare a password using `jupyter notebook password`. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#automatic-password-setup)]
+    3. Set up SSL for an encrypted connection. For now create a self-signed certificate using the following command. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication)]
+
+        ```bash
+        openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem
+        ```
+
+        <!-- markdownlint-disable MD046 -->
+        !!! warning
+
+            When you connect to your Jupyter Server, your browser will warn you that the connection may be insecure. This is because self-signed certificates are not trusted by your operating system's root certificates. It is possible to fix this with some additional work using notes at the [official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication). Generally the security warning can be bypassed without issue _in this case_.
+        <!-- markdownlint-enable MD046 -->
+
+3. Configure the notebook server by locating lines like the following in `~/.jupyter/jupyter_notebook_config.py` and updating them with the right-hand side of each variable assignment (equals sign `=`). This file was created as part of the first step of these instructions. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#running-a-public-notebook-server)]
+
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+
+        If you used `jupyter notebook password` the hashed password will be located in `jupyter_notebook_config.json` instead of `.py`.
+    <!-- markdownlint-enable MD046 -->
+
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+
+        The lines below may not appear together depending on the version of Jupyter installed. The file `jupyter_notebook_config.py` contains over a thousand lines. You may need to search using a text editor search or find feature. If you are using `nano` please visit our [nano page](../workflow_solutions/shell.md#searching-for-text-in-nano) to learn how to search.
+    <!-- markdownlint-enable MD046 -->
+
+    ```python
+    c.NotebookApp.certfile = u'/absolute/path/to/your/certificate/mycert.pem'
+    c.NotebookApp.keyfile = u'/absolute/path/to/your/certificate/mykey.key'
+    c.NotebookApp.ip = '*'
+    c.NotebookApp.password = u'sha1:bcd259ccf...<your hashed password here>'
+    c.NotebookApp.open_browser = False
+
+    # It is a good idea to set a known, fixed port for server access
+    c.NotebookApp.port = 9999
+    ```
+
+4. Start the server with `jupyter notebook`.
+5. Access the server with the browser on your local machine by navigating to `https://<floating-ip>:<port>`. In this case the port was set to be `9999`, and `<floating-ip>` comes from the prerequisites for this section. The port must match that used for the security group to allow traffic between your local machine and the cloud instance. You must also be on the UAB Campus VPN.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Some browsers may default to using `http` instead of `https` when given a raw IP address. Make sure to fully type out `https://<floating-ip>:<port>`.
 <!-- markdownlint-enable MD046 -->
