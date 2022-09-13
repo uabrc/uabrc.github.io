@@ -100,8 +100,8 @@ You'll need to create a new branch on your local machine (the working branch). T
 
 You'll need to add, remove or otherwise modify files as appropriate to implement the changes you intend.
 
-- Stage and commit changes in small units as you go.
-- Be sure you are on the correct branch, i.e. your working branch!
+- [Stage and commit](../workflow_solutions/git.md#staging-and-committing-changes) changes in small units as you go.
+- Be sure you are on the correct [branch](../workflow_solutions/git.md#how-do-i-manage-branches), i.e. your working branch!
 - VSCode facilitates staging and committing files and it is highly recommended.
 
     ![!stages and changes in vscode](images/contrib-workflow-vscode-stage-commit.png)
@@ -112,7 +112,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
 ### Verify your changes
 
-1. Activate your conda environment.
+1. [Activate](../workflow_solutions/using_anaconda.md#activate-an-environment) your conda environment.
     1. Open the file `test.py` in the repository to start the Python extension.
     2. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
 2. Open a VSCode terminal using ++ctrl+shift+grave++.
@@ -127,7 +127,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
 ### Make a pull request
 
-1. Push your local working branch to your GitHub remote repository using `git push`.
+1. [Push](../workflow_solutions/git.md#pushing) your local working branch to your GitHub remote repository.
 2. Navigate to the upstream repository at <https://github.com/uabrc/uabrc.github.io>.
 3. Click the "Pull requests" tab and click the "New pull request" button.
 
