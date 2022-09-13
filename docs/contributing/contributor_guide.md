@@ -147,6 +147,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 6. Click the "Create pull request" button to open the pull request creation form.
     1. Give your pull request a concise and informative name. The name should describe what the pull request changes at a high level.
     2. In the description box, give details about what was changed at a conceptual level. The actual details of the changes can be viewed in the "Commits" and "Files changed" tabs.
+    3. If you want reviewers to be able to make changes to your pull request (recommended) then leave the "Allow edits" checkbox checked.
 
     ![!pull request creation form](images/contributor-workflow-github-open-pull-request-form.png)
 
