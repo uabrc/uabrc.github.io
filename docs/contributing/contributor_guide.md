@@ -172,6 +172,26 @@ We will do our best to check information for accuracy, as well as proofread the 
     - Section title "Running Analysis Jobs" vs "SLURM"
 - Put redirects for any page moves in case someone has bookmarked a page (see Redirect section below)
 
+### Adding The Same Content to Multiple Locations
+
+We have included the `mkdocs-include-markdown-plugin` to facilitate placing the same content in multiple places in the docs with a single definition. Please use this feature sparingly as it adds complexity. Only use it if you are certain the content should be precisely the same in two locations. Do **NOT** use this for cross-linking content, always use links instead.
+
+To use
+
+1. Place the shared content in the `docs_include` folder in a well-named `*.md` file.
+    1. Follow the usual markdown linting rules and make the top-level header a level one header, i.e. starting with `#`.
+    2. The header levels will be fixed at inclusion time.
+2. At each location of inclusion write code like the following
+
+    ```text
+    {%
+        include-markdown "../docs_include/<file>.md"
+        heading-offset=<parent-section-header-level>
+    %}
+    ```
+
+    The value of `<parent-section-header-level>` should be a positive integer. If the parent section is a level two header, put `2` here. All documents have a root parent which is level one.
+
 ## Markdown Formatting
 
 - Links must be one of the following formats including all punctuation and brackets:
