@@ -37,6 +37,7 @@ plugins:
       data_path: docs
   - git-revision-date-localized:
       type: date
+  - include-markdown
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md

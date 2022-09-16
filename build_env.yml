@@ -15,4 +15,5 @@ dependencies:
   - pip:
       - lightgallery==0.5
       - mkdocs-git-revision-date-localized-plugin==1.0.1
+      - mkdocs-include-markdown-plugin==3.8.1
       - mkdocs-redirects==1.1.0
