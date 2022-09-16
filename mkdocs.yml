@@ -53,15 +53,19 @@ plugins:
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
         cheaha/conda.md: cheaha/software/software.md#anaconda-on-cheaha
         contributor_guide.md: contributing/contributor_guide.md
+        account_management/xias_guest.md: account_management/xias/guest_instructions.md
+        account_management/xias_sites.md: account_management/xias/pi_site_management.md
+        account_management/xias_users.md: account_management/xias/pi_guest_management.md
 
 nav:
   - Home: index.md
   - Account Management:
       - Cheaha Account: account_management/cheaha_account.md
       - External Collaborator Accounts (XIAS):
-          - "For PIs - (1) Managing Projects & Sites": account_management/xias_sites.md
-          - "For PIs - (2) Managing Guests": account_management/xias_users.md
-          - "For Guests - Account Creation": account_management/xias_guest.md
+          - account_management/xias/index.md
+          - "For PIs - (1) Managing Projects & Sites": account_management/xias/guest_instructions.md
+          - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
+          - "For Guests - Account Creation": account_management/xias/guest_instructions.md
       - Gitlab Account: account_management/gitlab_account.md
   - Data Management:
       - Cheaha Storage: data_management/storage.md
