@@ -1,4 +1,9 @@
-# How to Request Support
+# Support
+
+{%
+    include-markdown "../../docs_include/contact_us.md"
+    heading-offset=1
+%}
 
 ## How Do I Create a Support Ticket?
 
