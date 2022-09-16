@@ -48,6 +48,8 @@ Before adding users, have a list of user emails handy for the site you wish to a
 
     ![!Email sample received following XIAS user registration. Includes user name and email as well as sites and URI resources.](./images/xias_users_add_006.png)
 
+8. Once the guest XIAS account has been created, the guest will need to login at <https://rc.uab.edu> and follow the automated [Cheaha Account Creation Process](../cheaha_account.md#creating-a-new-account) to create a Cheaha account. They will need to use the same email and password they used when creating their XIAS account.
+
 ## Discovering and Managing Users
 
 There are two ways to discover XIAS users you are currently sponsoring.
