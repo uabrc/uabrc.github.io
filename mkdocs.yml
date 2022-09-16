@@ -128,3 +128,6 @@ nav:
   - Help:
       - Support: help/support.md
       - FAQ: help/faq.md
+
+watch:
+  - docs_include/
