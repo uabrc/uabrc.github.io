@@ -1,31 +1,59 @@
 :root {
-  --md-primary-fg-color: #1e6b52;
-  --md-primary-fg-color--dark: #1e6b52;
+    --md-primary-fg-color: #1e6b52;
+    --md-primary-fg-color--dark: #1e6b52;
 }
 
 .md-grid {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .md-content a {
-  color: revert;
+    color: revert;
 }
 
 .md-content a:visited {
-  color: revert;
+    color: revert;
 }
 
 .md-content a:hover {
-  color: revert;
-  border-bottom: 1px solid;
+    color: revert;
+    border-bottom: 1px solid;
 }
 
 .md-typeset .headerlink:hover {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 html .md-footer-meta.md-typeset a.supportemail {
-  color: #aaaaff;
+    color: #aaaaff;
+}
+
+/* TODO you are trying to figure out how to inline svgs and change their color dynamically using css */
+/* TODO check this out https://github.com/squidfunk/mkdocs-material/issues/2318 */
+
+/* link icons */
+:is(.external-link, .mailto-link, .download-link) svg {
+    position: relative;
+    height: 0.8em;
+    padding-right: 0.2em;
+    display: inline;
+    vertical-align: center;
+}
+
+:is(.external-link, .mailto-link, .download-link) svg path {
+    fill: currentColor;
+}
+
+.external-link svg {
+    top: 0.0667em;
+}
+
+.mailto-link svg {
+    top: 0.10em;
+}
+
+.download-link svg {
+    top: 0.0em;
 }
 
 /* adds a flexbox to the surrounding div */
@@ -38,26 +66,30 @@ div.lightgallery {
 .lightgallery img {
     max-width: 50vw;
     box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
 }
+
 /* 100 viewport width on smaller screens */
 @media only screen and (max-width : 600px) {
-      .lightgallery img {
-       max-width: 100%;
-            }
+    .lightgallery img {
+        max-width: 100%;
+    }
 }
+
 .md-typeset .admonition.construction,
 .md-typeset details.construction {
-  border-color: #eed202;
+    border-color: #eed202;
 }
-.md-typeset .construction > .admonition-title,
-.md-typeset .construction > summary {
-  background-color: rgba(238, 210, 2, 0.1);
-  border-color: #eed202;
+
+.md-typeset .construction>.admonition-title,
+.md-typeset .construction>summary {
+    background-color: rgba(238, 210, 2, 0.1);
+    border-color: #eed202;
 }
-.md-typeset .construction > .admonition-title::before,
-.md-typeset .construction > summary::before {
-  background-color: #eed202;
-  -webkit-mask-image: var(--md-admonition-icon--warning);
-          mask-image: var(--md-admonition-icon--warning);
+
+.md-typeset .construction>.admonition-title::before,
+.md-typeset .construction>summary::before {
+    background-color: #eed202;
+    -webkit-mask-image: var(--md-admonition-icon--warning);
+    mask-image: var(--md-admonition-icon--warning);
 }

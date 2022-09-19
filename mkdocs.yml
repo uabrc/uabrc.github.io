@@ -14,6 +14,9 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - _javascript/icon.js
+
 copyright: Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
 
 markdown_extensions:
