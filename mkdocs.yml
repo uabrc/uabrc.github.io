@@ -11,6 +11,7 @@ theme:
     - navigation.indexes
     - navigation.instant
   favicon: images/favicon.png
+  logo: images/logo.png
 
 extra_css:
   - stylesheets/extra.css
