@@ -10,6 +10,7 @@ theme:
   features:
     - navigation.indexes
     - navigation.instant
+  favicon: images/favicon.png
 
 extra_css:
   - stylesheets/extra.css
