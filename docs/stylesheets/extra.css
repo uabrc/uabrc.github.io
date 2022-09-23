@@ -33,7 +33,7 @@ div.lightgallery {
     display: flex;
     justify-content: center;
 }
- 
+
 /* adding the drop shadow,margin and keeping the images at 50 viewport width */
 .lightgallery img {
     max-width: 50vw;

@@ -2,7 +2,7 @@
 
 RClone is a powerful command line tool for transferring and synchronizing files over the internet between various machines, servers and cloud storage services. It is highly recommended for small to moderate amounts of data. For very large amounts of data consider using [Globus](globus.md) for increased robustness against failure. Where Globus is not available, `rclone` is still suitable.
 
-RClone requires a modest amount of setup time on local machines, but once setup can be used fairly easily. RClone uses the concepts of "remotes", which is an abstract term for any storage service or device that is not physically part of the local machine. Many remotes are offered, including [SFTP](../../uab_cloud/cloud_remote_access.md#sftp) and various [UAB Cloud Storage Solutions](https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options). SFTP may be used to access Cheaha, cloud.rc and other laptop and desktop computers.
+RClone requires a modest amount of setup time on local machines, but once setup can be used fairly easily. RClone uses the concepts of "remotes", which is an abstract term for any storage service or device that is not physically part of the local machine. Many remotes are offered, including [SFTP](../../uab_cloud/remote_access.md#sftp) and various [UAB Cloud Storage Solutions](https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options). SFTP may be used to access Cheaha, cloud.rc and other laptop and desktop computers.
 
 To use RClone effectively, you'll need to setup remotes before using the various commands. Most file manipulation commands on Linux can be found in the RClone commands, but may have slightly different names, e.g. `cp` is `rclone copy`.
 
@@ -12,7 +12,7 @@ RClone is very powerful and, as such, has a wide variety of configuration option
 
 ### Installing on Cheaha
 
-On Cheaha, RClone is already installed as a [Module](../../cheaha/lmod.md). Use `module load rclone` to load it.
+On Cheaha, RClone is already installed as a [Module](../../cheaha/software/modules.md). Use `module load rclone` to load it.
 
 ### Installing on Linux and cloud.rc
 
@@ -69,7 +69,7 @@ RClone is capable of interfacing with many remote cloud services, as well as usi
 
 RClone connects two personal computers or servers using SFTP which is built on SSH, so a lot of these instructions mirror what would be done with an SSH configuration.
 
-1. [Generate a Key Pair](../../uab_cloud/cloud_remote_access.md#generating-key-pairs) for use with the remote machine.
+1. [Generate a Key Pair](../../uab_cloud/remote_access.md#generating-key-pairs) for use with the remote machine.
 2. At the terminal enter `rclone config`.
 3. Follow the prompts to choose `sftp`.
 4. Enter the following values as they come up, using defaults for other values.
@@ -88,7 +88,7 @@ The setup process for UAB cloud remotes is generally the same, except for the sp
 
 As you step through the process, you will ultimately open two terminal windows and a browser window, and will need to copy text between the terminal windows. The first terminal window will be used to setup the RClone cloud remote. The second terminal will be used to authenticate to that cloud service and gain a token that will be passed back to the first terminal. Authentication will happen by logging into the service in a browser window. This setup method is necessary for any machine where a browser is not readily available, such as a cloud.rc virtual machine. To facilitate setup on these machines, the second terminal will be opened on a machine with RClone and a browser. An example of what this setup might look like is given below.
 
-![!overview of windows used for authenticating cloud remotes via rclone ><](./images/rclone-auth-overview.png)
+![!overview of windows used for authenticating cloud remotes via rclone](./images/rclone-auth-overview.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -111,7 +111,7 @@ As you step through the process, you will ultimately open two terminal windows a
     - [Authenticate to Microsoft OneDrive](#authenticating-to-microsoft-onedrive).
 9. Terminal-2 will print a secret token, which will appear like in the following image. You will need to copy the portion highlighted in the image, between the lines with `--->` and `<---`.
 
-    ![!rclone authentication token sample ><](./images/rclone-auth-token-sample.png)
+    ![!rclone authentication token sample](./images/rclone-auth-token-sample.png)
 
 10. Copy and paste the token from the terminal-2 to terminal-1.
 11. Follow the remaining prompts.
@@ -123,22 +123,22 @@ As you step through the process, you will ultimately open two terminal windows a
 
 1. Click "Use Single Sign On (SSO)".
 
-    ![!box authentication dialog with single sign on highlighted ><](./images/rclone-auth-box-010.png)
+    ![!box authentication dialog with single sign on highlighted](./images/rclone-auth-box-010.png)
 
 2. Type in your UAB email address (not your @uabmc.edu email!).
 3. Click "Authorize".
 
-    ![!box single sign on authentication dialog ><](./images/rclone-auth-box-020.png)
+    ![!box single sign on authentication dialog](./images/rclone-auth-box-020.png)
 
 4. You will be redirected to the UAB SSO page.
 5. Authenticate with your blazerid credentials.
 6. You will be asked to grant permission to the RClone software. Click "Grant access to Box" if you want the software to work with Box. If you do not grant permission, you will not be able to use RClone with Box.
 
-    ![!box grant permission request dialog ><](./images/rclone-auth-box-030.png)
+    ![!box grant permission request dialog](./images/rclone-auth-box-030.png)
 
 7. You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.
 
-    ![!success page ><](./images/rclone-auth-rclone-success.png)
+    ![!success page](./images/rclone-auth-rclone-success.png)
 
 8. Return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
 
@@ -153,25 +153,142 @@ As you step through the process, you will ultimately open two terminal windows a
 1. Type in your UAB email address (not your @uabmc.edu email!).
 2. Click "Next".
 
-    ![!onedrive authentication dialog ><](./images/rclone-auth-onedrive-010.png)
+    ![!onedrive authentication dialog](./images/rclone-auth-onedrive-010.png)
 
 3. If prompted, click "Work or school account".
 
-    ![!onedrive account selection dialog ><](./images/rclone-auth-onedrive-020.png)
+    ![!onedrive account selection dialog](./images/rclone-auth-onedrive-020.png)
 
 4. You will be asked to grant permission to the RClone software. Click "Accept" if you want the software to work with OneDrive. If you do not grant permission, you will not be able to use RClone with OneDrive.
 
-    ![!onedrive grant permission request dialog ><](./images/rclone-auth-onedrive-030.png)
+    ![!onedrive grant permission request dialog](./images/rclone-auth-onedrive-030.png)
 
 5. You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.
 
-    ![!success page ><](./images/rclone-auth-rclone-success.png)
+    ![!success page](./images/rclone-auth-rclone-success.png)
 
 6. Next you will return to the general instructions. Before you do, note that you'll be asked to choose which type of OneDrive service to access. The prompt will look like the image below. For UAB, the two relevant selections will be (1) to access your personal OneDrive space and (3) for a SharePoint Site, e.g. for a lab or department.
 
-    ![!rclone selection prompt among list of onedrive services ><](./images/rclone-auth-onedrive-040.png)
+    ![!rclone selection prompt among list of onedrive services](./images/rclone-auth-onedrive-040.png)
 
 7. With your selection in mind, return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
+
+### Setting Up an S3 LTS Remote
+
+The full S3 configuration process can be done from a single command line terminal. Open a terminal and enter `rclone config` to begin the configuration process.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The locations where you will need to input either a command or select an option are preceded with a `$` for easier navigation.
+<!-- markdownlint-enable MD046 -->
+
+``` bash
+$ rclone config
+
+2022/02/22 13:02:15 NOTICE: Config file "/home/mdefende/.config/rclone/rclone.conf" not found - using defaults
+No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+
+# select 'n' to create a new remote
+$ n/s/q> n
+
+# name the new remote
+$ name> uablts
+```
+
+At this point, you've created a new remote configuration called uablts. This will be the remote name used in further commands. You can name the remote whatever you would like, but will need to replace uablts in the instructions with whichever name you chose, if you chose a different name.
+
+``` bash
+...
+4 / Amazon Drive
+  \ (amazon cloud drive)
+5 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Lyve Cloud, Minio, RackCorp, SeaweedFS, and Tencent COS
+  \ (s3)
+6 / Backblaze B2
+  \ (b2)
+...
+
+$ Storage> 5
+
+...
+2 / Alibaba Cloud Object Storage System (OSS) formerly Aliyun
+  \ (Alibaba)
+3 / Ceph Object Storage
+  \ (Ceph)
+4 / Digital Ocean Spaces
+  \ (DigitalOcean)
+...
+
+$ provider> 3
+
+Option env_auth.
+Get AWS credentials from runtime (environment variables or EC2/ECS meta data if no env vars).
+Only applies if access_key_id and secret_access_key is blank.
+Choose a number from below, or type in your own boolean value (true or false).
+Press Enter for the default (false).
+ 1 / Enter AWS credentials in the next step.
+   \ (false)
+ 2 / Get AWS credentials from the environment (env vars or IAM).
+   \ (true)
+
+$ env_auth> 1 (or leave blank)
+
+Option access_key_id.
+AWS Access Key ID.
+Leave blank for anonymous access or runtime credentials.
+Enter a value. Press Enter to leave empty.
+
+$ access_key_id> (Enter your access key given to you by research computing)
+
+Option secret_access_key.
+AWS Secret Access Key (password).
+Leave blank for anonymous access or runtime credentials.
+Enter a value. Press Enter to leave empty.
+
+$ secret_access_key> (Enter your secret access key given to you by research computing here)
+
+Option region.
+Region to connect to.
+Leave blank if you are using an S3 clone and you don't have a region.
+Choose a number from below, or type in your own value.
+Press Enter to leave empty.
+   / Use this if unsure.
+ 1 | Will use v4 signatures and an empty region.
+   \ ()
+   / Use this only if v4 signatures don't work.
+ 2 | E.g. pre Jewel/v10 CEPH.
+   \ (other-v2-signature)
+
+$ region> (Leave empty)
+
+Option endpoint.
+Endpoint for S3 API.
+Required when using an S3 clone.
+Enter a value. Press Enter to leave empty.
+
+$ endpoint> s3.lts.rc.uab.edu
+```
+
+From here, press Enter to accept default options until it gives you a summary of your connection
+
+``` bash
+[uablts]
+type = s3
+provider = Ceph
+access_key_id = ****************** # these will be filled in on your screen
+secret_access_key = ********************************
+endpoint = s3.lts.rc.uab.edu
+--------------------
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d>
+```
+
+Make sure everything looks correct here, then press Enter. At this point, it will bring you back to the main configuration menu. You can choose the `Quit Config` option and exit back to a basic terminal.
 
 ### Reconnecting to an Existing Remote
 
@@ -196,7 +313,7 @@ The various remotes each have their own individual page with their own specific 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Remote paths are always prefixed by the name of the remote like `cheaha:/path/to/files`. The color character `:` is required for all remote paths. Local paths have no prefix like `/path/to/local/files`. RClone can thus be used between any two machines that are configured where `rclone` is being used, including from the local machine to itself. In the following instructions, replace `<remote:>` by the appropriate remote name from configuration. To access local files, leave `<remote:>` off entirely.
+    Remote paths are always prefixed by the name of the remote like `cheaha:/path/to/files`. The colon character `:` is required for all remote paths. Local paths have no prefix like `/path/to/local/files`. RClone can thus be used between any two machines that are configured where `rclone` is being used, including from the local machine to itself. In the following instructions, replace `<remote:>` by the appropriate remote name from configuration. To access local files, leave `<remote:>` off entirely.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->

@@ -1,13 +1,15 @@
 site_name: UAB Research Computing
-repo_url: https://github.com/uabrc/researcher-facing-MkDocs
+repo_url: https://github.com/uabrc/uabrc.github.io/
+edit_uri: edit/main/docs/
 
 theme:
   name: material
-  include_search_page: true
   search_index_only: true
-  feature:
-    tabs: true
   custom_dir: theme
+  language: en
+  features:
+    - navigation.indexes
+    - navigation.instant
 
 extra_css:
   - stylesheets/extra.css
@@ -16,12 +18,16 @@ copyright: Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<b
 
 markdown_extensions:
   - admonition
-  - pymdownx.details
-  - pymdownx.superfences
   - attr_list
   - lightgallery:
       show_description_in_lightgallery: true
       show_description_as_inline_caption: false
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - tables
   - toc:
       permalink: true
 
@@ -29,50 +35,95 @@ plugins:
   - search
   - table-reader:
       data_path: docs
+  - git-revision-date-localized:
+      type: date
+  - redirects:
+      redirect_maps:
+        account_management/gitlab_researcher.md: account_management/gitlab_account.md
+        account_management/uab_researcher.md: account_management/cheaha_account.md
+        cheaha/lmod.md: cheaha/software/modules.md
+        data_management/LTS/lts.md: data_management/lts/lts.md
+        data_management/LTS/sharing.md: data_management/lts/sharing.md
+        environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
+        environment_management/containers.md: workflow_solutions/getting_containers.md
+        environment_management/git.md: workflow_solutions/getting_software_with_git.md
+        uab_cloud/cloud_remote_access.md: uab_cloud/remote_access.md
+        welcome/rc_days.md: education/research_computing_days.md
+        welcome/welcome.md: index.md
+        cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
+        cheaha/conda.md: cheaha/software/software.md#anaconda-on-cheaha
+        contributor_guide.md: contributing/contributor_guide.md
 
 nav:
   - Home: index.md
-  - Welcome:
-      - welcome/welcome.md
-      - welcome/rc_days.md
   - Account Management:
-      - account_management/uab_researcher.md
-      - External Collaborators (XIAS):
-          - account_management/xias_users.md
-          - account_management/xias_sites.md
-          - account_management/xias_guest.md
-      - account_management/gitlab_researcher.md
+      - Cheaha Account: account_management/cheaha_account.md
+      - External Collaborator Accounts (XIAS):
+          - "For PIs - (1) Managing Projects & Sites": account_management/xias_sites.md
+          - "For PIs - (2) Managing Guests": account_management/xias_users.md
+          - "For Guests - Account Creation": account_management/xias_guest.md
+      - Gitlab Account: account_management/gitlab_account.md
   - Data Management:
-      - data_management/storage.md
-      - data_management/s3.md
-      - File Transfer:
-          - data_management/transfer/globus.md
-          - data_management/transfer/rclone.md
-          - data_management/transfer/filezilla.md
-  - Cheaha User Guide:
+      - Cheaha Storage: data_management/storage.md
+      - Long Term Storage:
+          - Introduction: data_management/lts/lts.md
+          - Sharing: data_management/lts/sharing.md
+      - Transfer:
+          - Globus: data_management/transfer/globus.md
+          - RClone: data_management/transfer/rclone.md
+          - FileZilla: data_management/transfer/filezilla.md
+      - Code Storage: data_management/code_storage.md
+  - Workflow Solutions:
+      - Using the Shell: workflow_solutions/shell.md
+      - Using Anaconda: workflow_solutions/using_anaconda.md
+      - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
+      - Getting Containers: workflow_solutions/getting_containers.md
+      - Getting Software from GitHub and GitLab: workflow_solutions/getting_software_with_git.md
+  - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
       - Hardware: cheaha/hardware.md
+      - Software:
+          - Preinstalled Modules: cheaha/software/modules.md
+          - Self-Installed Software: cheaha/software/software.md
       - Open OnDemand:
-          - cheaha/open_ondemand/ood_main.md
-          - cheaha/open_ondemand/ood_interactive.md
-          - cheaha/open_ondemand/ood_files.md
-          - cheaha/open_ondemand/ood_jobs.md
+          - Homepage: cheaha/open_ondemand/ood_main.md
+          - File Browser: cheaha/open_ondemand/ood_files.md
+          - Interactive Apps: cheaha/open_ondemand/ood_interactive.md
+          - Job Composer: cheaha/open_ondemand/ood_jobs.md
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md
-          - cheaha/slurm/sbatch_usage.md
-          - cheaha/slurm/gpu.md
-          - cheaha/slurm/job_management.md
-      - cheaha/lmod.md
-      - cheaha/conda.md
-  - UAB Cloud:
+          - Submitting Jobs: cheaha/slurm/submitting_jobs.md
+          - Managing Jobs: cheaha/slurm/job_management.md
+          - GPUs: cheaha/slurm/gpu.md
+      - Job Efficiency: cheaha/job_efficiency.md
+  - UAB Cloud (cloud.rc) Guide:
       - Introduction: uab_cloud/introduction.md
-      - uab_cloud/network_setup_basic.md
-      - uab_cloud/security_setup_basic.md
-      - uab_cloud/instance_setup_basic.md
-      - uab_cloud/volume_setup_basic.md
-      - uab_cloud/cloud_remote_access.md
-      - uab_cloud/installing_software.md
-      - uab_cloud/snapshots.md
+      - Tutorial:
+          - (1) Networks: uab_cloud/network_setup_basic.md
+          - (2) Security Policies: uab_cloud/security_setup_basic.md
+          - (3) Instances: uab_cloud/instance_setup_basic.md
+          - (4) Volumes (optional): uab_cloud/volume_setup_basic.md
+      - Remote Access: uab_cloud/remote_access.md
+      - Installing Software: uab_cloud/installing_software.md
+      - Snapshots and Images: uab_cloud/snapshots.md
+  - UAB Kubernetes Guide:
+      - Startup: kubernetes/startup.md
+  - National Research Computing Cyberinfrastructure:
+      - The Open Science Grid: national_ci/osg.md
+      - NSF Cyberinfrastructure: national_ci/nsf_access.md
+      - NIH Cyberinfrastructure: national_ci/nih.md
+  - Grants & Contracts:
+      - Overview: grants/overview.md
+      - Facilities and Plan: grants/facilities.md
+      - Budgeting: grants/budgets.md
+      - Descriptions: grants/publications.md
+  - Education & Outreach:
+      - Case Studies: education/case_studies.md
+      - Research Computing Days: education/research_computing_days.md
+      - Offered Courses: education/courses.md
+      - Social Media: education/social_media.md
+  - Policies: policies.md
+  - Contributing To The Docs: contributing/contributor_guide.md
   - Help:
-      - help/support.md
-      - help/faq.md
+      - Support: help/support.md
+      - FAQ: help/faq.md

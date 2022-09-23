@@ -1,18 +1,24 @@
-# Basic Security Setup
+# Security Policy Setup and Tutorial
 
 These instructions show you how to prepare to use SSH with your instances. At a minimum, an SSH security group and at least one key pair must be created. Other security groups can and should be added as needed for additional services.
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.
+<!-- markdownlint-enable MD046 -->
+
 ## Creating a Security Group
 
-Security Groups are used to set rules for how external devices can connect to your instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. Security groups may be reused across multiple instances.
+Security Groups are used to set rules for how external devices can connect to your instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. Applications you develop may need other ports opened, so you may need to create additional security groups to handle those. Security groups may be reused across multiple instances.
 
 1. Click "Networks" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!cloud.rc Overview page. Security Groups is selected in the Network Topology fold-out menu in the left-hand navigation pane. ><](./images/networks_000.png)
+    ![!cloud.rc Overview page. Security Groups is selected in the Network Topology fold-out menu in the left-hand navigation pane.](./images/networks_000.png)
 
 2. Click "Security Groups" in the fold out menu.
 
-    ![!cloud.rc Security Groups page. The Security Groups table has one entry, the default, persistent entry labeled default. ><](./images/security_groups_001.png)
+    ![!cloud.rc Security Groups page. The Security Groups table has one entry, the default, persistent entry labeled default.](./images/security_groups_001.png)
 
 3. Click "+ Create Security Group" to open a dialog box.
 
@@ -21,14 +27,14 @@ Security Groups are used to set rules for how external devices can connect to yo
     1. Under "Name" enter `ssh`.
     2. Leave "Description" empty.
 
-    ![!Create Security Group dialog. The dialog has been filled out with the name set as ssh. ><](./images/security_groups_002.png)
+    ![!Create Security Group dialog. The dialog has been filled out with the name set as ssh.](./images/security_groups_002.png)
 
 5. Click "Create Security Group".
 
     1. Redirects to the "Manage Security Group Rules: ssh" page.
     2. There should be an entry for "Egress IPv4" and "Egress IPv6". Leave these alone.
 
-    ![!Manage Security Group Rules for ssh. The Table has two entries, both Egress direction. One is for IPv4 and the other for IPv6. Both have no IP restrictions. ><](./images/security_groups_003.png)
+    ![!Manage Security Group Rules for ssh. The Table has two entries, both Egress direction. One is for IPv4 and the other for IPv6. Both have no IP restrictions.](./images/security_groups_003.png)
 
 6. Click "+ Add Rule" to open a dialog box.
 
@@ -37,7 +43,7 @@ Security Groups are used to set rules for how external devices can connect to yo
     3. Select "CIDR" in the "Remote" drop down box.
     4. Type `0.0.0.0/0` in the "CIDR" box. For the sake of this tutorial, this value is fine. For properly securing virtual machines, see the "Warning" below for more information on better practice.
 
-    ![!Add Rule dialog box. The dialog box is filled out. The rule is set to SSH. ><](./images/security_groups_004.png)
+    ![!Add Rule dialog box. The dialog box is filled out. The rule is set to SSH.](./images/security_groups_004.png)
 
     <!-- markdownlint-disable MD046 -->
     !!! warning
@@ -52,15 +58,33 @@ Security Groups are used to set rules for how external devices can connect to yo
     1. Redirects to the "Manage Security Group Rules: ssh" page.
     2. There should be a new entry in the table.
 
-    ![!Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs. ><](./images/security_groups_005.png)
+    ![!Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs.](./images/security_groups_005.png)
+
+## Deleting a Security Group
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Deleting Security Groups is not part of the tutorial, and is here as a reference.
+<!-- markdownlint-enable MD046 -->
+
+To delete a security group, return to the "Security Groups" page using the left-hand navigation pane. In the table, find the row with the security group you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Security Group" to open a confirmation dialog.
+
+![!Delete security group entry highlighted in table row actions drop down menu.](./images/delete_security_group_001.png)
+
+Click "Delete Security Group" again to delete the security group permanently.
+
+![!Delete security group confirmation dialog.](./images/delete_security_group_002.png)
 
 ## Creating a Key pair
 
-A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./cloud_remote_access.md#install-an-ssh-client) on your local machine.
+A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./remote_access.md#install-an-ssh-client) on your local machine.
 
 Key Pairs are security devices used to authenticate and connect to a remote machine, like Cheaha or cloud.rc instances, and use [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) to encrypt the connection. As the name suggests, there are two parts: a public key which is placed on the remote machine, and a private key which is kept secret on your personal machine.
 
 While key pairs can be reused between instances, we highly recommend using a new key pair with each instance to minimize risk if a private key becomes compromised. See [Good Practices](#good-practices) for more information.
+
+There are a number of pitfalls and potential issues that can arise during this process. For information on these pitfalls and for more information on managing key pairs, see [Managing Keys](remote_access.md#managing-keys).
 
 There are two ways to create a key pair:
 
@@ -79,49 +103,49 @@ Using a password protected Key Pair is highly recommended for additional securit
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
+    ![!cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane.](./images/key_pairs_000.png)
 
 2. Click "Key Pairs".
 
-    ![!Key Pairs page. The Key Pairs table is empty. ><](./images/key_pairs_001.png)
+    ![!Key Pairs page. The Key Pairs table is empty.](./images/key_pairs_001.png)
 
 3. Click "+ Create Key Pair" to open a dialog box.
 
 4. Fill out the dialog box.
 
-    1. Enter a "Key Pair Name".
+    1. Enter a "Key Pair Name". See [Naming Conventions](introduction.md#naming-conventions).
 
     2. Select "SSH Key" in the "Key Type" drop down box.
 
-        ![!Create Key pair dialog. The dialog form is filled out. The Key Pair Name is set to my_key_pair. ><](./images/key_pairs_002.png)
+        ![!Create Key pair dialog. The dialog form is filled out. The Key Pair Name is set to my_key_pair.](./images/key_pairs_002.png)
 
 5. Click "+ Create Key Pair"
 
     1. Opens a download file dialog box in your browser to download a file containing the secret private key. The file may have extension `.pem` or `.crt` depending on your operating system.
     2. Download the private key file. For security reasons this will be your only chance to ever obtain the private key from cloud.rc. If you lose this file you will have to generate a new Key Pair.
 
-        ![!Download File dialog on Firefox for Windows. The file being downloaded is my_key_pair.pem. ><](./images/key_pairs_003.png)
+        ![!Download File dialog on Firefox for Windows. The file being downloaded is my_key_pair.pem.](./images/key_pairs_003.png)
 
     3. Redirects to the "Key Pairs" page.
     4. There should be a new entry in the table.
 
-        ![!Key Pairs page. The Key Pairs table has one entry labeled my_key_pair. ><](./images/key_pairs_004.png)
+        ![!Key Pairs page. The Key Pairs table has one entry labeled my_key_pair.](./images/key_pairs_004.png)
 
-6. To add the private key on your local machine please see "Add key" under [Add a Private Key](./cloud_remote_access.md#add-a-private-key).
+6. To add the private key on your local machine please see "Add key" under [Add a Private Key](./remote_access.md#add-a-private-key).
 
 ### Generating a Key Pair Locally
 
-To generate a key pair, see instructions located at [Generating Key Pairs](./cloud_remote_access.md#generating-key-pairs).
+To generate a key pair, see instructions located at [Generating Key Pairs](./remote_access.md#generating-key-pairs).
 
 1. Click "Import Public Key" to open a dialog box.
 
 2. Fill out the dialog box.
 
-    1. Enter a "Key Pair Name".
+    1. Enter a "Key Pair Name". See [Naming Conventions](introduction.md#naming-conventions).
     2. Select "SSH Key" in the "Key Type" drop-down box.
     3. Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
 
-    ![!Import Public Key dialog. The dialog form is empty. ><](./images/key_pairs_alt_002.png)
+    ![!Import Public Key dialog. The dialog form is empty.](./images/key_pairs_alt_002.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! danger
@@ -135,16 +159,26 @@ Please see [SSH Into the Instance](./instance_setup_basic.md#ssh-into-the-instan
 
 ### Revoking a Key Pair
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Revoking Key Pairs is not part of the tutorial, and is here as a reference.
+<!-- markdownlint-enable MD046 -->
+
 Revoking a key pair from cloud.rc is simple. First, log on to the interface.
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
-    ![!cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane. ><](./images/key_pairs_000.png)
+    ![!cloud.rc Overview page. Key Pairs is selected in the Compute fold-out menu in the left-hand navigation pane.](./images/key_pairs_000.png)
 
 2. Click "Key Pairs".
 
-    ![!Key Pairs page. The Key Pairs table has one entry. ><](./images/key_pairs_004.png)
+    ![!Key Pairs page. The Key Pairs table has one entry.](./images/key_pairs_004.png)
 
 3. Find the key pair you wish to revoke and click the "Delete Key Pair" button in that row.
 
-4. Optionally, [Remove the Private Key](./cloud_remote_access.md#remove-a-private-key) from your local machine. This step is not necessary to ensure security, but can help maintain a clean environment.
+4. Optionally, [Remove the Private Key](./remote_access.md#remove-a-private-key) from your local machine. This step is not necessary to ensure security, but can help maintain a clean environment.
+
+## Continuing the Tutorial
+
+Now that you've set up a [Network](network_setup_basic.md) and [Security Policies](security_setup_basic.md), you're ready to create a virtual machine (VM) [Instance](instance_setup_basic.md) to work with. To continue the tutorial, please visit [Instances](instance_setup_basic.md) next.

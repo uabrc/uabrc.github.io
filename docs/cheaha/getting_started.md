@@ -10,7 +10,7 @@ Please [Contact Us](../index.md#contact-us) with requests for support. Tips on g
 
 ### UAB Users
 
-Please visit [https://rc.uab.edu](https://rc.uab.edu) to create an account. More information can be found [here](../account_management/uab_researcher.md).
+Please visit [https://rc.uab.edu](https://rc.uab.edu) to create an account. More information can be found [here](../account_management/cheaha_account.md).
 
 ### Outside Collaborator
 
@@ -48,12 +48,12 @@ In addition to personal storage, Primary Investigators may request additional sh
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    **There are no automatic backups of any data on Cheaha**. If the system undergoes a complete crash, data stored on Cheaha may be lost and will be unrecoverable. Make backups of raw data and analysis scripts such as [Box](https://www.box.com) and [Github](https://www.github.com) or [Gitlab](https://gitlab.rc.uab.edu).
+    Data on Cheaha are replicated for recovery in case of system failures; however, **data are not recoverable if deleted by the researcher**. Be very careful with commands such as `rm -r` and other tools that delete files making sure you are deleting only the files and folders you mean to. Backing up data onto external platforms is the sole responsiblity of the researcher. Make backups of raw data places such as [RC Long-term Storage](https://uabrc.github.io/data_management/lts/lts/), AWS/Google Cloud/Azure data storage, local hard drives, or [UAB Box](https://www.box.com). Analysis scripts to places like [Github](https://www.github.com) or [UAB RC Gitlab](https://gitlab.rc.uab.edu).
 <!-- markdownlint-enable MD046 -->
 
 ### Etiquette
 
-[Quotas](./slurm/sbatch_usage.md#slurm-partitions) are in place to ensure any one user can't monopolize all resources.
+[Quotas](hardware.md#quality-of-service-qos-limits) are in place to ensure any one user can't monopolize all resources.
 
 #### Running Tasks on Compute Nodes
 
@@ -81,12 +81,12 @@ Slurm is our job queueing software used for submitting any number of job scripts
 
 ## Software
 
-A large variety of software is available on Cheaha as modules. To view and use these modules see [the following documentation](./lmod.md).
+A large variety of software is available on Cheaha as modules. To view and use these modules see [the following documentation](./software/modules.md).
 
-For new software installation, please try searching [Anaconda](./conda.md) for packages first. If you still need help, please [send a support ticket](../help/support.md)
+For new software installation, please try searching [Anaconda](../workflow_solutions/using_anaconda.md) for packages first. If you still need help, please [send a support ticket](../help/support.md)
 
 ### Conda Packages
 
-A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see [the following documentation](./conda.md).
+A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see our [Anaconda page](./software/software.md#anaconda-on-cheaha).
 
 If the software installation instructions tell you to use either `conda install` or `pip install` commands, the software and its dependencies can be installed using a virtual environment.
