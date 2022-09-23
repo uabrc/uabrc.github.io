@@ -583,6 +583,22 @@ Two separate patterns can be used to set or change permissions on files and dire
 - `chmod 740 sensitive_directory` make a directory readable by you and your group, and writeable and executable by only you. Other users cannot delete files in this folder.
 - `chmod ug=r notes.txt` followed by `chmod o-rwx notes.txt` makes a file read-only for you and your group and removes all permissions for other users.
 
+### Manage group ownership (`chgrp`)
+
+To change group ownership of files and directories use `chgrp`.
+
+The command `chgrp` may only be used on a file or directory if you own it, or if you are a member of its current group owner _and_ a member of its new group owner.
+
+For single files use `chgrp <new-group> <file>`.
+
+To change a directory and all of its contents recursively use `chgrp -hR <new-group> <file>`. The `-h` flag will avoid walking through the targets of symbolic links.
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    When using `chgrp -R`, the default behavior is to walk through the contents of symbolic links. If this is not desired, use `-hR`.
+<!-- markdownlint-enable MD046 -->
+
 ### Manage researcher access to files and directories (`getfacl`, `setfacl`)
 
 <!-- markdownlint-disable MD046 -->
