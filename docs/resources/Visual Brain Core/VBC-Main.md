@@ -2,7 +2,7 @@
 
 CINL Brain Core is an arm of the [Civitan International Neuroimaging Laboratory](https://www.uab.edu/medicine/cinl). The original "Visual Brain Core" was made possible by a generous grant from UAB's HSF/GEF grant program. Given that our resources ended up being used by a broader base of users than just vision researchers, we've dropped the "visual" from our name. Also, we're continuing our work in collaboration with UAB's Civitan International Neuroimaging Lab, and so we're officially the CINL Brain Core now.
 
-## CINL Brain Core Mission{#CINL_Brain_Core_Mission}
+## CINL Brain Core Mission
 
 Our mission is to help produce high quality, cutting edge research examining the visual brain. To achieve this, we will help investigators overcome some common barriers to performing high quality vision research, and provide forums to discuss new ideas and research techniques.
 
