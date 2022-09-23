@@ -2,25 +2,7 @@
 
 CINL Brain Core is an arm of the [Civitan International Neuroimaging Laboratory](https://www.uab.edu/medicine/cinl). The original "Visual Brain Core" was made possible by a generous grant from UAB's HSF/GEF grant program. Given that our resources ended up being used by a broader base of users than just vision researchers, we've dropped the "visual" from our name. Also, we're continuing our work in collaboration with UAB's Civitan International Neuroimaging Lab, and so we're officially the CINL Brain Core now.
 
-## Contents
-
-- [CINL Brain Core Mission](#CINL_Brain_Core_Mission)
-- [Information For CINL Brain Core](#information)
-  - [CINL Brain Core Personnel and Office Hours](#CINL_Brain_Core_Personnel_and_Office_Hours)
-  - [CINL Brain Core Seminar Series and Neuroimaging Journal Club](#CINL_Brain_Core_Seminar_Series_and_Neuroimaging_Journal_Club)
-  - [Grant Proposals](#Grant_Proposals)
-  - [Mailing List:](#Mailing_List)
-- [Neuroimaging at UAB](#Neuroimaging at UAB)
-  - [UAB Neuroimaging Facilities](#UAB_Neuroimaging_Facilities)
-  - [Neuroimaging and Systems Neuroscience Labs at UAB](#Neuroimaging_and_Systems_Neuroscience_Labs_at_UAB)
-  - [Cluster Computing Environment at UAB: Cheaha](#Cluster_Computing_Environment_at_UAB:_Cheaha)
-  - [UAB-Auburn University Collaboration for Neuroimaging](#UAB-Auburn_University_Collaboration_for_Neuroimaging)
-- How To...
-  - [Computer and coding related how-to's](#Computer_and_coding_related_how-to)
-  - [fMRI related how-to's and important links](#fMRI_related_how-to's_and_important_links)
-  - [UAB Neuroimaging Tools and How-To's (some require blazer id)](#UAB_Neuroimaging_Tools_and_How-To)
-
-## [CINL Brain Core Mission](#CINL_Brain_Core_Mission)
+## CINL Brain Core Mission{#CINL_Brain_Core_Mission}
 
 Our mission is to help produce high quality, cutting edge research examining the visual brain. To achieve this, we will help investigators overcome some common barriers to performing high quality vision research, and provide forums to discuss new ideas and research techniques.
 
@@ -42,9 +24,9 @@ Our goal is to create a sustainable resource for facilitating research into the 
 
 [Visual Brain Core Poster](Visual_Brain_Core_Poster.pdf)
 
-## [Information For CINL Brain Core](#information)
+## Information For CINL Brain Core
 
-### [CINL Brain Core Personnel and Office Hours](#CINL_Brain_Core_Personnel_and_Office_Hours)
+### CINL Brain Core Personnel and Office Hours
 
 - **Office Hours:**
   - **Monday, 10:00 am - noon, Civitan International Research Center, Second floor outside room 210.**
@@ -52,17 +34,15 @@ Our goal is to create a sustainable resource for facilitating research into the 
   - **Thursday, 10:00 am - noon, Edge of Chaos in Lister Hill Library.**
 - Mark Bolding, Ph.D. will discuss MR physics related questions. Ravi Tripathi, MS: Computer Systems Specialist. Consultation on high performance computing and algorithm issues.
 
-### [CINL Brain Core Seminar Series and Neuroimaging Journal Club](#CINL_Brain_Core_Seminar_Series_and_Neuroimaging_Journal_Club)
+### CINL Brain Core Seminar Series and Neuroimaging Journal Club
 
 Brain Core seminar series includes high level speakers usually from outside UAB. Every second Friday at noon in CIRC 120. We will discuss new ideas and techniques in brain imaging. During other fridays at noon in CIRC 120, we have Neuroimaging Journal Club. The Neuroimaging journal club is for UAB and Auburn researchers to share their work, or journal articles of their interest with our neuroimaging community. Information about this colloquium is here: [CINL page ](https://www.uab.edu/medicine/cinl/seminars).
 
-[Previous speakers](https://docs.uabgrid.uab.edu/wiki/List_of_speakers_in_Visual_Brain_Core_Seminar_Series)
+### For Use in Grant Proposals
 
-### [For Use in Grant Proposals:](#Grant_Proposals)
+The CINL Brain Core is supported by users. For this reason, we ask that you include use of the Brain Core resources in the budget of your upcoming grants. Quotations from previous proposals are provided here: [Grant Proposal Language](https://docs.rc.uab.edu/grants/overview/).
 
-The CINL Brain Core is supported by users. For this reason, we ask that you include use of the Brain Core resources in the budget of your upcoming grants. Quotations from previous proposals are provided here: [Grant Proposal Language](https://docs.uabgrid.uab.edu/wiki/Grant_Proposal_Language).
-
-### [Mailing List](#Mailing_List)
+### Mailing List
 
 Please follow these instructions to subscribe to the ‘CINL-NOTICE’ listserv:
 
@@ -72,9 +52,9 @@ After confirming your email address, you would start receiving cancellation emai
 
 ### [Brainhack](https://brainhack.org/global2021/)
 
-## [Neuroimaging at UAB](#Neuroimaging at UAB)
+## Neuroimaging at UAB
 
-### [UAB Neuroimaging Facilities](#UAB_Neuroimaging_Facilities)
+### UAB Neuroimaging Facilities
 
 [Alabama Advanced Imaging Consortium](http://www.alabamaadvancedimaging.org/) 
 
@@ -84,7 +64,7 @@ UAB-HSF MEG Laboratory
 
 Small Animal Imaging Shared Facility
 
-### [Neuroimaging and Systems Neuroscience Labs at UAB](#Neuroimaging_and_Systems_Neuroscience_Labs_at_UAB)
+### Neuroimaging and Systems Neuroscience Labs at UAB
 
 - [a partial list of researchers who use the CINL](https://www.uab.edu/medicine/cinl/about/researchers)
 
@@ -92,12 +72,12 @@ Small Animal Imaging Shared Facility
 
 Here is a [partial list of manuscripts](https://docs.uabgrid.uab.edu/wiki/Partial_list_of_manuscripts) that have resulted from CINL and Visual Brain Core resources.
 
-### [Cluster Computing Environment at UAB: Cheaha](#Cluster_Computing_Environment_at_UAB:_Cheaha)
+### Cluster Computing Environment at UAB Cheaha
 
 - [Cheaha_GettingStarted](https://docs.rc.uab.edu/cheaha/getting_started/) - information on getting an account and learning about how to use the cluster
 - [Cheaha](https://docs.rc.uab.edu/grants/overview/) - background information on the cluster useful for grants and publications
 
-### [UAB-Auburn University Collaboration for Neuroimaging](#UAB-Auburn_University_Collaboration_for_Neuroimaging)
+### UAB-Auburn University Collaboration for Neuroimaging
 
 **[Auburn University MRI Research Center](http://www.eng.auburn.edu/research/centers/mri/)**
 Siemens Magnetom 7T
@@ -112,7 +92,7 @@ To get on our mailing list, [click here](https://docs.google.com/forms/d/e/1FAIp
 
 ## How To...
 
-### [Computer and coding related how-to's](#Computer_and_coding_related_how-to)
+### Computer and coding related how-to's
 
 [Using Linux](https://linuxjourney.com/)
 
@@ -124,7 +104,7 @@ To get on our mailing list, [click here](https://docs.google.com/forms/d/e/1FAIp
 
 [Saving Data in Box](https://docs.rc.uab.edu/data_management/transfer/rclone/)
 
-### [fMRI related how-to's and important links](#fMRI_related_how-to's_and_important_links)
+### fMRI related how-to's and important links
 
 ### [Tools](https://docs.rc.uab.edu/cheaha/software/modules/) 
 
@@ -157,7 +137,7 @@ Check what modules are available on cheaha with
 - [VISTA Lab at Stanford](http://web.stanford.edu/group/vista/cgi-bin/wandell/talks-and-tutorials/)
 - [Van Essen Lab at Washington University](https://sites.wustl.edu/vanessenlab/resources/)
 
-### [UAB Neuroimaging Tools and How-To's](#UAB_Neuroimaging_Tools_and_How-To) (some require blazer id)
+### UAB Neuroimaging Tools and How-To's (some require blazer id)
 
 [Imaging Protocols](https://www.uab.edu/medicine/cinl/for-researchers/policies-and-procedures)
 
