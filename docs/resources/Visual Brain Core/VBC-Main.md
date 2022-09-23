@@ -22,8 +22,6 @@ The study of vision and visual plasticity using a human model requires expertise
 
 Our goal is to create a sustainable resource for facilitating research into the visual brain. As such, we ask that all users of the resource include some percentage of support for core resources in their grant proposals. Without consistent support of this type, the core will not be able to be maintained. Please see our website for information you can cut and paste into your grant application regarding the components of the visual brain core. Also, please cite the Visual Brain Core when publishing work based on help from the core. The correct citation in published work is “This work was supported by a grant from the General Endowment Fund of the University of Alabama Health Services Foundation.”
 
-[Visual Brain Core Poster](Visual_Brain_Core_Poster.pdf)
-
 ## Information For CINL Brain Core
 
 ### CINL Brain Core Personnel and Office Hours
