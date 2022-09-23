@@ -40,6 +40,39 @@ To create a project directory, or change access to or ownership of a project dir
 
 A special location under `/data/project/sloss` to store projects that are at most 5 TB. In keeping with the name [Sloss](https://www.slossfurnaces.com/), these spaces are intended as a foundry for experimental or temporary project spaces that have potential to grow. Otherwise, they are treated like any other project space.
 
+### Project Directory Permissions
+
+Every project directory has a group that is unique system-wide, and not used anywhere else on the filesystem. The unique project group will be referred to as `<grp>` and generally has the same name as the top level project directory.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Some early group names may not match their project directory, but should be reasonably close.
+<!-- markdownlint-enable MD046 -->
+
+Members of the project directory group have permissions to access that project directory. Adding and removing members from the project directory group is how Research Computing controls access to, and ownership of, project directories. We do not use access control lists (ACLs) to manage permissions ourselves, but use of ACLs is allowed and encouraged for PIs and project administrators who want more fine-grained control. Please see our [section on ACLs](../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl) for more information.
+
+Be default, project space permissions are set up in the following way:
+
+{{ read_csv('data_management/res/project_space_permissions.csv', keep_default_na=False) }}
+
+Having `setgid` enabled on directories means new files and directories created within will inherit group ownership and the `setgid` bit. The `setgid` bit is reflected by the `2` in the numeric permissions and the `s` in the symbolic permissions. The `setgid` bit and per-directory project groups is how Research Computing controls access to each project directory.
+
+There are some known issues surrounding project directory permissions when files are put into the project directory. Different commands have different behaviors. The following list describes the behaviors of various commands used to move and copy data, as well as good practices.
+
+- `mv` maintains all permissions and ownerships of the source file or directory.
+    - For files and directories created outside the project directory, avoid using `mv`, prefer `cp` or similar instead. See below for alternatives.
+    - For files and directories created within the project directory, `mv` may work, but be sure the file has correct permissions and group ownership.
+- `cp`, `tar -x`, `rsync`, `rclone`, `sftp` and Globus all behave as though creating a new file at the target location, by default. Prefer these commands when it is sensible to do so.
+    - Avoid using the `-p` flag with `cp`, `tar`, `rsync` and `sftp`.
+    - When using the `-p` flag, files and directories will retain their source permissions.
+    - Retaining source permissions in project directories is undesirable behavior and can create headaches for you, your colleagues, and your project directory administrators and PIs.
+
+For PIs and project administrators:
+
+- Please educate your staff and collaborators about the above permission setups, and any additional ACLs you may have in place, to minimize future challenges.
+- If you have issues with permissions, please contact [Support](../help/support.md#contact-us).
+
 ## Scratch
 
 Two types of scratch space are provided for analyses currently being ran, network-mounted and local. These are spaces shared across users (though one user still cannot access another user's files without permission) and as such, data should be moved out of scratch when the analysis is finished.
