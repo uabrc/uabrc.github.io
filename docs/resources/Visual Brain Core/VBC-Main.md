@@ -70,8 +70,6 @@ Small Animal Imaging Shared Facility
 
 *UAB folks, please let us know if your lab should be included on this list, or add more information about it!*
 
-Here is a [partial list of manuscripts](https://docs.uabgrid.uab.edu/wiki/Partial_list_of_manuscripts) that have resulted from CINL and Visual Brain Core resources.
-
 ### Cluster Computing Environment at UAB Cheaha
 
 - [Cheaha_GettingStarted](https://docs.rc.uab.edu/cheaha/getting_started/) - information on getting an account and learning about how to use the cluster
