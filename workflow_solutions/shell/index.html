@@ -279,6 +279,10 @@
       
         
           
+            
+          
+        
+          
         
           
         
@@ -286,10 +290,16 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_2">
-          External Collaborator Accounts (XIAS)
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../account_management/xias/">External Collaborator Accounts (XIAS)</a>
+          
+            <label for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="External Collaborator Accounts (XIAS)" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_2">
@@ -299,12 +309,14 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+          
+            
               
   
   
   
     <li class="md-nav__item">
-      <a href="../../account_management/xias_sites/" class="md-nav__link">
+      <a href="../../account_management/xias/guest_instructions/" class="md-nav__link">
         For PIs - (1) Managing Projects & Sites
       </a>
     </li>
@@ -318,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../account_management/xias_users/" class="md-nav__link">
+      <a href="../../account_management/xias/pi_guest_management/" class="md-nav__link">
         For PIs - (2) Managing Guests
       </a>
     </li>
@@ -332,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../account_management/xias_guest/" class="md-nav__link">
+      <a href="../../account_management/xias/guest_instructions/" class="md-nav__link">
         For Guests - Account Creation
       </a>
     </li>
@@ -1015,6 +1027,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-group-ownership-chgrp" class="md-nav__link">
+    Manage group ownership (chgrp)
+  </a>
   
 </li>
         
@@ -2478,6 +2497,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#manage-group-ownership-chgrp" class="md-nav__link">
+    Manage group ownership (chgrp)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#manage-researcher-access-to-files-and-directories-getfacl-setfacl" class="md-nav__link">
     Manage researcher access to files and directories (getfacl, setfacl)
   </a>
@@ -3022,6 +3048,18 @@
 <li><code>chmod 740 sensitive_directory</code> make a directory readable by you and your group, and writeable and executable by only you. Other users cannot delete files in this folder.</li>
 <li><code>chmod ug=r notes.txt</code> followed by <code>chmod o-rwx notes.txt</code> makes a file read-only for you and your group and removes all permissions for other users.</li>
 </ul>
+<h3 id="manage-group-ownership-chgrp">Manage group ownership (<code>chgrp</code>)<a class="headerlink" href="#manage-group-ownership-chgrp" title="Permanent link">&para;</a></h3>
+<p>To change group ownership of files and directories use <code>chgrp</code>.</p>
+<p>The command <code>chgrp</code> may only be used on a file or directory if you own it, or if you are a member of its current group owner <em>and</em> a member of its new group owner.</p>
+<p>For single files use <code>chgrp &lt;new-group&gt; &lt;file&gt;</code>.</p>
+<p>To change a directory and all of its contents recursively use <code>chgrp -hR &lt;new-group&gt; &lt;file&gt;</code>. The <code>-h</code> flag will avoid walking through the targets of symbolic links.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When using <code>chgrp -R</code>, the default behavior is to walk through the contents of symbolic links. If this is not desired, use <code>-hR</code>.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h3 id="manage-researcher-access-to-files-and-directories-getfacl-setfacl">Manage researcher access to files and directories (<code>getfacl</code>, <code>setfacl</code>)<a class="headerlink" href="#manage-researcher-access-to-files-and-directories-getfacl-setfacl" title="Permanent link">&para;</a></h3>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition construction">
@@ -3035,7 +3073,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2022</span>
       
     
   </small>

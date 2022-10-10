@@ -279,6 +279,10 @@
       
         
           
+            
+          
+        
+          
         
           
         
@@ -286,10 +290,16 @@
         
       
       
-        <label class="md-nav__link" for="__nav_2_2">
-          External Collaborator Accounts (XIAS)
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../account_management/xias/">External Collaborator Accounts (XIAS)</a>
+          
+            <label for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="External Collaborator Accounts (XIAS)" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_2">
@@ -299,12 +309,14 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+          
+            
               
   
   
   
     <li class="md-nav__item">
-      <a href="../../account_management/xias_sites/" class="md-nav__link">
+      <a href="../../account_management/xias/guest_instructions/" class="md-nav__link">
         For PIs - (1) Managing Projects & Sites
       </a>
     </li>
@@ -318,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../account_management/xias_users/" class="md-nav__link">
+      <a href="../../account_management/xias/pi_guest_management/" class="md-nav__link">
         For PIs - (2) Managing Guests
       </a>
     </li>
@@ -332,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../account_management/xias_guest/" class="md-nav__link">
+      <a href="../../account_management/xias/guest_instructions/" class="md-nav__link">
         For Guests - Account Creation
       </a>
     </li>
@@ -471,6 +483,13 @@
           <li class="md-nav__item">
   <a href="#sloss" class="md-nav__link">
     Sloss
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-directory-permissions" class="md-nav__link">
+    Project Directory Permissions
   </a>
   
 </li>
@@ -1904,6 +1923,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#project-directory-permissions" class="md-nav__link">
+    Project Directory Permissions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2076,6 +2102,79 @@
 <p>To create a project directory, or change access to or ownership of a project directory, the PI should follow the instructions at <a href="../../help/support/#how-do-i-request-or-change-a-project-space">How Do I Request Or Change A Project Space?</a></p>
 <h3 id="sloss">Sloss<a class="headerlink" href="#sloss" title="Permanent link">&para;</a></h3>
 <p>A special location under <code>/data/project/sloss</code> to store projects that are at most 5 TB. In keeping with the name <a href="https://www.slossfurnaces.com/">Sloss</a>, these spaces are intended as a foundry for experimental or temporary project spaces that have potential to grow. Otherwise, they are treated like any other project space.</p>
+<h3 id="project-directory-permissions">Project Directory Permissions<a class="headerlink" href="#project-directory-permissions" title="Permanent link">&para;</a></h3>
+<p>Every project directory has a group that is unique system-wide, and not used anywhere else on the filesystem. The unique project group will be referred to as <code>&lt;grp&gt;</code> and generally has the same name as the top level project directory.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some early group names may not match their project directory, but should be reasonably close.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<p>Members of the project directory group have permissions to access that project directory. Adding and removing members from the project directory group is how Research Computing controls access to, and ownership of, project directories. We do not use access control lists (ACLs) to manage permissions ourselves, but use of ACLs is allowed and encouraged for PIs and project administrators who want more fine-grained control. Please see our <a href="../../workflow_solutions/shell/#manage-researcher-access-to-files-and-directories-getfacl-setfacl">section on ACLs</a> for more information.</p>
+<p>Be default, project space permissions are set up in the following way:</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">Top level directory</th>
+<th align="left">Newly created files</th>
+<th align="left">Newly created directories</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Numeric Permissions</td>
+<td align="left"><code>2770</code></td>
+<td align="left"><code>0664</code></td>
+<td align="left"><code>2775</code></td>
+</tr>
+<tr>
+<td align="left">Symbolic Permissions</td>
+<td align="left"><code>drwxrws---</code></td>
+<td align="left"><code>-rw-rw-r--</code></td>
+<td align="left"><code>drwxrwsr-x</code></td>
+</tr>
+<tr>
+<td align="left"><code>setgid</code> enabled</td>
+<td align="left">Yes</td>
+<td align="left"></td>
+<td align="left">Yes</td>
+</tr>
+<tr>
+<td align="left">User owner</td>
+<td align="left">PI/Admin</td>
+<td align="left">Creator</td>
+<td align="left">Creator</td>
+</tr>
+<tr>
+<td align="left">Group owner</td>
+<td align="left"><code>&lt;grp&gt;</code></td>
+<td align="left"><code>&lt;grp&gt;</code></td>
+<td align="left"><code>&lt;grp&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Having <code>setgid</code> enabled on directories means new files and directories created within will inherit group ownership and the <code>setgid</code> bit. The <code>setgid</code> bit is reflected by the <code>2</code> in the numeric permissions and the <code>s</code> in the symbolic permissions. The <code>setgid</code> bit and per-directory project groups is how Research Computing controls access to each project directory.</p>
+<p>There are some known issues surrounding project directory permissions when files are put into the project directory. Different commands have different behaviors. The following list describes the behaviors of various commands used to move and copy data, as well as good practices.</p>
+<ul>
+<li><code>mv</code> maintains all permissions and ownerships of the source file or directory.<ul>
+<li>For files and directories created outside the project directory, avoid using <code>mv</code>, prefer <code>cp</code> or similar instead. See below for alternatives.</li>
+<li>For files and directories created within the project directory, <code>mv</code> may work, but be sure the file has correct permissions and group ownership.</li>
+</ul>
+</li>
+<li><code>cp</code>, <code>tar -x</code>, <code>rsync</code>, <code>rclone</code>, <code>sftp</code> and Globus all behave as though creating a new file at the target location, by default. Prefer these commands when it is sensible to do so.<ul>
+<li>Avoid using the <code>-p</code> flag with <code>cp</code>, <code>tar</code>, <code>rsync</code> and <code>sftp</code>.</li>
+<li>When using the <code>-p</code> flag, files and directories will retain their source permissions.</li>
+<li>Retaining source permissions in project directories is undesirable behavior and can create headaches for you, your colleagues, and your project directory administrators and PIs.</li>
+</ul>
+</li>
+</ul>
+<p>For PIs and project administrators:</p>
+<ul>
+<li>Please educate your staff and collaborators about the above permission setups, and any additional ACLs you may have in place, to minimize future challenges.</li>
+<li>If you have issues with permissions, please contact <a href="../../help/support/#contact-us">Support</a>. We can guide you through <a href="../../workflow_solutions/shell/#manage-permissions-of-files-and-directores-chmod">Managing Permissions</a> and <a href="../../workflow_solutions/shell/#manage-group-ownership-chgrp">Managing Group Ownership</a>.</li>
+</ul>
 <h2 id="scratch">Scratch<a class="headerlink" href="#scratch" title="Permanent link">&para;</a></h2>
 <p>Two types of scratch space are provided for analyses currently being ran, network-mounted and local. These are spaces shared across users (though one user still cannot access another user's files without permission) and as such, data should be moved out of scratch when the analysis is finished.</p>
 <h3 id="user-scratch">User Scratch<a class="headerlink" href="#user-scratch" title="Permanent link">&para;</a></h3>
@@ -2129,7 +2228,7 @@ here:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2022</span>
       
     
   </small>
