@@ -615,6 +615,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4">
@@ -665,6 +667,20 @@
     <li class="md-nav__item">
       <a href="../../workflow_solutions/using_workflow_managers/" class="md-nav__link">
         Using Workflow Managers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow_solutions/git/" class="md-nav__link">
+        Using Git
       </a>
     </li>
   
@@ -1750,6 +1766,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reviewing-pull-requests" class="md-nav__link">
+    Reviewing Pull Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Reviewing Pull Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-upstream-remote" class="md-nav__link">
+    Add upstream remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-the-pull-request" class="md-nav__link">
+    Pull the pull request
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file-organization" class="md-nav__link">
     File Organization
   </a>
@@ -2038,6 +2081,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reviewing-pull-requests" class="md-nav__link">
+    Reviewing Pull Requests
+  </a>
+  
+    <nav class="md-nav" aria-label="Reviewing Pull Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-upstream-remote" class="md-nav__link">
+    Add upstream remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-the-pull-request" class="md-nav__link">
+    Pull the pull request
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file-organization" class="md-nav__link">
     File Organization
   </a>
@@ -2212,7 +2282,7 @@
 <p>Activate the environment in VSCode by clicking the currently activated environment in the bottom-left of the VSCode window. A menu will appear allowing you to select from discovered environments. You may need to reload VSCode to get the environment to appear if it was just created.</p>
 <p>To build the documentation locally, use <code>mkdocs build</code> in the VSCode terminal. Be sure to fix all warnings before submitting a pull request.</p>
 <h2 id="workflow-for-contributing">Workflow for Contributing<a class="headerlink" href="#workflow-for-contributing" title="Permanent link">&para;</a></h2>
-<p>The workflow below assumes you are using VSCode as described above, and wish to use <a href="#mkdocs-serve"><code>mkdocs serve</code></a> to verify your changes. You may alternately verify changes using <a href="#verifying-changes-using-github-pages">GitHub Pages</a>.</p>
+<p>The workflow below assumes you are using VSCode and all of the prerequisites listed above. Some familiarity with git and GitHub are assumed.</p>
 <h3 id="create-a-working-branch">Create a working branch<a class="headerlink" href="#create-a-working-branch" title="Permanent link">&para;</a></h3>
 <p>You'll need to create a new branch on your local machine (the working branch). The purpose of a branch is to encapsulate a coherent set of changes to add or deprecate a feature, or fix a bug. Typically each bug is associated with one issue, or a set of very closely-related issues. See our <a href="https://github.com/uabrc/uabrc.github.io/issues">Issue Tracker</a> for available issues.</p>
 <ul>
@@ -2225,23 +2295,16 @@
 <h3 id="implement-your-changes">Implement your changes<a class="headerlink" href="#implement-your-changes" title="Permanent link">&para;</a></h3>
 <p>You'll need to add, remove or otherwise modify files as appropriate to implement the changes you intend.</p>
 <ul>
-<li>Stage and commit changes in small units as you go.</li>
-<li>Be sure you are on the correct branch, i.e. your working branch!</li>
+<li><a href="../../workflow_solutions/git/#staging-and-committing-changes">Stage and commit</a> changes in small units as you go.</li>
+<li>Be sure you are on the correct <a href="../../workflow_solutions/git/#how-do-i-manage-branches">branch</a>, i.e. your working branch!</li>
 <li>
-<p>VSCode facilitates staging and committing files and it is highly recommended.</p>
+<p>VSCode facilitates staging and committing files.</p>
 <p><div class="lightgallery"><a data-sub-html="stages and changes in vscode" href="../images/contrib-workflow-vscode-stage-commit.png"><img alt="stages and changes in vscode" src="../images/contrib-workflow-vscode-stage-commit.png" /></a></div></p>
-</li>
-<li>
-<p>Alternatively, stage/commit shell commands documentation may be found at:</p>
-<ol>
-<li>Stage: <a href="https://github.com/git-guides/git-add">https://github.com/git-guides/git-add</a></li>
-<li>Commit: <a href="https://github.com/git-guides/git-commit">https://github.com/git-guides/git-commit</a></li>
-</ol>
 </li>
 </ul>
 <h3 id="verify-your-changes">Verify your changes<a class="headerlink" href="#verify-your-changes" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Activate your conda environment.<ol>
+<li><a href="../../workflow_solutions/using_anaconda/#activate-an-environment">Activate</a> your conda environment.<ol>
 <li>Open the file <code>test.py</code> in the repository to start the Python extension.</li>
 <li>Select the interpreter using <a href="https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment">https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment</a></li>
 </ol>
@@ -2255,13 +2318,13 @@
 <p>If a new browser tab does not open automatically, use your browser to navigate to <code>http://localhost:8000</code>.</p>
 </li>
 <li>
-<p>Verify your changes look and function as expected.</p>
+<p>Ensure your changes look and function as expected.</p>
 <p><div class="lightgallery"><a data-sub-html="browser with changes made" href="../images/contrib-workflow-verify-changes-in-browser.png"><img alt="browser with changes made" src="../images/contrib-workflow-verify-changes-in-browser.png" /></a></div></p>
 </li>
 </ol>
 <h3 id="make-a-pull-request">Make a pull request<a class="headerlink" href="#make-a-pull-request" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Push your local working branch to your GitHub remote repository using <code>git push</code>.</li>
+<li><a href="../../workflow_solutions/git/#pushing">Push</a> your local working branch to your GitHub remote repository.</li>
 <li>Navigate to the upstream repository at <a href="https://github.com/uabrc/uabrc.github.io">https://github.com/uabrc/uabrc.github.io</a>.</li>
 <li>
 <p>Click the "Pull requests" tab and click the "New pull request" button.</p>
@@ -2285,6 +2348,7 @@
 <ol>
 <li>Give your pull request a concise and informative name. The name should describe what the pull request changes at a high level.</li>
 <li>In the description box, give details about what was changed at a conceptual level. The actual details of the changes can be viewed in the "Commits" and "Files changed" tabs.</li>
+<li>If you want reviewers to be able to make changes to your pull request (recommended) then leave the "Allow edits" checkbox checked.</li>
 </ol>
 <p><div class="lightgallery"><a data-sub-html="pull request creation form" href="../images/contributor-workflow-github-open-pull-request-form.png"><img alt="pull request creation form" src="../images/contributor-workflow-github-open-pull-request-form.png" /></a></div></p>
 </li>
@@ -2300,6 +2364,38 @@
 <li>Quality, organization and accuracy of contribution.</li>
 </ol>
 <p>We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date!</p>
+<h2 id="reviewing-pull-requests">Reviewing Pull Requests<a class="headerlink" href="#reviewing-pull-requests" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently only RC Data Science staff have permissions to review pull requests.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<p>Reviewing a pull request means obtaining a copy of the pull request branch and <a href="#verify-your-changes">Verifying the Changes</a> on your local machine or on your fork. GitHub provides a facility for obtaining pull request branches directly from the upstream repository.</p>
+<h3 id="add-upstream-remote">Add upstream remote<a class="headerlink" href="#add-upstream-remote" title="Permanent link">&para;</a></h3>
+<p><a href="../../workflow_solutions/git/#managing-remotes">Add the Upstream Remote</a> using <code>git remote add upstream https://github.com/uabrc/uabrc.github.io.git</code>.</p>
+<h3 id="pull-the-pull-request">Pull the pull request<a class="headerlink" href="#pull-the-pull-request" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><a href="../../workflow_solutions/git/#fetching-and-pulling">Fetch</a> the pull request with <code>git fetch upstream pull/&lt;id&gt;/head:&lt;branch-name&gt;</code>.</p>
+<p><div class="lightgallery"><a data-sub-html="part of github.com page with id number and branch name highlighted" href="../images/contrib-workflow-github-pull-request-page-parts.png"><img alt="part of github.com page with id number and branch name highlighted" src="../images/contrib-workflow-github-pull-request-page-parts.png" /></a></div></p>
+<ol>
+<li>Replace <code>&lt;id&gt;</code> with the pull request id number.</li>
+<li>Replace <code>&lt;branch-name&gt;</code> with the branch name from the pull request source.</li>
+</ol>
+</li>
+<li>
+<p><a href="../../workflow_solutions/git/#checking-out-existing-branches">Checkout</a> the branch using <code>git checkout &lt;branch-name&gt;</code>.</p>
+</li>
+<li>Follow the instructions for <a href="#verify-your-changes">Verifying Changes</a></li>
+<li>(Optional) make modifications to the pull request.<ol>
+<li>Before starting, make sure that the pull request author has allowed edits to their branch.</li>
+<li><a href="../../workflow_solutions/git/#managing-remotes">Add the Author's Fork as a Remote</a>.</li>
+<li><a href="../../workflow_solutions/git/#pushing">Push changes to the Author's Fork</a>. Be sure to push to the correct remote!</li>
+</ol>
+</li>
+</ol>
 <h2 id="file-organization">File Organization<a class="headerlink" href="#file-organization" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Main headings are based on <a href="https://www.uab.edu/it/home/research-computing/research-digital-marketplace">UAB Research Computing services</a></li>
@@ -2418,7 +2514,7 @@ Contrast checker: <a href="https://webaim.org/resources/contrastchecker/">https:
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2022</span>
       
     
   </small>
