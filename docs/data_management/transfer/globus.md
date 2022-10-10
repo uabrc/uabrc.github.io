@@ -69,7 +69,7 @@ To verify your installation is complete, please visit <https://app.globus.org> a
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    File permissions from the source will not be copied to the destination. Please read more about this in [our FAQ](../../help/faq.md#why-cant-other-users-access-data-i-transferred-to-a-project-space-on-cheaha)
+    File permissions from the source will not be copied to the destination. Please read more at [this ask.ci FAQ](https://ask.cyberinfrastructure.org/t/why-cant-other-users-access-data-i-transferred-to-a-project-space-on-cheaha/2527/3).
 <!-- markdownlint-enable MD046 -->
 
 ### Transfer and Sync Options
