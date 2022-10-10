@@ -1,4 +1,4 @@
-site_name: UAB Research Computing
+site_name: Research Computing Documentation
 repo_url: https://github.com/uabrc/uabrc.github.io/
 edit_uri: edit/main/docs/
 
@@ -10,6 +10,8 @@ theme:
   features:
     - navigation.indexes
     - navigation.instant
+  favicon: images/favicon.png
+  logo: images/logo.png
 
 extra_css:
   - stylesheets/extra.css
