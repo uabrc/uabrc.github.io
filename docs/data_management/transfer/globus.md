@@ -91,6 +91,10 @@ Between the two "Start" buttons on the "File Manager" page is a "Transfer & Sync
 1. File Not Found - This may mean that a file was not readable by Globus. Check that the file hasn't moved or changed names during the transfer. It is recommended to not modify files while they are being transferred by Globus.
 2. Permission Denied - Globus is not able to access the files because permissions do not allow it. For Globus Connect Personal, be sure the containing folder is on the "Accessible Folders" list. Be sure that your Cheaha account has access to read the file.
 
+### Project Space Permissions
+
+Globus does not preserve permissions nor ownership when data is transferred, instead using whatever permissions are default at the target location, and making the owner the authenticated user who initiated the transfer. Typically this is not an issue, but may cause problems for project directories. Please see our [Project Directory Permissions Section](../storage.md#project-directory-permissions) for more information.
+
 ### More Information
 
 A [Globus FAQ](https://docs.globus.org/faq/globus-connect-endpoints/) is available for additional information on endpoints and transfers.
