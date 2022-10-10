@@ -16,6 +16,11 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 copyright: Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
 
 markdown_extensions:
@@ -24,11 +29,13 @@ markdown_extensions:
   - lightgallery:
       show_description_in_lightgallery: true
       show_description_as_inline_caption: false
-  - pymdownx.keys
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.details
-  - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
+  - pymdownx.keys
+  - pymdownx.superfences
   - tables
   - toc:
       permalink: true

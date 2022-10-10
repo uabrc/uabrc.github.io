@@ -26,7 +26,7 @@ The command `sbatch` accepts script files as input. Scripts should be written in
 
 Slurm has many flags a researcher can use when creating a job, but a short list of the most important ones for are described below. It is highly recommended to be as explicit as possible with flags and not rely on system defaults. Explicitly using the flags below makes your scripts more portable, shareable and reproducible.
 
-{{ read_csv('cheaha/res/slurm_flags.csv', keep_default_na=False) }}
+{{ read_csv('cheaha/res/job_submit_flags.csv', keep_default_na=False) }}
 
 ### Available Partitions for `--partition`
 
