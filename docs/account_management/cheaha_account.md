@@ -9,7 +9,7 @@ Creating a new account is a simple, automated, self-service process. To start, n
 - If you are affiliated with UAB and have a BlazerID, please authenticate using Single Sign-On (SSO).
 - If you are affiliated with UAB Medicine, you will need to use your BlazerID to authenticate via Single Sign-On (SSO) instead of your UABMC authentication process.
 - If you are an external collaborator and have a XIAS account with access to Cheaha, please authenticate using your XIAS email address as the ID, not automatically generated `xias-XXXXXX-1` ID.
-- If you are an external collaborator and do not have a XIAS account, you will need a UAB-affiliated sponsor and will need to follow our [XIAS Guest Account Instructions](xias_guest.md). Your sponsor will need to follow our [XIAS Sites](xias_sites.md) and [XIAS Users](xias_users.md) documentation pages.
+- If you are an external collaborator and do not have a XIAS account, you will need a UAB-affiliated sponsor and will need to follow our [XIAS Guest Account Instructions](xias/guest_instructions.md). Your sponsor will need to follow our [XIAS Site Management](xias/pi_site_management.md) and [XIAS Guest Management](xias/pi_guest_management.md) documentation pages.
 
 Once you have authenticated, you should see a page that looks like the following.
 
