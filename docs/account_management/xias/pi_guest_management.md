@@ -3,20 +3,20 @@
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    These instructions are intended for use by UAB-employed PIs to organize external collaborators, also known as guests. UAB PIs: Please direct guests [here](xias_guest.md) for instructions on creating their accounts.
+    These instructions are intended for use by UAB-employed PIs to organize external collaborators, also known as guests. UAB PIs: Please direct guests [here](guest_instructions.md) for instructions on creating their accounts.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    To complete these steps you will first need to createa a [Project/Site](xias_sites.md)
+    To complete these steps you will first need to createa a [Project/Site](pi_site_management.md)
 <!-- markdownlint-enable MD046 -->
 
 UAB XIAS User management allow UAB faculty and staff to grant external collaborators access to specific resources on the internal UAB Campus Network. All XIAS users must be connected with at least one site, so you'll need to create one at the [UAB XIAS User Management Webpage](https://idm.uab.edu/cgi-cas/xrmi/sites). All XIAS Users must also have an expiration date.
 
 ## Adding Users
 
-Before adding users, have a list of user emails handy for the site you wish to add users to, as well as expiration dates for each user. You will need to create a [Project/Site](xias_sites.md) before you can add external collaborators.
+Before adding users, have a list of user emails handy for the site you wish to add users to, as well as expiration dates for each user. You will need to create a [Project/Site](pi_site_management.md) before you can add external collaborators.
 
 1. To start go to the [UAB XIAS User Management Webpage](https://idm.uab.edu/cgi-cas/xrmi/sites) and click Manage Users in the left menu.
 
@@ -47,6 +47,8 @@ Before adding users, have a list of user emails handy for the site you wish to a
 7. To complete their registration, please direct your external collaborators to the [UAB XIAS Guest Users page](https://idm.uab.edu/xias/top). When they have completed their registration, you should receive an email like the following.
 
     ![!Email sample received following XIAS user registration. Includes user name and email as well as sites and URI resources.](./images/xias_users_add_006.png)
+
+8. Once the guest XIAS account has been created, the guest will need to login at <https://rc.uab.edu> and follow the automated [Cheaha Account Creation Process](../cheaha_account.md#creating-a-new-account) to create a Cheaha account. They will need to use the same email and password they used when creating their XIAS account.
 
 ## Discovering and Managing Users
 

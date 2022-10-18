@@ -1,0 +1,6 @@
+﻿ ,Top level directory,Newly created files,Newly created directories
+Numeric Permissions,`2770`,`0664`,`2775`
+Symbolic Permissions,`drwxrws---`,`-rw-rw-r--`,`drwxrwsr-x`
+`setgid` enabled,Yes,,Yes
+User owner,PI/Admin,Creator,Creator
+Group owner,`<grp>`,`<grp>`,`<grp>`

@@ -232,7 +232,7 @@ Additionally, when running basically any AWS CLI command, you can include the `-
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you are wanting to perform actions on a specific directory in S3, it is imperative to add the `/` at the end of the directory name. For more information on this, see [our FAQ](../../help/faq.md#why-do-i-need-to-add-the-trailing--to-the-end-of-path-names-in-my-s3-commands)
+    If you are wanting to perform actions on a specific directory in S3, it is imperative to add the `/` at the end of the directory name. For more information on this, see [this ask.ci FAQ](https://ask.cyberinfrastructure.org/t/why-do-i-need-to-add-the-trailing-to-the-end-of-path-names-in-my-s3-commands/2530/2).
 <!-- markdownlint-enable MD046 -->
 
 ### Make a Bucket

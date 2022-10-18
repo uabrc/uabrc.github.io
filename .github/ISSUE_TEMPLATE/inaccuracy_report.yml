@@ -1,0 +1,24 @@
+name: Inaccuracy Report
+description: Let us know about inaccurate or outdated information
+labels: ["fix: inaccuracy"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking time to fill out this report!
+  - type: textarea
+    id: description
+    attributes:
+      label: What is inaccurate?
+      description: Please describe the inaccuracy. If you can, please tell us what would be an accurate replacement.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: url
+    attributes:
+      label: Where is the inaccuracy?
+      description: Please paste a link to the affected section.
+      placeholder: Tell us where it is!
+    validations:
+      required: true

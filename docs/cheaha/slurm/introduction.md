@@ -16,3 +16,7 @@ The main Slurm documentation can be found at [the Slurm site](https://slurm.sche
 6. Monitor the job (`squeue`)
 7. Review the results, and modify/rerun if necessary (`sacct` and `seff`)
 8. Remove data from `$USER_SCRATCH`
+
+For more details, please see [Submitting Jobs](submitting_jobs.md).
+
+For details on managing and reviewing jobs, please see [Job Management](job_management.md).

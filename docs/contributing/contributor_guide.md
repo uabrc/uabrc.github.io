@@ -84,7 +84,7 @@ To build the documentation locally, use `mkdocs build` in the VSCode terminal. B
 
 ## Workflow for Contributing
 
-The workflow below assumes you are using VSCode as described above, and wish to use [`mkdocs serve`](#mkdocs-serve) to verify your changes. You may alternately verify changes using [GitHub Pages](#verifying-changes-using-github-pages).
+The workflow below assumes you are using VSCode and all of the prerequisites listed above. Some familiarity with git and GitHub are assumed.
 
 ### Create a working branch
 
@@ -100,19 +100,15 @@ You'll need to create a new branch on your local machine (the working branch). T
 
 You'll need to add, remove or otherwise modify files as appropriate to implement the changes you intend.
 
-- Stage and commit changes in small units as you go.
-- Be sure you are on the correct branch, i.e. your working branch!
-- VSCode facilitates staging and committing files and it is highly recommended.
+- [Stage and commit](../workflow_solutions/git.md#staging-and-committing-changes) changes in small units as you go.
+- Be sure you are on the correct [branch](../workflow_solutions/git.md#how-do-i-manage-branches), i.e. your working branch!
+- VSCode facilitates staging and committing files.
 
     ![!stages and changes in vscode](images/contrib-workflow-vscode-stage-commit.png)
 
-- Alternatively, stage/commit shell commands documentation may be found at:
-    1. Stage: <https://github.com/git-guides/git-add>
-    2. Commit: <https://github.com/git-guides/git-commit>
-
 ### Verify your changes
 
-1. Activate your conda environment.
+1. [Activate](../workflow_solutions/using_anaconda.md#activate-an-environment) your conda environment.
     1. Open the file `test.py` in the repository to start the Python extension.
     2. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
 2. Open a VSCode terminal using ++ctrl+shift+grave++.
@@ -121,13 +117,13 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
     ![!example mkdocs serve usage](images/contrib-workflow-mkdocs-serve.png)
 
 4. If a new browser tab does not open automatically, use your browser to navigate to `http://localhost:8000`.
-5. Verify your changes look and function as expected.
+5. Ensure your changes look and function as expected.
 
     ![!browser with changes made](images/contrib-workflow-verify-changes-in-browser.png)
 
 ### Make a pull request
 
-1. Push your local working branch to your GitHub remote repository using `git push`.
+1. [Push](../workflow_solutions/git.md#pushing) your local working branch to your GitHub remote repository.
 2. Navigate to the upstream repository at <https://github.com/uabrc/uabrc.github.io>.
 3. Click the "Pull requests" tab and click the "New pull request" button.
 
@@ -147,6 +143,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 6. Click the "Create pull request" button to open the pull request creation form.
     1. Give your pull request a concise and informative name. The name should describe what the pull request changes at a high level.
     2. In the description box, give details about what was changed at a conceptual level. The actual details of the changes can be viewed in the "Commits" and "Files changed" tabs.
+    3. If you want reviewers to be able to make changes to your pull request (recommended) then leave the "Allow edits" checkbox checked.
 
     ![!pull request creation form](images/contributor-workflow-github-open-pull-request-form.png)
 
@@ -162,6 +159,36 @@ From here your pull request will go through a review process. The following crit
 6. Quality, organization and accuracy of contribution.
 
 We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date!
+
+## Reviewing Pull Requests
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Currently only RC Data Science staff have permissions to review pull requests.
+<!-- markdownlint-enable MD046 -->
+
+Reviewing a pull request means obtaining a copy of the pull request branch and [Verifying the Changes](#verify-your-changes) on your local machine or on your fork. GitHub provides a facility for obtaining pull request branches directly from the upstream repository.
+
+### Add upstream remote
+
+[Add the Upstream Remote](../workflow_solutions/git.md#managing-remotes) using `git remote add upstream https://github.com/uabrc/uabrc.github.io.git`.
+
+### Pull the pull request
+
+1. [Fetch](../workflow_solutions/git.md#fetching-and-pulling) the pull request with `git fetch upstream pull/<id>/head:<branch-name>`.
+
+    ![!part of github.com page with id number and branch name highlighted](images/contrib-workflow-github-pull-request-page-parts.png)
+
+    1. Replace `<id>` with the pull request id number.
+    2. Replace `<branch-name>` with the branch name from the pull request source.
+
+2. [Checkout](../workflow_solutions/git.md#checking-out-existing-branches) the branch using `git checkout <branch-name>`.
+3. Follow the instructions for [Verifying Changes](#verify-your-changes)
+4. (Optional) make modifications to the pull request.
+    1. Before starting, make sure that the pull request author has allowed edits to their branch.
+    2. [Add the Author's Fork as a Remote](../workflow_solutions/git.md#managing-remotes).
+    3. [Push changes to the Author's Fork](../workflow_solutions/git.md#pushing). Be sure to push to the correct remote!
 
 ## File Organization
 
