@@ -18,12 +18,12 @@ Collaborators outside UAB will need sponsorship from a current UAB researcher th
 
 For the UAB sponsor:
 
-1. [Create a XIAS Site](../account_management/xias_sites.md)
-2. [Add the external collaborator](../account_management/xias_users.md)
+1. [Create a XIAS Site](../account_management/xias/pi_site_management.md)
+2. [Add the external collaborator](../account_management/xias/pi_guest_management.md)
 
 For the external collaborator after the sponsor has completed the previous instructions:
 
-1. [Create an account and access Cheaha](../account_management/xias_guest.md)
+1. [Create an account and access Cheaha](../account_management/xias/guest_instructions.md)
 
 ## Accessing Cheaha
 
