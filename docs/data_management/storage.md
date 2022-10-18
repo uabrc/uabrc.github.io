@@ -101,11 +101,18 @@ Each compute node has a local scratch directory that is accessible via the varia
 
 ## How much space do I have left?
 
-To check how much space you have left in `/data/user/$USER` and `/scratch/$USER` please enter the command `quota-report`. This report is automatically displayed each time you log in.
+- **Personal**: use the command `quota-report` to see usage in `/data/user/$USER` and `/scratch/$USER`.
+- **Project**: use the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name, i.e., `/data/project/<project>`. Be sure to _not_ use the trailing space.
+    - Yes: `proj-quota-report mylab`
+    - No: `proj-quota-report mylab/`
 
-For space in `/data/project/<project>` please enter the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name.
+Both quota reports are updated nightly, so they may be out of date if you move data around before running these commands.
 
-Both quota reports are updated nightly.
+<!-- markdownlint-disable MD046 -->
+!!! tip
+
+    Running out of space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/lts.md).
+<!-- markdownlint-enable MD046 -->
 
 ## Data Policies
 
