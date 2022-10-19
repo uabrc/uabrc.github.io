@@ -137,7 +137,8 @@ nav:
       - Offered Courses: education/courses.md
       - Social Media: education/social_media.md
   - Policies: policies.md
-  - Contributing To The Docs: contributing/contributor_guide.md
+  - Reporting Errors: contributing/reporting_errors.md
+  - Contributing Content: contributing/contributor_guide.md
   - Help:
       - Support: help/support.md
       - FAQ: help/faq.md
