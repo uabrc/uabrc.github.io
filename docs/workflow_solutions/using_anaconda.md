@@ -28,7 +28,7 @@ Anaconda installation instructions are located here: <https://docs.anaconda.com/
 
 ### Installing Miniconda
 
-Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important, like [virtual machines](../uab_cloud/introduction.md) and [containers](getting_containers.md).
+Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important, like [virtual machines](../uab_cloud/index.md) and [containers](getting_containers.md).
 
 Miniconda installation instructions are located here: <https://docs.conda.io/en/latest/miniconda.html>.
 

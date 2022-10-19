@@ -28,7 +28,7 @@ Networking setup should be a one-time setup. While Floating IPs fall under the N
 4. Fill out the dialog box. Only the "Network" tab is important, we
     will create a subnet as a separate step.
 
-    1. Enter a "Network Name". See [Naming Conventions](../introduction.md#naming-conventions).
+    1. Enter a "Network Name". See [Naming Conventions](../index.md#naming-conventions).
 
     2. Leave "Enable Admin State" checked.
 
@@ -95,7 +95,7 @@ Click "Delete Network" again to delete the network permanently.
 
     1. The "Subnet" tab.
 
-        1. Enter a "Subnet Name". See [Naming Conventions](../introduction.md#naming-conventions).
+        1. Enter a "Subnet Name". See [Naming Conventions](../index.md#naming-conventions).
 
         2. Enter `192.168.0.0/24` as the "Network Address". The trailing `/24` allocates the entire range from `192.168.0.0` through `192.168.0.255` to the subnet.
 
@@ -184,7 +184,7 @@ To follow these directions for creating a router, a [Network](#creating-a-networ
 
 4. Fill out the dialog box.
 
-    1. Enter a "Router Name". See [Naming Conventions](../introduction.md#naming-conventions).
+    1. Enter a "Router Name". See [Naming Conventions](../index.md#naming-conventions).
     2. Leave "Enable Admin State" checked.
     3. Select "uab-campus" in the "External Network" drop down box.
     4. Leave the "Availability Zone Hints" box empty.

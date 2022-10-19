@@ -123,9 +123,9 @@ Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quic
 
 Jupyter Notebooks are a staple of modern research computing, especially when developing new workflows or evaluating the usefulness of software packages.
 
-The setup process for [cloud.rc](introduction.md) is more involved than for [Cheaha](../cheaha/getting_started.md). Before using cloud.rc for Jupyter Notebooks, be sure that [Open OnDemand on Cheaha](../cheaha/open_ondemand/ood_interactive.md#jupyter-notebook) does not meet your needs.
+The setup process for [cloud.rc](index.md) is more involved than for [Cheaha](../cheaha/getting_started.md). Before using cloud.rc for Jupyter Notebooks, be sure that [Open OnDemand on Cheaha](../cheaha/open_ondemand/ood_interactive.md#jupyter-notebook) does not meet your needs.
 
-To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our [Introduction](introduction.md) and follow the tutorial completely.
+To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our [Introduction](index.md) and follow the tutorial completely.
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
 2. A [Cloud Instance](tutorial/instances.md) with attached [Floating IP]network_setup_basic.md#floating-ips).

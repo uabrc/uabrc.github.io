@@ -30,7 +30,7 @@ These instructions require that you've set up a [Network](networks.md) and follo
 
 ### Details Tab
 
-1. Enter an "Instance Name". See [Naming Conventions](../introduction.md#naming-conventions).
+1. Enter an "Instance Name". See [Naming Conventions](../index.md#naming-conventions).
 2. Enter a "Description".
 3. Select "nova" in the "Availability Zone" drop down box.
 4. Select "1" in the "Count" field.

@@ -113,7 +113,7 @@ Using a password protected Key Pair is highly recommended for additional securit
 
 4. Fill out the dialog box.
 
-    1. Enter a "Key Pair Name". See [Naming Conventions](../introduction.md#naming-conventions).
+    1. Enter a "Key Pair Name". See [Naming Conventions](../index.md#naming-conventions).
 
     2. Select "SSH Key" in the "Key Type" drop down box.
 
@@ -141,7 +141,7 @@ To generate a key pair, see instructions located at [Generating Key Pairs](../re
 
 2. Fill out the dialog box.
 
-    1. Enter a "Key Pair Name". See [Naming Conventions](../introduction.md#naming-conventions).
+    1. Enter a "Key Pair Name". See [Naming Conventions](../index.md#naming-conventions).
     2. Select "SSH Key" in the "Key Type" drop-down box.
     3. Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
 

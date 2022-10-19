@@ -69,6 +69,7 @@ plugins:
         uab_cloud/network_setup_basic.md: uab_cloud/tutorial/networks.md
         uab_cloud/security_setup_basic.md: uab_cloud/tutorial/security.md
         uab_cloud/volume_setup_basic.md: uab_cloud/tutorial/volumes.md
+        uab_cloud/introduction.md: uab_cloud/index.md
 
 nav:
   - Home: index.md
@@ -115,7 +116,7 @@ nav:
           - GPUs: cheaha/slurm/gpu.md
       - Job Efficiency: cheaha/job_efficiency.md
   - UAB Cloud (cloud.rc) Guide:
-      - Introduction: uab_cloud/introduction.md
+      - uab_cloud/index.md
       - Tutorial:
           - uab_cloud/tutorial/index.md
           - (1) Networks: uab_cloud/tutorial/networks.md
