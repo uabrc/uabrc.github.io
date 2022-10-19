@@ -101,7 +101,7 @@ Each compute node has a local scratch directory that is accessible via the varia
 
 ## Temporary Files (`tmp`)
 
-Please do not use the directory `tmp` as storage for temporary files. A full `tmp` directory harms compute performance. Instead, please use [`$LOCAL_SCRATCH`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
+Please do not use the directory `tmp` as storage for temporary files. The `tmp` directory is local to each node, and a full `tmp` directory harms compute performance on that node for all users. Instead, please use [`$LOCAL_SCRATCH`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
 
 Some software defaults to using `tmp` without any warning or documentation, especially software designed for personal computers. We may reach out to inform you if your software fills `tmp`, as it can harm performance on that compute node. If that happens we will work with you to identify ways of redirecting temporary storage to one of the scratch spaces.
 
