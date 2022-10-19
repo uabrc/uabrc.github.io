@@ -243,6 +243,52 @@ Refer to [Setting up a Configuration File](./remote_access.md#setting-up-a-confi
 
 Now you are ready to [Install Software](./installing_software.md) and, optionally, [Create a Persistent Volume](./volume_setup_basic.md).
 
+### Testing Application Ports
+
+If you intend to use your instance as a server host, you'll likely need to set up additional [Security Groups](security_setup_basic.md#creating-a-security-group) for any ports the server expects to communicate on. It can be helpful to verify that those ports are open before configuring the server software. Assuming you know which ports are needed, the simplest way to do this is outlined below.
+
+1. Set up [Security Groups](security_setup_basic.md#creating-a-security-group) for the ports your server will need to communicate on.
+2. [SSH](#streamlining-ssh) into the instance.
+3. Prepare the `netcat` software command `nc`:
+    - For Ubuntu, the command `nc` should already be available.
+    - For other OSes, you may need to [Install](./installing_software.md) `nc` or `netcat`.
+4. For one of your `<port>` of interest, start a TCP listener with `nc -l <port> &`.
+5. Open a new terminal on your local machine.
+6. Probe the `<port>`:
+    - Using the Windows command prompt:
+        1. Enter the command `telnet <floating-ip> <port>`.
+        2. If the terminal window goes blank, then the connection was successful.
+
+            ![!telnet success example](images/port-check-telnet-success.png)
+
+            Otherwise you will see a message like `Could not open connection to the host`.
+
+            ![!telnet failure example](images/port-check-telnet-failure.png)
+
+        3. To exit `telnet` press ++ctrl+bracket-right++, then type `q`, then press ++enter++.
+
+            ![!telnet quit example](images/port-check-telnet-exit.png)
+
+    - Using any Linux-based prompt, MacOS, or Git Bash on Windows:
+        1. Ensure `nc` is installed locally.
+        2. Enter the command `nc -nvz <floating-ip> <port>`.
+            - `n` means don't try host lookup, which prevents unhelpful warnings.
+            - `v` means verbose, i.e., print the output we care about.
+            - `z` means scan for listeners on the remote.
+        3. If the connection is successful you should see something close to the following, with `<floating-ip>` and `<port>` replaced by the values you supplied earlier.
+
+            ```text
+            (UNKNOWN) [<floating-ip>] <port> (?) open
+            ```
+
+            ![!nc success example](images/port-check-nc-success.png)
+
+            If the connection is unsuccessful you will see `Connection refused` instead of `open`.
+
+            ![!nc failure example](images/port-check-nc-failure.png)
+
+Now you should have more information on whether your VM port configuration was successful. Feel free to repeat the steps above for each port, as needed.
+
 ## Deleting an Instance
 
 <!-- markdownlint-disable MD046 -->
