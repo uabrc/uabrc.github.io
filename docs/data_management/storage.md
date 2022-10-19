@@ -99,6 +99,19 @@ Each compute node has a local scratch directory that is accessible via the varia
     `$LOCAL_SCRATCH` is only useful for jobs in which all processes run on the same compute node, so MPI jobs are not candidates for this solution. Use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node.
 <!-- markdownlint-enable MD046 -->
 
+## Temporary Files (`tmp`)
+
+Please do not use the directory `tmp` as storage for temporary files. A full `tmp` directory harms compute performance. Instead, please use [`$LOCAL_SCRATCH`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
+
+Some software defaults to using `tmp` without any warning or documentation, especially software designed for personal computers. We may reach out to inform you if your software fills `tmp`, as it can harm performance on that compute node. If that happens we will work with you to identify ways of redirecting temporary storage to one of the scratch spaces.
+
+### Software Known to Use `tmp`
+
+The following software are known to use `tmp` by default, and can be worked around by using the listed flags.
+
+- Java: `java * -Djava.io.tmpdir=$LOCAL_SCRATCH`
+- UMI Tools: `umi_tools * --temp-dir=$LOCAL_SCRATCH`
+
 ## How much space do I have left?
 
 To check how much space you have left in `/data/user/$USER` and `/scratch/$USER` please enter the command `quota-report`. This report is automatically displayed each time you log in.
