@@ -12,14 +12,7 @@ To get started using cloud.rc, please navigate to <https://dashboard.cloud.rc.ua
 
 To get the most out of cloud.rc, you'll want to make sure you have a working familiarity with the [Linux terminal](../workflow_solutions/shell.md).
 
-Cloud.rc runs on Openstack. If you are new to Openstack or to cloud.rc, it is highly recommended to follow our tutorial to learn how to set up all of the necessary components of a virtual machine (VM) setup. In the tutorial we cover:
-
-1. [Networks](tutorial/networks.md)
-2. [Security Policies](tutorial/security.md)
-3. [Instances](tutorial/instances.md)
-4. [Volumes](tutorial/volumes.md) (optional)
-
-The tutorial is intended to be followed in this order. Doing it out of order may result in errors and issues. If you encounter any unexpected issues, unclear instructions or have questions or comments, please contact [Support](../help/support.md). Otherwise, feel free to start the tutorial with [Networks](tutorial/networks.md).
+Cloud.rc runs on Openstack. If you are new to Openstack or to cloud.rc, it is highly recommended to follow our [Tutorial](tutorial/index.md) to learn how to set up all of the necessary components of a virtual machine (VM) setup. The tutorial is intended to be followed in order. Doing it out of order may result in errors and issues. If you encounter any unexpected issues, unclear instructions or have questions or comments, please contact [Support](../help/support.md).
 
 ## Naming Conventions
 
