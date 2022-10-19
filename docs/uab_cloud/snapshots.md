@@ -31,14 +31,14 @@ Images are a helpful way to store the state of an instance for later use. Repeat
 
 ### Creating an Instance from an Image
 
-To create an instance from an image, follow the directions below, assuming you have [Created an Image](#creating-an-instance-snapshot).
+To create an instance from an image, follow the directions below, assuming you have [Created an Image](#creating-an-image).
 
 1. Navigate to "Compute" and then "Instances" in the left-hand navigation menu to open the "Instances" page.
 2. Click the "Launch Instance" button.
 
     ![!instances table with launch instance button highlighted](./images/use_snapshot_001.png)
 
-3. A dialog box will open. Follow the instructions at [Basic Instance Setup](./instance_setup_basic.md) until you get to the "Source" tab.
+3. A dialog box will open. Follow the instructions at [Basic Instance Setup](tutorial/instances.md) until you get to the "Source" tab.
 4. In the "Source" tab, select "Instance Snapshot" under the "Select Boot Source" drop down menu.
 
     ![!launch instance dialog on source tab with instance snapshot selected in select boot source drow down](./images/use_snapshot_002.png)
@@ -56,7 +56,7 @@ To create an instance from an image, follow the directions below, assuming you h
         ![!example of flavors too small to hold an instance snapshot](./images/use_snapshot_004.png)
     <!-- markdownlint-enable MD046 -->
 
-7. Continue following the instructions at [Basic Instance Setup](./instance_setup_basic.md) to start the instance.
+7. Continue following the instructions at [Basic Instance Setup](tutorial/instances.md) to start the instance.
 
 ### Sharing Instance Snapshots
 
@@ -78,7 +78,7 @@ Click "Delete Image" again to delete the image permanently.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
-    You will not be able to delete the image if it has an associated [volume snapshot](#volume-snapshots) or [volume](volume_setup_basic.md). They will need to be removed or deleted first.
+    You will not be able to delete the image if it has an associated [volume snapshot](#volume-snapshots) or [volume](tutorial/volumes.md). They will need to be removed or deleted first.
 <!-- markdownlint-enable MD046 -->
 
 ## Volume Snapshots

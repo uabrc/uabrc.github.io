@@ -1,6 +1,6 @@
 # Volume Setup and Tutorial
 
-These instructions are intended for researchers who want to setup a persistent volume for use across instances. To follow these instructions you'll need to have already setup an [Instance](./instance_setup_basic.md).
+These instructions are intended for researchers who want to setup a persistent volume for use across instances. To follow these instructions you'll need to have already setup an [Instance](instances.md).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -22,7 +22,7 @@ These instructions are intended for researchers who want to setup a persistent v
 
 4. Fill out the dialog box.
 
-    1. Enter a "Volume Name". See [Naming Conventions](introduction.md#naming-conventions).
+    1. Enter a "Volume Name". See [Naming Conventions](../introduction.md#naming-conventions).
     2. Enter a "Description".
     3. Select "No source, empty volume" in the "Volume Source" drop-down box to create an empty volume.
     4. Select "\_\_DEFAULT\_\_" in the "Type" drop down box.
@@ -189,5 +189,6 @@ Click "Delete Volume" again to delete the volume permanently.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
-    It will not be possible to delete a volume if it has an associated [volume snapshot](snapshots.md). The snapshot will need to be deleted first.
+
+    It will not be possible to delete a volume if it has an associated [volume snapshot](../snapshots.md). The snapshot will need to be deleted first.
 <!-- markdownlint-enable MD046 -->

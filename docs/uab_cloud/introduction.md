@@ -14,12 +14,12 @@ To get the most out of cloud.rc, you'll want to make sure you have a working fam
 
 Cloud.rc runs on Openstack. If you are new to Openstack or to cloud.rc, it is highly recommended to follow our tutorial to learn how to set up all of the necessary components of a virtual machine (VM) setup. In the tutorial we cover:
 
-1. [Networks](network_setup_basic.md)
-2. [Security Policies](security_setup_basic.md)
-3. [Instances](instance_setup_basic.md)
-4. [Volumes](volume_setup_basic.md) (optional)
+1. [Networks](tutorial/networks.md)
+2. [Security Policies](tutorial/security.md)
+3. [Instances](tutorial/instances.md)
+4. [Volumes](tutorial/volumes.md) (optional)
 
-The tutorial is intended to be followed in this order. Doing it out of order may result in errors and issues. If you encounter any unexpected issues, unclear instructions or have questions or comments, please contact [Support](../help/support.md). Otherwise, feel free to start the tutorial with [Networks](network_setup_basic.md).
+The tutorial is intended to be followed in this order. Doing it out of order may result in errors and issues. If you encounter any unexpected issues, unclear instructions or have questions or comments, please contact [Support](../help/support.md). Otherwise, feel free to start the tutorial with [Networks](tutorial/networks.md).
 
 ## Naming Conventions
 

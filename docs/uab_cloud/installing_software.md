@@ -1,6 +1,6 @@
 # Installing Software on Instances
 
-An important part of managing instances is the installation of software. This page assumes you have a working instance and can [SSH](./instance_setup_basic.md#ssh-into-the-instance) into it. This page assumes you are using an Ubuntu image.
+An important part of managing instances is the installation of software. This page assumes you have a working instance and can [SSH](./tutorial/instances.md#ssh-into-the-instance) into it. This page assumes you are using an Ubuntu image.
 
 We highly recommend building your research software stack into a [Container](../workflow_solutions/getting_containers.md). While there is a learning curve and some setup time, containers make replicating and sharing environments simpler. Everything you develop is packaged into a self-contained unit that can be run on virtually any modern Linux system.
 
@@ -128,8 +128,8 @@ The setup process for [cloud.rc](introduction.md) is more involved than for [Che
 To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our [Introduction](introduction.md) and follow the tutorial completely.
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
-2. A [Cloud Instance](instance_setup_basic.md) with attached [Floating IP]network_setup_basic.md#floating-ips).
-3. A [Security Group](security_setup_basic.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
+2. A [Cloud Instance](tutorial/instances.md) with attached [Floating IP]network_setup_basic.md#floating-ips).
+3. A [Security Group](tutorial/security.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
 4. [Miniconda installed](#installing-miniconda) on the instance. Miniconda is a lightweight version of Anaconda.
 
 Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_anaconda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_anaconda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#>.
