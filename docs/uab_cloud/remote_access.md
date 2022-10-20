@@ -224,16 +224,6 @@ ssh <user>@<remote_ip> -i <private_key_file>
 
 Where `user` is the remote username, `remote_ip` is the IP address of the remote machine, and `<private_key_file>` is the private key file used for access the remote machine. See [Generating Key Pairs](#generating-key-pairs) for general instructions on creating a key pair, or [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair) for cloud.rc specific instructions.
 
-## Graphical Interface
-
-### MobaXTerm
-
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction.
-<!-- markdownlint-enable MD046 -->
-
 ## Data Transfer
 
 ### SCP
