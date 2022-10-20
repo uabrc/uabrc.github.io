@@ -1,5 +1,7 @@
 # Globus
 
+Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is recommended for most single-use, day-to-day data transfer use-cases.
+
 UAB Research Computing uses High Assurance Endpoints and Collections, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions.
 
 1. You will be prompted to prove authorization each time you access a UAB Research Computing endpoint, collection or attempt to download files to your local machine from such an endpoint or collection. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.
