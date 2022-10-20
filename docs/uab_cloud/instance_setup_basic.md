@@ -252,7 +252,18 @@ If you intend to use your instance as a server host, you'll likely need to set u
 3. Prepare the `netcat` software command `nc`:
     - For Ubuntu, the command `nc` should already be available.
     - For other OSes, you may need to [Install](./installing_software.md) `nc` or `netcat`.
-4. For one of your `<port>` of interest, start a TCP listener with `nc -l <port> &`.
+4. For one of your `<port>` of interest, start a TCP listener with `nc -l <port>`.
+
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+
+        `nc -l <port>` will only listen for a single connection attempt, and then close. To emulate indefinite listening behavior, use it within a loop like so.
+
+        ``` bash
+        while true; do nc -l <port>; done
+        ```
+    <!-- markdownlint-enable MD046 -->
+
 5. Open a new terminal on your local machine.
 6. Probe the `<port>`:
     - Using the Windows command prompt:
