@@ -14,6 +14,18 @@ To get the most out of cloud.rc, you'll want to make sure you have a working fam
 
 Cloud.rc runs on Openstack. If you are new to Openstack or to cloud.rc, it is highly recommended to follow our [Tutorial](tutorial/index.md) to learn how to set up all of the necessary components of a virtual machine (VM) setup. The tutorial is intended to be followed in order. Doing it out of order may result in errors and issues. If you encounter any unexpected issues, unclear instructions or have questions or comments, please contact [Support](../help/support.md).
 
+## Cloud Usage Philosophy
+
+An important philosophy of cloud services is that virtual machines are disposable, and cloud platforms are designed to facilitate this philosophy. If a virtual machine fails, breaks or becomes misconfigured, it is designed to be destroyed and recreated from scratch.
+
+With that in mind, there are many possible use-cases for cloud.rc. Broadly speaking, a few common ones:
+
+1. Experimental workflow development prior to [Containerization](../workflow_solutions/getting_containers.md) and batch processing on [Cheaha](../cheaha/getting_started.md) or a [National Cyberinfrastructure platform](../national_ci/index.md).
+2. Packaging software into [Containers](../workflow_solutions/getting_containers.md#create-your-own-docker-container).
+3. Temporary hosting of server software for scientific development or workflows.
+
+The downside to disposable machines is losing configuration specifics. Software exists that can assist with reproducible virtual machine configuration, including [Ansible](https://www.ansible.com/), or even just a custom shell script. We are unable to provide assistance with deployment of virtual machine internals.
+
 ## Naming Conventions
 
 Entities on cloud.rc must be named a certain way or difficult-to-diagnose errors may occur. Entities includes instances, volumes, networks, routers, and anything else that you are allowed to give a name to.
