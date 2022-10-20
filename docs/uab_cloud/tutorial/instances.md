@@ -241,7 +241,7 @@ Refer to [Setting up a Configuration File](../remote_access.md#setting-up-a-conf
 
 ## Next Steps
 
-Now you are ready to [Install Software](../installing_software.md) and, optionally, [Create a Persistent Volume](volumes.md).
+Now you are ready to [Install Software](../installing_software.md), set up [Security Groups](security.md#creating-a-security-group) for [Servers](../installing_software.md#installing-server-software), and optionally [Create a Persistent Volume](volumes.md).
 
 ## Deleting an Instance
 
