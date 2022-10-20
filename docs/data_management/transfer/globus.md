@@ -13,13 +13,13 @@ Globus Identities is a concept helping to map Globus Accounts (one per person) t
 
 Most UAB researchers will have a single identity, their UAB identity, tied to their blazerid. Some researchers may have external collaborations or appointments that provide additional entities which need access to other endpoints on Globus.
 
+To manage your identities, navigate to <https://app.globus.org/account/identities> and sign in.
+
 <!-- markdownlint-disable MD046 -->
 !!! important
 
     To use UAB Research Computing endpoints and collections, you will need to ensure you are using you UAB identity.
 <!-- markdownlint-enable MD046 -->
-
-To manage your identities, navigate to <https://app.globus.org/account/identities> and sign in.
 
 ## Moving Data Between Endpoints
 
