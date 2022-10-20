@@ -27,6 +27,12 @@ Anaconda on Cheaha works like it does on any other system, once the module has b
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
+!!! important
+
+    Only create environments on compute nodes. Anaconda environment creation consumes substantial resources and should not be run on the login node.
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
 !!! warning
 
     The Cheaha operating system has a version of Python installed. This version is used by `python` calls when Anaconda has not been loaded.
