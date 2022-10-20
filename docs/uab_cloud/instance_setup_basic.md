@@ -283,9 +283,9 @@ If you intend to use your instance as a server host, you'll likely need to set u
     - Using any Linux-based prompt, MacOS, or Git Bash on Windows:
         1. Ensure `nc` is installed locally.
         2. Enter the command `nc -nvz <floating-ip> <port>`.
-            - `n` means don't try host lookup, which prevents unhelpful warnings.
-            - `v` means verbose, i.e., print the output we care about.
-            - `z` means scan for listeners on the remote.
+            - `n` uses numeric output, which minimizes unhelpful warnings about hostname lookups. It is also faster.
+            - `v` uses verbose output, i.e., print the output we care about.
+            - `z` scans for listeners on the remote.
         3. If the connection is successful you should see something close to the following, with `<floating-ip>` and `<port>` replaced by the values you supplied earlier.
 
             ```text
