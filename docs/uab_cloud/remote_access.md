@@ -234,6 +234,10 @@ Where `user` is the remote username, `remote_ip` is the IP address of the remote
     Under construction.
 <!-- markdownlint-enable MD046 -->
 
+## Server Software
+
+Remotely accessing server software requires configuration of [Security Groups](tutorial/security.md#creating-a-security-group) to open ports the server will communicate on. Please see our information on [Installing Server Software](installing_software.md#installing-server-software) for details.
+
 ## Data Transfer
 
 ### SCP
