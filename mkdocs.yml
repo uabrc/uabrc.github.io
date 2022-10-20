@@ -129,6 +129,7 @@ nav:
   - UAB Kubernetes Guide:
       - Startup: kubernetes/startup.md
   - National Research Computing Cyberinfrastructure:
+      - national_ci/index.md
       - The Open Science Grid: national_ci/osg.md
       - NSF Cyberinfrastructure: national_ci/nsf_access.md
       - NIH Cyberinfrastructure: national_ci/nih.md
