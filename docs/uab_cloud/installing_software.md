@@ -46,13 +46,13 @@ If the software uses a custom installer, then follow the instructions provided b
 
 ### Installing Server Software
 
-If you wish to set up server software, you'll need to open ports for that software by creating [Security Groups](security_setup_basic.md#creating-a-security-group). Then you may want to test the ports are open and verify your software is listening. It is highly recommended to verify the ports are configured properly and remotely accessible before you spend time setting up and configuring the server software.
+If you wish to set up server software, you'll need to open ports for that software by creating [Security Groups](tutorial/security.md#creating-a-security-group). Then you may want to test the ports are open and verify your software is listening. It is highly recommended to verify the ports are configured properly and remotely accessible before you spend time setting up and configuring the server software.
 
 #### Testing Server Ports
 
-If you intend to use your instance as a server host, you'll likely need to set up additional [Security Groups](security_setup_basic.md#creating-a-security-group) for any ports the server expects to communicate on. It can be helpful to verify that those ports are open before configuring the server software. Assuming you know which ports are needed, the simplest way to do this is outlined below.
+If you intend to use your instance as a server host, you'll likely need to set up additional [Security Groups](tutorial/security.md#creating-a-security-group) for any ports the server expects to communicate on. It can be helpful to verify that those ports are open before configuring the server software. Assuming you know which ports are needed, the simplest way to do this is outlined below.
 
-1. Set up [Security Groups](security_setup_basic.md#creating-a-security-group) for the ports your server will need to communicate on.
+1. Set up [Security Groups](tutorial/security.md#creating-a-security-group) for the ports your server will need to communicate on.
 2. [SSH](#streamlining-ssh) into the instance.
 3. Prepare the `netcat` software command `nc`:
     - For Ubuntu, the command `nc` should already be available.
@@ -121,7 +121,7 @@ The program is `ss` for "socket statistics", which can display information linki
 - `t` displays tcp sockets.
 - `u` displays udp sockets.
 
-An example of the output is shown below. The most useful columns for us are `Local Address:Port`, to verify they match the configured [Security Group](security_setup_basic.md#creating-a-security-group) ports, and `Process`, to verify the server software is listening on the correct ports.
+An example of the output is shown below. The most useful columns for us are `Local Address:Port`, to verify they match the configured [Security Group](tutorial/security.md#creating-a-security-group) ports, and `Process`, to verify the server software is listening on the correct ports.
 
 ![!example of ss listener verification](images/port-check-ss-lnptu.png)
 

@@ -63,7 +63,7 @@ Security Groups are used to set rules for how external devices can connect to yo
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you plan to [Install Server Software](installing_software.md#installing-server-software), you will need to revisit this section to set up additional security groups for server ports.
+    If you plan to [Install Server Software](../installing_software.md#installing-server-software), you will need to revisit this section to set up additional security groups for server ports.
 <!-- markdownlint-enable MD046 -->
 
 ## Deleting a Security Group
