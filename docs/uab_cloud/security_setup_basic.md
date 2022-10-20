@@ -60,6 +60,12 @@ Security Groups are used to set rules for how external devices can connect to yo
 
     ![!Manage Security Group Rules for ssh. The Table has three entries. The new entry is Ingress direction with IPv4. It is restricted to TCP port 22 on all IPs.](./images/security_groups_005.png)
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you plan to set up server software, you will need to revisit this section to set up additional security groups for ports required by the server.
+<!-- markdownlint-enable MD046 -->
+
 ## Deleting a Security Group
 
 <!-- markdownlint-disable MD046 -->
