@@ -121,6 +121,10 @@ The program is `ss` for "socket statistics", which can display information linki
 - `t` displays tcp sockets.
 - `u` displays udp sockets.
 
+An example of the output is shown below. The most useful columns for us are `Local Address:Port`, to verify they match the configured [Security Group](security_setup_basic.md#creating-a-security-group) ports, and `Process`, to verify the server software is listening on the correct ports.
+
+![!example of ss listener verification](images/port-check-ss-lnptu.png)
+
 ### Common Examples
 
 #### Installing NVidia Drivers
