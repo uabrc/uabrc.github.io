@@ -300,6 +300,22 @@ If you intend to use your instance as a server host, you'll likely need to set u
 
 Now you should have more information on whether your VM port configuration was successful. Feel free to repeat the steps above for each port, as needed.
 
+### Verify Server Software is Listening
+
+Once you have the server set up, you can check which processes are listening on which ports using the following command.
+
+```bash
+sudo ss -lnptu
+```
+
+The program is `ss` for "socket statistics", which can display information linking ports and processes. The flags are
+
+- `l` displays only listening sockets
+- `n` uses numeric output, which minimizes unhelpful warnings about hostname lookups. It is also faster.
+- `p` shows which process is using each socket.
+- `t` displays tcp sockets.
+- `u` displays udp sockets.
+
 ## Deleting an Instance
 
 <!-- markdownlint-disable MD046 -->
