@@ -217,3 +217,7 @@ This section is dedicated to using this feature with Anaconda on Cheaha. To use 
     ```
 
 You may optionally verify that Python works correctly by entering `py.list(["hello", "world"])`. A python list object should appear in the workspace.
+
+#### Using a GPU with MATLAB
+
+Please see the [MATLAB Section on our GPU Page](../slurm/gpu.md#matlab).
