@@ -8,9 +8,7 @@
 
 ## Anaconda on Cheaha
 
-This page details specific information for using Anaconda on [Cheaha](../getting_started.md).
-
-For general information on usage please see [Anaconda Environments](../../workflow_solutions/using_anaconda.md).
+For additional general information on using Anaconda please see [Anaconda Environments](../../workflow_solutions/using_anaconda.md).
 
 ### Loading Anaconda
 
