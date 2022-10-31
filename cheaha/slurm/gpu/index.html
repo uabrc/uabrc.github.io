@@ -1110,6 +1110,19 @@
     Open OnDemand
   </a>
   
+    <nav class="md-nav" aria-label="Open OnDemand">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matlab" class="md-nav__link">
+    MATLAB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1861,6 +1874,19 @@
     Open OnDemand
   </a>
   
+    <nav class="md-nav" aria-label="Open OnDemand">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matlab" class="md-nav__link">
+    MATLAB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1980,6 +2006,18 @@
 
 <h3 id="open-ondemand">Open OnDemand<a class="headerlink" href="#open-ondemand" title="Permanent link">&para;</a></h3>
 <p>When requesting an interactive job through <code>Open OnDemand</code>, selecting the <code>pascalnodes</code> partitions will automatically request access to one GPU as well. There is currently no way to change the number of GPUs for OOD interactive jobs.</p>
+<h4 id="matlab">MATLAB<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h4>
+<p>To use GPUs with our <a href="../../open_ondemand/ood_interactive/">Open OnDemand</a> MATLAB, you'll need to take a slightly different route than usual.</p>
+<ol>
+<li>Determine which CUDA Toolkits are compatible with your required version of MATLAB using the table at the <a href="https://www.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html">MathWorks Site</a>. The column <code>Pascal (cc6.x)</code> is relevant for our system.</li>
+<li>Start an <a href="../../open_ondemand/ood_interactive/">HPC Interactive Desktop Job</a> with appropriate resources. Be sure to use one of the <code>pascalnodes*</code> <a href="#scheduling-gpus">Partitions</a>.</li>
+<li>Open a terminal.</li>
+<li>Load the appropriate <a href="#cuda-toolkit">CUDA Toolkit Module</a>.</li>
+<li>Load the appropriate MATLAB <a href="../../software/modules/">Module</a>.</li>
+<li>Start MATLAB by entering the command <code>matlab</code>.</li>
+<li>When MATLAB loads, enter the command <code>gpuDevice</code> in the MATLAB Command Window to verify it can identify the GPU.</li>
+</ol>
+<p>For more information and official MATLAB documentation please see this page: <a href="https://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html">https://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html</a>.</p>
 <h2 id="cuda-toolkit">CUDA Toolkit<a class="headerlink" href="#cuda-toolkit" title="Permanent link">&para;</a></h2>
 <p>You will need to load a CUDA toolkit module for relevant commands to access the GPUs. Depending on which version of tensorflow, pytorch, or other similar software you are using, a different version of the CUDA toolkit may be required. For instance, tensorflow version 2.5.0 requires CUDA toolkit version 11.2.</p>
 <p>Several CUDA toolkit versions have been installed as modules on Cheaha. To see which CUDA toolkits are available, use:</p>
@@ -1997,7 +2035,7 @@ send an install request to [support@listserv.uab.edu].</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2022</span>
       
     
   </small>
