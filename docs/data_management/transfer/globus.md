@@ -113,6 +113,22 @@ Globus does not preserve permissions nor ownership when data is transferred, ins
 
 A [Globus FAQ](https://docs.globus.org/faq/globus-connect-endpoints/) is available for additional information on endpoints and transfers.
 
+## Connectors
+
+UAB Researcher Computing has subscriptions to connectors for cloud services and other types of filesystems.
+
+### UAB Box Connector
+
+To use the UAB Box Connector, [search for an endpoint](#moving-data-between-endpoints) like usual and enter "UAB Box" into the search box. Select the endpoint labeled "UAB Box". You should see a list of files and folders that are available to you at <https://uab.app.box.com>. File transfers work as they would with any other endpoint or collection.
+
+### Long-term Storage S3 (LTS) Connector
+
+<!-- markdownlint-disable MD046 -->
+!!! construction
+
+    This section is under construction.
+<!-- markdownlint-enable MD046 -->
+
 ## Using Bookmarks
 
 To save a bookmark, use the File Manager interface to select an endpoint and navigate to a path on that endpoint. Then click the bookmark button as shown below.
