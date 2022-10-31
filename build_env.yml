@@ -12,6 +12,7 @@ dependencies:
   - mkdocs-table-reader-plugin=1.0.0
   - pip=21.2.4
   - python=3.9.7
+  - tabulate=0.8.9
   - pip:
       - lightgallery==0.5
       - mkdocs-git-revision-date-localized-plugin==1.0.1
