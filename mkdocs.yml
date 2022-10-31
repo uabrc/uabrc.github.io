@@ -31,8 +31,6 @@ markdown_extensions:
       show_description_as_inline_caption: false
   - pymdownx.arithmatex:
       generic: true
-      inline_syntax: ["round"]
-      block_syntax: ["square", "begin"]
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
