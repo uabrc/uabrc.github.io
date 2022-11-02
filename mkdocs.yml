@@ -72,7 +72,7 @@ nav:
       - Cheaha Account: account_management/cheaha_account.md
       - External Collaborator Accounts (XIAS):
           - account_management/xias/index.md
-          - "For PIs - (1) Managing Projects & Sites": account_management/xias/guest_instructions.md
+          - "For PIs - (1) Managing Projects & Sites": account_management/xias/pi_site_management.md
           - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
           - "For Guests - Account Creation": account_management/xias/guest_instructions.md
       - Gitlab Account: account_management/gitlab_account.md
@@ -137,7 +137,8 @@ nav:
       - Offered Courses: education/courses.md
       - Social Media: education/social_media.md
   - Policies: policies.md
-  - Contributing To The Docs: contributing/contributor_guide.md
+  - Reporting Errors: contributing/reporting_errors.md
+  - Contributing Content: contributing/contributor_guide.md
   - Help:
       - Support: help/support.md
       - FAQ: help/faq.md
