@@ -2197,9 +2197,18 @@
 <!-- markdownlint-enable MD046 -->
 
 <h2 id="how-much-space-do-i-have-left">How much space do I have left?<a class="headerlink" href="#how-much-space-do-i-have-left" title="Permanent link">&para;</a></h2>
-<p>To check how much space you have left in <code>/data/user/$USER</code> and <code>/scratch/$USER</code> please enter the command <code>quota-report</code>. This report is automatically displayed each time you log in.</p>
-<p>For space in <code>/data/project/&lt;project&gt;</code> please enter the command <code>proj-quota-report &lt;project&gt;</code>. Replace <code>&lt;project&gt;</code> with the appropriate project directory name.</p>
-<p>Both quota reports are updated nightly.</p>
+<ul>
+<li><strong>Personal</strong>: use the command <code>quota-report</code> to see usage in <code>/data/user/$USER</code> and <code>/scratch/$USER</code>.</li>
+<li><strong>Project</strong>: use the command <code>proj-quota-report &lt;project&gt;</code>. Replace <code>&lt;project&gt;</code> with the appropriate project directory name, i.e., <code>/data/project/&lt;project&gt;</code>. Be sure to <em>not</em> use a trailing slash. Use <code>proj-quota-report mylab</code> not <code>proj-quota-report mylab/</code>.</li>
+</ul>
+<p>Both quota reports are updated nightly, so they may be out of date if you move data around before running these commands.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Running out of space? Can't afford to remove any data? Please consider using our <a href="../lts/lts/">Long Term Storage (LTS) system</a>.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h2 id="data-policies">Data Policies<a class="headerlink" href="#data-policies" title="Permanent link">&para;</a></h2>
 <h3 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h3>
 <p><strong>It is the responsibility of the user to maintain proper backups of their data.</strong></p>
@@ -2228,7 +2237,7 @@ here:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2022</span>
       
     
   </small>
