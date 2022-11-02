@@ -1055,6 +1055,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-slurm-queue" class="md-nav__link">
+    The SLURM Queue
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1816,6 +1823,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-slurm-queue" class="md-nav__link">
+    The SLURM Queue
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1850,13 +1864,57 @@
 </ol>
 <p>For more details, please see <a href="../submitting_jobs/">Submitting Jobs</a>.</p>
 <p>For details on managing and reviewing jobs, please see <a href="../job_management/">Job Management</a>.</p>
+<h2 id="the-slurm-queue">The SLURM Queue<a class="headerlink" href="#the-slurm-queue" title="Permanent link">&para;</a></h2>
+<p>When working on Cheaha and with Research Computing, you will often hear references to the SLURM Queue. By its name, you might think that the SLURM Queue is a first-in-first-out (FIFO) queue like when waiting in line at an event or place of business. And, some institutions use a FIFO queue, as it is the default configuration for SLURM.</p>
+<p>At UAB Research Computing, we use a multifactor <em>priority</em> queue, meaning that those users with top priority are first to receive service, regardless of when they entered the queue.</p>
+<p>SLURM measures priority as a single number, and the highest value generally is first to receive service. Multiple factors play into the queue. The most important factors are given in the table below, in no particular order.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Factor</th>
+<th align="left">Description</th>
+<th align="left">What Gives Higher Priority</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Age</td>
+<td align="left">Lenght of time job has spent in queue.</td>
+<td align="left">Longer time in queue</td>
+<td align="left">Job in queue for 2 days will start faster than for 4 hours.</td>
+</tr>
+<tr>
+<td align="left">Resources</td>
+<td align="left">Quantity of resources requested for job.</td>
+<td align="left">Request fewer resources</td>
+<td align="left">1 CPU will start faster than 4 CPUs. 2 hour time limit will start faster than 10 hours.</td>
+</tr>
+<tr>
+<td align="left">Partition</td>
+<td align="left">Which partition was requested for job.</td>
+<td align="left">Lower resource partitions</td>
+<td align="left">Express partition will start faster than Long. NOT related to Priority Tier.</td>
+</tr>
+<tr>
+<td align="left">Fair Share</td>
+<td align="left">What fraction of cluster resources are already being used by you.</td>
+<td align="left">Fewer jobs currently running</td>
+<td align="left">Having 1 job already running will start faster than having 10 of the same job.</td>
+</tr>
+</tbody>
+</table>
+<p>The fastest way to queue a job is to request minimal resources and time, have a smaller share of total resources already used, and use the shortest partition possible.</p>
+<p>Given two or more jobs with equal priority, the job on the partition with the largest "Priority Tier" value goes first.</p>
+<p>The scheduler cannot predict the future. If a job enters the queue with a higher priority than yours, it will start before yours. This may lead to a situation where your job no longer fits on any of the nodes. If this happens your job will have to wait until sufficient space opens regardless of its priority value. A possible strategy to minimize the risk of preemption is to request fewer resources per node, to more readily fill available space.</p>
+<p>If you are unsure of the best queueing strategy for your workflow, please <a href="../../..#contact-us">Contact Us</a> for a consultation, we are happy to help.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2022</span>
       
     
   </small>
