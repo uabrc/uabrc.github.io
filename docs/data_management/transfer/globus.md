@@ -19,6 +19,20 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 
 To verify your installation is complete, please visit <https://app.globus.org> and log in. Click "Endpoints" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the endpoint you just created.
 
+## Managing Identities
+
+Globus Identities is a concept helping to map Globus Accounts (one per person) to institutions (one or more per person).
+
+Most UAB researchers will have a single identity, their UAB identity, tied to their blazerid. Some researchers may have external collaborations or appointments that provide additional entities which need access to other endpoints on Globus.
+
+To manage your identities, navigate to <https://app.globus.org/account/identities> and sign in.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    To use UAB Research Computing endpoints and collections, you will need to ensure you are using you UAB identity.
+<!-- markdownlint-enable MD046 -->
+
 ## Moving Data Between Endpoints
 
 1. Log in to the Globus App online at <https://app.globus.org> using UAB Single Sign-On (SSO). Start typing "University of Alabama at Birmingham" into the "Use your existing organizational login" text box and selected it when it appears in the list.
@@ -110,6 +124,32 @@ Globus does not preserve permissions nor ownership when data is transferred, ins
 ### More Information
 
 A [Globus FAQ](https://docs.globus.org/faq/globus-connect-endpoints/) is available for additional information on endpoints and transfers.
+
+## Connectors
+
+UAB Researcher Computing has subscriptions to connectors for cloud services and other types of filesystems.
+
+### UAB Box Connector
+
+To use the UAB Box Connector, [search for an endpoint](#moving-data-between-endpoints) like usual and enter "UAB Box" into the search box. Select the endpoint labeled "UAB Box". You should see a list of files and folders that are available to you at <https://uab.app.box.com>. File transfers work as they would with any other endpoint or collection.
+
+### Long-term Storage S3 (LTS) Connector
+
+<!-- markdownlint-disable MD046 -->
+!!! construction
+
+    This section is under construction.
+<!-- markdownlint-enable MD046 -->
+
+## Using Bookmarks
+
+To save a bookmark, use the File Manager interface to select an endpoint and navigate to a path on that endpoint. Then click the bookmark button as shown below.
+
+![!Globus File Manager interface with mouse pointer hovering over Bookmark icon.](./images/globus_060_create_bookmark.png)
+
+To manage bookmarks, click "Bookmarks" in the left-hand navigation pane. Click the "Pencil" icon to edit a bookmark. Click the "Trash Bin" icon to delete a bookmark.
+
+![!Globus Bookmarks interface showing four bookmarks.](./images/globus_061_manage_bookmarks.png)
 
 ## Managing Shared Collections from a Globus Connect Personal Endpoint
 
