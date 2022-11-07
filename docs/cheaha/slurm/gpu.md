@@ -36,6 +36,20 @@ Additionally, when requesting a job using `sbatch`, you will need to include a S
 
 When requesting an interactive job through `Open OnDemand`, selecting the `pascalnodes` partitions will automatically request access to one GPU as well. There is currently no way to change the number of GPUs for OOD interactive jobs.
 
+#### MATLAB
+
+To use GPUs with our [Open OnDemand](../open_ondemand/ood_interactive.md) MATLAB, you'll need to take a slightly different route than usual.
+
+1. Determine which CUDA Toolkits are compatible with your required version of MATLAB using the table at the [MathWorks Site](https://www.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html). The column `Pascal (cc6.x)` is relevant for our system.
+2. Start an [HPC Interactive Desktop Job](../open_ondemand/ood_interactive.md) with appropriate resources. Be sure to use one of the `pascalnodes*` [Partitions](#scheduling-gpus).
+3. Open a terminal.
+4. Load the appropriate [CUDA Toolkit Module](#cuda-toolkit).
+5. Load the appropriate MATLAB [Module](../software/modules.md).
+6. Start MATLAB by entering the command `matlab`.
+7. When MATLAB loads, enter the command `gpuDevice` in the MATLAB Command Window to verify it can identify the GPU.
+
+For more information and official MATLAB documentation please see this page: <https://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html>.
+
 ## CUDA Toolkit
 
 You will need to load a CUDA toolkit module for relevant commands to access the GPUs. Depending on which version of tensorflow, pytorch, or other similar software you are using, a different version of the CUDA toolkit may be required. For instance, tensorflow version 2.5.0 requires CUDA toolkit version 11.2.
