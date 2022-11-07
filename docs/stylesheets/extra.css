@@ -9,7 +9,12 @@
 }
 
 .md-content a {
-    color: revert;
+    logo fix color: revert;
+}
+
+.md-header__button.md-logo :is(img, svg) {
+    height: 1.2rem;
+    width: auto;
 }
 
 .md-content a:visited {

@@ -8,9 +8,7 @@
 
 ## Anaconda on Cheaha
 
-This page details specific information for using Anaconda on [Cheaha](../getting_started.md).
-
-For general information on usage please see [Anaconda Environments](../../workflow_solutions/using_anaconda.md).
+For additional general information on using Anaconda please see [Anaconda Environments](../../workflow_solutions/using_anaconda.md).
 
 ### Loading Anaconda
 
@@ -24,6 +22,12 @@ Anaconda on Cheaha works like it does on any other system, once the module has b
 !!! note
 
     The `base` environment is installed in a shared location and cannot be modified by researchers. Other environments are installed in your home directory by default.
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Only create environments on compute nodes. Anaconda environment creation consumes substantial resources and should not be run on the login node.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
