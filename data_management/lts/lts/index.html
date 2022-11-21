@@ -540,6 +540,19 @@
     Creating a Bucket
   </a>
   
+    <nav class="md-nav" aria-label="Creating a Bucket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avoiding-duplicate-names" class="md-nav__link">
+    Avoiding Duplicate Names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1980,6 +1993,19 @@
     Creating a Bucket
   </a>
   
+    <nav class="md-nav" aria-label="Creating a Bucket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avoiding-duplicate-names" class="md-nav__link">
+    Avoiding Duplicate Names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2122,6 +2148,14 @@
 <p>Currently, UAB LTS is only accessible using the UAB Campus Network. If you are off campus and want to access LTS, please use the <a href="https://www.uab.edu/it/home/tech-solutions/network/vpn">UAB Campus VPN</a>. If you are accessing LTS through Cheaha, you do not need to use the VPN, even at home.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a href="../../transfer/globus/#long-term-storage-s3-lts-connector">Globus</a> may be used to transfer data with LTS.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h2 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h2>
 <p>When talking about S3 storage, some terms are different compared to a normal filesystem. This section is here to briefly explain some differences in case you go to other documentation and see these terms instead.</p>
 <p>In S3, there are no such things as folders and files, just objects. Everything is an object, and there is no standard filesystem where things are physically stored in a heirarchical manner. However, there are certain things that can make it look that way such as prefixes. Prefixes are used in place of a file path to an object, and so can be used to represent a path to an object.</p>
@@ -2148,6 +2182,8 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
+<h4 id="avoiding-duplicate-names">Avoiding Duplicate Names<a class="headerlink" href="#avoiding-duplicate-names" title="Permanent link">&para;</a></h4>
+<p>Good practice when naming buckets is to use a short, descriptive and memorable name, then append a universally unique identifier (UUID) to the end. Websites like <a href="https://www.uuidgenerator.net/">https://www.uuidgenerator.net/</a> may be used to generate and copy UUIDs. There are <span class="arithmatex">\(5.3\times 10^{36}\)</span> possible UUIDs, which means the chance of duplicating one is virtually zero. Please see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Collisions">Wikipedia</a> for math supporting the low rate of duplication.</p>
 <h3 id="uploading-and-downloading-data">Uploading and Downloading Data<a class="headerlink" href="#uploading-and-downloading-data" title="Permanent link">&para;</a></h3>
 <p>Once you're inside the bucket, files can be uploaded easily through dragging and dropping from your local machine into the GUI. You can also use the <code>Upload</code> button in the toolbar to open a file browser and choose what to upload.</p>
 <p>Downloading files from the bucket can be done by first selecting the file(s)/folder(s) to download and then clicking the <code>Actions</code> button in the toolbar. In that dropdown will be a <code>Download</code> option. You can also get to this dropdown through the <code>File</code> menu or by right-clicking.</p>
@@ -2480,7 +2516,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 11, 2022</span>
       
     
   </small>
