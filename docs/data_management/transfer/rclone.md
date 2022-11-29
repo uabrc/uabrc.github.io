@@ -8,6 +8,19 @@ To use RClone effectively, you'll need to setup remotes before using the various
 
 RClone is very powerful and, as such, has a wide variety of configuration options and flags to fine tune behavior. We will only cover the basics needed to install the software, setup remotes relevant to work at UAB, and some basic usage commands.
 
+## Quick Tutorial for Cheaha
+
+To use RClone for simple data transfer to and from Cheaha, follow these steps:
+
+1. Load the module using `module load rclone`.
+2. [Set up a remote storage provider](#setting-up-remotes)
+3. Copy files using the `rclone cp` [command](#copying-files).
+
+    - To transfer from Cheaha, use `rclone cp :path/on/cheaha remote:path/on/dest`
+    - To transfer to Cheaha, use `rclone cp remote:/path/on/remote :path/on/cheaha`.
+
+    Be sure to replace `remote` with the name of the remote you set up in step 2.
+
 ## Installing
 
 ### Installing on Cheaha
@@ -109,6 +122,7 @@ As you step through the process, you will ultimately open two terminal windows a
 8. When the browser window opens, use it to authenticate to your selected service.
     - [Authenticate to UAB Box](#authenticating-to-uab-box).
     - [Authenticate to Microsoft OneDrive](#authenticating-to-microsoft-onedrive).
+    - Other services not officially supported by UAB IT are possible, but are not documented here. You will need to provide your own credentials for these services.
 9. Terminal-2 will print a secret token, which will appear like in the following image. You will need to copy the portion highlighted in the image, between the lines with `--->` and `<---`.
 
     ![!rclone authentication token sample](./images/rclone-auth-token-sample.png)
@@ -321,6 +335,24 @@ The various remotes each have their own individual page with their own specific 
 
     Remember to use quotes `"` around paths with spaces like `"path\to\a folder with spaces"`
 <!-- markdownlint-enable MD046 -->
+
+### Usage Concept
+
+All `rclone` commands follow the same general patterns outlined below. `source` is the name of the source remote and `destination` is the name of the `destination` remote. Remotes must be [set up](#setting-up-remotes) before using commands. To work with local files use the format `:path/to/data` instead of `remote:path/to/data`. The colon is necessary to access local files.
+
+- Single-source commands like `ls`:
+
+    ```bash
+    rclone ls <flags...> source:path/to/data
+    ```
+
+- Transfer commands like `cp`:
+
+    ```bash
+    rclone cp <flags...> source:path/to/data destination:path/to/data
+    ```
+
+    Source always comes before destination. To change the direction of file transfer, swap the order of `source` and `destination`.
 
 ### Creating a Directory
 
