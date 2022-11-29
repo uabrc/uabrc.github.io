@@ -82,6 +82,12 @@ For PIs and project administrators:
 
 Two types of scratch space are provided for analyses currently being ran, network-mounted and local. These are spaces shared across users (though one user still cannot access another user's files without permission) and as such, data should be moved out of scratch when the analysis is finished.
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Starting January 2023, scratch data will have limited retention. See [Scratch Retention Policy](#scratch-retention-policy) for more information.
+<!-- markdownlint-enable MD046 -->
+
 ### User Scratch
 
 All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in `/data/scratch/$USER` or `$USER_SCRATCH`. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.
@@ -132,11 +138,44 @@ Both quota reports are updated nightly, so they may be out of date if you move d
 
 ## Data Policies
 
+### Replication
+
+Data on GPFS are replicated using a RAID configuration which is intended to decrease the risk of data loss in the event of disk failures. This is standard good practice for researcher computing data centers.
+
 ### Backups
 
-**It is the responsibility of the user to maintain proper backups of their data.**
+<!-- markdownlint-disable MD046 -->
+!!! important
 
-Data on Cheaha are replicated from a main drive to an emergency backup drive each time a file is created, altered, or destroyed. This emergency backup drive is only used when there is a cluster failure and does not function as a traditional backup. If you delete data from the cluster, it is gone forever.
+    Backups of data are the responsibility of researchers using Cheaha.
+<!-- markdownlint-enable MD046 -->
+
+A good practice for backing up data is to use the 3-2-1 rule, as [recommended by US-CERT](https://www.cisa.gov/uscert/security-publications/data-backup-options):
+
+- **3**: Keep **3** copies of important data. 1 primary copy for use, 2 backup copies.
+- **2**: Store backup copies on **2** different media types to protect from media-specific hazards.
+- **1**: Store **1** backup copy offsite, located geographically distant from the primary copy.
+
+What hazards can cause data loss?
+
+- Accidental file deletion.
+    - Example: mistakenly deleting the wrong files when using the [shell command](../workflow_solutions/shell.md#delete-files-and-directories-rm-rmdir) `rm`.
+    - Files deleted with `rm` or any similar command can not be recovered by us under any circumstances.
+    - Please restore from a backup.
+- Natural disasters.
+    - Examples: tornado; hurricane.
+    - All of our data sits in one geographical location at the UAB Technology Innovation Center (TIC).
+    - Plans to add geographical data redundancy are being considered.
+    - Please restore from an offsite backup.
+- Unusable backups.
+    - Examples: backup software bug; media destroyed; natural disaster at offsite location.
+    - Regularly test data restoration from all backups.
+
+How can I ensure data integrity?
+
+- Regularly back up your (and your lab's) data in an offsite location.
+- [S3 based long-term storage (LTS)](lts/lts.md) can be used for short-term onsite backup.
+- Crashplan licenses are available for automatic offsite backups, please contact [Support](../help/support.md) for more information.
 
 ### HIPAA Compliance
 
@@ -147,6 +186,13 @@ As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. C
 
     It is the responsibility of the user to make sure PHI is only accessible by researchers on the IRB. If PHI is being stored in a project folder and some researchers are not on an IRB, their access to those files should be restricted using Access Control Lists (ACLs). If you need assistance setting up ACLs properly, please [contact us](../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
+
+### Scratch Retention Policy
+
+Starting January 2023, data stored in `/scratch` will be subject to two limited retention policies.
+
+- Each user will have a quota of 50 TB of scratch storage.
+- Files will be retained for 30 days.
 
 ## Directory Permissions
 
