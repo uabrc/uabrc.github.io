@@ -14,6 +14,13 @@ UAB Long-term storage (LTS) is an S3 object-storage platform hosted at UAB. This
     Currently, UAB LTS is only accessible using the UAB Campus Network. If you are off campus and want to access LTS, please use the [UAB Campus VPN](https://www.uab.edu/it/home/tech-solutions/network/vpn). If you are accessing LTS through Cheaha, you do not need to use the VPN, even at home.
 
 <!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! tip
+
+    [Globus](../transfer/globus.md#long-term-storage-s3-lts-connector) may be used to transfer data with LTS.
+<!-- markdownlint-enable MD046 -->
+
 ## Terminology
 
 When talking about S3 storage, some terms are different compared to a normal filesystem. This section is here to briefly explain some differences in case you go to other documentation and see these terms instead.
@@ -57,6 +64,10 @@ The bucket will have the symbol of a hard disk with an Amazon A brand on it. Thi
 
     Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage.
 <!-- markdownlint-enable MD046 -->
+
+#### Avoiding Duplicate Names
+
+Good practice when naming buckets is to use a short, descriptive and memorable name, then append a universally unique identifier (UUID) to the end. Websites like <https://www.uuidgenerator.net/> may be used to generate and copy UUIDs. There are $5.3\times 10^{36}$ possible UUIDs, which means the chance of duplicating one is virtually zero. Please see [Wikipedia](https://en.wikipedia.org/wiki/Universally_unique_identifier#Collisions) for math supporting the low rate of duplication.
 
 ### Uploading and Downloading Data
 

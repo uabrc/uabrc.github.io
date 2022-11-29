@@ -136,10 +136,52 @@ To use the UAB Box Connector, [search for an endpoint](#moving-data-between-endp
 ### Long-term Storage S3 (LTS) Connector
 
 <!-- markdownlint-disable MD046 -->
-!!! construction
+!!! important
 
-    This section is under construction.
+    [LTS](../lts/lts.md) behaves differently from other file systems and comes with a few possible pitfalls. Keep in mind the following three rules: (1) all data must be in buckets, (2) buckets are only allowed in the root folder, and (3) buckets must have unique names.
 <!-- markdownlint-enable MD046 -->
+
+To use the UAB [LTS](../lts/lts.md) Connector, [search for an endpoint](#moving-data-between-endpoints) like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a [bucket](../lts/lts.md#make-a-bucket) in [LTS](../lts/lts.md). To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.
+
+#### Data Must be in Buckets
+
+All data transferred to LTS must be placed in a bucket, and may _not_ be placed directly into the root directory. Attempting to move data to the root directory will result in an unhelpful error message in the "Activity" window.
+
+![!unhelpful error message for data placed in the root LTS directory](images/globus_lts_no_bucket_error_001.png)
+
+Clicking on the "view event log" link shows the following.
+
+![!unhelpful event log message](images/globus_lts_no_bucket_error_002.png)
+
+```text
+Error (transfer)
+Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
+Server: m-a201b5.9ad93.a567.data.globus.org:443
+Command: STOR /test.log
+Message: The connection to the server was broken
+---
+Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
+```
+
+#### Buckets Must Have Globally Unique Names
+
+When creating new buckets, the name must be unique across all buckets on the system. At first this may sound very restrictive, but it is quite simple to deal with in practice. See our LTS section on [good naming practice](../lts/lts.md#avoiding-duplicate-names) for how to avoid duplicate names.
+
+If a duplicate bucket name is entered, a long error message will appear in a small space next to the new bucket name. The message reads like the following, expanded for readability.
+
+![!large error message in small space](images/globus_lts_duplicate_name_error_001.png)
+
+```text
+Bad Gateway: Endpoint Error, Error (mkdir)
+Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
+Server: m-b81a79.9ad93.a567.data.globus.org:443
+Command: MKD /test/
+Message: Fatal FTP Response ---
+Details: 553-
+  GlobusError: v=1 c=PATH_EXISTS\r\n553-
+  GridFTP-Path: (null)\r\n553-globus_gridftp_server_s3_base: S3
+  Error accessing "": ErrorBucketAlreadyExists: ErrorBucketAlreadyExists: \r\n553 End.\r\n
+```
 
 ## Using Bookmarks
 

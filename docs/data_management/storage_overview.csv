@@ -2,5 +2,5 @@ Platform,Data Use-Case,Default Quota,Managed By?,Cheaha Location,Access Speed
 [Long-term Storage](lts/lts.md),Rarely changing or immutable files. Data not directly usable in Cheaha jobs,75 TB,Lab PI,Off Cheaha,Slow
 [User data and home directories](storage.md#user-space),General-purpose medium- to long-term storage.,5 TB,All users,/home/<blazerid\> ($HOME) and /data/user/<blazerid\> ($USER_DATA),Fast
 [Project Directories](storage.md#project-directory),Data to be shared among a single or multiple labs,25 TB,Lab PI,/data/project/<project_name\>,Fast
-[Network Scratch](storage.md#network-scratch),Temporary files created during analysis. Rolling file deletion over time,100 TB,All users,/data/scratch/<blazerid\> ($USER_SCRATCH),Fast
+[Network Scratch](storage.md#network-scratch),Temporary files created during analysis. Rolling file deletion over time,100 TB,All users,/scratch/<blazerid\> ($USER_SCRATCH),Fast
 [Local Scratch](storage.md#local-scratch),Small files created during jobs. Must be deleted at the end of a job.,Small,All users,$LOCAL_SCRATCH,Fastest
