@@ -311,8 +311,4 @@ sftp> get -r <remote_directory> <optional_local_path>
 
 ### RClone
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction.
-<!-- markdownlint-enable MD046 -->
+Please see our [RClone](../data_management/transfer/rclone.md) page for more information on using RClone with the SFTP remote option.

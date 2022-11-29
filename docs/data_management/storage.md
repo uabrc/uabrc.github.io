@@ -11,12 +11,6 @@
     - To Be Determined: `$USER_SCRATCH` will point to `/scratch/$USER`
 <!-- markdownlint-enable MD046 -->
 
-<!-- markdownlint-disable MD046 -->
-!!! warning
-
-    The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](../index.md#contact-us).
-<!-- markdownlint-enable MD046 -->
-
 ## What Type of Storage Do I Need?
 
 There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to find the storage platform we provide that best matches your needed use-case.
