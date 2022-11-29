@@ -322,6 +322,24 @@ The various remotes each have their own individual page with their own specific 
     Remember to use quotes `"` around paths with spaces like `"path\to\a folder with spaces"`
 <!-- markdownlint-enable MD046 -->
 
+### Usage Concept
+
+All `rclone` commands follow the same general patterns outlined below.
+
+- Single-source commands like `ls`:
+
+    ```bash
+    rclone ls <flags...> source:path/to/data
+    ```
+
+- Transfer commands like `cp`:
+
+    ```bash
+    rclone cp <flags...> source:path/to/data destination:path/to/data
+    ```
+
+    Source always comes before destination. To change the direction of file transfer, swap the order.
+
 ### Creating a Directory
 
 To create a directory use `rclone mkdir <remote:><path>`.
