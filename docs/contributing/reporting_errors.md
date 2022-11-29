@@ -1,4 +1,4 @@
-# Reporting Errors
+# Reporting Documentation Errors
 
 <!-- markdownlint-disable MD046 -->
 !!! important
