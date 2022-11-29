@@ -10,7 +10,7 @@ UAB Research Computing uses High Assurance Endpoints and Collections, meaning th
 For more detailed information on High Assurance please see the Globus official pages below:
 
 - [High Assurance Security Overview](https://docs.globus.org/security/high-assurance-overview/)
-- [High Assurance Collections]([https://](https://docs.globus.org/high-assurance/))
+- [High Assurance Collections](https://docs.globus.org/high-assurance/)
 
 ## Setting up Globus Connect Personal
 
