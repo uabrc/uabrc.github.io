@@ -1,6 +1,17 @@
 # Storage
 
 <!-- markdownlint-disable MD046 -->
+!!! announcement
+
+    Please note upcoming changes!
+
+    - December 13, 2022: Clean up of `temp-scratch` must be completed by all researchers.
+    - December 16, 2022: Access to `temp-scratch` will be removed for all researchers.
+    - January 16, 2023: New `$SCRATCH` storage limited-retention policies will start.
+    - To Be Determined: `$USER_SCRATCH` will point to `/scratch/$USER`
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
 !!! warning
 
     The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](../index.md#contact-us).
