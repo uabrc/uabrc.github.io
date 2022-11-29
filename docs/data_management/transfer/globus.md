@@ -263,7 +263,3 @@ It is NOT RECOMMENDED to make Globus Connect Personal endpoints public as this i
 4. Click "X Delete Endpoint" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the endpoint, or to cancel.
 
     ![!Delete Endpoint confirmation dialog banner.](./images/globus_105_shared_delete.png)
-
-## Setting up Globus Connect Server
-
-Under construction!

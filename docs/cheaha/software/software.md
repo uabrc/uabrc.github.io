@@ -1,11 +1,5 @@
 # Software Installation
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    This page is a stub and is under construction.
-<!-- markdownlint-enable MD046 -->
-
 ## Anaconda on Cheaha
 
 For additional general information on using Anaconda please see [Anaconda Environments](../../workflow_solutions/using_anaconda.md).
@@ -52,5 +46,3 @@ For more information on usage with examples, see [Anaconda Environments](../../w
 2. Create a new environment with only Mamba using `conda create --name mamba -c conda-forge mamba`
 3. `conda activate mamba`
 4. Use Mamba to install environments as needed. Be aware you must use the flag `--prefix=~/.conda/envs/` to put the environment in the correct location to be seen by Anaconda.
-
-## Open On Demand Sandbox App
