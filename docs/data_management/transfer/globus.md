@@ -193,6 +193,12 @@ To manage bookmarks, click "Bookmarks" in the left-hand navigation pane. Click t
 
 ![!Globus Bookmarks interface showing four bookmarks.](./images/globus_061_manage_bookmarks.png)
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    It is not possible to create bookmarks within High Assurance Endpoints.
+<!-- markdownlint-enable MD046 -->
+
 ## Managing Shared Collections from a Globus Connect Personal Endpoint
 
 It is NOT RECOMMENDED to make Globus Connect Personal endpoints public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal endpoint than for a shared collection. Shared collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use shared collections!
