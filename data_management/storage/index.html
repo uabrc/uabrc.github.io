@@ -562,6 +562,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#replication" class="md-nav__link">
+    Replication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#backups" class="md-nav__link">
     Backups
   </a>
@@ -571,6 +578,13 @@
           <li class="md-nav__item">
   <a href="#hipaa-compliance" class="md-nav__link">
     HIPAA Compliance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scratch-retention-policy" class="md-nav__link">
+    Scratch Retention Policy
   </a>
   
 </li>
@@ -1814,7 +1828,7 @@
   
     <li class="md-nav__item">
       <a href="../../contributing/reporting_errors/" class="md-nav__link">
-        Reporting Errors
+        Reporting Documentation Errors
       </a>
     </li>
   
@@ -2033,6 +2047,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#replication" class="md-nav__link">
+    Replication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#backups" class="md-nav__link">
     Backups
   </a>
@@ -2042,6 +2063,13 @@
           <li class="md-nav__item">
   <a href="#hipaa-compliance" class="md-nav__link">
     HIPAA Compliance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scratch-retention-policy" class="md-nav__link">
+    Scratch Retention Policy
   </a>
   
 </li>
@@ -2086,13 +2114,6 @@
 <li>January 16, 2023: New <code>$SCRATCH</code> storage limited-retention policies will start.</li>
 <li>To Be Determined: <code>$USER_SCRATCH</code> will point to <code>/scratch/$USER</code></li>
 </ul>
-</div>
-<!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please <a href="../..#contact-us">contact us</a>.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
@@ -2245,6 +2266,13 @@
 </ul>
 <h2 id="scratch">Scratch<a class="headerlink" href="#scratch" title="Permanent link">&para;</a></h2>
 <p>Two types of scratch space are provided for analyses currently being ran, network-mounted and local. These are spaces shared across users (though one user still cannot access another user's files without permission) and as such, data should be moved out of scratch when the analysis is finished.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Starting January 2023, scratch data will have limited retention. See <a href="#scratch-retention-policy">Scratch Retention Policy</a> for more information.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h3 id="user-scratch">User Scratch<a class="headerlink" href="#user-scratch" title="Permanent link">&para;</a></h3>
 <p>All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in <code>/data/scratch/$USER</code> or <code>$USER_SCRATCH</code>. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.</p>
 <p>Network scratch is available on the login node and each compute node. This storage is a GPFS high performance file system providing roughly 1 PB of storage. If using scratch, this should be your jobs' primary working directory, unless the job would benefit from local scratch (see below).</p>
@@ -2287,9 +2315,49 @@
 <!-- markdownlint-enable MD046 -->
 
 <h2 id="data-policies">Data Policies<a class="headerlink" href="#data-policies" title="Permanent link">&para;</a></h2>
+<h3 id="replication">Replication<a class="headerlink" href="#replication" title="Permanent link">&para;</a></h3>
+<p>Data on GPFS are replicated using a RAID configuration which is intended to decrease the risk of data loss in the event of disk failures. This is standard good practice for researcher computing data centers.</p>
 <h3 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h3>
-<p><strong>It is the responsibility of the user to maintain proper backups of their data.</strong></p>
-<p>Data on Cheaha are replicated from a main drive to an emergency backup drive each time a file is created, altered, or destroyed. This emergency backup drive is only used when there is a cluster failure and does not function as a traditional backup. If you delete data from the cluster, it is gone forever.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Backups of data are the responsibility of researchers using Cheaha.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<p>A good practice for backing up data is to use the 3-2-1 rule, as <a href="https://www.cisa.gov/uscert/security-publications/data-backup-options">recommended by US-CERT</a>:</p>
+<ul>
+<li><strong>3</strong>: Keep <strong>3</strong> copies of important data. 1 primary copy for use, 2 backup copies.</li>
+<li><strong>2</strong>: Store backup copies on <strong>2</strong> different media types to protect from media-specific hazards.</li>
+<li><strong>1</strong>: Store <strong>1</strong> backup copy offsite, located geographically distant from the primary copy.</li>
+</ul>
+<p>What hazards can cause data loss?</p>
+<ul>
+<li>Accidental file deletion.<ul>
+<li>Example: mistakenly deleting the wrong files when using the <a href="../../workflow_solutions/shell/#delete-files-and-directories-rm-rmdir">shell command</a> <code>rm</code>.</li>
+<li>Files deleted with <code>rm</code> or any similar command can not be recovered by us under any circumstances.</li>
+<li>Please restore from a backup.</li>
+</ul>
+</li>
+<li>Natural disasters.<ul>
+<li>Examples: tornado; hurricane.</li>
+<li>All of our data sits in one geographical location at the UAB Technology Innovation Center (TIC).</li>
+<li>Plans to add geographical data redundancy are being considered.</li>
+<li>Please restore from an offsite backup.</li>
+</ul>
+</li>
+<li>Unusable backups.<ul>
+<li>Examples: backup software bug; media destroyed; natural disaster at offsite location.</li>
+<li>Regularly test data restoration from all backups.</li>
+</ul>
+</li>
+</ul>
+<p>How can I ensure data integrity?</p>
+<ul>
+<li>Regularly back up your (and your lab's) data in an offsite location.</li>
+<li><a href="../lts/lts/">S3 based long-term storage (LTS)</a> can be used for short-term onsite backup.</li>
+<li>Crashplan licenses are available for automatic offsite backups, please contact <a href="../../help/support/">Support</a> for more information.</li>
+</ul>
 <h3 id="hipaa-compliance">HIPAA Compliance<a class="headerlink" href="#hipaa-compliance" title="Permanent link">&para;</a></h3>
 <p>As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. Currently, long-term storage is NOT HIPAA compliant but will be in the future.</p>
 <!-- markdownlint-disable MD046 -->
@@ -2299,6 +2367,12 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
+<h3 id="scratch-retention-policy">Scratch Retention Policy<a class="headerlink" href="#scratch-retention-policy" title="Permanent link">&para;</a></h3>
+<p>Starting January 2023, data stored in <code>/scratch</code> will be subject to two limited retention policies.</p>
+<ul>
+<li>Each user will have a quota of 50 TB of scratch storage.</li>
+<li>Files will be retained for 30 days.</li>
+</ul>
 <h2 id="directory-permissions">Directory Permissions<a class="headerlink" href="#directory-permissions" title="Permanent link">&para;</a></h2>
 <p>Default file permissions are described for each directory above.
 Additional background on Linux file system permissions can be found
@@ -2314,7 +2388,7 @@ here:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2022</span>
       
     
   </small>
