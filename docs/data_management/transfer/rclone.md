@@ -338,7 +338,7 @@ The various remotes each have their own individual page with their own specific 
 
 ### Usage Concept
 
-All `rclone` commands follow the same general patterns outlined below.
+All `rclone` commands follow the same general patterns outlined below. `source` is the name of the source remote and `destination` is the name of the `destination` remote. Remotes must be [set up](#setting-up-remotes) before using commands. To work with local files use the format `:path/to/data` instead of `remote:path/to/data`. The colon is necessary to access local files.
 
 - Single-source commands like `ls`:
 
@@ -352,7 +352,7 @@ All `rclone` commands follow the same general patterns outlined below.
     rclone cp <flags...> source:path/to/data destination:path/to/data
     ```
 
-    Source always comes before destination. To change the direction of file transfer, swap the order.
+    Source always comes before destination. To change the direction of file transfer, swap the order of `source` and `destination`.
 
 ### Creating a Directory
 
