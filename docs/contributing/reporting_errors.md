@@ -1,5 +1,11 @@
 # Reporting Errors
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    This page is only for reporting errors with the documentation. For issues related to our computing services, please contact [Support](../help/support.md).
+<!-- markdownlint-enable MD046 -->
+
 Our documentation is hosted on GitHub at <https://github.com/uabrc/uabrc.github.io>. To report errors, make requests, and contribute to the documentation, you'll need to [Create a GitHub Account](https://github.com/join) if you do not have one already.
 
 ## How Do I Report Inaccurate Information?
