@@ -1107,6 +1107,8 @@
       
         
           
+            
+          
         
           
         
@@ -1118,10 +1120,16 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6">
-          UAB Cloud (cloud.rc) Guide
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">UAB Cloud (cloud.rc) Guide</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="UAB Cloud (cloud.rc) Guide" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
@@ -1130,18 +1138,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../introduction/" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
             
           
             
@@ -1159,6 +1155,10 @@
       
         
           
+            
+          
+        
+          
         
           
         
@@ -1168,10 +1168,16 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6_2">
-          Tutorial
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../tutorial/">Tutorial</a>
+          
+            <label for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_2">
@@ -1181,12 +1187,14 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+          
+            
               
   
   
   
     <li class="md-nav__item">
-      <a href="../network_setup_basic/" class="md-nav__link">
+      <a href="../tutorial/networks/" class="md-nav__link">
         (1) Networks
       </a>
     </li>
@@ -1200,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security_setup_basic/" class="md-nav__link">
+      <a href="../tutorial/security/" class="md-nav__link">
         (2) Security Policies
       </a>
     </li>
@@ -1214,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../instance_setup_basic/" class="md-nav__link">
+      <a href="../tutorial/instances/" class="md-nav__link">
         (3) Instances
       </a>
     </li>
@@ -1228,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../volume_setup_basic/" class="md-nav__link">
+      <a href="../tutorial/volumes/" class="md-nav__link">
         (4) Volumes (optional)
       </a>
     </li>
@@ -2200,7 +2208,7 @@
 
 
 <h1 id="remote-access-to-instances">Remote Access to Instances<a class="headerlink" href="#remote-access-to-instances" title="Permanent link">&para;</a></h1>
-<p>All of the access methods described below are built on top of <code>ssh</code> and require completion of the steps in <a href="../security_setup_basic/">Basic Security Setup</a> to use with <code>cloud.rc</code>. Some of these steps are referenced in that document.</p>
+<p>All of the access methods described below are built on top of <code>ssh</code> and require completion of the steps in <a href="../tutorial/security/">Basic Security Setup</a> to use with <code>cloud.rc</code>. Some of these steps are referenced in that document.</p>
 <h2 id="command-line-via-ssh">Command Line via SSH<a class="headerlink" href="#command-line-via-ssh" title="Permanent link">&para;</a></h2>
 <p>SSH stands for <strong>S</strong>ecure <strong>SH</strong>ell and is a powerful tool for executing terminal commands on remote machines. It is widely used and ubiquitous, and a number of other technologies are built on top of SSH, like <code>sftp</code> and <code>scp</code> for transferring files. It is also the primary mode of command line communication with Research Computing technologies like Cheaha and cloud.rc.</p>
 <h3 id="install-an-ssh-client">Install an SSH Client<a class="headerlink" href="#install-an-ssh-client" title="Permanent link">&para;</a></h3>
@@ -2316,7 +2324,7 @@
 <li>Navigate to the <code>.ssh</code> folder in a terminal window.</li>
 <li>
 <p>Run <code>ssh-add &lt;private_key_file&gt;</code></p>
-<p><div class="lightgallery"><a data-sub-html="MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent." href="../images/key_pairs_005.png"><img alt="MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent." src="../images/key_pairs_005.png" /></a></div></p>
+<p><div class="lightgallery"><a data-sub-html="MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent." href="../tutorial/images/key_pairs_005.png"><img alt="MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent." src="../tutorial/images/key_pairs_005.png" /></a></div></p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
@@ -2364,9 +2372,9 @@
 </code></pre></div>
 <ul>
 <li>Be sure to give a meaningful name under <code>&lt;host&gt;</code> so you can easily refer back to this config later and for ease of typing when using <code>ssh</code> with this configuration. Only letters, numbers, dashes and underscores are allowed, and it must start with a letter.</li>
-<li>The value <code>&lt;remote_ip&gt;</code> can be any remote machine relevant to your work. For cloud.rc it should be whatever IP was assigned in <a href="../network_setup_basic/#creating-a-floating-ip">Creating a Floating IP</a>.</li>
+<li>The value <code>&lt;remote_ip&gt;</code> can be any remote machine relevant to your work. For cloud.rc it should be whatever IP was assigned in <a href="../tutorial/networks/#creating-a-floating-ip">Creating a Floating IP</a>.</li>
 <li>The value <code>&lt;user&gt;</code> should be whatever user name you will log in as. For cloud.rc, <code>ubuntu</code> or <code>centos</code> are typical, depending on instance operating system.</li>
-<li>The value <code>&lt;path_to_private_key_file&gt;</code> is the absolute path to the private key file, e.g. the path to your <code>.ssh</code> folder followed by the <code>&lt;private_key_file&gt;</code> file name. For cloud.rc this will be whatever private key file was generated in <a href="../security_setup_basic/#creating-a-key-pair">Creating a Key Pair</a>.</li>
+<li>The value <code>&lt;path_to_private_key_file&gt;</code> is the absolute path to the private key file, e.g. the path to your <code>.ssh</code> folder followed by the <code>&lt;private_key_file&gt;</code> file name. For cloud.rc this will be whatever private key file was generated in <a href="../tutorial/security/#creating-a-key-pair">Creating a Key Pair</a>.</li>
 </ul>
 <p>Save the <code>config</code> file. Start a new terminal and use the command <code>ssh &lt;host&gt;</code>, with no other flags, to test.</p>
 <h3 id="ssh-client-usage">SSH Client Usage<a class="headerlink" href="#ssh-client-usage" title="Permanent link">&para;</a></h3>
@@ -2374,9 +2382,9 @@
 <p>If you haven't set up a configuration file, use the following.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ssh &lt;user&gt;@&lt;remote_ip&gt; -i &lt;private_key_file&gt;
 </code></pre></div>
-<p>Where <code>user</code> is the remote username, <code>remote_ip</code> is the IP address of the remote machine, and <code>&lt;private_key_file&gt;</code> is the private key file used for access the remote machine. See <a href="#generating-key-pairs">Generating Key Pairs</a> for general instructions on creating a key pair, or <a href="../security_setup_basic/#creating-a-key-pair">Creating a Key Pair</a> for cloud.rc specific instructions.</p>
+<p>Where <code>user</code> is the remote username, <code>remote_ip</code> is the IP address of the remote machine, and <code>&lt;private_key_file&gt;</code> is the private key file used for access the remote machine. See <a href="#generating-key-pairs">Generating Key Pairs</a> for general instructions on creating a key pair, or <a href="../tutorial/security/#creating-a-key-pair">Creating a Key Pair</a> for cloud.rc specific instructions.</p>
 <h2 id="server-software">Server Software<a class="headerlink" href="#server-software" title="Permanent link">&para;</a></h2>
-<p>Remotely accessing server software requires configuration of <a href="../security_setup_basic/#creating-a-security-group">Security Groups</a> to open ports the server will communicate on. Please see our information on <a href="../installing_software/#installing-server-software">Installing Server Software</a> for details.</p>
+<p>Remotely accessing server software requires configuration of <a href="../tutorial/security/#creating-a-security-group">Security Groups</a> to open ports the server will communicate on. Please see our information on <a href="../installing_software/#installing-server-software">Installing Server Software</a> for details.</p>
 <h2 id="data-transfer">Data Transfer<a class="headerlink" href="#data-transfer" title="Permanent link">&para;</a></h2>
 <h3 id="scp">SCP<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h3>
 <p>SCP stands for <strong>S</strong>ecure <strong>C</strong>o<strong>P</strong>y and works like the <code>cp</code> command, but allows transferring files and directories with remote machines. SCP is built on top of SSH and is installed with most SSH Clients. To install SCP, see <a href="#install-an-ssh-client">Install an SSH Client</a>.</p>
@@ -2451,7 +2459,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2022</span>
       
     
   </small>
@@ -2469,7 +2477,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../volume_setup_basic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: (4) Volumes (optional)" rel="prev">
+        <a href="../tutorial/volumes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: (4) Volumes (optional)" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>

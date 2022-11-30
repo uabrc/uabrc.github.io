@@ -1107,6 +1107,8 @@
       
         
           
+            
+          
         
           
         
@@ -1118,10 +1120,16 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6">
-          UAB Cloud (cloud.rc) Guide
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">UAB Cloud (cloud.rc) Guide</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="UAB Cloud (cloud.rc) Guide" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
@@ -1130,18 +1138,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../introduction/" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
             
           
             
@@ -1159,6 +1155,10 @@
       
         
           
+            
+          
+        
+          
         
           
         
@@ -1168,10 +1168,16 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6_2">
-          Tutorial
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../tutorial/">Tutorial</a>
+          
+            <label for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_2">
@@ -1181,12 +1187,14 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+          
+            
               
   
   
   
     <li class="md-nav__item">
-      <a href="../network_setup_basic/" class="md-nav__link">
+      <a href="../tutorial/networks/" class="md-nav__link">
         (1) Networks
       </a>
     </li>
@@ -1200,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security_setup_basic/" class="md-nav__link">
+      <a href="../tutorial/security/" class="md-nav__link">
         (2) Security Policies
       </a>
     </li>
@@ -1214,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../instance_setup_basic/" class="md-nav__link">
+      <a href="../tutorial/instances/" class="md-nav__link">
         (3) Instances
       </a>
     </li>
@@ -1228,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../volume_setup_basic/" class="md-nav__link">
+      <a href="../tutorial/volumes/" class="md-nav__link">
         (4) Volumes (optional)
       </a>
     </li>
@@ -2022,7 +2030,7 @@
 
 
 <h1 id="installing-software-on-instances">Installing Software on Instances<a class="headerlink" href="#installing-software-on-instances" title="Permanent link">&para;</a></h1>
-<p>An important part of managing instances is the installation of software. This page assumes you have a working instance and can <a href="../instance_setup_basic/#ssh-into-the-instance">SSH</a> into it. This page assumes you are using an Ubuntu image.</p>
+<p>An important part of managing instances is the installation of software. This page assumes you have a working instance and can <a href="../tutorial/instances/#ssh-into-the-instance">SSH</a> into it. This page assumes you are using an Ubuntu image.</p>
 <p>We highly recommend building your research software stack into a <a href="../../workflow_solutions/getting_containers/">Container</a>. While there is a learning curve and some setup time, containers make replicating and sharing environments simpler. Everything you develop is packaged into a self-contained unit that can be run on virtually any modern Linux system.</p>
 <p>A particular command <code>sudo</code> will be used extensively. Be warned that <code>sudo</code> grants any commands used administrator privileges. If you use <code>sudo</code> with untrustworthy software, you may be allowing an attacker to compromise your system.</p>
 <!-- markdownlint-disable MD046 -->
@@ -2057,11 +2065,11 @@
 <p>If the software is available via <code>apt</code> then use <code>sudo apt install &lt;package&gt;</code>. An example would be <code>sudo apt install git</code> to install git software.</p>
 <p>If the software uses a custom installer, then follow the instructions provided by the software's documentation. An example would be <a href="#installing-miniconda">Miniconda</a>, where a shell script is downloaded and then executed using <code>bash installer.sh</code>.</p>
 <h3 id="installing-server-software">Installing Server Software<a class="headerlink" href="#installing-server-software" title="Permanent link">&para;</a></h3>
-<p>If you wish to set up server software, you'll need to open ports for that software by creating <a href="../security_setup_basic/#creating-a-security-group">Security Groups</a>. Then you may want to test the ports are open and verify your software is listening. It is highly recommended to verify the ports are configured properly and remotely accessible before you spend time setting up and configuring the server software.</p>
+<p>If you wish to set up server software, you'll need to open ports for that software by creating <a href="../tutorial/security/#creating-a-security-group">Security Groups</a>. Then you may want to test the ports are open and verify your software is listening. It is highly recommended to verify the ports are configured properly and remotely accessible before you spend time setting up and configuring the server software.</p>
 <h4 id="testing-server-ports">Testing Server Ports<a class="headerlink" href="#testing-server-ports" title="Permanent link">&para;</a></h4>
-<p>If you intend to use your instance as a server host, you'll likely need to set up additional <a href="../security_setup_basic/#creating-a-security-group">Security Groups</a> for any ports the server expects to communicate on. It can be helpful to verify that those ports are open before configuring the server software. Assuming you know which ports are needed, the simplest way to do this is outlined below.</p>
+<p>If you intend to use your instance as a server host, you'll likely need to set up additional <a href="../tutorial/security/#creating-a-security-group">Security Groups</a> for any ports the server expects to communicate on. It can be helpful to verify that those ports are open before configuring the server software. Assuming you know which ports are needed, the simplest way to do this is outlined below.</p>
 <ol>
-<li>Set up <a href="../security_setup_basic/#creating-a-security-group">Security Groups</a> for the ports your server will need to communicate on.</li>
+<li>Set up <a href="../tutorial/security/#creating-a-security-group">Security Groups</a> for the ports your server will need to communicate on.</li>
 <li><a href="#streamlining-ssh">SSH</a> into the instance.</li>
 <li>Prepare the <code>netcat</code> software command <code>nc</code>:<ul>
 <li>For Ubuntu, the command <code>nc</code> should already be available.</li>
@@ -2137,9 +2145,10 @@
 <li><code>t</code> displays tcp sockets.</li>
 <li><code>u</code> displays udp sockets.</li>
 </ul>
-<p>An example of the output is shown below. The most useful columns for us are <code>Local Address:Port</code>, to verify they match the configured <a href="../security_setup_basic/#creating-a-security-group">Security Group</a> ports, and <code>Process</code>, to verify the server software is listening on the correct ports.</p>
+<p>An example of the output is shown below. The most useful columns for us are <code>Local Address:Port</code>, to verify they match the configured <a href="../tutorial/security/#creating-a-security-group">Security Group</a> ports, and <code>Process</code>, to verify the server software is listening on the correct ports.</p>
 <p><div class="lightgallery"><a data-sub-html="example of ss listener verification" href="../images/port-check-ss-lnptu.png"><img alt="example of ss listener verification" src="../images/port-check-ss-lnptu.png" /></a></div></p>
 <h3 id="common-examples">Common Examples<a class="headerlink" href="#common-examples" title="Permanent link">&para;</a></h3>
+<p>Below are a few examples of installing certain common softwares that may be useful to scientific applications. We are not able to provide diagnostic or troubleshooting support for installation of any software. If you believe these instructions are outdated or in error, please <a href="../../contributing/reporting_errors/#how-do-i-report-inaccurate-information">reach out and let us know</a>.</p>
 <h4 id="installing-nvidia-drivers">Installing NVidia Drivers<a class="headerlink" href="#installing-nvidia-drivers" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Run the commands in <a href="#before-installing-software">Before Installing Software</a>.</li>
@@ -2212,12 +2221,12 @@
 
 <h4 id="installing-jupyter-notebook-server">Installing Jupyter Notebook Server<a class="headerlink" href="#installing-jupyter-notebook-server" title="Permanent link">&para;</a></h4>
 <p>Jupyter Notebooks are a staple of modern research computing, especially when developing new workflows or evaluating the usefulness of software packages.</p>
-<p>The setup process for <a href="../introduction/">cloud.rc</a> is more involved than for <a href="../../cheaha/getting_started/">Cheaha</a>. Before using cloud.rc for Jupyter Notebooks, be sure that <a href="../../cheaha/open_ondemand/ood_interactive/#jupyter-notebook">Open OnDemand on Cheaha</a> does not meet your needs.</p>
-<p>To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our <a href="../introduction/">Introduction</a> and follow the tutorial completely.</p>
+<p>The setup process for <a href="../">cloud.rc</a> is more involved than for <a href="../../cheaha/getting_started/">Cheaha</a>. Before using cloud.rc for Jupyter Notebooks, be sure that <a href="../../cheaha/open_ondemand/ood_interactive/#jupyter-notebook">Open OnDemand on Cheaha</a> does not meet your needs.</p>
+<p>To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our <a href="../">Introduction</a> and follow the tutorial completely.</p>
 <ol>
 <li>Run the commands in <a href="#before-installing-software">Before Installing Software</a>.</li>
-<li>A <a href="../instance_setup_basic/">Cloud Instance</a> with attached [Floating IP]network_setup_basic.md#floating-ips).</li>
-<li>A <a href="../security_setup_basic/#creating-a-security-group">Security Group</a> for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to <code>9999</code>.</li>
+<li>A <a href="../tutorial/instances/">Cloud Instance</a> with attached [Floating IP]network_setup_basic.md#floating-ips).</li>
+<li>A <a href="../tutorial/security/#creating-a-security-group">Security Group</a> for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to <code>9999</code>.</li>
 <li><a href="#installing-miniconda">Miniconda installed</a> on the instance. Miniconda is a lightweight version of Anaconda.</li>
 </ol>
 <p>Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an <a href="../../workflow_solutions/using_anaconda/#create-an-environment">Anaconda Environment</a> using a reproducible <a href="../../workflow_solutions/using_anaconda/#creating-an-environment-from-a-yaml-file">Environment File</a>. The steps below belong to the official Jupyter documentation available at <a href="https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#">https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#</a>.</p>
