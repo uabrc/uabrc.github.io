@@ -1,6 +1,6 @@
 # Instance Setup and Tutorial
 
-Instances are the basic unit of compute on cloud.rc. Requesting an instance involves a number of steps, and requires that a [Network](./network_setup_basic.md) has already been setup, along with certain [Security](./security_setup_basic.md) settings and features. It is also possible to attach persistent reusable [Volumes](./volume_setup_basic.md) to instances.
+Instances are the basic unit of compute on cloud.rc. Requesting an instance involves a number of steps, and requires that a [Network](networks.md) has already been setup, along with certain [Security](security.md) settings and features. It is also possible to attach persistent reusable [Volumes](volumes.md) to instances.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -12,8 +12,8 @@ Instances are the basic unit of compute on cloud.rc. Requesting an instance invo
 
 Creating an instance is possibly a step you'll perform often, depending on your workflow. There are many smaller steps to create an instance, so please take care to check all the fields when you create an instance.
 
-These instructions require that you've set up a [Network](./network_setup_basic.md) and followed all of the instructions on the linked page. You should have a Network, Subnet, Router and Floating IP. You will also need to setup a
-[Key Pair](./security_setup_basic.md#creating-a-key-pair) and an [SSH Security Group](./security_setup_basic.md#creating-a-security-group).
+These instructions require that you've set up a [Network](networks.md) and followed all of the instructions on the linked page. You should have a Network, Subnet, Router and Floating IP. You will also need to setup a
+[Key Pair](security.md#creating-a-key-pair) and an [SSH Security Group](security.md#creating-a-security-group).
 
 1. Click "Compute" in the left-hand navigation pane to open the fold-out menu.
 
@@ -30,7 +30,7 @@ These instructions require that you've set up a [Network](./network_setup_basic.
 
 ### Details Tab
 
-1. Enter an "Instance Name". See [Naming Conventions](introduction.md#naming-conventions).
+1. Enter an "Instance Name". See [Naming Conventions](../index.md#naming-conventions).
 2. Enter a "Description".
 3. Select "nova" in the "Availability Zone" drop down box.
 4. Select "1" in the "Count" field.
@@ -73,7 +73,7 @@ Flavors determine what hardware will be available to your instance, including cp
 
 ### Networks Tab
 
-Networks determine how your instance will talk to the internet and other instances. If you are following along with the tutorial, you should already have a Network set up. See [Network](./network_setup_basic.md) for more information.
+Networks determine how your instance will talk to the internet and other instances. If you are following along with the tutorial, you should already have a Network set up. See [Network](networks.md) for more information.
 
 1. Pick a network from the list under the "Available' section.
     1. A Network may already be picked in the "Allocated" section. If this is not the correct Network, use the down arrow next to it to remove it from the "Allocated" section. If the Network is correct, skip (ii.) through (iv.).
@@ -95,7 +95,7 @@ Networks determine how your instance will talk to the internet and other instanc
 
 ### Security Groups Tab
 
-Security Groups allow for fine-grained control over external access to your instance. If you are following along with the tutorial, you should already have an "ssh" Security Group set up. For more information see [Creating a Security Group](./security_setup_basic.md#creating-a-security-group) for more information.
+Security Groups allow for fine-grained control over external access to your instance. If you are following along with the tutorial, you should already have an "ssh" Security Group set up. For more information see [Creating a Security Group](security.md#creating-a-security-group) for more information.
 
 1. Pick the "ssh" Security Group from the "Available" section by pressing the up arrow next to it.
 2. The "default" Security Group should already be in the "Allocated" section.
@@ -106,7 +106,7 @@ Security Groups allow for fine-grained control over external access to your inst
 
 ### Key Pair Tab
 
-Key Pairs allow individual access rights to the instance via SSH. If you are following along with the tutorial, you should already have a key pair set up. For more information see [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
+Key Pairs allow individual access rights to the instance via SSH. If you are following along with the tutorial, you should already have a key pair set up. For more information see [Creating a Key Pair](security.md#creating-a-key-pair).
 
 1. Pick one or more key pairs from the list under the "Available"
     section.
@@ -171,47 +171,47 @@ In the "Instances" table, click the name of your failed instance. You should see
 
 ![!failed instance overview page showing id and fault reason](images/instance_failed_002.png)
 
-We will need to "ID" and the reason for the fault. In this case, the instance failed because it could not allocate a GPU, as all GPUs were allocated at the time of its creation. It is not possible to diagnose the specifics without consulting us, so please feel free to contact [Support](../help/support.md).
+We will need to "ID" and the reason for the fault. In this case, the instance failed because it could not allocate a GPU, as all GPUs were allocated at the time of its creation. It is not possible to diagnose the specifics without consulting us, so please feel free to contact [Support](../../help/support.md).
 
-Instances can fail for other reasons as well, please contact [Support](../help/support.md) with the "ID" and "Fault" information.
+Instances can fail for other reasons as well, please contact [Support](../../help/support.md) with the "ID" and "Fault" information.
 
 For instances which fail due to internal reasons, i.e. while using SSH or an application, we are still able to provide support but it will have to be on a case-by-case basis. Be prepared to walk us through the steps you took to set up the instance and any software, as well as any data processing steps, leading up to the failure.
 
 ## SSH Into the Instance
 
-If you are following the tutorial, then at this stage you should be able to SSH into your instance from the UAB Campus Network or on the UAB Campus VPN. You will need to [Install an SSH Client](./remote_access.md#install-an-ssh-client) Once your machine has an ssh client, use the following command. If your image uses an operating system other than Ubuntu, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip), and the value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
+If you are following the tutorial, then at this stage you should be able to SSH into your instance from the UAB Campus Network or on the UAB Campus VPN. You will need to [Install an SSH Client](../remote_access.md#install-an-ssh-client) Once your machine has an ssh client, use the following command. If your image uses an operating system other than Ubuntu, such as CentOS, replace the user `ubuntu` with `centos` or whatever is appropriate. The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](networks.md#creating-a-floating-ip), and the value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](security.md#creating-a-key-pair).
 
-1. [Install an SSH Client](./remote_access.md#install-an-ssh-client) to use SSH from your local machine to your cloud instance.
-2. [Manage Your Private Key](./remote_access.md#managing-keys)
-    - [Start the SSH Agent](./remote_access.md#starting-the-ssh-agent-for-a-single-session) to enable your system to remember your private key.
-    - [Add a Private Key](./remote_access.md#add-a-private-key) to the ssh agent to remember it for future use.
-3. [Verify the SSH Client Works](./remote_access.md#ssh-client-usage). Use the following command to connect
+1. [Install an SSH Client](../remote_access.md#install-an-ssh-client) to use SSH from your local machine to your cloud instance.
+2. [Manage Your Private Key](../remote_access.md#managing-keys)
+    - [Start the SSH Agent](../remote_access.md#starting-the-ssh-agent-for-a-single-session) to enable your system to remember your private key.
+    - [Add a Private Key](../remote_access.md#add-a-private-key) to the ssh agent to remember it for future use.
+3. [Verify the SSH Client Works](../remote_access.md#ssh-client-usage). Use the following command to connect
 
     ``` bash
     ssh ubuntu@<floating ip> -i ~/.ssh/<private_key_file>
     ```
 
     - If your image uses an operating system other than Ubuntu, such as CentOS, replace the user `ubuntu` with `centos`, or whatever may be appropriate.
-    - The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip).
-    - The value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
+    - The value `<floating ip>` should be whatever IP was assigned in [Creating a Floating IP](networks.md#creating-a-floating-ip).
+    - The value `<private_key_file>` should be whatever your key pair file was named from [Creating a Key Pair](security.md#creating-a-key-pair).
 
     ![!MINGW64 terminal on Windows. The ssh command has been used to login to the Floating IP Address using the -i command with the locally stored private key my_key_pair.pem. Login was successful. A banner page has been shown and a terminal prompt is waiting for input.](./images/instances_020.png)
 
-4. (optional, but helpful) [Set Up a Configuration File](./remote_access.md#setting-up-a-configuration-file) to simplify the command used to make a connection.
+4. (optional, but helpful) [Set Up a Configuration File](../remote_access.md#setting-up-a-configuration-file) to simplify the command used to make a connection.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Reusing a floating IP for a new instance can result in a "Remote Host Identification Has Changed" error, preventing connection. Please see [Remove an Invalid Host Fingerprint](./remote_access.md#remove-an-invalid-host-fingerprint).
+    Reusing a floating IP for a new instance can result in a "Remote Host Identification Has Changed" error, preventing connection. Please see [Remove an Invalid Host Fingerprint](../remote_access.md#remove-an-invalid-host-fingerprint).
 <!-- markdownlint-enable MD046 -->
 
 ### Streamlining SSH
 
-Refer to [Setting up a Configuration File](./remote_access.md#setting-up-a-configuration-file) in [Cloud Remote Access](./remote_access.md).
+Refer to [Setting up a Configuration File](../remote_access.md#setting-up-a-configuration-file) in [Cloud Remote Access](../remote_access.md).
 
 ## Next Steps
 
-Now you are ready to [Install Software](./installing_software.md), set up [Security Groups](security_setup_basic.md#creating-a-security-group) for [Servers](installing_software.md#installing-server-software), and optionally [Create a Persistent Volume](./volume_setup_basic.md).
+Now you are ready to [Install Software](../installing_software.md), set up [Security Groups](security.md#creating-a-security-group) for [Servers](../installing_software.md#installing-server-software), and optionally [Create a Persistent Volume](volumes.md).
 
 ## Deleting an Instance
 
@@ -237,4 +237,4 @@ Click "Delete Instance" again to delete the instance permanently.
 
 ## Continuing the Tutorial
 
-Now that you have set up a [Network](network_setup_basic.md), [Security Policies](security_setup_basic.md) and an [Instance](instance_setup_basic.md), you are done with the tutorial, congratulations! There is one remaining optional step. If you need a persistent data volume to move between instances, please check our [Volumes](volume_setup_basic.md) page.
+Now that you have set up a [Network](networks.md), [Security Policies](security.md) and an [Instance](instances.md), you are done with the tutorial, congratulations! There is one remaining optional step. If you need a persistent data volume to move between instances, please check our [Volumes](volumes.md) page.

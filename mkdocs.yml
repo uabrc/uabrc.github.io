@@ -65,6 +65,11 @@ plugins:
         account_management/xias_guest.md: account_management/xias/guest_instructions.md
         account_management/xias_sites.md: account_management/xias/pi_site_management.md
         account_management/xias_users.md: account_management/xias/pi_guest_management.md
+        uab_cloud/instance_setup_basic.md: uab_cloud/tutorial/instances.md
+        uab_cloud/network_setup_basic.md: uab_cloud/tutorial/networks.md
+        uab_cloud/security_setup_basic.md: uab_cloud/tutorial/security.md
+        uab_cloud/volume_setup_basic.md: uab_cloud/tutorial/volumes.md
+        uab_cloud/introduction.md: uab_cloud/index.md
 
 nav:
   - Home: index.md
@@ -111,12 +116,13 @@ nav:
           - GPUs: cheaha/slurm/gpu.md
       - Job Efficiency: cheaha/job_efficiency.md
   - UAB Cloud (cloud.rc) Guide:
-      - Introduction: uab_cloud/introduction.md
+      - uab_cloud/index.md
       - Tutorial:
-          - (1) Networks: uab_cloud/network_setup_basic.md
-          - (2) Security Policies: uab_cloud/security_setup_basic.md
-          - (3) Instances: uab_cloud/instance_setup_basic.md
-          - (4) Volumes (optional): uab_cloud/volume_setup_basic.md
+          - uab_cloud/tutorial/index.md
+          - (1) Networks: uab_cloud/tutorial/networks.md
+          - (2) Security Policies: uab_cloud/tutorial/security.md
+          - (3) Instances: uab_cloud/tutorial/instances.md
+          - (4) Volumes (optional): uab_cloud/tutorial/volumes.md
       - Remote Access: uab_cloud/remote_access.md
       - Installing Software: uab_cloud/installing_software.md
       - Snapshots and Images: uab_cloud/snapshots.md
