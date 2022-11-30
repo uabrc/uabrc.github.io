@@ -2100,6 +2100,17 @@
 
 
 <h1 id="globus">Globus<a class="headerlink" href="#globus" title="Permanent link">&para;</a></h1>
+<p>Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is recommended for most single-use, day-to-day data transfer use-cases.</p>
+<p>UAB Research Computing uses High Assurance Endpoints and Collections, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions.</p>
+<ol>
+<li>You will be prompted to prove authorization each time you access a UAB Research Computing endpoint, collection or attempt to download files to your local machine from such an endpoint or collection. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.</li>
+<li>Bookmarks are not allowed in High Assurance endpoints and collections.</li>
+</ol>
+<p>For more detailed information on High Assurance please see the Globus official pages below:</p>
+<ul>
+<li><a href="https://docs.globus.org/security/high-assurance-overview/">High Assurance Security Overview</a></li>
+<li><a href="https://docs.globus.org/high-assurance/">High Assurance Collections</a></li>
+</ul>
 <h2 id="setting-up-globus-connect-personal">Setting up Globus Connect Personal<a class="headerlink" href="#setting-up-globus-connect-personal" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.globus.org/globus-connect-personal">Globus Connect Personal</a> is software meant to be installed on local machines such as laptops, desktops,
 workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on <a href="https://docs.globus.org/how-to/globus-connect-personal-mac/">MacOS</a>, <a href="https://docs.globus.org/how-to/globus-connect-personal-linux">Linux</a> and <a href="https://docs.globus.org/how-to/globus-connect-personal-windows">Windows</a>.</p>
@@ -2145,7 +2156,7 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 <p><div class="lightgallery"><a data-sub-html="Globus Collection Search Recent tab showing two endpoints." href="../images/globus_005_recent_tab.png"><img alt="Globus Collection Search Recent tab showing two endpoints." src="../images/globus_005_recent_tab.png" /></a></div></p>
 </li>
 <li>
-<p>The "Bookmarks" tab shows a list of endpoint bookmarks.</p>
+<p>The "Bookmarks" tab shows a list of endpoint bookmarks. Bookmarks may not reference folders within UAB Research Computing or other High Assurance endpoints or collections.</p>
 <p><div class="lightgallery"><a data-sub-html="Globus Collection Search Bookmarks tab showing four bookmarks." href="../images/globus_006_bookmarks_tab.png"><img alt="Globus Collection Search Bookmarks tab showing four bookmarks." src="../images/globus_006_bookmarks_tab.png" /></a></div></p>
 </li>
 <li>
@@ -2255,6 +2266,13 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 <p><div class="lightgallery"><a data-sub-html="Globus File Manager interface with mouse pointer hovering over Bookmark icon." href="../images/globus_060_create_bookmark.png"><img alt="Globus File Manager interface with mouse pointer hovering over Bookmark icon." src="../images/globus_060_create_bookmark.png" /></a></div></p>
 <p>To manage bookmarks, click "Bookmarks" in the left-hand navigation pane. Click the "Pencil" icon to edit a bookmark. Click the "Trash Bin" icon to delete a bookmark.</p>
 <p><div class="lightgallery"><a data-sub-html="Globus Bookmarks interface showing four bookmarks." href="../images/globus_061_manage_bookmarks.png"><img alt="Globus Bookmarks interface showing four bookmarks." src="../images/globus_061_manage_bookmarks.png" /></a></div></p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is not possible to create bookmarks within High Assurance Endpoints.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h2 id="managing-shared-collections-from-a-globus-connect-personal-endpoint">Managing Shared Collections from a Globus Connect Personal Endpoint<a class="headerlink" href="#managing-shared-collections-from-a-globus-connect-personal-endpoint" title="Permanent link">&para;</a></h2>
 <p>It is NOT RECOMMENDED to make Globus Connect Personal endpoints public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal endpoint than for a shared collection. Shared collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use shared collections!</p>
 <h3 id="creating-a-shared-collection">Creating a Shared Collection<a class="headerlink" href="#creating-a-shared-collection" title="Permanent link">&para;</a></h3>
@@ -2362,7 +2380,7 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2022</span>
       
     
   </small>
