@@ -241,6 +241,20 @@ Click "Delete Instance" again to delete the instance permanently.
     It is highly recommended to shut off an instance before deleting it.
 <!-- markdownlint-enable MD046 -->
 
+## Help my Instance is Stuck or not Working
+
+If your instance is stuck or otherwise not working as expected, first try deleting it and starting over. If you are unable to delete it or it gets stuck while deleting, please contact [Support](../../help/support.md) and copy the the instance ID as shown below.
+
+### Where is my Instance ID?
+
+To find your instance ID, navigate to the "Instances" table. Click the "Instance Name" for the instance you are interested in to load an information page for that instance.
+
+![!instance table with instance highlighted by mouse](../images/instance-id-001.png)
+
+In the instance information page, navigate to the "Overview" tab. Near the top is a field labeled "ID". The value to the right of "ID" is a Universally Unique ID (UUID) which uniquely names your instance. We need that ID to delete a stuck instance, so please provide it when requesting cloud.rc instance support.
+
+![!instance information overview tab with ID highlighted](../images/instance-id-002.png)
+
 ## Continuing the Tutorial
 
 Now that you have set up a [Network](networks.md), [Security Policies](security.md) and an [Instance](instances.md), you are done with the tutorial, congratulations! There is one remaining optional step. If you need a persistent data volume to move between instances, please check our [Volumes](volumes.md) page.
