@@ -58,14 +58,6 @@ To create an instance from an image, follow the directions below, assuming you h
 
 7. Continue following the instructions at [Basic Instance Setup](tutorial/instances.md) to start the instance.
 
-### Sharing Instance Snapshots
-
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction.
-<!-- markdownlint-enable MD046 -->
-
 ### Deleting an Image
 
 To delete an image, return to the "Images" page using the left-hand navigation pane. In the table, find the row with the image you wish to delete, and click the drop-down arrow under "Actions" in that row. Then click "Delete Image" to open a confirmation dialog.
@@ -99,14 +91,6 @@ Volume snapshots are a helpful way to store the state of a volume for later use.
 4. You will be taken to the "Volume Snapshots" page, where your new snapshot will appear in its own row in the table.
 
     ![!volume snapshots page showing new snapshot](./images/create_volume_snapshot_003.png)
-
-### Sharing Volume Snapshots
-
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction.
-<!-- markdownlint-enable MD046 -->
 
 ### Deleting a Volume Snapshot
 

@@ -87,12 +87,6 @@ Networks determine how your instance will talk to the internet and other instanc
 
 ### Network Ports Tab
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction
-<!-- markdownlint-enable MD046 -->
-
 1. Leave this tab empty.
 
     ![!Launch Instance dialog. The Network Ports tab is selected. The dialog form has been left empty.](./images/instances_007.png)
@@ -127,44 +121,20 @@ Key Pairs allow individual access rights to the instance via SSH. If you are fol
 
 ### Configuration Tab
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction
-<!-- markdownlint-enable MD046 -->
-
 1. Skip this tab.
 2. Click "Next >" to move to the "Server Groups" tab.
 
 ### Server Groups Tab
-
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction
-<!-- markdownlint-enable MD046 -->
 
 1. Skip this tab.
 2. Click "Next >" to move to the "Scheduler Hints" tab.
 
 ### Scheduler Hints Tab
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction
-<!-- markdownlint-enable MD046 -->
-
 1. Skip this tab.
 2. Click "Next >" to move to the "Metadata" tab.
 
 ### Metadata Tab
-
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction
-<!-- markdownlint-enable MD046 -->
 
 1. Skip this tab.
 
