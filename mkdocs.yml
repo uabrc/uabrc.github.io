@@ -70,17 +70,20 @@ plugins:
         uab_cloud/security_setup_basic.md: uab_cloud/tutorial/security.md
         uab_cloud/volume_setup_basic.md: uab_cloud/tutorial/volumes.md
         uab_cloud/introduction.md: uab_cloud/index.md
+        cheaha/getting_started.md: cheaha/index.md
 
 nav:
   - Home: index.md
   - Account Management:
+      - account_management/index.md
       - Cheaha Account: account_management/cheaha_account.md
+      - Cloud.rc Account: account_management/cloud_rc_account.md
+      - Gitlab Account: account_management/gitlab_account.md
       - External Collaborator Accounts (XIAS):
           - account_management/xias/index.md
           - "For PIs - (1) Managing Projects & Sites": account_management/xias/pi_site_management.md
           - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
           - "For Guests - Account Creation": account_management/xias/guest_instructions.md
-      - Gitlab Account: account_management/gitlab_account.md
   - Data Management:
       - Cheaha Storage: data_management/storage.md
       - Long Term Storage:
@@ -92,6 +95,7 @@ nav:
           - FileZilla: data_management/transfer/filezilla.md
       - Code Storage: data_management/code_storage.md
   - Workflow Solutions:
+      - workflow_solutions/index.md
       - Using the Shell: workflow_solutions/shell.md
       - Using Anaconda: workflow_solutions/using_anaconda.md
       - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
@@ -99,7 +103,7 @@ nav:
       - Getting Containers: workflow_solutions/getting_containers.md
       - Getting Software from GitHub and GitLab: workflow_solutions/getting_software_with_git.md
   - Cheaha Guide:
-      - Getting Started: cheaha/getting_started.md
+      - cheaha/index.md
       - Hardware: cheaha/hardware.md
       - Software:
           - Preinstalled Modules: cheaha/software/modules.md

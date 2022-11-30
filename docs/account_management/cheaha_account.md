@@ -1,6 +1,6 @@
 # Cheaha Account Management
 
-These instructions are intended to guide researchers on creating and managing their [Cheaha](../cheaha/getting_started.md) account.
+These instructions are intended to guide researchers on creating and managing their [Cheaha](../cheaha/index.md) account.
 
 ## Creating a New Account
 
@@ -20,7 +20,7 @@ When you are ready, click "Create Account" to start the account creation process
 
 ![!Account creation notification popup](images/uab_self_register_002.png)
 
-Welcome to Cheaha and to Research Computing! Please visit our [Cheaha Getting Started page](../cheaha/getting_started.md) to learn more about using Cheaha.
+Welcome to Cheaha and to Research Computing! Please visit our [Cheaha Getting Started page](../cheaha/index.md) to learn more about using Cheaha.
 
 ## Managing an Existing Account
 

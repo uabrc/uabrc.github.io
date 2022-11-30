@@ -6,7 +6,7 @@ The shell is a powerful tool, and with great power comes great responsibility. T
 
 Most commands are perfectly safe, and often when they do something unexpected it can be fixed with some work. We will do our best to warn you of commands with greater potential for destruction, but no documentation is perfect.
 
-We are not responsible for accidental deletions or overwrites caused inadvertently, or otherwise, by any commands run by researchers. Be warned that directories, files and file contents that are deleted or overwritten cannot be restored by us under any circumstances. Researchers are responsible for maintaining backups of their files. If in doubt about a command please contact [Contact Us](../index.md#contact-us) for guidance.
+We are not responsible for accidental deletions or overwrites caused inadvertently, or otherwise, by any commands run by researchers. Be warned that directories, files and file contents that are deleted or overwritten cannot be restored by us under any circumstances; it simple isn't possible. Researchers are responsible for maintaining [backups](../data_management/storage.md#backups) of their files. If in doubt about a command please contact [Contact Us](../index.md#contact-us) for guidance.
 
 ### Educational Resources
 

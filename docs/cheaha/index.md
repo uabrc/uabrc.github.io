@@ -48,7 +48,7 @@ In addition to personal storage, Primary Investigators may request additional sh
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Data on Cheaha are replicated for recovery in case of system failures; however, **data are not recoverable if deleted by the researcher**. Be very careful with commands such as `rm -r` and other tools that delete files making sure you are deleting only the files and folders you mean to. Backing up data onto external platforms is the sole responsiblity of the researcher. Make backups of raw data places such as [RC Long-term Storage](https://uabrc.github.io/data_management/lts/lts/), AWS/Google Cloud/Azure data storage, local hard drives, or [UAB Box](https://www.box.com). Analysis scripts to places like [Github](https://www.github.com) or [UAB RC Gitlab](https://gitlab.rc.uab.edu).
+    Data on Cheaha are replicated for recovery in case of system failures; however, **data are not recoverable if deleted by the researcher**. Be very careful with commands such as `rm -r` and other tools that delete files making sure you are deleting only the files and folders you mean to. Backing up data onto external platforms is the sole responsiblity of the researcher. Make [backups](../data_management/storage.md#backups) of raw data places such as [RC Long-term Storage](https://uabrc.github.io/data_management/lts/lts/), AWS/Google Cloud/Azure data storage, local hard drives, or [UAB Box](https://www.box.com). Analysis scripts to places like [Github](https://www.github.com) or [UAB RC Gitlab](https://gitlab.rc.uab.edu).
 <!-- markdownlint-enable MD046 -->
 
 ### Etiquette

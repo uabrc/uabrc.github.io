@@ -22,7 +22,7 @@ The table below is a theoretical analysis of FLOPS (floating point operations pe
 
 The full table can be downloaded [here](./res/flops_hpc.csv).
 
-For information on using Cheaha, see our dedicated [section](./getting_started.md).
+For information on using Cheaha, see our dedicated [section](index.md).
 
 ### Partitions
 
