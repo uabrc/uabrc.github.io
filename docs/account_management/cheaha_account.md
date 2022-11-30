@@ -1,15 +1,14 @@
 # Cheaha Account Management
 
-These instructions are intended to guide researchers on creating new accounts and managing existing accounts.
+These instructions are intended to guide researchers on creating and managing their [Cheaha](../cheaha/getting_started.md) account.
 
 ## Creating a New Account
 
-Creating a new account is a simple, automated, self-service process. To start, navigate to <https://rc.uab.edu>, our [Open OnDemand](../cheaha/open_ondemand/ood_main.md) web portal, and authenticate. The authentication process differs depending on your affiliation. Accounts are available to researchers with the following situations.
+Creating a new account is a simple, automated, self-service process. To start, navigate to <https://rc.uab.edu>, our [Open OnDemand](../cheaha/open_ondemand/ood_main.md) web portal, and authenticate. The authentication process differs depending on your affiliation, but all Cheaha accounts are authenticated using Single Sign-on (SSO). Accounts are available to researchers with the following affiliations.
 
-- If you are affiliated with UAB and have a BlazerID, please authenticate using Single Sign-On (SSO).
-- If you are affiliated with UAB Medicine, you will need to use your BlazerID to authenticate via Single Sign-On (SSO) instead of your UABMC authentication process.
-- If you are an external collaborator and have a XIAS account with access to Cheaha, please authenticate using your XIAS email address as the ID, not automatically generated `xias-XXXXXX-1` ID.
-- If you are an external collaborator and do not have a XIAS account, you will need a UAB-affiliated sponsor and will need to follow our [XIAS Guest Account Instructions](xias/guest_instructions.md). Your sponsor will need to follow our [XIAS Site Management](xias/pi_site_management.md) and [XIAS Guest Management](xias/pi_guest_management.md) documentation pages.
+- **UAB Campus**: authenticate with your BlazerID credentials.
+- **UAB Medicine (UABMC)**: authenticate with your BlazerID credentials. UABMC credentials are not supported.
+- **External Collaborator**: authenticate with your XIAS email address and the password created during XIAS account creation. If you do not yet have a XIAS account, you will need to follow the instructions at our [XIAS page](xias/index.md). Communicate with your sponsore to ensure that `https://rc.uab.edu` is included in the list of approved URIs.
 
 Once you have authenticated, you should see a page that looks like the following.
 
@@ -21,7 +20,7 @@ When you are ready, click "Create Account" to start the account creation process
 
 ![!Account creation notification popup](images/uab_self_register_002.png)
 
-Welcome to Cheaha and to Research Computing!
+Welcome to Cheaha and to Research Computing! Please visit our [Cheaha Getting Started page](../cheaha/getting_started.md) to learn more about using Cheaha.
 
 ## Managing an Existing Account
 
