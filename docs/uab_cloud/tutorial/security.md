@@ -8,6 +8,12 @@ These instructions show you how to prepare to use SSH with your instances. At a 
     If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.
 <!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Virtual machines are disposable! If you get stuck at any point, or things don't seem like they're working as expected, etc., feel free to delete the instance and start over.
+<!-- markdownlint-enable MD046 -->
+
 ## Creating a Security Group
 
 Security Groups are used to set rules for how external devices can connect to your instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. Applications you develop may need other ports opened, so you may need to create additional security groups to handle those. Security groups may be reused across multiple instances.

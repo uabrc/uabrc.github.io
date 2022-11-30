@@ -4,6 +4,12 @@ Welcome to the cloud.rc tutorial!
 
 Through this tutorial we will show you how to use cloud.rc to create your very own VM for scientific research on our OpenStack cloud service. The tutorial works best if you read and follow the instructions carefully, and follow the steps in order.
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Virtual machines are disposable! If you get stuck at any point, or things don't seem like they're working as expected, etc., feel free to delete the instance and start over.
+<!-- markdownlint-enable MD046 -->
+
 ## Prerequisites
 
 To access cloud.rc, you must either be on the UAB Campus Network or the UAB Campus VPN.
