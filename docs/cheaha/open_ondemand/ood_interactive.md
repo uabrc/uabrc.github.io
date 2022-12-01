@@ -93,6 +93,17 @@ Pandoc is a tool for transforming various markup and markdown formatted document
 
 3. Start the job and use RStudio and `knitr` as expected.
 
+#### Starting With a Clean Session to Avoid Errors
+
+By default, RStudio loads the most recently opened project at startup and restores the `.RData` file into the workspace. If you only work on a single project, this may be helpful. If you frequently change projects then these default settings can create difficult-to-diagnose errors, or you may inadvertently alter a project by adding incorrect packages, for example.
+
+To reduce the risk of these kinds of errors, uncheck the highlighted boxes below in the RStudio Options menu under the "General" selection.
+
+- Restore most recently opened project at startup
+- Restore .RData into workspace at startup
+
+![!image showing boxes to uncheck highlighted with red markers](images/ood_rstudio_server_clean_session.png)
+
 ### Jupyter Notebook
 
 Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
