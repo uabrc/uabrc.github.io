@@ -4,7 +4,7 @@
 
 If you are here because you need to know how to get software from either instance, please see [Obtaining Software](#for-obtaining-software) below.
 
-If you are here because you need a place to collaborate with others on a software project, please see [Hosting Software](#for-hosting-software) below.
+If you are here because you need a place to collaborate with others on a software project, please see [Collaborating](#for-collaboration) below.
 
 ## Important Note on Terms
 
@@ -51,42 +51,73 @@ You may also use the "Clone" button on the page to see instructions for cloning 
 
 More in-depth instructions, including for SSH cloning, are provided at the [official documentation](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html#clone-a-repository).
 
-## For Hosting Software
+## For Collaborating
 
-### Which Do I Choose?
+GitHub and GitLab can both be used for software project management, and have helpful tools to facilitate group collaboration within projects and across multiple projects.
+
+Both services use organizations to manage projects across a team of people: [GitHub docs page](https://docs.github.com/en/organizations), [GitLab docs page](https://docs.gitlab.com/ee/topics/set_up_organization.html). Within a GitHub organization, people and repositories can be arranged into [teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams). GitLab allows arrangement of people and repositories with [projects](https://docs.gitlab.com/ee/user/project/).
+
+An important feature, used extensively for this documentation's GitHub repository, is the issue tracker. Both [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) and [GitLab](https://docs.gitlab.com/ee/user/project/issues/) have per-repository issue trackers. Collaborators can create and manage issues, label them, and resolve them.
+
+### How do I Choose Between GitHub and GitLab?
 
 - Want to collaborate publicly and outside UAB? Consider using [GitHub](#github-hosting).
 - Want your project private or internal to UAB? Consider using our [GitLab](#gitlab-hosting) instance.
 
 It is also possible to collaborate publicly using GitLab, and privately with GitHub, but there may be additional challenges.
 
-### GitHub Hosting
+### Good Practice for Organizing a Lab Space
 
-To do anything with GitHub, you will first need to navigate to their website <https://github.com> and [create an account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account).
+Below is a bulleted list of good practices for organizing a lab space. Each bullet is followed by links to relevant GitHub and GitLab documentation pages, as appropriate.
 
-The official GitHub documentation is available at <https://docs.github.com/>.
+- Have an organization for your lab space. [GitHub](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations) [GitLab](https://docs.gitlab.com/ee/topics/set_up_organization.html)
+    - The organization should have its PI or PIs as owners, i.e., the owner role. [GitHub](https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization) [GitLab](https://docs.gitlab.com/ee/user/permissions.html#permissions-and-roles)
+    - Other trusted individuals can be made administrators as needed, to delegate important and sensitive tasks that require elevated permissions.
+- For each software project, create a repository within your organization. [GitHub](https://docs.github.com/en/get-started/quickstart/create-a-repo), [GitLab](https://docs.gitlab.com/ee/user/project/repository/)
+    - By default, organization members will have access at their assigned role level. These can be changed by managing roles and using teams effectively, if needed. For smaller labs this is often not necessary.
+    - The created repository is the central one for the organization and should not be changed directly.
+- For every individual, including owners and admins, work should be performed on a personal fork of the repository and then merged by submitting pull/merge requests.
+    - Forks are copies of repositories made as a snapshot at the moment they are created. From that point on they are independent repositories with some features to facilitate collaborative workflows. [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) [GitLab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html)
+    - Pull/merge requests allow individuals to contribute to a central repository. They allow reviewers to check the changes to ensure code quality, and to provide reviews or request changes. They are the primary means of controlling how code changes over time, and who is allowed to make those changes. [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
+    - See the [Fork-Pull/Merge Request Workflow Section](#the-fork-pullmerge-request-workflow) for more details on this valuable method of change management.
 
-#### New Repositories with GitHub
+### The Fork-Pull/Merge Request Workflow
 
-To create a new project on GitHub, please see the [official documentation](https://docs.github.com/en/get-started/quickstart/create-a-repo?tool=webui). Once you have created the repository and have its URL, [clone](#cloning-from-github) it to begin working on it locally.
+The Fork-Pull/Merge Request workflow is a central concept to effective collaboration on individual repositories. It allows code owners and admins to effectively control how code changes, while giving accountability and credit to code maintainers and programmers. Every person working on a project has an effective means of working independently while being able to pull their changes together in a central location. It also neatly ties into issue tracking, which is discussed in the [Issue Tracking Section](#effective-issue-tracking).
 
-#### Uploading Code to GitHub
+The workflow assumes a central repository already exists within an organization on either GitHub or GitLab. The workflow is written from the point of view of a new programmer who wants to work on the repository. The programmer must have a local machine where they will do their work and it must have Git installed.
 
-To upload existing code from a local repository to GitHub, first [Create a New Repository](#new-repositories-with-github) which will host the existing code. Then follow the instructions in [Uploading an Existing Code Folder](#uploading-an-existing-code-folder).
+- One-time setup
+    1. Fork an individual repository (downstream) from the central organization repository (upstream). [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) [GitLab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html)
+    2. [Clone](git.md#cloning) the downstream fork to the local machine where the programming will happen.
+- Workflow
+    1. Decide on a set of changes to make. Good practice is only working on one conceptual unit at a time. One feature, one bug fix, or one documentation page. Prefer fixing bugs before adding features.
+    2. Synchronize your downstream fork with the upstream fork to minimize risk of merge conflicts. [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) [GitLab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html#repository-mirroring)
+    3. [Pull the downstream fork main branch](git.md#fetching-and-pulling) to your local clone main branch.
+    4. [Create a working branch](git.md#creating-new-branches) for intended changes. Give it a short, descriptive name like `feature-add-button` or `fix-broken-link`.
+    5. [Checkout the working branch](git.md#checking-out-existing-branches).
+    6. Make changes to the code on the local machine using your preferred editor. Make small units of change at a time, try not to commit too much, but make sure your changes don't break the code. There is an art to this that comes with practice, but don't be afraid of trying.
+    7. [Commit those changes](git.md#staging-and-committing-changes) to the working branch. Keep making changes and committing until the set of changes is complete.
+    8. When all needed changes have been made, [push the working branch](git.md#pushing) to your fork.
+    9. Create a pull/merge request from the downstream working branch to the upstream main branch. [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
+    10. Wait for reviews, make needed changes, and hopefully merging of your request.
 
-### GitLab Hosting
+Sometimes merging will be blocked because of a merge conflict. One programmer may make changes to code being worked on by another, and the two changes come into conflict. If this occurs, below are some steps that may help resolve the issue. In some cases, conflict resolution is straightforward, but in other cases thought will be necessary to disentangle what code should be kept, what should be discarded, and what should be modified.
 
-To do anything with our GitLab instance, you will first need to create an account. Please see our [GitLab Account Management page](../account_management/gitlab_account.md).
+- The downstream programmer should try synchronizing their fork, pulling it to their local main branch, and [merging] the main branch into their working branch. The conflict may still occur on their local machine, but they will be able to more easily see and test the effects of various conflict resolution attempts.
+- Use a three-way diff program or editor which will let you see both sets of conflicting code, and facilitate making changes and selections. [VSCode](https://code.visualstudio.com) has a built-in three-way merge editor.
+- Be sure everyone is using the same formatting rules in their editors. Sometimes spurious conflicts can occur as a result of inconsistent formatting.
+- To minimize risk of conflict, don't have more than one programmer work on the same section of code if possible.
 
-The official GitLab documentation is available at <https://docs.gitlab.com/>.
+### Effective Issue Tracking
 
-#### New Repositories with GitLab
+Effective use of issue tracking can greatly reduce cognitive load and simplify code management. It gives a central location where users and maintainers can report bugs, make feature requests, and ask for clarifications on usage and documentation. These issues are tracked over time, can be labeled and organized, and closed and reopened. [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) [GitLab](https://docs.gitlab.com/ee/user/project/issues/)
 
-To create a new repository on GitLab, please see the [official documentation](ttps://docs.gitlab.com/ee/user/project/repository/#create-a-repository). Once you have created the repository and have its URL, [clone](#cloning-from-gitlab) it to begin working on it locally.
+The typical issue lifecycle, at a high level, is something like below.
 
-#### Uploading Code to GitLab
-
-To upload existing code from a local repository to GitLab, first [Create a New Repository](#new-repositories-with-gitlab) which will host the existing code. Then follow the instructions in [Uploading an Existing Code Folder](#uploading-an-existing-code-folder).
+1. Create an issue. [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) [GitLab](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#create-an-issue)
+2. Ask for clarifications and discuss as needed.
+3. Use the [Fork-Pull/Merge Request Workflow](#the-fork-pullmerge-request-workflow) to resolve the issue. In the Pull Request description, put the text `Fixes #...` where `...` should be replaced by the issue's number. When the request is merged, the issue will automatically be linked to the request and closed.
 
 ## Common Scenarios
 
