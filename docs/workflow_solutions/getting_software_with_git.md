@@ -4,7 +4,7 @@
 
 If you are here because you need to know how to get software from either instance, please see [Obtaining Software](#for-obtaining-software) below.
 
-If you are here because you need a place to collaborate with others on a software project, please see [Collaborating](#for-collaboration) below.
+If you are here because you need a place to collaborate with others on a software project, please see [Collaborating](#for-collaborating) below.
 
 ## Important Note on Terms
 
@@ -61,10 +61,12 @@ An important feature, used extensively for this documentation's GitHub repositor
 
 ### How do I Choose Between GitHub and GitLab?
 
-- Want to collaborate publicly and outside UAB? Consider using [GitHub](#github-hosting).
-- Want your project private or internal to UAB? Consider using our [GitLab](#gitlab-hosting) instance.
+- Want to collaborate publicly and outside UAB? Consider using GitHub.
+- Want your project private or internal to UAB? Consider using our GitLab instance.
 
-It is also possible to collaborate publicly using GitLab, and privately with GitHub, but there may be additional challenges.
+It is possible to collaborate publicly using GitLab, but there may be additional challenges. While external collaborators can see a public GitLab repository on our instance, they can't make any changes or create issues without a [XIAS Account](../account_management/xias/index.md).
+
+It is possible to collaborate privately using GitHub with no additional hurdles, but if your project contains sensitive or protected information of any kinds, it should not be posted to GitHub, even in private repositories. Please consult with us via [Support](../help/support.md) before
 
 ### Good Practice for Organizing a Lab Space
 
@@ -126,7 +128,7 @@ The typical issue lifecycle, at a high level, is something like below.
 The process for this has a few intricate steps that may be unfamiliar even to regular users of git, and has a few pitfalls.
 
 1. Use `git init` in the top-level code folder on the local machine, if it is not already a git repository. If it already is a repository, be sure the primary branch is called `main`. Use `git branch -m <oldname> main`.
-2. Create a repository on the remote server ([GitHub](#new-repositories-with-github), [GitLab](#new-repositories-with-gitlab))
+2. Create a repository on the remote server [GitHub](https://docs.github.com/en/get-started/quickstart/create-a-repo), [GitLab](https://docs.gitlab.com/ee/user/project/repository/#create-a-repository)
 3. Use `git remote add origin <url>` to add the remote URL to the local repository with the name `origin`.
 4. Verify the URL is correct with `git remote -v`. Fix it with `git remote set-url origin <url>` if needed.
 5. Checkout the main branch without `git checkout main`.
@@ -139,3 +141,10 @@ The process for this has a few intricate steps that may be unfamiliar even to re
 
     `--allow-unrelated-histories` is necessary because Git considers the remote repository to be a completely distinct entity from the local repository. Their histories are unrelated.
 <!-- markdownlint-enable MD046 -->
+
+## HTTPS vs SSH Access
+
+For most beginners using Git, GitHub and GitLab, HTTPS (hypertext transfer protocol secure) is probably a sufficient method for accessing in early stages. It is the default mode of accessing GitHub and GitLab when using Git at the command line. HTTPS is less secure than SSH (secure shell). We recommend learning to use SSH as soon as possible to minimize security risks. Below are links to GitHub and GitLab documentation for using SSH.
+
+[GitHub SSH documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+[GitLab SSH documentation](https://docs.gitlab.com/ee/user/ssh.html)
