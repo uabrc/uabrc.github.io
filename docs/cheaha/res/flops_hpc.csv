@@ -5,4 +5,4 @@ Generation,Cpu Tflops Per Node,Gpu Tflops Per Node,Tflops Per Node,Nodes,Tflops
 8,0.96,,0.96,4,3.84
 9,2.30,,2.30,52,119.81
 10,4.10,,4.10,34,139.26
-,,,,,619.10
+Total,,,,,619.10
