@@ -1,6 +1,9 @@
-Platform,Data Use-Case,Default Quota,Managed By?,Cheaha Location,Access Speed
-[Long-term Storage](lts/lts.md),Rarely changing or immutable files. Data not directly usable in Cheaha jobs,75 TB,Lab PI,Off Cheaha,Slow
-[User data and home directories](storage.md#user-space),General-purpose medium- to long-term storage.,5 TB,All users,/home/<blazerid\> ($HOME) and /data/user/<blazerid\> ($USER_DATA),Fast
-[Project Directories](storage.md#project-directory),Data to be shared among a single or multiple labs,25 TB,Lab PI,/data/project/<project_name\>,Fast
-[Network Scratch](storage.md#network-scratch),Temporary files created during analysis. Rolling file deletion over time,100 TB,All users,/scratch/<blazerid\> ($USER_SCRATCH),Fast
-[Local Scratch](storage.md#local-scratch),Small files created during jobs. Must be deleted at the end of a job.,Small,All users,$LOCAL_SCRATCH,Fastest
+Platform,[Long-term Storage](lts/lts.md),[User Data and Home Directories](storage.md#user-space),[Project Directories](storage.md#project-directory),[Network Scratch](storage.md#network-scratch),[Local Scratch](storage.md#local-scratch)
+Data Use-Case,Rarely changing or immutable files. Data not directly usable in Cheaha jobs.,General-purpose medium- to long-term storage.,Data to be shared among a single or multiple labs.,Temporary files created during analysis. Rolling file deletion over time.,Small files created during jobs. Must be deleted at the end of a job.
+Default Quota,75 TB,5 TB,25 TB,100 TB,Small
+Owner,Lab PI,Individual Researchers,Lab PI,Individual Researchers,Individual Researchers
+Accessible From,- Cheaha<br>- Globus,- Cheaha<br>- Globus,- Cheaha<br>- Globus,Cheaha,Cheaha
+Cheaha Path,No Path,`/home/<blazerid>` (`$HOME`) and `/data/user/<blazerid>` (`$USER_DATA`),`/data/project/<name>`,`/scratch/<blazerid>` (`$USER_SCRATCH`),`/scratch/local` (`$LOCAL_SCRATCH`)
+Read/Write (IO) Speed,Slow,Fast,Fast,Fast,Fastest
+Policies,,,,Data deleted after 30 days.,Data deleted as needed.
+How to Access,Contact [Support](../help/support.md),Comes with Cheaha account.,See [Request Project Space](../help/support.md#how-do-i-request-or-change-a-project-space),Comes with Cheaha account.,Comes with Cheaha account.
