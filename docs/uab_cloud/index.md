@@ -6,7 +6,21 @@ Resource quotas are set to ensure that every researcher has a fair share. Please
 
 Currently, access to cloud.rc must be made while on the UAB Campus Network or on the UAB Campus Virtual Private Network (VPN). For more information about using the UAB Campus VPN, please visit [VPN - UAB IT](https://www.uab.edu/it/home/tech-solutions/network/vpn).
 
-To get started using cloud.rc, please navigate to <https://dashboard.cloud.rc.uab.edu/>. A view of the dashboard is shown below.
+## First Steps
+
+To get started using cloud.rc, please navigate to <https://dashboard.cloud.rc.uab.edu/>. You will be taken to a login page that looks like below. To login you will need an account, please request one by contacting [Support](../help/support.md). When requesting an account, please tell us how you intend to use the service. Some reasonable use-cases are listed in [Cloud Usage Philosophy](#cloud-usage-philosophy) below.
+
+![!cloud.rc login](images/cloud-rc-login.png)
+
+There are three fields that must be filled out:
+
+- Domain: must always be `uab`, lowercase.
+- User Name: your BlazerID or XIAS email.
+- Password: whatever your current password is, not necessarily the same as your Single Sign-On password. If you have forgotten your password please contact [Support](../help/support.md).
+
+Once these fields are filled, click "Sign In" to login.
+
+Once logged in, you will see the OpenStack dashboard. An example is shown below.
 
 ![!cloud.rc dashboard](images/introduction.png)
 
