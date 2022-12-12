@@ -720,7 +720,7 @@
   
     <li class="md-nav__item">
       <a href="../workflow_solutions/getting_software_with_git/" class="md-nav__link">
-        Getting Software from GitHub and GitLab
+        Software Collaboration with GitHub and GitLab
       </a>
     </li>
   
@@ -1574,14 +1574,14 @@
       
       
         <label class="md-nav__link" for="__nav_10">
-          Education & Outreach
+          Outreach & Training
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Education & Outreach" data-md-level="1">
+      <nav class="md-nav" aria-label="Outreach & Training" data-md-level="1">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
-          Education & Outreach
+          Outreach & Training
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1633,8 +1633,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../education/social_media/" class="md-nav__link">
-        Social Media
+      <a href="../education/training_resources/" class="md-nav__link">
+        Training Resources
       </a>
     </li>
   
@@ -1787,6 +1787,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#first-steps" class="md-nav__link">
+    First Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cloud-usage-philosophy" class="md-nav__link">
     Cloud Usage Philosophy
   </a>
@@ -1820,8 +1827,18 @@
 <h1 id="uab-cloud">UAB Cloud<a class="headerlink" href="#uab-cloud" title="Permanent link">&para;</a></h1>
 <p>Our <a href="https://dashboard.cloud.rc.uab.edu">cloud.rc</a> portal, based on <a href="https://www.openstack.org/">OpenStack</a> cloud software, provides a home for more permanent research applications such as web pages and database hosting, as well as a place where researchers can more fluidly develop applications for high performance compute.</p>
 <p>Resource quotas are set to ensure that every researcher has a fair share. Please be sure to free up resources when they are no longer needed by deleting instances and volumes.</p>
-<p>Currently, access to cloud.rc must be made while on the UAB Campus Network or on the UAB Campus Virtual Private Network (VPN). For more information about using the UAB Campus VPN, please visit <a href="https://www.uab.edu/it/home/tech-solutions/network/vpn">VPN - UAB IT</a>.</p>
-<p>To get started using cloud.rc, please navigate to <a href="https://dashboard.cloud.rc.uab.edu/">https://dashboard.cloud.rc.uab.edu/</a>. A view of the dashboard is shown below.</p>
+<p>Currently, access to cloud.rc must be made while on the UAB Campus Network or on the UAB Campus Virtual Private Network (VPN). For more information about using the UAB Campus VPN, please visit <a href="https://www.uab.edu/it/home/tech-solutions/network/vpn">VPN - UAB IT</a>. The VPN requires <a href="https://www.uab.edu/it/home/security/2-factor">Duo 2FA</a>.</p>
+<h2 id="first-steps">First Steps<a class="headerlink" href="#first-steps" title="Permanent link">&para;</a></h2>
+<p>To get started using cloud.rc, please navigate to <a href="https://dashboard.cloud.rc.uab.edu/">https://dashboard.cloud.rc.uab.edu/</a>. You will be taken to a login page that looks like below. To login you will need an account, please request one by contacting <a href="../help/support/">Support</a>. When requesting an account, please tell us how you intend to use the service. Some reasonable use-cases are listed in <a href="#cloud-usage-philosophy">Cloud Usage Philosophy</a> below.</p>
+<p><div class="lightgallery"><a data-sub-html="cloud.rc login" href="images/cloud-rc-login.png"><img alt="cloud.rc login" src="images/cloud-rc-login.png" /></a></div></p>
+<p>There are three fields that must be filled out:</p>
+<ul>
+<li>Domain: must always be <code>uab</code>, lowercase.</li>
+<li>User Name: your BlazerID or XIAS email.</li>
+<li>Password: whatever your current password is, not necessarily the same as your Single Sign-On password. If you have forgotten your password please contact <a href="../help/support/">Support</a>.</li>
+</ul>
+<p>Once these fields are filled, click "Sign In" to login.</p>
+<p>Once logged in, you will see the OpenStack dashboard. An example is shown below.</p>
 <p><div class="lightgallery"><a data-sub-html="cloud.rc dashboard" href="images/introduction.png"><img alt="cloud.rc dashboard" src="images/introduction.png" /></a></div></p>
 <p>To get the most out of cloud.rc, you'll want to make sure you have a working familiarity with the <a href="../workflow_solutions/shell/">Linux terminal</a>.</p>
 <p>Cloud.rc runs on Openstack. If you are new to Openstack or to cloud.rc, it is highly recommended to follow our <a href="tutorial/">Tutorial</a> to learn how to set up all of the necessary components of a virtual machine (VM) setup. The tutorial is intended to be followed in order. Doing it out of order may result in errors and issues. If you encounter any unexpected issues, unclear instructions or have questions or comments, please contact <a href="../help/support/">Support</a>.</p>
@@ -1848,7 +1865,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 12, 2022</span>
       
     
   </small>
