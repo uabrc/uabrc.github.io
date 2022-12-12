@@ -1024,7 +1024,14 @@
     Jupyter Notebook
   </a>
   
-    <nav class="md-nav" aria-label="Jupyter Notebook">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-anaconda-environments" class="md-nav__link">
+    Working with Anaconda Environments
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Anaconda Environments">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1991,7 +1998,14 @@
     Jupyter Notebook
   </a>
   
-    <nav class="md-nav" aria-label="Jupyter Notebook">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-anaconda-environments" class="md-nav__link">
+    Working with Anaconda Environments
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with Anaconda Environments">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2174,12 +2188,20 @@
 <h3 id="jupyter-notebook">Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permanent link">&para;</a></h3>
 <p>Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.</p>
 <p><div class="lightgallery"><a data-sub-html="Jupyter Notebook job request form." href="../images/ood_jupyter_notebook_form.png"><img alt="Jupyter Notebook job request form." src="../images/ood_jupyter_notebook_form.png" /></a></div></p>
+<p>Jupyter Notebooks are commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the <a href="#working-with-anaconda-environments">Working with Anaconda Environments section</a> below before continuing here.</p>
 <p>To adjust the environment, please use the Environment Setup box to load modules. For GPU applications it is generally necessary to load one of our <code>cuda##.#/toolkit</code> modules, and possibly a <code>cuDNN</code> module. These are required for <code>tensorflow</code>, <code>keras</code> and <code>pytorch</code>. Use <code>module spider cuda</code> and <code>module spider cudnn</code> to view the list of appropriate modules. An example is shown below.</p>
 <p><div class="lightgallery"><a data-sub-html="Jupyter Notebook job request form Environment Setup box." href="../images/ood_jupyter_notebook_env_setup_box.png"><img alt="Jupyter Notebook job request form Environment Setup box." src="../images/ood_jupyter_notebook_env_setup_box.png" /></a></div></p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are not able to see your environment, you may need to install the <code>ipykernel</code> package. It is required for Jupyter to recognize your environment. See <a href="../../../workflow_solutions/using_anaconda/#packages-for-jupyter">Packages for Jupyter</a> for more information.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
@@ -2197,6 +2219,8 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
+<h3 id="working-with-anaconda-environments">Working with Anaconda Environments<a class="headerlink" href="#working-with-anaconda-environments" title="Permanent link">&para;</a></h3>
+<p>For information on working with Anaconda environments please see our <a href="../../../workflow_solutions/using_anaconda/">Using Anaconda page</a>. The please review our <a href="../../software/software/#anaconda-on-cheaha">Cheaha-specific Anaconda page</a> for important tips and how to avoid common pitfalls.</p>
 <h4 id="extra-jupyter-arguments">Extra Jupyter Arguments<a class="headerlink" href="#extra-jupyter-arguments" title="Permanent link">&para;</a></h4>
 <p>The <code>Extra Jupyter Arguments</code> field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in <code>/data/user/$USER</code>, also known as <code>$USER_DATA</code>, put <code>--notebook-dir=$USER_DATA</code> in this field. You will be able to navigate to the notebook if it is in a subdirectory of <code>notebook-dir</code>, but you won't be able to navigate to any other directories. An example is shown below.</p>
 <p><div class="lightgallery"><a data-sub-html="Jupyter Notebook job request form Extra jupyter arguments box." href="../images/ood_jupyter_notebook_extra_args_box.png"><img alt="Jupyter Notebook job request form Extra jupyter arguments box." src="../images/ood_jupyter_notebook_extra_args_box.png" /></a></div></p>

@@ -1910,8 +1910,16 @@
 <h1 id="software-installation">Software Installation<a class="headerlink" href="#software-installation" title="Permanent link">&para;</a></h1>
 <h2 id="anaconda-on-cheaha">Anaconda on Cheaha<a class="headerlink" href="#anaconda-on-cheaha" title="Permanent link">&para;</a></h2>
 <p>For additional general information on using Anaconda please see <a href="../../../workflow_solutions/using_anaconda/">Anaconda Environments</a>.</p>
+<p>If you are using Jupyter Notebook, please see our section on <a href="../../../workflow_solutions/using_anaconda/#packages-for-jupyter">Packages for Jupyter</a>.</p>
 <h3 id="loading-anaconda">Loading Anaconda<a class="headerlink" href="#loading-anaconda" title="Permanent link">&para;</a></h3>
 <p>Anaconda is installed on Cheaha as a family of modules, and does not need to be installed by Researchers. Instead, the most recent version of Anaconda installed on Cheaha may be loaded using the command <code>module load Anaconda3</code>. Other versions may be discovered using the command <code>module avail Anaconda</code>. We recommend always using the latest version.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using <a href="../../open_ondemand/ood_interactive/#jupyter-notebook">Open OnDemand Jupyter Notebook</a> you do not need to use the <code>module load</code> command as part of creating the job.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h3 id="using-anaconda">Using Anaconda<a class="headerlink" href="#using-anaconda" title="Permanent link">&para;</a></h3>
 <p>Anaconda on Cheaha works like it does on any other system, once the module has been loaded, with a couple of important differences in the callouts below.</p>
 <!-- markdownlint-disable MD046 -->
@@ -1931,14 +1939,15 @@
 <!-- markdownlint-disable MD046 -->
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The Cheaha operating system has a version of Python installed. This version is used by <code>python</code> calls when Anaconda has not been loaded.</p>
+<p>The Cheaha operating system has a version of Python installed. This version is used by <code>python</code> calls when Anaconda has not been loaded. This can cause unexpected errors. Be sure you've loaded the Anaconda environment you need before using Python.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>Do not use <code>conda init</code> on Cheaha! Anaconda is managed as a <a href="../modules/">module</a>, including script setup. Using <code>conda init</code> can cause hard-to-diagnose issues with <a href="../../open_ondemand/ood_interactive/">Open OnDemand Interactive Jobs</a>. Please see <a href="https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/2">this ask.ci FAQ</a> for how to undo what <code>conda init</code> does.</p>
+<p>Do not use <code>conda init</code> on Cheaha! Anaconda is managed as a <a href="../modules/">module</a>, including script setup. Using <code>conda init</code> at any point can cause hard-to-diagnose issues with <a href="../../open_ondemand/ood_interactive/">Open OnDemand Interactive Jobs</a>. Please see <a href="https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/2">this ask.ci FAQ</a> for how to undo what <code>conda init</code> does.</p>
+<p>If the Anaconda software instructs you to use <code>conda init</code> while on Cheaha, please ignore it to avoid future issues with <a href="../../open_ondemand/ood_main/">Open OnDemand</a>.</p>
 </div>
 <!-- markdownlint-disable MD046 -->
 
@@ -1957,7 +1966,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2022</span>
       
     
   </small>
