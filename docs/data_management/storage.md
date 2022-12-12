@@ -15,7 +15,7 @@
 
 There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to find the storage platform we provide that best matches your needed use-case.
 
-{{ read_csv('data_management/storage_overview.csv', keep_default_na=False) }}
+{{ read_csv('data_management/res/storage_overview.csv', keep_default_na=False) }}
 
 ## User Space
 
