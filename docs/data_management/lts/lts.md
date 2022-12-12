@@ -139,8 +139,8 @@ Use "%(bucket)s.s3.amazonaws.com" to the target Amazon S3. "%(bucket)s" and "%(l
 DNS-style bucket+hostname:port template for accessing a bucket [%(bucket)s.s3.amazonaws.com]: %(bucket).s3.lts.rc.uab.edu
 
 Encryption password is used to protect your files from reading by unauthorized persons while in transfer to S3
-Encryption password: <leave blank>
-Path to GPG program [/usr/bin/gpg]: $HOME/bin/gpg
+Encryption password: <leave blank or enter password>
+Path to GPG program [/usr/bin/gpg]: <leave blank>
 
 When using secure HTTPS protocol all communication with Amazon S3 servers is protected from 3rd party eavesdropping. This method is slower than plain HTTP, and can only be proxied with Python 2.7 or newer
 Use HTTPS protocol [Yes]: <leave blank>
