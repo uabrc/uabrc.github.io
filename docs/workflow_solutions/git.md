@@ -61,6 +61,14 @@ More information is available at the [official git webbook](https://git-scm.com/
 
 Obtaining repositories is how projects start, or how you might start working on someone else's repository. Substantially more information is available from the [official git webbook](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
 
+#### Start a Local Repository (Init)
+
+Starting a local repository is also known as "initializing" a repository. It can be done with an empty folder, or a folder with existing code. Navigate to the folder and use the following command to initialize a repository.
+
+```bash
+git init
+```
+
 #### Forking
 
 Forking a repository is not a git concept, but a concept of remote repository hosting services like GitHub and GitLab. Forking is cloning a repository from another users account to your own account on GitHub or GitLab.
