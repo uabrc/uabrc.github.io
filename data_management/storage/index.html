@@ -2143,53 +2143,77 @@
 <thead>
 <tr>
 <th align="left">Platform</th>
-<th align="left">Data Use-Case</th>
-<th align="left">Default Quota</th>
-<th align="left">Managed By?</th>
-<th align="left">Cheaha Location</th>
-<th align="left">Access Speed</th>
+<th align="left"><a href="../lts/lts/">Long-term Storage</a></th>
+<th align="left"><a href="./#user-space">User Data and Home Directories</a></th>
+<th align="left"><a href="./#project-directory">Project Directories</a></th>
+<th align="left"><a href="./#network-scratch">Network Scratch</a></th>
+<th align="left"><a href="./#local-scratch">Local Scratch</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><a href="../lts/lts/">Long-term Storage</a></td>
-<td align="left">Rarely changing or immutable files. Data not directly usable in Cheaha jobs</td>
-<td align="left">75 TB</td>
-<td align="left">Lab PI</td>
-<td align="left">Off Cheaha</td>
-<td align="left">Slow</td>
-</tr>
-<tr>
-<td align="left"><a href="./#user-space">User data and home directories</a></td>
+<td align="left">Data Use-Case</td>
+<td align="left">Rarely changing or immutable files. Data not directly usable in Cheaha jobs.</td>
 <td align="left">General-purpose medium- to long-term storage.</td>
-<td align="left">5 TB</td>
-<td align="left">All users</td>
-<td align="left">/home/&lt;blazerid> (<span class="arithmatex">\(HOME) and /data/user/&lt;blazerid\&gt; (\)</span>USER_DATA)</td>
-<td align="left">Fast</td>
-</tr>
-<tr>
-<td align="left"><a href="./#project-directory">Project Directories</a></td>
-<td align="left">Data to be shared among a single or multiple labs</td>
-<td align="left">25 TB</td>
-<td align="left">Lab PI</td>
-<td align="left">/data/project/&lt;project_name></td>
-<td align="left">Fast</td>
-</tr>
-<tr>
-<td align="left"><a href="./#network-scratch">Network Scratch</a></td>
-<td align="left">Temporary files created during analysis. Rolling file deletion over time</td>
-<td align="left">100 TB</td>
-<td align="left">All users</td>
-<td align="left">/scratch/&lt;blazerid> ($USER_SCRATCH)</td>
-<td align="left">Fast</td>
-</tr>
-<tr>
-<td align="left"><a href="./#local-scratch">Local Scratch</a></td>
+<td align="left">Data to be shared among a single or multiple labs.</td>
+<td align="left">Temporary files created during analysis. Rolling file deletion over time.</td>
 <td align="left">Small files created during jobs. Must be deleted at the end of a job.</td>
+</tr>
+<tr>
+<td align="left">Default Quota</td>
+<td align="left">75 TB</td>
+<td align="left">5 TB</td>
+<td align="left">25 TB</td>
+<td align="left">100 TB</td>
 <td align="left">Small</td>
-<td align="left">All users</td>
-<td align="left">$LOCAL_SCRATCH</td>
+</tr>
+<tr>
+<td align="left">Owner</td>
+<td align="left">Lab PI</td>
+<td align="left">Individual Researchers</td>
+<td align="left">Lab PI</td>
+<td align="left">Individual Researchers</td>
+<td align="left">Individual Researchers</td>
+</tr>
+<tr>
+<td align="left">Accessible From</td>
+<td align="left">- Cheaha<br>- Globus</td>
+<td align="left">- Cheaha<br>- Globus</td>
+<td align="left">- Cheaha<br>- Globus</td>
+<td align="left">Cheaha</td>
+<td align="left">Cheaha</td>
+</tr>
+<tr>
+<td align="left">Cheaha Path</td>
+<td align="left">No Path</td>
+<td align="left"><code>/home/&lt;blazerid&gt;</code> (<code>$HOME</code>) and <code>/data/user/&lt;blazerid&gt;</code> (<code>$USER_DATA</code>)</td>
+<td align="left"><code>/data/project/&lt;name&gt;</code></td>
+<td align="left"><code>/scratch/&lt;blazerid&gt;</code> (<code>$USER_SCRATCH</code>)</td>
+<td align="left"><code>/scratch/local</code> (<code>$LOCAL_SCRATCH</code>)</td>
+</tr>
+<tr>
+<td align="left">Read/Write (IO) Speed</td>
+<td align="left">Slow</td>
+<td align="left">Fast</td>
+<td align="left">Fast</td>
+<td align="left">Fast</td>
 <td align="left">Fastest</td>
+</tr>
+<tr>
+<td align="left">Policies</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Data deleted after 30 days.</td>
+<td align="left">Data deleted as needed.</td>
+</tr>
+<tr>
+<td align="left">How to Access</td>
+<td align="left">Contact <a href="../../help/support/">Support</a></td>
+<td align="left">Comes with Cheaha account.</td>
+<td align="left">See <a href="../../help/support/#how-do-i-request-or-change-a-project-space">Request Project Space</a></td>
+<td align="left">Comes with Cheaha account.</td>
+<td align="left">Comes with Cheaha account.</td>
 </tr>
 </tbody>
 </table>
@@ -2408,7 +2432,7 @@ here:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2022</span>
       
     
   </small>
