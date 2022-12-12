@@ -12,7 +12,7 @@
 
 Please visit <https://github.com>.
 
-For UAB Research Computing's GitHub repositories, please see our [Social Media](../education/social_media.md) page.
+For UAB Research Computing's GitHub repositories, please see our [Social Media](../education/training_resources.md#our-social-media-presence) page.
 
 ## GitLab
 
