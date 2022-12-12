@@ -1145,6 +1145,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pytorch-compatibility" class="md-nav__link">
+    PyTorch Compatibility
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1944,6 +1951,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pytorch-compatibility" class="md-nav__link">
+    PyTorch Compatibility
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2061,7 +2075,19 @@
 <p>If a specific version of the CUDA toolkit is needed but not installed,
 send an install request to [support@listserv.uab.edu].</p>
 <h3 id="tensorflow-compatibility">Tensorflow Compatibility<a class="headerlink" href="#tensorflow-compatibility" title="Permanent link">&para;</a></h3>
-<p>To check which module is required for your version of Tensorflow, see the toolkit requirements chart here <a href="https://www.tensorflow.org/install/source#gpu">https://www.tensorflow.org/install/source#gpu</a>.</p>
+<p>To check which CUDA Toolkit module version is required for your version of Tensorflow, see the toolkit requirements chart here <a href="https://www.tensorflow.org/install/source#gpu">https://www.tensorflow.org/install/source#gpu</a>.</p>
+<h3 id="pytorch-compatibility">PyTorch Compatibility<a class="headerlink" href="#pytorch-compatibility" title="Permanent link">&para;</a></h3>
+<p>PyTorch does not maintain a simple compatibility table for CUDA Toolkit versions. Instead, please manually check their <a href="https://pytorch.org/get-started/locally/#start-locally">"get started" page</a> for the latest PyTorch version compatibility, and their <a href="https://pytorch.org/get-started/previous-versions/">"previous versions" page</a> for older PyTorch version compatibility. Assume that a CUDA Toolkit version is not compatible if it is not listed for a specific PyTorch version.</p>
+<p>To use GPUs prior to PyTorch version 1.13 you <em>must</em> select a <code>cudatoolkit</code> version from the pytorch channel when you install PyTorch using Anaconda. It is how PyTorch knows to install a GPU compatible flavor, as opposed to the CPU only flavor. See below for templates of CPU and GPU installs for PyTorch versions prior to 1.13. Be sure to check the compatibility links above for your selected version. Note <code>torchaudio</code> is also available for signal processing.</p>
+<ul>
+<li>CPU Version: <code>conda install pytorch==... torchvision==... -c pytorch</code></li>
+<li>GPU Version: <code>conda install pytorch==... torchvision==... cudatoolkit=... -c pytorch</code></li>
+</ul>
+<p>For versions of PyTorch 1.13 and newer, use the following template instead.</p>
+<ul>
+<li>CPU Version: <code>conda install pytorch==... torchvision==... cpuonly -c pytorch</code></li>
+<li>GPU Version: <code>conda install pytorch==... torchvision==... pytorch-cuda=... -c pytorch -c nvidia</code></li>
+</ul>
 <h2 id="reviewing-gpu-jobs">Reviewing GPU Jobs<a class="headerlink" href="#reviewing-gpu-jobs" title="Permanent link">&para;</a></h2>
 <p>As with all jobs, use <a href="../job_management/#reviewing-past-jobs-with-sacct"><code>sacct</code></a> to review GPU jobs. Quantity of GPUs may be reviewed using the <code>reqtres</code> and <code>alloctres</code> <a href="../job_management/#sacct-fields">fields</a>.</p>
 
@@ -2070,7 +2096,7 @@ send an install request to [support@listserv.uab.edu].</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2022</span>
       
     
   </small>
