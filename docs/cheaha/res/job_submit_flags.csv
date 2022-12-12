@@ -11,7 +11,7 @@ Flag,Short,Environment Variable,Description,sbatch,srun
 ,,`SLURM_CPUS_ON_NODE`,Number of cpus available on this node.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_CPUS_ON_NODE),[srun](https://slurm.schedmd.com/srun.html#OPT_SLURM_CPUS_ON_NODE)
 `--mem`,,`SLURM_MEM_PER_NODE`,Amount of RAM needed per node in MB. Can specify 16 GB using 16384 or 16G.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_mem),[srun](https://slurm.schedmd.com/srun.html#OPT_SLURM_CPUS_ON_NODE)
 `--gres`,,`SBATCH_GRES`,Used to request GPUs per node. For 2 GPUs per node use `--gres=gpu:2`.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_gres),[srun](https://slurm.schedmd.com/srun.html#OPT_gres)
-`--array`,,`SBATCH_ARRAY_INX`,Comma-separated list of similar tasks to run. More details below.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_array),
-,,`SBATCH_ARRAY_JOB_ID`,Parent Job ID number of array task. Same for all array tasks submitted with same script. May differ from `SLURM_JOB_ID` depending on array task index.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_JOB_ID),
-,,`SLURM_ARRAY_TASK_COUNT`,Total number of array tasks.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_ARRAY_TASK_COUNT),
-,,`SLURM_ARRAY_TASK_ID`,Current array task index.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_ARRAY_TASK_ID),
+`--array`,,`SBATCH_ARRAY_INX`,Comma-separated list of similar tasks to run. More details below.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_array),n/a
+,,`SBATCH_ARRAY_JOB_ID`,Parent Job ID number of array task. Same for all array tasks submitted with same script. May differ from `SLURM_JOB_ID` depending on array task index.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_JOB_ID),n/a
+,,`SLURM_ARRAY_TASK_COUNT`,Total number of array tasks.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_ARRAY_TASK_COUNT),n/a
+,,`SLURM_ARRAY_TASK_ID`,Current array task index.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_ARRAY_TASK_ID),n/a
