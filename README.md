@@ -19,6 +19,12 @@ python -u sstatus.py -c partitions > partitions.csv
 python -u sstatus.py -c qos > qos.csv
 ```
 
+### Generating and Maintaining Hardware tables
+
+The repo for the main hardware table is located at <https://gitlab.rc.uab.edu/rc-data-science/data-science-internal/cluster-fabric-docs>.
+
+To use follow the readme at the repo.
+
 ### Useful Regex
 
 #### Checking Internal Links are Relative

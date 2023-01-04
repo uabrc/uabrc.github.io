@@ -1,6 +1,6 @@
 # Getting Started
 
-Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing. We offer a user-friendly portal website [Open OnDemand](#open-ondemand) with graphical interfaces to the most common features, all in one place.
+Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing of research computing software. We offer a user-friendly portal website Open OnDemand with graphical interfaces to the most common features, all in one place. Read on to learn more about our resources and how to access them.
 
 ## Getting Help
 
@@ -8,32 +8,21 @@ Please [Contact Us](../index.md#contact-us) with requests for support. Tips on g
 
 ## Account Creation
 
-### UAB Users
-
-Please visit [https://rc.uab.edu](https://rc.uab.edu) to create an account. More information can be found [here](../account_management/cheaha_account.md).
-
-### Outside Collaborator
-
-Collaborators outside UAB will need sponsorship from a current UAB researcher through XIAS. The UAB researcher will need to create a project to associate the outside collaborator with and then add that user to the project. The outside collaborator will then be able to sign up to use Cheaha. Use the following instructions to help set up a XIAS account:
-
-For the UAB sponsor:
-
-1. [Create a XIAS Site](../account_management/xias/pi_site_management.md)
-2. [Add the external collaborator](../account_management/xias/pi_guest_management.md)
-
-For the external collaborator after the sponsor has completed the previous instructions:
-
-1. [Create an account and access Cheaha](../account_management/xias/guest_instructions.md)
+Please visit our [Account Creation page](../account_management/cheaha_account.md) for detailed instructions on creating a Cheaha account.
 
 ## Accessing Cheaha
 
-The primary method for accessing Cheaha is through our online portal website, Open OnDemand, available at [https://rc.uab.edu](https://rc.uab.edu). We have more detailed documentation on using Open OnDemand located [further in](./open_ondemand/ood_main.md).
+The primary method for accessing Cheaha is through our online portal website, Open OnDemand. To login to our portal, navigate to our <https://rc.uab.edu>, which does not require an on-campus connection nor the UAB Campus VPN. You should be presented with UAB's Single Sign-on page, which will require use of [Duo 2FA](https://www.uab.edu/it/home/security/2-factor). Login using the appropriate credentials laid out at our [Account Creation page](../account_management/cheaha_account.md).
 
-The portal features a [file browser](./open_ondemand/ood_files.md), [job composer](./open_ondemand/ood_jobs.md) and various [interactive applications](./open_ondemand/ood_interactive.md) including a remote desktop, Jupyter, RStudio and MATLAB, among others. There is also a [terminal](./open_ondemand/ood_main.md#shell-access) usable directly in the browser for very basic functions such as file management.
+[SSH](../uab_cloud/remote_access.md#command-line-via-ssh) may be used to access Cheaha. Connect to host `cheaha.rc.uab.edu` on port `22`.
+
+## Open OnDemand Features
+
+The Open OnDemand portal features a [file browser](./open_ondemand/ood_files.md), [job composer](./open_ondemand/ood_jobs.md) and various [interactive applications](./open_ondemand/ood_interactive.md) including a remote desktop, Jupyter, RStudio and MATLAB, among others. There is also a [terminal](./open_ondemand/ood_main.md#shell-access) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](./open_ondemand/ood_main.md).
 
 ## Hardware
 
-A full list of the available hardware can be found [furthur in](./hardware.md).
+A full list of the available hardware can be found on our [hardware page](./hardware.md).
 
 ### Storage
 
