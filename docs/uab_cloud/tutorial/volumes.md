@@ -1,11 +1,17 @@
 # Volume Setup and Tutorial
 
-These instructions are intended for researchers who want to setup a persistent volume for use across instances. To follow these instructions you'll need to have already setup an [Instance](./instance_setup_basic.md).
+These instructions are intended for researchers who want to setup a persistent volume for use across instances. To follow these instructions you'll need to have already setup an [Instance](instances.md).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
     If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Virtual machines are disposable! If you get stuck at any point, or things don't seem like they're working as expected, etc., feel free to delete the instance and start over.
 <!-- markdownlint-enable MD046 -->
 
 ## Creating a Volume
@@ -22,7 +28,7 @@ These instructions are intended for researchers who want to setup a persistent v
 
 4. Fill out the dialog box.
 
-    1. Enter a "Volume Name". See [Naming Conventions](introduction.md#naming-conventions).
+    1. Enter a "Volume Name". See [Naming Conventions](../index.md#naming-conventions).
     2. Enter a "Description".
     3. Select "No source, empty volume" in the "Volume Source" drop-down box to create an empty volume.
     4. Select "\_\_DEFAULT\_\_" in the "Type" drop down box.
@@ -189,5 +195,6 @@ Click "Delete Volume" again to delete the volume permanently.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
-    It will not be possible to delete a volume if it has an associated [volume snapshot](snapshots.md). The snapshot will need to be deleted first.
+
+    It will not be possible to delete a volume if it has an associated [volume snapshot](../snapshots.md). The snapshot will need to be deleted first.
 <!-- markdownlint-enable MD046 -->

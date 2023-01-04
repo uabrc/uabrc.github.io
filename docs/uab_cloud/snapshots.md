@@ -8,14 +8,14 @@ An instance snapshot is referred to as an image. Volume snapshots do not have a 
 
 ### Creating an Image
 
-Images are a helpful way to store the state of an instance for later use. Repeating tedious tasks like [Software Installs](./installing_software.md) can be avoided by taking a snapshot at a known-good point during set up of an instance environment, saving time in the future if something goes wrong. Images may also be shared with other users to simplify workflows and onboarding new collaborators. To create an image please follow the steps below. We assume you are already logged in at [cloud.rc](./introduction.md)
+Images are a helpful way to store the state of an instance for later use. Repeating tedious tasks like [Software Installs](./installing_software.md) can be avoided by taking a snapshot at a known-good point during set up of an instance environment, saving time in the future if something goes wrong. Images may also be shared with other users to simplify workflows and onboarding new collaborators. To create an image please follow the steps below. We assume you are already logged in at [cloud.rc](index.md)
 
 1. Navigate to "Compute" and then "Instances" in the left-hand navigation menu to open the "Instances" page.
 2. To take a snapshot of a particular instance, click the drop down menu under the "Actions" column in the row of the desired instance. Then click "Create Snapshot".
 
     ![!instances table with create snapshot button highlighted](./images/create_snapshot_001.png)
 
-3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot". See [Naming Conventions](introduction.md#naming-conventions).
+3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot". See [Naming Conventions](index.md#naming-conventions).
 
     ![!create snapshot dialog](./images/create_snapshot_002.png)
 
@@ -31,14 +31,14 @@ Images are a helpful way to store the state of an instance for later use. Repeat
 
 ### Creating an Instance from an Image
 
-To create an instance from an image, follow the directions below, assuming you have [Created an Image](#creating-an-instance-snapshot).
+To create an instance from an image, follow the directions below, assuming you have [Created an Image](#creating-an-image).
 
 1. Navigate to "Compute" and then "Instances" in the left-hand navigation menu to open the "Instances" page.
 2. Click the "Launch Instance" button.
 
     ![!instances table with launch instance button highlighted](./images/use_snapshot_001.png)
 
-3. A dialog box will open. Follow the instructions at [Basic Instance Setup](./instance_setup_basic.md) until you get to the "Source" tab.
+3. A dialog box will open. Follow the instructions at [Basic Instance Setup](tutorial/instances.md) until you get to the "Source" tab.
 4. In the "Source" tab, select "Instance Snapshot" under the "Select Boot Source" drop down menu.
 
     ![!launch instance dialog on source tab with instance snapshot selected in select boot source drow down](./images/use_snapshot_002.png)
@@ -56,15 +56,7 @@ To create an instance from an image, follow the directions below, assuming you h
         ![!example of flavors too small to hold an instance snapshot](./images/use_snapshot_004.png)
     <!-- markdownlint-enable MD046 -->
 
-7. Continue following the instructions at [Basic Instance Setup](./instance_setup_basic.md) to start the instance.
-
-### Sharing Instance Snapshots
-
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction.
-<!-- markdownlint-enable MD046 -->
+7. Continue following the instructions at [Basic Instance Setup](tutorial/instances.md) to start the instance.
 
 ### Deleting an Image
 
@@ -78,35 +70,27 @@ Click "Delete Image" again to delete the image permanently.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
-    You will not be able to delete the image if it has an associated [volume snapshot](#volume-snapshots) or [volume](volume_setup_basic.md). They will need to be removed or deleted first.
+    You will not be able to delete the image if it has an associated [volume snapshot](#volume-snapshots) or [volume](tutorial/volumes.md). They will need to be removed or deleted first.
 <!-- markdownlint-enable MD046 -->
 
 ## Volume Snapshots
 
 ### Creating a Volume Snapshot
 
-Volume snapshots are a helpful way to store the state of a volume for later use. They are used as the backing for [Images, or Instance Snapshots](#images-or-instance-snapshots), and have the same benefits. Most volume snapshots are created as part of an instance, but to create a volume snapshot directly please follow the steps below. We assume you are already logged in at [cloud.rc](./introduction.md)
+Volume snapshots are a helpful way to store the state of a volume for later use. They are used as the backing for [Images, or Instance Snapshots](#images-or-instance-snapshots), and have the same benefits. Most volume snapshots are created as part of an instance, but to create a volume snapshot directly please follow the steps below. We assume you are already logged in at [cloud.rc](index.md)
 
 1. Navigate to "Volumes" and then "Volumes" in the left-hand navigation menu to open the "Volumes" page.
 2. To take a snapshot of a particular volume, click the drop down menu under the "Actions" column in the row of the desired volume. Then click "Create Snapshot".
 
     ![!instances table with create snapshot button highlighted](./images/create_volume_snapshot_001.png)
 
-3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot". See [Naming Conventions](introduction.md#naming-conventions).
+3. A dialog box will open. Fill in the "Snapshot Name" with a memorable name suitable for future reference, then click "Create Snapshot". See [Naming Conventions](index.md#naming-conventions).
 
     ![!create snapshot dialog](./images/create_volume_snapshot_002.png)
 
 4. You will be taken to the "Volume Snapshots" page, where your new snapshot will appear in its own row in the table.
 
     ![!volume snapshots page showing new snapshot](./images/create_volume_snapshot_003.png)
-
-### Sharing Volume Snapshots
-
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction.
-<!-- markdownlint-enable MD046 -->
 
 ### Deleting a Volume Snapshot
 

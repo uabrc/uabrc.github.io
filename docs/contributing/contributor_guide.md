@@ -2,12 +2,6 @@
 
 We welcome contributions from our community. To ensure a high-quality documentation experience, we have some guidelines for contributors who wish to create.
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    This contributor guide is a work in progress and may change and develop over time. Please bear with us, and feel free to offer suggestions.
-<!-- markdownlint-enable MD046 -->
-
 ## Prerequisites
 
 We are using Visual Studio Code (VSCode) for development with the following extensions installed. While VSCode is not required, it can help with automating formatting, linting and Anaconda environment management. VSCode may be obtained from [Visual Studio Code](https://code.visualstudio.com/) and documentation is available at [VSCode: Docs](https://code.visualstudio.com/docs).

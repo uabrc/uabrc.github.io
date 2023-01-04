@@ -8,6 +8,12 @@ Networking setup should be a one-time setup. While Floating IPs fall under the N
     If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.
 <!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Virtual machines are disposable! If you get stuck at any point, or things don't seem like they're working as expected, etc., feel free to delete the instance and start over.
+<!-- markdownlint-enable MD046 -->
+
 ## Networks
 
 ### Creating a Network
@@ -28,7 +34,7 @@ Networking setup should be a one-time setup. While Floating IPs fall under the N
 4. Fill out the dialog box. Only the "Network" tab is important, we
     will create a subnet as a separate step.
 
-    1. Enter a "Network Name". See [Naming Conventions](introduction.md#naming-conventions).
+    1. Enter a "Network Name". See [Naming Conventions](../index.md#naming-conventions).
 
     2. Leave "Enable Admin State" checked.
 
@@ -95,7 +101,7 @@ Click "Delete Network" again to delete the network permanently.
 
     1. The "Subnet" tab.
 
-        1. Enter a "Subnet Name". See [Naming Conventions](introduction.md#naming-conventions).
+        1. Enter a "Subnet Name". See [Naming Conventions](../index.md#naming-conventions).
 
         2. Enter `192.168.0.0/24` as the "Network Address". The trailing `/24` allocates the entire range from `192.168.0.0` through `192.168.0.255` to the subnet.
 
@@ -184,7 +190,7 @@ To follow these directions for creating a router, a [Network](#creating-a-networ
 
 4. Fill out the dialog box.
 
-    1. Enter a "Router Name". See [Naming Conventions](introduction.md#naming-conventions).
+    1. Enter a "Router Name". See [Naming Conventions](../index.md#naming-conventions).
     2. Leave "Enable Admin State" checked.
     3. Select "uab-campus" in the "External Network" drop down box.
     4. Leave the "Availability Zone Hints" box empty.
@@ -288,4 +294,4 @@ Click "Release Floating IP" again to release the floating IP.
 
 ## Continuing the Tutorial
 
-Now that you have set up a [Network](network_setup_basic.md), the next step is to apply [Security Policies](security_setup_basic.md) to be able to communicate with it. To continue the tutorial, please visit [Security Policies](security_setup_basic.md) next.
+Now that you have set up a [Network](networks.md), the next step is to apply [Security Policies](security.md) to be able to communicate with it. To continue the tutorial, please visit [Security Policies](security.md) next.
