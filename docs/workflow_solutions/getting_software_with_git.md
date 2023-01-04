@@ -8,7 +8,7 @@ If you are here because you need a place to collaborate with others on a softwar
 
 ## Important Note on Terms
 
-On most pages in this documentation, we use "local" to refer to your laptop or desktop computer, and "remote" to refer to [Cheaha](../cheaha/getting_started.md) or a [Cloud.rc](../uab_cloud/index.md) virtual machine.
+On most pages in this documentation, we use "local" to refer to your laptop or desktop computer, and "remote" to refer to [Cheaha](../cheaha/index.md) or a [Cloud.rc](../uab_cloud/index.md) virtual machine.
 
 When dealing with Git and repository hosting services like GitHub and GitLab we use remote to refer to repositories that are on a repository hosting site like GitHub or GitLab, and local to refer to repositories that are not on a repository hosting site.
 
