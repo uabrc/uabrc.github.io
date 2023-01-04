@@ -1,6 +1,6 @@
 # Workflow Solutions for Research Software
 
-In this section are a number of pages describing solutions for composing and managing research software workflows.
+In this section are pages describing solutions for composing and managing research software workflows.
 
 - [Using the Shell](shell.md) for interacting with text terminals (TTY) and the shell in Linux.
 - [Using Anaconda](using_anaconda.md) for package management and common scientific software and libraries.
