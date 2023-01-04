@@ -141,7 +141,7 @@ nav:
       - NSF Cyberinfrastructure: national_ci/nsf_access.md
       - NIH Cyberinfrastructure: national_ci/nih.md
   - Grants & Contracts:
-      - Overview: grants/overview.md
+      - grants/index.md
       - Facilities and Plan: grants/facilities.md
       - Budgeting: grants/budgets.md
       - Descriptions: grants/publications.md
