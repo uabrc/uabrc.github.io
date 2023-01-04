@@ -230,7 +230,7 @@ Matlab has the ability to interoperate with Python from within Matlab. The offic
 
 This section is dedicated to using this feature with Anaconda on Cheaha. To use Python contained in an Anaconda Environment within Matlab, please use the following steps.
 
-1. Create an [HPC Interactive Desktop Job](#interactive-apps) using [Open OnDemand](ood_main.md).
+1. Create an [HPC Interactive Desktop Job](#interactive-apps) using [Open OnDemand](index.md).
 2. Open a terminal in that job. The following steps should all be run in this terminal unless otherwise specified.
 3. [Load the Anaconda Module](../software/software.md#anaconda-on-cheaha).
 4. [Create an Environment](../../workflow_solutions/using_anaconda.md#using-anaconda) in Anaconda with the packages needed.

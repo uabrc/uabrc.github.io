@@ -190,7 +190,7 @@ For more details on using `srun` please see the [official documentation](https:/
 
 ## Graphical Interactive Jobs
 
-It is highly recommended to use the [Open OnDemand](../open_ondemand/ood_main.md) web portal for [interactive apps](../open_ondemand/ood_interactive.md). Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha. A terminal is also available through Open OnDemand.
+It is highly recommended to use the [Open OnDemand](../open_ondemand/index.md) web portal for [interactive apps](../open_ondemand/ood_interactive.md). Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha. A terminal is also available through Open OnDemand.
 
 It is possible to use other remote desktop software, such as VNC, to start and interact with jobs. These methods are not officially supported and we do not have the capacity to help with remote desktop connections. Instead, please consider switching your workflow to use the [Open OnDemand HPC Desktop](../open_ondemand/ood_interactive.md#my-interactive-sessions). If you are unable to use this method, please contact [Support](../../help/support.md).
 

@@ -18,7 +18,7 @@ The primary method for accessing Cheaha is through our online portal website, Op
 
 ## Open OnDemand Features
 
-The Open OnDemand portal features a [file browser](./open_ondemand/ood_files.md), [job composer](./open_ondemand/ood_jobs.md) and various [interactive applications](./open_ondemand/ood_interactive.md) including a remote desktop, Jupyter, RStudio and MATLAB, among others. There is also a [terminal](./open_ondemand/ood_main.md#shell-access) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](./open_ondemand/ood_main.md).
+The Open OnDemand portal features a [file browser](open_ondemand/ood_files.md), [job composer](open_ondemand/ood_jobs.md) and various [interactive applications](open_ondemand/ood_interactive.md) including a remote desktop, Jupyter, RStudio and MATLAB, among others. There is also a [terminal](open_ondemand/index.md#shell-access) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](open_ondemand/index.md).
 
 ## Hardware
 

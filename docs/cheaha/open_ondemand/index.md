@@ -8,7 +8,7 @@ You will find system-wide messages from admins at the tope of the page (red outl
 
 In the middle of the page (green outline), you will see a Message of the Day containing the email address for support if you are having any issues with Cheaha. There are also links to our Acceptable Use Policy as well as links to our documentation.
 
-Lastly, there is a table with a list of available SLURM partitions on Cheaha with their max runtime and number of compute nodes per job as well as their priority. Use this table to plan job requests based on your needed computational resources.
+Lastly, there is a table with a list of available SLURM partitions (blue outline) on Cheaha with their max runtime and number of compute nodes per job as well as their priority. Use this table to plan job requests based on your needed computational resources.
 
 ## Toolbar
 
@@ -30,3 +30,17 @@ To use a shell terminal in Cheaha through OOD, click `Clusters >> >_Cheaha Shell
 
     Using the shell terminal in this way puts you on the login node. Do not run any compute tasks on the login node. Request a compute node first!
 <!-- markdownlint-enable MD046 -->
+
+## File Browser
+
+For more information on using the Open OnDemand file browser please see our [File Browser](ood_files.md) page.
+
+## Interactive Apps
+
+We have several interactive applications available, and making your own interactive apps is also possible. For our current offerings please see our [Interactive Apps](ood_interactive.md) page.
+
+## Job Composer
+
+Open OnDemand offers a SLURM Job Composer that can be helpful for writing and starting certain kinds of jobs without a terminal. Note that while this method is useful for single and simple jobs, it is less suitable for jobs at large scales or jobs that need to be shared with collaborators. The Job Composer may also be used to monitor your actively running jobs without a terminal.
+
+Please see our [Job Composer](images/ood_active_jobs.png) page for more information.
