@@ -112,6 +112,25 @@ html .md-footer-meta.md-typeset a.supportemail {
     mask-image: var(--md-admonition-icon--warning);
 }
 
+/* construction admonition */
+.md-typeset .admonition.announcement,
+.md-typeset details.announcement {
+    border-color: #64dd17;
+}
+
+.md-typeset .announcement>.admonition-title,
+.md-typeset .announcement>summary {
+    background-color: rgba(100, 221, 23, 0.1);
+    border-color: #64dd17;
+}
+
+.md-typeset .announcement>.admonition-title::before,
+.md-typeset .announcement>summary::before {
+    background-color: #64dd17;
+    -webkit-mask-image: var(--md-admonition-icon--warning);
+    mask-image: var(--md-admonition-icon--warning);
+}
+
 /* lightgallery and image tweaks */
 
 /* image width */

@@ -65,7 +65,21 @@ send an install request to [support@listserv.uab.edu].
 
 ### Tensorflow Compatibility
 
-To check which module is required for your version of Tensorflow, see the toolkit requirements chart here <https://www.tensorflow.org/install/source#gpu>.
+To check which CUDA Toolkit module version is required for your version of Tensorflow, see the toolkit requirements chart here <https://www.tensorflow.org/install/source#gpu>.
+
+### PyTorch Compatibility
+
+PyTorch does not maintain a simple compatibility table for CUDA Toolkit versions. Instead, please manually check their ["get started" page](https://pytorch.org/get-started/locally/#start-locally) for the latest PyTorch version compatibility, and their ["previous versions" page](https://pytorch.org/get-started/previous-versions/) for older PyTorch version compatibility. Assume that a CUDA Toolkit version is not compatible if it is not listed for a specific PyTorch version.
+
+To use GPUs prior to PyTorch version 1.13 you _must_ select a `cudatoolkit` version from the pytorch channel when you install PyTorch using Anaconda. It is how PyTorch knows to install a GPU compatible flavor, as opposed to the CPU only flavor. See below for templates of CPU and GPU installs for PyTorch versions prior to 1.13. Be sure to check the compatibility links above for your selected version. Note `torchaudio` is also available for signal processing.
+
+- CPU Version: `conda install pytorch==... torchvision==... -c pytorch`
+- GPU Version: `conda install pytorch==... torchvision==... cudatoolkit=... -c pytorch`
+
+For versions of PyTorch 1.13 and newer, use the following template instead.
+
+- CPU Version: `conda install pytorch==... torchvision==... cpuonly -c pytorch`
+- GPU Version: `conda install pytorch==... torchvision==... pytorch-cuda=... -c pytorch -c nvidia`
 
 ## Reviewing GPU Jobs
 

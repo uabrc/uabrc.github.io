@@ -93,11 +93,24 @@ Pandoc is a tool for transforming various markup and markdown formatted document
 
 3. Start the job and use RStudio and `knitr` as expected.
 
+#### Starting With a Clean Session to Avoid Errors
+
+By default, RStudio loads the most recently opened project at startup and restores the `.RData` file into the workspace. If you only work on a single project, this may be helpful. If you frequently change projects then these default settings can create difficult-to-diagnose errors, or you may inadvertently alter a project by adding incorrect packages, for example.
+
+To reduce the risk of these kinds of errors, uncheck the highlighted boxes below in the RStudio Options menu under the "General" selection.
+
+- Restore most recently opened project at startup
+- Restore .RData into workspace at startup
+
+![!image showing boxes to uncheck highlighted with red markers](images/ood_rstudio_server_clean_session.png)
+
 ### Jupyter Notebook
 
 Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
 
 ![!Jupyter Notebook job request form.](./images/ood_jupyter_notebook_form.png)
+
+Jupyter Notebooks are commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-anaconda-environments) below before continuing here.
 
 To adjust the environment, please use the Environment Setup box to load modules. For GPU applications it is generally necessary to load one of our `cuda##.#/toolkit` modules, and possibly a `cuDNN` module. These are required for `tensorflow`, `keras` and `pytorch`. Use `module spider cuda` and `module spider cudnn` to view the list of appropriate modules. An example is shown below.
 
@@ -107,6 +120,12 @@ To adjust the environment, please use the Environment Setup box to load modules.
 !!! note
 
     If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you are not able to see your environment, you may need to install the `ipykernel` package. It is required for Jupyter to recognize your environment. See [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#packages-for-jupyter) for more information.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
@@ -120,6 +139,10 @@ To adjust the environment, please use the Environment Setup box to load modules.
 
     Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Please do not activate conda environments in the Environment Setup field.
 <!-- markdownlint-enable MD046 -->
+
+### Working with Anaconda Environments
+
+For information on working with Anaconda environments please see our [Using Anaconda page](../../workflow_solutions/using_anaconda.md). The please review our [Cheaha-specific Anaconda page](../software/software.md#anaconda-on-cheaha) for important tips and how to avoid common pitfalls.
 
 #### Extra Jupyter Arguments
 
@@ -184,6 +207,10 @@ To create a new environment, click the `+` button at the top of the `Current env
 <!-- markdownlint-enable MD046 -->
 
 After successfully creating your environment, navigate to the Files tab. You can create a new notebook using the `New` dropdown menu in the top right. Select your virtual environment of choice, and a notebook will be created and opened.
+
+#### Help GPU is not Available with TensorFlow or PyTorch
+
+If you are using Jupyter with TensorFlow or PyTorch and no GPU is found, please see our SLURM GPU page sections on [TensorFlow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
 
 ### Matlab
 

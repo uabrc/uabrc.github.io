@@ -8,6 +8,12 @@ These instructions show you how to prepare to use SSH with your instances. At a 
     If you are viewing this page as part of the cloud.rc tutorial, please follow the steps in order from top to bottom. Ignore any sections on deleting or releasing resources unless you need to correct a mistake.
 <!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Virtual machines are disposable! If you get stuck at any point, or things don't seem like they're working as expected, etc., feel free to delete the instance and start over.
+<!-- markdownlint-enable MD046 -->
+
 ## Creating a Security Group
 
 Security Groups are used to set rules for how external devices can connect to your instances. Here we will create an SSH Security Group using a method that can be applied to other types of connections. Applications you develop may need other ports opened, so you may need to create additional security groups to handle those. Security groups may be reused across multiple instances.
@@ -63,7 +69,7 @@ Security Groups are used to set rules for how external devices can connect to yo
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you plan to [Install Server Software](installing_software.md#installing-server-software), you will need to revisit this section to set up additional security groups for server ports.
+    If you plan to [Install Server Software](../installing_software.md#installing-server-software), you will need to revisit this section to set up additional security groups for server ports.
 <!-- markdownlint-enable MD046 -->
 
 ## Deleting a Security Group
@@ -84,13 +90,13 @@ Click "Delete Security Group" again to delete the security group permanently.
 
 ## Creating a Key pair
 
-A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](./remote_access.md#install-an-ssh-client) on your local machine.
+A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](../remote_access.md#install-an-ssh-client) on your local machine.
 
 Key Pairs are security devices used to authenticate and connect to a remote machine, like Cheaha or cloud.rc instances, and use [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) to encrypt the connection. As the name suggests, there are two parts: a public key which is placed on the remote machine, and a private key which is kept secret on your personal machine.
 
 While key pairs can be reused between instances, we highly recommend using a new key pair with each instance to minimize risk if a private key becomes compromised. See [Good Practices](#good-practices) for more information.
 
-There are a number of pitfalls and potential issues that can arise during this process. For information on these pitfalls and for more information on managing key pairs, see [Managing Keys](remote_access.md#managing-keys).
+There are a number of pitfalls and potential issues that can arise during this process. For information on these pitfalls and for more information on managing key pairs, see [Managing Keys](../remote_access.md#managing-keys).
 
 There are two ways to create a key pair:
 
@@ -119,7 +125,7 @@ Using a password protected Key Pair is highly recommended for additional securit
 
 4. Fill out the dialog box.
 
-    1. Enter a "Key Pair Name". See [Naming Conventions](introduction.md#naming-conventions).
+    1. Enter a "Key Pair Name". See [Naming Conventions](../index.md#naming-conventions).
 
     2. Select "SSH Key" in the "Key Type" drop down box.
 
@@ -137,17 +143,17 @@ Using a password protected Key Pair is highly recommended for additional securit
 
         ![!Key Pairs page. The Key Pairs table has one entry labeled my_key_pair.](./images/key_pairs_004.png)
 
-6. To add the private key on your local machine please see "Add key" under [Add a Private Key](./remote_access.md#add-a-private-key).
+6. To add the private key on your local machine please see "Add key" under [Add a Private Key](../remote_access.md#add-a-private-key).
 
 ### Generating a Key Pair Locally
 
-To generate a key pair, see instructions located at [Generating Key Pairs](./remote_access.md#generating-key-pairs).
+To generate a key pair, see instructions located at [Generating Key Pairs](../remote_access.md#generating-key-pairs).
 
 1. Click "Import Public Key" to open a dialog box.
 
 2. Fill out the dialog box.
 
-    1. Enter a "Key Pair Name". See [Naming Conventions](introduction.md#naming-conventions).
+    1. Enter a "Key Pair Name". See [Naming Conventions](../index.md#naming-conventions).
     2. Select "SSH Key" in the "Key Type" drop-down box.
     3. Click "Browse..." to upload a public key file from your custom key pair **OR** copy-paste the content of that key file into the "Public Key" box.
 
@@ -161,7 +167,7 @@ To generate a key pair, see instructions located at [Generating Key Pairs](./rem
 
 ### Using the Key Pair
 
-Please see [SSH Into the Instance](./instance_setup_basic.md#ssh-into-the-instance) for more information on using the Key Pair.
+Please see [SSH Into the Instance](instances.md#ssh-into-the-instance) for more information on using the Key Pair.
 
 ### Revoking a Key Pair
 
@@ -183,8 +189,8 @@ Revoking a key pair from cloud.rc is simple. First, log on to the interface.
 
 3. Find the key pair you wish to revoke and click the "Delete Key Pair" button in that row.
 
-4. Optionally, [Remove the Private Key](./remote_access.md#remove-a-private-key) from your local machine. This step is not necessary to ensure security, but can help maintain a clean environment.
+4. Optionally, [Remove the Private Key](../remote_access.md#remove-a-private-key) from your local machine. This step is not necessary to ensure security, but can help maintain a clean environment.
 
 ## Continuing the Tutorial
 
-Now that you've set up a [Network](network_setup_basic.md) and [Security Policies](security_setup_basic.md), you're ready to create a virtual machine (VM) [Instance](instance_setup_basic.md) to work with. To continue the tutorial, please visit [Instances](instance_setup_basic.md) next.
+Now that you've set up a [Network](networks.md) and [Security Policies](security.md), you're ready to create a virtual machine (VM) [Instance](instances.md) to work with. To continue the tutorial, please visit [Instances](instances.md) next.
