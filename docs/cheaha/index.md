@@ -20,6 +20,22 @@ The primary method for accessing Cheaha is through our online portal website, Op
 
 The Open OnDemand portal features a [file browser](open_ondemand/ood_files.md), [job composer](open_ondemand/ood_jobs.md) and various [interactive applications](open_ondemand/ood_interactive.md) including a remote desktop, Jupyter, RStudio and MATLAB, among others. There is also a [terminal](open_ondemand/index.md#shell-access) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](open_ondemand/index.md).
 
+## Slurm
+
+Slurm is our job queueing software used for submitting any number of job scripts to run on the cluster. We have documentation on how to set up job scripts and submit them [further in](./slurm/index.md). More complete documentation is available at <https://slurm.schedmd.com/>.
+
+## Software
+
+A large variety of software is available on Cheaha as modules. To view and use these modules see [the following documentation](./software/modules.md).
+
+For new software installation, please try searching [Anaconda](../workflow_solutions/using_anaconda.md) for packages first. If you still need help, please [send a support ticket](../help/support.md)
+
+### Conda Packages
+
+A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see our [Anaconda page](./software/software.md#anaconda-on-cheaha).
+
+If the software installation instructions tell you to use either `conda install` or `pip install` commands, the software and its dependencies can be installed using a virtual environment.
+
 ## Hardware
 
 A full list of the available hardware can be found on our [hardware page](./hardware.md).
@@ -61,21 +77,5 @@ You are on the login node if:
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you are doing more than minor file management, you will need to use a compute node. Please request an interactive session at [https://rc.uab.edu](https://rc.uab.edu) or through a job submitted using [Slurm](./slurm/introduction.md).
+    If you are doing more than minor file management, you will need to use a compute node. Please request an interactive session at [https://rc.uab.edu](https://rc.uab.edu) or through a job submitted using [Slurm](slurm/index.md).
 <!-- markdownlint-enable MD046 -->
-
-## Slurm
-
-Slurm is our job queueing software used for submitting any number of job scripts to run on the cluster. We have documentation on how to set up job scripts and submit them [further in](./slurm/introduction.md). More complete documentation is available at <https://slurm.schedmd.com/>.
-
-## Software
-
-A large variety of software is available on Cheaha as modules. To view and use these modules see [the following documentation](./software/modules.md).
-
-For new software installation, please try searching [Anaconda](../workflow_solutions/using_anaconda.md) for packages first. If you still need help, please [send a support ticket](../help/support.md)
-
-### Conda Packages
-
-A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see our [Anaconda page](./software/software.md#anaconda-on-cheaha).
-
-If the software installation instructions tell you to use either `conda install` or `pip install` commands, the software and its dependencies can be installed using a virtual environment.

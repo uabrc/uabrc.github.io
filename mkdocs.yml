@@ -72,6 +72,7 @@ plugins:
         uab_cloud/introduction.md: uab_cloud/index.md
         cheaha/getting_started.md: cheaha/index.md
         cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/index.md
+        cheaha/slurm/introduction.md: cheaha/slurm/index.md
 
 nav:
   - Home: index.md
@@ -80,7 +81,7 @@ nav:
       - Cheaha Account: account_management/cheaha_account.md
       - Cloud.rc Account: account_management/cloud_rc_account.md
       - Gitlab Account: account_management/gitlab_account.md
-      - External Collaborator Accounts (XIAS):
+      - External Collaborator (XIAS) Accounts:
           - account_management/xias/index.md
           - "For PIs - (1) Managing Projects & Sites": account_management/xias/pi_site_management.md
           - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
@@ -99,26 +100,26 @@ nav:
       - workflow_solutions/index.md
       - Using the Shell: workflow_solutions/shell.md
       - Using Anaconda: workflow_solutions/using_anaconda.md
-      - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
       - Using Git: workflow_solutions/git.md
-      - Getting Containers: workflow_solutions/getting_containers.md
       - Software Collaboration with GitHub and GitLab: workflow_solutions/getting_software_with_git.md
+      - Getting Containers: workflow_solutions/getting_containers.md
+      - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
   - Cheaha Guide:
       - cheaha/index.md
-      - Hardware: cheaha/hardware.md
-      - Software:
-          - Preinstalled Modules: cheaha/software/modules.md
-          - Self-Installed Software: cheaha/software/software.md
       - Open OnDemand:
           - cheaha/open_ondemand/index.md
           - File Browser: cheaha/open_ondemand/ood_files.md
           - Interactive Apps: cheaha/open_ondemand/ood_interactive.md
           - Job Composer: cheaha/open_ondemand/ood_jobs.md
       - SLURM:
-          - Introduction: cheaha/slurm/introduction.md
+          - cheaha/slurm/index.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md
           - Managing Jobs: cheaha/slurm/job_management.md
           - GPUs: cheaha/slurm/gpu.md
+      - Software:
+          - Preinstalled Modules: cheaha/software/modules.md
+          - Self-Installed Software: cheaha/software/software.md
+      - Hardware: cheaha/hardware.md
       - Job Efficiency: cheaha/job_efficiency.md
   - UAB Cloud (cloud.rc) Guide:
       - uab_cloud/index.md
