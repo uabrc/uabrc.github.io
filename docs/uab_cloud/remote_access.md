@@ -1,6 +1,6 @@
 # Remote Access to Instances
 
-All of the access methods described below are built on top of `ssh` and require completion of the steps in [Basic Security Setup](./security_setup_basic.md) to use with `cloud.rc`. Some of these steps are referenced in that document.
+All of the access methods described below are built on top of `ssh` and require completion of the steps in [Basic Security Setup](tutorial/security.md) to use with `cloud.rc`. Some of these steps are referenced in that document.
 
 ## Command Line via SSH
 
@@ -143,7 +143,7 @@ If `ssh-agent` isn't already running and you encounter an error, use the followi
 - Navigate to the `.ssh` folder in a terminal window.
 - Run `ssh-add <private_key_file>`
 
-    ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent.](./images/key_pairs_005.png)
+    ![!MINGW64 terminal on Windows. Commands have been used to move the private key file into the ssh folder and add it to the ssh agent.](./tutorial/images/key_pairs_005.png)
 
     <!-- markdownlint-disable MD046 -->
     !!! bug
@@ -206,9 +206,9 @@ Host <host>
 ```
 
 - Be sure to give a meaningful name under `<host>` so you can easily refer back to this config later and for ease of typing when using `ssh` with this configuration. Only letters, numbers, dashes and underscores are allowed, and it must start with a letter.
-- The value `<remote_ip>` can be any remote machine relevant to your work. For cloud.rc it should be whatever IP was assigned in [Creating a Floating IP](./network_setup_basic.md#creating-a-floating-ip).
+- The value `<remote_ip>` can be any remote machine relevant to your work. For cloud.rc it should be whatever IP was assigned in [Creating a Floating IP](tutorial/networks.md#creating-a-floating-ip).
 - The value `<user>` should be whatever user name you will log in as. For cloud.rc, `ubuntu` or `centos` are typical, depending on instance operating system.
-- The value `<path_to_private_key_file>` is the absolute path to the private key file, e.g. the path to your `.ssh` folder followed by the `<private_key_file>` file name. For cloud.rc this will be whatever private key file was generated in [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair).
+- The value `<path_to_private_key_file>` is the absolute path to the private key file, e.g. the path to your `.ssh` folder followed by the `<private_key_file>` file name. For cloud.rc this will be whatever private key file was generated in [Creating a Key Pair](tutorial/security.md#creating-a-key-pair).
 
 Save the `config` file. Start a new terminal and use the command `ssh <host>`, with no other flags, to test.
 
@@ -222,17 +222,11 @@ If you haven't set up a configuration file, use the following.
 ssh <user>@<remote_ip> -i <private_key_file>
 ```
 
-Where `user` is the remote username, `remote_ip` is the IP address of the remote machine, and `<private_key_file>` is the private key file used for access the remote machine. See [Generating Key Pairs](#generating-key-pairs) for general instructions on creating a key pair, or [Creating a Key Pair](./security_setup_basic.md#creating-a-key-pair) for cloud.rc specific instructions.
+Where `user` is the remote username, `remote_ip` is the IP address of the remote machine, and `<private_key_file>` is the private key file used for access the remote machine. See [Generating Key Pairs](#generating-key-pairs) for general instructions on creating a key pair, or [Creating a Key Pair](tutorial/security.md#creating-a-key-pair) for cloud.rc specific instructions.
 
-## Graphical Interface
+## Server Software
 
-### MobaXTerm
-
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction.
-<!-- markdownlint-enable MD046 -->
+Remotely accessing server software requires configuration of [Security Groups](tutorial/security.md#creating-a-security-group) to open ports the server will communicate on. Please see our information on [Installing Server Software](installing_software.md#installing-server-software) for details.
 
 ## Data Transfer
 
@@ -317,8 +311,4 @@ sftp> get -r <remote_directory> <optional_local_path>
 
 ### RClone
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    Under construction.
-<!-- markdownlint-enable MD046 -->
+Please see our [RClone](../data_management/transfer/rclone.md) page for more information on using RClone with the SFTP remote option.

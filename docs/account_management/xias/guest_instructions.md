@@ -46,6 +46,15 @@ activate your account manually.
 
     ![!Activate (sync) accounts form. Form requires email address and current password.](./images/xias_guest_activate_accounts.png)
 
+## Required Software for Research Computing Access
+
+Research computing software requires security software be installed on your devices in order to login. [Duo two-factor authentication (2FA)](https://www.uab.edu/it/home/security/2-factor) software is required on your mobile to device to access any Single Sign-on services. [VPN access software](https://www.uab.edu/it/home/tech-solutions/network/vpn) is required for some services when connected from outside the UAB internal network. Accessing the VPN also requires Duo 2FA.
+
+Below is a list of Research Computing services and their required software.
+
+- Cheaha: 2FA
+- Cloud.rc: VPN and 2FA if off-campus
+
 ## Change Password and Recover From Lost Password
 
 To change your password, or recover your account in case of a lost

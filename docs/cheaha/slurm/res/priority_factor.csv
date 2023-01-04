@@ -1,0 +1,5 @@
+Factor,Description,What Gives Higher Priority,Example
+Age,Lenght of time job has spent in queue.,Longer time in queue,Job in queue for 2 days will start faster than for 4 hours.
+Resources,Quantity of resources requested for job.,Request fewer resources,1 CPU will start faster than 4 CPUs. 2 hour time limit will start faster than 10 hours.
+Partition,Which partition was requested for job.,Lower resource partitions,Express partition will start faster than Long. NOT related to Priority Tier.
+Fair Share,What fraction of cluster resources are already being used by you.,Fewer jobs currently running,Having 1 job already running will start faster than having 10 of the same job.

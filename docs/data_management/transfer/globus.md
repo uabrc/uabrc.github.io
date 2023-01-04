@@ -1,11 +1,37 @@
 # Globus
 
+Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is recommended for most single-use, day-to-day data transfer use-cases.
+
+UAB Research Computing uses High Assurance Endpoints and Collections, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions.
+
+1. You will be prompted to prove authorization each time you access a UAB Research Computing endpoint, collection or attempt to download files to your local machine from such an endpoint or collection. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.
+2. Bookmarks are not allowed in High Assurance endpoints and collections.
+
+For more detailed information on High Assurance please see the Globus official pages below:
+
+- [High Assurance Security Overview](https://docs.globus.org/security/high-assurance-overview/)
+- [High Assurance Collections](https://docs.globus.org/high-assurance/)
+
 ## Setting up Globus Connect Personal
 
 [Globus Connect Personal](https://www.globus.org/globus-connect-personal) is software meant to be installed on local machines such as laptops, desktops,
 workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on [MacOS](https://docs.globus.org/how-to/globus-connect-personal-mac/), [Linux](https://docs.globus.org/how-to/globus-connect-personal-linux) and [Windows](https://docs.globus.org/how-to/globus-connect-personal-windows).
 
 To verify your installation is complete, please visit <https://app.globus.org> and log in. Click "Endpoints" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the endpoint you just created.
+
+## Managing Identities
+
+Globus Identities is a concept helping to map Globus Accounts (one per person) to institutions (one or more per person).
+
+Most UAB researchers will have a single identity, their UAB identity, tied to their blazerid. Some researchers may have external collaborations or appointments that provide additional entities which need access to other endpoints on Globus.
+
+To manage your identities, navigate to <https://app.globus.org/account/identities> and sign in.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    To use UAB Research Computing endpoints and collections, you will need to ensure you are using you UAB identity.
+<!-- markdownlint-enable MD046 -->
 
 ## Moving Data Between Endpoints
 
@@ -34,7 +60,7 @@ To verify your installation is complete, please visit <https://app.globus.org> a
 
         ![!Globus Collection Search Recent tab showing two endpoints.](./images/globus_005_recent_tab.png)
 
-    3. The "Bookmarks" tab shows a list of endpoint bookmarks.
+    3. The "Bookmarks" tab shows a list of endpoint bookmarks. Bookmarks may not reference folders within UAB Research Computing or other High Assurance endpoints or collections.
 
         ![!Globus Collection Search Bookmarks tab showing four bookmarks.](./images/globus_006_bookmarks_tab.png)
 
@@ -99,6 +125,64 @@ Globus does not preserve permissions nor ownership when data is transferred, ins
 
 A [Globus FAQ](https://docs.globus.org/faq/globus-connect-endpoints/) is available for additional information on endpoints and transfers.
 
+## Connectors
+
+UAB Researcher Computing has subscriptions to connectors for cloud services and other types of filesystems.
+
+### UAB Box Connector
+
+To use the UAB Box Connector, [search for an endpoint](#moving-data-between-endpoints) like usual and enter "UAB Box" into the search box. Select the endpoint labeled "UAB Box". You should see a list of files and folders that are available to you at <https://uab.app.box.com>. File transfers work as they would with any other endpoint or collection.
+
+### Long-term Storage S3 (LTS) Connector
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    [LTS](../lts/lts.md) behaves differently from other file systems and comes with a few possible pitfalls. Keep in mind the following three rules: (1) all data must be in buckets, (2) buckets are only allowed in the root folder, and (3) buckets must have unique names.
+<!-- markdownlint-enable MD046 -->
+
+To use the UAB [LTS](../lts/lts.md) Connector, [search for an endpoint](#moving-data-between-endpoints) like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a [bucket](../lts/lts.md#make-a-bucket) in [LTS](../lts/lts.md). To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.
+
+#### Data Must be in Buckets
+
+All data transferred to LTS must be placed in a bucket, and may _not_ be placed directly into the root directory. Attempting to move data to the root directory will result in an unhelpful error message in the "Activity" window.
+
+![!unhelpful error message for data placed in the root LTS directory](images/globus_lts_no_bucket_error_001.png)
+
+Clicking on the "view event log" link shows the following.
+
+![!unhelpful event log message](images/globus_lts_no_bucket_error_002.png)
+
+```text
+Error (transfer)
+Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
+Server: m-a201b5.9ad93.a567.data.globus.org:443
+Command: STOR /test.log
+Message: The connection to the server was broken
+---
+Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
+```
+
+#### Buckets Must Have Globally Unique Names
+
+When creating new buckets, the name must be unique across all buckets on the system. At first this may sound very restrictive, but it is quite simple to deal with in practice. See our LTS section on [good naming practice](../lts/lts.md#avoiding-duplicate-names) for how to avoid duplicate names.
+
+If a duplicate bucket name is entered, a long error message will appear in a small space next to the new bucket name. The message reads like the following, expanded for readability.
+
+![!large error message in small space](images/globus_lts_duplicate_name_error_001.png)
+
+```text
+Bad Gateway: Endpoint Error, Error (mkdir)
+Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
+Server: m-b81a79.9ad93.a567.data.globus.org:443
+Command: MKD /test/
+Message: Fatal FTP Response ---
+Details: 553-
+  GlobusError: v=1 c=PATH_EXISTS\r\n553-
+  GridFTP-Path: (null)\r\n553-globus_gridftp_server_s3_base: S3
+  Error accessing "": ErrorBucketAlreadyExists: ErrorBucketAlreadyExists: \r\n553 End.\r\n
+```
+
 ## Using Bookmarks
 
 To save a bookmark, use the File Manager interface to select an endpoint and navigate to a path on that endpoint. Then click the bookmark button as shown below.
@@ -108,6 +192,12 @@ To save a bookmark, use the File Manager interface to select an endpoint and nav
 To manage bookmarks, click "Bookmarks" in the left-hand navigation pane. Click the "Pencil" icon to edit a bookmark. Click the "Trash Bin" icon to delete a bookmark.
 
 ![!Globus Bookmarks interface showing four bookmarks.](./images/globus_061_manage_bookmarks.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    It is not possible to create bookmarks within High Assurance Endpoints.
+<!-- markdownlint-enable MD046 -->
 
 ## Managing Shared Collections from a Globus Connect Personal Endpoint
 
@@ -191,7 +281,3 @@ It is NOT RECOMMENDED to make Globus Connect Personal endpoints public as this i
 4. Click "X Delete Endpoint" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the endpoint, or to cancel.
 
     ![!Delete Endpoint confirmation dialog banner.](./images/globus_105_shared_delete.png)
-
-## Setting up Globus Connect Server
-
-Under construction!

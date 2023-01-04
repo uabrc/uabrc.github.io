@@ -1,6 +1,6 @@
 # Installing Software on Instances
 
-An important part of managing instances is the installation of software. This page assumes you have a working instance and can [SSH](./instance_setup_basic.md#ssh-into-the-instance) into it. This page assumes you are using an Ubuntu image.
+An important part of managing instances is the installation of software. This page assumes you have a working instance and can [SSH](./tutorial/instances.md#ssh-into-the-instance) into it. This page assumes you are using an Ubuntu image.
 
 We highly recommend building your research software stack into a [Container](../workflow_solutions/getting_containers.md). While there is a learning curve and some setup time, containers make replicating and sharing environments simpler. Everything you develop is packaged into a self-contained unit that can be run on virtually any modern Linux system.
 
@@ -44,7 +44,90 @@ If the software is available via `apt` then use `sudo apt install <package>`. An
 
 If the software uses a custom installer, then follow the instructions provided by the software's documentation. An example would be [Miniconda](#installing-miniconda), where a shell script is downloaded and then executed using `bash installer.sh`.
 
+### Installing Server Software
+
+If you wish to set up server software, you'll need to open ports for that software by creating [Security Groups](tutorial/security.md#creating-a-security-group). Then you may want to test the ports are open and verify your software is listening. It is highly recommended to verify the ports are configured properly and remotely accessible before you spend time setting up and configuring the server software.
+
+#### Testing Server Ports
+
+If you intend to use your instance as a server host, you'll likely need to set up additional [Security Groups](tutorial/security.md#creating-a-security-group) for any ports the server expects to communicate on. It can be helpful to verify that those ports are open before configuring the server software. Assuming you know which ports are needed, the simplest way to do this is outlined below.
+
+1. Set up [Security Groups](tutorial/security.md#creating-a-security-group) for the ports your server will need to communicate on.
+2. [SSH](#streamlining-ssh) into the instance.
+3. Prepare the `netcat` software command `nc`:
+    - For Ubuntu, the command `nc` should already be available.
+    - For other OSes, you may need to [Install](./installing_software.md) `nc` or `netcat`.
+4. For one of your `<port>` of interest, start a TCP listener with `nc -l <port>`.
+
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+
+        `nc -l <port>` will only listen for a single connection attempt, and then close. To emulate indefinite listening behavior, use it within a loop like so.
+
+        ``` bash
+        while true; do nc -l <port>; done
+        ```
+    <!-- markdownlint-enable MD046 -->
+
+5. Open a new terminal on your local machine.
+6. Probe the `<port>`:
+    - Using the Windows command prompt:
+        1. Enter the command `telnet <floating-ip> <port>`.
+        2. If the terminal window goes blank, then the connection was successful.
+
+            ![!telnet success example](images/port-check-telnet-success.png)
+
+            Otherwise you will see a message like `Could not open connection to the host`.
+
+            ![!telnet failure example](images/port-check-telnet-failure.png)
+
+        3. To exit `telnet` press ++ctrl+bracket-right++, then type `q`, then press ++enter++.
+
+            ![!telnet quit example](images/port-check-telnet-exit.png)
+
+    - Using any Linux-based prompt, MacOS, or Git Bash on Windows:
+        1. Ensure `nc` is installed locally.
+        2. Enter the command `nc -nvz <floating-ip> <port>`.
+            - `n` uses numeric output, which minimizes unhelpful warnings about hostname lookups. It is also faster.
+            - `v` uses verbose output, i.e., print the output we care about.
+            - `z` scans for listeners on the remote.
+        3. If the connection is successful you should see something close to the following, with `<floating-ip>` and `<port>` replaced by the values you supplied earlier.
+
+            ```text
+            (UNKNOWN) [<floating-ip>] <port> (?) open
+            ```
+
+            ![!nc success example](images/port-check-nc-success.png)
+
+            If the connection is unsuccessful you will see `Connection refused` instead of `open`.
+
+            ![!nc failure example](images/port-check-nc-failure.png)
+
+Now you should have more information on whether your VM port configuration was successful. Feel free to repeat the steps above for each port, as needed.
+
+#### Verify Server Software is Listening
+
+Once you have the server set up, you can check which processes are listening on which ports using the following command.
+
+```bash
+sudo ss -lnptu
+```
+
+The program is `ss` for "socket statistics", which can display information linking ports and processes. The flags are
+
+- `l` displays only listening sockets
+- `n` uses numeric output, which minimizes unhelpful warnings about hostname lookups. It is also faster.
+- `p` shows which process is using each socket.
+- `t` displays tcp sockets.
+- `u` displays udp sockets.
+
+An example of the output is shown below. The most useful columns for us are `Local Address:Port`, to verify they match the configured [Security Group](tutorial/security.md#creating-a-security-group) ports, and `Process`, to verify the server software is listening on the correct ports.
+
+![!example of ss listener verification](images/port-check-ss-lnptu.png)
+
 ### Common Examples
+
+Below are a few examples of installing certain common softwares that may be useful to scientific applications. We are not able to provide diagnostic or troubleshooting support for installation of any software. If you believe these instructions are outdated or in error, please [reach out and let us know](../contributing/reporting_errors.md#how-do-i-report-inaccurate-information).
 
 #### Installing NVidia Drivers
 
@@ -123,13 +206,13 @@ Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quic
 
 Jupyter Notebooks are a staple of modern research computing, especially when developing new workflows or evaluating the usefulness of software packages.
 
-The setup process for [cloud.rc](introduction.md) is more involved than for [Cheaha](../cheaha/getting_started.md). Before using cloud.rc for Jupyter Notebooks, be sure that [Open OnDemand on Cheaha](../cheaha/open_ondemand/ood_interactive.md#jupyter-notebook) does not meet your needs.
+The setup process for [cloud.rc](index.md) is more involved than for [Cheaha](../cheaha/getting_started.md). Before using cloud.rc for Jupyter Notebooks, be sure that [Open OnDemand on Cheaha](../cheaha/open_ondemand/ood_interactive.md#jupyter-notebook) does not meet your needs.
 
-To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our [Introduction](introduction.md) and follow the tutorial completely.
+To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our [Introduction](index.md) and follow the tutorial completely.
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
-2. A [Cloud Instance](instance_setup_basic.md) with attached [Floating IP]network_setup_basic.md#floating-ips).
-3. A [Security Group](security_setup_basic.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
+2. A [Cloud Instance](tutorial/instances.md) with attached [Floating IP]network_setup_basic.md#floating-ips).
+3. A [Security Group](tutorial/security.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
 4. [Miniconda installed](#installing-miniconda) on the instance. Miniconda is a lightweight version of Anaconda.
 
 Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_anaconda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_anaconda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#>.

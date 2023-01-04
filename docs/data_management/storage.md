@@ -1,16 +1,21 @@
 # Storage
 
 <!-- markdownlint-disable MD046 -->
-!!! warning
+!!! announcement
 
-    The information on this page is under construction and some of it may be obsolete. If you need additional clarifications in the meantime, please [contact us](../index.md#contact-us).
+    Please note upcoming changes!
+
+    - December 13, 2022: Clean up of `temp-scratch` must be completed by all researchers.
+    - December 16, 2022: Access to `temp-scratch` will be removed for all researchers.
+    - January 16, 2023: New `$SCRATCH` storage limited-retention policies will start.
+    - To Be Determined: `$USER_SCRATCH` will point to `/scratch/$USER`
 <!-- markdownlint-enable MD046 -->
 
 ## What Type of Storage Do I Need?
 
 There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to find the storage platform we provide that best matches your needed use-case.
 
-{{ read_csv('data_management/storage_overview.csv', keep_default_na=False) }}
+{{ read_csv('data_management/res/storage_overview.csv', keep_default_na=False) }}
 
 ## User Space
 
@@ -77,6 +82,12 @@ For PIs and project administrators:
 
 Two types of scratch space are provided for analyses currently being ran, network-mounted and local. These are spaces shared across users (though one user still cannot access another user's files without permission) and as such, data should be moved out of scratch when the analysis is finished.
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Starting January 2023, scratch data will have limited retention. See [Scratch Retention Policy](#scratch-retention-policy) for more information.
+<!-- markdownlint-enable MD046 -->
+
 ### User Scratch
 
 All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in `/data/scratch/$USER` or `$USER_SCRATCH`. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.
@@ -99,21 +110,72 @@ Each compute node has a local scratch directory that is accessible via the varia
     `$LOCAL_SCRATCH` is only useful for jobs in which all processes run on the same compute node, so MPI jobs are not candidates for this solution. Use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node.
 <!-- markdownlint-enable MD046 -->
 
+## Temporary Files (`tmp`)
+
+Please do not use the directory `tmp` as storage for temporary files. The `tmp` directory is local to each node, and a full `tmp` directory harms compute performance on that node for all users. Instead, please use [`$LOCAL_SCRATCH`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
+
+Some software defaults to using `tmp` without any warning or documentation, especially software designed for personal computers. We may reach out to inform you if your software fills `tmp`, as it can harm performance on that compute node. If that happens we will work with you to identify ways of redirecting temporary storage to one of the scratch spaces.
+
+### Software Known to Use `tmp`
+
+The following software are known to use `tmp` by default, and can be worked around by using the listed flags.
+
+- Java: `java * -Djava.io.tmpdir=$LOCAL_SCRATCH`
+- UMI Tools: `umi_tools * --temp-dir=$LOCAL_SCRATCH`
+
 ## How much space do I have left?
 
-To check how much space you have left in `/data/user/$USER` and `/scratch/$USER` please enter the command `quota-report`. This report is automatically displayed each time you log in.
+- **Personal**: use the command `quota-report` to see usage in `/data/user/$USER` and `/scratch/$USER`.
+- **Project**: use the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name, i.e., `/data/project/<project>`. Be sure to _not_ use a trailing slash. Use `proj-quota-report mylab` not `proj-quota-report mylab/`.
 
-For space in `/data/project/<project>` please enter the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name.
+Both quota reports are updated nightly, so they may be out of date if you move data around before running these commands.
 
-Both quota reports are updated nightly.
+<!-- markdownlint-disable MD046 -->
+!!! tip
+
+    Running out of space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/lts.md).
+<!-- markdownlint-enable MD046 -->
 
 ## Data Policies
 
+### Replication
+
+Data on GPFS are replicated using a RAID configuration which is intended to decrease the risk of data loss in the event of disk failures. This is standard good practice for researcher computing data centers.
+
 ### Backups
 
-**It is the responsibility of the user to maintain proper backups of their data.**
+<!-- markdownlint-disable MD046 -->
+!!! important
 
-Data on Cheaha are replicated from a main drive to an emergency backup drive each time a file is created, altered, or destroyed. This emergency backup drive is only used when there is a cluster failure and does not function as a traditional backup. If you delete data from the cluster, it is gone forever.
+    Backups of data are the responsibility of researchers using Cheaha.
+<!-- markdownlint-enable MD046 -->
+
+A good practice for backing up data is to use the 3-2-1 rule, as [recommended by US-CERT](https://www.cisa.gov/uscert/security-publications/data-backup-options):
+
+- **3**: Keep **3** copies of important data. 1 primary copy for use, 2 backup copies.
+- **2**: Store backup copies on **2** different media types to protect from media-specific hazards.
+- **1**: Store **1** backup copy offsite, located geographically distant from the primary copy.
+
+What hazards can cause data loss?
+
+- Accidental file deletion.
+    - Example: mistakenly deleting the wrong files when using the [shell command](../workflow_solutions/shell.md#delete-files-and-directories-rm-rmdir) `rm`.
+    - Files deleted with `rm` or any similar command can not be recovered by us under any circumstances.
+    - Please restore from a backup.
+- Natural disasters.
+    - Examples: tornado; hurricane.
+    - All of our data sits in one geographical location at the UAB Technology Innovation Center (TIC).
+    - Plans to add geographical data redundancy are being considered.
+    - Please restore from an offsite backup.
+- Unusable backups.
+    - Examples: backup software bug; media destroyed; natural disaster at offsite location.
+    - Regularly test data restoration from all backups.
+
+How can I ensure data integrity?
+
+- Regularly back up your (and your lab's) data in an offsite location.
+- [S3 based long-term storage (LTS)](lts/lts.md) can be used for short-term onsite backup.
+- Crashplan licenses are available for automatic offsite backups, please contact [Support](../help/support.md) for more information.
 
 ### HIPAA Compliance
 
@@ -124,6 +186,13 @@ As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. C
 
     It is the responsibility of the user to make sure PHI is only accessible by researchers on the IRB. If PHI is being stored in a project folder and some researchers are not on an IRB, their access to those files should be restricted using Access Control Lists (ACLs). If you need assistance setting up ACLs properly, please [contact us](../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
+
+### Scratch Retention Policy
+
+Starting January 2023, data stored in `/scratch` will be subject to two limited retention policies.
+
+- Each user will have a quota of 50 TB of scratch storage.
+- Files will be retained for 30 days.
 
 ## Directory Permissions
 

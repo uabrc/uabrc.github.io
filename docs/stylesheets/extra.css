@@ -1,103 +1,126 @@
 /* UAB theming */
 :root {
-  --md-primary-fg-color: #1e6b52;
-  --md-primary-fg-color--dark: #1e6b52;
+    --md-primary-fg-color: #1e6b52;
+    --md-primary-fg-color--dark: #1e6b52;
 }
 
-/*  */
+/* logo fix */
+.md-header__button.md-logo :is(img, svg) {
+    height: 1.2rem;
+    width: auto;
+}
 
 /* link color correction */
 .md-content a,
 .md-content a:visited {
-  color: revert;
+    color: revert;
 }
 
 .md-content a:hover {
-  color: revert;
-  border-bottom: 1px solid;
+    color: revert;
+    border-bottom: 1px solid;
 }
 
 .md-typeset .headerlink:hover {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 html .md-footer-meta.md-typeset a.supportemail {
-  color: #aaaaff;
+    color: #aaaaff;
 }
 
 /* header accessiblity/readability */
 .md-typeset h1 {
-  color: var(--md-default-fg-color);
-  font-weight: 600;
-  font-size: 2.0em;
-  margin-bottom: 0;
+    color: var(--md-default-fg-color);
+    font-weight: 600;
+    font-size: 2.0em;
+    margin-bottom: 0;
 }
 
 .md-typeset h2 {
-  font-weight: 600;
-  line-height: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .md-typeset h3 {
-  font-weight: 600;
-  line-height: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .md-typeset h4 {
-  font-weight: 600;
-  line-height: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .md-typeset :not(h1, h2, h3, h4)+:is(h2, h3, h4) {
-  margin-top: 44px;
+    margin-top: 44px;
 }
 
 .md-typeset h1+:is(h2, h3, h4) {
-  margin-top: 0.8em;
+    margin-top: 0.8em;
 }
 
 /* construction admonition */
 .md-typeset .admonition.construction,
 .md-typeset details.construction {
-  border-color: #eed202;
+    border-color: #eed202;
 }
 
 .md-typeset .construction>.admonition-title,
 .md-typeset .construction>summary {
-  background-color: rgba(238, 210, 2, 0.1);
-  border-color: #eed202;
+    background-color: rgba(238, 210, 2, 0.1);
+    border-color: #eed202;
 }
 
 .md-typeset .construction>.admonition-title::before,
 .md-typeset .construction>summary::before {
-  background-color: #eed202;
-  -webkit-mask-image: var(--md-admonition-icon--warning);
-  mask-image: var(--md-admonition-icon--warning);
+    background-color: #eed202;
+    -webkit-mask-image: var(--md-admonition-icon--warning);
+    mask-image: var(--md-admonition-icon--warning);
+}
+
+/* construction admonition */
+.md-typeset .admonition.announcement,
+.md-typeset details.announcement {
+    border-color: #64dd17;
+}
+
+.md-typeset .announcement>.admonition-title,
+.md-typeset .announcement>summary {
+    background-color: rgba(100, 221, 23, 0.1);
+    border-color: #64dd17;
+}
+
+.md-typeset .announcement>.admonition-title::before,
+.md-typeset .announcement>summary::before {
+    background-color: #64dd17;
+    -webkit-mask-image: var(--md-admonition-icon--warning);
+    mask-image: var(--md-admonition-icon--warning);
 }
 
 /* lightgallery and image tweaks */
 
 /* image width */
 .md-grid {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 /* adds a flexbox to the surrounding div */
 div.lightgallery {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* adding the drop shadow,margin and keeping the images at 50 viewport width */
 .lightgallery img {
-  max-width: 50vw;
-  box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
-  margin-bottom: 1rem;
+    max-width: 50vw;
+    box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1rem;
 }
 
 /* 100 viewport width on smaller screens */
 @media only screen and (max-width : 600px) {
-  .lightgallery img {
-    max-width: 100%;
-  }
+    .lightgallery img {
+        max-width: 100%;
+    }
 }

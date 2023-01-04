@@ -16,7 +16,7 @@ To access docker containers, install `Docker` in your system. To install docker 
 
 ### Docker Installation on UAB RC Cloud
 
-Following are the installation instructions to install `Docker` on UAB RC Cloud with Ubuntu operating system. Tested the installation on Ubuntu 20.04. Setting up UAB RC Cloud account can be found in [UAB RC Cloud](../uab_cloud/introduction.md).
+Following are the installation instructions to install `Docker` on UAB RC Cloud with Ubuntu operating system. Tested the installation on Ubuntu 20.04. Setting up UAB RC Cloud account can be found in [UAB RC Cloud](../uab_cloud/index.md).
 
 ```bash
 sudo apt-get update
