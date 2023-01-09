@@ -3,12 +3,13 @@
 <!-- markdownlint-disable MD046 -->
 !!! announcement
 
+    **UPDATED 2022-09-01**
+
     Please note upcoming changes!
 
-    - December 13, 2022: Clean up of `temp-scratch` must be completed by all researchers.
-    - December 16, 2022: Access to `temp-scratch` will be removed for all researchers.
-    - January 16, 2023: New `$SCRATCH` storage limited-retention policies will start.
-    - To Be Determined: `$USER_SCRATCH` will point to `/scratch/$USER`
+    - January 13, 2023: `$USER_SCRATCH` will point to `/scratch/$USER`
+    - January 27, 2023: Clean up of `temp-scratch` must be completed by all researchers. Access to `temp-scratch` will be removed for all researchers.
+    - February 13, 2023: New `$SCRATCH` storage limited-retention policies will start.
 <!-- markdownlint-enable MD046 -->
 
 Welcome to UAB Research Computing!
