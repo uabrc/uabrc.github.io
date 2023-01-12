@@ -6,6 +6,8 @@ The `--array` flag transforms an `sbatch` job script for a single task into a co
 
 We will show how to create and use `sbatch` jobs with the `--array` flag, or `sbatch --array` jobs. We will use a simplified, practical example that parallels the process of a computational scientific experiment. The practical task we will solve is simplified to enhance focus on the structure of the problem, rather than the content of the problem. The structure of the problem is what makes `sbatch --array` jobs more or less suitable for a particular need. Specifically, whether there are many independent subtasks that all have the same structure, with similar or the same parameters.
 
+For other examples of using SLURM and its other tools, please see [Submitting Jobs](submitting_jobs.md) and [Managing Jobs](job_management.md).
+
 ## The Task
 
 Your task is to determine the statistical properties of dice rolls. To measure these properties, you'll need to simulate rolling the dice many times to obtain a lot of data. Because dice rolls are independent, the task of simulating many dice rolls can be subdivided into many independent subtasks, all with the same parameters. While we could simulate dice rolls one at a time, in sequence, we could instead use an `sbatch --array` job to simulate dice rolls in parallel.
