@@ -1,4 +1,4 @@
-# Practical Examples of `sbatch` Usage With the `--array` Flag
+# Practical Examples of `sbatch` Usage With the `--array` Flag and Dynamic Indices
 
 Do you find yourself tediously creating many `sbatch` job scripts for the same type of data set? Or do you modify the same job script? Have you ever experienced frustrating errors or typos while doing this? Would you like to save time by using one script for many similar tasks? If so then please read on for how to use `sbatch` jobs with the `--array` flag.
 
