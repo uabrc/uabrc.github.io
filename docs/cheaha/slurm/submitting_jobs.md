@@ -61,7 +61,7 @@ Batch jobs are typically submitted using scripts with `sbatch`. Using `sbatch` t
 
 For batch jobs, flags are typically included as directive comments at the top of the script like `#SBATCH --job-name=my-job`. Read on to see examples of batch jobs using `sbatch`.
 
-### Batch Job
+### A Simple Batch Job
 
 Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
 
@@ -85,7 +85,7 @@ echo "Hello Error" 1>&2
 There is a lot going on in the above script, so let's break it down. There are three main chunks of this script:
 
 1. Line 1 is the interpreter directive: `#!/bin/bash`. This tells the shell what application to use to execute this script. All `sbatch` scripts on Cheaha should start with this line.
-2. Lines 3-11 are the [`sbatch` flags](#slurm-flags) which tell the scheduler what resources you need and how to manage your job.
+2. Lines 3-11 are the [`sbatch` flags](#slurm-flags-and-environment-variables) which tell the scheduler what resources you need and how to manage your job.
 
     - Line 3: The job name is `test`.
     - Lines 4-7: The job will have 1 node, with 1 core and 1 GB of memory.
@@ -141,46 +141,13 @@ For more details on using `sbatch` please see the [official documentation](https
     If you are using bash or shell arrays, it is crucial to note they use 0-based indexing. Plan your `--array` flag indices accordingly.
 <!-- markdownlint-enable MD046 -->
 
-### Batch Array Jobs With Dynamic Indices
+### Batch Array Jobs With Dynamic or Computed Indices
 
-Before reading this example, please read our [static batch array job example](#batch-array-jobs) as a refresher for the basics of array jobs.
-
-It is currently not possible to have dynamic `--array` values in `sbatch` scripts, because the `#SBATCH` directives are processed before the script is executed by the shell, preventing [variable expansion](../../workflow_solutions/shell.md#environment-concepts). Furthermore, the variables would be treated as comments and thus not expanded. A workaround is required, so we propose using a wrapper script.
-
-The script named `job.sh` (note that the `#SBATCH --array=` directive is missing):
-
-```bash
-#!/bin/bash
-#
-#SBATCH --job-name=test
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=1G
-#SBATCH --partition=express
-#SBATCH --time=00:10:00
-#SBATCH --output=%x_%A_%a.out
-#SBATCH --error=%x_%A_%a.err
-
-echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
-```
-
-The wrapper named `job_wrapper.sh`:
-
-```bash
-#!/bin/bash
-
-start=0
-end=9
-
-sbatch --array=${start}-${end} ./job.sh
-```
-
-Run the wrapper by entering `./job_wrapper.sh` at the terminal. Make sure both `job.sh` and `job_wrapper.sh` have [executable permissions set](../../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) with `chmod u+x job.sh job_wrapper.sh`.
+For a practical example with dynamic indices, please visit our [`sbatch` Dynamic Example](sbatch_dynamic_example.md)
 
 ## Interactive Jobs with `srun`
 
-To interact with the terminal in a job context, use the `srun` command with the `--pty /bin/bash` flag. The other [flags](#slurm-flags) should be substituted in place of `$FLAGS`.
+To interact with the terminal in a job context, use the `srun` command with the `--pty /bin/bash` flag. The other [flags](#slurm-flags-and-environment-variables) should be substituted in place of `$FLAGS`.
 
 ``` bash
 srun $FLAGS --pty /bin/bash
