@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD046 -->
 !!! announcement
 
-    **UPDATED 2023-09-01**
+    **UPDATED 2023-01-09**
 
     Please note upcoming changes!
 
