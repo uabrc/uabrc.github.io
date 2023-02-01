@@ -150,8 +150,8 @@ Use "%(bucket)s.s3.amazonaws.com" to the target Amazon S3. "%(bucket)s" and "%(l
 DNS-style bucket+hostname:port template for accessing a bucket [%(bucket)s.s3.amazonaws.com]: %(bucket).s3.lts.rc.uab.edu
 
 Encryption password is used to protect your files from reading by unauthorized persons while in transfer to S3
-Encryption password: <leave blank>
-Path to GPG program [/usr/bin/gpg]: $HOME/bin/gpg
+Encryption password: <leave blank or enter password>
+Path to GPG program [/usr/bin/gpg]: <leave blank>
 
 When using secure HTTPS protocol all communication with Amazon S3 servers is protected from 3rd party eavesdropping. This method is slower than plain HTTP, and can only be proxied with Python 2.7 or newer
 Use HTTPS protocol [Yes]: <leave blank>
@@ -315,6 +315,22 @@ aws s3 ls <bucket/path/directory/> --endpoint-url https://s3.lts.rc.uab.edu
 ```
 
 If you would like to list all objects recursively, you can add the `--recursive` tag. A couple of other helpful options are `--summarize` and `--human-readable` that will give a total number of objects and their size and make the size output more easily readable, respectively.
+
+### Check Bucket or Folder Size
+
+**s3cmd**:
+
+With s3cmd, you can use the `du` command to list the size of a bucket or folder within a bucket.
+
+``` bash
+s3cmd du [-H] <s3://bucket/path/>
+```
+
+By default, the output will be in bytes, but you can add the `-H` option to output in a human readable format rounding the nearest MB, GB, or TB.
+
+**AWS CLI**:
+
+By default, the `ls` subcommand will output the size of any objects in the path given (see the [ls section](#listing-buckets-and-contents)). Unlike the other tools, AWS CLI will not output the total size of folders. However, the total combined size of all objects in a folder can be calculated using the `--summarize` option. You can also convert the output to readable size by using `--human-readable` as well.
 
 ### Uploading Files and Folders
 
