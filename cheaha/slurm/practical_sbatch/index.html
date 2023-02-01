@@ -13,7 +13,7 @@
     
     
       
-        <title>Managing Jobs - Research Computing Documentation</title>
+        <title>Practical Batch Array Jobs - Research Computing Documentation</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#managing-jobs" class="md-skip">
+        <a href="#practical-examples-of-sbatch-usage-with-the-array-flag-and-dynamic-indices" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Managing Jobs
+              Practical Batch Array Jobs
             
           </span>
         </div>
@@ -1043,20 +1043,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../practical_sbatch/" class="md-nav__link">
-        Practical Batch Array Jobs
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -1069,12 +1055,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Managing Jobs
+          Practical Batch Array Jobs
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Managing Jobs
+        Practical Batch Array Jobs
       </a>
       
         
@@ -1093,65 +1079,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#monitoring-queued-jobs-with-squeue" class="md-nav__link">
-    Monitoring Queued Jobs with squeue
+  <a href="#the-task" class="md-nav__link">
+    The Task
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cancelling-jobs-with-scancel" class="md-nav__link">
-    Cancelling Jobs with scancel
+  <a href="#building-a-solution" class="md-nav__link">
+    Building a Solution
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reviewing-past-jobs-with-sacct" class="md-nav__link">
-    Reviewing Past Jobs with sacct
-  </a>
-  
-    <nav class="md-nav" aria-label="Reviewing Past Jobs with sacct">
+    <nav class="md-nav" aria-label="Building a Solution">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#review-jobs-by-jobid" class="md-nav__link">
-    Review Jobs by JobID
+  <a href="#job-script" class="md-nav__link">
+    Job Script
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preamble" class="md-nav__link">
+    Preamble
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#review-jobs-submitted-between-specific-timepoints" class="md-nav__link">
-    Review Jobs Submitted Between Specific Timepoints
+  <a href="#payload" class="md-nav__link">
+    Payload
+  </a>
+  
+    <nav class="md-nav" aria-label="Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-extraction" class="md-nav__link">
+    File Extraction
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#customizing-the-output" class="md-nav__link">
-    Customizing the Output
+  <a href="#running-the-software" class="md-nav__link">
+    Running the Software
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#formatting-the-output" class="md-nav__link">
-    Formatting the Output
-  </a>
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sacct-flags" class="md-nav__link">
-    sacct Flags
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sacct-fields" class="md-nav__link">
-    sacct Fields
+  <a href="#main-script" class="md-nav__link">
+    Main Script
   </a>
   
 </li>
@@ -1162,79 +1153,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slurm-common-reference" class="md-nav__link">
-    SLURM Common Reference
+  <a href="#putting-it-all-together" class="md-nav__link">
+    Putting it All Together
   </a>
   
-    <nav class="md-nav" aria-label="SLURM Common Reference">
+    <nav class="md-nav" aria-label="Putting it All Together">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#slurm-jobid-formatting" class="md-nav__link">
-    SLURM JobID Formatting
+  <a href="#the-example-scripts" class="md-nav__link">
+    The Example Scripts
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slurm-time-formatting" class="md-nav__link">
-    SLURM Time Formatting
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slurm-states" class="md-nav__link">
-    SLURM States
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slurm-units" class="md-nav__link">
-    SLURM Units
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tres-explained" class="md-nav__link">
-    TRES Explained
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rss-explained" class="md-nav__link">
-    RSS Explained
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slurm-resource-calculations" class="md-nav__link">
-    SLURM Resource Calculations
-  </a>
-  
-    <nav class="md-nav" aria-label="SLURM Resource Calculations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#calculating-cpus" class="md-nav__link">
-    Calculating CPUs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#calculating-memory" class="md-nav__link">
-    Calculating Memory
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1247,6 +1176,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../job_management/" class="md-nav__link">
+        Managing Jobs
+      </a>
     </li>
   
 
@@ -1990,65 +1933,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#monitoring-queued-jobs-with-squeue" class="md-nav__link">
-    Monitoring Queued Jobs with squeue
+  <a href="#the-task" class="md-nav__link">
+    The Task
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cancelling-jobs-with-scancel" class="md-nav__link">
-    Cancelling Jobs with scancel
+  <a href="#building-a-solution" class="md-nav__link">
+    Building a Solution
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reviewing-past-jobs-with-sacct" class="md-nav__link">
-    Reviewing Past Jobs with sacct
-  </a>
-  
-    <nav class="md-nav" aria-label="Reviewing Past Jobs with sacct">
+    <nav class="md-nav" aria-label="Building a Solution">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#review-jobs-by-jobid" class="md-nav__link">
-    Review Jobs by JobID
+  <a href="#job-script" class="md-nav__link">
+    Job Script
+  </a>
+  
+    <nav class="md-nav" aria-label="Job Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preamble" class="md-nav__link">
+    Preamble
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#review-jobs-submitted-between-specific-timepoints" class="md-nav__link">
-    Review Jobs Submitted Between Specific Timepoints
+  <a href="#payload" class="md-nav__link">
+    Payload
+  </a>
+  
+    <nav class="md-nav" aria-label="Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-extraction" class="md-nav__link">
+    File Extraction
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#customizing-the-output" class="md-nav__link">
-    Customizing the Output
+  <a href="#running-the-software" class="md-nav__link">
+    Running the Software
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#formatting-the-output" class="md-nav__link">
-    Formatting the Output
-  </a>
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sacct-flags" class="md-nav__link">
-    sacct Flags
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sacct-fields" class="md-nav__link">
-    sacct Fields
+  <a href="#main-script" class="md-nav__link">
+    Main Script
   </a>
   
 </li>
@@ -2059,79 +2007,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slurm-common-reference" class="md-nav__link">
-    SLURM Common Reference
+  <a href="#putting-it-all-together" class="md-nav__link">
+    Putting it All Together
   </a>
   
-    <nav class="md-nav" aria-label="SLURM Common Reference">
+    <nav class="md-nav" aria-label="Putting it All Together">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#slurm-jobid-formatting" class="md-nav__link">
-    SLURM JobID Formatting
+  <a href="#the-example-scripts" class="md-nav__link">
+    The Example Scripts
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slurm-time-formatting" class="md-nav__link">
-    SLURM Time Formatting
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slurm-states" class="md-nav__link">
-    SLURM States
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slurm-units" class="md-nav__link">
-    SLURM Units
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tres-explained" class="md-nav__link">
-    TRES Explained
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rss-explained" class="md-nav__link">
-    RSS Explained
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slurm-resource-calculations" class="md-nav__link">
-    SLURM Resource Calculations
-  </a>
-  
-    <nav class="md-nav" aria-label="SLURM Resource Calculations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#calculating-cpus" class="md-nav__link">
-    Calculating CPUs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#calculating-memory" class="md-nav__link">
-    Calculating Memory
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2152,522 +2038,251 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/uabrc/uabrc.github.io/edit/main/docs/cheaha/slurm/job_management.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/uabrc/uabrc.github.io/edit/main/docs/cheaha/slurm/practical_sbatch.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="managing-jobs">Managing Jobs<a class="headerlink" href="#managing-jobs" title="Permanent link">&para;</a></h1>
-<p>When jobs are submitted, researchers can monitor their status using Slurm commands. Additionally, researchers can get information about completed jobs regarding their CPU and memory usage during execution for planning future jobs. Both of these cases should be a regular part of using Cheaha for researchers.</p>
-<p>In case jobs were submitted by accident or the code was written incorrectly, they can also be cancelled.</p>
-<h2 id="monitoring-queued-jobs-with-squeue">Monitoring Queued Jobs with <code>squeue</code><a class="headerlink" href="#monitoring-queued-jobs-with-squeue" title="Permanent link">&para;</a></h2>
-<p>Currently running jobs can be monitored using the <code>squeue</code> command. The basic command to list all jobs for a specific researcher is:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>squeue -u <span class="nv">$USER</span>
+<h1 id="practical-examples-of-sbatch-usage-with-the-array-flag-and-dynamic-indices">Practical Examples of <code>sbatch</code> Usage With the <code>--array</code> Flag and Dynamic Indices<a class="headerlink" href="#practical-examples-of-sbatch-usage-with-the-array-flag-and-dynamic-indices" title="Permanent link">&para;</a></h1>
+<p>Do you find yourself tediously creating many <code>sbatch</code> job scripts for the same type of data set? Or do you modify the same job script? Have you ever experienced frustrating errors or typos while doing this? Would you like to save time by using one script for many similar tasks? If so then please read on for how to use <code>sbatch</code> jobs with the <code>--array</code> flag.</p>
+<p>The <code>--array</code> flag transforms an <code>sbatch</code> job script for a single task into a collection of tasks that are all scheduled simultaneously. For programmers, the <code>--array</code> flag turns a job script into a parallel loop, or a loop where each iteration is run independently and in no particular order. Naturally, this means that your tasks must be independent and similar. The most common use case is running the same software with different inputs or on different data sets. To get the most out of this page, you'll want to be familiar with <a href="../submitting_jobs/">Submitting Jobs</a>.</p>
+<p>We will show how to create and use <code>sbatch</code> jobs with the <code>--array</code> flag, or <code>sbatch --array</code> jobs. We will use a simplified, practical example that parallels the process of a computational scientific experiment. The practical task we will solve is simplified to enhance focus on the structure of the problem, rather than the content of the problem. The structure of the problem is what makes <code>sbatch --array</code> jobs more or less suitable for a particular need. Specifically, whether there are many independent subtasks that all have the same structure, with similar or the same parameters.</p>
+<p>For other examples of using SLURM and its other tools, please see <a href="../submitting_jobs/">Submitting Jobs</a> and <a href="../job_management/">Managing Jobs</a>.</p>
+<h2 id="the-task">The Task<a class="headerlink" href="#the-task" title="Permanent link">&para;</a></h2>
+<p>Your task is to determine the statistical properties of dice rolls. To measure these properties, you'll need to simulate rolling the dice many times to obtain a lot of data. Because dice rolls are independent, the task of simulating many dice rolls can be subdivided into many independent subtasks, all with the same parameters. While we could simulate dice rolls one at a time, in sequence, we could instead use an <code>sbatch --array</code> job to simulate dice rolls in parallel.</p>
+<p>Suppose you've already written some code called <code>simulate</code> that performs these simulations. The code transforms three integer inputs into an output sequence of positive integers. Based on the usual rules for tabletop role-playing game (TTRPG) dice rolling. The block below shows a sample input requesting ten rolls that are the sum of two six-sided die rolls plus one. In TTRPG notation we would write this as <code>2d6+1</code> rolled ten times. The output, in the case below, is a sequence of ten integers. Each element of the sequence falls in the possible range of the <code>2d6+1</code> die roll, which is <code>[3,13]</code>.</p>
+<div class="highlight"><span class="filename">Inputs, Outputs, How to Call</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># a tuplet of integers like the following...</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># name       | number of rolls | quantity | sides    | modifier</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># properties | positive        | positive | positive | any integer</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>               <span class="m">10</span>              , <span class="m">2</span>        , <span class="m">6</span>        , <span class="m">1</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># is transformed to sequence of positive integers</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="m">8</span>,9,4,4,3,8,6,6,13,8
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># based on a call like</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>simulate <span class="nv">$SEED</span> <span class="nv">$INPUT_FILE</span> <span class="nv">$OUTPUT_FILE</span>
 </code></pre></div>
-<p>The output of <code>squeue</code> will look like:</p>
-<p><div class="lightgallery"><a data-sub-html="Output from squeue." href="../images/squeue_output.png"><img alt="Output from squeue." src="../images/squeue_output.png" /></a></div></p>
-<p>By default the fields displayed are <code>jobid</code>, <code>partition</code>, <code>jobname</code> as <code>name</code>, blazerid as <code>user</code>, job state as <code>st</code>, total run time as <code>time</code>, number of nodes as <code>node</code>, and the list of nodes as <code>nodelist</code>, used for each job a researcher has submitted.</p>
-<p>For array jobs, the JobID will be formatted as <code>jobid_arrayid</code>.</p>
-<p>More information is available at the <a href="https://slurm.schedmd.com/squeue.html">Official Documentation</a>.</p>
-<h2 id="cancelling-jobs-with-scancel">Cancelling Jobs with <code>scancel</code><a class="headerlink" href="#cancelling-jobs-with-scancel" title="Permanent link">&para;</a></h2>
-<p>Cancelling queued and currently running jobs can be done using the <code>scancel</code> command. Importantly, this will only cancel jobs that were initiated by the researcher running the command. <code>scancel</code> is very flexible in how it behaves:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># cancel a single job or an entire job array</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>scancel &lt;jobid&gt;
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># cancel specific job array IDs, specified as single number or a range</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>scancel &lt;jobid_arrayid&gt;
+<p>The input data takes the form of a simple text file (specifically a comma-separated value or CSV file) with four integers as described above. The upstream source of this data puts each simulation in a separate file in a separate folder. This may feel contrived for a simple example, but real experimental data is often structured with one treatment per folder, so we are using it in this example. We do not necessarily know in advance how many data folders will be present when we run the code. Sure, we could count manually and then hardcode that value, but we are trying to automate our process to avoid introducing errors and to save time in the future.</p>
+<p>All of the above constraints must fit within the framework provided by SLURM and the <code>sbatch --array</code> job style. Now that we have a complete list of requirements, we are ready to start forming a solution.</p>
+<h2 id="building-a-solution">Building a Solution<a class="headerlink" href="#building-a-solution" title="Permanent link">&para;</a></h2>
+<p>We are going to need three components to effectively use <code>sbatch array</code> jobs given the requirements and constraints of the task.</p>
+<ol>
+<li>The <code>simulate</code> code that transforms inputs to outputs. We are assuming this exists and will not discuss the implementation in detail here.</li>
+<li>A <code>job</code> shell script file that instructs SLURM how to allocate each array job task.</li>
+<li>A <code>main</code> shell script to automate the <code>--array</code> bounds and call the <code>job</code> script.</li>
+</ol>
+<h3 id="job-script">Job Script<a class="headerlink" href="#job-script" title="Permanent link">&para;</a></h3>
+<p>The job shell script file will be very much like a typical <code>sbatch</code> job script. The preamble will contain the details of SLURM scheduler instructions in the form of flags. After the preamble comes the payload, where we instruct the shell what commands need to be run within each task.</p>
+<h4 id="preamble">Preamble<a class="headerlink" href="#preamble" title="Permanent link">&para;</a></h4>
+<p>The preamble of an <code>sbatch</code> job script instructs SLURM how to queue the job and what resources to allocate. Our preamble is relatively straightforward and should look familiar if you've written job scripts before. For more detailed information on what the flags mean please see <a href="../submitting_jobs/#slurm-flags-and-environment-variables">Slurm Flags</a>.</p>
+<div class="highlight"><span class="filename">job script preamble</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#! /bin/bash</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#SBATCH --job-name=simulate_dice_rolls</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">#SBATCH --output=%x-%A-%a.log</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">#SBATCH --error=%x-%A-%a.log</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># cancel all jobs on a partition for the user</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>scancel -p &lt;partition&gt;
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">#SBATCH --partition=express</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1">#SBATCH --time=00:02:00</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># cancel all jobs for a researcher</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>scancel -u <span class="nv">$USER</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">#SBATCH --ntasks=1</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1">#SBATCH --mem=1G</span>
 </code></pre></div>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Cancelling all jobs will also cancel the interactive jobs created on the Open OnDemand portal.</p>
-</div>
-<!-- markdownlint-disable MD046 -->
-
-<p>More information is available at the <a href="https://slurm.schedmd.com/scancel.html">Official Documentation</a>.</p>
-<h2 id="reviewing-past-jobs-with-sacct">Reviewing Past Jobs with <code>sacct</code><a class="headerlink" href="#reviewing-past-jobs-with-sacct" title="Permanent link">&para;</a></h2>
-<p>If you are planning a new set of jobs and are estimating resource requests, it is useful to review similar jobs that have already completed. To list past jobs for a researcher, use the <code>sacct</code> command. Common use cases and information are detailed below. Full details are available at the <a href="https://slurm.schedmd.com/scancel.html">Official Documentation</a>.</p>
+<p>If we had a fixed number of datasets, say ten, we could add the line <code>#SBATCH --array=0-9</code> to the preamble and not require a <code>main.sh</code> file. In that case we would just use <code>sbatch job.sh</code> and be done. However, for this example, we require a dynamic upper bound on the <code>--array</code> flag, which isn't possible in the preamble of a script file.</p>
+<h4 id="payload">Payload<a class="headerlink" href="#payload" title="Permanent link">&para;</a></h4>
+<p>For our example, the payload consists of multiple parts. We will need to extract the file from just one of the folders, ensuring that each folder is used exactly once. Dependencies must be loaded, and then the software must be run. The most interesting part will be extracting the files.</p>
+<h5 id="file-extraction">File Extraction<a class="headerlink" href="#file-extraction" title="Permanent link">&para;</a></h5>
+<p>The general idea for file extraction, and generally use of the <code>$SLURM_ARRAY_TASK_ID</code> variable, is for each task to pull one unique element out of a list of possibilities. The list of possibilities can take many forms. In our case, we can use a shell array of strings constructed from a <a href="../../../workflow_solutions/shell/#glob-syntax">glob pattern</a>.</p>
+<p>Other workflows may extract lines from a manifest file, or even have a computation that transforms the job array index provided by <code>$SLURM_ARRAY_TASK_ID</code> into some other number or collection of numbers.</p>
+<p>Below is the file extraction portion of <code>job.sh</code>, along with descriptions of each line.</p>
+<div class="highlight"><span class="filename">Job Script Payload: File Extraction</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">shopt</span> -s nullglob
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">input_files</span><span class="o">=(</span>../inputs/**/dice.csv<span class="o">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nv">INPUT_FILE</span><span class="o">=</span><span class="si">${</span><span class="nv">input_files</span><span class="p">[</span><span class="nv">$SLURM_ARRAY_TASK_ID</span><span class="p">]</span><span class="si">}</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nv">OUTPUT_FILE</span><span class="o">=</span><span class="si">${</span><span class="nv">INPUT_FILE</span><span class="p">/inputs/outputs</span><span class="si">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nv">OUTPUT_FILE</span><span class="o">=</span><span class="si">${</span><span class="nv">OUTPUT_FILE</span><span class="p">/dice/rolls</span><span class="si">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>The line <code>shopt -s nullglob</code> instructs <code>bash</code> to allow empty arrays created with glob patterns.</p>
+</li>
+<li>
+<p>The line <code>input_files=(../inputs/**/dice.csv)</code> uses the glob pattern <code>../inputs/**/dice.csv</code> to create a shell array of paths to files in our dataset. Note that this shell array is distinct from the job <code>--array</code>, though they should have the same total number of elements, one for each task.</p>
+<p>The glob pattern can be read as:</p>
+<ul>
+<li><code>../</code>: move up one folder then...</li>
+<li><code>inputs/</code>: look in the folder <code>inputs</code> for...</li>
+<li><code>**/</code>: any number of nested subfolders containing...</li>
+<li><code>dice.csv</code>: the file <code>dice.csv</code>.</li>
+</ul>
+<p>The parentheses around the glob pattern instructs <code>bash</code> to create a shell array of strings from the results of the glob pattern. If there are multiple folders, each with one <code>dice.csv</code> file, then the shell array will have one entry for each of them.</p>
+<p>The shell array is then stored in the variable <code>input_files</code>.</p>
+</li>
+<li>
+<p>The line <code>INPUT_FILE=${input_files[$SLURM_ARRAY_TASK_ID]}</code> extracts exactly one entry from the <code>input_files</code> shell array and puts it in the variable <code>INPUT_FILE</code>. The value of <code>$SLURM_ARRAY_TASK_ID</code> is set by the SLURM schedule when each task starts. If there are ten tasks, as with <code>--array=0-9</code>, then each task has <code>$SLURM_ARRAY_TASK_ID</code> set to a unique value from <code>[0,9]</code>. We index the shell array <code>input_files</code> using <code>$SLURM_ARRAY_TASK_ID</code> to get a single entry from the shell array. Putting it all together, each task will pull out exactly one file from the set of data folders.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To minimize queue wait times and make best use of resources, please review job efficiency using <code>seff</code>. See our <a href="../../job_efficiency/">Job Efficiency</a> page for more information.</p>
+<p>Curly braces with a leading dollar sign like <code>${...}</code> are used for evaluating some modification to a variable.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
-
-<h3 id="review-jobs-by-jobid">Review Jobs by JobID<a class="headerlink" href="#review-jobs-by-jobid" title="Permanent link">&para;</a></h3>
-<p>The basic form is to use <code>-j</code> along with a JobID to list information about that job.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sacct -j &lt;jobid&gt;
-</code></pre></div>
-<p>You can also review multiple jobs using a comma-separated list of JobIDs.</p>
-<p>This command will output basic information such as the ID, Name, Partition, Allocated CPUs, and State for the given JobID.</p>
-<p>Jobs can have matching extern and/or batch job entries as well. These are not especially helpful for most researchers. You can remove these entries using the <code>-X</code> flag.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sacct -j &lt;jobid&gt; -X
-</code></pre></div>
-<h3 id="review-jobs-submitted-between-specific-timepoints">Review Jobs Submitted Between Specific Timepoints<a class="headerlink" href="#review-jobs-submitted-between-specific-timepoints" title="Permanent link">&para;</a></h3>
-<p>If you do not remember the JobID, you can use the <code>-S</code> and <code>-E</code> flags to retrieve jobs submitted between the given start datetime and end datetime.</p>
-<p>For example, to retrieve jobs submitted during the month of July 2021, the command could be:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sacct -S <span class="m">070121</span> -E <span class="m">073121</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sacct -S <span class="m">07</span>/01/21 -E <span class="m">07</span>/31/21
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>sacct -S <span class="m">2021</span>-07-01 -E <span class="m">2021</span>-07-31
-</code></pre></div>
-<h3 id="customizing-the-output">Customizing the Output<a class="headerlink" href="#customizing-the-output" title="Permanent link">&para;</a></h3>
-<p>You can add <code>-o</code> with a list of <a href="#sacct-fields">output fields</a> to customize the information you see.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sacct -o jobid,start,end,state,alloccpu,reqmem
-</code></pre></div>
-<p>You may also use the format <code>&lt;field&gt;%&lt;width&gt;</code> to make columns be <code>&lt;width&gt;</code> characters wide. This is sometimes necessary for <a href="#tres-explained">TRES fields</a> and <code>nodelist</code>, among others. An example might be <code>alloctres%40</code> to make the field 40 characters wide.</p>
-<p>This command will output the JobID, the start time, end time, the state, the number of allocated CPUs, and the requested memory for the specified job. All potential output fields can be seen using <code>sacct --helpformat</code>. Their descriptions can be found on the <a href="https://slurm.schedmd.com/sacct.html">sacct documentation</a> under Job Accounting Fields.</p>
-<h3 id="formatting-the-output">Formatting the Output<a class="headerlink" href="#formatting-the-output" title="Permanent link">&para;</a></h3>
-<p>You can format the output of <code>sacct</code> using a delimiter with the flags <code>--parsable2</code> and <code>--delimiter=&lt;delim&gt;</code>. Any number of characters may be used as a delimiter. The default is <code>|</code>. It is not recommended to use <code>,</code> as that is used in comma-separated lists throughout <code>sacct</code> fields.</p>
-<h3 id="sacct-flags"><code>sacct</code> Flags<a class="headerlink" href="#sacct-flags" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th align="left">Flag</th>
-<th align="left">Short</th>
-<th align="left">Description</th>
-<th align="left">Docs</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">FILTERING</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>--user</code></td>
-<td align="left"><code>-u</code></td>
-<td align="left">Jobs from a specific user. Please only use your own blazerid.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_uid">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--allocations</code></td>
-<td align="left"><code>-X</code></td>
-<td align="left">Show jobs only, not steps.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_allocations">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--starttime</code></td>
-<td align="left"><code>-S</code></td>
-<td align="left">Jobs starting at a given time. See <a href="#slurm-time-formatting">Time formatting</a>.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_starttime">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--endtime</code></td>
-<td align="left"><code>-E</code></td>
-<td align="left">Jobs ending at a given time. See <a href="#slurm-time-formatting">Time Formatting</a>.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_endtime">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--state</code></td>
-<td align="left"><code>-s</code></td>
-<td align="left">Jobs with a given state. See <a href="#slurm-states">States</a>.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_state">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--jobs</code></td>
-<td align="left"><code>-j</code></td>
-<td align="left">Show only the jobids supplied in a comma-separated list.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_jobs">sacct</a></td>
-</tr>
-<tr>
-<td align="left">FORMATTING</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><code>--format</code></td>
-<td align="left"><code>-o</code></td>
-<td align="left">Show only the <a href="#sacct-fields">Fields</a> supplied in a comma-separated list.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_format">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--helpformat</code></td>
-<td align="left"><code>-e</code></td>
-<td align="left">Show a list of available <a href="#sacct-fields">Fields</a>.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_helpformat">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--parsable2</code></td>
-<td align="left"><code>-P</code></td>
-<td align="left">Output as delimited data with <code>--delimiter</code> if supplied, default is <code>|</code>.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_parsable2">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--delimiter</code></td>
-<td align="left">n/a</td>
-<td align="left">Characters to delimit field values.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_delimiter">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--json</code></td>
-<td align="left">n/a</td>
-<td align="left">Output as JSON. (Not yet available on Cheaha).</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_json">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--yaml</code></td>
-<td align="left">n/a</td>
-<td align="left">Output as YAML. (Not yet available on Cheaha).</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_yaml">sacct</a></td>
-</tr>
-<tr>
-<td align="left"><code>--noconvert</code></td>
-<td align="left">n/a</td>
-<td align="left">Keep uniform units, e.g. all M instead of M and G. See <a href="#slurm-units">Units</a>.</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_noconvert">sacct</a></td>
-</tr>
-</tbody>
-</table>
-<p>A complete list of flags is available at <a href="https://slurm.schedmd.com/sacct.html#SECTION_OPTIONS">Official Documentation</a>.</p>
-<h3 id="sacct-fields"><code>sacct</code> Fields<a class="headerlink" href="#sacct-fields" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="left">Description</th>
-<th align="left">Same As...</th>
-<th align="left">Job</th>
-<th align="left">Step</th>
-<th align="left">Docs</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">METADATA</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">jobid</td>
-<td align="left">SLURM assigned job ID number.</td>
-<td align="left"><a href="#slurm-job-id-formatting">jobid format</a></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_JobID">sacct</a></td>
-</tr>
-<tr>
-<td align="left">jobname</td>
-<td align="left">User assigned job name.</td>
-<td align="left"><code>--job-name</code></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_JobName">sacct</a></td>
-</tr>
-<tr>
-<td align="left">state</td>
-<td align="left">Current state of the job.</td>
-<td align="left"><a href="#slurm-states">states</a></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_State">sacct</a></td>
-</tr>
-<tr>
-<td align="left">partition</td>
-<td align="left">Partition job was submitted to.</td>
-<td align="left"><code>--partition</code></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_Partition">sacct</a></td>
-</tr>
-<tr>
-<td align="left">ntasks</td>
-<td align="left">Number of requested tasks.</td>
-<td align="left"><code>--ntasks</code></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_NTasks">sacct</a></td>
-</tr>
-<tr>
-<td align="left">nodelist</td>
-<td align="left">List of nodes used.</td>
-<td align="left"><code>--nodelist</code> if supplied</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_NodeList">sacct</a></td>
-</tr>
-<tr>
-<td align="left">TIME</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">submit</td>
-<td align="left">Submit time as YYYY-MM-DDTHH:MM:SS</td>
-<td align="left">n/a</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_Submit">sacct</a></td>
-</tr>
-<tr>
-<td align="left">start</td>
-<td align="left">Start time as YYYY-MM-DDTHH:MM:SS</td>
-<td align="left">n/a</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_Start">sacct</a></td>
-</tr>
-<tr>
-<td align="left">end</td>
-<td align="left">End time as YYYY-MM-DDTHH:MM:SS</td>
-<td align="left">n/a</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_End">sacct</a></td>
-</tr>
-<tr>
-<td align="left">elapsed</td>
-<td align="left">Elapsed time as DD-HH:MM:SS</td>
-<td align="left">n/a</td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_Elapsed">sacct</a></td>
-</tr>
-<tr>
-<td align="left">RESOURCE REQUESTED</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">reqcpus</td>
-<td align="left">CPUs requested.</td>
-<td align="left"><a href="#calculating-cpus">cpu calculation</a></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_ReqCPUS">sacct</a></td>
-</tr>
-<tr>
-<td align="left">reqmem</td>
-<td align="left">Memory requested. Uses 10Gc for per core, 10Gn for per node.</td>
-<td align="left"><code>--mem-per-cpu</code> or <code>--mem</code></td>
-<td align="left">yes</td>
-<td align="left">no</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_ReqMem">sacct</a></td>
-</tr>
-<tr>
-<td align="left">reqnodes</td>
-<td align="left">Nodes requested.</td>
-<td align="left"><code>--nodes</code></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_ReqNodes">sacct</a></td>
-</tr>
-<tr>
-<td align="left">reqtres</td>
-<td align="left">All requested resources. May be used to review GPUs.</td>
-<td align="left"><a href="#tres-explained">tres explanation</a></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_ReqTres">sacct</a></td>
-</tr>
-<tr>
-<td align="left">RESOUCES ALLOCATED</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">alloccpus</td>
-<td align="left">CPUs allocated.</td>
-<td align="left"><a href="#calculating-cpus">cpu calculation</a></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_AllocCPUs">sacct</a></td>
-</tr>
-<tr>
-<td align="left">allocnodes</td>
-<td align="left">Nodes allocated</td>
-<td align="left"><code>--nodes</code></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_AllocNodes">sacct</a></td>
-</tr>
-<tr>
-<td align="left">alloctres</td>
-<td align="left">All allocated resources. May be used to review GPUs.</td>
-<td align="left"><a href="#tres-explained">tres explanation</a></td>
-<td align="left">yes</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_AllocTres">sacct</a></td>
-</tr>
-<tr>
-<td align="left">averss</td>
-<td align="left">Average resident set size (memory) in bytes across tasks.</td>
-<td align="left"><a href="#rss-explained">resident set size</a></td>
-<td align="left">no</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_AveRSS">sacct</a></td>
-</tr>
-<tr>
-<td align="left">maxrss</td>
-<td align="left">Maximum resident set size (memory) in bytes across tasks.</td>
-<td align="left"><a href="#rss-explained">resident set size</a></td>
-<td align="left">no</td>
-<td align="left">yes</td>
-<td align="left"><a href="https://slurm.schedmd.com/sacct.html#OPT_MaxRSS">sacct</a></td>
-</tr>
-</tbody>
-</table>
-<p>A complete list of fields is available at the <a href="https://slurm.schedmd.com/sacct.html#SECTION_Job-Accounting-Fields">Official Documentation</a>.</p>
-<h2 id="slurm-common-reference">SLURM Common Reference<a class="headerlink" href="#slurm-common-reference" title="Permanent link">&para;</a></h2>
-<h3 id="slurm-jobid-formatting">SLURM JobID Formatting<a class="headerlink" href="#slurm-jobid-formatting" title="Permanent link">&para;</a></h3>
-<p>JobID numbers are assigned automatically by the scheduler in the order submissions are received. All jobs have a single, unique JobID number associated with them. Some features will cause JobID numbers to be reported differently than their actual value.</p>
-<ul>
-<li>For non-array jobs submitted with <code>sbatch</code>, <code>salloc</code>, or with <code>srun</code> outside of a job context, the unique JobID number is reported directly.</li>
-<li>For array jobs submitted with <code>sbatch</code>, the array is assigned a master ID like <code>12345678</code>, and each task is reported as <code>&lt;master-job-id&gt;_&lt;task-id&gt;</code>. An example might be <code>12345678_987</code>. Each task still has a unique JobID number.</li>
-<li>For job steps submitted with <code>srun</code> inside of a job context, the JobID is reported as <code>&lt;job-id&gt;.&lt;task-name&gt;</code>. All jobs submitted generate a <code>.batch</code> step and a <code>.extern</code> step. An example might be <code>12345678.batch</code>.</li>
-</ul>
-<h3 id="slurm-time-formatting">SLURM Time Formatting<a class="headerlink" href="#slurm-time-formatting" title="Permanent link">&para;</a></h3>
-<p>SLURM formats time in two different ways: (1) time points and (2) durations. Time points are used whenever a single point in time is needed, such as the start or end of a job. Durations are needed for job requests and reported for elapsed times.</p>
-<p>Units are given a shorthand designations:</p>
-<ul>
-<li><code>YYYY</code> four-digit year.</li>
-<li><code>MM</code> two-digit month or two-digit minutes, depending on placement.</li>
-<li><code>DD</code> two-digit day.</li>
-<li><code>HH</code> two-digit hour.</li>
-<li><code>SS</code> two-digit seconds.</li>
-<li><code>AM|PM</code> literally AM or PM.</li>
-</ul>
-<p>Square brackets <code>[]</code> indicate the contents are optional.</p>
-<p>Time points may be formatted like any of the following.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>HH:MM[:SS][AM|PM]
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>MMDD[YY][-HH:MM[:SS]]
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>MM.DD[.YY][-HH:MM[:SS]]
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>MM/DD[/YY][-HH:MM[:SS]]
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>YYYY-MM-DD[THH:MM[:SS]]
-</code></pre></div>
-<p>Duration requests are made like any of the following.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>MM[:SS]
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>[HH:]MM:SS
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>DD-HH[:MM[:SS]]
-</code></pre></div>
-<p>Durations are reported like the following.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[DD-[HH:]]MM:SS
-</code></pre></div>
-<h3 id="slurm-states">SLURM States<a class="headerlink" href="#slurm-states" title="Permanent link">&para;</a></h3>
-<p>Job states report on where the job is in the overall SLURM process. If all goes well, you will see jobs move through the following states:</p>
-<ol>
-<li><code>PENDING</code></li>
-<li><code>RUNNING</code></li>
-<li>A terminal state depending on what happens<ol>
-<li><code>COMPLETED</code> if the job finished normally and returns exit code zero</li>
-<li><code>CANCELLED</code> if the researcher cancels the job</li>
-<li><code>FAILED</code> if there is a software error or non-zero exit code</li>
-<li><code>TIMEOUT</code> if the job had insufficient time</li>
-</ol>
+</li>
+<li>
+<p>The line <code>OUTPUT_FILE=${INPUT_FILE/inputs/outputs}</code> transforms the variable <code>INPUT_FILE</code> so that any instance of the word <code>inputs</code> is replaced with the word <code>outputs</code>. The result is assigned to the variable <code>OUTPUT_FILE</code>. The net result is the output file currently will be <code>../outputs/folder/dice.csv</code>.</p>
+</li>
+<li>
+<p>We're not quite done setting up the output path. The line <code>OUTPUT_FILE=${OUTPUT_FILE/dics/rolls}</code> further replaces <code>dice</code> with <code>rolls</code>. The net result is <code>../outputs/folder/rolls.csv</code>.</p>
+<p>Lines 4 and 5 result in a parallel folder structure between inputs and outputs. It is possible to use other structures such as all outputs in the same folder, or outputs in the same folders as inputs, but we won't go into detail here on how to achieve those.</p>
 </li>
 </ol>
-<p>Other states are possible. A complete list of job states is available at the <a href="https://slurm.schedmd.com/sacct.html#SECTION_JOB-STATE-CODES">Official Documentation</a>.</p>
-<h3 id="slurm-units">SLURM Units<a class="headerlink" href="#slurm-units" title="Permanent link">&para;</a></h3>
-<p>Slurm uses flexible units for memory to keep reports compact. It always prefers the shortest possible representation, and will choose the largest units by default. Other units may be used, and there are flags to allow reporting in uniform units.</p>
-<p>The memory units are <code>KMGT</code> for <code>kilo</code>, <code>mega</code>, <code>giga</code>, <code>tera</code> respectively. All are in bytes. Slurm uses the convention that e.g.</p>
-<div class="arithmatex">\[
-\begin{aligned}
-1\textrm{T}
-&amp;=1024\textrm{G}\\
-&amp;=1024^{2}\textrm{M}\\
-&amp;=1024^{3}\textrm{K}
-\end{aligned}
-\]</div>
-<h3 id="tres-explained">TRES Explained<a class="headerlink" href="#tres-explained" title="Permanent link">&para;</a></h3>
-<p>The abbreviation <code>TRES</code> stands for "trackable resources". Any resource made available by SLURM that is trackable is recorded in the SLURM database and can be recovered using <a href="#reviewing-past-jobs-with-sacct">sacct</a>. The <a href="#sacct-fields">fields</a> <code>reqtres</code> and <code>alloctres</code> can be used to review CPUs, memory, nodes and GPUs. The data is stored as a comma-separated list of <code>&lt;resource&gt;=&lt;quantity&gt;</code> pairs, and all values are totals across the entire job, not per node or per task. An example might look like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>billing=8,cpu=8,gres/gpu=2,mem=64G,node=1
+<h5 id="running-the-software">Running the Software<a class="headerlink" href="#running-the-software" title="Permanent link">&para;</a></h5>
+<p>Running the software requires setting up the random number generator seed (for repeatability), loading module dependencies, creating the output directory, and finally running the simulation.</p>
+<div class="highlight"><span class="filename">Job Script Payload: Running the Software</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">SEED</span><span class="o">=</span><span class="m">314159</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>module load ...
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nv">OUTPUT_DIRECTORY</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="nv">$OUTPUT_FILE</span><span class="s2">&quot;</span><span class="k">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>mkdir -p <span class="nv">$OUTPUT_DIRECTORY</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>simulate <span class="nv">$SEED</span> <span class="nv">$INPUT_FILE</span> <span class="nv">$OUTPUT_FILE</span>
 </code></pre></div>
-<h3 id="rss-explained">RSS Explained<a class="headerlink" href="#rss-explained" title="Permanent link">&para;</a></h3>
-<p>The abbreviation <code>RSS</code> stands for "resident set size", and is related to memory usage by jobs in SLURM. Memory usage is challenging to record accurately. Recording memory means a request must be made to the operating system to obtain memory usage at a single point in time, which uses computational resources. There is a balance made between resolution in time, and computational overhead.</p>
-<p>The difficulty with recording memory usage contributes to difficulty diagnosing root causes of out of memory errors, bus errors, and segmentation faults.</p>
-<p>RSS is recorded by slurm in the <a href="#reviewing-past-jobs-with-sacct">sacct</a> <a href="#sacct-fields">fields</a> <code>averss</code> and <code>maxrss</code>. These values are both reported in bytes, rather than the usual <a href="#slurm-units">compact memory units</a>.</p>
-<h3 id="slurm-resource-calculations">SLURM Resource Calculations<a class="headerlink" href="#slurm-resource-calculations" title="Permanent link">&para;</a></h3>
-<h4 id="calculating-cpus">Calculating CPUs<a class="headerlink" href="#calculating-cpus" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">\[
-\begin{aligned}
-\textrm{Total CPUs}
-&amp;=\left(\textrm{--cpus-per-task}\right)
-\left(\textrm{--ntasks}\right)
-\left(\textrm{--nodes}\right)\\
-&amp;=\left(\frac{\textrm{CPU}}{\textrm{Task}}\right)
-\left(\frac{\textrm{Task}}{\textrm{Node}}\right)
-\left(\textrm{Node}\right)
-\end{aligned}
-\]</div>
-<p>Example:</p>
-<p>For a job with <code>--cpus-per-task=16 --ntasks=2 --nodes=3</code>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\textrm{Total CPUs}
-&amp;=16\times 2\times 3\\
-&amp;=96
-\end{aligned}
-\]</div>
-<h4 id="calculating-memory">Calculating Memory<a class="headerlink" href="#calculating-memory" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">\[
-\begin{aligned}
-\textrm{Total Memory}
-&amp;=\left(\textrm{--mem}\right)
-\left(\textrm{--nodes}\right)\\
-&amp;=\left(\frac{\textrm{Memory}}{\textrm{Node}}\right)
-\left(\textrm{Node}\right)\\
-\\
-\textrm{Total Memory}
-&amp;=\left(\textrm{--mem-per-cpu}\right)
-\left(\textrm{--cpus-per-task}\right)
-\left(\textrm{--ntasks}\right)
-\left(\textrm{--nodes}\right)\\
-&amp;=\left(\frac{\textrm{Memory}}{\textrm{CPU}}\right)
-\left(\frac{\textrm{CPU}}{\textrm{Task}}\right)
-\left(\frac{\textrm{Task}}{\textrm{Node}}\right)
-\left(\textrm{Node}\right)
-\end{aligned}
-\]</div>
-<p>Examples:</p>
-<p>For a job with <code>--mem=40G --nodes=2</code>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\textrm{Total Memory}
-&amp;=\left(\textrm{--mem}\right)
-\left(\textrm{--nodes}\right)\\
-&amp;=40\textrm{G}\times 2\\
-&amp;=80\textrm{G}
-\end{aligned}
-\]</div>
-<p>For a job with <code>--mem-per-cpu=10G --cpus-per-task=8 --ntasks=2 --nodes=2</code>:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\textrm{Total Memory}
-&amp;=\left(\textrm{--mem-per-cpu}\right)
-\left(\textrm{--cpus-per-task}\right)
-\left(\textrm{--ntasks}\right)
-\left(\textrm{--nodes}\right)\\
-&amp;=10\textrm{G}\times 8\times 2\times 2\\
-&amp;=320\textrm{G}
-\end{aligned}
-\]</div>
+<ol>
+<li>
+<p>The line <code>SEED=314159</code> sets the variable <code>SEED</code> with a static number for repeatability. It is set in a variable, rather than directly on the final line, so future readers of the code will understand the purpose of the number.</p>
+</li>
+<li>
+<p>The line <code>module load ...</code> is where any necessary <code>module load</code> or <code>conda activate</code> executions would go to prepare dependencies.</p>
+</li>
+<li>
+<p>The line <code>OUTPUT_DIRECTORY=$(dirname "$OUTPUT_FILE")</code> extracts the directory part of the output file path and assigns it to the variable <code>OUTPUT_DIRECTORY</code>.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Single parentheses with a leading dollar sign like <code>$(...)</code> are used for capturing the string output of a command in a variable.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+</li>
+<li>
+<p>The line <code>mkdir -p $OUTPUT_DIRECTORY</code> creates the directory at the path stored in the variable <code>$OUTPUT_DIRECTORY</code>. The flag <code>-p</code> means the <code>mkdir</code> command will not produce an error if the directory already exists.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you know your software will create any necessary output directories, then this and the previous line are not necessary.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+</li>
+<li>
+<p>The line <code>simulate $SEED $INPUT_FILE $OUTPUT_FILE</code> runs the simulation.</p>
+</li>
+</ol>
+<h3 id="main-script">Main Script<a class="headerlink" href="#main-script" title="Permanent link">&para;</a></h3>
+<p>The <code>main</code> shell script will determine the upper bound <code>$N</code> of the <code>--array</code> flag, and then call <code>sbatch --array=1-$N job.sh</code>. It will be up to <code>job.sh</code> to determine how to use <code>$SLURM_ARRAY_TASK_ID</code>. Before we go too much further, it may be helpful to think of <code>sbatch --array=1-$N job.sh</code> as creating an indexed loop, from 1 to <code>$N</code>, and running <code>job.sh</code> on each of those index values. The important point is that the loop indices are run in parallel, so whatever happens in each call to <code>job.sh</code> must be independent. The <code>main.sh</code> file is the same for all languages and is shown in the code block below. The comments describe what each segment of code is doing.</p>
+<div class="highlight"><span class="filename">main.sh</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#! /bin/bash</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">shopt</span> -s nullglob
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nv">input_files</span><span class="o">=(</span>../inputs/**/dice.csv<span class="o">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nv">FILE_COUNT</span><span class="o">=</span><span class="si">${#</span><span class="nv">input_files</span><span class="p">[@]</span><span class="si">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nv">FILE_COUNT</span><span class="o">=</span><span class="k">$((</span> <span class="nv">$FILE_COUNT</span> <span class="o">-</span> <span class="m">1</span> <span class="k">))</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>sbatch --array<span class="o">=</span><span class="m">0</span>-<span class="nv">$FILE_COUNT</span> job.sh
+</code></pre></div>
+<ol>
+<li>
+<p>The line <code>#! /bin/bash</code> instructs the operating system what interpreter to use if called without an explicit interpreter, like <code>./main.sh</code>. It is best practice to have this line for scripts running in <code>bash</code>. Other lines are possible for other interpreters.</p>
+</li>
+<li>
+<p>The line <code>shopt -s nullglob</code> instructs <code>bash</code> to allow empty arrays created with glob patterns.</p>
+</li>
+<li>
+<p>The line <code>input_files=(../inputs/**/dice.csv)</code> uses the glob pattern <code>../inputs/**/dice.csv</code> to create a shell array of paths to files in our dataset. The details of this are discussed above in <a href="#file-extraction">File Extraction</a>.</p>
+</li>
+<li>
+<p>The line <code>FILE_COUNT=${#input_files[@]}</code> gets all entries from the <code>input_files</code> array using the special index <code>@</code> (for all elements), then counting them with the prefix symbol <code>#</code>.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Curly braces with a leading dollar sign like <code>${...}</code> are used for evaluating string modifications to a variable.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+</li>
+<li>
+<p>The line <code>FILE_COUNT=$(( FILE_COUNT - 1 ))</code> subtracts one from the file count. We must do this because array variables, as used in <code>job.sh</code>, start counting at zero (they are zero-indexed). So instead of counting from <code>1</code> to <code>10</code>, we would count from <code>0</code> to <code>9</code>.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Double parentheses with a leading dollar sign like <code>$((...))</code> are used for evaluating integer arithmetic to a variable.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+</li>
+<li>
+<p>The line <code>sbatch --array=0-$FILE_COUNT job.sh</code> puts the array tasks in the SLURM queue using the <code>job.sh</code> script. The number of tasks runs from <code>0</code> to <code>$FILE_COUNT</code> as compute above.</p>
+</li>
+</ol>
+<p>To use the script, enter the command <code>bash main.sh</code> at the terminal.</p>
+<h2 id="putting-it-all-together">Putting it All Together<a class="headerlink" href="#putting-it-all-together" title="Permanent link">&para;</a></h2>
+<p>We needed three parts to make the <code>sbatch --array</code> job work for our task. Each of these parts has been described above in some detail.</p>
+<ol>
+<li><code>simulate</code> program to run a simulation.</li>
+<li><code>job.sh</code> to instruct the SLURM scheduler what to do in each parallel task.</li>
+<li><code>main.sh</code> to run everything.</li>
+</ol>
+<p>Executing <code>bash main.sh</code> at the terminal will first compute the number of array tasks, then call <code>sbatch --array</code> with that number of tasks on <code>job.sh</code>. The scheduler will then schedule that many jobs to be run. Each job will have a unique task ID, which will be used to access unique input files and write to unique output files. All of them will be run in parallel.</p>
+<p>The reason <code>sbatch --array</code> could be used on our dice rolling statistics task is because dice rolls are independent. It doesn't matter when I roll the dice or whether I roll them together or sequentially, the results will be statistically the same.</p>
+<p>Any task that can be broken into independent subtasks with similar input parameters can be used with <code>sbatch --array</code> in this way. Please feel free to use the scripts provided as a template for your own <code>sbatch --array</code> jobs, modifying them as appropriate.</p>
+<h3 id="the-example-scripts">The Example Scripts<a class="headerlink" href="#the-example-scripts" title="Permanent link">&para;</a></h3>
+<p>For reference, here are the full scripts.</p>
+<div class="highlight"><span class="filename">job.sh</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#! /bin/bash</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">#SBATCH --job-name=simulate_dice_rolls</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">#SBATCH --output=%x-%A-%a.log</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">#SBATCH --error=%x-%A-%a.log</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1">#SBATCH --partition=express</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1">#SBATCH --time=00:02:00</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1">#SBATCH --ntasks=1</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1">#SBATCH --mem=1G</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="nb">shopt</span> -s nullglob
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="nv">input_files</span><span class="o">=(</span>../inputs/**/dice.csv<span class="o">)</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="nv">INPUT_FILE</span><span class="o">=</span><span class="si">${</span><span class="nv">input_files</span><span class="p">[</span><span class="nv">$SLURM_ARRAY_TASK_ID</span><span class="p">]</span><span class="si">}</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="nv">OUTPUT_FILE</span><span class="o">=</span><span class="si">${</span><span class="nv">INPUT_FILE</span><span class="p">/inputs/outputs</span><span class="si">}</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="nv">OUTPUT_FILE</span><span class="o">=</span><span class="si">${</span><span class="nv">OUTPUT_FILE</span><span class="p">/dice/rolls</span><span class="si">}</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="nv">SEED</span><span class="o">=</span><span class="m">314159</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>module load ...
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="nv">OUTPUT_DIRECTORY</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="nv">$OUTPUT_FILE</span><span class="s2">&quot;</span><span class="k">)</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>mkdir -p <span class="nv">$OUTPUT_DIRECTORY</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>simulate <span class="nv">$SEED</span> <span class="nv">$INPUT_FILE</span> <span class="nv">$OUTPUT_FILE</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">main.sh</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ch">#! /bin/bash</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">shopt</span> -s nullglob
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nv">input_files</span><span class="o">=(</span>../inputs/**/dice.csv<span class="o">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nv">FILE_COUNT</span><span class="o">=</span><span class="si">${#</span><span class="nv">input_files</span><span class="p">[@]</span><span class="si">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nv">FILE_COUNT</span><span class="o">=</span><span class="k">$((</span> <span class="nv">$FILE_COUNT</span> <span class="o">-</span> <span class="m">1</span> <span class="k">))</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>sbatch --array<span class="o">=</span><span class="m">0</span>-<span class="nv">$FILE_COUNT</span> job.sh
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2023</span>
       
     
   </small>
@@ -2685,7 +2300,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../practical_sbatch/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Practical Batch Array Jobs" rel="prev">
+        <a href="../submitting_jobs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Submitting Jobs" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2694,20 +2309,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Practical Batch Array Jobs
+              Submitting Jobs
             </div>
           </div>
         </a>
       
       
         
-        <a href="../gpu/" class="md-footer__link md-footer__link--next" aria-label="Next: GPUs" rel="next">
+        <a href="../job_management/" class="md-footer__link md-footer__link--next" aria-label="Next: Managing Jobs" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              GPUs
+              Managing Jobs
             </div>
           </div>
           <div class="md-footer__button md-icon">

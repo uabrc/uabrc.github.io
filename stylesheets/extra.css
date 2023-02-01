@@ -52,7 +52,13 @@ html .md-footer-meta.md-typeset a.supportemail {
     line-height: normal;
 }
 
-.md-typeset :not(h1, h2, h3, h4)+:is(h2, h3, h4) {
+.md-typeset h5 {
+    font-weight: 600;
+    line-height: normal;
+    color: var(--md-default-fg-color);
+}
+
+.md-typeset :not(h1, h2, h3, h4, h5)+:is(h2, h3, h4, h5) {
     margin-top: 44px;
 }
 
