@@ -143,7 +143,7 @@ For more details on using `sbatch` please see the [official documentation](https
 
 ### Batch Array Jobs With Dynamic or Computed Indices
 
-For a practical example with dynamic indices, please visit our [`sbatch` Dynamic Example](sbatch_dynamic_example.md)
+For a practical example with dynamic indices, please visit our [Practical `sbatch` Examples](practical_sbatch.md)
 
 ## Interactive Jobs with `srun`
 
