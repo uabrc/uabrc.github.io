@@ -44,7 +44,7 @@ For example, if you wanted to give users `bob` and `jane` the ability to list ob
             ]
         },
     "Action": [
-        "s3.ListBucket"
+        "s3:ListBucket"
     ],
     "Resource": [
         "arn:aws:s3:::b1"
@@ -52,7 +52,7 @@ For example, if you wanted to give users `bob` and `jane` the ability to list ob
 }
 ```
 
-Critically, this does not allow the given users the ability to read, download, edit, or delete any objects in the bucket. They will be able to list the objects, see the names, sizes, and directory structure, but will not be able to interact with the objects. These permissions should be enumerated in a separate statement like:
+Critically, this does not allow the given users the ability to read, download, edit, or delete any objects in the bucket. They will be able to list the objects, see the names, sizes, and directory structure but will not be able to interact with the objects. These permissions should be enumerated in a separate statement like:
 
 ``` json
 {
@@ -65,7 +65,7 @@ Critically, this does not allow the given users the ability to read, download, e
             ]
         },
     "Action": [
-        "s3.GetObject"
+        "s3:GetObject"
     ],
     "Resource": [
         "arn:aws:s3:::b1/*"
@@ -98,6 +98,8 @@ A full list of Actions for UAB LTS can be seen on the [Ceph docs](https://docs.c
 
 ### Read-Only for All Files
 
+This will give permissions to `bob` and `jane` for bucket `b1`. The permissions will include bucket access (the `list-bucket` statement) as well as read-only permissions for all objects in the bucket (the `read-only` statement). Specifically, they will be able to copy the files from the bucket to another bucket or a local file system.
+
 ``` json
     {
     "Version": "2012-10-17",
@@ -111,7 +113,7 @@ A full list of Actions for UAB LTS can be seen on the [Ceph docs](https://docs.c
             ]
         },
         "Action": [
-            "s3.ListBucket"
+            "s3:ListBucket"
         ],
         "Resource": [
             "arn:aws:s3:::b1"
@@ -127,7 +129,7 @@ A full list of Actions for UAB LTS can be seen on the [Ceph docs](https://docs.c
             ]
         },
         "Action": [
-            "s3.GetObject"
+            "s3:GetObject"
         ],
         "Resource": [
             "arn:aws:s3:::b1/*"
@@ -138,7 +140,7 @@ A full list of Actions for UAB LTS can be seen on the [Ceph docs](https://docs.c
 
 ### Read-Write Permissions
 
-This will give read, write, and delete permissions to the users so they are able to sync directories between a local source folder and the S3 destination
+This will give read, write, and delete permissions to `bob` and `jane` so they are able to sync directories between a local source folder and the S3 destination. This can be dangerous because of the delete permissions so care should be given in handing out that permission. `s3:DeleteObject` can be set into another statement field and limited to very select users while giving upload permission to many users.
 
 ``` json
 {
@@ -153,7 +155,7 @@ This will give read, write, and delete permissions to the users so they are able
             ]
         },
         "Action": [
-            "s3.ListBucket"
+            "s3:ListBucket"
         ],
         "Resource": [
             "arn:aws:s3:::b1"
@@ -169,9 +171,9 @@ This will give read, write, and delete permissions to the users so they are able
             ]
         },
         "Action": [
-            "s3.GetObject",
-            "s3.PutObject",
-            "s3.DeleteObject"
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:DeleteObject"
         ],
         "Resource": [
             "arn:aws:s3:::b1/*"
@@ -197,7 +199,7 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
             ]
         },
         "Action": [
-            "s3.ListBucket"
+            "s3:ListBucket"
         ],
         "Resource": [
             "arn:aws:s3:::b1"
@@ -212,8 +214,8 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
             ]
         },
         "Action": [
-            "s3.GetBucketPolicy",
-            "s3.PutBucketPolicy"
+            "s3:GetBucketPolicy",
+            "s3:PutBucketPolicy"
         ],
         "Resource": [
             "arn:aws:s3:::b1"
@@ -229,9 +231,9 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
             ]
         },
         "Action": [
-            "s3.GetObject",
-            "s3.PutObject",
-            "s3.DeleteObject"
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:DeleteObject"
         ],
         "Resource": [
          "arn:aws:s3:::b1/*"
@@ -242,12 +244,12 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
 
 ## Applying a Policy
 
-Policies can be applied to a bucket either by the owner or by a user who has been given the `s3:PutBucketPolicy` permission. You can use either s3cmd or AWS CLI for this.
+Policies can be applied to a bucket either by the owner or by a user who has been given the `s3:PutBucketPolicy` permission. Use s3cmd to apply policies.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    As of now, rclone has not implemented a way to alter policies. If you have been using rclone, you will need to configure either s3cmd or AWS CLI and use those for policy management instead
+    As of now, rclone has not implemented a way to alter policies, and AWS CLI does not apply them to our system correctly. If you have been using rclone or AWS CLI, you will need to configure s3cmd for policy management instead
 <!-- markdownlint-enable MD046 -->
 
 Applying a policy is fairly straightforward for both tools. First, you should save the policy as a JSON file. The, you can interact with the policy using these commands:
@@ -257,21 +259,10 @@ Applying a policy is fairly straightforward for both tools. First, you should sa
 s3cmd setpolicy <policy_file> s3://<bucket>
 
 # s3cmd view policy
-s3cmd getpolicy s3://<bucket>
+s3cmd info s3://<bucket>
 
 # s3cmd remove policy
 s3cmd delpolicy s3://<bucket>
-```
-
-``` bash
-# AWS CLI set policy
-aws s3api put-bucket-policy --bucket <bucket> --policy <policy_file> --endpoint https://s3.lts.rc.uab.edu
-
-# AWS CLI view policy
-aws s3api get-bucket-policy --bucket <bucket> --endpoint https://s3.lts.rc.uab.edu
-
-# AWS CLI remove policy
-aws s3api delete-bucket-policy --bucket <bucket> --endpoint https://s3.lts.rc.uab.edu
 ```
 
 ## Policy Suggestions
