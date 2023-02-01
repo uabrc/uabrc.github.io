@@ -638,6 +638,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#check-bucket-or-folder-size" class="md-nav__link">
+    Check Bucket or Folder Size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#uploading-files-and-folders" class="md-nav__link">
     Uploading Files and Folders
   </a>
@@ -2127,6 +2134,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#check-bucket-or-folder-size" class="md-nav__link">
+    Check Bucket or Folder Size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#uploading-files-and-folders" class="md-nav__link">
     Uploading Files and Folders
   </a>
@@ -2282,8 +2296,8 @@
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="hll">DNS-style bucket+hostname:port template for accessing a bucket [%(bucket)s.s3.amazonaws.com]: %(bucket).s3.lts.rc.uab.edu
 </span><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Encryption password is used to protect your files from reading by unauthorized persons while in transfer to S3
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="hll">Encryption password: &lt;leave blank&gt;
-</span><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="hll">Path to GPG program [/usr/bin/gpg]: $HOME/bin/gpg
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="hll">Encryption password: &lt;leave blank or enter password&gt;
+</span><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="hll">Path to GPG program [/usr/bin/gpg]: &lt;leave blank&gt;
 </span><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>When using secure HTTPS protocol all communication with Amazon S3 servers is protected from 3rd party eavesdropping. This method is slower than plain HTTP, and can only be proxied with Python 2.7 or newer
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="hll">Use HTTPS protocol [Yes]: &lt;leave blank&gt;
@@ -2397,13 +2411,21 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>aws s3 ls &lt;bucket/path/directory/&gt; --endpoint-url https://s3.lts.rc.uab.edu
 </code></pre></div>
 <p>If you would like to list all objects recursively, you can add the <code>--recursive</code> tag. A couple of other helpful options are <code>--summarize</code> and <code>--human-readable</code> that will give a total number of objects and their size and make the size output more easily readable, respectively.</p>
+<h3 id="check-bucket-or-folder-size">Check Bucket or Folder Size<a class="headerlink" href="#check-bucket-or-folder-size" title="Permanent link">&para;</a></h3>
+<p><strong>s3cmd</strong>:</p>
+<p>With s3cmd, you can use the <code>du</code> command to list the size of a bucket or folder within a bucket.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>s3cmd du <span class="o">[</span>-H<span class="o">]</span> &lt;s3://bucket/path/&gt;
+</code></pre></div>
+<p>By default, the output will be in bytes, but you can add the <code>-H</code> option to output in a human readable format rounding the nearest MB, GB, or TB.</p>
+<p><strong>AWS CLI</strong>:</p>
+<p>By default, the <code>ls</code> subcommand will output the size of any objects in the path given (see the <a href="#listing-buckets-and-contents">ls section</a>). Unlike the other tools, AWS CLI will not output the total size of folders. However, the total combined size of all objects in a folder can be calculated using the <code>--summarize</code> option. You can also convert the output to readable size by using <code>--human-readable</code> as well.</p>
 <h3 id="uploading-files-and-folders">Uploading Files and Folders<a class="headerlink" href="#uploading-files-and-folders" title="Permanent link">&para;</a></h3>
 <p><strong>RClone</strong>:</p>
 <p>Uploading files and folders can be done a couple of ways. The first is by using the <code>copy</code> subcommand. This will add files from the source to the destination.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>rclone copy &lt;source&gt; uablts:&lt;bucket/destination&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>rclone copy &lt;source&gt; uablts:&lt;bucket/destination&gt;
 </code></pre></div>
 <p>The second method is using the <code>sync</code> subcommand. This subcommand makes the destination identical to the source. The <code>-i</code> option can be added to make it interactive, asking you whether to copy or delete each file.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>rclone sync <span class="o">[</span>-i<span class="o">]</span> &lt;source&gt; uablts:&lt;bucket/destination/&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>rclone sync <span class="o">[</span>-i<span class="o">]</span> &lt;source&gt; uablts:&lt;bucket/destination/&gt;
 </code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition danger">
@@ -2414,31 +2436,31 @@
 
 <p><strong>s3cmd</strong>:</p>
 <p>s3cmd disinguishes between moving files between a local source and S3 versus moving files between two S3 locations using 3 different commands.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># transfer from local to S3</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>s3cmd put &lt;source&gt; s3://&lt;bucket/path/destination/&gt;
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># transfer from S3 to local</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>s3cmd get s3://&lt;bucket/path/source/&gt; &lt;destination&gt;
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1"># transfer between two S3 locations</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>s3cmd cp s3://&lt;bucket/path/&gt; s3://&lt;bucket/path/&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># transfer from local to S3</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>s3cmd put &lt;source&gt; s3://&lt;bucket/path/destination/&gt;
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># transfer from S3 to local</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>s3cmd get s3://&lt;bucket/path/source/&gt; &lt;destination&gt;
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1"># transfer between two S3 locations</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>s3cmd cp s3://&lt;bucket/path/&gt; s3://&lt;bucket/path/&gt;
 </code></pre></div>
 <p>If you are transferring an entire folder from S3 to either another S3 location or a local destination, you will need to add the <code>--recursive</code> option, otherwise you will get an error.</p>
 <p>Like rclone and AWS, there is also a <code>sync</code> command here as well.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># sync an S3 location to a local source</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>s3cmd sync &lt;source&gt; s3://&lt;bucket/path/destination&gt;
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># sync a local destination to an S3 location</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>s3cmd sync s3://&lt;bucket/path/source&gt; &lt;destination&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># sync an S3 location to a local source</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>s3cmd sync &lt;source&gt; s3://&lt;bucket/path/destination&gt;
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># sync a local destination to an S3 location</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>s3cmd sync s3://&lt;bucket/path/source&gt; &lt;destination&gt;
 </code></pre></div>
 <p><strong>AWS CLI</strong>:</p>
 <p>Copying files and directories can be managed using the <code>cp</code> subcommand and has the same behavior as rclone's <code>copy</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>aws s3 cp &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--recursive<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>aws s3 cp &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--recursive<span class="o">]</span>
 </code></pre></div>
 <p>If you are copying a directory, you will need to add the <code>--recursive</code> option.</p>
 <p>If you are wanting to copy data down from LTS to your local machine or Cheaha, just reverse the positions of the source and destination in the function call.</p>
 <p>Like rclone, AWS also has a sync subcommand that performs the same functionality. You can use it like so:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>aws s3 sync &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--delete<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>aws s3 sync &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--delete<span class="o">]</span>
 </code></pre></div>
 <p><code>sync</code> has an added benefit that only files that do not exist in the destination or files that have changed in the source will be transferred whereas <code>cp</code> copies everything no matter if it already exists in the destination. By default, <code>sync</code> DOES NOT cause files in the detination that are not in the source to be deleted like <code>rclone sync</code> does. If you want this functionality, you can add the <code>--delete</code> tag at the end of the function call.</p>
 <!-- markdownlint-disable MD046 -->
@@ -2451,26 +2473,26 @@
 <h3 id="deleting-files-and-directories">Deleting Files and Directories<a class="headerlink" href="#deleting-files-and-directories" title="Permanent link">&para;</a></h3>
 <p><strong>RClone</strong>:</p>
 <p>File deletion is performed using the <code>delete</code> subcommand.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>rclone delete uablts:&lt;bucket/path/file&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>rclone delete uablts:&lt;bucket/path/file&gt;
 </code></pre></div>
 <p>Directory deletion is handled using the <code>purge</code> subcommand. Be very cautious with this, as this deletes all files and subdirectories within the directory as well.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>rclone purge uablts:&lt;bucket/path/&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>rclone purge uablts:&lt;bucket/path/&gt;
 </code></pre></div>
 <p><strong>s3cmd</strong>:</p>
 <p>File and directory deletion is handled by the <code>rm</code> command.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>s3cmd rm s3://&lt;bucket/path/file&gt; <span class="o">[</span>--recursive<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>s3cmd rm s3://&lt;bucket/path/file&gt; <span class="o">[</span>--recursive<span class="o">]</span>
 </code></pre></div>
 <p>If you want to delete a directory, you will need to add the <code>--recursive</code> option.</p>
 <p>To delete an entire bucket, use the <code>rb</code> command.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>s3cmd rb s3://&lt;bucket&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>s3cmd rb s3://&lt;bucket&gt;
 </code></pre></div>
 <p><strong>AWS CLI</strong>:</p>
 <p>The subcommand for deleting files and folders from LTS is <code>rm</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>aws s3 rm s3://&lt;bucket/path/object&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--recursive<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>aws s3 rm s3://&lt;bucket/path/object&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--recursive<span class="o">]</span>
 </code></pre></div>
 <p><code>rm</code> can delete both files and folders. If you are wanting to delete a folder and everything in it, you will need to add the <code>--recursive</code> option. Like with <code>sync</code> be very cautious using <code>rm</code> and make sure you know what you are deleting before you do so.</p>
 <p>To delete an entire bucket, you will need to use the <code>s3api</code> command paired with the `delete-bucket subcommand. An example of this looks like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>aws s3api delete-bucket --bucket &lt;bucket&gt; --endpoint-url https://s3.lts.rc.uab.edu
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>aws s3api delete-bucket --bucket &lt;bucket&gt; --endpoint-url https://s3.lts.rc.uab.edu
 </code></pre></div>
 <h3 id="command-comparison-chart">Command Comparison Chart<a class="headerlink" href="#command-comparison-chart" title="Permanent link">&para;</a></h3>
 <!-- markdownlint-disable MD046 -->
@@ -2552,7 +2574,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2023</span>
       
     
   </small>
