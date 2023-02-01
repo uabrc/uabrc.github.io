@@ -2081,14 +2081,14 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="s2">&quot;s3.ListBucket&quot;</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="s2">&quot;s3:ListBucket&quot;</span><span class="w"></span>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">],</span><span class="w"></span>
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="s2">&quot;arn:aws:s3:::b1&quot;</span><span class="w"></span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>Critically, this does not allow the given users the ability to read, download, edit, or delete any objects in the bucket. They will be able to list the objects, see the names, sizes, and directory structure, but will not be able to interact with the objects. These permissions should be enumerated in a separate statement like:</p>
+<p>Critically, this does not allow the given users the ability to read, download, edit, or delete any objects in the bucket. They will be able to list the objects, see the names, sizes, and directory structure but will not be able to interact with the objects. These permissions should be enumerated in a separate statement like:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;read-only&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
@@ -2099,7 +2099,7 @@
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">            </span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="s2">&quot;s3.GetObject&quot;</span><span class="w"></span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="s2">&quot;s3:GetObject&quot;</span><span class="w"></span>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="p">],</span><span class="w"></span>
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="s2">&quot;arn:aws:s3:::b1/*&quot;</span><span class="w"></span>
@@ -2126,6 +2126,7 @@
 <p>A full list of Actions for UAB LTS can be seen on the <a href="https://docs.ceph.com/en/quincy/radosgw/bucketpolicy/#limitations">Ceph docs</a>.</p>
 <h2 id="example-policies">Example Policies<a class="headerlink" href="#example-policies" title="Permanent link">&para;</a></h2>
 <h3 id="read-only-for-all-files">Read-Only for All Files<a class="headerlink" href="#read-only-for-all-files" title="Permanent link">&para;</a></h3>
+<p>This will give permissions to <code>bob</code> and <code>jane</code> for bucket <code>b1</code>. The permissions will include bucket access (the <code>list-bucket</code> statement) as well as read-only permissions for all objects in the bucket (the <code>read-only</code> statement). Specifically, they will be able to copy the files from the bucket to another bucket or a local file system.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"></span>
@@ -2138,7 +2139,7 @@
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">            </span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">            </span><span class="s2">&quot;s3.ListBucket&quot;</span><span class="w"></span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">            </span><span class="s2">&quot;s3:ListBucket&quot;</span><span class="w"></span>
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="p">],</span><span class="w"></span>
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">            </span><span class="s2">&quot;arn:aws:s3:::b1&quot;</span><span class="w"></span>
@@ -2154,7 +2155,7 @@
 <a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">            </span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">            </span><span class="s2">&quot;s3.GetObject&quot;</span><span class="w"></span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">            </span><span class="s2">&quot;s3:GetObject&quot;</span><span class="w"></span>
 <a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">        </span><span class="p">],</span><span class="w"></span>
 <a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">        </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">            </span><span class="s2">&quot;arn:aws:s3:::b1/*&quot;</span><span class="w"></span>
@@ -2163,7 +2164,7 @@
 <a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="read-write-permissions">Read-Write Permissions<a class="headerlink" href="#read-write-permissions" title="Permanent link">&para;</a></h3>
-<p>This will give read, write, and delete permissions to the users so they are able to sync directories between a local source folder and the S3 destination</p>
+<p>This will give read, write, and delete permissions to <code>bob</code> and <code>jane</code> so they are able to sync directories between a local source folder and the S3 destination. This can be dangerous because of the delete permissions so care should be given in handing out that permission. <code>s3:DeleteObject</code> can be set into another statement field and limited to very select users while giving upload permission to many users.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span><span class="w"></span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span><span class="w"></span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"></span>
@@ -2176,7 +2177,7 @@
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">            </span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">            </span><span class="s2">&quot;s3.ListBucket&quot;</span><span class="w"></span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">            </span><span class="s2">&quot;s3:ListBucket&quot;</span><span class="w"></span>
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="p">],</span><span class="w"></span>
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">            </span><span class="s2">&quot;arn:aws:s3:::b1&quot;</span><span class="w"></span>
@@ -2192,9 +2193,9 @@
 <a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">            </span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">            </span><span class="s2">&quot;s3.GetObject&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">            </span><span class="s2">&quot;s3.PutObject&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">            </span><span class="s2">&quot;s3.DeleteObject&quot;</span><span class="w"></span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">            </span><span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">            </span><span class="s2">&quot;s3:PutObject&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">            </span><span class="s2">&quot;s3:DeleteObject&quot;</span><span class="w"></span>
 <a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">        </span><span class="p">],</span><span class="w"></span>
 <a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">        </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">            </span><span class="s2">&quot;arn:aws:s3:::b1/*&quot;</span><span class="w"></span>
@@ -2216,7 +2217,7 @@
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">            </span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">            </span><span class="s2">&quot;s3.ListBucket&quot;</span><span class="w"></span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">            </span><span class="s2">&quot;s3:ListBucket&quot;</span><span class="w"></span>
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="p">],</span><span class="w"></span>
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">            </span><span class="s2">&quot;arn:aws:s3:::b1&quot;</span><span class="w"></span>
@@ -2231,8 +2232,8 @@
 <a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">            </span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">            </span><span class="s2">&quot;s3.GetBucketPolicy&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">            </span><span class="s2">&quot;s3.PutBucketPolicy&quot;</span><span class="w"></span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">            </span><span class="s2">&quot;s3:GetBucketPolicy&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">            </span><span class="s2">&quot;s3:PutBucketPolicy&quot;</span><span class="w"></span>
 <a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">        </span><span class="p">],</span><span class="w"></span>
 <a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">        </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">            </span><span class="s2">&quot;arn:aws:s3:::b1&quot;</span><span class="w"></span>
@@ -2248,9 +2249,9 @@
 <a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">            </span><span class="p">]</span><span class="w"></span>
 <a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="w">        </span><span class="p">},</span><span class="w"></span>
 <a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">        </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">            </span><span class="s2">&quot;s3.GetObject&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="w">            </span><span class="s2">&quot;s3.PutObject&quot;</span><span class="p">,</span><span class="w"></span>
-<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">            </span><span class="s2">&quot;s3.DeleteObject&quot;</span><span class="w"></span>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">            </span><span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="w">            </span><span class="s2">&quot;s3:PutObject&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">            </span><span class="s2">&quot;s3:DeleteObject&quot;</span><span class="w"></span>
 <a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">        </span><span class="p">],</span><span class="w"></span>
 <a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="w">        </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">         </span><span class="s2">&quot;arn:aws:s3:::b1/*&quot;</span><span class="w"></span>
@@ -2259,11 +2260,11 @@
 <a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="applying-a-policy">Applying a Policy<a class="headerlink" href="#applying-a-policy" title="Permanent link">&para;</a></h2>
-<p>Policies can be applied to a bucket either by the owner or by a user who has been given the <code>s3:PutBucketPolicy</code> permission. You can use either s3cmd or AWS CLI for this.</p>
+<p>Policies can be applied to a bucket either by the owner or by a user who has been given the <code>s3:PutBucketPolicy</code> permission. Use s3cmd to apply policies.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As of now, rclone has not implemented a way to alter policies. If you have been using rclone, you will need to configure either s3cmd or AWS CLI and use those for policy management instead</p>
+<p>As of now, rclone has not implemented a way to alter policies, and AWS CLI does not apply them to our system correctly. If you have been using rclone or AWS CLI, you will need to configure s3cmd for policy management instead</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
@@ -2272,19 +2273,10 @@
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>s3cmd setpolicy &lt;policy_file&gt; s3://&lt;bucket&gt;
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># s3cmd view policy</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>s3cmd getpolicy s3://&lt;bucket&gt;
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>s3cmd info s3://&lt;bucket&gt;
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># s3cmd remove policy</span>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>s3cmd delpolicy s3://&lt;bucket&gt;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># AWS CLI set policy</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>aws s3api put-bucket-policy --bucket &lt;bucket&gt; --policy &lt;policy_file&gt; --endpoint https://s3.lts.rc.uab.edu
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># AWS CLI view policy</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>aws s3api get-bucket-policy --bucket &lt;bucket&gt; --endpoint https://s3.lts.rc.uab.edu
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># AWS CLI remove policy</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>aws s3api delete-bucket-policy --bucket &lt;bucket&gt; --endpoint https://s3.lts.rc.uab.edu
 </code></pre></div>
 <h2 id="policy-suggestions">Policy Suggestions<a class="headerlink" href="#policy-suggestions" title="Permanent link">&para;</a></h2>
 <!-- markdownlint-disable MD046 -->
@@ -2307,7 +2299,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2023</span>
       
     
   </small>
