@@ -12,13 +12,19 @@ Benefits of Anaconda:
 
 Anaconda can also install Pip and record which Pip packages are installed, so Anaconda can do everything Pip can, and more.
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If using Anaconda on Cheaha, please see our [Anaconda on Cheaha page](../cheaha/software/software.md#anaconda-on-cheaha) for important details and restrictions.
+<!-- markdownlint-enable MD046 -->
+
 ## What is my best solution for installing Anaconda?
 
 If you are using a local machine or doing general purpose software development, or have a particular package in mind, go [here](#installing-anaconda) to install Anaconda.
 
 If you are using a virtual machine or container, go [here](#installing-miniconda) to install Miniconda.
 
-If you are using Cheaha, go [here](../cheaha/conda.md) for how to use Anaconda on Cheaha.
+If you are using Cheaha, go [here](../cheaha/software/software.md#anaconda-on-cheaha) for how to use Anaconda on Cheaha.
 
 ### Installing Anaconda
 
@@ -28,7 +34,7 @@ Anaconda installation instructions are located here: <https://docs.anaconda.com/
 
 ### Installing Miniconda
 
-Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important, like [virtual machines](../uab_cloud/introduction.md) and [containers](getting_containers.md).
+Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important, like [virtual machines](../uab_cloud/index.md) and [containers](getting_containers.md).
 
 Miniconda installation instructions are located here: <https://docs.conda.io/en/latest/miniconda.html>.
 
@@ -39,6 +45,12 @@ Anaconda is a package manager, meaning it handles all of the difficult mathemati
 Anaconda is structured around environments. Environments are self-contained collections of researcher-selected packages. Environments can be changed out using a simple package without requiring tedious installing and uninstalling of packages or software, and avoiding dependency conflicts with each other. Environments allow researchers to work and collaborate on multiple projects, each with different requirements, all on the same computer. Environments can be installed from the command line, from pre-designed or shared YAML files, and can be modified or updated as needed.
 
 The following subsections detail some of the more common commands and use cases for Anaconda usage. More complete information on this process can be found at the [Anaconda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#).
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If using Anaconda on Cheaha, please see our [Anaconda on Cheaha page](../cheaha/software/software.md#anaconda-on-cheaha) for important details and restrictions.
+<!-- markdownlint-enable MD046 -->
 
 ### Create an Environment
 
@@ -252,5 +264,5 @@ conda install -n base -c conda-forge mamba
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Mamba must be installed in the base environment to function correctly! If you are using Cheaha, and cannot install in the base environment, see our workaround [here](../cheaha/conda.md#using-mamba)
+    Mamba must be installed in the base environment to function correctly! If you are using Cheaha, and cannot install in the base environment, see our workaround [here](../cheaha/software/software.md#speedups-using-mamba)
 <!-- markdownlint-enable MD046 -->

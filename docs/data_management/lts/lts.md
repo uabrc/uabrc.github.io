@@ -14,6 +14,13 @@ UAB Long-term storage (LTS) is an S3 object-storage platform hosted at UAB. This
     Currently, UAB LTS is only accessible using the UAB Campus Network. If you are off campus and want to access LTS, please use the [UAB Campus VPN](https://www.uab.edu/it/home/tech-solutions/network/vpn). If you are accessing LTS through Cheaha, you do not need to use the VPN, even at home.
 
 <!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! tip
+
+    [Globus](../transfer/globus.md#long-term-storage-s3-lts-connector) may be used to transfer data with LTS.
+<!-- markdownlint-enable MD046 -->
+
 ## Terminology
 
 When talking about S3 storage, some terms are different compared to a normal filesystem. This section is here to briefly explain some differences in case you go to other documentation and see these terms instead.
@@ -57,6 +64,10 @@ The bucket will have the symbol of a hard disk with an Amazon A brand on it. Thi
 
     Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage.
 <!-- markdownlint-enable MD046 -->
+
+#### Avoiding Duplicate Names
+
+Good practice when naming buckets is to use a short, descriptive and memorable name, then append a universally unique identifier (UUID) to the end. Websites like <https://www.uuidgenerator.net/> may be used to generate and copy UUIDs. There are $5.3\times 10^{36}$ possible UUIDs, which means the chance of duplicating one is virtually zero. Please see [Wikipedia](https://en.wikipedia.org/wiki/Universally_unique_identifier#Collisions) for math supporting the low rate of duplication.
 
 ### Uploading and Downloading Data
 
@@ -139,8 +150,8 @@ Use "%(bucket)s.s3.amazonaws.com" to the target Amazon S3. "%(bucket)s" and "%(l
 DNS-style bucket+hostname:port template for accessing a bucket [%(bucket)s.s3.amazonaws.com]: %(bucket).s3.lts.rc.uab.edu
 
 Encryption password is used to protect your files from reading by unauthorized persons while in transfer to S3
-Encryption password: <leave blank>
-Path to GPG program [/usr/bin/gpg]: $HOME/bin/gpg
+Encryption password: <leave blank or enter password>
+Path to GPG program [/usr/bin/gpg]: <leave blank>
 
 When using secure HTTPS protocol all communication with Amazon S3 servers is protected from 3rd party eavesdropping. This method is slower than plain HTTP, and can only be proxied with Python 2.7 or newer
 Use HTTPS protocol [Yes]: <leave blank>
@@ -232,7 +243,7 @@ Additionally, when running basically any AWS CLI command, you can include the `-
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you are wanting to perform actions on a specific directory in S3, it is imperative to add the `/` at the end of the directory name. For more information on this, see [our FAQ](../../help/faq.md#why-do-i-need-to-add-the-trailing--to-the-end-of-path-names-in-my-s3-commands)
+    If you are wanting to perform actions on a specific directory in S3, it is imperative to add the `/` at the end of the directory name. For more information on this, see [this ask.ci FAQ](https://ask.cyberinfrastructure.org/t/why-do-i-need-to-add-the-trailing-to-the-end-of-path-names-in-my-s3-commands/2530/2).
 <!-- markdownlint-enable MD046 -->
 
 ### Make a Bucket
@@ -304,6 +315,22 @@ aws s3 ls <bucket/path/directory/> --endpoint-url https://s3.lts.rc.uab.edu
 ```
 
 If you would like to list all objects recursively, you can add the `--recursive` tag. A couple of other helpful options are `--summarize` and `--human-readable` that will give a total number of objects and their size and make the size output more easily readable, respectively.
+
+### Check Bucket or Folder Size
+
+**s3cmd**:
+
+With s3cmd, you can use the `du` command to list the size of a bucket or folder within a bucket.
+
+``` bash
+s3cmd du [-H] <s3://bucket/path/>
+```
+
+By default, the output will be in bytes, but you can add the `-H` option to output in a human readable format rounding the nearest MB, GB, or TB.
+
+**AWS CLI**:
+
+By default, the `ls` subcommand will output the size of any objects in the path given (see the [ls section](#listing-buckets-and-contents)). Unlike the other tools, AWS CLI will not output the total size of folders. However, the total combined size of all objects in a folder can be calculated using the `--summarize` option. You can also convert the output to readable size by using `--human-readable` as well.
 
 ### Uploading Files and Folders
 

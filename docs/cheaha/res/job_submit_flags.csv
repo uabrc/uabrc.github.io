@@ -1,0 +1,17 @@
+Flag,Short,Environment Variable,Description,sbatch,srun
+`--job-name`,`-J`,`SBATCH_JOB_NAME`,Name of job stored in records and visible in `squeue`.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_job-name),[srun](https://slurm.schedmd.com/srun.html#OPT_job-name)
+,,`SLURM_JOB_ID`,Job ID number of running job or array task. May differ from `SLURM_ARRAY_JOB_ID` depending on array task index,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_JOB_ID),[srun](https://slurm.schedmd.com/srun.html#OPT_SLURM_JOB_ID)
+`--output`,`-o`,`SBATCH_OUTPUT`,Path to file storing text output.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_output),[srun](https://slurm.schedmd.com/srun.html#OPT_output)
+`--error`,`-e`,`SBATCH_ERROR`,Path to file storing error output.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_error),[srun](https://slurm.schedmd.com/srun.html#OPT_error)
+`--partition`,`-p`,`SBATCH_PARTITION`,Partition to submit job to. More details below.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_partition),[srun](https://slurm.schedmd.com/srun.html#OPT_partition)
+`--time`,`-t`,`SBATCH_TIMELIMIT`,Maximum allowed runtime of job. Allowed formats below.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_time),[srun](https://slurm.schedmd.com/srun.html#OPT_time)
+`--nodes`,`-N`,,Number of nodes needed. Set to `1` if your software does not use MPI or if unsure.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_nodes),[srun](https://slurm.schedmd.com/srun.html#OPT_nodes)
+`--ntasks`,`-n`,`SLURM_NTASKS`,Number of tasks planned per node. Mostly used for bookkeeping and calculating total cpus per node. If unsure set to `1`.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_ntasks),[srun](https://slurm.schedmd.com/srun.html#OPT_ntasks)
+`--cpus-per-task`,`-c`,`SLURM_CPUS_PER_TASK`,Number of needed cores per task. Cores per node equals `-n` times `-c`.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_cpus-per-task),[srun](https://slurm.schedmd.com/srun.html#OPT_cpus-per-task)
+,,`SLURM_CPUS_ON_NODE`,Number of cpus available on this node.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_CPUS_ON_NODE),[srun](https://slurm.schedmd.com/srun.html#OPT_SLURM_CPUS_ON_NODE)
+`--mem`,,`SLURM_MEM_PER_NODE`,Amount of RAM needed per node in MB. Can specify 16 GB using 16384 or 16G.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_mem),[srun](https://slurm.schedmd.com/srun.html#OPT_SLURM_CPUS_ON_NODE)
+`--gres`,,`SBATCH_GRES`,Used to request GPUs per node. For 2 GPUs per node use `--gres=gpu:2`.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_gres),[srun](https://slurm.schedmd.com/srun.html#OPT_gres)
+`--array`,,`SBATCH_ARRAY_INX`,Comma-separated list of similar tasks to run. More details below.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_array),n/a
+,,`SBATCH_ARRAY_JOB_ID`,Parent Job ID number of array task. Same for all array tasks submitted with same script. May differ from `SLURM_JOB_ID` depending on array task index.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_JOB_ID),n/a
+,,`SLURM_ARRAY_TASK_COUNT`,Total number of array tasks.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_ARRAY_TASK_COUNT),n/a
+,,`SLURM_ARRAY_TASK_ID`,Current array task index.,[sbatch](https://slurm.schedmd.com/sbatch.html#OPT_SLURM_ARRAY_TASK_ID),n/a

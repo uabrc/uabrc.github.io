@@ -1,5 +1,17 @@
 # Welcome to UAB Research Computing Docs
 
+<!-- markdownlint-disable MD046 -->
+!!! announcement
+
+    **UPDATED 2023-01-09**
+
+    Please note upcoming changes!
+
+    - January 13, 2023: `$USER_SCRATCH` will point to `/scratch/$USER`
+    - January 27, 2023: Clean up of `temp-scratch` must be completed by all researchers. Access to `temp-scratch` will be removed for all researchers.
+    - February 13, 2023: New `$SCRATCH` storage limited-retention policies will start.
+<!-- markdownlint-enable MD046 -->
+
 Welcome to UAB Research Computing!
 
 The Research Computing System (RCS) provides a framework for sharing data, accessing compute power, and collaborating with peers on campus and around the globe. Our goal is to construct a dynamic "network of services" that you can use to organize, study and share your research data.
@@ -8,7 +20,7 @@ Research Computing provides services to researchers in these core areas:
 
 - _Data Analysis_: using the High Performance Computing (HPC) fabric [Cheaha](cheaha/getting_started.md) for batch data processing.
 - _Data Sharing_: supporting trusted information exchange to spark new ideas via our [Storage](data_management/storage.md) system.
-- _Application Development_: providing virtual machines and web-hosted development tools empowering researcher via our [cloud.rc](uab_cloud/introduction.md) fabric.
+- _Application Development_: providing virtual machines and web-hosted development tools empowering researcher via our [cloud.rc](uab_cloud/index.md) fabric.
 
 ## Contact Us
 

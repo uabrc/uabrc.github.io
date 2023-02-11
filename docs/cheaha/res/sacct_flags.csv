@@ -1,0 +1,16 @@
+Flag,Short,Description,Docs
+FILTERING
+`--user`,`-u`,"Jobs from a specific user. Please only use your own blazerid.",[sacct](https://slurm.schedmd.com/sacct.html#OPT_uid)
+`--allocations`,`-X`,"Show jobs only, not steps.",[sacct](https://slurm.schedmd.com/sacct.html#OPT_allocations)
+`--starttime`,`-S`,"Jobs starting at a given time. See [Time formatting](#slurm-time-formatting).",[sacct](https://slurm.schedmd.com/sacct.html#OPT_starttime)
+`--endtime`,`-E`,"Jobs ending at a given time. See [Time Formatting](#slurm-time-formatting).",[sacct](https://slurm.schedmd.com/sacct.html#OPT_endtime)
+`--state`,`-s`,"Jobs with a given state. See [States](#slurm-states).",[sacct](https://slurm.schedmd.com/sacct.html#OPT_state)
+`--jobs`,`-j`,"Show only the jobids supplied in a comma-separated list.",[sacct](https://slurm.schedmd.com/sacct.html#OPT_jobs)
+FORMATTING
+`--format`,`-o`,"Show only the [Fields](#sacct-fields) supplied in a comma-separated list.",[sacct](https://slurm.schedmd.com/sacct.html#OPT_format)
+`--helpformat`,`-e`,"Show a list of available [Fields](#sacct-fields).",[sacct](https://slurm.schedmd.com/sacct.html#OPT_helpformat)
+`--parsable2`,`-P`,"Output as delimited data with `--delimiter` if supplied, default is `|`.",[sacct](https://slurm.schedmd.com/sacct.html#OPT_parsable2)
+`--delimiter`,n/a,"Characters to delimit field values.",[sacct](https://slurm.schedmd.com/sacct.html#OPT_delimiter)
+`--json`,n/a,"Output as JSON. (Not yet available on Cheaha).",[sacct](https://slurm.schedmd.com/sacct.html#OPT_json)
+`--yaml`,n/a,"Output as YAML. (Not yet available on Cheaha).",[sacct](https://slurm.schedmd.com/sacct.html#OPT_yaml)
+`--noconvert`,n/a,"Keep uniform units, e.g. all M instead of M and G. See [Units](#slurm-units).",[sacct](https://slurm.schedmd.com/sacct.html#OPT_noconvert)

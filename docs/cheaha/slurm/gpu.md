@@ -36,6 +36,20 @@ Additionally, when requesting a job using `sbatch`, you will need to include a S
 
 When requesting an interactive job through `Open OnDemand`, selecting the `pascalnodes` partitions will automatically request access to one GPU as well. There is currently no way to change the number of GPUs for OOD interactive jobs.
 
+#### MATLAB
+
+To use GPUs with our [Open OnDemand](../open_ondemand/ood_interactive.md) MATLAB, you'll need to take a slightly different route than usual.
+
+1. Determine which CUDA Toolkits are compatible with your required version of MATLAB using the table at the [MathWorks Site](https://www.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html). The column `Pascal (cc6.x)` is relevant for our system.
+2. Start an [HPC Interactive Desktop Job](../open_ondemand/ood_interactive.md) with appropriate resources. Be sure to use one of the `pascalnodes*` [Partitions](#scheduling-gpus).
+3. Open a terminal.
+4. Load the appropriate [CUDA Toolkit Module](#cuda-toolkit).
+5. Load the appropriate MATLAB [Module](../software/modules.md).
+6. Start MATLAB by entering the command `matlab`.
+7. When MATLAB loads, enter the command `gpuDevice` in the MATLAB Command Window to verify it can identify the GPU.
+
+For more information and official MATLAB documentation please see this page: <https://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html>.
+
 ## CUDA Toolkit
 
 You will need to load a CUDA toolkit module for relevant commands to access the GPUs. Depending on which version of tensorflow, pytorch, or other similar software you are using, a different version of the CUDA toolkit may be required. For instance, tensorflow version 2.5.0 requires CUDA toolkit version 11.2.
@@ -48,3 +62,25 @@ module -r spider 'cuda.*toolkit'
 
 If a specific version of the CUDA toolkit is needed but not installed,
 send an install request to [support@listserv.uab.edu].
+
+### Tensorflow Compatibility
+
+To check which CUDA Toolkit module version is required for your version of Tensorflow, see the toolkit requirements chart here <https://www.tensorflow.org/install/source#gpu>.
+
+### PyTorch Compatibility
+
+PyTorch does not maintain a simple compatibility table for CUDA Toolkit versions. Instead, please manually check their ["get started" page](https://pytorch.org/get-started/locally/#start-locally) for the latest PyTorch version compatibility, and their ["previous versions" page](https://pytorch.org/get-started/previous-versions/) for older PyTorch version compatibility. Assume that a CUDA Toolkit version is not compatible if it is not listed for a specific PyTorch version.
+
+To use GPUs prior to PyTorch version 1.13 you _must_ select a `cudatoolkit` version from the pytorch channel when you install PyTorch using Anaconda. It is how PyTorch knows to install a GPU compatible flavor, as opposed to the CPU only flavor. See below for templates of CPU and GPU installs for PyTorch versions prior to 1.13. Be sure to check the compatibility links above for your selected version. Note `torchaudio` is also available for signal processing.
+
+- CPU Version: `conda install pytorch==... torchvision==... -c pytorch`
+- GPU Version: `conda install pytorch==... torchvision==... cudatoolkit=... -c pytorch`
+
+For versions of PyTorch 1.13 and newer, use the following template instead.
+
+- CPU Version: `conda install pytorch==... torchvision==... cpuonly -c pytorch`
+- GPU Version: `conda install pytorch==... torchvision==... pytorch-cuda=... -c pytorch -c nvidia`
+
+## Reviewing GPU Jobs
+
+As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct) to review GPU jobs. Quantity of GPUs may be reviewed using the `reqtres` and `alloctres` [fields](job_management.md#sacct-fields).

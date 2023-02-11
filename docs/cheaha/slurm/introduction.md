@@ -16,3 +16,25 @@ The main Slurm documentation can be found at [the Slurm site](https://slurm.sche
 6. Monitor the job (`squeue`)
 7. Review the results, and modify/rerun if necessary (`sacct` and `seff`)
 8. Remove data from `$USER_SCRATCH`
+
+For more details, please see [Submitting Jobs](submitting_jobs.md).
+
+For details on managing and reviewing jobs, please see [Job Management](job_management.md).
+
+## The SLURM Queue
+
+When working on Cheaha and with Research Computing, you will often hear references to the SLURM Queue. By its name, you might think that the SLURM Queue is a first-in-first-out (FIFO) queue like when waiting in line at an event or place of business. And, some institutions use a FIFO queue, as it is the default configuration for SLURM.
+
+At UAB Research Computing, we use a multifactor _priority_ queue, meaning that those users with top priority are first to receive service, regardless of when they entered the queue.
+
+SLURM measures priority as a single number, and the highest value generally is first to receive service. Multiple factors play into the queue. The most important factors are given in the table below, in no particular order.
+
+{{ read_csv("cheaha/slurm/res/priority_factor.csv") }}
+
+The fastest way to queue a job is to request minimal resources and time, have a smaller share of total resources already used, and use the shortest partition possible.
+
+Given two or more jobs with equal priority, the job on the partition with the largest "Priority Tier" value goes first.
+
+The scheduler cannot predict the future. If a job enters the queue with a higher priority than yours, it will start before yours. This may lead to a situation where your job no longer fits on any of the nodes. If this happens your job will have to wait until sufficient space opens regardless of its priority value. A possible strategy to minimize the risk of preemption is to request fewer resources per node, to more readily fill available space.
+
+If you are unsure of the best queueing strategy for your workflow, please [Contact Us](../../index.md#contact-us) for a consultation, we are happy to help.

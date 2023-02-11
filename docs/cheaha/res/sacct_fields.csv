@@ -1,0 +1,24 @@
+Field,Description,Same As...,Job,Step,Docs
+METADATA
+jobid,"SLURM assigned job ID number.",[jobid format](#slurm-job-id-formatting),yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_JobID)
+jobname,"User assigned job name.",`--job-name`,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_JobName)
+state,"Current state of the job.",[states](#slurm-states),yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_State)
+partition,"Partition job was submitted to.",`--partition`,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_Partition)
+ntasks,"Number of requested tasks.",`--ntasks`,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_NTasks)
+nodelist,"List of nodes used.",`--nodelist` if supplied,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_NodeList)
+TIME
+submit,"Submit time as YYYY-MM-DDTHH:MM:SS",n/a,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_Submit)
+start,"Start time as YYYY-MM-DDTHH:MM:SS",n/a,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_Start)
+end,"End time as YYYY-MM-DDTHH:MM:SS",n/a,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_End)
+elapsed,"Elapsed time as DD-HH:MM:SS",n/a,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_Elapsed)
+RESOURCE REQUESTED
+reqcpus,"CPUs requested.",[cpu calculation](#calculating-cpus),yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_ReqCPUS)
+reqmem,"Memory requested. Uses 10Gc for per core, 10Gn for per node.",`--mem-per-cpu` or `--mem`,yes,no,[sacct](https://slurm.schedmd.com/sacct.html#OPT_ReqMem)
+reqnodes,"Nodes requested.",`--nodes`,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_ReqNodes)
+reqtres,"All requested resources. May be used to review GPUs.",[tres explanation](#tres-explained),yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_ReqTres)
+RESOUCES ALLOCATED
+alloccpus,"CPUs allocated.",[cpu calculation](#calculating-cpus),yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_AllocCPUs)
+allocnodes,"Nodes allocated",`--nodes`,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_AllocNodes)
+alloctres,"All allocated resources. May be used to review GPUs.",[tres explanation](#tres-explained),yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_AllocTres)
+averss,Average resident set size (memory) in bytes across tasks.,[resident set size](#rss-explained),no,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_AveRSS)
+maxrss,Maximum resident set size (memory) in bytes across tasks.,[resident set size](#rss-explained),no,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_MaxRSS)

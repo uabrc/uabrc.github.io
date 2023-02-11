@@ -52,7 +52,7 @@ The table below is a theoretical analysis of FLOPS (floating point operations pe
 
 The full table can be downloaded [here](./res/flops_cloud.csv).
 
-For information on using our Cloud service at cloud.rc, see our dedicated [section](../uab_cloud/introduction.md).
+For information on using our Cloud service at cloud.rc, see our dedicated [section](../uab_cloud/index.md).
 
 ## Kubernetes Container Service
 
