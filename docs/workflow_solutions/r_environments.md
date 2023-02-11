@@ -32,12 +32,6 @@ To begin, projects start at a parent or root directory within which most, if not
 
     ![!Choose the project name and location as well as whether to initialize a git repo and use renv](images/r_name_project.png)
 
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    If you choose to use `renv`, you will need to install it before creating the project using either `install.packages` or RStudio's built-in package installation wizard.
-<!-- markdownlint-enable MD046 -->
-
 Afterwards, RStudio will reset, change the working directory to the project root, and create a .RProj file that controls the project settings. The project dropdown will have the newly created project name now.
 
 ### Project Settings
