@@ -4,6 +4,12 @@ A major use for LTS is storage of data that should be accessible to multiple use
 
 Instead, sharing buckets must be done through the command line using [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html). A bucket policy is a JSON formatted file that assigns user read and write permissions to the bucket and to objects within the bucket. If you have not worked with JSON files before, a brief explantion can be found [here](https://docs.fileformat.com/web/json/). It's important to note that the bucket owner will always retain the ability to perform all actions on a bucket and its contents and so do not need to be explicitly granted permissions.
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Your username for LTS could potentially be `<blazerid>` or `<blazerid>@uab.edu depending on when your account was created. It is very important when crafting these policies that the correct username is specified, and these two are not interchangeable. For users with XIAS accounts, your username should be the email address you signed up for the XIAS account with. The usernames are case-sensitive. If you do not remember what your username is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
+<!-- markdownlint-enable MD046 -->
+
 ## Policy Structure
 
 Policies files are essentially built as a series of statements expressly allowing or deny access to functions that interact with objects in S3. A skeleton policy file would look like this:
@@ -25,13 +31,13 @@ Each statement is made up of a few fields:
 
 1. Sid: a short decription of what the statement is for (i.e. "bucket-access")
 2. Effect: "Allow" or "Deny" permissions based on how you want to alter permissions
-3. Principal: Essentially a list of users to change permissions for. Have to formatted like `arn:aws:iam:::user/<blazerid>`.
+3. Principal: Essentially a list of users to change permissions for. Have to formatted like `arn:aws:iam:::user/<lts_username>`.
 4. Action: A list of commands to allow or deny permission for, depending on the Effect value.
 5. Resource: The name of the bucket or objects to apply permissions to. Must be formatted like `arn:aws:s3:::<bucket[/path/objects]>`.
 
 It is currently suggested to have at least two statements, one statement allowing access to the bucket itself, and another statement dictating permissions for objects in the bucket.
 
-For example, if you wanted to give users `bob` and `jane` the ability to list objects in your bucket `b1`, the statement would be:
+For example, if you wanted to give users `bob` and `jane@uab.edu` the ability to list objects in your bucket `bucket1`, the statement would be:
 
 ``` json
 {
@@ -40,14 +46,14 @@ For example, if you wanted to give users `bob` and `jane` the ability to list ob
     "Principal": {
         "AWS": [
             "arn:aws:iam:::user/bob",
-            "arn:aws:iam:::user/jane"
+            "arn:aws:iam:::user/jane@uab.edu"
             ]
         },
     "Action": [
         "s3:ListBucket"
     ],
     "Resource": [
-        "arn:aws:s3:::b1"
+        "arn:aws:s3:::bucket1"
     ]
 }
 ```
@@ -61,25 +67,25 @@ Critically, this does not allow the given users the ability to read, download, e
     "Principal": {
         "AWS": [
             "arn:aws:iam:::user/bob",
-            "arn:aws:iam:::user/jane"
+            "arn:aws:iam:::user/jane@uab.edu"
             ]
         },
     "Action": [
         "s3:GetObject"
     ],
     "Resource": [
-        "arn:aws:s3:::b1/*"
+        "arn:aws:s3:::bucket1/*"
     ]
 }
 ```
 
-This permission set allows `bob` and `jane` to download files but not to move, overwrite, delete, or otherwise interact with them. Notice that the Resource value has changed from just `b1` to `b1/*`. We can set this Resource value to different paths and objects to limit the permissions granted. For example:
+This permission set allows `bob` and `jane@uab.edu` to download files but not to move, overwrite, delete, or otherwise interact with them. Notice that the Resource value has changed from just `bucket1` to `bucket1/*`. We can set this Resource value to different paths and objects to limit the permissions granted. For example:
 
-1. `b1/*`: Apply permissions to all objects in the entire bucket
-2. `b1/test_folder/*`: Apply permissions to all objects in folder `test_folder`
-3. `b1/test_folder/*jpg`: Apply read permissions to only JPGs within `test_folder`.
+1. `bucket1/*`: Apply permissions to all objects in the entire bucket
+2. `bucket1/test_folder/*`: Apply permissions to all objects in folder `test_folder`
+3. `bucket1/test_folder/*jpg`: Apply read permissions to only JPGs within `test_folder`.
 
-For the last two examples, `bob` and `jane` will not have permission to download any files outside of the `test_folder` folder. All permissions are implicitly denied unless explicitly given in the policy statements.
+For the last two examples, `bob` and `jane@uab.edu` will not have permission to download any files outside of the `test_folder` folder. All permissions are implicitly denied unless explicitly given in the policy statements.
 
 ### Common Actions
 
@@ -98,7 +104,7 @@ A full list of Actions for UAB LTS can be seen on the [Ceph docs](https://docs.c
 
 ### Read-Only for All Files
 
-This will give permissions to `bob` and `jane` for bucket `b1`. The permissions will include bucket access (the `list-bucket` statement) as well as read-only permissions for all objects in the bucket (the `read-only` statement). Specifically, they will be able to copy the files from the bucket to another bucket or a local file system.
+This will give permissions to `bob` and `jane@uab.edu` for bucket `bucket1`. The permissions will include bucket access (the `list-bucket` statement) as well as read-only permissions for all objects in the bucket (the `read-only` statement). Specifically, they will be able to copy the files from the bucket to another bucket or a local file system.
 
 ``` json
     {
@@ -109,14 +115,14 @@ This will give permissions to `bob` and `jane` for bucket `b1`. The permissions 
         "Principal": {
             "AWS": [
                 "arn:aws:iam:::user/bob",
-                "arn:aws:iam:::user/jane"
+                "arn:aws:iam:::user/jane@uab.edu"
             ]
         },
         "Action": [
             "s3:ListBucket"
         ],
         "Resource": [
-            "arn:aws:s3:::b1"
+            "arn:aws:s3:::bucket1"
         ]
     },
     {
@@ -125,14 +131,14 @@ This will give permissions to `bob` and `jane` for bucket `b1`. The permissions 
         "Principal": {
             "AWS": [
                 "arn:aws:iam:::user/bob",
-                "arn:aws:iam:::user/jane"
+                "arn:aws:iam:::user/jane@uab.edu"
             ]
         },
         "Action": [
             "s3:GetObject"
         ],
         "Resource": [
-            "arn:aws:s3:::b1/*"
+            "arn:aws:s3:::bucket1/*"
         ]
     }]
     }
@@ -140,7 +146,7 @@ This will give permissions to `bob` and `jane` for bucket `b1`. The permissions 
 
 ### Read-Write Permissions
 
-This will give read, write, and delete permissions to `bob` and `jane` so they are able to sync directories between a local source folder and the S3 destination. This can be dangerous because of the delete permissions so care should be given in handing out that permission. `s3:DeleteObject` can be set into another statement field and limited to very select users while giving upload permission to many users.
+This will give read, write, and delete permissions to `bob` and `jane@uab.edu` so they are able to sync directories between a local source folder and the S3 destination. This can be dangerous because of the delete permissions so care should be given in handing out that permission. `s3:DeleteObject` can be set into another statement field and limited to very select users while giving upload permission to many users.
 
 ``` json
 {
@@ -151,14 +157,14 @@ This will give read, write, and delete permissions to `bob` and `jane` so they a
         "Principal": {
             "AWS": [
                 "arn:aws:iam:::user/bob",
-                "arn:aws:iam:::user/jane"
+                "arn:aws:iam:::user/jane@uab.edu"
             ]
         },
         "Action": [
             "s3:ListBucket"
         ],
         "Resource": [
-            "arn:aws:s3:::b1"
+            "arn:aws:s3:::bucket1"
         ]
     },
     {
@@ -167,7 +173,7 @@ This will give read, write, and delete permissions to `bob` and `jane` so they a
         "Principal": {
             "AWS": [
                 "arn:aws:iam:::user/bob",
-                "arn:aws:iam:::user/jane"
+                "arn:aws:iam:::user/jane@uab.edu"
             ]
         },
         "Action": [
@@ -176,7 +182,7 @@ This will give read, write, and delete permissions to `bob` and `jane` so they a
             "s3:DeleteObject"
         ],
         "Resource": [
-            "arn:aws:s3:::b1/*"
+            "arn:aws:s3:::bucket1/*"
         ]
     }]
 }
@@ -184,7 +190,7 @@ This will give read, write, and delete permissions to `bob` and `jane` so they a
 
 ### Tiered Permissions
 
-In some instances, the bucket owner (i.e. ideally the PI for the lab if this is a shared lab space) will want to allow certain users to have permissions to alter the policies for new or departing lab members. This example will give standard read-write permissions to both our lab members, but only policy altering permissions to `jane`.
+In some instances, the bucket owner (i.e. ideally the PI for the lab if this is a shared lab space) will want to allow certain users to have permissions to alter the policies for new or departing lab members. This example will give standard read-write permissions to both our lab members, but only policy altering permissions to `jane@uab.edu`.
 
 ``` json
 {
@@ -195,14 +201,14 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
         "Principal": {
             "AWS": [
                 "arn:aws:iam:::user/bob",
-                "arn:aws:iam:::user/jane"
+                "arn:aws:iam:::user/jane@uab.edu"
             ]
         },
         "Action": [
             "s3:ListBucket"
         ],
         "Resource": [
-            "arn:aws:s3:::b1"
+            "arn:aws:s3:::bucket1"
         ]
     },
     {
@@ -210,7 +216,7 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
         "Effect": "Allow",
         "Principal": {
             "AWS": [
-                "arn:aws:iam:::user/jane"
+                "arn:aws:iam:::user/jane@uab.edu"
             ]
         },
         "Action": [
@@ -218,7 +224,7 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
             "s3:PutBucketPolicy"
         ],
         "Resource": [
-            "arn:aws:s3:::b1"
+            "arn:aws:s3:::bucket1"
         ]
     },
     {
@@ -227,7 +233,7 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
         "Principal": {
             "AWS": [
                 "arn:aws:iam:::user/bob",
-                "arn:aws:iam:::user/jane"
+                "arn:aws:iam:::user/jane@uab.edu"
             ]
         },
         "Action": [
@@ -236,7 +242,7 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
             "s3:DeleteObject"
         ],
         "Resource": [
-         "arn:aws:s3:::b1/*"
+         "arn:aws:s3:::bucket1/*"
         ]
     }]
 }
