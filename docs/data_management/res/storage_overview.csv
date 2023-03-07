@@ -1,4 +1,4 @@
-Platform,[Long-term Storage](lts/lts.md),[User Data and Home Directories](storage.md#user-space),[Project Directories](storage.md#project-directory),[Network Scratch](storage.md#network-scratch),[Local Scratch](storage.md#local-scratch)
+Platform,[Long-term Storage](lts/index.md),[User Data and Home Directories](storage.md#user-space),[Project Directories](storage.md#project-directory),[Network Scratch](storage.md#network-scratch),[Local Scratch](storage.md#local-scratch)
 Data Use-Case,Rarely changing or immutable files. Data not directly usable in Cheaha jobs.,General-purpose medium- to long-term storage.,Data to be shared among a single or multiple labs.,Temporary files created during analysis. Rolling file deletion over time.,Small files created during jobs. Must be deleted at the end of a job.
 Default Quota,75 TB,5 TB,25 TB,100 TB,Small
 Owner,Lab PI,Individual Researchers,Lab PI,Individual Researchers,Individual Researchers
