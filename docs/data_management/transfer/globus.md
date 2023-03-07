@@ -138,10 +138,10 @@ To use the UAB Box Connector, [search for an endpoint](#moving-data-between-endp
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    [LTS](../lts/lts.md) behaves differently from other file systems and comes with a few possible pitfalls. Keep in mind the following three rules: (1) all data must be in buckets, (2) buckets are only allowed in the root folder, and (3) buckets must have unique names.
+    [LTS](../lts/index.md) behaves differently from other file systems and comes with a few possible pitfalls. Keep in mind the following three rules: (1) all data must be in buckets, (2) buckets are only allowed in the root folder, and (3) buckets must have unique names.
 <!-- markdownlint-enable MD046 -->
 
-To use the UAB [LTS](../lts/lts.md) Connector, [search for an endpoint](#moving-data-between-endpoints) like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a [bucket](../lts/lts.md#make-a-bucket) in [LTS](../lts/lts.md). To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.
+To use the UAB [LTS](../lts/index.md) Connector, [search for an endpoint](#moving-data-between-endpoints) like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a [bucket](../lts/interfaces.md#make-a-bucket) in LTS. To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.
 
 #### Data Must be in Buckets
 
@@ -165,7 +165,7 @@ Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
 
 #### Buckets Must Have Globally Unique Names
 
-When creating new buckets, the name must be unique across all buckets on the system. At first this may sound very restrictive, but it is quite simple to deal with in practice. See our LTS section on [good naming practice](../lts/lts.md#avoiding-duplicate-names) for how to avoid duplicate names.
+When creating new buckets, the name must be unique across all buckets on the system. At first this may sound very restrictive, but it is quite simple to deal with in practice. See our LTS section on [good naming practice](../lts/index.md#avoiding-duplicate-names-for-buckets) for how to avoid duplicate names.
 
 If a duplicate bucket name is entered, a long error message will appear in a small space next to the new bucket name. The message reads like the following, expanded for readability.
 
