@@ -56,3 +56,7 @@ For more information on usage with examples, see [Anaconda Environments](../../w
 2. Create a new environment with only Mamba using `conda create --name mamba -c conda-forge mamba`
 3. `conda activate mamba`
 4. Use Mamba to install environments as needed. Be aware you must use the flag `--prefix=~/.conda/envs/` to put the environment in the correct location to be seen by Anaconda.
+
+## Singularity Containers
+
+Containers are a very useful resource for installing software without needing administrator permission. Please read the full documentation about singularity and containers on our [main Singularity page](../../workflow_solutions/getting_containers.md#containers-on-cheaha).
