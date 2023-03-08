@@ -96,6 +96,7 @@ nav:
       - Using Anaconda: workflow_solutions/using_anaconda.md
       - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
       - Using Git: workflow_solutions/git.md
+      - R Projects and Environments: workflow_solutions/r_environments.md
       - Getting Containers: workflow_solutions/getting_containers.md
       - Software Collaboration with GitHub and GitLab: workflow_solutions/getting_software_with_git.md
   - Cheaha Guide:
