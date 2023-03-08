@@ -13,7 +13,7 @@
     
     
       
-        <title>Getting Containers - Research Computing Documentation</title>
+        <title>Software Containers - Research Computing Documentation</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Containers
+              Software Containers
             
           </span>
         </div>
@@ -733,12 +733,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Getting Containers
+          Software Containers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Getting Containers
+        Software Containers
       </a>
       
         
@@ -760,6 +760,40 @@
   <a href="#fantastic-containers-and-where-to-find-them" class="md-nav__link">
     Fantastic Containers and Where to Find Them
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers-on-cheaha" class="md-nav__link">
+    Containers on Cheaha
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers on Cheaha">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-singularity-images" class="md-nav__link">
+    Pull Singularity Images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-singularity-images" class="md-nav__link">
+    Running Singularity Images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singularity-paths" class="md-nav__link">
+    Singularity Paths
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1948,6 +1982,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#containers-on-cheaha" class="md-nav__link">
+    Containers on Cheaha
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers on Cheaha">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-singularity-images" class="md-nav__link">
+    Pull Singularity Images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-singularity-images" class="md-nav__link">
+    Running Singularity Images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singularity-paths" class="md-nav__link">
+    Singularity Paths
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-containers-on-uab-rc-cloud-cloudrcuabedu" class="md-nav__link">
     Using Containers on UAB RC Cloud (cloud.rc.uab.edu)
   </a>
@@ -2046,91 +2114,135 @@
 
 
 <h1 id="software-containers">Software Containers<a class="headerlink" href="#software-containers" title="Permanent link">&para;</a></h1>
-<p>Containers help to manage software installations and all their dependencies in a single large image.</p>
-<p>Docker is an open-source platform for building, deploying, running, updating, and managing containers.</p>
+<p>Containers help to manage software installations and all their dependencies in a single large image. These containers are a self-contained operating system along with any software the container creator added. Containers avoid software conflicts due to versioning as well as OS incompatibility and can be run on most, if not all, operating systems.</p>
+<p>The most common container engine is called Docker. Docker is an open-source platform for building, deploying, running, updating, and managing containers and has distributions for Linux, Windows, and Mac. Singularity is another common container engine specialized for use on HPC systems such as Cheaha where Docker cannot be used.</p>
 <h2 id="fantastic-containers-and-where-to-find-them">Fantastic Containers and Where to Find Them<a class="headerlink" href="#fantastic-containers-and-where-to-find-them" title="Permanent link">&para;</a></h2>
 <p>Docker containers are available in <a href="https://hub.docker.com/">https://hub.docker.com/</a>. This docker hub repository allows to share containers and use pre-existing docker images.</p>
 <p><div class="lightgallery"><a data-sub-html="Containers docker hub website." href="../images/containers_docker_hub_website.png"><img alt="Containers docker hub website." src="../images/containers_docker_hub_website.png" /></a></div></p>
+<p>It is often a good idea to search the Github repo for an application or pipeline to see if a container has already been provided by the authors.</p>
+<h2 id="containers-on-cheaha">Containers on Cheaha<a class="headerlink" href="#containers-on-cheaha" title="Permanent link">&para;</a></h2>
+<p>Using containers on Cheaha bypasses the need to message support to install necessary software. Containers can be downloaded by any user into their personal space and used immediately without admin permission. as mentioned above, you will need to use Singularity containers on Cheaha. You can find all of the Singularity modules using the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module spider Singularity
+</code></pre></div>
+<p>It's highly recommended to only use Singularity versions 3+.</p>
+<h3 id="pull-singularity-images">Pull Singularity Images<a class="headerlink" href="#pull-singularity-images" title="Permanent link">&para;</a></h3>
+<p>Singularity can pull images from a variety of sources, including Dockerhub, and convert them to the proper format automatically. In order to download an image, use the <code>pull</code> subcommand followed by the output image name and the URI of the image. The general form of the command for pulling from Dockerhub is as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>singularity pull &lt;output.sif&gt; docker://&lt;account&gt;/&lt;image&gt;<span class="o">[</span>:&lt;version_tag&gt;<span class="o">]</span>
+</code></pre></div>
+<p>For example, if we wanted to pull the <a href="https://hub.docker.com/r/godlovedc/lolcow">lolcow container</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>singularity pull lolcow.sif docker://godlovedc/lolcow
+</code></pre></div>
+<p>We now have the <code>lolcow.sif</code> image we can run or share with other researchers. It's important to remember that containers are just independent files that can be moved, copied, or deleted the same as any other file.</p>
+<h3 id="running-singularity-images">Running Singularity Images<a class="headerlink" href="#running-singularity-images" title="Permanent link">&para;</a></h3>
+<p>There are 3 ways to run Singularity images, all with their unique purposes and are as follows:</p>
+<ol>
+<li><code>singularity run</code>: run a container using a default command set by the author. Generally, this will be used when a container encompasses a full pipeline controlled by a single command. The general form for this command is <code>singularity run &lt;image.sif&gt; [options]</code> where <code>[options]</code> are defined by the default command. You can use <code>singularity run &lt;image.sif&gt; --help</code> to see what those options are.</li>
+<li><code>singularity exec</code>: run any command available in the container. This provides more flexibility than <code>run</code> and would be useful in the cases where a container has more modular components as opposed to a single control script. The general form for this would be <code>singularity exec &lt;image.sif&gt; &lt;command&gt; [options]</code>. You can add the <code>--help</code> option to see what a given command does and its inputs.</li>
+<li><code>singularity shell</code>: allow interactive use of the container through the terminal. This changes your active environment to that in the container. You can traverse the container's directory tree and search for various files and commands as if it was a virtual machine. This is very useful for interactive development as well as investigation of a container's contents. The general form of the command is <code>singularity shell &lt;image.sif&gt;</code>.</li>
+</ol>
+<p>It's important to note that both <code>run</code> and <code>exec</code> enter the container as part of their execution and then exit back to the original shell environment afterwards whereas <code>shell</code> keeps you in the container until you either close the terminal or use the <code>exit</code> command.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code>singularity shell</code> is not executable via shell scripts. Any singularity commands in a batch script should be <code>run</code> or <code>exec</code> instead.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h3 id="singularity-paths">Singularity Paths<a class="headerlink" href="#singularity-paths" title="Permanent link">&para;</a></h3>
+<p>By default, Singularity containers have limited access to the general filesystem. Containers get default access to the <code>/home</code> directory as well as the directory the container was run from. If you run the container from <code>$HOME</code> but try to access files in <code>$USER_DATA</code>, you will see an error. In order to give a container access to other directories, use the <code>-B</code> or <code>--bind</code> option when invoking the container. For instance, if I wanted to use <code>run</code> on a container that had an input option called <code>-i</code> and give the container access to a subfolder called <code>my_data</code> in a project space called <code>UABRC</code>, the singularity command would look like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>singularity run --bind /data/project/UABRC/my_data image.sif -i /data/project/UABRC/my_data
+</code></pre></div>
+<p>You can also alias the bind path to a shorter name and use it in the command. In that case, the bind option would look like <code>--bind &lt;/directory_path&gt;:&lt;/alias&gt;</code>. For example, if I was running a container and was giving the <code>my_data</code> directory as an input, I could alias it to <code>/input_data</code> and use it in the command like so:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>singularity run --bind /data/project/UABRC/my_data:/input_data image.sif -i /input_data
+</code></pre></div>
+<p>These bind paths can be used in both <code>exec</code> and <code>shell</code> subcommands as well.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Bind paths cannot grant access to folders and files your account does not have access to. For instance, you cannot use a container to access data in another user's account unless that user has explicitly given you the correct permissions via <code>chmod</code> or ACLs.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h2 id="using-containers-on-uab-rc-cloud-cloudrcuabedu">Using Containers on UAB RC Cloud (cloud.rc.uab.edu)<a class="headerlink" href="#using-containers-on-uab-rc-cloud-cloudrcuabedu" title="Permanent link">&para;</a></h2>
 <p>To access docker containers, install <code>Docker</code> in your system. To install docker desktop on your computer, follow this link: <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop Page</a>.</p>
 <h3 id="docker-installation-on-uab-rc-cloud">Docker Installation on UAB RC Cloud<a class="headerlink" href="#docker-installation-on-uab-rc-cloud" title="Permanent link">&para;</a></h3>
 <p>Following are the installation instructions to install <code>Docker</code> on UAB RC Cloud with Ubuntu operating system. Tested the installation on Ubuntu 20.04. Setting up UAB RC Cloud account can be found in <a href="../../uab_cloud/">UAB RC Cloud</a>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt-get update
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo apt install docker.io
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo apt-get update
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo apt install docker.io
 </code></pre></div>
 <h3 id="using-a-docker-container-from-dockerhub">Using a Docker Container from DockerHub<a class="headerlink" href="#using-a-docker-container-from-dockerhub" title="Permanent link">&para;</a></h3>
 <p>We can start pulling a container named <code>alpine</code> from the Docker hub. <code>alpine</code> is a general-purpose Linux distribution. Look for the container <code>alpine</code> in the docker hub, copy the pull command, and paste it into your terminal.</p>
 <p><div class="lightgallery"><a data-sub-html="Containers pull docker from dockerhub." href="../images/containers_pull_docker_from_dockerhub.png"><img alt="Containers pull docker from dockerhub." src="../images/containers_pull_docker_from_dockerhub.png" /></a></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo docker pull alpine
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo docker pull alpine
 </code></pre></div>
 <p><div class="lightgallery"><a data-sub-html="Containers docker pull alpine." href="../images/containers_docker_pull_alpine.png"><img alt="Containers docker pull alpine." src="../images/containers_docker_pull_alpine.png" /></a></div></p>
 <p>Once the image is pulled, you can verify if the image exists using the below command. Note that if you do not specify the tag/version of the container, the recent version is built, and the tag is listed as <code>latest</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo docker images
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo docker images
 </code></pre></div>
 <p><div class="lightgallery"><a data-sub-html="Containers alpine image." href="../images/containers_alpine_image.png"><img alt="Containers alpine image." src="../images/containers_alpine_image.png" /></a></div></p>
 <p>If you prefer to pull a particular version of the <code>alpine</code> container, you need to mention the tag details in your pull command. You can see the available tags/versions of <code>alpine</code> from the Docker hub.</p>
 <p><div class="lightgallery"><a data-sub-html="Containers dockerfile links alpine." href="../images/containers_dockerfile_links_alpine.png"><img alt="Containers dockerfile links alpine." src="../images/containers_dockerfile_links_alpine.png" /></a></div></p>
 <p>To pull particular version of <code>alpine</code> container, use the below syntax.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo docker pull container_name:tag
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo docker pull container_name:tag
 </code></pre></div>
 <p>Here the <code>container_name</code> is <code>alpine</code>, and the tag is <code>3.14</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo docker pull alpine:3.14
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo docker pull alpine:3.14
 </code></pre></div>
 <p>The existing image looks like,</p>
 <p><div class="lightgallery"><a data-sub-html="Containers docker alpine tag image." href="../images/containers_docker_alpine_tag_image.png"><img alt="Containers docker alpine tag image." src="../images/containers_docker_alpine_tag_image.png" /></a></div></p>
 <h2 id="create-your-own-docker-container">Create Your Own Docker Container<a class="headerlink" href="#create-your-own-docker-container" title="Permanent link">&para;</a></h2>
 <p>You can create your own Docker container, build it, and upload/share them in the Docker hub or UAB GitLab container registry.</p>
 <p>Let us take a synthetic python code and formulate the packages/dependencies required to build your software container. Below is a python script that requires packages, namely, numpy, scipy, and matplotlib. Next, the steps to create a <code>Dockerfile</code> is illustrated. Let us name this script <code>python_test.py</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>import numpy as np
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>import matplotlib
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>import pylab
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>import matplotlib.pylab as plt
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>import scipy.integrate as integrate
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nv">a</span> <span class="o">=</span> np.array<span class="o">([</span><span class="m">0</span>, <span class="m">10</span>, <span class="m">20</span>, <span class="m">30</span>, <span class="m">40</span><span class="o">])</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>print<span class="o">(</span>a<span class="o">)</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="nv">b</span> <span class="o">=</span> np.arange<span class="o">(</span>-5, <span class="m">5</span>, <span class="m">0</span>.5<span class="o">)</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>print<span class="o">(</span>b<span class="o">)</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="nv">t</span> <span class="o">=</span> np.arange<span class="o">(</span><span class="m">0</span>,20.5,0.5<span class="o">)</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>print<span class="o">(</span>t<span class="o">)</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="nv">result</span> <span class="o">=</span> integrate.quad<span class="o">(</span>np.sin, <span class="m">0</span>, np.pi<span class="o">)</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>print<span class="o">(</span>result<span class="o">)</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>plt.plot<span class="o">([</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span><span class="o">]</span>, <span class="o">[</span><span class="m">1</span>, <span class="m">4</span>, <span class="m">9</span>, <span class="m">16</span><span class="o">])</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>plt.show<span class="o">()</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>plt.savefig<span class="o">(</span><span class="s1">&#39;testing.png&#39;</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>import numpy as np
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>import matplotlib
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>import pylab
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>import matplotlib.pylab as plt
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>import scipy.integrate as integrate
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nv">a</span> <span class="o">=</span> np.array<span class="o">([</span><span class="m">0</span>, <span class="m">10</span>, <span class="m">20</span>, <span class="m">30</span>, <span class="m">40</span><span class="o">])</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>print<span class="o">(</span>a<span class="o">)</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="nv">b</span> <span class="o">=</span> np.arange<span class="o">(</span>-5, <span class="m">5</span>, <span class="m">0</span>.5<span class="o">)</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>print<span class="o">(</span>b<span class="o">)</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="nv">t</span> <span class="o">=</span> np.arange<span class="o">(</span><span class="m">0</span>,20.5,0.5<span class="o">)</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>print<span class="o">(</span>t<span class="o">)</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="nv">result</span> <span class="o">=</span> integrate.quad<span class="o">(</span>np.sin, <span class="m">0</span>, np.pi<span class="o">)</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>print<span class="o">(</span>result<span class="o">)</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>plt.plot<span class="o">([</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span><span class="o">]</span>, <span class="o">[</span><span class="m">1</span>, <span class="m">4</span>, <span class="m">9</span>, <span class="m">16</span><span class="o">])</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>plt.show<span class="o">()</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>plt.savefig<span class="o">(</span><span class="s1">&#39;testing.png&#39;</span><span class="o">)</span>
 </code></pre></div>
 <h3 id="create-a-dockerfile-that-has-miniconda-installed">Create a Dockerfile that has Miniconda Installed<a class="headerlink" href="#create-a-dockerfile-that-has-miniconda-installed" title="Permanent link">&para;</a></h3>
 <p>We require numpy, scipy, and matplotlib libraries to execute the above Python script. Following are the steps to create a specification file and build a container image.</p>
 <ol>
 <li>
 <p>Create an empty directory <code>miniconda</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdir miniconda
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mkdir miniconda
 </code></pre></div>
 </li>
 <li>
 <p>Create a <code>Dockerfile</code> within the <code>miniconda</code> directory with the following contents. The file name <code>Dockerfile</code> is case-sensitive.</p>
 <p><div class="lightgallery"><a data-sub-html="Containers create dockerfile." href="../images/containers_create_dockerfile.png"><img alt="Containers create dockerfile." src="../images/containers_create_dockerfile.png" /></a></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># You may start with a base image</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># Always use a specific tag like &quot;4.10.3&quot;, never &quot;latest&quot;!</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># The version referenced by &quot;latest&quot; can change, so the build will be</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># more stable when building from a specific version tag.</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>FROM continuumio/miniconda3:4.12.0
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Use RUN to execute commands inside the miniconda image</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>RUN conda install -y numpy<span class="s2">&quot;&gt;=1.16.5, &lt;1.23.0&quot;</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># RUN multiple commands together</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># Last two lines are cleaning out the local repository and removing the state</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1"># information for installed package</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>RUN apt-get update <span class="se">\</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="o">&amp;&amp;</span> conda install -y <span class="nv">scipy</span><span class="o">=</span><span class="m">1</span>.7.3 <span class="se">\</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="o">&amp;&amp;</span> conda install -y <span class="nv">matplotlib</span><span class="o">=</span><span class="m">3</span>.5.1 <span class="se">\</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="o">&amp;&amp;</span> apt-get --yes clean <span class="se">\</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="o">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># You may start with a base image</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># Always use a specific tag like &quot;4.10.3&quot;, never &quot;latest&quot;!</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># The version referenced by &quot;latest&quot; can change, so the build will be</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># more stable when building from a specific version tag.</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>FROM continuumio/miniconda3:4.12.0
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># Use RUN to execute commands inside the miniconda image</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>RUN conda install -y numpy<span class="s2">&quot;&gt;=1.16.5, &lt;1.23.0&quot;</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c1"># RUN multiple commands together</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="c1"># Last two lines are cleaning out the local repository and removing the state</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="c1"># information for installed package</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>RUN apt-get update <span class="se">\</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="o">&amp;&amp;</span> conda install -y <span class="nv">scipy</span><span class="o">=</span><span class="m">1</span>.7.3 <span class="se">\</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="o">&amp;&amp;</span> conda install -y <span class="nv">matplotlib</span><span class="o">=</span><span class="m">3</span>.5.1 <span class="se">\</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="o">&amp;&amp;</span> apt-get --yes clean <span class="se">\</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="o">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*
 </code></pre></div>
 <p>This is the specification file. It provides Docker with the software information, and versions, it needs to build our new container. See the Docker Container documentation for more information <a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a>.</p>
 <p>In the Dockerfile, we start with an existing container <code>continuumio/miniconda3:4.12.0</code>. This container is obtained from Dockerhub; here, <code>continuumio</code> is the producer, and the repo name is <code>continuumio/miniconda3</code>.</p>
@@ -2143,11 +2255,11 @@
 </li>
 <li>
 <p>To build your container, change the directory to <code>miniconda</code> and use the below syntax to build the <code>Dockerfile</code>. Here we use <code>.</code> to say "current directory." This will only work if you are in the directory with the <code>Dockerfile</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo docker build -t repository_name:tag .
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo docker build -t repository_name:tag .
 </code></pre></div>
 <p>Here the repository_name is <code>py3-miniconda</code> and the tag is <code>2022-08</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span> miniconda
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>sudo docker build -t py3-miniconda:2022-08 .
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">cd</span> miniconda
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>sudo docker build -t py3-miniconda:2022-08 .
 </code></pre></div>
 <p><div class="lightgallery"><a data-sub-html="Containers build docker." href="../images/containers_build_docker.png"><img alt="Containers build docker." src="../images/containers_build_docker.png" /></a></div></p>
 </li>
@@ -2156,16 +2268,16 @@
 <p class="admonition-title">Note</p>
 <p>The <code>.</code> at the end of the command! This indicates that we're using the current directory as our build environment, including the Dockerfile inside. Also, you may rename the <code>repository_name</code> and <code>tag</code> as you prefer.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo docker images
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo docker images
 </code></pre></div>
 <p><div class="lightgallery"><a data-sub-html="Containers miniconda docker image." href="../images/containers_miniconda_docker_image.png"><img alt="Containers miniconda docker image." src="../images/containers_miniconda_docker_image.png" /></a></div></p>
 <h3 id="running-the-built-miniconda-docker-container-interactively">Running the Built Miniconda Docker Container Interactively<a class="headerlink" href="#running-the-built-miniconda-docker-container-interactively" title="Permanent link">&para;</a></h3>
 <p>To run docker interactively and execute commands inside the container, use the below syntax. Here <code>run</code> executes the command in a new container, and <code>-it</code> starts an interactive shell inside the container. After executing this command, the command prompt will change and move into the bash shell.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo docker run -it repository_name:tag /bin/bash
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo docker run -it repository_name:tag /bin/bash
 </code></pre></div>
 <p>To execute your container <code>py3-miniconda</code> interactively, run this command with the tag `2022-08'.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo docker run -it py3-miniconda:2022-08 /bin/bash
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">cd</span> /opt/conda/bin/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo docker run -it py3-miniconda:2022-08 /bin/bash
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">cd</span> /opt/conda/bin/
 </code></pre></div>
 <p>The <code>python</code> executables to execute our synthetic python script are within the directory structure <code>/opt/conda/bin</code>.</p>
 <p><div class="lightgallery"><a data-sub-html="Docker interactive." href="../images/containers_docker_interactive.png"><img alt="Docker interactive." src="../images/containers_docker_interactive.png" /></a></div></p>
@@ -2174,10 +2286,10 @@
 <p>Before we mount data onto a container, remember you initially created the python script <code>python_test.py</code> when creating your own container. Move <code>python_test.py</code> within <code>miniconda</code> directory. Now you have your <code>miniconda/python_test.py</code> outside the container. To access the files outside the container you should mount the file path along with the <code>docker run</code> command.</p>
 <p><div class="lightgallery"><a data-sub-html="Containers python script." href="../images/containers_python_script.png"><img alt="Containers python script." src="../images/containers_python_script.png" /></a></div></p>
 <p>To mount a host directory into your docker container, use the <code>-v</code> flag.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo docker run -v /host/directory/:/container/directory  -other-options
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo docker run -v /host/directory/:/container/directory  -other-options
 </code></pre></div>
 <p>So the command for our example will be,</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo docker run -v /home/ubuntu/:/home  -it py3-miniconda:2022-08 /bin/sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo docker run -v /home/ubuntu/:/home  -it py3-miniconda:2022-08 /bin/sh
 </code></pre></div>
 <p>Here we are mounting the $HOME directory <code>/home/ubuntu</code> from a host into containers' $HOME directory. Note that you may mount a particular directory according to your preference. The following shows the list of files in containers' $HOME directory with and without mounting.</p>
 <p>Before mounting, there are no files found within the $HOME directory.</p>
@@ -2185,7 +2297,7 @@
 <p>After mounting using <code>-v</code> flag, files show up within the $HOME directory. The highlighted <code>miniconda</code> is our working directory with python script.</p>
 <p><div class="lightgallery"><a data-sub-html="Containers after mounting." href="../images/containers_after_mounting.png"><img alt="Containers after mounting." src="../images/containers_after_mounting.png" /></a></div></p>
 <p>We can now execute the script, python_test.py using this command.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python python_test.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>python python_test.py
 </code></pre></div>
 <p><div class="lightgallery"><a data-sub-html="Containers python script execution." href="../images/containers_python_script_execution.png"><img alt="Containers python script execution." src="../images/containers_python_script_execution.png" /></a></div></p>
 <p>More lessons on Docker can be found in this link: <a href="https://christinalk.github.io/docker-introduction/">Introduction to Docker</a> and <a href="https://docs.docker.com/engine/reference/builder/">Docker Documentation</a>.</p>
@@ -2204,14 +2316,14 @@
 </li>
 <li>
 <p>Login to UAB GitLab Registry using your <code>registry_name:ID</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo docker login gitlab.rc.uab.edu:4567
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>sudo docker login gitlab.rc.uab.edu:4567
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The registry_name and ID shown in this examples are for understanding and not meant for testing. Please use your GitLab registry name and ID for testing.</p>
 </div>
 <p>Note: For securing concerns, use an access token to log in. Create an access token in UAB GitLab to push/pull the docker container in the container registry (Secure token and guidelines to follow are shown next).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token
 </code></pre></div>
 </li>
 <li>
@@ -2241,16 +2353,16 @@
 <ul>
 <li>List the docker images on your local computer using the <code>docker images</code> command. An <code>alpine</code> image exists already on this computer. Your container will likely have a different name.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo docker images
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>sudo docker images
 </code></pre></div>
 <p><div class="lightgallery"><a data-sub-html="Containers docker image." href="../images/containers_docker_image.png"><img alt="Containers docker image." src="../images/containers_docker_image.png" /></a></div></p>
 <ul>
 <li>Tag <code>alpine</code> to push into UAB GitLab registry. We need to have the UAB GitLab registry name to push. It will show the default command on the container registry page. Copy these commands for future reference. The tag is <code>test</code> here.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo docker tag alpine:latest gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo docker tag alpine:latest gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
 </code></pre></div>
 <p>You can see the tag <code>test</code> associated with the <code>alpine</code> image.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>sudo docker images
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>sudo docker images
 </code></pre></div>
 <p><div class="lightgallery"><a data-sub-html="Containers docker test image." href="../images/containers_docker_test_image.png"><img alt="Containers docker test image." src="../images/containers_docker_test_image.png" /></a></div></p>
 <p>The below first command is the syntax to push the Docker image to the UAB GitLab container registry from your computer. The second command is an example of pushing a Docker image to the UAB GitLab container registry from your computer.</p>
@@ -2258,20 +2370,20 @@
 <p class="admonition-title">Note</p>
 <p>The registry_name,ID, and gitlab_group_name shown in this examples are for understanding and not meant for testing. Please use your GitLab registry name and ID for testing.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>sudo docker push gitlab_registry_name:ID/gitlab_group_name/project_name:tag
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>sudo docker push gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>sudo docker push gitlab_registry_name:ID/gitlab_group_name/project_name:tag
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>sudo docker push gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
 </code></pre></div>
 <p><div class="lightgallery"><a data-sub-html="Containers docker push gitlab." href="../images/containers_docker_push_gitlab.png"><img alt="Containers docker push gitlab." src="../images/containers_docker_push_gitlab.png" /></a></div></p>
 <p>In your GitLab's page container registry, refresh to view the <code>alpine</code> container is pushed to the registry.</p>
 <p><div class="lightgallery"><a data-sub-html="Containers alpine gitlab." href="../images/containers_alpine_gitlab.png"><img alt="Containers alpine gitlab." src="../images/containers_alpine_gitlab.png" /></a></div></p>
 <p>Now lets pull the <code>alpine</code> container from GitLab's page container registry to your system. Before that, remove the previous image from the system, which already has a <code>test</code> tag, to avoid discrepancies.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo docker rmi -f image_id
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>sudo docker rmi -f image_id
 </code></pre></div>
 <p><div class="lightgallery"><a data-sub-html="Containers docker rmi." href="../images/containers_docker_rmi.png"><img alt="Containers docker rmi." src="../images/containers_docker_rmi.png" /></a></div></p>
 <p><div class="lightgallery"><a data-sub-html="Containers test gitlab registry." href="../images/containers_test_gitlab_registry.png"><img alt="Containers test gitlab registry." src="../images/containers_test_gitlab_registry.png" /></a></div></p>
 <p>In your GitLab's page container registry, copy the pull command from the <code>test</code> container registry, and use it to pull the docker container to your system. You can see the image is reflected in the image list.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>sudo docker pull gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>sudo docker pull gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
 </code></pre></div>
 <p><div class="lightgallery"><a data-sub-html="Containers gitlab pull." href="../images/containers_gitlab_pull.png"><img alt="Containers gitlab pull." src="../images/containers_gitlab_pull.png" /></a></div></p>
 <p><div class="lightgallery"><a data-sub-html="Containers pull docker images." href="../images/containers_pull_docker_images.png"><img alt="Containers pull docker images." src="../images/containers_pull_docker_images.png" /></a></div></p>
@@ -2281,7 +2393,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 8, 2023</span>
       
     
   </small>
