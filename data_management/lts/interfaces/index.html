@@ -13,7 +13,7 @@
     
     
       
-        <title>Globus - Research Computing Documentation</title>
+        <title>Interfacing with LTS - Research Computing Documentation</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#globus" class="md-skip">
+        <a href="#connecting-to-lts" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Globus
+              Interfacing with LTS
             
           </span>
         </div>
@@ -437,12 +437,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
       
       
       
@@ -460,7 +462,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../lts/">Long Term Storage</a>
+          <a href="../">Long Term Storage</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -481,11 +483,189 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../lts/interfaces/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Interfacing with LTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Interfacing with LTS
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#globus" class="md-nav__link">
+    Globus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    Command Line
+  </a>
+  
+    <nav class="md-nav" aria-label="Command Line">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rclone" class="md-nav__link">
+    rclone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s3cmd" class="md-nav__link">
+    s3cmd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aws-cli" class="md-nav__link">
+    AWS CLI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-command-structure" class="md-nav__link">
+    General Command Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-a-bucket" class="md-nav__link">
+    Make a Bucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-buckets-and-contents" class="md-nav__link">
+    Listing Buckets and Contents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-bucket-or-folder-size" class="md-nav__link">
+    Check Bucket or Folder Size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploading-files-and-folders" class="md-nav__link">
+    Uploading Files and Folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-files-and-directories" class="md-nav__link">
+    Deleting Files and Directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-comparison-chart" class="md-nav__link">
+    Command Comparison Chart
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cyberduck" class="md-nav__link">
+    Cyberduck
+  </a>
+  
+    <nav class="md-nav" aria-label="Cyberduck">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-connection" class="md-nav__link">
+    Creating a Connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-bucket" class="md-nav__link">
+    Creating a Bucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploading-and-downloading-data" class="md-nav__link">
+    Uploading and Downloading Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-interfaces" class="md-nav__link">
+    Alternative Interfaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -497,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lts/policies/" class="md-nav__link">
+      <a href="../policies/" class="md-nav__link">
         Sharing
       </a>
     </li>
@@ -516,14 +696,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
       
       
       
@@ -552,181 +730,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Globus
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../transfer/globus/" class="md-nav__link">
         Globus
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up-globus-connect-personal" class="md-nav__link">
-    Setting up Globus Connect Personal
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#managing-identities" class="md-nav__link">
-    Managing Identities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#moving-data-between-endpoints" class="md-nav__link">
-    Moving Data Between Endpoints
-  </a>
-  
-    <nav class="md-nav" aria-label="Moving Data Between Endpoints">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#transfer-and-sync-options" class="md-nav__link">
-    Transfer and Sync Options
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-errors" class="md-nav__link">
-    Common Errors
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#project-space-permissions" class="md-nav__link">
-    Project Space Permissions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#more-information" class="md-nav__link">
-    More Information
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connectors" class="md-nav__link">
-    Connectors
-  </a>
-  
-    <nav class="md-nav" aria-label="Connectors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#uab-box-connector" class="md-nav__link">
-    UAB Box Connector
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#long-term-storage-s3-lts-connector" class="md-nav__link">
-    Long-term Storage S3 (LTS) Connector
-  </a>
-  
-    <nav class="md-nav" aria-label="Long-term Storage S3 (LTS) Connector">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-must-be-in-buckets" class="md-nav__link">
-    Data Must be in Buckets
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buckets-must-have-globally-unique-names" class="md-nav__link">
-    Buckets Must Have Globally Unique Names
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-bookmarks" class="md-nav__link">
-    Using Bookmarks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#managing-shared-collections-from-a-globus-connect-personal-endpoint" class="md-nav__link">
-    Managing Shared Collections from a Globus Connect Personal Endpoint
-  </a>
-  
-    <nav class="md-nav" aria-label="Managing Shared Collections from a Globus Connect Personal Endpoint">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-shared-collection" class="md-nav__link">
-    Creating a Shared Collection
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deleting-a-shared-collection" class="md-nav__link">
-    Deleting a Shared Collection
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -738,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rclone/" class="md-nav__link">
+      <a href="../../transfer/rclone/" class="md-nav__link">
         RClone
       </a>
     </li>
@@ -752,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../filezilla/" class="md-nav__link">
+      <a href="../../transfer/filezilla/" class="md-nav__link">
         FileZilla
       </a>
     </li>
@@ -2003,51 +2011,99 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-up-globus-connect-personal" class="md-nav__link">
-    Setting up Globus Connect Personal
+  <a href="#globus" class="md-nav__link">
+    Globus
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#managing-identities" class="md-nav__link">
-    Managing Identities
+  <a href="#command-line" class="md-nav__link">
+    Command Line
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#moving-data-between-endpoints" class="md-nav__link">
-    Moving Data Between Endpoints
-  </a>
-  
-    <nav class="md-nav" aria-label="Moving Data Between Endpoints">
+    <nav class="md-nav" aria-label="Command Line">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#transfer-and-sync-options" class="md-nav__link">
-    Transfer and Sync Options
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rclone" class="md-nav__link">
+    rclone
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#common-errors" class="md-nav__link">
-    Common Errors
+  <a href="#s3cmd" class="md-nav__link">
+    s3cmd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#project-space-permissions" class="md-nav__link">
-    Project Space Permissions
+  <a href="#aws-cli" class="md-nav__link">
+    AWS CLI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-command-structure" class="md-nav__link">
+    General Command Structure
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#more-information" class="md-nav__link">
-    More Information
+  <a href="#make-a-bucket" class="md-nav__link">
+    Make a Bucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-buckets-and-contents" class="md-nav__link">
+    Listing Buckets and Contents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-bucket-or-folder-size" class="md-nav__link">
+    Check Bucket or Folder Size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploading-files-and-folders" class="md-nav__link">
+    Uploading Files and Folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-files-and-directories" class="md-nav__link">
+    Deleting Files and Directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-comparison-chart" class="md-nav__link">
+    Command Comparison Chart
   </a>
   
 </li>
@@ -2058,77 +2114,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connectors" class="md-nav__link">
-    Connectors
+  <a href="#cyberduck" class="md-nav__link">
+    Cyberduck
   </a>
   
-    <nav class="md-nav" aria-label="Connectors">
+    <nav class="md-nav" aria-label="Cyberduck">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uab-box-connector" class="md-nav__link">
-    UAB Box Connector
+  <a href="#creating-a-connection" class="md-nav__link">
+    Creating a Connection
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#long-term-storage-s3-lts-connector" class="md-nav__link">
-    Long-term Storage S3 (LTS) Connector
-  </a>
-  
-    <nav class="md-nav" aria-label="Long-term Storage S3 (LTS) Connector">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-must-be-in-buckets" class="md-nav__link">
-    Data Must be in Buckets
+  <a href="#creating-a-bucket" class="md-nav__link">
+    Creating a Bucket
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#buckets-must-have-globally-unique-names" class="md-nav__link">
-    Buckets Must Have Globally Unique Names
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-bookmarks" class="md-nav__link">
-    Using Bookmarks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#managing-shared-collections-from-a-globus-connect-personal-endpoint" class="md-nav__link">
-    Managing Shared Collections from a Globus Connect Personal Endpoint
-  </a>
-  
-    <nav class="md-nav" aria-label="Managing Shared Collections from a Globus Connect Personal Endpoint">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creating-a-shared-collection" class="md-nav__link">
-    Creating a Shared Collection
+  <a href="#uploading-and-downloading-data" class="md-nav__link">
+    Uploading and Downloading Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deleting-a-shared-collection" class="md-nav__link">
-    Deleting a Shared Collection
+  <a href="#alternative-interfaces" class="md-nav__link">
+    Alternative Interfaces
   </a>
   
 </li>
@@ -2150,286 +2166,348 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/uabrc/uabrc.github.io/edit/main/docs/data_management/transfer/globus.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/uabrc/uabrc.github.io/edit/main/docs/data_management/lts/interfaces.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="globus">Globus<a class="headerlink" href="#globus" title="Permanent link">&para;</a></h1>
-<p>Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is recommended for most single-use, day-to-day data transfer use-cases.</p>
-<p>UAB Research Computing uses High Assurance Endpoints and Collections, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions.</p>
-<ol>
-<li>You will be prompted to prove authorization each time you access a UAB Research Computing endpoint, collection or attempt to download files to your local machine from such an endpoint or collection. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.</li>
-<li>Bookmarks are not allowed in High Assurance endpoints and collections.</li>
-</ol>
-<p>For more detailed information on High Assurance please see the Globus official pages below:</p>
-<ul>
-<li><a href="https://docs.globus.org/security/high-assurance-overview/">High Assurance Security Overview</a></li>
-<li><a href="https://docs.globus.org/high-assurance/">High Assurance Collections</a></li>
-</ul>
-<h2 id="setting-up-globus-connect-personal">Setting up Globus Connect Personal<a class="headerlink" href="#setting-up-globus-connect-personal" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.globus.org/globus-connect-personal">Globus Connect Personal</a> is software meant to be installed on local machines such as laptops, desktops,
-workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on <a href="https://docs.globus.org/how-to/globus-connect-personal-mac/">MacOS</a>, <a href="https://docs.globus.org/how-to/globus-connect-personal-linux">Linux</a> and <a href="https://docs.globus.org/how-to/globus-connect-personal-windows">Windows</a>.</p>
-<p>To verify your installation is complete, please visit <a href="https://app.globus.org">https://app.globus.org</a> and log in. Click "Endpoints" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the endpoint you just created.</p>
-<h2 id="managing-identities">Managing Identities<a class="headerlink" href="#managing-identities" title="Permanent link">&para;</a></h2>
-<p>Globus Identities is a concept helping to map Globus Accounts (one per person) to institutions (one or more per person).</p>
-<p>Most UAB researchers will have a single identity, their UAB identity, tied to their blazerid. Some researchers may have external collaborations or appointments that provide additional entities which need access to other endpoints on Globus.</p>
-<p>To manage your identities, navigate to <a href="https://app.globus.org/account/identities">https://app.globus.org/account/identities</a> and sign in.</p>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>To use UAB Research Computing endpoints and collections, you will need to ensure you are using you UAB identity.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
-<h2 id="moving-data-between-endpoints">Moving Data Between Endpoints<a class="headerlink" href="#moving-data-between-endpoints" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Log in to the Globus App online at <a href="https://app.globus.org">https://app.globus.org</a> using UAB Single Sign-On (SSO). Start typing "University of Alabama at Birmingham" into the "Use your existing organizational login" text box and selected it when it appears in the list.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus login page with University of Alabama at Birmingham entered into the text box" href="../images/globus_001_login.png"><img alt="Globus login page with University of Alabama at Birmingham entered into the text box" src="../images/globus_001_login.png" /></a></div></p>
-</li>
-<li>
-<p>Click File Manager in the left-hand navigation pane.</p>
-<p><div class="lightgallery"><a data-sub-html="Navigation pane with File Manager selected." href="../images/globus_002_nav_pane_file_manager.png"><img alt="Navigation pane with File Manager selected." src="../images/globus_002_nav_pane_file_manager.png" /></a></div></p>
-</li>
-<li>
-<p>Ensure the center icon for the "Panels" selection is picked.</p>
-<p><div class="lightgallery"><a data-sub-html="Panels selection widget with center icon selected. Center icon appears to be two side-by-side panes." href="../images/globus_003_panels.png"><img alt="Panels selection widget with center icon selected. Center icon appears to be two side-by-side panes." src="../images/globus_003_panels.png" /></a></div></p>
-</li>
-<li>
-<p>Click the "Search" icon in the "Collection" text box near the top-left or top-right of the page to locate an endpoint. There are multiple ways to find an endpoint. For some endpoints you may be asked to log in, which is true of all UAB endpoints. Some UAB endpoints may also require that you be on the UAB Campus VPN.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus File Manager interface with mouse pointer over left-hand Collection Search box." href="../images/globus_004_search_bar.png"><img alt="Globus File Manager interface with mouse pointer over left-hand Collection Search box." src="../images/globus_004_search_bar.png" /></a></div></p>
-<ol>
-<li>
-<p>Begin typing in the box to search for an endpoint. To find UAB-related endpoints, search for "UAB". There are two Cheaha endpoints</p>
-<ol>
-<li>Cheaha cluster on-campus (UAB Science DMZ) for machines that are either on the UAB Campus Network, or connected to the UAB Campus VPN.</li>
-<li>Cheaha cluster off-campus (UAB Science DMZ) for machines that are <em>not</em> on the UAB Campus Network and <em>not</em> on the UAB Campus VPN.</li>
-</ol>
-</li>
-<li>
-<p>The "Recent" tab shows endpoints that have most recently been used.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus Collection Search Recent tab showing two endpoints." href="../images/globus_005_recent_tab.png"><img alt="Globus Collection Search Recent tab showing two endpoints." src="../images/globus_005_recent_tab.png" /></a></div></p>
-</li>
-<li>
-<p>The "Bookmarks" tab shows a list of endpoint bookmarks. Bookmarks may not reference folders within UAB Research Computing or other High Assurance endpoints or collections.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus Collection Search Bookmarks tab showing four bookmarks." href="../images/globus_006_bookmarks_tab.png"><img alt="Globus Collection Search Bookmarks tab showing four bookmarks." src="../images/globus_006_bookmarks_tab.png" /></a></div></p>
-</li>
-<li>
-<p>The "Your Collections" tab shows all endpoints owned by you. For most researchers this will be one or more Globus Connect Personal endpoints.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus Collection Search Your Collections tab showing one endpoint." href="../images/globus_007_your_collections_tab.png"><img alt="Globus Collection Search Your Collections tab showing one endpoint." src="../images/globus_007_your_collections_tab.png" /></a></div></p>
-</li>
-<li>
-<p>The "Shared With You" tab shows any private endpoints that have
-    been shared with you by other users, possibly collaborators.</p>
-</li>
-<li>
-<p>The "More Options" tab will show a brief text on installing
-    Globus Connect Personal.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>When an endpoint has been selected you will see a list of folders and files on the default path for that endpoint in the bottom box. You can use the "Path" box to type a path to find the files you are looking for.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus File Manager interface with one endpoint selected showing files of default directory." href="../images/globus_010_one_endpoint_done.png"><img alt="Globus File Manager interface with one endpoint selected showing files of default directory." src="../images/globus_010_one_endpoint_done.png" /></a></div></p>
-</li>
-<li>
-<p>Repeat the process of selecting an endpoint for the other "Collection" text box.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus File Manager interface with both endpoints selected showing files for both default directories." href="../images/globus_011_two_endpoint_done.png"><img alt="Globus File Manager interface with both endpoints selected showing files for both default directories." src="../images/globus_011_two_endpoint_done.png" /></a></div></p>
-</li>
-<li>
-<p>When both endpoints have been selected and you have chosen the correct paths for each endpoint, select files and/or folders on the side you wish to transfer FROM. We will call this side the source endpoint, and the other side the target endpoint. Selections may be made by clicking the checkboxes that appear when you hover over each file or folder.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus File Manager interface with files selected in left endpoint." href="../images/globus_012_selected_files.png"><img alt="Globus File Manager interface with files selected in left endpoint." src="../images/globus_012_selected_files.png" /></a></div></p>
-</li>
-<li>
-<p>When all files and folders have been selected from the source endpoint, click the "Start" button on the source endpoint side. This will start a transfer process from source to target. The files will be placed in the currently open path on the target endpoint.</p>
-<p><div class="lightgallery"><a data-sub-html="Pop-up showing Transfer request submitted successfully. Pop-up contains link to View details." href="../images/globus_013_popup.png"><img alt="Pop-up showing Transfer request submitted successfully. Pop-up contains link to View details." src="../images/globus_013_popup.png" /></a></div></p>
-</li>
-<li>
-<p>A green pop-up notification will appear indicating the transfer has started. Click "View details >" to be taken to the status of the transfer. You can also check on the status of any transfers by clicking the "Activity" button in the left-hand navigation pane.</p>
-</li>
-</ol>
+<h1 id="connecting-to-lts">Connecting to LTS<a class="headerlink" href="#connecting-to-lts" title="Permanent link">&para;</a></h1>
+<p>LTS is not available as a mounted filesystem on local computers or Cheaha. You must use an interface to transfer data between LTS and whichever machine you are using. There a variety of interfaces around, some of which are listed here.</p>
+<h2 id="globus">Globus<a class="headerlink" href="#globus" title="Permanent link">&para;</a></h2>
+<p><a href="../../transfer/globus/#long-term-storage-s3-lts-connector">Globus</a> is a general file transfer system that operates through a web browser and is recommended for most file transfer needs. UAB has an S3 connector for Globus that can transfer data to and from LTS as long as the user has access to the desired buckets.</p>
+<p>To connect to the LTS endpoint in Globus, search <code>UAB Research Computing LTS</code> in the search bar.</p>
+<h2 id="command-line">Command Line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h2>
+<p>Linux has very few workable GUIs capable of accessing S3 storage for free available, and so almost all tools for transferring from Cheaha to LTS will be command line interfaces (CLI). The positives for this are that CLIs offer a much broader range of function available to researchers for managing their LTS buckets.</p>
+<p>There are a few different CLIs available to researchers on Cheaha to use. Current available CLIs on Cheaha are <a href="https://rclone.org/">rclone</a>, <a href="https://github.com/s3tools/s3cmd">s3cmd</a>, and the <a href="https://aws.amazon.com/cli/">AWS CLI</a>. This documentation will show how to perform each function using all three tools where possible and will give a comparison chart contrasting what each tool is useful for.</p>
+<p>rclone and AWS CLI are available as modules under the <code>rclone</code> and <code>awscli</code> module names. s3cmd should be installed via Anaconda.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>File permissions from the source will not be copied to the destination. Please read more at <a href="https://ask.cyberinfrastructure.org/t/why-cant-other-users-access-data-i-transferred-to-a-project-space-on-cheaha/2527/3">this ask.ci FAQ</a>.</p>
+<p>Of note, all of these tools are available for Windows and Mac as well if you are comfortable using command line interfaces on those platforms. There are installation instructions for both of these tools on their respective websites.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
-<h3 id="transfer-and-sync-options">Transfer and Sync Options<a class="headerlink" href="#transfer-and-sync-options" title="Permanent link">&para;</a></h3>
-<p>Between the two "Start" buttons on the "File Manager" page is a "Transfer &amp; Sync Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options are...</p>
-<p><div class="lightgallery"><a data-sub-html="Transfer and Sync Options pane showing multiple options." href="../images/globus_040_transfer_and_sync_options.png"><img alt="Transfer and Sync Options pane showing multiple options." src="../images/globus_040_transfer_and_sync_options.png" /></a></div></p>
-<ol>
-<li>sync - Sync files only, rather than create new files.</li>
-<li>delete files - Delete any files on the target that are not on the source. Useful for forcing identical filesystems when syncing.</li>
-<li>preserve source - Copies file "modified time" metadata.</li>
-<li>verify integrity - Verifies that checksums are identical on source and target after transfer completes. Highly recommended to have this checked.</li>
-<li>encrypt transfer - Encrypts data before leaving source and decrypts after arriving at destination. Recommended for all transfers, required and enforced for all UAB endpoints.</li>
-<li>skip files - Skips source files that cause errors during the transfer. Otherwise the entire transfer will stop when an error is encountered.</li>
-<li>quota fail - Fails instead of retries when the target storage quota is exceeded.</li>
-</ol>
-<h3 id="common-errors">Common Errors<a class="headerlink" href="#common-errors" title="Permanent link">&para;</a></h3>
-<ol>
-<li>File Not Found - This may mean that a file was not readable by Globus. Check that the file hasn't moved or changed names during the transfer. It is recommended to not modify files while they are being transferred by Globus.</li>
-<li>Permission Denied - Globus is not able to access the files because permissions do not allow it. For Globus Connect Personal, be sure the containing folder is on the "Accessible Folders" list. Be sure that your Cheaha account has access to read the file.</li>
-</ol>
-<h3 id="project-space-permissions">Project Space Permissions<a class="headerlink" href="#project-space-permissions" title="Permanent link">&para;</a></h3>
-<p>Globus does not preserve permissions nor ownership when data is transferred, instead using whatever permissions are default at the target location, and making the owner the authenticated user who initiated the transfer. Typically this is not an issue, but may cause problems for project directories. Please see our <a href="../../storage/#project-directory-permissions">Project Directory Permissions Section</a> for more information.</p>
-<h3 id="more-information">More Information<a class="headerlink" href="#more-information" title="Permanent link">&para;</a></h3>
-<p>A <a href="https://docs.globus.org/faq/globus-connect-endpoints/">Globus FAQ</a> is available for additional information on endpoints and transfers.</p>
-<h2 id="connectors">Connectors<a class="headerlink" href="#connectors" title="Permanent link">&para;</a></h2>
-<p>UAB Researcher Computing has subscriptions to connectors for cloud services and other types of filesystems.</p>
-<h3 id="uab-box-connector">UAB Box Connector<a class="headerlink" href="#uab-box-connector" title="Permanent link">&para;</a></h3>
-<p>To use the UAB Box Connector, <a href="#moving-data-between-endpoints">search for an endpoint</a> like usual and enter "UAB Box" into the search box. Select the endpoint labeled "UAB Box". You should see a list of files and folders that are available to you at <a href="https://uab.app.box.com">https://uab.app.box.com</a>. File transfers work as they would with any other endpoint or collection.</p>
-<h3 id="long-term-storage-s3-lts-connector">Long-term Storage S3 (LTS) Connector<a class="headerlink" href="#long-term-storage-s3-lts-connector" title="Permanent link">&para;</a></h3>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p><a href="../../lts/">LTS</a> behaves differently from other file systems and comes with a few possible pitfalls. Keep in mind the following three rules: (1) all data must be in buckets, (2) buckets are only allowed in the root folder, and (3) buckets must have unique names.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
-<p>To use the UAB <a href="../../lts/">LTS</a> Connector, <a href="#moving-data-between-endpoints">search for an endpoint</a> like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a <a href="../../lts/interfaces/#make-a-bucket">bucket</a> in LTS. To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.</p>
-<h4 id="data-must-be-in-buckets">Data Must be in Buckets<a class="headerlink" href="#data-must-be-in-buckets" title="Permanent link">&para;</a></h4>
-<p>All data transferred to LTS must be placed in a bucket, and may <em>not</em> be placed directly into the root directory. Attempting to move data to the root directory will result in an unhelpful error message in the "Activity" window.</p>
-<p><div class="lightgallery"><a data-sub-html="unhelpful error message for data placed in the root LTS directory" href="../images/globus_lts_no_bucket_error_001.png"><img alt="unhelpful error message for data placed in the root LTS directory" src="../images/globus_lts_no_bucket_error_001.png" /></a></div></p>
-<p>Clicking on the "view event log" link shows the following.</p>
-<p><div class="lightgallery"><a data-sub-html="unhelpful event log message" href="../images/globus_lts_no_bucket_error_002.png"><img alt="unhelpful event log message" src="../images/globus_lts_no_bucket_error_002.png" /></a></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Error (transfer)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Server: m-a201b5.9ad93.a567.data.globus.org:443
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Command: STOR /test.log
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Message: The connection to the server was broken
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>---
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<p>In order to access LTS through the command line no matter which CLI you use, you will need to perform some configuration. This will set up the remote connection from your local machine (or you Cheaha profile) to LTS. If you choose to use multiple CLIs, you will need to perform configuration for each one separately.</p>
+<h4 id="rclone">rclone<a class="headerlink" href="#rclone" title="Permanent link">&para;</a></h4>
+<p>The instructions for setting up a remote connection with rclone can be found in <a href="../../transfer/rclone/#setting-up-an-s3-lts-remote">our main rclone documentation</a>. In the following examples, <code>uablts</code> is used as the name of the remote connection.</p>
+<h4 id="s3cmd">s3cmd<a class="headerlink" href="#s3cmd" title="Permanent link">&para;</a></h4>
+<p>s3cmd can be easily installed via an <a href="../../../workflow_solutions/using_anaconda/">Anaconda environment</a>. Create the environment, activate it, then install using:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install s3cmd
 </code></pre></div>
-<h4 id="buckets-must-have-globally-unique-names">Buckets Must Have Globally Unique Names<a class="headerlink" href="#buckets-must-have-globally-unique-names" title="Permanent link">&para;</a></h4>
-<p>When creating new buckets, the name must be unique across all buckets on the system. At first this may sound very restrictive, but it is quite simple to deal with in practice. See our LTS section on <a href="../../lts/#avoiding-duplicate-names-for-buckets">good naming practice</a> for how to avoid duplicate names.</p>
-<p>If a duplicate bucket name is entered, a long error message will appear in a small space next to the new bucket name. The message reads like the following, expanded for readability.</p>
-<p><div class="lightgallery"><a data-sub-html="large error message in small space" href="../images/globus_lts_duplicate_name_error_001.png"><img alt="large error message in small space" src="../images/globus_lts_duplicate_name_error_001.png" /></a></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Bad Gateway: Endpoint Error, Error (mkdir)
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Server: m-b81a79.9ad93.a567.data.globus.org:443
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Command: MKD /test/
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Message: Fatal FTP Response ---
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Details: 553-
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  GlobusError: v=1 c=PATH_EXISTS\r\n553-
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  GridFTP-Path: (null)\r\n553-globus_gridftp_server_s3_base: S3
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  Error accessing &quot;&quot;: ErrorBucketAlreadyExists: ErrorBucketAlreadyExists: \r\n553 End.\r\n
-</code></pre></div>
-<h2 id="using-bookmarks">Using Bookmarks<a class="headerlink" href="#using-bookmarks" title="Permanent link">&para;</a></h2>
-<p>To save a bookmark, use the File Manager interface to select an endpoint and navigate to a path on that endpoint. Then click the bookmark button as shown below.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus File Manager interface with mouse pointer hovering over Bookmark icon." href="../images/globus_060_create_bookmark.png"><img alt="Globus File Manager interface with mouse pointer hovering over Bookmark icon." src="../images/globus_060_create_bookmark.png" /></a></div></p>
-<p>To manage bookmarks, click "Bookmarks" in the left-hand navigation pane. Click the "Pencil" icon to edit a bookmark. Click the "Trash Bin" icon to delete a bookmark.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus Bookmarks interface showing four bookmarks." href="../images/globus_061_manage_bookmarks.png"><img alt="Globus Bookmarks interface showing four bookmarks." src="../images/globus_061_manage_bookmarks.png" /></a></div></p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is not possible to create bookmarks within High Assurance Endpoints.</p>
+<p>Depending on how Anaconda chooses to install the package, the actual s3cmd script may be in your $HOME/.local/bin folder. This folder can be added to your path using <code>PATH=$PATH:$HOME/.local/bin</code>, and you will have access to the s3cmd script after that.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
-<h2 id="managing-shared-collections-from-a-globus-connect-personal-endpoint">Managing Shared Collections from a Globus Connect Personal Endpoint<a class="headerlink" href="#managing-shared-collections-from-a-globus-connect-personal-endpoint" title="Permanent link">&para;</a></h2>
-<p>It is NOT RECOMMENDED to make Globus Connect Personal endpoints public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal endpoint than for a shared collection. Shared collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use shared collections!</p>
-<h3 id="creating-a-shared-collection">Creating a Shared Collection<a class="headerlink" href="#creating-a-shared-collection" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Click "Endpoints" in the left-hand navigation pane.</p>
-</li>
-<li>
-<p>Click the "Administered By You" tab.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus Endpoints page with Administered by You selected, showing two endpoints. One of the endpoints is a shared endpoint." href="../images/globus_100_shared_admin_tab.png"><img alt="Globus Endpoints page with Administered by You selected, showing two endpoints. One of the endpoints is a shared endpoint." src="../images/globus_100_shared_admin_tab.png" /></a></div></p>
-</li>
-<li>
-<p>In the table, find the endpoint you wish to share data from and click its name. You will be taken to the page for that endpoint.</p>
-</li>
-<li>
-<p>Click the "Collections" tab.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus UAB RC Work Laptop page with Guest Collections tab selected showing one collection." href="../images/globus_101_shared_collections.png"><img alt="Globus UAB RC Work Laptop page with Guest Collections tab selected showing one collection." src="../images/globus_101_shared_collections.png" /></a></div></p>
-</li>
-<li>
-<p>Click the "Add a Guest Collection" button.</p>
-</li>
-<li>
-<p>Fill out the form.</p>
-<p><div class="lightgallery"><a data-sub-html="Create New Guest Collection form." href="../images/globus_102_shared_collection_form.png"><img alt="Create New Guest Collection form." src="../images/globus_102_shared_collection_form.png" /></a></div></p>
-<ol>
-<li>Manually enter a path or click the Browse button to select a folder.</li>
-<li>Give a short but memorable name for your shared collection. This information will be useful for your collaborators.</li>
-<li>Optionally fill in a more detailed description of the shared collection for your records.</li>
-<li>Optionally fill in searchable keywords.</li>
-</ol>
-</li>
-<li>
-<p>Click "Create Share" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged endpoint. Any further references to "an endpoint" will be about the newly created, shared collection.</p>
-</li>
-<li>
-<p>Make sure you are on the "Permissions" tab. You should see a permissions table with your name in the first row.</p>
-<p><div class="lightgallery"><a data-sub-html="Newly created test endpoint page with Permissions tab selected." href="../images/globus_103_shared_permissions.png"><img alt="Newly created test endpoint page with Permissions tab selected." src="../images/globus_103_shared_permissions.png" /></a></div></p>
-</li>
-<li>
-<p>Click "Add Permissions -- Share With" to share your endpoint with other users.</p>
-</li>
-<li>
-<p>Fill out the form.</p>
-<p><div class="lightgallery"><a data-sub-html="Test endpoint Add Permissions Share With form." href="../images/globus_104_shared_add_permissions.png"><img alt="Test endpoint Add Permissions Share With form." src="../images/globus_104_shared_add_permissions.png" /></a></div></p>
-<ol>
-<li>Optionally enter a path within the shared endpoint or use the Browse button. If you leave the path as just a slash, the entire shared endpoint will be shared with these users.</li>
-<li>
-<p>Select who to share with.</p>
-<ol>
-<li>User - One or more users.</li>
-<li>Group - All members of a group.</li>
-<li>
-<p>All Users - All globus users.</p>
+<p>Once you have s3cmd downloaded, you can start the configuration process like so:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>s3cmd --configure <span class="o">[</span>-c <span class="nv">$HOME</span>/profile_name<span class="o">]</span>
+</code></pre></div>
+<p>You can run the configuration either with or without the <code>[-c]</code> option. If you use it, a file named <code>profile_name</code> will be created in your home directory with your login credentials and other information. If you omit the <code>-c</code> option, a file called <code>$HOME/.s3cfg</code> will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform, it's suggested to omit the <code>-c</code> option.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After configuration, the <code>s3cmd</code> command will default to using the <code>.s3cfg</code> file for credentials if it exists. If you create a separate named profile file, you will need to add that to the <code>s3cmd</code> call each time you run it.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<p>During configuration, you will be asked to enter some information. You can follow the example below, inputting your user-specific information where required. Lines requiring user input are highlighted.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Access key and Secret key are your identifiers for Amazon S3. Leave them empty for using the env variables.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="hll">Access Key: &lt;access key&gt;
+</span><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="hll">Secret Key: &lt;secret key&gt;
+</span><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="hll">Default Region [US]: &lt;leave blank&gt;
+</span><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Use &quot;s3.amazonaws.com&quot; for S3 Endpoint and not modify it to the target Amazon S3.
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="hll">S3 Endpoint [s3.amazonaws.com]: s3.lts.rc.uab.edu
+</span><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Use &quot;%(bucket)s.s3.amazonaws.com&quot; to the target Amazon S3. &quot;%(bucket)s&quot; and &quot;%(location)s&quot; vars can be used if the target S3 system supports dns based buckets.
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="hll">DNS-style bucket+hostname:port template for accessing a bucket [%(bucket)s.s3.amazonaws.com]: %(bucket).s3.lts.rc.uab.edu
+</span><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Encryption password is used to protect your files from reading by unauthorized persons while in transfer to S3
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="hll">Encryption password: &lt;leave blank or enter password&gt;
+</span><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="hll">Path to GPG program [/usr/bin/gpg]: &lt;leave blank&gt;
+</span><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>When using secure HTTPS protocol all communication with Amazon S3 servers is protected from 3rd party eavesdropping. This method is slower than plain HTTP, and can only be proxied with Python 2.7 or newer
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="hll">Use HTTPS protocol [Yes]: &lt;leave blank&gt;
+</span><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>On some networks all internet access must go through a HTTP proxy. Try setting it here if you can&#39;t connect to S3 directly
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="hll">HTTP Proxy server name: &lt;leave blank&gt;
+</span><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>New settings:
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>  Access Key: &lt;access key&gt;
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>  Secret Key: &lt;secret key&gt;
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  Default Region: US
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>  S3 Endpoint: s3.lts.rc.uab.edu
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>  DNS-style bucket+hostname:port template for accessing a bucket: %(bucket).s3.lts.rc.uab.edu
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>  Encryption password:
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>  Path to GPG program: $HOME/bin/gpg
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>  Use HTTPS protocol: True
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>  HTTP Proxy server name:
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>  HTTP Proxy server port: 0
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="hll">Test access with supplied credentials? [Y/n] Y
+</span><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>Please wait, attempting to list all buckets...
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>Success. Your access key and secret key worked fine :-)
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>Now verifying that encryption works...
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>Not configured. Never mind.
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="hll">Save settings? [y/N] y
+</span></code></pre></div>
+<p>If your test access succeeded, you are now ready to use <code>s3cmd</code>.</p>
+<h4 id="aws-cli">AWS CLI<a class="headerlink" href="#aws-cli" title="Permanent link">&para;</a></h4>
+<p>Setting up a remote connection using AWS CLI is fairly straightforward. After loading the <code>awscli</code> module, run <code>aws configure</code> in the terminal.</p>
+<p>It will ask you enter four pieces of information, fill them out as so:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>AWS Access Key [none]: &lt;access key&gt;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>AWS Secret Access Key [none]: &lt;secret key&gt;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Default region name [none]: &lt;Press Enter&gt;
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Default output format [none]: json
+</code></pre></div>
+<p>Your access key and secret key should have been given to you by research computing when you requested your account. Copy-paste these into the terminal when requested.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>AWS CLI assumes you are using the AWS service for S3 storage. In order to access UAB LTS, for all AWS CLI commands, you will need to add the <code>--endpoint-url https://s3.lts.rc.uab.edu</code> option to the <code>aws</code> function call.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h3 id="general-command-structure">General Command Structure<a class="headerlink" href="#general-command-structure" title="Permanent link">&para;</a></h3>
+<p><strong>RClone</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rclone &lt;subcommand&gt; <span class="o">[</span>options<span class="o">]</span> &lt;remote&gt;:&lt;bucket&gt;
+</code></pre></div>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For all commands, replace everything in <code>&lt;&gt;</code> with the necessary values. Do not include the <code>&lt;&gt;</code> symbols in your command.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<p>To see a list of all subcommands available to rclone, you can use <code>rclone --help</code>. You can also use the <code>--help</code> option with any subcommand to see a detailed explanation of what it does plus any options you may want or need to set when calling it.</p>
+<p><strong>s3cmd</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>s3cmd <span class="o">[</span>-c profile_file<span class="o">]</span> &lt;command&gt; <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>-n --dry-run<span class="o">]</span>
+</code></pre></div>
+<p>As noted previously, the <code>[-c profile_file]</code> is only required if you are NOT using credentials saved in the <code>$HOME/.s3cfg</code> file. Otherwise, you can leave it out.</p>
+<p>To see a list of commands available, use <code>s3cmd --help</code>. Additionally, if you want to test an action without actually running it (i.e. it prints all actions that would be performed), you can add the <code>-n</code> or <code>--dry-run</code> option.</p>
+<p><strong>AWS CLI</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>aws &lt;command&gt; &lt;subcommand&gt; <span class="o">[</span>options<span class="o">]</span>
+</code></pre></div>
+<p>The <code>&lt;command&gt;</code> for most commonly used functions will either be <code>s3</code> or <code>s3api</code>. You can use the <code>help</code> option to view available commands, subcommands, and options for AWS.</p>
+<p>Additionally, when running basically any AWS CLI command, you can include the <code>--dryrun</code> option to see the exact actions that will be performed without actually performing them. This is useful for things like deleting files and folders to make sure you are not performing an unwanted action.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you are wanting to perform actions on a specific directory in S3, it is imperative to add the <code>/</code> at the end of the directory name. For more information on this, see <a href="https://ask.cyberinfrastructure.org/t/why-do-i-need-to-add-the-trailing-to-the-end-of-path-names-in-my-s3-commands/2530/2">this ask.ci FAQ</a>.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<h3 id="make-a-bucket">Make a Bucket<a class="headerlink" href="#make-a-bucket" title="Permanent link">&para;</a></h3>
+<p>Buckets are essentially the root folder of a filesystem where you are storing your data. You will need to create a bucket before being able to copy data to LTS. Bucket names are unique across LTS, see <a href="../#avoiding-duplicate-names-for-buckets">avoiding duplicate names</a> for more details.</p>
+<p><strong>RClone</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>rclone mkdir uablts:&lt;bucket&gt;
+</code></pre></div>
+<p><strong>s3cmd</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>s3cmd mb s3://&lt;bucket&gt;
+</code></pre></div>
+<p><strong>AWS CLI</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>aws s3api create-bucket --bucket &lt;bucket&gt; --endpoint-url https://s3.lts.rc.uab.edu
+</code></pre></div>
+<h3 id="listing-buckets-and-contents">Listing Buckets and Contents<a class="headerlink" href="#listing-buckets-and-contents" title="Permanent link">&para;</a></h3>
+<p><strong>RClone</strong>:</p>
+<p>To list all buckets you have available, use the <code>lsd</code> subcommand with only the remote specified:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>rclone lsd uablts:
+</code></pre></div>
+<p>To list all contents inside a bucket, use the <code>ls</code> subcommand with the remote and bucket specified. You can also be specific about the path to the directory you want to list.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>rclone ls uablts:&lt;bucket/path/directory&gt;
+</code></pre></div>
+<p>This outputs all files along with their directory path recursively. So if you only specify the main bucket, it will output every file in the bucket no matter how deep in the directory tree.</p>
+<p>To only list files and folders in a given directory, you can use the <code>lsf</code> subcommand</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>rclone lsf uablts:&lt;bucket/path/directory/&gt;
+</code></pre></div>
+<p><strong>s3cmd</strong>:</p>
+<p>With s3cmd, you can use the <code>ls</code> command to list both buckets and their contents.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>s3cmd ls &lt;s3://bucket/path/&gt;
+</code></pre></div>
+<p>You can add the <code>--recursive</code> option to list all files in the given path. By default, it only lists objects or folders at the top level of the path.</p>
+<p><strong>AWS CLI</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>aws s3 ls &lt;bucket/path/directory/&gt; --endpoint-url https://s3.lts.rc.uab.edu
+</code></pre></div>
+<p>If you would like to list all objects recursively, you can add the <code>--recursive</code> tag. A couple of other helpful options are <code>--summarize</code> and <code>--human-readable</code> that will give a total number of objects and their size and make the size output more easily readable, respectively.</p>
+<h3 id="check-bucket-or-folder-size">Check Bucket or Folder Size<a class="headerlink" href="#check-bucket-or-folder-size" title="Permanent link">&para;</a></h3>
+<p><strong>s3cmd</strong>:</p>
+<p>With s3cmd, you can use the <code>du</code> command to list the size of a bucket or folder within a bucket.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>s3cmd du <span class="o">[</span>-H<span class="o">]</span> &lt;s3://bucket/path/&gt;
+</code></pre></div>
+<p>By default, the output will be in bytes, but you can add the <code>-H</code> option to output in a human readable format rounding the nearest MB, GB, or TB.</p>
+<p><strong>AWS CLI</strong>:</p>
+<p>By default, the <code>ls</code> subcommand will output the size of any objects in the path given (see the <a href="#listing-buckets-and-contents">ls section</a>). Unlike the other tools, AWS CLI will not output the total size of folders. However, the total combined size of all objects in a folder can be calculated using the <code>--summarize</code> option. You can also convert the output to readable size by using <code>--human-readable</code> as well.</p>
+<h3 id="uploading-files-and-folders">Uploading Files and Folders<a class="headerlink" href="#uploading-files-and-folders" title="Permanent link">&para;</a></h3>
+<p><strong>RClone</strong>:</p>
+<p>Uploading files and folders can be done a couple of ways. The first is by using the <code>copy</code> subcommand. This will add files from the source to the destination.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>rclone copy &lt;source&gt; uablts:&lt;bucket/destination&gt;
+</code></pre></div>
+<p>The second method is using the <code>sync</code> subcommand. This subcommand makes the destination identical to the source. The <code>-i</code> option can be added to make it interactive, asking you whether to copy or delete each file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>rclone sync <span class="o">[</span>-i<span class="o">]</span> &lt;source&gt; uablts:&lt;bucket/destination/&gt;
+</code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>This will expose information to everyone on Globus!</p>
+<p>Be extremely cautious using sync. If there are files in the destination that are not in the source, it will delete those files in addition to adding files to the destination. If data is deleted from LTS, it is not recoverable.</p>
 </div>
+<!-- markdownlint-enable MD046 -->
+
+<p><strong>s3cmd</strong>:</p>
+<p>s3cmd disinguishes between moving files between a local source and S3 versus moving files between two S3 locations using 3 different commands.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># transfer from local to S3</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>s3cmd put &lt;source&gt; s3://&lt;bucket/path/destination/&gt;
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># transfer from S3 to local</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>s3cmd get s3://&lt;bucket/path/source/&gt; &lt;destination&gt;
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1"># transfer between two S3 locations</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>s3cmd cp s3://&lt;bucket/path/&gt; s3://&lt;bucket/path/&gt;
+</code></pre></div>
+<p>If you are transferring an entire folder from S3 to either another S3 location or a local destination, you will need to add the <code>--recursive</code> option, otherwise you will get an error.</p>
+<p>Like rclone and AWS, there is also a <code>sync</code> command here as well.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># sync an S3 location to a local source</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>s3cmd sync &lt;source&gt; s3://&lt;bucket/path/destination&gt;
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># sync a local destination to an S3 location</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>s3cmd sync s3://&lt;bucket/path/source&gt; &lt;destination&gt;
+</code></pre></div>
+<p><strong>AWS CLI</strong>:</p>
+<p>Copying files and directories can be managed using the <code>cp</code> subcommand and has the same behavior as rclone's <code>copy</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>aws s3 cp &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--recursive<span class="o">]</span>
+</code></pre></div>
+<p>If you are copying a directory, you will need to add the <code>--recursive</code> option.</p>
+<p>If you are wanting to copy data down from LTS to your local machine or Cheaha, just reverse the positions of the source and destination in the function call.</p>
+<p>Like rclone, AWS also has a sync subcommand that performs the same functionality. You can use it like so:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>aws s3 sync &lt;source&gt; s3://&lt;bucket/path/destination&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--delete<span class="o">]</span>
+</code></pre></div>
+<p><code>sync</code> has an added benefit that only files that do not exist in the destination or files that have changed in the source will be transferred whereas <code>cp</code> copies everything no matter if it already exists in the destination. By default, <code>sync</code> DOES NOT cause files in the detination that are not in the source to be deleted like <code>rclone sync</code> does. If you want this functionality, you can add the <code>--delete</code> tag at the end of the function call.</p>
 <!-- markdownlint-disable MD046 -->
-</li>
-</ol>
-</li>
-<li>
-<p>Search for users to add, or a group, depending on your choice above. You should be able to find any globus user using the search box.</p>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Be certain of which user you are selecting! Check the email address domain.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Be extremely cautious using <code>--delete</code>. Only use if you are sure any data deleted is not important. Data deleted from LTS is not recoverable.</p>
 </div>
+<!-- markdownlint-enable MD046 -->
+
+<h3 id="deleting-files-and-directories">Deleting Files and Directories<a class="headerlink" href="#deleting-files-and-directories" title="Permanent link">&para;</a></h3>
+<p><strong>RClone</strong>:</p>
+<p>File deletion is performed using the <code>delete</code> subcommand.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>rclone delete uablts:&lt;bucket/path/file&gt;
+</code></pre></div>
+<p>Directory deletion is handled using the <code>purge</code> subcommand. Be very cautious with this, as this deletes all files and subdirectories within the directory as well.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>rclone purge uablts:&lt;bucket/path/&gt;
+</code></pre></div>
+<p><strong>s3cmd</strong>:</p>
+<p>File and directory deletion is handled by the <code>rm</code> command.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>s3cmd rm s3://&lt;bucket/path/file&gt; <span class="o">[</span>--recursive<span class="o">]</span>
+</code></pre></div>
+<p>If you want to delete a directory, you will need to add the <code>--recursive</code> option.</p>
+<p>To delete an entire bucket, use the <code>rb</code> command.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>s3cmd rb s3://&lt;bucket&gt;
+</code></pre></div>
+<p><strong>AWS CLI</strong>:</p>
+<p>The subcommand for deleting files and folders from LTS is <code>rm</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>aws s3 rm s3://&lt;bucket/path/object&gt; --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>--recursive<span class="o">]</span>
+</code></pre></div>
+<p><code>rm</code> can delete both files and folders. If you are wanting to delete a folder and everything in it, you will need to add the <code>--recursive</code> option. Like with <code>sync</code> be very cautious using <code>rm</code> and make sure you know what you are deleting before you do so.</p>
+<p>To delete an entire bucket, you will need to use the <code>s3api</code> command paired with the `delete-bucket subcommand. An example of this looks like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>aws s3api delete-bucket --bucket &lt;bucket&gt; --endpoint-url https://s3.lts.rc.uab.edu
+</code></pre></div>
+<h3 id="command-comparison-chart">Command Comparison Chart<a class="headerlink" href="#command-comparison-chart" title="Permanent link">&para;</a></h3>
 <!-- markdownlint-disable MD046 -->
-</li>
-<li>
-<p>If adding users, optionally enter a message so they know why they are being added.</p>
-</li>
-<li>Select permissions. Read is automatically selected and cannot be changed. Write permissions are optional.</li>
-</ol>
-</li>
-<li>
-<p>Click "Add Permission" to add permissions for these users or groups.
-    You will be returned to the page for the shared endpoint and should
-    be on the "Permissions" tab and should see the user or group in the
-    table.</p>
-</li>
-</ol>
-<h3 id="deleting-a-shared-collection">Deleting a Shared Collection<a class="headerlink" href="#deleting-a-shared-collection" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Click "Endpoints" in the left-hand navigation pane, then c</p>
-</li>
-<li>
-<p>Click the "Administered By You" tab.</p>
-<p><div class="lightgallery"><a data-sub-html="Globus Endpoints page with Administered by You tab selected, showing two endpoints." href="../images/globus_100_shared_admin_tab.png"><img alt="Globus Endpoints page with Administered by You tab selected, showing two endpoints." src="../images/globus_100_shared_admin_tab.png" /></a></div></p>
-</li>
-<li>
-<p>Click the right caret "&gt;" icon at the right side of the row with the endpoint you wish to delete. You will be taken to the information page for that endpoint.</p>
-</li>
-<li>
-<p>Click "X Delete Endpoint" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the endpoint, or to cancel.</p>
-<p><div class="lightgallery"><a data-sub-html="Delete Endpoint confirmation dialog banner." href="../images/globus_105_shared_delete.png"><img alt="Delete Endpoint confirmation dialog banner." src="../images/globus_105_shared_delete.png" /></a></div></p>
-</li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For brevity, the chart will exclude the <code>--endpoint-url</code> option from the AWS CLI commands, but it will need to be included if you choose to use that tool.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>rclone</th>
+<th>s3cmd</th>
+<th>AWS CLI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Make Bucket</td>
+<td><code>rclone mkdir uablts:&lt;bucket&gt;</code></td>
+<td><code>s3cmd mb s3://&lt;bucket&gt;</code></td>
+<td><code>aws s3api create-bucket --bucket &lt;bucket&gt;</code></td>
+</tr>
+<tr>
+<td>List Buckets</td>
+<td><code>rclone lsd uablts:</code></td>
+<td><code>s3cmd ls</code></td>
+<td><code>aws s3 ls</code></td>
+</tr>
+<tr>
+<td>List Files</td>
+<td><code>rclone lsf uablts:&lt;bucket/path/&gt;</code></td>
+<td><code>s3cmd ls s3://&lt;bucket/path/&gt;</code></td>
+<td><code>aws s3 ls s3://&lt;bucket/path/&gt;</code></td>
+</tr>
+<tr>
+<td>Full Upload</td>
+<td><code>rclone copy &lt;source&gt; uablts:&lt;bucket/destination&gt;</code></td>
+<td><code>s3cmd put &lt;source&gt; s3://&lt;bucket/destination/&gt;</code></td>
+<td><code>aws s3 cp &lt;source&gt; s3://&lt;bucket/destination&gt;</code></td>
+</tr>
+<tr>
+<td>Download</td>
+<td><code>rclone copy uablts:&lt;bucket/source/&gt; &lt;destination&gt;</code></td>
+<td><code>s3cmd get s3://&lt;bucket/source/&gt; &lt;destination&gt;</code></td>
+<td><code>aws s3 cp s3://&lt;bucket/source/&gt; &lt;destination&gt;</code></td>
+</tr>
+<tr>
+<td>Sync</td>
+<td><code>rclone sync [-i] &lt;source&gt; uablts:&lt;bucket/destination/&gt;</code></td>
+<td><code>s3cmd sync &lt;source&gt; s3://&lt;bucket/destination/&gt;</code></td>
+<td><code>aws s3 sync &lt;source&gt; s3://&lt;bucket/destination/&gt; [--delete]</code></td>
+</tr>
+<tr>
+<td>Delete File</td>
+<td><code>rclone delete uablts:&lt;bucket/path/file&gt;</code></td>
+<td><code>s3cmd rm s3://&lt;bucket/path/file&gt;</code></td>
+<td><code>aws s3 rm s3://&lt;bucket/path/file&gt;</code></td>
+</tr>
+<tr>
+<td>Delete Folder</td>
+<td><code>rclone purge uablts:&lt;bucket/path/&gt;</code></td>
+<td><code>s3cmd rm s3://&lt;bucket/path/&gt; --recursive</code></td>
+<td><code>aws s3 rm s3://&lt;bucket/path/&gt; --recursive</code></td>
+</tr>
+<tr>
+<td>Delete Bucket</td>
+<td><code>rclone purge uablts:&lt;bucket&gt;</code></td>
+<td><code>s3cmd rb s3://&lt;bucket&gt;</code></td>
+<td><code>aws s3api delete-bucket --bucket &lt;bucket&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="cyberduck">Cyberduck<a class="headerlink" href="#cyberduck" title="Permanent link">&para;</a></h2>
+<p>To access LTS from Windows and Mac, we suggest using the <a href="https://cyberduck.io/download/">Cyberduck</a> GUI which is free to download.</p>
+<p>Once you have it installed and open, Cyberduck will look like this:</p>
+<p><div class="lightgallery"><a data-sub-html="Cyberduck basic interface &gt;&lt;" href="../images/cyberduck.png"><img alt="Cyberduck basic interface &gt;&lt;" src="../images/cyberduck.png" /></a></div></p>
+<h3 id="creating-a-connection">Creating a Connection<a class="headerlink" href="#creating-a-connection" title="Permanent link">&para;</a></h3>
+<p>First, download the <a href="../res/UAB_S3_Object_Storage.cyberduckprofile">UAB CyberDuck Connection Profile</a>. After it's downloaded, double click the file to open it in Cyberduck. It will open the following connection creation window:</p>
+<p><div class="lightgallery"><a data-sub-html="Cyberduck UAB Connection Creation &gt;&lt;" href="../images/cyberduck-open-connection.png"><img alt="Cyberduck UAB Connection Creation &gt;&lt;" src="../images/cyberduck-open-connection.png" /></a></div></p>
+<p>Input your Access Key and Secret Access Key sent to you by Research Computing after account creation in their appropriate fields. Once you've entered these keys you can close the connection creation window. This connection with the keys you entered is now saved as a bookmark for easy access in the future. Double click the created bookmark to open the connection to LTS.</p>
+<h3 id="creating-a-bucket">Creating a Bucket<a class="headerlink" href="#creating-a-bucket" title="Permanent link">&para;</a></h3>
+<p>In order to create a bucket, click <code>File &gt; New Folder...</code> and then name the bucket you would like to create. Once the bucket is created, it will appear in the File window. An example could look like:</p>
+<p><div class="lightgallery"><a data-sub-html="Example bucket creation" href="../images/cyberduck-create-bucket.png"><img alt="Example bucket creation" src="../images/cyberduck-create-bucket.png" /></a></div></p>
+<p>The bucket will have the symbol of a hard disk with an Amazon A brand on it. This is the root of the file system for that bucket. You can then double click into it to open that file system.</p>
+<h3 id="uploading-and-downloading-data">Uploading and Downloading Data<a class="headerlink" href="#uploading-and-downloading-data" title="Permanent link">&para;</a></h3>
+<p>Once you're inside the bucket, files can be uploaded easily through dragging and dropping from your local machine into the GUI. You can also use the <code>Upload</code> button in the toolbar to open a file browser and choose what to upload.</p>
+<p>Downloading files from the bucket can be done by first selecting the file(s)/folder(s) to download and then clicking the <code>Actions</code> button in the toolbar. In that dropdown will be a <code>Download</code> option. You can also get to this dropdown through the <code>File</code> menu or by right-clicking.</p>
+<h3 id="alternative-interfaces">Alternative Interfaces<a class="headerlink" href="#alternative-interfaces" title="Permanent link">&para;</a></h3>
+<p>In addition to Cyberduck, there are other GUI based programs for interfacing with UAB LTS. <a href="https://s3browser.com/">S3 Browser</a> is an easy-to-use program for uploading and downloading files. However more sophisticated tools, such as setting file permissions, are hidden behind a paywall. This tool is also only available on Windows platforms. researchers can investigate this tool if desired, however research computing will not provide direct support for this program.</p>
 
   <hr>
 <div class="md-source-file">
@@ -2454,7 +2532,7 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../lts/policies/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sharing" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Long-Term Storage" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2463,20 +2541,20 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
               <span class="md-footer__direction">
                 Previous
               </span>
-              Sharing
+              Long-Term Storage
             </div>
           </div>
         </a>
       
       
         
-        <a href="../rclone/" class="md-footer__link md-footer__link--next" aria-label="Next: RClone" rel="next">
+        <a href="../policies/" class="md-footer__link md-footer__link--next" aria-label="Next: Sharing" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              RClone
+              Sharing
             </div>
           </div>
           <div class="md-footer__button md-icon">
