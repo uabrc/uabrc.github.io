@@ -134,7 +134,7 @@ Both quota reports are updated nightly, so they may be out of date if you move d
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    Running out of space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/lts.md).
+    Running out of space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/index.md).
 <!-- markdownlint-enable MD046 -->
 
 ## Data Policies
@@ -175,7 +175,7 @@ What hazards can cause data loss?
 How can I ensure data integrity?
 
 - Regularly back up your (and your lab's) data in an offsite location.
-- [S3 based long-term storage (LTS)](lts/lts.md) can be used for short-term onsite backup.
+- [S3 based long-term storage (LTS)](lts/index.md) can be used for short-term onsite backup.
 - Crashplan licenses are available for automatic offsite backups, please contact [Support](../help/support.md) for more information.
 
 ### HIPAA Compliance
