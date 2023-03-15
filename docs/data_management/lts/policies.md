@@ -7,7 +7,7 @@ Instead, sharing buckets must be done through the command line using [bucket pol
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Your username for LTS could potentially be `<blazerid>` or `<blazerid>@uab.edu depending on when your account was created. It is very important when crafting these policies that the correct username is specified, and these two are not interchangeable. For users with XIAS accounts, your username should be the email address you signed up for the XIAS account with. The usernames are case-sensitive. If you do not remember what your username is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
+    Your username for LTS could potentially be `<blazerid>` or `<blazerid>@uab.edu` depending on when your account was created. It is very important when crafting these policies that the correct username is specified, and these two are not interchangeable. For users with XIAS accounts, your username should be the email address you signed up for the XIAS account with. The usernames are case-sensitive. If you do not remember what your username is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
 <!-- markdownlint-enable MD046 -->
 
 ## Policy Structure
