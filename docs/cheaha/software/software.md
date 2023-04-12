@@ -50,12 +50,21 @@ For more information on usage with examples, see [Anaconda Environments](../../w
 
 ### Speedups Using Mamba
 
-[Mamba](../../workflow_solutions/using_anaconda.md#speeding-things-up-with-mamba) is not installed in the base environment on Cheaha, and cannot be installed in the base environment by researchers. We are working on installing Mamba in the base environment as part of our module installation process change. In the meantime if you need the speed Mamba provides, you can follow these instructions to make it available for yourself.
+[Mamba](../../workflow_solutions/using_anaconda.md#speeding-things-up-with-mamba) is a faster alternative to Anaconda, and is installed on Cheaha as a [module](modules.md). To use the latest version of Mamba on Cheaha, please use `module load Mamba` at the terminal and in your scripts.
 
-1. `module load Anaconda3`
-2. Create a new environment with only Mamba using `conda create --name mamba -c conda-forge mamba`
-3. `conda activate mamba`
-4. Use Mamba to install environments as needed. Be aware you must use the flag `--prefix=~/.conda/envs/` to put the environment in the correct location to be seen by Anaconda.
+There are currently a couple of known issues when working with Mamba on Cheaha.
+
+1. After using `module load Mamba`, use `source activate` before any other `mamba` or `conda` commands.
+2. Using `mamba init` can cause environment instability. Do _not_ use it.
+3. Mamba alters the terminal prompt while a `mamba` environment is activated. The system should function as normal otherwise.
+
+!!! info
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Do _not_ use `mamba init`, even when instructed to do so by Mamba. Doing so can result in environment instability. If you do use `mamba init` you can resolve the issue by removing the content added to your `.bashrc` file. Please visit [our FAQ](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/2) for more details.
+<!-- markdownlint-enable MD046 -->
 
 ## Singularity Containers
 
