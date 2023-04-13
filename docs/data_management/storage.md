@@ -1,46 +1,32 @@
 # Storage
 
-<!-- markdownlint-disable MD046 -->
-!!! announcement
-
-    **UPDATED 2023-01-09**
-
-    Please note upcoming changes!
-
-    - January 13, 2023: `$USER_SCRATCH` will point to `/scratch/$USER`
-    - January 27, 2023: Clean up of `temp-scratch` must be completed by all researchers. Access to `temp-scratch` will be removed for all researchers.
-    - February 13, 2023: New `$SCRATCH` storage limited-retention policies will start.
-<!-- markdownlint-enable MD046 -->
-
 ## What Type of Storage Do I Need?
 
 There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to find the storage platform we provide that best matches your needed use-case.
 
 {{ read_csv('data_management/res/storage_overview.csv', keep_default_na=False) }}
 
-## User Space
+## Researcher Storage
 
-Each user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`). These two locations are meant to store general data long-term and can be used during active analysis or for archiving small projects. Traditionally, `$HOME` is meant to store scripts and supporting files and toolboxes such as Anaconda virtual environments or R packages while `$USER_DATA` can store datasets and results for a user's projects.
+Every researcher has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`). These two locations are meant to store general data and can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, `$HOME` is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, `$USER_DATA` is intended to store  datasets and results for individual research projects.
 
-The owner (`$USER`) of both directories can read, write/delete, and list files. No other users or groups have permissions to this directory. While it is possible to share files in your personal space with other users, a more practical solution may be to use a [project directory](#project-directory) instead.
+The owner (or `$USER`) of both directories can read, write, delete, and list files in these spaces. No other accounts or groups have permissions to your personal directories. While it is possible to share files directly from your personal space with other people, a more practical solution may be to use a [project directory](#project-directory) instead. It is not possible to share the contents of your personal directory without potentially leaking sensitive information, please do not modify the [permissions](../workflow_solutions/shell.md#what-permissions-do) and [access control lists](../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl) on your personal directories.
 
-A user is limited to 5 TB of data across both `$HOME` and `$USER_DATA` combined.
-
-<!-- markdownlint-disable MD046 -->
-!!! note
-
-    The home and user data directories are mirrored across storage locations to allow for emergency backup in case some of the drives fail. This is not meant to be a long-term backup solution as any data deleted by a user is deleted on the main drive and the mirrored drive.
-<!-- markdownlint-enable MD046 -->
+Every researcher is limited to 5 TB of data across both `$HOME` and `$USER_DATA` combined.
 
 ## Project Directory
 
-Shared data can be stored in a `/data/project/<project_name>` directory. The default storage size for a new project is 50TB. If you need less than 5TB or your need for shared space is short term, please request a [Sloss space](#sloss) instead. Project storage can be helpful for teams of researchers who need access to the same data.
+Shared data can be stored in a `/data/project/<project_name>` directory. Project storage can be helpful for teams of researchers who need access to the same data or to collaborate on a shared research project.
 
-All project spaces must be owned by a principal investigator (PI) who is an employee of UAB with a legitimate research interest. The PI takes responsibility for data in the space, as well as access control of all files and directories under the parent directory. As with all data on Cheaha, backups and archival services are not provided, and are the responsibility of the respective data owners.
+The default storage size for projects is 25TB. If you require more storage, please contact [Support](../help/support.md). If your project is small (less than 5TB) or short-term, please request a [Sloss space](#sloss) instead to conserve storage.
 
-The PI and all members with access to the project directory can read, write/delete, and list files within the top-level directory, and all other subdirectories by default. Other people on the system have no ability to access the project space. Access control for directories and files within the project space can be implemented via access control lists. Please see the bash commands [setfacl](https://linux.die.net/man/1/setfacl) and [getfacl](https://linux.die.net/man/1/getfacl)) for more information. Access control within the project directory are the responsibility of the project owner. However, we respect that access control lists can be tricky, so please feel free to [contact us](../index.md#contact-us) for assistance.
+All project spaces must be owned by a principal investigator (PI) who is an employee of UAB with a legitimate research interest. The PI takes responsibility for all data in the space. The PI is also responsible for managing access control of all files and directories under the project directory. As with all data on Cheaha, backups and archival services are not provided and are the responsibility of the respective data owners.
 
-To create a project directory, or change access to or ownership of a project directory, the PI should follow the instructions at [How Do I Request Or Change A Project Space?](../help/support.md#how-do-i-request-or-change-a-project-space)
+By default, the PI and all accounts with access to the project directory can read, write, delete, and list files within the top-level directory and all subdirectories. Accounts which are not members of the project directory group cannot read, write, delete or otherwise access or modify the contents of the project directory. Fine-grained access control for directories and files within the project space can be implemented via [permissions](../workflow_solutions/shell.md#what-permissions-do) and [access control lists](../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl). We understand that access control lists can be tricky, so please feel free to [contact us](../index.md#contact-us) for assistance with high-level permission management.
+
+Each PI is allowed one project directory. We recommend structuring the project directory so that distinct research projects have their own subdirectories, permissions, and access control lists. Doing so will help keep research project data and metadata separate. We also recommend carefully controlling member permissions to specific datasets to minimize the risk of accidental deletion or modification.
+
+To create a project directory, change membership, or change ownership of a project directory, the PI should follow the instructions at [How Do I Request Or Change A Project Space?](../help/support.md#how-do-i-request-or-change-a-project-space). If a project owner leaves UAB without defining a new owner, please contact [Support](../help/support.md) so we can resolve the issue as soon as possible.
 
 ### Sloss
 
@@ -139,10 +125,6 @@ Both quota reports are updated nightly, so they may be out of date if you move d
 
 ## Data Policies
 
-### Replication
-
-Data on GPFS are replicated using a RAID configuration which is intended to decrease the risk of data loss in the event of disk failures. This is standard good practice for researcher computing data centers.
-
 ### Backups
 
 <!-- markdownlint-disable MD046 -->
@@ -180,12 +162,12 @@ How can I ensure data integrity?
 
 ### HIPAA Compliance
 
-As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. Currently, long-term storage is NOT HIPAA compliant but will be in the future.
+As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. Currently, [long-term storage](lts/index.md) is NOT HIPAA compliant but will be in the future.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    It is the responsibility of the user to make sure PHI is only accessible by researchers on the IRB. If PHI is being stored in a project folder and some researchers are not on an IRB, their access to those files should be restricted using Access Control Lists (ACLs). If you need assistance setting up ACLs properly, please [contact us](../index.md#contact-us).
+    It is the responsibility of researchers to make sure PHI is accessible _only_ to people on the relevant IRB, with a demonstrated need to know. If PHI is stored in a project directory where some researchers are not on the IRB, their access to those files should be restricted using Access Control Lists (ACLs). Access control should be planned in advance of moving PHI data to Cheaha. If you need assistance setting up ACLs properly, please contact [Support](../help/support.md).
 <!-- markdownlint-enable MD046 -->
 
 ### Scratch Retention Policy
@@ -193,14 +175,4 @@ As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. C
 Starting January 2023, data stored in `/scratch` will be subject to two limited retention policies.
 
 - Each user will have a quota of 50 TB of scratch storage.
-- Files will be retained for 30 days.
-
-## Directory Permissions
-
-Default file permissions are described for each directory above.
-Additional background on Linux file system permissions can be found
-here:
-
-- <https://its.unc.edu/research-computing/techdocs/how-to-use-unix-and-linux-file-permissions/>
-- <https://www.rc.fas.harvard.edu/resources/documentation/linux/unix-permissions/>
-- <https://hpc.nih.gov/storage/permissions.html>
+- Files will be retained for a maximum of 30 days.
