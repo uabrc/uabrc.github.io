@@ -21,6 +21,26 @@ For outages:
 2. What were you working on when you noticed the outage?
 3. How were you accessing the cluster? Web Portal, SSH, VNC, etc.?
 
+### What Types of Files can I Attach to Tickets?
+
+Certain common file extensions are filtered when sent via email or attached to tickets. Generally, any file that is potentially executable is filtered. Below is a list of file extensions known to be filtered, and there may be others.
+
+- Executable files: `.exe`, `.dat`, `.cab`
+- Windows registry files: `.reg`
+- Code and script files: `.sh`, `.bash`, `.py`, `.m`, `.r`
+- Log files: `.log`
+- Rich document files containing macros. Essentially, any file extension from Microsoft Office ending with `m`, e.g., `.docm`.
+- Files with special characters in the filename.
+
+To ensure your files are attached to tickets as expected, try the following.
+
+- Images, use `.png` or `.jpg`.
+- Log files, rename `output.log` to `output.txt`
+- Code files, rename `code.sh` or `code.py`, etc., to `code.txt`.
+- Change the name to only use ASCII letters, numbers, hyphen, and underscore.
+
+Please do not try to attach executable files to tickets. If you have a legitimate need to give us executable files, mention it in the ticket and we can find a path forward on a case-by-case basis.
+
 ### How Do I Work With Tickets I've Created?
 
 UAB IT and Research Computing use ServiceNow for ticket management. When any email is sent to <support@listserv.uab.edu>, AskIT is notified and a ticket is created in ServiceNow and the ticket details are forwarded by email to every member of Research Computing staff.
