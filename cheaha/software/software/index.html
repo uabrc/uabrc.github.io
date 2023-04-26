@@ -2011,13 +2011,23 @@
 
 <p>For more information on usage with examples, see <a href="../../../workflow_solutions/using_anaconda/">Anaconda Environments</a>.</p>
 <h3 id="speedups-using-mamba">Speedups Using Mamba<a class="headerlink" href="#speedups-using-mamba" title="Permanent link">&para;</a></h3>
-<p><a href="../../../workflow_solutions/using_anaconda/#speeding-things-up-with-mamba">Mamba</a> is not installed in the base environment on Cheaha, and cannot be installed in the base environment by researchers. We are working on installing Mamba in the base environment as part of our module installation process change. In the meantime if you need the speed Mamba provides, you can follow these instructions to make it available for yourself.</p>
+<p><a href="../../../workflow_solutions/using_anaconda/#speeding-things-up-with-mamba">Mamba</a> is a faster alternative to Anaconda, and is installed on Cheaha as a <a href="../modules/">module</a>. To use the latest version of Mamba on Cheaha, please use <code>module load Mamba</code> at the terminal and in your scripts.</p>
+<p>There are currently a couple of known issues when working with Mamba on Cheaha.</p>
 <ol>
-<li><code>module load Anaconda3</code></li>
-<li>Create a new environment with only Mamba using <code>conda create --name mamba -c conda-forge mamba</code></li>
-<li><code>conda activate mamba</code></li>
-<li>Use Mamba to install environments as needed. Be aware you must use the flag <code>--prefix=~/.conda/envs/</code> to put the environment in the correct location to be seen by Anaconda.</li>
+<li>After using <code>module load Mamba</code>, use <code>source activate</code> before any other <code>mamba</code> or <code>conda</code> commands.</li>
+<li>Using <code>mamba init</code> can cause environment instability. Do <em>not</em> use it.</li>
+<li>Mamba alters the terminal prompt while a <code>mamba</code> environment is activated. The system should function as normal otherwise.</li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+</div>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do <em>not</em> use <code>mamba init</code>, even when instructed to do so by Mamba. Doing so can result in environment instability. If you do use <code>mamba init</code> you can resolve the issue by removing the content added to your <code>.bashrc</code> file. Please visit <a href="https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/2">our FAQ</a> for more details.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h2 id="singularity-containers">Singularity Containers<a class="headerlink" href="#singularity-containers" title="Permanent link">&para;</a></h2>
 <p>Containers are a very useful resource for installing software without needing administrator permission. Please read the full documentation about singularity and containers on our <a href="../../../workflow_solutions/getting_containers/#containers-on-cheaha">main Singularity page</a>.</p>
 
@@ -2026,7 +2036,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 8, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2023</span>
       
     
   </small>

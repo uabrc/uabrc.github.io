@@ -2348,24 +2348,15 @@
 <p>Building on the example above, we can bring in good software development practices to ensure we don't lose track of how our environment is changing as we develop our software or our workflows. If you've ever lost a lot of hard work by accidentally deleting an important file, or forgetting what changes you've made that need to be rolled back, this section is for you.</p>
 <p>Efficient software developers live the mantra "Don't repeat yourself". Part of not repeating yourself is keeping a detailed and meticulous record of changes made as your software grows over time. <a href="../getting_software_with_git/">Git</a> is a way to have the computer keep track of those changes digitally. Git can be used to save changes to environment files as they change over time. Remember that each time your environment changes to commit the output of <a href="#exporting-an-environment">Exporting your Environment</a> to a repository for your project.</p>
 <h2 id="speeding-things-up-with-mamba">Speeding Things up with Mamba<a class="headerlink" href="#speeding-things-up-with-mamba" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/mamba-org/mamba#readme">Mamba</a> is an alternative to Anaconda that uses <code>libsolv</code> and parallel processing to install environments more quickly, sometimes by an order of magnitude. Mamba will also discover conflicts very quickly. Mamba is available as a <a href="https://anaconda.org/conda-forge/mamba">package</a> via Anaconda. Currently Mamba cannot be installed on Cheaha, only on self-maanged systems like cloud.rc instances. To install use the following.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>conda activate base
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>conda update --all
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>conda install -n base -c conda-forge mamba
-</code></pre></div>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Mamba must be installed in the base environment to function correctly! If you are using Cheaha, and cannot install in the base environment, see our workaround <a href="../../cheaha/software/software/#speedups-using-mamba">here</a></p>
-</div>
-<!-- markdownlint-enable MD046 -->
+<p>If you are using Cheaha, Mamba is already installed in the base environment. To learn how to use Mamba on Cheaha, please read our <a href="../../cheaha/software/software/#speedups-using-mamba">Cheaha Software page</a>. For use in your own environment, please read on.</p>
+<p><a href="https://github.com/mamba-org/mamba#readme">Mamba</a> is an alternative to Anaconda that uses <code>libsolv</code> and parallel processing to install environments more quickly, sometimes by an order of magnitude. Mamba will also discover conflicts very quickly. To install Mamba, please follow the instructiosn available at the <a href="https://mamba.readthedocs.io/en/latest/installation.html#fresh-install">official documentation</a>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2023</span>
       
     
   </small>
