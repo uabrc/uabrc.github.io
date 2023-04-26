@@ -466,8 +466,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#user-space" class="md-nav__link">
-    User Space
+  <a href="#researcher-storage" class="md-nav__link">
+    Researcher Storage
   </a>
   
 </li>
@@ -562,13 +562,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#replication" class="md-nav__link">
-    Replication
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#backups" class="md-nav__link">
     Backups
   </a>
@@ -591,13 +584,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#directory-permissions" class="md-nav__link">
-    Directory Permissions
-  </a>
   
 </li>
       
@@ -2015,8 +2001,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#user-space" class="md-nav__link">
-    User Space
+  <a href="#researcher-storage" class="md-nav__link">
+    Researcher Storage
   </a>
   
 </li>
@@ -2111,13 +2097,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#replication" class="md-nav__link">
-    Replication
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#backups" class="md-nav__link">
     Backups
   </a>
@@ -2143,13 +2122,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#directory-permissions" class="md-nav__link">
-    Directory Permissions
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2168,19 +2140,6 @@
 
 
 <h1 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h1>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition announcement">
-<p class="admonition-title">Announcement</p>
-<p><strong>UPDATED 2023-01-09</strong></p>
-<p>Please note upcoming changes!</p>
-<ul>
-<li>January 13, 2023: <code>$USER_SCRATCH</code> will point to <code>/scratch/$USER</code></li>
-<li>January 27, 2023: Clean up of <code>temp-scratch</code> must be completed by all researchers. Access to <code>temp-scratch</code> will be removed for all researchers.</li>
-<li>February 13, 2023: New <code>$SCRATCH</code> storage limited-retention policies will start.</li>
-</ul>
-</div>
-<!-- markdownlint-enable MD046 -->
-
 <h2 id="what-type-of-storage-do-i-need">What Type of Storage Do I Need?<a class="headerlink" href="#what-type-of-storage-do-i-need" title="Permanent link">&para;</a></h2>
 <p>There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to find the storage platform we provide that best matches your needed use-case.</p>
 <table>
@@ -2202,6 +2161,14 @@
 <td align="left">Data to be shared among a single or multiple labs.</td>
 <td align="left">Temporary files created during analysis. Rolling file deletion over time.</td>
 <td align="left">Small files created during jobs. Must be deleted at the end of a job.</td>
+</tr>
+<tr>
+<td align="left">Prerequisite</td>
+<td align="left">PI with Cheaha account</td>
+<td align="left">Cheaha account</td>
+<td align="left">PI with Cheaha account</td>
+<td align="left">Cheaha account</td>
+<td align="left">Cheaha account</td>
 </tr>
 <tr>
 <td align="left">Default Quota</td>
@@ -2229,7 +2196,7 @@
 </tr>
 <tr>
 <td align="left">Cheaha Path</td>
-<td align="left">No Path</td>
+<td align="left">No path; see <a href="../lts/interfaces/">LTS Interfaces</a>.</td>
 <td align="left"><code>/home/&lt;blazerid&gt;</code> (<code>$HOME</code>) and <code>/data/user/&lt;blazerid&gt;</code> (<code>$USER_DATA</code>)</td>
 <td align="left"><code>/data/project/&lt;name&gt;</code></td>
 <td align="left"><code>/scratch/&lt;blazerid&gt;</code> (<code>$USER_SCRATCH</code>)</td>
@@ -2245,9 +2212,9 @@
 </tr>
 <tr>
 <td align="left">Policies</td>
+<td align="left">PI owns and is responsible for data.</td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">PI owns and is responsible for data.</td>
 <td align="left">Data deleted after 30 days.</td>
 <td align="left">Data deleted as needed.</td>
 </tr>
@@ -2261,22 +2228,17 @@
 </tr>
 </tbody>
 </table>
-<h2 id="user-space">User Space<a class="headerlink" href="#user-space" title="Permanent link">&para;</a></h2>
-<p>Each user has personal directories found at <code>/home/$USER</code> (or <code>$HOME</code>) and <code>/data/user/$USER</code> (or <code>$USER_DATA</code>). These two locations are meant to store general data long-term and can be used during active analysis or for archiving small projects. Traditionally, <code>$HOME</code> is meant to store scripts and supporting files and toolboxes such as Anaconda virtual environments or R packages while <code>$USER_DATA</code> can store datasets and results for a user's projects.</p>
-<p>The owner (<code>$USER</code>) of both directories can read, write/delete, and list files. No other users or groups have permissions to this directory. While it is possible to share files in your personal space with other users, a more practical solution may be to use a <a href="#project-directory">project directory</a> instead.</p>
-<p>A user is limited to 5 TB of data across both <code>$HOME</code> and <code>$USER_DATA</code> combined.</p>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The home and user data directories are mirrored across storage locations to allow for emergency backup in case some of the drives fail. This is not meant to be a long-term backup solution as any data deleted by a user is deleted on the main drive and the mirrored drive.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
+<h2 id="researcher-storage">Researcher Storage<a class="headerlink" href="#researcher-storage" title="Permanent link">&para;</a></h2>
+<p>Every researcher has personal directories found at <code>/home/$USER</code> (or <code>$HOME</code>) and <code>/data/user/$USER</code> (or <code>$USER_DATA</code>). These two locations are meant to store general data and can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, <code>$HOME</code> is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, <code>$USER_DATA</code> is intended to store  datasets and results for individual research projects.</p>
+<p>The owner (or <code>$USER</code>) of both directories can read, write, delete, and list files in these spaces. No other accounts or groups have permissions to your personal directories. While it is possible to share files directly from your personal space with other people, a more practical solution may be to use a <a href="#project-directory">project directory</a> instead. It is not possible to share the contents of your personal directory without potentially leaking sensitive information, please do not modify the <a href="../../workflow_solutions/shell/#what-permissions-do">permissions</a> and <a href="../../workflow_solutions/shell/#manage-researcher-access-to-files-and-directories-getfacl-setfacl">access control lists</a> on your personal directories.</p>
+<p>Every researcher is limited to 5 TB of data across both <code>$HOME</code> and <code>$USER_DATA</code> combined.</p>
 <h2 id="project-directory">Project Directory<a class="headerlink" href="#project-directory" title="Permanent link">&para;</a></h2>
-<p>Shared data can be stored in a <code>/data/project/&lt;project_name&gt;</code> directory. The default storage size for a new project is 50TB. If you need less than 5TB or your need for shared space is short term, please request a <a href="#sloss">Sloss space</a> instead. Project storage can be helpful for teams of researchers who need access to the same data.</p>
-<p>All project spaces must be owned by a principal investigator (PI) who is an employee of UAB with a legitimate research interest. The PI takes responsibility for data in the space, as well as access control of all files and directories under the parent directory. As with all data on Cheaha, backups and archival services are not provided, and are the responsibility of the respective data owners.</p>
-<p>The PI and all members with access to the project directory can read, write/delete, and list files within the top-level directory, and all other subdirectories by default. Other people on the system have no ability to access the project space. Access control for directories and files within the project space can be implemented via access control lists. Please see the bash commands <a href="https://linux.die.net/man/1/setfacl">setfacl</a> and <a href="https://linux.die.net/man/1/getfacl">getfacl</a>) for more information. Access control within the project directory are the responsibility of the project owner. However, we respect that access control lists can be tricky, so please feel free to <a href="../..#contact-us">contact us</a> for assistance.</p>
-<p>To create a project directory, or change access to or ownership of a project directory, the PI should follow the instructions at <a href="../../help/support/#how-do-i-request-or-change-a-project-space">How Do I Request Or Change A Project Space?</a></p>
+<p>Shared data can be stored in a <code>/data/project/&lt;project_name&gt;</code> directory. Project storage can be helpful for teams of researchers who need access to the same data or to collaborate on a shared research project.</p>
+<p>The default storage size for projects is 25TB. If you require more storage, please contact <a href="../../help/support/">Support</a>. If your project is small (less than 5TB) or short-term, please request a <a href="#sloss">Sloss space</a> instead to conserve storage.</p>
+<p>All project spaces must be owned by a principal investigator (PI) who is an employee of UAB with a legitimate research interest. The PI takes responsibility for all data in the space. The PI is also responsible for managing access control of all files and directories under the project directory. As with all data on Cheaha, backups and archival services are not provided and are the responsibility of the respective data owners.</p>
+<p>By default, the PI and all accounts with access to the project directory can read, write, delete, and list files within the top-level directory and all subdirectories. Accounts which are not members of the project directory group cannot read, write, delete or otherwise access or modify the contents of the project directory. Fine-grained access control for directories and files within the project space can be implemented via <a href="../../workflow_solutions/shell/#what-permissions-do">permissions</a> and <a href="../../workflow_solutions/shell/#manage-researcher-access-to-files-and-directories-getfacl-setfacl">access control lists</a>. We understand that access control lists can be tricky, so please feel free to <a href="../..#contact-us">contact us</a> for assistance with high-level permission management.</p>
+<p>Each PI is allowed one project directory. We recommend structuring the project directory so that distinct research projects have their own subdirectories, permissions, and access control lists. Doing so will help keep research project data and metadata separate. We also recommend carefully controlling member permissions to specific datasets to minimize the risk of accidental deletion or modification.</p>
+<p>To create a project directory, change membership, or change ownership of a project directory, the PI should follow the instructions at <a href="../../help/support/#how-do-i-request-or-change-a-project-space">How Do I Request Or Change A Project Space?</a>. If a project owner leaves UAB without defining a new owner, please contact <a href="../../help/support/">Support</a> so we can resolve the issue as soon as possible.</p>
 <h3 id="sloss">Sloss<a class="headerlink" href="#sloss" title="Permanent link">&para;</a></h3>
 <p>A special location under <code>/data/project/sloss</code> to store projects that are at most 5 TB. In keeping with the name <a href="https://www.slossfurnaces.com/">Sloss</a>, these spaces are intended as a foundry for experimental or temporary project spaces that have potential to grow. Otherwise, they are treated like any other project space.</p>
 <h3 id="project-directory-permissions">Project Directory Permissions<a class="headerlink" href="#project-directory-permissions" title="Permanent link">&para;</a></h3>
@@ -2403,8 +2365,6 @@
 <!-- markdownlint-enable MD046 -->
 
 <h2 id="data-policies">Data Policies<a class="headerlink" href="#data-policies" title="Permanent link">&para;</a></h2>
-<h3 id="replication">Replication<a class="headerlink" href="#replication" title="Permanent link">&para;</a></h3>
-<p>Data on GPFS are replicated using a RAID configuration which is intended to decrease the risk of data loss in the event of disk failures. This is standard good practice for researcher computing data centers.</p>
 <h3 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h3>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition important">
@@ -2447,11 +2407,11 @@
 <li>Crashplan licenses are available for automatic offsite backups, please contact <a href="../../help/support/">Support</a> for more information.</li>
 </ul>
 <h3 id="hipaa-compliance">HIPAA Compliance<a class="headerlink" href="#hipaa-compliance" title="Permanent link">&para;</a></h3>
-<p>As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. Currently, long-term storage is NOT HIPAA compliant but will be in the future.</p>
+<p>As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. Currently, <a href="../lts/">long-term storage</a> is NOT HIPAA compliant but will be in the future.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>It is the responsibility of the user to make sure PHI is only accessible by researchers on the IRB. If PHI is being stored in a project folder and some researchers are not on an IRB, their access to those files should be restricted using Access Control Lists (ACLs). If you need assistance setting up ACLs properly, please <a href="../..#contact-us">contact us</a>.</p>
+<p>It is the responsibility of researchers to make sure PHI is accessible <em>only</em> to people on the relevant IRB, with a demonstrated need to know. If PHI is stored in a project directory where some researchers are not on the IRB, their access to those files should be restricted using Access Control Lists (ACLs). Access control should be planned in advance of moving PHI data to Cheaha. If you need assistance setting up ACLs properly, please contact <a href="../../help/support/">Support</a>.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
@@ -2459,16 +2419,7 @@
 <p>Starting January 2023, data stored in <code>/scratch</code> will be subject to two limited retention policies.</p>
 <ul>
 <li>Each user will have a quota of 50 TB of scratch storage.</li>
-<li>Files will be retained for 30 days.</li>
-</ul>
-<h2 id="directory-permissions">Directory Permissions<a class="headerlink" href="#directory-permissions" title="Permanent link">&para;</a></h2>
-<p>Default file permissions are described for each directory above.
-Additional background on Linux file system permissions can be found
-here:</p>
-<ul>
-<li><a href="https://its.unc.edu/research-computing/techdocs/how-to-use-unix-and-linux-file-permissions/">https://its.unc.edu/research-computing/techdocs/how-to-use-unix-and-linux-file-permissions/</a></li>
-<li><a href="https://www.rc.fas.harvard.edu/resources/documentation/linux/unix-permissions/">https://www.rc.fas.harvard.edu/resources/documentation/linux/unix-permissions/</a></li>
-<li><a href="https://hpc.nih.gov/storage/permissions.html">https://hpc.nih.gov/storage/permissions.html</a></li>
+<li>Files will be retained for a maximum of 30 days.</li>
 </ul>
 
   <hr>
@@ -2476,7 +2427,7 @@ here:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
       
     
   </small>
