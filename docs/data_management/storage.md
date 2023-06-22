@@ -2,35 +2,77 @@
 
 ## What Type of Storage Do I Need?
 
-There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to find the storage platform we provide that best matches your needed use-case.
+There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to help determine the storage platform we provide that best matches your needed use-case. If you need additional assistance, please contact [Support](../help/support.md).
 
 {{ read_csv('data_management/res/storage_overview.csv', keep_default_na=False) }}
 
-## Researcher Storage
+## What Individual Storage Solutions are Available?
 
-Every researcher has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`). These two locations are meant to store general data and can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, `$HOME` is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, `$USER_DATA` is intended to store  datasets and results for individual research projects.
+Every researcher has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. These two locations are meant to store general data and can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, `$HOME` is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, `$USER_DATA` is intended to store datasets and results for individual research projects.
 
-The owner (or `$USER`) of both directories can read, write, delete, and list files in these spaces. No other accounts or groups have permissions to your personal directories. While it is possible to share files directly from your personal space with other people, a more practical solution may be to use a [project directory](#project-directory) instead. It is not possible to share the contents of your personal directory without potentially leaking sensitive information, please do not modify the [permissions](../workflow_solutions/shell.md#what-permissions-do) and [access control lists](../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl) on your personal directories.
+Individual allocations on Long-Term Storage (LTS) are also available upon request.
 
-Every researcher is limited to 5 TB of data across both `$HOME` and `$USER_DATA` combined.
+### How Do I Request Individual Long-Term Storage?
 
-## Project Directory
+To request individual Long-Term Storage, please first read and understand how [Long-Term Storage](./lts/index.md) differs from traditional filesystems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact [Support](../help/support.md).
 
-Shared data can be stored in a `/data/project/<project_name>` directory. Project storage can be helpful for teams of researchers who need access to the same data or to collaborate on a shared research project.
+## What Shared Storage Solutions are Available?
 
-The default storage size for projects is 25TB. If you require more storage, please contact [Support](../help/support.md). If your project is small (less than 5TB) or short-term, please request a [Sloss space](#sloss) instead to conserve storage.
+Shared Storage is available via two services. We have Project Storage (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases, so please read on to determine which may be most suitable.
 
-All project spaces must be owned by a principal investigator (PI) who is an employee of UAB with a legitimate research interest. The PI takes responsibility for all data in the space. The PI is also responsible for managing access control of all files and directories under the project directory. As with all data on Cheaha, backups and archival services are not provided and are the responsibility of the respective data owners.
+Project Storage is best-suited for changing or dynamic data. Specifically:
 
-By default, the PI and all accounts with access to the project directory can read, write, delete, and list files within the top-level directory and all subdirectories. Accounts which are not members of the project directory group cannot read, write, delete or otherwise access or modify the contents of the project directory. Fine-grained access control for directories and files within the project space can be implemented via [permissions](../workflow_solutions/shell.md#what-permissions-do) and [access control lists](../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl). We understand that access control lists can be tricky, so please feel free to [contact us](../index.md#contact-us) for assistance with high-level permission management.
+- Data needing/undergoing analysis
+- Exploratory data
+- Temporary data needed longer than 30 days
 
-Each PI is allowed one project directory. We recommend structuring the project directory so that distinct research projects have their own subdirectories, permissions, and access control lists. Doing so will help keep research project data and metadata separate. We also recommend carefully controlling member permissions to specific datasets to minimize the risk of accidental deletion or modification.
+In contrast, [Long-Term Storage](./lts/index.md) is best-suited for unchanging or static data. Specifically:
 
-To create a project directory, change membership, or change ownership of a project directory, the PI should follow the instructions at [How Do I Request Or Change A Project Space?](../help/support.md#how-do-i-request-or-change-a-project-space). If a project owner leaves UAB without defining a new owner, please contact [Support](../help/support.md) so we can resolve the issue as soon as possible.
+- Instrument-acquired data
+- Completed analyses
+- Hosting data for others to copy
+- Hosting data for the public internet
+- "Pick-up" and "drop-off" locations for data as part of a workflow
 
-### Sloss
+Shared Storage is available for labs headed by a PI _and_ for Core facilities headed by a director.
 
-A special location under `/data/project/sloss` to store projects that are at most 5 TB. In keeping with the name [Sloss](https://www.slossfurnaces.com/), these spaces are intended as a foundry for experimental or temporary project spaces that have potential to grow. Otherwise, they are treated like any other project space.
+Shared Storage is allocated on a per-organization basis, not on a per-person basis. If an individual researcher manages both a lab and a Core, they may request independent storage allocations for each organization. Each organization may request both Project Storage and Long-Term Storage.
+
+### How Do I Request Shared Storage?
+
+To request shared Project Storage or Long-Term Storage, please contact [Support](../help/support.md). To ensure prompt allocation of Shared Storage, please follow the guidelines below.
+
+- Requests must be made to <support@listserv.uab.edu> or via the [AskIT HelpDesk](https://www.uab.edu/it/home/).
+- Requests must come from one of the proposed owners.
+- All proposed owners must have created their [Research Computing accounts](../account_management/cheaha_account.md) at the time the request is made.
+
+Please provide the following information. Missing information can delay allocation of Shared Storage as we either look up the information, or ask followup questions.
+
+- **Responsible Party/Owner:** The BlazerID of the person claiming reponsibility for what happens and what is stored in the space. Typically this would be a Principal Investigator (PI) or a Core Director.
+    - Multiple responsible parties are allowed.
+    - We need one person declared as "primary" owner. This person will be the literal owner (in the Linux sense) for Project Storage.
+- **Members:** A list of BlazerIDs of people to give access to the space. (Note: this only applies to Project Storage. LTS access controls are managed differently.)
+- **Type of Organization:** Is the Shared Storage request for a lab, core, campus administrative group, or something else?
+- **Name of Organization:** The _specific_ name of the organization the Shared Storage request is for.
+- **Parent Organization:** The name of the parent organization for your organization. Please be as detailed as possible.
+- **Purpose of Shared Storage:** The research purpose for the storage, how do you intend to use it? Please feel free to be as detailed as you like, but please limit to a few sentences at most.
+- **Internal UAB Collaborator Organizations:** The name(s) of any other UAB organizations participating in the Shared Storage.
+- **External Collaborator Organizations:** The name(s) of any external organizations participating in the Shared Storage.
+- **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
+- **Name of Shared Storage:** Please give us a short, memorable name that is specific to your organization but general to your purpose.
+    - For Project Storage, this name will be used in the `/data/project/<name>` path on Cheaha.
+    - For Labs we recommend the format `<PI_blazerid>-lab`.
+    - For Cores we recommend a shortened version of the Core name.
+
+If some members have not created their accounts at the time of the request, we will proceed with allocating the Shared Storage. Additional members may be added at a later time in a new service request.
+
+### How Do I Make Changes to Shared Storage Membership?
+
+To request changes in Shared Storage membership, please contact [Support](../help/support.md). Please take note of the following guidelines to ensure changes can be made promptly.
+
+- We must have written approval from an owner to make membership changes.
+- The exact name of the Shared Storage. If it is Project Storage, the path to the storage location, i.e., `/data/project/...`.
+- Please give BlazerIDs of members to add or remove.
 
 ### Project Directory Permissions
 
@@ -123,7 +165,19 @@ Both quota reports are updated nightly, so they may be out of date if you move d
     Running out of space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/index.md).
 <!-- markdownlint-enable MD046 -->
 
-## Data Policies
+## Data Responsibilities and Procedures
+
+### Archival
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Archival of data is the responsibility of researchers using Cheaha.
+<!-- markdownlint-enable MD046 -->
+
+At this time, Research Computing does not offer a method of archival. If you have need for archival, please feel free to contact [Support](../help/support.md) to start a conversation.
+
+A possible external resource for archival is available through University of Oklahoma (OU) Supercomputing Center for Education and Research (OSCER). Please see the following link for details: <https://www.ou.edu/oscer/resources/ourrstore--ou---regional-research-store>.
 
 ### Backups
 
@@ -162,7 +216,14 @@ How can I ensure data integrity?
 
 ### HIPAA Compliance
 
-As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. Currently, [long-term storage](lts/index.md) is NOT HIPAA compliant but will be in the future.
+Cheaha is HIPAA compliant and can accept Protected Health Information (PHI) data. Currently, [long-term storage](lts/index.md) is NOT HIPAA compliant but will be in the future.
+
+For UAB policies surrounding PHI data, please see the following URLs.
+
+- [Data Classification](https://www.uab.edu/it/home/policies/data-classification/classification-overview)
+- [Data Protection and Security Policy](https://secure2.compliancebridge.com/uab/portal/getdoc.php?file=302)
+- [Data Access Policy](https://secure2.compliancebridge.com/uab/portal/getdoc.php?file=301)
+- [HIPAA Data Policy](https://www.uab.edu/it/home/policies/compliance/hipaa)
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -170,9 +231,11 @@ As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. C
     It is the responsibility of researchers to make sure PHI is accessible _only_ to people on the relevant IRB, with a demonstrated need to know. If PHI is stored in a project directory where some researchers are not on the IRB, their access to those files should be restricted using Access Control Lists (ACLs). Access control should be planned in advance of moving PHI data to Cheaha. If you need assistance setting up ACLs properly, please contact [Support](../help/support.md).
 <!-- markdownlint-enable MD046 -->
 
+Managing PHI data can be challenging. There are experts on Campus who can provide assistance. Please contact [Support](../help/support.md) if you intend to use Research Computing services in combination with PHI and PHI-derived data.
+
 ### Scratch Retention Policy
 
-Starting January 2023, data stored in `/scratch` will be subject to two limited retention policies.
+Data stored in `/scratch` is subject to two limited retention policies.
 
 - Each user will have a quota of 50 TB of scratch storage.
 - Files will be retained for a maximum of 30 days.

@@ -70,32 +70,13 @@ Please do not try to attach executable files to tickets. If you have a legitimat
 
 ## How Do I Request Or Change A Project Space?
 
-Projects are collaborative data and code storage spaces with controlled access. Any UAB investigator with a legitimate research need can request a project storage space. Please send an email with the following information, depending on what you need.
+Please see our [Storage page](../data_management/storage.md) for more information.
 
-For more details on project storage, please see our [Storage](../data_management/storage.md) page.
-
-### New Projects
-
-1. What is the purpose of the project space?
-2. What should we name the project? Short, descriptive, memorable names work best. The name will be used as the project folder name in our file system, so alphanumeric, underscore and dash characters only please.
-3. Who should have access? Please provide a list of blazerids. The intended project owner will always have access.
-
-### Access Management
-
-1. What is the name of the project?
-2. Who should be given access?
-3. Who should no longer have access?
-
-### Storage
-
-1. What is the name of the project?
-2. How much additional or total space will be needed?
-
-### How do I request new software installed?
+## How do I request new software installed?
 
 Before making a request for new software on Cheaha, please try searching our [modules](../cheaha/software/modules.md) or searching for packages on [Anaconda](../workflow_solutions/using_anaconda.md).
 
-If you are not able to find a suitable module or package and would like a new piece of software installed on Cheaha, please [create a ticket](#how-do-i-create-a-support-ticket) with the name of the software, the version number, and a link to the installation instructions.
+If you are not able to find a suitable module or package and would like software installed on Cheaha, please [create a ticket](#how-do-i-create-a-support-ticket) with the name of the software, the version number, and a link to the installation instructions.
 
 ## Office Hours
 
