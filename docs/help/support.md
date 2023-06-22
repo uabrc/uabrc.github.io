@@ -68,7 +68,7 @@ To ensure your files are attached to tickets as expected, try the following.
 
 Please do not try to attach executable files to tickets. If you have a legitimate need to give us executable files, mention it in the ticket and we can find a path forward on a case-by-case basis.
 
-## How Do I Request Or Change A Project Space?
+## How Do I Request Or Change Shared Storage?
 
 Please see our [Storage page](../data_management/storage.md) for more information.
 
