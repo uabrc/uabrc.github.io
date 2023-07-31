@@ -885,26 +885,6 @@
     Storage
   </a>
   
-    <nav class="md-nav" aria-label="Storage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-storage" class="md-nav__link">
-    User Storage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#project-directories" class="md-nav__link">
-    Project Directories
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -2020,26 +2000,6 @@
     Storage
   </a>
   
-    <nav class="md-nav" aria-label="Storage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-storage" class="md-nav__link">
-    User Storage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#project-directories" class="md-nav__link">
-    Project Directories
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -2125,19 +2085,11 @@
 <h2 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h2>
 <p>A full list of the available hardware can be found on our <a href="../hardware/">hardware page</a>.</p>
 <h3 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h3>
-<h4 id="user-storage">User Storage<a class="headerlink" href="#user-storage" title="Permanent link">&para;</a></h4>
-<p>Each user is allocated 5 TB of personal storage by default. This storage quota is shared between the <code>USER_DATA</code> (<code>/data/user/&lt;blazerid&gt;</code>) and the <code>HOME</code> (<code>/home/&lt;blazerid&gt;</code>) directories. More information on storage can be <a href="../../data_management/storage/">found here</a>.</p>
-<h4 id="project-directories">Project Directories<a class="headerlink" href="#project-directories" title="Permanent link">&para;</a></h4>
-<p>In addition to personal storage, Primary Investigators may request additional shared storage for their lab personnel. This space is given a default size of 25 TB. Each PI may have one project space. To request project storage space, the PI should email support at support@listserv.uab.edu with the name of the project as well as the Blazer IDs of the researchers to give access to. Any future requests for giving or removing access must come from the PI.</p>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>Data on Cheaha are replicated for recovery in case of system failures; however, <strong>data are not recoverable if deleted by the researcher</strong>. Be very careful with commands such as <code>rm -r</code> and other tools that delete files making sure you are deleting only the files and folders you mean to. Backing up data onto external platforms is the sole responsiblity of the researcher. Make backups of raw data places such as <a href="https://uabrc.github.io/data_management/lts/lts/">RC Long-term Storage</a>, AWS/Google Cloud/Azure data storage, local hard drives, or <a href="https://www.box.com">UAB Box</a>. Analysis scripts to places like <a href="https://www.github.com">Github</a> or <a href="https://gitlab.rc.uab.edu">UAB RC Gitlab</a>.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
+<p>All researchers are granted 5 TB of individual storage when they <a href="../../account_management/cheaha_account/">create their Research Computing account</a>.</p>
+<p>Shared storage is available to all Lab Groups and Core Facilities on campus. Shared storage is also available to UAB Administration groups.</p>
+<p>Please visit our <a href="../../data_management/storage/">Storage page</a> for detailed information about our individual and shared storage options.</p>
 <h3 id="etiquette">Etiquette<a class="headerlink" href="#etiquette" title="Permanent link">&para;</a></h3>
-<p><a href="../hardware/#quality-of-service-qos-limits">Quotas</a> are in place to ensure any one user can't monopolize all resources.</p>
+<p><a href="../hardware/#quality-of-service-qos-limits">Quality-of-Service (QoS) limits</a> are in place to ensure any one user can't monopolize all resources.</p>
 <h4 id="running-tasks-on-compute-nodes">Running Tasks on Compute Nodes<a class="headerlink" href="#running-tasks-on-compute-nodes" title="Permanent link">&para;</a></h4>
 <p>There two main node types on Cheaha for researchers, the login node and many compute nodes. All expensive compute tasks must be run on compute nodes. Tasks running on the login node slow down processes for everyone, and in extreme cases can cause service outages affecting your work and the work of many of your colleagues. We will contact you if we find processes on the login node to help move your tasks to compute nodes.</p>
 <p>You are on compute nodes if:</p>
@@ -2171,7 +2123,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
       
     
   </small>

@@ -2324,7 +2324,7 @@
 <h3 id="admin-esq-priveleges">Admin-esq Priveleges<a class="headerlink" href="#admin-esq-priveleges" title="Permanent link">&para;</a></h3>
 <p>It is suggested to keep the number of people who have permission to delete data and alter policies to a minimum. Inexperience with policies can result in permissions being granted to incorrect users which can potentially lead to irrecoverable consequences. Syncing data without purposeful thought can result in the undesired loss of data.</p>
 <h3 id="bucket-ownership">Bucket Ownership<a class="headerlink" href="#bucket-ownership" title="Permanent link">&para;</a></h3>
-<p>For labs using LTS to store data from their Cheaha project space, it is highly advised that the PI for the lab creates and owns the bucket and then gives policy changing permissions to another researcher for day-to-day maintenance if desired. For instance, if a lab manager creates the bucket and then leaves the university without giving policy permissions to other users, the lab will not be able to change the policies for those data.</p>
+<p>For labs using LTS to store data from their Cheaha Project Storage directory, it is highly advised that the PI for the lab creates and owns the bucket and then gives policy changing permissions to another researcher for day-to-day maintenance if desired. For instance, if a lab manager creates the bucket and then leaves the university without giving policy permissions to other users, the lab will not be able to change the policies for those data.</p>
 <h3 id="sharing-multiple-datasets-with-different-groups">Sharing Multiple Datasets with Different Groups<a class="headerlink" href="#sharing-multiple-datasets-with-different-groups" title="Permanent link">&para;</a></h3>
 <p>Some groups on campus may distribute datasets to other research groups using LTS. If you are distributing data to multiple groups, and those groups should not have access to each other's data, it is highly advised to store those datasets in separate buckets as opposed to separate directories in a single bucket.</p>
 <p>An idiosyncrasy of buckets involves the fact that all objects are stored in the top level of the bucket, and once permissions are given to someone to see the bucket, they will be able to see all objects within the bucket without restrictions even if they are not given download permissions for some objects. If any identifying or priveleged information is given in file names on LTS, it could constitute an IRB violation. Additionally, managing permissions for groups to access data only from specific folders makes the policy file much more complicated and prone to errors. When sharing multiple datasets with multiple different groups, it's advised to keep these data in separate buckets and have individual policy files for each bucket to make policy management simpler and less prone to error.</p>
@@ -2334,7 +2334,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
       
     
   </small>
