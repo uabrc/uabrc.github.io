@@ -285,7 +285,7 @@ It is suggested to keep the number of people who have permission to delete data 
 
 ### Bucket Ownership
 
-For labs using LTS to store data from their Cheaha project space, it is highly advised that the PI for the lab creates and owns the bucket and then gives policy changing permissions to another researcher for day-to-day maintenance if desired. For instance, if a lab manager creates the bucket and then leaves the university without giving policy permissions to other users, the lab will not be able to change the policies for those data.
+For labs using LTS to store data from their Cheaha Project Storage directory, it is highly advised that the PI for the lab creates and owns the bucket and then gives policy changing permissions to another researcher for day-to-day maintenance if desired. For instance, if a lab manager creates the bucket and then leaves the university without giving policy permissions to other users, the lab will not be able to change the policies for those data.
 
 ### Sharing Multiple Datasets with Different Groups
 

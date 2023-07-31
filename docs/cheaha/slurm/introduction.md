@@ -8,7 +8,7 @@ The main Slurm documentation can be found at [the Slurm site](https://slurm.sche
 
 ## Batch Job Workflow
 
-1. Stage data to `$USER_DATA`, `$USER_SCRATCH`, or a project directory.
+1. Stage data to `$USER_DATA`, `$USER_SCRATCH`, or a `/data/project/...` directory.
 2. Research how to run your directives in 'batch' mode. In other words, how to run your analysis pipeline from the command line, with no GUIs or researcher input.
 3. Identify the appropriate resources necessary to run the jobs (CPUs, time, memory, etc)
 4. Write a job script specifying these parameters using Slurm directives.
