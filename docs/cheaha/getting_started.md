@@ -26,23 +26,15 @@ A full list of the available hardware can be found on our [hardware page](./hard
 
 ### Storage
 
-#### User Storage
+All researchers are granted 5 TB of individual storage when they [create their Research Computing account](../account_management/cheaha_account.md).
 
-Each user is allocated 5 TB of personal storage by default. This storage quota is shared between the `USER_DATA` (`/data/user/<blazerid>`) and the `HOME` (`/home/<blazerid>`) directories. More information on storage can be [found here](../data_management/storage.md).
+Shared storage is available to all Lab Groups and Core Facilities on campus. Shared storage is also available to UAB Administration groups.
 
-#### Project Directories
-
-In addition to personal storage, Primary Investigators may request additional shared storage for their lab personnel. This space is given a default size of 25 TB. Each PI may have one project space. To request project storage space, the PI should email support at support@listserv.uab.edu with the name of the project as well as the Blazer IDs of the researchers to give access to. Any future requests for giving or removing access must come from the PI.
-
-<!-- markdownlint-disable MD046 -->
-!!! danger
-
-    Data on Cheaha are replicated for recovery in case of system failures; however, **data are not recoverable if deleted by the researcher**. Be very careful with commands such as `rm -r` and other tools that delete files making sure you are deleting only the files and folders you mean to. Backing up data onto external platforms is the sole responsiblity of the researcher. Make backups of raw data places such as [RC Long-term Storage](https://uabrc.github.io/data_management/lts/lts/), AWS/Google Cloud/Azure data storage, local hard drives, or [UAB Box](https://www.box.com). Analysis scripts to places like [Github](https://www.github.com) or [UAB RC Gitlab](https://gitlab.rc.uab.edu).
-<!-- markdownlint-enable MD046 -->
+Please visit our [Storage page](../data_management/storage.md) for detailed information about our individual and shared storage options.
 
 ### Etiquette
 
-[Quotas](hardware.md#quality-of-service-qos-limits) are in place to ensure any one user can't monopolize all resources.
+[Quality-of-Service (QoS) limits](hardware.md#quality-of-service-qos-limits) are in place to ensure any one user can't monopolize all resources.
 
 #### Running Tasks on Compute Nodes
 
