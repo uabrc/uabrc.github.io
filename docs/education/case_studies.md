@@ -166,3 +166,15 @@ The `nvidia-smi` reports the GPU memory usage and the 2 GPU process running deta
 Empirical results on running Parabricks sample test case on `amperendoes` and `pascalnodes` partitions are illustrated in the below table. For this test case, it seems `pascalnodes` runtime is efficient than `amperenodes`  for 1GPU and 2GPU. However, the real-world science simulations may vary in their speedup.  
 
 {{ read_csv('education/res/parabricks_exec_time.csv', keep_default_na=False) }}
+
+## How to Run Millions of Jobs on OSG: A Case Study
+
+The OSPool is a sharing computing capacity platform in support of Open Science. These resources are accessible to researchers affiliated with a US academic institution. To avail of the OSPool resources, you must obtain an account via [OSG Portal](https://portal.osg-htc.org/). The job to the OSPool is submitted through a high-throughput computing approach (HTC) using HTCondor. HTCondor is a software system that creates a High-Throughput Computing (HTC) environment.
+
+Further guidelines on using Open Science Grid (OSG) for scientific applications, the job compatibility to run on OSG, and examples of submitting HTCondor jobs on OSG access points are found in our [OSG page](../national_ci/osg.md). Please have a look at this page if you are new to OSG.
+
+Numerous jobs such as image analysis, bioinformatics simulation, and molecular interaction benefit from execution on OSPool. The subsequent section illustrates a case study of executing macro-molecular interaction on OSPool.
+
+### Accelerating Cheaha jobs on Open Sciene Grid (OSG)
+
+Numerous scientific applications from interdisciplinary fields, such as protein structure analysis, bio-molecular simulation, genome sequencing, engineering applications, and so on, require massive resources. Many of these applications are large array/batch jobs that take longer to execute and sometimes take longer to get scheduled on Cheaha Cluster. It has become a researcher-facing issue as these research jobs take months to complete their execution and to be further analyzed.
