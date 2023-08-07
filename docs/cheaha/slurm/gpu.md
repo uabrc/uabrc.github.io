@@ -61,7 +61,11 @@ module -r spider 'cuda.*toolkit'
 ```
 
 If a specific version of the CUDA toolkit is needed but not installed,
-send an install request to [support@listserv.uab.edu].
+send an install request to [support@listserv.uab.edu](support@listserv.uab.edu).
+
+### cuDNN
+
+NVIDIA drivers for their deep neural net toolbox are available in the cuDNN modules. Be aware that versions of cuDNN are not compatible with all installed versions of the CUDA toolkit, and no default version of the toolkit is loaded when loading a cuDNN module. The cuDNN module names have a CUDA version listed in the module name, i.e. `cuDNN/8.2.1.32-CUDA-11.3.1`. Please load the toolkit version matching the CUDA version in the cuDNN name, in this case `cuda11.3/toolkit`.
 
 ### Tensorflow Compatibility
 
