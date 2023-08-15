@@ -1183,6 +1183,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#cudnn" class="md-nav__link">
+    cuDNN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tensorflow-compatibility" class="md-nav__link">
     Tensorflow Compatibility
   </a>
@@ -1989,6 +1996,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#cudnn" class="md-nav__link">
+    cuDNN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tensorflow-compatibility" class="md-nav__link">
     Tensorflow Compatibility
   </a>
@@ -2116,8 +2130,9 @@
 <p>Several CUDA toolkit versions have been installed as modules on Cheaha. To see which CUDA toolkits are available, use:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module -r spider <span class="s1">&#39;cuda.*toolkit&#39;</span>
 </code></pre></div>
-<p>If a specific version of the CUDA toolkit is needed but not installed,
-send an install request to [support@listserv.uab.edu].</p>
+<p>If a specific version of the CUDA toolkit is needed but not installed, send an install request to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;</a>.</p>
+<h3 id="cudnn">cuDNN<a class="headerlink" href="#cudnn" title="Permanent link">&para;</a></h3>
+<p>NVIDIA drivers for their deep neural net toolbox are available in the cuDNN modules. Be aware that versions of cuDNN are not compatible with all installed versions of the CUDA toolkit, and no default version of the toolkit is loaded when loading a cuDNN module. The cuDNN module names have a CUDA version listed in the module name, i.e. <code>cuDNN/8.2.1.32-CUDA-11.3.1</code>. Please load the toolkit version matching the CUDA version in the cuDNN name, in this case <code>cuda11.3/toolkit</code>.</p>
 <h3 id="tensorflow-compatibility">Tensorflow Compatibility<a class="headerlink" href="#tensorflow-compatibility" title="Permanent link">&para;</a></h3>
 <p>To check which CUDA Toolkit module version is required for your version of Tensorflow, see the toolkit requirements chart here <a href="https://www.tensorflow.org/install/source#gpu">https://www.tensorflow.org/install/source#gpu</a>.</p>
 <h3 id="pytorch-compatibility">PyTorch Compatibility<a class="headerlink" href="#pytorch-compatibility" title="Permanent link">&para;</a></h3>
@@ -2140,7 +2155,7 @@ send an install request to [support@listserv.uab.edu].</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
       
     
   </small>
