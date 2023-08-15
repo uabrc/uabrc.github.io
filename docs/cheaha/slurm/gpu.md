@@ -60,8 +60,7 @@ Several CUDA toolkit versions have been installed as modules on Cheaha. To see w
 module -r spider 'cuda.*toolkit'
 ```
 
-If a specific version of the CUDA toolkit is needed but not installed,
-send an install request to [support@listserv.uab.edu](support@listserv.uab.edu).
+If a specific version of the CUDA toolkit is needed but not installed, send an install request to <support@listserv.uab.edu>.
 
 ### cuDNN
 
