@@ -3,13 +3,6 @@
 UAB Long-term storage (LTS) is an S3 object-storage platform hosted at UAB. This storage is designed to hold data that is not currently being used in analysis but should be kept for data sharing, recapitulation purposes, or reused for further analysis in the future. This documentation covers multiple methods for accessing LTS in Windows, Mac, and Linux environments.
 
 <!-- markdownlint-disable MD046 -->
-!!! important
-
-    Currently, UAB LTS is only accessible using the UAB Campus Network. If you are off campus and want to access LTS, please use the [UAB Campus VPN](https://www.uab.edu/it/home/tech-solutions/network/vpn). If you are accessing LTS through Cheaha, you do not need to use the VPN, even at home.
-
-<!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
 !!! tip
 
     [Globus](../transfer/globus.md#long-term-storage-s3-lts-connector) may be used to transfer data with LTS.
