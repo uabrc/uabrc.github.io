@@ -145,8 +145,68 @@ For more details on using `sbatch` please see the [official documentation](https
 
 For a practical example with dynamic indices, please visit our [Practical `sbatch` Examples](practical_sbatch.md)
 
-## Interactive Jobs with `srun`
+### Interactive Jobs with `srun`
 
+Jobs should be submitted to the slurm job scheduler either using a batch job or an interactive job.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+Do not run jobs on login nodes. Login node is shared by all users, if run any more intensive jobs, then it can causes slowdown on the node which leads to performance issues for all other users.
+<!-- markdownlint-disable MD046 -->
+
+Let us see how to acquire a compute node quickly using `srun`. You can run interactive job using `srun` command with the `--pty /bin/bash` flag. Here is an example,
+
+```bash
+$srun --ntasks=2 --time=01:00:00 --mem-per-cpu=8G --partition=medium --job-name=test_srun --pty /bin/bash
+
+srun: job 21648044 queued and waiting for resources
+srun: job 21648044 has been allocated resources
+```
+
+The above example allocates a compute node with a 8GB of RAM on a `medium` partition with `--ntasks=2`.
+
+The below image shows acquiring compute node using `srun`. The node `c0172` is allocated to run interactive jobs.
+
+![!Submit jobs srun.](./images/submit_jobs_srun.png)
+
+<!-- markdownlint-disable MD046 -->
+
+!!! note
+
+The limitations of `srun` is that the jobs/execution die if the internet connection is down, and you may have to rerun the job again.
+
+<!-- markdownlint-disable MD046 -->
+
+#### `srun` for running parallel jobs
+`srun` is used to run executables in parallel, and is used within `sbatch` script.
+
+Let us see an example where `srun` is used to launch multiple (parallel) instances of a job.
+
+```bash
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --job-name=srun_test
+#SBATCH --partition=long
+#SBATCH --time=0:05:00
+#SBATCH --mem=4G
+
+srun hostname
+```
+
+In the script above, we have asked for two nodes --nodes=2, and each node will run a single instance of a `hostname` as we requested --ntasks-per-node=1.
+
+The output for the above script is,
+
+```bash
+c0187
+c0188
+```
+
+Alternatively `srun` can also be used to run MPI,OpenMP, hybrid MPI/OpenMP and many more parallel jobs.
+
+<!--
 To interact with the terminal in a job context, use the `srun` command with the `--pty /bin/bash` flag. The other [flags](#slurm-flags-and-environment-variables) should be substituted in place of `$FLAGS`.
 
 ``` bash
@@ -154,6 +214,8 @@ srun $FLAGS --pty /bin/bash
 ```
 
 For more details on using `srun` please see the [official documentation](https://slurm.schedmd.com/srun.html).
+
+-->
 
 ## Graphical Interactive Jobs
 
