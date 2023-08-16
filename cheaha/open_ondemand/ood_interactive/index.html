@@ -1029,6 +1029,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#rstudio-and-python" class="md-nav__link">
+    RStudio and Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#rstudio-projects-and-renv" class="md-nav__link">
     RStudio Projects and renv
   </a>
@@ -2026,6 +2033,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#rstudio-and-python" class="md-nav__link">
+    RStudio and Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#rstudio-projects-and-renv" class="md-nav__link">
     RStudio Projects and renv
   </a>
@@ -2206,16 +2220,55 @@
 <!-- markdownlint-enable MD046 -->
 
 <h3 id="rstudio-server">RStudio Server<a class="headerlink" href="#rstudio-server" title="Permanent link">&para;</a></h3>
-<p>RStudio is available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. You'll also need to select both the version of RStudio you wish to use, and the version of R you wish to use. The job creation form is shown below.</p>
-<p><div class="lightgallery"><a data-sub-html="RStudio Server job request form." href="../images/ood_rstudio_server_form.png"><img alt="RStudio Server job request form." src="../images/ood_rstudio_server_form.png" /></a></div></p>
-<p>To adjust the environment, please use the Environment Setup box to load modules or Anaconda environments. A common strategy when there is difficulty building R packages is to search for it on <a href="../../software/software/#anaconda-on-cheaha">Anaconda</a>, create an Anaconda environment with that package already built, and load the environment in the Environment Setup box. An example is shown below.</p>
+<p>RStudio is available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. You'll also need to select both the version of RStudio you wish to use, and the version of R you wish to use. To adjust the environment, please use the Environment Setup box to load modules besides R and RStudio as seen below. All other modules and paths should be loaded here as it is difficult to load and consistently use modules once RStudio starts.</p>
 <p><div class="lightgallery"><a data-sub-html="RStudio Server job request form Environment Setup box." href="../images/ood_rstudio_server_env_setup_box.png"><img alt="RStudio Server job request form Environment Setup box." src="../images/ood_rstudio_server_env_setup_box.png" /></a></div></p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>We have recently changed the way we deploy RStudio on OOD. There are now two versions available, and one is marked with the text <code>(deprecated)</code>. The version without the deprecation notice is the new deployment method and is preferred for use. It is more flexible and more robust, and will allow us to support you more quickly and easily. The version with the deprecation notice is the previous containerized version. Because it is deprecated, we will not provide additional support for that version. Please move your workflows to the newer version.</p>
+<p>Unless an older version of R is absolutely necessary, it is highly suggested to always use the newest version of R and RStudio for both updated functionality within those software as well as updated compilers for package installation. Using the newest version of R solves most known package installation errors.</p>
 </div>
+<!-- markdownlint-enable MD046 -->
+
+<h4 id="rstudio-and-python">RStudio and Python<a class="headerlink" href="#rstudio-and-python" title="Permanent link">&para;</a></h4>
+<p>If you have a workflow that uses both R and Python, it is strongly recommended to use the <a href="https://rstudio.github.io/reticulate/">reticulate</a> package along with Anaconda environments. Reticulate allows researchers to load Python packages into a native R session as objects. For instance, if someone prefer some functionality of the <code>pandas</code> package but has other code already written in R, they can import <code>pandas</code> to R and use both simultaneously.</p>
+<p>This also allows researchers to download precompiled command line binaries into an Anaconda environment and easliy use them in their R scripts.</p>
+<p>For setup, use the following steps:</p>
+<ol>
+<li>
+<p>In a terminal on a compute node, either in an HPC Desktop job or by clicking the blue Host button on any job card:</p>
+<ol>
+<li>Load the <code>Anaconda3</code> module</li>
+<li>Create an Anaconda environment. More information about how to create Anaconda environments can be found <a href="../../../workflow_solutions/using_anaconda/">in our documentation</a>.</li>
+<li>Activate your environment and install your requuired python packages using either <code>pip install</code> or <code>conda install</code> depending on the package source.</li>
+</ol>
 <!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The preceding steps should only need to be run once. If other Python packages need to be installed in the same environment, repeat steps 1 and 3. You will not need to recreate your environment.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+</li>
+<li>
+<p>In RStudio:</p>
+<ol>
+<li>Add the command <code>module load Anaconda3</code> to the Environment Setup window when requesting the RStudio job.</li>
+<li>If not already installed, install the <code>reticulate</code> package using either <code>install.packages</code> or the <a href="#rstudio-projects-and-renv">renv</a> package.</li>
+<li>Use <code>reticulate::use_condaenv('env_name')</code> to load your conda environment.</li>
+<li>From here, you will be able to interact with all of the python packages and non-python precompiled binaries in your Anaconda environment using R and RStudio. Please read more about how to do that in <a href="https://rstudio.github.io/reticulate/#importing-python-modules">reticulate's documentation</a>.</li>
+</ol>
+</li>
+</ol>
+<p>For cases where your R code only needs access to precompiled binaries or libraries and does not need to import any Python libraries, you can instead create your Anaconda environment and add the following lines into the Environment Setup window:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module load Anaconda3
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda activate &lt;env_name&gt;
+</code></pre></div>
+<p>This will add those binaries and libraries to your environment <code>$PATH</code> which RStudio will inherit.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you're wanting to directly use any Python package in R, <strong>DO NOT</strong> include the <code>conda activate</code> command in the Environment Setup. Use <code>reticulate</code> instead as described above.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
 
 <h4 id="rstudio-projects-and-renv">RStudio Projects and renv<a class="headerlink" href="#rstudio-projects-and-renv" title="Permanent link">&para;</a></h4>
 <p>The most recent versions of RStudio installed on Cheaha support R Projects as well as package management through the <code>renv</code> package. Please read more about improving analysis reproducibility using both of these tools in our <a href="../../../workflow_solutions/r_environments/">workflow solutions</a></p>
@@ -2224,13 +2277,13 @@
 <ol>
 <li>
 <p><a href="../../../workflow_solutions/using_anaconda/#create-an-environment">Create an environment</a> called <code>pandoc</code> with the package <code>pandoc</code> using the following command.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda create --name pandoc -c conda-forge pandoc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda create --name pandoc -c conda-forge pandoc
 </code></pre></div>
 </li>
 <li>
 <p>In the <a href="#rstudio-server">RStudio job form</a>, in the Enviroment Setup box, add the following.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>module load Anaconda3
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>conda activate pandoc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>module load Anaconda3
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>conda activate pandoc
 </code></pre></div>
 </li>
 <li>
@@ -2361,7 +2414,7 @@
 <li>Start Matlab by entering the command <code>matlab</code>.</li>
 <li>
 <p>Verify success by entering <code>pyenv</code> at the Matlab prompt (not the terminal window). Multiple lines of text will be returned at the prompt. Among them you should see a line like the following, with your environment name in place of <code>&lt;env_name&gt;</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Executable: /home/$USER/.conda/envs/&lt;env_name&gt;/bin/python
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Executable: /home/$USER/.conda/envs/&lt;env_name&gt;/bin/python
 </code></pre></div>
 </li>
 </ol>
@@ -2374,7 +2427,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
       
     
   </small>
