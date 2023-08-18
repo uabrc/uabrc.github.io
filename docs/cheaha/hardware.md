@@ -17,9 +17,10 @@ The table below contains a summary of the computational resources available on C
 In the table, [Slurm](./slurm/introduction.md) partitions are grouped by shared QoS limits on cores, memory, and GPUs. Node limits are applied to partitions independently. All limits are applied to researchers independently.
 
 Examples of how to make use of the table:
-    - You submit 30 jobs to the "express" partition, requesting 10 cores each. If the first 26 jobs start, then 260 out of 264 core limit will be in use. The remaining 4 jobs will be held in queue, because starting one more would go beyond the QoS limit (270 > 264).
-    - You submit 5 jobs to the "medium" partition and 5 to the "long" partition. It is possible that all 10 jobs may start, because partition node limits are separate. If all 5 jobs start, jobs on the "medium" partition.
-    - You submit jobs to the "amperenodes" and "amperenodes-medium" partitions totaling 10 GPUs, and the "pascalnodes" partition totaling 4 GPUs. Jobs totaling 8 or fewer GPUs on the "gpu: ampere" group, and all jobs on "gpu: pascal", can start at the same time.
+
+- You submit 30 jobs to the "express" partition, requesting 10 cores each. If the first 26 jobs start, then 260 out of 264 core limit will be in use. The remaining 4 jobs will be held in queue, because starting one more would go beyond the QoS limit (270 > 264).
+- You submit 5 jobs to the "medium" partition and 5 to the "long" partition. It is possible that all 10 jobs may start, because partition node limits are separate. If all 5 jobs start, jobs on the "medium" partition.
+- You submit jobs to the "amperenodes" and "amperenodes-medium" partitions totaling 10 GPUs, and the "pascalnodes" partition totaling 4 GPUs. Jobs totaling 8 or fewer GPUs on the "gpu: ampere" group, and all jobs on "gpu: pascal", can start at the same time.
 
 {{ read_csv('cheaha/res/hardware_summary_cheaha.csv', keep_default_na=False) }}
 <!-- fix headers -->
