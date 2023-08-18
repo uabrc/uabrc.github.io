@@ -1,6 +1,6 @@
 # Hardware Information
 
-The following hardware summaries may be useful for grant proposal writing. If any information is missing that would be helpful to you, please be sure to [contact us](../index.md#contact-us) or create an issue on our [tracker](https://github.com/uabrc/uabrc.github.io/issues).
+The following hardware summaries may be useful for selecting partitions for workflows and for grant proposal writing. If any information is missing that would be helpful to you, please be sure to [contact us](../index.md#contact-us) or create an issue on our [tracker](https://github.com/uabrc/uabrc.github.io/issues).
 
 <!-- markdownlint-disable MD046 -->
 !!! tip
@@ -10,11 +10,29 @@ The following hardware summaries may be useful for grant proposal writing. If an
 
 ## Cheaha HPC Cluster
 
-The HPC cluster is comprised of 8192 compute cores connected by low-latency Fourteen Data Rate (FDR) and Enhanced Data Rate (EDR) InfiniBand networks. In addition to the basic compute cores, there are also 72 NVIDIA Tesla P100 GPUs available. There is a total of just under 49 TB of memory across the cluster. A description of the available hardware generations are summarized in the following table.
+### Summary
 
-{{ read_csv('cheaha/res/hardware_short_hpc.csv', keep_default_na=False) }}
+The table below contains a summary of the computational resources available on Cheaha and relevant Quality of Service (QoS) Limits. QoS limits allow us to balance usage and ensure fairness for all researchers using the cluster. QoS limits are not a guarantee of resource availability.
 
-The full table can be downloaded [here](./res/hardware_short_hpc.csv).
+In the table, [Slurm](./slurm/introduction.md) partitions are grouped by shared QoS limits on cores, memory, and GPUs. Node limits are applied to partitions independently. All limits are applied to researchers independently.
+
+Examples of how to make use of the table:
+    - You submit 30 jobs to the "express" partition, requesting 10 cores each. If the first 26 jobs start, then 260 out of 264 core limit will be in use. The remaining 4 jobs will be held in queue, because starting one more would go beyond the QoS limit (270 > 264).
+    - You submit 5 jobs to the "medium" partition and 5 to the "long" partition. It is possible that all 10 jobs may start, because partition node limits are separate. If all 5 jobs start, jobs on the "medium" partition.
+    - You submit jobs to the "amperenodes" and "amperenodes-medium" partitions totaling 10 GPUs, and the "pascalnodes" partition totaling 4 GPUs. Jobs totaling 8 or fewer GPUs on the "gpu: ampere" group, and all jobs on "gpu: pascal", can start at the same time.
+
+{{ read_csv('cheaha/res/hardware_summary_cheaha.csv', keep_default_na=False) }}
+<!-- fix headers -->
+
+The full table can be downloaded [here](./res/hardware_summary_cheaha.csv).
+
+### Details
+
+Detailed hardware information, including processor and GPU makes and models, core clock frequencies, and other information for current hardware are in the table below.
+
+{{ read_csv('cheaha/res/hardware_full_all.csv', keep_default_na=False) }}
+
+The full table can be downloaded [here](./res/hardware_full_all.csv).
 
 The table below is a theoretical analysis of FLOPS (floating point operations per second) based on processor instructions and core counts, and is not a reflection of efficiency in practice.
 
@@ -23,20 +41,6 @@ The table below is a theoretical analysis of FLOPS (floating point operations pe
 The full table can be downloaded [here](./res/flops_hpc.csv).
 
 For information on using Cheaha, see our dedicated [section](./getting_started.md).
-
-### Partitions
-
-{{ read_csv('cheaha/res/partitions.csv', keep_default_na=False) }}
-
-The full table can be downloaded [here](./res/partitions.csv).
-
-### Quality of Service (QoS) Limits
-
-Quality of Service (QoS) allows us to balance usage across the cluster, so that no single researcher can consume all of the resources. Each set of QoS limits is applied to one or more partitions according to the table below. Each limit is applied to every researcher on Cheaha. The partitions within a group all share the same limits, so that a researcher can use 1.5 TB on both `express` and `short`, but can't use 2 TB on both at the same time.
-
-{{ read_csv('cheaha/res/qos.csv', keep_default_na=False) }}
-
-The full table can be downloaded [here](./res/qos.csv).
 
 ## Cloud Service at cloud.rc
 
@@ -73,11 +77,3 @@ The table below is a theoretical analysis of FLOPS (floating point operations pe
 {{ read_csv('cheaha/res/flops_container.csv', keep_default_na=False) }}
 
 The full table can be downloaded [here](./res/flops_container.csv).
-
-## Full Hardware Details
-
-Detailed hardware information including processor and GPU makes and models, core clock frequencies, and other information for current hardware are in the table below.
-
-{{ read_csv('cheaha/res/hardware_full_all.csv', keep_default_na=False) }}
-
-The full table can be downloaded [here](./res/hardware_full_all.csv).
