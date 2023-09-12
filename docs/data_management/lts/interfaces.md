@@ -67,7 +67,7 @@ Secret Key: <secret key>
 Default Region [US]: <leave blank>
 
 Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.
-S3 Endpoint [s3.amazonaws.com]: s3.lts.rc.uab.edu
+S3 Endpoint [s3.amazonaws.com]: https://s3.lts.rc.uab.edu
 
 Use "%(bucket)s.s3.amazonaws.com" to the target Amazon S3. "%(bucket)s" and "%(location)s" vars can be used if the target S3 system supports dns based buckets.
 DNS-style bucket+hostname:port template for accessing a bucket [%(bucket)s.s3.amazonaws.com]: %(bucket).s3.lts.rc.uab.edu
@@ -86,7 +86,7 @@ New settings:
   Access Key: <access key>
   Secret Key: <secret key>
   Default Region: US
-  S3 Endpoint: s3.lts.rc.uab.edu
+  S3 Endpoint: https://s3.lts.rc.uab.edu
   DNS-style bucket+hostname:port template for accessing a bucket: %(bucket).s3.lts.rc.uab.edu
   Encryption password:
   Path to GPG program: $HOME/bin/gpg
