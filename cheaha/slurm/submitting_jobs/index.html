@@ -1172,6 +1172,19 @@
     Interactive Jobs with srun
   </a>
   
+    <nav class="md-nav" aria-label="Interactive Jobs with srun">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#srun-for-running-parallel-jobs" class="md-nav__link">
+    srun for running parallel jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2049,6 +2062,19 @@
     Interactive Jobs with srun
   </a>
   
+    <nav class="md-nav" aria-label="Interactive Jobs with srun">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#srun-for-running-parallel-jobs" class="md-nav__link">
+    srun for running parallel jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2354,10 +2380,65 @@
 <h3 id="batch-array-jobs-with-dynamic-or-computed-indices">Batch Array Jobs With Dynamic or Computed Indices<a class="headerlink" href="#batch-array-jobs-with-dynamic-or-computed-indices" title="Permanent link">&para;</a></h3>
 <p>For a practical example with dynamic indices, please visit our <a href="../practical_sbatch/">Practical <code>sbatch</code> Examples</a></p>
 <h2 id="interactive-jobs-with-srun">Interactive Jobs with <code>srun</code><a class="headerlink" href="#interactive-jobs-with-srun" title="Permanent link">&para;</a></h2>
-<p>To interact with the terminal in a job context, use the <code>srun</code> command with the <code>--pty /bin/bash</code> flag. The other <a href="#slurm-flags-and-environment-variables">flags</a> should be substituted in place of <code>$FLAGS</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>srun <span class="nv">$FLAGS</span> --pty /bin/bash
+<p>Jobs should be submitted to the slurm job scheduler either using a <a href="#batch-jobs-with-sbatch">batch job</a> or an <a href="../../open_ondemand/ood_main/">Open OnDemand (OOD) interactive job</a>.</p>
+<p>You can use <code>srun</code> for working on short interactive tasks such as <a href="../../../workflow_solutions/using_anaconda/">creating an Anaconda environment</a> and running <a href="#srun-for-running-parallel-jobs">parallel tasks</a> within an sbatch script.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The limitations of <code>srun</code> is that the jobs/execution die if the internet connection is down, and you may have to rerun the job again.</p>
+</div>
+<!-- markdownlint-disable MD046 -->
+
+<p>Let us see how to acquire a compute node quickly using <code>srun</code>. You can run interactive job using <code>srun</code> command with the <code>--pty /bin/bash</code> flag. Here is an example,</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">$srun</span> --ntasks<span class="o">=</span><span class="m">2</span> --time<span class="o">=</span><span class="m">01</span>:00:00 --mem-per-cpu<span class="o">=</span>8G --partition<span class="o">=</span>medium --job-name<span class="o">=</span>test_srun --pty /bin/bash
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>srun: job <span class="m">21648044</span> queued and waiting <span class="k">for</span> resources
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>srun: job <span class="m">21648044</span> has been allocated resources
 </code></pre></div>
-<p>For more details on using <code>srun</code> please see the <a href="https://slurm.schedmd.com/srun.html">official documentation</a>.</p>
+<p>The above example allocates a compute node with a 8GB of RAM on a <code>medium</code> partition with <code>--ntasks=2</code> to run short tasks.</p>
+<h3 id="srun-for-running-parallel-jobs"><code>srun</code> for running parallel jobs<a class="headerlink" href="#srun-for-running-parallel-jobs" title="Permanent link">&para;</a></h3>
+<p><code>srun</code> is used to run executables in parallel, and is used within <code>sbatch</code> script. Let us see an example where <code>srun</code> is used to launch multiple (parallel) instances of a job.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">#SBATCH --nodes=2</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#SBATCH --ntasks-per-node=1</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">#SBATCH --job-name=srun_test</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">#SBATCH --partition=long</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">#SBATCH --time=05:00</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1">#SBATCH --mem=4G</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>srun hostname
+</code></pre></div>
+<p>In the script above, we have asked for two nodes --nodes=2, and each node will run a single instance of a <code>hostname</code> as we requested --ntasks-per-node=1. The output for the above script is,</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>c0187
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>c0188
+</code></pre></div>
+<p>Here is another example of running different independent programs simultaneously on different resources within a batch job. Multiple <code>srun</code> can execute simultaneously as long as they do not exceed the resources reserved for that job i.e., step 1 executes in node 1 with --ntasks=4, and step 2 executes in node 2 with --ntasks=4 simultaneously. Note that <code>--nodes=1 -r1</code> in step 2 defines the number of nodes and their relative node position within the resources assigned to the job.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">#SBATCH --nodes=2</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">#SBATCH --ntasks=8</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">#SBATCH --ntasks-per-node=4</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1">#SBATCH --partition=amd-hdr100</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1">#SBATCH --time=05:00</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1">#SBATCH --mem-per-cpu=1G</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1">#Partioning of resources for two different tasks</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1">#STEP 1</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>srun --nodes<span class="o">=</span><span class="m">1</span> --ntasks<span class="o">=</span><span class="m">4</span> hostname
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1">#STEP 2</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>srun --nodes<span class="o">=</span><span class="m">1</span> -r1 --ntasks<span class="o">=</span><span class="m">4</span> uname -a
+</code></pre></div>
+<p>Here is the output for running multiple <code>srun</code> in a single job, i.e., executing the <code>hostname</code> and <code>uname -a</code> tasks simultaneously but on different nodes.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>c0203
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>c0203
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>c0203
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>c0203
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Linux c0204 <span class="m">3</span>.10.0-1160.24.1.el7.x86_64 <span class="c1">#1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Linux c0204 <span class="m">3</span>.10.0-1160.24.1.el7.x86_64 <span class="c1">#1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Linux c0204 <span class="m">3</span>.10.0-1160.24.1.el7.x86_64 <span class="c1">#1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>Linux c0204 <span class="m">3</span>.10.0-1160.24.1.el7.x86_64 <span class="c1">#1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span>
+</code></pre></div>
+<p>Alternatively, <code>srun</code> can also run MPI,OpenMP, hybrid MPI/OpenMP, and many more parallel jobs. For more details on using <code>srun</code>, please see the <a href="https://slurm.schedmd.com/srun.html">official documentation</a>.</p>
 <h2 id="graphical-interactive-jobs">Graphical Interactive Jobs<a class="headerlink" href="#graphical-interactive-jobs" title="Permanent link">&para;</a></h2>
 <p>It is highly recommended to use the <a href="../../open_ondemand/ood_main/">Open OnDemand</a> web portal for <a href="../../open_ondemand/ood_interactive/">interactive apps</a>. Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha. A terminal is also available through Open OnDemand.</p>
 <p>It is possible to use other remote desktop software, such as VNC, to start and interact with jobs. These methods are not officially supported and we do not have the capacity to help with remote desktop connections. Instead, please consider switching your workflow to use the <a href="../../open_ondemand/ood_interactive/#my-interactive-sessions">Open OnDemand HPC Desktop</a>. If you are unable to use this method, please contact <a href="../../../help/support/">Support</a>.</p>
@@ -2392,7 +2473,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 29, 2023</span>
       
     
   </small>
