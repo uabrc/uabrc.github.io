@@ -867,15 +867,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#partitions" class="md-nav__link">
-    Partitions
+  <a href="#summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#quality-of-service-qos-limits" class="md-nav__link">
-    Quality of Service (QoS) Limits
+  <a href="#details" class="md-nav__link">
+    Details
   </a>
   
 </li>
@@ -895,13 +895,6 @@
         <li class="md-nav__item">
   <a href="#kubernetes-container-service" class="md-nav__link">
     Kubernetes Container Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#full-hardware-details" class="md-nav__link">
-    Full Hardware Details
   </a>
   
 </li>
@@ -1921,15 +1914,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#partitions" class="md-nav__link">
-    Partitions
+  <a href="#summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#quality-of-service-qos-limits" class="md-nav__link">
-    Quality of Service (QoS) Limits
+  <a href="#details" class="md-nav__link">
+    Details
   </a>
   
 </li>
@@ -1953,13 +1946,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#full-hardware-details" class="md-nav__link">
-    Full Hardware Details
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1978,7 +1964,7 @@
 
 
 <h1 id="hardware-information">Hardware Information<a class="headerlink" href="#hardware-information" title="Permanent link">&para;</a></h1>
-<p>The following hardware summaries may be useful for grant proposal writing. If any information is missing that would be helpful to you, please be sure to <a href="../..#contact-us">contact us</a> or create an issue on our <a href="https://github.com/uabrc/uabrc.github.io/issues">tracker</a>.</p>
+<p>The following hardware summaries may be useful for selecting partitions for workflows and for grant proposal writing. If any information is missing that would be helpful to you, please be sure to <a href="../..#contact-us">contact us</a> or create an issue on our <a href="https://github.com/uabrc/uabrc.github.io/issues">tracker</a>.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1987,126 +1973,607 @@
 <!-- markdownlint-enable MD046 -->
 
 <h2 id="cheaha-hpc-cluster">Cheaha HPC Cluster<a class="headerlink" href="#cheaha-hpc-cluster" title="Permanent link">&para;</a></h2>
-<p>The HPC cluster is comprised of 8192 compute cores connected by low-latency Fourteen Data Rate (FDR) and Enhanced Data Rate (EDR) InfiniBand networks. In addition to the basic compute cores, there are also 72 NVIDIA Tesla P100 GPUs available. There is a total of just under 49 TB of memory across the cluster. A description of the available hardware generations are summarized in the following table.</p>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<p>The table below contains a summary of the computational resources available on Cheaha and relevant Quality of Service (QoS) Limits. QoS limits allow us to balance usage and ensure fairness for all researchers using the cluster. QoS limits are not a guarantee of resource availability.</p>
+<p>In the table, <a href="../slurm/introduction/">Slurm</a> partitions are grouped by shared QoS limits on cores, memory, and GPUs. Node limits are applied to partitions independently. All limits are applied to researchers independently.</p>
+<p>Examples of how to make use of the table:</p>
+<ul>
+<li>You submit 30 jobs to the "express" partition, requesting 10 cores each. If the first 26 jobs start, then 260 out of 264 core limit will be in use. The remaining 4 jobs will be held in queue, because starting one more would go beyond the QoS limit (270 &gt; 264).</li>
+<li>You submit 5 jobs to the "medium" partition and 5 to the "long" partition. It is possible that all 10 jobs may start, because partition node limits are separate. If all 5 jobs start, jobs on the "medium" partition.</li>
+<li>You submit jobs to the "amperenodes" and "amperenodes-medium" partitions totaling 10 GPUs, and the "pascalnodes" partition totaling 4 GPUs. Jobs totaling 8 or fewer GPUs on the "gpu: ampere" group, and all jobs on "gpu: pascal", can start at the same time.</li>
+</ul>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition announcement">
+<p class="admonition-title">Announcement</p>
+<p>Physical A100 nodes are slated for a future release on Cheaha. Information related to <code>amperenodes</code> and the A100 GPUs should be considered tentative information. The <code>amperenodes</code> hardware is not yet available as of 2023-08-22. Release date to be determined (TBD).</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <table>
 <thead>
 <tr>
-<th align="left">Fabric</th>
-<th align="left">Generation</th>
-<th align="left">Compute Type</th>
 <th align="left">Partition</th>
-<th align="right">Total Cores</th>
-<th align="right">Total Memory Gb</th>
-<th align="left">Total Gpus</th>
-<th align="left">Cores Per Node</th>
-<th align="left">Memory Per Node Gb</th>
-<th align="right">Nodes</th>
-<th align="left">Cpu Info</th>
-<th align="left">Gpu Info</th>
+<th align="left">Time Limit in Hours</th>
+<th align="left">Nodes (Limit/Partition)</th>
+<th align="left">Cores/Node (Limit/Person)</th>
+<th align="left">Mem GB/Node (Limit/Person)</th>
+<th align="left">GPU/Node (Limit/Person)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">hpc</td>
-<td align="left">7</td>
-<td align="left">gpu</td>
-<td align="left">pascalnodes</td>
-<td align="right">504</td>
-<td align="right">4608</td>
-<td align="left">72</td>
-<td align="left">28</td>
-<td align="left">256</td>
-<td align="right">18</td>
-<td align="left">Intel Xeon E5-2680 v4 2.40 GHz</td>
-<td align="left">NVIDIA Tesla P100 16 GB</td>
-</tr>
-<tr>
-<td align="left">hpc</td>
-<td align="left">8</td>
-<td align="left">cpu</td>
-<td align="left">cpu</td>
-<td align="right">504</td>
-<td align="right">4032</td>
+<td align="left"><strong>cpu: amd</strong></td>
 <td align="left"></td>
-<td align="left">24</td>
-<td align="left">192</td>
-<td align="right">21</td>
-<td align="left">Intel Xeon E5-2680 v4 2.50 GHz</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">hpc</td>
-<td align="left">8</td>
-<td align="left">high memory</td>
-<td align="left">largemem</td>
-<td align="right">240</td>
-<td align="right">7680</td>
-<td align="left"></td>
-<td align="left">24</td>
-<td align="left">768</td>
-<td align="right">10</td>
-<td align="left">Intel Xeon E5-2680 v4 2.50 GHz</td>
+<td align="left">amd-hdr100</td>
+<td align="left">150</td>
+<td align="left">34 (5)</td>
+<td align="left">128 (264)</td>
+<td align="left">504 (3072)</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">hpc</td>
-<td align="left">8</td>
-<td align="left">high memory</td>
-<td align="left">largemem</td>
-<td align="right">96</td>
-<td align="right">6144</td>
 <td align="left"></td>
-<td align="left">24</td>
-<td align="left">1536</td>
-<td align="right">4</td>
-<td align="left">Intel Xeon E5-2680 v4 2.50 GHz</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">hpc</td>
-<td align="left">9</td>
-<td align="left">cpu</td>
-<td align="left">cpu</td>
-<td align="right">2496</td>
-<td align="right">30056</td>
+<td align="left"><strong>cpu: intel</strong></td>
 <td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">express</td>
+<td align="left">2</td>
+<td align="left">51 (~)</td>
+<td align="left">48 (264)</td>
+<td align="left">754 (3072)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">short</td>
+<td align="left">12</td>
+<td align="left">51 (44)</td>
+<td align="left">48 (264)</td>
+<td align="left">754 (3072)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">medium</td>
+<td align="left">50</td>
+<td align="left">51 (44)</td>
+<td align="left">48 (264)</td>
+<td align="left">754 (3072)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">long</td>
+<td align="left">150</td>
+<td align="left">51 (5)</td>
+<td align="left">48 (264)</td>
+<td align="left">754 (3072)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>gpu: ampere</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">amperenodes</td>
+<td align="left">12</td>
+<td align="left">20 (TBD)</td>
+<td align="left">32 (64)</td>
+<td align="left">189 (384)</td>
+<td align="left">2 (4)</td>
+</tr>
+<tr>
+<td align="left">amperenodes-medium</td>
 <td align="left">48</td>
-<td align="left">578</td>
-<td align="right">52</td>
-<td align="left">Intel Xeon Gold 6248R 3.00 GHz</td>
+<td align="left">20 (TBD)</td>
+<td align="left">32 (64)</td>
+<td align="left">189 (384)</td>
+<td align="left">2 (4)</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">hpc</td>
-<td align="left">10</td>
-<td align="left">cpu</td>
-<td align="left">cpu</td>
-<td align="right">4352</td>
-<td align="right">17408</td>
+<td align="left"><strong>gpu: pascal</strong></td>
 <td align="left"></td>
-<td align="left">128</td>
-<td align="left">512</td>
-<td align="right">34</td>
-<td align="left">AMD Epyc 7713 Milan 2.00 GHz</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left">Total</td>
+<td align="left">pascalnodes</td>
+<td align="left">12</td>
+<td align="left">18 (~)</td>
+<td align="left">28 (56)</td>
+<td align="left">252 (500)</td>
+<td align="left">4 (8)</td>
+</tr>
+<tr>
+<td align="left">pascalnodes-medium</td>
+<td align="left">48</td>
+<td align="left">7 (~)</td>
+<td align="left">28 (56)</td>
+<td align="left">252 (500)</td>
+<td align="left">4 (8)</td>
+</tr>
+<tr>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="right">8192</td>
-<td align="right">69928</td>
-<td align="left">72</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="right">139</td>
 <td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>mem: large</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">largemem</td>
+<td align="left">50</td>
+<td align="left">13 (10)</td>
+<td align="left">24 (290)</td>
+<td align="left">755 (7168)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">largemem-long</td>
+<td align="left">150</td>
+<td align="left">5 (10)</td>
+<td align="left">24 (290)</td>
+<td align="left">755 (7168)</td>
 <td align="left"></td>
 </tr>
 </tbody>
 </table>
-<p>The full table can be downloaded <a href="../res/hardware_short_hpc.csv">here</a>.</p>
+<!-- fix headers -->
+
+<p>The full table can be downloaded <a href="../res/hardware_summary_cheaha.csv">here</a>.</p>
+<h3 id="details">Details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h3>
+<p>Detailed hardware information, including processor and GPU makes and models, core clock frequencies, and other information for current hardware are in the table below.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Generation</th>
+<th align="left">Compute Type</th>
+<th align="right">Total Cores</th>
+<th align="right">Total Memory Gb</th>
+<th align="left">Total Gpus</th>
+<th align="right">Cores Per Node</th>
+<th align="right">Cores Per Die</th>
+<th align="right">Dies Per Node</th>
+<th align="left">Die Brand</th>
+<th align="left">Die Name</th>
+<th align="right">Die Frequency Ghz</th>
+<th align="right">Memory Per Node Gb</th>
+<th align="left">Gpu Per Node</th>
+<th align="left">Gpu Brand</th>
+<th align="left">Gpu Name</th>
+<th align="left">Gpu Memory Gb</th>
+<th align="right">Nodes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1</td>
+<td align="left">cpu: amd</td>
+<td align="right">128</td>
+<td align="right">1024</td>
+<td align="left"></td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="left">AMD</td>
+<td align="left">Opteron 242</td>
+<td align="right">1.6</td>
+<td align="right">16</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">64</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">cpu: intel</td>
+<td align="right">192</td>
+<td align="right">1152</td>
+<td align="left"></td>
+<td align="right">8</td>
+<td align="right">4</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon E5450</td>
+<td align="right">3</td>
+<td align="right">48</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">cpu: intel</td>
+<td align="right">384</td>
+<td align="right">1536</td>
+<td align="left"></td>
+<td align="right">12</td>
+<td align="right">6</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon X5650</td>
+<td align="right">2.66</td>
+<td align="right">48</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">32</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">cpu: intel</td>
+<td align="right">192</td>
+<td align="right">1536</td>
+<td align="left"></td>
+<td align="right">12</td>
+<td align="right">6</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon X5650</td>
+<td align="right">2.66</td>
+<td align="right">96</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">cpu: intel</td>
+<td align="right">48</td>
+<td align="right">1152</td>
+<td align="left"></td>
+<td align="right">16</td>
+<td align="right">8</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon X5650</td>
+<td align="right">2.7</td>
+<td align="right">384</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="left">cpu: intel</td>
+<td align="right">192</td>
+<td align="right">1152</td>
+<td align="left"></td>
+<td align="right">16</td>
+<td align="right">8</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon E2650</td>
+<td align="right">2</td>
+<td align="right">96</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left">cpu: intel</td>
+<td align="right">336</td>
+<td align="right">5376</td>
+<td align="left"></td>
+<td align="right">24</td>
+<td align="right">12</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon E5-2680 v3</td>
+<td align="right">2.5</td>
+<td align="right">384</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">14</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left">cpu: intel</td>
+<td align="right">912</td>
+<td align="right">9728</td>
+<td align="left"></td>
+<td align="right">24</td>
+<td align="right">12</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon E5-2680 v3</td>
+<td align="right">2.5</td>
+<td align="right">256</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">38</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left">cpu: intel</td>
+<td align="right">1056</td>
+<td align="right">5632</td>
+<td align="left"></td>
+<td align="right">24</td>
+<td align="right">12</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon E5-2680 v3</td>
+<td align="right">2.5</td>
+<td align="right">128</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">44</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td align="left">gpu: pascal</td>
+<td align="right">504</td>
+<td align="right">4608</td>
+<td align="left">72</td>
+<td align="right">28</td>
+<td align="right">14</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon E5-2680 v4</td>
+<td align="right">2.4</td>
+<td align="right">256</td>
+<td align="left">4</td>
+<td align="left">NVIDIA</td>
+<td align="left">Tesla P100</td>
+<td align="left">16</td>
+<td align="right">18</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td align="left">cpu: intel</td>
+<td align="right">504</td>
+<td align="right">4032</td>
+<td align="left"></td>
+<td align="right">24</td>
+<td align="right">12</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon E5-2680 v4</td>
+<td align="right">2.5</td>
+<td align="right">192</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">21</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td align="left">mem: large</td>
+<td align="right">240</td>
+<td align="right">7680</td>
+<td align="left"></td>
+<td align="right">24</td>
+<td align="right">12</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon E5-2680 v4</td>
+<td align="right">2.5</td>
+<td align="right">768</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td align="left">mem: large</td>
+<td align="right">96</td>
+<td align="right">6144</td>
+<td align="left"></td>
+<td align="right">24</td>
+<td align="right">12</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon E5-2680 v4</td>
+<td align="right">2.5</td>
+<td align="right">1536</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td align="left">cpu: intel</td>
+<td align="right">2496</td>
+<td align="right">39936</td>
+<td align="left"></td>
+<td align="right">48</td>
+<td align="right">24</td>
+<td align="right">2</td>
+<td align="left">Intel</td>
+<td align="left">Xeon Gold 6248R</td>
+<td align="right">3</td>
+<td align="right">768</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">52</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td align="left">cpu: amd</td>
+<td align="right">4352</td>
+<td align="right">17408</td>
+<td align="left"></td>
+<td align="right">128</td>
+<td align="right">64</td>
+<td align="right">2</td>
+<td align="left">AMD</td>
+<td align="left">Epyc 7713 Milan</td>
+<td align="right">2</td>
+<td align="right">512</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">34</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td align="left">gpu: ampere</td>
+<td align="right">2560</td>
+<td align="right">10240</td>
+<td align="left">40</td>
+<td align="right">128</td>
+<td align="right">64</td>
+<td align="right">2</td>
+<td align="left">AMD</td>
+<td align="left">Epyc 7763 Milan</td>
+<td align="right">2.45</td>
+<td align="right">512</td>
+<td align="left">2</td>
+<td align="left">NVIDIA</td>
+<td align="left">A100</td>
+<td align="left">80</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">cpu: intel</td>
+<td align="right">240</td>
+<td align="right">960</td>
+<td align="left"></td>
+<td align="right">48</td>
+<td align="right">12</td>
+<td align="right">4</td>
+<td align="left">Intel</td>
+<td align="left">Xeon Gold 6248R</td>
+<td align="right">3</td>
+<td align="right">192</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">gpu: ampere</td>
+<td align="right">512</td>
+<td align="right">4096</td>
+<td align="left">32</td>
+<td align="right">128</td>
+<td align="right">64</td>
+<td align="right">2</td>
+<td align="left">AMD</td>
+<td align="left">Epyc 7742 Rome</td>
+<td align="right">2.25</td>
+<td align="right">1024</td>
+<td align="left">8</td>
+<td align="left">NVIDIA</td>
+<td align="left">A100</td>
+<td align="left">40</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">cpu: intel</td>
+<td align="right">144</td>
+<td align="right">576</td>
+<td align="left"></td>
+<td align="right">48</td>
+<td align="right">12</td>
+<td align="right">4</td>
+<td align="left">Intel</td>
+<td align="left">Xeon Gold 6248R</td>
+<td align="right">3</td>
+<td align="right">192</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">gpu: ampere</td>
+<td align="right">512</td>
+<td align="right">4096</td>
+<td align="left">32</td>
+<td align="right">128</td>
+<td align="right">64</td>
+<td align="right">2</td>
+<td align="left">AMD</td>
+<td align="left">Epyc 7742 Rome</td>
+<td align="right">2.25</td>
+<td align="right">1024</td>
+<td align="left">8</td>
+<td align="left">NVIDIA</td>
+<td align="left">A100</td>
+<td align="left">40</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
+<p>The full table can be downloaded <a href="../res/hardware_full_all.csv">here</a>.</p>
 <p>The table below is a theoretical analysis of FLOPS (floating point operations per second) based on processor instructions and core counts, and is not a reflection of efficiency in practice.</p>
 <table>
 <thead>
@@ -2116,7 +2583,7 @@
 <th align="left">Gpu Tflops Per Node</th>
 <th align="left">Tflops Per Node</th>
 <th align="left">Nodes</th>
-<th align="right">Tflops</th>
+<th align="left">Tflops</th>
 </tr>
 </thead>
 <tbody>
@@ -2126,7 +2593,7 @@
 <td align="left">17.06</td>
 <td align="left">18.14</td>
 <td align="left">18</td>
-<td align="right">326.43</td>
+<td align="left">326.43</td>
 </tr>
 <tr>
 <td align="left">8</td>
@@ -2134,7 +2601,7 @@
 <td align="left"></td>
 <td align="left">0.96</td>
 <td align="left">21</td>
-<td align="right">20.16</td>
+<td align="left">20.16</td>
 </tr>
 <tr>
 <td align="left">8</td>
@@ -2142,7 +2609,7 @@
 <td align="left"></td>
 <td align="left">0.96</td>
 <td align="left">10</td>
-<td align="right">9.6</td>
+<td align="left">9.60</td>
 </tr>
 <tr>
 <td align="left">8</td>
@@ -2150,7 +2617,7 @@
 <td align="left"></td>
 <td align="left">0.96</td>
 <td align="left">4</td>
-<td align="right">3.84</td>
+<td align="left">3.84</td>
 </tr>
 <tr>
 <td align="left">9</td>
@@ -2158,7 +2625,7 @@
 <td align="left"></td>
 <td align="left">2.30</td>
 <td align="left">52</td>
-<td align="right">119.81</td>
+<td align="left">119.81</td>
 </tr>
 <tr>
 <td align="left">10</td>
@@ -2166,7 +2633,15 @@
 <td align="left"></td>
 <td align="left">4.10</td>
 <td align="left">34</td>
-<td align="right">139.26</td>
+<td align="left">139.26</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">5.02</td>
+<td align="left">15.14</td>
+<td align="left">20.15</td>
+<td align="left">20</td>
+<td align="left">403.10</td>
 </tr>
 <tr>
 <td align="left">Total</td>
@@ -2174,143 +2649,12 @@
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="right">619.1</td>
+<td align="left">1,022.20</td>
 </tr>
 </tbody>
 </table>
 <p>The full table can be downloaded <a href="../res/flops_hpc.csv">here</a>.</p>
 <p>For information on using Cheaha, see our dedicated <a href="../getting_started/">section</a>.</p>
-<h3 id="partitions">Partitions<a class="headerlink" href="#partitions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th align="left">Partition</th>
-<th align="right">Nodes</th>
-<th align="left">Nodes Per Researcher</th>
-<th align="left">Time Limit</th>
-<th align="right">Priority Tier</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">interactive</td>
-<td align="right">52</td>
-<td align="left">1</td>
-<td align="left">2 hours</td>
-<td align="right">20</td>
-</tr>
-<tr>
-<td align="left">express</td>
-<td align="right">52</td>
-<td align="left">UNLIMITED</td>
-<td align="left">2 hours</td>
-<td align="right">20</td>
-</tr>
-<tr>
-<td align="left">short</td>
-<td align="right">52</td>
-<td align="left">44</td>
-<td align="left">12 hours</td>
-<td align="right">16</td>
-</tr>
-<tr>
-<td align="left">pascalnodes</td>
-<td align="right">18</td>
-<td align="left">UNLIMITED</td>
-<td align="left">12 hours</td>
-<td align="right">16</td>
-</tr>
-<tr>
-<td align="left">pascalnodes-medium</td>
-<td align="right">7</td>
-<td align="left">UNLIMITED</td>
-<td align="left">2 days,  0 hours</td>
-<td align="right">15</td>
-</tr>
-<tr>
-<td align="left">medium</td>
-<td align="right">52</td>
-<td align="left">44</td>
-<td align="left">2 days,  2 hours</td>
-<td align="right">12</td>
-</tr>
-<tr>
-<td align="left">long</td>
-<td align="right">52</td>
-<td align="left">5</td>
-<td align="left">6 days,  6 hours</td>
-<td align="right">8</td>
-</tr>
-<tr>
-<td align="left">intel-dcb</td>
-<td align="right">21</td>
-<td align="left">5</td>
-<td align="left">6 days,  6 hours</td>
-<td align="right">8</td>
-</tr>
-<tr>
-<td align="left">amd-hdr100</td>
-<td align="right">33</td>
-<td align="left">5</td>
-<td align="left">6 days,  6 hours</td>
-<td align="right">8</td>
-</tr>
-<tr>
-<td align="left">largemem</td>
-<td align="right">14</td>
-<td align="left">10</td>
-<td align="left">2 days,  2 hours</td>
-<td align="right">6</td>
-</tr>
-<tr>
-<td align="left">largemem-long</td>
-<td align="right">5</td>
-<td align="left">10</td>
-<td align="left">6 days,  6 hours</td>
-<td align="right">6</td>
-</tr>
-</tbody>
-</table>
-<p>The full table can be downloaded <a href="../res/partitions.csv">here</a>.</p>
-<h3 id="quality-of-service-qos-limits">Quality of Service (QoS) Limits<a class="headerlink" href="#quality-of-service-qos-limits" title="Permanent link">&para;</a></h3>
-<p>Quality of Service (QoS) allows us to balance usage across the cluster, so that no single researcher can consume all of the resources. Each set of QoS limits is applied to one or more partitions according to the table below. Each limit is applied to every researcher on Cheaha. The partitions within a group all share the same limits, so that a researcher can use 1.5 TB on both <code>express</code> and <code>short</code>, but can't use 2 TB on both at the same time.</p>
-<table>
-<thead>
-<tr>
-<th align="left">Partition</th>
-<th align="right">Core Count Quota</th>
-<th align="left">Memory (GB) Quota</th>
-<th align="left">GPU Count Quota</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">express, short, medium, long, intel-dcb, amd-hdr100</td>
-<td align="right">264</td>
-<td align="left">3072</td>
-<td align="left">n/a</td>
-</tr>
-<tr>
-<td align="left">interactive</td>
-<td align="right">48</td>
-<td align="left">n/a</td>
-<td align="left">n/a</td>
-</tr>
-<tr>
-<td align="left">largemem, largemem-long</td>
-<td align="right">290</td>
-<td align="left">7168</td>
-<td align="left">n/a</td>
-</tr>
-<tr>
-<td align="left">pascalnodes, pascalnodes-medium</td>
-<td align="right">56</td>
-<td align="left">500</td>
-<td align="left">8</td>
-</tr>
-</tbody>
-</table>
-<p>The full table can be downloaded <a href="../res/qos.csv">here</a>.</p>
 <h2 id="cloud-service-at-cloudrc">Cloud Service at cloud.rc<a class="headerlink" href="#cloud-service-at-cloudrc" title="Permanent link">&para;</a></h2>
 <p>The Cloud service hardware consists of 5 Intel nodes and 4 DGX-A100 nodes. A description of the available hardware are summarized in the following table.</p>
 <table>
@@ -2529,422 +2873,13 @@
 </tbody>
 </table>
 <p>The full table can be downloaded <a href="../res/flops_container.csv">here</a>.</p>
-<h2 id="full-hardware-details">Full Hardware Details<a class="headerlink" href="#full-hardware-details" title="Permanent link">&para;</a></h2>
-<p>Detailed hardware information including processor and GPU makes and models, core clock frequencies, and other information for current hardware are in the table below.</p>
-<table>
-<thead>
-<tr>
-<th align="right">Generation</th>
-<th align="left">Compute Type</th>
-<th align="left">Partition</th>
-<th align="right">Total Cores</th>
-<th align="right">Total Memory Gb</th>
-<th align="left">Total Gpus</th>
-<th align="right">Cores Per Node</th>
-<th align="right">Cores Per Die</th>
-<th align="right">Dies Per Node</th>
-<th align="left">Die Brand</th>
-<th align="left">Die Name</th>
-<th align="right">Die Frequency Ghz</th>
-<th align="right">Memory Per Node Gb</th>
-<th align="left">Gpu Per Node</th>
-<th align="left">Gpu Brand</th>
-<th align="left">Gpu Name</th>
-<th align="left">Gpu Memory Gb</th>
-<th align="right">Nodes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">1</td>
-<td align="left">cpu</td>
-<td align="left"></td>
-<td align="right">128</td>
-<td align="right">1024</td>
-<td align="left"></td>
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="left">AMD</td>
-<td align="left">Opteron 242</td>
-<td align="right">1.6</td>
-<td align="right">16</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">64</td>
-</tr>
-<tr>
-<td align="right">2</td>
-<td align="left">cpu</td>
-<td align="left"></td>
-<td align="right">192</td>
-<td align="right">1152</td>
-<td align="left"></td>
-<td align="right">8</td>
-<td align="right">4</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon E5450</td>
-<td align="right">3</td>
-<td align="right">48</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">24</td>
-</tr>
-<tr>
-<td align="right">3</td>
-<td align="left">cpu</td>
-<td align="left"></td>
-<td align="right">384</td>
-<td align="right">1536</td>
-<td align="left"></td>
-<td align="right">12</td>
-<td align="right">6</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon X5650</td>
-<td align="right">2.66</td>
-<td align="right">48</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">32</td>
-</tr>
-<tr>
-<td align="right">3</td>
-<td align="left">cpu</td>
-<td align="left"></td>
-<td align="right">192</td>
-<td align="right">1536</td>
-<td align="left"></td>
-<td align="right">12</td>
-<td align="right">6</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon X5650</td>
-<td align="right">2.66</td>
-<td align="right">96</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">16</td>
-</tr>
-<tr>
-<td align="right">4</td>
-<td align="left">cpu</td>
-<td align="left"></td>
-<td align="right">48</td>
-<td align="right">1152</td>
-<td align="left"></td>
-<td align="right">16</td>
-<td align="right">8</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon X5650</td>
-<td align="right">2.7</td>
-<td align="right">384</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td align="right">5</td>
-<td align="left">cpu</td>
-<td align="left"></td>
-<td align="right">192</td>
-<td align="right">1152</td>
-<td align="left"></td>
-<td align="right">16</td>
-<td align="right">8</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon E2650</td>
-<td align="right">2</td>
-<td align="right">96</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">12</td>
-</tr>
-<tr>
-<td align="right">6</td>
-<td align="left">cpu</td>
-<td align="left">cpu</td>
-<td align="right">336</td>
-<td align="right">5376</td>
-<td align="left"></td>
-<td align="right">24</td>
-<td align="right">12</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon E5-2680 v3</td>
-<td align="right">2.5</td>
-<td align="right">384</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">14</td>
-</tr>
-<tr>
-<td align="right">6</td>
-<td align="left">cpu</td>
-<td align="left">cpu</td>
-<td align="right">912</td>
-<td align="right">9728</td>
-<td align="left"></td>
-<td align="right">24</td>
-<td align="right">12</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon E5-2680 v3</td>
-<td align="right">2.5</td>
-<td align="right">256</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">38</td>
-</tr>
-<tr>
-<td align="right">6</td>
-<td align="left">cpu</td>
-<td align="left">cpu</td>
-<td align="right">1056</td>
-<td align="right">5632</td>
-<td align="left"></td>
-<td align="right">24</td>
-<td align="right">12</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon E5-2680 v3</td>
-<td align="right">2.5</td>
-<td align="right">128</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">44</td>
-</tr>
-<tr>
-<td align="right">7</td>
-<td align="left">gpu</td>
-<td align="left">pascalnodes</td>
-<td align="right">504</td>
-<td align="right">4608</td>
-<td align="left">72</td>
-<td align="right">28</td>
-<td align="right">14</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon E5-2680 v4</td>
-<td align="right">2.4</td>
-<td align="right">256</td>
-<td align="left">4</td>
-<td align="left">NVIDIA</td>
-<td align="left">Tesla P100</td>
-<td align="left">16</td>
-<td align="right">18</td>
-</tr>
-<tr>
-<td align="right">8</td>
-<td align="left">cpu</td>
-<td align="left">cpu</td>
-<td align="right">504</td>
-<td align="right">4032</td>
-<td align="left"></td>
-<td align="right">24</td>
-<td align="right">12</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon E5-2680 v4</td>
-<td align="right">2.5</td>
-<td align="right">192</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">21</td>
-</tr>
-<tr>
-<td align="right">8</td>
-<td align="left">high memory</td>
-<td align="left">largemem</td>
-<td align="right">240</td>
-<td align="right">7680</td>
-<td align="left"></td>
-<td align="right">24</td>
-<td align="right">12</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon E5-2680 v4</td>
-<td align="right">2.5</td>
-<td align="right">768</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">10</td>
-</tr>
-<tr>
-<td align="right">8</td>
-<td align="left">high memory</td>
-<td align="left">largemem</td>
-<td align="right">96</td>
-<td align="right">6144</td>
-<td align="left"></td>
-<td align="right">24</td>
-<td align="right">12</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon E5-2680 v4</td>
-<td align="right">2.5</td>
-<td align="right">1536</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">4</td>
-</tr>
-<tr>
-<td align="right">9</td>
-<td align="left">cpu</td>
-<td align="left">cpu</td>
-<td align="right">2496</td>
-<td align="right">39936</td>
-<td align="left"></td>
-<td align="right">48</td>
-<td align="right">24</td>
-<td align="right">2</td>
-<td align="left">Intel</td>
-<td align="left">Xeon Gold 6248R</td>
-<td align="right">3</td>
-<td align="right">768</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">52</td>
-</tr>
-<tr>
-<td align="right">10</td>
-<td align="left">cpu</td>
-<td align="left">cpu</td>
-<td align="right">4352</td>
-<td align="right">17408</td>
-<td align="left"></td>
-<td align="right">128</td>
-<td align="right">64</td>
-<td align="right">2</td>
-<td align="left">AMD</td>
-<td align="left">Epyc 7713 Milan</td>
-<td align="right">2</td>
-<td align="right">512</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">34</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">cpu</td>
-<td align="left"></td>
-<td align="right">240</td>
-<td align="right">960</td>
-<td align="left"></td>
-<td align="right">48</td>
-<td align="right">12</td>
-<td align="right">4</td>
-<td align="left">Intel</td>
-<td align="left">Xeon Gold 6248R</td>
-<td align="right">3</td>
-<td align="right">192</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">5</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">gpu</td>
-<td align="left"></td>
-<td align="right">512</td>
-<td align="right">4096</td>
-<td align="left">32</td>
-<td align="right">128</td>
-<td align="right">64</td>
-<td align="right">2</td>
-<td align="left">AMD</td>
-<td align="left">Epyc 7742 Rome</td>
-<td align="right">2.25</td>
-<td align="right">1024</td>
-<td align="left">8</td>
-<td align="left">NVIDIA</td>
-<td align="left">A100</td>
-<td align="left">40</td>
-<td align="right">4</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">cpu</td>
-<td align="left"></td>
-<td align="right">144</td>
-<td align="right">576</td>
-<td align="left"></td>
-<td align="right">48</td>
-<td align="right">12</td>
-<td align="right">4</td>
-<td align="left">Intel</td>
-<td align="left">Xeon Gold 6248R</td>
-<td align="right">3</td>
-<td align="right">192</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="left">gpu</td>
-<td align="left"></td>
-<td align="right">512</td>
-<td align="right">4096</td>
-<td align="left">32</td>
-<td align="right">128</td>
-<td align="right">64</td>
-<td align="right">2</td>
-<td align="left">AMD</td>
-<td align="left">Epyc 7742 Rome</td>
-<td align="right">2.25</td>
-<td align="right">1024</td>
-<td align="left">8</td>
-<td align="left">NVIDIA</td>
-<td align="left">A100</td>
-<td align="left">40</td>
-<td align="right">4</td>
-</tr>
-</tbody>
-</table>
-<p>The full table can be downloaded <a href="../res/hardware_full_all.csv">here</a>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2023</span>
       
     
   </small>
