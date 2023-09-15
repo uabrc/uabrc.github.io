@@ -2425,7 +2425,7 @@
 <!-- markdownlint-enable MD046 -->
 
 <h3 id="user-scratch">User Scratch<a class="headerlink" href="#user-scratch" title="Permanent link">&para;</a></h3>
-<p>All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in <code>/data/scratch/$USER</code> or <code>$USER_SCRATCH</code>. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.</p>
+<p>All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in <code>/scratch/$USER</code> or <code>$USER_SCRATCH</code>. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.</p>
 <p>Network scratch is available on the login node and each compute node. This storage is a GPFS high performance file system providing roughly 1 PB of storage. If using scratch, this should be your jobs' primary working directory, unless the job would benefit from local scratch (see below).</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition warning">
@@ -2547,7 +2547,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
       
     
   </small>

@@ -1886,7 +1886,24 @@
 <li><code>bucket</code>: The root which objects are stored in. Each account can create a certain number of buckets and each bucket can be shared individually with other users. Bucket names are unique across the entire LTS platform (see the section on <a href="#avoiding-duplicate-names-for-buckets">duplicate names</a>)</li>
 <li><code>prefix</code>: Used in place of a file path to an object, and so can be used to represent an object's place in a typical filesystem. Stored as metadata in each object, prefixes are used for searches in a bucket.</li>
 <li><code>policy</code>: sets permissions for whole buckets and individual objects. Policies allow or deny access to buckets for individual accounts. These are controlled by the owner of the bucket.</li>
+<li><code>access key</code>: a unique identifier given to each user for access to LTS, similar to a username. A user's access key is preset and given to them after account setup.</li>
+<li><code>secret key</code>: a credential string similar to a password given to each user for access to LTS. The secret key is preset and given to the user after account setup</li>
 </ul>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Never give access and secret keys for personal or lab accounts to anyone! Bad actors who are given keys to accounts which own important buckets can change access permissions and delete any and all data!</p>
+<p>If you need to give elevated permissions to other users to view, upload, download, delete, etc. any data from a bucket, those permissions can be changed via <a href="policies/">bucket policies</a> without giving out keys. Please <a href="../..#contact-us">contact Research Computing</a> for help setting up and applying policies if you need it</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you lose your access and secret keys, please submit a <a href="../..#contact-us">support ticket</a> to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;</a> to request your keys. Keys will only be given to an account owner as verified by RC staff.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <p>This documentation will use the standard file and path terms since those are more easily understood by most users. Just be aware that documentation such as <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/index.html">AWS CLI</a> will use terms prefix, object, and others that are not standard in a typical filesystem.</p>
 <h2 id="requesting-an-account">Requesting an Account<a class="headerlink" href="#requesting-an-account" title="Permanent link">&para;</a></h2>
 <p>UAB researchers do not have automatic access to LTS, and currently, single sign on is not enabled. To request access to LTS, please send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;</a>. You will be then be given an Access Key and a Secret Access Key, both of which will be used later on. Keep track of both of these keys and do not share them with anyone else, these are your login credentials for LTS.</p>
@@ -1899,7 +1916,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
       
     
   </small>
