@@ -56,7 +56,7 @@ module reset
 
 To reduce unexpected behavior and/or to get rid of Lmod errors,
 
-1. Avoid using `module load` in .bashrc. Instead create a bash script with the module load commands and source it each time to load the modules needed in a shell/sbatch script . Here is an example of loading module in a bash script named `module_test.sh` and compilation,
+1. Avoid using `module load` in `.bashrc`. Instead, create a bash script with the module load commands and source it each time to load the modules needed in a shell/sbatch script . Here is an example of loading module in a bash script named `module_test.sh` and compilation,
 
     ```bash
     #!/bin/bash
@@ -69,50 +69,75 @@ To reduce unexpected behavior and/or to get rid of Lmod errors,
 
     ```bash
     $ chmod +x module_test.sh
-    $ source ./module_test.sh 
+    $ source ./module_test.sh
 
     Resetting modules to system default
 
-    Currently Loaded Modules:
-    1) shared                          9) hwloc/1.11.2-GCC-4.9.3-2.25                               17) ncurses/6.0-foss-2016a
-    2) slurm/18.08.9                  10) OpenMPI/1.10.2-GCC-4.9.3-2.25                             18) zlib/1.2.8-foss-2016a
-    3) rc-base                        11) OpenBLAS/0.2.15-GCC-4.9.3-2.25-LAPACK-3.6.0               19) SAMtools/1.3.1-foss-2016a
-    4) DefaultModules                 12) gompi/2016a                                               20) bzip2/1.0.6-foss-2016a
-    5) GCCcore/4.9.3                  13) FFTW/3.3.4-gompi-2016a                                    21) Boost/1.61.0-foss-2016a
-    6) binutils/2.25-GCCcore-4.9.3    14) ScaLAPACK/2.0.2-gompi-2016a-OpenBLAS-0.2.15-LAPACK-3.6.0  22) TopHat/2.1.1-foss-2016a
-    7) GCC/4.9.3-2.25                 15) foss/2016a
-    8) numactl/2.0.11-GCC-4.9.3-2.25  16) Bowtie/1.1.2-foss-2016a
+    # Currently Loaded Modules
+    shared
+    slurm/18.08.9
+    rc-base
+    DefaultModules
+    GCCcore/4.9.3
+    binutils/2.25-GCCcore-4.9.3
+    GCC/4.9.3-2.25
+    numactl/2.0.11-GCC-4.9.3-2.25
+    hwloc/1.11.2-GCC-4.9.3-2.25
+    OpenMPI/1.10.2-GCC-4.9.3-2.25
+    OpenBLAS/0.2.15-GCC-4.9.3-2.25-LAPACK-3.6.0
+    gompi/2016a
+    FFTW/3.3.4-gompi-2016a
+    ScaLAPACK/2.0.2-gompi-2016a-OpenBLAS-0.2.15-LAPACK-3.6.0
+    foss/2016a
+    Bowtie/1.1.2-foss-2016a
+    ncurses/6.0-foss-2016a
+    zlib/1.2.8-foss-2016a
+    SAMtools/1.3.1-foss-2016a
+    bzip2/1.0.6-foss-2016a
+    Boost/1.61.0-foss-2016a
+    TopHat/2.1.1-foss-2016a
     ```
 
-2. Before loading modules in a shell/bash/sbatch script, use a clean shell by using `module reset` at the beginning to restore to default system settings. Using `module reset` before loading modules separates what software is loaded in the working shell, from software loaded in the script shell. Be aware that forked processes (like scripts) and Slurm commands inherit the environment variables of the working shell, including loaded modules. Here is an example that show case module conflict between cuda11.8 and cuda11.4 version that may lead to unexpected behavior or an erroneous output.
+2. Before loading modules in a shell/bash/sbatch script, use a clean shell by using `module reset` at the beginning to restore to default system settings. Using `module reset` before loading modules separates what software is loaded in the working shell from the software loaded in the script shell. Be aware that forked processes (like scripts) and Slurm commands inherit the environment variables of the working shell, including loaded modules. Here is an example that shows module conflict between cuda11.8 and cuda11.4 versions that may lead to unexpected behavior or an erroneous output.
 
 ```bash
 # Working shell where you may try testing module load and your run script
 $ module load cuda11.4/toolkit
 
-$ module list
-Currently Loaded Modules:
-  1) shared   2) slurm/18.08.9   3) rc-base   4) DefaultModules   5) cuda11.4/toolkit/11.4.2
+$ module -t list
+
+#Currently Loaded Modules
+shared
+slurm/18.08.9
+rc-base
+DefaultModules
+cuda11.4/toolkit/11.4.2
 ```
 
 ```bash
-# bash/sbatch script you are submitting to slurm
+# bash script you are passing in sbatch script
 #!/bin/bash
 module load cuda11.8/toolkit
+module -t list
 ```
 
 ```bash
-# Not using `module reset` at the beginning could cause CUDA conflict issues.
-$ source ./module_test.sh
+# Not using `module reset` at the beginning of the bash script could cause CUDA conflict issues.
+$ source ./module_test2.sh
 
-Currently Loaded Modules:
-  1) shared   2) slurm/18.08.9   3) rc-base   4) DefaultModules   5) cuda11.4/toolkit/11.4.2   6) cuda11.8/toolkit/11.8.0
+#Currently Loaded Modules
+shared
+slurm/18.08.9
+rc-base
+DefaultModules
+cuda11.4/toolkit/11.4.2
+cuda11.8/toolkit/11.8.0
 ```
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    The best practice would be to avoid using `module reset` in the `Environment Setup` of Open OnDemand jobs as the OOD session by default resets the module at the beginning of every session. It is observed to cause unexpected behavior while loading `module reset` in the Rstudio server OOD sessions.
+    The best practice would be to avoid using `module reset` in the `Environment Setup` of Open OnDemand jobs as the OOD session, by default, resets the module at the beginning of every session. It is observed to cause unexpected behavior if `module reset` is used in the Rstudio server OOD sessions.
 <!-- markdownlint-enable MD046 -->
 
 ## Licensed and Commercial Software Restrictions
