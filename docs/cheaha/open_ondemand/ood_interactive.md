@@ -173,13 +173,13 @@ To adjust the environment, please use the Environment Setup box to load modules.
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Do not load `module load Anaconda3` in the `Environment Setup` field, it is loaded automatically. Loading any versions of `Anaconda3` would affect the Python executable which is used by default. These results in hard-to-diagnose errors in OOD Jupyter notebook.
+    Do not load `module load Anaconda3` in the `Environment Setup` field, as it is loaded automatically. Loading any versions of `Anaconda3` would affect the Python executable, which is used by default. These results in hard-to-diagnose errors in the OOD Jupyter notebook.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Having `conda/mamba activate` and `source activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Please do not activate conda environments in the `Environment Setup` field.
+    Having `conda/mamba activate` and `source activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
 <!-- markdownlint-enable MD046 -->
 
 ### Working with Anaconda Environments
