@@ -56,7 +56,7 @@ module reset
 
 To reduce unexpected behavior and/or to get rid of Lmod errors,
 
-1. Avoid using `module load` in `.bashrc`. Instead, create a bash script with the module load commands and source it each time to load the modules needed in a shell/sbatch script . Here is an example of loading module in a bash script named `module_test.sh` and compilation,
+1. Avoid using `module load` in `.bashrc`. Instead, create a bash script with the module load commands and source it each time to load the modules needed in a shell/[sbatch script](../slurm/submitting_jobs.md). Here is an example of loading module in a bash script named `module_test.sh` and compilation,
 
     ```bash
     #!/bin/bash
@@ -137,7 +137,7 @@ cuda11.8/toolkit/11.8.0
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    The best practice would be to avoid using `module reset` in the `Environment Setup` of Open OnDemand jobs as the OOD session, by default, resets the module at the beginning of every session. It is observed to cause unexpected behavior if `module reset` is used in the Rstudio server OOD sessions.
+    The best practice would be to avoid using `module reset` in the `Environment Setup` of [Open OnDemand jobs](../open_ondemand/ood_interactive.md) as the OOD session, by default, resets the module at the beginning of every session. It is observed to cause unexpected behavior if `module reset` is used in the Rstudio server OOD sessions.
 <!-- markdownlint-enable MD046 -->
 
 ## Licensed and Commercial Software Restrictions
