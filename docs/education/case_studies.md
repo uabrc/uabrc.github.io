@@ -16,7 +16,7 @@ A license is no longer required to use Clara Parabricks 4.x and later versions, 
 
 1. Access to internet.
 
-2. Any GPU that supports CUDA architecture 60, 61, 70, 75 and has 12GB GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs.
+2. Any GPU that supports CUDA architecture 6.0, 6.1, 7.0, 7.5 and has 12GB GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs.
 
 #### System Requirements
 
@@ -36,7 +36,7 @@ Parbaricks 4.x are available as containers in the [NGC Catalog](https://catalog.
 
 Parabricks 4.x container image can be installed on Cheaha using Singularity container. More details on usage of Singularity container on Cheaha can be found in the [Containers Page](../workflow_solutions/getting_containers.md).
 
-To install Parabricks using Singulairty, load the `Singularity 3.x` module from Cheaha as,  
+To install Parabricks using Singulairty, load the `Singularity 3.x` module from Cheaha as,
 
 ```bash
 module load Singularity/3.5.2-GCC-5.4.0-2.26
@@ -55,15 +55,15 @@ After the image `parabricks.sif` is successfully created, you can run singularit
 Running `singularity shell` helps to navigate through the containers directory to verify the path of the software executable and later use the path outside the container to run the software. Following are the commands to run the container using `singularity shell` and traverse through the directories inside the contianer.
 
 ```bash
-singularity shell parabricks.sif 
+singularity shell parabricks.sif
 ```
 
 ```bash
-Singularity> ls /bin/pbrun     
-/bin/pbrun 
-Singularity> /bin/pbrun --version 
-Please visit https://docs.nvidia.com/clara/#parabricks for detailed documentation 
-pbrun: 4.0.1-1 
+Singularity> ls /bin/pbrun
+/bin/pbrun
+Singularity> /bin/pbrun --version
+Please visit https://docs.nvidia.com/clara/#parabricks for detailed documentation
+pbrun: 4.0.1-1
 ```
 
 ![!Parabricks singularity shell.](./images/parabricks_singularity_shell.png)
@@ -91,49 +91,49 @@ Once the sample data is downloaded, you can execute the pipeline using the execu
 You will have to load the CUDA toolkit to access GPUs as below.
 
 ```bash
-module load cuda11.4/toolkit/11.4.2 
+module load cuda11.4/toolkit/11.4.2
 ```
 
 In the below script, the `--nv` option enables the use of NVIDIA GPUs within the container. The `-B` option is to bind the directories of the host environment and use it within the container. Here the CUDA lib path `/cm/local/apps/cuda/libs/current/lib64` is binded to use within the container. The singualrity container `parabricks.sif` is executed using the command `singualrity run` over the executable `/bin/pbrun`.
 
 ```bash
-SINGULARITYENV_LD_LIBRARY_PATH=$LD_LIBRARY_PATH singularity run --nv \ 
+SINGULARITYENV_LD_LIBRARY_PATH=$LD_LIBRARY_PATH singularity run --nv \
 –B /cm/local/apps/cuda/libs/current/lib64 parabricks.sif /bin/pbrun fq2bam \
 --ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta \
 --in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz \
---out-bam output.bam 
+--out-bam output.bam
 ```
 
-You can execute Parabricks on Cheaha using `amperenodes` and `pascalnodes` partition. Maximum number of GPUs you can request in `amperenodes` partition to run Parabricks is 2, and that of `pascalnodes` is 4.  Here is a sample job script to run Parabricks on `amperenodes` partition on 2 GPUs.  
+You can execute Parabricks on Cheaha using `amperenodes` and `pascalnodes` partition. Maximum number of GPUs you can request in `amperenodes` partition to run Parabricks is 2, and that of `pascalnodes` is 4.  Here is a sample job script to run Parabricks on `amperenodes` partition on 2 GPUs.
 
 ```bash
-#!/bin/bash 
-#SBATCH --ntasks=24 
-#SBATCH --mem=100G 
-#SBATCH --time=2:00:00  
-#SBATCH --partition=amperenodes  
-#SBATCH --job-name=parabricks-ampere  
-#SBATCH --gres=gpu:2 
-#SBATCH --error=%x-%j_gpu2.err 
-#SBATCH --output=%x-%j_gpu2.out 
-#SBATCH --mail-user=$USER@uab.edu 
+#!/bin/bash
+#SBATCH --ntasks=24
+#SBATCH --mem=100G
+#SBATCH --time=2:00:00
+#SBATCH --partition=amperenodes
+#SBATCH --job-name=parabricks-ampere
+#SBATCH --gres=gpu:2
+#SBATCH --error=%x-%j_gpu2.err
+#SBATCH --output=%x-%j_gpu2.out
+#SBATCH --mail-user=$USER@uab.edu
 
 #Load the Singularity and CUDA Toolkit modules
-module load Singularity/3.5.2-GCC-5.4.0-2.26 
-module load cuda11.4/toolkit/11.4.2 
+module load Singularity/3.5.2-GCC-5.4.0-2.26
+module load cuda11.4/toolkit/11.4.2
 
 #Run the "pbrun" executable from the singularity image "parabrikcs.sif", and pass the CUDA lib path to make it accessible within the container
 SINGULARITYENV_LD_LIBRARY_PATH=$LD_LIBRARY_PATH singularity run --nv \
 -B /cm/local/apps/cuda/libs/current/lib64 parabricks.sif /bin/pbrun fq2bam \
 --ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta \
 --in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz \
---out-bam output.bam 
+--out-bam output.bam
 ```
 
-You can also request the required resources using `srun` using the below command, and execute the commands required to run Parabricks.  
+You can also request the required resources using `srun` using the below command, and execute the commands required to run Parabricks.
 
 ```bash
-srun --ntasks=24 --mem=100G --time=1:00:00 --partition=amperenodes --job-name=parabricks-ampere --gres=gpu:2 --pty /bin/bash 
+srun --ntasks=24 --mem=100G --time=1:00:00 --partition=amperenodes --job-name=parabricks-ampere --gres=gpu:2 --pty /bin/bash
 ```
 
 #### Illustration on `fq2bam` tool analyses
@@ -146,7 +146,7 @@ If you execute the above batch script using Parabricks sample data on `amperenod
 
 ### Monitoring GPU Usage During Runtime on Cheaha
 
-The `nvidia-smi` command helps to montior the GPU usage during runtime. You need to `ssh` to the assigned GPU node, and type in the following command.  
+The `nvidia-smi` command helps to montior the GPU usage during runtime. You need to `ssh` to the assigned GPU node, and type in the following command.
 
 ```bash
 ssh GPU_node
@@ -163,6 +163,6 @@ The `nvidia-smi` reports the GPU memory usage and the 2 GPU process running deta
 
 ### Runtime Evaluation of Parabricks Sample Test Case on `amperenodes` and `pascalnodes` Partition
 
-Empirical results on running Parabricks sample test case on `amperendoes` and `pascalnodes` partitions are illustrated in the below table. For this test case, it seems `pascalnodes` runtime is efficient than `amperenodes`  for 1GPU and 2GPU. However, the real-world science simulations may vary in their speedup.  
+Empirical results on running Parabricks sample test case on `amperendoes` and `pascalnodes` partitions are illustrated in the below table. For this test case, it seems `pascalnodes` runtime is efficient than `amperenodes` for 1 or 2 GPUs. However, the real-world science simulations may vary in their speedup.
 
 {{ read_csv('education/res/parabricks_exec_time.csv', keep_default_na=False) }}
