@@ -223,7 +223,15 @@ Linux c0204 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_
 Linux c0204 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-Alternatively, `srun` can also run MPI,OpenMP, hybrid MPI/OpenMP, and many more parallel jobs. For more details on using `srun`, please see the [official documentation](https://slurm.schedmd.com/srun.html).
+Alternatively, `srun` can also run MPI, OpenMP, hybrid MPI/OpenMP, and many more parallel jobs. For more details on using `srun`, please see the [official documentation](https://slurm.schedmd.com/srun.html).
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    `srun` has been disabled for use with MPI. We have removed this functionality due to an open vulnerability: <https://nvd.nist.gov/vuln/detail/CVE-2023-41915>. The vulnerability could allow an attacker to escalate privileges to root and/or access data they do not have permissions for.
+
+    Instead of `srun`, please load one of the `OpenMPI` modules with an appropriate version. Please contact [Support](../../help/support.md) with any questions or concerns.
+<!-- markdownlint-enable MD046 -->
 
 ## Graphical Interactive Jobs
 
