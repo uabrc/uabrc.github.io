@@ -20,6 +20,41 @@ When requesting a job using `sbatch`, you will need to include the Slurm flag `-
     It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at [Managing Jobs](./job_management.md#managing-jobs) for more information.
 <!-- markdownlint-enable MD046 -->
 
+## Ensuring IO Performance With A100 GPUs
+
+If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to `/local/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor performance.
+
+The following script can be used to wrap your existing workflows. It will automatically create a temporary directory `$TMPDIR` and delete it when your workflow is finished. You'll need to supply the original source of your data as `$MY_DATA_DIR`. The script is not guaranteed to delete the temporary directory if the job ends before it reaches the final line, so please be mindful and periodically check for any extra temporary directories and delete them as needed.
+
+```bash
+#!/bin/bash
+#SBATCH ...
+#SBATCH --partition=amperenodes
+#SBATCH --gres=gpu:1
+
+# LOAD CUDA MODULES
+module load CUDA/12.1.1
+module load cuDNN/12.1.1
+
+# CREATE TEMPORARY DIRECTORY
+# WARNING! $TMPDIR will be deleted at the end of the script!
+# Changing the following line can cause permanent, unintended deletion of important data.
+TMPDIR="/local/$USER/$SLURM_JOB_ID"
+mkdir -p "$TMPDIR"
+
+# COPY RESEARCH DATA TO LOCAL TEMPORARY DIRECTORY
+# Replace $MY_DATA_DIR with the path to your data folder
+cp -r "$MY_DATA_DIR" "$TMPDIR"
+
+# YOUR ORIGINAL WORKFLOW GOES HERE
+# be sure to load files from "$TMPDIR"!
+
+# CLEAN UP TEMPORARY DIRECTORY
+# WARNING!
+# Changing the following line can cause permanent, unintended deletion of important data.
+rm -rf "$TMPDIR"
+```
+
 ### Open OnDemand
 
 When requesting an interactive job through `Open OnDemand`, selecting the `pascalnodes` partitions will automatically request access to one GPU as well. There is currently no way to change the number of GPUs for OOD interactive jobs.
