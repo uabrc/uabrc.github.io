@@ -152,6 +152,10 @@ The following software are known to use `tmp` by default, and can be worked arou
 - Java: `java * -Djava.io.tmpdir=$LOCAL_SCRATCH`
 - UMI Tools: `umi_tools * --temp-dir=$LOCAL_SCRATCH`
 
+Software known to use `tmp` by default with no know workaround.
+
+- Keras has `/tmp/.keras` hardcoded as a fallback cache directory if `~/.keras` is inaccessible.
+
 ## How much space do I have left?
 
 - **Individual Storage**: use the command `quota-report` to see usage in `/data/user/$USER` and `/scratch/$USER`.
