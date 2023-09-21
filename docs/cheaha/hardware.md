@@ -20,13 +20,7 @@ Examples of how to make use of the table:
 
 - You submit 30 jobs to the "express" partition, requesting 10 cores each. If the first 26 jobs start, then 260 out of 264 core limit will be in use. The remaining 4 jobs will be held in queue, because starting one more would go beyond the QoS limit (270 > 264).
 - You submit 5 jobs to the "medium" partition and 5 to the "long" partition. It is possible that all 10 jobs may start, because partition node limits are separate. If all 5 jobs start, jobs on the "medium" partition.
-- You submit jobs to the "amperenodes" and "amperenodes-medium" partitions totaling 10 GPUs, and the "pascalnodes" partition totaling 4 GPUs. Jobs totaling 8 or fewer GPUs on the "gpu: ampere" group, and all jobs on "gpu: pascal", can start at the same time.
-
-<!-- markdownlint-disable MD046 -->
-!!! announcement
-
-    Physical A100 nodes are slated for a future release on Cheaha. Information related to `amperenodes` and the A100 GPUs should be considered tentative information. The `amperenodes` hardware is not yet available as of 2023-08-22. Release date to be determined (TBD).
-<!-- markdownlint-enable MD046 -->
+- You submit jobs to the "amperenodes" and "amperenodes-medium" partitions totaling 10 GPUs, and the "pascalnodes" partition totaling 4 GPUs. Jobs totaling 4 or fewer GPUs on the "gpu: ampere" group, and all jobs on "gpu: pascal", can start at the same time.
 
 {{ read_csv('cheaha/res/hardware_summary_cheaha.csv', keep_default_na=False) }}
 <!-- fix headers -->

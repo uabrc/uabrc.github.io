@@ -10,7 +10,7 @@ For more information on these nodes, see `Detailed Hardware Information`.
 
 ## Scheduling GPUs
 
-To submit a job with one or more GPUs, you will need to set the partition to the `pascalnodes` family of partitions for P100 GPUs or `amperenodes` family for A100 GPUs.
+To submit a job with one or more GPUs, you will need to set the partition to `pascalnodes` or `amperenodes` family of partitions for P100 GPUs or `amperenodes` family for A100 GPUs.
 
 When requesting a job using `sbatch`, you will need to include the Slurm flag `--gres=gpu:#`. Replace `#` with the number of GPUs you need. Quotas and constraints are available on our [Hardware Summary](../hardware.md#summary)
 

@@ -1,16 +1,20 @@
-# Welcome to UAB Research Computing Docs
+# Welcome to UAB Research Computing
 
-Welcome to UAB Research Computing!
-
-The Research Computing System (RCS) provides a framework for sharing data, accessing compute power, and collaborating with peers on campus and around the globe. Our goal is to construct a dynamic "network of services" that you can use to organize, study and share your research data.
-
-Research Computing provides services to researchers in these core areas:
+The Research Computing System (RCS) provides a framework for sharing research data, accessing computing power, and collaborating with peers on campus and around the globe. Our goal is to construct a dynamic "network of services" that you can use to organize, study and share your research data. Research Computing provides services to researchers in these core areas:
 
 - _Data Analysis_: using the High Performance Computing (HPC) fabric [Cheaha](cheaha/getting_started.md) for batch data processing.
 - _Data Sharing_: supporting trusted information exchange to spark new ideas via our [Storage](data_management/storage.md) system.
 - _Application Development_: providing virtual machines and web-hosted development tools empowering researcher via our [cloud.rc](uab_cloud/index.md) fabric.
 
-## Contact Us
+<!-- markdownlint-disable MD046 -->
+!!! announcement
+
+    We have released new A100 gpus on Cheaha! For more information please see [GPUs](cheaha/slurm/gpu.md).
+
+    We have released new CUDA and cuDNN modules! For more information please see [CUDA Modules](cheaha/slurm/gpu.md#cuda-modules).
+<!-- markdownlint-enable MD046 -->
+
+## How to Contact Us
 
 Please reach out to us via email at <support@listserv.uab.edu> to create a support ticket.
 
@@ -22,9 +26,7 @@ For face-to-face support please visit us in our Zoom office hours held weekly:
 - Thursdays 10:00 AM to 12:00 PM:
 [Zoom](https://uab.zoom.us/j/81783104592?pwd=L21OOWNlY2doWXova3MzOGFRcE4zQT09)
 
-**New!** Please visit our [status page](https://uabstatus.statuscast.com/#!/incidentlist?componentId=34990).
-
-For additional information about support please see [Support](./help/support.md).
+For additional information please see [Support](./help/support.md).
 
 ## Support and Development
 
