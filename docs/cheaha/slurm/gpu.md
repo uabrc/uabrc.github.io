@@ -114,3 +114,30 @@ For versions of PyTorch 1.13 and newer, use the following template instead.
 ## Reviewing GPU Jobs
 
 As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct) to review GPU jobs. Quantity of GPUs may be reviewed using the `reqtres` and `alloctres` [fields](job_management.md#sacct-fields).
+
+## Frequently Asked Questions (FAQ) About A100 GPUs
+
+- **I've been using the P100 GPUs on `pascalnodes` up until now, what is the easiest way to start using the A100 GPUs?**
+    - If you are using an `sbatch` script...
+        - Change `--partition=pascalnodes` to `--partition=amperenodes`, or change `--partition=pascalnodes-medium` to `--partition=amperenodes-medium`.
+        - Also change `--gres=gpu:3` and `--gres=gpu:4` to `--gres=gpu:2`, as there are only two A100 GPUs per node.
+    - If you are using an [Open OnDemand Interactive App](../open_ondemand/ood_interactive.md)...
+        - Change the partition from "pascalnodes" to "amperenodes, or change "pascalnodes-medium" to "amperenodes-medium".
+    - In all cases, be sure to read the section on [Ensuring IO Performance With A100 GPUs](#ensuring-io-performance-with-a100-gpus) to be sure disk read speed doesn't limit your performance gains.
+- **How do I access the A100 GPUs?**
+    You can access the A100 GPUs by request jobs in the appropriate partitions. Use `amperenodes` partition for up to 12 hours or `amperenodes-medium` partition for up to 48 hours.
+- **How many GPUs can I request at once?**
+    Up to four GPUs may be requested by any one researcher at once. However, there are only two GPUs per node, so requesting four GPUs will allocate two nodes. To make use of multiple nodes, your workflow software must know how to communicate between nodes using software like Horovod or OpenMPI. If you are new to GPUs and aren't sure you need multiple nodes, please limit your request to one or two gpus.
+- **What performance improvements can I expect over the P100 GPUs?**
+    Performance improvements depend on the software and algorithms being used. Determining optimal configuration will take some experimenting. Swapping a single P100 to a single A100, you can generally expect 3x to 20x improvement. For more information about possible performance improvements, please see the [Official NVIDIA A100 page](https://www.nvidia.com/en-us/data-center/a100/).
+- **How can I make the most efficient use of the A100 GPUs?**
+    A100s process data very rapidly compared with previous technology. Ideally, we want the A100 to be the bottleneck during processing, rather than CPUs or I/O operations. Here are two initial possibilities to consider for optimizing efficiency:
+    - All researchers should copy their input data onto `/local/$SLURM_JOB_ID` (node-specific NVMe drives) before processing to avoid I/O bottlenecks reducing performance. See [Ensuring IO Performance With A100 GPUs](#ensuring-io-performance-with-a100-gpus).
+    - Some researchers may benefit from using a larger number of CPU cores for data loading and preprocessing, compared with `pascalnodes`. Please consider experimenting with different numbers of CPU cores using the same dataset to find what is optimal for you. If you feel that performance should be higher, please contact [Support](../../help/support.md) so we can guide you toward an optimal CPU-to-GPU ratio for your application and workflow.
+- **Where are the A100 nodes physically located, and will this impact my workflows?**
+    The A100 nodes are located in the DC BLOX Data Center, west of UAB Campus. Because Cheaha storage (GPFS) is located on campus, there may be slightly higher latency when transferring data between the A100 nodes and GPFS. Impacts will only occur if very small amounts of data are transferred very frequently, which is unusual for most GPU workflows. We strongly recommend copying your input data onto `/local/$SLURM_JOB_ID` prior to processing, see [Ensuring IO Performance With A100 GPUs](#ensuring-io-performance-with-a100-gpus).
+- **What will happen to the P100 GPUs?**
+    We intend to retain all of the 18 existing P100 GPU nodes, of which  9 nodes are available now. The remaining 9 nodes have been temporarily taken offline as we reconfigure hardware, and will be reallocated based on demand and other factors.
+- **What else should I be aware of?**
+    - Please be sure to clean your data off of `/local/$SLURM_JOB_ID` as soon as you no longer need it, before the job finishes.
+    - We have updated the CUDA and cuDNN modules to improve reliability and ease of use. Please see the section on [CUDA Modules](#cuda-modules) for more information.
