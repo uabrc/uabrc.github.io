@@ -1146,7 +1146,14 @@
     Scheduling GPUs
   </a>
   
-    <nav class="md-nav" aria-label="Scheduling GPUs">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ensuring-io-performance-with-a100-gpus" class="md-nav__link">
+    Ensuring IO Performance With A100 GPUs
+  </a>
+  
+    <nav class="md-nav" aria-label="Ensuring IO Performance With A100 GPUs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1175,16 +1182,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cuda-toolkit" class="md-nav__link">
-    CUDA Toolkit
+  <a href="#cuda-modules" class="md-nav__link">
+    CUDA Modules
   </a>
   
-    <nav class="md-nav" aria-label="CUDA Toolkit">
+    <nav class="md-nav" aria-label="CUDA Modules">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cudnn" class="md-nav__link">
-    cuDNN
+  <a href="#cudnn-modules" class="md-nav__link">
+    cuDNN Modules
   </a>
   
 </li>
@@ -1211,6 +1218,13 @@
         <li class="md-nav__item">
   <a href="#reviewing-gpu-jobs" class="md-nav__link">
     Reviewing GPU Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions-faq-about-a100-gpus" class="md-nav__link">
+    Frequently Asked Questions (FAQ) About A100 GPUs
   </a>
   
 </li>
@@ -1959,7 +1973,14 @@
     Scheduling GPUs
   </a>
   
-    <nav class="md-nav" aria-label="Scheduling GPUs">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ensuring-io-performance-with-a100-gpus" class="md-nav__link">
+    Ensuring IO Performance With A100 GPUs
+  </a>
+  
+    <nav class="md-nav" aria-label="Ensuring IO Performance With A100 GPUs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1988,16 +2009,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cuda-toolkit" class="md-nav__link">
-    CUDA Toolkit
+  <a href="#cuda-modules" class="md-nav__link">
+    CUDA Modules
   </a>
   
-    <nav class="md-nav" aria-label="CUDA Toolkit">
+    <nav class="md-nav" aria-label="CUDA Modules">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cudnn" class="md-nav__link">
-    cuDNN
+  <a href="#cudnn-modules" class="md-nav__link">
+    cuDNN Modules
   </a>
   
 </li>
@@ -2028,6 +2049,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions-faq-about-a100-gpus" class="md-nav__link">
+    Frequently Asked Questions (FAQ) About A100 GPUs
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2047,63 +2075,62 @@
 
 <h1 id="gpus">GPUs<a class="headerlink" href="#gpus" title="Permanent link">&para;</a></h1>
 <h2 id="available-devices">Available Devices<a class="headerlink" href="#available-devices" title="Permanent link">&para;</a></h2>
-<p>Currently, the Cheaha cluster has 18 nodes dedicated to GPU use under the <code>pascalnodes</code> partition family. Each node contains 4 individual NVIDIA P100 GPUs. These GPUs have the following specifications:</p>
+<p>Cheaha has GPUs available with the following statistics, broken out by <a href="../introduction/">Slurm Partition</a>. For more information on all available partitions, see our <a href="../../hardware/#summary">Hardware Summary</a>.</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th align="left"></th>
+<th align="left"><code>pascalnodes</code></th>
+<th align="left"><code>amperenodes</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>GPU Architecture</td>
-<td><strong>NVIDIA Pascal</strong></td>
+<td align="left">Product Name</td>
+<td align="left">P100</td>
+<td align="left">A100 80GB</td>
 </tr>
 <tr>
-<td>NVIDIA CUDA Cores</td>
-<td><strong>3584</strong></td>
+<td align="left">Architecture</td>
+<td align="left">Pascal</td>
+<td align="left">Ampere</td>
 </tr>
 <tr>
-<td>GPU Memory</td>
-<td><strong>16GB CoWoS HBM2 at 732 GB/s</strong></td>
+<td align="left">CUDA Compute Capability Version</td>
+<td align="left">6.0</td>
+<td align="left">8.0</td>
 </tr>
 <tr>
-<td>Double-Precision Performance</td>
-<td><strong>4.7 TeraFLOPS</strong></td>
+<td align="left">CUDA Cores</td>
+<td align="left">3584</td>
+<td align="left">6912</td>
 </tr>
 <tr>
-<td>Single-Precision Performance</td>
-<td><strong>9.3 TeraFLOPS</strong></td>
+<td align="left">Memory (GB)</td>
+<td align="left">16</td>
+<td align="left">80</td>
 </tr>
 <tr>
-<td>Compute APIs</td>
-<td><strong>CUDA, DirectCompute, OpenCL, OpenACC</strong></td>
+<td align="left">Memory Bandwidth (GB/s)</td>
+<td align="left">720</td>
+<td align="left">2039</td>
+</tr>
+<tr>
+<td align="left">NVLink Bandwidth (GB/s)</td>
+<td align="left">160</td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">FP32 performance (TFLOPs)</td>
+<td align="left">10.6</td>
+<td align="left">19.5</td>
 </tr>
 </tbody>
 </table>
 <p>For more information on these nodes, see <code>Detailed Hardware Information</code>.</p>
 <h2 id="scheduling-gpus">Scheduling GPUs<a class="headerlink" href="#scheduling-gpus" title="Permanent link">&para;</a></h2>
-<p>To successfully request access to GPUs, you will need to set the partition to one of the <code>pascalnodes</code> family of partitions depending on how much time you need for the job.</p>
-<table>
-<thead>
-<tr>
-<th>Partition</th>
-<th>Time Limit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pascalnodes</td>
-<td>12 hours</td>
-</tr>
-<tr>
-<td>pascalnodes-medium</td>
-<td>50 hours</td>
-</tr>
-</tbody>
-</table>
-<p>Additionally, when requesting a job using <code>sbatch</code>, you will need to include a SLURM directive <code>--gres=gpu:#</code> where <code>#</code> is the number of GPUs you need.</p>
+<p>To submit a job with one or more GPUs, you will need to set the partition to <code>pascalnodes</code> or <code>amperenodes</code> family of partitions for P100 GPUs or <code>amperenodes</code> family for A100 GPUs.</p>
+<p>When requesting a job using <code>sbatch</code>, you will need to include the Slurm flag <code>--gres=gpu:#</code>. Replace <code>#</code> with the number of GPUs you need. Quotas and constraints are available on our <a href="../../hardware/#summary">Hardware Summary</a></p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2111,33 +2138,68 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
+<h2 id="ensuring-io-performance-with-a100-gpus">Ensuring IO Performance With A100 GPUs<a class="headerlink" href="#ensuring-io-performance-with-a100-gpus" title="Permanent link">&para;</a></h2>
+<p>If you are using <code>amperenodes</code> and the A100 GPUs, then it is highly recommended to move your input files to <code>/local/$SLURM_JOB_ID</code> prior to running your workflow, to ensure adequate GPU performance. Using <code>$USER_SCRATCH</code>, or other network file locations, will starve the GPU of data, resulting in poor performance.</p>
+<p>The following script can be used to wrap your existing workflows. It will automatically create a temporary directory <code>$TMPDIR</code> and delete it when your workflow is finished. You'll need to supply the original source of your data as <code>$MY_DATA_DIR</code>. The script is not guaranteed to delete the temporary directory if the job ends before it reaches the final line, so please be mindful and periodically check for any extra temporary directories and delete them as needed.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#SBATCH ...</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#SBATCH --partition=amperenodes</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">#SBATCH --gres=gpu:1</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># LOAD CUDA MODULES</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>module load CUDA/12.1.1
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>module load cuDNN/12.1.1
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># CREATE TEMPORARY DIRECTORY</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># WARNING! $TMPDIR will be deleted at the end of the script!</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Changing the following line can cause permanent, unintended deletion of important data.</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nv">TMPDIR</span><span class="o">=</span><span class="s2">&quot;/local/</span><span class="nv">$USER</span><span class="s2">/</span><span class="nv">$SLURM_JOB_ID</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>mkdir -p <span class="s2">&quot;</span><span class="nv">$TMPDIR</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># COPY RESEARCH DATA TO LOCAL TEMPORARY DIRECTORY</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># Replace $MY_DATA_DIR with the path to your data folder</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>cp -r <span class="s2">&quot;</span><span class="nv">$MY_DATA_DIR</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$TMPDIR</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1"># YOUR ORIGINAL WORKFLOW GOES HERE</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1"># be sure to load files from &quot;$TMPDIR&quot;!</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="c1"># CLEAN UP TEMPORARY DIRECTORY</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="c1"># WARNING!</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1"># Changing the following line can cause permanent, unintended deletion of important data.</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>rm -rf <span class="s2">&quot;</span><span class="nv">$TMPDIR</span><span class="s2">&quot;</span>
+</code></pre></div>
 <h3 id="open-ondemand">Open OnDemand<a class="headerlink" href="#open-ondemand" title="Permanent link">&para;</a></h3>
 <p>When requesting an interactive job through <code>Open OnDemand</code>, selecting the <code>pascalnodes</code> partitions will automatically request access to one GPU as well. There is currently no way to change the number of GPUs for OOD interactive jobs.</p>
 <h4 id="matlab">MATLAB<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h4>
-<p>To use GPUs with our <a href="../../open_ondemand/ood_interactive/">Open OnDemand</a> MATLAB, you'll need to take a slightly different route than usual.</p>
+<p>To use GPUs with our <a href="../../open_ondemand/ood_interactive/">Open OnDemand</a> MATLAB app, you may need to take a slightly different route than usual.</p>
+<p>If you are using MATLAB R2022a or newer, then our <code>pascalnodes</code> P100 GPUs and <code>amperenodes</code> A100 GPUs should work without any additional steps.</p>
+<p>If you are using R2021b and earlier, then follow the instructions below.</p>
 <ol>
-<li>Determine which CUDA Toolkits are compatible with your required version of MATLAB using the table at the <a href="https://www.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html">MathWorks Site</a>. The column <code>Pascal (cc6.x)</code> is relevant for our system.</li>
 <li>Start an <a href="../../open_ondemand/ood_interactive/">HPC Interactive Desktop Job</a> with appropriate resources. Be sure to use one of the <code>pascalnodes*</code> <a href="#scheduling-gpus">Partitions</a>.</li>
 <li>Open a terminal.</li>
-<li>Load the appropriate <a href="#cuda-toolkit">CUDA Toolkit Module</a>.</li>
+<li>Load the appropriate <a href="#cuda-modules">CUDA Module</a>.<ul>
+<li>Determine which CUDA Modules are compatible with your required version of MATLAB using the table at the <a href="https://www.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html">MathWorks Site</a>.</li>
+<li>Check the <code>Pascal (cc6.x)</code> column for the <code>pascalnodes</code> P100 GPUs and <code>Ampere (cc8.x)</code> column for the <code>amperenodes</code> A100 GPUs.</li>
+<li>As of September, 2023, <code>module load CUDA/11.6.0</code> and newer should work fine with any version of MATLAB R2021b or older, with possible caveats for some functions.</li>
+</ul>
+</li>
 <li>Load the appropriate MATLAB <a href="../../software/modules/">Module</a>.</li>
 <li>Start MATLAB by entering the command <code>matlab</code>.</li>
 <li>When MATLAB loads, enter the command <code>gpuDevice</code> in the MATLAB Command Window to verify it can identify the GPU.</li>
 </ol>
 <p>For more information and official MATLAB documentation please see this page: <a href="https://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html">https://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html</a>.</p>
-<h2 id="cuda-toolkit">CUDA Toolkit<a class="headerlink" href="#cuda-toolkit" title="Permanent link">&para;</a></h2>
-<p>You will need to load a CUDA toolkit module for relevant commands to access the GPUs. Depending on which version of tensorflow, pytorch, or other similar software you are using, a different version of the CUDA toolkit may be required. For instance, tensorflow version 2.5.0 requires CUDA toolkit version 11.2.</p>
-<p>Several CUDA toolkit versions have been installed as modules on Cheaha. To see which CUDA toolkits are available, use:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module -r spider <span class="s1">&#39;cuda.*toolkit&#39;</span>
+<h2 id="cuda-modules">CUDA Modules<a class="headerlink" href="#cuda-modules" title="Permanent link">&para;</a></h2>
+<p>You will need to load a CUDA module to make use of GPUs on Cheaha. Depending on which version of software you are using, different versions of CUDA module may be required. For instance, tensorflow version <code>2.13.0</code> requires the <code>CUDA/11.8.0</code> module. To see which versions are available on Cheaha, use the following command at the terminal.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>module -r spider <span class="s1">&#39;CUDA/*&#39;</span>
 </code></pre></div>
-<p>If a specific version of the CUDA toolkit is needed but not installed, send an install request to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;</a>.</p>
-<h3 id="cudnn">cuDNN<a class="headerlink" href="#cudnn" title="Permanent link">&para;</a></h3>
-<p>NVIDIA drivers for their deep neural net toolbox are available in the cuDNN modules. Be aware that versions of cuDNN are not compatible with all installed versions of the CUDA toolkit, and no default version of the toolkit is loaded when loading a cuDNN module. The cuDNN module names have a CUDA version listed in the module name, i.e. <code>cuDNN/8.2.1.32-CUDA-11.3.1</code>. Please load the toolkit version matching the CUDA version in the cuDNN name, in this case <code>cuda11.3/toolkit</code>.</p>
+<p>If a specific version of CUDA is needed but not installed, please send an install request to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;</a>.</p>
+<h3 id="cudnn-modules">cuDNN Modules<a class="headerlink" href="#cudnn-modules" title="Permanent link">&para;</a></h3>
+<p>If working with deep neural networks (DNNs, CNNs, LSTMs, LLMs, etc.), you will need to load a <code>cuDNN</code> module as well. The <code>cuDNN</code> modules are built to be compatible with a sibling <code>CUDA</code> module and are named with the corresponding version. For example, if you are loading <code>CUDA/12.2.0</code>, you will also need to load <code>cuDNN/8.9.2.26-CUDA-12.2.0</code>.</p>
 <h3 id="tensorflow-compatibility">Tensorflow Compatibility<a class="headerlink" href="#tensorflow-compatibility" title="Permanent link">&para;</a></h3>
-<p>To check which CUDA Toolkit module version is required for your version of Tensorflow, see the toolkit requirements chart here <a href="https://www.tensorflow.org/install/source#gpu">https://www.tensorflow.org/install/source#gpu</a>.</p>
+<p>To check which CUDA Module version is required for your version of Tensorflow, see the toolkit requirements chart here <a href="https://www.tensorflow.org/install/source#gpu">https://www.tensorflow.org/install/source#gpu</a>.</p>
 <h3 id="pytorch-compatibility">PyTorch Compatibility<a class="headerlink" href="#pytorch-compatibility" title="Permanent link">&para;</a></h3>
-<p>PyTorch does not maintain a simple compatibility table for CUDA Toolkit versions. Instead, please manually check their <a href="https://pytorch.org/get-started/locally/#start-locally">"get started" page</a> for the latest PyTorch version compatibility, and their <a href="https://pytorch.org/get-started/previous-versions/">"previous versions" page</a> for older PyTorch version compatibility. Assume that a CUDA Toolkit version is not compatible if it is not listed for a specific PyTorch version.</p>
-<p>To use GPUs prior to PyTorch version 1.13 you <em>must</em> select a <code>cudatoolkit</code> version from the pytorch channel when you install PyTorch using Anaconda. It is how PyTorch knows to install a GPU compatible flavor, as opposed to the CPU only flavor. See below for templates of CPU and GPU installs for PyTorch versions prior to 1.13. Be sure to check the compatibility links above for your selected version. Note <code>torchaudio</code> is also available for signal processing.</p>
+<p>PyTorch does not maintain a simple compatibility table for CUDA versions. Instead, please manually check their <a href="https://pytorch.org/get-started/locally/#start-locally">"get started" page</a> for the latest PyTorch version compatibility, and their <a href="https://pytorch.org/get-started/previous-versions/">"previous versions" page</a> for older PyTorch version compatibility. Assume that a CUDA version is not compatible if it is not listed for a specific PyTorch version.</p>
+<p>To use GPUs prior to PyTorch version 1.13 you <em>must</em> select a <code>cudatoolkit</code> version from the PyTorch channel when you install PyTorch using Anaconda. It is how PyTorch knows to install a GPU compatible flavor, as opposed to the CPU only flavor. See below for templates of CPU and GPU installs for PyTorch versions prior to 1.13. Be sure to check the compatibility links above for your selected version. Note <code>torchaudio</code> is also available for signal processing.</p>
 <ul>
 <li>CPU Version: <code>conda install pytorch==... torchvision==... -c pytorch</code></li>
 <li>GPU Version: <code>conda install pytorch==... torchvision==... cudatoolkit=... -c pytorch</code></li>
@@ -2149,13 +2211,50 @@
 </ul>
 <h2 id="reviewing-gpu-jobs">Reviewing GPU Jobs<a class="headerlink" href="#reviewing-gpu-jobs" title="Permanent link">&para;</a></h2>
 <p>As with all jobs, use <a href="../job_management/#reviewing-past-jobs-with-sacct"><code>sacct</code></a> to review GPU jobs. Quantity of GPUs may be reviewed using the <code>reqtres</code> and <code>alloctres</code> <a href="../job_management/#sacct-fields">fields</a>.</p>
+<h2 id="frequently-asked-questions-faq-about-a100-gpus">Frequently Asked Questions (FAQ) About A100 GPUs<a class="headerlink" href="#frequently-asked-questions-faq-about-a100-gpus" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>I've been using the P100 GPUs on <code>pascalnodes</code> up until now, what is the easiest way to start using the A100 GPUs?</strong><ul>
+<li>If you are using an <code>sbatch</code> script...<ul>
+<li>Change <code>--partition=pascalnodes</code> to <code>--partition=amperenodes</code>, or change <code>--partition=pascalnodes-medium</code> to <code>--partition=amperenodes-medium</code>.</li>
+<li>Also change <code>--gres=gpu:3</code> and <code>--gres=gpu:4</code> to <code>--gres=gpu:2</code>, as there are only two A100 GPUs per node.</li>
+</ul>
+</li>
+<li>If you are using an <a href="../../open_ondemand/ood_interactive/">Open OnDemand Interactive App</a>...<ul>
+<li>Change the partition from "pascalnodes" to "amperenodes, or change "pascalnodes-medium" to "amperenodes-medium".</li>
+</ul>
+</li>
+<li>In all cases, be sure to read the section on <a href="#ensuring-io-performance-with-a100-gpus">Ensuring IO Performance With A100 GPUs</a> to be sure disk read speed doesn't limit your performance gains.</li>
+</ul>
+</li>
+<li><strong>How do I access the A100 GPUs?</strong>
+    You can access the A100 GPUs by request jobs in the appropriate partitions. Use <code>amperenodes</code> partition for up to 12 hours or <code>amperenodes-medium</code> partition for up to 48 hours.</li>
+<li><strong>How many GPUs can I request at once?</strong>
+    Up to four GPUs may be requested by any one researcher at once. However, there are only two GPUs per node, so requesting four GPUs will allocate two nodes. To make use of multiple nodes, your workflow software must know how to communicate between nodes using software like Horovod or OpenMPI. If you are new to GPUs and aren't sure you need multiple nodes, please limit your request to one or two gpus.</li>
+<li><strong>What performance improvements can I expect over the P100 GPUs?</strong>
+    Performance improvements depend on the software and algorithms being used. Determining optimal configuration will take some experimenting. Swapping a single P100 to a single A100, you can generally expect 3x to 20x improvement. For more information about possible performance improvements, please see the <a href="https://www.nvidia.com/en-us/data-center/a100/">Official NVIDIA A100 page</a>.</li>
+<li><strong>How can I make the most efficient use of the A100 GPUs?</strong>
+    A100s process data very rapidly compared with previous technology. Ideally, we want the A100 to be the bottleneck during processing, rather than CPUs or I/O operations. Here are two initial possibilities to consider for optimizing efficiency:<ul>
+<li>All researchers should copy their input data onto <code>/local/$SLURM_JOB_ID</code> (node-specific NVMe drives) before processing to avoid I/O bottlenecks reducing performance. See <a href="#ensuring-io-performance-with-a100-gpus">Ensuring IO Performance With A100 GPUs</a>.</li>
+<li>Some researchers may benefit from using a larger number of CPU cores for data loading and preprocessing, compared with <code>pascalnodes</code>. Please consider experimenting with different numbers of CPU cores using the same dataset to find what is optimal for you. If you feel that performance should be higher, please contact <a href="../../../help/support/">Support</a> so we can guide you toward an optimal CPU-to-GPU ratio for your application and workflow.</li>
+</ul>
+</li>
+<li><strong>Where are the A100 nodes physically located, and will this impact my workflows?</strong>
+    The A100 nodes are located in the DC BLOX Data Center, west of UAB Campus. Because Cheaha storage (GPFS) is located on campus, there may be slightly higher latency when transferring data between the A100 nodes and GPFS. Impacts will only occur if very small amounts of data are transferred very frequently, which is unusual for most GPU workflows. We strongly recommend copying your input data onto <code>/local/$SLURM_JOB_ID</code> prior to processing, see <a href="#ensuring-io-performance-with-a100-gpus">Ensuring IO Performance With A100 GPUs</a>.</li>
+<li><strong>What will happen to the P100 GPUs?</strong>
+    We intend to retain all of the 18 existing P100 GPU nodes, of which  9 nodes are available now. The remaining 9 nodes have been temporarily taken offline as we reconfigure hardware, and will be reallocated based on demand and other factors.</li>
+<li><strong>What else should I be aware of?</strong><ul>
+<li>Please be sure to clean your data off of <code>/local/$SLURM_JOB_ID</code> as soon as you no longer need it, before the job finishes.</li>
+<li>We have updated the CUDA and cuDNN modules to improve reliability and ease of use. Please see the section on <a href="#cuda-modules">CUDA Modules</a> for more information.</li>
+</ul>
+</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2023</span>
       
     
   </small>

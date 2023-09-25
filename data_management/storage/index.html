@@ -2246,7 +2246,7 @@
 <td align="left"><code>/home/&lt;blazerid&gt;</code> (<code>$HOME</code>) and <code>/data/user/&lt;blazerid&gt;</code> (<code>$USER_DATA</code>)</td>
 <td align="left"><code>/data/project/&lt;name&gt;</code></td>
 <td align="left"><code>/scratch/&lt;blazerid&gt;</code> (<code>$USER_SCRATCH</code>)</td>
-<td align="left"><code>/scratch/local</code> (<code>$LOCAL_SCRATCH</code>)</td>
+<td align="left"><code>/local/$SLURM_JOB_ID</code></td>
 </tr>
 <tr>
 <td align="left">Read/Write (IO) Speed</td>
@@ -2435,22 +2435,48 @@
 <!-- markdownlint-enable MD046 -->
 
 <h3 id="local-scratch">Local Scratch<a class="headerlink" href="#local-scratch" title="Permanent link">&para;</a></h3>
-<p>Each compute node has a local scratch directory that is accessible via the variable <code>$LOCAL_SCRATCH</code>. If your job performs a lot of file I/O, the job should use <code>$LOCAL_SCRATCH</code> rather than <code>$USER_SCRATCH</code> to prevent bogging down the network scratch file system. It's important to recognize that most jobs run on the cluster do not fall under this category.</p>
+<p>Each compute node has a local scratch directory that is accessible via <code>/local/$SLURM_JOB_ID</code>. At this time, you will need to create the directory manually using <code>mkdir -p /local/$SLURM_JOB_ID</code>. If your job performs a lot of file I/O, the job should use <code>/local/$SLURM_JOB_ID</code> rather than <code>$USER_SCRATCH</code> to prevent bogging down the network scratch file system. It's important to recognize that most jobs run on the cluster do not fall under this category.</p>
+<p>If you are using <code>amperenodes</code> and the A100 GPUs, then it is highly recommended to move your input files to <code>/local/$SLURM_JOB_ID</code> prior to running your workflow, to ensure adequate GPU performance. Using <code>$USER_SCRATCH</code>, or other network file locations, will starve the GPU of data, resulting in poor performance. For more information please see <a href="../../cheaha/slurm/gpu/#ensuring-io-performance-with-a100-gpus">Ensuring IO Performance With A100 GPUs</a>.</p>
+<p>Be sure to clean up <code>/local/$SLURM_JOB_ID</code> after your job is complete! An example script to automate this process is shown below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#SBATCH ...</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># LOAD MODULES</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># module load ...</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># CREATE TEMPORARY DIRECTORY</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># WARNING! $TMPDIR will be deleted at the end of the script!</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Changing the following line can cause permanent, unintended deletion of important data.</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nv">TMPDIR</span><span class="o">=</span><span class="s2">&quot;/local/</span><span class="nv">$USER</span><span class="s2">/</span><span class="nv">$SLURM_JOB_ID</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>mkdir -p <span class="s2">&quot;</span><span class="nv">$TMPDIR</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># COPY RESEARCH DATA TO LOCAL TEMPORARY DIRECTORY</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># Replace $MY_DATA_DIR with the path to your data folder</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>cp -r <span class="s2">&quot;</span><span class="nv">$MY_DATA_DIR</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$TMPDIR</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># YOUR ORIGINAL WORKFLOW GOES HERE</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1"># be sure to load files from &quot;$TMPDIR&quot;!</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1"># CLEAN UP TEMPORARY DIRECTORY</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1"># WARNING!</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c1"># Changing the following line can cause permanent, unintended deletion of important data.</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>rm -rf <span class="s2">&quot;</span><span class="nv">$TMPDIR</span><span class="s2">&quot;</span>
+</code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><code>$LOCAL_SCRATCH</code> is only useful for jobs in which all processes run on the same compute node, so MPI jobs are not candidates for this solution. Use the <code>#SBATCH --nodes=1</code> slurm directive to specify that all requested cores are on the same node.</p>
+<p>Using <code>/local/$SLURM_JOB_ID</code> with MPI jobs takes additional consideration. If you do not need MPI, please use the <code>#SBATCH --nodes=1</code> slurm directive to specify that all requested cores are on the same node. If you need the performance of <code>/local/$SLURM_JOB_ID</code> in an MPI job, please contact <a href="../../help/support/">Support</a> and read about the Slurm commands <code>sbcast</code> and <code>sgather</code>.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
 <h2 id="temporary-files-tmp">Temporary Files (<code>tmp</code>)<a class="headerlink" href="#temporary-files-tmp" title="Permanent link">&para;</a></h2>
-<p>Please do not use the directory <code>tmp</code> as storage for temporary files. The <code>tmp</code> directory is local to each node, and a full <code>tmp</code> directory harms compute performance on that node for all users. Instead, please use <a href="#local-scratch"><code>$LOCAL_SCRATCH</code></a> for fast access and <a href="#user-scratch"><code>$USER_SCRATCH</code></a> for larger space.</p>
+<p>Please do not use the directory <code>tmp</code> as storage for temporary files. The <code>tmp</code> directory is local to each node, and a full <code>tmp</code> directory harms compute performance on that node for all users. Instead, please use <a href="#local-scratch"><code>/local/$SLURM_JOB_ID</code></a> for fast access and <a href="#user-scratch"><code>$USER_SCRATCH</code></a> for larger space.</p>
 <p>Some software defaults to using <code>tmp</code> without any warning or documentation, especially software designed for personal computers. We may reach out to inform you if your software fills <code>tmp</code>, as it can harm performance on that compute node. If that happens we will work with you to identify ways of redirecting temporary storage to one of the scratch spaces.</p>
 <h3 id="software-known-to-use-tmp">Software Known to Use <code>tmp</code><a class="headerlink" href="#software-known-to-use-tmp" title="Permanent link">&para;</a></h3>
-<p>The following software are known to use <code>tmp</code> by default, and can be worked around by using the listed flags.</p>
+<p>The following software are known to use <code>tmp</code> by default, and can be worked around by using the listed flags. See <a href="#local-scratch">Local Scratch</a> for more information about creating a local temporary directory.</p>
 <ul>
-<li>Java: <code>java * -Djava.io.tmpdir=$LOCAL_SCRATCH</code></li>
-<li>UMI Tools: <code>umi_tools * --temp-dir=$LOCAL_SCRATCH</code></li>
+<li>Java: <code>java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID</code></li>
+<li>UMI Tools: <code>umi_tools * --temp-dir=/local/$SLURM_JOB_ID</code></li>
 </ul>
 <h2 id="how-much-space-do-i-have-left">How much space do I have left?<a class="headerlink" href="#how-much-space-do-i-have-left" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2547,7 +2573,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2023</span>
       
     
   </small>
