@@ -56,7 +56,7 @@ module reset
 
 To reduce unexpected behavior and/or to get rid of Lmod errors,
 
-1. Avoid using `module load` in `.bashrc`. Instead, create a bash script with the module load commands and source it each time to load the modules needed in a shell/[sbatch script](../slurm/submitting_jobs.md). Here is an example of loading module in a bash script named `module_test.sh` and compilation,
+1. Avoid using `module load` in `$HOME/.bashrc`. Instead, create a bash script with the module load commands and source it each time to load the modules needed in a shell/[sbatch script](../slurm/submitting_jobs.md). Here is an example of loading module in a bash script named `module_test.sh` and compilation,
 
     ```bash
     #!/bin/bash
@@ -115,7 +115,7 @@ cuda11.4/toolkit/11.4.2
 ```
 
 ```bash
-# bash script you are passing in sbatch script
+# bash script you are passing in a sbatch script
 #!/bin/bash
 module load cuda11.8/toolkit
 module -t list
