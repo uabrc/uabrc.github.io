@@ -4,6 +4,8 @@
 
 A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found [here](https://resources.nvidia.com/en-us-genomics-ep/healthcare-genomics-?lx=OhKlSJ).
 
+For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md)
+
 ### Licensing Policy
 
 A license is no longer required to use Clara Parabricks 4.x and later versions, and is free for the following groups,
@@ -12,19 +14,22 @@ A license is no longer required to use Clara Parabricks 4.x and later versions, 
 2. Research by non-profit institutions.
 3. For development, test and evaluation purposes without use in production.
 
-### Minimum Hardware requirements to run Parabricks on GPUs
+### Minimum Hardware requirements to run Parabricks on Cheaha GPUs
 
-1. Access to internet.
+1. Access to the internet.
+2. Any GPU that supports CUDA architecture/compute capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0 and has 16 GB of GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs. For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md)
 
-2. Any GPU that supports CUDA architecture 6.0, 6.1, 7.0, 7.5 and has 12GB GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs.
+<!-- markdownlint-disable MD046 -->
+!!! Note
+
+The P100 GPUs on Cheaha appear to work with Parabricks 4.0.0, based on our testing, despite having compute capability 6.0. This usage is not officially supported by NVIDIA.
+<!-- markdownlint-enable MD046 -->
 
 #### System Requirements
 
-(i) 2 GPU server should have 100GB CPU RAM, at least 24 CPU threads.
-
-(ii) 4 GPU server should have 196GB CPU RAM, at least 32 CPU threads.
-
-(iii) 8 GPU server should have 392GB CPU RAM, at least 48 CPU threads.
+- 2 GPU server should have 100GB CPU RAM, at least 24 CPU threads.
+- 4 GPU server should have 196GB CPU RAM, at least 32 CPU threads.
+- 8 GPU server should have 392GB CPU RAM, at least 48 CPU threads.
 
 ## Parabricks Testing on Cheaha
 
@@ -34,7 +39,7 @@ Parabricks software can be installed and used in the Cheaha platform on `pascaln
 
 Parbaricks 4.x are available as containers in the [NGC Catalog](https://catalog.ngc.nvidia.com/orgs/nvidia/collections/claraparabricks/entities), and Parabricks 4.0.0 documentation is available [here](https://docs.nvidia.com/clara/parabricks/4.0.0/index.html). It has generic container that comprises all the analyses pipeline that are referred in the [Nvidia Documentation](https://docs.nvidia.com/clara/parabricks/4.0.0/toolreference.html). It also has containers for specific tool category.
 
-Parabricks 4.x container image can be installed on Cheaha using Singularity container. More details on usage of Singularity container on Cheaha can be found in the [Containers Page](../workflow_solutions/getting_containers.md).
+Parabricks 4.x container image can be installed on Cheaha using a Singularity container. More details on usage of Singularity container on Cheaha can be found in the [Containers Page](../workflow_solutions/getting_containers.md).
 
 To install Parabricks using Singulairty, load the `Singularity 3.x` module from Cheaha as,
 
