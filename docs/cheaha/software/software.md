@@ -58,8 +58,6 @@ There are currently a couple of known issues when working with Mamba on Cheaha.
 2. Using `mamba init` can cause environment instability. Do _not_ use it.
 3. Mamba alters the terminal prompt while a `mamba` environment is activated. The system should function as normal otherwise.
 
-!!! info
-
 <!-- markdownlint-disable MD046 -->
 !!! warning
 

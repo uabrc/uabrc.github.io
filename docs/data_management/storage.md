@@ -119,7 +119,7 @@ Two types of scratch space are provided for analyses currently being ran, networ
 
 ### User Scratch
 
-All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in `/data/scratch/$USER` or `$USER_SCRATCH`. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.
+All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in `/scratch/$USER` or `$USER_SCRATCH`. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.
 
 Network scratch is available on the login node and each compute node. This storage is a GPFS high performance file system providing roughly 1 PB of storage. If using scratch, this should be your jobs' primary working directory, unless the job would benefit from local scratch (see below).
 
@@ -131,26 +131,56 @@ Network scratch is available on the login node and each compute node. This stora
 
 ### Local Scratch
 
-Each compute node has a local scratch directory that is accessible via the variable `$LOCAL_SCRATCH`. If your job performs a lot of file I/O, the job should use `$LOCAL_SCRATCH` rather than `$USER_SCRATCH` to prevent bogging down the network scratch file system. It's important to recognize that most jobs run on the cluster do not fall under this category.
+Each compute node has a local scratch directory that is accessible via `/local/$SLURM_JOB_ID`. At this time, you will need to create the directory manually using `mkdir -p /local/$SLURM_JOB_ID`. If your job performs a lot of file I/O, the job should use `/local/$SLURM_JOB_ID` rather than `$USER_SCRATCH` to prevent bogging down the network scratch file system. It's important to recognize that most jobs run on the cluster do not fall under this category.
+
+If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to `/local/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor performance. For more information please see [Ensuring IO Performance With A100 GPUs](../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
+
+Be sure to clean up `/local/$SLURM_JOB_ID` after your job is complete! An example script to automate this process is shown below.
+
+```bash
+#!/bin/bash
+#SBATCH ...
+
+# LOAD MODULES
+# module load ...
+
+# CREATE TEMPORARY DIRECTORY
+# WARNING! $TMPDIR will be deleted at the end of the script!
+# Changing the following line can cause permanent, unintended deletion of important data.
+TMPDIR="/local/$USER/$SLURM_JOB_ID"
+mkdir -p "$TMPDIR"
+
+# COPY RESEARCH DATA TO LOCAL TEMPORARY DIRECTORY
+# Replace $MY_DATA_DIR with the path to your data folder
+cp -r "$MY_DATA_DIR" "$TMPDIR"
+
+# YOUR ORIGINAL WORKFLOW GOES HERE
+# be sure to load files from "$TMPDIR"!
+
+# CLEAN UP TEMPORARY DIRECTORY
+# WARNING!
+# Changing the following line can cause permanent, unintended deletion of important data.
+rm -rf "$TMPDIR"
+```
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    `$LOCAL_SCRATCH` is only useful for jobs in which all processes run on the same compute node, so MPI jobs are not candidates for this solution. Use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node.
+    Using `/local/$SLURM_JOB_ID` with MPI jobs takes additional consideration. If you do not need MPI, please use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node. If you need the performance of `/local/$SLURM_JOB_ID` in an MPI job, please contact [Support](../help/support.md) and read about the Slurm commands `sbcast` and `sgather`.
 <!-- markdownlint-enable MD046 -->
 
 ## Temporary Files (`tmp`)
 
-Please do not use the directory `tmp` as storage for temporary files. The `tmp` directory is local to each node, and a full `tmp` directory harms compute performance on that node for all users. Instead, please use [`$LOCAL_SCRATCH`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
+Please do not use the directory `tmp` as storage for temporary files. The `tmp` directory is local to each node, and a full `tmp` directory harms compute performance on that node for all users. Instead, please use [`/local/$SLURM_JOB_ID`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
 
 Some software defaults to using `tmp` without any warning or documentation, especially software designed for personal computers. We may reach out to inform you if your software fills `tmp`, as it can harm performance on that compute node. If that happens we will work with you to identify ways of redirecting temporary storage to one of the scratch spaces.
 
 ### Software Known to Use `tmp`
 
-The following software are known to use `tmp` by default, and can be worked around by using the listed flags.
+The following software are known to use `tmp` by default, and can be worked around by using the listed flags. See [Local Scratch](#local-scratch) for more information about creating a local temporary directory.
 
-- Java: `java * -Djava.io.tmpdir=$LOCAL_SCRATCH`
-- UMI Tools: `umi_tools * --temp-dir=$LOCAL_SCRATCH`
+- Java: `java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID`
+- UMI Tools: `umi_tools * --temp-dir=/local/$SLURM_JOB_ID`
 
 ## How much space do I have left?
 
