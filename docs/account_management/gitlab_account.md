@@ -1,4 +1,4 @@
-# UAB GitLab Overview and Registration
+# UAB GitLab Account Management
 
 Welcome to UAB GitLab! This is a UAB-specific [GitLab](https://about.gitlab.com/). GitLab is similar to [GitHub](https://github.com/), but hosted here at UAB on secure servers.
 
@@ -25,11 +25,15 @@ UAB GitLab is useful for software developers. It is a single application for the
 
 Our GitLab instance may be found at <https://gitlab.rc.uab.edu>.
 
-## UAB GitLab Registration
+## Creating a New Account
 
-### UAB-Affiliated Researcher Registration
+Please choose the subsection below that matches how you are associated with UAB.
 
-If you are a UAB affiliated researcher and have a BlazerID, you may create an account by logging in at the site above using the `ldap` tab. Please use your single sign-on (SSO) credentials.
+### UAB Campus or UAB Medicine (UABMC) Affiliated
+
+Authenticate with your BlazerID credentials under the `ldap` tab at <https://gitlab.rc.uab.edu>. UABMC credentials are not supported.
+
+![!gitlab login pane with ldap tab selected](./images/gitlab_researcher_ldap.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! note "Please use BlazerID and password instead of UABMC credentials"
@@ -37,20 +41,14 @@ If you are a UAB affiliated researcher and have a BlazerID, you may create an ac
     Please use your BlazerID and BlazerID password for UAB GitLab. UABMC credentials are a different sign in system and will likely not work. Central IT groups like Research Computing do not have a way to access UABMC credentials.
 <!-- markdownlint-enable MD046 -->
 
-![!gitlab login pane with ldap tab selected](./images/gitlab_researcher_ldap.png)
+### XIAS External Collaborator
 
-## UABMC Researcher Registration
+If you are a collaborator with a XIAS account you'll need to follow the procedure below. If you do not have an account, first please visit our [XIAS page](xias/index.md) and follow the instructions there.
 
-Please use your BlazerID and BlazerID credentials to sign in following the directions for UAB-Affiliated Researchers. UABMC credentials should not be used for UAB GitLab.
-
-## XIAS External Collaborator Registration
-
-If you are a collaborator with a XIAS account you'll need to follow a different procedure.
-
-1. Ensure that your sponsor has included `https://gitlab.rc.uab.edu` in the list of approved URIs on the XIAS configuration page.
-2. Email support@listserv.uab.edu providing your full name, XIAS account email address, and sponsor.
+1. Communicate with your sponsor to ensure that `https://gitlab.rc.uab.edu` is included in the list of approved URIs. If they are unsure of what this means, please direct them to our [XIAS PI Site Management page](xias/pi_site_management.md).
+2. Email <support@listserv.uab.edu> providing your full name, your XIAS account email address, and your sponsor's full name.
 3. UAB Research Computing will create the account.
-4. You will recieve an email from gitlab.rc.uab.edu with a link to create a password.
+4. You will recieve an email from <https://gitlab.rc.uab.edu> with a link to create a password.
 5. Navigate to <https://gitlab.rc.uab.edu>.
 6. Click the `Standard` tab.
 7. In the `Username or email` field type the part of your XIAS email address before the `@` symbol. Do not include the `@` symbol or anything after it.
@@ -62,5 +60,5 @@ If you are a collaborator with a XIAS account you'll need to follow a different 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    XIAS account researchers can only be granted access if their sponsor adds the GitLab URL to the list of approved URIs. Please see [XIAS Sites](./xias/pi_site_management.md) for more information.
+    XIAS account researchers can only be granted access if their sponsor adds the GitLab URL to the list of approved URIs. Please see our [XIAS PI Site Management page](./xias/pi_site_management.md) for more information.
 <!-- markdownlint-enable MD046 -->
