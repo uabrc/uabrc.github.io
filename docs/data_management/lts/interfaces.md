@@ -1,97 +1,20 @@
-# Long-Term Storage
+# Connecting to LTS
 
-<!-- markdownlint-disable MD046 -->
-!!! important
+LTS is not available as a mounted filesystem on local computers or Cheaha. You must use an interface to transfer data between LTS and whichever machine you are using. There a variety of interfaces around, some of which are listed here.
 
-    This page is a work in progress. Please be patient as information is added or removed. Thank you.
-<!-- markdownlint-enable MD046 -->
+## Globus
 
-UAB Long-term storage (LTS) is an S3 object-storage platform hosted at UAB. This storage is designed to hold data that is not currently being used in analysis but should be kept for data sharing, recapitulation purposes, or reused for further analysis in the future. This documentation covers multiple methods for accessing LTS in Windows, Mac, and Linux environments.
+[Globus](../transfer/globus.md#long-term-storage-s3-lts-connector) is a general file transfer system that operates through a web browser and is recommended for most file transfer needs. UAB has an S3 connector for Globus that can transfer data to and from LTS as long as the user has access to the desired buckets.
 
-<!-- markdownlint-disable MD046 -->
-!!! important
+To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in the search bar.
 
-    Currently, UAB LTS is only accessible using the UAB Campus Network. If you are off campus and want to access LTS, please use the [UAB Campus VPN](https://www.uab.edu/it/home/tech-solutions/network/vpn). If you are accessing LTS through Cheaha, you do not need to use the VPN, even at home.
-
-<!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
-!!! tip
-
-    [Globus](../transfer/globus.md#long-term-storage-s3-lts-connector) may be used to transfer data with LTS.
-<!-- markdownlint-enable MD046 -->
-
-## Terminology
-
-When talking about S3 storage, some terms are different compared to a normal filesystem. This section is here to briefly explain some differences in case you go to other documentation and see these terms instead.
-
-In S3, there are no such things as folders and files, just objects. Everything is an object, and there is no standard filesystem where things are physically stored in a heirarchical manner. However, there are certain things that can make it look that way such as prefixes. Prefixes are used in place of a file path to an object, and so can be used to represent a path to an object.
-
-This documentation will use the standard file and path terms since that's more easily understood by most users. Just be aware that documentation such as [AWS CLI](https://awscli.amazonaws.com/v2/documentation/api/latest/index.html) will use terms prefix, object, and others that are not standard in a typical filesystem.
-
-## Requesting an Account
-
-UAB researchers do not have automatic access to LTS, and currently, single sign on is not enabled. To request access to LTS, please send an email to <support@listserv.uab.edu>. You will be then be given an Access Key and a Secret Access Key, both of which will be used later on. Keep track of both of these keys and do not share them with anyone else, these are your login credentials for LTS.
-
-## Windows/Mac
-
-To access LTS from Windows and Mac, we suggest using the [Cyberduck](https://cyberduck.io/download/) GUI which is free to download.
-
-Once you have it installed and open, Cyberduck will look like this:
-
-![!Cyberduck basic interface ><](images/cyberduck.png)
-
-### Creating a Connection
-
-First, download the [UAB CyberDuck Connection Profile](res/UAB_S3_Object_Storage.cyberduckprofile). After it's downloaded, double click the file to open it in Cyberduck. It will open the following connection creation window:
-
-![!Cyberduck UAB Connection Creation ><](images/cyberduck-open-connection.png)
-
-Input your Access Key and Secret Access Key sent to you by Research Computing after account creation in their appropriate fields. Once you've entered these keys you can close the connection creation window. This connection with the keys you entered is now saved as a bookmark for easy access in the future. Double click the created bookmark to open the connection to LTS.
-
-### Creating a Bucket
-
-Sets of storage objects are stored in what are called buckets. Buckets are sets of file systems for storing data. You can create different buckets for various purposes, such as separating buckets by dataset or project, or having a single bucket for all data you are moving off of Cheaha project storage.
-
-In order to create a bucket, click `File > New Folder...` and then name the bucket you would like to create. Once the bucket is created, it will appear in the File window. An example could look like:
-
-![!Example bucket creation ><](images/cyberduck-create-bucket.png)
-
-The bucket will have the symbol of a hard disk with an Amazon A brand on it. This is the root of the file system for that bucket. You can then double click into it to open that file system.
-
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage.
-<!-- markdownlint-enable MD046 -->
-
-#### Avoiding Duplicate Names
-
-Good practice when naming buckets is to use a short, descriptive and memorable name, then append a universally unique identifier (UUID) to the end. Websites like <https://www.uuidgenerator.net/> may be used to generate and copy UUIDs. There are $5.3\times 10^{36}$ possible UUIDs, which means the chance of duplicating one is virtually zero. Please see [Wikipedia](https://en.wikipedia.org/wiki/Universally_unique_identifier#Collisions) for math supporting the low rate of duplication.
-
-### Uploading and Downloading Data
-
-Once you're inside the bucket, files can be uploaded easily through dragging and dropping from your local machine into the GUI. You can also use the `Upload` button in the toolbar to open a file browser and choose what to upload.
-
-Downloading files from the bucket can be done by first selecting the file(s)/folder(s) to download and then clicking the `Actions` button in the toolbar. In that dropdown will be a `Download` option. You can also get to this dropdown through the `File` menu or by right-clicking.
-
-<!-- markdownlint-disable MD046-->
-!!! note
-
-    By default, all buckets and files you upload are only available to you.Currently, there is not a known method to add permissions for individual researchers in the Cyberduck interface. If you need to add access to a bucket or set of files within a bucket, please look in the Linux guide below. If you do not have access to a personal Linux machine, Cheaha is available to use for this purpose.
-<!-- markdownlint-enable MD046-->
-
-### Alternative Interfaces
-
-In addition to Cyberduck, there are other GUI based programs for interfacing with UAB LTS. [S3 Browser](https://s3browser.com/) is an easy-to-use program for uploading and downloading files. However more sophisticated tools, such as setting file permissions, are hidden behind a paywall. This tool is also only available on Windows platforms. researchers can investigate this tool if desired, however research computing will not provide direct support for this program.
-
-## Linux/Command Line
+## Command Line
 
 Linux has very few workable GUIs capable of accessing S3 storage for free available, and so almost all tools for transferring from Cheaha to LTS will be command line interfaces (CLI). The positives for this are that CLIs offer a much broader range of function available to researchers for managing their LTS buckets.
 
 There are a few different CLIs available to researchers on Cheaha to use. Current available CLIs on Cheaha are [rclone](https://rclone.org/), [s3cmd](https://github.com/s3tools/s3cmd), and the [AWS CLI](https://aws.amazon.com/cli/). This documentation will show how to perform each function using all three tools where possible and will give a comparison chart contrasting what each tool is useful for.
 
-Both of these are available as modules under the `rclone` and `awscli` module names.
+rclone and AWS CLI are available as modules under the `rclone` and `awscli` module names. s3cmd should be installed via Anaconda.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -144,14 +67,14 @@ Secret Key: <secret key>
 Default Region [US]: <leave blank>
 
 Use "s3.amazonaws.com" for S3 Endpoint and not modify it to the target Amazon S3.
-S3 Endpoint [s3.amazonaws.com]: s3.lts.rc.uab.edu
+S3 Endpoint [s3.amazonaws.com]: https://s3.lts.rc.uab.edu
 
 Use "%(bucket)s.s3.amazonaws.com" to the target Amazon S3. "%(bucket)s" and "%(location)s" vars can be used if the target S3 system supports dns based buckets.
 DNS-style bucket+hostname:port template for accessing a bucket [%(bucket)s.s3.amazonaws.com]: %(bucket).s3.lts.rc.uab.edu
 
 Encryption password is used to protect your files from reading by unauthorized persons while in transfer to S3
-Encryption password: <leave blank>
-Path to GPG program [/usr/bin/gpg]: $HOME/bin/gpg
+Encryption password: <leave blank or enter password>
+Path to GPG program [/usr/bin/gpg]: <leave blank>
 
 When using secure HTTPS protocol all communication with Amazon S3 servers is protected from 3rd party eavesdropping. This method is slower than plain HTTP, and can only be proxied with Python 2.7 or newer
 Use HTTPS protocol [Yes]: <leave blank>
@@ -163,7 +86,7 @@ New settings:
   Access Key: <access key>
   Secret Key: <secret key>
   Default Region: US
-  S3 Endpoint: s3.lts.rc.uab.edu
+  S3 Endpoint: https://s3.lts.rc.uab.edu
   DNS-style bucket+hostname:port template for accessing a bucket: %(bucket).s3.lts.rc.uab.edu
   Encryption password:
   Path to GPG program: $HOME/bin/gpg
@@ -248,13 +171,7 @@ Additionally, when running basically any AWS CLI command, you can include the `-
 
 ### Make a Bucket
 
-Buckets are essentially the root folder of a filesystem where you are storing your data. You will need to create a bucket before being able to copy data to LTS.
-
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage.
-<!-- markdownlint-enable MD046 -->
+Buckets are essentially the root folder of a filesystem where you are storing your data. You will need to create a bucket before being able to copy data to LTS. Bucket names are unique across LTS, see [avoiding duplicate names](index.md#avoiding-duplicate-names-for-buckets) for more details.
 
 **RClone**:
 
@@ -315,6 +232,22 @@ aws s3 ls <bucket/path/directory/> --endpoint-url https://s3.lts.rc.uab.edu
 ```
 
 If you would like to list all objects recursively, you can add the `--recursive` tag. A couple of other helpful options are `--summarize` and `--human-readable` that will give a total number of objects and their size and make the size output more easily readable, respectively.
+
+### Check Bucket or Folder Size
+
+**s3cmd**:
+
+With s3cmd, you can use the `du` command to list the size of a bucket or folder within a bucket.
+
+``` bash
+s3cmd du [-H] <s3://bucket/path/>
+```
+
+By default, the output will be in bytes, but you can add the `-H` option to output in a human readable format rounding the nearest MB, GB, or TB.
+
+**AWS CLI**:
+
+By default, the `ls` subcommand will output the size of any objects in the path given (see the [ls section](#listing-buckets-and-contents)). Unlike the other tools, AWS CLI will not output the total size of folders. However, the total combined size of all objects in a folder can be calculated using the `--summarize` option. You can also convert the output to readable size by using `--human-readable` as well.
 
 ### Uploading Files and Folders
 
@@ -458,3 +391,37 @@ aws s3api delete-bucket --bucket <bucket> --endpoint-url https://s3.lts.rc.uab.e
 | Delete File   | `rclone delete uablts:<bucket/path/file>`                | `s3cmd rm s3://<bucket/path/file>`               | `aws s3 rm s3://<bucket/path/file>`                          |
 | Delete Folder | `rclone purge uablts:<bucket/path/>`                     | `s3cmd rm s3://<bucket/path/> --recursive`       | `aws s3 rm s3://<bucket/path/> --recursive`                  |
 | Delete Bucket | `rclone purge uablts:<bucket>`                           | `s3cmd rb s3://<bucket>`                         | `aws s3api delete-bucket --bucket <bucket>`                  |
+
+## Cyberduck
+
+To access LTS from Windows and Mac, we suggest using the [Cyberduck](https://cyberduck.io/download/) GUI which is free to download.
+
+Once you have it installed and open, Cyberduck will look like this:
+
+![!Cyberduck basic interface ><](images/cyberduck.png)
+
+### Creating a Connection
+
+First, download the [UAB CyberDuck Connection Profile](res/UAB_S3_Object_Storage.cyberduckprofile). After it's downloaded, double click the file to open it in Cyberduck. It will open the following connection creation window:
+
+![!Cyberduck UAB Connection Creation ><](images/cyberduck-open-connection.png)
+
+Input your Access Key and Secret Access Key sent to you by Research Computing after account creation in their appropriate fields. Once you've entered these keys you can close the connection creation window. This connection with the keys you entered is now saved as a bookmark for easy access in the future. Double click the created bookmark to open the connection to LTS.
+
+### Creating a Bucket
+
+In order to create a bucket, click `File > New Folder...` and then name the bucket you would like to create. Once the bucket is created, it will appear in the File window. An example could look like:
+
+![!Example bucket creation](images/cyberduck-create-bucket.png)
+
+The bucket will have the symbol of a hard disk with an Amazon A brand on it. This is the root of the file system for that bucket. You can then double click into it to open that file system.
+
+### Uploading and Downloading Data
+
+Once you're inside the bucket, files can be uploaded easily through dragging and dropping from your local machine into the GUI. You can also use the `Upload` button in the toolbar to open a file browser and choose what to upload.
+
+Downloading files from the bucket can be done by first selecting the file(s)/folder(s) to download and then clicking the `Actions` button in the toolbar. In that dropdown will be a `Download` option. You can also get to this dropdown through the `File` menu or by right-clicking.
+
+### Alternative Interfaces
+
+In addition to Cyberduck, there are other GUI based programs for interfacing with UAB LTS. [S3 Browser](https://s3browser.com/) is an easy-to-use program for uploading and downloading files. However more sophisticated tools, such as setting file permissions, are hidden behind a paywall. This tool is also only available on Windows platforms. researchers can investigate this tool if desired, however research computing will not provide direct support for this program.

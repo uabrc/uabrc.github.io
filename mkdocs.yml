@@ -55,8 +55,10 @@ plugins:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
         account_management/uab_researcher.md: account_management/cheaha_account.md
         cheaha/lmod.md: cheaha/software/modules.md
-        data_management/LTS/lts.md: data_management/lts/lts.md
-        data_management/LTS/sharing.md: data_management/lts/sharing.md
+        data_management/LTS/lts.md: data_management/lts/index.md
+        data_management/LTS/sharing.md: data_management/lts/policies.md
+        data_management/lts/lts.md: data_management/lts/index.md
+        data_management/lts/sharing.md: data_management/lts/policies.md
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/getting_software_with_git.md
@@ -88,8 +90,9 @@ nav:
   - Data Management:
       - Cheaha Storage: data_management/storage.md
       - Long Term Storage:
-          - Introduction: data_management/lts/lts.md
-          - Sharing: data_management/lts/sharing.md
+          - data_management/lts/index.md
+          - Interfacing with LTS: data_management/lts/interfaces.md
+          - Sharing: data_management/lts/policies.md
       - Transfer:
           - Globus: data_management/transfer/globus.md
           - RClone: data_management/transfer/rclone.md
@@ -100,7 +103,8 @@ nav:
       - Using Anaconda: workflow_solutions/using_anaconda.md
       - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
       - Using Git: workflow_solutions/git.md
-      - Getting Containers: workflow_solutions/getting_containers.md
+      - R Projects and Environments: workflow_solutions/r_environments.md
+      - Software Containers: workflow_solutions/getting_containers.md
       - Software Collaboration with GitHub and GitLab: workflow_solutions/getting_software_with_git.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
@@ -116,6 +120,7 @@ nav:
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md
+          - Practical Batch Array Jobs: cheaha/slurm/practical_sbatch.md
           - Managing Jobs: cheaha/slurm/job_management.md
           - GPUs: cheaha/slurm/gpu.md
       - Job Efficiency: cheaha/job_efficiency.md
