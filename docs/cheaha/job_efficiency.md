@@ -50,7 +50,7 @@ Questions to ask yourself before requesting resources:
 6. Which partition is most appropriate?
 
     - More than 40 GB memory and queue wait times are long? Try `largemem*`.
-    - Need a GPU? Use `pascalnodes*`.
+    - Need a GPU? Use `pascalnodes*` or `amperenodes*`.
     - Software works with AMD? Try `amd-hdr100`.
 
 <!-- markdownlint-disable MD046 -->
