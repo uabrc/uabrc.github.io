@@ -1,26 +1,31 @@
 # Connecting to LTS
 
-LTS is not available as a mounted filesystem on local computers or Cheaha. You must use an interface to transfer data between LTS and whichever machine you are using. There a variety of interfaces around, some of which are listed here.
+LTS is not available as a mounted filesystem on local computers or Cheaha. You must use an interface to transfer data between LTS and whichever machine you are using. There a variety of interfaces with the following recommendations.
 
 ## Globus
 
 [Globus](../transfer/globus.md#long-term-storage-s3-lts-connector) is a general file transfer system that operates through a web browser and is recommended for most file transfer needs. UAB has an S3 connector for Globus that can transfer data to and from LTS as long as the user has access to the desired buckets.
 
-To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in the search bar.
+To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in the search bar and enter your access and secret keys given to you by Research Computing staff. You will be able to see the buckets owned by the account associated with the keys you entered.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If your LTS account was given permission to access a bucket owned by another account, it will not automatically appear in the Globus file browser. You can access buckets you have `s3:ListBucket` permissions on by typing `/<bucket-name>/` in the Path field under the LTS endpoint.
+
+    ![!Access a shared bucket in Globus](images/globus-bucket.png) 
+<!-- markdownlint-enable MD046 -->
+
+Globus is very useful for single transfers of data either to or from LTS and is available on any computer with an internet connection. However, it is currently not capable of managing buckets. This must be done through a command line interface.
 
 ## Command Line
 
-Linux has very few workable GUIs capable of accessing S3 storage for free available, and so almost all tools for transferring from Cheaha to LTS will be command line interfaces (CLI). The positives for this are that CLIs offer a much broader range of function available to researchers for managing their LTS buckets.
+While globus is the recommended tool for most data transfers, command line tools are necessary for planned, regular transfers as well as managing permissions on buckets. We recommend the following two tools for different purposes:
 
-There are a few different CLIs available to researchers on Cheaha to use. Current available CLIs on Cheaha are [rclone](https://rclone.org/), [s3cmd](https://github.com/s3tools/s3cmd), and the [AWS CLI](https://aws.amazon.com/cli/). This documentation will show how to perform each function using all three tools where possible and will give a comparison chart contrasting what each tool is useful for.
+1. [s3cmd](https://github.com/s3tools/s3cmd) is a Python tool that we suggest using for managing bucket permissions as well as small transfers.
+2. [s5cmd](https://github.com/peak/s5cmd) is a Go package that transfers data much more quickly than s3cmd, especially as the file size and/or quanitity increases.
 
-rclone and AWS CLI are available as modules under the `rclone` and `awscli` module names. s3cmd should be installed via Anaconda.
-
-<!-- markdownlint-disable MD046 -->
-!!! note
-
-    Of note, all of these tools are available for Windows and Mac as well if you are comfortable using command line interfaces on those platforms. There are installation instructions for both of these tools on their respective websites.
-<!-- markdownlint-enable MD046 -->
+You do not need to install both tools if they aren't necessary. Both are available to install into [Anaconda](../../workflow_solutions/using_anaconda.md) environments. Specific install and usage commands for each are given in their respecitve sections.
 
 ### Configuration
 
@@ -391,37 +396,3 @@ aws s3api delete-bucket --bucket <bucket> --endpoint-url https://s3.lts.rc.uab.e
 | Delete File   | `rclone delete uablts:<bucket/path/file>`                | `s3cmd rm s3://<bucket/path/file>`               | `aws s3 rm s3://<bucket/path/file>`                          |
 | Delete Folder | `rclone purge uablts:<bucket/path/>`                     | `s3cmd rm s3://<bucket/path/> --recursive`       | `aws s3 rm s3://<bucket/path/> --recursive`                  |
 | Delete Bucket | `rclone purge uablts:<bucket>`                           | `s3cmd rb s3://<bucket>`                         | `aws s3api delete-bucket --bucket <bucket>`                  |
-
-## Cyberduck
-
-To access LTS from Windows and Mac, we suggest using the [Cyberduck](https://cyberduck.io/download/) GUI which is free to download.
-
-Once you have it installed and open, Cyberduck will look like this:
-
-![!Cyberduck basic interface ><](images/cyberduck.png)
-
-### Creating a Connection
-
-First, download the [UAB CyberDuck Connection Profile](res/UAB_S3_Object_Storage.cyberduckprofile). After it's downloaded, double click the file to open it in Cyberduck. It will open the following connection creation window:
-
-![!Cyberduck UAB Connection Creation ><](images/cyberduck-open-connection.png)
-
-Input your Access Key and Secret Access Key sent to you by Research Computing after account creation in their appropriate fields. Once you've entered these keys you can close the connection creation window. This connection with the keys you entered is now saved as a bookmark for easy access in the future. Double click the created bookmark to open the connection to LTS.
-
-### Creating a Bucket
-
-In order to create a bucket, click `File > New Folder...` and then name the bucket you would like to create. Once the bucket is created, it will appear in the File window. An example could look like:
-
-![!Example bucket creation](images/cyberduck-create-bucket.png)
-
-The bucket will have the symbol of a hard disk with an Amazon A brand on it. This is the root of the file system for that bucket. You can then double click into it to open that file system.
-
-### Uploading and Downloading Data
-
-Once you're inside the bucket, files can be uploaded easily through dragging and dropping from your local machine into the GUI. You can also use the `Upload` button in the toolbar to open a file browser and choose what to upload.
-
-Downloading files from the bucket can be done by first selecting the file(s)/folder(s) to download and then clicking the `Actions` button in the toolbar. In that dropdown will be a `Download` option. You can also get to this dropdown through the `File` menu or by right-clicking.
-
-### Alternative Interfaces
-
-In addition to Cyberduck, there are other GUI based programs for interfacing with UAB LTS. [S3 Browser](https://s3browser.com/) is an easy-to-use program for uploading and downloading files. However more sophisticated tools, such as setting file permissions, are hidden behind a paywall. This tool is also only available on Windows platforms. researchers can investigate this tool if desired, however research computing will not provide direct support for this program.
