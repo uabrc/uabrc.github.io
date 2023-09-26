@@ -1,14 +1,19 @@
-# Welcome to UAB Research Computing Docs
+# Welcome to UAB Research Computing
+
+The Research Computing System (RCS) provides a framework for sharing research data, accessing computing power, and collaborating with peers on campus and around the globe. Our goal is to construct a dynamic "network of services" that you can use to organize, study and share your research data. Research Computing provides services to researchers in these core areas:
+
+- _Data Analysis_: using the High Performance Computing (HPC) fabric [Cheaha](cheaha/index.md) for batch data processing.
+- _Data Sharing_: supporting trusted information exchange to spark new ideas via our [Storage](data_management/storage.md) system.
+- _Application Development_: providing virtual machines and web-hosted development tools empowering researcher via our [cloud.rc](uab_cloud/index.md) fabric.
 
 <!-- markdownlint-disable MD046 -->
 !!! announcement
 
-    Please note upcoming changes!
+    We have released new A100 gpus on Cheaha! For more information please see [GPUs](cheaha/slurm/gpu.md).
 
-    - December 13, 2022: Clean up of `temp-scratch` must be completed by all researchers.
-    - December 16, 2022: Access to `temp-scratch` will be removed for all researchers.
-    - January 16, 2023: New `$SCRATCH` storage limited-retention policies will start.
-    - To Be Determined: `$USER_SCRATCH` will point to `/scratch/$USER`
+    We have released new CUDA and cuDNN modules! For more information please see [CUDA Modules](cheaha/slurm/gpu.md#cuda-modules).
+
+    Also see our [A100 GPU Frequently Asked Questions (FAQ)](cheaha/slurm/gpu.md#frequently-asked-questions-faq-about-a100-gpus)
 <!-- markdownlint-enable MD046 -->
 
 Welcome to UAB Research Computing!
@@ -21,21 +26,29 @@ Research Computing provides services to researchers in these core areas:
 - _Data Sharing_: supporting trusted information exchange to spark new ideas via our [Storage](data_management/storage.md) system.
 - _Application Development_: providing virtual machines and web-hosted development tools empowering researcher via our [cloud.rc](uab_cloud/index.md) fabric.
 
-## Contact Us
+<!-- markdownlint-disable MD046 -->
+!!! announcement
+
+    We have released new A100 gpus on Cheaha! For more information please see [GPUs](cheaha/slurm/gpu.md).
+
+    We have released new CUDA and cuDNN modules! For more information please see [CUDA Modules](cheaha/slurm/gpu.md#cuda-modules).
+
+    Also see our [A100 GPU Frequently Asked Questions (FAQ)](cheaha/slurm/gpu.md#frequently-asked-questions-faq-about-a100-gpus)
+<!-- markdownlint-enable MD046 -->
+
+## How to Contact Us
 
 Please reach out to us via email at <support@listserv.uab.edu> to create a support ticket.
 
 For face-to-face support please visit us in our Zoom office hours held weekly:
 
 - Mondays 10:00 AM to 12:00 PM:
-[Zoom](https://uab.zoom.us/j/84019898491?pwd=bWlYaldMWUoyY0lCcGhuT3dmZjZLQT09)
+[Zoom](https://uab.zoom.us/j/81783104592?pwd=L21OOWNlY2doWXova3MzOGFRcE4zQT09)
 
 - Thursdays 10:00 AM to 12:00 PM:
-[Zoom](https://uab.zoom.us/j/96229651103?pwd=RmpsWG1NYkxjclgxTThXb1h2bVBndz09)
+[Zoom](https://uab.zoom.us/j/81783104592?pwd=L21OOWNlY2doWXova3MzOGFRcE4zQT09)
 
-**New!** Please visit our [status page](https://uabstatus.statuscast.com/#!/incidentlist?componentId=34990).
-
-For additional information about support please see [Support](./help/support.md).
+For additional information please see [Support](./help/support.md).
 
 ## Support and Development
 

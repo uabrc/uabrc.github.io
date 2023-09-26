@@ -1,49 +1,78 @@
 # Storage
 
-<!-- markdownlint-disable MD046 -->
-!!! announcement
-
-    Please note upcoming changes!
-
-    - December 13, 2022: Clean up of `temp-scratch` must be completed by all researchers.
-    - December 16, 2022: Access to `temp-scratch` will be removed for all researchers.
-    - January 16, 2023: New `$SCRATCH` storage limited-retention policies will start.
-    - To Be Determined: `$USER_SCRATCH` will point to `/scratch/$USER`
-<!-- markdownlint-enable MD046 -->
-
 ## What Type of Storage Do I Need?
 
-There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to find the storage platform we provide that best matches your needed use-case.
+There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to help determine the storage platform we provide that best matches your needed use-case. If you need additional assistance, please contact [Support](../help/support.md).
 
 {{ read_csv('data_management/res/storage_overview.csv', keep_default_na=False) }}
 
-## User Space
+## What Individual Storage Solutions are Available?
 
-Each user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`). These two locations are meant to store general data long-term and can be used during active analysis or for archiving small projects. Traditionally, `$HOME` is meant to store scripts and supporting files and toolboxes such as Anaconda virtual environments or R packages while `$USER_DATA` can store datasets and results for a user's projects.
+Every researcher has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. These two locations are meant to store general data and can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, `$HOME` is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, `$USER_DATA` is intended to store datasets and results for individual research projects.
 
-The owner (`$USER`) of both directories can read, write/delete, and list files. No other users or groups have permissions to this directory. While it is possible to share files in your personal space with other users, a more practical solution may be to use a [project directory](#project-directory) instead.
+Individual allocations on Long-Term Storage (LTS) are also available upon request.
 
-A user is limited to 5 TB of data across both `$HOME` and `$USER_DATA` combined.
+### How Do I Request Individual Long-Term Storage?
 
-<!-- markdownlint-disable MD046 -->
-!!! note
+To request individual Long-Term Storage, please first read and understand how [Long-Term Storage](./lts/index.md) differs from traditional filesystems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact [Support](../help/support.md).
 
-    The home and user data directories are mirrored across storage locations to allow for emergency backup in case some of the drives fail. This is not meant to be a long-term backup solution as any data deleted by a user is deleted on the main drive and the mirrored drive.
-<!-- markdownlint-enable MD046 -->
+## What Shared Storage Solutions are Available?
 
-## Project Directory
+Shared Storage is available via two services. We have Project Storage (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases, so please read on to determine which may be most suitable.
 
-Shared data can be stored in a `/data/project/<project_name>` directory. The default storage size for a new project is 50TB. If you need less than 5TB or your need for shared space is short term, please request a [Sloss space](#sloss) instead. Project storage can be helpful for teams of researchers who need access to the same data.
+Project Storage is best-suited for changing or dynamic data. Specifically:
 
-All project spaces must be owned by a principal investigator (PI) who is an employee of UAB with a legitimate research interest. The PI takes responsibility for data in the space, as well as access control of all files and directories under the parent directory. As with all data on Cheaha, backups and archival services are not provided, and are the responsibility of the respective data owners.
+- Data needing/undergoing analysis
+- Exploratory data
+- Temporary data needed longer than 30 days
 
-The PI and all members with access to the project directory can read, write/delete, and list files within the top-level directory, and all other subdirectories by default. Other people on the system have no ability to access the project space. Access control for directories and files within the project space can be implemented via access control lists. Please see the bash commands [setfacl](https://linux.die.net/man/1/setfacl) and [getfacl](https://linux.die.net/man/1/getfacl)) for more information. Access control within the project directory are the responsibility of the project owner. However, we respect that access control lists can be tricky, so please feel free to [contact us](../index.md#contact-us) for assistance.
+In contrast, [Long-Term Storage](./lts/index.md) is best-suited for unchanging or static data. Specifically:
 
-To create a project directory, or change access to or ownership of a project directory, the PI should follow the instructions at [How Do I Request Or Change A Project Space?](../help/support.md#how-do-i-request-or-change-a-project-space)
+- Instrument-acquired data
+- Completed analyses
+- Hosting data for others to copy
+- Hosting data for the public internet
+- "Pick-up" and "drop-off" locations for data as part of a workflow
 
-### Sloss
+Shared Storage is available for labs headed by a PI _and_ for Core facilities headed by a director.
 
-A special location under `/data/project/sloss` to store projects that are at most 5 TB. In keeping with the name [Sloss](https://www.slossfurnaces.com/), these spaces are intended as a foundry for experimental or temporary project spaces that have potential to grow. Otherwise, they are treated like any other project space.
+Shared Storage is allocated on a per-organization basis, not on a per-person basis. If an individual researcher manages both a lab and a Core, they may request independent storage allocations for each organization. Each organization may request both Project Storage and Long-Term Storage.
+
+### How Do I Request Shared Storage?
+
+To request shared Project Storage or Long-Term Storage, please contact [Support](../help/support.md). To ensure prompt allocation of Shared Storage, please follow the guidelines below.
+
+- Requests must be made to <support@listserv.uab.edu> or via the [AskIT HelpDesk](https://www.uab.edu/it/home/).
+- Requests must come from one of the proposed owners.
+- All proposed owners must have created their [Research Computing accounts](../account_management/cheaha_account.md) at the time the request is made.
+
+Please provide the following information. Missing information can delay allocation of Shared Storage as we either look up the information, or ask followup questions.
+
+- **Responsible Party/Owner:** The BlazerID of the person claiming reponsibility for what happens and what is stored in the space. Typically this would be a Principal Investigator (PI) or a Core Director.
+    - Multiple responsible parties are allowed.
+    - We need one person declared as "primary" owner. This person will be the literal owner (in the Linux sense) for Project Storage.
+- **Members:** A list of BlazerIDs of people to give access to the space. (Note: this only applies to Project Storage. LTS access controls are managed differently.)
+- **Type of Organization:** Is the Shared Storage request for a lab, core, campus administrative group, or something else?
+- **Name of Organization:** The _specific_ name of the organization the Shared Storage request is for.
+- **Parent Organization:** The name of the parent organization for your organization. Please be as detailed as possible.
+- **Purpose of Shared Storage:** The research purpose for the storage, how do you intend to use it? Please feel free to be as detailed as you like, but please limit to a few sentences at most.
+- **Internal UAB Collaborator Organizations:** The name(s) of any other UAB organizations participating in the Shared Storage.
+- **External Collaborator Organizations:** The name(s) of any external organizations participating in the Shared Storage.
+- **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
+- **Name of Shared Storage:** Please give us a short, memorable name that is specific to your organization but general to your purpose.
+    - For Project Storage, this name will be used in the `/data/project/<name>` path on Cheaha.
+    - For Labs we recommend the format `<PI_blazerid>-lab`.
+    - For Cores we recommend a shortened version of the Core name.
+
+If some members have not created their accounts at the time of the request, we will proceed with allocating the Shared Storage. Additional members may be added at a later time in a new service request.
+
+### How Do I Make Changes to Shared Storage Membership?
+
+To request changes in Shared Storage membership, please contact [Support](../help/support.md). Please take note of the following guidelines to ensure changes can be made promptly.
+
+- We must have written approval from an owner to make membership changes.
+- The exact name of the Shared Storage. If it is Project Storage, the path to the storage location, i.e., `/data/project/...`.
+- Please give BlazerIDs of members to add or remove.
 
 ### Project Directory Permissions
 
@@ -90,7 +119,7 @@ Two types of scratch space are provided for analyses currently being ran, networ
 
 ### User Scratch
 
-All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in `/data/scratch/$USER` or `$USER_SCRATCH`. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.
+All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in `/scratch/$USER` or `$USER_SCRATCH`. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.
 
 Network scratch is available on the login node and each compute node. This storage is a GPFS high performance file system providing roughly 1 PB of storage. If using scratch, this should be your jobs' primary working directory, unless the job would benefit from local scratch (see below).
 
@@ -102,45 +131,84 @@ Network scratch is available on the login node and each compute node. This stora
 
 ### Local Scratch
 
-Each compute node has a local scratch directory that is accessible via the variable `$LOCAL_SCRATCH`. If your job performs a lot of file I/O, the job should use `$LOCAL_SCRATCH` rather than `$USER_SCRATCH` to prevent bogging down the network scratch file system. It's important to recognize that most jobs run on the cluster do not fall under this category.
+Each compute node has a local scratch directory that is accessible via `/local/$SLURM_JOB_ID`. At this time, you will need to create the directory manually using `mkdir -p /local/$SLURM_JOB_ID`. If your job performs a lot of file I/O, the job should use `/local/$SLURM_JOB_ID` rather than `$USER_SCRATCH` to prevent bogging down the network scratch file system. It's important to recognize that most jobs run on the cluster do not fall under this category.
+
+If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to `/local/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor performance. For more information please see [Ensuring IO Performance With A100 GPUs](../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
+
+Be sure to clean up `/local/$SLURM_JOB_ID` after your job is complete! An example script to automate this process is shown below.
+
+```bash
+#!/bin/bash
+#SBATCH ...
+
+# LOAD MODULES
+# module load ...
+
+# CREATE TEMPORARY DIRECTORY
+# WARNING! $TMPDIR will be deleted at the end of the script!
+# Changing the following line can cause permanent, unintended deletion of important data.
+TMPDIR="/local/$USER/$SLURM_JOB_ID"
+mkdir -p "$TMPDIR"
+
+# COPY RESEARCH DATA TO LOCAL TEMPORARY DIRECTORY
+# Replace $MY_DATA_DIR with the path to your data folder
+cp -r "$MY_DATA_DIR" "$TMPDIR"
+
+# YOUR ORIGINAL WORKFLOW GOES HERE
+# be sure to load files from "$TMPDIR"!
+
+# CLEAN UP TEMPORARY DIRECTORY
+# WARNING!
+# Changing the following line can cause permanent, unintended deletion of important data.
+rm -rf "$TMPDIR"
+```
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    `$LOCAL_SCRATCH` is only useful for jobs in which all processes run on the same compute node, so MPI jobs are not candidates for this solution. Use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node.
+    Using `/local/$SLURM_JOB_ID` with MPI jobs takes additional consideration. If you do not need MPI, please use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node. If you need the performance of `/local/$SLURM_JOB_ID` in an MPI job, please contact [Support](../help/support.md) and read about the Slurm commands `sbcast` and `sgather`.
 <!-- markdownlint-enable MD046 -->
 
 ## Temporary Files (`tmp`)
 
-Please do not use the directory `tmp` as storage for temporary files. The `tmp` directory is local to each node, and a full `tmp` directory harms compute performance on that node for all users. Instead, please use [`$LOCAL_SCRATCH`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
+Please do not use the directory `tmp` as storage for temporary files. The `tmp` directory is local to each node, and a full `tmp` directory harms compute performance on that node for all users. Instead, please use [`/local/$SLURM_JOB_ID`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
 
 Some software defaults to using `tmp` without any warning or documentation, especially software designed for personal computers. We may reach out to inform you if your software fills `tmp`, as it can harm performance on that compute node. If that happens we will work with you to identify ways of redirecting temporary storage to one of the scratch spaces.
 
 ### Software Known to Use `tmp`
 
-The following software are known to use `tmp` by default, and can be worked around by using the listed flags.
+The following software are known to use `tmp` by default, and can be worked around by using the listed flags. See [Local Scratch](#local-scratch) for more information about creating a local temporary directory.
 
-- Java: `java * -Djava.io.tmpdir=$LOCAL_SCRATCH`
-- UMI Tools: `umi_tools * --temp-dir=$LOCAL_SCRATCH`
+- Java: `java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID`
+- UMI Tools: `umi_tools * --temp-dir=/local/$SLURM_JOB_ID`
 
 ## How much space do I have left?
 
-- **Personal**: use the command `quota-report` to see usage in `/data/user/$USER` and `/scratch/$USER`.
-- **Project**: use the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name, i.e., `/data/project/<project>`. Be sure to _not_ use a trailing slash. Use `proj-quota-report mylab` not `proj-quota-report mylab/`.
+- **Individual Storage**: use the command `quota-report` to see usage in `/data/user/$USER` and `/scratch/$USER`.
+- **Project Storage**: use the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name, i.e., `/data/project/<project>`. Be sure to _not_ use a trailing slash. Use `proj-quota-report mylab` not `proj-quota-report mylab/`.
+- **Long-Term Storage**: please contact [Support](../help/support.md).
 
-Both quota reports are updated nightly, so they may be out of date if you move data around before running these commands.
+Quota reports are updated nightly, so they may be out of date if you move data around before running these commands.
 
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    Running out of space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/lts.md).
+    Running out of space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/index.md).
 <!-- markdownlint-enable MD046 -->
 
-## Data Policies
+## Data Responsibilities and Procedures
 
-### Replication
+### Archival
 
-Data on GPFS are replicated using a RAID configuration which is intended to decrease the risk of data loss in the event of disk failures. This is standard good practice for researcher computing data centers.
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Archival of data is the responsibility of researchers using Cheaha.
+<!-- markdownlint-enable MD046 -->
+
+At this time, Research Computing does not offer a method of archival. If you have need for archival, please feel free to contact [Support](../help/support.md) to start a conversation.
+
+A possible external resource for archival is available through University of Oklahoma (OU) Supercomputing Center for Education and Research (OSCER). Please see the following link for details: <https://www.ou.edu/oscer/resources/ourrstore--ou---regional-research-store>.
 
 ### Backups
 
@@ -174,32 +242,31 @@ What hazards can cause data loss?
 How can I ensure data integrity?
 
 - Regularly back up your (and your lab's) data in an offsite location.
-- [S3 based long-term storage (LTS)](lts/lts.md) can be used for short-term onsite backup.
+- [S3 based long-term storage (LTS)](lts/index.md) can be used for short-term onsite backup.
 - Crashplan licenses are available for automatic offsite backups, please contact [Support](../help/support.md) for more information.
 
 ### HIPAA Compliance
 
-As of December 2019, Cheaha is HIPAA compliant and so PHI can be stored on it. Currently, long-term storage is NOT HIPAA compliant but will be in the future.
+Cheaha is HIPAA compliant and can accept Protected Health Information (PHI) data. Currently, [long-term storage](lts/index.md) is NOT HIPAA compliant but will be in the future.
+
+For UAB policies surrounding PHI data, please see the following URLs.
+
+- [Data Classification](https://www.uab.edu/it/home/policies/data-classification/classification-overview)
+- [Data Protection and Security Policy](https://secure2.compliancebridge.com/uab/portal/getdoc.php?file=302)
+- [Data Access Policy](https://secure2.compliancebridge.com/uab/portal/getdoc.php?file=301)
+- [HIPAA Data Policy](https://www.uab.edu/it/home/policies/compliance/hipaa)
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    It is the responsibility of the user to make sure PHI is only accessible by researchers on the IRB. If PHI is being stored in a project folder and some researchers are not on an IRB, their access to those files should be restricted using Access Control Lists (ACLs). If you need assistance setting up ACLs properly, please [contact us](../index.md#contact-us).
+    It is the responsibility of researchers to make sure PHI is accessible _only_ to people on the relevant IRB, with a demonstrated need to know. If PHI is stored in a project directory where some researchers are not on the IRB, their access to those files should be restricted using Access Control Lists (ACLs). Access control should be planned in advance of moving PHI data to Cheaha. If you need assistance setting up ACLs properly, please contact [Support](../help/support.md).
 <!-- markdownlint-enable MD046 -->
+
+Managing PHI data can be challenging. There are experts on Campus who can provide assistance. Please contact [Support](../help/support.md) if you intend to use Research Computing services in combination with PHI and PHI-derived data.
 
 ### Scratch Retention Policy
 
-Starting January 2023, data stored in `/scratch` will be subject to two limited retention policies.
+Data stored in `/scratch` is subject to two limited retention policies.
 
 - Each user will have a quota of 50 TB of scratch storage.
-- Files will be retained for 30 days.
-
-## Directory Permissions
-
-Default file permissions are described for each directory above.
-Additional background on Linux file system permissions can be found
-here:
-
-- <https://its.unc.edu/research-computing/techdocs/how-to-use-unix-and-linux-file-permissions/>
-- <https://www.rc.fas.harvard.edu/resources/documentation/linux/unix-permissions/>
-- <https://hpc.nih.gov/storage/permissions.html>
+- Files will be retained for a maximum of 30 days.
