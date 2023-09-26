@@ -30,7 +30,7 @@ Slurm has many flags a researcher can use when creating a job, but a short list 
 
 ### Available Partitions for `--partition`
 
-Please see the [Partitions page](../hardware.md#partitions) for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
+Please see [Cheaha Hardware](../hardware.md#summary) for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
 
 ### Requesting GPUs
 

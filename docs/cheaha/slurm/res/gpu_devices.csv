@@ -1,0 +1,9 @@
+ ,`pascalnodes`,`amperenodes`
+Product Name,P100,A100 80GB
+Architecture,Pascal,Ampere
+CUDA Compute Capability Version,6.0,8.0
+CUDA Cores,3584,6912
+Memory (GB),16,80
+Memory Bandwidth (GB/s),720,2039
+NVLink Bandwidth (GB/s),160,600
+FP32 performance (TFLOPs),10.6,19.5
