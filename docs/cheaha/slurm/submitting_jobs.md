@@ -30,7 +30,7 @@ Slurm has many flags a researcher can use when creating a job, but a short list 
 
 ### Available Partitions for `--partition`
 
-Please see the [Partitions page](../hardware.md#partitions) for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
+Please see [Cheaha Hardware](../hardware.md#summary) for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
 
 ### Requesting GPUs
 
@@ -61,7 +61,7 @@ Batch jobs are typically submitted using scripts with `sbatch`. Using `sbatch` t
 
 For batch jobs, flags are typically included as directive comments at the top of the script like `#SBATCH --job-name=my-job`. Read on to see examples of batch jobs using `sbatch`.
 
-### Batch Job
+### A Simple Batch Job
 
 Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
 
@@ -85,7 +85,7 @@ echo "Hello Error" 1>&2
 There is a lot going on in the above script, so let's break it down. There are three main chunks of this script:
 
 1. Line 1 is the interpreter directive: `#!/bin/bash`. This tells the shell what application to use to execute this script. All `sbatch` scripts on Cheaha should start with this line.
-2. Lines 3-11 are the [`sbatch` flags](#slurm-flags) which tell the scheduler what resources you need and how to manage your job.
+2. Lines 3-11 are the [`sbatch` flags](#slurm-flags-and-environment-variables) which tell the scheduler what resources you need and how to manage your job.
 
     - Line 3: The job name is `test`.
     - Lines 4-7: The job will have 1 node, with 1 core and 1 GB of memory.
@@ -141,52 +141,89 @@ For more details on using `sbatch` please see the [official documentation](https
     If you are using bash or shell arrays, it is crucial to note they use 0-based indexing. Plan your `--array` flag indices accordingly.
 <!-- markdownlint-enable MD046 -->
 
-### Batch Array Jobs With Dynamic Indices
+### Batch Array Jobs With Dynamic or Computed Indices
 
-Before reading this example, please read our [static batch array job example](#batch-array-jobs) as a refresher for the basics of array jobs.
-
-It is currently not possible to have dynamic `--array` values in `sbatch` scripts, because the `#SBATCH` directives are processed before the script is executed by the shell, preventing [variable expansion](../../workflow_solutions/shell.md#environment-concepts). Furthermore, the variables would be treated as comments and thus not expanded. A workaround is required, so we propose using a wrapper script.
-
-The script named `job.sh` (note that the `#SBATCH --array=` directive is missing):
-
-```bash
-#!/bin/bash
-#
-#SBATCH --job-name=test
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=1G
-#SBATCH --partition=express
-#SBATCH --time=00:10:00
-#SBATCH --output=%x_%A_%a.out
-#SBATCH --error=%x_%A_%a.err
-
-echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
-```
-
-The wrapper named `job_wrapper.sh`:
-
-```bash
-#!/bin/bash
-
-start=0
-end=9
-
-sbatch --array=${start}-${end} ./job.sh
-```
-
-Run the wrapper by entering `./job_wrapper.sh` at the terminal. Make sure both `job.sh` and `job_wrapper.sh` have [executable permissions set](../../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) with `chmod u+x job.sh job_wrapper.sh`.
+For a practical example with dynamic indices, please visit our [Practical `sbatch` Examples](practical_sbatch.md)
 
 ## Interactive Jobs with `srun`
 
-To interact with the terminal in a job context, use the `srun` command with the `--pty /bin/bash` flag. The other [flags](#slurm-flags) should be substituted in place of `$FLAGS`.
+Jobs should be submitted to the slurm job scheduler either using a [batch job](#batch-jobs-with-sbatch) or an [Open OnDemand (OOD) interactive job](../open_ondemand/ood_main.md).
 
-``` bash
-srun $FLAGS --pty /bin/bash
+You can use `srun` for working on short interactive tasks such as [creating an Anaconda environment](../../workflow_solutions/using_anaconda.md) and running [parallel tasks](#srun-for-running-parallel-jobs) within an sbatch script.
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    The limitations of `srun` is that the jobs/execution die if the internet connection is down, and you may have to rerun the job again.
+<!-- markdownlint-disable MD046 -->
+
+Let us see how to acquire a compute node quickly using `srun`. You can run interactive job using `srun` command with the `--pty /bin/bash` flag. Here is an example,
+
+```bash
+$srun --ntasks=2 --time=01:00:00 --mem-per-cpu=8G --partition=medium --job-name=test_srun --pty /bin/bash
+
+srun: job 21648044 queued and waiting for resources
+srun: job 21648044 has been allocated resources
 ```
 
-For more details on using `srun` please see the [official documentation](https://slurm.schedmd.com/srun.html).
+The above example allocates a compute node with a 8GB of RAM on a `medium` partition with `--ntasks=2` to run short tasks.
+
+### `srun` for running parallel jobs
+
+`srun` is used to run executables in parallel, and is used within `sbatch` script. Let us see an example where `srun` is used to launch multiple (parallel) instances of a job.
+
+```bash
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --job-name=srun_test
+#SBATCH --partition=long
+#SBATCH --time=05:00
+#SBATCH --mem=4G
+
+srun hostname
+```
+
+In the script above, we have asked for two nodes --nodes=2, and each node will run a single instance of a `hostname` as we requested --ntasks-per-node=1. The output for the above script is,
+
+```bash
+c0187
+c0188
+```
+
+Here is another example of running different independent programs simultaneously on different resources within a batch job. Multiple `srun` can execute simultaneously as long as they do not exceed the resources reserved for that job i.e., step 1 executes in node 1 with --ntasks=4, and step 2 executes in node 2 with --ntasks=4 simultaneously. Note that `--nodes=1 -r1` in step 2 defines the number of nodes and their relative node position within the resources assigned to the job.
+
+```bash
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --ntasks=8
+#SBATCH --ntasks-per-node=4
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=amd-hdr100
+#SBATCH --time=05:00
+#SBATCH --mem-per-cpu=1G
+
+#Partioning of resources for two different tasks
+#STEP 1
+srun --nodes=1 --ntasks=4 hostname
+#STEP 2
+srun --nodes=1 -r1 --ntasks=4 uname -a
+```
+
+Here is the output for running multiple `srun` in a single job, i.e., executing the `hostname` and `uname -a` tasks simultaneously but on different nodes.
+
+```bash
+c0203
+c0203
+c0203
+c0203
+Linux c0204 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+Linux c0204 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+Linux c0204 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+Linux c0204 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+Alternatively, `srun` can also run MPI,OpenMP, hybrid MPI/OpenMP, and many more parallel jobs. For more details on using `srun`, please see the [official documentation](https://slurm.schedmd.com/srun.html).
 
 ## Graphical Interactive Jobs
 

@@ -1,14 +1,80 @@
 # Software Containers
 
-Containers help to manage software installations and all their dependencies in a single large image.
+Containers help to manage software installations and all their dependencies in a single large image. These containers are a self-contained operating system along with any software the container creator added. Containers avoid software conflicts due to versioning as well as OS incompatibility and can be run on most, if not all, operating systems.
 
-Docker is an open-source platform for building, deploying, running, updating, and managing containers.
+The most common container engine is called Docker. Docker is an open-source platform for building, deploying, running, updating, and managing containers and has distributions for Linux, Windows, and Mac. Singularity is another common container engine specialized for use on HPC systems such as Cheaha where Docker cannot be used.
 
 ## Fantastic Containers and Where to Find Them
 
 Docker containers are available in <https://hub.docker.com/>. This docker hub repository allows to share containers and use pre-existing docker images.
 
 ![!Containers docker hub website.](./images/containers_docker_hub_website.png)
+
+It is often a good idea to search the Github repo for an application or pipeline to see if a container has already been provided by the authors.
+
+## Containers on Cheaha
+
+Using containers on Cheaha bypasses the need to message support to install necessary software. Containers can be downloaded by any user into their personal space and used immediately without admin permission. as mentioned above, you will need to use Singularity containers on Cheaha. You can find all of the Singularity modules using the following command:
+
+``` bash
+module spider Singularity
+```
+
+It's highly recommended to only use Singularity versions 3+.
+
+### Pull Singularity Images
+
+Singularity can pull images from a variety of sources, including Dockerhub, and convert them to the proper format automatically. In order to download an image, use the `pull` subcommand followed by the output image name and the URI of the image. The general form of the command for pulling from Dockerhub is as follows:
+
+``` bash
+singularity pull <output.sif> docker://<account>/<image>[:<version_tag>]
+```
+
+For example, if we wanted to pull the [lolcow container](https://hub.docker.com/r/godlovedc/lolcow):
+
+``` bash
+singularity pull lolcow.sif docker://godlovedc/lolcow
+```
+
+We now have the `lolcow.sif` image we can run or share with other researchers. It's important to remember that containers are just independent files that can be moved, copied, or deleted the same as any other file.
+
+### Running Singularity Images
+
+There are 3 ways to run Singularity images, all with their unique purposes and are as follows:
+
+1. `singularity run`: run a container using a default command set by the author. Generally, this will be used when a container encompasses a full pipeline controlled by a single command. The general form for this command is `singularity run <image.sif> [options]` where `[options]` are defined by the default command. You can use `singularity run <image.sif> --help` to see what those options are.
+2. `singularity exec`: run any command available in the container. This provides more flexibility than `run` and would be useful in the cases where a container has more modular components as opposed to a single control script. The general form for this would be `singularity exec <image.sif> <command> [options]`. You can add the `--help` option to see what a given command does and its inputs.
+3. `singularity shell`: allow interactive use of the container through the terminal. This changes your active environment to that in the container. You can traverse the container's directory tree and search for various files and commands as if it was a virtual machine. This is very useful for interactive development as well as investigation of a container's contents. The general form of the command is `singularity shell <image.sif>`.
+
+It's important to note that both `run` and `exec` enter the container as part of their execution and then exit back to the original shell environment afterwards whereas `shell` keeps you in the container until you either close the terminal or use the `exit` command.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    `singularity shell` is not executable via shell scripts. Any singularity commands in a batch script should be `run` or `exec` instead.
+<!-- markdownlint-enable MD046 -->
+
+### Singularity Paths
+
+By default, Singularity containers have limited access to the general filesystem. Containers get default access to the `/home` directory as well as the directory the container was run from. If you run the container from `$HOME` but try to access files in `$USER_DATA`, you will see an error. In order to give a container access to other directories, use the `-B` or `--bind` option when invoking the container. For instance, if I wanted to use `run` on a container that had an input option called `-i` and give the container access to a subfolder called `my_data` in a project space called `UABRC`, the singularity command would look like:
+
+``` bash
+singularity run --bind /data/project/UABRC/my_data image.sif -i /data/project/UABRC/my_data
+```
+
+You can also alias the bind path to a shorter name and use it in the command. In that case, the bind option would look like `--bind </directory_path>:</alias>`. For example, if I was running a container and was giving the `my_data` directory as an input, I could alias it to `/input_data` and use it in the command like so:
+
+``` bash
+singularity run --bind /data/project/UABRC/my_data:/input_data image.sif -i /input_data
+```
+
+These bind paths can be used in both `exec` and `shell` subcommands as well.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Bind paths cannot grant access to folders and files your account does not have access to. For instance, you cannot use a container to access data in another user's account unless that user has explicitly given you the correct permissions via `chmod` or ACLs.
+<!-- markdownlint-enable MD046 -->
 
 ## Using Containers on UAB RC Cloud (cloud.rc.uab.edu)
 
