@@ -23,21 +23,13 @@ Globus is very useful for single transfers of data either to or from LTS and is 
 While globus is the recommended tool for most data transfers, command line tools are necessary for planned, regular transfers as well as managing permissions on buckets. We recommend the following two tools for different purposes:
 
 1. [s3cmd](https://github.com/s3tools/s3cmd) is a Python tool that we suggest using for managing bucket permissions as well as small transfers.
-2. [s5cmd](https://github.com/peak/s5cmd) is a Go package that transfers data much more quickly than s3cmd, especially as the file size and/or quanitity increases.
+2. [s5cmd](https://github.com/peak/s5cmd) is a Go package that transfers data much more quickly than s3cmd, especially as the file size and/or quanitity increases. It does not have full bucket management capabilities.
 
 You do not need to install both tools if they aren't necessary. Both are available to install into [Anaconda](../../workflow_solutions/using_anaconda.md) environments. Specific install and usage commands for each are given in their respecitve sections.
 
-### Configuration
+### s3cmd
 
-In order to access LTS through the command line no matter which CLI you use, you will need to perform some configuration. This will set up the remote connection from your local machine (or you Cheaha profile) to LTS. If you choose to use multiple CLIs, you will need to perform configuration for each one separately.
-
-#### rclone
-
-The instructions for setting up a remote connection with rclone can be found in [our main rclone documentation](../transfer/rclone.md#setting-up-an-s3-lts-remote). In the following examples, `uablts` is used as the name of the remote connection.
-
-#### s3cmd
-
-s3cmd can be easily installed via an [Anaconda environment](../../workflow_solutions/using_anaconda.md). Create the environment, activate it, then install using:
+s3cmd is our suggested tool for managing bucket permissions and small, periodic file transfers. It can be easily installed via an Anaconda environment. Create the environment, activate it, then install using:
 
 ``` bash
 pip install s3cmd
@@ -55,7 +47,7 @@ Once you have s3cmd downloaded, you can start the configuration process like so:
 s3cmd --configure [-c $HOME/profile_name]
 ```
 
-You can run the configuration either with or without the `[-c]` option. If you use it, a file named `profile_name` will be created in your home directory with your login credentials and other information. If you omit the `-c` option, a file called `$HOME/.s3cfg` will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform, it's suggested to omit the `-c` option.
+You can run the configuration either with or without the `[-c]` option. If you use it, a file named `profile_name` will be created in your home directory with your login credentials and other information. If you omit the `-c` option, a file called `$HOME/.s3cfg` will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform and are only managing a single account, it's suggested to omit the `-c` option. If you are a PI or data manager and are managing both a personal and lab/core LTS account, you will need to make a separate profile for each account.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -99,283 +91,65 @@ New settings:
   HTTP Proxy server name:
   HTTP Proxy server port: 0
 
-Test access with supplied credentials? [Y/n] Y
-Please wait, attempting to list all buckets...
-Success. Your access key and secret key worked fine :-)
-
-Now verifying that encryption works...
-Not configured. Never mind.
+Test access with supplied credentials? [Y/n] n
 
 Save settings? [y/N] y
 ```
 
-If your test access succeeded, you are now ready to use `s3cmd`.
-
-#### AWS CLI
-
-Setting up a remote connection using AWS CLI is fairly straightforward. After loading the `awscli` module, run `aws configure` in the terminal.
-
-It will ask you enter four pieces of information, fill them out as so:
-
-``` text
-AWS Access Key [none]: <access key>
-AWS Secret Access Key [none]: <secret key>
-Default region name [none]: <Press Enter>
-Default output format [none]: json
-```
-
-Your access key and secret key should have been given to you by research computing when you requested your account. Copy-paste these into the terminal when requested.
-
 <!-- markdownlint-disable MD046 -->
-!!! important
+!!! note
 
-    AWS CLI assumes you are using the AWS service for S3 storage. In order to access UAB LTS, for all AWS CLI commands, you will need to add the `--endpoint-url https://s3.lts.rc.uab.edu` option to the `aws` function call.
+    If you choose to test access using your credentials, the test may fail. Do not rely on the automatic test results, test access yourself by either creating a bucket or listing files from a existing bucket using the commands listed below.
 <!-- markdownlint-enable MD046 -->
 
-### General Command Structure
-
-**RClone**:
+### s3cmd Commands
 
 ``` bash
-rclone <subcommand> [options] <remote>:<bucket>
-```
-
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    For all commands, replace everything in `<>` with the necessary values. Do not include the `<>` symbols in your command.
-<!-- markdownlint-enable MD046 -->
-
-To see a list of all subcommands available to rclone, you can use `rclone --help`. You can also use the `--help` option with any subcommand to see a detailed explanation of what it does plus any options you may want or need to set when calling it.
-
-**s3cmd**:
-
-``` bash
+# General command structure for s3cmd
 s3cmd [-c profile_file] <command> [options] [-n --dry-run]
 ```
 
-As noted previously, the `[-c profile_file]` is only required if you are NOT using credentials saved in the `$HOME/.s3cfg` file. Otherwise, you can leave it out.
+The `[-c profile_file]` is only required if you are using credentials NOT saved in the `$HOME/.s3cfg` file. Otherwise, you can omit it.
 
-To see a list of commands available, use `s3cmd --help`. Additionally, if you want to test an action without actually running it (i.e. it prints all actions that would be performed), you can add the `-n` or `--dry-run` option.
-
-**AWS CLI**:
+To see a list of all available commands, use `s3cmd --help`. Additionally, if you want to test an action without actually running it (i.e. it prints all actions that would be performed), you can add the `-n` or `--dry-run` option. A list of selected commands are provided below for reference
 
 ``` bash
-aws <command> <subcommand> [options]
-```
-
-The `<command>` for most commonly used functions will either be `s3` or `s3api`. You can use the `help` option to view available commands, subcommands, and options for AWS.
-
-Additionally, when running basically any AWS CLI command, you can include the `--dryrun` option to see the exact actions that will be performed without actually performing them. This is useful for things like deleting files and folders to make sure you are not performing an unwanted action.
-
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    If you are wanting to perform actions on a specific directory in S3, it is imperative to add the `/` at the end of the directory name. For more information on this, see [this ask.ci FAQ](https://ask.cyberinfrastructure.org/t/why-do-i-need-to-add-the-trailing-to-the-end-of-path-names-in-my-s3-commands/2530/2).
-<!-- markdownlint-enable MD046 -->
-
-### Make a Bucket
-
-Buckets are essentially the root folder of a filesystem where you are storing your data. You will need to create a bucket before being able to copy data to LTS. Bucket names are unique across LTS, see [avoiding duplicate names](index.md#avoiding-duplicate-names-for-buckets) for more details.
-
-**RClone**:
-
-``` bash
-rclone mkdir uablts:<bucket>
-```
-
-**s3cmd**:
-
-``` bash
+# Create a bucket 
 s3cmd mb s3://<bucket>
-```
 
-**AWS CLI**:
+# List a bucket/path within the bucket
+s3cmd ls [-r, --recursive] s3://<bucket/path>
 
-``` bash
-aws s3api create-bucket --bucket <bucket> --endpoint-url https://s3.lts.rc.uab.edu
-```
+# Check bucket or folder size
+s3cmd du -H s3://<bucket/path/>
 
-### Listing Buckets and Contents
-
-**RClone**:
-
-To list all buckets you have available, use the `lsd` subcommand with only the remote specified:
-
-``` bash
-rclone lsd uablts:
-```
-
-To list all contents inside a bucket, use the `ls` subcommand with the remote and bucket specified. You can also be specific about the path to the directory you want to list.
-
-``` bash
-rclone ls uablts:<bucket/path/directory>
-```
-
-This outputs all files along with their directory path recursively. So if you only specify the main bucket, it will output every file in the bucket no matter how deep in the directory tree.
-
-To only list files and folders in a given directory, you can use the `lsf` subcommand
-
-``` bash
-rclone lsf uablts:<bucket/path/directory/>
-```
-
-**s3cmd**:
-
-With s3cmd, you can use the `ls` command to list both buckets and their contents.
-
-``` bash
-s3cmd ls <s3://bucket/path/>
-```
-
-You can add the `--recursive` option to list all files in the given path. By default, it only lists objects or folders at the top level of the path.
-
-**AWS CLI**:
-
-``` bash
-aws s3 ls <bucket/path/directory/> --endpoint-url https://s3.lts.rc.uab.edu
-```
-
-If you would like to list all objects recursively, you can add the `--recursive` tag. A couple of other helpful options are `--summarize` and `--human-readable` that will give a total number of objects and their size and make the size output more easily readable, respectively.
-
-### Check Bucket or Folder Size
-
-**s3cmd**:
-
-With s3cmd, you can use the `du` command to list the size of a bucket or folder within a bucket.
-
-``` bash
-s3cmd du [-H] <s3://bucket/path/>
-```
-
-By default, the output will be in bytes, but you can add the `-H` option to output in a human readable format rounding the nearest MB, GB, or TB.
-
-**AWS CLI**:
-
-By default, the `ls` subcommand will output the size of any objects in the path given (see the [ls section](#listing-buckets-and-contents)). Unlike the other tools, AWS CLI will not output the total size of folders. However, the total combined size of all objects in a folder can be calculated using the `--summarize` option. You can also convert the output to readable size by using `--human-readable` as well.
-
-### Uploading Files and Folders
-
-**RClone**:
-
-Uploading files and folders can be done a couple of ways. The first is by using the `copy` subcommand. This will add files from the source to the destination.
-
-``` bash
-rclone copy <source> uablts:<bucket/destination>
-```
-
-The second method is using the `sync` subcommand. This subcommand makes the destination identical to the source. The `-i` option can be added to make it interactive, asking you whether to copy or delete each file.
-
-``` bash
-rclone sync [-i] <source> uablts:<bucket/destination/>
-```
-
-<!-- markdownlint-disable MD046 -->
-!!! danger
-
-    Be extremely cautious using sync. If there are files in the destination that are not in the source, it will delete those files in addition to adding files to the destination. If data is deleted from LTS, it is not recoverable.
-<!-- markdownlint-enable MD046 -->
-
-**s3cmd**:
-
-s3cmd disinguishes between moving files between a local source and S3 versus moving files between two S3 locations using 3 different commands.
-
-``` bash
-# transfer from local to S3
+# transfer a file or folder from local to a bucket
 s3cmd put <source> s3://<bucket/path/destination/>
 
-# transfer from S3 to local
+# transfer a file or folder from a bucket to a local drive
 s3cmd get s3://<bucket/path/source/> <destination>
 
 # transfer between two S3 locations
 s3cmd cp s3://<bucket/path/> s3://<bucket/path/>
-```
 
-If you are transferring an entire folder from S3 to either another S3 location or a local destination, you will need to add the `--recursive` option, otherwise you will get an error.
-
-Like rclone and AWS, there is also a `sync` command here as well.
-
-``` bash
-# sync an S3 location to a local source
+# sync an S3 location with a local source. The S3 destination will be made exactly the same as the source including file deletions. The source is unaltered. The S3 bucket/folder can be either the source or the destination
 s3cmd sync <source> s3://<bucket/path/destination>
 
-# sync a local destination to an S3 location
-s3cmd sync s3://<bucket/path/source> <destination>
+# remove a single object or all objects within a given path
+s3cmd rm s3://<bucket/path/file> [--recursive]
+
+# remove an entire bucket
+s3cmd rb s3://<bucket>
+
+# get info about the bucket
+s3cmd info s3://<bucket>
 ```
-
-**AWS CLI**:
-
-Copying files and directories can be managed using the `cp` subcommand and has the same behavior as rclone's `copy`.
-
-``` bash
-aws s3 cp <source> s3://<bucket/path/destination> --endpoint-url https://s3.lts.rc.uab.edu [--recursive]
-```
-
-If you are copying a directory, you will need to add the `--recursive` option.
-
-If you are wanting to copy data down from LTS to your local machine or Cheaha, just reverse the positions of the source and destination in the function call.
-
-Like rclone, AWS also has a sync subcommand that performs the same functionality. You can use it like so:
-
-``` bash
-aws s3 sync <source> s3://<bucket/path/destination> --endpoint-url https://s3.lts.rc.uab.edu [--delete]
-```
-
-`sync` has an added benefit that only files that do not exist in the destination or files that have changed in the source will be transferred whereas `cp` copies everything no matter if it already exists in the destination. By default, `sync` DOES NOT cause files in the detination that are not in the source to be deleted like `rclone sync` does. If you want this functionality, you can add the `--delete` tag at the end of the function call.
 
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Be extremely cautious using `--delete`. Only use if you are sure any data deleted is not important. Data deleted from LTS is not recoverable.
+    Be extremely cautious using `sync`. If there are files in the destination that are not in the source, it will delete those files in addition to adding files to the destination. If data is deleted from LTS, it is not recoverable.
 <!-- markdownlint-enable MD046 -->
-
-### Deleting Files and Directories
-
-**RClone**:
-
-File deletion is performed using the `delete` subcommand.
-
-``` bash
-rclone delete uablts:<bucket/path/file>
-```
-
-Directory deletion is handled using the `purge` subcommand. Be very cautious with this, as this deletes all files and subdirectories within the directory as well.
-
-``` bash
-rclone purge uablts:<bucket/path/>
-```
-
-**s3cmd**:
-
-File and directory deletion is handled by the `rm` command.
-
-``` bash
-s3cmd rm s3://<bucket/path/file> [--recursive]
-```
-
-If you want to delete a directory, you will need to add the `--recursive` option.
-
-To delete an entire bucket, use the `rb` command.
-
-``` bash
-s3cmd rb s3://<bucket>
-```
-
-**AWS CLI**:
-
-The subcommand for deleting files and folders from LTS is `rm`:
-
-``` bash
-aws s3 rm s3://<bucket/path/object> --endpoint-url https://s3.lts.rc.uab.edu [--recursive]
-```
-
-`rm` can delete both files and folders. If you are wanting to delete a folder and everything in it, you will need to add the `--recursive` option. Like with `sync` be very cautious using `rm` and make sure you know what you are deleting before you do so.
-
-To delete an entire bucket, you will need to use the `s3api` command paired with the `delete-bucket subcommand. An example of this looks like:
-
-``` bash
-aws s3api delete-bucket --bucket <bucket> --endpoint-url https://s3.lts.rc.uab.edu
-```
 
 ### Command Comparison Chart
 
