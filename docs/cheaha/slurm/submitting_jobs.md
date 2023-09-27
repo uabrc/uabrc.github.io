@@ -57,7 +57,7 @@ If also using `--array=0-4`, then to create an output file like `my-job-12345678
     The following examples assume familiarity with the Linux terminal. If you are unfamiliar with the terminal then please see our [Shell page](../../workflow_solutions/shell.md) for more information and educational resources.
 <!-- markdownlint-enable MD046 -->
 
-Batch jobs are typically submitted using scripts with `sbatch`. Using `sbatch` this way is the preferred method for submitting jobs to Slurm on Cheaha. It is more portable, shareable, reproducible and scripts can be version controlled using [Git](../../workflow_solutions/getting_software_with_git.md).
+Batch jobs are typically submitted using scripts with `sbatch`. Using `sbatch` this way is the preferred method for submitting jobs to Slurm on Cheaha. It is more portable, shareable, reproducible and scripts can be version controlled using [Git](../../workflow_solutions/git_collaboration.md).
 
 For batch jobs, flags are typically included as directive comments at the top of the script like `#SBATCH --job-name=my-job`. Read on to see examples of batch jobs using `sbatch`.
 
