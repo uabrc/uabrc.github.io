@@ -29,8 +29,8 @@ When any email is sent to <support@listserv.uab.edu> the following happens:
 
 1. An RITM ticket is created in ServiceNow and assigned to Research Computing.
 2. The email is routed to Research Computing staff and the ticket creator from the `support@listserv.uab.edu` email list. Please **do not reply**. Replies create additional tickets and cause service delays.
-3. A ticket creation email is sent from `askit@uab.edu` to Research Computing staff and the ticket creator. Please **do not reply**. Replies create additional tickets and cause service delays.
-4. A monitoring email is sent from `support-watch@listserv.uab.edu` to Research Computing staff and the ticket creator. Replies will update the ticket with new information and send further emails to Research Computing staff and the ticket creator. Please _do_ reply to this and future emails from `support-watch@listserv.uab.edu` as needed to update the ticket. Before replying, please delete all previous quoted replies to avoid the accumulation of noise in the ticket. The images below show how to, and how not to, reply to `support-watch@listserv.uab.edu` emails.
+3. A monitoring email is sent from `support-watch@listserv.uab.edu` to Research Computing staff and the ticket creator. Please **do not reply** to this email. Your email will not make it through, because the email address is closed to Research Computing staff.
+4. A ticket creation email is sent from `askit@uab.edu` to Research Computing staff and the ticket creator. Please _do reply_ to this email. Replies to `askit@uab.edu` with the correct subject line format will add your reply as a comment to the ticket. Before replying, please delete all previous quoted replies to avoid the accumulation of noise in the ticket. The images below show how to, and how not to, reply to `askit@uab.edu` emails.
 
     - Please reply like this:
         ![!Image showing reply without extraneous quoted text. Please do this.](images/support-watch-do-reply-like-this.png)
@@ -38,14 +38,14 @@ When any email is sent to <support@listserv.uab.edu> the following happens:
     - Not like this:
         ![!Image showing reply with extraneous quoted text. Please do not do this.](images/support-watch-do-not-reply-like-this.png)
 
-If you prefer to use email to manage your ticket, please use the method of replying to emails from `support-watch@listserv.uab.edu`. Note that you will not be able to see any attachments this way. They are stripped off and added to the ticket in the ServiceNow web interface, available through the `RITM0000000` link in the `support-watch@listserv.uab.edu` emails.
+If you prefer to use email to manage your ticket, please use the method of replying to emails from `askit@uab.edu`. Note that you will not be able to see any attachments this way. They are stripped off and added to the ticket in the ServiceNow web interface, available through the `RITM0000000` link in the emails you've received.
 
-If you prefer to use the ServiceNow web interface, please click the `RITM0000000` link in the email from `support-watch@listserv.uab.edu`.
+If you prefer to use the ServiceNow web interface, please click the `RITM0000000` link in the email replies.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    The UAB email server strips all potentially executable files from emails. This includes attachments with `.sh`, `.py` and `.exe` suffixes. Zip files containing those files will also be stripped. If you need to send script examples to us please rename the files to have a `.txt` suffix and inform us of their original nature.
+    The UAB email server strips all potentially executable files from emails. This includes attachments with `.log`, `.sh`, `.py` and `.exe` suffixes. Zip files containing those files will also be stripped. If you need to send script examples to us please rename the files to have a `.txt` suffix and inform us of their original nature.
 <!-- markdownlint-enable MD046 -->
 
 ### What Types of Files can I Attach to Tickets?
