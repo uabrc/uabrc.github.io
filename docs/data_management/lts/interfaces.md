@@ -102,7 +102,7 @@ Save settings? [y/N] y
     If you choose to test access using your credentials, the test may fail. Do not rely on the automatic test results, test access yourself by either creating a bucket or listing files from a existing bucket using the commands listed below.
 <!-- markdownlint-enable MD046 -->
 
-### s3cmd Commands
+#### s3cmd Commands
 
 ``` bash
 # General command structure for s3cmd
@@ -132,7 +132,8 @@ s3cmd get s3://<bucket/path/source/> <destination>
 # transfer between two S3 locations
 s3cmd cp s3://<bucket/path/> s3://<bucket/path/>
 
-# sync an S3 location with a local source. The S3 destination will be made exactly the same as the source including file deletions. The source is unaltered. The S3 bucket/folder can be either the source or the destination
+# sync an S3 location with a local source. The S3 destination will be made exactly the same as the source including file deletions. 
+# The source is unaltered. The S3 bucket/folder can be either the source or the destination
 s3cmd sync <source> s3://<bucket/path/destination>
 
 # remove a single object or all objects within a given path
@@ -151,22 +152,79 @@ s3cmd info s3://<bucket>
     Be extremely cautious using `sync`. If there are files in the destination that are not in the source, it will delete those files in addition to adding files to the destination. If data is deleted from LTS, it is not recoverable.
 <!-- markdownlint-enable MD046 -->
 
-### Command Comparison Chart
+### s5cmd
+
+s5cmd is a parallel transfer tool suggested for period transfers of large and/or many files at a time. It has options for customizing how many processors are available for transferring data as well as how many chunks files can be broken into during transfer to minimize transfer time. s5cmd can be installed easily in an Anaconda environment using the following command.
+
+``` bash
+conda install -c conda-forge s5cmd
+```
+
+#### Configuring s5cmd
+
+s5cmd does not use the same authentication file as s3cmd. Instead, it uses official AWS SDK to access S3 including LTS. The default credentials file for AWS CLI would found at `${HOME}/.aws/credentials`. This file is then populated with different profiles and their access and secret keys. You can create the necessary file with the following commands.
+
+``` bash
+mkdir ${HOME}/.aws
+touch ${HOME}/.aws/credentials
+```
+
+Open the credentials file with your favorite editor (i.e. `vim`, `nano`, `gedit`, etc.) and create a default profile by adding the following lines.
+
+``` text
+[default]
+aws_access_key_id = <access_key>
+aws_secret_access_key = <secret_key>
+```
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    For brevity, the chart will exclude the `--endpoint-url` option from the AWS CLI commands, but it will need to be included if you choose to use that tool.
+    Do not include the `<>` symbols in the credentials file when saving your keys
 <!-- markdownlint-enable MD046 -->
 
-| Action        | rclone                                                   | s3cmd                                            | AWS CLI                                                      |
-| ------------- | -------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ |
-| Make Bucket   | `rclone mkdir uablts:<bucket>`                           | `s3cmd mb s3://<bucket>`                         | `aws s3api create-bucket --bucket <bucket>`                  |
-| List Buckets  | `rclone lsd uablts:`                                     | `s3cmd ls`                                       | `aws s3 ls`                                                  |
-| List Files    | `rclone lsf uablts:<bucket/path/>`                       | `s3cmd ls s3://<bucket/path/>`                   | `aws s3 ls s3://<bucket/path/>`                              |
-| Full Upload   | `rclone copy <source> uablts:<bucket/destination>`       | `s3cmd put <source> s3://<bucket/destination/>`  | `aws s3 cp <source> s3://<bucket/destination>`               |
-| Download      | `rclone copy uablts:<bucket/source/> <destination>`      | `s3cmd get s3://<bucket/source/> <destination>`  | `aws s3 cp s3://<bucket/source/> <destination>`              |
-| Sync          | `rclone sync [-i] <source> uablts:<bucket/destination/>` | `s3cmd sync <source> s3://<bucket/destination/>` | `aws s3 sync <source> s3://<bucket/destination/> [--delete]` |
-| Delete File   | `rclone delete uablts:<bucket/path/file>`                | `s3cmd rm s3://<bucket/path/file>`               | `aws s3 rm s3://<bucket/path/file>`                          |
-| Delete Folder | `rclone purge uablts:<bucket/path/>`                     | `s3cmd rm s3://<bucket/path/> --recursive`       | `aws s3 rm s3://<bucket/path/> --recursive`                  |
-| Delete Bucket | `rclone purge uablts:<bucket>`                           | `s3cmd rb s3://<bucket>`                         | `aws s3api delete-bucket --bucket <bucket>`                  |
+One of the benefits of this credential method is that multiple sets of credentials can be kept in the same file. For instance, if you have both a lab/core LTS account and a personal account, you could set your personal account as the default profile and then add your lab credentials under a named profile like so:
+
+``` text
+[default]
+aws_access_key_id = <personal_access_key>
+aws_secret_access_key = <personal_secret_key>
+
+[example-lab]
+aws_access_key_id = <lab_access_key>
+aws_secret_access_key = <lab_secret_key>
+```
+
+#### s5cmd Commands
+
+s5cmd has the following general form.
+
+``` bash
+s5cmd --endpoint-url https://s3.lts.rc.uab.edu [global_options] command [command options] [arguments]
+```
+
+Here, global options must be kept separate from command specific options. For instance, the `--endpoint-url` option is a global option that specifies the URL for the S3 server. This must be included with every s5cmd command to communicate with UAB LTS, otherwise it will default to accessing AWS servers. Other global options include `--numworkers` and `--profile`, the number of available CPUs and which account to use in the `credentials` file, respectively. You can see a list of global options and the list of available commands by running `s5cmd --help`. A selection of commands are listed below.
+
+``` bash
+# copy all files from a local directory to a bucket using a single CPU
+s5cmd --endpoint-url https://s3.lts.rc.uab.edu cp /path/to/directory/* s3://bucket/
+
+# copy all files from a local directory to a bucket using 10 CPUs  and allowing the files to be broken into 5 parts during transfer
+s5cmd --endpoint-url https://s3.lts.rc.uab.edu --numworkers 10 cp --concurrency 5 /path/to/directory/* s3://bucket/
+
+# sync an S3 bucket (destination) to a local directory (source)
+s5cmd --endpoint-url https://s3.lts.rc.uab.edu sync /path/to/directory/ s3://bucket/
+
+# remove all objects with a given prefix from a bucket
+s5cmd --endpoint-url https://s3.lts.rc.uab.edu rm s3://bucket/prefix/*
+```
+
+As with s3cmd, be very careful using the `sync` and `rm` commands as these can/will delete files either locally or on LTS. There are many more commands s5cmd can use as well as a number of command options that can be used to customize how an operation is performed. Please see the help documentation for a full list.
+
+It's important to note that the main functionality of s5cmd over s3cmd is the parallelization options given by the `--numworkers` global option and the `--concurrency` local option for `cp` and `sync` commands. Choosing not to use these options will result in unoptimized performance.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    When setting the value for `--numworkers`, do not select a value beyond the number of CPUs you have requested for your job! This can cause high context switching (meaning individual CPUs are switching between multiple running processes) which can affect job performance for all jobs on a node.
+<!-- markdownlint-enable MD046 -->
