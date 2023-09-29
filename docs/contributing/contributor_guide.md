@@ -190,7 +190,7 @@ Reviewing a pull request means obtaining a copy of the pull request branch and [
 - Favor placing new pages and information into an existing section over creating
 - Approach documentation from a problem solving angle rather than a technology. Examples:
     - Section title "Installing Software Yourself with Anaconda" vs "Anaconda"
-    - Section title "Running Analysis Jobs" vs "SLURM"
+    - Section title "Running Analysis Jobs" vs "Slurm"
 - Put redirects for any page moves in case someone has bookmarked a page (see Redirect section below)
 
 ## Markdown Formatting

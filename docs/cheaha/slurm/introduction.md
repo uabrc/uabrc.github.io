@@ -1,4 +1,4 @@
-# Introduction to SLURM
+# Introduction to Slurm
 
 All work on Cheaha must be submitted to the queueing system, Slurm. This doc gives a basic overview of Slurm and how to use it.
 
@@ -21,13 +21,13 @@ For more details, please see [Submitting Jobs](submitting_jobs.md).
 
 For details on managing and reviewing jobs, please see [Job Management](job_management.md).
 
-## The SLURM Queue
+## The Slurm Queue
 
-When working on Cheaha and with Research Computing, you will often hear references to the SLURM Queue. By its name, you might think that the SLURM Queue is a first-in-first-out (FIFO) queue like when waiting in line at an event or place of business. And, some institutions use a FIFO queue, as it is the default configuration for SLURM.
+When working on Cheaha and with Research Computing, you will often hear references to the Slurm Queue. By its name, you might think that the Slurm Queue is a first-in-first-out (FIFO) queue like when waiting in line at an event or place of business. And, some institutions use a FIFO queue, as it is the default configuration for Slurm.
 
 At UAB Research Computing, we use a multifactor _priority_ queue, meaning that those users with top priority are first to receive service, regardless of when they entered the queue.
 
-SLURM measures priority as a single number, and the highest value generally is first to receive service. Multiple factors play into the queue. The most important factors are given in the table below, in no particular order.
+Slurm measures priority as a single number, and the highest value generally is first to receive service. Multiple factors play into the queue. The most important factors are given in the table below, in no particular order.
 
 {{ read_csv("cheaha/slurm/res/priority_factor.csv") }}
 

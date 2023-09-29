@@ -24,7 +24,7 @@ To successfully request access to GPUs, you will need to set the partition to on
 | pascalnodes        | 12 hours   |
 | pascalnodes-medium | 50 hours   |
 
-Additionally, when requesting a job using `sbatch`, you will need to include a SLURM directive `--gres=gpu:#` where `#` is the number of GPUs you need.
+Additionally, when requesting a job using `sbatch`, you will need to include a Slurm directive `--gres=gpu:#` where `#` is the number of GPUs you need.
 
 <!-- markdownlint-disable MD046 -->
 !!! note

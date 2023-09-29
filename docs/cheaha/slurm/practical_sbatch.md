@@ -6,7 +6,7 @@ The `--array` flag transforms an `sbatch` job script for a single task into a co
 
 We will show how to create and use `sbatch` jobs with the `--array` flag, or `sbatch --array` jobs. We will use a simplified, practical example that parallels the process of a computational scientific experiment. The practical task we will solve is simplified to enhance focus on the structure of the problem, rather than the content of the problem. The structure of the problem is what makes `sbatch --array` jobs more or less suitable for a particular need. Specifically, whether there are many independent subtasks that all have the same structure, with similar or the same parameters.
 
-For other examples of using SLURM and its other tools, please see [Submitting Jobs](submitting_jobs.md) and [Managing Jobs](job_management.md).
+For other examples of using Slurm and its other tools, please see [Submitting Jobs](submitting_jobs.md) and [Managing Jobs](job_management.md).
 
 ## The Task
 
@@ -30,23 +30,23 @@ simulate $SEED $INPUT_FILE $OUTPUT_FILE
 
 The input data takes the form of a simple text file (specifically a comma-separated value or CSV file) with four integers as described above. The upstream source of this data puts each simulation in a separate file in a separate folder. This may feel contrived for a simple example, but real experimental data is often structured with one treatment per folder, so we are using it in this example. We do not necessarily know in advance how many data folders will be present when we run the code. Sure, we could count manually and then hardcode that value, but we are trying to automate our process to avoid introducing errors and to save time in the future.
 
-All of the above constraints must fit within the framework provided by SLURM and the `sbatch --array` job style. Now that we have a complete list of requirements, we are ready to start forming a solution.
+All of the above constraints must fit within the framework provided by Slurm and the `sbatch --array` job style. Now that we have a complete list of requirements, we are ready to start forming a solution.
 
 ## Building a Solution
 
 We are going to need three components to effectively use `sbatch array` jobs given the requirements and constraints of the task.
 
 1. The `simulate` code that transforms inputs to outputs. We are assuming this exists and will not discuss the implementation in detail here.
-2. A `job` shell script file that instructs SLURM how to allocate each array job task.
+2. A `job` shell script file that instructs Slurm how to allocate each array job task.
 3. A `main` shell script to automate the `--array` bounds and call the `job` script.
 
 ### Job Script
 
-The job shell script file will be very much like a typical `sbatch` job script. The preamble will contain the details of SLURM scheduler instructions in the form of flags. After the preamble comes the payload, where we instruct the shell what commands need to be run within each task.
+The job shell script file will be very much like a typical `sbatch` job script. The preamble will contain the details of Slurm scheduler instructions in the form of flags. After the preamble comes the payload, where we instruct the shell what commands need to be run within each task.
 
 #### Preamble
 
-The preamble of an `sbatch` job script instructs SLURM how to queue the job and what resources to allocate. Our preamble is relatively straightforward and should look familiar if you've written job scripts before. For more detailed information on what the flags mean please see [Slurm Flags](submitting_jobs.md#slurm-flags-and-environment-variables).
+The preamble of an `sbatch` job script instructs Slurm how to queue the job and what resources to allocate. Our preamble is relatively straightforward and should look familiar if you've written job scripts before. For more detailed information on what the flags mean please see [Slurm Flags](submitting_jobs.md#slurm-flags-and-environment-variables).
 
 ```shell title="job script preamble"
 #! /bin/bash
@@ -102,7 +102,7 @@ OUTPUT_FILE=${OUTPUT_FILE/dice/rolls}
 
     The shell array is then stored in the variable `input_files`.
 
-3. The line `INPUT_FILE=${input_files[$SLURM_ARRAY_TASK_ID]}` extracts exactly one entry from the `input_files` shell array and puts it in the variable `INPUT_FILE`. The value of `$SLURM_ARRAY_TASK_ID` is set by the SLURM schedule when each task starts. If there are ten tasks, as with `--array=0-9`, then each task has `$SLURM_ARRAY_TASK_ID` set to a unique value from `[0,9]`. We index the shell array `input_files` using `$SLURM_ARRAY_TASK_ID` to get a single entry from the shell array. Putting it all together, each task will pull out exactly one file from the set of data folders.
+3. The line `INPUT_FILE=${input_files[$SLURM_ARRAY_TASK_ID]}` extracts exactly one entry from the `input_files` shell array and puts it in the variable `INPUT_FILE`. The value of `$SLURM_ARRAY_TASK_ID` is set by the Slurm schedule when each task starts. If there are ten tasks, as with `--array=0-9`, then each task has `$SLURM_ARRAY_TASK_ID` set to a unique value from `[0,9]`. We index the shell array `input_files` using `$SLURM_ARRAY_TASK_ID` to get a single entry from the shell array. Putting it all together, each task will pull out exactly one file from the set of data folders.
 
     <!-- markdownlint-disable MD046 -->
     !!! tip
@@ -192,7 +192,7 @@ sbatch --array=0-$FILE_COUNT job.sh
         Double parentheses with a leading dollar sign like `$((...))` are used for evaluating integer arithmetic to a variable.
     <!-- markdownlint-enable MD046 -->
 
-6. The line `sbatch --array=0-$FILE_COUNT job.sh` puts the array tasks in the SLURM queue using the `job.sh` script. The number of tasks runs from `0` to `$FILE_COUNT` as compute above.
+6. The line `sbatch --array=0-$FILE_COUNT job.sh` puts the array tasks in the Slurm queue using the `job.sh` script. The number of tasks runs from `0` to `$FILE_COUNT` as compute above.
 
 To use the script, enter the command `bash main.sh` at the terminal.
 
@@ -201,7 +201,7 @@ To use the script, enter the command `bash main.sh` at the terminal.
 We needed three parts to make the `sbatch --array` job work for our task. Each of these parts has been described above in some detail.
 
 1. `simulate` program to run a simulation.
-2. `job.sh` to instruct the SLURM scheduler what to do in each parallel task.
+2. `job.sh` to instruct the Slurm scheduler what to do in each parallel task.
 3. `main.sh` to run everything.
 
 Executing `bash main.sh` at the terminal will first compute the number of array tasks, then call `sbatch --array` with that number of tasks on `job.sh`. The scheduler will then schedule that many jobs to be run. Each job will have a unique task ID, which will be used to access unique input files and write to unique output files. All of them will be run in parallel.

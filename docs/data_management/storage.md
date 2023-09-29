@@ -136,7 +136,7 @@ Each compute node has a local scratch directory that is accessible via the varia
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    `$LOCAL_SCRATCH` is only useful for jobs in which all processes run on the same compute node, so MPI jobs are not candidates for this solution. Use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node.
+    `$LOCAL_SCRATCH` is only useful for jobs in which all processes run on the same compute node, so MPI jobs are not candidates for this solution. Use the `#SBATCH --nodes=1` Slurm directive to specify that all requested cores are on the same node.
 <!-- markdownlint-enable MD046 -->
 
 ## Temporary Files (`tmp`)

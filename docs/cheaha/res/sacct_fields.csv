@@ -1,6 +1,6 @@
 Field,Description,Same As...,Job,Step,Docs
 METADATA
-jobid,"SLURM assigned job ID number.",[jobid format](#slurm-job-id-formatting),yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_JobID)
+jobid,"Slurm assigned job ID number.",[jobid format](#slurm-job-id-formatting),yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_JobID)
 jobname,"User assigned job name.",`--job-name`,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_JobName)
 state,"Current state of the job.",[states](#slurm-states),yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_State)
 partition,"Partition job was submitted to.",`--partition`,yes,yes,[sacct](https://slurm.schedmd.com/sacct.html#OPT_Partition)

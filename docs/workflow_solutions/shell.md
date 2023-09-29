@@ -479,7 +479,7 @@ See our [Remote Access - Data Transfer Section](../uab_cloud/remote_access.md#da
 
 ### Submit and manage jobs on Cheaha
 
-See our [SLURM Section](../cheaha/slurm/introduction.md) for more detailed information.
+See our [Slurm Section](../cheaha/slurm/introduction.md) for more detailed information.
 
 ### Manage permissions of files and directores (`chmod`)
 
