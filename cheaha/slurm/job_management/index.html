@@ -1191,36 +1191,36 @@
       
         <li class="md-nav__item">
   <a href="#slurm-common-reference" class="md-nav__link">
-    SLURM Common Reference
+    Slurm Common Reference
   </a>
   
-    <nav class="md-nav" aria-label="SLURM Common Reference">
+    <nav class="md-nav" aria-label="Slurm Common Reference">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#slurm-jobid-formatting" class="md-nav__link">
-    SLURM JobID Formatting
+    Slurm JobID Formatting
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#slurm-time-formatting" class="md-nav__link">
-    SLURM Time Formatting
+    Slurm Time Formatting
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#slurm-states" class="md-nav__link">
-    SLURM States
+    Slurm States
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#slurm-units" class="md-nav__link">
-    SLURM Units
+    Slurm Units
   </a>
   
 </li>
@@ -1241,10 +1241,10 @@
         
           <li class="md-nav__item">
   <a href="#slurm-resource-calculations" class="md-nav__link">
-    SLURM Resource Calculations
+    Slurm Resource Calculations
   </a>
   
-    <nav class="md-nav" aria-label="SLURM Resource Calculations">
+    <nav class="md-nav" aria-label="Slurm Resource Calculations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2088,36 +2088,36 @@
       
         <li class="md-nav__item">
   <a href="#slurm-common-reference" class="md-nav__link">
-    SLURM Common Reference
+    Slurm Common Reference
   </a>
   
-    <nav class="md-nav" aria-label="SLURM Common Reference">
+    <nav class="md-nav" aria-label="Slurm Common Reference">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#slurm-jobid-formatting" class="md-nav__link">
-    SLURM JobID Formatting
+    Slurm JobID Formatting
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#slurm-time-formatting" class="md-nav__link">
-    SLURM Time Formatting
+    Slurm Time Formatting
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#slurm-states" class="md-nav__link">
-    SLURM States
+    Slurm States
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#slurm-units" class="md-nav__link">
-    SLURM Units
+    Slurm Units
   </a>
   
 </li>
@@ -2138,10 +2138,10 @@
         
           <li class="md-nav__item">
   <a href="#slurm-resource-calculations" class="md-nav__link">
-    SLURM Resource Calculations
+    Slurm Resource Calculations
   </a>
   
-    <nav class="md-nav" aria-label="SLURM Resource Calculations">
+    <nav class="md-nav" aria-label="Slurm Resource Calculations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2379,7 +2379,7 @@
 </tr>
 <tr>
 <td align="left">jobid</td>
-<td align="left">SLURM assigned job ID number.</td>
+<td align="left">Slurm assigned job ID number.</td>
 <td align="left"><a href="#slurm-job-id-formatting">jobid format</a></td>
 <td align="left">yes</td>
 <td align="left">yes</td>
@@ -2556,16 +2556,16 @@
 </tbody>
 </table>
 <p>A complete list of fields is available at the <a href="https://slurm.schedmd.com/sacct.html#SECTION_Job-Accounting-Fields">Official Documentation</a>.</p>
-<h2 id="slurm-common-reference">SLURM Common Reference<a class="headerlink" href="#slurm-common-reference" title="Permanent link">&para;</a></h2>
-<h3 id="slurm-jobid-formatting">SLURM JobID Formatting<a class="headerlink" href="#slurm-jobid-formatting" title="Permanent link">&para;</a></h3>
+<h2 id="slurm-common-reference">Slurm Common Reference<a class="headerlink" href="#slurm-common-reference" title="Permanent link">&para;</a></h2>
+<h3 id="slurm-jobid-formatting">Slurm JobID Formatting<a class="headerlink" href="#slurm-jobid-formatting" title="Permanent link">&para;</a></h3>
 <p>JobID numbers are assigned automatically by the scheduler in the order submissions are received. All jobs have a single, unique JobID number associated with them. Some features will cause JobID numbers to be reported differently than their actual value.</p>
 <ul>
 <li>For non-array jobs submitted with <code>sbatch</code>, <code>salloc</code>, or with <code>srun</code> outside of a job context, the unique JobID number is reported directly.</li>
 <li>For array jobs submitted with <code>sbatch</code>, the array is assigned a master ID like <code>12345678</code>, and each task is reported as <code>&lt;master-job-id&gt;_&lt;task-id&gt;</code>. An example might be <code>12345678_987</code>. Each task still has a unique JobID number.</li>
 <li>For job steps submitted with <code>srun</code> inside of a job context, the JobID is reported as <code>&lt;job-id&gt;.&lt;task-name&gt;</code>. All jobs submitted generate a <code>.batch</code> step and a <code>.extern</code> step. An example might be <code>12345678.batch</code>.</li>
 </ul>
-<h3 id="slurm-time-formatting">SLURM Time Formatting<a class="headerlink" href="#slurm-time-formatting" title="Permanent link">&para;</a></h3>
-<p>SLURM formats time in two different ways: (1) time points and (2) durations. Time points are used whenever a single point in time is needed, such as the start or end of a job. Durations are needed for job requests and reported for elapsed times.</p>
+<h3 id="slurm-time-formatting">Slurm Time Formatting<a class="headerlink" href="#slurm-time-formatting" title="Permanent link">&para;</a></h3>
+<p>Slurm formats time in two different ways: (1) time points and (2) durations. Time points are used whenever a single point in time is needed, such as the start or end of a job. Durations are needed for job requests and reported for elapsed times.</p>
 <p>Units are given a shorthand designations:</p>
 <ul>
 <li><code>YYYY</code> four-digit year.</li>
@@ -2591,8 +2591,8 @@
 <p>Durations are reported like the following.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[DD-[HH:]]MM:SS
 </code></pre></div>
-<h3 id="slurm-states">SLURM States<a class="headerlink" href="#slurm-states" title="Permanent link">&para;</a></h3>
-<p>Job states report on where the job is in the overall SLURM process. If all goes well, you will see jobs move through the following states:</p>
+<h3 id="slurm-states">Slurm States<a class="headerlink" href="#slurm-states" title="Permanent link">&para;</a></h3>
+<p>Job states report on where the job is in the overall Slurm process. If all goes well, you will see jobs move through the following states:</p>
 <ol>
 <li><code>PENDING</code></li>
 <li><code>RUNNING</code></li>
@@ -2605,7 +2605,7 @@
 </li>
 </ol>
 <p>Other states are possible. A complete list of job states is available at the <a href="https://slurm.schedmd.com/sacct.html#SECTION_JOB-STATE-CODES">Official Documentation</a>.</p>
-<h3 id="slurm-units">SLURM Units<a class="headerlink" href="#slurm-units" title="Permanent link">&para;</a></h3>
+<h3 id="slurm-units">Slurm Units<a class="headerlink" href="#slurm-units" title="Permanent link">&para;</a></h3>
 <p>Slurm uses flexible units for memory to keep reports compact. It always prefers the shortest possible representation, and will choose the largest units by default. Other units may be used, and there are flags to allow reporting in uniform units.</p>
 <p>The memory units are <code>KMGT</code> for <code>kilo</code>, <code>mega</code>, <code>giga</code>, <code>tera</code> respectively. All are in bytes. Slurm uses the convention that e.g.</p>
 <div class="arithmatex">\[
@@ -2617,14 +2617,14 @@
 \end{aligned}
 \]</div>
 <h3 id="tres-explained">TRES Explained<a class="headerlink" href="#tres-explained" title="Permanent link">&para;</a></h3>
-<p>The abbreviation <code>TRES</code> stands for "trackable resources". Any resource made available by SLURM that is trackable is recorded in the SLURM database and can be recovered using <a href="#reviewing-past-jobs-with-sacct">sacct</a>. The <a href="#sacct-fields">fields</a> <code>reqtres</code> and <code>alloctres</code> can be used to review CPUs, memory, nodes and GPUs. The data is stored as a comma-separated list of <code>&lt;resource&gt;=&lt;quantity&gt;</code> pairs, and all values are totals across the entire job, not per node or per task. An example might look like:</p>
+<p>The abbreviation <code>TRES</code> stands for "trackable resources". Any resource made available by Slurm that is trackable is recorded in the Slurm database and can be recovered using <a href="#reviewing-past-jobs-with-sacct">sacct</a>. The <a href="#sacct-fields">fields</a> <code>reqtres</code> and <code>alloctres</code> can be used to review CPUs, memory, nodes and GPUs. The data is stored as a comma-separated list of <code>&lt;resource&gt;=&lt;quantity&gt;</code> pairs, and all values are totals across the entire job, not per node or per task. An example might look like:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>billing=8,cpu=8,gres/gpu=2,mem=64G,node=1
 </code></pre></div>
 <h3 id="rss-explained">RSS Explained<a class="headerlink" href="#rss-explained" title="Permanent link">&para;</a></h3>
-<p>The abbreviation <code>RSS</code> stands for "resident set size", and is related to memory usage by jobs in SLURM. Memory usage is challenging to record accurately. Recording memory means a request must be made to the operating system to obtain memory usage at a single point in time, which uses computational resources. There is a balance made between resolution in time, and computational overhead.</p>
+<p>The abbreviation <code>RSS</code> stands for "resident set size", and is related to memory usage by jobs in Slurm. Memory usage is challenging to record accurately. Recording memory means a request must be made to the operating system to obtain memory usage at a single point in time, which uses computational resources. There is a balance made between resolution in time, and computational overhead.</p>
 <p>The difficulty with recording memory usage contributes to difficulty diagnosing root causes of out of memory errors, bus errors, and segmentation faults.</p>
-<p>RSS is recorded by slurm in the <a href="#reviewing-past-jobs-with-sacct">sacct</a> <a href="#sacct-fields">fields</a> <code>averss</code> and <code>maxrss</code>. These values are both reported in bytes, rather than the usual <a href="#slurm-units">compact memory units</a>.</p>
-<h3 id="slurm-resource-calculations">SLURM Resource Calculations<a class="headerlink" href="#slurm-resource-calculations" title="Permanent link">&para;</a></h3>
+<p>RSS is recorded by Slurm in the <a href="#reviewing-past-jobs-with-sacct">sacct</a> <a href="#sacct-fields">fields</a> <code>averss</code> and <code>maxrss</code>. These values are both reported in bytes, rather than the usual <a href="#slurm-units">compact memory units</a>.</p>
+<h3 id="slurm-resource-calculations">Slurm Resource Calculations<a class="headerlink" href="#slurm-resource-calculations" title="Permanent link">&para;</a></h3>
 <h4 id="calculating-cpus">Calculating CPUs<a class="headerlink" href="#calculating-cpus" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -2695,7 +2695,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2023</span>
       
     
   </small>
