@@ -237,4 +237,4 @@ It's important to note that the main functionality of s5cmd over s3cmd is the pa
 
 ## Alternatives
 
-There are other tools for interfacing with LTS such as rclone. Please see our [rclone documentation](../transfer/rclone.md) for more details
+There are other tools for interfacing with LTS such as rclone. Please see our [rclone documentation](../transfer/rclone.md) for more details.
