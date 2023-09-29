@@ -2273,23 +2273,7 @@
 <h4 id="rstudio-projects-and-renv">RStudio Projects and renv<a class="headerlink" href="#rstudio-projects-and-renv" title="Permanent link">&para;</a></h4>
 <p>The most recent versions of RStudio installed on Cheaha support R Projects as well as package management through the <code>renv</code> package. Please read more about improving analysis reproducibility using both of these tools in our <a href="../../../workflow_solutions/r_environments/">workflow solutions</a></p>
 <h4 id="using-pandoc-and-knitr-within-rstudio">Using Pandoc and <code>knitr</code> within RStudio<a class="headerlink" href="#using-pandoc-and-knitr-within-rstudio" title="Permanent link">&para;</a></h4>
-<p>Pandoc is a tool for transforming various markup and markdown formatted documents into one another. RStudio uses <code>knitr</code>, which depends on Pandoc, to build reports and documents from notebooks. Pandoc cannot be installed on our system via RStudio. An alternative method is to use <a href="../../../workflow_solutions/using_anaconda/">Anaconda</a>, following the instructions below.</p>
-<ol>
-<li>
-<p><a href="../../../workflow_solutions/using_anaconda/#create-an-environment">Create an environment</a> called <code>pandoc</code> with the package <code>pandoc</code> using the following command.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda create --name pandoc -c conda-forge pandoc
-</code></pre></div>
-</li>
-<li>
-<p>In the <a href="#rstudio-server">RStudio job form</a>, in the Enviroment Setup field, add the following.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>module load Anaconda3
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>conda activate pandoc
-</code></pre></div>
-</li>
-<li>
-<p>Start the job and use RStudio and <code>knitr</code> as expected.</p>
-</li>
-</ol>
+<p>If you want to use RMarkdown to create reports in RStudio, R modules using version 4.2.0 and later include <code>knitr</code> compatibility. Please use the latest versions of both R and Rstudio for fully integrated <code>knitr</code> functionality.</p>
 <h4 id="starting-with-a-clean-session-to-avoid-errors">Starting With a Clean Session to Avoid Errors<a class="headerlink" href="#starting-with-a-clean-session-to-avoid-errors" title="Permanent link">&para;</a></h4>
 <p>By default, RStudio loads the most recently opened project at startup and restores the <code>.RData</code> file into the workspace. If you only work on a single project, this may be helpful. If you frequently change projects then these default settings can create difficult-to-diagnose errors, or you may inadvertently alter a project by adding incorrect packages, for example.</p>
 <p>To reduce the risk of these kinds of errors, uncheck the highlighted fields below in the RStudio Options menu under the "General" selection.</p>
@@ -2303,9 +2287,9 @@
 <p><div class="lightgallery"><a data-sub-html="Jupyter Notebook job request form." href="../images/ood_jupyter_notebook_form.png"><img alt="Jupyter Notebook job request form." src="../images/ood_jupyter_notebook_form.png" /></a></div></p>
 <p>Jupyter Notebooks are commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the <a href="#working-with-anaconda-environments">Working with Anaconda Environments section</a> below before continuing here.</p>
 <p>To modify the Operating System (OS) environment that Anaconda and Jupyter will run in, please use the Environment Setup field to load modules. For GPU applications you'll need to load a <code>CUDA/*</code> module. If working with deep learning workflows, you will also possibly need to load the <code>cuDNN/*-CUDA-*</code> module corresponding to your choice of <code>CUDA/*</code> module version. These are required for popular ML/DL/AI libraries like TensorFlow, Keras, and PyTorch. Use <code>module spider cuda</code> and <code>module spider cudnn</code> to view the list of appropriate modules. An example of what to put in the Environment Setup field, when using Tensorflow in a Jupyter notebook, is shown below.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># ENVIRONMENT SETUP</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>module load CUDA/12.2.0
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>module load cuDNN/8.9.2.26-CUDA-12.2.0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># ENVIRONMENT SETUP</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>module load CUDA/12.2.0
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>module load cuDNN/8.9.2.26-CUDA-12.2.0
 </code></pre></div>
 <p>For information on which versions of CUDA to load for Tensorflow and PyTorch, please see <a href="../../slurm/gpu/#tensorflow-compatibility">Tensorflow Compatibility</a> and <a href="../../slurm/gpu/#pytorch-compatibility">PyTorch Compatibility</a>.</p>
 <!-- markdownlint-disable MD046 -->
@@ -2418,7 +2402,7 @@
 <li>Start Matlab by entering the command <code>matlab</code>.</li>
 <li>
 <p>Verify success by entering <code>pyenv</code> at the Matlab prompt (not the terminal window). Multiple lines of text will be returned at the prompt. Among them you should see a line like the following, with your environment name in place of <code>&lt;env_name&gt;</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Executable: /home/$USER/.conda/envs/&lt;env_name&gt;/bin/python
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Executable: /home/$USER/.conda/envs/&lt;env_name&gt;/bin/python
 </code></pre></div>
 </li>
 </ol>
