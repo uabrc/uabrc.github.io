@@ -24,4 +24,4 @@ If you have questions about the course please feel free to reach out to [Support
 
 ### Syllabus
 
-The syllabus is available at one of our [GitLab repositories](https://gitlab.rc.uab.edu/rc-data-science/communications/dsjc-course/-/blob/main/data_science_journal_club_syllabus.html). To see it, click the download button on the linked page and open the downloaded HTML file in your web browser. You may first need to [create a GitLab account](../account_management/gitlab_account.md).
+The syllabus is available as a public webpage at <https://s3.lts.rc.uab.edu/uab-rc-dsjc/syllabus.html>, hosted on [LTS](../data_management/lts/index.md).

@@ -60,9 +60,9 @@ As shown earlier, some software can be run outside of the VNC session. Setup for
 
 ### RStudio Server
 
-RStudio is available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. You'll also need to select both the version of RStudio you wish to use, and the version of R you wish to use. To adjust the environment, please use the Environment Setup box to load modules besides R and RStudio as seen below. All other modules and paths should be loaded here as it is difficult to load and consistently use modules once RStudio starts.
+RStudio is available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. You'll also need to select both the version of RStudio you wish to use, and the version of R you wish to use. To adjust the environment, please use the Environment Setup field to load modules besides R and RStudio as seen below. All other modules and paths should be loaded here as it is difficult to load and consistently use modules once RStudio starts.
 
-![!RStudio Server job request form Environment Setup box.](./images/ood_rstudio_server_env_setup_box.png)
+![!RStudio Server job request form Environment Setup field.](./images/ood_rstudio_server_env_setup_box.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -118,33 +118,18 @@ The most recent versions of RStudio installed on Cheaha support R Projects as we
 
 #### Using Pandoc and `knitr` within RStudio
 
-Pandoc is a tool for transforming various markup and markdown formatted documents into one another. RStudio uses `knitr`, which depends on Pandoc, to build reports and documents from notebooks. Pandoc cannot be installed on our system via RStudio. An alternative method is to use [Anaconda](../../workflow_solutions/using_anaconda.md), following the instructions below.
-
-1. [Create an environment](../../workflow_solutions/using_anaconda.md#create-an-environment) called `pandoc` with the package `pandoc` using the following command.
-
-    ```bash
-    conda create --name pandoc -c conda-forge pandoc
-    ```
-
-2. In the [RStudio job form](#rstudio-server), in the Enviroment Setup box, add the following.
-
-    ```bash
-    module load Anaconda3
-    conda activate pandoc
-    ```
-
-3. Start the job and use RStudio and `knitr` as expected.
+If you want to use RMarkdown to create reports in RStudio, R modules using version 4.2.0 and later include `knitr` compatibility. Please use the latest versions of both R and Rstudio for fully integrated `knitr` functionality.
 
 #### Starting With a Clean Session to Avoid Errors
 
 By default, RStudio loads the most recently opened project at startup and restores the `.RData` file into the workspace. If you only work on a single project, this may be helpful. If you frequently change projects then these default settings can create difficult-to-diagnose errors, or you may inadvertently alter a project by adding incorrect packages, for example.
 
-To reduce the risk of these kinds of errors, uncheck the highlighted boxes below in the RStudio Options menu under the "General" selection.
+To reduce the risk of these kinds of errors, uncheck the highlighted fields below in the RStudio Options menu under the "General" selection.
 
 - Restore most recently opened project at startup
 - Restore .RData into workspace at startup
 
-![!image showing boxes to uncheck highlighted with red markers](images/ood_rstudio_server_clean_session.png)
+![!image showing fields to uncheck highlighted with red markers](images/ood_rstudio_server_clean_session.png)
 
 ### Jupyter Notebook
 
@@ -154,9 +139,15 @@ Jupyter Notebooks are available for use graphically in your browser via OOD. As 
 
 Jupyter Notebooks are commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-anaconda-environments) below before continuing here.
 
-To adjust the environment, please use the Environment Setup box to load modules. For GPU applications it is generally necessary to load one of our `cuda##.#/toolkit` modules, and possibly a `cuDNN` module. These are required for `tensorflow`, `keras` and `pytorch`. Use `module spider cuda` and `module spider cudnn` to view the list of appropriate modules. An example is shown below.
+To modify the Operating System (OS) environment that Anaconda and Jupyter will run in, please use the Environment Setup field to load modules. For GPU applications you'll need to load a `CUDA/*` module. If working with deep learning workflows, you will also possibly need to load the `cuDNN/*-CUDA-*` module corresponding to your choice of `CUDA/*` module version. These are required for popular ML/DL/AI libraries like TensorFlow, Keras, and PyTorch. Use `module spider cuda` and `module spider cudnn` to view the list of appropriate modules. An example of what to put in the Environment Setup field, when using Tensorflow in a Jupyter notebook, is shown below.
 
-![!Jupyter Notebook job request form Environment Setup box.](./images/ood_jupyter_notebook_env_setup_box.png)
+```shell
+# ENVIRONMENT SETUP
+module load CUDA/12.2.0
+module load cuDNN/8.9.2.26-CUDA-12.2.0
+```
+
+For information on which versions of CUDA to load for Tensorflow and PyTorch, please see [Tensorflow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -171,15 +162,15 @@ To adjust the environment, please use the Environment Setup box to load modules.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
-!!! tip
+!!! important
 
-    You do not need `module load Anaconda3` in the `Environment Setup` field, it is loaded automatically.
+    Do not load `module load Anaconda3` in the `Environment Setup` field, as it is loaded automatically. Loading any versions of `Anaconda3` would affect the Python executable, which is used by default. These results in hard-to-diagnose errors in the OOD Jupyter notebook.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Please do not activate conda environments in the Environment Setup field.
+    Having `conda/mamba activate` and `source activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
 <!-- markdownlint-enable MD046 -->
 
 ### Working with Anaconda Environments
@@ -190,7 +181,7 @@ For information on working with Anaconda environments please see our [Using Anac
 
 The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
 
-![!Jupyter Notebook job request form Extra jupyter arguments box.](./images/ood_jupyter_notebook_extra_args_box.png)
+![!Jupyter Notebook job request form Extra jupyter arguments field.](./images/ood_jupyter_notebook_extra_args_box.png)
 
 #### Submitting the Jupyter Notebook Job
 
@@ -252,7 +243,7 @@ After successfully creating your environment, navigate to the Files tab. You can
 
 #### Help GPU is not Available with TensorFlow or PyTorch
 
-If you are using Jupyter with TensorFlow or PyTorch and no GPU is found, please see our Slurm GPU page sections on [TensorFlow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
+If you are using Jupyter with TensorFlow or PyTorch and no GPU is found, please see our Slurm GPU page sections on [TensorFlow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility). For MATLAB, please see [MATLAB Compatibility](../slurm/gpu.md#matlab).
 
 ### Matlab
 

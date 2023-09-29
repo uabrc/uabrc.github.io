@@ -118,7 +118,7 @@ OUTPUT_FILE=${OUTPUT_FILE/dice/rolls}
 
 ##### Running the Software
 
-Running the software requires setting up the random number generator seed (for repeatability), loading module dependencies, creating the output directory, and finally running the simulation.
+Running the software requires setting up the random number generator seed (for repeatability), loading [module](../software/modules.md) dependencies, creating the output directory, and finally running the simulation.
 
 ```shell title="Job Script Payload: Running the Software"
 SEED=314159

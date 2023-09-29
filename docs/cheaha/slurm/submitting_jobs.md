@@ -30,7 +30,7 @@ Slurm has many flags a researcher can use when creating a job, but a short list 
 
 ### Available Partitions for `--partition`
 
-Please see the [Partitions page](../hardware.md#partitions) for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
+Please see [Cheaha Hardware](../hardware.md#summary) for more information. Remember, the smaller your resource request, the sooner your job will get through the queue.
 
 ### Requesting GPUs
 
@@ -57,7 +57,7 @@ If also using `--array=0-4`, then to create an output file like `my-job-12345678
     The following examples assume familiarity with the Linux terminal. If you are unfamiliar with the terminal then please see our [Shell page](../../workflow_solutions/shell.md) for more information and educational resources.
 <!-- markdownlint-enable MD046 -->
 
-Batch jobs are typically submitted using scripts with `sbatch`. Using `sbatch` this way is the preferred method for submitting jobs to Slurm on Cheaha. It is more portable, shareable, reproducible and scripts can be version controlled using [Git](../../workflow_solutions/getting_software_with_git.md).
+Batch jobs are typically submitted using scripts with `sbatch`. Using `sbatch` this way is the preferred method for submitting jobs to Slurm on Cheaha. It is more portable, shareable, reproducible and scripts can be version controlled using [Git](../../workflow_solutions/git_collaboration.md).
 
 For batch jobs, flags are typically included as directive comments at the top of the script like `#SBATCH --job-name=my-job`. Read on to see examples of batch jobs using `sbatch`.
 
@@ -223,7 +223,15 @@ Linux c0204 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_
 Linux c0204 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-Alternatively, `srun` can also run MPI,OpenMP, hybrid MPI/OpenMP, and many more parallel jobs. For more details on using `srun`, please see the [official documentation](https://slurm.schedmd.com/srun.html).
+Alternatively, `srun` can also run MPI, OpenMP, hybrid MPI/OpenMP, and many more parallel jobs. For more details on using `srun`, please see the [official documentation](https://slurm.schedmd.com/srun.html).
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    `srun` has been disabled for use with MPI. We have removed this functionality due to an open vulnerability: <https://nvd.nist.gov/vuln/detail/CVE-2023-41915>. The vulnerability could allow an attacker to escalate privileges to root and/or access data they do not have permissions for.
+
+    Instead of `srun`, please load one of the `OpenMPI` modules with an appropriate version. Please contact [Support](../../help/support.md) with any questions or concerns.
+<!-- markdownlint-enable MD046 -->
 
 ## Graphical Interactive Jobs
 
