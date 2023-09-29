@@ -177,15 +177,15 @@ For information on which versions of CUDA to load for Tensorflow and PyTorch, pl
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
-!!! tip
+!!! important
 
-    You do not need `module load Anaconda3` in the `Environment Setup` field, it is loaded automatically.
+    Do not load `module load Anaconda3` in the `Environment Setup` field, as it is loaded automatically. Loading any versions of `Anaconda3` would affect the Python executable, which is used by default. These results in hard-to-diagnose errors in the OOD Jupyter notebook.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Having `conda activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Please do not activate conda environments in the Environment Setup field.
+    Having `conda/mamba activate` and `source activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
 <!-- markdownlint-enable MD046 -->
 
 ### Working with Anaconda Environments
