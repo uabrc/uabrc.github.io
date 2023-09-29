@@ -118,22 +118,7 @@ The most recent versions of RStudio installed on Cheaha support R Projects as we
 
 #### Using Pandoc and `knitr` within RStudio
 
-Pandoc is a tool for transforming various markup and markdown formatted documents into one another. RStudio uses `knitr`, which depends on Pandoc, to build reports and documents from notebooks. Pandoc cannot be installed on our system via RStudio. An alternative method is to use [Anaconda](../../workflow_solutions/using_anaconda.md), following the instructions below.
-
-1. [Create an environment](../../workflow_solutions/using_anaconda.md#create-an-environment) called `pandoc` with the package `pandoc` using the following command.
-
-    ```bash
-    conda create --name pandoc -c conda-forge pandoc
-    ```
-
-2. In the [RStudio job form](#rstudio-server), in the Enviroment Setup field, add the following.
-
-    ```bash
-    module load Anaconda3
-    conda activate pandoc
-    ```
-
-3. Start the job and use RStudio and `knitr` as expected.
+If you want to use RMarkdown to create reports in RStudio, R modules using version 4.2.0 and later include `knitr` compatibility. Please use the latest versions of both R and Rstudio for fully integrated `knitr` functionality.
 
 #### Starting With a Clean Session to Avoid Errors
 
