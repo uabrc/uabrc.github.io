@@ -2478,6 +2478,10 @@
 <li>Java: <code>java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID</code></li>
 <li>UMI Tools: <code>umi_tools * --temp-dir=/local/$SLURM_JOB_ID</code></li>
 </ul>
+<p>Software known to use <code>tmp</code> by default with no know workaround.</p>
+<ul>
+<li>Keras has <code>/tmp/.keras</code> hardcoded as a fallback cache directory if <code>~/.keras</code> is inaccessible.</li>
+</ul>
 <h2 id="how-much-space-do-i-have-left">How much space do I have left?<a class="headerlink" href="#how-much-space-do-i-have-left" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Individual Storage</strong>: use the command <code>quota-report</code> to see usage in <code>/data/user/$USER</code> and <code>/scratch/$USER</code>.</li>
@@ -2573,7 +2577,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2023</span>
       
     
   </small>
