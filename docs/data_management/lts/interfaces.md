@@ -234,3 +234,7 @@ It's important to note that the main functionality of s5cmd over s3cmd is the pa
 
     When setting the value for `--numworkers`, do not select a value beyond the number of CPUs you have requested for your job! This can cause high context switching (meaning individual CPUs are switching between multiple running processes) which can affect job performance for all jobs on a node.
 <!-- markdownlint-enable MD046 -->
+
+## Alternatives
+
+There are other tools for interfacing with LTS such as rclone. Please see our [rclone documentation](../transfer/rclone.md) for more details
