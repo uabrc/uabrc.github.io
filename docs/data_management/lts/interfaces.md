@@ -152,6 +152,12 @@ s3cmd info s3://<bucket>
     Be extremely cautious using `sync`. If there are files in the destination that are not in the source, it will delete those files in addition to adding files to the destination. If data is deleted from LTS, it is not recoverable.
 <!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    When using `ls` to list buckets, it will only show the buckets you own, not buckets you have been given permissions on. This is a limitation of the S3 system. You can still interact with any buckets you have been given relevant permissions on, but you will need to remember the names of the buckets you don't own.
+<!-- markdownlint-enable MD046 -->
+
 ### s5cmd
 
 s5cmd is a parallel transfer tool suggested for period transfers of large and/or many files at a time. It has options for customizing how many processors are available for transferring data as well as how many chunks files can be broken into during transfer to minimize transfer time. s5cmd can be installed easily in an Anaconda environment using the following command.
