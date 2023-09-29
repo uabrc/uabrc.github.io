@@ -1,11 +1,7 @@
-# UAB Cyberinfrastructure Plan and Grant Facilities Document
+# UAB IT Research Computing (UABRC) Resources and Cybersecurity Facilities Document
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
+The link below contains a plain-text facilities document designed to support research grant applications.
 
-    This page is a stub and is under construction.
-<!-- markdownlint-enable MD046 -->
+[Click Here To Download The Research Computing Facilities Grant Document.](res/uab-rc-facilities.txt)
 
-[Click Here To Download The Research Computing Facilities Grant Document.](res/facilities.txt)
-
-Please feel free to use this document to support your grant applications.
+If you believe that information within is inaccurate or there are missing details, please feel free to contact [Support](../help/support.md)
