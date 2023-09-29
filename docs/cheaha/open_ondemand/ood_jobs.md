@@ -14,13 +14,13 @@ Additionally, you can view more detailed information about a job by clicking the
 
 ![!Job details.](./images/ood_job_details.png)
 
-This table shows extra information such as the total number of nodes, CPUs, time limit, and memory requested for the job. The path to the output file for the job created by SLURM will also be listed. You can open the file location in a file browser or in a terminal here.
+This table shows extra information such as the total number of nodes, CPUs, time limit, and memory requested for the job. The path to the output file for the job created by Slurm will also be listed. You can open the file location in a file browser or in a terminal here.
 
 You can end a currently running job by pressing Delete at the bottom right of these expanded job details.
 
 ## Job Composer
 
-The job composer allows you to create SLURM jobs directly in the web interface without having to create a VNC session. Clicking `Jobs > Job Composer` will bring up a new window:
+The job composer allows you to create Slurm jobs directly in the web interface without having to create a VNC session. Clicking `Jobs > Job Composer` will bring up a new window:
 
 ![!Job composer page with no jobs.](./images/ood_base_composer.png)
 

@@ -243,7 +243,7 @@ After successfully creating your environment, navigate to the Files tab. You can
 
 #### Help GPU is not Available with TensorFlow or PyTorch
 
-If you are using Jupyter with TensorFlow or PyTorch and no GPU is found, please see our SLURM GPU page sections on [TensorFlow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility). For MATLAB, please see [MATLAB Compatibility](../slurm/gpu.md#matlab).
+If you are using Jupyter with TensorFlow or PyTorch and no GPU is found, please see our Slurm GPU page sections on [TensorFlow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility). For MATLAB, please see [MATLAB Compatibility](../slurm/gpu.md#matlab).
 
 ### Matlab
 
