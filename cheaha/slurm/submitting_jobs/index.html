@@ -2438,7 +2438,15 @@
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Linux c0204 <span class="m">3</span>.10.0-1160.24.1.el7.x86_64 <span class="c1">#1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span>
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>Linux c0204 <span class="m">3</span>.10.0-1160.24.1.el7.x86_64 <span class="c1">#1 SMP Thu Mar 25 21:21:56 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux</span>
 </code></pre></div>
-<p>Alternatively, <code>srun</code> can also run MPI,OpenMP, hybrid MPI/OpenMP, and many more parallel jobs. For more details on using <code>srun</code>, please see the <a href="https://slurm.schedmd.com/srun.html">official documentation</a>.</p>
+<p>Alternatively, <code>srun</code> can also run MPI, OpenMP, hybrid MPI/OpenMP, and many more parallel jobs. For more details on using <code>srun</code>, please see the <a href="https://slurm.schedmd.com/srun.html">official documentation</a>.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code>srun</code> has been disabled for use with MPI. We have removed this functionality due to an open vulnerability: <a href="https://nvd.nist.gov/vuln/detail/CVE-2023-41915">https://nvd.nist.gov/vuln/detail/CVE-2023-41915</a>. The vulnerability could allow an attacker to escalate privileges to root and/or access data they do not have permissions for.</p>
+<p>Instead of <code>srun</code>, please load one of the <code>OpenMPI</code> modules with an appropriate version. Please contact <a href="../../../help/support/">Support</a> with any questions or concerns.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
 <h2 id="graphical-interactive-jobs">Graphical Interactive Jobs<a class="headerlink" href="#graphical-interactive-jobs" title="Permanent link">&para;</a></h2>
 <p>It is highly recommended to use the <a href="../../open_ondemand/ood_main/">Open OnDemand</a> web portal for <a href="../../open_ondemand/ood_interactive/">interactive apps</a>. Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha. A terminal is also available through Open OnDemand.</p>
 <p>It is possible to use other remote desktop software, such as VNC, to start and interact with jobs. These methods are not officially supported and we do not have the capacity to help with remote desktop connections. Instead, please consider switching your workflow to use the <a href="../../open_ondemand/ood_interactive/#my-interactive-sessions">Open OnDemand HPC Desktop</a>. If you are unable to use this method, please contact <a href="../../../help/support/">Support</a>.</p>
@@ -2473,7 +2481,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2023</span>
       
     
   </small>
