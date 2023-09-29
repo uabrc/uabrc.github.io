@@ -50,19 +50,7 @@ For more information on usage with examples, see [Anaconda Environments](../../w
 
 ### Speedups Using Mamba
 
-[Mamba](../../workflow_solutions/using_anaconda.md#speeding-things-up-with-mamba) is a faster alternative to Anaconda, and is installed on Cheaha as a [module](modules.md). To use the latest version of Mamba on Cheaha, please use `module load Mamba` at the terminal and in your scripts.
-
-There are currently a couple of known issues when working with Mamba on Cheaha.
-
-1. After using `module load Mamba`, use `source activate` before any other `mamba` or `conda` commands.
-2. Using `mamba init` can cause environment instability. Do _not_ use it.
-3. Mamba alters the terminal prompt while a `mamba` environment is activated. The system should function as normal otherwise.
-
-<!-- markdownlint-disable MD046 -->
-!!! warning
-
-    Do _not_ use `mamba init`, even when instructed to do so by Mamba. Doing so can result in environment instability. If you do use `mamba init` you can resolve the issue by removing the content added to your `.bashrc` file. Please visit [our FAQ](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/2) for more details.
-<!-- markdownlint-enable MD046 -->
+Use of Mamba has been deprecated on Cheaha. On Cheaha, use `module load Anaconda3` and the usual `conda` commands instead. The backend of `conda` has been set to use `libmamba` and is now equally performant.
 
 ## Singularity Containers
 
