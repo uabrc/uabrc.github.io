@@ -1,4 +1,9 @@
-# How to Request Support
+# Support
+
+{%
+    include-markdown "../../docs_include/contact_us.md"
+    heading-offset=1
+%}
 
 Before reaching out to us, try searching this documentation for keywords related to your issue. If you aren't able to find anything, please try checking our FAQ located on [ask.cyberinfrastructure](https://ask.cyberinfrastructure.org/c/locales-data-centers-and-campus-rc/uab/52). If you still need help, please read on for how to send in a ticket and how to work with our ticketing system.
 
