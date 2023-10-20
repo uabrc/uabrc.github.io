@@ -118,3 +118,7 @@ The following policy file will give read permission to all LTS users for all obj
     ]
 }
 ```
+
+## Can I Change Permissions On A Bucket Via Globus?
+
+As of now, there is no way to change permissions on a bucket via Globus. The only way to change permissions is via the command line.
