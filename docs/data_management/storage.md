@@ -189,7 +189,7 @@ The following software are known to use `tmp` by default, and can be worked arou
 
 Software known to use `tmp` by default with no know workaround.
 
-- Keras has `/tmp/.keras` hardcoded as a fallback cache directory if `~/.keras` is inaccessible.
+- [Keras](https://github.com/tensorflow/tensorflow/blob/5bb81b7b0dd140a4304b92530614502c0c61a150/tensorflow/python/keras/utils/data_utils.py#L205) has `/tmp/.keras` hardcoded as a fallback cache directory if `~/.keras` is inaccessible.
 
 ## How much space do I have left?
 
