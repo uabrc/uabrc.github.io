@@ -15,13 +15,13 @@ This is ultimately up to the bucket owner, but there are a couple of single-buck
     - **Purpose:** This fulfills more of a pure backup role compared to option 2. While all users can upload files
     - **Benefits:** The policy file for these permissions is much simpler to create and manage. Limits the number of people who can remove files that might be needed down the line.
     - **Drawbacks:** Needing to ask a steward or the bucket owner to delete individual files introduces friction to data management.
-    - [Example Policy File](res/example-synced-project-policy.json)
+    - [Example Policy File](res/example-synced-project-policy.json){: download="example-synced-project-policy.json" }
 2. Active and collaborative external storage. All users would have a specific prefix/folder they have complete control where they can add or remove data at will.
     - **General permissions:** Data stewards and the bucket owner would have permission to delete any files. Regular users would only be able to upload to and delete files from their owned prefix/folder. All users would be able to see and download any files from any other user.
     - **Purpose:** This satisfies the need for expanded storage accessible from Cheaha (via the terminal or Globus). All users have their own space they can use as they see fit within the bucket for extra storage while still being able to access, but not alter, files from other users in cases they need to be shared. Part of the bucket, or a separate bucket entirely, can also be used as a backup for old or current datasets where users only have read permissions.
     - **Benefits:** How the bucket can be used is much more malleable and up to the individual users. Empowers them to add and remove data from their own prefix/folder without oversight from stewards or the bucket owner.
     - **Drawbacks:** The policy file is more difficult to craft and manage when researchers needed to be added or removed from the bucket. Allowing users to delete their uploaded data at their discretion may conflict with the owner's view of those data.
-    - [Example Policy File](res/example-active-external-storage-policy.json)
+    - [Example Policy File](res/example-active-external-storage-policy.json){: download="example-active-external-storage-policy.json" }
 
 While these are two simple solutions, a combination of both can be implemented with some clever crafting of the policy file. As well, you could take advantage of both solutions with multiple buckets. Keep in mind that data in all buckets contribute towards the total storage allocation equally. Once an account's storage quota is reached, no files can be added to any bucket owned by that account until files are removed.
 
