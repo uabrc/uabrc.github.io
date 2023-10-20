@@ -33,7 +33,7 @@ The P100 GPUs on Cheaha appear to work with Parabricks 4.0.0, based on our testi
 
 ## Parabricks Testing on Cheaha
 
-Parabricks software can be installed and used in the Cheaha platform on `pascalnodes` and `amperenodes` partition. The `amperenodes` partitons are currently a special queue on Cheaha and are available to users upon request based on project specification.
+Parabricks software can be installed and used in the Cheaha platform on `pascalnodes` and `amperenodes` partition.
 
 ### Parabricks 4.x Installation on Cheaha
 
@@ -75,7 +75,7 @@ pbrun: 4.0.1-1
 
 If the above commands are successfully executed, then the Parabricks software is installed correctly.
 
-### Downloading Pararbicks Sample Use Case
+### Downloading Parabricks Sample Use Case
 
 Sample test case for Parabricks can be found [here](https://docs.nvidia.com/clara/parabricks/4.0.0/tutorials/gettingthesampledata.html). Download the sample data using `wget`,
 
@@ -91,25 +91,24 @@ tar -xzvf parabricks_sample.tar.gz
 
 ### Parabricks Testing on `pascalnodes` and `amperenodes` on Cheaha
 
-Once the sample data is downloaded, you can execute the pipeline using the executable `pbrun` which is located in /bin/pbrun within the container. To run the executable `/bin/prbun` outside the container you need to set the LD_LIBRARY_PATH for the CUDA library and bind it with the container. In the below command, the LD_LIBRARY_PATH of the host environment is passed to the container using environment variable SINGULARITYENV_LD_LIBRARY_PATH.
+Once the sample data is downloaded, you can execute the pipeline using the executable `pbrun` which is located in /bin/pbrun within the container.
 
 You will have to load the CUDA toolkit to access GPUs as below.
 
 ```bash
-module load cuda11.4/toolkit/11.4.2
+module load CUDA/11.6.0
 ```
 
-In the below script, the `--nv` option enables the use of NVIDIA GPUs within the container. The `-B` option is to bind the directories of the host environment and use it within the container. Here the CUDA lib path `/cm/local/apps/cuda/libs/current/lib64` is binded to use within the container. The singualrity container `parabricks.sif` is executed using the command `singualrity run` over the executable `/bin/pbrun`.
+In the below script, the `--nv` option enables the use of NVIDIA GPUs within the container. The singualrity container `parabricks.sif` is executed using the command `singualrity run` over the executable `/bin/pbrun`.
 
 ```bash
-SINGULARITYENV_LD_LIBRARY_PATH=$LD_LIBRARY_PATH singularity run --nv \
-–B /cm/local/apps/cuda/libs/current/lib64 parabricks.sif /bin/pbrun fq2bam \
+singularity run --nv parabricks.sif /bin/pbrun fq2bam \
 --ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta \
 --in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz \
 --out-bam output.bam
 ```
 
-You can execute Parabricks on Cheaha using `amperenodes` and `pascalnodes` partition. Maximum number of GPUs you can request in `amperenodes` partition to run Parabricks is 2, and that of `pascalnodes` is 4.  Here is a sample job script to run Parabricks on `amperenodes` partition on 2 GPUs.
+You can execute Parabricks on Cheaha using `amperenodes` and `pascalnodes` partition. Maximum number of GPUs you can request in `amperenodes` partition to run Parabricks is 2, and that of `pascalnodes` is 4. Below is a sample job script to run Parabricks on `amperenodes` partition on 2 GPUs.
 
 ```bash
 #!/bin/bash
@@ -125,11 +124,10 @@ You can execute Parabricks on Cheaha using `amperenodes` and `pascalnodes` parti
 
 #Load the Singularity and CUDA Toolkit modules
 module load Singularity/3.5.2-GCC-5.4.0-2.26
-module load cuda11.4/toolkit/11.4.2
+module load CUDA/11.6.0
 
 #Run the "pbrun" executable from the singularity image "parabrikcs.sif", and pass the CUDA lib path to make it accessible within the container
-SINGULARITYENV_LD_LIBRARY_PATH=$LD_LIBRARY_PATH singularity run --nv \
--B /cm/local/apps/cuda/libs/current/lib64 parabricks.sif /bin/pbrun fq2bam \
+singularity run --nv parabricks.sif /bin/pbrun fq2bam \
 --ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta \
 --in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz \
 --out-bam output.bam
@@ -158,7 +156,7 @@ ssh GPU_node
 ```
 
 ```bash
-module load cuda11.4/toolkit/11.4.2
+module load CUDA/11.6.0
 nvidia-smi
 ```
 
@@ -168,6 +166,6 @@ The `nvidia-smi` reports the GPU memory usage and the 2 GPU process running deta
 
 ### Runtime Evaluation of Parabricks Sample Test Case on `amperenodes` and `pascalnodes` Partition
 
-Empirical results on running Parabricks sample test case on `amperendoes` and `pascalnodes` partitions are illustrated in the below table. For this test case, it seems `pascalnodes` runtime is efficient than `amperenodes` for 1 or 2 GPUs. However, the real-world science simulations may vary in their speedup.
+Parabricks is tested and works with CUDA version >= 11.6.0 on Cheaha. Empirical results on running Parabricks sample test case on `amperendoes` and `pascalnodes` partitions are illustrated in the below table. For this test case, it seems `pascalnodes` runtime is efficient than `amperenodes` for 1 or 2 GPUs. However, the real-world science simulations may vary in their speedup.
 
 {{ read_csv('education/res/parabricks_exec_time.csv', keep_default_na=False) }}
