@@ -179,12 +179,17 @@ Some software defaults to using `tmp` without any warning or documentation, espe
 
 The following software are known to use `tmp` by default, and can be worked around by using the listed flags. See [Local Scratch](#local-scratch) for more information about creating a local temporary directory.
 
-- Java: `java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID`
-- UMI Tools: `umi_tools * --temp-dir=/local/$SLURM_JOB_ID`
+- [Java](https://docs.oracle.com/cd/E63231_01/doc/BIAIN/GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1.htm#BIAIN-GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1): `java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID`
+- [UMI Tools](https://umi-tools.readthedocs.io/en/latest/common_options.html): `umi_tools * --temp-dir=/local/$SLURM_JOB_ID`
+- [Samtools Sort](http://www.htslib.org/doc/samtools-sort.html): `samtools sort * -T /local/$SLURM_JOB_ID`
+- [GATK Tool](https://gatk.broadinstitute.org/hc/en-us/community/posts/360072269012--tmp-dir-option-user-error): `gatk --java-options * --tmp-dir /local/$SLURM_JOB_ID`
+- [Parabricks](https://docs.nvidia.com/clara/parabricks/4.0.1/gettingstarted.html): `pbrun * --tmp-dir=/local/$SLURM_JOB_ID`
+- [FastQC](https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help): `fastqc * -d /local/$SLURM_JOB_ID`
+- [MACS2](https://manpages.org/macs2_callpeak): `macs2 callpeak * --tempdir /local/$SLURM_JOB_ID`
 
 Software known to use `tmp` by default with no know workaround.
 
-- Keras has `/tmp/.keras` hardcoded as a fallback cache directory if `~/.keras` is inaccessible.
+- [Keras](https://github.com/tensorflow/tensorflow/blob/5bb81b7b0dd140a4304b92530614502c0c61a150/tensorflow/python/keras/utils/data_utils.py#L205) has `/tmp/.keras` hardcoded as a fallback cache directory if `~/.keras` is inaccessible. See [here](https://github.com/tensorflow/tensorflow/issues/38831) for a discussion of the issue.
 
 ## How much space do I have left?
 
