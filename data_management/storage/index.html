@@ -2491,12 +2491,17 @@
 <h3 id="software-known-to-use-tmp">Software Known to Use <code>tmp</code><a class="headerlink" href="#software-known-to-use-tmp" title="Permanent link">&para;</a></h3>
 <p>The following software are known to use <code>tmp</code> by default, and can be worked around by using the listed flags. See <a href="#local-scratch">Local Scratch</a> for more information about creating a local temporary directory.</p>
 <ul>
-<li>Java: <code>java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID</code></li>
-<li>UMI Tools: <code>umi_tools * --temp-dir=/local/$SLURM_JOB_ID</code></li>
+<li><a href="https://docs.oracle.com/cd/E63231_01/doc/BIAIN/GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1.htm#BIAIN-GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1">Java</a>: <code>java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID</code></li>
+<li><a href="https://umi-tools.readthedocs.io/en/latest/common_options.html">UMI Tools</a>: <code>umi_tools * --temp-dir=/local/$SLURM_JOB_ID</code></li>
+<li><a href="http://www.htslib.org/doc/samtools-sort.html">Samtools Sort</a>: <code>samtools sort * -T /local/$SLURM_JOB_ID</code></li>
+<li><a href="https://gatk.broadinstitute.org/hc/en-us/community/posts/360072269012--tmp-dir-option-user-error">GATK Tool</a>: <code>gatk --java-options * --tmp-dir /local/$SLURM_JOB_ID</code></li>
+<li><a href="https://docs.nvidia.com/clara/parabricks/4.0.1/gettingstarted.html">Parabricks</a>: <code>pbrun * --tmp-dir=/local/$SLURM_JOB_ID</code></li>
+<li><a href="https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help">FastQC</a>: <code>fastqc * -d /local/$SLURM_JOB_ID</code></li>
+<li><a href="https://manpages.org/macs2_callpeak">MACS2</a>: <code>macs2 callpeak * --tempdir /local/$SLURM_JOB_ID</code></li>
 </ul>
 <p>Software known to use <code>tmp</code> by default with no know workaround.</p>
 <ul>
-<li>Keras has <code>/tmp/.keras</code> hardcoded as a fallback cache directory if <code>~/.keras</code> is inaccessible.</li>
+<li><a href="https://github.com/tensorflow/tensorflow/blob/5bb81b7b0dd140a4304b92530614502c0c61a150/tensorflow/python/keras/utils/data_utils.py#L205">Keras</a> has <code>/tmp/.keras</code> hardcoded as a fallback cache directory if <code>~/.keras</code> is inaccessible. See <a href="https://github.com/tensorflow/tensorflow/issues/38831">here</a> for a discussion of the issue.</li>
 </ul>
 <h2 id="how-much-space-do-i-have-left">How much space do I have left?<a class="headerlink" href="#how-much-space-do-i-have-left" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2593,7 +2598,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2023</span>
       
     
   </small>
