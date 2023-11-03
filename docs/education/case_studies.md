@@ -2,7 +2,7 @@
 
 ## Parabricks for Performing GPU-accelerated Genome Sequencing Analysis
 
-A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found [here](https://resources.nvidia.com/en-us-genomics-ep/healthcare-genomics-?lx=OhKlSJ).
+A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found [here](https://resources.nvidia.com/en-us-genomics-ep/genomics-appliance-for-research?lx=OhKlSJ).
 
 For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md)
 
@@ -17,12 +17,13 @@ A license is no longer required to use Clara Parabricks 4.x and later versions, 
 ### Minimum Hardware requirements to run Parabricks on Cheaha GPUs
 
 1. Access to the internet.
-2. Any GPU that supports CUDA architecture/compute capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0 and has 16 GB of GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs. For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md)
+2. Any GPU that supports CUDA architecture/compute capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0.
+3. The GPU has 16 GB of GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs. For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md).
+4. An NVIDIA driver with version 525.60.13 or greater.
 
 <!-- markdownlint-disable MD046 -->
 !!! Note
-
-The P100 GPUs on Cheaha appear to work with Parabricks 4.0.0, based on our testing, despite having compute capability 6.0. This usage is not officially supported by NVIDIA.
+The recent versions of Parabricks requires 16GB of GPU RAM or more. If this requirement is not satisfied, it will lead to `out of memory` error. Therefore, `Pascalnodes` partition are not recommended to run Parabricks pipeline as it does not meet the hardware requirement.
 <!-- markdownlint-enable MD046 -->
 
 #### System Requirements
