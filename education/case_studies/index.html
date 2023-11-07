@@ -1740,18 +1740,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#downloading-pararbicks-sample-use-case" class="md-nav__link">
-    Downloading Pararbicks Sample Use Case
+  <a href="#downloading-parabricks-sample-use-case" class="md-nav__link">
+    Downloading Parabricks Sample Use Case
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#parabricks-testing-on-pascalnodes-and-amperenodes-on-cheaha" class="md-nav__link">
-    Parabricks Testing on pascalnodes and amperenodes on Cheaha
+  <a href="#parabricks-testing-on-amperenodes-on-cheaha" class="md-nav__link">
+    Parabricks Testing on amperenodes on Cheaha
   </a>
   
-    <nav class="md-nav" aria-label="Parabricks Testing on pascalnodes and amperenodes on Cheaha">
+    <nav class="md-nav" aria-label="Parabricks Testing on amperenodes on Cheaha">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1774,8 +1774,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#runtime-evaluation-of-parabricks-sample-test-case-on-amperenodes-and-pascalnodes-partition" class="md-nav__link">
-    Runtime Evaluation of Parabricks Sample Test Case on amperenodes and pascalnodes Partition
+  <a href="#runtime-evaluation-of-parabricks-sample-test-case-on-amperenodes-partition" class="md-nav__link">
+    Runtime Evaluation of Parabricks Sample Test Case on amperenodes Partition
   </a>
   
 </li>
@@ -2037,18 +2037,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#downloading-pararbicks-sample-use-case" class="md-nav__link">
-    Downloading Pararbicks Sample Use Case
+  <a href="#downloading-parabricks-sample-use-case" class="md-nav__link">
+    Downloading Parabricks Sample Use Case
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#parabricks-testing-on-pascalnodes-and-amperenodes-on-cheaha" class="md-nav__link">
-    Parabricks Testing on pascalnodes and amperenodes on Cheaha
+  <a href="#parabricks-testing-on-amperenodes-on-cheaha" class="md-nav__link">
+    Parabricks Testing on amperenodes on Cheaha
   </a>
   
-    <nav class="md-nav" aria-label="Parabricks Testing on pascalnodes and amperenodes on Cheaha">
+    <nav class="md-nav" aria-label="Parabricks Testing on amperenodes on Cheaha">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2071,8 +2071,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#runtime-evaluation-of-parabricks-sample-test-case-on-amperenodes-and-pascalnodes-partition" class="md-nav__link">
-    Runtime Evaluation of Parabricks Sample Test Case on amperenodes and pascalnodes Partition
+  <a href="#runtime-evaluation-of-parabricks-sample-test-case-on-amperenodes-partition" class="md-nav__link">
+    Runtime Evaluation of Parabricks Sample Test Case on amperenodes Partition
   </a>
   
 </li>
@@ -2101,7 +2101,7 @@
 
 <h1 id="case-studies">Case Studies<a class="headerlink" href="#case-studies" title="Permanent link">&para;</a></h1>
 <h2 id="parabricks-for-performing-gpu-accelerated-genome-sequencing-analysis">Parabricks for Performing GPU-accelerated Genome Sequencing Analysis<a class="headerlink" href="#parabricks-for-performing-gpu-accelerated-genome-sequencing-analysis" title="Permanent link">&para;</a></h2>
-<p>A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found <a href="https://resources.nvidia.com/en-us-genomics-ep/healthcare-genomics-?lx=OhKlSJ">here</a>.</p>
+<p>A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found <a href="https://resources.nvidia.com/en-us-genomics-ep/genomics-appliance-for-research?lx=OhKlSJ">here</a>.</p>
 <p>For more information on Cheaha GPUs, please see our <a href="../../cheaha/slurm/gpu/">GPU Page</a></p>
 <h3 id="licensing-policy">Licensing Policy<a class="headerlink" href="#licensing-policy" title="Permanent link">&para;</a></h3>
 <p>A license is no longer required to use Clara Parabricks 4.x and later versions, and is free for the following groups,</p>
@@ -2113,13 +2113,15 @@
 <h3 id="minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus">Minimum Hardware requirements to run Parabricks on Cheaha GPUs<a class="headerlink" href="#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Access to the internet.</li>
-<li>Any GPU that supports CUDA architecture/compute capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0 and has 16 GB of GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs. For more information on Cheaha GPUs, please see our <a href="../../cheaha/slurm/gpu/">GPU Page</a></li>
+<li>Any GPU that supports CUDA architecture/compute capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0.</li>
+<li>The GPU has 16 GB of GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs. For more information on Cheaha GPUs, please see our <a href="../../cheaha/slurm/gpu/">GPU Page</a>.</li>
+<li>An NVIDIA driver with version 525.60.13 or greater.</li>
 </ol>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 </div>
-<p>The P100 GPUs on Cheaha appear to work with Parabricks 4.0.0, based on our testing, despite having compute capability 6.0. This usage is not officially supported by NVIDIA.</p>
+<p>The recent versions of Parabricks requires 16GB of GPU RAM or more. If this requirement is not satisfied, it will lead to <code>out of memory</code> error. Therefore, <code>Pascalnodes</code> partition are not recommended to run Parabricks pipeline as it does not meet the hardware requirement.</p>
 <!-- markdownlint-enable MD046 -->
 
 <h4 id="system-requirements">System Requirements<a class="headerlink" href="#system-requirements" title="Permanent link">&para;</a></h4>
@@ -2129,49 +2131,48 @@
 <li>8 GPU server should have 392GB CPU RAM, at least 48 CPU threads.</li>
 </ul>
 <h2 id="parabricks-testing-on-cheaha">Parabricks Testing on Cheaha<a class="headerlink" href="#parabricks-testing-on-cheaha" title="Permanent link">&para;</a></h2>
-<p>Parabricks software can be installed and used in the Cheaha platform on <code>pascalnodes</code> and <code>amperenodes</code> partition. The <code>amperenodes</code> partitons are currently a special queue on Cheaha and are available to users upon request based on project specification.</p>
+<p>Parabricks software can be installed and used in the Cheaha platform on <code>amperenodes</code> partition.</p>
 <h3 id="parabricks-4x-installation-on-cheaha">Parabricks 4.x Installation on Cheaha<a class="headerlink" href="#parabricks-4x-installation-on-cheaha" title="Permanent link">&para;</a></h3>
-<p>Parbaricks 4.x are available as containers in the <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/collections/claraparabricks/entities">NGC Catalog</a>, and Parabricks 4.0.0 documentation is available <a href="https://docs.nvidia.com/clara/parabricks/4.0.0/index.html">here</a>. It has generic container that comprises all the analyses pipeline that are referred in the <a href="https://docs.nvidia.com/clara/parabricks/4.0.0/toolreference.html">Nvidia Documentation</a>. It also has containers for specific tool category.</p>
+<p>Parbaricks 4.x are available as containers in the <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/collections/claraparabricks/entities">NGC Catalog</a>. It has generic container that comprises all the analyses pipeline that are referred in the <a href="https://docs.nvidia.com/clara/parabricks/latest/toolreference.html">Nvidia Documentation</a>. It also has containers for specific tool category. The recent Parabricks 4.x documentation is available <a href="https://docs.nvidia.com/clara/parabricks/latest/index.html">here</a>.</p>
 <p>Parabricks 4.x container image can be installed on Cheaha using a Singularity container. More details on usage of Singularity container on Cheaha can be found in the <a href="../../workflow_solutions/getting_containers/">Containers Page</a>.</p>
 <p>To install Parabricks using Singulairty, load the <code>Singularity 3.x</code> module from Cheaha as,</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module load Singularity/3.5.2-GCC-5.4.0-2.26
 </code></pre></div>
-<p>Go to the NGC catalog page and copy the image path to pull the desired containers of Parabricks using Singularity. Here, the generic container is pulled using Singularity.  The image path is in “nvcr.io/nvidia/clara/clara-parabricks" and the tag is 4.0.1-1. The container image name <code>parabricks.sif</code> is an user-derived name.</p>
+<p>Go to the NGC catalog page and copy the image path to pull the desired containers of Parabricks using Singularity. Here, the generic container is pulled using Singularity.  The image path is in “nvcr.io/nvidia/clara/clara-parabricks" and the tag is 4.2.0-1. The container image name <code>parabricks-4.2.0-1.sif</code> is an user-derived name.</p>
 <p><div class="lightgallery"><a data-sub-html="Parabricks container." href="../images/parabricks_container.png"><img alt="Parabricks container." src="../images/parabricks_container.png" /></a></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>singularity pull parabricks.sif docker://nvcr.io/nvidia/clara/clara-parabricks:4.0.1-1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>singularity pull parabricks-4.2.0-1.sif docker://nvcr.io/nvidia/clara/clara-parabricks:4.2.0-1
 </code></pre></div>
-<p>After the image <code>parabricks.sif</code> is successfully created, you can run singularity image “parabrikcs.sif” with all input and output parameters. Various ways of running singularity image can be found in the <a href="../../workflow_solutions/getting_containers/">Containers Page</a>.</p>
+<p>After the image <code>parabricks-4.2.0-1.sif</code> is successfully created, you can run singularity image <code>parabricks-4.2.0-1.sif</code> with all input and output parameters. Various ways of running singularity image can be found in the <a href="../../workflow_solutions/getting_containers/">Containers Page</a>.</p>
 <p>Running <code>singularity shell</code> helps to navigate through the containers directory to verify the path of the software executable and later use the path outside the container to run the software. Following are the commands to run the container using <code>singularity shell</code> and traverse through the directories inside the contianer.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>singularity shell parabricks.sif
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>singularity shell parabricks-4.2.0-1.sif
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Singularity&gt; ls /bin/pbrun
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/bin/pbrun
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Singularity&gt; /bin/pbrun --version
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Singularity&gt; /bin/pbrun version
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Please visit https://docs.nvidia.com/clara/#parabricks <span class="k">for</span> detailed documentation
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>pbrun: <span class="m">4</span>.0.1-1
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>pbrun: <span class="m">4</span>.2.0-1
 </code></pre></div>
-<p><div class="lightgallery"><a data-sub-html="Parabricks singularity shell." href="../images/parabricks_singularity_shell.png"><img alt="Parabricks singularity shell." src="../images/parabricks_singularity_shell.png" /></a></div></p>
 <p>If the above commands are successfully executed, then the Parabricks software is installed correctly.</p>
-<h3 id="downloading-pararbicks-sample-use-case">Downloading Pararbicks Sample Use Case<a class="headerlink" href="#downloading-pararbicks-sample-use-case" title="Permanent link">&para;</a></h3>
-<p>Sample test case for Parabricks can be found <a href="https://docs.nvidia.com/clara/parabricks/4.0.0/tutorials/gettingthesampledata.html">here</a>. Download the sample data using <code>wget</code>,</p>
+<h3 id="downloading-parabricks-sample-use-case">Downloading Parabricks Sample Use Case<a class="headerlink" href="#downloading-parabricks-sample-use-case" title="Permanent link">&para;</a></h3>
+<p>Sample test case for Parabricks can be found <a href="https://docs.nvidia.com/clara/parabricks/latest/tutorials/gettingthesampledata.html">here</a>. Download the sample data using <code>wget</code>,</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>wget -O parabricks_sample.tar.gz https://s3.amazonaws.com/parabricks.sample/parabricks_sample.tar.gz
 </code></pre></div>
 <p>Untar the <code>parabricks_sample.tar.gz</code> file,</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tar -xzvf parabricks_sample.tar.gz
 </code></pre></div>
-<h3 id="parabricks-testing-on-pascalnodes-and-amperenodes-on-cheaha">Parabricks Testing on <code>pascalnodes</code> and <code>amperenodes</code> on Cheaha<a class="headerlink" href="#parabricks-testing-on-pascalnodes-and-amperenodes-on-cheaha" title="Permanent link">&para;</a></h3>
-<p>Once the sample data is downloaded, you can execute the pipeline using the executable <code>pbrun</code> which is located in /bin/pbrun within the container. To run the executable <code>/bin/prbun</code> outside the container you need to set the LD_LIBRARY_PATH for the CUDA library and bind it with the container. In the below command, the LD_LIBRARY_PATH of the host environment is passed to the container using environment variable SINGULARITYENV_LD_LIBRARY_PATH.</p>
-<p>You will have to load the CUDA toolkit to access GPUs as below.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>module load cuda11.4/toolkit/11.4.2
+<h3 id="parabricks-testing-on-amperenodes-on-cheaha">Parabricks Testing on <code>amperenodes</code> on Cheaha<a class="headerlink" href="#parabricks-testing-on-amperenodes-on-cheaha" title="Permanent link">&para;</a></h3>
+<p>Once the sample data is downloaded, you can execute the pipeline using the executable <code>pbrun</code> which is located in /bin/pbrun within the container.</p>
+<p>You will have to load the compatible <code>CUDA</code> module to access GPUs as below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>module load CUDA/11.6.0
 </code></pre></div>
-<p>In the below script, the <code>--nv</code> option enables the use of NVIDIA GPUs within the container. The <code>-B</code> option is to bind the directories of the host environment and use it within the container. Here the CUDA lib path <code>/cm/local/apps/cuda/libs/current/lib64</code> is binded to use within the container. The singualrity container <code>parabricks.sif</code> is executed using the command <code>singualrity run</code> over the executable <code>/bin/pbrun</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">SINGULARITYENV_LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span> singularity run --nv <span class="se">\</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>–B /cm/local/apps/cuda/libs/current/lib64 parabricks.sif /bin/pbrun fq2bam <span class="se">\</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>--ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta <span class="se">\</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>--in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz <span class="se">\</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>--out-bam output.bam
+<p>In the below script, the <code>--nv</code> option enables the use of NVIDIA GPUs within the container. The singualrity container <code>parabricks-4.2.0-1.sif</code> is executed using the command <code>singualrity run</code> over the executable <code>/bin/pbrun</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>singularity run --nv parabricks-4.2.0-1.sif /bin/pbrun fq2bam <span class="se">\</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>--ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta <span class="se">\</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>--in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz <span class="se">\</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>--out-bam output.bam
 </code></pre></div>
-<p>You can execute Parabricks on Cheaha using <code>amperenodes</code> and <code>pascalnodes</code> partition. Maximum number of GPUs you can request in <code>amperenodes</code> partition to run Parabricks is 2, and that of <code>pascalnodes</code> is 4.  Here is a sample job script to run Parabricks on <code>amperenodes</code> partition on 2 GPUs.</p>
+<p>You can execute Parabricks on Cheaha using <code>amperenodes</code> partition. Maximum number of GPUs you can request in <code>amperenodes</code> partition to run Parabricks is 2. Below is a sample job script to run Parabricks on <code>amperenodes</code> partition on 2 GPUs.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="ch">#!/bin/bash</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">#SBATCH --ntasks=24</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">#SBATCH --mem=100G</span>
@@ -2179,20 +2180,19 @@
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1">#SBATCH --partition=amperenodes</span>
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1">#SBATCH --job-name=parabricks-ampere</span>
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1">#SBATCH --gres=gpu:2</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1">#SBATCH --error=%x-%j_gpu2.err</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1">#SBATCH --output=%x-%j_gpu2.out</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1">#SBATCH --error=%x-%j_gpu2.ampere.err</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1">#SBATCH --output=%x-%j_gpu2.ampere.out</span>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1">#SBATCH --mail-user=$USER@uab.edu</span>
 <a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
 <a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1">#Load the Singularity and CUDA Toolkit modules</span>
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>module load Singularity/3.5.2-GCC-5.4.0-2.26
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>module load cuda11.4/toolkit/11.4.2
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>module load CUDA/11.6.0
 <a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="c1">#Run the &quot;pbrun&quot; executable from the singularity image &quot;parabrikcs.sif&quot;, and pass the CUDA lib path to make it accessible within the container</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="nv">SINGULARITYENV_LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span> singularity run --nv <span class="se">\</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>-B /cm/local/apps/cuda/libs/current/lib64 parabricks.sif /bin/pbrun fq2bam <span class="se">\</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>--ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta <span class="se">\</span>
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>--in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz <span class="se">\</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>--out-bam output.bam
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="c1">#Run the &quot;pbrun&quot; executable from the singularity image &quot;parabricks-4.2.0-1.sif&quot;, and pass the CUDA lib path to make it accessible within the container</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>singularity run --nv parabricks-4.2.0-1.sif /bin/pbrun fq2bam <span class="se">\</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>--ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta <span class="se">\</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>--in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz <span class="se">\</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>--out-bam output.bam
 </code></pre></div>
 <p>You can also request the required resources using <code>srun</code> using the below command, and execute the commands required to run Parabricks.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>srun --ntasks<span class="o">=</span><span class="m">24</span> --mem<span class="o">=</span>100G --time<span class="o">=</span><span class="m">1</span>:00:00 --partition<span class="o">=</span>amperenodes --job-name<span class="o">=</span>parabricks-ampere --gres<span class="o">=</span>gpu:2 --pty /bin/bash
@@ -2200,18 +2200,114 @@
 <h4 id="illustration-on-fq2bam-tool-analyses">Illustration on <code>fq2bam</code> tool analyses<a class="headerlink" href="#illustration-on-fq2bam-tool-analyses" title="Permanent link">&para;</a></h4>
 <p>The above execution script performs <code>fq2bam</code> pipeline analyses. The <code>fq2bam</code> tool aligns, sorts (by coordinate), and marks duplicates in pair-ended FASTQ file data. The data files used in this example are taken from the sample data downloaded in the previous section.</p>
 <p>If you execute the above batch script using Parabricks sample data on <code>amperenodes</code> with 2 GPUs, the results will be reported as below.</p>
-<p><div class="lightgallery"><a data-sub-html="Parabricks fq2bam results." href="../images/parabricks_fq2bam_results.png"><img alt="Parabricks fq2bam results." src="../images/parabricks_fq2bam_results.png" /></a></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:54:50<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:54:50<span class="o">]</span> <span class="o">||</span>                 Parabricks accelerated Genomics Pipeline                 <span class="o">||</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:54:50<span class="o">]</span> <span class="o">||</span>                              Version <span class="m">4</span>.2.0-1                             <span class="o">||</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:54:50<span class="o">]</span> <span class="o">||</span>                       GPU-BWA mem, Sorting Phase-I                       <span class="o">||</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:54:50<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="o">[</span>M::bwa_idx_load_from_disk<span class="o">]</span> <span class="nb">read</span> <span class="m">0</span> ALT contigs
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:54:55<span class="o">]</span> GPU-BWA mem
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:54:55<span class="o">]</span> ProgressMeter    Reads           Base Pairs Aligned
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:55:09<span class="o">]</span> <span class="m">5043564</span>          <span class="m">600000000</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:55:13<span class="o">]</span> <span class="m">10087128</span> <span class="m">1180000000</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:55:18<span class="o">]</span> <span class="m">15130692</span> <span class="m">1740000000</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:55:22<span class="o">]</span> <span class="m">20174256</span> <span class="m">2320000000</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:55:26<span class="o">]</span> <span class="m">25217820</span> <span class="m">2900000000</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:55:30<span class="o">]</span> <span class="m">30261384</span> <span class="m">3490000000</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:55:33<span class="o">]</span> <span class="m">35304948</span> <span class="m">4050000000</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:55:37<span class="o">]</span> <span class="m">40348512</span> <span class="m">4640000000</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:55:41<span class="o">]</span> <span class="m">45392076</span> <span class="m">5230000000</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:55:45<span class="o">]</span> <span class="m">50435640</span> <span class="m">5790000000</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:57:59<span class="o">]</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>GPU-BWA Mem time: <span class="m">184</span>.615934 seconds
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:57:59<span class="o">]</span> GPU-BWA Mem is finished.
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="o">[</span>main<span class="o">]</span> CMD: /usr/local/parabricks/binaries//bin/bwa mem -Z ./pbOpts.txt -F <span class="m">0</span> /home/prema/projects/parabricks_testing/parabricks_sample/Ref/Homo_sapiens_assembly38.fasta /home/prema/projects/parabricks_testing/parabricks_sample/Data/sample_1.fq.gz /home/prema/projects/parabricks_testing/parabricks_sample/Data/sample_2.fq.gz @RG<span class="se">\t</span>ID:HK3TJBCX2.1<span class="se">\t</span>LB:lib1<span class="se">\t</span>PL:bar<span class="se">\t</span>SM:sample<span class="se">\t</span>PU:HK3TJBCX2.1
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="o">[</span>main<span class="o">]</span> Real time: <span class="m">188</span>.762 sec<span class="p">;</span> CPU: <span class="m">2037</span>.057 sec
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:57:59<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:57:59<span class="o">]</span> <span class="o">||</span>        Program:                      GPU-BWA mem, Sorting Phase-I        <span class="o">||</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:57:59<span class="o">]</span> <span class="o">||</span>        Version:                                           <span class="m">4</span>.2.0-1        <span class="o">||</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:57:59<span class="o">]</span> <span class="o">||</span>        Start Time:                       Fri Nov  <span class="m">3</span> <span class="m">11</span>:54:50 <span class="m">2023</span>        <span class="o">||</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:57:59<span class="o">]</span> <span class="o">||</span>        End Time:                         Fri Nov  <span class="m">3</span> <span class="m">11</span>:57:59 <span class="m">2023</span>        <span class="o">||</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:57:59<span class="o">]</span> <span class="o">||</span>        Total Time:                            <span class="m">3</span> minutes <span class="m">9</span> seconds        <span class="o">||</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:57:59<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:00<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:00<span class="o">]</span> <span class="o">||</span>                 Parabricks accelerated Genomics Pipeline                 <span class="o">||</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:00<span class="o">]</span> <span class="o">||</span>                              Version <span class="m">4</span>.2.0-1                             <span class="o">||</span>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:00<span class="o">]</span> <span class="o">||</span>                             Sorting Phase-II                             <span class="o">||</span>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:00<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:00<span class="o">]</span> progressMeter - Percentage
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:00<span class="o">]</span> <span class="m">0</span>.0       <span class="m">0</span>.00 GB
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:05<span class="o">]</span> <span class="m">52</span>.8      <span class="m">0</span>.00 GB
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:10<span class="o">]</span> Sorting and Marking: <span class="m">10</span>.001 seconds
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:10<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:10<span class="o">]</span> <span class="o">||</span>        Program:                                  Sorting Phase-II        <span class="o">||</span>
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:10<span class="o">]</span> <span class="o">||</span>        Version:                                           <span class="m">4</span>.2.0-1        <span class="o">||</span>
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:10<span class="o">]</span> <span class="o">||</span>        Start Time:                       Fri Nov  <span class="m">3</span> <span class="m">11</span>:58:00 <span class="m">2023</span>        <span class="o">||</span>
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:10<span class="o">]</span> <span class="o">||</span>        End Time:                         Fri Nov  <span class="m">3</span> <span class="m">11</span>:58:10 <span class="m">2023</span>        <span class="o">||</span>
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:10<span class="o">]</span> <span class="o">||</span>        Total Time:                                     <span class="m">10</span> seconds        <span class="o">||</span>
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:10<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:11<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:11<span class="o">]</span> <span class="o">||</span>                 Parabricks accelerated Genomics Pipeline                 <span class="o">||</span>
+<a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:11<span class="o">]</span> <span class="o">||</span>                              Version <span class="m">4</span>.2.0-1                             <span class="o">||</span>
+<a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:11<span class="o">]</span> <span class="o">||</span>                         Marking Duplicates, BQSR                         <span class="o">||</span>
+<a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:11<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:11<span class="o">]</span> Using PBBinBamFile <span class="k">for</span> BAM writing
+<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:11<span class="o">]</span> progressMeter -  Percentage
+<a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:21<span class="o">]</span> <span class="m">24</span>.9      <span class="m">0</span>.08 GB
+<a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:31<span class="o">]</span> <span class="m">48</span>.1      <span class="m">0</span>.07 GB
+<a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:41<span class="o">]</span> <span class="m">69</span>.8      <span class="m">0</span>.09 GB
+<a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:58:51<span class="o">]</span> <span class="m">85</span>.9      <span class="m">0</span>.11 GB
+<a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:59:01<span class="o">]</span> <span class="m">100</span>.0     <span class="m">0</span>.00 GB
+<a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:59:01<span class="o">]</span> BQSR and writing final BAM:  <span class="m">50</span>.044 seconds
+<a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:59:01<span class="o">]</span> ------------------------------------------------------------------------------
+<a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:59:01<span class="o">]</span> <span class="o">||</span>        Program:                          Marking Duplicates, BQSR        <span class="o">||</span>
+<a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:59:01<span class="o">]</span> <span class="o">||</span>        Version:                                           <span class="m">4</span>.2.0-1        <span class="o">||</span>
+<a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:59:01<span class="o">]</span> <span class="o">||</span>        Start Time:                       Fri Nov  <span class="m">3</span> <span class="m">11</span>:58:11 <span class="m">2023</span>        <span class="o">||</span>
+<a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:59:01<span class="o">]</span> <span class="o">||</span>        End Time:                         Fri Nov  <span class="m">3</span> <span class="m">11</span>:59:01 <span class="m">2023</span>        <span class="o">||</span>
+<a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:59:01<span class="o">]</span> <span class="o">||</span>        Total Time:                                     <span class="m">50</span> seconds        <span class="o">||</span>
+<a id="__codelineno-10-67" name="__codelineno-10-67" href="#__codelineno-10-67"></a><span class="o">[</span>PB Info <span class="m">2023</span>-Nov-03 <span class="m">11</span>:59:01<span class="o">]</span> ------------------------------------------------------------------------------
+</code></pre></div>
 <h3 id="monitoring-gpu-usage-during-runtime-on-cheaha">Monitoring GPU Usage During Runtime on Cheaha<a class="headerlink" href="#monitoring-gpu-usage-during-runtime-on-cheaha" title="Permanent link">&para;</a></h3>
 <p>The <code>nvidia-smi</code> command helps to montior the GPU usage during runtime. You need to <code>ssh</code> to the assigned GPU node, and type in the following command.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ssh GPU_node
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ssh GPU_node
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>module load cuda11.4/toolkit/11.4.2
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>nvidia-smi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>module load CUDA/11.6.0
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>nvidia-smi
 </code></pre></div>
 <p>The <code>nvidia-smi</code> reports the GPU memory usage and the 2 GPU process running details as shown below.</p>
-<p><div class="lightgallery"><a data-sub-html="Parabricks nvidia smi." href="../images/parabricks_nvidia-smi.png"><img alt="Parabricks nvidia smi." src="../images/parabricks_nvidia-smi.png" /></a></div></p>
-<h3 id="runtime-evaluation-of-parabricks-sample-test-case-on-amperenodes-and-pascalnodes-partition">Runtime Evaluation of Parabricks Sample Test Case on <code>amperenodes</code> and <code>pascalnodes</code> Partition<a class="headerlink" href="#runtime-evaluation-of-parabricks-sample-test-case-on-amperenodes-and-pascalnodes-partition" title="Permanent link">&para;</a></h3>
-<p>Empirical results on running Parabricks sample test case on <code>amperendoes</code> and <code>pascalnodes</code> partitions are illustrated in the below table. For this test case, it seems <code>pascalnodes</code> runtime is efficient than <code>amperenodes</code> for 1 or 2 GPUs. However, the real-world science simulations may vary in their speedup.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$ module load CUDA/11.6.0
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>$ nvidia-smi
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Fri Nov  <span class="m">3</span> <span class="m">12</span>:38:24 <span class="m">2023</span>       
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>+---------------------------------------------------------------------------------------+
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">|</span> NVIDIA-SMI <span class="m">535</span>.86.10              Driver Version: <span class="m">535</span>.86.10    CUDA Version: <span class="m">12</span>.2     <span class="p">|</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">|</span>-----------------------------------------+----------------------+----------------------+
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="p">|</span> GPU  Name                 Persistence-M <span class="p">|</span> Bus-Id        Disp.A <span class="p">|</span> Volatile Uncorr. ECC <span class="p">|</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="p">|</span> Fan  Temp   Perf          Pwr:Usage/Cap <span class="p">|</span>         Memory-Usage <span class="p">|</span> GPU-Util  Compute M. <span class="p">|</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="p">|</span>                                         <span class="p">|</span>                      <span class="p">|</span>               MIG M. <span class="p">|</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="p">|</span><span class="o">=========================================</span>+<span class="o">======================</span>+<span class="o">======================</span><span class="p">|</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="p">|</span>   <span class="m">0</span>  NVIDIA A100 80GB PCIe          Off <span class="p">|</span> <span class="m">00000000</span>:25:00.0 Off <span class="p">|</span>                    <span class="m">0</span> <span class="p">|</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="p">|</span> N/A   35C    P0             165W / 300W <span class="p">|</span>  16631MiB / 81920MiB <span class="p">|</span>     <span class="m">97</span>%      Default <span class="p">|</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="p">|</span>                                         <span class="p">|</span>                      <span class="p">|</span>             Disabled <span class="p">|</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>+-----------------------------------------+----------------------+----------------------+
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="p">|</span>   <span class="m">1</span>  NVIDIA A100 80GB PCIe          Off <span class="p">|</span> <span class="m">00000000</span>:81:00.0 Off <span class="p">|</span>                    <span class="m">0</span> <span class="p">|</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="p">|</span> N/A   32C    P0             112W / 300W <span class="p">|</span>  16631MiB / 81920MiB <span class="p">|</span>     <span class="m">96</span>%      Default <span class="p">|</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="p">|</span>                                         <span class="p">|</span>                      <span class="p">|</span>             Disabled <span class="p">|</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>+-----------------------------------------+----------------------+----------------------+
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>+---------------------------------------------------------------------------------------+
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="p">|</span> Processes:                                                                            <span class="p">|</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="p">|</span>  GPU   GI   CI        PID   Type   Process name                            GPU Memory <span class="p">|</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="p">|</span>        ID   ID                                                             Usage      <span class="p">|</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="p">|</span><span class="o">=======================================================================================</span><span class="p">|</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="p">|</span>    <span class="m">0</span>   N/A  N/A     <span class="m">65905</span>      C   .../local/parabricks/binaries//bin/bwa    16594MiB <span class="p">|</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="p">|</span>    <span class="m">1</span>   N/A  N/A     <span class="m">65905</span>      C   .../local/parabricks/binaries//bin/bwa    16594MiB <span class="p">|</span>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>+---------------------------------------------------------------------------------------+
+</code></pre></div>
+<h3 id="runtime-evaluation-of-parabricks-sample-test-case-on-amperenodes-partition">Runtime Evaluation of Parabricks Sample Test Case on <code>amperenodes</code> Partition<a class="headerlink" href="#runtime-evaluation-of-parabricks-sample-test-case-on-amperenodes-partition" title="Permanent link">&para;</a></h3>
+<p>Parabricks is tested and works with CUDA version &gt;= 11.6.0 on Cheaha. Empirical results on running Parabricks sample test case on <code>amperendoes</code> partitions are illustrated in the below table. For this test case, runtime of 1 GPU is better than 2 GPU. Generally, large-scale data scales well with increase in number of GPUs, and the real-world science simulations may vary in their speedup.</p>
 <table>
 <thead>
 <tr>
@@ -2224,37 +2320,23 @@
 <tr>
 <td align="left">amperenodes</td>
 <td align="right">1</td>
-<td align="right">402</td>
+<td align="right">239</td>
 </tr>
 <tr>
 <td align="left">amperenodes</td>
 <td align="right">2</td>
-<td align="right">394</td>
-</tr>
-<tr>
-<td align="left">pascalnodes</td>
-<td align="right">1</td>
-<td align="right">360</td>
-</tr>
-<tr>
-<td align="left">pascalnodes</td>
-<td align="right">2</td>
-<td align="right">261</td>
-</tr>
-<tr>
-<td align="left">pascalnodes</td>
-<td align="right">4</td>
-<td align="right">301</td>
+<td align="right">270</td>
 </tr>
 </tbody>
 </table>
+<p>Applications show 2x performance with Parabricks &gt; 4.0 version. You can refer <a href="https://docs.nvidia.com/clara/parabricks/latest/bestperformance.html#best-performance-for-germline-pipeline">here</a> to performance tuning ideas to achieve best performance with Parabricks.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2023</span>
       
     
   </small>
