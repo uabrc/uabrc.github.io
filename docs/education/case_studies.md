@@ -265,7 +265,7 @@ Fri Nov  3 12:38:24 2023
 
 ### Runtime Evaluation of Parabricks Sample Test Case on `amperenodes` Partition
 
-Parabricks is tested and works with CUDA version >= 11.6.0 on Cheaha. Empirical results on running Parabricks sample test case on `amperendoes` partitions are illustrated in the below table. For this test case, runtime of 1GPU is better than 2GPU. Generally, large-scale data scales well with increase in number of GPUs, and the real-world science simulations may vary in their speedup.
+Parabricks is tested and works with CUDA version >= 11.6.0 on Cheaha. Empirical results on running Parabricks sample test case on `amperendoes` partitions are illustrated in the below table. For this test case, runtime of 1 GPU is better than 2 GPU. Generally, large-scale data scales well with increase in number of GPUs, and the real-world science simulations may vary in their speedup.
 
 {{ read_csv('education/res/parabricks_exec_time.csv', keep_default_na=False) }}
 
