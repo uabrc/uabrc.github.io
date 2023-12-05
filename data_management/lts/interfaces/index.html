@@ -2067,19 +2067,21 @@
 <li><a href="https://github.com/s3tools/s3cmd">s3cmd</a> is a Python tool that we suggest using for managing bucket permissions as well as small transfers.</li>
 <li><a href="https://github.com/peak/s5cmd">s5cmd</a> is a Go package that transfers data much more quickly than s3cmd, especially as the file size and/or quanitity increases. It does not have full bucket management capabilities.</li>
 </ol>
-<p>You do not need to install both tools if they aren't necessary. Both are available to install into <a href="../../../workflow_solutions/using_anaconda/">Anaconda</a> environments. Specific install and usage commands for each are given in their respecitve sections.</p>
-<h3 id="s3cmd">s3cmd<a class="headerlink" href="#s3cmd" title="Permanent link">&para;</a></h3>
-<p>s3cmd is our suggested tool for managing bucket permissions and small, periodic file transfers. It can be easily installed via an Anaconda environment. Create the environment, activate it, then install using:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install s3cmd
+<p>You do not need to install both tools if they aren't necessary. Both are available to install into <a href="../../../workflow_solutions/using_anaconda/">Anaconda</a> environments. It's suggested to create a single environment named <code>s3</code> and install both s3cmd and s5cmd into it for easy access to both tools. Specific install and usage commands for each are given in their respective sections. You can create the general environment using the following commands:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module load Anaconda3
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda create -n s3 -c conda-forge pip s5cmd
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>conda activate s3
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pip install s3cmd
 </code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Depending on how Anaconda chooses to install the package, the actual s3cmd script may be in your $HOME/.local/bin folder. This folder can be added to your path using <code>PATH=$PATH:$HOME/.local/bin</code>, and you will have access to the s3cmd script after that.</p>
+<p>We manually install pip into the conda environment so that <code>pip</code> will install <code>s3cmd</code> into the conda environment as opposed to <code>$HOME/.local</code>. This way, you do not need to add the <code>.local</code> folder to your path whenever you want to use <code>s3cmd</code>.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
-<p>Once you have s3cmd downloaded, you can start the configuration process like so:</p>
+<h3 id="s3cmd">s3cmd<a class="headerlink" href="#s3cmd" title="Permanent link">&para;</a></h3>
+<p>s3cmd is our suggested tool for managing bucket permissions and small, periodic file transfers. See the <a href="#command-line">preceding section</a> for instructions on how to install both it and s5cmd into an Anaconda environment. Once you have s3cmd installed and the environment active, you can start the configuration process like so:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>s3cmd --configure <span class="o">[</span>-c <span class="nv">$HOME</span>/profile_name<span class="o">]</span>
 </code></pre></div>
 <p>You can run the configuration either with or without the <code>[-c]</code> option. If you use it, a file named <code>profile_name</code> will be created in your home directory with your login credentials and other information. If you omit the <code>-c</code> option, a file called <code>$HOME/.s3cfg</code> will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform and are only managing a single account, it's suggested to omit the <code>-c</code> option. If you are a PI or data manager and are managing both a personal and lab/core LTS account, you will need to make a separate profile for each account.</p>
@@ -2187,18 +2189,16 @@
 <!-- markdownlint-enable MD046 -->
 
 <h3 id="s5cmd">s5cmd<a class="headerlink" href="#s5cmd" title="Permanent link">&para;</a></h3>
-<p>s5cmd is a parallel transfer tool suggested for period transfers of large and/or many files at a time. It has options for customizing how many processors are available for transferring data as well as how many chunks files can be broken into during transfer to minimize transfer time. s5cmd can be installed easily in an Anaconda environment using the following command.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>conda install -c conda-forge s5cmd
-</code></pre></div>
+<p>s5cmd is a parallel transfer tool suggested for period transfers of large and/or many files at a time. It has options for customizing how many processors are available for transferring data as well as how many chunks files can be broken into during transfer to minimize transfer time. See the <a href="#command-line">preceding section</a> for instructions on how to install both it and s3cmd into an Anaconda environment</p>
 <h4 id="configuring-s5cmd">Configuring s5cmd<a class="headerlink" href="#configuring-s5cmd" title="Permanent link">&para;</a></h4>
 <p>s5cmd does not use the same authentication file as s3cmd. Instead, it uses official AWS SDK to access S3 including LTS. The default credentials file for AWS CLI would found at <code>${HOME}/.aws/credentials</code>. This file is then populated with different profiles and their access and secret keys. You can create the necessary file with the following commands.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.aws
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>touch <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.aws/credentials
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdir <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.aws
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>touch <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.aws/credentials
 </code></pre></div>
 <p>Open the credentials file with your favorite editor (i.e. <code>vim</code>, <code>nano</code>, <code>gedit</code>, etc.) and create a default profile by adding the following lines.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[default]
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>aws_access_key_id = &lt;access_key&gt;
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>aws_secret_access_key = &lt;secret_key&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[default]
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>aws_access_key_id = &lt;access_key&gt;
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>aws_secret_access_key = &lt;secret_key&gt;
 </code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
@@ -2208,30 +2208,30 @@
 <!-- markdownlint-enable MD046 -->
 
 <p>One of the benefits of this credential method is that multiple sets of credentials can be kept in the same file. For instance, if you have both a lab/core LTS account and a personal account, you could set your personal account as the default profile and then add your lab credentials under a named profile like so:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[default]
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>aws_access_key_id = &lt;personal_access_key&gt;
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>aws_secret_access_key = &lt;personal_secret_key&gt;
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>[example-lab]
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>aws_access_key_id = &lt;lab_access_key&gt;
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>aws_secret_access_key = &lt;lab_secret_key&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[default]
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>aws_access_key_id = &lt;personal_access_key&gt;
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>aws_secret_access_key = &lt;personal_secret_key&gt;
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>[example-lab]
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>aws_access_key_id = &lt;lab_access_key&gt;
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>aws_secret_access_key = &lt;lab_secret_key&gt;
 </code></pre></div>
 <h4 id="s5cmd-commands">s5cmd Commands<a class="headerlink" href="#s5cmd-commands" title="Permanent link">&para;</a></h4>
 <p>s5cmd has the following general form.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>s5cmd --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>global_options<span class="o">]</span> <span class="nb">command</span> <span class="o">[</span><span class="nb">command</span> options<span class="o">]</span> <span class="o">[</span>arguments<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>s5cmd --endpoint-url https://s3.lts.rc.uab.edu <span class="o">[</span>global_options<span class="o">]</span> <span class="nb">command</span> <span class="o">[</span><span class="nb">command</span> options<span class="o">]</span> <span class="o">[</span>arguments<span class="o">]</span>
 </code></pre></div>
 <p>Here, global options must be kept separate from command specific options. For instance, the <code>--endpoint-url</code> option is a global option that specifies the URL for the S3 server. This must be included with every s5cmd command to communicate with UAB LTS, otherwise it will default to accessing AWS servers. Other global options include <code>--numworkers</code> and <code>--profile</code>, the number of available CPUs and which account to use in the <code>credentials</code> file, respectively. You can see a list of global options and the list of available commands by running <code>s5cmd --help</code>. A selection of commands are listed below.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># copy all files from a local directory to a bucket using a single CPU</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>s5cmd --endpoint-url https://s3.lts.rc.uab.edu cp /path/to/directory/* s3://bucket/
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># copy all files from a local directory to a bucket using 10 CPUs  and allowing the files to be broken into 5 parts during transfer</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>s5cmd --endpoint-url https://s3.lts.rc.uab.edu --numworkers <span class="m">10</span> cp --concurrency <span class="m">5</span> /path/to/directory/* s3://bucket/
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># sync an S3 bucket (destination) to a local directory (source)</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>s5cmd --endpoint-url https://s3.lts.rc.uab.edu sync /path/to/directory/ s3://bucket/
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="c1"># remove all objects with a given prefix from a bucket</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>s5cmd --endpoint-url https://s3.lts.rc.uab.edu rm s3://bucket/prefix/*
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># copy all files from a local directory to a bucket using a single CPU</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>s5cmd --endpoint-url https://s3.lts.rc.uab.edu cp /path/to/directory/* s3://bucket/
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># copy all files from a local directory to a bucket using 10 CPUs  and allowing the files to be broken into 5 parts during transfer</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>s5cmd --endpoint-url https://s3.lts.rc.uab.edu --numworkers <span class="m">10</span> cp --concurrency <span class="m">5</span> /path/to/directory/* s3://bucket/
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># sync an S3 bucket (destination) to a local directory (source)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>s5cmd --endpoint-url https://s3.lts.rc.uab.edu sync /path/to/directory/ s3://bucket/
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># remove all objects with a given prefix from a bucket</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>s5cmd --endpoint-url https://s3.lts.rc.uab.edu rm s3://bucket/prefix/*
 </code></pre></div>
 <p>As with s3cmd, be very careful using the <code>sync</code> and <code>rm</code> commands as these can/will delete files either locally or on LTS. There are many more commands s5cmd can use as well as a number of command options that can be used to customize how an operation is performed. Please see the help documentation for a full list.</p>
 <p>It's important to note that the main functionality of s5cmd over s3cmd is the parallelization options given by the <code>--numworkers</code> global option and the <code>--concurrency</code> local option for <code>cp</code> and <code>sync</code> commands. Choosing not to use these options will result in unoptimized performance.</p>
@@ -2250,7 +2250,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
       
     
   </small>
