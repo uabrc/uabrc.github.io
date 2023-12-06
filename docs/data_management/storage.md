@@ -68,8 +68,9 @@ Please provide the following information. Missing information can delay allocati
     <!-- markdownlint-disable MD046 -->
     !!! Tip
 
-        - Keep the name short, memorable, relevant and abstract.
-        - If there is any chance the shared space could serve more than one grant or research project, we recommend avoiding names related to a specific project. Instead, name it for something durable and robust, that won't easily change with time.
+        - Keep the name short, memorable, and relevant.
+        - Use `underscores (_)` or `hyphen (-)` to separate words.
+        - To serve future projects, consider names that are reusable.
     <!-- markdownlint-disable MD046 -->
 
 If some members have not created their accounts at the time of the request, we will proceed with allocating the Shared Storage. Additional members may be added at a later time in a new service request.
