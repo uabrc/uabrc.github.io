@@ -1,0 +1,142 @@
+<style>
+  /* Grid container styling */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 12px;
+  }
+
+  /* Card styling */
+  /* Card styling with hover effect */
+  /* Card styling */
+  .card {
+    position: relative;
+    border-radius: 10px; /* Set border-radius */
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px; /* Match the border-radius of the card */
+    padding: 1px; /* Adjust padding for the border width */
+    background: linear-gradient(
+      45deg,
+      #52bc99,
+      blue
+    ); /* Gradient for the border */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transition: opacity 0.3s ease; /* Transition for smooth hover effect */
+    opacity: 0; /* Hide initially */
+  }
+
+  .card:hover::before {
+    opacity: 1; /* Show gradient border on hover */
+  }
+
+  .card-content {
+    position: relative; /* To ensure content appears above the pseudo-element */
+  }
+
+  /* Rest of your CSS for .card-content, .svg-icon, .title, and .description */
+
+  /* SVG Icon placeholder styling */
+  .svg-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e0e0; /* Placeholder style */
+    margin-bottom: 10px;
+  }
+
+  /* Title styling */
+  .title {
+    font-size: 1.2em;
+    color: #333;
+    margin: 5px;
+  }
+
+  .title a {
+    text-decoration: none;
+    color: inherit;
+    margin: 5px;
+  }
+
+  /* Description styling */
+  .description {
+    color: #666;
+    font-size: 1em;
+    margin: 5px;
+  }
+</style>
+<div class="grid-container">
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-content">
+      <!-- Placeholder for SVG -->
+      <h2 class="title"><a href="https://rc.uab.edu/">Cheaha</a></h2>
+      <p class="description">
+        Cheaha is a High Performance Computing (HPC) resource intended
+        primarily for batch processing of research computing software.
+        <a href="https://docs.rc.uab.edu/cheaha/getting_started/"
+          >Learn More</a
+        >
+      </p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-content">
+      <!-- Placeholder for SVG -->
+      <h2 class="title">
+        <a href="https://cloud.rc.uab.edu/">RC Cloud</a>
+      </h2>
+      <p class="description">
+        Our cloud.rc portal, based on OpenStack cloud software,
+        provides a home for more permanent research applications such
+        as web pages and database hosting.
+        <a href="https://docs.rc.uab.edu/uab_cloud/">Learn More</a>
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-content">
+      <!-- Placeholder for SVG -->
+      <h2 class="title">
+        <a href="https://gitlab.rc.uab.edu/">Gitlab</a>
+      </h2>
+      <p class="description">
+        Streamline your research with our cutting-edge workflow
+        solutions. Our user-friendly tools like Anaconda, Gitlab, and
+        containerization make it simple to organize your projects.
+        <a
+          href="https://docs.rc.uab.edu/account_management/gitlab_account/"
+          >Learn More</a
+        >
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-content">
+      <!-- Placeholder for SVG -->
+      <h2 class="title">
+        <a href="https://app.globus.org/">Globus</a>
+      </h2>
+      <p class="description">
+        Your data is in safe hands, and we're committed to providing
+        the storage solutions you need for your research success.
+        <a
+          href="https://docs.rc.uab.edu/data_management/transfer/globus/"
+          >Learn More</a
+        >
+      </p>
+    </div>
+  </div>
+  <!-- More cards as needed -->
+</div>
