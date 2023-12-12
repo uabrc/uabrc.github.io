@@ -16,6 +16,8 @@ The primary method for accessing Cheaha is through our online portal website, Op
 
 [SSH](../uab_cloud/remote_access.md#command-line-via-ssh) may be used to access Cheaha. Connect to host `cheaha.rc.uab.edu` on port `22`.
 
+An alternative method suited for developers using VSCode, is to use the "Remote - Tunnels" extension to connect to an [HPC Desktop Interactive Job](./open_ondemand/ood_interactive.md#hpc-desktop). More details on this process are available in the [VSCode Tunnel](./open_ondemand/ood_interactive.md#visual-studio-code-remote-tunnel) section.
+
 ## Open OnDemand Features
 
 The Open OnDemand portal features a [file browser](./open_ondemand/ood_files.md), [job composer](./open_ondemand/ood_jobs.md) and various [interactive applications](./open_ondemand/ood_interactive.md) including a remote desktop, Jupyter, RStudio and MATLAB, among others. There is also a [terminal](./open_ondemand/ood_main.md#shell-access) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](./open_ondemand/ood_main.md).
