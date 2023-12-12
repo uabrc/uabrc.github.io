@@ -36,6 +36,12 @@ To use this method you will need either a GitHub account or Microsoft account. M
     When using a tunnel, all information visible within VSCode is end-to-end encrypted and sent from Cheaha to your local machine through a third-party service (the tunnel). Use of any third party services and encryption for Restricted/PHI Data requires a risk assessment first, on a case-by-case basis.
 <!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Do not use "Remote - SSH" to access Cheaha, as all processes run on the login node. VSCode Server, and associated processes, running on the login node may be shut down at any time to free login node resources. Instead, please use "Remote - Tunnels" as described below.
+<!-- markdownlint-enable MD046 -->
+
 **One-time setup:**
 
 Install the [VSCode CLI](https://code.visualstudio.com/docs/editor/command-line) into your `/home/$USER` directory on Cheaha. Instructions for obtaining the CLI executable are available at <https://code.visualstudio.com/docs/remote/tunnels#_using-the-code-cli>.
