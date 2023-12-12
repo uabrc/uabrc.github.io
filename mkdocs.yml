@@ -29,6 +29,7 @@ markdown_extensions:
   - lightgallery:
       show_description_in_lightgallery: true
       show_description_as_inline_caption: false
+  - md_in_html
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
