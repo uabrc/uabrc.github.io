@@ -34,4 +34,6 @@ Due to data sensitivity, we advise against storing data from different groups in
 
 ## Transfering From Local Machines to LTS
 
-Data
+The details concerning data transfer from core instruments and analysis machines can differ drastically across cores. For cores where all data are transferred from a single machine or server to LTS, a single installation of Globus Connect Personal or [Globus Connect Server](https://www.globus.org/globus-connect-server) would be satisfactory for uploading data to LTS.
+
+For situations where data either needs to be transferred multiple machines to LTS. please contact [Research Computing](../../index.md#how-to-contact-us) for a consultation.
