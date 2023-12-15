@@ -36,4 +36,12 @@ Due to data sensitivity, we advise against storing data from different groups in
 
 The details concerning data transfer from core instruments and analysis machines can differ drastically across cores. For cores where all data are transferred from a single machine or server to LTS, a single installation of Globus Connect Personal or [Globus Connect Server](https://www.globus.org/globus-connect-server) would be satisfactory for uploading data to LTS.
 
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Do not set up transfers from machines that core customers will have access to. This creates opportunities for researchers to access data they are not authorized for. Data collected by the core should only be accessible by core personnel until those data are distributed to their respective labs.
+<!-- markdownlint-enable MD046 -->
+
 For situations where data either needs to be transferred multiple machines to LTS. please contact [Research Computing](../../index.md#how-to-contact-us) for a consultation.
+
+## Distributing Collected Data
