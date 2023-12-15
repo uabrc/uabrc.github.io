@@ -2343,11 +2343,23 @@
 <li><strong>Internal UAB Collaborator Organizations:</strong> The name(s) of any other UAB organizations participating in the Shared Storage.</li>
 <li><strong>External Collaborator Organizations:</strong> The name(s) of any external organizations participating in the Shared Storage.</li>
 <li><strong>Regulatory Requirements:</strong> List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.</li>
-<li><strong>Name of Shared Storage:</strong> Please give us a short, memorable name that is specific to your organization but general to your purpose.<ul>
+<li>
+<p><strong>Name of Shared Storage:</strong> Please give us a generic name specific to your project/lab.</p>
+<ul>
 <li>For Project Storage, this name will be used in the <code>/data/project/&lt;name&gt;</code> path on Cheaha.</li>
-<li>For Labs we recommend the format <code>&lt;PI_blazerid&gt;-lab</code>.</li>
-<li>For Cores we recommend a shortened version of the Core name.</li>
+<li>For Labs we recommend the format <code>&lt;PI_blazerid&gt;_lab</code>. Example: PI_blazerid_lab, PI_name_lab, PI_blazerid_group</li>
+<li>For Cores we recommend a shortened version of the Core name. Example: core_facility_space</li>
 </ul>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>Keep the name short, memorable, and relevant.</li>
+<li>Use <code>underscores (_)</code> or <code>hyphen (-)</code> to separate words.</li>
+<li>To serve future projects, consider names that are generic.</li>
+</ul>
+</div>
+<!-- markdownlint-disable MD046 -->
 </li>
 </ul>
 <p>If some members have not created their accounts at the time of the request, we will proceed with allocating the Shared Storage. Additional members may be added at a later time in a new service request.</p>
@@ -2598,7 +2610,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2023</span>
       
     
   </small>
