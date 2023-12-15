@@ -59,10 +59,19 @@ Please provide the following information. Missing information can delay allocati
 - **Internal UAB Collaborator Organizations:** The name(s) of any other UAB organizations participating in the Shared Storage.
 - **External Collaborator Organizations:** The name(s) of any external organizations participating in the Shared Storage.
 - **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
-- **Name of Shared Storage:** Please give us a short, memorable name that is specific to your organization but general to your purpose.
+- **Name of Shared Storage:** Please give us a generic name specific to your project/lab.
+  
     - For Project Storage, this name will be used in the `/data/project/<name>` path on Cheaha.
-    - For Labs we recommend the format `<PI_blazerid>-lab`.
-    - For Cores we recommend a shortened version of the Core name.
+    - For Labs we recommend the format `<PI_blazerid>_lab`. Example: PI_blazerid_lab, PI_name_lab, PI_blazerid_group
+    - For Cores we recommend a shortened version of the Core name. Example: core_facility_space
+
+    <!-- markdownlint-disable MD046 -->
+    !!! Tip
+
+        - Keep the name short, memorable, and relevant.
+        - Use `underscores (_)` or `hyphen (-)` to separate words.
+        - To serve future projects, consider names that are generic.
+    <!-- markdownlint-disable MD046 -->
 
 If some members have not created their accounts at the time of the request, we will proceed with allocating the Shared Storage. Additional members may be added at a later time in a new service request.
 
