@@ -1,0 +1,102 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+
+{% extends "main.html" %} {% block tabs %} {{ super() }}
+
+<link rel="stylesheet" href="css/home.css" />
+<!-- Main site Entry button descriptions -->
+<section>
+  <div class="vheader">
+    <div class="bg__video-container">
+      <video autoplay="autoplay" loop="loop" muted="muted">
+        <source
+          src="https://customer-g9o2xxnyrjqmkrge.cloudflarestream.com/ba2991e6453ee8bcb708521226b7f448/downloads/default.mp4"
+          type="video/mp4"
+        />
+        Your Browser isn't supported
+      </video>
+    </div>
+      <div class="md-grid md-typeset">
+        <div class="tx-hero">
+          <div class="tx-hero__image">
+            <!--<img src="assets/product-layers.png" draggable="false">-->
+          </div>
+          <div class="tx-hero__content">
+            <h1 class="title">UAB Research Computing</h1>
+            <p>The Research Computing System (RCS) provides a framework for sharing research data, accessing computing power, and collaborating with peers on campus and around the globe.</p>
+            <a href="https://rc.uab.edu" title="Cheaha Login" class="md-button md-button--primary">
+              Log In
+            </a>
+            <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button">
+              View our Docs
+            </a>
+          </div>
+        </div>
+      </div>
+  </section>
+  
+<div class="top-hr">
+  <div class="feature-item">
+    <h2><a class="hcard" href="https://rc.uab.edu/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M20 3H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM4 9V5h16v4zm16 4H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zM4 19v-4h16v4z"></path><path d="M17 6h2v2h-2zm-3 0h2v2h-2zm3 10h2v2h-2zm-3 0h2v2h-2z"></path></svg>
+      Cheaha</a>
+    </h2>
+    <p class="description">
+      Cheaha is a High Performance Computing (HPC) resource intended
+      primarily for batch processing of research computing software. We offer graphical interfaces to the most common features, all in one place. 
+      <a class="learn" href="https://docs.rc.uab.edu/cheaha/getting_started/">Learn More</a>
+      
+    </p>
+  </div>
+  <div class="feature-item">
+    <h2><a class="hcard" href="https://cloud.rc.uab.edu/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M18.944 11.112C18.507 7.67 15.56 5 12 5 9.244 5 6.85 6.611 5.757 9.15 3.609 9.792 2 11.82 2 14c0 2.757 2.243 5 5 5h11c2.206 0 4-1.794 4-4a4.01 4.01 0 0 0-3.056-3.888zM18 17H7c-1.654 0-3-1.346-3-3 0-1.404 1.199-2.756 2.673-3.015l.581-.102.192-.558C8.149 8.274 9.895 7 12 7c2.757 0 5 2.243 5 5v1h1c1.103 0 2 .897 2 2s-.897 2-2 2z"></path></svg>
+      RC Cloud</a>
+    </h2>
+    <p class="description">
+      Our cloud.rc portal, based on OpenStack cloud software, provides
+      a home for more permanent research applications such as web
+      pages and database hosting. Available via UAB network or VPN. 
+      <a class="learn" href="https://docs.rc.uab.edu/uab_cloud/">Learn More</a>
+    </p>
+  </div>
+  <div class="feature-item">
+    <h2><a class="hcard" href="https://gitlab.rc.uab.edu/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M20.892 9.889a.664.664 0 0 0-.025-.087l-2.104-6.479a.84.84 0 0 0-.8-.57.822.822 0 0 0-.789.575l-2.006 6.175H8.834L6.826 3.327a.823.823 0 0 0-.786-.575h-.006a.837.837 0 0 0-.795.575L3.133 9.815c0 .005-.005.01-.007.016l-1.067 3.281a1.195 1.195 0 0 0 .435 1.34l9.227 6.706c.167.121.393.12.558-.003l9.229-6.703a1.2 1.2 0 0 0 .435-1.34l-1.051-3.223zM17.97 3.936l1.809 5.566H16.16l1.81-5.566zm-11.94 0 1.812 5.566H4.228L6.03 3.936zm-2.982 9.752a.253.253 0 0 1-.093-.284l.793-2.437 5.817 7.456-6.517-4.735zm1.499-3.239h3.601l2.573 7.916-6.174-7.916zm7.452 8.794-2.856-8.798h5.718l-1.792 5.515-1.07 3.283zm1.282-.877 2.467-7.588.106-.329h3.604l-5.586 7.156-.591.761zm7.671-4.678-6.519 4.733.022-.029 5.794-7.425.792 2.436a.25.25 0 0 1-.089.285z"></path></svg> 
+      Gitlab</a>
+    </h2>
+    <p class="description">
+      Streamline your research with our cutting-edge workflow
+      solutions. Our user-friendly tools like Anaconda, Gitlab, and
+      containerization make it simple to organize your projects.
+      <a class="learn"
+        href="https://docs.rc.uab.edu/account_management/gitlab_account/"
+        >Learn More</a
+      >
+    </p>
+  </div>
+</div>
+{% endblock %}
+<!-- Main site box descriptions -->
+{% block main %}
+<main class="md-main" data-md-component="main">
+  <div class="md-main__inner md-grid">
+    <div
+      class="md-sidebar md-sidebar--secondary"
+      data-md-component="sidebar"
+      data-md-type="toc"
+    >
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner"></div>
+      </div>
+    </div>
+    {% endblock %} {% block container %}
+    <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+        {% block content %} {% include "partials/content.html" %} {%
+        endblock %}
+      </article>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
