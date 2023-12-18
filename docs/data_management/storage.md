@@ -60,7 +60,7 @@ Please provide the following information. Missing information can delay allocati
 - **External Collaborator Organizations:** The name(s) of any external organizations participating in the Shared Storage.
 - **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
 - **Name of Shared Storage:** Please give us a generic name specific to your project/lab.
-  
+
     - For Project Storage, this name will be used in the `/data/project/<name>` path on Cheaha.
     - For Labs we recommend the format `<PI_blazerid>_lab`. Example: PI_blazerid_lab, PI_name_lab, PI_blazerid_group
     - For Cores we recommend a shortened version of the Core name. Example: core_facility_space
