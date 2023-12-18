@@ -83,6 +83,41 @@ To request changes in Shared Storage membership, please contact [Support](../hel
 - The exact name of the Shared Storage. If it is Project Storage, the path to the storage location, i.e., `/data/project/...`.
 - Please give BlazerIDs of members to add or remove.
 
+### How Can I Get A Larger `/data/project/` (GPFS) Allocation?
+
+At this time, due to constraints on total GPFS storage, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [User Scratch](#user-scratch) for temporary storage of up to 100 TB of data for use during analysis.
+
+If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md).
+
+### How Can I Get A Larger LTS Lab Allocation?
+
+At this time, due to constraints on total [LTS](./lts/index.md) storage, increasing an LTS allocation requires purchasing additional hardware. Below are some facts about purchasing additional storage nodes.
+
+- Allocation increases occur by purchasing whole storage nodes.
+- Each node has 133 TB of usable storage.
+- Nodes are purchased with researcher funds at vendor cost.
+- No markups are added to the cost of nodes.
+- Purchased nodes are racked with existing hardware in our data centers.
+- Purchased nodes are maintained by Research Computing with the same level of service as other hardware.
+- Purchased nodes are supported for 5 years from date of purchase, the industry standard for commercial datacenter hardware.
+- Once an order is placed with the vendor, we can provide additional storage immediately _if_ free storage is available, regardless of lead-time.
+
+If you have additional questions _or_ wish to discuss further, please [Contact Support](../help/support.md).
+
+### If I Can't Get a Larger Allocation, What Alternatives Are There?
+
+One alternative we recommend is breaking your dataset into batches. A generic, template workflow might be something like below.
+
+- Copy a batch of data from LTS, or an internet source, to User Scratch.
+- Perform analyses on copied data in User Scratch.
+- Store intermediate or final results in `/data/project/` or LTS.
+- Delete copied data from User Scratch.
+- Start again with the next batch.
+
+When all batches have been processed, begin processing or aggregating the resulting data.
+
+If you wish to discuss other alternatives tailored to your workflow, please [Contact Support](../help/support.md).
+
 ### Project Directory Permissions
 
 Every project directory has a group that is unique system-wide, and not used anywhere else on the filesystem. The unique project group will be referred to as `<grp>` and generally has the same name as the top level project directory.
