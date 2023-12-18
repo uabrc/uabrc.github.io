@@ -30,10 +30,62 @@ A simplified diagram illustrating this organization can be seen below.
 
 ![!Suggested organization of LTS buckets and data](images/simplified-lts-core-diagram.png)
 
-Due to data sensitivity, we advise against storing data from different groups in the same bucket. Managing permissions for a bucket where many groups can only access specific portions of a bucket is cumbersome and prone to error. Instead, separate policy files should be kept for each bucket specifying which researchers from each lab or group should be able to access the stored data. These policy files can be kept in a single location owned by the core for future modification. This also facilitates future transfer of bucket ownership from the core to the lab or group to whom the data belongs after data collection or analysis is complete.
+Due to data sensitivity, we advise against storing data from different groups in the same bucket. Managing permissions for a bucket where many groups can only access specific portions of a bucket is cumbersome and prone to error. Instead, separate [policy files](policies.md) should be kept for each bucket specifying which researchers from each lab or group should be able to access the stored data. These policy files can be kept in a single location owned by the core for future modification. This also facilitates future transfer of bucket ownership from the core to the lab or group to whom the data belongs after data collection or analysis is complete.
 
 ## Transfering From Local Machines to LTS
 
 The details concerning data transfer from core instruments and analysis machines can differ drastically across cores. For cores where all data are transferred from a single machine or server to LTS, a single installation of Globus Connect Personal or [Globus Connect Server](https://www.globus.org/globus-connect-server) would be satisfactory for uploading data to LTS.
 
 For situations where data either needs to be transferred multiple machines to LTS. please contact [Research Computing](../../index.md#how-to-contact-us) for a consultation.
+
+## Distributing to Data Owners
+
+While uploading and/or managing data for other groups, data in any buckets the core owns will count against the quota for the core. Data will need to be distributed in some way to the groups who own the data to free up storage in the core's account once those data have been fully collected or analyzed. It is not currently possible to directly the change the owner of a bucket without submitting a ticket to research computing, however it is possible to set permissions on a bucket to allow the data owners to copy the data to a new bucket under their ownership. Once the data are copied, the original bucket can be moved onto a physical disc as an archive or deleted.
+
+Permission to copy data is granted via a [policy file](policies.md). Policy files can be customized extensively, but a general file can be seen below.
+
+``` json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+    {
+        "Sid": "lab-permissions",
+        "Effect": "Allow",
+        "Principal": {
+            "AWS": [
+                "arn:aws:iam:::user/lab-group"
+            ]
+        },
+        "Action": [
+            "s3:ListBucket",
+            "s3:GetObject"
+        ],
+        "Resource": [
+            "arn:aws:s3:::core-bucket",
+            "arn:aws:s3:::core-bucket/*"
+        ]
+    }]
+}
+```
+
+This policy file allows the `lab-group` LTS account permission to list and copy all objects in the bucket. Data should typically only be copied from a core bucket to a lab bucket, not to a specific individual's bucket. The owner of `lab-group` will need to initiate the transfer. General commands for creating a bucket and transferring data to it can be found below for convenience. These commands use [s5cmd](interfaces.md#s5cmd) for transfer and assume the credentials used are for the `lab-group`.
+
+``` bash
+# Create a new bucket to hold the data
+s5cmd --endpoint-url https://s3.lts.rc.uab.edu mb s3://destination-bucket
+
+# Copy files from core bucket to lab bucket
+s5cmd --endpoint-url https://s3.lts.rc.uab.edu --numworkers 10 cp --concurrency 5 s3://core-bucket/* s3://destination-bucket
+```
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The `cp` command above specifies 10 CPUs to use for transfer to increase throughput. This value should be changed based on the number of cores available in your job if you're copying using Cheaha.
+<!-- markdownlint-enable MD046 -->
+
+[Globus](interfaces.md#globus) is another option for transferring data using a GUI as opposed to a command line. When using Globus, you will need to set up the LTS endpoint using the credentials for the lab account. Access the LTS endpoint in both window panes and type the names of the buckets to transfer to and from. See the image below as an example
+
+![!Example for transferring data from core LTS bucket to lab LTS bucket](images/globus-transfer-from-core.png)
+
+Once you've accessed those buckets, drag and drop which files need to be transferred.
