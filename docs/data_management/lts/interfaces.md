@@ -25,23 +25,24 @@ While globus is the recommended tool for most data transfers, command line tools
 1. [s3cmd](https://github.com/s3tools/s3cmd) is a Python tool that we suggest using for managing bucket permissions as well as small transfers.
 2. [s5cmd](https://github.com/peak/s5cmd) is a Go package that transfers data much more quickly than s3cmd, especially as the file size and/or quanitity increases. It does not have full bucket management capabilities.
 
-You do not need to install both tools if they aren't necessary. Both are available to install into [Anaconda](../../workflow_solutions/using_anaconda.md) environments. Specific install and usage commands for each are given in their respecitve sections.
-
-### s3cmd
-
-s3cmd is our suggested tool for managing bucket permissions and small, periodic file transfers. It can be easily installed via an Anaconda environment. Create the environment, activate it, then install using:
+You do not need to install both tools if they aren't necessary. Both are available to install into [Anaconda](../../workflow_solutions/using_anaconda.md) environments. It's suggested to create a single environment named `s3` and install both s3cmd and s5cmd into it for easy access to both tools. Specific install and usage commands for each are given in their respective sections. You can create the general environment using the following commands:
 
 ``` bash
+module load Anaconda3
+conda create -n s3 -c conda-forge pip s5cmd
+conda activate s3
 pip install s3cmd
 ```
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Depending on how Anaconda chooses to install the package, the actual s3cmd script may be in your $HOME/.local/bin folder. This folder can be added to your path using `PATH=$PATH:$HOME/.local/bin`, and you will have access to the s3cmd script after that.
+    We manually install pip into the conda environment so that `pip` will install `s3cmd` into the conda environment as opposed to `$HOME/.local`. This way, you do not need to add the `.local` folder to your path whenever you want to use `s3cmd`.
 <!-- markdownlint-enable MD046 -->
 
-Once you have s3cmd downloaded, you can start the configuration process like so:
+### s3cmd
+
+s3cmd is our suggested tool for managing bucket permissions and small, periodic file transfers. See the [preceding section](#command-line) for instructions on how to install both it and s5cmd into an Anaconda environment. Once you have s3cmd installed and the environment active, you can start the configuration process like so:
 
 ``` bash
 s3cmd --configure [-c $HOME/profile_name]
@@ -160,11 +161,7 @@ s3cmd info s3://<bucket>
 
 ### s5cmd
 
-s5cmd is a parallel transfer tool suggested for period transfers of large and/or many files at a time. It has options for customizing how many processors are available for transferring data as well as how many chunks files can be broken into during transfer to minimize transfer time. s5cmd can be installed easily in an Anaconda environment using the following command.
-
-``` bash
-conda install -c conda-forge s5cmd
-```
+s5cmd is a parallel transfer tool suggested for period transfers of large and/or many files at a time. It has options for customizing how many processors are available for transferring data as well as how many chunks files can be broken into during transfer to minimize transfer time. See the [preceding section](#command-line) for instructions on how to install both it and s3cmd into an Anaconda environment
 
 #### Configuring s5cmd
 
