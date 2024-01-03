@@ -111,7 +111,8 @@ nav:
       - Software:
           - Preinstalled Modules: cheaha/software/modules.md
           - Self-Installed Software: cheaha/software/software.md
-      - Open OnDemand:
+      - Cheaha Web Portal: 
+          - cheaha/open_ondemand/index.md
           - Homepage: cheaha/open_ondemand/ood_main.md
           - File Browser: cheaha/open_ondemand/ood_files.md
           - Interactive Apps: cheaha/open_ondemand/ood_interactive.md
