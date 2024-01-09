@@ -42,6 +42,20 @@ Shared storage is available to all Lab Groups and Core Facilities on campus. Sha
 
 Please visit our [Storage page](../data_management/storage.md) for detailed information about our individual and shared storage options.
 
+### Partitions
+
+Compute nodes are divided into groups called partitions each with specific qualities suitable for different kinds of workflows or software. In order to submit a compute job, a partition must be chosen in the Slurm options. The partitions can be roughly grouped as such:
+
+|  Use | Partition Names | Notes |
+|---|---|---|
+| GPU Processing | pascalnodes, pascalnodes-medium, <br>amperenodes, amperenodes-medium  | These are the only partitions with GPUs |
+| All Purpose | amd-hdr100 | Runs AMD CPUs compared to all other CPU partitions running Intel. <br>[Contact us](../index.md#how-to-contact-us) with issues running on this partition |
+| Shorter time  | express, short, intel-dcb  |  |
+| Medium-long time  | medium, long  |  |
+| Very large memory | largemem, largemem-long |  |
+
+Please visit our [hardware](hardware.md#cheaha-hpc-cluster) for more details about the partitions.
+
 ### Etiquette
 
 [Quality-of-Service (QoS) limits](hardware.md#quality-of-service-qos-limits) are in place to ensure any one user can't monopolize all resources.
