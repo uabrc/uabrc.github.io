@@ -48,8 +48,8 @@ Compute nodes are divided into groups called partitions each with specific quali
 
 |  Use | Partition Names | Notes |
 |---|---|---|
-| GPU Processing | pascalnodes, pascalnodes-medium, <br>amperenodes, amperenodes-medium  | These are the only partitions with GPUs |
-| All Purpose | amd-hdr100 | Runs AMD CPUs compared to all other CPU partitions running Intel. <br>[Contact us](../index.md#how-to-contact-us) with issues running on this partition |
+| GPU Processing | pascalnodes, pascalnodes-medium, amperenodes, amperenodes-medium  | These are the only partitions with GPUs |
+| All Purpose | amd-hdr100 | Runs AMD CPUs compared to all other CPU partitions running Intel. [Contact us](../index.md#how-to-contact-us) with issues running on this partition |
 | Shorter time  | express, short, intel-dcb  |  |
 | Medium-long time  | medium, long  |  |
 | Very large memory | largemem, largemem-long |  |
