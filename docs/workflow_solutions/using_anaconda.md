@@ -249,6 +249,24 @@ Now we can be sure that the correct versions of the software will be installed o
     The example above is provided only for illustration purposes. The error has since been fixed, but the example above really happened and is helpful to explain version pinning.
 <!-- markdownlint-enable MD046 -->
 
+### Creating a Jupyter Notebook Job
+
+There are detailed steps here to guide your creation of a [Jupyter Notebook job](<https://docs.rc.uab.edu/cheaha/open_ondemand/ood_interactive/#jupyter-notebook>)
+
+### Creating and Activating an Environment
+
+Please follow the detailed guide on how to create and then activate a custom anaconda environment. [Creating an Environment](<https://docs.rc.uab.edu/workflow_solutions/using_anaconda/#create-an-environment>). [Activating an Environment](<https://docs.rc.uab.edu/workflow_solutions/using_anaconda/#activate-an-environment>)
+
+### Changing Environments within Jupyter Notebook
+
+When your Jupyter Notebook Job has been created on Cheaha, and you want to load an environment you have already created. Select from the dropdown menu "New". You can find this in the top right corner of the Jupyter Notebook landing page. Select the preferred existing environment you created. ![!Select Environment](images/selectenvsjupyter.png).
+
+On another note, you may want to replicate an environment setup to handle a project, research, or analysis but you are already working on a Jupyter Notebook file. You can select a different environment from the Jupyter Notebook file by;
+
+i. Selecting the Jupyter Notebook File from your landing page.
+
+ii. While in the file, look for the menu option "Kernel", select this. In the Kernel dropdown option, select "Change kernel". Then select your preferred kernel environment. Wait a few seconds for it to load, and you are ready to use your preferred environment. ![!Changing Environment](images/changingkernel.png).
+
 #### Good Software Development Practice
 
 Building on the example above, we can bring in good software development practices to ensure we don't lose track of how our environment is changing as we develop our software or our workflows. If you've ever lost a lot of hard work by accidentally deleting an important file, or forgetting what changes you've made that need to be rolled back, this section is for you.
