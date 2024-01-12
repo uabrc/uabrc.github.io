@@ -149,29 +149,20 @@ module load cuDNN/8.9.2.26-CUDA-12.2.0
 
 For information on which versions of CUDA to load for Tensorflow and PyTorch, please see [Tensorflow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
 
-<!-- markdownlint-disable MD046 -->
-!!! note
+### Common Challenges and Issues in the OOD Jupyter Notebook
 
-    If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
-<!-- markdownlint-enable MD046 -->
+1. Missing Conda Environment in Jupyter Notebook:
+    - If you are not able to see your environment, you may need to install the `ipykernel` package. It is required for Jupyter to recognize your environment. See [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#packages-for-jupyter) for more information.
 
-<!-- markdownlint-disable MD046 -->
-!!! important
+2. Python-related issue:
+    - Jupyter Notebook by default loads Anaconda3. Hence, Do not load any versions of `Anaconda3` module in the `Environment Setup` field, as it causes Python mismatch, and the errors are hard-to-diagnose.
+    - If you experience issues related to Python, use the command `which python` that helps to confirm whether the desired Python executable is being used.
+  
+3. Unexpected/Silent Job Failure:
+    - Having `conda/mamba activate` and `source activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
 
-    If you are not able to see your environment, you may need to install the `ipykernel` package. It is required for Jupyter to recognize your environment. See [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#packages-for-jupyter) for more information.
-<!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    Do not load `module load Anaconda3` in the `Environment Setup` field, as it is loaded automatically. Loading any versions of `Anaconda3` would affect the Python executable, which is used by default. These results in hard-to-diagnose errors in the OOD Jupyter notebook.
-<!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
-!!! warning
-
-    Having `conda/mamba activate` and `source activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
-<!-- markdownlint-enable MD046 -->
+4. Timeout in Loading Jupyter Notebook:
+    - If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
 
 ### Working with Anaconda Environments
 
