@@ -155,14 +155,19 @@ For information on which versions of CUDA to load for Tensorflow and PyTorch, pl
     - If you are not able to see your environment, you may need to install the `ipykernel` package. It is required for Jupyter to recognize your environment. See [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#packages-for-jupyter) for more information.
 
 2. Python-related issue:
-    - Jupyter Notebook by default loads Anaconda3. Hence, Do not load any versions of `Anaconda3` module in the `Environment Setup` field, as it causes Python mismatch, and the errors are hard-to-diagnose.
-    - If you experience issues related to Python, use the command `which python` that helps to confirm whether the desired Python executable is being used.
+    - Jupyter Notebook by default loads Anaconda3. Hence, Do not load any versions of `Anaconda3` or `mamba` module in the `Environment Setup` field, as it causes Python mismatch, and the errors are hard-to-diagnose.
+    - Having custom installs of Anaconda/Miniconda/Mambaforge/Minimamba can cause similar issue.
+    - If you experience issues related to Python, use the command `which python` that helps to confirm whether the desired Python executable is being used. Within the Conda environment, the command `which python` prints the path of the `python` executable, something like, `~/.conda/envs/remora/bin/python`. If not it is clear that an unexpected version of Python is being used.
+    - The command `conda init` or `mamba init` place a specific version of Python at the front of the `$PATH` variable in the `.bashrc` file.The `$PATH` variable is an environment variable that contains a list of directories where the operating system looks for executable files. When you type a command in the terminal, the system searches these directories to find the corresponding executable. As a result, when you attempt to execute a Python-related command, the system will find the first matching executable in the directories listed in the modified `$PATH`. If the first entry corresponds to the version of Python added by `mamba init` or `conda init`, that specific version will be used which lead to hard-to-diagnose errors.
   
 3. Unexpected/Silent Job Failure:
     - Having `conda/mamba activate` and `source activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
 
 4. Timeout in Loading Jupyter Notebook:
     - If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
+
+5. VNC Error When Launching OOD Jupyter Notebook:
+    - Using `conda init` and `mamba init` causes a block of code automatically created in the file  `.bashrc` located in your `$HOME` directory. They interfere with the function of various OOD applications and leads to VNC error. To resolve this issue, please follow the instrucitons in this [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
 
 ### Working with Anaconda Environments
 
@@ -177,12 +182,6 @@ The `Extra Jupyter Arguments` field allows you to pass additional arguments to t
 #### Submitting the Jupyter Notebook Job
 
 Submitting the job will bring you to the `My Interactive Jobs` window while the Jupyter job is initialized. Click `Connect to Jupyter` to open the Jupyter Home Page.
-
-<!-- markdownlint-disable MD046 -->
-!!! note
-
-    If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
-<!-- markdownlint-enable MD046 -->
 
 #### The Jupyter Server Home Page
 
