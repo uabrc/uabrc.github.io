@@ -29,6 +29,13 @@ Search for and install extensions using the extension menu (keyboard shortcut: +
     - For a single line, click anywhere on that line to place the caret, then press ++ctrl+slash++
     - For commenting a block of text, select the block, then press ++ctrl+slash++
 
+<!-- markdownlint-disable MD046 -->
+!!! Note
+
+For Mac Users VSCode hotkeys are ++command+shift++ rather than ++ctrl+shift++
+
+<!-- markdownlint-enable MD046 -->
+
 ### VSCode `settings.json` Additions
 
 To make the best use of formatting extensions for this project, please add the following block to your `settings.json` file. These changes can be made:
