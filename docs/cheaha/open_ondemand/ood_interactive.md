@@ -31,7 +31,7 @@ Click the `Launch Desktop in new tab` button to open your interactive VNC sessio
 <!-- markdownlint-disable MD046 -->
 !!! bug
 
-    If your job fails to launch, please see our [FAQ](../../help/faq.md) for possible solutions, or [contact us](../../index.md#contact-us).
+    If your job fails to launch, please see the section [Common Challenges](http://127.0.0.1:8000/cheaha/open_ondemand/ood_interactive/#common-challenges-and-issues-in-the-ood-jupyter-notebook), or our [FAQ](../../help/faq.md) for possible solutions, or [contact us](../../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
@@ -149,25 +149,31 @@ module load cuDNN/8.9.2.26-CUDA-12.2.0
 
 For information on which versions of CUDA to load for Tensorflow and PyTorch, please see [Tensorflow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
 
-### Common Challenges and Issues in the OOD Jupyter Notebook
+#### Common Challenges and Issues in the OOD Jupyter Notebook
 
-1. Missing Conda Environment in Jupyter Notebook:
-    - If you are not able to see your environment, you may need to install the `ipykernel` package. It is required for Jupyter to recognize your environment. See [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#packages-for-jupyter) for more information.
-
-2. Python-related issue:
-    - Jupyter Notebook by default loads Anaconda3. Hence, Do not load any versions of `Anaconda3` or `mamba` module in the `Environment Setup` field, as it causes Python mismatch, and the errors are hard-to-diagnose.
-    - Having custom installs of Anaconda/Miniconda/Mambaforge/Minimamba can cause similar issue.
-    - If you experience issues related to Python, use the command `which python` that helps to confirm whether the desired Python executable is being used. Within the Conda environment, the command `which python` prints the path of the `python` executable, something like, `~/.conda/envs/remora/bin/python`. If not it is clear that an unexpected version of Python is being used.
-    - The command `conda init` or `mamba init` place a specific version of Python at the front of the `$PATH` variable in the `.bashrc` file.The `$PATH` variable is an environment variable that contains a list of directories where the operating system looks for executable files. When you type a command in the terminal, the system searches these directories to find the corresponding executable. As a result, when you attempt to execute a Python-related command, the system will find the first matching executable in the directories listed in the modified `$PATH`. If the first entry corresponds to the version of Python added by `mamba init` or `conda init`, that specific version will be used which lead to hard-to-diagnose errors.
+1. Hard-to-diagnose Python-related issues:
+    - Jupyter Notebook by default loads `Anaconda3`. Hence do not load any versions of `Anaconda3` or `mamba` module in the `Environment Setup` field in the OOD Jupyter Notebook, as it causes Python mismatch, and the errors are hard-to-diagnose.
+    - Having custom installs of Anaconda/Miniconda/Mambaforge/Minimamba can cause the above similar issue.
+    - To identify a Python mismatch, use the commands `which python` and `python --version` to confirm the desired Python executable and version. Within the `conda` environment, `which python` prints the path of the Python executable (e.g., `~/.conda/envs/remora/bin/python`). If it doesn't match the expected version, an unexpected Python version may be in use.
+    - The commands `conda init` or `mamba init` add a specific version of Python to the front of the `$PATH` variable in the `.bashrc` file. The `$PATH` variable is an environment variable containing directories where the operating system looks for executable files. When you type a command in the terminal, the system searches these directories to find the corresponding executable. As a result, when you attempt to execute a Python-related command, the system will find the first matching executable in the directories listed in the modified `$PATH`. If the first entry corresponds to the version of Python added by `mamba init` or `conda init`, that specific version will be used which lead to Python mismatch and hard-to-diagnose errors.
   
-3. Unexpected/Silent Job Failure:
-    - Having `conda/mamba activate` and `source activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
+2. Unexpected/Silent Job Failure:
+    - Having `conda/mamba activate` and `source activate` statements in the OOD Jupyter Notebooks' `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
 
-4. Timeout in Loading Jupyter Notebook:
-    - If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
+3. Timeout in Loading Jupyter Notebook:
+    - If you encounter a "Failed to Connect" message while trying to open the job, and experience a timeout issue in loading the OOD Jupyter Notebook, it is recommended to close the tab and wait for a few minutes. Jupyter is still in the process of initializing and may take some time after the job initially starts running.
 
-5. VNC Error When Launching OOD Jupyter Notebook:
-    - Using `conda init` and `mamba init` causes a block of code automatically created in the file  `.bashrc` located in your `$HOME` directory. They interfere with the function of various OOD applications and leads to VNC error. To resolve this issue, please follow the instrucitons in this [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
+4. VNC Error When Launching OOD Jupyter Notebook:
+    - Using `conda init` and `mamba init` causes a block of code automatically inserted into the `.bashrc` file in your `$HOME` directory. This code block may interfere with the proper functioning of various OOD applications, resulting in a VNC error. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
+
+5. Issues related to `pip`:
+    - When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` within the same conda environment and use `pip` from that environment. If `pip` is used outside of Anaconda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments. In such cases, resolving errors may involve deleting the `~/.local` directory.
+  
+    - Here's an example of the correct procedure:
+         1. Load the `Anaconda3` module using `module load Anaconda3`.
+         2. Create or activate the desired Anaconda environment. Please refer to the [Anaconda documentation](https://docs.rc.uab.edu/workflow_solutions/using_anaconda/#create-an-environment).
+         3. Install `pip` within the `conda` environment using `conda install pip`.
+         4. Use `pip` from within this `conda` environment to install packages. Please refer to [Installing packages with `pip`](https://docs.rc.uab.edu/workflow_solutions/using_anaconda/#installing-packages-with-pip).
 
 ### Working with Anaconda Environments
 

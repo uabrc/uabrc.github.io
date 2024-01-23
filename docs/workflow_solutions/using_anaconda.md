@@ -115,6 +115,11 @@ Generally, if a package needs to be downloaded from a specific conda channel, it
 
 Some packages are not available through Anaconda. Often these packages are available via [PyPi](https://pypi.org/) and thus using the Python built-in Pip package manager. Pip may also be used to install locally-available packages as well.
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+    Make sure `pip` is installed within the `conda` environment and use it for installing packages within the `conda` environment to prevent [Pip related issues](https://docs.rc.uab.edu/cheaha/open_ondemand/ood_interactive/#common-challenges-and-issues-in-the-ood-jupyter-notebook).
+<!-- markdownlint-disable MD046 -->
+
 ```bash
 # install most recent version of a package
 pip install \<package\>
