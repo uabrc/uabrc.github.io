@@ -24,7 +24,7 @@ You can see the current working directory at the top (green) along with its file
 
 #### Uploading Data
 
-Data can be uploaded from your local machine using this interface. Use the `Upload` button in the OOD Command Menu at the top right to select files from your local browser. Additionally, you can drag and drop files from your machine into the File List window as well.
+Data can be uploaded from your local machine using this interface. Use the `Upload` button in the OOD Command Menu at the top right to select files from your local browser.
 
 This should be limited to small files only. For large files or datasets, please use [Globus](../../data_management/transfer/globus.md) instead.
 
