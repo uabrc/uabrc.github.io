@@ -1,6 +1,6 @@
 # Open OnDemand
 
-Open OnDemand is web portal to access Cheaha. On it, you can submit interactive jobs in easy to use forms. These jobs include a generic desktop as well as specific apps such as RStudio or MATLAB. There is also access to a basic file manager for viewing and moving files.
+Open OnDemand (OOD) is web portal to access Cheaha. On it, you can submit interactive jobs in easy to use forms. These jobs include a generic desktop as well as specific apps such as RStudio or MATLAB. There is also access to a basic file manager for viewing and moving files.
 
 The web portal can be accessed at [https://rc.uab.edu](https://rc.uab.edu) and is available both on and off campus.
 
@@ -15,3 +15,11 @@ To start a generic desktop job where any piece of software can run, do the follo
       2. See our [partition table](https://docs.rc.uab.edu/cheaha/hardware/#summary) for to determine which partition fits your job. The requested amount of time should not exceed the partition limit.
 4. Click Launch at the bottom. This will take you to the My Interactive Sessions page and a job card will be created for your interactive job.
 5. When the job card is created, the job is in queue. It will remain gray while in queue but will turn green when the job has been allocated resources and is running. Click the `Launch Desktop in new tab` button to open the interactive job.
+
+Every interactive job requested in OOD is already set on a compute node. This bypasses the login node and is the preferred method for running interactive jobs on Cheaha.
+
+### Choosing Resources
+
+Resources requested for an interactive job are shared amonst all processes run in that job. This means if you are planning on running multiple analyses in the same interactive session at the same time, you will need to request adequate resources for all processes.
+
+Be sure to select a reasonable partition for your job. For a quick breakdown of partition use cases see [Cheaha's Getting Started](../getting_started.md#partitions). For a more complete overview of the partitions, see our [hardware page](../hardware.md#cheaha-hpc-cluster).
