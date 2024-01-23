@@ -20,6 +20,20 @@ Every interactive job requested in OOD is already set on a compute node. This by
 
 ### Choosing Resources
 
-Resources requested for an interactive job are shared amonst all processes run in that job. This means if you are planning on running multiple analyses in the same interactive session at the same time, you will need to request adequate resources for all processes.
+Resources requested for an interactive job are shared amongst all processes run in that job. This means if you are planning on running multiple analyses in the same interactive session at the same time, you will need to request adequate resources for all processes.
 
 Be sure to select a reasonable partition for your job. For a quick breakdown of partition use cases see [Cheaha's Getting Started](../getting_started.md#partitions). For a more complete overview of the partitions, see our [hardware page](../hardware.md#cheaha-hpc-cluster).
+
+## Debugging OOD Job Failures
+
+On occasion, interactive jobs created in OOD will crash on startup and cause the job card to disappear. Most of these failures are caused by improper environment setup prior to job creation. If you experiencing OOD job failures, retrieve the OOD job info using the following steps:
+
+1. Create a new job with the same setup as the job that failed.
+2. When the job is in queue, click the link in the `Session ID` field in the job card before the job fails (see the image below for an example). This will open a file browser in a new tab.
+
+    ![!Example Session ID Link](images/example_session_id_link.png)
+
+3. Wait for the job to fail. Afterwards, refresh the file browser, select all of the files (do not include the `desktops` or `..` folders), and click `Download`.
+4. Take all of the files that were downloaded, put them in a new folder, and zip the folder.
+
+[Submit a ticket](../../index.md#how-to-contact-us) to us explaining the issue with the zip folder created in Step 4 attached to the email, and we will be happy to assist. If you would like to inspect the log yourself for debugging, the `output.log` typically will contain the relevant error messages.
