@@ -42,7 +42,7 @@ The details concerning data transfer from core instruments and analysis machines
     Do not set up transfers from machines that core customers will have access to. This creates opportunities for researchers to access data they are not authorized for. Data collected by the core should only be accessible by core personnel until those data are distributed to their respective labs.
 <!-- markdownlint-enable MD046 -->
 
-For situations where data either needs to be transferred multiple machines to LTS. please contact [Research Computing](../../index.md#how-to-contact-us) for a consultation.
+For situations where data either needs to be transferred from multiple machines to LTS. please contact [Research Computing](../../index.md#how-to-contact-us) for a consultation.
 
 ## Distributing to Data Owners
 
