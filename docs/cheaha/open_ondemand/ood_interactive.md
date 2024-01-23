@@ -31,7 +31,7 @@ Click the `Launch Desktop in new tab` button to open your interactive VNC sessio
 <!-- markdownlint-disable MD046 -->
 !!! bug
 
-    If your job fails to launch, please see the section [Common Challenges](http://127.0.0.1:8000/cheaha/open_ondemand/ood_interactive/#common-challenges-and-issues-in-the-ood-jupyter-notebook), or our [FAQ](../../help/faq.md) for possible solutions, or [contact us](../../index.md#contact-us).
+    If your job fails to launch, please see the section [Common Challenges](https://docs.rc.uab.edu/cheaha/open_ondemand/ood_interactive/#common-challenges-and-issues-in-the-ood-jupyter-notebook), or our [FAQ](../../help/faq.md) for possible solutions, or [contact us](../../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
