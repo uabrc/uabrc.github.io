@@ -1,5 +1,9 @@
 # LTS FAQ
 
+## What Are Valid Bucket Names In LTS?
+
+Bucket names must be comprised only of lowercase letters, numbers, and hyphens. No capital letters or underscores are allowed. Trying to create a bucket with the disallowed characters will return an error.
+
 ## Can I Share My Account Access Keys With Other People?
 
 You should never share access keys with anyone. These should be treated similarly to your BlazerID and password. Sharing keys creates a point of vulnerability and if they fall into a nefarious actor's hands, all buckets that account owns and the data in them can be deleted.
