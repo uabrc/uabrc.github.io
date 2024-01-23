@@ -1,6 +1,6 @@
 # Box Storage
 
-To find information on Box and how to log in to your Box account, please find the details [here](<hhttps://www.uab.edu/it/home/tech-solutions/file-storage/box>).
+To find information on Box and how to log in to your Box account, please find the details [here](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
 
 ## Finding your Box Storage Total
 
