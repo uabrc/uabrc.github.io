@@ -113,10 +113,7 @@ nav:
           - Self-Installed Software: cheaha/software/software.md
       - Cheaha Web Portal: 
           - cheaha/open_ondemand/index.md
-          - Homepage: cheaha/open_ondemand/ood_main.md
-          - File Browser: cheaha/open_ondemand/ood_files.md
-          - Interactive Apps: cheaha/open_ondemand/ood_interactive.md
-          - Job Composer: cheaha/open_ondemand/ood_jobs.md
+          - Web Portal Layout: cheaha/open_ondemand/ood_layout.md
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md
