@@ -46,7 +46,11 @@ Selecting the `Show Owner/Mode` option will show the permissions for the files i
 
 ## Interactive Apps
 
-There are two tabs used to interact with applications in OOD, the Interactive Apps dropdown, used to select resources and start jobs, and the My Interactive Sessions tab, used to view currently running interactive apps. The Interactive Apps dropdown has a list of specific software setup to run on Cheaha that you can interact with through a browser window such as RStudio, MATLAB, and Jupyter. There is also an HPC Desktop app that provides a general VNC desktop to run all available software on Cheaha. See the [quickstart](index.md#quickstart) for how to create an example HPC Desktop job. Below, you can see a general form for selecting job resources.
+There are two tabs used to interact with applications in OOD, the Interactive Apps dropdown, used to select resources and start jobs, and the My Interactive Sessions tab, used to view currently running interactive apps. 
+
+### Creating an Interactive Job
+
+The Interactive Apps dropdown has a list of specific software setup to run on Cheaha that you can interact with through a browser window such as RStudio, MATLAB, and Jupyter. There is also an HPC Desktop app that provides a general VNC desktop to run all available software on Cheaha. See the [quickstart](index.md#quickstart) for how to create an example HPC Desktop job. Below, you can see a general form for selecting job resources.
 
 ![!A general form for selecting interactive job resources](images/ood_general_resources_form.png)
 
@@ -58,9 +62,21 @@ The interactive apps have the following fields to customize the resources for yo
 4. Numer of CPUs: Total number of CPUs to request
 5. Memory Per CPU (GB): GB of memory multiplied by the requested number of CPUs.
 
-Every interactive app has resources only allocated on a single node, so make sure the amount of memory you request is less than or equal to the max amount per node for the partition you choose. You can find a table with the memory values per node in a partition in our [hardware page](../hardware.md#cheaha-hpc-cluster)
+<!-- markdownlint-disable MD046 -->
+!!! note
 
-### Environment Setup Window
+    The "number of GPUs" field is ignored if a partition is selected that has no GPUs.
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! tip
+
+    You can decrease wait time in the queue by choosing resources carefully. The closer your request is to actual usage, the more optimal your wait time will be. Please see our section on [Job Efficiency](../job_efficiency.md) for more information.
+<!-- markdownlint-enable MD046 -->
+
+Every interactive app has resources only allocated on a single node, and resources are shared among all processes running in the app. Make sure the amount of memory you request is less than or equal to the max amount per node for the partition you choose. We have a table with [memory available per node](../hardware.md#cheaha-hpc-cluster) for each partition.
+
+#### Environment Setup Window
 
 In addition to requesting general resources, for some apps you will have the option to add commands to be run during job startup in an Environment Setup Window. See below for an example showing how to load CUDA into a Jupyter job so it can use a GPU.
 
@@ -68,7 +84,25 @@ In addition to requesting general resources, for some apps you will have the opt
 
 For jobs such as RStudio and Jupyter, some modules like CUDA need to be loaded beforehand so the application has access to it. This can also include loading compiler modules such as CMake and GCC for compiling package installations or editing your `$PATH` specifically for the interactive app without needing to edit your `.bashrc`. See the software specific pages for more examples on how to use the Environment Setup.
 
-### Debugging OOD Job Failures
+### My Interactive Sessions
+
+The My Interactive Sessions page lists the available apps and your current interactive sessions. If you are logged out, disconnected, or lose track of an interactive application (because of a closed tab or computer shutdown) you can reconnect to running applications on this page. The My Interactive Sessions page looks like:
+
+![!List of interactive sessions shown as job cards.](./images/ood_interactive_sessions.png)
+
+For each job running via Open OnDemand, there will be a card listed on this page. Each card has basic information about the number of cores, node assignment, and time remaining for the job. Also shown are the Job ID in the top-left part of the job card, and a Session ID link near the center of the card. The Job ID and Session ID are important for diagnosing issues you may encounter on Cheaha while using Open OnDemand.
+
+<!-- markdownlint-disable MD046 -->
+!!! bug
+
+    If your job fails to launch, see [debugging OOD jobs](#debugging-ood-job-failures) for instructions on how to access OOD job data and submit a support ticket.
+<!-- markdownlint-enable MD046 -->
+
+Click the `Launch Desktop in new tab` button to open your interactive VNC session. You may have to wait for the card to change from blue to green to launch the job. You can also click the button in the Host field to open a terminal directly. This terminal is opened on the compute node and so can run any commands you need.
+
+These interactive jobs can be stopped early by clicking `Delete` on the right side of the job card.
+
+#### Debugging OOD Job Failures
 
 On occasion, interactive jobs created in OOD will crash on startup and cause the job card to disappear. Most of these failures are caused by improper environment setup prior to job creation. If you experiencing OOD job failures, retrieve the OOD job info using the following steps:
 
