@@ -20,9 +20,7 @@ Every interactive job requested in OOD is already set on a compute node. This by
 
 ### Choosing Resources
 
-Resources requested for an interactive job are shared amongst all processes run in that job. This means if you are planning on running multiple analyses in the same interactive session at the same time, you will need to request adequate resources for all processes.
-
-Be sure to select a reasonable partition for your job. For a quick breakdown of partition use cases see [Cheaha's Getting Started](../getting_started.md#partitions). For a more complete overview of the partitions, see our [hardware page](../hardware.md#cheaha-hpc-cluster).
+For a more complete description of how to select resources, go [here](ood_layout.md#creating-an-interactive-job)
 
 ## Debugging OOD Job Failures
 
