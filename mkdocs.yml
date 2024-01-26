@@ -98,7 +98,7 @@ nav:
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
       - Code Storage: data_management/code_storage.md
-      - Alternate Storage: data_management/alternative_storage.md
+      - Alternate Storage: data_management/storage_alternatives.md
   - Workflow Solutions:
       - Using the Shell: workflow_solutions/shell.md
       - Using Anaconda: workflow_solutions/using_anaconda.md
