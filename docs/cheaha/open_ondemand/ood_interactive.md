@@ -90,8 +90,6 @@ Some software can be run standalone, and does not require an [HPC Desktop](#hpc-
     Versions shown in the OOD form may not line up with versions available in modules. If you need a version not available in OOD, please feel free to [send in a ticket](../../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
 
-
-
 ### Jupyter Notebook
 
 Jupyter Notebooks are available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
@@ -315,7 +313,6 @@ You may optionally verify that Python works correctly by entering `py.list(["hel
 #### Using a GPU with MATLAB
 
 Please see the [MATLAB Section on our GPU Page](../slurm/gpu.md#matlab).
-
 
 ## My Interactive Sessions
 
