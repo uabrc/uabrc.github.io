@@ -27,5 +27,5 @@ jobs:
 
       - name: Build pages
         run: |
-          micromamba activate build
+          conda activate build
           mkdocs gh-deploy --force --strict
