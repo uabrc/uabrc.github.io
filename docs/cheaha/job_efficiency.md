@@ -73,7 +73,7 @@ seff <jobid>
 
 The output will look like:
 
-![!SLURM Job Efficiency](./images/seff_output.png)
+![!Slurm Job Efficiency](./images/seff_output.png)
 
 The job had poor CPU efficiency, requesting 2 CPUs which were only busy for 30% of runtime. Requesting only a single core may have made more sense here. The job also had poor memory efficiency, using less than 1 GB total memory of the requested 16 GB (5.73%). For subsequent jobs using a similar analysis and dataset size, decreasing the requested memory to about 1200 MB and a single CPU would be more efficient, and get the job queued faster.
 

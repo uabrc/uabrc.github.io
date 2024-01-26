@@ -59,10 +59,19 @@ Please provide the following information. Missing information can delay allocati
 - **Internal UAB Collaborator Organizations:** The name(s) of any other UAB organizations participating in the Shared Storage.
 - **External Collaborator Organizations:** The name(s) of any external organizations participating in the Shared Storage.
 - **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
-- **Name of Shared Storage:** Please give us a short, memorable name that is specific to your organization but general to your purpose.
+- **Name of Shared Storage:** Please give us a generic name specific to your project/lab.
+
     - For Project Storage, this name will be used in the `/data/project/<name>` path on Cheaha.
-    - For Labs we recommend the format `<PI_blazerid>-lab`.
-    - For Cores we recommend a shortened version of the Core name.
+    - For Labs we recommend the format `<PI_blazerid>_lab`. Example: PI_blazerid_lab, PI_name_lab, PI_blazerid_group
+    - For Cores we recommend a shortened version of the Core name. Example: core_facility_space
+
+    <!-- markdownlint-disable MD046 -->
+    !!! Tip
+
+        - Keep the name short, memorable, and relevant.
+        - Use `underscores (_)` or `hyphen (-)` to separate words.
+        - To serve future projects, consider names that are generic.
+    <!-- markdownlint-disable MD046 -->
 
 If some members have not created their accounts at the time of the request, we will proceed with allocating the Shared Storage. Additional members may be added at a later time in a new service request.
 
@@ -73,6 +82,41 @@ To request changes in Shared Storage membership, please contact [Support](../hel
 - We must have written approval from an owner to make membership changes.
 - The exact name of the Shared Storage. If it is Project Storage, the path to the storage location, i.e., `/data/project/...`.
 - Please give BlazerIDs of members to add or remove.
+
+### How Can I Get A Larger `/data/project/` (GPFS) Allocation?
+
+At this time, due to constraints on total GPFS storage, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [User Scratch](#user-scratch) for temporary storage of up to 100 TB of data for use during analysis.
+
+If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md).
+
+### How Can I Get A Larger LTS Lab Allocation?
+
+At this time, due to constraints on total [LTS](./lts/index.md) storage, increasing an LTS allocation requires purchasing additional hardware. Below are some facts about purchasing additional storage nodes.
+
+- Allocation increases occur by purchasing whole storage nodes.
+- Each node has 133 TB of usable storage.
+- Nodes are purchased with researcher funds at vendor cost.
+- No markups are added to the cost of nodes.
+- Purchased nodes are racked with existing hardware in our data centers.
+- Purchased nodes are maintained by Research Computing with the same level of service as other hardware.
+- Purchased nodes are supported for 5 years from date of purchase, the industry standard for commercial datacenter hardware.
+- Once an order is placed with the vendor, we can provide additional storage immediately _if_ free storage is available, regardless of lead-time.
+
+If you have additional questions _or_ wish to discuss further, please [Contact Support](../help/support.md).
+
+### If I Can't Get a Larger Allocation, What Alternatives Are There?
+
+One alternative we recommend is breaking your dataset into batches. A generic, template workflow might be something like below.
+
+- Copy a batch of data from LTS, or an internet source, to User Scratch.
+- Perform analyses on copied data in User Scratch.
+- Store intermediate or final results in `/data/project/` or LTS.
+- Delete copied data from User Scratch.
+- Start again with the next batch.
+
+When all batches have been processed, begin processing or aggregating the resulting data.
+
+If you wish to discuss other alternatives tailored to your workflow, please [Contact Support](../help/support.md).
 
 ### Project Directory Permissions
 
@@ -179,8 +223,17 @@ Some software defaults to using `tmp` without any warning or documentation, espe
 
 The following software are known to use `tmp` by default, and can be worked around by using the listed flags. See [Local Scratch](#local-scratch) for more information about creating a local temporary directory.
 
-- Java: `java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID`
-- UMI Tools: `umi_tools * --temp-dir=/local/$SLURM_JOB_ID`
+- [Java](https://docs.oracle.com/cd/E63231_01/doc/BIAIN/GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1.htm#BIAIN-GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1): `java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID`
+- [UMI Tools](https://umi-tools.readthedocs.io/en/latest/common_options.html): `umi_tools * --temp-dir=/local/$SLURM_JOB_ID`
+- [Samtools Sort](http://www.htslib.org/doc/samtools-sort.html): `samtools sort * -T /local/$SLURM_JOB_ID`
+- [GATK Tool](https://gatk.broadinstitute.org/hc/en-us/community/posts/360072269012--tmp-dir-option-user-error): `gatk --java-options * --tmp-dir /local/$SLURM_JOB_ID`
+- [Parabricks](https://docs.nvidia.com/clara/parabricks/4.0.1/gettingstarted.html): `pbrun * --tmp-dir=/local/$SLURM_JOB_ID`
+- [FastQC](https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help): `fastqc * -d /local/$SLURM_JOB_ID`
+- [MACS2](https://manpages.org/macs2_callpeak): `macs2 callpeak * --tempdir /local/$SLURM_JOB_ID`
+
+Software known to use `tmp` by default with no know workaround.
+
+- [Keras](https://github.com/tensorflow/tensorflow/blob/5bb81b7b0dd140a4304b92530614502c0c61a150/tensorflow/python/keras/utils/data_utils.py#L205) has `/tmp/.keras` hardcoded as a fallback cache directory if `~/.keras` is inaccessible. See [here](https://github.com/tensorflow/tensorflow/issues/38831) for a discussion of the issue.
 
 ## How much space do I have left?
 

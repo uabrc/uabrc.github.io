@@ -116,9 +116,9 @@ A complete list of flags is available at [Official Documentation](https://slurm.
 
 A complete list of fields is available at the [Official Documentation](https://slurm.schedmd.com/sacct.html#SECTION_Job-Accounting-Fields).
 
-## SLURM Common Reference
+## Slurm Common Reference
 
-### SLURM JobID Formatting
+### Slurm JobID Formatting
 
 JobID numbers are assigned automatically by the scheduler in the order submissions are received. All jobs have a single, unique JobID number associated with them. Some features will cause JobID numbers to be reported differently than their actual value.
 
@@ -126,9 +126,9 @@ JobID numbers are assigned automatically by the scheduler in the order submissio
 - For array jobs submitted with `sbatch`, the array is assigned a master ID like `12345678`, and each task is reported as `<master-job-id>_<task-id>`. An example might be `12345678_987`. Each task still has a unique JobID number.
 - For job steps submitted with `srun` inside of a job context, the JobID is reported as `<job-id>.<task-name>`. All jobs submitted generate a `.batch` step and a `.extern` step. An example might be `12345678.batch`.
 
-### SLURM Time Formatting
+### Slurm Time Formatting
 
-SLURM formats time in two different ways: (1) time points and (2) durations. Time points are used whenever a single point in time is needed, such as the start or end of a job. Durations are needed for job requests and reported for elapsed times.
+Slurm formats time in two different ways: (1) time points and (2) durations. Time points are used whenever a single point in time is needed, such as the start or end of a job. Durations are needed for job requests and reported for elapsed times.
 
 Units are given a shorthand designations:
 
@@ -165,9 +165,9 @@ Durations are reported like the following.
 [DD-[HH:]]MM:SS
 ```
 
-### SLURM States
+### Slurm States
 
-Job states report on where the job is in the overall SLURM process. If all goes well, you will see jobs move through the following states:
+Job states report on where the job is in the overall Slurm process. If all goes well, you will see jobs move through the following states:
 
 1. `PENDING`
 2. `RUNNING`
@@ -179,7 +179,7 @@ Job states report on where the job is in the overall SLURM process. If all goes 
 
 Other states are possible. A complete list of job states is available at the [Official Documentation](https://slurm.schedmd.com/sacct.html#SECTION_JOB-STATE-CODES).
 
-### SLURM Units
+### Slurm Units
 
 Slurm uses flexible units for memory to keep reports compact. It always prefers the shortest possible representation, and will choose the largest units by default. Other units may be used, and there are flags to allow reporting in uniform units.
 
@@ -196,7 +196,7 @@ $$
 
 ### TRES Explained
 
-The abbreviation `TRES` stands for "trackable resources". Any resource made available by SLURM that is trackable is recorded in the SLURM database and can be recovered using [sacct](#reviewing-past-jobs-with-sacct). The [fields](#sacct-fields) `reqtres` and `alloctres` can be used to review CPUs, memory, nodes and GPUs. The data is stored as a comma-separated list of `<resource>=<quantity>` pairs, and all values are totals across the entire job, not per node or per task. An example might look like:
+The abbreviation `TRES` stands for "trackable resources". Any resource made available by Slurm that is trackable is recorded in the Slurm database and can be recovered using [sacct](#reviewing-past-jobs-with-sacct). The [fields](#sacct-fields) `reqtres` and `alloctres` can be used to review CPUs, memory, nodes and GPUs. The data is stored as a comma-separated list of `<resource>=<quantity>` pairs, and all values are totals across the entire job, not per node or per task. An example might look like:
 
 ```text
 billing=8,cpu=8,gres/gpu=2,mem=64G,node=1
@@ -204,13 +204,13 @@ billing=8,cpu=8,gres/gpu=2,mem=64G,node=1
 
 ### RSS Explained
 
-The abbreviation `RSS` stands for "resident set size", and is related to memory usage by jobs in SLURM. Memory usage is challenging to record accurately. Recording memory means a request must be made to the operating system to obtain memory usage at a single point in time, which uses computational resources. There is a balance made between resolution in time, and computational overhead.
+The abbreviation `RSS` stands for "resident set size", and is related to memory usage by jobs in Slurm. Memory usage is challenging to record accurately. Recording memory means a request must be made to the operating system to obtain memory usage at a single point in time, which uses computational resources. There is a balance made between resolution in time, and computational overhead.
 
 The difficulty with recording memory usage contributes to difficulty diagnosing root causes of out of memory errors, bus errors, and segmentation faults.
 
-RSS is recorded by slurm in the [sacct](#reviewing-past-jobs-with-sacct) [fields](#sacct-fields) `averss` and `maxrss`. These values are both reported in bytes, rather than the usual [compact memory units](#slurm-units).
+RSS is recorded by Slurm in the [sacct](#reviewing-past-jobs-with-sacct) [fields](#sacct-fields) `averss` and `maxrss`. These values are both reported in bytes, rather than the usual [compact memory units](#slurm-units).
 
-### SLURM Resource Calculations
+### Slurm Resource Calculations
 
 #### Calculating CPUs
 
