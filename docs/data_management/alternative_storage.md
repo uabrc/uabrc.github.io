@@ -1,8 +1,14 @@
-# Box Storage
+# Alternative Storage Options
+
+UAB Offers alternative storage options to faculty, staff, and students. You can find details [here](https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options)
+
+Please note, these services are maintained by UAB IT, and Ask IT manages usage and access to these services.
+
+## Box Storage
 
 To find information on Box and how to log in to your Box account, please find the details [here](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
 
-## Finding your Box Storage Total
+### Finding your Box Storage Total
 
 The following steps will guide you on how to access your Box Storage Total, how much storage you have used, and how much storage you have left.
 
