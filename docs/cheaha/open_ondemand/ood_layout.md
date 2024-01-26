@@ -46,7 +46,7 @@ Selecting the `Show Owner/Mode` option will show the permissions for the files i
 
 ## Interactive Apps
 
-There are two tabs used to interact with applications in OOD, the Interactive Apps dropdown, used to select resources and start jobs, and the My Interactive Sessions tab, used to view currently running interactive apps. 
+There are two tabs used to interact with applications in OOD, the Interactive Apps dropdown, used to select resources and start jobs, and the My Interactive Sessions tab, used to view currently running interactive apps.
 
 ### Creating an Interactive Job
 
