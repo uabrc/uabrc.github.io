@@ -117,7 +117,7 @@ Some packages are not available through Anaconda. Often these packages are avail
 
 <!-- markdownlint-disable MD046 -->
 !!! important
-    Make sure `pip` is installed within the `conda` environment and use it for installing packages within the `conda` environment to prevent [Pip related issues](https://docs.rc.uab.edu/cheaha/open_ondemand/ood_interactive/#common-challenges-and-issues-in-the-ood-jupyter-notebook).
+    Make sure `pip` is installed within the `conda` environment and use it for installing packages within the `conda` environment to prevent [Pip related issues](../../cheaha/open_ondemand/ood_interactive/#common-challenges-and-issues-in-the-ood-jupyter-notebook).
 <!-- markdownlint-disable MD046 -->
 
 ```bash

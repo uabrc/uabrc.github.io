@@ -31,7 +31,7 @@ Click the `Launch Desktop in new tab` button to open your interactive VNC sessio
 <!-- markdownlint-disable MD046 -->
 !!! bug
 
-    If your job fails to launch, please see the section [Common Challenges](https://docs.rc.uab.edu/cheaha/open_ondemand/ood_interactive/#common-challenges-and-issues-in-the-ood-jupyter-notebook), or our [FAQ](../../help/faq.md) for possible solutions, or [contact us](../../index.md#contact-us).
+    If your job fails to launch, please see the section [Common Challenges](../../cheaha/open_ondemand/ood_interactive.md#common-challenges-and-issues-in-the-ood-jupyter-notebook), or our [FAQ](../../help/faq.md) for possible solutions, or [contact us](../../index.md#contact-us).
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
@@ -171,9 +171,9 @@ For information on which versions of CUDA to load for Tensorflow and PyTorch, pl
   
     - Here's an example of the correct procedure:
          1. Load the `Anaconda3` module using `module load Anaconda3`.
-         2. Create or activate the desired Anaconda environment. Please refer to the [Anaconda documentation](https://docs.rc.uab.edu/workflow_solutions/using_anaconda/#create-an-environment).
+         2. Create or activate the desired Anaconda environment. Please refer to the [Anaconda documentation](../../workflow_solutions/using_anaconda.md#create-an-environment)
          3. Install `pip` within the `conda` environment using `conda install pip`.
-         4. Use `pip` from within this `conda` environment to install packages. Please refer to [Installing packages with `pip`](https://docs.rc.uab.edu/workflow_solutions/using_anaconda/#installing-packages-with-pip).
+         4. Use `pip` from within this `conda` environment to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_anaconda.md#installing-packages-with-pip)
 
 ### Working with Anaconda Environments
 
