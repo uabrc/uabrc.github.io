@@ -30,6 +30,6 @@ dependencies:
   - yaml=0.2.5
   - pip:
       - mkdocs-glightbox==0.3.7
-      - mkdocs-git-revision-date-localized-plugin==1.0.1
-      - mkdocs-redirects==1.1.0
-      - mkdocs-table-reader-plugin==1.1.1
+      - mkdocs-git-revision-date-localized-plugin==1.2.2
+      - mkdocs-redirects==1.2.1
+      - mkdocs-table-reader-plugin==2.0.3
