@@ -29,6 +29,7 @@ markdown_extensions:
   - lightgallery:
       show_description_in_lightgallery: true
       show_description_as_inline_caption: false
+  - md_in_html
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
@@ -89,7 +90,9 @@ nav:
       - Long Term Storage:
           - data_management/lts/index.md
           - Interfacing with LTS: data_management/lts/interfaces.md
-          - Sharing: data_management/lts/policies.md
+          - Bucket Permissions: data_management/lts/policies.md
+          - UAB Core Accounts: data_management/lts/lts_cores.md
+          - FAQ: data_management/lts/lts_faq.md
       - Transfer:
           - Globus: data_management/transfer/globus.md
           - RClone: data_management/transfer/rclone.md
