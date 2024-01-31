@@ -137,7 +137,13 @@ You may use the [Anaconda page](https://anaconda.org/) to search for packages on
 
 #### Packages for Jupyter
 
-If you are using Anaconda with Jupyter, you will need to be sure to install the `ipykernel` package for your environment to be recognized by the [Jupyter Server](../cheaha/open_ondemand/ood_interactive.md#the-jupyter-server-home-page). If you are using Jupyter in [Open OnDemand](../cheaha/open_ondemand/ood_interactive.md#jupyter-notebook) then you do not need to install the `jupyter` package.
+If you are using Anaconda with Jupyter, you will need to be sure to install the `ipykernel` package for your environment to be recognized by the [Jupyter Server](../cheaha/open_ondemand/ood_interactive.md#the-jupyter-server-home-page). If you are using Jupyter in [Open OnDemand](../cheaha/open_ondemand/ood_interactive.md#jupyter-notebook) then you do not need to install the `jupyter` package. To install ipykernel, activate your environment and use the following command:
+
+``` shell
+conda install ipykernel
+```
+
+Each different environment you want to use in Jupyter needs to have `ipykernel` installed.
 
 ### Deactivating an Environment
 
