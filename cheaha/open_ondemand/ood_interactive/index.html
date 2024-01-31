@@ -1070,6 +1070,19 @@
     Jupyter Notebook
   </a>
   
+    <nav class="md-nav" aria-label="Jupyter Notebook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-challenges-and-issues-in-the-ood-jupyter-notebook" class="md-nav__link">
+    Common Challenges and Issues in the OOD Jupyter Notebook
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2094,6 +2107,19 @@
     Jupyter Notebook
   </a>
   
+    <nav class="md-nav" aria-label="Jupyter Notebook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-challenges-and-issues-in-the-ood-jupyter-notebook" class="md-nav__link">
+    Common Challenges and Issues in the OOD Jupyter Notebook
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2261,6 +2287,13 @@
 <p>It is possible to remotely access Cheaha using an <a href="#hpc-desktop">HPC Desktop Job</a> as a host for Visual Studio Code (VSCode), with the "Remote - Tunnels" extension. You can read more about the extension and process at <a href="https://code.visualstudio.com/docs/remote/tunnels">https://code.visualstudio.com/docs/remote/tunnels</a>.</p>
 <p>To use this method you will need either a GitHub account or Microsoft account. Microsoft accounts can be obtained using your SSO credentials through Microsoft.</p>
 <!-- markdownlint-disable MD046 -->
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>If your job fails to launch, please see the section <a href="./#common-challenges-and-issues-in-the-ood-jupyter-notebook">Common Challenges</a>, or our <a href="../../../help/faq/">FAQ</a> for possible solutions, or <a href="../../..#contact-us">contact us</a>.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>Do <em>NOT</em> use the remote tunnel extension if you intend to view or work with <a href="https://www.uab.edu/it/home/policies/data-classification/classification-overview">Restricted/PHI Data</a> while using VSCode.</p>
@@ -2326,34 +2359,63 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>module load cuDNN/8.9.2.26-CUDA-12.2.0
 </code></pre></div>
 <p>For information on which versions of CUDA to load for Tensorflow and PyTorch, please see <a href="../../slurm/gpu/#tensorflow-compatibility">Tensorflow Compatibility</a> and <a href="../../slurm/gpu/#pytorch-compatibility">PyTorch Compatibility</a>.</p>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>If you are not able to see your environment, you may need to install the <code>ipykernel</code> package. It is required for Jupyter to recognize your environment. See <a href="../../../workflow_solutions/using_anaconda/#packages-for-jupyter">Packages for Jupyter</a> for more information.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Do not load <code>module load Anaconda3</code> in the <code>Environment Setup</code> field, as it is loaded automatically. Loading any versions of <code>Anaconda3</code> would affect the Python executable, which is used by default. These results in hard-to-diagnose errors in the OOD Jupyter notebook.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Having <code>conda/mamba activate</code> and <code>source activate</code> statements in the <code>Environment Setup</code> field can cause unexpected and silent job failure. Avoid using <code>conda activate</code> in the <code>Environment Setup</code> field.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
+<h4 id="common-challenges-and-issues-in-the-ood-jupyter-notebook">Common Challenges and Issues in the OOD Jupyter Notebook<a class="headerlink" href="#common-challenges-and-issues-in-the-ood-jupyter-notebook" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Hard-to-diagnose Python-related issues:</p>
+<ul>
+<li>Jupyter Notebook by default loads <code>Anaconda3</code>. Hence do not load any versions of <code>Anaconda3</code> or <code>mamba</code> module in the <code>Environment Setup</code> field in the OOD Jupyter Notebook, as it causes Python mismatch, and the errors are hard-to-diagnose.</li>
+<li>Having custom installs of Anaconda/Miniconda/Mambaforge/Minimamba can cause the above similar issue.</li>
+<li>To identify a Python mismatch, use the commands <code>which python</code> and <code>python --version</code> to confirm the desired Python executable and version. Within the <code>conda</code> environment, <code>which python</code> prints the path of the Python executable (e.g., <code>~/.conda/envs/remora/bin/python</code>). If it doesn't match the expected version, an unexpected Python version may be in use.</li>
+<li>The commands <code>conda init</code> or <code>mamba init</code> add a specific version of Python to the front of the <code>$PATH</code> variable in the <code>.bashrc</code> file. The <code>$PATH</code> variable is an environment variable containing directories where the operating system looks for executable files. When you type a command in the terminal, the system searches these directories to find the corresponding executable. As a result, when you attempt to execute a Python-related command, the system will find the first matching executable in the directories listed in the modified <code>$PATH</code>. If the first entry corresponds to the version of Python added by <code>mamba init</code> or <code>conda init</code>, that specific version will be used which lead to Python mismatch and hard-to-diagnose errors.</li>
+</ul>
+</li>
+<li>
+<p>Unexpected/Silent Job Failure:</p>
+<ul>
+<li>Having <code>conda/mamba activate</code> and <code>source activate</code> statements in the OOD Jupyter Notebooks' <code>Environment Setup</code> field can cause unexpected and silent job failure. Avoid using <code>conda activate</code> in the <code>Environment Setup</code> field.</li>
+</ul>
+</li>
+<li>
+<p>Timeout in Loading Jupyter Notebook:</p>
+<ul>
+<li>If you encounter a "Failed to Connect" message while trying to open the job, and experience a timeout issue in loading the OOD Jupyter Notebook, it is recommended to close the tab and wait for a few minutes. Jupyter is still in the process of initializing and may take some time after the job initially starts running.</li>
+</ul>
+</li>
+<li>
+<p>VNC Error When Launching OOD Jupyter Notebook:</p>
+<ul>
+<li>While launching an OOD HPC Desktop Job or any OOD Applications, if the user gets errors, <code>Unable to contact settings server</code> and/or <code>Unable to load a failsafe session</code>, it is recommended to follow the below guidelines.</li>
+</ul>
+<p><div class="lightgallery"><a data-sub-html="Ood vnc error." href="../images/ood_vncerror.png"><img alt="Ood vnc error." src="../images/ood_vncerror.png" />
+</a></div><div class="lightgallery"><a data-sub-html="Ood vnc error_contd." href="../images/ood_vncerror_contd.png"><img alt="Ood vnc error_contd." src="../images/ood_vncerror_contd.png" /></a></div></p>
+<ul>
+<li>Using <code>conda init</code> and <code>mamba init</code> causes a block of code automatically inserted into the <code>.bashrc</code> file in your <code>$HOME</code> directory. This code block may interfere with the proper functioning of various OOD applications, resulting in a VNC error. To address this issue, it is recommended to follow the instructions outlined in the <a href="https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496">FAQ entry</a>.</li>
+</ul>
+</li>
+<li>
+<p>Issues related to <code>pip</code>:</p>
+<ul>
+<li>
+<p>When installing packages within a <code>conda</code> environment using <code>pip</code>, it's crucial to ensure that you install <code>pip</code> within the same conda environment and use <code>pip</code> from that environment. If <code>pip</code> is used outside of Anaconda or within an environment without <code>pip</code> installed, the packages are installed to <code>~/.local</code>. This can lead to unexpected package conflicts, as Python loads packages from <code>~/.local</code> before loading from Anaconda environments, and shows the following error,</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Requirement already satisfied: numpy <span class="k">in</span> /home/<span class="nv">$USER</span>/.local/lib/python3.11/site-packages <span class="o">(</span><span class="m">1</span>.26.3<span class="o">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>For the above case, resolving errors involve deleting the <code>~/.local</code> directory.</p>
+</li>
+<li>
+<p>Here's an example of the correct procedure for installing <code>pip</code> packages within a <code>conda</code>:</p>
+<ol>
+<li>Load the <code>Anaconda3</code> module using <code>module load Anaconda3</code>.</li>
+<li>Create or activate the desired Anaconda environment. Please refer to the <a href="../../../workflow_solutions/using_anaconda/#create-an-environment">Anaconda documentation</a></li>
+<li>Install <code>pip</code> within the <code>conda</code> environment using <code>conda install pip</code>.</li>
+<li>Use <code>pip</code> from within this <code>conda</code> environment to install packages. Please refer to <a href="../../../workflow_solutions/using_anaconda/#installing-packages-with-pip">Installing packages with <code>pip</code></a></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
 <h3 id="working-with-anaconda-environments">Working with Anaconda Environments<a class="headerlink" href="#working-with-anaconda-environments" title="Permanent link">&para;</a></h3>
 <p>For information on working with Anaconda environments please see our <a href="../../../workflow_solutions/using_anaconda/">Using Anaconda page</a>. The please review our <a href="../../software/software/#anaconda-on-cheaha">Cheaha-specific Anaconda page</a> for important tips and how to avoid common pitfalls.</p>
 <h4 id="extra-jupyter-arguments">Extra Jupyter Arguments<a class="headerlink" href="#extra-jupyter-arguments" title="Permanent link">&para;</a></h4>
@@ -2361,13 +2423,6 @@
 <p><div class="lightgallery"><a data-sub-html="Jupyter Notebook job request form Extra jupyter arguments field." href="../images/ood_jupyter_notebook_extra_args_box.png"><img alt="Jupyter Notebook job request form Extra jupyter arguments field." src="../images/ood_jupyter_notebook_extra_args_box.png" /></a></div></p>
 <h4 id="submitting-the-jupyter-notebook-job">Submitting the Jupyter Notebook Job<a class="headerlink" href="#submitting-the-jupyter-notebook-job" title="Permanent link">&para;</a></h4>
 <p>Submitting the job will bring you to the <code>My Interactive Jobs</code> window while the Jupyter job is initialized. Click <code>Connect to Jupyter</code> to open the Jupyter Home Page.</p>
-<!-- markdownlint-disable MD046 -->
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.</p>
-</div>
-<!-- markdownlint-enable MD046 -->
-
 <h4 id="the-jupyter-server-home-page">The Jupyter Server Home Page<a class="headerlink" href="#the-jupyter-server-home-page" title="Permanent link">&para;</a></h4>
 <p>The Jupyter Server Home Page will look like the following</p>
 <p><div class="lightgallery"><a data-sub-html="Home page for jupyter notebooks." href="../images/ood_jupyter_notebook_home.png"><img alt="Home page for jupyter notebooks." src="../images/ood_jupyter_notebook_home.png" /></a></div></p>
@@ -2453,8 +2508,8 @@
 </li>
 </ol>
 <p>For cases where your R code only needs access to precompiled binaries or libraries and does not need to import any Python libraries, you can instead create your Anaconda environment and add the following lines into the Environment Setup window:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>module load Anaconda3
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>conda activate &lt;env_name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>module load Anaconda3
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>conda activate &lt;env_name&gt;
 </code></pre></div>
 <p>This will add those binaries and libraries to your environment <code>$PATH</code> which RStudio will inherit.</p>
 <!-- markdownlint-disable MD046 -->
@@ -2499,7 +2554,7 @@
 <li>Start Matlab by entering the command <code>matlab</code>.</li>
 <li>
 <p>Verify success by entering <code>pyenv</code> at the Matlab prompt (not the terminal window). Multiple lines of text will be returned at the prompt. Among them you should see a line like the following, with your environment name in place of <code>&lt;env_name&gt;</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Executable: /home/$USER/.conda/envs/&lt;env_name&gt;/bin/python
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Executable: /home/$USER/.conda/envs/&lt;env_name&gt;/bin/python
 </code></pre></div>
 </li>
 </ol>
@@ -2539,7 +2594,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 31, 2024</span>
       
     
   </small>

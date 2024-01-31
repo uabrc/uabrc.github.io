@@ -2276,6 +2276,13 @@
 <p>Generally, if a package needs to be downloaded from a specific conda channel, it will mention that in its installation instructions.</p>
 <h4 id="installing-packages-with-pip">Installing Packages with Pip<a class="headerlink" href="#installing-packages-with-pip" title="Permanent link">&para;</a></h4>
 <p>Some packages are not available through Anaconda. Often these packages are available via <a href="https://pypi.org/">PyPi</a> and thus using the Python built-in Pip package manager. Pip may also be used to install locally-available packages as well.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure <code>pip</code> is installed within the <code>conda</code> environment and use it for installing packages within the <code>conda</code> environment to prevent <a href="../../cheaha/open_ondemand/ood_interactive/#common-challenges-and-issues-in-the-ood-jupyter-notebook">Pip related issues</a>.</p>
+</div>
+<!-- markdownlint-disable MD046 -->
+
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># install most recent version of a package</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>pip install <span class="se">\&lt;</span>package<span class="se">\&gt;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
@@ -2390,7 +2397,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 26, 2024</span>
       
     
   </small>
