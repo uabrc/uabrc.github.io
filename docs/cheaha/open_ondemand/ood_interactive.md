@@ -164,12 +164,23 @@ For information on which versions of CUDA to load for Tensorflow and PyTorch, pl
     - If you encounter a "Failed to Connect" message while trying to open the job, and experience a timeout issue in loading the OOD Jupyter Notebook, it is recommended to close the tab and wait for a few minutes. Jupyter is still in the process of initializing and may take some time after the job initially starts running.
 
 4. VNC Error When Launching OOD Jupyter Notebook:
+    - While launching an OOD HPC Desktop Job or any OOD Applications, if the user gets errors, `Unable to contact settings server` and/or `Unable to load a failsafe session`, it is recommended to follow the below guidelines.
+  
+    ![!Ood vnc error.](./images/ood_vncerror.png)
+    ![!Ood vnc error_contd.](./images/ood_vncerror_contd.png)
+
     - Using `conda init` and `mamba init` causes a block of code automatically inserted into the `.bashrc` file in your `$HOME` directory. This code block may interfere with the proper functioning of various OOD applications, resulting in a VNC error. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
 
 5. Issues related to `pip`:
-    - When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` within the same conda environment and use `pip` from that environment. If `pip` is used outside of Anaconda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments. In such cases, resolving errors may involve deleting the `~/.local` directory.
+    - When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` within the same conda environment and use `pip` from that environment. If `pip` is used outside of Anaconda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments, and shows the following error,
+
+        ```bash
+        Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)
+        ```
+
+    - For the above case, resolving errors involve deleting the `~/.local` directory.
   
-    - Here's an example of the correct procedure:
+    - Here's an example of the correct procedure for installing `pip` packages within a `conda`:
          1. Load the `Anaconda3` module using `module load Anaconda3`.
          2. Create or activate the desired Anaconda environment. Please refer to the [Anaconda documentation](../../workflow_solutions/using_anaconda.md#create-an-environment)
          3. Install `pip` within the `conda` environment using `conda install pip`.
