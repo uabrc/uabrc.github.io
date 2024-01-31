@@ -115,6 +115,9 @@ nav:
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
           - HPC Desktop: cheaha/open_ondemand/hpc_desktop.md
+          - Jupyter: cheaha/open_ondemand/ood_jupyter.md
+          - RStudio: cheaha/open_ondemand/ood_rstudio.md
+          - MATLAB: cheaha/open_ondemand/ood_matlab.md
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md
