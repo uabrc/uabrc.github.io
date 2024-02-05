@@ -112,10 +112,6 @@ nav:
       - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
-      - Hardware: cheaha/hardware.md
-      - Software:
-          - Preinstalled Modules: cheaha/software/modules.md
-          - Self-Installed Software: cheaha/software/software.md
       - Cheaha Web Portal: 
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
@@ -123,6 +119,10 @@ nav:
           - Jupyter: cheaha/open_ondemand/ood_jupyter.md
           - RStudio: cheaha/open_ondemand/ood_rstudio.md
           - MATLAB: cheaha/open_ondemand/ood_matlab.md
+      - Hardware: cheaha/hardware.md
+      - Software:
+          - Preinstalled Modules: cheaha/software/modules.md
+          - Self-Installed Software: cheaha/software/software.md
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md
