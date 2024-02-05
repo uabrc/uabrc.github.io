@@ -36,13 +36,40 @@ To use this method you will need either a GitHub account or Microsoft account. M
     Do not use "Remote - SSH" to access Cheaha, as all processes run on the login node. VSCode Server, and associated processes, running on the login node may be shut down at any time to free login node resources. Instead, please use "Remote - Tunnels" as described below.
 <!-- markdownlint-enable MD046 -->
 
-**One-time setup:**
+### Downloading and Installing VSCode and VSCode Server
 
-Install the [VSCode CLI](https://code.visualstudio.com/docs/editor/command-line) into your `/home/$USER` directory on Cheaha. Instructions for obtaining the CLI executable are available at <https://code.visualstudio.com/docs/remote/tunnels#_using-the-code-cli>.
+<!-- markdownlint-disable MD046 -->
+!!! important
 
-To avoid typing `./code` for commands, try placing the untarred output into `~/bin/` and adding that directory to `$PATH` in your `~/.bashrc` before starting a job. Then you will only need to type `code` for commands.
+    Current versions of VSCode are not supported on older Linux distributions, including CentOS 7 running on Cheaha. Cheaha is only compatible with VSCode version 1.85.2 or lower. The following instructions will show you how to install this specific version. If VSCode does not work and is giving messages saying `GLIBC_2.18 (or greater) not found (required by ./code)`, your installation of VSCode is too new and needs to be downgraded to 1.85.2.
+<!-- markdownlint-enable MD046 -->
 
-**Each session setup:**
+Open a terminal on Cheaha and use the following commands to install both VSCode and VSCode Server:
+
+``` bash
+curl -L -o vscode_cli.tar.gz 'https://update.code.visualstudio.com/1.85.2/cli-alpine-x64/stable'
+mkdir $HOME/bin
+tar -xz -C ${HOME}/bin -f vscode_cli.tar.gz
+
+export commit_sha=8b3775030ed1a69b13e4f4c628c612102e30a681
+curl -L "https://update.code.visualstudio.com/commit:${commit_sha}/server-linux-x64/stable" -o vscode_server.tar.gz
+mkdir -vp ~/.vscode-server/bin/${commit_sha}
+tar --no-same-owner -xzv --strip-components=1 -C ${HOME}/.vscode-server/bin/"${commit_sha}" -f vscode_server.tar.gz 
+```
+
+#### Adding code to PATH
+
+To avoid typing `./code` for commands, try adding `${HOME}/bin` to `$PATH` in your `~/.bashrc` before starting a job. Then you will only need to type `code` for commands. You can do this from the terminal with the following command:
+
+``` bash
+echo "export PATH=\$PATH:${HOME}/bin" >> $HOME/.bashrc 
+```
+
+You only need to have this line or `export PATH=$PATH:${HOME}/bin:...` in your `.bashrc` once. You should check your `.bashrc` to make sure this line isn't already there before adding it.
+
+### Starting a Tunnel
+
+These steps should be performed each time you would like to create a tunnel.
 
 1. Start an HPC Desktop job on Cheaha with the required resources. Note that all VSCode processing, including debuggers, unit testing, Jupyter Notebook server, file access, etc., all happen in this same job context. Adjust resources in relation to your development needs.
 2. Within the HPC Desktop Job, open a terminal and run the command `code tunnel` (assumes you've added `code` to `$PATH`).
