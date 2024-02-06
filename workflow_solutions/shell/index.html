@@ -8,8 +8,15 @@
       
       
       
+      
+        <link rel="prev" href="../../data_management/code_storage/">
+      
+      
+        <link rel="next" href="../using_anaconda/">
+      
+      
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
@@ -17,48 +24,48 @@
       
     
     
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
 
-      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
+
+    
+    
+      
+    
+    
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
-        
-      
-    
-<link rel="stylesheet" href="../../css/lightgallery.min.css" />
-
-    
-
-<script src="../../js/lightgallery.min.js"></script>
-
-    
-      
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  </head>
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -78,7 +85,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Research Computing Documentation" class="md-header__button md-logo" aria-label="Research Computing Documentation" data-md-component="logo">
       
@@ -86,7 +95,8 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -106,9 +116,13 @@
     </div>
     
     
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -116,13 +130,16 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -133,7 +150,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -145,7 +162,7 @@
         <a href="https://github.com/uabrc/uabrc.github.io/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -175,6 +192,7 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Research Computing Documentation" class="md-nav__button md-logo" aria-label="Research Computing Documentation" data-md-component="logo">
@@ -189,7 +207,7 @@
       <a href="https://github.com/uabrc/uabrc.github.io/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -201,14 +219,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
     </li>
   
@@ -216,503 +239,683 @@
     
       
       
-      
-
+  
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Account Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          Account Management
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Account Management" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          Account Management
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Account Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../account_management/cheaha_account/" class="md-nav__link">
-        Cheaha Account
+        
+  
+  <span class="md-ellipsis">
+    Cheaha Account
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
-      
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
         
         
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../account_management/xias/">External Collaborator Accounts (XIAS)</a>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
           
-            <label for="__nav_2_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
           
-        </div>
-      
-      <nav class="md-nav" aria-label="External Collaborator Accounts (XIAS)" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
-          <span class="md-nav__icon md-icon"></span>
-          External Collaborator Accounts (XIAS)
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../account_management/xias/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    External Collaborator Accounts (XIAS)
+  </span>
+  
+
+            </a>
             
               
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            External Collaborator Accounts (XIAS)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../account_management/xias/pi_site_management/" class="md-nav__link">
-        For PIs - (1) Managing Projects & Sites
+        
+  
+  <span class="md-ellipsis">
+    For PIs - (1) Managing Projects & Sites
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../account_management/xias/pi_guest_management/" class="md-nav__link">
-        For PIs - (2) Managing Guests
+        
+  
+  <span class="md-ellipsis">
+    For PIs - (2) Managing Guests
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../account_management/xias/guest_instructions/" class="md-nav__link">
-        For Guests - Account Creation
+        
+  
+  <span class="md-ellipsis">
+    For Guests - Account Creation
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../account_management/gitlab_account/" class="md-nav__link">
-        Gitlab Account
+        
+  
+  <span class="md-ellipsis">
+    Gitlab Account
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          Data Management
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Data Management" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Data Management
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../data_management/storage/" class="md-nav__link">
-        Cheaha Storage
+        
+  
+  <span class="md-ellipsis">
+    Cheaha Storage
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
-      
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
         
         
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../data_management/lts/">Long Term Storage</a>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
           
-            <label for="__nav_3_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
           
-        </div>
-      
-      <nav class="md-nav" aria-label="Long Term Storage" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_2">
-          <span class="md-nav__icon md-icon"></span>
-          Long Term Storage
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_management/lts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Long Term Storage
+  </span>
+  
+
+            </a>
             
               
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Long Term Storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../data_management/lts/interfaces/" class="md-nav__link">
-        Interfacing with LTS
+        
+  
+  <span class="md-ellipsis">
+    Interfacing with LTS
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../data_management/lts/policies/" class="md-nav__link">
-        Bucket Permissions
+        
+  
+  <span class="md-ellipsis">
+    Bucket Permissions
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../data_management/lts/lts_cores/" class="md-nav__link">
-        UAB Core Accounts
+        
+  
+  <span class="md-ellipsis">
+    UAB Core Accounts
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../data_management/lts/lts_faq/" class="md-nav__link">
-        FAQ
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Transfer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_3_3">
-          Transfer
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Transfer" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_3">
-          <span class="md-nav__icon md-icon"></span>
-          Transfer
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Transfer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../data_management/transfer/globus/" class="md-nav__link">
-        Globus
+        
+  
+  <span class="md-ellipsis">
+    Globus
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../data_management/transfer/rclone/" class="md-nav__link">
-        RClone
+        
+  
+  <span class="md-ellipsis">
+    RClone
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../data_management/transfer/filezilla/" class="md-nav__link">
-        FileZilla
+        
+  
+  <span class="md-ellipsis">
+    FileZilla
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../data_management/code_storage/" class="md-nav__link">
-        Code Storage
+        
+  
+  <span class="md-ellipsis">
+    Code Storage
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
     
   
   
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Workflow Solutions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_4">
-          Workflow Solutions
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Workflow Solutions" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          Workflow Solutions
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Workflow Solutions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Using the Shell
+          
+  
+  <span class="md-ellipsis">
+    Using the Shell
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Using the Shell
+        
+  
+  <span class="md-ellipsis">
+    Using the Shell
+  </span>
+  
+
       </a>
       
         
@@ -732,7 +935,9 @@
       
         <li class="md-nav__item">
   <a href="#introductory-guides" class="md-nav__link">
-    Introductory Guides
+    <span class="md-ellipsis">
+      Introductory Guides
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Introductory Guides">
@@ -740,7 +945,9 @@
         
           <li class="md-nav__item">
   <a href="#educational-resources" class="md-nav__link">
-    Educational Resources
+    <span class="md-ellipsis">
+      Educational Resources
+    </span>
   </a>
   
 </li>
@@ -752,7 +959,9 @@
       
         <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
-    Reference
+    <span class="md-ellipsis">
+      Reference
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Reference">
@@ -760,7 +969,9 @@
         
           <li class="md-nav__item">
   <a href="#command-concepts" class="md-nav__link">
-    Command Concepts
+    <span class="md-ellipsis">
+      Command Concepts
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Command Concepts">
@@ -768,14 +979,18 @@
         
           <li class="md-nav__item">
   <a href="#how-do-i-regain-control-of-the-prompt-while-a-command-is-running" class="md-nav__link">
-    How do I regain control of the prompt while a command is running?
+    <span class="md-ellipsis">
+      How do I regain control of the prompt while a command is running?
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#how-do-i-terminate-a-process-running-asynchronously" class="md-nav__link">
-    How do I terminate a process running asynchronously?
+    <span class="md-ellipsis">
+      How do I terminate a process running asynchronously?
+    </span>
   </a>
   
 </li>
@@ -787,56 +1002,72 @@
         
           <li class="md-nav__item">
   <a href="#special-escaped-characters" class="md-nav__link">
-    Special (Escaped) Characters
+    <span class="md-ellipsis">
+      Special (Escaped) Characters
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#piping-and-command-chains" class="md-nav__link">
-    Piping and Command Chains
+    <span class="md-ellipsis">
+      Piping and Command Chains
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#redirects" class="md-nav__link">
-    Redirects
+    <span class="md-ellipsis">
+      Redirects
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#path-concepts" class="md-nav__link">
-    Path Concepts
+    <span class="md-ellipsis">
+      Path Concepts
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#glob-syntax" class="md-nav__link">
-    Glob Syntax
+    <span class="md-ellipsis">
+      Glob Syntax
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#environment-concepts" class="md-nav__link">
-    Environment Concepts
+    <span class="md-ellipsis">
+      Environment Concepts
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#script-concepts" class="md-nav__link">
-    Script Concepts
+    <span class="md-ellipsis">
+      Script Concepts
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#script-arguments" class="md-nav__link">
-    Script Arguments
+    <span class="md-ellipsis">
+      Script Arguments
+    </span>
   </a>
   
 </li>
@@ -848,7 +1079,9 @@
       
         <li class="md-nav__item">
   <a href="#commands-for-solutions-to-common-problems" class="md-nav__link">
-    Commands for Solutions to Common Problems
+    <span class="md-ellipsis">
+      Commands for Solutions to Common Problems
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Commands for Solutions to Common Problems">
@@ -856,77 +1089,99 @@
         
           <li class="md-nav__item">
   <a href="#show-working-directory-pwd" class="md-nav__link">
-    Show working directory (pwd)
+    <span class="md-ellipsis">
+      Show working directory (pwd)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#list-files-and-directories-ls" class="md-nav__link">
-    List files and directories (ls)
+    <span class="md-ellipsis">
+      List files and directories (ls)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#examine-disk-usage-du" class="md-nav__link">
-    Examine disk usage (du)
+    <span class="md-ellipsis">
+      Examine disk usage (du)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#change-working-directory-cd" class="md-nav__link">
-    Change working directory (cd)
+    <span class="md-ellipsis">
+      Change working directory (cd)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#copy-files-and-directories-cp" class="md-nav__link">
-    Copy files and directories (cp)
+    <span class="md-ellipsis">
+      Copy files and directories (cp)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#move-files-and-directories-mv" class="md-nav__link">
-    Move files and directories mv
+    <span class="md-ellipsis">
+      Move files and directories mv
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#delete-files-and-directories-rm-rmdir" class="md-nav__link">
-    Delete files and directories (rm, rmdir)
+    <span class="md-ellipsis">
+      Delete files and directories (rm, rmdir)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#download-files-from-internet-sources-curl" class="md-nav__link">
-    Download files from internet sources (curl)
+    <span class="md-ellipsis">
+      Download files from internet sources (curl)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#create-directories-mkdir" class="md-nav__link">
-    Create directories (mkdir)
+    <span class="md-ellipsis">
+      Create directories (mkdir)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#create-files-touch" class="md-nav__link">
-    Create files (touch)
+    <span class="md-ellipsis">
+      Create files (touch)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#edit-plain-text-files-nano" class="md-nav__link">
-    Edit plain-text files (nano)
+    <span class="md-ellipsis">
+      Edit plain-text files (nano)
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Edit plain-text files (nano)">
@@ -934,7 +1189,9 @@
         
           <li class="md-nav__item">
   <a href="#searching-for-text-in-nano" class="md-nav__link">
-    Searching for text in nano
+    <span class="md-ellipsis">
+      Searching for text in nano
+    </span>
   </a>
   
 </li>
@@ -946,98 +1203,126 @@
         
           <li class="md-nav__item">
   <a href="#count-lines-words-and-characters-wc" class="md-nav__link">
-    Count lines, words and characters (wc)
+    <span class="md-ellipsis">
+      Count lines, words and characters (wc)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#display-file-contents-cat-less" class="md-nav__link">
-    Display file contents (cat, less)
+    <span class="md-ellipsis">
+      Display file contents (cat, less)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#examine-start-and-end-of-file-head-tail" class="md-nav__link">
-    Examine start and end of file (head, tail)
+    <span class="md-ellipsis">
+      Examine start and end of file (head, tail)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#sort-file-contents-sort" class="md-nav__link">
-    Sort file contents (sort)
+    <span class="md-ellipsis">
+      Sort file contents (sort)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#test-a-command-echo" class="md-nav__link">
-    Test a command (echo)
+    <span class="md-ellipsis">
+      Test a command (echo)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#search-for-text-grep" class="md-nav__link">
-    Search for text (grep)
+    <span class="md-ellipsis">
+      Search for text (grep)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#close-the-session-exit" class="md-nav__link">
-    Close the session (exit)
+    <span class="md-ellipsis">
+      Close the session (exit)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#clear-the-shell-display-clear" class="md-nav__link">
-    Clear the shell display (clear)
+    <span class="md-ellipsis">
+      Clear the shell display (clear)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#where-is-a-command-located-which" class="md-nav__link">
-    Where is a command located? (which)
+    <span class="md-ellipsis">
+      Where is a command located? (which)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#what-does-a-command-do-whatis-man" class="md-nav__link">
-    What does a command do? (whatis, man)
+    <span class="md-ellipsis">
+      What does a command do? (whatis, man)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#remotely-access-shell-on-other-machines-ssh" class="md-nav__link">
-    Remotely access shell on other machines (ssh)
+    <span class="md-ellipsis">
+      Remotely access shell on other machines (ssh)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#remotely-access-or-transfer-files-between-machines-sftp" class="md-nav__link">
-    Remotely access or transfer files between machines (sftp)
+    <span class="md-ellipsis">
+      Remotely access or transfer files between machines (sftp)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#submit-and-manage-jobs-on-cheaha" class="md-nav__link">
-    Submit and manage jobs on Cheaha
+    <span class="md-ellipsis">
+      Submit and manage jobs on Cheaha
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#manage-permissions-of-files-and-directores-chmod" class="md-nav__link">
-    Manage permissions of files and directores (chmod)
+    <span class="md-ellipsis">
+      Manage permissions of files and directores (chmod)
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Manage permissions of files and directores (chmod)">
@@ -1045,28 +1330,36 @@
         
           <li class="md-nav__item">
   <a href="#what-permissions-do" class="md-nav__link">
-    What Permissions Do
+    <span class="md-ellipsis">
+      What Permissions Do
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#how-to-check-permissions" class="md-nav__link">
-    How to Check Permissions
+    <span class="md-ellipsis">
+      How to Check Permissions
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#patterns-for-setting-permissions" class="md-nav__link">
-    Patterns for Setting Permissions
+    <span class="md-ellipsis">
+      Patterns for Setting Permissions
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
-    Examples
+    <span class="md-ellipsis">
+      Examples
+    </span>
   </a>
   
 </li>
@@ -1078,14 +1371,18 @@
         
           <li class="md-nav__item">
   <a href="#manage-group-ownership-chgrp" class="md-nav__link">
-    Manage group ownership (chgrp)
+    <span class="md-ellipsis">
+      Manage group ownership (chgrp)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#manage-researcher-access-to-files-and-directories-getfacl-setfacl" class="md-nav__link">
-    Manage researcher access to files and directories (getfacl, setfacl)
+    <span class="md-ellipsis">
+      Manage researcher access to files and directories (getfacl, setfacl)
+    </span>
   </a>
   
 </li>
@@ -1102,1036 +1399,1429 @@
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../using_anaconda/" class="md-nav__link">
-        Using Anaconda
+        
+  
+  <span class="md-ellipsis">
+    Using Anaconda
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../using_workflow_managers/" class="md-nav__link">
-        Using Workflow Managers
+        
+  
+  <span class="md-ellipsis">
+    Using Workflow Managers
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../git/" class="md-nav__link">
-        Using Git
+        
+  
+  <span class="md-ellipsis">
+    Using Git
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../r_environments/" class="md-nav__link">
-        R Projects and Environments
+        
+  
+  <span class="md-ellipsis">
+    R Projects and Environments
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../getting_containers/" class="md-nav__link">
-        Software Containers
+        
+  
+  <span class="md-ellipsis">
+    Software Containers
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../git_collaboration/" class="md-nav__link">
-        Software Collaboration with GitHub and GitLab
+        
+  
+  <span class="md-ellipsis">
+    Software Collaboration with GitHub and GitLab
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cheaha Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_5">
-          Cheaha Guide
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Cheaha Guide" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          Cheaha Guide
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cheaha Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/getting_started/" class="md-nav__link">
-        Getting Started
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/hardware/" class="md-nav__link">
-        Hardware
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_5_3">
-          Software
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Software" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_3">
-          <span class="md-nav__icon md-icon"></span>
-          Software
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/software/modules/" class="md-nav__link">
-        Preinstalled Modules
+        
+  
+  <span class="md-ellipsis">
+    Preinstalled Modules
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/software/software/" class="md-nav__link">
-        Self-Installed Software
+        
+  
+  <span class="md-ellipsis">
+    Self-Installed Software
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Open OnDemand
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_5_4">
-          Open OnDemand
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Open OnDemand" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_4">
-          <span class="md-nav__icon md-icon"></span>
-          Open OnDemand
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Open OnDemand
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/open_ondemand/ood_main/" class="md-nav__link">
-        Homepage
+        
+  
+  <span class="md-ellipsis">
+    Homepage
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/open_ondemand/ood_files/" class="md-nav__link">
-        File Browser
+        
+  
+  <span class="md-ellipsis">
+    File Browser
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/open_ondemand/ood_interactive/" class="md-nav__link">
-        Interactive Apps
+        
+  
+  <span class="md-ellipsis">
+    Interactive Apps
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/open_ondemand/ood_jobs/" class="md-nav__link">
-        Job Composer
+        
+  
+  <span class="md-ellipsis">
+    Job Composer
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SLURM
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_5_5">
-          SLURM
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="SLURM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_5">
-          <span class="md-nav__icon md-icon"></span>
-          SLURM
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            SLURM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/slurm/introduction/" class="md-nav__link">
-        Introduction
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/slurm/submitting_jobs/" class="md-nav__link">
-        Submitting Jobs
+        
+  
+  <span class="md-ellipsis">
+    Submitting Jobs
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/slurm/practical_sbatch/" class="md-nav__link">
-        Practical Batch Array Jobs
+        
+  
+  <span class="md-ellipsis">
+    Practical Batch Array Jobs
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/slurm/job_management/" class="md-nav__link">
-        Managing Jobs
+        
+  
+  <span class="md-ellipsis">
+    Managing Jobs
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/slurm/gpu/" class="md-nav__link">
-        GPUs
+        
+  
+  <span class="md-ellipsis">
+    GPUs
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../cheaha/job_efficiency/" class="md-nav__link">
-        Job Efficiency
+        
+  
+  <span class="md-ellipsis">
+    Job Efficiency
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
+  
+  
+  
+  
+    
+    
       
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../uab_cloud/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    UAB Cloud (cloud.rc) Guide
+  </span>
+  
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UAB Cloud (cloud.rc) Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
   
   
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-          
         
           
         
       
+        
       
         
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../uab_cloud/">UAB Cloud (cloud.rc) Guide</a>
-          
-            <label for="__nav_6">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
       
-      <nav class="md-nav" aria-label="UAB Cloud (cloud.rc) Guide" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          UAB Cloud (cloud.rc) Guide
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
+        
+      
+        
+      
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
-      
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
         
         
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../uab_cloud/tutorial/">Tutorial</a>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
           
-            <label for="__nav_6_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
           
-        </div>
-      
-      <nav class="md-nav" aria-label="Tutorial" data-md-level="2">
-        <label class="md-nav__title" for="__nav_6_2">
-          <span class="md-nav__icon md-icon"></span>
-          Tutorial
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../uab_cloud/tutorial/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+            </a>
             
               
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/tutorial/networks/" class="md-nav__link">
-        (1) Networks
+        
+  
+  <span class="md-ellipsis">
+    (1) Networks
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/tutorial/security/" class="md-nav__link">
-        (2) Security Policies
+        
+  
+  <span class="md-ellipsis">
+    (2) Security Policies
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/tutorial/instances/" class="md-nav__link">
-        (3) Instances
+        
+  
+  <span class="md-ellipsis">
+    (3) Instances
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/tutorial/volumes/" class="md-nav__link">
-        (4) Volumes (optional)
+        
+  
+  <span class="md-ellipsis">
+    (4) Volumes (optional)
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/remote_access/" class="md-nav__link">
-        Remote Access
+        
+  
+  <span class="md-ellipsis">
+    Remote Access
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/installing_software/" class="md-nav__link">
-        Installing Software
+        
+  
+  <span class="md-ellipsis">
+    Installing Software
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../uab_cloud/snapshots/" class="md-nav__link">
-        Snapshots and Images
+        
+  
+  <span class="md-ellipsis">
+    Snapshots and Images
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UAB Kubernetes Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-      
-      
-        <label class="md-nav__link" for="__nav_7">
-          UAB Kubernetes Guide
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="UAB Kubernetes Guide" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
-          <span class="md-nav__icon md-icon"></span>
-          UAB Kubernetes Guide
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UAB Kubernetes Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../kubernetes/startup/" class="md-nav__link">
-        Startup
+        
+  
+  <span class="md-ellipsis">
+    Startup
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
-      
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
         
         
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../national_ci/">National Research Computing Cyberinfrastructure</a>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
           
-            <label for="__nav_8">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
           
-        </div>
-      
-      <nav class="md-nav" aria-label="National Research Computing Cyberinfrastructure" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
-          <span class="md-nav__icon md-icon"></span>
-          National Research Computing Cyberinfrastructure
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../national_ci/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    National Research Computing Cyberinfrastructure
+  </span>
+  
+
+            </a>
             
               
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            National Research Computing Cyberinfrastructure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../national_ci/osg/" class="md-nav__link">
-        The Open Science Grid
+        
+  
+  <span class="md-ellipsis">
+    The Open Science Grid
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../national_ci/nsf_access/" class="md-nav__link">
-        NSF Cyberinfrastructure
+        
+  
+  <span class="md-ellipsis">
+    NSF Cyberinfrastructure
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../national_ci/nih/" class="md-nav__link">
-        NIH Cyberinfrastructure
+        
+  
+  <span class="md-ellipsis">
+    NIH Cyberinfrastructure
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Grants & Contracts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_9">
-          Grants & Contracts
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Grants & Contracts" data-md-level="1">
-        <label class="md-nav__title" for="__nav_9">
-          <span class="md-nav__icon md-icon"></span>
-          Grants & Contracts
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Grants & Contracts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../grants/overview/" class="md-nav__link">
-        Overview
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../grants/facilities/" class="md-nav__link">
-        Facilities and Plan
+        
+  
+  <span class="md-ellipsis">
+    Facilities and Plan
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../grants/budgets/" class="md-nav__link">
-        Budgeting
+        
+  
+  <span class="md-ellipsis">
+    Budgeting
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../grants/publications/" class="md-nav__link">
-        Descriptions
+        
+  
+  <span class="md-ellipsis">
+    Descriptions
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Outreach & Training
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_10">
-          Outreach & Training
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Outreach & Training" data-md-level="1">
-        <label class="md-nav__title" for="__nav_10">
-          <span class="md-nav__icon md-icon"></span>
-          Outreach & Training
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Outreach & Training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../education/case_studies/" class="md-nav__link">
-        Case Studies
+        
+  
+  <span class="md-ellipsis">
+    Case Studies
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../education/research_computing_days/" class="md-nav__link">
-        Research Computing Days
+        
+  
+  <span class="md-ellipsis">
+    Research Computing Days
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../education/courses/" class="md-nav__link">
-        Offered Courses
+        
+  
+  <span class="md-ellipsis">
+    Offered Courses
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../education/training_resources/" class="md-nav__link">
-        Training Resources
+        
+  
+  <span class="md-ellipsis">
+    Training Resources
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../policies/" class="md-nav__link">
-        Policies
+        
+  
+  <span class="md-ellipsis">
+    Policies
+  </span>
+  
+
       </a>
     </li>
   
@@ -2139,14 +2829,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../contributing/reporting_errors/" class="md-nav__link">
-        Reporting Documentation Errors
+        
+  
+  <span class="md-ellipsis">
+    Reporting Documentation Errors
+  </span>
+  
+
       </a>
     </li>
   
@@ -2154,14 +2849,19 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../contributing/contributor_guide/" class="md-nav__link">
-        Contributing Content
+        
+  
+  <span class="md-ellipsis">
+    Contributing Content
+  </span>
+  
+
       </a>
     </li>
   
@@ -2169,68 +2869,92 @@
     
       
       
-      
-
+  
   
   
   
     
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
-      
-      
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
         
           
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Help
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_14">
-          Help
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Help" data-md-level="1">
-        <label class="md-nav__title" for="__nav_14">
-          <span class="md-nav__icon md-icon"></span>
-          Help
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Help
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../help/support/" class="md-nav__link">
-        Support
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
       </a>
     </li>
   
 
-            
-          
+              
             
               
+                
+  
   
   
   
     <li class="md-nav__item">
       <a href="../../help/faq/" class="md-nav__link">
-        FAQ
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
       </a>
     </li>
   
 
+              
             
-          
-        </ul>
-      </nav>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2263,7 +2987,9 @@
       
         <li class="md-nav__item">
   <a href="#introductory-guides" class="md-nav__link">
-    Introductory Guides
+    <span class="md-ellipsis">
+      Introductory Guides
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Introductory Guides">
@@ -2271,7 +2997,9 @@
         
           <li class="md-nav__item">
   <a href="#educational-resources" class="md-nav__link">
-    Educational Resources
+    <span class="md-ellipsis">
+      Educational Resources
+    </span>
   </a>
   
 </li>
@@ -2283,7 +3011,9 @@
       
         <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
-    Reference
+    <span class="md-ellipsis">
+      Reference
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Reference">
@@ -2291,7 +3021,9 @@
         
           <li class="md-nav__item">
   <a href="#command-concepts" class="md-nav__link">
-    Command Concepts
+    <span class="md-ellipsis">
+      Command Concepts
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Command Concepts">
@@ -2299,14 +3031,18 @@
         
           <li class="md-nav__item">
   <a href="#how-do-i-regain-control-of-the-prompt-while-a-command-is-running" class="md-nav__link">
-    How do I regain control of the prompt while a command is running?
+    <span class="md-ellipsis">
+      How do I regain control of the prompt while a command is running?
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#how-do-i-terminate-a-process-running-asynchronously" class="md-nav__link">
-    How do I terminate a process running asynchronously?
+    <span class="md-ellipsis">
+      How do I terminate a process running asynchronously?
+    </span>
   </a>
   
 </li>
@@ -2318,56 +3054,72 @@
         
           <li class="md-nav__item">
   <a href="#special-escaped-characters" class="md-nav__link">
-    Special (Escaped) Characters
+    <span class="md-ellipsis">
+      Special (Escaped) Characters
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#piping-and-command-chains" class="md-nav__link">
-    Piping and Command Chains
+    <span class="md-ellipsis">
+      Piping and Command Chains
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#redirects" class="md-nav__link">
-    Redirects
+    <span class="md-ellipsis">
+      Redirects
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#path-concepts" class="md-nav__link">
-    Path Concepts
+    <span class="md-ellipsis">
+      Path Concepts
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#glob-syntax" class="md-nav__link">
-    Glob Syntax
+    <span class="md-ellipsis">
+      Glob Syntax
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#environment-concepts" class="md-nav__link">
-    Environment Concepts
+    <span class="md-ellipsis">
+      Environment Concepts
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#script-concepts" class="md-nav__link">
-    Script Concepts
+    <span class="md-ellipsis">
+      Script Concepts
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#script-arguments" class="md-nav__link">
-    Script Arguments
+    <span class="md-ellipsis">
+      Script Arguments
+    </span>
   </a>
   
 </li>
@@ -2379,7 +3131,9 @@
       
         <li class="md-nav__item">
   <a href="#commands-for-solutions-to-common-problems" class="md-nav__link">
-    Commands for Solutions to Common Problems
+    <span class="md-ellipsis">
+      Commands for Solutions to Common Problems
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Commands for Solutions to Common Problems">
@@ -2387,77 +3141,99 @@
         
           <li class="md-nav__item">
   <a href="#show-working-directory-pwd" class="md-nav__link">
-    Show working directory (pwd)
+    <span class="md-ellipsis">
+      Show working directory (pwd)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#list-files-and-directories-ls" class="md-nav__link">
-    List files and directories (ls)
+    <span class="md-ellipsis">
+      List files and directories (ls)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#examine-disk-usage-du" class="md-nav__link">
-    Examine disk usage (du)
+    <span class="md-ellipsis">
+      Examine disk usage (du)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#change-working-directory-cd" class="md-nav__link">
-    Change working directory (cd)
+    <span class="md-ellipsis">
+      Change working directory (cd)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#copy-files-and-directories-cp" class="md-nav__link">
-    Copy files and directories (cp)
+    <span class="md-ellipsis">
+      Copy files and directories (cp)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#move-files-and-directories-mv" class="md-nav__link">
-    Move files and directories mv
+    <span class="md-ellipsis">
+      Move files and directories mv
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#delete-files-and-directories-rm-rmdir" class="md-nav__link">
-    Delete files and directories (rm, rmdir)
+    <span class="md-ellipsis">
+      Delete files and directories (rm, rmdir)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#download-files-from-internet-sources-curl" class="md-nav__link">
-    Download files from internet sources (curl)
+    <span class="md-ellipsis">
+      Download files from internet sources (curl)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#create-directories-mkdir" class="md-nav__link">
-    Create directories (mkdir)
+    <span class="md-ellipsis">
+      Create directories (mkdir)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#create-files-touch" class="md-nav__link">
-    Create files (touch)
+    <span class="md-ellipsis">
+      Create files (touch)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#edit-plain-text-files-nano" class="md-nav__link">
-    Edit plain-text files (nano)
+    <span class="md-ellipsis">
+      Edit plain-text files (nano)
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Edit plain-text files (nano)">
@@ -2465,7 +3241,9 @@
         
           <li class="md-nav__item">
   <a href="#searching-for-text-in-nano" class="md-nav__link">
-    Searching for text in nano
+    <span class="md-ellipsis">
+      Searching for text in nano
+    </span>
   </a>
   
 </li>
@@ -2477,98 +3255,126 @@
         
           <li class="md-nav__item">
   <a href="#count-lines-words-and-characters-wc" class="md-nav__link">
-    Count lines, words and characters (wc)
+    <span class="md-ellipsis">
+      Count lines, words and characters (wc)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#display-file-contents-cat-less" class="md-nav__link">
-    Display file contents (cat, less)
+    <span class="md-ellipsis">
+      Display file contents (cat, less)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#examine-start-and-end-of-file-head-tail" class="md-nav__link">
-    Examine start and end of file (head, tail)
+    <span class="md-ellipsis">
+      Examine start and end of file (head, tail)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#sort-file-contents-sort" class="md-nav__link">
-    Sort file contents (sort)
+    <span class="md-ellipsis">
+      Sort file contents (sort)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#test-a-command-echo" class="md-nav__link">
-    Test a command (echo)
+    <span class="md-ellipsis">
+      Test a command (echo)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#search-for-text-grep" class="md-nav__link">
-    Search for text (grep)
+    <span class="md-ellipsis">
+      Search for text (grep)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#close-the-session-exit" class="md-nav__link">
-    Close the session (exit)
+    <span class="md-ellipsis">
+      Close the session (exit)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#clear-the-shell-display-clear" class="md-nav__link">
-    Clear the shell display (clear)
+    <span class="md-ellipsis">
+      Clear the shell display (clear)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#where-is-a-command-located-which" class="md-nav__link">
-    Where is a command located? (which)
+    <span class="md-ellipsis">
+      Where is a command located? (which)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#what-does-a-command-do-whatis-man" class="md-nav__link">
-    What does a command do? (whatis, man)
+    <span class="md-ellipsis">
+      What does a command do? (whatis, man)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#remotely-access-shell-on-other-machines-ssh" class="md-nav__link">
-    Remotely access shell on other machines (ssh)
+    <span class="md-ellipsis">
+      Remotely access shell on other machines (ssh)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#remotely-access-or-transfer-files-between-machines-sftp" class="md-nav__link">
-    Remotely access or transfer files between machines (sftp)
+    <span class="md-ellipsis">
+      Remotely access or transfer files between machines (sftp)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#submit-and-manage-jobs-on-cheaha" class="md-nav__link">
-    Submit and manage jobs on Cheaha
+    <span class="md-ellipsis">
+      Submit and manage jobs on Cheaha
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#manage-permissions-of-files-and-directores-chmod" class="md-nav__link">
-    Manage permissions of files and directores (chmod)
+    <span class="md-ellipsis">
+      Manage permissions of files and directores (chmod)
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Manage permissions of files and directores (chmod)">
@@ -2576,28 +3382,36 @@
         
           <li class="md-nav__item">
   <a href="#what-permissions-do" class="md-nav__link">
-    What Permissions Do
+    <span class="md-ellipsis">
+      What Permissions Do
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#how-to-check-permissions" class="md-nav__link">
-    How to Check Permissions
+    <span class="md-ellipsis">
+      How to Check Permissions
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#patterns-for-setting-permissions" class="md-nav__link">
-    Patterns for Setting Permissions
+    <span class="md-ellipsis">
+      Patterns for Setting Permissions
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
-    Examples
+    <span class="md-ellipsis">
+      Examples
+    </span>
   </a>
   
 </li>
@@ -2609,14 +3423,18 @@
         
           <li class="md-nav__item">
   <a href="#manage-group-ownership-chgrp" class="md-nav__link">
-    Manage group ownership (chgrp)
+    <span class="md-ellipsis">
+      Manage group ownership (chgrp)
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#manage-researcher-access-to-files-and-directories-getfacl-setfacl" class="md-nav__link">
-    Manage researcher access to files and directories (getfacl, setfacl)
+    <span class="md-ellipsis">
+      Manage researcher access to files and directories (getfacl, setfacl)
+    </span>
   </a>
   
 </li>
@@ -2634,39 +3452,40 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-<a href="https://github.com/uabrc/uabrc.github.io/edit/main/docs/workflow_solutions/shell.md" title="Edit this page" class="md-content__button md-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-</a>
+                  
+
+  
+  
 
 
 <h1 id="shell-reference">Shell Reference<a class="headerlink" href="#shell-reference" title="Permanent link">&para;</a></h1>
 <h2 id="introductory-guides">Introductory Guides<a class="headerlink" href="#introductory-guides" title="Permanent link">&para;</a></h2>
 <p>The shell is a powerful tool, and with great power comes great responsibility. The following warnings are not intended to frighten, but to give a sense of respect for the power of shell commands.</p>
 <p>Most commands are perfectly safe, and often when they do something unexpected it can be fixed with some work. We will do our best to warn you of commands with greater potential for destruction, but no documentation is perfect.</p>
-<p>We are not responsible for accidental deletions or overwrites caused inadvertently, or otherwise, by any commands run by researchers. Be warned that directories, files and file contents that are deleted or overwritten cannot be restored by us under any circumstances. Researchers are responsible for maintaining backups of their files. If in doubt about a command please contact <a href="../..#contact-us">Contact Us</a> for guidance.</p>
+<p>We are not responsible for accidental deletions or overwrites caused inadvertently, or otherwise, by any commands run by researchers. Be warned that directories, files and file contents that are deleted or overwritten cannot be restored by us under any circumstances. Researchers are responsible for maintaining backups of their files. If in doubt about a command please contact <a href="../../#contact-us">Contact Us</a> for guidance.</p>
 <h3 id="educational-resources">Educational Resources<a class="headerlink" href="#educational-resources" title="Permanent link">&para;</a></h3>
 <p>The internet has thousands of guides for using the shell. Rather than devise our own complete lesson plan for using the shell, we recommend finding and using one of the high-quality lessons available on the internet. The Software Carpentries group offers a number of high-quality online lesson plans for introductory computing and data science tools. While these lesson plans are intended to be delivered by an instructor in a classroom setting, they can be still be useful to follow solo. For the shell lesson, see <a href="https://swcarpentry.github.io/shell-novice/">https://swcarpentry.github.io/shell-novice/</a>.</p>
 <p>At the shell prompt, you can also use the command <code>curl cheat.sh/&lt;command&gt;</code> to get a simple-to-understand explanation of what the command does and how to use it (see <a href="#download-files-from-internet-sources-curl">curl</a>). Below is an example for the <a href="#show-working-directory-pwd">pwd command</a>.</p>
-<p><div class="lightgallery"><a data-sub-html="curl of site cheat.sh/pwd" href="../images/curl_cheat_sh_pwd.png"><img alt="curl of site cheat.sh/pwd" src="../images/curl_cheat_sh_pwd.png" /></a></div></p>
+<p><a class="glightbox" href="../images/curl_cheat_sh_pwd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!curl of site cheat.sh/pwd" src="../images/curl_cheat_sh_pwd.png" /></a></p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <h3 id="command-concepts">Command Concepts<a class="headerlink" href="#command-concepts" title="Permanent link">&para;</a></h3>
 <p>Commands are entered at the prompt. The prompt can take many forms, typically something like one of the following. Common features are: (1) a prompt character, often the dollar sign <code>$</code>; (2) a caret to indicate where characters will be inserted when you type, typically a blinking underscore <code>_</code> or rectangle; (3) color to enhance meaning of various components.</p>
 <ul>
 <li>
 <p>Bash on Cheaha...</p>
-<p><div class="lightgallery"><a data-sub-html="bash prompt on cheaha" href="../images/prompt_bash_cheaha.png"><img alt="bash prompt on cheaha" src="../images/prompt_bash_cheaha.png" /></a></div></p>
+<p><a class="glightbox" href="../images/prompt_bash_cheaha.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!bash prompt on cheaha" src="../images/prompt_bash_cheaha.png" /></a></p>
 </li>
 <li>
 <p>Git Bash on Windows Desktop...</p>
-<p><div class="lightgallery"><a data-sub-html="bash prompt on windows desktop" href="../images/prompt_git_bash_windows.png"><img alt="bash prompt on windows desktop" src="../images/prompt_git_bash_windows.png" /></a></div></p>
+<p><a class="glightbox" href="../images/prompt_git_bash_windows.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!bash prompt on windows desktop" src="../images/prompt_git_bash_windows.png" /></a></p>
 </li>
 <li>
 <p>Oh My Zsh on Debian...</p>
-<p><div class="lightgallery"><a data-sub-html="oh my zsh on debian" href="../images/prompt_oh_my_zsh_debian.png"><img alt="oh my zsh on debian" src="../images/prompt_oh_my_zsh_debian.png" /></a></div></p>
+<p><a class="glightbox" href="../images/prompt_oh_my_zsh_debian.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!oh my zsh on debian" src="../images/prompt_oh_my_zsh_debian.png" /></a></p>
 </li>
 </ul>
 <p>Commands take the form <code>command [optional] &lt;required&gt;</code>. The word <code>command</code> should be replaced with the literal name of the command, such as <code>pwd</code>, <code>ls</code> and <code>cd</code>, among many others.</p>
@@ -2717,11 +3536,11 @@
 </ul>
 <p>At the shell prompt, double quotes <code>""</code> interpret newline characters, while single quotes <code>''</code> do not.</p>
 <p>Below is an example file containing escaped characters (shown in <a href="#edit-plain-text-files-nano">nano</a>), and its interpreted output (shown with <a href="#test-a-command-echo">echo</a>).</p>
-<p><div class="lightgallery"><a data-sub-html="example file with escaped characters" href="../images/escape_characters_nano.png"><img alt="example file with escaped characters" src="../images/escape_characters_nano.png" /></a></div></p>
-<p><div class="lightgallery"><a data-sub-html="example of interpreted escaped characters" href="../images/escape_characters_interpreted.png"><img alt="example of interpreted escaped characters" src="../images/escape_characters_interpreted.png" /></a></div></p>
+<p><a class="glightbox" href="../images/escape_characters_nano.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example file with escaped characters" src="../images/escape_characters_nano.png" /></a></p>
+<p><a class="glightbox" href="../images/escape_characters_interpreted.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of interpreted escaped characters" src="../images/escape_characters_interpreted.png" /></a></p>
 <h3 id="piping-and-command-chains">Piping and Command Chains<a class="headerlink" href="#piping-and-command-chains" title="Permanent link">&para;</a></h3>
 <p>Commands may be composed into chains using pipes with the pipe character <code>|</code>. For example, <code>ls -l | wc -l</code> counts the number of lines returned by <code>ls -l</code> (see <a href="#list-files-and-directories-ls">ls</a> and <a href="#count-lines-words-and-characters-wc">wc</a>). <strong>Warning</strong> This construct does not accurately count the number of items in a directory, and is only for demonstration purposes. Do not use this exact command chain in practice.</p>
-<p><div class="lightgallery"><a data-sub-html="example of piping ls into wc" href="../images/pipe.png"><img alt="example of piping ls into wc" src="../images/pipe.png" /></a></div></p>
+<p><a class="glightbox" href="../images/pipe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of piping ls into wc" src="../images/pipe.png" /></a></p>
 <h3 id="redirects">Redirects<a class="headerlink" href="#redirects" title="Permanent link">&para;</a></h3>
 <p>Command inputs and outputs may be redirected with the characters <code>&lt;</code> for input and <code>&gt;</code> for output. Output redirects using <code>&gt;</code> overwrite the contents of existing files and are destructive. Using <code>&gt;&gt;</code> in place of <code>&gt;</code> appends contents to a file, rather than overwriting the contents.</p>
 <ul>
@@ -2729,15 +3548,15 @@
 <li>Typical output is written to <code>STDOUT</code> or <code>1</code> and errors are written to <code>STDERR</code> or <code>2</code>.</li>
 <li>
 <p><code>ls -l 1&gt; dirlist</code> stores the directory listing to the file <code>dirlist</code>. In this case using <code>&gt;</code> is the same as <code>1&gt;</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of redirecting stdout to a file" href="../images/redirect_stdout.png"><img alt="example of redirecting stdout to a file" src="../images/redirect_stdout.png" /></a></div></p>
+<p><a class="glightbox" href="../images/redirect_stdout.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of redirecting stdout to a file" src="../images/redirect_stdout.png" /></a></p>
 </li>
 <li>
 <p><code>ls -l doesnotexist 1&gt; error 2&gt;&amp;1</code> stores the error message to the file <code>error</code>. The text <code>2&gt;&amp;1</code> means write <code>STDERR</code> to <code>STDOUT</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of redirecting stderr to a file" href="../images/redirect_stderr.png"><img alt="example of redirecting stderr to a file" src="../images/redirect_stderr.png" /></a></div></p>
+<p><a class="glightbox" href="../images/redirect_stderr.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of redirecting stderr to a file" src="../images/redirect_stderr.png" /></a></p>
 </li>
 <li>
 <p><code>wc -l 0&lt; lines</code> reads the contents of file <code>lines</code> and counts the number of lines. Note that for <code>wc</code> this is not needed, but may be needed for other commands. In this case using <code>&lt;</code> is the same as <code>0&lt;</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of redirecting a file to stdin" href="../images/redirect_stdin.png"><img alt="example of redirecting a file to stdin" src="../images/redirect_stdin.png" /></a></div></p>
+<p><a class="glightbox" href="../images/redirect_stdin.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of redirecting a file to stdin" src="../images/redirect_stdin.png" /></a></p>
 </li>
 </ul>
 <p>For more information on the commands used in the examples, see <a href="#list-files-and-directories-ls">ls</a>, <a href="#count-lines-words-and-characters-wc">wc</a> and <a href="#display-file-contents-cat-less">cat</a>.</p>
@@ -2763,7 +3582,7 @@
 <li><em>Relative paths</em> start at the working directory, e.g. <code>bin</code>.</li>
 </ul>
 <p>Below are examples of constructed paths tested with <a href="#list-files-and-directories-ls">ls</a>.</p>
-<p><div class="lightgallery"><a data-sub-html="examples of paths" href="../images/paths.png"><img alt="examples of paths" src="../images/paths.png" /></a></div></p>
+<p><a class="glightbox" href="../images/paths.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!examples of paths" src="../images/paths.png" /></a></p>
 </li>
 </ul>
 <h3 id="glob-syntax">Glob Syntax<a class="headerlink" href="#glob-syntax" title="Permanent link">&para;</a></h3>
@@ -2776,14 +3595,14 @@
 <li>Double star <code>**</code> matches any number of directories with any names. <code>**/*.png</code> matches all <code>png</code> files within any subdirectory of the working directory. This is not commonly used, but extremely useful for some applications.</li>
 </ul>
 <p>Below are examples of glob usage tested with <a href="#list-files-and-directories-ls">ls</a>.</p>
-<p><div class="lightgallery"><a data-sub-html="examples of globs" href="../images/glob.png"><img alt="examples of globs" src="../images/glob.png" /></a></div></p>
+<p><a class="glightbox" href="../images/glob.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!examples of globs" src="../images/glob.png" /></a></p>
 </li>
 </ul>
 <h3 id="environment-concepts">Environment Concepts<a class="headerlink" href="#environment-concepts" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Environment variables may be assigned by using <code>var=value</code> where <code>var</code> is the variable name and <code>value</code> is its value. Below is an example tested with <a href="#test-a-command-echo">echo</a>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of variable assignment and checking" href="../images/variable.png"><img alt="example of variable assignment and checking" src="../images/variable.png" /></a></div></p>
+<p><a class="glightbox" href="../images/variable.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of variable assignment and checking" src="../images/variable.png" /></a></p>
 </li>
 <li>
 <p>Environment variable values may be expanded by using <code>"${var}"</code> where <code>var</code> is the variable name.</p>
@@ -2796,7 +3615,7 @@
 </li>
 <li>
 <p><em>Always</em> use double quotes around variables. DO use <code>"${HOME}"</code>, do NOT use <code>${HOME}</code>. Double quotes ensure that space characters in expanded values are handled appropriately. Below, note the error occurring without double quotes due to the spaces in the directory name. Double quoting the variable fixes the error. The commands used to test are <a href="#list-files-and-directories-ls">ls</a>, <a href="#change-working-directory-cd">cd</a> and <a href="#show-working-directory-pwd">pwd</a>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of double quote use" href="../images/variable_double_quote.png"><img alt="example of double quote use" src="../images/variable_double_quote.png" /></a></div></p>
+<p><a class="glightbox" href="../images/variable_double_quote.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of double quote use" src="../images/variable_double_quote.png" /></a></p>
 </li>
 <li>
 <p>Expanding a variable that isn't defined returns an empty string and does <em>not</em> produce an error, but may cause unexpected behavior.</p>
@@ -2842,8 +3661,8 @@
 <li><code>${@: -2:1}</code> is the second to last argument only.</li>
 </ul>
 <p>Below is an example script file, hash-bang not shown, demonstrating how each argument variable works, and its interpreted output. The text editor <a href="#edit-plain-text-files-nano">nano</a> is used to display the file and <a href="#manage-permissions-of-files-and-directores-chmod">chmod</a> is used to modify file permissions.</p>
-<p><div class="lightgallery"><a data-sub-html="example file showing numeric argument variables" href="../images/shell_args_example.png"><img alt="example file showing numeric argument variables" src="../images/shell_args_example.png" /></a></div></p>
-<p><div class="lightgallery"><a data-sub-html="example of interpreted numeric argument variables" href="../images/shell_args_example_output.png"><img alt="example of interpreted numeric argument variables" src="../images/shell_args_example_output.png" /></a></div></p>
+<p><a class="glightbox" href="../images/shell_args_example.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example file showing numeric argument variables" src="../images/shell_args_example.png" /></a></p>
+<p><a class="glightbox" href="../images/shell_args_example_output.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of interpreted numeric argument variables" src="../images/shell_args_example_output.png" /></a></p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2877,25 +3696,25 @@
 
 <h3 id="show-working-directory-pwd">Show working directory (<code>pwd</code>)<a class="headerlink" href="#show-working-directory-pwd" title="Permanent link">&para;</a></h3>
 <p>Use <code>pwd</code>, which stands for present working directory.</p>
-<p><div class="lightgallery"><a data-sub-html="example usage of pwd" href="../images/pwd.png"><img alt="example usage of pwd" src="../images/pwd.png" /></a></div></p>
+<p><a class="glightbox" href="../images/pwd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example usage of pwd" src="../images/pwd.png" /></a></p>
 <h3 id="list-files-and-directories-ls">List files and directories (<code>ls</code>)<a class="headerlink" href="#list-files-and-directories-ls" title="Permanent link">&para;</a></h3>
 <p>Below are common uses of <code>ls</code>, short for "list", used to display directory contents and examine details of files and directories. It may be used to <a href="#how-to-check-permissions">check file permissions</a> when using <a href="#manage-permissions-of-files-and-directores-chmod">chmod</a>.</p>
 <ul>
 <li>
 <p>Visible files only, list: <code>ls</code>. Multiple entries per line.</p>
-<p><div class="lightgallery"><a data-sub-html="example usage of ls" href="../images/ls.png"><img alt="example usage of ls" src="../images/ls.png" /></a></div></p>
+<p><a class="glightbox" href="../images/ls.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example usage of ls" src="../images/ls.png" /></a></p>
 </li>
 <li>
 <p>Visible files only, table: <code>ls -l</code>. One entry per line and shows <a href="#manage-permissions-of-files-and-directores-chmod">permissions</a>, size in bytes on disk, and timestamp.</p>
-<p><div class="lightgallery"><a data-sub-html="example usage of ls -l" href="../images/ls-l.png"><img alt="example usage of ls -l" src="../images/ls-l.png" /></a></div></p>
+<p><a class="glightbox" href="../images/ls-l.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example usage of ls -l" src="../images/ls-l.png" /></a></p>
 </li>
 <li>
 <p>Visible and hidden files, list <code>ls -a</code>. Same as <code>ls</code>, but has hidden files and directories and <code>.</code> and <code>..</code>. Example below is truncated to conserve page space.</p>
-<p><div class="lightgallery"><a data-sub-html="example usage of ls -a" href="../images/ls-a.png"><img alt="example usage of ls -a" src="../images/ls-a.png" /></a></div></p>
+<p><a class="glightbox" href="../images/ls-a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example usage of ls -a" src="../images/ls-a.png" /></a></p>
 </li>
 <li>
 <p>Visible and hidden files, table <code>ls -al</code>. Same as <code>ls -l</code> but has hidden files and directories and <code>.</code> and <code>..</code>. Example below is truncated to conserve page space.</p>
-<p><div class="lightgallery"><a data-sub-html="example usage of ls -al" href="../images/ls-al.png"><img alt="example usage of ls -al" src="../images/ls-al.png" /></a></div></p>
+<p><a class="glightbox" href="../images/ls-al.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example usage of ls -al" src="../images/ls-al.png" /></a></p>
 </li>
 </ul>
 <h3 id="examine-disk-usage-du">Examine disk usage (<code>du</code>)<a class="headerlink" href="#examine-disk-usage-du" title="Permanent link">&para;</a></h3>
@@ -2911,20 +3730,20 @@
 <li>To move up to the parent of the working directory, use <code>cd ..</code>.</li>
 </ul>
 <p>Below are examples of <code>cd</code> usage, tested with <a href="#list-files-and-directories-ls">ls</a>.</p>
-<p><div class="lightgallery"><a data-sub-html="example usage of cd" href="../images/cd.png"><img alt="example usage of cd" src="../images/cd.png" /></a></div></p>
+<p><a class="glightbox" href="../images/cd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example usage of cd" src="../images/cd.png" /></a></p>
 <h3 id="copy-files-and-directories-cp">Copy files and directories (<code>cp</code>)<a class="headerlink" href="#copy-files-and-directories-cp" title="Permanent link">&para;</a></h3>
 <p>Below are use cases with associated commands, and examples tested using <a href="#list-files-and-directories-ls">ls</a>.</p>
 <ul>
 <li>
 <p>Single file, change name: <code>cp -a &lt;source-file-path&gt; &lt;destination-file-path&gt;</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of cp on a single file" href="../images/cp-file.png"><img alt="example of cp on a single file" src="../images/cp-file.png" /></a></div></p>
+<p><a class="glightbox" href="../images/cp-file.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of cp on a single file" src="../images/cp-file.png" /></a></p>
 </li>
 <li>
 <p>Single file, keep name: <code>cp -a &lt;source-file-path&gt; &lt;destination-directory-path&gt;</code>.</p>
 </li>
 <li>
 <p>Directory: <code>cp -a &lt;source-directory-path&gt; &lt;destination-directory-path&gt;</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of cp on a directory" href="../images/cp-dir.png"><img alt="example of cp on a directory" src="../images/cp-dir.png" /></a></div></p>
+<p><a class="glightbox" href="../images/cp-dir.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of cp on a directory" src="../images/cp-dir.png" /></a></p>
 </li>
 <li>
 <p>Glob: <code>cp -a &lt;source-path-glob&gt; &lt;destination-directory-path&gt;</code>.</p>
@@ -2935,14 +3754,14 @@
 <ul>
 <li>
 <p>Single file, change name: <code>mv &lt;source-file-path&gt; &lt;destination-file-path&gt;</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of mv on a single file" href="../images/mv-file.png"><img alt="example of mv on a single file" src="../images/mv-file.png" /></a></div></p>
+<p><a class="glightbox" href="../images/mv-file.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of mv on a single file" src="../images/mv-file.png" /></a></p>
 </li>
 <li>
 <p>Single file, keep name: <code>mv &lt;source-file-path&gt; &lt;destination-directory-path&gt;</code>.</p>
 </li>
 <li>
 <p>Directory: <code>mv &lt;source-directory-path&gt; &lt;destination-directory-path&gt;</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of mv on a directory" href="../images/mv-dir.png"><img alt="example of mv on a directory" src="../images/mv-dir.png" /></a></div></p>
+<p><a class="glightbox" href="../images/mv-dir.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of mv on a directory" src="../images/mv-dir.png" /></a></p>
 </li>
 <li>
 <p>Glob: <code>mv &lt;source-path-glob&gt; &lt;destination-directory-path&gt;</code>.</p>
@@ -2960,14 +3779,14 @@
 <ul>
 <li>
 <p>Single file: <code>rm &lt;file-path&gt;</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of rm on a single file" href="../images/rm-file.png"><img alt="example of rm on a single file" src="../images/rm-file.png" /></a></div></p>
+<p><a class="glightbox" href="../images/rm-file.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of rm on a single file" src="../images/rm-file.png" /></a></p>
 </li>
 <li>
 <p>Empty Directory: <code>rmdir &lt;directory-path&gt;</code>.</p>
 </li>
 <li>
 <p>Directory with Contents: <code>rm -r &lt;directory-path&gt;</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of rm on a directory" href="../images/rm-directory.png"><img alt="example of rm on a directory" src="../images/rm-directory.png" /></a></div></p>
+<p><a class="glightbox" href="../images/rm-directory.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of rm on a directory" src="../images/rm-directory.png" /></a></p>
 </li>
 <li>
 <p>Glob: <code>rm &lt;file-path-glob&gt;</code>.</p>
@@ -2985,19 +3804,19 @@
 <p>By far the most common usage is to download a file. To do so use <code>curl -o &lt;file-path&gt; &lt;url&gt;</code>, where <code>&lt;file-path&gt;</code> is the desired local path to save and <code>&lt;url&gt;</code> is the web address of the source data.</p>
 <h3 id="create-directories-mkdir">Create directories (<code>mkdir</code>)<a class="headerlink" href="#create-directories-mkdir" title="Permanent link">&para;</a></h3>
 <p>Use <code>mkdir &lt;directory-name&gt;</code>. Example below is tested using <a href="#list-files-and-directories-ls">ls</a>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of mkdir" href="../images/mkdir.png"><img alt="example of mkdir" src="../images/mkdir.png" /></a></div></p>
+<p><a class="glightbox" href="../images/mkdir.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of mkdir" src="../images/mkdir.png" /></a></p>
 <h3 id="create-files-touch">Create files (<code>touch</code>)<a class="headerlink" href="#create-files-touch" title="Permanent link">&para;</a></h3>
 <p>Use <code>touch &lt;file-path&gt;</code>. Example below is tested using <a href="#list-files-and-directories-ls">ls</a>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of touch" href="../images/touch.png"><img alt="example of touch" src="../images/touch.png" /></a></div></p>
+<p><a class="glightbox" href="../images/touch.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of touch" src="../images/touch.png" /></a></p>
 <h3 id="edit-plain-text-files-nano">Edit plain-text files (<code>nano</code>)<a class="headerlink" href="#edit-plain-text-files-nano" title="Permanent link">&para;</a></h3>
 <p>Use <code>nano &lt;file-path&gt;</code>. If the file exists, it will be opened. If the file does not exist, it will be stored in memory until saved. If the contents are not saved they will be discarded and cannot be recovered. You may also use just <code>nano</code>, without a file path, to create a new empty file.</p>
-<p><div class="lightgallery"><a data-sub-html="example of nano interface" href="../images/nano_001.png"><img alt="example of nano interface" src="../images/nano_001.png" /></a></div></p>
+<p><a class="glightbox" href="../images/nano_001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of nano interface" src="../images/nano_001.png" /></a></p>
 <p>The character <code>^</code> is the <span class="keys"><kbd class="key-control">Ctrl</kbd></span> key, so <code>^y</code> would require pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-y">Y</kbd></span>. To save use <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span> to open the exit prompt.</p>
-<p><div class="lightgallery"><a data-sub-html="example of exit prompt" href="../images/nano_002.png"><img alt="example of exit prompt" src="../images/nano_002.png" /></a></div></p>
+<p><a class="glightbox" href="../images/nano_002.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of exit prompt" src="../images/nano_002.png" /></a></p>
 <p>Press <span class="keys"><kbd class="key-y">Y</kbd></span> for yes to bring up the save prompt.</p>
-<p><div class="lightgallery"><a data-sub-html="example of save prompt" href="../images/nano_003.png"><img alt="example of save prompt" src="../images/nano_003.png" /></a></div></p>
+<p><a class="glightbox" href="../images/nano_003.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of save prompt" src="../images/nano_003.png" /></a></p>
 <p>If you opened <code>nano</code> using an existing file, or passed in a file path, then the <code>File Name to Write</code> prompt will be autofilled with the given file name. If not, you will need to enter it here. When you have the file name entered as desired, press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to save. Below is a demonstration of the shell with the new file listed using <code>ls</code>. Example below is tested using <a href="#list-files-and-directories-ls">ls</a>.</p>
-<p><div class="lightgallery"><a data-sub-html="ls result of new file saved in nano" href="../images/nano_004.png"><img alt="ls result of new file saved in nano" src="../images/nano_004.png" /></a></div></p>
+<p><a class="glightbox" href="../images/nano_004.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!ls result of new file saved in nano" src="../images/nano_004.png" /></a></p>
 <h4 id="searching-for-text-in-nano">Searching for text in <code>nano</code><a class="headerlink" href="#searching-for-text-in-nano" title="Permanent link">&para;</a></h4>
 <p>Use the key combination <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-w">W</kbd></span> to search for text. Follow the prompts as they appear to navigate.</p>
 <h3 id="count-lines-words-and-characters-wc">Count lines, words and characters (<code>wc</code>)<a class="headerlink" href="#count-lines-words-and-characters-wc" title="Permanent link">&para;</a></h3>
@@ -3008,18 +3827,18 @@
 <li>All: <code>wc &lt;file-path&gt;</code>.</li>
 </ul>
 <p>Below are example outputs of a file named <code>newfile</code> containing the text <code>hello world</code> followed by a blank line. Note the file is <a href="#redirects">redirected</a> to <code>wc</code> from <code>STDIN</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example wc output" href="../images/wc.png"><img alt="example wc output" src="../images/wc.png" /></a></div></p>
+<p><a class="glightbox" href="../images/wc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example wc output" src="../images/wc.png" /></a></p>
 <h3 id="display-file-contents-cat-less">Display file contents (<code>cat</code>, <code>less</code>)<a class="headerlink" href="#display-file-contents-cat-less" title="Permanent link">&para;</a></h3>
 <p>Use <code>cat &lt;file-path&gt;</code> to display the contents of the file at <code>&lt;file-path&gt;</code>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of cat" href="../images/cat.png"><img alt="example of cat" src="../images/cat.png" /></a></div></p>
+<p><a class="glightbox" href="../images/cat.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of cat" src="../images/cat.png" /></a></p>
 <p>If the contents are too long to be displayed on one screen, you can pipe the output to <code>less</code> to add scrolling functionality by using <code>cat &lt;file-path&gt; | less</code>. Use the keyboard key <span class="keys"><kbd class="key-q">Q</kbd></span> to stop using <code>less</code>.</p>
 <p>Below are two images showing what <code>less</code> looks like. Note the last line of each image, which indicates you are using the <code>less</code> environment. The first image is an example where there is more text below the visible text. The second image is an example at the bottom of the text.</p>
-<p><div class="lightgallery"><a data-sub-html="example of cat less with more text below" href="../images/cat_less_1.png"><img alt="example of cat less with more text below" src="../images/cat_less_1.png" /></a></div></p>
-<p><div class="lightgallery"><a data-sub-html="example of cat less at the bottom of the text" href="../images/cat_less_2.png"><img alt="example of cat less at the bottom of the text" src="../images/cat_less_2.png" /></a></div></p>
+<p><a class="glightbox" href="../images/cat_less_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of cat less with more text below" src="../images/cat_less_1.png" /></a></p>
+<p><a class="glightbox" href="../images/cat_less_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of cat less at the bottom of the text" src="../images/cat_less_2.png" /></a></p>
 <h3 id="examine-start-and-end-of-file-head-tail">Examine start and end of file (<code>head</code>, <code>tail</code>)<a class="headerlink" href="#examine-start-and-end-of-file-head-tail" title="Permanent link">&para;</a></h3>
 <p>To display only the first two lines use <code>head -n 2 &lt;file-path&gt;</code>. Use <code>tail</code> instead of <code>head</code> for the last two lines.</p>
 <p>Below is an image showing the use of <code>head</code> and <code>tail</code> on a file with four lines. The file was created by <a href="#redirects">redirecting</a> the <a href="#test-a-command-echo">echo command</a> to a file, using the <a href="#special-escaped-characters">special newline character</a> to add line breaks.</p>
-<p><div class="lightgallery"><a data-sub-html="example of head and tail" href="../images/head_tail.png"><img alt="example of head and tail" src="../images/head_tail.png" /></a></div></p>
+<p><a class="glightbox" href="../images/head_tail.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of head and tail" src="../images/head_tail.png" /></a></p>
 <h3 id="sort-file-contents-sort">Sort file contents (<code>sort</code>)<a class="headerlink" href="#sort-file-contents-sort" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Alphabetical: <code>sort &lt;file-path&gt;</code>.</li>
@@ -3028,34 +3847,34 @@
 </ul>
 <p>Lines in the input file are returned in sorted order. The results are displayed in stdout. To write the sorted result to a file use <code>sort &lt;file-path&gt; &gt; &lt;new-file-path&gt;</code>.</p>
 <p>Below is an image showing the use of <code>head</code> and <code>tail</code> on a file with four lines. The file was created by <a href="#redirects">redirecting</a> the <a href="#test-a-command-echo">echo command</a> to a file, using the <a href="#special-escaped-characters">special newline character</a> to add line breaks.</p>
-<p><div class="lightgallery"><a data-sub-html="file used with sort example" href="../images/sort_file.png"><img alt="file used with sort example" src="../images/sort_file.png" /></a></div></p>
-<p><div class="lightgallery"><a data-sub-html="example of sort" href="../images/sort_command.png"><img alt="example of sort" src="../images/sort_command.png" /></a></div></p>
+<p><a class="glightbox" href="../images/sort_file.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!file used with sort example" src="../images/sort_file.png" /></a></p>
+<p><a class="glightbox" href="../images/sort_command.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of sort" src="../images/sort_command.png" /></a></p>
 <h3 id="test-a-command-echo">Test a command (<code>echo</code>)<a class="headerlink" href="#test-a-command-echo" title="Permanent link">&para;</a></h3>
 <p>Use <code>echo "&lt;command&gt;"</code> to see the expanded command without executing it. For example</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">echo</span> <span class="s2">&quot;cp -a </span><span class="nv">$USER_DATA</span><span class="s2">/mydir </span><span class="nv">$HOME</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;cp -a </span><span class="nv">$USER_DATA</span><span class="s2">/mydir </span><span class="nv">$HOME</span><span class="s2">&quot;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># prints</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cp -a /data/user/&lt;username&gt;/mydir /home/&lt;username&gt;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cp<span class="w"> </span>-a<span class="w"> </span>/data/user/&lt;username&gt;/mydir<span class="w"> </span>/home/&lt;username&gt;
 </code></pre></div>
 <p>Use the <code>-e</code> flag if you need to interpret escaped characters such as <code>\t</code> for tab or <code>\n</code> for new line. The command being examined in the example below is <a href="#copy-files-and-directories-cp">cp</a></p>
-<p><div class="lightgallery"><a data-sub-html="example of echo used for command test" href="../images/echo.png"><img alt="example of echo used for command test" src="../images/echo.png" /></a></div></p>
+<p><a class="glightbox" href="../images/echo.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of echo used for command test" src="../images/echo.png" /></a></p>
 <h3 id="search-for-text-grep">Search for text (<code>grep</code>)<a class="headerlink" href="#search-for-text-grep" title="Permanent link">&para;</a></h3>
 <p>Use <code>grep "&lt;pattern&gt;" "&lt;file-path&gt;"</code> to search for <code>&lt;pattern&gt;</code> in the file at <code>&lt;file-path&gt;</code>. Use the <code>-n</code> flag to display line numbers with results.</p>
 <p>Below is an example of <code>grep -n</code> on a file. The number at the start of the result line is the line number of the pattern match. The matched portion is shown in red while other text on the same line is shown in white. The file was created by <a href="#redirects">redirecting</a> the <a href="#test-a-command-echo">echo command</a> to a file, using the <a href="#special-escaped-characters">special newline character</a> to add line breaks. We are looking for the literal text "echo" within the file.</p>
-<p><div class="lightgallery"><a data-sub-html="example of grep showing line number" href="../images/grep.png"><img alt="example of grep showing line number" src="../images/grep.png" /></a></div></p>
+<p><a class="glightbox" href="../images/grep.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of grep showing line number" src="../images/grep.png" /></a></p>
 <h3 id="close-the-session-exit">Close the session (<code>exit</code>)<a class="headerlink" href="#close-the-session-exit" title="Permanent link">&para;</a></h3>
 <p>Use <code>exit</code>.</p>
 <h3 id="clear-the-shell-display-clear">Clear the shell display (<code>clear</code>)<a class="headerlink" href="#clear-the-shell-display-clear" title="Permanent link">&para;</a></h3>
 <p>Use <code>clear</code>.</p>
 <h3 id="where-is-a-command-located-which">Where is a command located? (<code>which</code>)<a class="headerlink" href="#where-is-a-command-located-which" title="Permanent link">&para;</a></h3>
 <p>Use <code>which &lt;command-name&gt;</code>. The command being searched for is <a href="#list-files-and-directories-ls">ls</a>.</p>
-<p><div class="lightgallery"><a data-sub-html="example of which" href="../images/which.png"><img alt="example of which" src="../images/which.png" /></a></div></p>
+<p><a class="glightbox" href="../images/which.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of which" src="../images/which.png" /></a></p>
 <h3 id="what-does-a-command-do-whatis-man">What does a command do? (<code>whatis</code>, <code>man</code>)<a class="headerlink" href="#what-does-a-command-do-whatis-man" title="Permanent link">&para;</a></h3>
 <p>For builtin command and aliases there are two distinct options for learning more. The command being examined is <a href="#list-files-and-directories-ls">ls</a>.</p>
 <ul>
 <li>Use <code>whatis &lt;command-name&gt;</code> to get a brief summary of the command.</li>
 <li>Use <code>man &lt;command-name&gt;</code> to get the full help file in a <code>less</code> environment. Use <code>q</code> on your keyboard to exit <code>less</code>.</li>
 </ul>
-<p><div class="lightgallery"><a data-sub-html="example of whatis" href="../images/whatis.png"><img alt="example of whatis" src="../images/whatis.png" /></a></div></p>
+<p><a class="glightbox" href="../images/whatis.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of whatis" src="../images/whatis.png" /></a></p>
 <h3 id="remotely-access-shell-on-other-machines-ssh">Remotely access shell on other machines (<code>ssh</code>)<a class="headerlink" href="#remotely-access-shell-on-other-machines-ssh" title="Permanent link">&para;</a></h3>
 <p>See our <a href="../../uab_cloud/remote_access/#command-line-via-ssh">SSH Section</a> for more detailed information.</p>
 <h3 id="remotely-access-or-transfer-files-between-machines-sftp">Remotely access or transfer files between machines (<code>sftp</code>)<a class="headerlink" href="#remotely-access-or-transfer-files-between-machines-sftp" title="Permanent link">&para;</a></h3>
@@ -3069,7 +3888,7 @@
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>Please carefully consider security when working in shared spaces like Cheaha. Setting private directories or files as readable by other users can inadvertently expose sensitive or protected information and may violate IT policy, FERPA, HIPAA or some combination.</p>
-<p>There are legitimate use cases for truly shared spaces. Please <a href="../..#contact-us">Contact Us</a> if you need to share information with other users or collaborators and aren't sure of how to do so securely.</p>
+<p>There are legitimate use cases for truly shared spaces. Please <a href="../../#contact-us">Contact Us</a> if you need to share information with other users or collaborators and aren't sure of how to do so securely.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
@@ -3130,7 +3949,7 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 <p>Below is an example of <code>chmod</code> used symbolically to set user execute permissions on a script. Note the error before permissions are set.</p>
-<p><div class="lightgallery"><a data-sub-html="example of symbolic chmod" href="../images/chmod_symbolic.png"><img alt="example of symbolic chmod" src="../images/chmod_symbolic.png" /></a></div></p>
+<p><a class="glightbox" href="../images/chmod_symbolic.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of symbolic chmod" src="../images/chmod_symbolic.png" /></a></p>
 </li>
 <li>
 <p>Numerals</p>
@@ -3149,7 +3968,7 @@
 </ul>
 <p>Setting <code>755</code> is a common pattern for system-wide scripts. Because the <code>4</code> read and <code>1</code> executable bits are set for all users, it can be called from anywhere by any other script, and not just the owner. However, the <code>2</code> write bit is set only for the owner, so other users cannot modify the contents of the script.</p>
 <p>Below is an example of <code>chmod</code> used numerically to add execution permissions to all users. Note the error before permissions are set.</p>
-<p><div class="lightgallery"><a data-sub-html="example of numeric chmod" href="../images/chmod_numeric.png"><img alt="example of numeric chmod" src="../images/chmod_numeric.png" /></a></div></p>
+<p><a class="glightbox" href="../images/chmod_numeric.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!example of numeric chmod" src="../images/chmod_numeric.png" /></a></p>
 </li>
 </ol>
 <h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
@@ -3179,60 +3998,49 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
-  <hr>
-<div class="md-source-file">
-  <small>
-    
-      Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2023</span>
-      
-    
-  </small>
-</div>
 
-              
-            </article>
-          </div>
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2023</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../../data_management/code_storage/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Code Storage" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Code Storage
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../using_anaconda/" class="md-footer__link md-footer__link--next" aria-label="Next: Using Anaconda" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Using Anaconda
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3258,11 +4066,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-
-      <script src="../../assets/javascripts/bundle.1514a9a0.min.js"></script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.instant"], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
@@ -3271,12 +4080,5 @@
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
-<script>
-  var elements = document.getElementsByClassName("lightgallery");
-  for (var i = 0; i < elements.length; i++) {
-    lightGallery(elements[i]);
-  }
-</script>
-
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
