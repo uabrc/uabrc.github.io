@@ -112,13 +112,13 @@ html .md-footer-meta.md-typeset a.supportemail {
 }
 
 /* adds a flexbox to the surrounding div */
-div.lightgallery {
+a.glightbox {
     display: flex;
     justify-content: center;
 }
 
 /* adding the drop shadow,margin and keeping the images at 50 viewport width */
-.lightgallery img {
+a.glightbox img {
     max-width: 50vw;
     box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
     margin-bottom: 1rem;
@@ -126,7 +126,7 @@ div.lightgallery {
 
 /* 100 viewport width on smaller screens */
 @media only screen and (max-width : 600px) {
-    .lightgallery img {
+    a.glightbox img {
         max-width: 100%;
     }
 }
