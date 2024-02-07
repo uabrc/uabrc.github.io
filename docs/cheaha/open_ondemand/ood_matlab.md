@@ -7,7 +7,7 @@ Matlab is available for use graphically in your browser via OOD. As with other s
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-Matlab tends to consume substantial memory at startup. You may experience difficulty with job errors below 20 GB of total memory.
+    Matlab tends to consume substantial memory at startup. You may experience difficulty with job errors below 20 GB of total memory.
 <!-- markdownlint-enable MD046 -->
 
 ## Using Anaconda Python from within Matlab
