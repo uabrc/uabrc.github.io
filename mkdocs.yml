@@ -26,9 +26,6 @@ copyright: Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<b
 markdown_extensions:
   - admonition
   - attr_list
-  - lightgallery:
-      show_description_in_lightgallery: true
-      show_description_as_inline_caption: false
   - md_in_html
   - pymdownx.arithmatex:
       generic: true
@@ -47,6 +44,8 @@ plugins:
       data_path: docs
   - git-revision-date-localized:
       type: date
+  - glightbox:
+      # auto_caption: true
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
@@ -90,7 +89,8 @@ nav:
       - Long Term Storage:
           - data_management/lts/index.md
           - Interfacing with LTS: data_management/lts/interfaces.md
-          - Sharing: data_management/lts/policies.md
+          - Bucket Permissions: data_management/lts/policies.md
+          - UAB Core Accounts: data_management/lts/lts_cores.md
           - FAQ: data_management/lts/lts_faq.md
       - Transfer:
           - Globus: data_management/transfer/globus.md

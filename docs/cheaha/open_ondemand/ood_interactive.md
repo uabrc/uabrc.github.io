@@ -29,9 +29,17 @@ It is possible to remotely access Cheaha using an [HPC Desktop Job](#hpc-desktop
 To use this method you will need either a GitHub account or Microsoft account. Microsoft accounts can be obtained using your SSO credentials through Microsoft.
 
 <!-- markdownlint-disable MD046 -->
+!!! bug
+
+    If your job fails to launch, please see the section [Common Challenges](../../cheaha/open_ondemand/ood_interactive.md#common-challenges-and-issues-in-the-ood-jupyter-notebook), or our [FAQ](../../help/faq.md) for possible solutions, or [contact us](../../index.md#contact-us).
+    
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
 !!! danger
 
     Do _NOT_ use the remote tunnel extension if you intend to view or work with [Restricted/PHI Data](https://www.uab.edu/it/home/policies/data-classification/classification-overview) while using VSCode.
+
 
     When using a tunnel, all information visible within VSCode is end-to-end encrypted and sent from Cheaha to your local machine through a third-party service (the tunnel). Use of any third party services and encryption for Restricted/PHI Data requires a risk assessment first, on a case-by-case basis.
 <!-- markdownlint-enable MD046 -->
@@ -108,29 +116,42 @@ module load cuDNN/8.9.2.26-CUDA-12.2.0
 
 For information on which versions of CUDA to load for Tensorflow and PyTorch, please see [Tensorflow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
 
-<!-- markdownlint-disable MD046 -->
-!!! note
+#### Common Challenges and Issues in the OOD Jupyter Notebook
 
-    If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
-<!-- markdownlint-enable MD046 -->
+1. Hard-to-diagnose Python-related issues:
+    - Jupyter Notebook by default loads `Anaconda3`. Hence do not load any versions of `Anaconda3` or `mamba` module in the `Environment Setup` field in the OOD Jupyter Notebook, as it causes Python mismatch, and the errors are hard-to-diagnose.
+    - Having custom installs of Anaconda/Miniconda/Mambaforge/Minimamba can cause the above similar issue.
+    - To identify a Python mismatch, use the commands `which python` and `python --version` to confirm the desired Python executable and version. Within the `conda` environment, `which python` prints the path of the Python executable (e.g., `~/.conda/envs/remora/bin/python`). If it doesn't match the expected version, an unexpected Python version may be in use.
+    - The commands `conda init` or `mamba init` add a specific version of Python to the front of the `$PATH` variable in the `.bashrc` file. The `$PATH` variable is an environment variable containing directories where the operating system looks for executable files. When you type a command in the terminal, the system searches these directories to find the corresponding executable. As a result, when you attempt to execute a Python-related command, the system will find the first matching executable in the directories listed in the modified `$PATH`. If the first entry corresponds to the version of Python added by `mamba init` or `conda init`, that specific version will be used which lead to Python mismatch and hard-to-diagnose errors.
+  
+2. Unexpected/Silent Job Failure:
+    - Having `conda/mamba activate` and `source activate` statements in the OOD Jupyter Notebooks' `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
 
-<!-- markdownlint-disable MD046 -->
-!!! important
+3. Timeout in Loading Jupyter Notebook:
+    - If you encounter a "Failed to Connect" message while trying to open the job, and experience a timeout issue in loading the OOD Jupyter Notebook, it is recommended to close the tab and wait for a few minutes. Jupyter is still in the process of initializing and may take some time after the job initially starts running.
 
-    If you are not able to see your environment, you may need to install the `ipykernel` package. It is required for Jupyter to recognize your environment. See [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#packages-for-jupyter) for more information.
-<!-- markdownlint-enable MD046 -->
+4. VNC Error When Launching OOD Jupyter Notebook:
+    - While launching an OOD HPC Desktop Job or any OOD Applications, if the user gets errors, `Unable to contact settings server` and/or `Unable to load a failsafe session`, it is recommended to follow the below guidelines.
+  
+    ![!Ood vnc error.](./images/ood_vncerror.png)
+    ![!Ood vnc error_contd.](./images/ood_vncerror_contd.png)
 
-<!-- markdownlint-disable MD046 -->
-!!! important
+    - Using `conda init` and `mamba init` causes a block of code automatically inserted into the `.bashrc` file in your `$HOME` directory. This code block may interfere with the proper functioning of various OOD applications, resulting in a VNC error. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
 
-    Do not load `module load Anaconda3` in the `Environment Setup` field, as it is loaded automatically. Loading any versions of `Anaconda3` would affect the Python executable, which is used by default. These results in hard-to-diagnose errors in the OOD Jupyter notebook.
-<!-- markdownlint-enable MD046 -->
+5. Issues related to `pip`:
+    - When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` within the same conda environment and use `pip` from that environment. If `pip` is used outside of Anaconda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments, and shows the following error,
 
-<!-- markdownlint-disable MD046 -->
-!!! warning
+        ```bash
+        Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)
+        ```
 
-    Having `conda/mamba activate` and `source activate` statements in the `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
-<!-- markdownlint-enable MD046 -->
+    - For the above case, resolving errors involve deleting the `~/.local` directory.
+  
+    - Here's an example of the correct procedure for installing `pip` packages within a `conda`:
+         1. Load the `Anaconda3` module using `module load Anaconda3`.
+         2. Create or activate the desired Anaconda environment. Please refer to the [Anaconda documentation](../../workflow_solutions/using_anaconda.md#create-an-environment)
+         3. Install `pip` within the `conda` environment using `conda install pip`.
+         4. Use `pip` from within this `conda` environment to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_anaconda.md#installing-packages-with-pip)
 
 ### Working with Anaconda Environments
 
@@ -145,12 +166,6 @@ The `Extra Jupyter Arguments` field allows you to pass additional arguments to t
 #### Submitting the Jupyter Notebook Job
 
 Submitting the job will bring you to the `My Interactive Jobs` window while the Jupyter job is initialized. Click `Connect to Jupyter` to open the Jupyter Home Page.
-
-<!-- markdownlint-disable MD046 -->
-!!! note
-
-    If you get a Failed to Connect message when opening the job, close the tab and wait a couple of minutes. Jupyter is still initializing and takes some time after the job first begins running.
-<!-- markdownlint-enable MD046 -->
 
 #### The Jupyter Server Home Page
 
