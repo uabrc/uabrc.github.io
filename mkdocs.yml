@@ -26,9 +26,6 @@ copyright: Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<b
 markdown_extensions:
   - admonition
   - attr_list
-  - lightgallery:
-      show_description_in_lightgallery: true
-      show_description_as_inline_caption: false
   - md_in_html
   - pymdownx.arithmatex:
       generic: true
@@ -47,6 +44,8 @@ plugins:
       data_path: docs
   - git-revision-date-localized:
       type: date
+  - glightbox:
+      # auto_caption: true
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
@@ -74,6 +73,10 @@ plugins:
         welcome/rc_days.md: education/research_computing_days.md
         welcome/welcome.md: index.md
         workflow_solutions/getting_software_with_git.md: workflow_solutions/git_collaboration.md
+        cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_files.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
 
 nav:
   - Home: index.md
@@ -109,15 +112,17 @@ nav:
       - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
+      - Cheaha Web Portal: 
+          - cheaha/open_ondemand/index.md
+          - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
+          - HPC Desktop: cheaha/open_ondemand/hpc_desktop.md
+          - Jupyter: cheaha/open_ondemand/ood_jupyter.md
+          - RStudio: cheaha/open_ondemand/ood_rstudio.md
+          - MATLAB: cheaha/open_ondemand/ood_matlab.md
       - Hardware: cheaha/hardware.md
       - Software:
           - Preinstalled Modules: cheaha/software/modules.md
           - Self-Installed Software: cheaha/software/software.md
-      - Open OnDemand:
-          - Homepage: cheaha/open_ondemand/ood_main.md
-          - File Browser: cheaha/open_ondemand/ood_files.md
-          - Interactive Apps: cheaha/open_ondemand/ood_interactive.md
-          - Job Composer: cheaha/open_ondemand/ood_jobs.md
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md

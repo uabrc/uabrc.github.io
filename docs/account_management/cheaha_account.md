@@ -4,7 +4,7 @@ These instructions are intended to guide researchers on creating new accounts an
 
 ## Creating a New Account
 
-Creating a new account is a simple, automated, self-service process. To start, navigate to <https://rc.uab.edu>, our [Open OnDemand](../cheaha/open_ondemand/ood_main.md) web portal, and authenticate. The authentication process differs depending on your affiliation. Accounts are available to researchers with the following situations.
+Creating a new account is a simple, automated, self-service process. To start, navigate to <https://rc.uab.edu>, our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal, and authenticate. The authentication process differs depending on your affiliation. Accounts are available to researchers with the following situations.
 
 - If you are affiliated with UAB and have a BlazerID, please authenticate using Single Sign-On (SSO).
 - If you are affiliated with UAB Medicine, you will need to use your BlazerID to authenticate via Single Sign-On (SSO) instead of your UABMC authentication process.
@@ -17,7 +17,7 @@ Once you have authenticated, you should see a page that looks like the following
 
 The form should be prefilled with your BlazerID or XIAS ID, full name, and email address. If any of these details are incorrect please [Contact Support](../help/support.md). Please also fill out the reason you wish to create an account. To create a Cheaha account, you must check both boxes affirming your acceptance of relevant UAB IT policies. Until both boxes are checked, the "Create Account" button will not be usable.
 
-When you are ready, click "Create Account" to start the account creation process. You should see a popup notification that looks like the following. After a few moments you should be redirected to our [Open OnDemand](../cheaha/open_ondemand/ood_main.md) web portal. If not, please [Contact Support](../help/support.md).
+When you are ready, click "Create Account" to start the account creation process. You should see a popup notification that looks like the following. After a few moments you should be redirected to our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal. If not, please [Contact Support](../help/support.md).
 
 ![!Account creation notification popup](images/uab_self_register_002.png)
 
@@ -35,7 +35,7 @@ If your account is in good standing you should see a page like the following.
 
 ### Account Requires Certification
 
-We review accounts periodically to ensure the system is being used fairly and as intended. Part of this process is to certify that researchers with accounts still wish to make use of Cheaha. Once per year every researcher will be required to certify their account before making use of Cheaha. If you account requires certification, when logging in to our [Open OnDemand](../cheaha/open_ondemand/ood_main.md) web portal you will see the following notification page.
+We review accounts periodically to ensure the system is being used fairly and as intended. Part of this process is to certify that researchers with accounts still wish to make use of Cheaha. Once per year every researcher will be required to certify their account before making use of Cheaha. If your account requires certification, when logging in to our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal you will see the following notification page.
 
 ![!Account certification notification page.](images/uab_certify_001.png).
 
