@@ -117,7 +117,7 @@ Some packages are not available through Anaconda. Often these packages are avail
 
 <!-- markdownlint-disable MD046 -->
 !!! important
-    Make sure `pip` is installed within the `conda` environment and use it for installing packages within the `conda` environment to prevent [Pip related issues](../../cheaha/open_ondemand/ood_interactive/#common-challenges-and-issues-in-the-ood-jupyter-notebook).
+    Make sure `pip` is installed within the `conda` environment and use it for installing packages within the `conda` environment to prevent [Pip related issues](../cheaha/open_ondemand/ood_interactive.md#common-challenges-and-issues-in-the-ood-jupyter-notebook).
 <!-- markdownlint-disable MD046 -->
 
 ```bash
@@ -308,7 +308,7 @@ There are two instances of PyTorch that can be installed, one requiring GPUs, an
 
 <!-- markdownlint-enable MD046 -->
 
-For a correct installation of pytorch, we have to ensure some conditions are met. See partition [docs](..//cheaha/hardware#details.md) for a guide. One of such conditions, is to load CUDA toolkit using the below command in your environment setup form (see image below).
+For a correct installation of pytorch, we have to ensure some conditions are met. See partition [docs](../cheaha/hardware.md#details) for a guide. One of such conditions, is to load CUDA toolkit using the below command in your environment setup form (see image below).
 
 ```bash
 
@@ -358,6 +358,11 @@ As an example we will be using a sample Jupyter Notebook with just a simple torc
 import torch
 
 print(torch.cuda.is_available())
+
+x = torch.cuda.current_device()
+
+print(torch.get_device_name(x))
+
 ```
 
 ![!PyTorch Jupyter Notebook Output](images/pytorch_output.png)
@@ -367,7 +372,6 @@ print(torch.cuda.is_available())
 1. Create a new environment that is compatible with supported tensorflow versions, use the below command to do this. For this tuorial we use Python 3.11.
 
     ```bash
-    # Create an environment compatible with Python Version 3.11 
 
     conda create -n tensorflow python=3.11
 
@@ -398,7 +402,6 @@ The image below shows an output that the TensorFlow library will utilize the ava
 To ensure packages and their dependencies are all up to date, it is a best practice to regularly update installed packages, and libraries in your activated environment.
 
 ```bash
-# update all packages in an environment
 
 conda update -—all
 
@@ -406,10 +409,9 @@ conda update -—all
 
 ### Deleting an Environment
 
-To delete an environment, use the following command
+To delete an environment, use the following command. Remember to replace `<env>` with the existing environment name.
 
 ```bash
-# delete an environment. Replace <env> with name of environment.
 
 conda env remove —-name <env>
 
@@ -417,12 +419,11 @@ conda env remove —-name <env>
 
 ### Sharing your environment file
 
-To share your environment for collaboration, there are primarily 3 ways to export environments, the below commands show how to create environment files that can be shared for replication.
+To share your environment for collaboration, there are primarily 3 ways to export environments, the below commands show how to create environment files that can be shared for replication. Remember to replace `<env>` with the existing environment name.
 
 1. Cross-Platform Compatible
 
     ```bash
-    #Create .yml file to share, replace <env> with preferred name for file.
 
     conda env export --from-history > <env>.yml 
 
@@ -430,17 +431,17 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
 1. Platform + Package Specific
 
-    ```bash
-    #Create .yml file to share, replace <envname> (represents the name of your environment) and <env> (represents the name of the file you want to export) with preferred names for file.
+Create .yml file to share, replace `<envname>` (represents the name of your environment) and `<env>` (represents the name of the file you want to export) with preferred names for file.
+
+```bash
 
     conda env export <envname> > <env>.yml 
 
-    ```
+```
 
 1. Platform + Package + Channel Specific
 
     ```bash
-    # Create .yml or .txt file to share, replace <env> with preferred name for file.
 
     conda list —-explicit > <env>.txt
 
@@ -467,7 +468,6 @@ Switching between two environments containing different libraries, packages, and
 1. Activate an environment using the below command
 
     ```bash
-    # Activate an environment, replace <env> with name of environment.
 
     conda activate <env>
 
@@ -475,14 +475,11 @@ Switching between two environments containing different libraries, packages, and
 
 1. To switch the environment, you can do one of the below options using the below commands
 
-a. By using this command
+a. By using these commands, first deactivate the environment with. Then you activate the second environment with. replace `<env2>` with name of other environment.
 
 ```bash
-# First deactivate the environment with.
 
-conda deactivate
-
-# Then you activate the second environment with. replace <env2> with name of second/other environment.
+conda deactivate 
 
 conda activate <env2>
 
@@ -491,7 +488,6 @@ conda activate <env2>
 b. Or you can just activate the second environment from the first using the activate command.
 
 ```bash
-# Activate an environment, replace <env2> with name of second/other environment.
 
 conda activate <env2>
 
@@ -521,7 +517,9 @@ On another note, you may want to replicate an environment setup to handle a proj
 
 1. Selecting the Jupyter Notebook File from your landing page.
 
-1. While in the file, look for the menu option "Kernel", select this. In the Kernel dropdown option, select "Change kernel". Then select your preferred kernel environment. Wait a few seconds for it to load, and you are ready to use your preferred environment. Selecting this would open a new Jupyter Notebook file with your selected environment. ![!Changing Environment](images/changingkernel.png).
+1. While in the file, look for the menu option "Kernel", select this. In the Kernel dropdown option, select "Change kernel". Then select your preferred kernel environment. Wait a few seconds for it to load, and you are ready to use your preferred environment. Selecting this would open a new Jupyter Notebook file with your selected environment. ![!Changing Environment](images/changingkernel.png)
+
+1. Your selected environment would appear in the top right corner.![!Selected Environment](images/selected_env.png)
 
 #### Good Software Development Practice
 
