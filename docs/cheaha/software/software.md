@@ -13,7 +13,7 @@ Anaconda is installed on Cheaha as a family of modules, and does not need to be 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    If you are using [Open OnDemand Jupyter Notebook](../open_ondemand/ood_interactive.md#jupyter-notebook) you do not need to use the `module load` command as part of creating the job.
+    If you are using [Open OnDemand Jupyter Notebook](../open_ondemand/ood_jupyter.md) you do not need to use the `module load` command as part of creating the job.
 <!-- markdownlint-enable MD046 -->
 
 ### Using Anaconda
@@ -41,9 +41,9 @@ Anaconda on Cheaha works like it does on any other system, once the module has b
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Do not use `conda init` on Cheaha! Anaconda is managed as a [module](./modules.md), including script setup. Using `conda init` at any point can cause hard-to-diagnose issues with [Open OnDemand Interactive Jobs](../open_ondemand/ood_interactive.md). Please see [this ask.ci FAQ](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/2) for how to undo what `conda init` does.
+    Do not use `conda init` on Cheaha! Anaconda is managed as a [module](./modules.md), including script setup. Using `conda init` at any point can cause hard-to-diagnose issues with [Open OnDemand Interactive Jobs](../open_ondemand/ood_layout.md#interactive-apps). Please see [this ask.ci FAQ](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/2) for how to undo what `conda init` does.
 
-    If the Anaconda software instructs you to use `conda init` while on Cheaha, please ignore it to avoid future issues with [Open OnDemand](../open_ondemand/ood_main.md).
+    If the Anaconda software instructs you to use `conda init` while on Cheaha, please ignore it to avoid future issues with [Open OnDemand](../open_ondemand/index.md).
 <!-- markdownlint-disable MD046 -->
 
 For more information on usage with examples, see [Anaconda Environments](../../workflow_solutions/using_anaconda.md).

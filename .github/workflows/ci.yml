@@ -7,23 +7,25 @@ on:
       - main
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Install environment
-        uses: mamba-org/setup-micromamba@v1
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
         with:
+          miniconda-version: latest
+          conda-solver: libmamba
           environment-file: build_env.yml
-          environment-name: build
-          cache-downloads: true
-          cache-env: true
+          activate-environment: build
 
       - name: Build pages
-        shell: bash -l {0}
         run: |
-          micromamba activate build
+          conda activate build
           mkdocs gh-deploy --force --strict

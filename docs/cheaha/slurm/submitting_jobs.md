@@ -147,7 +147,7 @@ For a practical example with dynamic indices, please visit our [Practical `sbatc
 
 ## Interactive Jobs with `srun`
 
-Jobs should be submitted to the Slurm job scheduler either using a [batch job](#batch-jobs-with-sbatch) or an [Open OnDemand (OOD) interactive job](../open_ondemand/ood_main.md).
+Jobs should be submitted to the Slurm job scheduler either using a [batch job](#batch-jobs-with-sbatch) or an [Open OnDemand (OOD) interactive job](../open_ondemand/index.md).
 
 You can use `srun` for working on short interactive tasks such as [creating an Anaconda environment](../../workflow_solutions/using_anaconda.md) and running [parallel tasks](#srun-for-running-parallel-jobs) within an sbatch script.
 
@@ -235,9 +235,9 @@ Alternatively, `srun` can also run MPI, OpenMP, hybrid MPI/OpenMP, and many more
 
 ## Graphical Interactive Jobs
 
-It is highly recommended to use the [Open OnDemand](../open_ondemand/ood_main.md) web portal for [interactive apps](../open_ondemand/ood_interactive.md). Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha. A terminal is also available through Open OnDemand.
+It is highly recommended to use the [Open OnDemand](../open_ondemand/index.md) web portal for [interactive apps](../open_ondemand/ood_layout.md#interactive-apps). Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha. A terminal is also available through Open OnDemand.
 
-It is possible to use other remote desktop software, such as VNC, to start and interact with jobs. These methods are not officially supported and we do not have the capacity to help with remote desktop connections. Instead, please consider switching your workflow to use the [Open OnDemand HPC Desktop](../open_ondemand/ood_interactive.md#my-interactive-sessions). If you are unable to use this method, please contact [Support](../../help/support.md).
+It is possible to use other remote desktop software, such as VNC, to start and interact with jobs. These methods are not officially supported and we do not have the capacity to help with remote desktop connections. Instead, please consider switching your workflow to use the [Open OnDemand HPC Desktop](../open_ondemand/hpc_desktop.md). If you are unable to use this method, please contact [Support](../../help/support.md).
 
 ## Estimating Compute Resources
 

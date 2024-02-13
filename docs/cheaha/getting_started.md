@@ -16,9 +16,19 @@ The primary method for accessing Cheaha is through our online portal website, Op
 
 [SSH](../uab_cloud/remote_access.md#command-line-via-ssh) may be used to access Cheaha. Connect to host `cheaha.rc.uab.edu` on port `22`.
 
+### With VSCode
+
+An alternative method suited for developers using VSCode, is to use the "Remote - Tunnels" extension to connect to an [HPC Desktop Interactive Job](./open_ondemand/hpc_desktop.md). More details on this process are available in the [VSCode Tunnel](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel) section.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Please do not use VSCode "Remote - SSH" to connect to Cheaha. All processes happen on the login node. Use the link above to use "Remote - Tunnel" instead.
+<!-- markdownlint-enable MD046 -->
+
 ## Open OnDemand Features
 
-The Open OnDemand portal features a [file browser](./open_ondemand/ood_files.md), [job composer](./open_ondemand/ood_jobs.md) and various [interactive applications](./open_ondemand/ood_interactive.md) including a remote desktop, Jupyter, RStudio and MATLAB, among others. There is also a [terminal](./open_ondemand/ood_main.md#shell-access) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](./open_ondemand/ood_main.md).
+The Open OnDemand portal features a [file browser](./open_ondemand/ood_layout.md#file-browser) and various interactive applications including a [remote desktop](./open_ondemand/hpc_desktop.md), [Jupyter](./open_ondemand/ood_jupyter.md), [RStudio](./open_ondemand/ood_rstudio.md) and [MATLAB](./open_ondemand/ood_matlab.md), among others. There is also a [terminal](./open_ondemand/ood_layout.md#opening-a-terminal) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](./open_ondemand/index.md).
 
 ## Hardware
 
@@ -31,6 +41,20 @@ All researchers are granted 5 TB of individual storage when they [create their R
 Shared storage is available to all Lab Groups and Core Facilities on campus. Shared storage is also available to UAB Administration groups.
 
 Please visit our [Storage page](../data_management/storage.md) for detailed information about our individual and shared storage options.
+
+### Partitions
+
+Compute nodes are divided into groups called partitions each with specific qualities suitable for different kinds of workflows or software. In order to submit a compute job, a partition must be chosen in the Slurm options. The partitions can be roughly grouped as such:
+
+|  Use | Partition Names | Notes |
+|---|---|---|
+| GPU Processing | pascalnodes, pascalnodes-medium, amperenodes, amperenodes-medium  | These are the only partitions with GPUs |
+| All Purpose | amd-hdr100 | Runs AMD CPUs compared to all other CPU partitions running Intel. [Contact us](../index.md#how-to-contact-us) with issues running on this partition |
+| Shorter time  | express, short, intel-dcb  |  |
+| Medium-long time  | medium, long  |  |
+| Very large memory | largemem, largemem-long |  |
+
+Please visit our [hardware](hardware.md#cheaha-hpc-cluster) for more details about the partitions.
 
 ### Etiquette
 
