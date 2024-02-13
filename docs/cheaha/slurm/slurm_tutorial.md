@@ -167,3 +167,28 @@ Input Range: 1 to 100000, Sum: 4999950000
 Input Range: 300000 to 400000, Sum: 34999950000
 Input Range: 200000 to 300000, Sum: 24999950000
 ```
+
+## Example 4: Multithreaded Job
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=multithreaded
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=24
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=16G
+#SBATCH --partition=express
+#SBATCH --time=01:00:00
+#SBATCH --output=%x_%j.out
+#SBATCH --error=%x_%j.err
+
+export OMP_NUM_THREADS=$SLURM_NTASKS_PER_NODE
+module load rc/matlab/R2023a
+matlab -nodisplay -r sum_array
+```
+
+## Example 5: Slurm GPU Job
+
+## Example 6: MPI/Multinode Job
+
+## Example 7: Slurm Array Job
