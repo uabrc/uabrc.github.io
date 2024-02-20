@@ -137,7 +137,7 @@ cuda11.8/toolkit/11.8.0
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    The best practice would be to avoid using `module reset` in the `Environment Setup` of [Open OnDemand jobs](../open_ondemand/ood_interactive.md) as the OOD session, by default, resets the module at the beginning of every session. It is observed to cause unexpected behavior if `module reset` is used in the Rstudio server OOD sessions.
+    The best practice would be to avoid using `module reset` in the `Environment Setup` of [Open OnDemand jobs](../open_ondemand/ood_layout.md#environment-setup-window) as the OOD session, by default, resets the module at the beginning of every session. It is observed to cause unexpected behavior if `module reset` is used in the Rstudio server OOD sessions.
 <!-- markdownlint-enable MD046 -->
 
 ## Licensed and Commercial Software Restrictions
