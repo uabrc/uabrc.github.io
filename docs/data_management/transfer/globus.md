@@ -143,6 +143,28 @@ To use the UAB Box Connector, [search for an endpoint](#moving-data-between-endp
 
 To use the UAB [LTS](../lts/index.md) Connector, [search for an endpoint](#moving-data-between-endpoints) like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a [bucket](../lts/interfaces.md#make-a-bucket) in LTS. To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.
 
+#### Adding LTS Allocation Credentials
+
+Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../lts/index.md#requesting-an-account) to the LTS endpoint. To do so, please follow the instructions given below.
+
+1. In your browser, navigate to <https://app.globus.org> and login using UAB SSO.
+2. Click "Collections" in the left-hand navigation pane.
+3. In the search field at the top of the "Collection" page, enter "UAB LTS" and then click the search button. Be sure to uncheck "Recently Used" if it is checked. You should see a collection titled "UAB Research Computing LTS (Long Term Storage aka S3)" appear in the search results.
+4. Click the right arrow indicator at the right-hand side of the "UAB Research Computing LTS" result. You should be taken to the Overview page for the "UAB Research Computing LTS" endpoint.
+
+    ![!Image showing Globus collections page with UAB LTS in search box, UAB Research Computing LTS endpoint visible in results, and right arrow highlighted.](./images/globus-lts-s3-credentials-01.png)
+
+5. Near the top of the Overview page, click the "Credentials" tab". After some time, you should see a form requesting your "AWS IAM Access Key ID" and "AWS IAM Secret Key".
+6. Enter the two requested keys in the appropriate boxes, then press "Continue". For data security reasons, you may be asked to authenticate again with your UAB SSO credentials. If you have more than one set of keys, you will need to choose which to enter. At this time, there doesn't appear to be a way to enter or use more than one set of credentials at a time with Globus.
+
+    ![!Image showing Register a Credential form on the UAB Research Computing LTS endpoint Overview page showing artificial keys entered into the appropriate text fields.](./images/globus-lts-s3-credentials-02.png)
+
+7. You should be taken back to the UAB Research Computing LTS endpoint Overview page with the Credentials tab selected. There should now be one entry on this page showing your AWS IAM Access Key ID and your Globus Identity (i.e., your `blazerid@uab.edu` email address). If you have multiple Access Keys and ever wish to change which one is being used with Globus, then click the "Trash Can" icon next to the entry on this page to delete it, and start the key entry process over from the previous step.
+
+    ![!Image showing UAB Research Computing LTS endpoint Overview page showing Access Credentials entry with AWS IAM Access Key ID and Globus Identity.](./images/globus-lts-s3-credentials-03.png)
+
+At this point you are able to access the LTS allocation associated with the Access Key you entered, and any buckets which have granted access to that Access Key. If you have more than one Access Key, e.g. for each of your personal and project allocations, you will need to choose which key to enter above. If you ever wish to change credentials, then click the "Trash Can" icon next to the entry shown in step 6, above, and start the key entry process over.
+
 #### Data Must be in Buckets
 
 All data transferred to LTS must be placed in a bucket, and may _not_ be placed directly into the root directory. Attempting to move data to the root directory will result in an unhelpful error message in the "Activity" window.
