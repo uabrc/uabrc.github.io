@@ -676,6 +676,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Globus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-lts-credentials-on-globus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing LTS Credentials on Globus
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2685,6 +2700,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Globus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-lts-credentials-on-globus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing LTS Credentials on Globus
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2795,11 +2825,13 @@
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>If your LTS account was given permission to access a bucket owned by another account, it will not automatically appear in the Globus file browser. You can access buckets you have <code>s3:ListBucket</code> permissions on by typing <code>/&lt;bucket-name&gt;/</code> in the Path field under the LTS endpoint.</p>
-<p><a class="glightbox" href="../images/globus-bucket.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Access a shared bucket in Globus" src="../images/globus-bucket.png" /></a> </p>
+<p><a class="glightbox" href="../images/globus-bucket.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Access a shared bucket in Globus" src="../images/globus-bucket.png" /></a></p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
 <p>Globus is very useful for single transfers of data either to or from LTS and is available on any computer with an internet connection. However, it is currently not capable of managing buckets. This must be done through a command line interface.</p>
+<h3 id="managing-lts-credentials-on-globus">Managing LTS Credentials on Globus<a class="headerlink" href="#managing-lts-credentials-on-globus" title="Permanent link">&para;</a></h3>
+<p>See our <a href="../../transfer/globus/#adding-lts-allocation-credentials">Globus - Adding LTS Allocation Credentials</a> section for more information.</p>
 <h2 id="command-line">Command Line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h2>
 <p>While globus is the recommended tool for most data transfers, command line tools are necessary for planned, regular transfers as well as managing permissions on buckets. We recommend the following two tools for different purposes:</p>
 <ol>
@@ -2882,7 +2914,7 @@
 </code></pre></div>
 <p>The <code>[-c profile_file]</code> is only required if you are using credentials NOT saved in the <code>$HOME/.s3cfg</code> file. Otherwise, you can omit it.</p>
 <p>To see a list of all available commands, use <code>s3cmd --help</code>. Additionally, if you want to test an action without actually running it (i.e. it prints all actions that would be performed), you can add the <code>-n</code> or <code>--dry-run</code> option. A list of selected commands are provided below for reference</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Create a bucket </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Create a bucket</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>s3cmd<span class="w"> </span>mb<span class="w"> </span>s3://&lt;bucket&gt;
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># List a bucket/path within the bucket</span>
@@ -2900,7 +2932,7 @@
 <a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1"># transfer between two S3 locations</span>
 <a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>s3cmd<span class="w"> </span>cp<span class="w"> </span>s3://&lt;bucket/path/&gt;<span class="w"> </span>s3://&lt;bucket/path/&gt;
 <a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="c1"># sync an S3 location with a local source. The S3 destination will be made exactly the same as the source including file deletions. </span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="c1"># sync an S3 location with a local source. The S3 destination will be made exactly the same as the source including file deletions.</span>
 <a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="c1"># The source is unaltered. The S3 bucket/folder can be either the source or the destination</span>
 <a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>s3cmd<span class="w"> </span>sync<span class="w"> </span>&lt;source&gt;<span class="w"> </span>s3://&lt;bucket/path/destination&gt;
 <a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
@@ -3003,7 +3035,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2024</span>
   </span>
 
     
