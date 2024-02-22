@@ -18,6 +18,10 @@ To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in
 
 Globus is very useful for single transfers of data either to or from LTS and is available on any computer with an internet connection. However, it is currently not capable of managing buckets. This must be done through a command line interface.
 
+### Managing LTS Credentials on Globus
+
+See our [Globus - Adding LTS Allocation Credentials](../transfer/globus.md#adding-lts-allocation-credentials) section for more information.
+
 ## Command Line
 
 While globus is the recommended tool for most data transfers, command line tools are necessary for planned, regular transfers as well as managing permissions on buckets. We recommend the following two tools for different purposes:
