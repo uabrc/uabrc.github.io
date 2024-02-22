@@ -13,10 +13,14 @@ To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in
 
     If your LTS account was given permission to access a bucket owned by another account, it will not automatically appear in the Globus file browser. You can access buckets you have `s3:ListBucket` permissions on by typing `/<bucket-name>/` in the Path field under the LTS endpoint.
 
-    ![!Access a shared bucket in Globus](images/globus-bucket.png) 
+    ![!Access a shared bucket in Globus](images/globus-bucket.png)
 <!-- markdownlint-enable MD046 -->
 
 Globus is very useful for single transfers of data either to or from LTS and is available on any computer with an internet connection. However, it is currently not capable of managing buckets. This must be done through a command line interface.
+
+### Managing LTS Credentials on Globus
+
+See our [Globus - Adding LTS Allocation Credentials](../transfer/globus.md#adding-lts-allocation-credentials) section for more information.
 
 ## Command Line
 
@@ -115,7 +119,7 @@ The `[-c profile_file]` is only required if you are using credentials NOT saved 
 To see a list of all available commands, use `s3cmd --help`. Additionally, if you want to test an action without actually running it (i.e. it prints all actions that would be performed), you can add the `-n` or `--dry-run` option. A list of selected commands are provided below for reference
 
 ``` bash
-# Create a bucket 
+# Create a bucket
 s3cmd mb s3://<bucket>
 
 # List a bucket/path within the bucket
@@ -133,7 +137,7 @@ s3cmd get s3://<bucket/path/source/> <destination>
 # transfer between two S3 locations
 s3cmd cp s3://<bucket/path/> s3://<bucket/path/>
 
-# sync an S3 location with a local source. The S3 destination will be made exactly the same as the source including file deletions. 
+# sync an S3 location with a local source. The S3 destination will be made exactly the same as the source including file deletions.
 # The source is unaltered. The S3 bucket/folder can be either the source or the destination
 s3cmd sync <source> s3://<bucket/path/destination>
 
