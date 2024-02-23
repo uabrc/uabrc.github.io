@@ -18,6 +18,26 @@ Anaconda can also install Pip and record which Pip packages are installed, so An
     If using Anaconda on Cheaha, please see our [Anaconda on Cheaha page](../cheaha/software/software.md#anaconda-on-cheaha) for important details and restrictions.
 <!-- markdownlint-enable MD046 -->
 
+## Anaconda best practices for environment reproducibility
+
+Creating, activating and managing environments with Anaconda can be challenging, especially when aiming for reproducibility across different systems, platforms, and projects. To tackle these challenges, below is a list of consolidated best practices drawn from some practical experiences:
+
+1. Using Conda and Pip Wisely: While using Cheaha, or any other platform prioritise using Conda packages as comprehensive compatibility and dependency checks are done during installation. Such that during project implementation, the required libraries function properly and would not throw up compatibility and dependency errors. Use Conda packages instead of Pip when possible as they significantly offer a reduced risk of breaking environments. If Pip packages are necessary for your work, install them after all Conda packages to minimize conflicts and breakage of your environment.
+
+2. Isolate Environments: Create separate Conda environments for different projects to prevent interference from conflicting dependencies, this would in turn help to maintain a clean workspace. This approach aids in managing dependencies more effectively and allows for easy replication/reproducibility across projects.
+
+3. Recreate Environments for Changes: Instead of modifying existing environments, recreate them with updated requirements to ensure stability. This method prevents inconsistencies caused by incremental changes. You can do this by creating a `.yml` file, using any of the methods listed [here](#working-with-environment-yaml-files). And then recreate the environment.
+
+4. Export and Store Requirements: Keep a record of Conda and Pip requirements in text files. This practice enables easy sharing and version control, making it simpler to recreate environments on different machines.
+
+5. Consider Reproducibility and Upgradability: Balancing the need for reproducible builds with the flexibility to upgrade dependencies is crucial. Utilize tools like conda-lock to generate lock files that pin dependencies, allowing for reproducible environments that can be easily updated when necessary. Please note that using `conda-lock` will pin dependencies for reproducibility, ensuring exact version upgrades are done when needed.
+
+6. Address Portability Issues: Make your environment files as portable as possible by excluding system-specific paths and using general package versions where appropriate. This consideration ensures that environments can be replicated across different systems without modification.
+
+7. Utilize Third-Party Tools: Tools such as conda-lock can help manage dependencies more efficiently by creating lock files that facilitate fast and reproducible environment setups across different operating systems.
+
+8. Regularly Update Environments: Keep your environments up-to-date with the latest package versions to incorporate security patches and new features. This practice, combined with the use of lock files, ensures that version updates do not compromise the reproducibility of your environments for your projects.
+
 ## What is my best solution for installing Anaconda?
 
 If you are using a local machine or doing general purpose software development, or have a particular package in mind, go [here](#installing-anaconda) to install Anaconda.
