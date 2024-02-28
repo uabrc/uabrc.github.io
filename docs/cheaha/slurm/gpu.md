@@ -127,7 +127,7 @@ As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct
 - **How do I access the A100 GPUs?**
     You can access the A100 GPUs by request jobs in the appropriate partitions. Use `amperenodes` partition for up to 12 hours or `amperenodes-medium` partition for up to 48 hours.
 - **How many GPUs can I request at once?**
-    Up to four GPUs may be requested by any one researcher at once. However, there are only two GPUs per node, so requesting four GPUs will allocate two nodes. To make use of multiple nodes, your workflow software must know how to communicate between nodes using software like Horovod or OpenMPI. If you are new to GPUs and aren't sure you need multiple nodes, please limit your request to one or two gpus.
+    Up to four GPUs may be requested by any one researcher at once. However, there are only two GPUs per node, so requesting four GPUs will allocate two nodes. To make use of multiple nodes, your workflow software must know how to communicate between nodes using software like [Horovod](https://horovod.ai/) or [OpenMPI](https://www.open-mpi.org/). If you are new to GPUs and aren't sure you need multiple nodes, please limit your request to one or two gpus.
 - **What performance improvements can I expect over the P100 GPUs?**
     Performance improvements depend on the software and algorithms being used. Determining optimal configuration will take some experimenting. Swapping a single P100 to a single A100, you can generally expect 3x to 20x improvement. For more information about possible performance improvements, please see the [Official NVIDIA A100 page](https://www.nvidia.com/en-us/data-center/a100/).
 - **How can I make the most efficient use of the A100 GPUs?**
