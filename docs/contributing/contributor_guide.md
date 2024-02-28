@@ -32,11 +32,7 @@ Search for and install extensions using the extension menu (keyboard shortcut: +
 <!-- markdownlint-disable MD046 -->
 !!! Note
 
-For Mac Users VSCode hotkeys are <kbd>⌘cmd</kbd><kbd>+ ⇧shift</kbd> rather than <kbd>^Ctrl</kbd>+ ⇧shift</kbd>
-
-
-<!-- ++command+shift++ rather than ++ctrl+shift++ -->
-
+For Mac Users VSCode hotkeys are  ++command+shift++ rather than ++ctrl+shift++
 <!-- markdownlint-enable MD046 -->
 
 ### VSCode `settings.json` Additions

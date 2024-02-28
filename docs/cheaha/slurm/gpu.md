@@ -34,7 +34,7 @@ The following script can be used to wrap your existing workflows. It will automa
 
 # LOAD CUDA MODULES
 module load CUDA/12.1.1
-module load cuDNN/12.1.1
+module load cuDNN/8.9.2.26-CUDA-12.1.1
 
 # CREATE TEMPORARY DIRECTORY
 # WARNING! $TMPDIR will be deleted at the end of the script!
