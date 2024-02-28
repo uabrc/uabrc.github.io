@@ -262,7 +262,7 @@ Now we can be sure that the correct versions of the software will be installed o
 
 ## Anaconda Environment Tutorial for PyTorch and TensorFlow
 
-The below tutorial would show you steps on how to create an environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access and use the Shell Command Line Interface (CLI), and using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](..//cheaha/open_ondemand/ood_interactive.md#jupyter-notebook)
+The below tutorial would show you steps on how to create an environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access and use the Shell Command Line Interface (CLI), and using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../cheaha/open_ondemand/ood_layout.md#interactive-apps)
 
 ### Installing Anaconda Environments using Cheaha's Command Line Interface (CLI)
 
