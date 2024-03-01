@@ -38,6 +38,14 @@ To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From
 
 If you are unable to select your environment, you may need to install the `ipykernel` package. It is required for Jupyter to recognize your environment. See [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#packages-for-jupyter) for more information.
 
+### Installing additional Language Kernels in Jupyter Notebook
+
+To install kernels for additional programming languages, just install their respective kernel. For example, install the SciJava Jupyter Kernel for Java. Ensure that you install the kernel into your Anaconda environment. 
+
+```
+ conda install conda-forge::scijava-jupyter-kernel
+ ```
+
 ## Common Issues in OOD Jupyter
 
 ### Python Executable Issues
