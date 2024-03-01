@@ -2,7 +2,10 @@
 
 Jupyter Notebooks and Jupyter Lab are both available as standalone apps in OOD. Jupyter is commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-anaconda-environments) below before continuing here.
 
-As with all interactive apps, you'll need to select the resources required using the job creation form. Jupyter may also require additional initial setup before the app launches.
+To launch the Jupyter notebook, select the menus 'Interactive Apps -> Jupyter Notebook'. The job creation and submision form appears:
+![!Jupyter Notebook home form](./images/ood_jupyter_notebook_home_form.png)
+
+ As with all interactive apps, you'll need to select the resources required using this job creation form. Jupyter may also require additional initial setup before the app launches. 
 
 ## Environment Setup
 
@@ -22,9 +25,10 @@ For information on which versions of CUDA to load for Tensorflow and PyTorch, pl
 
 ## Extra Jupyter Arguments
 
-The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
+The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. 
+<!-- An example is shown below. -->
 
-![!Jupyter Notebook job request form Extra jupyter arguments field.](./images/ood_jupyter_notebook_extra_args_box.png)
+<!-- ![!Jupyter Notebook job request form Extra jupyter arguments field.](./images/ood_jupyter_notebook_extra_args_box.png) -->
 
 ## Working with Anaconda Environments
 
@@ -38,13 +42,12 @@ To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From
 
 If you are unable to select your environment, you may need to install the `ipykernel` package. It is required for Jupyter to recognize your environment. See [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#packages-for-jupyter) for more information.
 
-### Installing additional Language Kernels in Jupyter Notebook
+## Working with other programming Languages within Jupyter Notebook
 
-To install kernels for additional programming languages, just install their respective kernel. For example, install the SciJava Jupyter Kernel for Java. Ensure that you install the kernel into your Anaconda environment. 
+To use other programming languages within Jupyter Notebook, it is necessary to install the appropriate kernel for the desired programming language, just as you did for Python with the `ipykernel`. For example, install the `sciJava-jupyter-kernel` for Java by running 
+ `conda install conda-forge::scijava-jupyter-kernel`. Ensure that you install the kernel into your Anaconda environment, and then selecte the enviroment for the desired language from the kernel dropdown menu.
 
-```
- conda install conda-forge::scijava-jupyter-kernel
- ```
+
 
 ## Common Issues in OOD Jupyter
 
