@@ -1,3 +1,7 @@
+---
+toc_depth: 3
+---
+
 # Remote Access to Instances
 
 All of the access methods described below are built on top of `ssh` and require completion of the steps in [Basic Security Setup](tutorial/security.md) to use with `cloud.rc`. Some of these steps are referenced in that document.
