@@ -113,8 +113,8 @@ nav:
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
       - Tutorials: 
-          - cheaha/tutorials/index.md
-          - Creating an Anaconda Environment: cheaha/tutorials/using_anaconda.md
+          - cheaha/tutorial/index.md
+          - Anaconda Environment Tutorial for PyTorch and TensorFlow: cheaha/tutorial/pytorch_tensorflow.md
       - Cheaha Web Portal: 
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md

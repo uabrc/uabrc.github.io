@@ -1,6 +1,6 @@
 # Anaconda Environment Tutorial for PyTorch and TensorFlow
 
-The below tutorial would show you steps on how to create an environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access and use the Shell Command Line Interface (CLI), and using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../cheaha/open_ondemand/ood_layout.md#interactive-apps)
+The below tutorial would show you steps on how to create an environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access and use the Shell Command Line Interface (CLI), and using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../open_ondemand/ood_layout.md#interactive-apps)
 
 ## Installing Anaconda Environments using Cheaha's Command Line Interface (CLI)
 
@@ -10,7 +10,7 @@ To access Cheaha's CLI (shell), please follow the below steps.
 
 2. Create a job on Cheaha using the Interactive Apps dropdown option.![!Interactive Apps Dropdown Menu](images/interactive_dropdown.png)
 
-3. Select Jupyter Notebook, and fill out the options, as per your project needs, then click Launch.  For more information on compute needs, and a guide for selecting the right options click [here](..//cheaha/job_efficiency.md#estimating-compute-resources). ![!Jupyter Launch Button](images/jupyter_launch.png)
+3. Select Jupyter Notebook, and fill out the options, as per your project needs, then click Launch.  For more information on compute needs, and a guide for selecting the right options click [here](../job_efficiency.md#estimating-compute-resources). ![!Jupyter Launch Button](images/jupyter_launch.png)
 
 4. Click the Connect to Jupyter button ![!Connect to Jupyter Button](images/connect_to_jupyt_button.png)
 
@@ -31,9 +31,9 @@ The instructions below, provide a recommended step by step guide to creating and
 
 There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilising only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;
 
-1. [Create](..//workflow_solutions/using_anaconda.md#create-an-environment) and [activate](..//workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in the links.
+1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in the links.
 
-1. Access the CLI following the steps [here.](..//workflow_solutions/using_anaconda.md#installing-anaconda-environments-using-cheahas-command-line-interface-cli)
+1. Access the CLI following the steps [here.](../../workflow_solutions/using_anaconda.md#installing-anaconda-environments-using-cheahas-command-line-interface-cli)
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -42,7 +42,7 @@ There are two instances of PyTorch that can be installed, one requiring GPUs, an
 
 <!-- markdownlint-enable MD046 -->
 
-For a correct installation of pytorch, we have to ensure some conditions are met. See partition [docs](../cheaha/hardware.md#details) for a guide. One of such conditions, is to load CUDA toolkit using the below command in your environment setup form (see image below).
+For a correct installation of pytorch, we have to ensure some conditions are met. See partition [docs](../hardware.md#details) for a guide. One of such conditions, is to load CUDA toolkit using the below command in your environment setup form (see image below).
 
 ```bash
 
@@ -61,7 +61,7 @@ module load CUDA/11.8.0
 
 ![!nvidia-smi output](images/CudaVersion.png)
 
-When your job has been created and your environment created and activated from the cheaha CLI (see above [instructions](..//workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
+When your job has been created and your environment created and activated from the cheaha CLI (see above [instructions](../../workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
 
 ```bash
 
@@ -81,7 +81,7 @@ You should get an output like the below image.
 
 ![!PyTorch Env Output](images/pytorchversion_output.png)
 
-The same process can be followed for installing another Deep Learning library Tensorflow (see instructions [below](..//workflow_solutions/using_anaconda.md#steps-to-install-tensorflow)) with some minute differences. You may decide to install the TensorFlow library into the same environment or create a new one. As a best practice, you may want to install these libraries in different environments.
+The same process can be followed for installing another Deep Learning library Tensorflow (see instructions [below](../tutorial/pytorch_tensorflow.md#steps-to-install-tensorflow)) with some minute differences. You may decide to install the TensorFlow library into the same environment or create a new one. As a best practice, you may want to install these libraries in different environments.
 
 ## Using PyTorch on Jupyter Notebook
 
