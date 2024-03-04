@@ -112,6 +112,9 @@ nav:
       - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
+      - Tutorials: 
+          - cheaha/tutorials/index.md
+          - Creating an Anaconda Environment: cheaha/tutorials/using_anaconda.md
       - Cheaha Web Portal: 
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
