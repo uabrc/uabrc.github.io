@@ -2,6 +2,7 @@
 
 ## Internal Resources
 
+- [AI at UAB](https://www.uab.edu/ai/): AI-related resources, accessible to UAB employees and the broader community, covering safety protocols, ethical principles, and broader applications in both development and deployment.
 - [Informatics Club](https://uab.campuslabs.com/engage/organization/informaticsclub): A UAB group for students and trainees to learn more about informatics.
     - [Code, Chat & Collab](https://calendar.uab.edu/event/code_chat_collab_5718): A recurring meet-up hosted by the Informatics Club where students, staff and faculty can meet to discuss informatics, data analysis, software development, and Cheaha use.
     - [Events and Resources](https://lnk.bio/5nl5): A collection of useful resources provided by the Informatics club.
