@@ -593,7 +593,7 @@ For single files use `chgrp <new-group> <file>`.
 
 To change a directory and all of its contents recursively use `chgrp -hR <new-group> <file>`. The `-h` flag will avoid walking through the targets of symbolic links.
 
-As a best practice, there could lso be instances where you will need to verify the parent directory/directories before you make changes, do the following, when a case like this arises;
+As a best practice, there could also be instances where you will need to verify the parent directory/directories before you make changes, do the following, when a case like this arises;
 
 1. Check that the parent directory/directories have the `setgid` (i.e. `s`) bit in the file permission, when you run the `ls -l <file_or_directory_path>`.
 
