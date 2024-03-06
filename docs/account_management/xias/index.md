@@ -15,11 +15,12 @@ An overview of creating an external collaborator account:
 
 To login to the Cheaha and gitlab services, you need to use your XIAS email address and a password  used to create the XIAS account as credentials. For accessing the cloud service, your username is your XIAS email address, while the password can be any current password you have, not necessarily the same as the one used to create your XIAS email address. For further guidance on how to proceed and what steps to take next, please refer to the following documentation pages.
 
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-disable MD046-->
 !!! warning
 
-  Before proceeding with any of the resources below, be sure you have been granted authorization to those particular resources by your Sponsor.
+    Before proceeding with any of the resources below, be sure you have been granted authorization to those particular resources by your Sponsor.
 <!-- markdownlint-enable MD046 -->
+
 - [How do I create a Cheaha account?](../cheaha_account.md)
 - [How do I get access to GitLab?](../gitlab_account.md)
 - [How do I get access to OpenStack?](../../uab_cloud/tutorial/index.md)

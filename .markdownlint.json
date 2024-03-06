@@ -2,4 +2,5 @@
     "MD007": { "indent": 4 },
     "MD013": false,
     "MD046": { "style": "fenced" }
+    "MD036": { "style": "fenced" }
 }
