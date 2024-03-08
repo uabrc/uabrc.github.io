@@ -341,6 +341,7 @@ The below result summarizes the parallel pool initialization and its utilization
 
 ```bash
 $ cat multithread_27105035.out
+
 MATLAB is selecting SOFTWARE OPENGL rendering.
 
                             < M A T L A B (R) >
@@ -348,7 +349,6 @@ MATLAB is selecting SOFTWARE OPENGL rendering.
              R2023b Update 6 (23.2.0.2485118) 64-bit (glnxa64)
                              December 28, 2023
 
- 
 To get started, type doc.
 For product information, visit www.mathworks.com.
  
@@ -370,4 +370,159 @@ $ sacct -j 27105035
 
 ## Example 6: GPU Job
 
+This slurm script shows the execution of Tensorflow job using GPU resources. Let us save this script as `gpu.job`. The Slurm parameter `--gres=gpu:2` in Line 6, requests for 2 GPUs. In Line 8, note that in order to run GPU-based jobs, either the `amperenodes` or `pascalnodes` partition must be used (please refer to our [GPU page](../slurm/gpu.md) for more information). Lines 14-15 load the necessary CUDA modules, while Lines 18-19 load the Anaconda module and activate a `conda` environment called `tensorflow`. Refer to [Tensorflow official page](https://www.tensorflow.org/) for installation. The last line executes a python script that utilizes Tensorflow library to perform matrix multiplication across multiple GPUs.
+
+```py linenums="1"
+#!/bin/bash
+#SBATCH --job-name=gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --gres=gpu:2
+#SBATCH --mem=16G
+#SBATCH --partition=amperenodes
+#SBATCH --time=01:00:00
+#SBATCH --output=%x_%j.out
+#SBATCH --error=%x_%j.err
+
+### Loading the required CUDA and cuDNN modules
+module load CUDA/12.2.0
+module load cuDNN/8.9.2.26-CUDA-12.2.0
+
+### Loading the Anaconda module and activating the `tensorflow` environment
+module load Anaconda3
+conda activate tensorflow
+
+### Executing the python script
+python matmul_tensorflow.py
+```
+
+Let us now create a file named `matmul_tensorflow.py` and copy the following script into it. This python script demonstrates the utilization of Tensorflow library to distribute computational tasks among multiple GPUs, in order to perform matrix multiplication in parallel (Lines 11-19). Lines 8-9 retrieve the logical GPUs and enable device placement logging, which helps to analyze which device is used for each operation. The final results are aggregated and the sum is computed on the CPU device (lines 22-23).
+
+```py linenums="1"
+import tensorflow as tf
+
+### Print Tensorflow version and check for available number of GPUs
+print("TensorFlow version:", tf.__version__)
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
+### Get the logical GPUs and enable device placement
+gpus = tf.config.list_logical_devices('GPU')
+tf.debugging.set_log_device_placement(True)
+
+if gpus:
+    ### Create tensors on each GPU and Perform matrix multiplication on multiple GPUs
+    c = []
+    for gpu in gpus:
+        with tf.device(gpu.name):
+            a = tf.random.uniform(shape=(4, 3))
+            b = tf.random.uniform(shape=(3, 4))
+            c.append(tf.matmul(a, b))
+            print(f"Computation on GPU: {gpu.name}")
+
+    ### Calculate the Sum on CPU device
+    with tf.device('/CPU:0'):
+        matmul_sum = tf.add_n(c)
+
+    ### Print the result
+    print(matmul_sum)
+```
+
+The results indicate that the Tensorflow version utilized is 2.15. The segments `/device:GPU:0` and `/device:GPU:1` specify that the computations were executed on two GPUs. The final results is a 4x4 matrix obtained by summing the matrix multiplication results. As show in the `sacct` report, the column `AllocGRES` shows that 2 GPUs are allocated for this job.
+
+```bash
+$ cat gpu_27107694.out 
+
+TensorFlow version: 2.15.0
+Num GPUs Available:  2
+Computation on GPU: /device:GPU:0
+Computation on GPU: /device:GPU:1
+tf.Tensor(
+[[1.6408134 0.9900811 1.3046092 0.9307438]
+ [1.5603762 1.6812123 1.8867838 1.0662912]
+ [2.481688  1.8107605 2.0444224 1.5500932]
+ [2.415476  1.9280369 2.020216  1.4872619]], shape=(4, 4), dtype=float32)
+```
+
+```bash
+$ sacct -j 27107694 --format=JobID,JobName,Partition,Account,AllocCPUS,allocgres,State,ExitCode
+
+       JobID    JobName  Partition    Account  AllocCPUS    AllocGRES      State ExitCode 
+------------ ---------- ---------- ---------- ---------- ------------ ---------- -------- 
+27107694            gpu amperenod+      USER          1        gpu:2  COMPLETED      0:0 
+27107694.ba+      batch                 USER          1        gpu:2  COMPLETED      0:0 
+27107694.ex+     extern                 USER          1        gpu:2  COMPLETED      0:0 
+```
+
 ## Example 7: Multinode Job
+
+The below Slurm script runs a Quantum Expresso job using the `pw.x` executable on multiple nodes. In this example, we request for 2 nodes on `amd-hdr100` partition in lines 4 and 7. The suitable Quantum Expresso module is loaded in line 13. The last line is configured for a parallel computation of Quantum Expresso simulation across 2 nodes `N 2` and 4 MPI processes `-nk 4` for the input parameters in `pw.scf.silicon.in`. The input file `pw.scf.silicon.in` can be obtained from the [Quantum Expresso Official page](https://www.quantum-espresso.org/Doc/INPUT_PW.html). However this input is subject to change, hence according to your use case you can change the inputs.
+
+```py linenums="1"
+#!/bin/bash
+
+#SBATCH --job-name=mpijob           
+#SBATCH --nodes=2
+#SBATCH --ntasks 4 
+#SBATCH --mem=64G
+#SBATCH --partition=amd-hdr100
+#SBATCH --time=12:00:00 
+#SBATCH --output=%x_%j.out        
+#SBATCH --error=%x_%j.err
+
+### Load the suitable Quantum Expresso module
+module load QuantumESPRESSO/6.3-foss-2018b
+
+### Executes the executable "pw.x" across 2 nodes and 4 processes/CPU cores for the input `pw.scf.silicon.in`
+srun --mpi=pmix_v3 -N 2 pw.x -nk 4 -i pw.scf.silicon.in
+```
+
+The below output shows that the workflow has been distrbuted across 2 nodes, with a total of 4 pools. The computations are performed based on these above-mentioned parallel execution configuration. Also, displays the metrics such as parallelization, overall performance, and successful job completion status. Note that the results only display essential information to aid in understanding the execution of this multi-node job. And, the `sacct` report indicates that the job is allocated with 4 CPUs across 2 nodes, and was completed successfully.
+
+```bash
+$ cat multinode_27108398.out 
+
+Program PWSCF v.6.3MaX starts on  8Mar2024 at 13:18:37
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org",
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on       4 processor cores
+     Number of MPI processes:                 4
+     Threads/MPI process:                     1
+
+     MPI processes distributed on     2 nodes
+     K-points division:     npool     =       4
+     Reading input from pw.scf.silicon.in
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  3
+     ..... 
+     .....
+          Parallel routines
+
+     PWSCF        :     1.17s CPU         1.36s WALL
+
+   This run was terminated on:  13:18:38   8Mar2024
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=
+```
+
+```bash
+$ sacct -j 27108398 --format=JobID,JobName,Partition,Account,AllocCPUS,AllocNodes,State,ExitCode
+
+       JobID    JobName  Partition    Account  AllocCPUS AllocNodes      State ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+27108398      multinode amd-hdr100      USER          4          2  COMPLETED      0:0 
+27108398.ba+      batch                 USER          3          1  COMPLETED      0:0 
+27108398.ex+     extern                 USER          4          2  COMPLETED      0:0 
+27108398.0         pw.x                 USER          4          2  COMPLETED      0:0 
+```
