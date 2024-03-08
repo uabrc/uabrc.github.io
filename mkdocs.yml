@@ -10,6 +10,7 @@ theme:
   features:
     - navigation.indexes
     - navigation.instant
+    - content.code.copy
   favicon: images/favicon.png
   logo: images/logo.png
 
