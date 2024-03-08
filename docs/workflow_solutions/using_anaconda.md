@@ -260,150 +260,7 @@ Now we can be sure that the correct versions of the software will be installed o
     The example above is provided only for illustration purposes. The error has since been fixed, but the example above really happened and is helpful to explain version pinning.
 <!-- markdownlint-enable MD046 -->
 
-## Anaconda Environment Tutorial for PyTorch and TensorFlow
-
-The below tutorial would show you steps on how to create an environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access and use the Shell Command Line Interface (CLI), and using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../cheaha/open_ondemand/ood_layout.md#interactive-apps)
-
-### Installing Anaconda Environments using Cheaha's Command Line Interface (CLI)
-
-To access Cheaha's CLI (shell), please follow the below steps.
-
-1. Login to [rc.uab.edu](https://rc.uab.edu)
-
-2. Create a job on Cheaha using the Interactive Apps dropdown option.![!Interactive Apps Dropdown Menu](images/interactive_dropdown.png)
-
-3. Select Jupyter Notebook, and fill out the options, as per your project needs, then click Launch.  For more information on compute needs, and a guide for selecting the right options click [here](..//cheaha/job_efficiency.md#estimating-compute-resources). ![!Jupyter Launch Button](images/jupyter_launch.png)
-
-4. Click the Connect to Jupyter button ![!Connect to Jupyter Button](images/connect_to_jupyt_button.png)
-
-    You will see the below interface. ![!Jupyter Notebook Landing Page](images/jupyter_landing_page.png)
-
-5. When the job has been created, on the My Interactive Sessions page, click the button in front of Host (usually colored blue) in the format >_c0000.
-![!host image](images/cheaha_shell_button.png)
-
-    This should open into a Shell CLI as shown below. ![!Cheaha Shell CLI](images/cheaha_shell_cli.png)
-
-6. In this interface, you can create, and activate environments, as well as install packages, modules and libraries into your activated environment.
-
-### Creating and Activating an Environment Using Cheaha CLI
-
-Please follow the detailed guides below on how to create and then activate a custom anaconda environment. For more information on these, please visit the links for [Creating an Environment](..//workflow_solutions/using_anaconda.md#create-an-environment). And [Activating an Environment](..//workflow_solutions/using_anaconda.md#activate-an-environment)
-
-Once your Anaconda environment has been created and activated, it would appear as shown below.
-
-![!Activated Environment](images/activated_env.png)
-
-You can now install relevant python libraries, and modules alongside their dependencies. For example, you may want to install a Deep Learning library (e.g. PyTorch or TensorFlow) inside of your activated environment. Follow the below steps on how to install these on Cheaha.
-
-### How do we create a custom environment for PyTorch and TensorFlow
-
-The instructions below, provide a recommended step by step guide to creating and activating an environment that has PyTorch and/or TensorFlow installed and ready to use for deep learning projects.
-
-### Steps to Install PyTorch Using Cheaha CLI
-
-There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilising only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;
-
-1. [Create](..//workflow_solutions/using_anaconda.md#create-an-environment) and [activate](..//workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in the links.
-
-1. Access the CLI following the steps [here.](..//workflow_solutions/using_anaconda.md#installing-anaconda-environments-using-cheahas-command-line-interface-cli)
-
-<!-- markdownlint-disable MD046 -->
-!!! note
-
-    When installing packages, modules and libraries into environments, remember to also install `ipykernel` using `conda install ipykernel`. This way your activated environment would appear in the list of kernels in your Jupyter Notebook. 
-
-<!-- markdownlint-enable MD046 -->
-
-For a correct installation of pytorch, we have to ensure some conditions are met. See partition [docs](../cheaha/hardware.md#details) for a guide. One of such conditions, is to load CUDA toolkit using the below command in your environment setup form (see image below).
-
-```bash
-
-module load CUDA/11.8.0
-
-```
-
-![!load CUDA](images/module_load_cuda.png)
-
-<!-- markdownlint-disable MD046 -->
-!!! note
-
-    The cudatoolkit version may vary, as at the time of this tutorial, 11.8 is the version used. Running `nvidia-smi`, as in the image below, will show you the status, version and other information on GPUs in your created job session. The CUDA version is highlighted. The GPU CUDA Version available on Cheaha at the time of this tutorial is 12.3. Because the toolkit version used is lower than the Cheaha GPU version, it works. 
-
-<!-- markdownlint-enable MD046 -->
-
-![!nvidia-smi output](images/CudaVersion.png)
-
-When your job has been created and your environment created and activated from the cheaha CLI (see above [instructions](..//workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
-
-```bash
-
-conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia
-
-```
-
-This commands will install a GPU compatible PyTorch version into your environment. To verify PyTorch is installed, and to see what version you have installed in your environment, use the below command.
-
-```bash
-
-conda list | grep "torch"
-
-```
-
-You should get an output like the below image.
-
-![!PyTorch Env Output](images/pytorchversion_output.png)
-
-The same process can be followed for installing another Deep Learning library Tensorflow (see instructions [below](..//workflow_solutions/using_anaconda.md#steps-to-install-tensorflow)) with some minute differences. You may decide to install the TensorFlow library into the same environment or create a new one. As a best practice, you may want to install these libraries in different environments.
-
-### Using PyTorch on Jupyter Notebook
-
-As an example we will be using a sample Jupyter Notebook with just a simple torch function to test if a GPU will be utilized with PyTorch functions. Run the command in a cell, and if your output is `True`, then you have your GPU setup to support PyTorch functions.
-
-```bash
-
-import torch
-
-print(torch.cuda.is_available())
-
-x = torch.cuda.current_device()
-
-print(torch.get_device_name(x))
-
-```
-
-![!PyTorch Jupyter Notebook Output](images/pytorch_output.png)
-
-### Steps to Install TensorFlow CPU and GPU Versions Using Cheaha CLI
-
-1. Create a new environment that is compatible with supported tensorflow versions, use the below command to do this. For this tuorial we use Python 3.11.
-
-    ```bash
-
-    conda create -n tensorflow python=3.11
-
-    ```
-
-2. The TensorFlow CPU and GPU versions requires pip to be up-to-date, to install and upgrade pip to the latest version use the below command.
-
-    ```bash
-
-    pip install -—upgrade pip
-
-    ```
-
-3. Install TensorFlow with pip
-
-    ```bash
-
-    pip install tensorflow[and-cuda]
-
-    ```
-
-The image below shows an output that the TensorFlow library will utilize the available GPU.
-
-![TensorFlow GPU](images/tensor_gpu.png)
-
-### Update packages in an environment
+#### Update packages in an environment
 
 To ensure packages and their dependencies are all up to date, it is a best practice to regularly update installed packages, and libraries in your activated environment.
 
@@ -413,7 +270,7 @@ conda update -—all
 
 ```
 
-### Deleting an Environment
+#### Deleting an Environment
 
 To delete an environment, use the following command. Remember to replace `<env>` with the existing environment name.
 
@@ -423,7 +280,7 @@ conda env remove —-name <env>
 
 ```
 
-### Sharing your environment file
+#### Sharing your environment file
 
 To share your environment for collaboration, there are primarily 3 ways to export environments, the below commands show how to create environment files that can be shared for replication. Remember to replace `<env>` with the existing environment name.
 
@@ -437,13 +294,13 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
 1. Platform + Package Specific
 
-Create .yml file to share, replace `<envname>` (represents the name of your environment) and `<env>` (represents the name of the file you want to export) with preferred names for file.
+    Create .yml file to share, replace `<envname>` (represents the name of your environment) and `<env>` (represents the name of the file you want to export) with preferred names for file.
 
-```bash
+    ```bash
 
     conda env export <envname> > <env>.yml 
 
-```
+    ```
 
 1. Platform + Package + Channel Specific
 
@@ -457,17 +314,14 @@ Create .yml file to share, replace `<envname>` (represents the name of your envi
 
     ```
 
-### Activating/Using a shared environment file
+#### Activating/Using a shared environment file
 
 To use an environment file shared with you, navigate into the folder where you have the .yml file saved. When in the folder, use use the command to create .yml file in your terminal, replace `<env>` with the environment file name.
+    ```bash
+    conda env create -—file <env>.yml
+    ```
 
-```bash
-
-conda env create -—file <env>.yml 
-
-```
-
-### Switching between environments
+#### Switching between environments
 
 Switching between two environments containing different libraries, packages, and dependencies can be carried out following the below steps.
 
@@ -479,27 +333,26 @@ Switching between two environments containing different libraries, packages, and
 
     ```
 
-1. To switch the environment, you can do one of the below options using the below commands
+To switch the environment, you can do one of the below options using the below commands
 
-a. By using these commands, first deactivate the environment with. Then you activate the second environment with. replace `<env2>` with name of other environment.
+1. First deactivate the environment with. Then you activate the second environment with. replace `<env2>` with name of other environment.
 
-```bash
+    ```bash
+    conda deactivate 
 
-conda deactivate 
+        AND THEN
 
-conda activate <env2>
+    conda activate <env2>
 
-```
+    ```
 
-b. Or you can just activate the second environment from the first using the activate command.
+1. Or you can just activate the second environment from the first using the activate command.
 
-```bash
+    ```bash
+    conda activate <env2>
+    ```
 
-conda activate <env2>
-
-```
-
-### Creating and Activating an Environment after creating a Jupyter Notebook file
+#### Creating and Activating an Environment after creating a Jupyter Notebook file
 
 We can create a new environment, that houses all of the packages, modules, and libraries we need for our current Jupyter Notebook to implement functions and operations, run all of its cells and deliver desired outputs. Follow the steps below to accomplish this;
 
@@ -513,7 +366,7 @@ We can create a new environment, that houses all of the packages, modules, and l
 
 1. Go into your working Jupyter Notebook file, and follow the instructions listed [here](..//workflow_solutions/using_anaconda.md#changing-environments-using-jupyter-notebook-gui). You may have to refresh the page to see your newly created environment in the kernel drop down menu.
 
-### Changing Environments using Jupyter Notebook GUI
+#### Changing Environments using Jupyter Notebook GUI
 
 1. When your Jupyter Notebook Job has been created on Cheaha, and you want to load an environment you have already created. Select from the dropdown menu "New". You can find this in the top right corner of the Jupyter Notebook landing page. ![!Select Environment](images/selectenvsjupyter.png)
 
