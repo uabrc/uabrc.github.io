@@ -2,7 +2,7 @@
 
 Jupyter Notebooks and Jupyter Lab are both available as standalone apps in OOD. Jupyter is commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-anaconda-environments) below before continuing here.
 
-To launch the Jupyter notebook, select the menus 'Interactive Apps -> Jupyter Notebook'. The job creation and submision form appears:
+To launch the Jupyter notebook, select the menus 'Interactive Apps -> Jupyter Notebook'. The job creation and submission form appears:
 ![!Jupyter Notebook home form](./images/ood_jupyter_notebook_home_form.png)
 
 As with all interactive apps, you'll need to select the resources required using the job creation form. Jupyter may also require additional initial setup before the app launches.
@@ -23,20 +23,18 @@ module load cuDNN/8.9.2.26-CUDA-12.2.0
 
 For information on which versions of CUDA to load for Tensorflow and PyTorch, please see [Tensorflow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
 
-For information on partition and GPU selection, please review our [hardware information page](../hardware.md)
+For information on partition and GPU selection, please review our [hardware information page](../hardware.md) and [GPU Page](../slurm/gpu.md)
 
 ## Extra Jupyter Arguments
 
-The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories.
+The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
+![!Jupyter Notebook job request form Extra jupyter arguments field.](./images/ood_jupyter_notebook_extra_args_box.png)
 
-<!-- An example is shown below. -->
+## Working with different programming languages within Jupyter Notebook
 
-<!-- ![!Jupyter Notebook job request form Extra jupyter arguments field.](./images/ood_jupyter_notebook_extra_args_box.png) -->
+To use other programming languages within Jupyter Notebook, you need to install the corresponding kernel for each language, similar to the process used for Python with the `ipykernel`. This can be achieved using package managers such as `pip` or `conda`, or by following language-specific instructions. For instance, to install the `R kernel`, run `conda install -c r r-essentials`. Please make sure the kernel is installed in your Anaconda environment. Then, select the desired language environment from the kernel dropdown menu.
 
-## Working with other programming languages within Jupyter Notebook
-
-To use other programming languages within Jupyter Notebook, it is necessary to install the appropriate kernel for the desired programming language, just as you did for Python with the `ipykernel`. For example, install the `sciJava-jupyter-kernel` for Java by running
- `conda install conda-forge::scijava-jupyter-kernel`. Ensure that you install the kernel into your Anaconda environment, and then selecte the enviroment for the desired language from the kernel dropdown menu.
+To write and run multiple code cells in different languages within a single notebook, easily switch between kernels and select the preferred kernel for each language, and then proceed to run the code cells in their respective languages.
 
 ## Working with Anaconda Environments
 
