@@ -280,7 +280,7 @@ To learn more about setting up a third-level domain, please have your department
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-The above information about costs is true as of March 2024. Specifics may change over time.
+    The above information about costs is true as of March 2024. Specifics may change over time.
 <!-- markdownlint-enable MD046 -->
 
 ## Data Transfer
