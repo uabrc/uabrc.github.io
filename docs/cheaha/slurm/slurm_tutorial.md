@@ -2,7 +2,7 @@
 
 This Slurm tutorial serves as a hands-on guide for users to create Slurm batch scripts based on their specific software needs and apply them for their respective usecases.  It covers basic examples for beginners and advanced ones, including sequential and parallel jobs, array jobs, multithreaded jobs, GPU utilization jobs, and MPI (Message Passing Interface) jobs.
 
-## Strucutre of a Slurm Batch Job
+## Structure of a Slurm Batch Job
 
 Below is the template for a typical Slurm job submission in the Cheaha high-performance computing (HPC) system. The script begins with `#!/bin/bash`, indicating it is a bash script. The next step would be to declare Slurm configuration options, specifying the required resources for job execution. This section typically comprises parameters such as CPU count, partition, memory allocation, time limit, etc. Following the configuration, the script may include sections for loading necessary software or libraries required for the job.
 
@@ -32,15 +32,15 @@ To test this example, copy the below script in a file named `hostname.job`. This
 #!/bin/bash
 
 ### Declaring Slurm configuration Options and specifying required resources
-#SBATCH --job-name=hostname ### Name of the job
-#SBATCH --nodes=1           ### Number of Nodes
-#SBATCH --ntasks=1          ### Number of Tasks
-#SBATCH --cpus-per-task=1   ### Number of Tasks per CPU
-#SBATCH --mem=1G            ### Memory required
-#SBATCH --partition=express ### Cheaha Partition
-#SBATCH --time=00:10:00     ### Estimated Time of Completion
-#SBATCH --output=%x_%j.out  ### Slurm Output file
-#SBATCH --error=%x_%j.err   ### Slurm Error file
+#SBATCH --job-name=hostname     ### Name of the job
+#SBATCH --nodes=1               ### Number of Nodes
+#SBATCH --ntasks=1              ### Number of Tasks
+#SBATCH --cpus-per-task=1       ### Number of Tasks per CPU
+#SBATCH --mem=1G                ### Memory required, 1 gigabyte
+#SBATCH --partition=express     ### Cheaha Partition
+#SBATCH --time=00:10:00         ### Estimated Time of Completion, 10 minutes
+#SBATCH --output=%x_%j.out      ### Slurm Output file, %x is job name, %j is job id
+#SBATCH --error=%x_%j.err       ### Slurm Error file, %x is job name, %j is job id
 
 ### Running the command `hostname`
 hostname
@@ -86,15 +86,15 @@ This example illustrate a Slurm job that runs a Python script involving [NumPy](
 
 ```py linenums="1"
 #!/bin/bash
-#SBATCH --job-name=numpy 
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=1G
-#SBATCH --partition=express
-#SBATCH --time=01:00:00
-#SBATCH --output=%x_%j.out
-#SBATCH --error=%x_%j.err
+#SBATCH --job-name=numpy            ### Name of the job            
+#SBATCH --nodes=1                   ### Number of Nodes
+#SBATCH --ntasks=1                  ### Number of Tasks
+#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU
+#SBATCH --mem=4G                    ### Memory required, 4 gigabyte
+#SBATCH --partition=express         ### Cheaha Partition
+#SBATCH --time=01:00:00             ### Estimated Time of Completion, 1 hour
+#SBATCH --output=%x_%j.out          ### Slurm Output file, %x is job name, %j is job id
+#SBATCH --error=%x_%j.err           ### Slurm Error file, %x is job name, %j is job id
 
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
 module load Anaconda3
@@ -142,15 +142,15 @@ Multiple jobs or tasks can be executed simultaneously using `srun` within a sing
 
 ```py linenums="1"
 #!/bin/bash
-#SBATCH --job-name=multijob
-#SBATCH --nodes=1
-#SBATCH --ntasks=3
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=1G
-#SBATCH --partition=express
-#SBATCH --time=01:00:00
-#SBATCH --output=%x_%j.out
-#SBATCH --error=%x_%j.err
+#SBATCH --job-name=multijob             ### Name of the job                
+#SBATCH --nodes=1                       ### Number of Nodes
+#SBATCH --ntasks=3                      ### Number of Tasks
+#SBATCH --cpus-per-task=1               ### Number of Tasks per CPU    
+#SBATCH --mem=4G                        ### Memory required, 4 gigabyte
+#SBATCH --partition=express             ### Cheaha Partition    
+#SBATCH --time=01:00:00                 ### Estimated Time of Completion, 1 hour
+#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id    
+#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id    
 
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
 module load Anaconda3
@@ -221,16 +221,16 @@ The following Slurm script is an example of how you might convert the previous `
 
 ```py linenums="1"
 #!/bin/bash
-#SBATCH --job-name=slurm_array
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=1G
-#SBATCH --partition=express
-#SBATCH --time=01:00:00
-#SBATCH --output=%x_%A_%a.out
-#SBATCH --error=%x_%A_%a.err
-#SBATCH --array=1-3
+#SBATCH --job-name=slurm_array       ### Name of the job                                                      
+#SBATCH --nodes=1                    ### Number of Nodes               
+#SBATCH --ntasks=1                   ### Number of Tasks
+#SBATCH --cpus-per-task=1            ### Number of Tasks per CPU 
+#SBATCH --mem=4G                     ### Memory required, 4 gigabyte
+#SBATCH --partition=express          ### Cheaha Partition 
+#SBATCH --time=01:00:00              ### Estimated Time of Completion, 1 hour
+#SBATCH --output=%x_%A_%a.out        ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --error=%x_%A_%a.err         ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --array=1-3                  ### Number of Slurm array tasks, 3 tasks       
 
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
 module load Anaconda3
@@ -278,15 +278,15 @@ This Slurm script illustrates execution of a MATLAB script in a multithread/mult
 
 ```py linenums="1"
 #!/bin/bash
-#SBATCH --job-name=multithread
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
-#SBATCH --partition=express
-#SBATCH --time=01:00:00
-#SBATCH --output=%x_%j.out
-#SBATCH --error=%x_%j.err
+#SBATCH --job-name=multithread          ### Name of the job                                   
+#SBATCH --nodes=1                       ### Number of Nodes
+#SBATCH --ntasks=1                      ### Number of Tasks
+#SBATCH --cpus-per-task=4               ### Number of Tasks per CPU    
+#SBATCH --mem=16G                       ### Memory required, 16 gigabyte
+#SBATCH --partition=express             ### Cheaha Partition    
+#SBATCH --time=01:00:00                 ### Estimated Time of Completion, 1 hour
+#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job i
+#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id
 
 ### Loading required Matlab module
 module load rc/matlab/R2023b
@@ -374,16 +374,16 @@ This slurm script shows the execution of Tensorflow job using GPU resources. Let
 
 ```py linenums="1"
 #!/bin/bash
-#SBATCH --job-name=gpu
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --gres=gpu:2
-#SBATCH --mem=16G
-#SBATCH --partition=amperenodes
-#SBATCH --time=01:00:00
-#SBATCH --output=%x_%j.out
-#SBATCH --error=%x_%j.err
+#SBATCH --job-name=gpu              ### Name of the job                                             
+#SBATCH --nodes=1                   ### Number of Nodes                    
+#SBATCH --ntasks=1                  ### Number of Tasks                                 
+#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU                          
+#SBATCH --gres=gpu:2                ### Number of GPUs, 2 GPUs                  
+#SBATCH --mem=16G                   ### Memory required, 16 gigabyte                  
+#SBATCH --partition=amperenodes     ### Cheaha Partition                               
+#SBATCH --time=01:00:00             ### Estimated Time of Completion, 1 hour                
+#SBATCH --output=%x_%j.out          ### Slurm Output file, %x is job name, %j is job id                         
+#SBATCH --error=%x_%j.err           ### Slurm Error file, %x is job name, %j is job id                       
 
 ### Loading the required CUDA and cuDNN modules
 module load CUDA/12.2.0
@@ -461,14 +461,14 @@ The below Slurm script runs a Quantum Expresso job using the `pw.x` executable o
 ```py linenums="1"
 #!/bin/bash
 
-#SBATCH --job-name=mpijob           
-#SBATCH --nodes=2
-#SBATCH --ntasks 4 
-#SBATCH --mem=64G
-#SBATCH --partition=amd-hdr100
-#SBATCH --time=12:00:00 
-#SBATCH --output=%x_%j.out        
-#SBATCH --error=%x_%j.err
+#SBATCH --job-name=mpijob               ### Name of the job              
+#SBATCH --nodes=2                       ### Number of Nodes
+#SBATCH --ntasks 4                      ### Number of Tasks
+#SBATCH --mem=64G                       ### Memory required, 64 gigabyte
+#SBATCH --partition=amd-hdr100          ### Cheaha Partition
+#SBATCH --time=12:00:00                 ### Estimated Time of Completion, 12 hour
+#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id    
+#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id         
 
 ### Load the suitable Quantum Expresso module
 module load QuantumESPRESSO/6.3-foss-2018b
