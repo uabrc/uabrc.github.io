@@ -17,9 +17,12 @@ To access Cheaha's CLI (shell), please follow the below steps.
     You will see the below interface. ![!Jupyter Notebook Landing Page](images/jupyter_landing_page.png)
 
 5. When the job has been created, on the My Interactive Sessions page, click the button in front of Host (usually colored blue) in the format >_c0000.
-![!host image](images/cheaha_shell_button.png)
 
-    This should open into a Shell CLI as shown below. ![!Cheaha Shell CLI](images/cheaha_shell_cli.png)
+    ![!host image](images/cheaha_shell_button.png)
+
+    This should open into a Shell CLI as shown below.
+
+    ![!Cheaha Shell CLI](images/cheaha_shell_cli.png)
 
 6. In this interface, you can create, and activate environments, as well as install packages, modules and libraries into your activated environment.
 
@@ -87,14 +90,12 @@ The same process can be followed for installing another Deep Learning library Te
 
 As an example we will be using a sample Jupyter Notebook with just a simple torch function to test if a GPU will be utilized with PyTorch functions. Run the command in a cell, and if your output is `True`, then you have your GPU setup to support PyTorch functions.
 
-```bash
+```python
 
 import torch
 
 print(torch.cuda.is_available())
-
 x = torch.cuda.current_device()
-
 print(torch.get_device_name(x))
 
 ```

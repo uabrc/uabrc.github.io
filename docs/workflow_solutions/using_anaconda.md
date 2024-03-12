@@ -308,7 +308,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     conda list —-explicit > <env>.txt
 
-                OR
+                #OR
 
     conda list —-explicit > <env>.yml
 
@@ -317,8 +317,11 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 #### Activating/Using a shared environment file
 
 To use an environment file shared with you, navigate into the folder where you have the .yml file saved. When in the folder, use use the command to create .yml file in your terminal, replace `<env>` with the environment file name.
-    ```bash
-    conda env create -—file <env>.yml
+
+```bash
+
+    conda env create --file <env>.yml
+
     ```
 
 #### Switching between environments
@@ -338,10 +341,9 @@ To switch the environment, you can do one of the below options using the below c
 1. First deactivate the environment with. Then you activate the second environment with. replace `<env2>` with name of other environment.
 
     ```bash
+
     conda deactivate 
-
-        AND THEN
-
+    #AND THEN
     conda activate <env2>
 
     ```
@@ -349,7 +351,9 @@ To switch the environment, you can do one of the below options using the below c
 1. Or you can just activate the second environment from the first using the activate command.
 
     ```bash
+
     conda activate <env2>
+    
     ```
 
 #### Creating and Activating an Environment after creating a Jupyter Notebook file
@@ -372,13 +376,13 @@ We can create a new environment, that houses all of the packages, modules, and l
 
 1. When you click new, you would see a dropdown of environments that are available for you to use. If you do not see your created environment listed, you may need to install `ipykernel` using `conda install ipykernel` in your cheaha shell within your activated environment. Select the preferred existing environment you created. ![!Kernel/Environment Drop Down](images/jpnotebook_landingpage_kernel.png)
 
-On another note, you may want to replicate an environment setup to handle a project, research, or analysis but you are already working on a Jupyter Notebook file. You can select a different environment from the Jupyter Notebook file by;
+    On another note, you may want to replicate an environment setup to handle a project, research, or analysis but you are already working on a Jupyter Notebook file. You can select a different environment from the Jupyter Notebook file by;
 
-1. Selecting the Jupyter Notebook File from your landing page.
+    1. Selecting the Jupyter Notebook File from your landing page.
 
-1. While in the file, look for the menu option "Kernel", select this. In the Kernel dropdown option, select "Change kernel". Then select your preferred kernel environment. Wait a few seconds for it to load, and you are ready to use your preferred environment. Selecting this would open a new Jupyter Notebook file with your selected environment. ![!Changing Environment](images/changingkernel.png)
+    1. While in the file, look for the menu option "Kernel", select this. In the Kernel dropdown option, select "Change kernel". Then select your preferred kernel environment. Wait a few seconds for it to load, and you are ready to use your preferred environment. Selecting this would open a new Jupyter Notebook file with your selected environment. ![!Changing Environment](images/changingkernel.png)
 
-1. Your selected environment would appear in the top right corner.![!Selected Environment](images/selected_env.png)
+    1. Your selected environment would appear in the top right corner.![!Selected Environment](images/selected_env.png)
 
 #### Good Software Development Practice
 
