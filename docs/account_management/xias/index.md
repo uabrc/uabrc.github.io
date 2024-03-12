@@ -16,8 +16,9 @@ We recommend the sponsor and guest stay in close contact during the process in c
 ## What is next and how to login to services?
 
 To login to the [Cheaha](../../cheaha/getting_started.md) and [GitLab](../gitlab_account.md) services, you need to use your XIAS email address and the password used to create your XIAS account. To access the Cloud.rc, you first need to request an account. Please follow [Cloud.rc](../../uab_cloud/index.md#first-steps) to initiate the request.
- <!-- your username is your XIAS email address, while the password can be any current password you have, not necessarily the same as the one used to create your XIAS email address. -->
- For further guidance on how to proceed and what steps to take next, please refer to the following documentation pages.
+
+For further guidance on how to proceed and what steps to take next, please refer to the following documentation pages.
+
 <!-- markdownlint-disable MD046-->
 !!! warning
 
@@ -26,4 +27,5 @@ To login to the [Cheaha](../../cheaha/getting_started.md) and [GitLab](../gitlab
 
 - [How do I create a Cheaha account?](../cheaha_account.md)
 - [How do I get access to GitLab?](../gitlab_account.md)
-- [How do I get access to OpenStack?](../../uab_cloud/tutorial/index.md)
+- [How do I get access to Cloud.rc (OpenStack)?](../../uab_cloud/tutorial/index.md)
+  
