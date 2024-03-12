@@ -30,11 +30,11 @@ For information on partition and GPU selection, please review our [hardware info
 The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
 ![!Jupyter Notebook job request form Extra jupyter arguments field.](./images/ood_jupyter_notebook_extra_args_box.png)
 
-## Working with different programming languages within Jupyter Notebook
+## Working with other programming languages within Jupyter Notebook
 
-To use other programming languages within Jupyter Notebook, you need to install the corresponding kernel for each language, similar to the process used for Python with the `ipykernel`. This can be achieved using package managers such as `pip` or `conda`, or by following language-specific instructions. For instance, to install the `R kernel`, run `conda install -c r r-essentials`. Please make sure the kernel is installed in your Anaconda environment. Then, select the desired language environment from the kernel dropdown menu.
+To work with other programming languages within Jupyter Notebook, you need to install the corresponding kernel for each language, similar to the process used for Python with the `ipykernel`. This can be done using package managers such as `pip` or `conda`, or by following language-specific instructions. For example, to install `R kernel` for the R language, we can run the `conda install -c r r-essentials` command. Please ensure that the kernel is installed in your Anaconda environment. Then, select the desired language environment from the kernel dropdown menu.
 
-To write and run multiple code cells in different languages within a single notebook, easily switch between kernels and select the preferred kernel for each language, and then proceed to run the code cells in their respective languages.
+Once the necessary kernels are installed, if you wish, you can write and run multiple code cells in different languages within a single notebook. Easily switch between kernels and select the preferred one for each language, and then proceed to run the code cells in their respective languages.
 
 ## Working with Anaconda Environments
 
