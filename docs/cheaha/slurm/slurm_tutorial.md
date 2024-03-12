@@ -138,7 +138,7 @@ $ sacct -j 26127143
 
 ## Example 3: Parallel Jobs
 
-Multiple jobs or tasks can be executed simultaneously using `srun` within a single batch script. In this example, the same executable `python_script_new.py` is run in parallel with distinct inputs (line 17-19). The `&` symbol at the end of each line run these commands in background. The `wait` command (line 20) performs synchronization and ensures that all background processes and parallel tasks are completed before finishing. In Line 4, three tasks are requested as there are three executables to be run in parallel. Copy the batch script into a file named `multijob.job`. Use the `conda` environemnt `pytools-env`, as shown in [example2](../slurm/slurm_tutorial.md/#example-2-sequential-job).
+Multiple jobs or tasks can be executed simultaneously using `srun` within a single batch script. In this example, the same executable `python_script_new.py` is run in parallel with distinct inputs (line 17-19). The `&` symbol at the end of each line run these commands in background. The `wait` command (line 20) performs synchronization and ensures that all background processes and parallel tasks are completed before finishing. In Line 4, three tasks are requested as there are three executables to be run in parallel. The overall job script is allocated with three CPUs, and in lines(17-19), each `srun` script utilizes 1 CPU to perform their respective task. Copy the batch script into a file named `multijob.job`. Use the `conda` environemnt `pytools-env`, as shown in [example2](../slurm/slurm_tutorial.md/#example-2-sequential-job).
 
 ```py linenums="1"
 #!/bin/bash
@@ -188,7 +188,7 @@ sum_result = np.sum(input_array)
 print("Input Range: {} to {}, Sum: {}".format(start, end, sum_result))
 ```
 
-The below ouptut shows that each line corresponds to the output of one parallel execution of python script with specific input ranges.
+The below ouptut shows that each line corresponds to the output of one parallel execution of python script with specific input ranges. Note that the results are in out-of-order. This is because each `srun` script runs independently, and their completion times may vary based on factors such as system load, resource availability, and the nature of their computations. If you want the results to be in order, you may want to modify your script to explicitly collect and organize them. One possible approach can be found in the section [srun for running parallel jobs](../slurm/submitting_jobs.md/#srun-for-running-parallel-jobs) (refer to example 2).
 
 ```bash
 $cat multijob_27099591.out
