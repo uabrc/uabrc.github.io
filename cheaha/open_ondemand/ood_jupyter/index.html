@@ -1323,6 +1323,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#working-with-other-programming-languages-within-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with other programming languages within Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#working-with-anaconda-environments" class="md-nav__link">
     <span class="md-ellipsis">
       Working with Anaconda Environments
@@ -2748,6 +2757,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#working-with-other-programming-languages-within-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with other programming languages within Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#working-with-anaconda-environments" class="md-nav__link">
     <span class="md-ellipsis">
       Working with Anaconda Environments
@@ -2860,6 +2878,8 @@
 
 <h1 id="jupyter-apps">Jupyter Apps<a class="headerlink" href="#jupyter-apps" title="Permanent link">&para;</a></h1>
 <p>Jupyter Notebooks and Jupyter Lab are both available as standalone apps in OOD. Jupyter is commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the <a href="#working-with-anaconda-environments">Working with Anaconda Environments section</a> below before continuing here.</p>
+<p>To launch the Jupyter notebook, select the menus 'Interactive Apps -&gt; Jupyter Notebook'. The job creation and submission form appears:</p>
+<p><a class="glightbox" href="../images/ood_jupyter_notebook_home_form.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Jupyter Notebook home form" src="../images/ood_jupyter_notebook_home_form.png" /></a></p>
 <p>As with all interactive apps, you'll need to select the resources required using the job creation form. Jupyter may also require additional initial setup before the app launches.</p>
 <h2 id="environment-setup">Environment Setup<a class="headerlink" href="#environment-setup" title="Permanent link">&para;</a></h2>
 <p>To modify the environment that Anaconda and Jupyter will run in, please use the Environment Setup field to load modules and modify the environment <code>$PATH</code>. Be aware that any changes to the environment made in this window will be inherited by terminals as well as notebooks opened within Jupyter.</p>
@@ -2870,9 +2890,13 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>module<span class="w"> </span>load<span class="w"> </span>cuDNN/8.9.2.26-CUDA-12.2.0
 </code></pre></div>
 <p>For information on which versions of CUDA to load for Tensorflow and PyTorch, please see <a href="../../slurm/gpu/#tensorflow-compatibility">Tensorflow Compatibility</a> and <a href="../../slurm/gpu/#pytorch-compatibility">PyTorch Compatibility</a>.</p>
+<p>For information on partition and GPU selection, please review our <a href="../../hardware/">hardware information page</a> and <a href="../../slurm/gpu/">GPU Page</a></p>
 <h2 id="extra-jupyter-arguments">Extra Jupyter Arguments<a class="headerlink" href="#extra-jupyter-arguments" title="Permanent link">&para;</a></h2>
 <p>The <code>Extra Jupyter Arguments</code> field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in <code>/data/user/$USER</code>, also known as <code>$USER_DATA</code>, put <code>--notebook-dir=$USER_DATA</code> in this field. You will be able to navigate to the notebook if it is in a subdirectory of <code>notebook-dir</code>, but you won't be able to navigate to any other directories. An example is shown below.</p>
 <p><a class="glightbox" href="../images/ood_jupyter_notebook_extra_args_box.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Jupyter Notebook job request form Extra jupyter arguments field." src="../images/ood_jupyter_notebook_extra_args_box.png" /></a></p>
+<h2 id="working-with-other-programming-languages-within-jupyter-notebook">Working with other programming languages within Jupyter Notebook<a class="headerlink" href="#working-with-other-programming-languages-within-jupyter-notebook" title="Permanent link">&para;</a></h2>
+<p>To work with other programming languages within Jupyter Notebook, you need to install the corresponding kernel for each language, similar to the process used for Python with the <code>ipykernel</code>. This can be done using package managers such as <code>pip</code> or <code>conda</code>, or by following language-specific instructions. For example, to install <code>R kernel</code> for the R language, we can run the <code>conda install -c r r-essentials</code> command. Please ensure that the kernel is installed in your Anaconda environment. Then, select the desired language environment from the kernel dropdown menu.</p>
+<p>Once the necessary kernels are installed, if you wish, you can write and run multiple code cells in different languages within a single notebook. Easily switch between kernels and select the preferred one for each language, and then proceed to run the code cells in their respective languages.</p>
 <h2 id="working-with-anaconda-environments">Working with Anaconda Environments<a class="headerlink" href="#working-with-anaconda-environments" title="Permanent link">&para;</a></h2>
 <p>By default, Jupyter notebooks will use the base environment that comes with the Anaconda3 module. This environment contains a large number of popular packages and may useful for something quick, dirty, and simple. However, for any analysis needing specific package versions or special packages, you will need to create your own environment and select it from the <code>Kernel</code> menu. For information on creating and managing Anaconda environments please see our <a href="../../../workflow_solutions/using_anaconda/">Using Anaconda page</a>. Then please review our <a href="../../software/software/#anaconda-on-cheaha">Cheaha-specific Anaconda page</a> for important tips and how to avoid common pitfalls.</p>
 <p>To change the kernel, use the <code>Kernel</code> dropdown and select <code>Change Kernel</code>. From the list, choose the kernel corresponding to your desired Anaconda environment (see below for an example). If your environment isn't appearing, you may be missing the <a href="#ipykernel">ipykernel package</a>.</p>
@@ -2927,7 +2951,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 31, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 12, 2024</span>
   </span>
 
     
