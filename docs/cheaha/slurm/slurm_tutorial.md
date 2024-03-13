@@ -188,7 +188,7 @@ sum_result = np.sum(input_array)
 print("Input Range: {} to {}, Sum: {}".format(start, end, sum_result))
 ```
 
-The below output shows that each line corresponds to the output of one parallel execution of python script with specific input ranges. Note that the results are in out-of-order. This is because each `srun` script runs independently, and their completion times may vary based on factors such as system load, resource availability, and the nature of their computations. If you want the results to be in order, you may want to modify your script to explicitly collect and organize them. One possible approach can be found in the section [srun for running parallel jobs](../slurm/submitting_jobs.md/#srun-for-running-parallel-jobs) (refer to example 2).
+The below output shows that each line corresponds to the output of one parallel execution of python script with specific input ranges. Note that the results are in out of order. This is because each `srun` script runs independently, and their completion times may vary based on factors such as system load, resource availability, and the nature of their computations. If the results must be in order to be correct, you will need to modify your script to explicitly collect and organize them. One possible approach can be found in the section [srun for running parallel jobs](../slurm/submitting_jobs.md/#srun-for-running-parallel-jobs) (refer to example 2).
 
 ```bash
 $cat multijob_27099591.out
