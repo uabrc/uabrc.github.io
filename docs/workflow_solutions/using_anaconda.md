@@ -292,7 +292,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```
 
-1. Platform + Package Specific
+2. Platform + Package Specific
 
     Create .yml file to share, replace `<envname>` (represents the name of your environment) and `<env>` (represents the name of the file you want to export) with preferred names for file.
 
@@ -302,14 +302,12 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```
 
-1. Platform + Package + Channel Specific
+3. Platform + Package + Channel Specific
 
     ```bash
 
     conda list —-explicit > <env>.txt
-
-                #OR
-
+    # OR
     conda list —-explicit > <env>.yml
 
     ```
@@ -320,30 +318,28 @@ To use an environment file shared with you, navigate into the folder where you h
 
 ```bash
 
-    conda env create --file <env>.yml
+conda env create --file <env>.yml
 
-    ```
+```
 
 #### Switching between environments
 
-Switching between two environments containing different libraries, packages, and dependencies can be carried out following the below steps.
+Switching between two environments containing different libraries, packages, and dependencies can be carried out following the below steps. Activate an environment using the command below.
 
-1. Activate an environment using the below command
+```bash
 
-    ```bash
+conda activate <env>
 
-    conda activate <env>
+```
 
-    ```
-
-To switch the environment, you can do one of the below options using the below commands
+To switch the environment, you can do one of the below options using the commands below.
 
 1. First deactivate the environment with. Then you activate the second environment with. replace `<env2>` with name of other environment.
 
     ```bash
 
     conda deactivate 
-    #AND THEN
+    # AND THEN
     conda activate <env2>
 
     ```
