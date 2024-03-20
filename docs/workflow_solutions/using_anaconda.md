@@ -137,13 +137,17 @@ You may use the [Anaconda page](https://anaconda.org/) to search for packages on
 
 #### Packages for Jupyter
 
-If you are using Anaconda with Jupyter, you will need to be sure to install the `ipykernel` package for your environment to be recognized by the Jupyter Server. If you are using Jupyter in [Open OnDemand](../cheaha/open_ondemand/ood_jupyter.md) then you do not need to install the `jupyter` package. To install ipykernel, activate your environment and use the following command:
+For more information about using Anaconda with Jupyter, see the section [Working with Anaconda Environments](..//cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
 
-``` shell
-conda install ipykernel
+### Update packages in an environment
+
+To ensure packages and their dependencies are all up to date, it is a best practice to regularly update installed packages, and libraries in your activated environment.
+
+```bash
+
+conda update -—all
+
 ```
-
-Each different environment you want to use in Jupyter needs to have `ipykernel` installed.
 
 ### Deactivating an Environment
 
@@ -157,6 +161,16 @@ conda deactivate
 Anaconda may say that using `source deactivate` is deprecated, but environment will still be deactivated.
 
 Closing the terminal will also close out the environment.
+
+### Deleting an Environment
+
+To delete an environment, use the following command. Remember to replace `<env>` with the existing environment name.
+
+```bash
+
+conda env remove —-name <env>
+
+```
 
 ### Working with Environment YAML Files
 
@@ -179,6 +193,38 @@ To create an environment from a YAML file `env.yml`, use the following command.
 ```bash
 conda env create --file env.yml
 ```
+
+#### Sharing your environment file
+
+To share your environment for collaboration, there are primarily 3 ways to export environments, the below commands show how to create environment files that can be shared for replication. Remember to replace `<env>` with the existing environment name.
+
+1. Cross-Platform Compatible
+
+    ```bash
+
+    conda env export --from-history > <env>.yml 
+
+    ```
+
+2. Platform + Package Specific
+
+    Create .yml file to share, replace `<envname>` (represents the name of your environment) and `<env>` (represents the name of the file you want to export) with preferred names for file.
+
+    ```bash
+
+    conda env export <envname> > <env>.yml 
+
+    ```
+
+3. Platform + Package + Channel Specific
+
+    ```bash
+
+    conda list —-explicit > <env>.txt
+    # OR
+    conda list —-explicit > <env>.yml
+
+    ```
 
 #### Replicability versus Portability
 
@@ -259,126 +305,6 @@ Now we can be sure that the correct versions of the software will be installed o
 
     The example above is provided only for illustration purposes. The error has since been fixed, but the example above really happened and is helpful to explain version pinning.
 <!-- markdownlint-enable MD046 -->
-
-#### Update packages in an environment
-
-To ensure packages and their dependencies are all up to date, it is a best practice to regularly update installed packages, and libraries in your activated environment.
-
-```bash
-
-conda update -—all
-
-```
-
-#### Deleting an Environment
-
-To delete an environment, use the following command. Remember to replace `<env>` with the existing environment name.
-
-```bash
-
-conda env remove —-name <env>
-
-```
-
-#### Sharing your environment file
-
-To share your environment for collaboration, there are primarily 3 ways to export environments, the below commands show how to create environment files that can be shared for replication. Remember to replace `<env>` with the existing environment name.
-
-1. Cross-Platform Compatible
-
-    ```bash
-
-    conda env export --from-history > <env>.yml 
-
-    ```
-
-2. Platform + Package Specific
-
-    Create .yml file to share, replace `<envname>` (represents the name of your environment) and `<env>` (represents the name of the file you want to export) with preferred names for file.
-
-    ```bash
-
-    conda env export <envname> > <env>.yml 
-
-    ```
-
-3. Platform + Package + Channel Specific
-
-    ```bash
-
-    conda list —-explicit > <env>.txt
-    # OR
-    conda list —-explicit > <env>.yml
-
-    ```
-
-#### Activating/Using a shared environment file
-
-To use an environment file shared with you, navigate into the folder where you have the .yml file saved. When in the folder, use use the command to create .yml file in your terminal, replace `<env>` with the environment file name.
-
-```bash
-
-conda env create --file <env>.yml
-
-```
-
-#### Switching between environments
-
-Switching between two environments containing different libraries, packages, and dependencies can be carried out following the below steps. Activate an environment using the command below.
-
-```bash
-
-conda activate <env>
-
-```
-
-To switch the environment, you can do one of the below options using the commands below.
-
-1. First deactivate the environment with. Then you activate the second environment with. replace `<env2>` with name of other environment.
-
-    ```bash
-
-    conda deactivate 
-    # AND THEN
-    conda activate <env2>
-
-    ```
-
-1. Or you can just activate the second environment from the first using the activate command.
-
-    ```bash
-
-    conda activate <env2>
-    
-    ```
-
-#### Creating and Activating an Environment after creating a Jupyter Notebook file
-
-We can create a new environment, that houses all of the packages, modules, and libraries we need for our current Jupyter Notebook to implement functions and operations, run all of its cells and deliver desired outputs. Follow the steps below to accomplish this;
-
-1. Access Cheaha Shell (CLI), there are detailed steps on how to do this [here.](..//workflow_solutions/using_anaconda.md#creating-and-activating-an-environment-using-cheaha-cli)
-
-1. [Create](..//workflow_solutions/using_anaconda.md#create-an-environment) and [activate](..//workflow_solutions/using_anaconda.md#activate-an-environment) your new environment, follow instructions in the linked docs.
-
-1. Install your desired packages, libraries or modules into your activated environment using `conda install 'packagename'` or `pip install 'packagename'`. Packagename representing your needed library, module or package.
-
-1. Remember to install 'ipykernel' in your activated environment, using `conda install ipykernel`.
-
-1. Go into your working Jupyter Notebook file, and follow the instructions listed [here](..//workflow_solutions/using_anaconda.md#changing-environments-using-jupyter-notebook-gui). You may have to refresh the page to see your newly created environment in the kernel drop down menu.
-
-#### Changing Environments using Jupyter Notebook GUI
-
-1. When your Jupyter Notebook Job has been created on Cheaha, and you want to load an environment you have already created. Select from the dropdown menu "New". You can find this in the top right corner of the Jupyter Notebook landing page. ![!Select Environment](images/selectenvsjupyter.png)
-
-1. When you click new, you would see a dropdown of environments that are available for you to use. If you do not see your created environment listed, you may need to install `ipykernel` using `conda install ipykernel` in your cheaha shell within your activated environment. Select the preferred existing environment you created. ![!Kernel/Environment Drop Down](images/jpnotebook_landingpage_kernel.png)
-
-    On another note, you may want to replicate an environment setup to handle a project, research, or analysis but you are already working on a Jupyter Notebook file. You can select a different environment from the Jupyter Notebook file by;
-
-    1. Selecting the Jupyter Notebook File from your landing page.
-
-    1. While in the file, look for the menu option "Kernel", select this. In the Kernel dropdown option, select "Change kernel". Then select your preferred kernel environment. Wait a few seconds for it to load, and you are ready to use your preferred environment. Selecting this would open a new Jupyter Notebook file with your selected environment. ![!Changing Environment](images/changingkernel.png)
-
-    1. Your selected environment would appear in the top right corner.![!Selected Environment](images/selected_env.png)
 
 #### Good Software Development Practice
 
