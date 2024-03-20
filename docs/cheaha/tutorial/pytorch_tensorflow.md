@@ -4,7 +4,7 @@ The below tutorial would show you steps on how to create an Anaconda environment
 
 ## Installing Anaconda Environments using Cheaha's Command Line Interface (CLI)
 
-To access Cheaha's CLI (shell), please follow the below steps.
+To access the termainal (shell), please do the following.
 
 1. Login to [rc.uab.edu](https://rc.uab.edu)
 
@@ -36,7 +36,7 @@ There are two instances of PyTorch that can be installed, one requiring GPUs, an
 
 1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in the links.
 
-1. Access the CLI following the steps [here.](../../workflow_solutions/using_anaconda.md#installing-anaconda-environments-using-cheahas-command-line-interface-cli)
+1. Access the terminal following the steps [here](../../workflow_solutions/using_anaconda.md#installing-anaconda-environments-using-cheahas-command-line-interface-cli).
 
 <!-- markdownlint-disable MD046 -->
 !!! note
