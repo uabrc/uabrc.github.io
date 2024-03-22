@@ -54,7 +54,7 @@ plugins:
         account_management/xias_guest.md: account_management/xias/guest_instructions.md
         account_management/xias_sites.md: account_management/xias/pi_site_management.md
         account_management/xias_users.md: account_management/xias/pi_guest_management.md
-        cheaha/conda.md: cheaha/software/software.md/#anaconda-on-cheaha
+        cheaha/conda.md: cheaha/software/software.md#anaconda-on-cheaha
         cheaha/lmod.md: cheaha/software/modules.md
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
         contributor_guide.md: contributing/contributor_guide.md
@@ -125,11 +125,11 @@ nav:
           - Self-Installed Software: cheaha/software/software.md
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md
+          - Slurm Tutorial: cheaha/slurm/slurm_tutorial.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md
           - Practical Batch Array Jobs: cheaha/slurm/practical_sbatch.md
           - Managing Jobs: cheaha/slurm/job_management.md
           - GPUs: cheaha/slurm/gpu.md
-          - Slurm Tutorial: cheaha/slurm/slurm_tutorial.md
       - Job Efficiency: cheaha/job_efficiency.md
   - UAB Cloud (cloud.rc) Guide:
       - uab_cloud/index.md
