@@ -111,7 +111,7 @@ Between the two "Start" buttons on the "File Manager" page is a "Transfer & Time
 7. quota fail - Fails instead of retries when the target storage quota is exceeded.
 8. Apply filter - Filter rules can be used to customize and fine-tune the transfer process, ensuring that only the desired files/directories are transferred while excluding others based on the rules defined.
 
-Below the "Transfer Settings", there are other options you can enable to customize notification of success/failure, and schedule the transfer to occur at specific time.
+Below the "Transfer Settings", there are additioanl options available that you can enable to customize notification of success/failure, and schedule the transfer to occur at specific time.
 
 ### Common Errors
 
