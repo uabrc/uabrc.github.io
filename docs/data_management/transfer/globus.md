@@ -98,17 +98,20 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
 
 ### Transfer and Sync Options
 
-Between the two "Start" buttons on the "File Manager" page is a "Transfer & Sync Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options are...
+Between the two "Start" buttons on the "File Manager" page is a "Transfer & Timer Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options under "Transfer Settings" are...
 
-![!Transfer and Sync Options pane showing multiple options.](./images/globus_040_transfer_and_sync_options.png)
+![!Transfer and Timer Options pane showing multiple options.](./images/globus_040_transfer_and_sync_options.png)
 
 1. sync - Sync files only, rather than create new files.
 2. delete files - Delete any files on the target that are not on the source. Useful for forcing identical filesystems when syncing.
 3. preserve source - Copies file "modified time" metadata.
-4. verify integrity - Verifies that checksums are identical on source and target after transfer completes. Highly recommended to have this checked.
-5. encrypt transfer - Encrypts data before leaving source and decrypts after arriving at destination. Recommended for all transfers, required and enforced for all UAB endpoints.
+4. verify integrity - Verifies that checksums are identical on source and target after transfer completes. The default option is to verify integrity. Its highly recommended to leave this unchecked.
+5. encrypt transfer - Encrypts data before leaving source and decrypts after arriving at destination. Recommended for all transfers, required and enforced for all UAB endpoints. It is checked by default.
 6. skip files - Skips source files that cause errors during the transfer. Otherwise the entire transfer will stop when an error is encountered.
 7. quota fail - Fails instead of retries when the target storage quota is exceeded.
+8. Apply filter - Filter rules can be used to customize and fine-tune the transfer process, ensuring that only the desired files/directories are transferred while excluding others based on the rules defined.
+
+Below the "Transfer Settings", there are other options you can enable to customize notification of success/failure, and schedule the transfer to occur at specific time.
 
 ### Common Errors
 
