@@ -1,10 +1,10 @@
 # Anaconda Environment Tutorial for PyTorch and TensorFlow
 
-The below tutorial would show you steps on how to create an Anaconda environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access and use the Shell Command Line Interface (CLI), and using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../open_ondemand/ood_layout.md#interactive-apps)
+The below tutorial would show you steps on how to create an Anaconda environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access the terminal, as well as using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../open_ondemand/ood_layout.md#interactive-apps)
 
-## Installing Anaconda Environments using Cheaha's Command Line Interface (CLI)
+## Installing Anaconda Environments using Terminal
 
-To access the termainal (shell), please do the following.
+To access the terminal (shell), please do the following.
 
 1. Login to [rc.uab.edu](https://rc.uab.edu)
 
@@ -20,7 +20,7 @@ To access the termainal (shell), please do the following.
 
     ![!host image](images/cheaha_shell_button.png)
 
-    This should open into a Shell CLI as shown below.
+    This should open into a terminal as shown below.
 
     ![!Cheaha Shell CLI](images/cheaha_shell_cli.png)
 
@@ -30,7 +30,7 @@ To access the termainal (shell), please do the following.
 
 The instructions below, provide a recommended step by step guide to creating and activating an environment that has PyTorch and/or TensorFlow installed and ready to use for deep learning projects.
 
-## Steps to Install PyTorch Using Cheaha CLI
+## Installing PyTorch Using Terminal
 
 There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilising only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;
 
@@ -64,7 +64,7 @@ module load CUDA/11.8.0
 
 ![!nvidia-smi output](images/CudaVersion.png)
 
-When your job has been created and your environment created and activated from the cheaha CLI (see above [instructions](../../workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
+When your job has been created and your environment created and activated from the terminal (see above [instructions](../../workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
 
 ```bash
 
@@ -102,9 +102,9 @@ print(torch.get_device_name(x))
 
 ![!PyTorch Jupyter Notebook Output](images/pytorch_output.png)
 
-## Steps to Install TensorFlow CPU and GPU Versions Using Cheaha CLI
+## Install TensorFlow GPU Using Terminal
 
-1. Create a new environment that is compatible with supported tensorflow versions, use the below command to do this. For this tuorial we use Python 3.11.
+1. Create a new environment that is compatible with supported tensorflow versions, use the below command to do this. For this tutorial we will use Python 3.11.
 
     ```bash
 
@@ -116,7 +116,7 @@ print(torch.get_device_name(x))
 
     ```bash
 
-    pip install -—upgrade pip
+    pip install --upgrade pip
 
     ```
 
