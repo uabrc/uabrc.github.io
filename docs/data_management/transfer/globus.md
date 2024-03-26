@@ -2,10 +2,11 @@
 
 Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is recommended for most single-use, day-to-day data transfer use-cases.
 
-UAB Research Computing uses High Assurance Endpoints and Collections, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions.
+UAB Research Computing uses High Assurance Endpoints and Collections, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions/changes.
 
 1. You will be prompted to prove authorization each time you access a UAB Research Computing endpoint, collection or attempt to download files to your local machine from such an endpoint or collection. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.
 2. Bookmarks are not allowed in High Assurance endpoints and collections.
+3. In the newer version, Globus "Endpoints" have been moved under "Console", which can be located in the in the left-hand navigation pane.
 
 For more detailed information on High Assurance please see the Globus official pages below:
 
@@ -17,7 +18,7 @@ For more detailed information on High Assurance please see the Globus official p
 [Globus Connect Personal](https://www.globus.org/globus-connect-personal) is software meant to be installed on local machines such as laptops, desktops,
 workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on [MacOS](https://docs.globus.org/how-to/globus-connect-personal-mac/), [Linux](https://docs.globus.org/how-to/globus-connect-personal-linux) and [Windows](https://docs.globus.org/how-to/globus-connect-personal-windows).
 
-To verify your installation is complete, please visit <https://app.globus.org> and log in. Click "Endpoints" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the endpoint you just created.
+To verify your installation is complete, please visit <https://app.globus.org> and log in. Click "Collections" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the collection you just created.
 
 ## Managing Identities
 
@@ -33,7 +34,7 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
     To use UAB Research Computing endpoints and collections, you will need to ensure you are using you UAB identity.
 <!-- markdownlint-enable MD046 -->
 
-## Moving Data Between Endpoints
+## Moving Data Between Collections
 
 1. Log in to the Globus App online at <https://app.globus.org> using UAB Single Sign-On (SSO). Start typing "University of Alabama at Birmingham" into the "Use your existing organizational login" text box and selected it when it appears in the list.
 
@@ -71,9 +72,6 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
     5. The "Shared With You" tab shows any private endpoints that have
         been shared with you by other users, possibly collaborators.
 
-    6. The "More Options" tab will show a brief text on installing
-        Globus Connect Personal.
-
 5. When an endpoint has been selected you will see a list of folders and files on the default path for that endpoint in the bottom box. You can use the "Path" box to type a path to find the files you are looking for.
 
     ![!Globus File Manager interface with one endpoint selected showing files of default directory.](./images/globus_010_one_endpoint_done.png)
@@ -82,7 +80,7 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
 
     ![!Globus File Manager interface with both endpoints selected showing files for both default directories.](./images/globus_011_two_endpoint_done.png)
 
-7. When both endpoints have been selected and you have chosen the correct paths for each endpoint, select files and/or folders on the side you wish to transfer FROM. We will call this side the source endpoint, and the other side the target endpoint. Selections may be made by clicking the checkboxes that appear when you hover over each file or folder.
+7. When both endpoints have been selected and you have chosen the correct paths for each collection, select files and/or folders on the side you wish to transfer FROM. We will call this side the source collection, and the other side the target collection. Selections may be made by clicking the checkboxes that appear when you hover over each file or folder.
 
     ![!Globus File Manager interface with files selected in left endpoint.](./images/globus_012_selected_files.png)
 
@@ -100,17 +98,20 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
 
 ### Transfer and Sync Options
 
-Between the two "Start" buttons on the "File Manager" page is a "Transfer & Sync Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options are...
+Between the two "Start" buttons on the "File Manager" page is a "Transfer & Timer Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options under "Transfer Settings" are...
 
-![!Transfer and Sync Options pane showing multiple options.](./images/globus_040_transfer_and_sync_options.png)
+![!Transfer and Timer Options pane showing multiple options.](./images/globus_040_transfer_and_sync_options.png)
 
 1. sync - Sync files only, rather than create new files.
 2. delete files - Delete any files on the target that are not on the source. Useful for forcing identical filesystems when syncing.
 3. preserve source - Copies file "modified time" metadata.
-4. verify integrity - Verifies that checksums are identical on source and target after transfer completes. Highly recommended to have this checked.
-5. encrypt transfer - Encrypts data before leaving source and decrypts after arriving at destination. Recommended for all transfers, required and enforced for all UAB endpoints.
+4. verify integrity - Verifies that checksums are identical on source and target after transfer completes. The default option is to verify integrity. Its highly recommended to leave this unchecked.
+5. encrypt transfer - Encrypts data before leaving source and decrypts after arriving at destination. Recommended for all transfers, required and enforced for all UAB endpoints. It is checked by default.
 6. skip files - Skips source files that cause errors during the transfer. Otherwise the entire transfer will stop when an error is encountered.
 7. quota fail - Fails instead of retries when the target storage quota is exceeded.
+8. Apply filter - Filter rules can be used to customize and fine-tune the transfer process, ensuring that only the desired files/directories are transferred while excluding others based on the rules defined.
+
+Below the "Transfer Settings", there are additioanl options available that you can enable to customize notification of success/failure, and schedule the transfer to occur at specific time.
 
 ### Common Errors
 
