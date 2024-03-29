@@ -80,7 +80,7 @@ If you believe this to be in error, please [Contact Support](../help/support.md)
 
 ## What can I do with my account?
 
-Research Computing offers services addressing a wide range of needs for researchers at UAB, including students, staff, and faculty, as well as for both labs and research cores.
+Research Computing offers services addressing a wide range of needs for researchers at UAB, including students, staff, and faculty, as well as for both Labs and research cores.
 
 ### For Students, Staff, and Faculty
 
