@@ -143,7 +143,17 @@ To reduce unexpected behavior and/or to get rid of Lmod errors,
     TopHat/2.1.1-foss-2016a
     ```
 
-2. Before loading modules in a shell/bash/sbatch script, use a clean shell by using `module reset` at the beginning to restore to default system settings. Using `module reset` before loading modules separates what software is loaded in the working shell from the software loaded in the script shell. Be aware that forked processes (like scripts) and Slurm commands inherit the environment variables of the working shell, including loaded modules. Here is an example that shows module conflict between cuda11.8 and cuda11.4 versions that may lead to unexpected behavior or an erroneous output.
+2. Before loading modules in a shell/bash/sbatch script, use a clean shell by using `module reset` at the beginning.
+      - What it causes to happen
+         - Clearing loaded modules.
+         - Loading default modules specified by the system administrator.
+      - What it prevents from happening
+          - Module conflicts.
+      - Why it is a best-practice
+          - Ensures reproducibility by starting with a clean environment.
+          - Manages software dependencies effectively.
+
+Using `module reset` before loading modules separates what software is loaded in the working shell from the software loaded in the script shell. Be aware that forked processes (like scripts) and Slurm commands inherit the environment variables of the working shell, including loaded modules. Here is an example that shows module conflict between cuda11.8 and cuda11.4 versions that may lead to unexpected behavior or an erroneous output.
 
 ```bash
 # Working shell where you may try testing module load and your run script

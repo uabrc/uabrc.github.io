@@ -102,6 +102,12 @@ In addition to requesting general resources, for some apps you will have the opt
 
 For jobs such as RStudio and Jupyter, some modules like CUDA need to be loaded beforehand so the application has access to it. This can also include loading compiler modules such as CMake and GCC for compiling package installations or editing your `$PATH` specifically for the interactive app without needing to edit your `.bashrc`. See the software specific pages for more examples on how to use the Environment Setup.
 
+<!-- markdownlint-disable MD046 -->
+!!! Note
+
+    In the OOD session, the module is automatically reset at the beginning of every session by default. Therefore, avoid using `module reset` in the 'Environment Setup' box. See [best practice for loading modules](../software/modules.md/#best-practice-for-loading-modules) for more information.
+<!-- markdownlint-disable MD046 -->
+
 ### My Interactive Sessions
 
 The My Interactive Sessions page lists the available apps and your current interactive sessions. If you are logged out, disconnected, or lose track of an interactive application (because of a closed tab or computer shutdown) you can reconnect to running applications on this page. The My Interactive Sessions page looks like:
