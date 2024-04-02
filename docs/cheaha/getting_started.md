@@ -60,7 +60,7 @@ Please visit our [hardware](hardware.md#cheaha-hpc-cluster) for more details abo
 
 [Quality-of-Service (QoS) limits](hardware.md#quality-of-service-qos-limits) are in place to ensure any one user can't monopolize all resources.
 
-#### Why you should not run jobs on Login Nodes
+#### Why to avoid running jobs on Login Nodes
 
 To effectively manage and provide high-performance computing (HPC) resources to the University community provided via the clusters, kindly use the terminal from compute nodes in created jobs rather than the terminal from login nodes. Our clusters are essential for conducting this large and complex scientific computations that often times require a significant amount of computing power. These clusters are shared environments, where multiple users execute their research and computing tasks simultaneously. It is important to utilize the structure of these environments properly for efficient and respectful use of the shared resources, so everyone gets a fair chance at using these resources.
 
@@ -87,6 +87,10 @@ Slurm Workload Manager is a widely used open-source job scheduler that manages t
 ##### What Should Run in Jobs?
 
 Ideally, only non-intensive tasks like editing files, compiling programs, or managing job submissions should be performed on the login node. Compute-intensive tasks, large data analyses, and simulations should be submitted as Slurm jobs to compute nodes. This approach ensures that the login node remains responsive and available for all users to manage their tasks and submissions. Submitting compute-intensive tasks as Slurm jobs to compute nodes helps to prevent overloading the login node, ensuring a smoother experience for all users of the cluster. As Cheaha stakeholders we should hold ourselves to best practices, and ensure its optimal performance and accessibility.
+
+##### How to start SLURM Jobs?
+
+There are two straightforward ways to start SLURM jobs on cheaha, and they are detailed below.
 
 ###### Open OnDemand (OOD)
 
