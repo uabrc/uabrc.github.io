@@ -65,9 +65,9 @@ For batch jobs, flags are typically included as directive comments at the top of
 
 Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
 
-``` bash
+```py linenums="1"
 #!/bin/bash
-#
+
 #SBATCH --job-name=test
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -102,9 +102,9 @@ Building on the job script above, below is an array job. Array jobs are useful w
 
 To test the script below, copy and paste it into a plain text file `testarrayjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testarrayjob.sh`. Momentarily, 16 text files with `.out` and `.err` suffixes will be produced in your home directory.
 
-``` bash
+```py linenums="1"
 #!/bin/bash
-#
+
 #SBATCH --job-name=test
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -115,7 +115,7 @@ To test the script below, copy and paste it into a plain text file `testarrayjob
 #SBATCH --output=%x_%A_%a.out
 #SBATCH --error=%x_%A_%a.err
 #SBATCH --array=0-9
-
+ 
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 ```
 
@@ -232,6 +232,10 @@ Alternatively, `srun` can also run MPI, OpenMP, hybrid MPI/OpenMP, and many more
 
     Instead of `srun`, please load one of the `OpenMPI` modules with an appropriate version. Please contact [Support](../../help/support.md) with any questions or concerns.
 <!-- markdownlint-enable MD046 -->
+
+## Environment Setup and Module Usage in Job Submission
+
+Before submitting a job using `sbatch`, it's crucial to establish a tailored environment, including software installations and  loading necessary modules containing the required software packages. We highly recommend the practice of putting `module reset` before any `module load` calls in job scripts. The module system modifies the environment whenever the module list changes, and Slurm jobs inherit the environment from whatever called `sbatch` or `srun`. The module reset command normalizes the initial environment for the script, improving repeatability and minimizing the risk of hard-to-diagnose module conflicts. For examples and further information, please see [best practice for loading modules](../software/modules.md/#best-practice-for-loading-modules).  
 
 ## Graphical Interactive Jobs
 
