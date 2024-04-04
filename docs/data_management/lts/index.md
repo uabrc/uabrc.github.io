@@ -37,7 +37,7 @@ This documentation will use the standard file and path terms since those are mor
 
 ## Requesting an Account
 
-UAB researchers do not have automatic access to LTS, and currently, single sign on is not enabled. To request access to LTS, please send an email to <support@listserv.uab.edu>. You will be then be given an Access Key and a Secret Access Key, both of which will be used later on. Keep track of both of these keys and do not share them with anyone else, these are your login credentials for LTS. Please visit [Shared Storage](../storage.md) to review guidelines to request a LTS account.
+UAB researchers do not have automatic access to LTS, and currently, single sign on is not enabled. To request access to LTS, please send an email to <support@listserv.uab.edu>. You will be then be given an Access Key and a Secret Access Key, both of which will be used later on. Keep track of both of these keys and do not share them with anyone else, these are your login credentials for LTS. Please visit [Shared Storage](../storage.md) to review guidelines to request a LTS account. Information about Lab PIs and users responsibilities on Cheaha can be also accessed by visiting [users responsibilities](../../account_management/cheaha_account.md/#users-responsibilities).
 
 ## Avoiding Duplicate Names for Buckets
 

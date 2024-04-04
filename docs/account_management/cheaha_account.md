@@ -100,8 +100,26 @@ Research Computing offers services addressing a wide range of needs for research
     - [Tutorial](../uab_cloud/tutorial/index.md)
     - [Web servers](../uab_cloud/remote_access.md/#make-instances-publically-accessible-from-the-internet)
 
-#### Lab PIs Responsibilities
+#### Users Responsibilities
 
-Lab PIs can find more about their responsibilities regarding user account access to project and LTS by visiting [Project](../data_management/storage.md/#project-directory-permissions), and [LTS](../data_management/lts/index.md), and referring to [Cloud.rc policy](../uab_cloud/tutorial/security.md) for Cloud.rc policies.
+All users are advised to consider the following responsibilities while using Cheaha.
 
-  If you are unable to find what you need, please contact our team [here](../index.md#how-to-contact-us).
+- Lab PIs and Core Directors:
+
+    - Data Management and Storage:
+        - Periodically check group membership is correct
+        - Periodically check access controls to directories and buckets are correct
+        - Moving unused data to LTS or external archival solutions
+        - Managing backup plans
+
+    - OpenStack Projects:
+
+        - Periodically check group membership is correct
+        - Periodically check unused resources are released
+
+- All users:
+
+    - Regularly clearing `/scratch`
+    - Adherence to [UAB IT policies](https://www.uab.edu/it/home/policies)
+
+If you are unable to find what you need, please contact our team [here](../index.md#how-to-contact-us).

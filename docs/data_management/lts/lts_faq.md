@@ -126,3 +126,7 @@ The following policy file will give read permission to all LTS users for all obj
 ## Can I Change Permissions On A Bucket Via Globus?
 
 As of now, there is no way to change permissions on a bucket via [Globus](../transfer/globus.md). The only way to change permissions is via the command line.
+
+## When Should I Review Who Has Access?
+
+Regularly review user account access to projects and LTS spaces to ensure everyone's safety. For more information on Lab PIs and users' responsibilities, please visit [users responsibilities](../../account_management/cheaha_account.md/#users-responsibilities).
