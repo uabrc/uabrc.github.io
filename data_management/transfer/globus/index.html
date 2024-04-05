@@ -829,15 +829,15 @@
   </li>
       
         <li class="md-nav__item">
-    <a href="#moving-data-between-endpoints" class="md-nav__link">
+    <a href="#moving-data-between-collections" class="md-nav__link">
       <span class="md-ellipsis">
-        Moving Data Between Endpoints
+        Moving Data Between Collections
       </span>
     </a>
 
     <!-- Table of contents list -->
     
-      <nav class="md-nav" aria-label="Moving Data Between Endpoints">
+      <nav class="md-nav" aria-label="Moving Data Between Collections">
         <ul class="md-nav__list">
           
           
@@ -2867,15 +2867,15 @@
   </li>
       
         <li class="md-nav__item">
-    <a href="#moving-data-between-endpoints" class="md-nav__link">
+    <a href="#moving-data-between-collections" class="md-nav__link">
       <span class="md-ellipsis">
-        Moving Data Between Endpoints
+        Moving Data Between Collections
       </span>
     </a>
 
     <!-- Table of contents list -->
     
-      <nav class="md-nav" aria-label="Moving Data Between Endpoints">
+      <nav class="md-nav" aria-label="Moving Data Between Collections">
         <ul class="md-nav__list">
           
           
@@ -3097,10 +3097,12 @@
 
 <h1 id="globus">Globus<a class="headerlink" href="#globus" title="Permanent link">&para;</a></h1>
 <p>Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is recommended for most single-use, day-to-day data transfer use-cases.</p>
-<p>UAB Research Computing uses High Assurance Endpoints and Collections, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions.</p>
+<p>UAB Research Computing uses High Assurance Endpoints, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions/changes.</p>
 <ol>
-<li>You will be prompted to prove authorization each time you access a UAB Research Computing endpoint, collection or attempt to download files to your local machine from such an endpoint or collection. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.</li>
-<li>Bookmarks are not allowed in High Assurance endpoints and collections.</li>
+<li>You will be prompted to prove authorization each time you access a UAB Research Computing endpoint or attempt to download files to your local machine from such an endpoint. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.</li>
+<li>Bookmarks are not allowed in High Assurance endpoints.</li>
+<li>In the newer version, Globus "Endpoints" have been moved under "Console", which can be located in the in the left-hand navigation pane.
+       <a class="glightbox" href="../images/globus_108_console_endpoint.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus endpoints moved under console" src="../images/globus_108_console_endpoint.png" /></a></li>
 </ol>
 <p>For more detailed information on High Assurance please see the Globus official pages below:</p>
 <ul>
@@ -3110,19 +3112,19 @@
 <h2 id="setting-up-globus-connect-personal">Setting up Globus Connect Personal<a class="headerlink" href="#setting-up-globus-connect-personal" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.globus.org/globus-connect-personal">Globus Connect Personal</a> is software meant to be installed on local machines such as laptops, desktops,
 workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on <a href="https://docs.globus.org/how-to/globus-connect-personal-mac/">MacOS</a>, <a href="https://docs.globus.org/how-to/globus-connect-personal-linux">Linux</a> and <a href="https://docs.globus.org/how-to/globus-connect-personal-windows">Windows</a>.</p>
-<p>To verify your installation is complete, please visit <a href="https://app.globus.org">https://app.globus.org</a> and log in. Click "Endpoints" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the endpoint you just created.</p>
+<p>To verify your installation is complete, please visit <a href="https://app.globus.org">https://app.globus.org</a> and log in. Click "Collections" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the collection you just created.</p>
 <h2 id="managing-identities">Managing Identities<a class="headerlink" href="#managing-identities" title="Permanent link">&para;</a></h2>
 <p>Globus Identities is a concept helping to map Globus Accounts (one per person) to institutions (one or more per person).</p>
-<p>Most UAB researchers will have a single identity, their UAB identity, tied to their blazerid. Some researchers may have external collaborations or appointments that provide additional entities which need access to other endpoints on Globus.</p>
+<p>Most UAB researchers will have a single identity, their UAB identity, tied to their BlazerID. Some researchers may have external collaborations or appointments that provide additional entities which need access to other endpoints on Globus.</p>
 <p>To manage your identities, navigate to <a href="https://app.globus.org/account/identities">https://app.globus.org/account/identities</a> and sign in.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>To use UAB Research Computing endpoints and collections, you will need to ensure you are using you UAB identity.</p>
+<p>To use UAB Research Computing endpoints, you will need to ensure you are using your UAB identity.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
-<h2 id="moving-data-between-endpoints">Moving Data Between Endpoints<a class="headerlink" href="#moving-data-between-endpoints" title="Permanent link">&para;</a></h2>
+<h2 id="moving-data-between-collections">Moving Data Between Collections<a class="headerlink" href="#moving-data-between-collections" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Log in to the Globus App online at <a href="https://app.globus.org">https://app.globus.org</a> using UAB Single Sign-On (SSO). Start typing "University of Alabama at Birmingham" into the "Use your existing organizational login" text box and selected it when it appears in the list.</p>
@@ -3137,7 +3139,7 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 <p><a class="glightbox" href="../images/globus_003_panels.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Panels selection widget with center icon selected. Center icon appears to be two side-by-side panes." src="../images/globus_003_panels.png" /></a></p>
 </li>
 <li>
-<p>Click the "Search" icon in the "Collection" text box near the top-left or top-right of the page to locate an endpoint. There are multiple ways to find an endpoint. For some endpoints you may be asked to log in, which is true of all UAB endpoints. Some UAB endpoints may also require that you be on the UAB Campus VPN.</p>
+<p>Click the "Search" icon in the "Collection" text box near the top-left or top-right of the page to locate an endpoint/collection. An endpoint is a server that provides access to data stored in a cluster. A collection can be a mapped collection or guest collection, which represents a user's own collection of files or directories mapped from storage endpoints to their Globus account for easy management, sharing and accessing. Please refer to the <a href="https://docs.globus.org/guides/overviews/collections-and-endpoints/">Globus endpoints and collections</a> to know more. There are multiple ways to find an endpoint. For some endpoints you may be asked to log in, which is true of all UAB endpoints. Some UAB endpoints may also require that you be on the UAB Campus VPN.</p>
 <p><a class="glightbox" href="../images/globus_004_search_bar.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus File Manager interface with mouse pointer over left-hand Collection Search box." src="../images/globus_004_search_bar.png" /></a></p>
 <ol>
 <li>
@@ -3148,41 +3150,36 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 </ol>
 </li>
 <li>
-<p>The "Recent" tab shows endpoints that have most recently been used.</p>
+<p>The "Recent" tab shows endpoints/collections that have most recently been used.</p>
 <p><a class="glightbox" href="../images/globus_005_recent_tab.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus Collection Search Recent tab showing two endpoints." src="../images/globus_005_recent_tab.png" /></a></p>
 </li>
 <li>
-<p>The "Bookmarks" tab shows a list of endpoint bookmarks. Bookmarks may not reference folders within UAB Research Computing or other High Assurance endpoints or collections.</p>
+<p>The "Bookmarks" tab shows a list of collection bookmarks. Bookmarks may not reference folders within UAB Research Computing or other High Assurance endpoints.</p>
 <p><a class="glightbox" href="../images/globus_006_bookmarks_tab.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus Collection Search Bookmarks tab showing four bookmarks." src="../images/globus_006_bookmarks_tab.png" /></a></p>
 </li>
 <li>
-<p>The "Your Collections" tab shows all endpoints owned by you. For most researchers this will be one or more Globus Connect Personal endpoints.</p>
+<p>The "Your Collections" tab shows all collections owned by you. For most researchers this will be one or more Globus Connect Personal collections.</p>
 <p><a class="glightbox" href="../images/globus_007_your_collections_tab.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus Collection Search Your Collections tab showing one endpoint." src="../images/globus_007_your_collections_tab.png" /></a></p>
 </li>
 <li>
-<p>The "Shared With You" tab shows any private endpoints that have
-    been shared with you by other users, possibly collaborators.</p>
-</li>
-<li>
-<p>The "More Options" tab will show a brief text on installing
-    Globus Connect Personal.</p>
+<p>The "Shared With You" tab shows any private collections that have been shared with you by other users, possibly collaborators.</p>
 </li>
 </ol>
 </li>
 <li>
-<p>When an endpoint has been selected you will see a list of folders and files on the default path for that endpoint in the bottom box. You can use the "Path" box to type a path to find the files you are looking for.</p>
+<p>When an endpoint/collection has been selected you will see a list of folders and files on the default path for that endpoint/collection in the bottom box. You can use the "Path" box to type a path to find the files you are looking for.</p>
 <p><a class="glightbox" href="../images/globus_010_one_endpoint_done.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus File Manager interface with one endpoint selected showing files of default directory." src="../images/globus_010_one_endpoint_done.png" /></a></p>
 </li>
 <li>
-<p>Repeat the process of selecting an endpoint for the other "Collection" text box.</p>
+<p>Repeat the process of selecting an endpoint/collection for the other "Collection" text box.</p>
 <p><a class="glightbox" href="../images/globus_011_two_endpoint_done.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus File Manager interface with both endpoints selected showing files for both default directories." src="../images/globus_011_two_endpoint_done.png" /></a></p>
 </li>
 <li>
-<p>When both endpoints have been selected and you have chosen the correct paths for each endpoint, select files and/or folders on the side you wish to transfer FROM. We will call this side the source endpoint, and the other side the target endpoint. Selections may be made by clicking the checkboxes that appear when you hover over each file or folder.</p>
+<p>When both endpoints have been selected and you have chosen the correct paths for each collection, select files and/or folders on the side you wish to transfer FROM. We will call this side the source collection, and the other side the target collection. Selections may be made by clicking the checkboxes that appear when you hover over each file or folder.</p>
 <p><a class="glightbox" href="../images/globus_012_selected_files.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus File Manager interface with files selected in left endpoint." src="../images/globus_012_selected_files.png" /></a></p>
 </li>
 <li>
-<p>When all files and folders have been selected from the source endpoint, click the "Start" button on the source endpoint side. This will start a transfer process from source to target. The files will be placed in the currently open path on the target endpoint.</p>
+<p>When all files and folders have been selected from the source collection, click the "Start" button on the source collection side. This will start a transfer process from source to target. The files will be placed in the currently open path on the target collection.</p>
 <p><a class="glightbox" href="../images/globus_013_popup.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Pop-up showing Transfer request submitted successfully. Pop-up contains link to View details." src="../images/globus_013_popup.png" /></a></p>
 </li>
 <li>
@@ -3197,17 +3194,19 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 <!-- markdownlint-enable MD046 -->
 
 <h3 id="transfer-and-sync-options">Transfer and Sync Options<a class="headerlink" href="#transfer-and-sync-options" title="Permanent link">&para;</a></h3>
-<p>Between the two "Start" buttons on the "File Manager" page is a "Transfer &amp; Sync Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options are...</p>
-<p><a class="glightbox" href="../images/globus_040_transfer_and_sync_options.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Transfer and Sync Options pane showing multiple options." src="../images/globus_040_transfer_and_sync_options.png" /></a></p>
+<p>Between the two "Start" buttons on the "File Manager" page is a "Transfer &amp; Timer Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options under "Transfer Settings" are...</p>
+<p><a class="glightbox" href="../images/globus_040_transfer_and_sync_options.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Transfer and Timer Options pane showing multiple options." src="../images/globus_040_transfer_and_sync_options.png" /></a></p>
 <ol>
 <li>sync - Sync files only, rather than create new files.</li>
 <li>delete files - Delete any files on the target that are not on the source. Useful for forcing identical filesystems when syncing.</li>
 <li>preserve source - Copies file "modified time" metadata.</li>
-<li>verify integrity - Verifies that checksums are identical on source and target after transfer completes. Highly recommended to have this checked.</li>
-<li>encrypt transfer - Encrypts data before leaving source and decrypts after arriving at destination. Recommended for all transfers, required and enforced for all UAB endpoints.</li>
+<li>verify integrity - Verifies that checksums are identical on source and target after transfer completes. The default option is to verify integrity. Its highly recommended to leave this unchecked.</li>
+<li>encrypt transfer - Encrypts data before leaving source and decrypts after arriving at destination. Recommended for all transfers, required and enforced for all UAB endpoints. It is checked by default.</li>
 <li>skip files - Skips source files that cause errors during the transfer. Otherwise the entire transfer will stop when an error is encountered.</li>
 <li>quota fail - Fails instead of retries when the target storage quota is exceeded.</li>
+<li>Apply filter - Filter rules can be used to customize and fine-tune the transfer process, ensuring that only the desired files/directories are transferred while excluding others based on the rules defined.</li>
 </ol>
+<p>Below the "Transfer Settings", there are additional options available that you can enable to customize notification of success/failure, and schedule the transfer to occur at specific time.</p>
 <h3 id="common-errors">Common Errors<a class="headerlink" href="#common-errors" title="Permanent link">&para;</a></h3>
 <ol>
 <li>File Not Found - This may mean that a file was not readable by Globus. Check that the file hasn't moved or changed names during the transfer. It is recommended to not modify files while they are being transferred by Globus.</li>
@@ -3281,7 +3280,7 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  Error accessing &quot;&quot;: ErrorBucketAlreadyExists: ErrorBucketAlreadyExists: \r\n553 End.\r\n
 </code></pre></div>
 <h2 id="using-bookmarks">Using Bookmarks<a class="headerlink" href="#using-bookmarks" title="Permanent link">&para;</a></h2>
-<p>To save a bookmark, use the File Manager interface to select an endpoint and navigate to a path on that endpoint. Then click the bookmark button as shown below.</p>
+<p>To save a bookmark, use the File Manager interface to select an collection and navigate to a path on that collection. Then click the "Create Bookmarks" button as shown below.</p>
 <p><a class="glightbox" href="../images/globus_060_create_bookmark.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus File Manager interface with mouse pointer hovering over Bookmark icon." src="../images/globus_060_create_bookmark.png" /></a></p>
 <p>To manage bookmarks, click "Bookmarks" in the left-hand navigation pane. Click the "Pencil" icon to edit a bookmark. Click the "Trash Bin" icon to delete a bookmark.</p>
 <p><a class="glightbox" href="../images/globus_061_manage_bookmarks.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus Bookmarks interface showing four bookmarks." src="../images/globus_061_manage_bookmarks.png" /></a></p>
@@ -3293,18 +3292,18 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 <!-- markdownlint-enable MD046 -->
 
 <h2 id="managing-shared-collections-from-a-globus-connect-personal-endpoint">Managing Shared Collections from a Globus Connect Personal Endpoint<a class="headerlink" href="#managing-shared-collections-from-a-globus-connect-personal-endpoint" title="Permanent link">&para;</a></h2>
-<p>It is NOT RECOMMENDED to make Globus Connect Personal endpoints public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal endpoint than for a shared collection. Shared collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use shared collections!</p>
+<p>It is NOT RECOMMENDED to make Globus Connect Personal collections public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal collection than for a shared collection. Shared collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use shared collections!</p>
 <h3 id="creating-a-shared-collection">Creating a Shared Collection<a class="headerlink" href="#creating-a-shared-collection" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>Click "Endpoints" in the left-hand navigation pane.</p>
+<p>Click "Collections" in the left-hand navigation pane.</p>
 </li>
 <li>
-<p>Click the "Administered By You" tab.</p>
-<p><a class="glightbox" href="../images/globus_100_shared_admin_tab.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus Endpoints page with Administered by You selected, showing two endpoints. One of the endpoints is a shared endpoint." src="../images/globus_100_shared_admin_tab.png" /></a></p>
+<p>Click the "Administered By You" tab (or) you can search for the collections in search.</p>
+<p><a class="glightbox" href="../images/globus_100_shared_search_collections.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus Endpoints page with Administered by You selected, showing two endpoints. One of the endpoints is a shared endpoint." src="../images/globus_100_shared_search_collections.png" /></a></p>
 </li>
 <li>
-<p>In the table, find the endpoint you wish to share data from and click its name. You will be taken to the page for that endpoint.</p>
+<p>In the table, find the collections you wish to share data from and click its name. You will be taken to the page for that collection.</p>
 </li>
 <li>
 <p>Click the "Collections" tab.</p>
@@ -3321,34 +3320,37 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 <li>Give a short but memorable name for your shared collection. This information will be useful for your collaborators.</li>
 <li>Optionally fill in a more detailed description of the shared collection for your records.</li>
 <li>Optionally fill in searchable keywords.</li>
+<li>Other additional options include, information link, contact email, organization/department.</li>
+<li>Default directory, if left empty, is equivalent to the first field "Directory".</li>
 </ol>
 </li>
 <li>
-<p>Click "Create Share" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged endpoint. Any further references to "an endpoint" will be about the newly created, shared collection.</p>
+<p>Click "Create Collection" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged shared collection. Any further references to "an endpoint" will be about the newly created, shared collection.</p>
 </li>
 <li>
-<p>Make sure you are on the "Permissions" tab. You should see a permissions table with your name in the first row.</p>
+<p>Make sure you are on the "Permissions" tab. You should see a permissions table with your name in it.</p>
 <p><a class="glightbox" href="../images/globus_103_shared_permissions.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Newly created test endpoint page with Permissions tab selected." src="../images/globus_103_shared_permissions.png" /></a></p>
 </li>
 <li>
-<p>Click "Add Permissions -- Share With" to share your endpoint with other users.</p>
+<p>Click "Add Permissions -- Share With" to share your guest collection with other users.</p>
 </li>
 <li>
 <p>Fill out the form.</p>
 <p><a class="glightbox" href="../images/globus_104_shared_add_permissions.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Test endpoint Add Permissions Share With form." src="../images/globus_104_shared_add_permissions.png" /></a></p>
 <ol>
-<li>Optionally enter a path within the shared endpoint or use the Browse button. If you leave the path as just a slash, the entire shared endpoint will be shared with these users.</li>
+<li>Optionally enter a path within the shared endpoint or use the Browse button. If you leave the path as just a slash, the entire shared endpoint will be shared with the permitted users.</li>
 <li>
 <p>Select who to share with.</p>
 <ol>
 <li>User - One or more users.</li>
 <li>Group - All members of a group.</li>
+<li>All Users - All globus users.</li>
 <li>
-<p>All Users - All globus users.</p>
+<p>Public - Makes data accessible to everyone.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>This will expose information to everyone on Globus!</p>
+<p>It is important to note that options (iii) and (iv) poses a high risk in terms of security. Therefore, we strongly advise against this practice.This will expose information to everyone on Globus!</p>
 </div>
 <!-- markdownlint-disable MD046 -->
 </li>
@@ -3371,26 +3373,26 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 </li>
 <li>
 <p>Click "Add Permission" to add permissions for these users or groups.
-    You will be returned to the page for the shared endpoint and should
-    be on the "Permissions" tab and should see the user or group in the
-    table.</p>
+    You will be returned to the page for the shared collection and should
+    be on the "Permissions" tab and should see the user or group in the table.</p>
 </li>
 </ol>
 <h3 id="deleting-a-shared-collection">Deleting a Shared Collection<a class="headerlink" href="#deleting-a-shared-collection" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>Click "Endpoints" in the left-hand navigation pane, then c</p>
+<p>Click "Collections" in the left-hand navigation pane, then</p>
 </li>
 <li>
 <p>Click the "Administered By You" tab.</p>
-<p><a class="glightbox" href="../images/globus_100_shared_admin_tab.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus Endpoints page with Administered by You tab selected, showing two endpoints." src="../images/globus_100_shared_admin_tab.png" /></a></p>
+<p><a class="glightbox" href="../images/globus_105_shared_collections.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus Endpoints page with Administered by You tab selected, showing two endpoints." src="../images/globus_105_shared_collections.png" /></a></p>
 </li>
 <li>
-<p>Click the right caret "&gt;" icon at the right side of the row with the endpoint you wish to delete. You will be taken to the information page for that endpoint.</p>
+<p>Click the right caret "&gt;" icon at the right side of the row with the collection you wish to delete. You will be taken to the information page for that collection.</p>
+<p><a class="glightbox" href="../images/globus_106_shared_collection_overview.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus Endpoints page with Shared Collection Overview." src="../images/globus_106_shared_collection_overview.png" /></a></p>
 </li>
 <li>
-<p>Click "X Delete Endpoint" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the endpoint, or to cancel.</p>
-<p><a class="glightbox" href="../images/globus_105_shared_delete.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Delete Endpoint confirmation dialog banner." src="../images/globus_105_shared_delete.png" /></a></p>
+<p>Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the collection, or to cancel.</p>
+<p><a class="glightbox" href="../images/globus_107_shared_delete.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Delete Collection confirmation dialog banner." src="../images/globus_107_shared_delete.png" /></a></p>
 </li>
 </ol>
 
@@ -3413,7 +3415,7 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 3, 2024</span>
   </span>
 
     
