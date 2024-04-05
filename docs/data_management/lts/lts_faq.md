@@ -129,4 +129,4 @@ As of now, there is no way to change permissions on a bucket via [Globus](../tra
 
 ## When Should I Review Who Has Access?
 
-Regularly review user account access to projects and LTS spaces to ensure everyone's safety. For more information on Lab PIs and users' responsibilities, please visit [users responsibilities](../../account_management/cheaha_account.md/#users-responsibilities).
+Regularly review user account access to projects and LTS spaces to ensure everyone's safety. For more information on Lab PIs and users' responsibilities, please visit [users' responsibilities](../../account_management/cheaha_account.md/#users-responsibilities).

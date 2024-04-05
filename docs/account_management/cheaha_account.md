@@ -100,9 +100,9 @@ Research Computing offers services addressing a wide range of needs for research
     - [Tutorial](../uab_cloud/tutorial/index.md)
     - [Web servers](../uab_cloud/remote_access.md/#make-instances-publically-accessible-from-the-internet)
 
-#### Users Responsibilities
+#### Users' Responsibilities on Cheaha
 
-All users are advised to consider the following responsibilities while using Cheaha.
+All Cheaha users are advised to adhere the following responsibilities.
 
 - Lab PIs and Core Directors:
 
