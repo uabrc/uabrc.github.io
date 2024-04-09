@@ -52,6 +52,42 @@ If you want to revert to the default modules, you can use:
 module reset
 ```
 
+## Saving Modules using Collections
+
+To save time in typing in long list of modules everytime you work on a project, you can save the desired list of modules using module collection. To acheive this, load the desired modules and save them to a collection using a module collection name, as shown below.
+
+```bash
+module load module_1 module_2 ...
+
+module save collection_name
+```
+
+Here, the `collection_name` can be something relevant to your project and easy to remember.
+
+To load the desired modules using the saved collection use,
+
+``` bash
+module restore collection_name
+```
+
+To delete a collection use the below command,
+
+``` bash
+module disable collection_name
+```
+
+To list the save list of module collection use,
+
+``` bash
+module savelist
+```
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Using `module save` command without a collection name saves the desired modules in the name `default` to the location $HOME/.lmod.d/default, and causes issue in launching [Open On Demand (OOD) HPC desktop job](../../cheaha/open_ondemand/hpc_desktop.md). The user gets a VNC error such as, `Unable to contact settings server` and/or `Unable to load a failsafe session`.  To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
+<!-- markdownlint-enable MD046 -->
+
 ## Best Practice for Loading Modules
 
 To reduce unexpected behavior and/or to get rid of Lmod errors,
