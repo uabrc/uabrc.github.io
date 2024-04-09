@@ -131,3 +131,9 @@ print(torch.get_device_name(x))
 The image below shows an output that the TensorFlow library will utilize the available GPU.
 
 ![TensorFlow GPU](images/tensor_gpu.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The information (I) and warning (W) outputs notifies you of the installed Tensorflow binary and how it would function. The I output informs you that the installed Tensorflow library will utilize your CPU for additional speed. The W output tells you TensorRT is not available, please note TensorRT is not currently supported on our systems.
+<!-- markdownlint-enable MD046 -->
