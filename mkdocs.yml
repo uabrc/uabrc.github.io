@@ -10,6 +10,7 @@ theme:
   features:
     - navigation.indexes
     - navigation.instant
+    - content.code.copy
   favicon: images/favicon.png
   logo: images/logo.png
 
@@ -128,6 +129,7 @@ nav:
           - Self-Installed Software: cheaha/software/software.md
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md
+          - Slurm Tutorial: cheaha/slurm/slurm_tutorial.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md
           - Practical Batch Array Jobs: cheaha/slurm/practical_sbatch.md
           - Managing Jobs: cheaha/slurm/job_management.md
