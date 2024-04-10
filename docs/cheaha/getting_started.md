@@ -60,7 +60,7 @@ Please visit our [hardware](hardware.md#cheaha-hpc-cluster) for more details abo
 
 [Quality-of-Service (QoS) limits](hardware.md#quality-of-service-qos-limits) are in place to ensure any one user can't monopolize all resources.
 
-#### Why to avoid running jobs on Login Nodes
+#### Why you should avoid running jobs on Login Nodes
 
 To effectively manage and provide high-performance computing (HPC) resources to the University community provided via the clusters, kindly use the terminal from compute nodes in created jobs rather than the terminal from login nodes. Our clusters are essential for conducting this large and complex scientific computations that often times require a significant amount of computing power. These clusters are shared environments, where multiple users execute their research and computing tasks simultaneously. It is important to utilize the structure of these environments properly for efficient and respectful use of the shared resources, so everyone gets a fair chance at using these resources.
 
@@ -78,7 +78,9 @@ You are on the login node if:
 
 - terminal prompt looks like `[<blazerid>@login001 ~]$`
 
-The Login node can be accessed from the Cheaha landing page or through the home directory, while compute nodes can be accessed after a job has been created on the "My Interactive Sessions". You can see in the images below, how to identify if you’re within a login node or compute node. ![!Login Node and Compute Node](images/LoginCompNode.png)
+The Login node can be accessed from the Cheaha landing page or through the home directory, while compute nodes can be accessed after a job has been created on the "My Interactive Sessions". You can see in the images below, how to identify if you’re within a login node or compute node. Image on the left is a compute node, image on the right is a login node.
+
+![!Login Node and Compute Node](images/LoginCompNode.png)
 
 ##### Slurm and Slurm Jobs
 
