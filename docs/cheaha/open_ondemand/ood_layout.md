@@ -20,6 +20,24 @@ You can open a file browser in a new tab by clicking the `Files` dropdown and se
 
 You can see the current working directory at the top (green) along with its file and folder list (black). There are also control bars for both working with files (blue) as well as the file browser itself (orange).
 
+### Renaming/Moving File
+
+You can use the `Rename/Move` button in the control bar to either `rename` a selected file with a desired name or `move` it to a preferred location by specifying the full path of the destination.
+
+![!An image showing the Rename/Move options on Cheaha File Browser](images/file_browser_rename_move.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Make sure you never leave the box empty while renaming the files! If it's left empty, you risk losing the files, which cannot be recovered. This problem has been noted in OOD version < 2.0.0.
+<!-- markdownlint-enable MD046 -->
+
+Below is an example that shows how leaving the box empty while renaming the folder "test_rename" results in the loss of the folder itself.
+
+![!An image showing the Rename/Move button left empty on Cheaha File Browser](images/file_browser_rename_move_empty.png)
+
+![!An image showing the file lost on Cheaha File Browser](images/file_browser_rename_move_file_lost.png)
+
 ### OOD Command Menu
 
 #### Uploading Data
