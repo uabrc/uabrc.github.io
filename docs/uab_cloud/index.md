@@ -49,3 +49,25 @@ Please use the following rules when naming entities:
 - Must: use only letters, numbers, dash `-` and underscore `_`.
 - Must: have the first character in the name be a letter.
 - Should: use short, descriptive, memorable names.
+
+## Users' Responsibilities on Cheaha
+
+All Cheaha users are advised to adhere the following responsibilities.
+
+- Lab PIs and Core Directors:
+
+    - Data Management and Storage:
+        - Periodically check group membership is correct
+        - Periodically check access controls to directories and buckets are correct
+        - Moving unused data to LTS or external archival solutions
+        - Managing backup plans
+
+    - OpenStack Projects:
+
+        - Periodically check group membership is correct
+        - Periodically check unused resources are released
+
+- All users:
+
+    - Regularly clearing `/scratch`
+    - Adherence to [UAB IT policies](https://www.uab.edu/it/home/policies)
