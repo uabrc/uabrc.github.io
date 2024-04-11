@@ -2,7 +2,7 @@
 
 Our [cloud.rc](https://dashboard.cloud.rc.uab.edu) portal, based on [OpenStack](https://www.openstack.org/) cloud software, provides a home for more permanent research applications such as web pages and database hosting, as well as a place where researchers can more fluidly develop applications for high performance compute.
 
-Resource quotas are set to ensure that every researcher has a fair share. Please be sure to free up resources when they are no longer needed by deleting instances and volumes. For users' responsibilities on Cheaha system, visit [users' responsibilities](../account_management/cheaha_account.md/#users-responsibilities).
+Resource quotas are set to ensure that every researcher has a fair share. Please be sure to free up resources when they are no longer needed by deleting instances and volumes.
 
 Currently, access to cloud.rc must be made while on the UAB Campus Network or on the UAB Campus Virtual Private Network (VPN). For more information about using the UAB Campus VPN, please visit [VPN - UAB IT](https://www.uab.edu/it/home/tech-solutions/network/vpn). The VPN requires [Duo 2FA](https://www.uab.edu/it/home/security/2-factor).
 
