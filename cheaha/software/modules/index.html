@@ -20,7 +20,7 @@
     
     
       
-        <title>Preinstalled Modules - Research Computing Documentation</title>
+        <title>Pre-installed Modules - Research Computing Documentation</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modules-and-applications" class="md-skip">
+        <a href="#pre-installed-modules" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Preinstalled Modules
+              Pre-installed Modules
             
           </span>
         </div>
@@ -1392,7 +1392,7 @@
           
   
   <span class="md-ellipsis">
-    Preinstalled Modules
+    Pre-installed Modules
   </span>
   
 
@@ -1403,7 +1403,7 @@
         
   
   <span class="md-ellipsis">
-    Preinstalled Modules
+    Pre-installed Modules
   </span>
   
 
@@ -2825,10 +2825,58 @@
   
 
 
-<h1 id="modules-and-applications">Modules and Applications<a class="headerlink" href="#modules-and-applications" title="Permanent link">&para;</a></h1>
+<h1 id="pre-installed-modules">Pre-installed Modules<a class="headerlink" href="#pre-installed-modules" title="Permanent link">&para;</a></h1>
 <p>Most software available on Cheaha is installed as modules, managed by the Lmod system. This document will provide a basic rundown of using Lmod commands to customize a software environment. <code>module</code> is the main command used to interface with module files in Lmod.</p>
+<p>As of the most recent update of this page there are 4,445 active modules installed on Cheaha. The most commonly used general research software modules are listed in the table below. Read on to learn more about searching for and loading modules. If you can't find what you need in our modules, learn more about <a href="../software/">getting software installed</a>. If you need further assistance, please <a href="../../../help/support/">contact Support</a>.</p>
+<!--
+Count modules with the following command
+`module -t avail 2>&1 >/dev/null | wc -l`
+-->
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Anaconda3</td>
+<td style="text-align: left;">Software that can install the Python language, Python packages, and other research software. Learn more about using Anaconda at our <a href="../software/#anaconda-on-cheaha">Anaconda on Cheaha page</a>. You may be interested in our <a href="../../open_ondemand/ood_jupyter/">OpenOnDemand Jupyter Notebook interactive app</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUDA, cuDNN</td>
+<td style="text-align: left;">Libraries for developing and using deep learning and AI models with NVidia GPUs. Commonly used with TensorFlow and PyTorch. See our <a href="../../slurm/gpu/">GPU page</a> for more information.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mathematica</td>
+<td style="text-align: left;">Mathematical CAS and numerical computing software. Try our <a href="../../open_ondemand/hpc_desktop/">Open OnDemand HPC Desktop interactive app</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Matlab</td>
+<td style="text-align: left;">Matlab language and development environment. We recommend using our <a href="../../open_ondemand/ood_matlab/">Open OnDemand Matlab interactive app</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">R, Rstudio</td>
+<td style="text-align: left;">R language and RStudio IDE. We recommend using our <a href="../../open_ondemand/ood_rstudio/">Open OnDemand RStudio interactive app</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SAS</td>
+<td style="text-align: left;">Statistical analysis software. Try our <a href="../../open_ondemand/hpc_desktop/">Open OnDemand HPC Desktop interactive app</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Singularity</td>
+<td style="text-align: left;">Software container engine. See our <a href="../../../workflow_solutions/getting_containers/">Containers</a> page for more information.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stata</td>
+<td style="text-align: left;">Statistical analysis software. Try our <a href="../../open_ondemand/hpc_desktop/">Open OnDemand HPC Desktop interactive app</a>.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="listing-and-searching-modules">Listing and Searching Modules<a class="headerlink" href="#listing-and-searching-modules" title="Permanent link">&para;</a></h2>
-<p>To begin, all module commands are run from the terminal. To know what software is installed on Cheaha, use the <code>avail</code> command.</p>
+<p>To begin, all module commands are run from the <a href="../../open_ondemand/ood_layout/#opening-a-terminal">terminal</a>. To know what software is installed on Cheaha, use the <code>avail</code> command.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module<span class="w"> </span>avail
 </code></pre></div>
 <p>If you need to know what software is already loaded in your environment, run:</p>
@@ -2968,44 +3016,49 @@
 <thead>
 <tr>
 <th style="text-align: left;">Software</th>
-<th style="text-align: left;">Restrictions</th>
+<th style="text-align: left;">Restricted to...</th>
 <th style="text-align: left;">License Holder</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">Ansys</td>
-<td style="text-align: left;">School of Engineering affiliated</td>
+<td style="text-align: left;">School of Engineering affiliated people</td>
 <td style="text-align: left;">School of Engineering</td>
 </tr>
 <tr>
 <td style="text-align: left;">Gurobi</td>
-<td style="text-align: left;">One individual user per license</td>
+<td style="text-align: left;">Named individual</td>
 <td style="text-align: left;">Individuals</td>
 </tr>
 <tr>
 <td style="text-align: left;">LS-Dyna</td>
-<td style="text-align: left;">School of Engineering affiliated</td>
+<td style="text-align: left;">School of Engineering affiliated people</td>
 <td style="text-align: left;">School of Engineering</td>
 </tr>
 <tr>
-<td style="text-align: left;">MATLAB</td>
-<td style="text-align: left;">UAB affiliated</td>
+<td style="text-align: left;">Matlab</td>
+<td style="text-align: left;">UAB affiliated people</td>
+<td style="text-align: left;">UAB Campus</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mathematica</td>
+<td style="text-align: left;">UAB affiliated people</td>
 <td style="text-align: left;">UAB Campus</td>
 </tr>
 <tr>
 <td style="text-align: left;">Parabricks</td>
-<td style="text-align: left;">2 GPUs for researchers using RC systems</td>
+<td style="text-align: left;">UAB affiliated people using up to 2 GPUs total on RC systems</td>
 <td style="text-align: left;">Research Computing</td>
 </tr>
 <tr>
 <td style="text-align: left;">SAS</td>
-<td style="text-align: left;">UAB affiliated</td>
+<td style="text-align: left;">UAB affiliated people</td>
 <td style="text-align: left;">UAB Campus</td>
 </tr>
 <tr>
 <td style="text-align: left;">Stata</td>
-<td style="text-align: left;">UAB affiliated</td>
+<td style="text-align: left;">UAB affiliated people</td>
 <td style="text-align: left;">UAB Campus</td>
 </tr>
 </tbody>
@@ -3047,7 +3100,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2024</span>
   </span>
 
     
@@ -3077,7 +3130,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
+      Copyright &copy; 2021-2024 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
     </div>
   
   
