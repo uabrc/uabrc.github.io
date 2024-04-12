@@ -1,8 +1,9 @@
-Software,Restrictions,License Holder
-Ansys,"School of Engineering affiliated",School of Engineering
-Gurobi,"One individual user per license",Individuals
-LS-Dyna,"School of Engineering affiliated",School of Engineering
-MATLAB,"UAB affiliated",UAB Campus
-Parabricks,"2 GPUs for researchers using RC systems",Research Computing
-SAS,"UAB affiliated",UAB Campus
-Stata,"UAB affiliated",UAB Campus
+Software,Restricted to...,License Holder
+Ansys,"School of Engineering affiliated people",School of Engineering
+Gurobi,"Named individual",Individuals
+LS-Dyna,"School of Engineering affiliated people",School of Engineering
+Matlab,"UAB affiliated people",UAB Campus
+Mathematica,"UAB affiliated people",UAB Campus
+Parabricks,"UAB affiliated people using up to 2 GPUs total on RC systems",Research Computing
+SAS,"UAB affiliated people",UAB Campus
+Stata,"UAB affiliated people",UAB Campus
