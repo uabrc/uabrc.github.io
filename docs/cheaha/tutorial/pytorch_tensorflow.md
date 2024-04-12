@@ -130,7 +130,7 @@ print(torch.get_device_name(x))
 
 The image below shows an output that the TensorFlow library will utilize the available GPU.
 
-![TensorFlow GPU](images/tensor_gpu.png)
+![TensorFlow GPU output](images/tensor_gpu.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! note
