@@ -13,7 +13,7 @@ Count modules with the following command
 
 ## Listing and Searching Modules
 
-To begin, all module commands are run from the terminal. To know what software is installed on Cheaha, use the `avail` command.
+To begin, all module commands are run from the [terminal](../open_ondemand/ood_layout.md#opening-a-terminal). To know what software is installed on Cheaha, use the `avail` command.
 
 ``` bash
 module avail
