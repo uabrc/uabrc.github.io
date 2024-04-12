@@ -122,7 +122,7 @@ nav:
           - MATLAB: cheaha/open_ondemand/ood_matlab.md
       - Hardware: cheaha/hardware.md
       - Software:
-          - Preinstalled Modules: cheaha/software/modules.md
+          - Pre-installed Modules: cheaha/software/modules.md
           - Self-Installed Software: cheaha/software/software.md
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md

@@ -1,4 +1,4 @@
-# Modules and Applications
+# Pre-installed Modules
 
 Most software available on Cheaha is installed as modules, managed by the Lmod system. This document will provide a basic rundown of using Lmod commands to customize a software environment. `module` is the main command used to interface with module files in Lmod.
 
