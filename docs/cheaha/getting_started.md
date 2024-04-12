@@ -78,9 +78,13 @@ You are on the login node if:
 
 - terminal prompt looks like `[<blazerid>@login001 ~]$`
 
-The Login node can be accessed from the Cheaha landing page or through the home directory, while compute nodes can be accessed after a job has been created on the "My Interactive Sessions". You can see in the images below, how to identify if you’re within a login node or compute node. Image on the left is a compute node, image on the right is a login node.
+The Login node can be accessed from the Cheaha landing page or through the home directory, while compute nodes can be accessed after a job has been created on the "My Interactive Sessions". You can see in the images below, how to identify if you’re within a login node or compute node. Image below is a compute node. Safe for heavy computation.
 
-![!Login Node and Compute Node](images/LoginCompNode.png)
+![!compute node terminal prompt shows username@c0112](images/comp_node.png)
+
+Compared to the image below which is a login node.
+
+![!login node terminal prompt shows username@login004](images/login_node.png)
 
 ##### Slurm and Slurm Jobs
 
