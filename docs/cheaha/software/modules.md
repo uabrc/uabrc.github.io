@@ -2,6 +2,15 @@
 
 Most software available on Cheaha is installed as modules, managed by the Lmod system. This document will provide a basic rundown of using Lmod commands to customize a software environment. `module` is the main command used to interface with module files in Lmod.
 
+As of the most recent update of this page there are 4,445 active modules installed on Cheaha. The most commonly used general research software modules are listed in the table below. Read on to learn more about searching for and loading modules. If you can't find what you need in our modules, learn more about [getting software installed](./software.md). If you need further assistance, please [contact Support](../../help/support.md).
+
+<!--
+Count modules with the following command
+`module -t avail 2>&1 >/dev/null | wc -l`
+-->
+
+{{ read_csv('cheaha/software/res/common_software.csv', keep_default_na=False) }}
+
 ## Listing and Searching Modules
 
 To begin, all module commands are run from the terminal. To know what software is installed on Cheaha, use the `avail` command.
