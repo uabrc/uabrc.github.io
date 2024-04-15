@@ -71,3 +71,4 @@ On Cheaha, resources are shared among multiple users, and your actions can signi
 
     - Regularly clearing `/scratch`
     - Adherence to [UAB IT policies](https://www.uab.edu/it/home/policies)
+    - Request computational resources reasonably. refer to our [compute resource estimation](../cheaha/job_efficiency/#estimating-compute-resources)
