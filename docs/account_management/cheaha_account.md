@@ -82,6 +82,8 @@ If you believe this to be in error, please [Contact Support](../help/support.md)
 
 Research Computing offers services addressing a wide range of needs for researchers at UAB, including students, staff, and faculty, as well as for both Labs and research cores.
 
+We're always happy to provide support for your Research Computing needs, you need only [contact us](../index.md/#how-to-contact-us).
+
 ### For Students, Staff, and Faculty
 
 - [Get Started with Open OnDemand](../cheaha/open_ondemand/index.md)
