@@ -52,7 +52,7 @@ Please use the following rules when naming entities:
 
 ## Users' Responsibilities on Cheaha
 
-All Cheaha users are advised to adhere the following responsibilities.
+On Cheaha, resources are shared among multiple users, and your actions can significantly impact the system and affect others. All users are expected to use their Cheaha account, storage, and computational resources responsibly and professionally. All Cheaha users are advised to adhere the following responsibilities:
 
 - Lab PIs and Core Directors:
 
@@ -71,7 +71,3 @@ All Cheaha users are advised to adhere the following responsibilities.
 
     - Regularly clearing `/scratch`
     - Adherence to [UAB IT policies](https://www.uab.edu/it/home/policies)
-
-<!-- More information about Lab PIs and users responsibilities on Cheaha can be also accessed by visiting [users' responsibilities](../../account_management/cheaha_account.md/#users-responsibilities). 
-
-For more information on Lab PIs and users' responsibilities on Cheaha, please visit [users responsibilities](../account_management/cheaha_account.md/#users-responsibilities). -->
