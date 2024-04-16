@@ -27,7 +27,7 @@ You can use the `Rename/Move` button in the control bar to either `rename` a sel
 ![!An image showing the Rename/Move options on Cheaha File Browser](images/file_browser_rename_move.png)
 
 <!-- markdownlint-disable MD046 -->
-!!! warning
+!!! danger
 
     Make sure you never leave the box empty while renaming the files! If it's left empty, you risk losing the files, which cannot be recovered. This problem has been noted in OOD version < 2.0.0.
 <!-- markdownlint-enable MD046 -->
