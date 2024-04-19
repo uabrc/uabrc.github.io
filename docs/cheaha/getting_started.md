@@ -60,9 +60,13 @@ Please visit our [hardware](hardware.md#cheaha-hpc-cluster) for more details abo
 
 [Quality-of-Service (QoS) limits](hardware.md#quality-of-service-qos-limits) are in place to ensure any one user can't monopolize all resources.
 
-#### Running Tasks on Compute Nodes
+#### Why you should avoid running jobs on Login Nodes
 
-There two main node types on Cheaha for researchers, the login node and many compute nodes. All expensive compute tasks must be run on compute nodes. Tasks running on the login node slow down processes for everyone, and in extreme cases can cause service outages affecting your work and the work of many of your colleagues. We will contact you if we find processes on the login node to help move your tasks to compute nodes.
+To effectively manage and provide high-performance computing (HPC) resources to the University community provided via the clusters, kindly use the terminal from compute nodes in created jobs rather than the terminal from login nodes. Our clusters are essential for conducting this large and complex scientific computations that often times require a significant amount of computing power. These clusters are shared environments, where multiple users execute their research and computing tasks simultaneously. It is important to utilize the structure of these environments properly for efficient and respectful use of the shared resources, so everyone gets a fair chance at using these resources.
+
+##### Login vs. Compute Nodes
+
+Like with most HPC clusters, cheaha nodes are divided into two, the login node and compute nodes. The login node acts as the gateway for users to access the cluster, submit jobs, and manage files. Compute nodes, on the other hand, are like the engines of the cluster, designed to perform the heavy lifting of data processing and computation.
 
 You are on compute nodes if:
 
@@ -73,6 +77,34 @@ You are on compute nodes if:
 You are on the login node if:
 
 - terminal prompt looks like `[<blazerid>@login001 ~]$`
+
+The Login node can be accessed from the Cheaha landing page or through the home directory, while compute nodes can be accessed after a job has been created on the "My Interactive Sessions". You can see in the images below, how to identify if you’re within a login node or compute node. Image below is a compute node. Safe for heavy computation.
+
+![!compute node terminal prompt shows username@c0112](images/comp_node.png)
+
+Compared to the image below which is a login node.
+
+![!login node terminal prompt shows username@login004](images/login_node.png)
+
+##### Slurm and Slurm Jobs
+
+Slurm Workload Manager is a widely used open-source job scheduler that manages the queue of jobs submitted to the compute nodes. It ensures efficient use of the cluster by allocating resources to jobs, prioritizing tasks, and managing queues of pending jobs. Starting Slurm jobs can be done in two primary ways: using Open OnDemand (OOD) or through the terminal. For more details on how to use Slurm on cheaha, please see our [slurm docs](..//cheaha/slurm/introduction.md).
+
+##### What Should Run in Jobs?
+
+Ideally, only non-intensive tasks like editing files, or managing job submissions should be performed on the login node. Compute-intensive tasks, large data analyses, and simulations should be submitted as Slurm jobs to compute nodes. This approach ensures that the login node remains responsive and available for all users to manage their tasks and submissions. Submitting compute-intensive tasks as Slurm jobs to compute nodes helps to prevent overloading the login node, ensuring a smoother experience for all users of the cluster.
+
+##### How to start SLURM Jobs?
+
+There are two straightforward ways to start SLURM jobs on cheaha, and they are detailed below.
+
+###### Open OnDemand (OOD)
+
+UAB uses the OOD platform, a web-based interface for providing access to cluster resources without the need for command-line tools. Users can easily submit jobs, manage files, and even use interactive applications directly from their browsers. One of the standout features of OOD is the ability to launch interactive applications, such as a virtual desktop environment. This feature allows users to work within the cluster as if they were on a local desktop, providing a user-friendly interface for managing tasks and running applications. For an overview of how the page works, and to read more details see our docs on [Navigating Open OnDemand](../cheaha/open_ondemand/index.md). After logging into OOD, users can access various applications designed for job management, file editing, and more.
+
+###### Terminal (sbatch Jobs)
+
+For users comfortable with the command line, submitting jobs via scripts using `sbatch` is a straightforward process. An `sbatch` script contains the job specifications, such as the number of nodes, execution time, and the command to run. This method provides flexibility and control over job submission and management. For more information on this, please see our docs on [Submitting Jobs with Slurm](../cheaha/slurm/submitting_jobs.md).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -95,3 +127,7 @@ For new software installation, please try searching [Anaconda](../workflow_solut
 A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see our [Anaconda page](./software/software.md#anaconda-on-cheaha).
 
 If the software installation instructions tell you to use either `conda install` or `pip install` commands, the software and its dependencies can be installed using a virtual environment.
+
+## How to Get Help
+
+For questions, you can reach out via our various [channels](../help/support.md).
