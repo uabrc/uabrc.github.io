@@ -92,7 +92,7 @@ Slurm Workload Manager is a widely used open-source job scheduler that manages t
 
 ##### What Should Run in Jobs?
 
-Ideally, only non-intensive tasks like editing files, compiling programs, or managing job submissions should be performed on the login node. Compute-intensive tasks, large data analyses, and simulations should be submitted as Slurm jobs to compute nodes. This approach ensures that the login node remains responsive and available for all users to manage their tasks and submissions. Submitting compute-intensive tasks as Slurm jobs to compute nodes helps to prevent overloading the login node, ensuring a smoother experience for all users of the cluster. As Cheaha stakeholders we should hold ourselves to best practices, and ensure its optimal performance and accessibility.
+Ideally, only non-intensive tasks like editing files, or managing job submissions should be performed on the login node. Compute-intensive tasks, large data analyses, and simulations should be submitted as Slurm jobs to compute nodes. This approach ensures that the login node remains responsive and available for all users to manage their tasks and submissions. Submitting compute-intensive tasks as Slurm jobs to compute nodes helps to prevent overloading the login node, ensuring a smoother experience for all users of the cluster.
 
 ##### How to start SLURM Jobs?
 
