@@ -143,7 +143,7 @@ When using modules in Cheaha, we recommend users to follow these best practices 
     TopHat/2.1.1-foss-2016a
     ```
 
-2. Be selective and only load a specific module version that you need for your current workflow.Loading unnecessary modules can lead to conflicts and inefficiencies.
+2. Be selective and only load a specific module version that you need for your current workflow. Loading unnecessary modules can lead to conflicts and inefficiencies.
 3. Before loading modules in a shell/bash/sbatch script, use a clean shell by using `module reset` at the beginning.
       - What it does:
          - Clearing loaded modules.
