@@ -65,7 +65,7 @@ For batch jobs, flags are typically included as directive comments at the top of
 
 Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
 
-```bash
+```bash linenums="1"
 #!/bin/bash
 #
 #SBATCH --job-name=test
@@ -102,7 +102,7 @@ Building on the job script above, below is an array job. Array jobs are useful w
 
 To test the script below, copy and paste it into a plain text file `testarrayjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testarrayjob.sh`. Momentarily, 16 text files with `.out` and `.err` suffixes will be produced in your home directory.
 
-```bash
+```bash linenums="1"
 #!/bin/bash
 #
 #SBATCH --job-name=test
