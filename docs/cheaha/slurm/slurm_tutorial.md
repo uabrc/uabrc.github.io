@@ -28,7 +28,7 @@ Let us start with a simple example to print `hostname` of the node where your jo
 
 To test this example, copy the below script in a file named `hostname.job`. This job executes the `hostname` command (line 15) on a single node, using one task, one CPU core, 1 gigabyte of memory, with a time limit of 10 minutes. The output and error logs are directed to separate files with names based on their job name and ID (line 11 and 12). For a more detailed understanding of the individual parameters used in this script, please refer to the section on [Simple Batch Job](../slurm/submitting_jobs.md/#a-simple-batch-job). The following script includes comments, marked with `###`, describing their functions. We will utilize this notation for annotating comments in subsequent examples.
 
-```py linenums="1"
+```bash linenums="1"
 #!/bin/bash
 
 ### Declaring Slurm configuration options and specifying required resources
@@ -84,7 +84,7 @@ c0156
 
 This example illustrate a Slurm job that runs a Python script involving [NumPy](https://numpy.org/) operation. This python script is executed sequentially using the same resource configuration as [Example 1](../slurm/slurm_tutorial.md/#example-1-a-simple-slurm-batch-job). Let us name the below script as `numpy.job`.
 
-```py linenums="1"
+```bash linenums="1"
 #!/bin/bash
 #SBATCH --job-name=numpy            ### Name of the job            
 #SBATCH --nodes=1                   ### Number of Nodes
@@ -140,7 +140,7 @@ $ sacct -j 26127143
 
 Multiple jobs or tasks can be executed simultaneously using `srun` within a single batch script. In this example, the same executable `python_script_new.py` is run in parallel with distinct inputs (line 17-19). The `&` symbol at the end of each line run these commands in background. The `wait` command (line 20) performs synchronization and ensures that all background processes and parallel tasks are completed before finishing. In Line 4, three tasks are requested as there are three executables to be run in parallel. The overall job script is allocated with three CPUs, and in lines(17-19), each `srun` script utilizes 1 CPU to perform their respective task. Copy the batch script into a file named `multijob.job`. Use the same `conda` environment `pytools-env` shown in [example2](../slurm/slurm_tutorial.md/#example-2-sequential-job).
 
-```py linenums="1"
+```bash linenums="1"
 #!/bin/bash
 #SBATCH --job-name=multijob             ### Name of the job                
 #SBATCH --nodes=1                       ### Number of Nodes
@@ -165,7 +165,7 @@ wait
 
 Copy the following python script and call it as `python_script_new.py`. The input file takes two command-line arguments i.e. the `start` and `end` values. The script uses these values to creates an array and compute the sum of its elements using numpy. The above batch script runs three parallel instances of this Python script with different inputs.
 
-```py linenums="1"
+```bash linenums="1"
 import sys
 import numpy as np
 
@@ -219,7 +219,7 @@ Array jobs are more effective when you have a larger number of similar tasks to 
 
 The following Slurm script is an example of how you might convert the previous `multijob` script to an array job. To start, copy the below script to a file named, `slurm_array.job`. The script requires the input file `python_script_new.py` and the `conda` environment `pytools-env`, similar to those used in [example2](../slurm/slurm_tutorial.md/#example-2-sequential-job) and [example 3](../slurm/slurm_tutorial.md/#example-3-parallel-jobs). Line 11 specifies the script as an array job, treating each task within the array as an independent job. For each task, lines 18-19 calculates the input range. `SLURM_ARRAY_TASK_ID` identifies the task executed using indexes, and is automatically set for array jobs. The python script (line 22) runs individual array task concurrently on respective input range. The command `awk` is used to prepend each output line with the unique task identifier and then append the results to the file, `output_all_tasks.txt`. For more details on on parameters of array jobs, please refer to [Batch Array Jobs](../slurm/submitting_jobs.md/#batch-array-jobs-with-known-indices) and [Practical Batch Array Jobs](../slurm/practical_sbatch.md/#).
 
-```py linenums="1"
+```bash linenums="1"
 #!/bin/bash
 #SBATCH --job-name=slurm_array       ### Name of the job                                                      
 #SBATCH --nodes=1                    ### Number of Nodes               
@@ -276,7 +276,7 @@ $ sacct -j 27101430
 
 This Slurm script illustrates execution of a MATLAB script in a multithread/multicore environemnt. Save the script as `multithread.job`. The `%` symbol in this script denotes comments within MATLAB code. Line 16 runs the MATLAB script `parfor_sum_array`, with an input array size `100` passed as argument, using 4 CPU cores (as specified in Line 5).
 
-```py linenums="1"
+```bash linenums="1"
 #!/bin/bash
 #SBATCH --job-name=multithread          ### Name of the job                                   
 #SBATCH --nodes=1                       ### Number of Nodes
@@ -303,7 +303,7 @@ Copy the below MATLAB script as `parfor_sum_array.m`. At the beginning, the scri
     Make sure that the `SLURM_CPUS_PER_TASK > 1` in order to take advantage of multithreaded performance. It is important that the  `SLURM_CPUS_PER_TASK` does not exceed the number of workers and physical cores (i.e. CPU cores) available on the node. This is to prevent high context switching, where individual CPUs are constantly switching between multiple running processes, which can negatively impact job performance of all jobs running on the node. It may also lead to overhead during job execution and result in poorer performance. Please refer to our [Hardware page](../hardware.md/#hardware-information) to learn more about resource limits and selecting appropriate resources.
 <!-- markdownlint-disable MD046 -->
 
-```py linenums="1"
+```bash linenums="1"
 % Function to calculate the sum of an array in parallel. This function takes array_size as input from command-line arguments
 function sum_array(array_size)
     % Check if input array size is provided
@@ -372,7 +372,7 @@ $ sacct -j 27105035
 
 This slurm script shows the execution of Tensorflow job using GPU resources. Let us save this script as `gpu.job`. The Slurm parameter `--gres=gpu:2` in line 6, requests for 2 GPUs. In line 8, note that in order to run GPU-based jobs, either the `amperenodes` or `pascalnodes` partition must be used (please refer to our [GPU page](../slurm/gpu.md) for more information). Lines 14-15 loads the necessary CUDA modules, while lines 18-19 load the Anaconda module and activate a `conda` environment called `tensorflow`. Refer to [Tensorflow official page](https://www.tensorflow.org/) for installation. The last line executes a python script that utilizes Tensorflow library to perform matrix multiplication across multiple GPUs.
 
-```py linenums="1"
+```bash linenums="1"
 #!/bin/bash
 #SBATCH --job-name=gpu              ### Name of the job                                             
 #SBATCH --nodes=1                   ### Number of Nodes                    
@@ -399,7 +399,7 @@ python matmul_tensorflow.py
 
 Let us now create a file named `matmul_tensorflow.py` and copy the following script into it. This python script demonstrates the utilization of Tensorflow library to distribute computational tasks among multiple GPUs, in order to perform matrix multiplication in parallel (Lines 11-19). Lines 8-9 retrieve the logical GPUs and enable device placement logging, which helps to analyze which device is used for each operation. The final results are aggregated and the sum is computed on the CPU device (lines 22-23).
 
-```py linenums="1"
+```bash linenums="1"
 import tensorflow as tf
 
 ### Print Tensorflow version and check for available number of GPUs
@@ -458,7 +458,7 @@ $ sacct -j 27107694 --format=JobID,JobName,Partition,Account,AllocCPUS,allocgres
 
 The below Slurm script runs a Quantum Expresso job using the `pw.x` executable on multiple nodes. In this example, we request for 2 nodes on `amd-hdr100` partition in lines 4 and 7. The suitable Quantum Expresso module is loaded in line 13. The last line is configured for a parallel computation of Quantum Expresso simulation across 2 nodes `N 2` and 4 MPI processes `-nk 4` for the input parameters in `pw.scf.silicon.in`. The input file `pw.scf.silicon.in` and psuedo potential file is taken from the [github page](https://pranabdas.github.io/espresso/hands-on/scf/). However this input is subject to change, hence according to your use case you can change the inputs.
 
-```py linenums="1"
+```bash linenums="1"
 #!/bin/bash
 
 #SBATCH --job-name=mpijob               ### Name of the job              
