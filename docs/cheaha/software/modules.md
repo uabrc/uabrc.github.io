@@ -1,10 +1,19 @@
-# Modules and Applications
+# Pre-installed Modules
 
 Most software available on Cheaha is installed as modules, managed by the Lmod system. This document will provide a basic rundown of using Lmod commands to customize a software environment. `module` is the main command used to interface with module files in Lmod.
 
+As of the most recent update of this page there are 4,445 active modules installed on Cheaha. The most commonly used general research software modules are listed in the table below. Read on to learn more about searching for and loading modules. If you can't find what you need in our modules, learn more about [getting software installed](./software.md). If you need further assistance, please [contact Support](../../help/support.md).
+
+<!--
+Count modules with the following command
+`module -t avail 2>&1 >/dev/null | wc -l`
+-->
+
+{{ read_csv('cheaha/software/res/common_software.csv', keep_default_na=False) }}
+
 ## Listing and Searching Modules
 
-To begin, all module commands are run from the terminal. To know what software is installed on Cheaha, use the `avail` command.
+To begin, all module commands are run from the [terminal](../open_ondemand/ood_layout.md#opening-a-terminal). To know what software is installed on Cheaha, use the `avail` command.
 
 ``` bash
 module avail
@@ -51,6 +60,42 @@ If you want to revert to the default modules, you can use:
 ``` bash
 module reset
 ```
+
+## Saving Modules using Collections
+
+To save time in typing in long list of modules everytime you work on a project, you can save the desired list of modules using module collection. To acheive this, load the desired modules and save them to a collection using a module collection name, as shown below.
+
+```bash
+module load module_1 module_2 ...
+
+module save collection_name
+```
+
+Here, the `collection_name` can be something relevant to your project and easy to remember.
+
+To load the desired modules using the saved collection use,
+
+``` bash
+module restore collection_name
+```
+
+To delete a collection use the below command,
+
+``` bash
+module disable collection_name
+```
+
+To list the save list of module collection use,
+
+``` bash
+module savelist
+```
+
+<!-- markdownlint-disable MD046 -->
+!!! warning
+
+    Using `module save` command without a collection name saves the desired modules in the name `default` to the location $HOME/.lmod.d/default, and causes issue in launching [Open On Demand (OOD) HPC desktop job](../../cheaha/open_ondemand/hpc_desktop.md). The user gets a VNC error such as, `Unable to contact settings server` and/or `Unable to load a failsafe session`.  To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/3).
+<!-- markdownlint-enable MD046 -->
 
 ## Best Practice for Loading Modules
 
