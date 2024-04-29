@@ -54,7 +54,7 @@ Please use the following rules when naming entities:
 
 On Cheaha, resources are shared among multiple users, and your actions can significantly impact the system and affect others. All users are expected to use their Cheaha account, storage, and computational resources responsibly and professionally. All Cheaha users are advised to adhere the following responsibilities:
 
-- Lab PIs and Core Directors:
+- **Lab PIs and Core Directors**:
 
     - Data Management and Storage:
         - Periodically check group membership is correct
@@ -67,8 +67,21 @@ On Cheaha, resources are shared among multiple users, and your actions can signi
         - Periodically check group membership is correct
         - Periodically check unused resources are released
 
-- All users:
+Regularly reviewing membership, permissions and access control, especially if conducted frequently, enhances security. It should occur at least once per year and during specific events. These events include:
+
+- Security incidents
+- A member of the group leaves the owner's group (e.g. a student leaves a lab group, or moves to a different project)
+- A member of the group moves to a role with greater permissions or responsibilities within the owner's group (e.g. a staff member takes on a data stewardship role)
+
+PIs are also responsible for ensuring that if their project(s) are accessible to students, they are aware that metadata about the project(s) may contain [FERPA-protected sensitive data](https://www.uab.edu/registrar/ferpa/faculty-staff).
+
+- **All users**:
 
     - Regularly clearing `/scratch`
     - Adherence to [UAB IT policies](https://www.uab.edu/it/home/policies)
     - Request computational resources reasonably. Refer to our [compute resource estimation](../cheaha/job_efficiency/#estimating-compute-resources)
+    - [Responsible Conduct of Research training](https://www.uab.edu/research/home/responsible-conduct-of-research)
+    - [Annual account certification of Cheaha account](../account_management/cheaha_account.md/#account-requires-certification)
+
+In addition, all Cheaha account users working with Protected Health Information (PHI) data are responsible to review [HIPAA policies](https://www.uab.edu/it/home/policies/compliance/hipaa) and
+[HIPAA training](https://www.uab.edu/compliance/areas-of-focus/privacy/training).
