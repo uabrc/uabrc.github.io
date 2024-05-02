@@ -10,6 +10,7 @@ theme:
   features:
     - navigation.indexes
     - navigation.instant
+    - content.code.copy
   favicon: images/favicon.png
   logo: images/logo.png
 
@@ -21,7 +22,7 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
-copyright: Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
+copyright: Copyright &copy; 2021-2024 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
 
 markdown_extensions:
   - admonition
@@ -112,6 +113,9 @@ nav:
       - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
+      - Tutorials: 
+          - cheaha/tutorial/index.md
+          - Anaconda Environment Tutorial: cheaha/tutorial/pytorch_tensorflow.md
       - Cheaha Web Portal: 
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
@@ -121,10 +125,11 @@ nav:
           - MATLAB: cheaha/open_ondemand/ood_matlab.md
       - Hardware: cheaha/hardware.md
       - Software:
-          - Preinstalled Modules: cheaha/software/modules.md
+          - Pre-installed Modules: cheaha/software/modules.md
           - Self-Installed Software: cheaha/software/software.md
       - SLURM:
           - Introduction: cheaha/slurm/introduction.md
+          - Slurm Tutorial: cheaha/slurm/slurm_tutorial.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md
           - Practical Batch Array Jobs: cheaha/slurm/practical_sbatch.md
           - Managing Jobs: cheaha/slurm/job_management.md

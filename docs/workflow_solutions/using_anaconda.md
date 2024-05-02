@@ -157,13 +157,17 @@ You may use the [Anaconda page](https://anaconda.org/) to search for packages on
 
 #### Packages for Jupyter
 
-If you are using Anaconda with Jupyter, you will need to be sure to install the `ipykernel` package for your environment to be recognized by the Jupyter Server. If you are using Jupyter in [Open OnDemand](../cheaha/open_ondemand/ood_jupyter.md) then you do not need to install the `jupyter` package. To install ipykernel, activate your environment and use the following command:
+For more information about using Anaconda with Jupyter, see the section [Working with Anaconda Environments](..//cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
 
-``` shell
-conda install ipykernel
+### Update packages in an environment
+
+To ensure packages and their dependencies are all up to date, it is a best practice to regularly update installed packages, and libraries in your activated environment.
+
+```bash
+
+conda update -—all
+
 ```
-
-Each different environment you want to use in Jupyter needs to have `ipykernel` installed.
 
 ### Deactivating an Environment
 
@@ -177,6 +181,16 @@ conda deactivate
 Anaconda may say that using `source deactivate` is deprecated, but environment will still be deactivated.
 
 Closing the terminal will also close out the environment.
+
+### Deleting an Environment
+
+To delete an environment, use the following command. Remember to replace `<env>` with the existing environment name.
+
+```bash
+
+conda env remove —-name <env>
+
+```
 
 ### Working with Environment YAML Files
 
@@ -199,6 +213,38 @@ To create an environment from a YAML file `env.yml`, use the following command.
 ```bash
 conda env create --file env.yml
 ```
+
+#### Sharing your environment file
+
+To share your environment for collaboration, there are primarily 3 ways to export environments, the below commands show how to create environment files that can be shared for replication. Remember to replace `<env>` with the existing environment name.
+
+1. Cross-Platform Compatible
+
+    ```bash
+
+    conda env export --from-history > <env>.yml 
+
+    ```
+
+2. Platform + Package Specific
+
+    Create .yml file to share, replace `<envname>` (represents the name of your environment) and `<env>` (represents the name of the file you want to export) with preferred names for file.
+
+    ```bash
+
+    conda env export <envname> > <env>.yml 
+
+    ```
+
+3. Platform + Package + Channel Specific
+
+    ```bash
+
+    conda list —-explicit > <env>.txt
+    # OR
+    conda list —-explicit > <env>.yml
+
+    ```
 
 #### Replicability versus Portability
 

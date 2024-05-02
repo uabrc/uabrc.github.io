@@ -2,6 +2,10 @@
 
 Jupyter Notebooks and Jupyter Lab are both available as standalone apps in OOD. Jupyter is commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-anaconda-environments) below before continuing here.
 
+To launch the Jupyter notebook, select the menus 'Interactive Apps -> Jupyter Notebook'. The job creation and submission form appears:
+
+![!Jupyter Notebook home form](./images/ood_jupyter_notebook_home_form.png)
+
 As with all interactive apps, you'll need to select the resources required using the job creation form. Jupyter may also require additional initial setup before the app launches.
 
 ## Environment Setup
@@ -20,23 +24,55 @@ module load cuDNN/8.9.2.26-CUDA-12.2.0
 
 For information on which versions of CUDA to load for Tensorflow and PyTorch, please see [Tensorflow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
 
+For information on partition and GPU selection, please review our [hardware information page](../hardware.md) and [GPU Page](../slurm/gpu.md)
+
 ## Extra Jupyter Arguments
 
 The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
 
 ![!Jupyter Notebook job request form Extra jupyter arguments field.](./images/ood_jupyter_notebook_extra_args_box.png)
 
+## Working with other programming languages within Jupyter Notebook
+
+To work with other programming languages within Jupyter Notebook, you need to install the corresponding kernel for each language, similar to the process used for Python with the `ipykernel`. This can be done using package managers such as `pip` or `conda`, or by following language-specific instructions. For example, to install `R kernel` for the R language, we can run the `conda install -c r r-essentials` command. Please ensure that the kernel is installed in your Anaconda environment. Then, select the desired language environment from the kernel dropdown menu.
+
+Once the necessary kernels are installed, if you wish, you can write and run multiple code cells in different languages within a single notebook. Easily switch between kernels and select the preferred one for each language, and then proceed to run the code cells in their respective languages.
+
 ## Working with Anaconda Environments
 
 By default, Jupyter notebooks will use the base environment that comes with the Anaconda3 module. This environment contains a large number of popular packages and may useful for something quick, dirty, and simple. However, for any analysis needing specific package versions or special packages, you will need to create your own environment and select it from the `Kernel` menu. For information on creating and managing Anaconda environments please see our [Using Anaconda page](../../workflow_solutions/using_anaconda.md). Then please review our [Cheaha-specific Anaconda page](../software/software.md#anaconda-on-cheaha) for important tips and how to avoid common pitfalls.
 
-To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From the list, choose the kernel corresponding to your desired Anaconda environment (see below for an example). If your environment isn't appearing, you may be missing the [ipykernel package](#ipykernel).
+To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From the list, choose the kernel corresponding to your desired Anaconda environment (see below for an example). If your environment isn't appearing, you may be missing the ipykernel package. To do so, use `conda install ipykernel` to get ipykernel packgae installed into your environment, so Jupyter can recognize your environment.
 
 ![! Select your Anaconda environment from the Kernel dropdown menu in Jupyter](images/jupyter_kernel.png)
 
-### ipykernel
+### Creating an Environment for use with Jupyter Notebook
 
-If you are unable to select your environment, you may need to install the `ipykernel` package. It is required for Jupyter to recognize your environment. See [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#packages-for-jupyter) for more information.
+We can create a new environment, that houses all of the packages, modules, and libraries we need for our current Jupyter Notebook to implement functions and operations, run all of its cells and deliver desired outputs. Follow the steps below to accomplish this;
+
+1. Access the [terminal](..//..//workflow_solutions/using_anaconda.md#creating-and-activating-an-environment-using-cheaha-cli).
+
+1. [Create](..//..//workflow_solutions/using_anaconda.md#create-an-environment) and [activate](..//..//workflow_solutions/using_anaconda.md#activate-an-environment) your new environment, following the linked steps.
+
+1. [Install your desired packages into your activated environment](..//..//workflow_solutions/using_anaconda.md#install-packages).
+
+1. Remember to install 'ipykernel' in your activated environment, using `conda install ipykernel`.
+
+1. Go into your working Jupyter Notebook file, and [change to the created environment](..//..//workflow_solutions/using_anaconda.md#changing-environments-using-jupyter-notebook-gui).
+
+### Changing Environments using Jupyter Notebook GUI
+
+1. When your Jupyter Notebook Job has been created on Cheaha, and you want to load an environment you have already created. Select from the dropdown menu "New". You can find this in the top right corner of the Jupyter Notebook landing page. ![!Select Environment](images/selectenvsjupyter.png)
+
+1. When you click new, you would see a dropdown of environments that are available for you to use. If you do not see your created environment listed, you may need to install `ipykernel` using `conda install ipykernel` in your cheaha shell within your activated environment. You may have to refresh the page to see your newly created environment. Select the preferred existing environment you created. ![!Kernel/Environment Drop Down](images/jpnotebook_landingpage_kernel.png)
+
+    On another note, you may want to replicate an environment setup to handle a project, research, or analysis but you are already working on a Jupyter Notebook file. You can select a different environment from the Jupyter Notebook file by;
+
+    1. Selecting the Jupyter Notebook File from your landing page.
+
+    1. While in the file, look for the menu option "Kernel", select this. In the Kernel dropdown option, select "Change kernel". Then select your preferred kernel environment. Wait a few seconds for it to load, and you are ready to use your preferred environment. Selecting this would open a new Jupyter Notebook file with your selected environment. ![!Changing Environment](images/changingkernel.png)
+
+    1. Your selected environment would appear in the top right corner.![!Selected Environment](images/selected_env.png)
 
 ## Common Issues in OOD Jupyter
 
