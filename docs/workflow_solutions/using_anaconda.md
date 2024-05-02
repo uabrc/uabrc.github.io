@@ -32,11 +32,11 @@ Creating, activating and managing environments with Anaconda can be challenging,
 
 5. Consider Reproducibility and Upgradability: Balancing the need for reproducible builds with the flexibility to upgrade dependencies is crucial. Utilize tools like conda-lock to generate lock files that pin dependencies, allowing for reproducible environments that can be easily updated when necessary. Please note that using `conda-lock` will pin dependencies for reproducibility, ensuring exact version upgrades are done when needed.
 
-6. Address Portability Issues: Make your environment files as portable as possible by excluding system-specific paths and using general package versions where appropriate. This consideration ensures that environments can be replicated across different systems without modification. For example, in your `requirements.txt`, it is advised to specify the package and version, in the below format, using NumPy;
+6. Address Portability Issues: Make your environment files as portable as possible by excluding system-specific paths and using general package versions where appropriate. This consideration ensures that environments can be replicated across different systems without modification. For example, in your `requirements.txt`, it is advised to specify the package and version, see `numpy` example as shown below;
 
     `numpy=1.21.5`
 
-    see more information [here.](#replicability-versus-portability)
+    Please see more information [here](#replicability-versus-portability).
 
 ## What is my best solution for installing Anaconda?
 
