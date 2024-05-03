@@ -1807,6 +1807,17 @@
   </li>
       
         <li class="md-nav__item">
+    <a href="#environment-setup-and-module-usage-in-job-submission" class="md-nav__link">
+      <span class="md-ellipsis">
+        Environment Setup and Module Usage in Job Submission
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
     <a href="#graphical-interactive-jobs" class="md-nav__link">
       <span class="md-ellipsis">
         Graphical Interactive Jobs
@@ -3037,6 +3048,17 @@
   </li>
       
         <li class="md-nav__item">
+    <a href="#environment-setup-and-module-usage-in-job-submission" class="md-nav__link">
+      <span class="md-ellipsis">
+        Environment Setup and Module Usage in Job Submission
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
     <a href="#graphical-interactive-jobs" class="md-nav__link">
       <span class="md-ellipsis">
         Graphical Interactive Jobs
@@ -3281,21 +3303,34 @@
 <p>For batch jobs, flags are typically included as directive comments at the top of the script like <code>#SBATCH --job-name=my-job</code>. Read on to see examples of batch jobs using <code>sbatch</code>.</p>
 <h3 id="a-simple-batch-job">A Simple Batch Job<a class="headerlink" href="#a-simple-batch-job" title="Permanent link">&para;</a></h3>
 <p>Below is an example batch job script. To test it, copy and paste it into a plain text file <code>testjob.sh</code> in your <a href="../../../data_management/storage/#home-directory">Home Directory</a> on Cheaha. Run it at the terminal by navigating to your home directory by entering <code>cd ~</code> and then entering <code>sbatch testjob.sh</code>. Momentarily, two text files with <code>.out</code> and <code>.err</code> suffixes will be produced in your home directory.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#SBATCH --job-name=test</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">#SBATCH --nodes=1</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">#SBATCH --ntasks=1</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">#SBATCH --mem=1G</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">#SBATCH --partition=express</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">#SBATCH --time=00:10:00</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">#SBATCH --output=%x_%j.out</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">#SBATCH --error=%x_%j.err</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello World&quot;</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello Error&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">#</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#SBATCH --job-name=test</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#SBATCH --nodes=1</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">#SBATCH --ntasks=1</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1">#SBATCH --mem=1G</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">#SBATCH --partition=express</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">#SBATCH --time=00:10:00</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#SBATCH --output=%x_%j.out</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="c1">#SBATCH --error=%x_%j.err</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello World&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello Error&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+</code></pre></div></td></tr></table></div>
 <p>There is a lot going on in the above script, so let's break it down. There are three main chunks of this script:</p>
 <ol>
 <li>Line 1 is the interpreter directive: <code>#!/bin/bash</code>. This tells the shell what application to use to execute this script. All <code>sbatch</code> scripts on Cheaha should start with this line.</li>
@@ -3317,21 +3352,34 @@
 <h3 id="batch-array-jobs-with-known-indices">Batch Array Jobs With Known Indices<a class="headerlink" href="#batch-array-jobs-with-known-indices" title="Permanent link">&para;</a></h3>
 <p>Building on the job script above, below is an array job. Array jobs are useful when you need to perform the same analysis on slightly different inputs with no interaction between those analyses. We call this situation "pleasingly parallel". We can take advantage of an array job using the variable <code>$SLURM_ARRAY_TASK_ID</code>, which will have an integer in the set of values we give to the <code>--array</code> flag.</p>
 <p>To test the script below, copy and paste it into a plain text file <code>testarrayjob.sh</code> in your <a href="../../../data_management/storage/#home-directory">Home Directory</a> on Cheaha. Run it at the terminal by navigating to your home directory by entering <code>cd ~</code> and then entering <code>sbatch testarrayjob.sh</code>. Momentarily, 16 text files with <code>.out</code> and <code>.err</code> suffixes will be produced in your home directory.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">#SBATCH --job-name=test</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">#SBATCH --nodes=1</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">#SBATCH --ntasks=1</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">#SBATCH --mem=1G</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1">#SBATCH --partition=express</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">#SBATCH --time=00:10:00</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">#SBATCH --output=%x_%A_%a.out</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">#SBATCH --error=%x_%A_%a.err</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1">#SBATCH --array=0-9</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;My SLURM_ARRAY_TASK_ID: &quot;</span><span class="w"> </span><span class="nv">$SLURM_ARRAY_TASK_ID</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">#</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">#SBATCH --job-name=test</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1">#SBATCH --nodes=1</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1">#SBATCH --ntasks=1</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1">#SBATCH --mem=1G</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="c1">#SBATCH --partition=express</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">#SBATCH --time=00:10:00</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="c1">#SBATCH --output=%x_%A_%a.out</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1">#SBATCH --error=%x_%A_%a.err</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="c1">#SBATCH --array=0-9</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;My SLURM_ARRAY_TASK_ID: &quot;</span><span class="w"> </span><span class="nv">$SLURM_ARRAY_TASK_ID</span>
+</code></pre></div></td></tr></table></div>
 <p>This script is very similar to the one above, but will submit 10 jobs to the scheduler that all do slightly different things. Each of the 10 jobs will have the same amount and type of resources allocated, and can run in parallel. The 10 jobs come from <code>--array=0-9</code>. The output of each job will be one of the numbers in the set <code>{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}</code>, depending on which job is running. The output files will look like <code>test_$(SLURM_ARRAY_JOB_ID)_$(SLURM_ARRAY_TASK_ID).out</code> or <code>.err</code>. The value of <code>$(SLURM_ARRAY_JOB_ID)</code> is the main Job ID given to the entire array submission.</p>
 <p>Scripts can be written to take advantage of the <code>$SLURM_ARRAY_TASK_ID</code> variable indexing variable. For example, a project could have a list of participants that should be processed in the same way, and the analysis script uses the array task ID as an index to pull out one entry from that list for each job. Many common programming languages can interact with shell variables like <code>$SLURM_ARRAY_TASK_ID</code>, or the values can be passed to a program as an argument.</p>
 <p>You can override the <code>--array</code> flag stored in the script when you call <code>sbatch</code>. To do so, pass another <code>--array</code> flag along with the script name like below. This allows you to rerun only subsets of your array script.</p>
@@ -3419,6 +3467,8 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
+<h2 id="environment-setup-and-module-usage-in-job-submission">Environment Setup and Module Usage in Job Submission<a class="headerlink" href="#environment-setup-and-module-usage-in-job-submission" title="Permanent link">&para;</a></h2>
+<p>Before submitting a job using <code>sbatch</code>, it's crucial to establish a tailored environment, including software installations and loading necessary modules containing the required software packages. We highly recommend the practice of putting <code>module reset</code> before any <code>module load</code> calls in job scripts. The module system modifies the environment whenever the module list changes, and Slurm jobs inherit the environment from whatever called <code>sbatch</code> or <code>srun</code>. The module reset command normalizes the initial environment for the script, improving repeatability and minimizing the risk of hard-to-diagnose module conflicts. For examples and further information, please see <a href="../../software/modules/#best-practice-for-loading-modules">best practice for loading modules</a>.</p>
 <h2 id="graphical-interactive-jobs">Graphical Interactive Jobs<a class="headerlink" href="#graphical-interactive-jobs" title="Permanent link">&para;</a></h2>
 <p>It is highly recommended to use the <a href="../../open_ondemand/">Open OnDemand</a> web portal for <a href="../../open_ondemand/ood_layout/#interactive-apps">interactive apps</a>. Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha. A terminal is also available through Open OnDemand.</p>
 <p>It is possible to use other remote desktop software, such as VNC, to start and interact with jobs. These methods are not officially supported and we do not have the capacity to help with remote desktop connections. Instead, please consider switching your workflow to use the <a href="../../open_ondemand/hpc_desktop/">Open OnDemand HPC Desktop</a>. If you are unable to use this method, please contact <a href="../../../help/support/">Support</a>.</p>
@@ -3467,7 +3517,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 23, 2024</span>
   </span>
 
     
