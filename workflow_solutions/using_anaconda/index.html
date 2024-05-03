@@ -978,6 +978,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+    <a href="#anaconda-best-practices-for-environment-reproducibility" class="md-nav__link">
+      <span class="md-ellipsis">
+        Anaconda best practices for environment reproducibility
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
     <a href="#what-is-my-best-solution-for-installing-anaconda" class="md-nav__link">
       <span class="md-ellipsis">
         What is my best solution for installing Anaconda?
@@ -2974,6 +2985,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+    <a href="#anaconda-best-practices-for-environment-reproducibility" class="md-nav__link">
+      <span class="md-ellipsis">
+        Anaconda best practices for environment reproducibility
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
     <a href="#what-is-my-best-solution-for-installing-anaconda" class="md-nav__link">
       <span class="md-ellipsis">
         What is my best solution for installing Anaconda?
@@ -3287,6 +3309,30 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
+<h2 id="anaconda-best-practices-for-environment-reproducibility">Anaconda best practices for environment reproducibility<a class="headerlink" href="#anaconda-best-practices-for-environment-reproducibility" title="Permanent link">&para;</a></h2>
+<p>Creating, activating and managing environments with Anaconda can be challenging, especially when aiming for reproducibility across different systems, platforms, and projects. To tackle these challenges, below is a list of consolidated best practices drawn from some practical experiences:</p>
+<ol>
+<li>
+<p>Using Conda and Pip Effectively: While using Cheaha, or on any other platform, prioritise using Conda packages, as checks are done during package installation. This way required libraries function properly and are less likely to throw up compatibility and dependency errors. Use Conda packages instead of Pip when possible as they significantly offer a reduced risk of breaking environments. If Pip packages are necessary for your work, install them after all Conda packages to minimize conflicts and breakage of your environment. Also, in practice when packages are to be installed from an environment file, conda packages are usually installed first, before pip packages are installed.</p>
+</li>
+<li>
+<p>Isolate Environments: Create separate Conda environments for different projects to prevent interference from conflicting dependencies, this would in turn help to maintain a clean workspace. This approach aids in managing dependencies more effectively and allows for easy replication/reproducibility across projects.</p>
+</li>
+<li>
+<p>Recreate Environments for Changes: Instead of modifying existing environments, recreate them with updated requirements to ensure stability. This method prevents inconsistencies caused by incremental changes. You can do this by creating a <code>.yml</code> file, using any of the methods listed <a href="#working-with-environment-yaml-files">here</a>, and then recreate the environment.</p>
+</li>
+<li>
+<p>Export and Store Requirements: Keep a record of Conda and Pip requirements in text files. This practice enables easy sharing and version control, making it simpler to recreate environments on different machines.</p>
+</li>
+<li>
+<p>Consider Reproducibility and Upgradability: Balancing the need for reproducible builds with the flexibility to upgrade dependencies is crucial. Utilize tools like conda-lock to generate lock files that pin dependencies, allowing for reproducible environments that can be easily updated when necessary. Please note that using <code>conda-lock</code> will pin dependencies for reproducibility, ensuring exact version upgrades are done when needed.</p>
+</li>
+<li>
+<p>Address Portability Issues: Make your environment files as portable as possible by excluding system-specific paths and using general package versions where appropriate. This consideration ensures that environments can be replicated across different systems without modification. For example, in your <code>requirements.txt</code>, it is advised to specify the package and version, see <code>numpy</code> example as shown below;</p>
+<p><code>numpy=1.21.5</code></p>
+<p>Please see more information <a href="#replicability-versus-portability">here</a>.</p>
+</li>
+</ol>
 <h2 id="what-is-my-best-solution-for-installing-anaconda">What is my best solution for installing Anaconda?<a class="headerlink" href="#what-is-my-best-solution-for-installing-anaconda" title="Permanent link">&para;</a></h2>
 <p>If you are using a local machine or doing general purpose software development, or have a particular package in mind, go <a href="#installing-anaconda">here</a> to install Anaconda.</p>
 <p>If you are using a virtual machine or container, go <a href="#installing-miniconda">here</a> to install Miniconda.</p>
@@ -3511,7 +3557,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 2, 2024</span>
   </span>
 
     
