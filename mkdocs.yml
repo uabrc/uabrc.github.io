@@ -146,6 +146,7 @@ nav:
       - Remote Access: uab_cloud/remote_access.md
       - Installing Software: uab_cloud/installing_software.md
       - Snapshots and Images: uab_cloud/snapshots.md
+      - Project Space Management: uab_cloud/project_space_mgmt.md
   - UAB Kubernetes Guide:
       - Startup: kubernetes/startup.md
   - National Research Computing Cyberinfrastructure:
