@@ -199,7 +199,7 @@ s3cmd info s3://<bucket>
 
 s5cmd is a parallel transfer tool suggested for period transfers of large and/or many files at a time. It has options for customizing how many processors are available for transferring data as well as how many chunks files can be broken into during transfer to minimize transfer time. See the [preceding section](#command-line) for instructions on how to install both it and s3cmd into an Anaconda environment
 
-#### Configuring s5cmd on Cheaha
+#### Configuring s5cmd
 
 s5cmd does not use the same authentication file as s3cmd. Instead, it uses official AWS SDK to access S3 including LTS. The default credentials file for AWS CLI would found at `${HOME}/.aws/credentials`. This file is then populated with different profiles and their access and secret keys. You can create the necessary file with the following commands.
 
