@@ -52,12 +52,6 @@ You may need to install `gpg` on a Mac using the below command,
 brew install gnupg
 ```
 
-To view the path of `gpg` installed, use the following command.
-
-```bash
-which gpg
-```
-
 #### Windows
 
 To install `s3cmd` on a Windows system, you will first need to install [Windows Subsystem for Linux (WSL)](../../uab_cloud/remote_access.md/#windows-subsystem-for-linux-wsl). Once WSL is installed, you can use the command line instructions for [Ubuntu](#ubuntu) to install `s3cmd`.
