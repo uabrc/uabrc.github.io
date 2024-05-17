@@ -18,57 +18,13 @@ Anaconda can also install Pip and record which Pip packages are installed, so An
     If using Anaconda on Cheaha, please see our [Anaconda on Cheaha page](../cheaha/software/software.md#anaconda-on-cheaha) for important details and restrictions.
 <!-- markdownlint-enable MD046 -->
 
-## Anaconda best practices for environment reproducibility
-
-Creating, activating and managing environments with Anaconda can be challenging, especially when aiming for reproducibility across different systems, platforms, and projects. To tackle these challenges, below is a list of consolidated best practices drawn from some practical experiences:
-
-1. Using Conda and Pip Effectively: While using Cheaha, or on any other platform, prioritise using Conda packages, as checks are done during package installation. This way required libraries function properly and are less likely to throw up compatibility and dependency errors. Use Conda packages instead of Pip when possible as they significantly offer a reduced risk of breaking environments. If Pip packages are necessary for your work, install them after all Conda packages to minimize conflicts and breakage of your environment. Also, in practice when packages are to be installed from an environment file, conda packages are usually installed first, before pip packages are installed.
-
-2. Isolate Environments: Create separate Conda environments for different projects to prevent interference from conflicting dependencies, this would in turn help to maintain a clean workspace. This approach aids in managing dependencies more effectively and allows for easy replication/reproducibility across projects.
-
-3. Recreate Environments for Changes: Instead of modifying existing environments, recreate them with updated requirements to ensure stability. This method prevents inconsistencies caused by incremental changes. You can do this by creating a `.yml` file, using any of the methods listed [here](#working-with-environment-yaml-files), and then recreate the environment.
-
-4. Export and Store Requirements: Keep a record of Conda and Pip requirements in text files. This practice enables easy sharing and version control, making it simpler to recreate environments on different machines.
-
-5. Consider Reproducibility and Upgradability: Balancing the need for reproducible builds with the flexibility to upgrade dependencies is crucial. Utilize tools like conda-lock to generate lock files that pin dependencies, allowing for reproducible environments that can be easily updated when necessary. Please note that using `conda-lock` will pin dependencies for reproducibility, ensuring exact version upgrades are done when needed.
-
-6. Address Portability Issues: Make your environment files as portable as possible by excluding system-specific paths and using general package versions where appropriate. This consideration ensures that environments can be replicated across different systems without modification. For example, in your `requirements.txt`, it is advised to specify the package and version, see `numpy` example as shown below;
-
-    `numpy=1.21.5`
-
-    Please see more information [here](#replicability-versus-portability).
-
-## What is my best solution for installing Anaconda?
-
-If you are using a local machine or doing general purpose software development, or have a particular package in mind, go [here](#installing-anaconda) to install Anaconda.
-
-If you are using a virtual machine or container, go [here](#installing-miniconda) to install Miniconda.
-
-If you are using Cheaha, go [here](../cheaha/software/software.md#anaconda-on-cheaha) for how to use Anaconda on Cheaha.
-
-### Installing Anaconda
-
-The full Anaconda install is a good choice if you are using a local machine, or doing general Python development work, or have a particular scientific package in mind.
-
-Anaconda installation instructions are located here: <https://docs.anaconda.com/anaconda/install/index.html>.
-
-For best performance, be sure to set the default solver to `libmamba` using `conda config --set solver libmamba`. For more information see: <https://conda.github.io/conda-libmamba-solver/getting-started/#set-as-default>.
-
-### Installing Miniconda
-
-Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important, like [virtual machines](../uab_cloud/index.md) and [containers](getting_containers.md).
-
-Miniconda installation instructions are located here: <https://docs.conda.io/en/latest/miniconda.html>.
-
-For best performance, be sure to set the default solver to `libmamba` using `conda config --set solver libmamba`. For more information see: <https://conda.github.io/conda-libmamba-solver/getting-started/#set-as-default>.
-
 ## Using Anaconda
 
 Anaconda is a package manager, meaning it handles all of the difficult mathematics and logistics of figuring out exactly what versions of which packages should be downloaded to meet your needs, or inform you if there is a conflict.
 
 Anaconda is structured around environments. Environments are self-contained collections of researcher-selected packages. Environments can be changed out using a simple package without requiring tedious installing and uninstalling of packages or software, and avoiding dependency conflicts with each other. Environments allow researchers to work and collaborate on multiple projects, each with different requirements, all on the same computer. Environments can be installed from the command line, from pre-designed or shared YAML files, and can be modified or updated as needed.
 
-The following subsections detail some of the more common commands and use cases for Anaconda usage. More complete information on this process can be found at the [Anaconda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#).
+The following subsections detail some of the more common commands and use cases for Anaconda usage. More complete information on this process can be found at the [Anaconda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -222,7 +178,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```bash
 
-    conda env export --from-history > <env>.yml 
+    conda env export --from-history > <env>.yml
 
     ```
 
@@ -232,7 +188,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```bash
 
-    conda env export <envname> > <env>.yml 
+    conda env export <envname> > <env>.yml
 
     ```
 
@@ -331,9 +287,3 @@ Now we can be sure that the correct versions of the software will be installed o
 Building on the example above, we can bring in good software development practices to ensure we don't lose track of how our environment is changing as we develop our software or our workflows. If you've ever lost a lot of hard work by accidentally deleting an important file, or forgetting what changes you've made that need to be rolled back, this section is for you.
 
 Efficient software developers live the mantra "Don't repeat yourself". Part of not repeating yourself is keeping a detailed and meticulous record of changes made as your software grows over time. [Git](git_collaboration.md) is a way to have the computer keep track of those changes digitally. Git can be used to save changes to environment files as they change over time. Remember that each time your environment changes to commit the output of [Exporting your Environment](#exporting-an-environment) to a repository for your project.
-
-## Speeding Things up with Mamba
-
-Use of Mamba has been deprecated on Cheaha. On Cheaha, use `module load Anaconda3` and the usual `conda` commands instead. The backend of `conda` has been set to use `libmamba` and is now equally performant.
-
-If you are using Mamba on a local machine and have Anaconda installed, you can set `libmamba` as your default solver using `conda config --set solver libmamba` as described here: <https://conda.github.io/conda-libmamba-solver/getting-started/#set-as-default>

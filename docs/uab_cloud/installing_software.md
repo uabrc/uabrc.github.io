@@ -139,17 +139,11 @@ Below are a few examples of installing certain common softwares that may be usef
 
 #### Installing Miniconda
 
-We recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html) on cloud.rc instances, as opposed to Anaconda, to conserve storage space.
+Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important. We recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html) on cloud.rc instances, as opposed to Anaconda, to conserve storage space. For more information on how to use Anaconda see the [Using Anaconda](../workflow_solutions/using_anaconda.md#using-anaconda). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
 2. `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
 3. `bash Miniconda3-latest-Linux-x86_64.sh`
-
-<!-- markdownlint-disable MD046 -->
-!!! tip
-
-    Consider installing [Mamba](../workflow_solutions/using_anaconda.md#mamba) to speed up environment installation.
-<!-- markdownlint-enable MD046 -->
 
 #### Installing Singularity
 
