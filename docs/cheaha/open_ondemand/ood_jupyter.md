@@ -78,17 +78,17 @@ We can create a new environment, that houses all of the packages, modules, and l
 
 ### Python Executable Issues
 
-Jupyter Notebook by default loads `Anaconda3`. Hence do not load any versions of `Anaconda3` or `mamba` module in the `Environment Setup` field in the OOD Jupyter Notebook, as it causes Python mismatch, and the errors are hard to diagnose.
+Jupyter Notebook by default loads `Anaconda3`. Hence do not load any versions of `Anaconda3` module in the `Environment Setup` field in the OOD Jupyter Notebook, as it causes Python mismatch, and the errors are hard to diagnose.
 
-Having custom installs of Anaconda/Miniconda/Mambaforge/Minimamba can cause the above similar issue. If you have installations of any of these software in your personal space, delete those directories and instead use the `Anaconda3` module.
+Having custom installs of Anaconda/Miniconda/ can cause the above similar issue. If you have installations of any of these software in your personal space, delete those directories and instead use the `Anaconda3` module.
 
 To identify a Python mismatch, use the commands `which python` and `python --version` to confirm the desired Python executable and version. Within the `conda` environment, `which python` prints the path of the Python executable (e.g. `~/.conda/envs/remora/bin/python`). If it doesn't match the expected version, an unexpected Python version may be in use.
 
-`conda init` or `mamba init` append an incorrect version of Python to the front of the `$PATH`, an environment variable containing directories where the operating system looks for executable files. When you attempt to execute a Python-related command, the system will find the first matching executable in the directories listed in the modified `$PATH`. If the first entry corresponds to the version of Python added by `mamba init` or `conda init`, that specific version will be used which lead to Python mismatch and hard-to-diagnose errors.
+`conda init` append an incorrect version of Python to the front of the `$PATH`, an environment variable containing directories where the operating system looks for executable files. When you attempt to execute a Python-related command, the system will find the first matching executable in the directories listed in the modified `$PATH`. If the first entry corresponds to the version of Python added by `conda init`, that specific version will be used which lead to Python mismatch and hard-to-diagnose errors.
   
 ### Unexpected/Silent Job Failure
 
-Having `conda/mamba activate` and `source activate` statements in the OOD Jupyter Notebooks' `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
+Having `conda activate` and `source activate` statements in the OOD Jupyter Notebooks' `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
 
 ### Timeout in Loading Jupyter Notebook
 
@@ -100,7 +100,7 @@ While launching an OOD HPC Desktop Job or any OOD Applications, if the user gets
   
 ![!OOD vnc error.](./images/ood_vncerror.png) ![!OOD vnc error_contd.](./images/ood_vncerror_contd.png)
 
-Using `conda init` and `mamba init` causes a block of code automatically inserted into the `.bashrc` file in your `$HOME` directory. This code block may interfere with the proper functioning of various OOD applications, resulting in a VNC error. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
+Using `conda init` causes a block of code automatically inserted into the `.bashrc` file in your `$HOME` directory. This code block may interfere with the proper functioning of various OOD applications, resulting in a VNC error. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
 
 ### Pip Installs Packages Outside of Environment
 
