@@ -3292,6 +3292,7 @@
 
 
 <h1 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h1>
+<p>Research Computing offers several data storage options to meet individual or shared needs of UAB researchers, depending on their requirement and use-cases. The types of storage available, procedures for requesting access, responsibilities, and usage guidelines are detailed in the following sections.</p>
 <h2 id="what-type-of-storage-do-i-need">What Type of Storage Do I Need?<a class="headerlink" href="#what-type-of-storage-do-i-need" title="Permanent link">&para;</a></h2>
 <p>There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to help determine the storage platform we provide that best matches your needed use-case. If you need additional assistance, please contact <a href="../../help/support/">Support</a>.</p>
 <table>
@@ -3384,7 +3385,7 @@
 <p>Every researcher has personal directories found at <code>/home/$USER</code> (or <code>$HOME</code>) and <code>/data/user/$USER</code> (or <code>$USER_DATA</code>), which are created automatically during account registration. These two locations are meant to store general data and can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, <code>$HOME</code> is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, <code>$USER_DATA</code> is intended to store datasets and results for individual research projects.</p>
 <p>Individual allocations on Long-Term Storage (LTS) are also available upon request.</p>
 <h3 id="how-do-i-request-individual-long-term-storage">How Do I Request Individual Long-Term Storage?<a class="headerlink" href="#how-do-i-request-individual-long-term-storage" title="Permanent link">&para;</a></h3>
-<p>To request individual Long-Term Storage, please first read and understand how <a href="../lts/">Long-Term Storage</a> differs from traditional filesystems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact <a href="../../help/support/">Support</a>.</p>
+<p>To request individual Long-Term Storage, please first read and understand how <a href="../lts/">Long-Term Storage</a> differs from traditional file systems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact <a href="../../help/support/">Support</a>.</p>
 <h2 id="what-shared-storage-solutions-are-available">What Shared Storage Solutions are Available?<a class="headerlink" href="#what-shared-storage-solutions-are-available" title="Permanent link">&para;</a></h2>
 <p>Shared Storage is available via two services. We have Project Storage (located in <code>/data/project</code> or Cheaha) and <a href="../lts/">Long-Term Storage (LTS)</a>. The two offerings are suited to different sets of use-cases, so please read on to determine which may be most suitable.</p>
 <p>Project Storage is best-suited for changing or dynamic data. Specifically:</p>
@@ -3404,15 +3405,17 @@
 <p>Shared Storage is available for labs headed by a PI <em>and</em> for Core facilities headed by a director.</p>
 <p>Shared Storage is allocated on a per-organization basis, not on a per-person basis. If an individual researcher manages both a lab and a Core, they may request independent storage allocations for each organization. Each organization may request both Project Storage and Long-Term Storage.</p>
 <h3 id="how-do-i-request-shared-storage">How Do I Request Shared Storage?<a class="headerlink" href="#how-do-i-request-shared-storage" title="Permanent link">&para;</a></h3>
-<p>To request shared Project Storage or Long-Term Storage, please contact <a href="../../help/support/">Support</a>. To ensure prompt allocation of Shared Storage, please follow the guidelines below.</p>
+<p>To request shared Project Storage or Long-Term Storage, please contact <a href="../../help/support/">Support</a>. To ensure prompt allocation of Shared Storage, please follow the guidelines below:</p>
 <ul>
 <li>Requests must be made to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#108;&#105;&#115;&#116;&#115;&#101;&#114;&#118;&#46;&#117;&#97;&#98;&#46;&#101;&#100;&#117;</a> or via the <a href="https://www.uab.edu/it/home/">AskIT HelpDesk</a>.</li>
-<li>Requests must come from one of the proposed owners.</li>
-<li>All proposed owners must have created their <a href="../../account_management/cheaha_account/">Research Computing accounts</a> at the time the request is made.</li>
+<li>Requests must come from one of the proposed owners (a Lab PI, a Research Core director, or both).</li>
+<li>The role of Lab PI entitles a person to a project space for that lab.</li>
+<li>The role of Research Core director entitles a person to a project space for that core. If one person has both roles, they may have two shared Storage spaces, one for each role.</li>
+<li>All proposed owners must have created their <a href="../../account_management/cheaha_account/">Research Computing accounts</a> at the time of the request.</li>
 </ul>
 <p>Please provide the following information. Missing information can delay allocation of Shared Storage as we either look up the information, or ask followup questions.</p>
 <ul>
-<li><strong>Responsible Party/Owner:</strong> The BlazerID of the person claiming reponsibility for what happens and what is stored in the space. Typically this would be a Principal Investigator (PI) or a Core Director.<ul>
+<li><strong>Responsible Party/Owner:</strong> The BlazerID of the person claiming responsibility for what happens and what is stored in the space. Typically this would be a Principal Investigator (PI) or a Core Director.<ul>
 <li>Multiple responsible parties are allowed.</li>
 <li>We need one person declared as "primary" owner. This person will be the literal owner (in the Linux sense) for Project Storage.</li>
 </ul>
@@ -3426,11 +3429,11 @@
 <li><strong>External Collaborator Organizations:</strong> The name(s) of any external organizations participating in the Shared Storage.</li>
 <li><strong>Regulatory Requirements:</strong> List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.</li>
 <li>
-<p><strong>Name of Shared Storage:</strong> Please give us a generic name specific to your project/lab.</p>
+<p><strong>Name of Shared Storage:</strong> Please give us a generic name specific to your project/Lab.</p>
 <ul>
-<li>For Project Storage, this name will be used in the <code>/data/project/&lt;name&gt;</code> path on Cheaha.</li>
-<li>For Labs we recommend the format <code>&lt;PI_blazerid&gt;_lab</code>. Example: PI_blazerid_lab, PI_name_lab, PI_blazerid_group</li>
-<li>For Cores we recommend a shortened version of the Core name. Example: core_facility_space</li>
+<li>For Labs, we recommend using the format <code>&lt;PI_blazerid&gt;_lab</code>, where <code>&lt;PI_blazerid&gt;</code> is the blazerid or name of the Principal Investigator (PI). For example: <code>PI_blazerid_lab</code>, <code>PI_name_lab</code>. </li>
+<li>For Cores, we recommend using a shortened version of the Core name. For example: <code>core_facility_space</code></li>
+<li>For Project Storage, the name you choose will be used in the path <code>/data/project/&lt;PI_blazerid&gt;_lab</code> on Cheaha. Also, this name,<code>&lt;PI_blazerid&gt;_lab</code>, will be given to your shared LTS account.</li>
 </ul>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition tip">
@@ -3454,7 +3457,7 @@
 </ul>
 <h3 id="how-can-i-get-a-larger-dataproject-gpfs-allocation">How Can I Get A Larger <code>/data/project/</code> (GPFS) Allocation?<a class="headerlink" href="#how-can-i-get-a-larger-dataproject-gpfs-allocation" title="Permanent link">&para;</a></h3>
 <p>At this time, due to constraints on total GPFS storage, we are not able to increase <code>/data/project/</code> allocations. Please consider batching your analyses by leveraging a combination of <a href="../lts/">LTS</a> to store raw and/or input data, and <a href="#user-scratch">User Scratch</a> for temporary storage of up to 100 TB of data for use during analysis.</p>
-<p>If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please <a href="../../help/support/">Contact Support</a>.</p>
+<p>If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please <a href="../../help/support/">Contact Support</a>. Please also note that project storage is not just for a single project only, it is meant as a storage for multiple projects.</p>
 <h3 id="how-can-i-get-a-larger-lts-lab-allocation">How Can I Get A Larger LTS Lab Allocation?<a class="headerlink" href="#how-can-i-get-a-larger-lts-lab-allocation" title="Permanent link">&para;</a></h3>
 <p>At this time, due to constraints on total <a href="../lts/">LTS</a> storage, increasing an LTS allocation requires purchasing additional hardware. Below are some facts about purchasing additional storage nodes.</p>
 <ul>
@@ -3733,7 +3736,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 17, 2024</span>
   </span>
 
     
