@@ -1,6 +1,6 @@
 # Storage
 
-Research computing provides several data storage options, which can serve the individual or shared needs of UAB researchers depending on their requirement and use-cases. The available type of storage, procedures for requesting access, responsibilities, and usage guidelines are elaborated in the following sections.
+Research Computing offers several data storage options to meet individual or shared needs of UAB researchers, depending on their requirement and use-cases. The types of storage available, procedures for requesting access, responsibilities, and usage guidelines are detailed in the following sections.
 
 ## What Type of Storage Do I Need?
 
@@ -16,7 +16,7 @@ Individual allocations on Long-Term Storage (LTS) are also available upon reques
 
 ### How Do I Request Individual Long-Term Storage?
 
-To request individual Long-Term Storage, please first read and understand how [Long-Term Storage](./lts/index.md) differs from traditional filesystems, like `/data/project/`(GPFS) on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact [Support](../help/support.md).
+To request individual Long-Term Storage, please first read and understand how [Long-Term Storage](./lts/index.md) differs from traditional file systems, like (GPFS) on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact [Support](../help/support.md).
 
 ## What Shared Storage Solutions are Available?
 
@@ -42,17 +42,17 @@ Shared Storage is allocated on a per-organization basis, not on a per-person bas
 
 ### How Do I Request Shared Storage?
 
-To request shared Project Storage or Long-Term Storage, please contact [Support](../help/support.md). To ensure prompt allocation of Shared Storage, please follow the guidelines below.
+To request shared Project Storage or Long-Term Storage, please contact [Support](../help/support.md). To ensure prompt allocation of Shared Storage, please follow the guidelines below:
 
 - Requests must be made to <support@listserv.uab.edu> or via the [AskIT HelpDesk](https://www.uab.edu/it/home/).
 - Requests must come from one of the proposed owners (a Lab PI, a Research Core director, or both)
 - The role of Lab PI entitles a person to a project space for that lab
-- The role of Research Core director entitles a person to a project space for that core. If one person has both roles, they may have two shared Storages, one for each role.
-- All proposed owners must have created their [Research Computing accounts](../account_management/cheaha_account.md) at the time the request is made.
+- The role of Research Core director entitles a person to a project space for that core. If one person has both roles, they may have two shared Storage spaces, one for each role.
+- All proposed owners must have created their [Research Computing accounts](../account_management/cheaha_account.md) at the time of the request.
 
 Please provide the following information. Missing information can delay allocation of Shared Storage as we either look up the information, or ask followup questions.
 
-- **Responsible Party/Owner:** The BlazerID of the person claiming reponsibility for what happens and what is stored in the space. Typically this would be a Principal Investigator (PI) or a Core Director.
+- **Responsible Party/Owner:** The BlazerID of the person claiming responsibility for what happens and what is stored in the space. Typically this would be a Principal Investigator (PI) or a Core Director.
     - Multiple responsible parties are allowed.
     - We need one person declared as "primary" owner. This person will be the literal owner (in the Linux sense) for Project Storage.
 - **Members:** A list of BlazerIDs of people to give access to the space. (Note: this only applies to Project Storage. LTS access controls are managed differently.)
@@ -63,11 +63,11 @@ Please provide the following information. Missing information can delay allocati
 - **Internal UAB Collaborator Organizations:** The name(s) of any other UAB organizations participating in the Shared Storage.
 - **External Collaborator Organizations:** The name(s) of any external organizations participating in the Shared Storage.
 - **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
-- **Name of Shared Storage:** Please give us a generic name specific to your project/lab.
+- **Name of Shared Storage:** Please give us a generic name specific to your project/Lab.
 
-    - For Labs we recommend the format `<PI_blazerid>_lab`. Replace `<PI_blazerid>` with the blazerid or name of the Principal Investigator (PI). For example: PI_blazerid_lab, PI_name_lab
-    - For Cores we recommend a shortened version of the Core name. Example: core_facility_space
-    - For Project Storage, this designated name will be used in the `/data/project/<PI_blazerid>_lab` path on Cheaha. The name, `<PI_blazerid>_lab`, will also be assigned to your shared LTS account.
+    - For Labs, we recommend using the format `<PI_blazerid>_lab`, where `<PI_blazerid>` is the blazerid or name of the Principal Investigator (PI). For example: `PI_blazerid_lab`, `PI_name_lab`. 
+    - For Cores, we recommend using a shortened version of the Core name. For example: `core_facility_space`
+    - For Project Storage, the name you choose will be used in the path `/data/project/<PI_blazerid>_lab` on Cheaha. Also, this name,`<PI_blazerid>_lab`, will be given  to your shared LTS account.
 
     <!-- markdownlint-disable MD046 -->
     !!! Tip
@@ -91,7 +91,7 @@ To request changes in Shared Storage membership, please contact [Support](../hel
 
 At this time, due to constraints on total GPFS storage, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [User Scratch](#user-scratch) for temporary storage of up to 100 TB of data for use during analysis.
 
-If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md). Please also note that project storage is not just for a single project. It is meant a storage for multiple projects.
+If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md). Please also note that project storage is not just for a single project only. It is meant a storage for multiple projects.
 
 ### How Can I Get A Larger LTS Lab Allocation?
 
@@ -103,7 +103,7 @@ At this time, due to constraints on total [LTS](./lts/index.md) storage, increas
 - No markups are added to the cost of nodes.
 - Purchased nodes are racked with existing hardware in our data centers.
 - Purchased nodes are maintained by Research Computing with the same level of service as other hardware.
-- Purchased nodes are supported for 5 years from date of purchase, the industry standard for commercial datacenter hardware.
+- Purchased nodes are supported for 5 years from date of purchase, the industry standard for commercial data center hardware.
 - Once an order is placed with the vendor, we can provide additional storage immediately _if_ free storage is available, regardless of lead-time.
 
 If you have additional questions _or_ wish to discuss further, please [Contact Support](../help/support.md).
