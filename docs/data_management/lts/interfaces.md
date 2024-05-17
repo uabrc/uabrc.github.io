@@ -1,3 +1,7 @@
+---
+toc_depth: 3
+---
+
 # Connecting to LTS
 
 LTS is not available as a mounted filesystem on local computers or Cheaha. You must use an interface to transfer data between LTS and whichever machine you are using. There are a variety of interfaces with the following recommendations.
@@ -40,7 +44,7 @@ conda activate s3
 pip install s3cmd
 ```
 
-Please note that the instructions mentioned above are specific to the Cheaha system. If you need to transfer data between your personal computer and LTS, you'll need to install `s3cmd` and `s5cmd` on your machine. Please refer to this [section](#installation-of-s3cmd-and-s5cmd-on-personal-system) for installation instructions specific to your operating system.
+Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your personal computer and LTS, you will need to install `s3cmd` or `s5cmd` on your machine. Please refer to this [section](#installation-of-s3cmd-and-s5cmd-on-personal-system) for installation instructions specific to your operating system.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -112,7 +116,7 @@ Save settings? [y/N] y
     2. To locate the appropriate "Path to GPG program" for Ubuntu and Mac operating systems, please use the command `which gpg`. The location may vary depending on your operating system.
 <!-- markdownlint-enable MD046 -->
 
-### s3cmd Commands
+#### s3cmd Commands
 
 ``` bash
 # General command structure for s3cmd
@@ -172,7 +176,7 @@ s3cmd info s3://<bucket>
 
 s5cmd is a parallel transfer tool suggested for period transfers of large and/or many files at a time. It has options for customizing how many processors are available for transferring data as well as how many chunks files can be broken into during transfer to minimize transfer time. See the [preceding section](#command-line) for instructions on how to install both it and s3cmd into an Anaconda environment
 
-### s5cmd Configuration
+#### Configuring s5cmd
 
 s5cmd does not use the same authentication file as s3cmd. Instead, it uses official AWS SDK to access S3 including LTS. The default credentials file for AWS CLI would found at `${HOME}/.aws/credentials`. This file is then populated with different profiles and their access and secret keys. You can create the necessary file with the following commands.
 
@@ -207,7 +211,7 @@ aws_access_key_id = <lab_access_key>
 aws_secret_access_key = <lab_secret_key>
 ```
 
-### s5cmd Commands
+#### s5cmd Commands
 
 s5cmd has the following general form.
 
