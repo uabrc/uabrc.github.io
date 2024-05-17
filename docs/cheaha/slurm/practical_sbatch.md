@@ -196,6 +196,12 @@ sbatch --array=0-$FILE_COUNT job.sh
 
 To use the script, enter the command `bash main.sh` at the terminal.
 
+<!-- markdownlint-disable MD046 -->
+!!! Note
+
+    When writing `sbatch` scripts for job submission and managing modules, begin your script by resetting the module environment with `module reset` to ensure a clean environment for subsequent configurations. See [best practice for loading modules](../software/modules.md/#best-practice-for-loading-modules) for more information.
+<!-- markdownlint-enable MD046 -->
+
 ## Putting it All Together
 
 We needed three parts to make the `sbatch --array` job work for our task. Each of these parts has been described above in some detail.

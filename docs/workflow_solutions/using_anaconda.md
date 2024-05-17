@@ -178,7 +178,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```bash
 
-    conda env export --from-history > <env>.yml 
+    conda env export --from-history > <env>.yml
 
     ```
 
@@ -188,7 +188,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```bash
 
-    conda env export <envname> > <env>.yml 
+    conda env export <envname> > <env>.yml
 
     ```
 
