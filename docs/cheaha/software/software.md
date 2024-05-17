@@ -46,7 +46,7 @@ Anaconda on Cheaha works like it does on any other system, once the module has b
     If the Anaconda software instructs you to use `conda init` while on Cheaha, please ignore it to avoid future issues with [Open OnDemand](../open_ondemand/index.md).
 <!-- markdownlint-disable MD046 -->
 
-For more information on usage with examples, see [Anaconda Environments](../../workflow_solutions/using_anaconda.md). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
+For more information on usage with examples, see [Anaconda Environments](../../workflow_solutions/using_anaconda.md). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../tutorial/pytorch_tensorflow.md).
 
 ## Singularity Containers
 
