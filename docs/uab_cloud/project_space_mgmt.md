@@ -50,19 +50,19 @@ Snapshots in OpenStack are used like Images, thereby making it relatively easy t
 
 1. Go to the `Compute` pane and then navigate to the `Instances` tab in your project space dashboard. You will then see a list of available instances.
 
-![!Screenshot showing Compute and Instance Buttons](images/rc_comp_instance.png)
+    ![!Screenshot showing Compute and Instance Buttons](images/rc_comp_instance.png)
 
 1. Select the Instance you want to create an Image for. Under the Actions, click on `Create Snapshot`.
 
-![!Create Snapshot Button](images/rc_snapshot_button.png)
+    ![!Create Snapshot Button](images/rc_snapshot_button.png)
 
 1. Insert a name for the Snapshot, and then click `Create Snapshot`.
 
-![!Menu Box to create Snapshot](images/rc_instance_snapshot.png)
+    ![!Menu Box to create Snapshot](images/rc_instance_snapshot.png)
 
 1. You will be redirected to the `Images` page, where you newly created Image will appear amongst a list of other available images.
 
-![!Screenshot showing created Images](images/rc_created_image.png)
+    ![!Screenshot showing created Images](images/rc_created_image.png)
 
 The created Image can then be launched, following the same instructions for creating an [Instance](../uab_cloud/tutorial/instances.md). This method would be most ideal if you want to recreate an environment for performing an analysis, but would prefer the workflow be run on different VMs, or to separate datasets or create some form of access restriction on particular research.
 
