@@ -103,7 +103,7 @@ At this time, due to constraints on total [LTS](./lts/index.md) storage, increas
 - No markups are added to the cost of nodes.
 - Purchased nodes are racked with existing hardware in our data centers.
 - Purchased nodes are maintained by Research Computing with the same level of service as other hardware.
-- Purchased nodes are supported for 5 years from date of purchase, the industry standard for commercial data center hardware.
+- Purchased nodes are supported for 5 years from date of purchase, the industry standard for commercial datacenter hardware.
 - Once an order is placed with the vendor, we can provide additional storage immediately _if_ free storage is available, regardless of lead-time.
 
 If you have additional questions _or_ wish to discuss further, please [Contact Support](../help/support.md).
