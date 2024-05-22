@@ -68,11 +68,11 @@ The created Image can then be launched, following the same instructions for crea
 
 ### Creating an Image From a Volume
 
-There are detailed instructions here on how to create an image from a Volume, [here](snapshots.md#creating-a-volume-snapshot).
+There are detailed instructions on how to create an image from a Volume, [here](snapshots.md#creating-a-volume-snapshot).
 
 ### Using a Key Pair to SSH
 
-Another way to access a created `Instance` would be to create a public key and private key for your local machine, and then share this public key with the creator of the `Instance`. As creator of the `Instance` you would need to add individual public keys of persons who you would want to access the created VM into the `authorized_keys` file. You can edit this file by using the command below, add the shared public key in a new line inside the file (copy and paste). Save the file and follow instructions here for remote accessing your `Instance` using [`SSH`](remote_access.md). Alternatively you can share the public and private key file you created for the instance following the same steps.
+Another way to access a created `Instance` would be to create a public key and private key for your local machine, and then share this public key with the creator of the `Instance`. As creator of the `Instance` you would need to add individual public keys of persons who you would want to access the created VM into the `authorized_keys` file. You can edit this file by using the command below, add the shared public key in a new line inside the file (copy and paste). Save the file and follow instructions here for remote accessing your `Instance` using [`SSH`](remote_access.md).
 
 ```bash
 # access and edit the file using
@@ -80,3 +80,27 @@ Another way to access a created `Instance` would be to create a public key and p
 nano cd ~/.ssh/authorized_keys
 
 ```
+
+Alternatively you can share the private key file you created for the `Instance`, with members of your project space. But in this case, your project members would have to save the shared private key (usually a `.pem` file) in their `$HOME/.ssh` folder. Members of your project space can ssh into the shared `Instance`, by doing the following;
+
+1. Add the private key into your `~/.ssh` folder and run the command below.
+
+    ```bash
+        
+        ssh-add ~/.ssh/<keypair_filename>.pem
+
+    ```
+
+1. Change the file permission.
+
+    ```bash
+        
+        sudo chmod 600 ~/.ssh/<keypair_filename>.pem
+
+    ```
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Please note Images created from an Instance would inherit the key-pair of the parent Instance.
+<!-- markdownlint-enable MD046 -->
