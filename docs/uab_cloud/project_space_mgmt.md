@@ -42,7 +42,7 @@ When in the project space, select `Compute` and then `Instances` to see availabl
 
 ## Sharing an Instance in a Project Space
 
-There are a couple of ways to collaborate while using on an `Instance`, this article would focus on some easy-to-use ways to use an `Instance` in a shared project space.
+There are a couple of ways to collaborate while using an `Instance`, this article would focus on some easy-to-use ways to use an `Instance` in a shared project space.
 
 ### Creating an Image From an Instance Using Snapshots
 
@@ -72,7 +72,7 @@ There are detailed instructions here on how to create an image from a Volume, [h
 
 ### Using a Key Pair to SSH
 
-Another way to access a created `Instance` would be to create a public key and private key for your local machine, and then share this public key with the creator of the `Instance`. As creator of the `Instance` you would need to add individual public keys of persons who you would want to access the created VM into the `authorized_keys` file. You can edit this file by using the command below, add the shared public key in a new line inside the file (copy and paste). Save the file and follow instructions here for remote accessing your `Instance` using [`SSH`](remote_access.md).
+Another way to access a created `Instance` would be to create a public key and private key for your local machine, and then share this public key with the creator of the `Instance`. As creator of the `Instance` you would need to add individual public keys of persons who you would want to access the created VM into the `authorized_keys` file. You can edit this file by using the command below, add the shared public key in a new line inside the file (copy and paste). Save the file and follow instructions here for remote accessing your `Instance` using [`SSH`](remote_access.md). Alternatively you can share the public and private key file you created for the instance following the same steps.
 
 ```bash
 # access and edit the file using
