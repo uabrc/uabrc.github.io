@@ -111,6 +111,12 @@ For versions of PyTorch 1.13 and newer, use the following template instead.
 - CPU Version: `conda install pytorch==... torchvision==... cpuonly -c pytorch`
 - GPU Version: `conda install pytorch==... torchvision==... pytorch-cuda=... -c pytorch -c nvidia`
 
+<!-- markdownlint-disable MD046 -->
+!!! Note
+
+     When loading modules, such as CUDA modules for jobs requiring one or more GPUs, always utilize `module reset` before loading modules, both at the terminal and within `sbatch` scripts. See [best practice for loading modules](../software/modules.md/#best-practice-for-loading-modules) for more information.
+<!-- markdownlint-disable MD046 -->
+
 ## Reviewing GPU Jobs
 
 As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct) to review GPU jobs. Quantity of GPUs may be reviewed using the `reqtres` and `alloctres` [fields](job_management.md#sacct-fields).

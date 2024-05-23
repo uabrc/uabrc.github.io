@@ -46,11 +46,7 @@ Anaconda on Cheaha works like it does on any other system, once the module has b
     If the Anaconda software instructs you to use `conda init` while on Cheaha, please ignore it to avoid future issues with [Open OnDemand](../open_ondemand/index.md).
 <!-- markdownlint-disable MD046 -->
 
-For more information on usage with examples, see [Anaconda Environments](../../workflow_solutions/using_anaconda.md).
-
-### Speedups Using Mamba
-
-Use of Mamba has been deprecated on Cheaha. On Cheaha, use `module load Anaconda3` and the usual `conda` commands instead. The backend of `conda` has been set to use `libmamba` and is now equally performant.
+For more information on usage with examples, see [Anaconda Environments](../../workflow_solutions/using_anaconda.md). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../tutorial/pytorch_tensorflow.md).
 
 ## Singularity Containers
 
