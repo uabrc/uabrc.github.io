@@ -96,7 +96,7 @@ import torch
 
 print(torch.cuda.is_available())
 x = torch.cuda.current_device()
-print(torch.get_device_name(x))
+print(torch.cuda.get_device_name(x))
 
 ```
 
