@@ -96,7 +96,7 @@ Every interactive app has resources only allocated on a single node, and resourc
 
 #### Environment Setup Window
 
-n addition to requesting general resources, for some apps you will have the option to add commands to be run during job startup in an Environment Setup Window. See below for an example showing how to load CUDA into a Jupyter job so it can use a GPU.
+In addition to requesting general resources, for some apps you will have the option to add commands to be run during job startup in an Environment Setup Window. See below for an example showing how to load CUDA into a Jupyter job so it can use a GPU.
 
 ![! Example environment setup window showing how to load CUDA into a Jupyter job](./images/ood_environment_setup_window.png)
 
