@@ -145,6 +145,7 @@ When using modules in Cheaha, we recommend users to follow these best practices 
 
 2. Be selective and only load a specific module version that you need for your current workflow. Loading unnecessary modules can lead to conflicts and inefficiencies.
 3. Before loading modules in a shell/bash/sbatch script, use a clean shell by using `module reset` at the beginning.
+
       - What it does:
          - Clearing loaded modules.
          - Loading default modules specified by the system administrator.
@@ -153,7 +154,7 @@ When using modules in Cheaha, we recommend users to follow these best practices 
       - Why it is a best-practice:
           - Ensures reproducibility by starting with a clean environment.
           - Manages software dependencies effectively.
-  
+
 Using `module reset` before loading modules separates what software is loaded in the working shell from the software loaded in the script shell. Be aware that forked processes (like scripts) and Slurm commands inherit the environment variables of the working shell, including loaded modules. Here is an example that shows module conflict between cuda11.8 and cuda11.4 versions that may lead to unexpected behavior or an erroneous output.
 
 ```bash
