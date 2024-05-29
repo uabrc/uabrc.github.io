@@ -50,4 +50,4 @@ For more information on usage with examples, see [Anaconda Environments](../../w
 
 ## Singularity Containers
 
-Containers are a very useful resource for installing software without needing administrator permission. Please read the full documentation about singularity and containers on our [main Singularity page](../../workflow_solutions/getting_containers.md#containers-on-cheaha).
+Containers are a very useful resource for installing software without needing administrator permission. Please read the full documentation about Singularity and containers on our [main Singularity page](../../workflow_solutions/getting_containers.md#containers-on-cheaha).

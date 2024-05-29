@@ -126,7 +126,7 @@ You can execute Parabricks on Cheaha using `amperenodes` partition. Maximum numb
 module load Singularity/3.5.2-GCC-5.4.0-2.26
 module load CUDA/11.6.0
 
-#Run the "pbrun" executable from the singularity image "parabricks-4.2.0-1.sif", and pass the CUDA lib path to make it accessible within the container
+#Run the "pbrun" executable from the Singularity image "parabricks-4.2.0-1.sif", and pass the CUDA lib path to make it accessible within the container
 singularity run --nv parabricks-4.2.0-1.sif /bin/pbrun fq2bam \
 --ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta \
 --in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz \
@@ -236,7 +236,7 @@ $ module load CUDA/11.6.0
 
 $ nvidia-smi
 
-Fri Nov  3 12:38:24 2023       
+Fri Nov  3 12:38:24 2023
 +---------------------------------------------------------------------------------------+
 | NVIDIA-SMI 535.86.10              Driver Version: 535.86.10    CUDA Version: 12.2     |
 |-----------------------------------------+----------------------+----------------------+
@@ -252,7 +252,7 @@ Fri Nov  3 12:38:24 2023
 | N/A   32C    P0             112W / 300W |  16631MiB / 81920MiB |     96%      Default |
 |                                         |                      |             Disabled |
 +-----------------------------------------+----------------------+----------------------+
-                                                                                         
+
 +---------------------------------------------------------------------------------------+
 | Processes:                                                                            |
 |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
