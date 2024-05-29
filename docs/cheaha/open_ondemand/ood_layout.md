@@ -126,7 +126,7 @@ Once the job is launched on the compute nodes, the state will switch to `Running
 
 The My Interactive Sessions page lists the available apps and your current interactive sessions. If you are logged out, disconnected, or lose track of an interactive application (because of a closed tab or computer shutdown) you can reconnect to running applications on this page. The My Interactive Sessions page looks like:
 
-![!List of interactive sessions shown as job cards.](./images/ood_interactive_sessions-II.png)
+![!List of interactive sessions shown as job cards.](./images/ood_interactive_sessions_II.png)
 
 For each job running via Open OnDemand, there will be a card listed on this page:
 
