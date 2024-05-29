@@ -228,7 +228,7 @@ Once the prerequisites are complete, the following steps must be performed to in
         - `r-irkernel` for R users
         - [Optional] `pip`
 
-2. Because floating IPs are, by default, reachable by anyone on the UAB Campus network, you'll need to secure the server using the steps below.
+2. Because floating IPs are, by default, reachable by anyone on the UAB Campus Network, you'll need to secure the server using the steps below.
     1. Generate a notebook config file using `jupyter notebook --generate-config`. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#prerequisite-a-notebook-configuration-file)]
     2. Prepare a password using `jupyter notebook password`. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#automatic-password-setup)]
     3. Set up SSL for an encrypted connection. For now create a self-signed certificate using the following command. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication)]
