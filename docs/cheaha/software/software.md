@@ -51,3 +51,9 @@ For more information on usage with examples, see [Anaconda Environments](../../w
 ## Singularity Containers
 
 Containers are a very useful resource for installing software without needing administrator permission. Please read the full documentation about Singularity and containers on our [main Singularity page](../../workflow_solutions/getting_containers.md#containers-on-cheaha).
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+Singularity is not installed via the [module system](./modules.md), in accordance with the most recent security recommendations. The `singularity` command may be used directly on any compute node, without the need for `module load`.
+<!-- markdownlint-disable MD046 -->
