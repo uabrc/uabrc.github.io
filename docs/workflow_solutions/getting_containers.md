@@ -14,13 +14,7 @@ It is often a good idea to search the Github repo for an application or pipeline
 
 ## Containers on Cheaha
 
-Using containers on Cheaha bypasses the need to message support to install necessary software. Containers can be downloaded by any user into their personal space and used immediately without admin permission. as mentioned above, you will need to use Singularity containers on Cheaha. You can find all of the Singularity modules using the following command:
-
-``` bash
-module spider Singularity
-```
-
-It's highly recommended to only use Singularity versions 3+.
+Using containers on Cheaha bypasses the need to message support to install necessary software. Containers can be downloaded by any user into their personal space and used immediately without admin permission. As mentioned above, you will need to use Singularity containers on Cheaha. In accordance with the most recent security recommendations, Singularity is installed directly on each node, so module commands are not needed to use Singularity.
 
 ### Pull Singularity Images
 
