@@ -713,6 +713,19 @@
           
           
             <li class="md-nav__item">
+    <a href="#installation-of-s3cmd-and-s5cmd-on-cheaha" class="md-nav__link">
+      <span class="md-ellipsis">
+        Installation of s3cmd and s5cmd on Cheaha
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
     <a href="#s3cmd" class="md-nav__link">
       <span class="md-ellipsis">
         s3cmd
@@ -725,16 +738,7 @@
         <ul class="md-nav__list">
           
           
-            <li class="md-nav__item">
-    <a href="#s3cmd-commands" class="md-nav__link">
-      <span class="md-ellipsis">
-        s3cmd Commands
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
+          
           
           
         </ul>
@@ -757,33 +761,24 @@
         <ul class="md-nav__list">
           
           
-            <li class="md-nav__item">
-    <a href="#configuring-s5cmd" class="md-nav__link">
-      <span class="md-ellipsis">
-        Configuring s5cmd
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
           
-          
-          
-            <li class="md-nav__item">
-    <a href="#s5cmd-commands" class="md-nav__link">
-      <span class="md-ellipsis">
-        s5cmd Commands
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
           
           
         </ul>
       </nav>
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#installation-of-s3cmd-and-s5cmd-on-personal-system" class="md-nav__link">
+      <span class="md-ellipsis">
+        Installation of s3cmd and s5cmd on Personal System
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
     
   </li>
           
@@ -2876,6 +2871,19 @@
           
           
             <li class="md-nav__item">
+    <a href="#installation-of-s3cmd-and-s5cmd-on-cheaha" class="md-nav__link">
+      <span class="md-ellipsis">
+        Installation of s3cmd and s5cmd on Cheaha
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
     <a href="#s3cmd" class="md-nav__link">
       <span class="md-ellipsis">
         s3cmd
@@ -2888,16 +2896,7 @@
         <ul class="md-nav__list">
           
           
-            <li class="md-nav__item">
-    <a href="#s3cmd-commands" class="md-nav__link">
-      <span class="md-ellipsis">
-        s3cmd Commands
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
+          
           
           
         </ul>
@@ -2920,33 +2919,24 @@
         <ul class="md-nav__list">
           
           
-            <li class="md-nav__item">
-    <a href="#configuring-s5cmd" class="md-nav__link">
-      <span class="md-ellipsis">
-        Configuring s5cmd
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
           
-          
-          
-            <li class="md-nav__item">
-    <a href="#s5cmd-commands" class="md-nav__link">
-      <span class="md-ellipsis">
-        s5cmd Commands
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
           
           
         </ul>
       </nav>
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#installation-of-s3cmd-and-s5cmd-on-personal-system" class="md-nav__link">
+      <span class="md-ellipsis">
+        Installation of s3cmd and s5cmd on Personal System
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
     
   </li>
           
@@ -2986,7 +2976,7 @@
 
 
 <h1 id="connecting-to-lts">Connecting to LTS<a class="headerlink" href="#connecting-to-lts" title="Permanent link">&para;</a></h1>
-<p>LTS is not available as a mounted filesystem on local computers or Cheaha. You must use an interface to transfer data between LTS and whichever machine you are using. There a variety of interfaces with the following recommendations.</p>
+<p>LTS is not available as a mounted filesystem on local computers or Cheaha. You must use an interface to transfer data between LTS and whichever machine you are using. There are a variety of interfaces with the following recommendations.</p>
 <h2 id="globus">Globus<a class="headerlink" href="#globus" title="Permanent link">&para;</a></h2>
 <p><a href="../../transfer/globus/#long-term-storage-s3-lts-connector">Globus</a> is a general file transfer system that operates through a web browser and is recommended for most file transfer needs. UAB has an S3 connector for Globus that can transfer data to and from LTS as long as the user has access to the desired buckets.</p>
 <p>To connect to the LTS endpoint in Globus, search <code>UAB Research Computing LTS</code> in the search bar and enter your access and secret keys given to you by Research Computing staff. You will be able to see the buckets owned by the account associated with the keys you entered.</p>
@@ -3007,12 +2997,14 @@
 <li><a href="https://github.com/s3tools/s3cmd">s3cmd</a> is a Python tool that we suggest using for managing bucket permissions as well as small transfers.</li>
 <li><a href="https://github.com/peak/s5cmd">s5cmd</a> is a Go package that transfers data much more quickly than s3cmd, especially as the file size and/or quanitity increases. It does not have full bucket management capabilities.</li>
 </ol>
-<p>You do not need to install both tools if they aren't necessary. Both are available to install into <a href="../../../workflow_solutions/using_anaconda/">Anaconda</a> environments. It's suggested to create a single environment named <code>s3</code> and install both s3cmd and s5cmd into it for easy access to both tools. Specific install and usage commands for each are given in their respective sections. You can create the general environment using the following commands:</p>
+<h3 id="installation-of-s3cmd-and-s5cmd-on-cheaha">Installation of <code>s3cmd</code> and <code>s5cmd</code> on Cheaha<a class="headerlink" href="#installation-of-s3cmd-and-s5cmd-on-cheaha" title="Permanent link">&para;</a></h3>
+<p>To install the tools on Cheaha, you can request a compute node through Cheaha's <a href="../../../cheaha/open_ondemand/ood_layout/#creating-an-interactive-job">Open OnDemand web portal</a>.Once your job is launched, open a terminal to execute the commands listed below. You do not need to install both tools if they aren't necessary. Both are available to install into <a href="../../../workflow_solutions/using_anaconda/">Anaconda</a> environments. It's suggested to create a single environment named <code>s3</code> and install both s3cmd and s5cmd into it for easy access to both tools. Specific install and usage commands for each are given in their respective sections. You can create the general environment using the following commands:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>s3<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>pip<span class="w"> </span>s5cmd
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>conda<span class="w"> </span>activate<span class="w"> </span>s3
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pip<span class="w"> </span>install<span class="w"> </span>s3cmd
 </code></pre></div>
+<p>Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your personal computer and LTS, you will need to install <code>s3cmd</code> or <code>s5cmd</code> on your machine. Please refer to this <a href="#installation-of-s3cmd-and-s5cmd-on-personal-system">section</a> for installation instructions specific to your operating system.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3021,7 +3013,9 @@
 <!-- markdownlint-enable MD046 -->
 
 <h3 id="s3cmd">s3cmd<a class="headerlink" href="#s3cmd" title="Permanent link">&para;</a></h3>
-<p>s3cmd is our suggested tool for managing bucket permissions and small, periodic file transfers. See the <a href="#command-line">preceding section</a> for instructions on how to install both it and s5cmd into an Anaconda environment. Once you have s3cmd installed and the environment active, you can start the configuration process like so:</p>
+<p>s3cmd is a tool used for managing buckets and objects in Amazon S3 (Simple Storage Service). s3cmd is our suggested tool for operations such as listing buckets, managing bucket permissions, synchronizing directories with s3 buckets, and for small periodic file transfers. If high-speed transfer of a large files is required, we recommend using <a href="#s5cmd">s5cmd</a>. See the <a href="#command-line">preceding section</a> for instructions on how to install both it and s5cmd into an Anaconda environment.</p>
+<h4 id="configuring-s3cmd">Configuring s3cmd<a class="headerlink" href="#configuring-s3cmd" title="Permanent link">&para;</a></h4>
+<p>Configuring s3cmd is necessary to establish a secure connection for accessing your LTS bucket in Amazon S3. Once you have s3cmd installed and the environment active, you can start the configuration process like so:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>s3cmd<span class="w"> </span>--configure<span class="w"> </span><span class="o">[</span>-c<span class="w"> </span><span class="nv">$HOME</span>/profile_name<span class="o">]</span>
 </code></pre></div>
 <p>You can run the configuration either with or without the <code>[-c]</code> option. If you use it, a file named <code>profile_name</code> will be created in your home directory with your login credentials and other information. If you omit the <code>-c</code> option, a file called <code>$HOME/.s3cfg</code> will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform and are only managing a single account, it's suggested to omit the <code>-c</code> option. If you are a PI or data manager and are managing both a personal and lab/core LTS account, you will need to make a separate profile for each account.</p>
@@ -3071,9 +3065,12 @@
 <a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>Save settings? [y/N] y
 </code></pre></div>
 <!-- markdownlint-disable MD046 -->
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you choose to test access using your credentials, the test may fail. Do not rely on the automatic test results, test access yourself by either creating a bucket or listing files from a existing bucket using the commands listed below.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ol>
+<li>If you choose to test access using your credentials, the test may fail. Do not rely on the automatic test results, test access yourself by either creating a bucket or listing files from a existing bucket using the commands listed below.</li>
+<li>To locate the appropriate "Path to GPG program" for Ubuntu and Mac operating systems, please use the command <code>which gpg</code>. The location may vary depending on your operating system.</li>
+</ol>
 </div>
 <!-- markdownlint-enable MD046 -->
 
@@ -3182,6 +3179,40 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
+<h3 id="installation-of-s3cmd-and-s5cmd-on-personal-system">Installation of <code>s3cmd</code> and <code>s5cmd</code> on Personal System<a class="headerlink" href="#installation-of-s3cmd-and-s5cmd-on-personal-system" title="Permanent link">&para;</a></h3>
+<p>The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems.</p>
+<ul>
+<li>
+<p>Ubuntu</p>
+<p>To install <code>s3cmd</code> using the following command,</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sudp<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>s3cmd
+</code></pre></div>
+<p>To install <code>s5cmd</code>, you will have to first install <code>go</code> software version 1.19+. Please refer to the <a href="https://go.dev/dl/">Download page</a>, and <a href="https://go.dev/doc/install">installation instruction</a> for further details. After intalling <code>go</code>, you can build <code>s5cmd</code> in your <code>$HOME</code> directory using the below steps.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/peak/s5cmd/v2@master
+</code></pre></div>
+<p>The below steps are to add <code>go</code> bin directory to your system's <code>PATH</code> which allows you to run <code>s5cmd</code> from any location in your terminal.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=$PATH:$HOME/go/bin&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</code></pre></div>
+</li>
+<li>
+<p>Mac</p>
+<p>Following are installation commands for <code>s3cmd</code> and <code>s5cmd</code> on a Mac System.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>brew<span class="w"> </span>install<span class="w"> </span>s3cmd
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>brew<span class="w"> </span>install<span class="w"> </span>peak/tap/s5cmd
+</code></pre></div>
+<p>You may need to install <code>gpg</code> on a Mac using the below command,</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>brew<span class="w"> </span>install<span class="w"> </span>gnupg
+</code></pre></div>
+</li>
+<li>
+<p>Windows</p>
+<p>To install <code>s3cmd</code> and <code>s5cmd</code> on a Windows system, you will first need to install <a href="../../../uab_cloud/remote_access/#windows-subsystem-for-linux-wsl">Windows Subsystem for Linux (WSL)</a>. Once WSL is installed, you can use the command line instructions for <a href="#ubuntu">Ubuntu</a> to install <code>s3cmd</code> and <code>s5cmd</code>.</p>
+<p>For more information on <code>s3cmd</code> and <code>s5cmd</code>, please refer to the official <a href="https://s3tools.org/download">s3tools Page</a>, and <a href="https://github.com/peak/s5cmd?tab=readme-ov-file">s5cmd page</a>.</p>
+</li>
+</ul>
 <h2 id="alternatives">Alternatives<a class="headerlink" href="#alternatives" title="Permanent link">&para;</a></h2>
 <p>There are other tools for interfacing with LTS such as rclone. Please see our <a href="../../transfer/rclone/">rclone documentation</a> for more details.</p>
 
@@ -3204,7 +3235,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2024</span>
   </span>
 
     
