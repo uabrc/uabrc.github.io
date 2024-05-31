@@ -52,9 +52,13 @@ Please note that the instructions mentioned above are specific to the Cheaha sys
     We manually install pip into the conda environment so that `pip` will install `s3cmd` into the conda environment as opposed to `$HOME/.local`. This way, you do not need to add the `.local` folder to your path whenever you want to use `s3cmd`.
 <!-- markdownlint-enable MD046 -->
 
-### s3cmd Configuration
+### s3cmd
 
-s3cmd is our suggested tool for managing bucket permissions and small, periodic file transfers. See the [preceding section](#command-line) for instructions on how to install both it and s5cmd into an Anaconda environment. Once you have s3cmd installed and the environment active, you can start the configuration process like so:
+s3cmd is a tool used for managing buckets and objects in Amazon S3 (Simple Storage Service). s3cmd is our suggested tool for operations such as listing buckets, managing bucket permissions, synchronizing directories with s3 buckets, and for small periodic file transfers. If high-speed transfer of a large files is required, we recommend using [s5cmd](#s5cmd). See the [preceding section](#command-line) for instructions on how to install both it and s5cmd into an Anaconda environment.
+
+#### Configuring s3cmd
+
+Configuring s3cmd is necessary to establish a secure connection for accessing your LTS bucket in Amazon S3. Once you have s3cmd installed and the environment active, you can start the configuration process like so:
 
 ``` bash
 s3cmd --configure [-c $HOME/profile_name]
