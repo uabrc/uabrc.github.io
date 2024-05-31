@@ -118,7 +118,7 @@ Depending on the resources requested, you may need to wait for some time. After 
 
 ![!desktop session in Starting state](./images/ood_desktop_starting.png)
 
-Once the job is launched on the compute nodes, the state will switch to `Running`. You will then see the option `Launch Desktop in new tab`  and button. Click this button to open the interactive VNC session in a new tab. Alternatively, you can also click the blue button in the `Host` field to open a terminal directly. This terminal is opened on the compute node and so can run any commands you need.
+Once the job is launched on the compute nodes, the state will switch to `Running`. You will then see the option `Launch Desktop in new tab` button. Click this button to open the interactive VNC session in a new tab. Alternatively, you can also click the blue button in the `Host` field to open a terminal directly. This terminal is opened on the compute node and so can run any commands you need.
 
 ![!desktop session in Running state](./images/ood_desktop_running.png)
 
