@@ -1,3 +1,7 @@
+---
+toc_depth: 3
+---
+
 # Writing Slurm Batch Jobs
 
 This Slurm tutorial serves as a hands-on guide for users to create Slurm batch scripts based on their specific software needs and apply them for their respective usecases.  It covers basic examples for beginners and advanced ones, including sequential and parallel jobs, array jobs, multithreaded jobs, GPU utilization jobs, and MPI (Message Passing Interface) jobs.
@@ -21,6 +25,10 @@ The last portion is running the actual code or software. Here, the computational
 ## Prerequisites
 
 If you're new to using Unix/Linux commands and bash scripting, we suggest going through the software carpentry lesson, [The Unix Shell](https://swcarpentry.github.io/shell-novice/). Also, we recommend reviewing the [Cheaha Hardware Information](../../cheaha/hardware.md) to help guide you in chosing appropriate partition and resources.
+
+## Choosing a Suitable for your Usecase
+
+1. [Example 1](#example-1-a-simple-slurm-batch-job) is ideal for cheaha users who are new to Slurm batch job submission.
 
 ## Example 1: A Simple Slurm Batch Job
 
