@@ -72,11 +72,11 @@ You are on compute nodes if:
 
 - using Open OnDemand Interactive Apps
 - using Open OnDemand Job Composer
-- terminal prompt looks like `[<blazerid>@c0001 ~]$`
+- terminal prompt looks like `[<BlazerID>@c0001 ~]$`
 
 You are on the login node if:
 
-- terminal prompt looks like `[<blazerid>@login001 ~]$`
+- terminal prompt looks like `[<BlazerID>@login001 ~]$`
 
 The Login node can be accessed from the Cheaha landing page or through the home directory, while compute nodes can be accessed after a job has been created on the "My Interactive Sessions". You can see in the images below, how to identify if you’re within a login node or compute node. Image below is a compute node. Safe for heavy computation.
 
