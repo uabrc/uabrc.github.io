@@ -4,7 +4,7 @@ toc_depth: 3
 
 # Writing Slurm Batch Jobs
 
-This Slurm tutorial serves as a hands-on guide for users to create Slurm batch scripts based on their specific software needs and apply them for their respective usecases.  It covers basic examples for beginners and advanced ones, including sequential and parallel jobs, array jobs, multithreaded jobs, GPU utilization jobs, and MPI (Message Passing Interface) jobs.
+This Slurm tutorial serves as a hands-on guide for users to create Slurm batch scripts based on their specific software needs and apply them for their respective usecases.  It covers basic examples for beginners and advanced ones, including sequential and parallel jobs, array jobs, multithreaded jobs, GPU utilization jobs, and MPI (Message Passing Interface) jobs. To know which type of batch jobs are suitable for your pipeline/usecase, please refer to the [User Guide](#a-user-guide-for-identifying-job-types-and-parallel-computing-approaches) section.
 
 ## Structure of a Slurm Batch Job
 
@@ -26,14 +26,28 @@ The last portion is running the actual code or software. Here, the computational
 
 If you're new to using Unix/Linux commands and bash scripting, we suggest going through the software carpentry lesson, [The Unix Shell](https://swcarpentry.github.io/shell-novice/). Also, we recommend reviewing the [Cheaha Hardware Information](../../cheaha/hardware.md) to help guide you in chosing appropriate partition and resources.
 
-## Choosing a Suitable for your Usecase
+## A User Guide for Understanding and Identifying Types of Batch Jobs
 
-1. [Example 1](#example-1-a-simple-slurm-batch-job) is ideal for cheaha users who are new to Slurm batch job submission.
+This user guide provides comprehensive insight into different types of batch jobs, facilitating in identifying the most suitable job type for your specific tasks. With clear explanations and practical examples, you will gain a deeper understanding of sequential, parallel, array, multicore, GPU, and multi-node jobs, assisting to make informed decisions when submitting jobs on the Cheaha system.
 
-## Example 1: A Simple Slurm Batch Job
+1. [Simple Batch Job](#example-1-a-simple-slurm-batch-job) is ideal for Cheaha users who are new to Slurm batch job submission.
+
+2. [Sequential Batch Job](#example-2-sequential-job) is for running tasks that are dependent on each other and require only one CPU resource. Increasing the number of CPUs typically does not enhance performance in these cases. For instance, a Python or R script that executes a series of steps—such as data loading, extraction, analysis, and output reporting—where each step must be completed before the next can begin.
+
+3. [Parallel Job](#example-3-parallel-jobs) is suitable for executing multiple independent tasks/jobs simultaneoulsy and efficiently distributing them across resources. This approach is particularly beneficial for small-scale tasks that cannot be split into parallel processes within the code itself. For example, consider a Python script that operates on different data set, in such a scenario, you can utilize srun to execute multiple instances of the script concurrently, each operating on a different dataset and on different resources.
+
+4. [Array Job](#example-4-array-job) is used for submitting and running mutiple large number of identical tasks in parallel. They share the same code and execute with similar resource requirements. For instance, array jobs can be designed for executing multiple instances of the same task with slight variations in inputs or parameters such as perform [FastQC](https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help) processing on 10 different samples.
+
+5. [Mutlicore Job](#example-5-multithreaded-or-multicore-job) is used when the software itself support multithreaded parallelism inherently. For instance, there are numerous software such as [MATLAB](https://www.mathworks.com/help/matlab/ref/parfor.html), [FEBio](https://help.febio.org/FebioUser/FEBio_um_3-4-Section-2.6.html), [Xplor-NIH](https://nmr.cit.nih.gov/xplor-nih/doc/current/helperPrograms/options.html), that support implicit parallelism and can be run on multiple cores by simply configuring with the appropriate options.
+
+6. [GPU Job](#example-6-gpu-job) are appropriate for pipelines and software that are designed to run on GPU-based systems. Example includes [Tensorflow](https://www.tensorflow.org/guide/gpu), [Parabricks](../../education/case_studies.md), [PyTorch](https://pytorch.org/tutorials/prototype/ios_gpu_workflow.html#prototype-use-ios-gpu-in-pytorch), etc.
+
+7. [Multi Node Job](#example-7-multinode-job) is for pipelines and softwares that can be distributed and run across multiple nodes. For example, MPI based applications/tools such as [Quantum Expresso](https://www.quantum-espresso.org/Doc/user_guide/node20.html), [Amber](https://usc-rc.github.io/tutorials/amber), [LAMMPS](https://docs.lammps.org/Run_basics.html), etc.
+
+### Example 1: A Simple Slurm Batch Job
 
 Let us start with a simple example to print `hostname` of the node where your job is submitted. You will have to request for the required resources to run your job using Slurm parameters (lines 5-10). To learn more about individual Slurm parameters given in the example, please refer to [Slurm flag and environment variables](../slurm/submitting_jobs.md/#slurm-flags-and-environment-variables) and the official [Slurm documentation](https://slurm.schedmd.com/).
-
+o
 To test this example, copy the below script in a file named `hostname.job`. This job executes the `hostname` command (line 15) on a single node, using one task, one CPU core, 1 gigabyte of memory, with a time limit of 10 minutes. The output and error logs are directed to separate files with names based on their job name and ID (line 11 and 12). For a more detailed understanding of the individual parameters used in this script, please refer to the section on [Simple Batch Job](../slurm/submitting_jobs.md/#a-simple-batch-job). The following script includes comments, marked with `###`, describing their functions. We will utilize this notation for annotating comments in subsequent examples.
 
 ```bash linenums="1"
@@ -54,7 +68,7 @@ To test this example, copy the below script in a file named `hostname.job`. This
 hostname
 ```
 
-### Submitting and Monitoring the Job
+#### Submitting and Monitoring the Job
 
 Now submit the script `hostname.job` for execution on Cheaha cluster using `sbatch hostname.job`. Slurm processes the job script and schedules the job for execution on the cluster. The output you see, "Submitted batch job 26035322," indicates that the job submission was successful, and Slurm has assigned a unique job ID `26035322`.
 
@@ -88,7 +102,7 @@ $ cat hostname_26035322.out
 c0156
 ```
 
-## Example 2: Sequential Job
+### Example 2: Sequential Job
 
 This example illustrate a Slurm job that runs a Python script involving [NumPy](https://numpy.org/) operation. This python script is executed sequentially using the same resource configuration as [Example 1](../slurm/slurm_tutorial.md/#example-1-a-simple-slurm-batch-job). Let us name the below script as `numpy.job`.
 
@@ -144,7 +158,7 @@ $ sacct -j 26127143
 26127143.ex+     extern                 USER          1  COMPLETED      0:0
 ```
 
-## Example 3: Parallel Jobs
+### Example 3: Parallel Jobs
 
 Multiple jobs or tasks can be executed simultaneously using `srun` within a single batch script. In this example, the same executable `python_script_new.py` is run in parallel with distinct inputs (line 17-19). The `&` symbol at the end of each line run these commands in background. The `wait` command (line 20) performs synchronization and ensures that all background processes and parallel tasks are completed before finishing. In Line 4, three tasks are requested as there are three executables to be run in parallel. The overall job script is allocated with three CPUs, and in lines(17-19), each `srun` script utilizes 1 CPU to perform their respective task. Copy the batch script into a file named `multijob.job`. Use the same `conda` environment `pytools-env` shown in [example2](../slurm/slurm_tutorial.md/#example-2-sequential-job).
 
@@ -221,7 +235,7 @@ $ sacct -j 27099591
 27099591.2       python                 USER          1  COMPLETED      0:0 
 ```
 
-## Example 4: Array Job
+### Example 4: Array Job
 
 Array jobs are more effective when you have a larger number of similar tasks to be executed simultaneously with varied input data, unlike `srun` parallel jobs which are suitable for running a smaller number of tasks concurrently (e.g. less than 5). Array jobs are easier to manage and monitor multiple tasks through unique identifiers.
 
@@ -280,7 +294,7 @@ $ sacct -j 27101430
 27101430_2.+     extern                 USER          1  COMPLETED      0:0 
 ```
 
-## Example 5: Multithreaded or Multicore Job
+### Example 5: Multithreaded or Multicore Job
 
 This Slurm script illustrates execution of a MATLAB script in a multithread/multicore environemnt. Save the script as `multithread.job`. The `%` symbol in this script denotes comments within MATLAB code. Line 16 runs the MATLAB script `parfor_sum_array`, with an input array size `100` passed as argument, using 4 CPU cores (as specified in Line 5).
 
@@ -376,7 +390,7 @@ $ sacct -j 27105035
 27105035.ex+     extern                 USER          4  COMPLETED      0:0 
 ```
 
-## Example 6: GPU Job
+### Example 6: GPU Job
 
 This slurm script shows the execution of Tensorflow job using GPU resources. Let us save this script as `gpu.job`. The Slurm parameter `--gres=gpu:2` in line 6, requests for 2 GPUs. In line 8, note that in order to run GPU-based jobs, either the `amperenodes` or `pascalnodes` partition must be used (please refer to our [GPU page](../slurm/gpu.md) for more information). Lines 14-15 loads the necessary CUDA modules, while lines 18-19 load the Anaconda module and activate a `conda` environment called `tensorflow`. Refer to [Tensorflow official page](https://www.tensorflow.org/) for installation. The last line executes a python script that utilizes Tensorflow library to perform matrix multiplication across multiple GPUs.
 
@@ -462,7 +476,7 @@ $ sacct -j 27107694 --format=JobID,JobName,Partition,Account,AllocCPUS,allocgres
 27107694.ex+     extern                 USER          1        gpu:2  COMPLETED      0:0 
 ```
 
-## Example 7: Multinode Job
+### Example 7: Multinode Job
 
 The below Slurm script runs a Quantum Expresso job using the `pw.x` executable on multiple nodes. In this example, we request for 2 nodes on `amd-hdr100` partition in lines 4 and 7. The suitable Quantum Expresso module is loaded in line 13. The last line is configured for a parallel computation of Quantum Expresso simulation across 2 nodes `N 2` and 4 MPI processes `-nk 4` for the input parameters in `pw.scf.silicon.in`. The input file `pw.scf.silicon.in` and psuedo potential file is taken from the [github page](https://pranabdas.github.io/espresso/hands-on/scf/). However this input is subject to change, hence according to your use case you can change the inputs.
 
