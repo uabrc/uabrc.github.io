@@ -298,15 +298,16 @@ If we find the package at one of the Channel sources mentioned above, we can che
 
     Then follow the installation instructions you see in the image below. ![!Anaconda.org page showing package installation instructions](images/install_anaconda_package.png)
 
-1. Using Conda Search Command: You can use the `conda search <package_name` command directly in your terminal to find packages. Replace `package_name` with the package you would like to search for. To do this on Cheaha, make sure to `module load Anaconda3` first, and follow the instructions to [activate](#activate-an-environment) an environment. Then do `conda search numpy`. You should get a long list of numpy packages. Review this output, but take note of the highlighted portions in the image. The section with a red selection shows the numpy versions that are available, The section with a blue selection shows the channel where each numpy version is stored. image
+1. Using Conda Search Command: You can use the `conda search <package_name` command directly in your terminal to find packages. Replace `package_name` with the package you would like to search for. To do this on Cheaha, make sure to `module load Anaconda3` first, and follow the instructions to [activate](#activate-an-environment) an environment. Then do `conda search numpy`. You should get a long list of numpy packages. Review this output, but take note of the highlighted portions in the image. The section with a red selection shows the numpy versions that are available, The section with a blue selection shows the channel where each numpy version is stored. ![!Search output from using conda search in Terminal](images/channel_conda_search.png)
 
     You can then install numpy with a specific version and from a specific channel with.
 
     ```bash
     conda install -c conda-forge numpy=2.0.0rc2
+
     ```
 
-1. Using Specific Channels: You can also get packages using specific Anaconda Channels. 
+1. Using Specific Channels: You can also get packages using specific Anaconda Channels listed below.
 
     1. Anaconda Main Channel: The default channel provided by Anaconda, Inc. Visit [Anaconda](https://anaconda.org)
 
@@ -320,28 +321,52 @@ If we find the package at one of the Channel sources mentioned above, we can che
     conda search -c conda-forge numpy
     ```
 
-If we find the package at one of these sources, we check the Platform version to ensure it is either noarch (if available) or linux. Noting the version, we can click the "source" or "repo" link (if available) or "homepage". Then we try to find the latest version. For a package found on GitHub, click "Releases" on the right-hand side. Verify that the latest Release is the same as, or very close to, the version on Anaconda or Pypi. If so, the package is being maintained on Anaconda/Pypi and suitable for use. Note the exact software name, version, and channel (if not on Pypi).
+If we find the package at one of these sources, we check the Platform version to ensure it is either noarch (if available) or linux. Noting the version, we can click the "source" or "repo" link (if available) or "homepage". Then we try to find the latest version. For a package found on GitHub, click "Releases" on the right-hand side. Verify that the latest Release is the same as, or very close to, the version on Anaconda or Pypi. If so, the package is being maintained on Anaconda/Pypi and suitable for use. Note the exact software name, version, and channel (if not on Pypi). ![!Github page for numpy, an Anaconda package](images/github_conda_releases.png)
 
-If we don't find it in any of those, or the Anaconda/Pypi pages are out of date, then we may not be able to use the software in an Anaconda environment. It is possible to try installing a git repository using pip, but care must be taken to choose the right commit or tag: https://pip.pypa.io/en/stable/cli/pip_install/#examples. To search for a git repository try:
-1. github <name>.
-2. gitlab <name>.
+If we don't find it in any of the sources mentioned above, or the Anaconda/Pypi pages are out of date, then we may not be able to use the software in an Anaconda environment. It is possible to try installing a git repository using pip, but care must be taken to choose the right commit or tag, you find more [info](https://pip.pypa.io/en/stable/cli/pip_install/#examples). To search for a git repository try:
 
-If the list is complete, then add all Anaconda channels to the channels: section. For Anaconda packages, add one line to dependencies for each software as - <name>=<version>. For Pypi packages add - pip: under dependencies. Then under - pip:add (indented)- ==. Refer to the template above for guidance on formatting. For git repos, add them under -pip:` based on examples here: https://pip.pypa.io/en/stable/cli/pip_install/#examples.
-If you run into challenges please contact us (link).
+1. github "name".
+2. gitlab "name".
 
-1. 
+Remember to replace name with name of Anaconda package.
+
+When we have a complete list of Anaconda packages and Channels, then we can create an environment from scratch with all the dependencies included. For Anaconda packages, add one line to dependencies for each software. For Pypi packages add - pip: under dependencies. Then under - pip:add `==` to pin the version, see below.
+
+```yaml
+name: test-env
+channels:
+  - anaconda
+  - conda-forge
+  - pip
+dependencies:
+  - matplotlib=3.8.4 #pinned version for conda
+  - python=3.10.4
+  - pip
+  - pip:
+  - numpy==1.26.4 #pinned version for pip
+  - http://insert_package_link_here #for url links
+
+```
+
+ For git repos, add them under `- pip:` based on examples [here](https://pip.pypa.io/en/stable/cli/pip_install/#examples). See the section [Replicability versus Portability](#replicability-versus-portability) for more information.
+
+The above configuration is only for illustration purposes, to show how channels and dependencies can be used. It is best to install all of your packages from conda channels, to avoid your environment breaking. Only packages that are unavailable via conda, should be installed via pip. If you run into challenges please [contact us](../index.md#contact-us).
+
+##### Key Things To Remember
 
 1. Exploring Package Documentation: For each package, check the documentation to understand its features, version history, and compatibility. Documentation can often be found on the Anaconda Cloud package page under the "Documentation" or "Homepage" link shared above in this tutorial.
+
+1. Regularly update your environment file to manage dependencies and maintain compatible software environments.
 
 1. Verify Package Version and Maintenance: Ensure you are getting the latest version of the package that is compatible with your environment. Verify that the package is actively maintained by checking the source repository (e.g., GitHub, GitLab). Look for recent commits, releases, and issue resolutions. The concepts of version pinning and semantic versioning, explain this in detail.
 
 ##### Version Pinning
 
-Version pinning in Anaconda environments involves specifying exact versions of packages to ensure consistency and compatibility. This practice is crucial for reproducibility, as it allows environments to be replicated exactly, a critical component in  research and collaborative projects. Version pinning also aids stability, by preventing unexpected changes that could break your environment, code or analysis. and maintains compatibility between different packages that rely on specific dependencies. To implement version pinning, you can create a YAML file that lists the exact versions of all installed packages or specify versions directly when [creating](#create-an-environment) or updating environments using Conda commands. Best practices include using explicit version numbers, regularly updating the environment file, managing dependencies carefully, and thoroughly testing the environment after pinning versions. These steps help maintain stable, reproducible, and compatible software environments, ensuring smooth project execution and collaboration.
+Version pinning in Anaconda environments involves specifying exact versions of packages to ensure consistency and compatibility. This practice is crucial for reproducibility, as it allows environments to be reproduced exactly, a critical component in research and collaborative projects. Version pinning also aids stability, by preventing unexpected changes that could break your environment, code or analysis. This practice also maintains compatibility between different packages that rely on specific dependencies. To implement version pinning, you can create a YAML file that lists the exact versions of all installed packages or specify versions directly when [creating](#create-an-environment) or updating environments using Conda commands.
 
 ##### Semantic Versioning
 
-Semantic versioning is a versioning scheme using a three-part format (MAJOR.MINOR.PATCH) to convey the significance of changes in a software package. In Anaconda environments, it plays a role in managing compatibility, version pinning, dependency resolution, and updating packages. The MAJOR version indicates incompatible API changes, i.e. same software package but operation and interaction are mostly different from what you are accustomed to in the previous version. The MINOR version adds backward-compatible functionality, i.e. same version of software package but now contains new features and functionality, operations and interactions are still mostly the same. While PATCH version includes backward-compatible bug fixes, i.e. same major and minor versions now have a slight change, perhaps a bug or some small change, still same features, operations and interactions, just the minor bug fix. Using semantic versioning helps maintain consistency and compatibility by ensuring that updates within the same major version are compatible, and by allowing precise control when specifying package versions. In practice, semantic versioning aids in managing Anaconda environments by facilitating precise version pinning and dependency resolution. For instance, you can pin specific versions using Conda commands or specify version ranges to ensure compatibility. Semantic versioning also informs upgrade strategies, helping decide when to upgrade packages based on the potential impact of changes. By leveraging semantic versioning, you can maintain stable and consistent environments, which is essential for smooth development and research workflows.
+Semantic versioning is a versioning scheme using a three-part format (MAJOR.MINOR.PATCH) to convey the significance of changes in a software package. In Anaconda environments, it plays a role in managing compatibility, version pinning, dependency resolution, and updating packages. The MAJOR version indicates incompatible API changes, i.e. same software package but operation and interaction are mostly different from what you are accustomed to in the previous version. The MINOR version adds backward-compatible functionality, i.e. same version of software package but now contains new features and functionality. Operations and interactions are still mostly the same. While PATCH version includes backward-compatible bug fixes, i.e. same major and minor versions now have a slight change, perhaps a bug or some small change, still same features, operations and interactions, just the minor bug fix. Using semantic versioning helps maintain consistency and compatibility by ensuring that updates within the same major version are compatible, and by allowing precise control when specifying package versions. In practice, semantic versioning aids in managing Anaconda environments by facilitating precise version pinning and dependency resolution. For instance, you can pin specific versions using Conda commands or specify version ranges to ensure compatibility as shown above. Semantic versioning also informs upgrade strategies, letting us know when to upgrade packages based on the potential impact of changes. By leveraging semantic versioning, you can maintain stable and consistent environments, which is essential for smooth research workflows.
 
 #### Good Software Development Practice
 
