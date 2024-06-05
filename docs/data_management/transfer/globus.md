@@ -160,7 +160,7 @@ Before you can manage an LTS allocation using Globus, you'll need to add the [LT
 
     ![!Image showing Register a Credential form on the UAB Research Computing LTS endpoint Overview page showing artificial keys entered into the appropriate text fields.](./images/globus-lts-s3-credentials-02.png)
 
-7. You should be taken back to the UAB Research Computing LTS endpoint Overview page with the Credentials tab selected. There should now be one entry on this page showing your AWS IAM Access Key ID and your Globus Identity (i.e., your `blazerid@uab.edu` email address). If you have multiple Access Keys and ever wish to change which one is being used with Globus, then click the "Trash Can" icon next to the entry on this page to delete it, and start the key entry process over from the previous step.
+7. You should be taken back to the UAB Research Computing LTS endpoint Overview page with the Credentials tab selected. There should now be one entry on this page showing your AWS IAM Access Key ID and your Globus Identity (i.e., your `BlazerID@uab.edu` email address). If you have multiple Access Keys and ever wish to change which one is being used with Globus, then click the "Trash Can" icon next to the entry on this page to delete it, and start the key entry process over from the previous step.
 
     ![!Image showing UAB Research Computing LTS endpoint Overview page showing Access Credentials entry with AWS IAM Access Key ID and Globus Identity.](./images/globus-lts-s3-credentials-03.png)
 

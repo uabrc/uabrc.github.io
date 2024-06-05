@@ -145,7 +145,7 @@ As you step through the process, you will ultimately open two terminal windows a
     ![!box single sign on authentication dialog](./images/rclone-auth-box-020.png)
 
 4. You will be redirected to the UAB SSO page.
-5. Authenticate with your blazerid credentials.
+5. Authenticate with your BlazerID credentials.
 6. You will be asked to grant permission to the RClone software. Click "Grant access to Box" if you want the software to work with Box. If you do not grant permission, you will not be able to use RClone with Box.
 
     ![!box grant permission request dialog](./images/rclone-auth-box-030.png)

@@ -1,6 +1,6 @@
 Flag,Short,Description,Docs
 FILTERING
-`--user`,`-u`,"Jobs from a specific user. Please only use your own blazerid.",[sacct](https://slurm.schedmd.com/sacct.html#OPT_uid)
+`--user`,`-u`,"Jobs from a specific user. Please only use your own BlazerID.",[sacct](https://slurm.schedmd.com/sacct.html#OPT_uid)
 `--allocations`,`-X`,"Show jobs only, not steps.",[sacct](https://slurm.schedmd.com/sacct.html#OPT_allocations)
 `--starttime`,`-S`,"Jobs starting at a given time. See [Time formatting](#slurm-time-formatting).",[sacct](https://slurm.schedmd.com/sacct.html#OPT_starttime)
 `--endtime`,`-E`,"Jobs ending at a given time. See [Time Formatting](#slurm-time-formatting).",[sacct](https://slurm.schedmd.com/sacct.html#OPT_endtime)

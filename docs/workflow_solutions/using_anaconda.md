@@ -65,7 +65,7 @@ conda activate <env>
 To know your environment has loaded, the command line should look like:
 
 ```text
-(<env>) [blazerid@c0XXX ~]$
+(<env>) [BlazerID@c0XXX ~]$
 ```
 
 Once the environment is activated, you are allowed to install whichever python libraries you need for your analysis.

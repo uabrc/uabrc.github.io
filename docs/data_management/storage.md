@@ -65,9 +65,9 @@ Please provide the following information. Missing information can delay allocati
 - **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
 - **Name of Shared Storage:** Please give us a generic name specific to your project/Lab.
 
-    - For Labs, we recommend using the format `<PI_blazerid>_lab`, where `<PI_blazerid>` is the blazerid or name of the Principal Investigator (PI). For example: `PI_blazerid_lab`, `PI_name_lab`. 
+    - For Labs, we recommend using the format `<PI_BlazerID>_lab`, where `<PI_BlazerID>` is the BlazerID or name of the Principal Investigator (PI). For example: `PI_BlazerID_lab`, `PI_name_lab`. 
     - For Cores, we recommend using a shortened version of the Core name. For example: `core_facility_space`
-    - For Project Storage, the name you choose will be used in the path `/data/project/<PI_blazerid>_lab` on Cheaha. Also, this name,`<PI_blazerid>_lab`, will be given to your shared LTS account.
+    - For Project Storage, the name you choose will be used in the path `/data/project/<PI_BlazerID>_lab` on Cheaha. Also, this name,`<PI_BlazerID>_lab`, will be given to your shared LTS account.
 
     <!-- markdownlint-disable MD046 -->
     !!! Tip
