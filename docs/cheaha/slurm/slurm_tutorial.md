@@ -26,13 +26,13 @@ The last portion is running the actual code or software. Here, the computational
 
 If you're new to using Unix/Linux commands and bash scripting, we suggest going through the software carpentry lesson, [The Unix Shell](https://swcarpentry.github.io/shell-novice/). Also, we recommend reviewing the [Cheaha Hardware Information](../../cheaha/hardware.md) to help guide you in chosing appropriate partition and resources.
 
-## A User Guide for Understanding and Identifying Types of Batch Jobs
+## Slurm Batch Job User Guide
 
 This user guide provides comprehensive insight into different types of batch jobs, facilitating in identifying the most suitable job type for your specific tasks. With clear explanations and practical examples, you will gain a deeper understanding of sequential, parallel, array, multicore, GPU, and multi-node jobs, assisting to make informed decisions when submitting jobs on the Cheaha system.
 
-1. [Simple Batch Job](#example-1-a-simple-slurm-batch-job) is ideal for Cheaha users who are new to Slurm batch job submission.
+1. [Simple Batch Job](#example-1-a-simple-slurm-batch-job) is ideal for Cheaha users who are just starting with Slurm batch job submission. It uses a simple example to introduce new users to requesting resources with `sbatch`, printing the `hostname`, and monitoring batch job submission.
 
-2. [Sequential Batch Job](#example-2-sequential-job) is for running tasks that are dependent on each other and require only one CPU resource. Increasing the number of CPUs typically does not enhance performance in these cases. For instance, a Python or R script that executes a series of steps—such as data loading, extraction, analysis, and output reporting—where each step must be completed before the next can begin.
+2. [Sequential Batch Job](#example-2-sequential-job) is used when tasks run one at a time sequentially. Adding more CPUs does not make a sequential job run faster. If you would want to run many such sequential jobs simultaneously, you can submit it as an [array job](#example-4-array-job). For instance, a Python or R script that executes a series of steps—such as data loading, extraction, analysis, and output reporting—where each step must be completed before the next can begin.
 
 3. [Parallel Job](#example-3-parallel-jobs) is suitable for executing multiple independent tasks/jobs simultaneoulsy and efficiently distributing them across resources. This approach is particularly beneficial for small-scale tasks that cannot be split into parallel processes within the code itself. For example, consider a Python script that operates on different data set, in such a scenario, you can utilize srun to execute multiple instances of the script concurrently, each operating on a different dataset and on different resources.
 
