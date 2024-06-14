@@ -682,6 +682,34 @@
   </li>
           
           
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#user-data-and-home-directories" class="md-nav__link">
+      <span class="md-ellipsis">
+        User Data and Home Directories
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#project-directory" class="md-nav__link">
+      <span class="md-ellipsis">
+        Project Directory
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="Project Directory">
+        <ul class="md-nav__list">
+          
           
             <li class="md-nav__item">
     <a href="#project-directory-permissions" class="md-nav__link">
@@ -3102,6 +3130,34 @@
   </li>
           
           
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#user-data-and-home-directories" class="md-nav__link">
+      <span class="md-ellipsis">
+        User Data and Home Directories
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#project-directory" class="md-nav__link">
+      <span class="md-ellipsis">
+        Project Directory
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="Project Directory">
+        <ul class="md-nav__list">
+          
           
             <li class="md-nav__item">
     <a href="#project-directory-permissions" class="md-nav__link">
@@ -3300,9 +3356,9 @@
 <tr>
 <th style="text-align: left;">Platform</th>
 <th style="text-align: left;"><a href="../lts/">Long-term Storage</a></th>
-<th style="text-align: left;"><a href="./#user-space">User Data and Home Directories</a></th>
+<th style="text-align: left;"><a href="./#user-data-and-home-directories">User Data and Home Directories</a></th>
 <th style="text-align: left;"><a href="./#project-directory">Project Directories</a></th>
-<th style="text-align: left;"><a href="./#network-scratch">Global Scratch</a></th>
+<th style="text-align: left;"><a href="./#user-scratch">User Scratch</a></th>
 <th style="text-align: left;"><a href="./#local-scratch">Local Scratch</a></th>
 </tr>
 </thead>
@@ -3382,13 +3438,13 @@
 </tbody>
 </table>
 <h2 id="what-individual-storage-solutions-are-available">What Individual Storage Solutions are Available?<a class="headerlink" href="#what-individual-storage-solutions-are-available" title="Permanent link">&para;</a></h2>
-<p>Every researcher has personal directories found at <code>/home/$USER</code> (or <code>$HOME</code>) and <code>/data/user/$USER</code> (or <code>$USER_DATA</code>), which are created automatically during account registration. These two locations are meant to store general data and can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, <code>$HOME</code> is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, <code>$USER_DATA</code> is intended to store datasets and results for individual research projects.</p>
-<p>Individual allocations on Long-Term Storage (LTS) are also available upon request.</p>
+<p>Every Cheaha user has personal directories found at <code>/home/$USER</code> (or <code>$HOME</code>) and <code>/data/user/$USER</code> (or <code>$USER_DATA</code>), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about <a href="../lts/">Long-Term Storage</a> and <a href="#user-data-and-home-directories">User Data and Home Directories</a>.</p>
 <h3 id="how-do-i-request-individual-long-term-storage">How Do I Request Individual Long-Term Storage?<a class="headerlink" href="#how-do-i-request-individual-long-term-storage" title="Permanent link">&para;</a></h3>
 <p>To request individual Long-Term Storage, please first read and understand how <a href="../lts/">Long-Term Storage</a> differs from traditional file systems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact <a href="../../help/support/">Support</a>.</p>
 <h2 id="what-shared-storage-solutions-are-available">What Shared Storage Solutions are Available?<a class="headerlink" href="#what-shared-storage-solutions-are-available" title="Permanent link">&para;</a></h2>
-<p>Shared Storage is available via two services. We have Project Storage (located in <code>/data/project</code> or Cheaha) and <a href="../lts/">Long-Term Storage (LTS)</a>. The two offerings are suited to different sets of use-cases, so please read on to determine which may be most suitable.</p>
-<p>Project Storage is best-suited for changing or dynamic data. Specifically:</p>
+<p>Shared Storage is available via two services. We have <a href="#project-directory">Project Storage</a> 
+(located in <code>/data/project</code> or Cheaha) and <a href="../lts/">Long-Term Storage (LTS)</a>. The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.</p>
+<p><a href="#project-directory">Project Storage</a> is best-suited for changing or dynamic data. Specifically::</p>
 <ul>
 <li>Data needing/undergoing analysis</li>
 <li>Exploratory data</li>
@@ -3474,7 +3530,7 @@
 <h3 id="if-i-cant-get-a-larger-allocation-what-alternatives-are-there">If I Can't Get a Larger Allocation, What Alternatives Are There?<a class="headerlink" href="#if-i-cant-get-a-larger-allocation-what-alternatives-are-there" title="Permanent link">&para;</a></h3>
 <p>One alternative we recommend is breaking your dataset into batches. A generic, template workflow might be something like below.</p>
 <ul>
-<li>Copy a batch of data from LTS, or an internet source, to User Scratch.</li>
+<li>Copy a batch of data from LTS, or an internet source, to <a href="#user-scratch">User Scratch</a>.</li>
 <li>Perform analyses on copied data in User Scratch.</li>
 <li>Store intermediate or final results in <code>/data/project/</code> or LTS.</li>
 <li>Delete copied data from User Scratch.</li>
@@ -3482,6 +3538,11 @@
 </ul>
 <p>When all batches have been processed, begin processing or aggregating the resulting data.</p>
 <p>If you wish to discuss other alternatives tailored to your workflow, please <a href="../../help/support/">Contact Support</a>.</p>
+<h2 id="user-data-and-home-directories">User Data and Home Directories<a class="headerlink" href="#user-data-and-home-directories" title="Permanent link">&para;</a></h2>
+<p>Every user of Cheaha are given a storage space to store general data and data that can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, <code>$HOME</code> is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, <code>$USER_DATA</code> is intended to store datasets and results for individual research projects, with access granted only to the user of that directory. Since the quotas for these directories are limited to 5TB, you may consider using <a href="#scratch">scratch</a> space and/or <a href="#project-directory">project directories</a> for storing, moving, and analyzing data.</p>
+<h2 id="project-directory">Project Directory<a class="headerlink" href="#project-directory" title="Permanent link">&para;</a></h2>
+<p>The Project Directories are larger than home directories and serves as a storage solution accessible to Labs led by a PI and Core facilities led by a director. It is intended for sharing data and code within a group of researchers or among lab members and collaborators, located under <code>/data/project/&lt;project&gt;</code>.</p>
+<p>The PI is the owner of the project directory, and when a directory <code>/data/project/&lt;project&gt;</code> is created, researchers permitted to collaborate on the project are added as members of this group, granting them access to the project directory. New members can be added or removed from the group upon PI approval. Currently, a project directory space is 25 TB, and this space is not designated for a single project only; it serves as storage for multiple projects.</p>
 <h3 id="project-directory-permissions">Project Directory Permissions<a class="headerlink" href="#project-directory-permissions" title="Permanent link">&para;</a></h3>
 <p>Every project directory has a group that is unique system-wide, and not used anywhere else on the filesystem. The unique project group will be referred to as <code>&lt;grp&gt;</code> and generally has the same name as the top level project directory.</p>
 <!-- markdownlint-disable MD046 -->
@@ -3736,7 +3797,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 11, 2024</span>
   </span>
 
     
