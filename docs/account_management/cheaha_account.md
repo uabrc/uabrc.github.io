@@ -77,3 +77,29 @@ Periodically, we review all researcher accounts to ensure they are authorized to
 ![!Account authorization error page.](images/uab_auth_error.png)
 
 If you believe this to be in error, please [Contact Support](../help/support.md).
+
+## What can I do with my account?
+
+Research Computing offers services addressing a wide range of needs for researchers at UAB, including students, staff, and faculty, as well as for both Labs and research cores.
+
+We're always happy to provide support for your Research Computing needs, you need only [contact us](../index.md/#how-to-contact-us).
+
+### For Students, Staff, and Faculty
+
+- [Get Started with Open OnDemand](../cheaha/open_ondemand/index.md)
+- [Additional Learning Resources](../education/training_resources.md)
+- [Data Science Journal Club Course](../education/courses.md/#data-science-journal-club-course)
+
+### For Lab PIs and Core Directors
+
+- [No-cost storage offerings](../data_management/storage.md/#what-type-of-storage-do-i-need>)
+    - [GPFS](../data_management/storage.md/#what-shared-storage-solutions-are-available): Hot storage, compute adjacent, directly accessible from Cheaha
+    - [LTS](../data_management/lts/index.md): Cool storage, large capacity
+- [Batch computing](../cheaha/slurm/introduction.md)
+    - [Desktop](../cheaha/open_ondemand/hpc_desktop.md), [Jupyter](../cheaha/open_ondemand/ood_jupyter.md), [RStudio](../cheaha/open_ondemand/ood_rstudio.md), [Matlab](../cheaha/open_ondemand/ood_matlab.md), and more
+    - [GPUs](../cheaha/slurm/gpu.md)
+- [On-prem cloud computing](../uab_cloud/index.md)
+    - [Tutorial](../uab_cloud/tutorial/index.md)
+    - [Web servers](../uab_cloud/remote_access.md/#make-instances-publically-accessible-from-the-internet)
+  
+  If you are unable to find what you need, please contact our team [here](../index.md#how-to-contact-us).
