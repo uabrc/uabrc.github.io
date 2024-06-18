@@ -65,7 +65,7 @@ For batch jobs, flags are typically included as directive comments at the top of
 
 Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
 
-``` bash
+```bash linenums="1"
 #!/bin/bash
 #
 #SBATCH --job-name=test
@@ -102,7 +102,7 @@ Building on the job script above, below is an array job. Array jobs are useful w
 
 To test the script below, copy and paste it into a plain text file `testarrayjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testarrayjob.sh`. Momentarily, 16 text files with `.out` and `.err` suffixes will be produced in your home directory.
 
-``` bash
+```bash linenums="1"
 #!/bin/bash
 #
 #SBATCH --job-name=test
@@ -147,7 +147,7 @@ For a practical example with dynamic indices, please visit our [Practical `sbatc
 
 ## Interactive Jobs with `srun`
 
-Jobs should be submitted to the Slurm job scheduler either using a [batch job](#batch-jobs-with-sbatch) or an [Open OnDemand (OOD) interactive job](../open_ondemand/ood_main.md).
+Jobs should be submitted to the Slurm job scheduler either using a [batch job](#batch-jobs-with-sbatch) or an [Open OnDemand (OOD) interactive job](../open_ondemand/index.md).
 
 You can use `srun` for working on short interactive tasks such as [creating an Anaconda environment](../../workflow_solutions/using_anaconda.md) and running [parallel tasks](#srun-for-running-parallel-jobs) within an sbatch script.
 
@@ -233,11 +233,15 @@ Alternatively, `srun` can also run MPI, OpenMP, hybrid MPI/OpenMP, and many more
     Instead of `srun`, please load one of the `OpenMPI` modules with an appropriate version. Please contact [Support](../../help/support.md) with any questions or concerns.
 <!-- markdownlint-enable MD046 -->
 
+## Environment Setup and Module Usage in Job Submission
+
+Before submitting a job using `sbatch`, it's crucial to establish a tailored environment, including software installations and loading necessary modules containing the required software packages. We highly recommend the practice of putting `module reset` before any `module load` calls in job scripts. The module system modifies the environment whenever the module list changes, and Slurm jobs inherit the environment from whatever called `sbatch` or `srun`. The module reset command normalizes the initial environment for the script, improving repeatability and minimizing the risk of hard-to-diagnose module conflicts. For examples and further information, please see [best practice for loading modules](../software/modules.md/#best-practice-for-loading-modules).
+
 ## Graphical Interactive Jobs
 
-It is highly recommended to use the [Open OnDemand](../open_ondemand/ood_main.md) web portal for [interactive apps](../open_ondemand/ood_interactive.md). Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha. A terminal is also available through Open OnDemand.
+It is highly recommended to use the [Open OnDemand](../open_ondemand/index.md) web portal for [interactive apps](../open_ondemand/ood_layout.md#interactive-apps). Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha. A terminal is also available through Open OnDemand.
 
-It is possible to use other remote desktop software, such as VNC, to start and interact with jobs. These methods are not officially supported and we do not have the capacity to help with remote desktop connections. Instead, please consider switching your workflow to use the [Open OnDemand HPC Desktop](../open_ondemand/ood_interactive.md#my-interactive-sessions). If you are unable to use this method, please contact [Support](../../help/support.md).
+It is possible to use other remote desktop software, such as VNC, to start and interact with jobs. These methods are not officially supported and we do not have the capacity to help with remote desktop connections. Instead, please consider switching your workflow to use the [Open OnDemand HPC Desktop](../open_ondemand/hpc_desktop.md). If you are unable to use this method, please contact [Support](../../help/support.md).
 
 ## Estimating Compute Resources
 

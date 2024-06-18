@@ -32,8 +32,7 @@ Search for and install extensions using the extension menu (keyboard shortcut: +
 <!-- markdownlint-disable MD046 -->
 !!! Note
 
-For Mac Users VSCode hotkeys are ++command+shift++ rather than ++ctrl+shift++
-
+    For Mac Users VSCode hotkeys are ++command+shift++ rather than ++ctrl+shift++
 <!-- markdownlint-enable MD046 -->
 
 ### VSCode `settings.json` Additions
@@ -49,8 +48,10 @@ To make the best use of formatting extensions for this project, please add the f
   },
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
-    "editor.detectIndentation": false,
-    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": "explicit"
+    },
     "editor.tabSize": 4,
     "editor.wordWrap": "on"
   },
@@ -320,5 +321,5 @@ Contrast checker: <https://webaim.org/resources/contrastchecker/>
 ## Terminology
 
 - `Research Computing (RC)` for the IT group supporting campus HPC resources.
-- `UAB Campus Network` for the hard-wired network physically located on UAB campus, and the UAB Secure wifi.
+- `UAB Campus Network` for the hard-wired network physically located on UAB campus, and the UAB WiFi Network ("UABSecure").
 - `UAB Campus VPN` for the VPN to tunnel remote connections through the UAB Campus Network.

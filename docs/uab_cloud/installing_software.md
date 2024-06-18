@@ -139,17 +139,11 @@ Below are a few examples of installing certain common softwares that may be usef
 
 #### Installing Miniconda
 
-We recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html) on cloud.rc instances, as opposed to Anaconda, to conserve storage space.
+Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important. We recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html) on cloud.rc instances, as opposed to Anaconda, to conserve storage space. For more information on how to use Anaconda see the [Using Anaconda](../workflow_solutions/using_anaconda.md#using-anaconda). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
 2. `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
 3. `bash Miniconda3-latest-Linux-x86_64.sh`
-
-<!-- markdownlint-disable MD046 -->
-!!! tip
-
-    Consider installing [Mamba](../workflow_solutions/using_anaconda.md#mamba) to speed up environment installation.
-<!-- markdownlint-enable MD046 -->
 
 #### Installing Singularity
 
@@ -206,7 +200,7 @@ Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quic
 
 Jupyter Notebooks are a staple of modern research computing, especially when developing new workflows or evaluating the usefulness of software packages.
 
-The setup process for [cloud.rc](index.md) is more involved than for [Cheaha](../cheaha/getting_started.md). Before using cloud.rc for Jupyter Notebooks, be sure that [Open OnDemand on Cheaha](../cheaha/open_ondemand/ood_interactive.md#jupyter-notebook) does not meet your needs.
+The setup process for [cloud.rc](index.md) is more involved than for [Cheaha](../cheaha/getting_started.md). Before using cloud.rc for Jupyter Notebooks, be sure that [Open OnDemand on Cheaha](../cheaha/open_ondemand/ood_jupyter.md) does not meet your needs.
 
 To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our [Introduction](index.md) and follow the tutorial completely.
 
@@ -234,7 +228,7 @@ Once the prerequisites are complete, the following steps must be performed to in
         - `r-irkernel` for R users
         - [Optional] `pip`
 
-2. Because floating IPs are, by default, reachable by anyone on the campus network, you'll need to secure the server using the steps below.
+2. Because floating IPs are, by default, reachable by anyone on the UAB Campus Network, you'll need to secure the server using the steps below.
     1. Generate a notebook config file using `jupyter notebook --generate-config`. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#prerequisite-a-notebook-configuration-file)]
     2. Prepare a password using `jupyter notebook password`. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#automatic-password-setup)]
     3. Set up SSL for an encrypted connection. For now create a self-signed certificate using the following command. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication)]

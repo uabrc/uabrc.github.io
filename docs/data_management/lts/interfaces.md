@@ -1,6 +1,10 @@
+---
+toc_depth: 3
+---
+
 # Connecting to LTS
 
-LTS is not available as a mounted filesystem on local computers or Cheaha. You must use an interface to transfer data between LTS and whichever machine you are using. There a variety of interfaces with the following recommendations.
+LTS is not available as a mounted filesystem on local computers or Cheaha. You must use an interface to transfer data between LTS and whichever machine you are using. There are a variety of interfaces with the following recommendations.
 
 ## Globus
 
@@ -13,10 +17,14 @@ To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in
 
     If your LTS account was given permission to access a bucket owned by another account, it will not automatically appear in the Globus file browser. You can access buckets you have `s3:ListBucket` permissions on by typing `/<bucket-name>/` in the Path field under the LTS endpoint.
 
-    ![!Access a shared bucket in Globus](images/globus-bucket.png) 
+    ![!Access a shared bucket in Globus](images/globus-bucket.png)
 <!-- markdownlint-enable MD046 -->
 
 Globus is very useful for single transfers of data either to or from LTS and is available on any computer with an internet connection. However, it is currently not capable of managing buckets. This must be done through a command line interface.
+
+### Managing LTS Credentials on Globus
+
+See our [Globus - Adding LTS Allocation Credentials](../transfer/globus.md#adding-lts-allocation-credentials) section for more information.
 
 ## Command Line
 
@@ -25,7 +33,9 @@ While globus is the recommended tool for most data transfers, command line tools
 1. [s3cmd](https://github.com/s3tools/s3cmd) is a Python tool that we suggest using for managing bucket permissions as well as small transfers.
 2. [s5cmd](https://github.com/peak/s5cmd) is a Go package that transfers data much more quickly than s3cmd, especially as the file size and/or quanitity increases. It does not have full bucket management capabilities.
 
-You do not need to install both tools if they aren't necessary. Both are available to install into [Anaconda](../../workflow_solutions/using_anaconda.md) environments. It's suggested to create a single environment named `s3` and install both s3cmd and s5cmd into it for easy access to both tools. Specific install and usage commands for each are given in their respective sections. You can create the general environment using the following commands:
+### Installation of `s3cmd` and `s5cmd` on Cheaha
+
+To install the tools on Cheaha, you can request a compute node through Cheaha's [Open OnDemand web portal](../../cheaha/open_ondemand/ood_layout.md/#creating-an-interactive-job).Once your job is launched, open a terminal to execute the commands listed below. You do not need to install both tools if they aren't necessary. Both are available to install into [Anaconda](../../workflow_solutions/using_anaconda.md) environments. It's suggested to create a single environment named `s3` and install both s3cmd and s5cmd into it for easy access to both tools. Specific install and usage commands for each are given in their respective sections. You can create the general environment using the following commands:
 
 ``` bash
 module load Anaconda3
@@ -33,6 +43,8 @@ conda create -n s3 -c conda-forge pip s5cmd
 conda activate s3
 pip install s3cmd
 ```
+
+Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your personal computer and LTS, you will need to install `s3cmd` or `s5cmd` on your machine. Please refer to this [section](#installation-of-s3cmd-and-s5cmd-on-personal-system) for installation instructions specific to your operating system.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -42,7 +54,11 @@ pip install s3cmd
 
 ### s3cmd
 
-s3cmd is our suggested tool for managing bucket permissions and small, periodic file transfers. See the [preceding section](#command-line) for instructions on how to install both it and s5cmd into an Anaconda environment. Once you have s3cmd installed and the environment active, you can start the configuration process like so:
+s3cmd is a tool used for managing buckets and objects in Amazon S3 (Simple Storage Service). s3cmd is our suggested tool for operations such as listing buckets, managing bucket permissions, synchronizing directories with s3 buckets, and for small periodic file transfers. If high-speed transfer of a large files is required, we recommend using [s5cmd](#s5cmd). See the [preceding section](#command-line) for instructions on how to install both it and s5cmd into an Anaconda environment.
+
+#### Configuring s3cmd
+
+Configuring s3cmd is necessary to establish a secure connection for accessing your LTS bucket in Amazon S3. Once you have s3cmd installed and the environment active, you can start the configuration process like so:
 
 ``` bash
 s3cmd --configure [-c $HOME/profile_name]
@@ -98,9 +114,10 @@ Save settings? [y/N] y
 ```
 
 <!-- markdownlint-disable MD046 -->
-!!! note
+!!! important
 
-    If you choose to test access using your credentials, the test may fail. Do not rely on the automatic test results, test access yourself by either creating a bucket or listing files from a existing bucket using the commands listed below.
+    1. If you choose to test access using your credentials, the test may fail. Do not rely on the automatic test results, test access yourself by either creating a bucket or listing files from a existing bucket using the commands listed below.
+    2. To locate the appropriate "Path to GPG program" for Ubuntu and Mac operating systems, please use the command `which gpg`. The location may vary depending on your operating system.
 <!-- markdownlint-enable MD046 -->
 
 #### s3cmd Commands
@@ -115,7 +132,7 @@ The `[-c profile_file]` is only required if you are using credentials NOT saved 
 To see a list of all available commands, use `s3cmd --help`. Additionally, if you want to test an action without actually running it (i.e. it prints all actions that would be performed), you can add the `-n` or `--dry-run` option. A list of selected commands are provided below for reference
 
 ``` bash
-# Create a bucket 
+# Create a bucket
 s3cmd mb s3://<bucket>
 
 # List a bucket/path within the bucket
@@ -133,7 +150,7 @@ s3cmd get s3://<bucket/path/source/> <destination>
 # transfer between two S3 locations
 s3cmd cp s3://<bucket/path/> s3://<bucket/path/>
 
-# sync an S3 location with a local source. The S3 destination will be made exactly the same as the source including file deletions. 
+# sync an S3 location with a local source. The S3 destination will be made exactly the same as the source including file deletions.
 # The source is unaltered. The S3 bucket/folder can be either the source or the destination
 s3cmd sync <source> s3://<bucket/path/destination>
 
@@ -231,6 +248,54 @@ It's important to note that the main functionality of s5cmd over s3cmd is the pa
 
     When setting the value for `--numworkers`, do not select a value beyond the number of CPUs you have requested for your job! This can cause high context switching (meaning individual CPUs are switching between multiple running processes) which can affect job performance for all jobs on a node.
 <!-- markdownlint-enable MD046 -->
+
+### Installation of `s3cmd` and `s5cmd` on Personal System
+
+The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems.
+
+- Ubuntu
+
+    To install `s3cmd` using the following command,
+
+    ```bash
+    sudo apt update
+    sudp apt install s3cmd
+    ```
+
+    To install `s5cmd`, you will have to first install `go` software version 1.19+. Please refer to the [Download page](https://go.dev/dl/), and [installation instruction](https://go.dev/doc/install) for further details. After intalling `go`, you can build `s5cmd` in your `$HOME` directory using the below steps.
+
+    ```bash
+    cd $HOME
+    go install github.com/peak/s5cmd/v2@master
+    ```
+
+    The below steps are to add `go` bin directory to your system's `PATH` which allows you to run `s5cmd` from any location in your terminal.
+
+    ```bash
+    echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
+    source ~/.bashrc
+    ```
+
+- Mac
+
+    Following are installation commands for `s3cmd` and `s5cmd` on a Mac System.
+
+    ```bash
+    brew install s3cmd
+    brew install peak/tap/s5cmd
+    ```
+
+    You may need to install `gpg` on a Mac using the below command,
+
+    ```bash
+    brew install gnupg
+    ```
+
+- Windows
+
+    To install `s3cmd` and `s5cmd` on a Windows system, you will first need to install [Windows Subsystem for Linux (WSL)](../../uab_cloud/remote_access.md/#windows-subsystem-for-linux-wsl). Once WSL is installed, you can use the command line instructions for [Ubuntu](#ubuntu) to install `s3cmd` and `s5cmd`.
+
+    For more information on `s3cmd` and `s5cmd`, please refer to the official [s3tools Page](https://s3tools.org/download), and [s5cmd page](https://github.com/peak/s5cmd?tab=readme-ov-file).
 
 ## Alternatives
 

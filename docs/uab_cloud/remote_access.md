@@ -1,3 +1,7 @@
+---
+toc_depth: 3
+---
+
 # Remote Access to Instances
 
 All of the access methods described below are built on top of `ssh` and require completion of the steps in [Basic Security Setup](tutorial/security.md) to use with `cloud.rc`. Some of these steps are referenced in that document.
@@ -224,9 +228,60 @@ ssh <user>@<remote_ip> -i <private_key_file>
 
 Where `user` is the remote username, `remote_ip` is the IP address of the remote machine, and `<private_key_file>` is the private key file used for access the remote machine. See [Generating Key Pairs](#generating-key-pairs) for general instructions on creating a key pair, or [Creating a Key Pair](tutorial/security.md#creating-a-key-pair) for cloud.rc specific instructions.
 
-## Server Software
+## Make Instances Publically Accessible From the Internet
 
-Remotely accessing server software requires configuration of [Security Groups](tutorial/security.md#creating-a-security-group) to open ports the server will communicate on. Please see our information on [Installing Server Software](installing_software.md#installing-server-software) for details.
+It is possible to make [instances](./tutorial/instances.md) publically accessible from the external internet. [Floating IPs](./tutorial/networks.md#floating-ips) are pulled from a limited and fixed pool of public IP addresses assigned from the overall UAB IP pool. By default, these IP addresses are unable to communicate beyond the UAB Internet Border firewall, for security reasons. To make your instance publically accessible, a Firewall Security Exception must be filed. The result of the security exception is to create a firewall rule to allow traffic between the internet and an application on your instance. This section will go over how to make your instance publically accessible.
+
+### Expectations
+
+The expectation of making an instance publically accessible is to advance UAB's mission, so be sure you've configured and thoroughly tested your instance in the UAB Network before proceeding. The following list is intended as a helpful reminder.
+
+- Have an instance with some research application or server that advances UAB's mission.
+- The instance is configured with a floating IP address.
+- The server and any applications follow [appropriate UAB IT policies](../policies.md).
+- For public-facing portions of the server which requiring login information, each authorized user must have their own independent credentials.
+- Thoroughly test your application on the UAB Campus Network prior to requesting public access.
+
+### Process For Granting Public Access
+
+Proceed to the [UAB IT Security Exception (Firewall Rule Change) form](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=daf70746374ce3c0daa253b543990e7f) at UAB ServiceNow and fill it in. You may need to login with your UAB BlazerID credentials. We have included information on a few of the
+
+- For the Section "Firewall" there are three checkbox options:UAB Internet Border; Department/Internal; UAB IT Data Center. Be sure only "UAB Internet Border" is checked.
+
+    ![Image showing "Firewall" section with UAB Internet Border checked and other options unchecked.](./images/public-access-firewall-type.png)
+
+- For the Section "System/Application Information" there are two checkbox options.
+    - Be sure "Is this a mission critical system?" is left unchecked. For IT purposes, mission critical systems include things like the Outlook Exchange server, BlazerNet, Taleo, and other similar systems affecting University operations.
+    - If your application involves the storage, processing or acquisition of [sensitive or restricted/PHI data](https://www.uab.edu/it/home/policies/data-classification/classification-overview) then you must check "Does this system/application store or process sensitive/restricted data?".
+        - If you checked this box, please select the type or types in the next section "What type of sensitive or restricted data is stored or processed?"
+        - **IMPORTANT** As of Feb 29, 2024, Cloud.rc is not suitable for use with restricted/PHI data.
+- For the Section "Justification/Description", in addition to your own description, be sure to mention that your application "Involves one or more virtual machine instances on the UAB IT Research Computing Cloud.rc platform".
+
+When you have completed the form, press the "Submit" button to make the request.
+
+### Configuring Security Groups for Server Software
+
+Remotely accessing server software, publicly or otherwise, requires configuration of [Security Groups](tutorial/security.md#creating-a-security-group) to open ports the server will communicate on. Please see our information on [Installing Server Software](installing_software.md#installing-server-software) for more details.
+
+### Special Notes for Web Page Servers and Apps
+
+Dynamic web pages may be served from OpenStack instances. Doing so requires the instance and its floating IP being [granted public access](#process-for-granting-public-access). Additionally, web page servers require an [SSL Certificate](#https-and-web-page-applications-require-an-ssl-certificate). It may also interest reseachers to know that [Custom Domains](#custom-domains-for-https-and-web-page-applications) are possible for your applications.
+
+#### HTTPS and Web Page Applications Require an SSL Certificate
+
+If your application serves a web page over HTTPS, you will need to obtain an SSL Certificate. UAB IT provides this service at no additional cost. To obtain a certificate, please visit the [UAB IT SSL Server Certificate service page](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=500f425737109b0024a67c1643990e80) and follow the instructions there.
+
+#### Custom Domains for HTTPS and Web Page Applications
+
+For applications serving a web pages over HTTPS, it is possible to request a custom domain name like "department.uab.edu". This type of domain name is called a third-level domain, and there is a one-time fee charged by UAB IT to set this up. Once the third-level domain is set up, fourth-level domains like "group.department.uab.edu" may be set up at no additional cost.
+
+To learn more about setting up a third-level domain, please have your department's IT Network Contact visit the [ServiceNow Knowledge Base Article](https://uabprod.service-now.com/service_portal?sys_kb_id=b0a8301637ff8200daa253b543990e5e&id=kb_article_view&sysparm_rank=2&sysparm_tsqueryId=0d90b0aa97240e100917316bf253af4e).
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The above information about costs is true as of March 2024. Specifics may change over time.
+<!-- markdownlint-enable MD046 -->
 
 ## Data Transfer
 

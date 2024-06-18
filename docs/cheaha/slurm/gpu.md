@@ -61,13 +61,13 @@ When requesting an interactive job through `Open OnDemand`, selecting the `pasca
 
 #### MATLAB
 
-To use GPUs with our [Open OnDemand](../open_ondemand/ood_interactive.md) MATLAB app, you may need to take a slightly different route than usual.
+To use GPUs with our [Open OnDemand MATLAB](../open_ondemand/ood_matlab.md) app, you may need to take a slightly different route than usual.
 
 If you are using MATLAB R2022a or newer, then our `pascalnodes` P100 GPUs and `amperenodes` A100 GPUs should work without any additional steps.
 
 If you are using R2021b and earlier, then follow the instructions below.
 
-1. Start an [HPC Interactive Desktop Job](../open_ondemand/ood_interactive.md) with appropriate resources. Be sure to use one of the `pascalnodes*` [Partitions](#scheduling-gpus).
+1. Start an [HPC Interactive Desktop Job](../open_ondemand/hpc_desktop.md) with appropriate resources. Be sure to use one of the `pascalnodes*` [Partitions](#scheduling-gpus).
 2. Open a terminal.
 3. Load the appropriate [CUDA Module](#cuda-modules).
     - Determine which CUDA Modules are compatible with your required version of MATLAB using the table at the [MathWorks Site](https://www.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html).
@@ -111,6 +111,12 @@ For versions of PyTorch 1.13 and newer, use the following template instead.
 - CPU Version: `conda install pytorch==... torchvision==... cpuonly -c pytorch`
 - GPU Version: `conda install pytorch==... torchvision==... pytorch-cuda=... -c pytorch -c nvidia`
 
+<!-- markdownlint-disable MD046 -->
+!!! Note
+
+     When loading modules, such as CUDA modules for jobs requiring one or more GPUs, always utilize `module reset` before loading modules, both at the terminal and within `sbatch` scripts. See [best practice for loading modules](../software/modules.md/#best-practice-for-loading-modules) for more information.
+<!-- markdownlint-disable MD046 -->
+
 ## Reviewing GPU Jobs
 
 As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct) to review GPU jobs. Quantity of GPUs may be reviewed using the `reqtres` and `alloctres` [fields](job_management.md#sacct-fields).
@@ -121,7 +127,7 @@ As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct
     - If you are using an `sbatch` script...
         - Change `--partition=pascalnodes` to `--partition=amperenodes`, or change `--partition=pascalnodes-medium` to `--partition=amperenodes-medium`.
         - Also change `--gres=gpu:3` and `--gres=gpu:4` to `--gres=gpu:2`, as there are only two A100 GPUs per node.
-    - If you are using an [Open OnDemand Interactive App](../open_ondemand/ood_interactive.md)...
+    - If you are using an [Open OnDemand Interactive App](../open_ondemand/ood_layout.md#interactive-apps)...
         - Change the partition from "pascalnodes" to "amperenodes, or change "pascalnodes-medium" to "amperenodes-medium".
     - In all cases, be sure to read the section on [Ensuring IO Performance With A100 GPUs](#ensuring-io-performance-with-a100-gpus) to be sure disk read speed doesn't limit your performance gains.
 - **How do I access the A100 GPUs?**
