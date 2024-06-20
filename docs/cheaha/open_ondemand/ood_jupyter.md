@@ -85,7 +85,7 @@ Having custom installs of Anaconda/Miniconda/ can cause the above similar issue.
 To identify a Python mismatch, use the commands `which python` and `python --version` to confirm the desired Python executable and version. Within the `conda` environment, `which python` prints the path of the Python executable (e.g. `~/.conda/envs/remora/bin/python`). If it doesn't match the expected version, an unexpected Python version may be in use.
 
 `conda init` append an incorrect version of Python to the front of the `$PATH`, an environment variable containing directories where the operating system looks for executable files. When you attempt to execute a Python-related command, the system will find the first matching executable in the directories listed in the modified `$PATH`. If the first entry corresponds to the version of Python added by `conda init`, that specific version will be used which lead to Python mismatch and hard-to-diagnose errors.
-  
+
 ### Unexpected/Silent Job Failure
 
 Having `conda activate` and `source activate` statements in the OOD Jupyter Notebooks' `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
@@ -97,7 +97,7 @@ If you encounter a "Failed to Connect" message while trying to open the job, and
 ### VNC Error When Launching OOD Jupyter Notebook
 
 While launching an OOD HPC Desktop Job or any OOD Applications, if the user gets errors, `Unable to contact settings server` and/or `Unable to load a failsafe session`, it is recommended to follow the below guidelines.
-  
+
 ![!OOD vnc error.](./images/ood_vncerror.png) ![!OOD vnc error_contd.](./images/ood_vncerror_contd.png)
 
 Using `conda init` causes a block of code automatically inserted into the `.bashrc` file in your `$HOME` directory. This code block may interfere with the proper functioning of various OOD applications, resulting in a VNC error. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
@@ -111,7 +111,7 @@ Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-p
 ```
 
 For the above case, resolving errors involve deleting the `~/.local` directory.
-  
+
 Here's an example of the correct procedure for installing `pip` packages within a `conda`:
 
 1. Load the `Anaconda3` module using `module load Anaconda3`.
