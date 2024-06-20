@@ -47,7 +47,7 @@ The text `[required]` is for flags and inputs that _are_ required to run the com
 
 Flags start with the character `-` as with the `-l` flag in `ls -l` (see [ls](#list-files-and-directories-ls)). Flags that do not require input can be combined as `ls -al`. Flags that require input may not be combined as with the flags `-n` and `-m 2` in `grep -n -m 2 pattern textfile.txt` (see [grep](#search-for-text-grep)).
 
-All inputs are separated by the space character ++space++. If you wish to or must use a space character in an input, that input must be surrounded by quotation marks. Note that single quotes and double quotes have different behavior. Single quotes `''` interpret all characters between them literally. Double quotes `""` interprets [special characters](#special-characters). In most cases, especially with [variable](#environment-concepts) contents, double quotes `""` are preferred.
+All inputs are separated by the space character ++space++. If you wish to or must use a space character in an input, that input must be surrounded by quotation marks. Note that single quotes and double quotes have different behavior. Single quotes `''` interpret all characters between them literally. Double quotes `""` interprets [special characters](#special-escaped-characters). In most cases, especially with [variable](#environment-concepts) contents, double quotes `""` are preferred.
 
 All commands are run in a process. By default, commands run at the shell prompt are run in the shell process, and wait for execution to stop before returning control to you. It is possible to regain control earlier in a number of ways.
 
