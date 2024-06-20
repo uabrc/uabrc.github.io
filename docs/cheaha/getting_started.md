@@ -58,7 +58,7 @@ Please visit our [hardware](hardware.md#cheaha-hpc-cluster) for more details abo
 
 ### Etiquette
 
-[Quality-of-Service (QoS) limits](hardware.md#quality-of-service-qos-limits) are in place to ensure any one user can't monopolize all resources.
+[Quality-of-Service (QoS) limits](hardware.md#summary) are in place to ensure any one user can't monopolize all resources.
 
 #### Why you should avoid running jobs on Login Nodes
 
