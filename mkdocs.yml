@@ -47,6 +47,10 @@ plugins:
       type: date
   - glightbox:
       # auto_caption: true
+  - htmlproofer:
+      enabled: !ENV [ENABLED_HTMLPROOFER, True]
+      raise_error_after_finish: True
+      skip_downloads: True
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
@@ -169,3 +173,14 @@ nav:
   - Help:
       - Support: help/support.md
       - FAQ: help/faq.md
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
