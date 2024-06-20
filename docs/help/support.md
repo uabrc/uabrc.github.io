@@ -80,7 +80,7 @@ If you are not able to find a suitable module or package and would like software
 
 ## Office Hours
 
-For our office hours links please see [Contact Us](../index.md#contact-us).
+For our office hours links please see [Contact Us](../index.md#how-to-contact-us).
 
 ## Status Updates
 

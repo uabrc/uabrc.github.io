@@ -16,7 +16,7 @@ To access cloud.rc, you must either be on the UAB Campus Network or the UAB Camp
 
 Please visit <https://cloud.rc.uab.edu> to ensure you are able to access the site.
 
-You will also need an account created for you by our team. If you believe you need an account but do not have one, please [Contact Us](../../index.md#contact-us).
+You will also need an account created for you by our team. If you believe you need an account but do not have one, please [Contact Us](../../index.md#how-to-contact-us).
 
 ## Tutorial Sections
 

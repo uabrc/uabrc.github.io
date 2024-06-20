@@ -6,7 +6,7 @@ The shell is a powerful tool, and with great power comes great responsibility. T
 
 Most commands are perfectly safe, and often when they do something unexpected it can be fixed with some work. We will do our best to warn you of commands with greater potential for destruction, but no documentation is perfect.
 
-We are not responsible for accidental deletions or overwrites caused inadvertently, or otherwise, by any commands run by researchers. Be warned that directories, files and file contents that are deleted or overwritten cannot be restored by us under any circumstances. Researchers are responsible for maintaining backups of their files. If in doubt about a command please contact [Contact Us](../index.md#contact-us) for guidance.
+We are not responsible for accidental deletions or overwrites caused inadvertently, or otherwise, by any commands run by researchers. Be warned that directories, files and file contents that are deleted or overwritten cannot be restored by us under any circumstances. Researchers are responsible for maintaining backups of their files. If in doubt about a command please contact [Contact Us](../index.md#how-to-contact-us) for guidance.
 
 ### Educational Resources
 
@@ -497,7 +497,7 @@ Permission management is an important part of managing access and control of fil
 
     Please carefully consider security when working in shared spaces like Cheaha. Setting private directories or files as readable by other users can inadvertently expose sensitive or protected information and may violate IT policy, FERPA, HIPAA or some combination.
 
-    There are legitimate use cases for truly shared spaces. Please [Contact Us](../index.md#contact-us) if you need to share information with other users or collaborators and aren't sure of how to do so securely.
+    There are legitimate use cases for truly shared spaces. Please [Contact Us](../index.md#how-to-contact-us) if you need to share information with other users or collaborators and aren't sure of how to do so securely.
 <!-- markdownlint-enable MD046 -->
 
 #### What Permissions Do

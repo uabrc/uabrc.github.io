@@ -24,13 +24,13 @@ When talking about S3 storage, some terms are different compared to a normal fil
 
     Never give access and secret keys for personal or lab accounts to anyone! Bad actors who are given keys to accounts which own important buckets can change access permissions and delete any and all data!
 
-    If you need to give elevated permissions to other users to view, upload, download, delete, etc. any data from a bucket, those permissions can be changed via [bucket policies](policies.md) without giving out keys. Please [contact Research Computing](../../index.md#contact-us) for help setting up and applying policies if you need it
+    If you need to give elevated permissions to other users to view, upload, download, delete, etc. any data from a bucket, those permissions can be changed via [bucket policies](policies.md) without giving out keys. Please [contact Research Computing](../../index.md#how-to-contact-us) for help setting up and applying policies if you need it
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    If you lose your access and secret keys, please submit a [support ticket](../../index.md#contact-us) to <support@listserv.uab.edu> to request your keys. Keys will only be given to an account owner as verified by RC staff.
+    If you lose your access and secret keys, please submit a [support ticket](../../index.md#how-to-contact-us) to <support@listserv.uab.edu> to request your keys. Keys will only be given to an account owner as verified by RC staff.
 <!-- markdownlint-enable MD046 -->
 
 This documentation will use the standard file and path terms since those are more easily understood by most users. Just be aware that documentation such as [AWS CLI](https://awscli.amazonaws.com/v2/documentation/api/latest/index.html) will use terms prefix, object, and others that are not standard in a typical filesystem.
