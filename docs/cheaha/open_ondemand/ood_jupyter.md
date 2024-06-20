@@ -50,15 +50,15 @@ To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From
 
 We can create a new environment, that houses all of the packages, modules, and libraries we need for our current Jupyter Notebook to implement functions and operations, run all of its cells and deliver desired outputs. Follow the steps below to accomplish this;
 
-1. Access the [terminal](..//..//workflow_solutions/using_anaconda.md#creating-and-activating-an-environment-using-cheaha-cli).
+1. Access the [terminal](../../workflow_solutions/using_anaconda.md#creating-and-activating-an-environment-using-cheaha-cli).
 
-1. [Create](..//..//workflow_solutions/using_anaconda.md#create-an-environment) and [activate](..//..//workflow_solutions/using_anaconda.md#activate-an-environment) your new environment, following the linked steps.
+1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) your new environment, following the linked steps.
 
-1. [Install your desired packages into your activated environment](..//..//workflow_solutions/using_anaconda.md#install-packages).
+1. [Install your desired packages into your activated environment](../../workflow_solutions/using_anaconda.md#install-packages).
 
 1. Remember to install 'ipykernel' in your activated environment, using `conda install ipykernel`.
 
-1. Go into your working Jupyter Notebook file, and [change to the created environment](..//..//workflow_solutions/using_anaconda.md#changing-environments-using-jupyter-notebook-gui).
+1. Go into your working Jupyter Notebook file, and [change to the created environment](../../workflow_solutions/using_anaconda.md#changing-environments-using-jupyter-notebook-gui).
 
 ### Changing Environments using Jupyter Notebook GUI
 
