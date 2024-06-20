@@ -88,7 +88,7 @@ Compared to the image below which is a login node.
 
 ##### Slurm and Slurm Jobs
 
-Slurm Workload Manager is a widely used open-source job scheduler that manages the queue of jobs submitted to the compute nodes. It ensures efficient use of the cluster by allocating resources to jobs, prioritizing tasks, and managing queues of pending jobs. Starting Slurm jobs can be done in two primary ways: using Open OnDemand (OOD) or through the terminal. For more details on how to use Slurm on cheaha, please see our [slurm docs](..//cheaha/slurm/introduction.md).
+Slurm Workload Manager is a widely used open-source job scheduler that manages the queue of jobs submitted to the compute nodes. It ensures efficient use of the cluster by allocating resources to jobs, prioritizing tasks, and managing queues of pending jobs. Starting Slurm jobs can be done in two primary ways: using Open OnDemand (OOD) or through the terminal. For more details on how to use Slurm on cheaha, please see our [slurm docs](../cheaha/slurm/introduction.md).
 
 ##### What Should Run in Jobs?
 
