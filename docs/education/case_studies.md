@@ -145,7 +145,6 @@ The above execution script performs `fq2bam` pipeline analyses. The `fq2bam` too
 
 If you execute the above batch script using Parabricks sample data on `amperenodes` with 2 GPUs, the results will be reported as below.
 
-
 ```bash
 [PB Info 2023-Nov-03 11:54:50] ------------------------------------------------------------------------------
 [PB Info 2023-Nov-03 11:54:50] ||                 Parabricks accelerated Genomics Pipeline                 ||
@@ -236,7 +235,7 @@ $ module load CUDA/11.6.0
 
 $ nvidia-smi
 
-Fri Nov  3 12:38:24 2023       
+Fri Nov  3 12:38:24 2023
 +---------------------------------------------------------------------------------------+
 | NVIDIA-SMI 535.86.10              Driver Version: 535.86.10    CUDA Version: 12.2     |
 |-----------------------------------------+----------------------+----------------------+
@@ -252,7 +251,7 @@ Fri Nov  3 12:38:24 2023
 | N/A   32C    P0             112W / 300W |  16631MiB / 81920MiB |     96%      Default |
 |                                         |                      |             Disabled |
 +-----------------------------------------+----------------------+----------------------+
-                                                                                         
+
 +---------------------------------------------------------------------------------------+
 | Processes:                                                                            |
 |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
