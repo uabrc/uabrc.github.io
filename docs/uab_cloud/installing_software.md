@@ -196,7 +196,7 @@ Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quic
     For other versions of the Singularity documentation, visit <https://sylabs.io/docs/>.
 <!-- markdownlint-enable MD046 -->
 
-#### Installing Jupyter Notebook Server
+#### Installing Jupyter Server
 
 Jupyter Notebooks are a staple of modern research computing, especially when developing new workflows or evaluating the usefulness of software packages.
 
@@ -209,7 +209,7 @@ To install, you will need the following pre-requisites. If you are unfamiliar wi
 3. A [Security Group](tutorial/security.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
 4. [Miniconda installed](#installing-miniconda) on the instance. Miniconda is a lightweight version of Anaconda.
 
-Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_anaconda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_anaconda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#>.
+Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_anaconda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_anaconda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html>.
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
@@ -229,9 +229,9 @@ Once the prerequisites are complete, the following steps must be performed to in
         - [Optional] `pip`
 
 2. Because floating IPs are, by default, reachable by anyone on the UAB Campus Network, you'll need to secure the server using the steps below.
-    1. Generate a notebook config file using `jupyter notebook --generate-config`. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#prerequisite-a-notebook-configuration-file)]
-    2. Prepare a password using `jupyter notebook password`. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#automatic-password-setup)]
-    3. Set up SSL for an encrypted connection. For now create a self-signed certificate using the following command. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication)]
+    1. Generate a notebook config file using `jupyter notebook --generate-config`. [[official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#prerequisite-a-jupyter-server-configuration-file)]
+    2. Prepare a password using `jupyter notebook password`. [[official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#automatic-password-setup)]
+    3. Set up SSL for an encrypted connection. For now create a self-signed certificate using the following command. [[official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#using-ssl-for-encrypted-communication)]
 
         ```bash
         openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem
@@ -240,10 +240,10 @@ Once the prerequisites are complete, the following steps must be performed to in
         <!-- markdownlint-disable MD046 -->
         !!! warning
 
-            When you connect to your Jupyter Server, your browser will warn you that the connection may be insecure. This is because self-signed certificates are not trusted by your operating system's root certificates. It is possible to fix this with some additional work using notes at the [official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication). Generally the security warning can be bypassed without issue _in this case_.
+            When you connect to your Jupyter Server, your browser will warn you that the connection may be insecure. This is because self-signed certificates are not trusted by your operating system's root certificates. It is possible to fix this with some additional work using notes at the [official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#using-ssl-for-encrypted-communication). Generally the security warning can be bypassed without issue _in this case_.
         <!-- markdownlint-enable MD046 -->
 
-3. Configure the notebook server by locating lines like the following in `~/.jupyter/jupyter_notebook_config.py` and updating them with the right-hand side of each variable assignment (equals sign `=`). This file was created as part of the first step of these instructions. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#running-a-public-notebook-server)]
+3. Configure the notebook server by locating lines like the following in `~/.jupyter/jupyter_notebook_config.py` and updating them with the right-hand side of each variable assignment (equals sign `=`). This file was created as part of the first step of these instructions. [[official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#running-a-public-notebook-server)]
 
     <!-- markdownlint-disable MD046 -->
     !!! note
