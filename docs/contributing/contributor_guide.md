@@ -246,6 +246,30 @@ To create a section index page:
 
 3. When a site visitor clicks `Cheaha Guide` in the nav pane, the page `cheaha/index.md` will be loaded.
 
+## CI/CD
+
+CI/CD is used to ensure consistency and formatting of markdown files via linting. URLs are also checked for validity.
+
+- Linting: `markdownlint` runs via [markdownlint-cli2-action](https://github.com/DavidAnson/markdownlint-cli2-action).
+- URL Validation:
+    - Internal links are validated by the `mkdocs build` [validation configuration](https://www.mkdocs.org/user-guide/configuration/#validation).
+    - External links are validated by the [mkdocs-htmlproofer-plugin](https://github.com/manuzhang/mkdocs-htmlproofer-plugin).
+
+### Pre-commit Hooks
+
+We use [pre-commit hooks](https://pre-commit.com/) to ensure contributions match our standards for consistency, formatting, and URL validity prior to pull requests.
+
+- Pre-commit runs [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) on markdown files.
+- Pre-commit runs `mkdocs build` to validate links.
+    - Internal links are validated by the `mkdocs build` [validation configuration](https://www.mkdocs.org/user-guide/configuration/#validation).
+    - External links are validated by the [mkdocs-htmlproofer-plugin](https://github.com/manuzhang/mkdocs-htmlproofer-plugin).
+
+The `mkdocs-htmlproofer-plugin` can take substantial time to run. To disable it modify the file `.htmlproofer.env` to read `ENABLED_HTMLPROOFER=False`. Be sure not to commit this change! It is recommended to discard this change and re-run validaitions before submitting a pull request.
+
+### Manual Validation
+
+Use the command `pre-commit run --all-files > out.log 2>&1` to run all [pre-commit hooks](#pre-commit-hooks) and store the results in the file `out.log` for simpler review within VSCode.
+
 ## Linting Known Issues
 
 There are known issues with the markdown linter and some of our non-standard plugins, especially admonitions (specifically a conflict involving fenced vs indented code blocks). To fix these cases please use one of the following methods. The `<lint warning code>` can be found by hovering over the yellow squiggles in VSCode to bring up the warning lens.
