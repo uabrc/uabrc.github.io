@@ -53,7 +53,7 @@ If you wish to set up server software, you'll need to open ports for that softwa
 If you intend to use your instance as a server host, you'll likely need to set up additional [Security Groups](tutorial/security.md#creating-a-security-group) for any ports the server expects to communicate on. It can be helpful to verify that those ports are open before configuring the server software. Assuming you know which ports are needed, the simplest way to do this is outlined below.
 
 1. Set up [Security Groups](tutorial/security.md#creating-a-security-group) for the ports your server will need to communicate on.
-2. [SSH](remote_access#setting-up-a-configuration-file) into the instance.
+2. [SSH](remote_access.md#setting-up-a-configuration-file) into the instance.
 3. Prepare the `netcat` software command `nc`:
     - For Ubuntu, the command `nc` should already be available.
     - For other OSes, you may need to [Install](./installing_software.md) `nc` or `netcat`.
