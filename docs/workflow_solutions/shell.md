@@ -233,7 +233,7 @@ Below is a reference guide to various commands through the lens of problems to b
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you are using Cheaha and working with more than a few files or directories, or the files are large, please run your shell commands in a [Job Context](../cheaha/slurm/submitting_jobs.mdinteractive-jobs-with-srun).
+    If you are using Cheaha and working with more than a few files or directories, or the files are large, please run your shell commands in a [Job Context](../cheaha/slurm/submitting_jobs.md#interactive-jobs-with-srun).
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
