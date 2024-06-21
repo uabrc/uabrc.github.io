@@ -50,6 +50,15 @@ plugins:
   - htmlproofer:
       enabled: !ENV [ENABLED_HTMLPROOFER, True]
       raise_error_after_finish: True
+      raise_error_excludes:
+        403:
+          [
+            "https://uabstatus.statuscast.com*",
+            "https://anaconda.org*",
+            "https://support.rstudio.com*",
+            "https://gatk.broadinstitute.org*",
+          ]
+        504: ["https://*cloud.rc.uab.edu*"]
       skip_downloads: True
   - redirects:
       redirect_maps:
@@ -117,10 +126,10 @@ nav:
       - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
-      - Tutorials: 
+      - Tutorials:
           - cheaha/tutorial/index.md
           - Anaconda Environment Tutorial: cheaha/tutorial/pytorch_tensorflow.md
-      - Cheaha Web Portal: 
+      - Cheaha Web Portal:
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
           - HPC Desktop: cheaha/open_ondemand/hpc_desktop.md
