@@ -88,7 +88,7 @@ Alternatively you can share the private key file you created for the Instance, w
 1. Add the private key into your `~/.ssh` folder and run the command below.
 
     ```bash
-        
+
         ssh-add ~/.ssh/<keypair_filename>.pem
 
     ```
@@ -96,7 +96,7 @@ Alternatively you can share the private key file you created for the Instance, w
 1. Change the file permission.
 
     ```bash
-        
+
         sudo chmod 600 ~/.ssh/<keypair_filename>.pem
 
     ```
