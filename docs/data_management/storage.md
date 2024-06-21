@@ -10,9 +10,7 @@ There are multiple locations for data storage both on and off Cheaha each with a
 
 ## What Individual Storage Solutions are Available?
 
-Every researcher has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. These two locations are meant to store general data and can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, `$HOME` is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, `$USER_DATA` is intended to store datasets and results for individual research projects.
-
-Individual allocations on Long-Term Storage (LTS) are also available upon request.
+Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about [Long-Term Storage](./lts/index.md) and [User Data and Home Directories](#user-data-and-home-directories).
 
 ### How Do I Request Individual Long-Term Storage?
 
@@ -20,9 +18,10 @@ To request individual Long-Term Storage, please first read and understand how [L
 
 ## What Shared Storage Solutions are Available?
 
-Shared Storage is available via two services. We have Project Storage (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases, so please read on to determine which may be most suitable.
+Shared Storage is available via two services. We have [Project Storage](#project-directory) 
+(located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
 
-Project Storage is best-suited for changing or dynamic data. Specifically:
+[Project Storage](#project-directory) is best-suited for changing or dynamic data. Specifically::
 
 - Data needing/undergoing analysis
 - Exploratory data
@@ -112,7 +111,7 @@ If you have additional questions _or_ wish to discuss further, please [Contact S
 
 One alternative we recommend is breaking your dataset into batches. A generic, template workflow might be something like below.
 
-- Copy a batch of data from LTS, or an internet source, to User Scratch.
+- Copy a batch of data from LTS, or an internet source, to [User Scratch](#user-scratch).
 - Perform analyses on copied data in User Scratch.
 - Store intermediate or final results in `/data/project/` or LTS.
 - Delete copied data from User Scratch.
@@ -121,6 +120,16 @@ One alternative we recommend is breaking your dataset into batches. A generic, t
 When all batches have been processed, begin processing or aggregating the resulting data.
 
 If you wish to discuss other alternatives tailored to your workflow, please [Contact Support](../help/support.md).
+
+## User Data and Home Directories
+
+Every user of Cheaha are given a storage space to store general data and data that can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, `$HOME` is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, `$USER_DATA` is intended to store datasets and results for individual research projects, with access granted only to the user of that directory. Since the quotas for these directories are limited to 5TB, you may consider using [scratch](#scratch) space and/or [project directories](#project-directory) for storing, moving, and analyzing data.
+
+## Project Directory
+
+The Project Directories are larger than home directories and serves as a storage solution accessible to Labs led by a PI and Core facilities led by a director. It is intended for sharing data and code within a group of researchers or among lab members and collaborators, located under `/data/project/<project>`.
+
+The PI is the owner of the project directory, and when a directory `/data/project/<project>` is created, researchers permitted to collaborate on the project are added as members of this group, granting them access to the project directory. New members can be added or removed from the group upon PI approval. Currently, a project directory space is 25 TB, and this space is not designated for a single project only; it serves as storage for multiple projects.
 
 ### Project Directory Permissions
 
