@@ -165,7 +165,8 @@ nav:
       - Descriptions: grants/publications.md
   - Outreach & Training:
       - Case Studies: education/case_studies.md
-      - Research Computing Days: education/research_computing_days.md
+      - Research Computing Days:
+          - education/research_computing_days/index.md
       - Offered Courses: education/courses.md
       - Training Resources: education/training_resources.md
   - Policies: policies.md
