@@ -2,7 +2,7 @@
 
 The below tutorial would show you steps on how to create an Anaconda environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access the terminal, as well as using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../open_ondemand/ood_layout.md#interactive-apps)
 
-## Installing Anaconda Environments using Terminal
+## Installing Anaconda Environments Using the Terminal
 
 To access the terminal (shell), please do the following.
 
@@ -30,18 +30,18 @@ To access the terminal (shell), please do the following.
 
 The instructions below, provide a recommended step by step guide to creating and activating an environment that has PyTorch and/or TensorFlow installed and ready to use for deep learning projects.
 
-## Installing PyTorch Using Terminal
+## Installing PyTorch Using the Terminal
 
 There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilising only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;
 
 1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in the links.
 
-1. Access the terminal following the steps [here](../../workflow_solutions/using_anaconda.md#installing-anaconda-environments-using-cheahas-command-line-interface-cli).
+2. Access the terminal following the steps [here](#installing-anaconda-environments-using-the-terminal).
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    When installing packages, modules and libraries into environments, remember to also install `ipykernel` using `conda install ipykernel`. This way your activated environment would appear in the list of kernels in your Jupyter Notebook. 
+    When installing packages, modules and libraries into environments, remember to also install `ipykernel` using `conda install ipykernel`. This way your activated environment would appear in the list of kernels in your Jupyter Notebook.
 
 <!-- markdownlint-enable MD046 -->
 
@@ -58,7 +58,7 @@ module load CUDA/11.8.0
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    The cudatoolkit version may vary, as at the time of this tutorial, 11.8 is the version used. Running `nvidia-smi`, as in the image below, will show you the status, version and other information on GPUs in your created job session. The CUDA version is highlighted. The GPU CUDA Version available on Cheaha at the time of this tutorial is 12.3. Because the toolkit version used is lower than the Cheaha GPU version, it works. 
+    The cudatoolkit version may vary, as at the time of this tutorial, 11.8 is the version used. Running `nvidia-smi`, as in the image below, will show you the status, version and other information on GPUs in your created job session. The CUDA version is highlighted. The GPU CUDA Version available on Cheaha at the time of this tutorial is 12.3. Because the toolkit version used is lower than the Cheaha GPU version, it works.
 
 <!-- markdownlint-enable MD046 -->
 
@@ -84,7 +84,7 @@ You should get an output like the below image.
 
 ![!PyTorch Env Output](images/pytorchversion_output.png)
 
-The same process can be followed for installing another Deep Learning library Tensorflow (see instructions [below](../tutorial/pytorch_tensorflow.md#steps-to-install-tensorflow)) with some minute differences. You may decide to install the TensorFlow library into the same environment or create a new one. As a best practice, you may want to install these libraries in different environments.
+The same process can be followed for installing another Deep Learning library Tensorflow (see instructions [below](#install-tensorflow-gpu-using-the-terminal)) with some minute differences. You may decide to install the TensorFlow library into the same environment or create a new one. As a best practice, you may want to install these libraries in different environments.
 
 ## Using PyTorch on Jupyter Notebook
 
@@ -102,7 +102,7 @@ print(torch.cuda.get_device_name(x))
 
 ![!PyTorch Jupyter Notebook Output](images/pytorch_output.png)
 
-## Install TensorFlow GPU Using Terminal
+## Install TensorFlow GPU Using the Terminal
 
 1. Create a new environment that is compatible with supported tensorflow versions, use the below command to do this. For this tutorial we will use Python 3.11.
 
