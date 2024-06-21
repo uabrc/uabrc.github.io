@@ -153,7 +153,7 @@ There are some known issues surrounding project directory permissions when files
 For PIs and project administrators:
 
 - Please educate your staff and collaborators about the above permission setups, and any additional ACLs you may have in place, to minimize future challenges.
-- If you have issues with permissions, please contact [Support](../help/support.md#how-to-contact-us). We can guide you through [Managing Permissions](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../workflow_solutions/shell.md#manage-group-ownership-chgrp).
+- If you have issues with permissions, please contact [Support](../index.md#how-to-contact-us). We can guide you through [Managing Permissions](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../workflow_solutions/shell.md#manage-group-ownership-chgrp).
 
 ## Scratch
 
