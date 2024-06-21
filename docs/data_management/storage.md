@@ -18,8 +18,7 @@ To request individual Long-Term Storage, please first read and understand how [L
 
 ## What Shared Storage Solutions are Available?
 
-Shared Storage is available via two services. We have [Project Storage](#project-directory) 
-(located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
+Shared Storage is available via two services. We have [Project Storage](#project-directory) (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
 
 [Project Storage](#project-directory) is best-suited for changing or dynamic data. Specifically::
 
@@ -284,7 +283,7 @@ A possible external resource for archival is available through University of Okl
     Backups of data are the responsibility of researchers using Cheaha.
 <!-- markdownlint-enable MD046 -->
 
-A good practice for backing up data is to use the 3-2-1 rule, as [recommended by US-CERT](https://www.cisa.gov/uscert/security-publications/data-backup-options):
+A good practice for backing up data is to use the 3-2-1 rule, as [recommended by US-CERT](https://www.cisa.gov/sites/default/files/publications/data_backup_options.pdf):
 
 - **3**: Keep **3** copies of important data. 1 primary copy for use, 2 backup copies.
 - **2**: Store backup copies on **2** different media types to protect from media-specific hazards.
