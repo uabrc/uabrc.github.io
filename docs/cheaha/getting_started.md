@@ -1,3 +1,7 @@
+---
+toc_depth: 3
+---
+
 # Getting Started
 
 Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing of research computing software. We offer a user-friendly portal website Open OnDemand with graphical interfaces to the most common features, all in one place. Read on to learn more about our resources and how to access them.
