@@ -224,7 +224,7 @@ Redirecting pages is possible using the plugin at <https://github.com/datarobot/
 plugins:
   - redirects:
       redirect_maps:
-        account_management/uab_researcher.md: account_management/cheaha_account.md
+        account_management/uab_researcher.md: account_management/cheaha_account/index.md
 ```
 
 ## Section Index Pages

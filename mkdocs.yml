@@ -50,7 +50,7 @@ plugins:
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
-        account_management/uab_researcher.md: account_management/cheaha_account.md
+        account_management/uab_researcher.md: account_management/cheaha_account/index.md
         account_management/xias_guest.md: account_management/xias/guest_instructions.md
         account_management/xias_sites.md: account_management/xias/pi_site_management.md
         account_management/xias_users.md: account_management/xias/pi_guest_management.md
@@ -81,8 +81,11 @@ plugins:
 
 nav:
   - Home: index.md
-  - Account Management:
-      - Cheaha Account: account_management/cheaha_account.md
+  - Account Management: 
+      - account_management/index.md
+      - Cheaha Account: 
+          - account_management/cheaha_account/index.md
+          - FAQ: account_management/cheaha_account/cheaha_faq.md
       - External Collaborator Accounts (XIAS):
           - account_management/xias/index.md
           - "For PIs - (1) Managing Projects & Sites": account_management/xias/pi_site_management.md

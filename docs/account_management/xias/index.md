@@ -25,7 +25,7 @@ For further guidance on how to proceed and what steps to take next, please refer
     Before proceeding with any of the resources below, be sure you have been granted authorization to those particular resources by your Sponsor.
 <!-- markdownlint-enable MD046 -->
 
-- [How do I create a Cheaha account?](../cheaha_account.md)
+- [How do I create a Cheaha account?](../cheaha_account/index.md)
 - [How do I get access to GitLab?](../gitlab_account.md)
 - [How do I get access to Cloud.rc (OpenStack)?](../../uab_cloud/tutorial/index.md)
   
