@@ -116,6 +116,7 @@ nav:
       - Tutorials: 
           - cheaha/tutorial/index.md
           - Anaconda Environment Tutorial: cheaha/tutorial/pytorch_tensorflow.md
+          - Profiling: cheaha/tutorial/profiling.md
       - Cheaha Web Portal: 
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
