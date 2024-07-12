@@ -72,29 +72,27 @@ To effectively manage and provide high-performance computing (HPC) resources to 
 
 Like with most HPC clusters, cheaha nodes are divided into two, the login node and compute nodes. The login node acts as the gateway for users to access the cluster, submit jobs, and manage files. Compute nodes, on the other hand, are like the engines of the cluster, designed to perform the heavy lifting of data processing and computation.
 
-You are on compute nodes if:
-
-- using Open OnDemand Interactive Apps
-- using Open OnDemand Job Composer
-- terminal prompt looks like `[$USER@c0112 ~]$`
+The Login node can be accessed from the Cheaha landing page or through the `$HOME` directory. You can see in the images below, how to identify if you’re within a login node or compute node.
 
 You are on the login node if:
 
 - terminal prompt looks like `[$USER@login004 ~]$`
+  
+![!login node terminal prompt shows username@login004](images/login_node.png)
+
+You are on compute nodes if:
+
+- using [Open OnDemand Interactive Apps](../cheaha/open_ondemand/ood_layout.md/#interactive-apps)
+- using [Interactive Jobs with `srun`](../cheaha/slurm/submitting_jobs.md/#interactive-jobs-with-srun)
+- terminal prompt looks like `[$USER@c0112 ~]$`
+
+![!compute node terminal prompt shows username@c0112](images/comp_node.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
     If the terminal prompt appears as `bash-4.2$` instead of the user prompt `[$USER@login004]`, please refer to the [FAQ](#how-to-restore-default-terminal-prompt-from-bash-42-to-userlogin004) below to resolve the issue.
 <!-- markdownlint-disable MD046 -->
-
-The Login node can be accessed from the Cheaha landing page or through the home directory, while compute nodes can be accessed after a job has been created on the "My Interactive Sessions". You can see in the images below, how to identify if you’re within a login node or compute node. Image below is a compute node. Safe for heavy computation.
-
-![!compute node terminal prompt shows username@c0112](images/comp_node.png)
-
-Compared to the image below which is a login node.
-
-![!login node terminal prompt shows username@login004](images/login_node.png)
 
 ##### How to Restore Default Terminal Prompt from `bash-4.2$` to `$USER@login004`?
 
