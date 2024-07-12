@@ -76,11 +76,17 @@ You are on compute nodes if:
 
 - using Open OnDemand Interactive Apps
 - using Open OnDemand Job Composer
-- terminal prompt looks like `[<BlazerID>@c0001 ~]$`
+- terminal prompt looks like `[$USER@c0112 ~]$`
 
 You are on the login node if:
 
-- terminal prompt looks like `[<BlazerID>@login001 ~]$`
+- terminal prompt looks like `[$USER@login004 ~]$`
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If the terminal prompt appears as `bash-4.2$` instead of the user prompt `[$USER@login004]`, please refer to the [FAQ](#how-to-restore-default-terminal-prompt-from-bash-42-to-userlogin004) below to resolve the issue.
+<!-- markdownlint-disable MD046 -->
 
 The Login node can be accessed from the Cheaha landing page or through the home directory, while compute nodes can be accessed after a job has been created on the "My Interactive Sessions". You can see in the images below, how to identify if you’re within a login node or compute node. Image below is a compute node. Safe for heavy computation.
 
@@ -89,6 +95,42 @@ The Login node can be accessed from the Cheaha landing page or through the home 
 Compared to the image below which is a login node.
 
 ![!login node terminal prompt shows username@login004](images/login_node.png)
+
+##### How to Restore Default Terminal Prompt from `bash-4.2$` to `$USER@login004`?
+
+There might be scenarios where you see the terminal prompt display `bash-4.2$` like below, instead of the user prompt `[$USER@login004]`.
+
+```bash
+bash-4.2$ 
+```
+
+The `bash-4.2$` prompt indicates that the files `$HOME/.bashrc` and/or `$HOME/.bash_profile` are missing or corrupted. To resolve this issue, we recommend following these steps:
+
+(i) If you have made any changes to these files earlier, it's advisable to create backups. For instance, you can rename `.bashrc` to `.bashrc.backup`, and you can verify if the backed-up files are listed.
+
+```bash
+bash-4.2$ mv $HOME/.bashrc $HOME/.bashrc.backup
+bash-4.2$ mv $HOME/.bash_profile $HOME/.bash_profile.backup
+
+bash-4.2$ ls .bash*
+.bash_profile.backup  .bashrc.backup
+```
+
+(ii) After you have taken the backup of those files, run the following command to copy the default versions from `/etc/skel` to `$HOME`. Doing this will clobber, or remove, any changes you may have made, so be sure to make a backup first, as shown in the step (ii), if you wish to keep any changes. You will see the copied files listed in the directory.
+
+```bash
+bash-4.2$ cp /etc/skel/.bash* $HOME
+
+bash-4.2$ ls .bash*
+.bash_profile  .bash_profile.backup  .bashrc  .bashrc.backup
+```
+
+(iii) You can exit the terminal or source your files using the commands below to apply the changes, after which you will see the user prompt.
+
+```bash
+bash-4.2$ source ~/.bashrc
+[$USER@login004 ~]$ 
+```
 
 ##### Slurm and Slurm Jobs
 
