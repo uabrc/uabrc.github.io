@@ -89,7 +89,7 @@ Generally, if a package needs to be downloaded from a specific conda channel, it
 
 #### Installing Packages with Pip
 
-Some packages are not available through Anaconda. Often these packages are available via [PyPi](https://pypi.org/) and thus using the Python built-in Pip package manager. Pip may also be used to install locally-available packages as well.
+Some packages are not available through Anaconda. Often these packages are available via [PyPI](https://pypi.org/) and thus using the Python built-in Pip package manager. Pip may also be used to install locally-available packages as well.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -109,7 +109,7 @@ pip install -r packages.txt
 
 #### Finding Packages
 
-You may use the [Anaconda page](https://anaconda.org/) to search for packages on Anaconda, or use Google with something like `<package name> conda`. To find packages in PyPi, either use the [PyPi page](https://pypi.org/) to search, or use Google with something like `<package name> pip`.
+You may use the [Anaconda page](https://anaconda.org/) to search for packages on Anaconda, or use Google with something like `<package name> conda`. To find packages in PyPI, either use the [PyPI page](https://pypi.org/) to search, or use Google with something like `<package name> pip`.
 
 #### Packages for Jupyter
 
@@ -284,68 +284,81 @@ Now we can be sure that the correct versions of the software will be installed o
 
 #### Good Practice for Finding Software Packages on Anaconda
 
-Finding Anaconda software packages involves searching through the available “Channels” and repositories to locate the specific packages that contain functions that you need for your environment. Channels are locations that store packages, these locations are where Anaconda looks for packages when an installation is to be done. The following are Anaconda Channels that are readily used to house majority of the packages used in scientific research. i. Anaconda ii. Conda-Forge iii. BioConda. There are other Channels also. If you want more information on Anaconda Channels please see their [docs](https://docs.anaconda.com/).
+Finding Anaconda software packages involves searching through the available “Channels” and repositories to locate the specific packages that contain functions that you need for your environment. Channels are Anaconda's way of organizing packages. Channels instruct Anaconda where to look for packages when installation is to be done. The following are Anaconda Channels that are readily used to house majority of the packages used in scientific research. Anaconda, Conda-Forge, BioConda, other Channels also exist. If you want more information on Anaconda Channels please see their [docs](https://docs.anaconda.com/).
+
+In the sections below, you will see information on how to find key packages you intend to use, ensure the packages are up-to-date, figure out the best way to install them, and finally compose an environment file for portability and replicability.
 
 ##### Step-by-Step Guide to Finding Anaconda Software Packages
 
-If we find the package at one of the Channel sources mentioned above, we can check the Platform version to ensure it is either "noarch" (if available) or linux. After noting the version, we can click the "source" or "repo" link (if available) or "homepage". Then we try to find the latest version. For a package found on GitHub, click "Releases" on the right-hand side. Verify that the latest Release is the same as, or very close to, the version on Anaconda or Pypi. If so, the package is being maintained on Anaconda/Pypi and suitable for use. Note the exact software name, version, and channel (if not on Pypi).
+If we find the package at one of the Channel sources mentioned above, we can check the Platform version to ensure it is either "noarch" (if available) or linux. After noting the version, we can click the "source" or "repo" link (if available) or "homepage". Then we try to find the latest version. For a package found on GitHub, click "Releases" on the right-hand side. Verify that the latest Release is the same as, or very close to, the version on Anaconda or PyPI. If so, the package is being maintained on Anaconda/PyPI and suitable for use. Note the exact software name, version, and channel (if not on PyPI). We prefer searching using the following methods, and usually have the most success in the order listed below.
 
-1. Using Google: You may already be familiar with the exact Anaconda package name you require, in the event this is not the case, a simple web engine search with key words would aid your search. For example, a web search for an Anaconda package would be something along the lines of “Anaconda package for `Generic Topic Name`”. Your search results, should return popular package names related to the topic you have searched for. In the sections below, there is an attempt to provide a detailed step-by-step guide on how to find Anaconda packages using “numpy” as an example.
+- Using Google: You may already be familiar with the exact Anaconda package name you require. In the event this is not the case, a simple web engine search with key words usually finds the package. For example, a web search for an Anaconda package would be something along the lines of “Anaconda package for `Generic Topic Name`”. Your search results, should return popular package names related to the topic you have searched for. In the sections below, there is an attempt to provide a detailed step-by-step guide on how to find Anaconda packages using “numpy” as an example.
 
-1. Anaconda Cloud: Anaconda Cloud is the primary source for finding Anaconda packages. You can visit [Anaconda Cloud](https://anaconda.org/) and use the search bar to find the package you need. For example, when you get the package name from your web search (using numpy). You will enter name of the package in the search bar as shown below. ![!Landing page of anaconda.org showing search](images/anaconda_search.png)
+- Anaconda Cloud: Anaconda Cloud is the primary source for finding Anaconda packages. You can visit [Anaconda Cloud](https://anaconda.org/) and use the search bar to find the package you need. For example, when you get the package name from your web search (using numpy). You will enter name of the package in the search bar as shown below.
 
-    Review results of your search, it is advised to use “Artifacts” that are compatible with the platform you are working with, as well as have the most “Favorites” and “Downloads” numbers. Click on the portion that contains the name of the package (highlighted 3 in the image below). 1 highlights the Artifact, Favorite and Downloads numbers, the selection 2 highlights the Channel where this package is stored. ![!Anaconda.org page showing download statistics](images/anaconda_channel_package.png)
+![!Landing page of anaconda.org showing search](images/anaconda_search.png)
 
-    Then follow the installation instructions you see in the image below. ![!Anaconda.org page showing package installation instructions](images/install_anaconda_package.png)
+Review results of your search, it is advised to use “Artifacts” that are compatible with the platform you are working with, as well as have the most “Favorites” and “Downloads” numbers. Click on the portion that contains the name of the package (highlighted 3 in the image below). 1 highlights the Artifact, Favorite and Downloads numbers, the selection 2 highlights the Channel where this package is stored.
 
-1. Using Conda Search Command: You can use the `conda search <package_name` command directly in your terminal to find packages. Replace `package_name` with the package you would like to search for. To do this on Cheaha, make sure to `module load Anaconda3` first, and follow the instructions to [activate](#activate-an-environment) an environment. Then do `conda search numpy`. You should get a long list of numpy packages. Review this output, but take note of the highlighted portions in the image. The section with a red selection shows the numpy versions that are available, The section with a blue selection shows the channel where each numpy version is stored. ![!Search output from using conda search in Terminal](images/channel_conda_search.png)
+![!Anaconda.org page showing download statistics](images/anaconda_channel_package.png)
 
-    You can then install numpy with a specific version and from a specific channel with.
+Follow the installation instructions you see in the image below.
 
-    ```bash
+![!Anaconda.org page showing package installation instructions](images/install_anaconda_package.png)
+
+- Using the Conda Search Command: You can use the `conda search <package_name>` command directly in your terminal to find packages. Replace `<package_name>` with the package you would like to search for. To do this on Cheaha, make sure to `module load Anaconda3` first, and follow the instructions to [activate](#activate-an-environment) an environment. Then do `conda search numpy`. You should get a long list of numpy packages. Review this output, but take note of the highlighted portions in the image. The section with a red selection shows the numpy versions that are available, The section with a blue selection shows the channel where each numpy version is stored.
+
+![!Search output from using conda search in Terminal](images/channel_conda_search.png)
+
+You can then install numpy with a specific version and from a specific channel with.
+
+```bash
     conda install -c conda-forge numpy=2.0.0rc2
+```
 
-    ```
+- Using Specific Channels: You can also get packages using specific Anaconda Channels listed below.
 
-1. Using Specific Channels: You can also get packages using specific Anaconda Channels listed below.
+    - Anaconda Main Channel: The default channel provided by Anaconda, Inc. Visit [Anaconda](https://anaconda.org)
 
-    1. Anaconda Main Channel: The default channel provided by Anaconda, Inc. Visit [Anaconda](https://anaconda.org)
+    - Conda-Forge: A community-driven channel with a wide variety of packages.Visit [Conda-Forge](https://conda-forge.org/)
 
-    1. Conda-Forge: A community-driven channel with a wide variety of packages.Visit [Conda-Forge](https://conda-forge.org/)
+    - Bioconda: A channel specifically for bioinformatics packages. Visit [Bioconda](https://bioconda.github.io/)
 
-    1. Bioconda: A channel specifically for bioinformatics packages. Visit [Bioconda](https://bioconda.github.io/)
+You can specify a channel in your search, and it will show you a list of the packages available in that channel using `conda search -c <channel_name> <package_name>`, remember to replace <channel_name> and <package_name> with the channel and package names you are searching for respectively.
 
-    You can specify a channel in your search, and it will show you a list of the packages available in that channel using `conda search -c <channel_name> <package_name>`, remember to replace <channel_name> and <package_name> with the channel and package names you are searching for respectively.
-
-    ```bash
+```bash
     conda search -c conda-forge numpy
-    ```
+```
 
-If we find the package at one of these sources, we check the Platform version to ensure it is either noarch (if available) or linux. Noting the version, we can click the "source" or "repo" link (if available) or "homepage". Then we try to find the latest version. For a package found on GitHub, click "Releases" on the right-hand side. Verify that the latest Release is the same as, or very close to, the version on Anaconda or Pypi. If so, the package is being maintained on Anaconda/Pypi and suitable for use. Note the exact software name, version, and channel (if not on Pypi). ![!Github page for numpy, an Anaconda package](images/github_conda_releases.png)
+If we find the package at one of these sources, we check the Platform version to ensure it is either noarch (if available) or linux for it to work on Cheaha ("noarch" is usually preferred for the sake of portability). Noting the version, we can click the "source" or "repo" link (if available) or "homepage". Then we try to find the latest version. For a package found on GitHub, click "Releases" on the right-hand side. Verify that the latest Release is the same as, or very close to, the version on Anaconda or PyPI. If so, the package is being maintained on Anaconda/PyPI and suitable for use. Note the exact software name, version, and channel (if not on PyPI).
 
-If we don't find it in any of the sources mentioned above, or the Anaconda/Pypi pages are out of date, then we may not be able to use the software in an Anaconda environment. It is possible to try installing a git repository using pip, but care must be taken to choose the right commit or tag, you find more [info](https://pip.pypa.io/en/stable/cli/pip_install/#examples). To search for a git repository try:
+![!Github page for numpy, an Anaconda package](images/github_conda_releases.png)
+
+If we don't find a package using Google, or the Anaconda/PyPI pages are out of date, then it may become very hard to use the software in an Anaconda environment. It is possible to try installing a git repository using pip, but care must be taken to choose the right commit or tag. You can find more [info here](https://pip.pypa.io/en/stable/cli/pip_install/#examples). To search for a git repository try:
 
 1. github "name".
 2. gitlab "name".
 
 Remember to replace name with name of Anaconda package.
 
-When we have a complete list of Anaconda packages and Channels, then we can create an environment from scratch with all the dependencies included. For Anaconda packages, add one line to dependencies for each software. For Pypi packages add - pip: under dependencies. Then under - pip:add `==` to pin the version, see below.
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+There are issues with out-of-date software. It may have bugs that have since been fixed and so makes for less reproducible science. Documentation may be harder to find if it isn't also matched to the software version. Examining the README.md file for instructions may provide some good information on installing the package. You can also reach out to us for [support](/docs/help/support.md) in installing a package.
+<!-- markdownlint-enable MD046 -->
+
+When we have a complete list of Anaconda packages and Channels, then we can create an environment from scratch with all the dependencies included. For Anaconda packages, add one line to dependencies for each software. For PyPI packages add - pip: under dependencies. Then under - pip:add `==` to pin the version, see below. The advantage to using an environment file is that it can be stored with your project in GitHub or GitLab, giving it all the benefits of [version control](/docs/workflow_solutions/git_collaboration.md).
 
 ```yaml
 name: test-env
-channels:
-  - anaconda
-  - conda-forge
-  - pip
 dependencies:
-  - matplotlib=3.8.4 #pinned version for conda
-  - python=3.10.4
+  - anaconda::matplotlib=3.8.4  # Pinned version from anaconda channel
+  - conda-forge::python=3.10.4  # Pinned version from conda-forge channel
   - pip
   - pip:
-  - numpy==1.26.4 #pinned version for pip
-  - http://insert_package_link_here #for url links
-
+    - numpy==1.26.4  # Pinned version for pip
+    - git+https://github.com/user/repo.git  # Example of installing from a Git repo
+    - http://insert_package_link_here  # For URL links
 ```
 
  For git repos, add them under `- pip:` based on examples [here](https://pip.pypa.io/en/stable/cli/pip_install/#examples). See the section [Replicability versus Portability](#replicability-versus-portability) for more information.
@@ -356,7 +369,7 @@ The above configuration is only for illustration purposes, to show how channels 
 
 1. Exploring Package Documentation: For each package, check the documentation to understand its features, version history, and compatibility. Documentation can often be found on the Anaconda Cloud package page under the "Documentation" or "Homepage" link shared above in this tutorial.
 
-1. Regularly update your environment file to manage dependencies and maintain compatible software environments.
+1. Regularly consider updating your environment file to manage dependencies and maintain compatible software environments. Also newer software tends to resolve older bugs, consequently improving the state of science.
 
 1. Verify Package Version and Maintenance: Ensure you are getting the latest version of the package that is compatible with your environment. Verify that the package is actively maintained by checking the source repository (e.g., GitHub, GitLab). Look for recent commits, releases, and issue resolutions. The concepts of version pinning and semantic versioning, explain this in detail.
 
@@ -366,9 +379,9 @@ Version pinning in Anaconda environments involves specifying exact versions of p
 
 ##### Semantic Versioning
 
-Semantic versioning is a versioning scheme using a three-part format (MAJOR.MINOR.PATCH) to convey the significance of changes in a software package. In Anaconda environments, it plays a role in managing compatibility, version pinning, dependency resolution, and updating packages. The MAJOR version indicates incompatible API changes, i.e. same software package but operation and interaction are mostly different from what you are accustomed to in the previous version. The MINOR version adds backward-compatible functionality, i.e. same version of software package but now contains new features and functionality. Operations and interactions are still mostly the same. While PATCH version includes backward-compatible bug fixes, i.e. same major and minor versions now have a slight change, perhaps a bug or some small change, still same features, operations and interactions, just the minor bug fix. Using semantic versioning helps maintain consistency and compatibility by ensuring that updates within the same major version are compatible, and by allowing precise control when specifying package versions.
+[Semantic versioning](https://semver.org) is a versioning scheme using a three-part format (MAJOR.MINOR.PATCH) to convey the significance of changes in a software package. In Anaconda environments, it plays a role in managing compatibility, version pinning, dependency resolution, and updating packages. The MAJOR version indicates incompatible API changes, i.e. same software package but operation and interaction are mostly different from what you are accustomed to in the previous version. The MINOR version adds backward-compatible functionality, i.e. same version of software package but now contains new features and functionality. Operations and interactions are still mostly the same. While PATCH version includes backward-compatible bug fixes, i.e. same major and minor versions now have a slight change, perhaps a bug or some small change, still same features, operations and interactions, just the minor bug fix. Using semantic versioning helps maintain consistency and compatibility by ensuring that updates within the same major version are compatible, and by allowing precise control when specifying package versions.
 
-In practice, semantic versioning aids in managing Anaconda environments by facilitating precise version pinning and dependency resolution. For instance, you can pin specific versions using Conda commands or specify version ranges to ensure compatibility as shown above. Semantic versioning also informs upgrade strategies, letting us know when to upgrade packages based on the potential impact of changes. By leveraging semantic versioning, you can maintain stable and consistent environments, which is essential for smooth research workflows.
+In practice, updating a Major version of a package may break your workflow, but may increase software reliability, stability and fix bugs affecting your science. Changing the major version may also introduce new bugs, these concerns and some others are some of the tradeoffs that have to be taken into consideration. Semantic versioning helps with managing Anaconda environments by facilitating precise [version pinning](#version-pinning) and dependency resolution. For instance, you can pin specific versions using Conda commands or specify version ranges to ensure compatibility as shown in the examples above. Semantic versioning also informs upgrade strategies, letting us know when to upgrade packages based on the potential impact of changes. By leveraging semantic versioning, you can maintain stable and consistent environments, which is essential for smooth research workflows.
 
 #### Good Software Development Practice
 
