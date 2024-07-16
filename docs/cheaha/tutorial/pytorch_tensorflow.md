@@ -34,21 +34,20 @@ The instructions below, provide a recommended step by step guide to creating and
 
 There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilising only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;
 
-1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in the links.
+1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in these links.
 
 1. Access the terminal following the steps [here](../../workflow_solutions/using_anaconda.md#installing-anaconda-environments-using-cheahas-command-line-interface-cli).
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    When installing packages, modules and libraries into environments, remember to also install `ipykernel` using `conda install ipykernel`. This way your activated environment would appear in the list of kernels in your Jupyter Notebook. 
+When installing packages, modules and libraries into environments, remember to also install `ipykernel` using `conda install ipykernel`. This way your activated environment would appear in the list of kernels in your Jupyter Notebook. 
 
 <!-- markdownlint-enable MD046 -->
 
 For a correct installation of pytorch, we have to ensure some conditions are met. See partition [docs](../hardware.md#details) for a guide. One of such conditions, is to load CUDA toolkit using the below command in your environment setup form (see image below).
 
 ```bash
-
 module load CUDA/11.8.0
 
 ```
@@ -58,8 +57,7 @@ module load CUDA/11.8.0
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    The cudatoolkit version may vary, as at the time of this tutorial, 11.8 is the version used. Running `nvidia-smi`, as in the image below, will show you the status, version and other information on GPUs in your created job session. The CUDA version is highlighted. The GPU CUDA Version available on Cheaha at the time of this tutorial is 12.3. Because the toolkit version used is lower than the Cheaha GPU version, it works. 
-
+The cudatoolkit version may vary, as at the time of this tutorial, version 11.8 is used. Running `nvidia-smi`, as in the image below, will show you the status, version and other information on GPUs in your created job session. The CUDA version is highlighted. The GPU CUDA Version available on Cheaha at the time of this tutorial is 12.3. Because the toolkit version used is lower than the Cheaha GPU version, it works without any hassle. For a list of PyTorch and TensorFlow compatible CUDA Versions please see this [list](/docs/cheaha/slurm/gpu.md#pytorch-compatibility).
 <!-- markdownlint-enable MD046 -->
 
 ![!nvidia-smi output](images/CudaVersion.png)
@@ -67,7 +65,6 @@ module load CUDA/11.8.0
 When your job has been created and your environment created and activated from the terminal (see above [instructions](../../workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
 
 ```bash
-
 conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia
 
 ```
@@ -75,7 +72,6 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvid
 This commands will install a GPU compatible PyTorch version into your environment. To verify PyTorch is installed, and to see what version you have installed in your environment, use the below command.
 
 ```bash
-
 conda list | grep "torch"
 
 ```
@@ -91,7 +87,6 @@ The same process can be followed for installing another Deep Learning library Te
 As an example we will be using a sample Jupyter Notebook with just a simple torch function to test if a GPU will be utilized with PyTorch functions. Run the command in a cell, and if your output is `True`, then you have your GPU setup to support PyTorch functions.
 
 ```python
-
 import torch
 
 print(torch.cuda.is_available())
