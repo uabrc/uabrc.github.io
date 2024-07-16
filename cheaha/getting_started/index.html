@@ -1278,107 +1278,6 @@
         <ul class="md-nav__list">
           
           
-            <li class="md-nav__item">
-    <a href="#why-you-should-avoid-running-jobs-on-login-nodes" class="md-nav__link">
-      <span class="md-ellipsis">
-        Why you should avoid running jobs on Login Nodes
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-      <nav class="md-nav" aria-label="Why you should avoid running jobs on Login Nodes">
-        <ul class="md-nav__list">
-          
-          
-            <li class="md-nav__item">
-    <a href="#login-vs-compute-nodes" class="md-nav__link">
-      <span class="md-ellipsis">
-        Login vs. Compute Nodes
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
-          
-          
-          
-            <li class="md-nav__item">
-    <a href="#slurm-and-slurm-jobs" class="md-nav__link">
-      <span class="md-ellipsis">
-        Slurm and Slurm Jobs
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
-          
-          
-          
-            <li class="md-nav__item">
-    <a href="#what-should-run-in-jobs" class="md-nav__link">
-      <span class="md-ellipsis">
-        What Should Run in Jobs?
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
-          
-          
-          
-            <li class="md-nav__item">
-    <a href="#how-to-start-slurm-jobs" class="md-nav__link">
-      <span class="md-ellipsis">
-        How to start SLURM Jobs?
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-      <nav class="md-nav" aria-label="How to start SLURM Jobs?">
-        <ul class="md-nav__list">
-          
-          
-            <li class="md-nav__item">
-    <a href="#open-ondemand-ood" class="md-nav__link">
-      <span class="md-ellipsis">
-        Open OnDemand (OOD)
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
-          
-          
-          
-            <li class="md-nav__item">
-    <a href="#terminal-sbatch-jobs" class="md-nav__link">
-      <span class="md-ellipsis">
-        Terminal (sbatch Jobs)
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
-          
-          
-        </ul>
-      </nav>
-    
-  </li>
-          
-          
-        </ul>
-      </nav>
-    
-  </li>
-          
           
         </ul>
       </nav>
@@ -3113,107 +3012,6 @@
         <ul class="md-nav__list">
           
           
-            <li class="md-nav__item">
-    <a href="#why-you-should-avoid-running-jobs-on-login-nodes" class="md-nav__link">
-      <span class="md-ellipsis">
-        Why you should avoid running jobs on Login Nodes
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-      <nav class="md-nav" aria-label="Why you should avoid running jobs on Login Nodes">
-        <ul class="md-nav__list">
-          
-          
-            <li class="md-nav__item">
-    <a href="#login-vs-compute-nodes" class="md-nav__link">
-      <span class="md-ellipsis">
-        Login vs. Compute Nodes
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
-          
-          
-          
-            <li class="md-nav__item">
-    <a href="#slurm-and-slurm-jobs" class="md-nav__link">
-      <span class="md-ellipsis">
-        Slurm and Slurm Jobs
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
-          
-          
-          
-            <li class="md-nav__item">
-    <a href="#what-should-run-in-jobs" class="md-nav__link">
-      <span class="md-ellipsis">
-        What Should Run in Jobs?
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
-          
-          
-          
-            <li class="md-nav__item">
-    <a href="#how-to-start-slurm-jobs" class="md-nav__link">
-      <span class="md-ellipsis">
-        How to start SLURM Jobs?
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-      <nav class="md-nav" aria-label="How to start SLURM Jobs?">
-        <ul class="md-nav__list">
-          
-          
-            <li class="md-nav__item">
-    <a href="#open-ondemand-ood" class="md-nav__link">
-      <span class="md-ellipsis">
-        Open OnDemand (OOD)
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
-          
-          
-          
-            <li class="md-nav__item">
-    <a href="#terminal-sbatch-jobs" class="md-nav__link">
-      <span class="md-ellipsis">
-        Terminal (sbatch Jobs)
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-  </li>
-          
-          
-        </ul>
-      </nav>
-    
-  </li>
-          
-          
-        </ul>
-      </nav>
-    
-  </li>
-          
           
         </ul>
       </nav>
@@ -3367,20 +3165,48 @@
 <p>To effectively manage and provide high-performance computing (HPC) resources to the University community provided via the clusters, kindly use the terminal from compute nodes in created jobs rather than the terminal from login nodes. Our clusters are essential for conducting this large and complex scientific computations that often times require a significant amount of computing power. These clusters are shared environments, where multiple users execute their research and computing tasks simultaneously. It is important to utilize the structure of these environments properly for efficient and respectful use of the shared resources, so everyone gets a fair chance at using these resources.</p>
 <h5 id="login-vs-compute-nodes">Login vs. Compute Nodes<a class="headerlink" href="#login-vs-compute-nodes" title="Permanent link">&para;</a></h5>
 <p>Like with most HPC clusters, cheaha nodes are divided into two, the login node and compute nodes. The login node acts as the gateway for users to access the cluster, submit jobs, and manage files. Compute nodes, on the other hand, are like the engines of the cluster, designed to perform the heavy lifting of data processing and computation.</p>
-<p>You are on compute nodes if:</p>
-<ul>
-<li>using Open OnDemand Interactive Apps</li>
-<li>using Open OnDemand Job Composer</li>
-<li>terminal prompt looks like <code>[&lt;BlazerID&gt;@c0001 ~]$</code></li>
-</ul>
+<p>The Login node can be accessed from the Cheaha landing page or through the <code>$HOME</code> directory. You can see in the images below, how to identify if you’re within a login node or compute node.</p>
 <p>You are on the login node if:</p>
 <ul>
-<li>terminal prompt looks like <code>[&lt;BlazerID&gt;@login001 ~]$</code></li>
+<li>terminal prompt looks like <code>[$USER@login004 ~]$</code></li>
 </ul>
-<p>The Login node can be accessed from the Cheaha landing page or through the home directory, while compute nodes can be accessed after a job has been created on the "My Interactive Sessions". You can see in the images below, how to identify if you’re within a login node or compute node. Image below is a compute node. Safe for heavy computation.</p>
-<p><a class="glightbox" href="../images/comp_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!compute node terminal prompt shows username@c0112" src="../images/comp_node.png" /></a></p>
-<p>Compared to the image below which is a login node.</p>
 <p><a class="glightbox" href="../images/login_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!login node terminal prompt shows username@login004" src="../images/login_node.png" /></a></p>
+<p>You are on compute nodes if:</p>
+<ul>
+<li>using <a href="../open_ondemand/ood_layout/#interactive-apps">Open OnDemand Interactive Apps</a></li>
+<li>using <a href="../slurm/submitting_jobs/#interactive-jobs-with-srun">Interactive Jobs with <code>srun</code></a></li>
+<li>terminal prompt looks like <code>[$USER@c0112 ~]$</code></li>
+</ul>
+<p><a class="glightbox" href="../images/comp_node.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!compute node terminal prompt shows username@c0112" src="../images/comp_node.png" /></a></p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the terminal prompt appears as <code>bash-4.2$</code> instead of the user prompt <code>[$USER@login004]</code>, please refer to the <a href="#how-to-restore-default-terminal-prompt-from-bash-42-to-userlogin004">FAQ</a> below to resolve the issue.</p>
+</div>
+<!-- markdownlint-disable MD046 -->
+
+<h5 id="how-to-restore-default-terminal-prompt-from-bash-42-to-userlogin004">How to Restore Default Terminal Prompt from <code>bash-4.2$</code> to <code>$USER@login004</code>?<a class="headerlink" href="#how-to-restore-default-terminal-prompt-from-bash-42-to-userlogin004" title="Permanent link">&para;</a></h5>
+<p>There might be scenarios where you see the terminal prompt display <code>bash-4.2$</code> like below, instead of the user prompt <code>[$USER@login004]</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bash-4.2$<span class="w"> </span>
+</code></pre></div>
+<p>The <code>bash-4.2$</code> prompt indicates that the files <code>$HOME/.bashrc</code> and/or <code>$HOME/.bash_profile</code> are missing or corrupted. To resolve this issue, we recommend following these steps:</p>
+<p>(i) If you have made any changes to these files earlier, it's advisable to create backups. For instance, you can rename <code>.bashrc</code> to <code>.bashrc.backup</code>, and you can verify if the backed-up files are listed.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bash-4.2$<span class="w"> </span>mv<span class="w"> </span><span class="nv">$HOME</span>/.bashrc<span class="w"> </span><span class="nv">$HOME</span>/.bashrc.backup
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>bash-4.2$<span class="w"> </span>mv<span class="w"> </span><span class="nv">$HOME</span>/.bash_profile<span class="w"> </span><span class="nv">$HOME</span>/.bash_profile.backup
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>bash-4.2$<span class="w"> </span>ls<span class="w"> </span>.bash*
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>.bash_profile.backup<span class="w">  </span>.bashrc.backup
+</code></pre></div>
+<p>(ii) After you have taken the backup of those files, run the following command to copy the default versions from <code>/etc/skel</code> to <code>$HOME</code>. Doing this will clobber, or remove, any changes you may have made, so be sure to make a backup first, as shown in the step (ii), if you wish to keep any changes. You will see the copied files listed in the directory.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bash-4.2$<span class="w"> </span>cp<span class="w"> </span>/etc/skel/.bash*<span class="w"> </span><span class="nv">$HOME</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>bash-4.2$<span class="w"> </span>ls<span class="w"> </span>.bash*
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>.bash_profile<span class="w">  </span>.bash_profile.backup<span class="w">  </span>.bashrc<span class="w">  </span>.bashrc.backup
+</code></pre></div>
+<p>(iii) You can exit the terminal or source your files using the commands below to apply the changes, after which you will see the user prompt.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bash-4.2$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="o">[</span><span class="nv">$USER</span>@login004<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>
+</code></pre></div>
 <h5 id="slurm-and-slurm-jobs">Slurm and Slurm Jobs<a class="headerlink" href="#slurm-and-slurm-jobs" title="Permanent link">&para;</a></h5>
 <p>Slurm Workload Manager is a widely used open-source job scheduler that manages the queue of jobs submitted to the compute nodes. It ensures efficient use of the cluster by allocating resources to jobs, prioritizing tasks, and managing queues of pending jobs. Starting Slurm jobs can be done in two primary ways: using Open OnDemand (OOD) or through the terminal. For more details on how to use Slurm on cheaha, please see our <a href="../slurm/introduction/">slurm docs</a>.</p>
 <h5 id="what-should-run-in-jobs">What Should Run in Jobs?<a class="headerlink" href="#what-should-run-in-jobs" title="Permanent link">&para;</a></h5>
@@ -3428,7 +3254,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2024</span>
   </span>
 
     
