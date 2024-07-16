@@ -2882,7 +2882,7 @@
 <p>There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilising only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;</p>
 <ol>
 <li>
-<p><a href="../../../workflow_solutions/using_anaconda/#create-an-environment">Create</a> and <a href="../../../workflow_solutions/using_anaconda/#activate-an-environment">activate</a> an environment as stated in the links.</p>
+<p><a href="../../../workflow_solutions/using_anaconda/#create-an-environment">Create</a> and <a href="../../../workflow_solutions/using_anaconda/#activate-an-environment">activate</a> an environment as stated in these links.</p>
 </li>
 <li>
 <p>Access the terminal following the steps <a href="../../../workflow_solutions/using_anaconda/#installing-anaconda-environments-using-cheahas-command-line-interface-cli">here</a>.</p>
@@ -2891,8 +2891,8 @@
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When installing packages, modules and libraries into environments, remember to also install <code>ipykernel</code> using <code>conda install ipykernel</code>. This way your activated environment would appear in the list of kernels in your Jupyter Notebook. </p>
 </div>
+<p>When installing packages, modules and libraries into environments, remember to also install <code>ipykernel</code> using <code>conda install ipykernel</code>. This way your activated environment would appear in the list of kernels in your Jupyter Notebook. </p>
 <!-- markdownlint-enable MD046 -->
 
 <p>For a correct installation of pytorch, we have to ensure some conditions are met. See partition <a href="../../hardware/#details">docs</a> for a guide. One of such conditions, is to load CUDA toolkit using the below command in your environment setup form (see image below).</p>
@@ -2902,8 +2902,8 @@
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The cudatoolkit version may vary, as at the time of this tutorial, 11.8 is the version used. Running <code>nvidia-smi</code>, as in the image below, will show you the status, version and other information on GPUs in your created job session. The CUDA version is highlighted. The GPU CUDA Version available on Cheaha at the time of this tutorial is 12.3. Because the toolkit version used is lower than the Cheaha GPU version, it works. </p>
 </div>
+<p>The cudatoolkit version may vary, as at the time of this tutorial, version 11.8 is used. Running <code>nvidia-smi</code>, as in the image below, will show you the status, version and other information on GPUs in your created job session. The CUDA version is highlighted. The GPU CUDA Version available on Cheaha at the time of this tutorial is 12.3. Because the toolkit version used is lower than the Cheaha GPU version, it works without any hassle. For a list of PyTorch and TensorFlow compatible CUDA Versions please see this <a href="/docs/cheaha/slurm/gpu.md#pytorch-compatibility">list</a>.</p>
 <!-- markdownlint-enable MD046 -->
 
 <p><a class="glightbox" href="../images/CudaVersion.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!nvidia-smi output" src="../images/CudaVersion.png" /></a></p>
@@ -2973,7 +2973,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 23, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2024</span>
   </span>
 
     
