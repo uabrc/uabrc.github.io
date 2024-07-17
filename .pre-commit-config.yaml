@@ -3,13 +3,12 @@ repos:
     rev: v0.13.0
     hooks:
       - id: markdownlint-cli2
-        exclude: theme/
         require_serial: true
   - repo: local
     hooks:
       - id: mkdocs-build
         name: Build documentation
-        entry: "conda activate mkdocs && mkdocs build"
+        entry: "conda activate mkdocs && mkdocs build --strict"
         language: system
         always_run: true
         pass_filenames: false

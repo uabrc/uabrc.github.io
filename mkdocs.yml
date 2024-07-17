@@ -71,7 +71,7 @@ plugins:
         uab_cloud/network_setup_basic.md: uab_cloud/tutorial/networks.md
         uab_cloud/security_setup_basic.md: uab_cloud/tutorial/security.md
         uab_cloud/volume_setup_basic.md: uab_cloud/tutorial/volumes.md
-        welcome/rc_days.md: education/research_computing_days.md
+        welcome/rc_days.md: education/research_computing_days/index.md
         welcome/welcome.md: index.md
         workflow_solutions/getting_software_with_git.md: workflow_solutions/git_collaboration.md
         cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
