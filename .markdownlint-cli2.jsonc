@@ -1,3 +1,6 @@
 {
-  "fix": false
+  "fix": false,
+  "ignores": [
+    "theme/"
+  ]
 }
