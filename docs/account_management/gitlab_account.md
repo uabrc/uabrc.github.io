@@ -48,14 +48,14 @@ Please use your BlazerID and BlazerID credentials to sign in following the direc
 If you are a collaborator with a XIAS account you'll need to follow a different procedure.
 
 1. Ensure that your sponsor has included `https://gitlab.rc.uab.edu` in the list of approved URIs on the XIAS configuration page.
-2. Email <mailto:support@listserv.uab.edu> providing your full name, XIAS account email address, and sponsor.
-3. UAB Research Computing will create the account.
-4. You will recieve an email from gitlab.rc.uab.edu with a link to create a password.
-5. Navigate to <https://gitlab.rc.uab.edu>.
-6. Click the `Standard` tab.
-7. In the `Username or email` field type the part of your XIAS email address before the `@` symbol. Do not include the `@` symbol or anything after it.
-8. Fill out the `Password` field with the GitLab password you created in Step #4.
-9. Click `Sign in`.
+1. Email <mailto:support@listserv.uab.edu> providing your full name, XIAS account email address, and sponsor.
+1. UAB Research Computing will create the account.
+1. You will recieve an email from gitlab.rc.uab.edu with a link to create a password.
+1. Navigate to <https://gitlab.rc.uab.edu>.
+1. Click the `Standard` tab.
+1. In the `Username or email` field type the part of your XIAS email address before the `@` symbol. Do not include the `@` symbol or anything after it.
+1. Fill out the `Password` field with the GitLab password you created in Step #4.
+1. Click `Sign in`.
 
 ![!gitlab login pane with standard tab selected](./images/gitlab_researcher_standard.png)
 

@@ -8,15 +8,15 @@ To access the terminal (shell), please do the following.
 
 1. Login to [rc.uab.edu](https://rc.uab.edu)
 
-2. Create a job on Cheaha using the Interactive Apps dropdown option.![!Interactive Apps Dropdown Menu](images/interactive_dropdown.png)
+1. Create a job on Cheaha using the Interactive Apps dropdown option.![!Interactive Apps Dropdown Menu](images/interactive_dropdown.png)
 
-3. Select Jupyter Notebook, and fill out the options, as per your project needs, then click Launch.  For more information on compute needs, and a guide for selecting the right options click [here](../job_efficiency.md#estimating-compute-resources). ![!Jupyter Launch Button](images/jupyter_launch.png)
+1. Select Jupyter Notebook, and fill out the options, as per your project needs, then click Launch.  For more information on compute needs, and a guide for selecting the right options click [here](../job_efficiency.md#estimating-compute-resources). ![!Jupyter Launch Button](images/jupyter_launch.png)
 
-4. Click the Connect to Jupyter button ![!Connect to Jupyter Button](images/connect_to_jupyt_button.png)
+1. Click the Connect to Jupyter button ![!Connect to Jupyter Button](images/connect_to_jupyt_button.png)
 
     You will see the below interface. ![!Jupyter Notebook Landing Page](images/jupyter_landing_page.png)
 
-5. When the job has been created, on the My Interactive Sessions page, click the button in front of Host (usually colored blue) in the format >_c0000.
+1. When the job has been created, on the My Interactive Sessions page, click the button in front of Host (usually colored blue) in the format >_c0000.
 
     ![!host image](images/cheaha_shell_button.png)
 
@@ -24,7 +24,7 @@ To access the terminal (shell), please do the following.
 
     ![!Cheaha Shell CLI](images/cheaha_shell_cli.png)
 
-6. In this interface, you can create, and activate environments, as well as install packages, modules and libraries into your activated environment.
+1. In this interface, you can create, and activate environments, as well as install packages, modules and libraries into your activated environment.
 
 ## How do we create a custom environment for PyTorch and TensorFlow
 
@@ -36,7 +36,7 @@ There are two instances of PyTorch that can be installed, one requiring GPUs, an
 
 1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in the links.
 
-2. Access the terminal following the steps [here](#installing-anaconda-environments-using-the-terminal).
+1. Access the terminal following the steps [here](#installing-anaconda-environments-using-the-terminal).
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -112,7 +112,7 @@ print(torch.cuda.get_device_name(x))
 
     ```
 
-2. The TensorFlow CPU and GPU versions requires pip to be up-to-date, to install and upgrade pip to the latest version use the below command.
+1. The TensorFlow CPU and GPU versions requires pip to be up-to-date, to install and upgrade pip to the latest version use the below command.
 
     ```bash
 
@@ -120,7 +120,7 @@ print(torch.cuda.get_device_name(x))
 
     ```
 
-3. Install TensorFlow with pip
+1. Install TensorFlow with pip
 
     ```bash
 

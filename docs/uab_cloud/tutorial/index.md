@@ -21,9 +21,9 @@ You will also need an account created for you by our team. If you believe you ne
 ## Tutorial Sections
 
 1. [Network](networks.md) - To do anything meaningful with a VM, it will need to be accessible to you and any collaborators. To make it accessible, you will first need to construct a virtual network by which it can communicate with the UAB Campus Network and beyond. This section will show you how to set up a bare-minimum network configuration.
-2. [Security](security.md) - Being able to communicate with the internet means we must take security precautions. This is not only good practice, but an [IT Policy requirement](https://www.uab.edu/it/home/policies). Some layers of security are enforced by how we've configured the cloud service. Your responsibility starts with ensuring the VM is only accessible on specific ports and by specific people. This section will show you how to do that.
-3. [Instances](instances.md) - Now that we've got a secure network, we are ready to create an instance. Instances are the virtual computing devices used to do the scientific processing for your research. Your responsibility starts with selecting or designing the software you will use, understanding how to install and configure it correctly for your application, and how to use and troubleshoot it. We are not able to provide any support for software within virtual machines.
-4. [Volumes](volumes.md) - Optionally, you can set up persistent storage volumes.
+1. [Security](security.md) - Being able to communicate with the internet means we must take security precautions. This is not only good practice, but an [IT Policy requirement](https://www.uab.edu/it/home/policies). Some layers of security are enforced by how we've configured the cloud service. Your responsibility starts with ensuring the VM is only accessible on specific ports and by specific people. This section will show you how to do that.
+1. [Instances](instances.md) - Now that we've got a secure network, we are ready to create an instance. Instances are the virtual computing devices used to do the scientific processing for your research. Your responsibility starts with selecting or designing the software you will use, understanding how to install and configure it correctly for your application, and how to use and troubleshoot it. We are not able to provide any support for software within virtual machines.
+1. [Volumes](volumes.md) - Optionally, you can set up persistent storage volumes.
 
 ## Advanced Information
 

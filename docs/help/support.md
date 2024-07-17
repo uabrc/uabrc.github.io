@@ -9,17 +9,17 @@ To Create a support ticket, send a descriptive email to <support@listserv.uab.ed
 For general issues:
 
 1. What is your goal?
-2. What steps were taken?
-3. What was expected?
-4. What actually happened?
-5. How was the cluster accessed? Web Portal, SSH, VNC, etc.?
-6. What software were you using? Please be as specific as possible. The command `module list` can be helpful here.
+1. What steps were taken?
+1. What was expected?
+1. What actually happened?
+1. How was the cluster accessed? Web Portal, SSH, VNC, etc.?
+1. What software were you using? Please be as specific as possible. The command `module list` can be helpful here.
 
 For outages:
 
 1. What part of the cluster is affected? Please list any relevant affected nodes or other hardware that is not accessible. If you are unable to access the cluster please state that instead.
-2. What were you working on when you noticed the outage?
-3. How were you accessing the cluster? Web Portal, SSH, VNC, etc.?
+1. What were you working on when you noticed the outage?
+1. How were you accessing the cluster? Web Portal, SSH, VNC, etc.?
 
 ### How Do I Work With Tickets I've Created?
 
@@ -28,9 +28,9 @@ UAB IT and Research Computing use ServiceNow for ticket management. When any ema
 When any email is sent to <support@listserv.uab.edu> the following happens:
 
 1. An RITM ticket is created in ServiceNow and assigned to Research Computing.
-2. The email is routed to Research Computing staff and the ticket creator from the `support@listserv.uab.edu` email list. Please **do not reply**. Replies create additional tickets and cause service delays.
-3. A monitoring email is sent from `support-watch@listserv.uab.edu` to Research Computing staff and the ticket creator. Please **do not reply** to this email. Your email will not make it through, because the email address is closed to Research Computing staff.
-4. A ticket creation email is sent from `askit@uab.edu` to Research Computing staff and the ticket creator. Please _do reply_ to this email. Replies to `askit@uab.edu` with the correct subject line format will add your reply as a comment to the ticket. Before replying, please delete all previous quoted replies to avoid the accumulation of noise in the ticket. The images below show how to, and how not to, reply to `askit@uab.edu` emails.
+1. The email is routed to Research Computing staff and the ticket creator from the `support@listserv.uab.edu` email list. Please **do not reply**. Replies create additional tickets and cause service delays.
+1. A monitoring email is sent from `support-watch@listserv.uab.edu` to Research Computing staff and the ticket creator. Please **do not reply** to this email. Your email will not make it through, because the email address is closed to Research Computing staff.
+1. A ticket creation email is sent from `askit@uab.edu` to Research Computing staff and the ticket creator. Please _do reply_ to this email. Replies to `askit@uab.edu` with the correct subject line format will add your reply as a comment to the ticket. Before replying, please delete all previous quoted replies to avoid the accumulation of noise in the ticket. The images below show how to, and how not to, reply to `askit@uab.edu` emails.
 
     - Please reply like this:
         ![!Image showing reply without extraneous quoted text. Please do this.](images/support-watch-do-reply-like-this.png)

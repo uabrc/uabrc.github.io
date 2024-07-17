@@ -39,8 +39,8 @@ Search for and install extensions using the extension menu (keyboard shortcut: +
 
 To make the best use of formatting extensions for this project, please add the following block to your `settings.json` file. These changes can be made:
 
-  1. Within the VSCode project file in the `.vscode` folder, affecting only this project. To make these changes find or create the file `.vscode/settings.json` *--OR--*
-  2. To the global VSCode settings file, affecting all projects. To change the global file, press ++ctrl+shift+p++ to open the Command Palette, then search for `Preferences: Open Settings (JSON)` and append the following content.
+  1. Within the VSCode project file in the `.vscode` folder, affecting only this project. To make these changes find or create the file `.vscode/settings.json` _--OR--_
+  1. To the global VSCode settings file, affecting all projects. To change the global file, press ++ctrl+shift+p++ to open the Command Palette, then search for `Preferences: Open Settings (JSON)` and append the following content.
 
 ```json
   "[html]": {
@@ -112,40 +112,40 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
 1. [Activate](../workflow_solutions/using_anaconda.md#activate-an-environment) your conda environment.
     1. Open the file `test.py` in the repository to start the Python extension.
-    2. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
-2. Open a VSCode terminal using ++ctrl+shift+grave++.
-3. Execute the command `mkdocs serve`
+    1. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
+1. Open a VSCode terminal using ++ctrl+shift+grave++.
+1. Execute the command `mkdocs serve`
 
     ![!example mkdocs serve usage](images/contrib-workflow-mkdocs-serve.png)
 
-4. If a new browser tab does not open automatically, use your browser to navigate to `http://localhost:8000`.
-5. Ensure your changes look and function as expected.
+1. If a new browser tab does not open automatically, use your browser to navigate to `http://localhost:8000`.
+1. Ensure your changes look and function as expected.
 
     ![!browser with changes made](images/contrib-workflow-verify-changes-in-browser.png)
 
 ### Make a pull request
 
 1. [Push](../workflow_solutions/git.md#pushing) your local working branch to your GitHub remote repository.
-2. Navigate to the upstream repository at <https://github.com/uabrc/uabrc.github.io>.
-3. Click the "Pull requests" tab and click the "New pull request" button.
+1. Navigate to the upstream repository at <https://github.com/uabrc/uabrc.github.io>.
+1. Click the "Pull requests" tab and click the "New pull request" button.
 
     ![!new pull request button at pull request tab](images/contrib-workflow-github-new-pull-request.png)
 
-4. Click the link "compare across forks".
+1. Click the link "compare across forks".
 
     ![!compare across forks link](images/contrib-workflow-github-compare-across-forks.png)
 
-5. There are four drop-down menus.
+1. There are four drop-down menus.
     1. The left two drop-down menus are for the base repository and should say `uabrc/uabrc.github.io` and `main` by default. Be sure that they do.
-    2. In the third drop-down menu, select your fork.
-    3. In the fourth drop-down menu, select your working branch.
+    1. In the third drop-down menu, select your fork.
+    1. In the fourth drop-down menu, select your working branch.
 
     ![!four drop down menus comparing changes while creating pull request](images/contrib-workflow-github-comparing-changes-drop-downs.png)
 
-6. Click the "Create pull request" button to open the pull request creation form.
+1. Click the "Create pull request" button to open the pull request creation form.
     1. Give your pull request a concise and informative name. The name should describe what the pull request changes at a high level.
-    2. In the description box, give details about what was changed at a conceptual level. The actual details of the changes can be viewed in the "Commits" and "Files changed" tabs.
-    3. If you want reviewers to be able to make changes to your pull request (recommended) then leave the "Allow edits" checkbox checked.
+    1. In the description box, give details about what was changed at a conceptual level. The actual details of the changes can be viewed in the "Commits" and "Files changed" tabs.
+    1. If you want reviewers to be able to make changes to your pull request (recommended) then leave the "Allow edits" checkbox checked.
 
     ![!pull request creation form](images/contributor-workflow-github-open-pull-request-form.png)
 
@@ -154,11 +154,11 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 From here your pull request will go through a review process. The following criteria are checked.
 
 1. No linting errors
-2. Correct formatting
-3. Image alternate text (alt text)
-4. Images must use the gallery functionality, formatted as `![!alttext](path/to/file)`. Note the leading `!` in the alttext.
-5. Valid internal and external links.
-6. Quality, organization and accuracy of contribution.
+1. Correct formatting
+1. Image alternate text (alt text)
+1. Images must use the gallery functionality, formatted as `![!alttext](path/to/file)`. Note the leading `!` in the alttext.
+1. Valid internal and external links.
+1. Quality, organization and accuracy of contribution.
 
 We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date!
 
@@ -183,14 +183,14 @@ Reviewing a pull request means obtaining a copy of the pull request branch and [
     ![!part of github.com page with id number and branch name highlighted](images/contrib-workflow-github-pull-request-page-parts.png)
 
     1. Replace `<id>` with the pull request id number.
-    2. Replace `<branch-name>` with the branch name from the pull request source.
+    1. Replace `<branch-name>` with the branch name from the pull request source.
 
-2. [Checkout](../workflow_solutions/git.md#checking-out-existing-branches) the branch using `git checkout <branch-name>`.
-3. Follow the instructions for [Verifying Changes](#verify-your-changes)
-4. (Optional) make modifications to the pull request.
+1. [Checkout](../workflow_solutions/git.md#checking-out-existing-branches) the branch using `git checkout <branch-name>`.
+1. Follow the instructions for [Verifying Changes](#verify-your-changes)
+1. (Optional) make modifications to the pull request.
     1. Before starting, make sure that the pull request author has allowed edits to their branch.
-    2. [Add the Author's Fork as a Remote](../workflow_solutions/git.md#managing-remotes).
-    3. [Push changes to the Author's Fork](../workflow_solutions/git.md#pushing). Be sure to push to the correct remote!
+    1. [Add the Author's Fork as a Remote](../workflow_solutions/git.md#managing-remotes).
+    1. [Push changes to the Author's Fork](../workflow_solutions/git.md#pushing). Be sure to push to the correct remote!
 
 ## File Organization
 
@@ -232,7 +232,7 @@ plugins:
 To create a section index page:
 
 1. Create a file called `index.md` in a reasonable directory location for that section.
-2. Add something like the following to that section entry under `nav:` in `mkdocs.yml`.
+1. Add something like the following to that section entry under `nav:` in `mkdocs.yml`.
 
     ```yml
     nav:
@@ -244,7 +244,7 @@ To create a section index page:
       ...
     ```
 
-3. When a site visitor clicks `Cheaha Guide` in the nav pane, the page `cheaha/index.md` will be loaded.
+1. When a site visitor clicks `Cheaha Guide` in the nav pane, the page `cheaha/index.md` will be loaded.
 
 ## CI/CD
 

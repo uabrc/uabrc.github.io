@@ -13,8 +13,8 @@ RClone is very powerful and, as such, has a wide variety of configuration option
 To use RClone for simple data transfer to and from Cheaha, follow these steps:
 
 1. Load the module using `module load rclone`.
-2. [Set up a remote storage provider](#setting-up-remotes)
-3. Copy files using the `rclone cp` [command](#copying-files).
+1. [Set up a remote storage provider](#setting-up-remotes)
+1. Copy files using the `rclone cp` [command](#copying-files).
 
     - To transfer from Cheaha, use `rclone cp :path/on/cheaha remote:path/on/dest`
     - To transfer to Cheaha, use `rclone cp remote:/path/on/remote :path/on/cheaha`.
@@ -44,19 +44,19 @@ It is highly recommended to install `rclone` in Windows Subsystem for Linux (WSL
 To instead install natively on Windows, you will need to use the following instructions.
 
 1. Download the appropriate version from the [downloads](https://rclone.org/downloads/) page.
-2. Extract `rclone.exe` into a memorable folder on your system. Do not put it into `Program Files`.
-3. In the Start Menu type `env` and look for the application "Edit the system Environment Variables" to open the System Properties dialog.
-4. Click the "Environment Variables..." button.
-5. Under "User variables for $USER" find the variable "Path".
-6. Click "Path" to select it.
-7. Click the "Edit..." button to open a new dialog.
-8. Click the "New" button.
-9. Type in the folder path to `rclone.exe` as `C:/path/to/rclone_folder`, modified appropriately.
-10. Click the "OK" button to confirm and close the dialog box.
-11. Click the "OK" button to confirm and close the Environment Variables dialog box.
-12. Click the "OK" button to confirm and close the System Properties dialog box.
-13. Verify the installation by typing "cmd" in the Start Menu and opening the Command Prompt application.
-14. Type `rclone` and you should see the `rclone` help text.
+1. Extract `rclone.exe` into a memorable folder on your system. Do not put it into `Program Files`.
+1. In the Start Menu type `env` and look for the application "Edit the system Environment Variables" to open the System Properties dialog.
+1. Click the "Environment Variables..." button.
+1. Under "User variables for $USER" find the variable "Path".
+1. Click "Path" to select it.
+1. Click the "Edit..." button to open a new dialog.
+1. Click the "New" button.
+1. Type in the folder path to `rclone.exe` as `C:/path/to/rclone_folder`, modified appropriately.
+1. Click the "OK" button to confirm and close the dialog box.
+1. Click the "OK" button to confirm and close the Environment Variables dialog box.
+1. Click the "OK" button to confirm and close the System Properties dialog box.
+1. Verify the installation by typing "cmd" in the Start Menu and opening the Command Prompt application.
+1. Type `rclone` and you should see the `rclone` help text.
 
 ### MacOS
 
@@ -83,15 +83,15 @@ RClone is capable of interfacing with many remote cloud services, as well as usi
 RClone connects two personal computers or servers using SFTP which is built on SSH, so a lot of these instructions mirror what would be done with an SSH configuration.
 
 1. [Generate a Key Pair](../../uab_cloud/remote_access.md#generating-key-pairs) for use with the remote machine.
-2. At the terminal enter `rclone config`.
-3. Follow the prompts to choose `sftp`.
-4. Enter the following values as they come up, using defaults for other values.
+1. At the terminal enter `rclone config`.
+1. Follow the prompts to choose `sftp`.
+1. Enter the following values as they come up, using defaults for other values.
     - `name>` Name of the remote for future reference and configuration
     - `host>` Remote IP address or `cheaha.rc.uab.edu` for Cheaha
     - `user>` The user you will log into on the remote machine
     - `key_file>` The absolute path to the private key file on the local machine, something like `~/.ssh/private_key_ed25519`
     - `key_file_pass>` The passphrase used to secure the private key file (optional, but highly recommended)
-5. Verify by using `rclone lsd <name>`.
+1. Verify by using `rclone lsd <name>`.
 
 The official docuemntation for `rclone sftp` is [here](https://rclone.org/sftp/).
 
@@ -110,26 +110,26 @@ As you step through the process, you will ultimately open two terminal windows a
 <!-- markdownlint-enable MD046 -->
 
 1. Open a terminal on the device you wish to authorize to access the chosen cloud service provider using RClone. This terminal will be referred to as terminal-1.
-2. At terminal-1 enter `rclone config`.
-3. Follow the prompts to choose one of the following. The selection here will be used later and will be referred to as `<remote>`.
+1. At terminal-1 enter `rclone config`.
+1. Follow the prompts to choose one of the following. The selection here will be used later and will be referred to as `<remote>`.
    - UAB Box: select `Box`. `<remote>` will be replaced by  `box`.
    - UAB SharePoint Site: select `Microsoft OneDrive`. `<remote>` will be replaced by `onedrive`.
    - UAB OneDrive: select `Microsoft OneDrive`. `<remote>` will be replaced by `onedrive`.
-4. Enter a short, memorable name for future reference when prompted with `name>`. Keep this `<name>` in mind as it will be how you access the remote when [Using Commands](#usage).
-5. Press enter to leave all additional prompts blank until "Use auto config?". Type "n", for no, and press enter.
-6. The prompt should now read `config_token>`.
-7. On a machine with a browser, such as your personal computer, open a new terminal and enter `rclone authorize "<remote>"`. Replacing `<remote>` with the value from step (3). This terminal will be referred to as terminal-2.
-8. When the browser window opens, use it to authenticate to your selected service.
+1. Enter a short, memorable name for future reference when prompted with `name>`. Keep this `<name>` in mind as it will be how you access the remote when [Using Commands](#usage).
+1. Press enter to leave all additional prompts blank until "Use auto config?". Type "n", for no, and press enter.
+1. The prompt should now read `config_token>`.
+1. On a machine with a browser, such as your personal computer, open a new terminal and enter `rclone authorize "<remote>"`. Replacing `<remote>` with the value from step (3). This terminal will be referred to as terminal-2.
+1. When the browser window opens, use it to authenticate to your selected service.
     - [Authenticate to UAB Box](#authenticating-to-uab-box).
     - [Authenticate to Microsoft OneDrive](#authenticating-to-microsoft-onedrive).
     - Other services not officially supported by UAB IT are possible, but are not documented here. You will need to provide your own credentials for these services.
-9. Terminal-2 will print a secret token, which will appear like in the following image. You will need to copy the portion highlighted in the image, between the lines with `--->` and `<---`.
+1. Terminal-2 will print a secret token, which will appear like in the following image. You will need to copy the portion highlighted in the image, between the lines with `--->` and `<---`.
 
     ![!rclone authentication token sample](./images/rclone-auth-token-sample.png)
 
-10. Copy and paste the token from the terminal-2 to terminal-1.
-11. Follow the remaining prompts.
-12. Verify success by using `rclone lsd <name>:` in terminal-1.
+1. Copy and paste the token from the terminal-2 to terminal-1.
+1. Follow the remaining prompts.
+1. Verify success by using `rclone lsd <name>:` in terminal-1.
 
 ### Authenticating to Cloud Remotes
 
@@ -139,22 +139,22 @@ As you step through the process, you will ultimately open two terminal windows a
 
     ![!box authentication dialog with single sign on highlighted](./images/rclone-auth-box-010.png)
 
-2. Type in your UAB email address (not your @uabmc.edu email!).
-3. Click "Authorize".
+1. Type in your UAB email address (not your @uabmc.edu email!).
+1. Click "Authorize".
 
     ![!box single sign on authentication dialog](./images/rclone-auth-box-020.png)
 
-4. You will be redirected to the UAB SSO page.
-5. Authenticate with your BlazerID credentials.
-6. You will be asked to grant permission to the RClone software. Click "Grant access to Box" if you want the software to work with Box. If you do not grant permission, you will not be able to use RClone with Box.
+1. You will be redirected to the UAB SSO page.
+1. Authenticate with your BlazerID credentials.
+1. You will be asked to grant permission to the RClone software. Click "Grant access to Box" if you want the software to work with Box. If you do not grant permission, you will not be able to use RClone with Box.
 
     ![!box grant permission request dialog](./images/rclone-auth-box-030.png)
 
-7. You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.
+1. You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.
 
     ![!success page](./images/rclone-auth-rclone-success.png)
 
-8. Return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
+1. Return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
@@ -165,27 +165,27 @@ As you step through the process, you will ultimately open two terminal windows a
 #### Authenticating to Microsoft OneDrive
 
 1. Type in your UAB email address (not your @uabmc.edu email!).
-2. Click "Next".
+1. Click "Next".
 
     ![!onedrive authentication dialog](./images/rclone-auth-onedrive-010.png)
 
-3. If prompted, click "Work or school account".
+1. If prompted, click "Work or school account".
 
     ![!onedrive account selection dialog](./images/rclone-auth-onedrive-020.png)
 
-4. You will be asked to grant permission to the RClone software. Click "Accept" if you want the software to work with OneDrive. If you do not grant permission, you will not be able to use RClone with OneDrive.
+1. You will be asked to grant permission to the RClone software. Click "Accept" if you want the software to work with OneDrive. If you do not grant permission, you will not be able to use RClone with OneDrive.
 
     ![!onedrive grant permission request dialog](./images/rclone-auth-onedrive-030.png)
 
-5. You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.
+1. You will be redirected to a "Success!" page. Return to Terminal (5) to find the authentication token.
 
     ![!success page](./images/rclone-auth-rclone-success.png)
 
-6. Next you will return to the general instructions. Before you do, note that you'll be asked to choose which type of OneDrive service to access. The prompt will look like the image below. For UAB, the two relevant selections will be (1) to access your personal OneDrive space and (3) for a SharePoint Site, e.g. for a lab or department.
+1. Next you will return to the general instructions. Before you do, note that you'll be asked to choose which type of OneDrive service to access. The prompt will look like the image below. For UAB, the two relevant selections will be (1) to access your personal OneDrive space and (3) for a SharePoint Site, e.g. for a lab or department.
 
     ![!rclone selection prompt among list of onedrive services](./images/rclone-auth-onedrive-040.png)
 
-7. With your selection in mind, return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
+1. With your selection in mind, return to [Setting up UAB Cloud Remotes](#setting-up-uab-cloud-remotes).
 
 ### Setting Up an S3 LTS Remote
 

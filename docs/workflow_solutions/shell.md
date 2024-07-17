@@ -535,13 +535,13 @@ Two separate patterns can be used to set or change permissions on files and dire
         - `o` users outside the owner's group
         - `a` all users (same as `ugo`).
 
-    2. A symbol indicating how to change the permissions
+    1. A symbol indicating how to change the permissions
 
         - `=` set permissions
         - `-` remove permissions
         - `+` add permissions
 
-    3. A collection of letters denoting which permissions to change. Multiple letters may be used.
+    1. A collection of letters denoting which permissions to change. Multiple letters may be used.
 
         - `r` read
         - `w` write (change the contents)
@@ -559,7 +559,7 @@ Two separate patterns can be used to set or change permissions on files and dire
 
     ![!example of symbolic chmod](images/chmod_symbolic.png)
 
-2. Numerals
+1. Numerals
 
     Bit mask patterns are in the form `755`. Each digit is the sum of three binary bits. The bits are
 

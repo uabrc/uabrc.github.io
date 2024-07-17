@@ -11,15 +11,15 @@ For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/g
 A license is no longer required to use Clara Parabricks 4.x and later versions, and is free for the following groups,
 
 1. Academic Research.
-2. Research by non-profit institutions.
-3. For development, test and evaluation purposes without use in production.
+1. Research by non-profit institutions.
+1. For development, test and evaluation purposes without use in production.
 
 ### Minimum Hardware requirements to run Parabricks on Cheaha GPUs
 
 1. Access to the internet.
-2. Any GPU that supports CUDA architecture/compute capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0.
-3. The GPU has 16 GB of GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs. For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md).
-4. An NVIDIA driver with version 525.60.13 or greater.
+1. Any GPU that supports CUDA architecture/compute capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0.
+1. The GPU has 16 GB of GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs. For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md).
+1. An NVIDIA driver with version 525.60.13 or greater.
 
 <!-- markdownlint-disable MD046 -->
 !!! Note

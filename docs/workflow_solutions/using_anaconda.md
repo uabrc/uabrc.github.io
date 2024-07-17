@@ -182,7 +182,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```
 
-2. Platform + Package Specific
+1. Platform + Package Specific
 
     Create .yml file to share, replace `<envname>` (represents the name of your environment) and `<env>` (represents the name of the file you want to export) with preferred names for file.
 
@@ -192,7 +192,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```
 
-3. Platform + Package + Channel Specific
+1. Platform + Package + Channel Specific
 
     ```bash
 

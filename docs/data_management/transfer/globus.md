@@ -5,8 +5,8 @@ Globus is a powerful tool for robustly and securely managing data transfers to a
 UAB Research Computing uses High Assurance Endpoints, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions/changes.
 
 1. You will be prompted to prove authorization each time you access a UAB Research Computing endpoint or attempt to download files to your local machine from such an endpoint. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.
-2. Bookmarks are not allowed in High Assurance endpoints.
-3. In the newer version, Globus "Endpoints" have been moved under "Console", which can be located in the in the left-hand navigation pane.
+1. Bookmarks are not allowed in High Assurance endpoints.
+1. In the newer version, Globus "Endpoints" have been moved under "Console", which can be located in the in the left-hand navigation pane.
        ![!Globus endpoints moved under console](./images/globus_108_console_endpoint.png)
 
 For more detailed information on High Assurance please see the Globus official pages below:
@@ -41,54 +41,54 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
 
     ![!Globus login page with University of Alabama at Birmingham entered into the text box](./images/globus_001_login.png)
 
-2. Click File Manager in the left-hand navigation pane.
+1. Click File Manager in the left-hand navigation pane.
 
     ![!Navigation pane with File Manager selected.](./images/globus_002_nav_pane_file_manager.png)
 
-3. Ensure the center icon for the "Panels" selection is picked.
+1. Ensure the center icon for the "Panels" selection is picked.
 
     ![!Panels selection widget with center icon selected. Center icon appears to be two side-by-side panes.](./images/globus_003_panels.png)
 
-4. Click the "Search" icon in the "Collection" text box near the top-left or top-right of the page to locate an endpoint/collection. An endpoint is a server that provides access to data stored in a cluster. A collection can be a mapped collection or guest collection, which represents a user's own collection of files or directories mapped from storage endpoints to their Globus account for easy management, sharing and accessing. Please refer to the [Globus endpoints and collections](https://docs.globus.org/guides/overviews/collections-and-endpoints/) to know more. There are multiple ways to find an endpoint. For some endpoints you may be asked to log in, which is true of all UAB endpoints. Some UAB endpoints may also require that you be on the UAB Campus VPN.
+1. Click the "Search" icon in the "Collection" text box near the top-left or top-right of the page to locate an endpoint/collection. An endpoint is a server that provides access to data stored in a cluster. A collection can be a mapped collection or guest collection, which represents a user's own collection of files or directories mapped from storage endpoints to their Globus account for easy management, sharing and accessing. Please refer to the [Globus endpoints and collections](https://docs.globus.org/guides/overviews/collections-and-endpoints/) to know more. There are multiple ways to find an endpoint. For some endpoints you may be asked to log in, which is true of all UAB endpoints. Some UAB endpoints may also require that you be on the UAB Campus VPN.
 
     ![!Globus File Manager interface with mouse pointer over left-hand Collection Search box.](./images/globus_004_search_bar.png)
 
     1. Begin typing in the box to search for an endpoint. To find UAB-related endpoints, search for "UAB". There are two Cheaha endpoints
 
         1. Cheaha cluster on-campus (UAB Science DMZ) for machines that are either on the UAB Campus Network, or connected to the UAB Campus VPN.
-        2. Cheaha cluster off-campus (UAB Science DMZ) for machines that are _not_ on the UAB Campus Network and _not_ on the UAB Campus VPN.
+        1. Cheaha cluster off-campus (UAB Science DMZ) for machines that are _not_ on the UAB Campus Network and _not_ on the UAB Campus VPN.
 
-    2. The "Recent" tab shows endpoints/collections that have most recently been used.
+    1. The "Recent" tab shows endpoints/collections that have most recently been used.
 
         ![!Globus Collection Search Recent tab showing two endpoints.](./images/globus_005_recent_tab.png)
 
-    3. The "Bookmarks" tab shows a list of collection bookmarks. Bookmarks may not reference folders within UAB Research Computing or other High Assurance endpoints.
+    1. The "Bookmarks" tab shows a list of collection bookmarks. Bookmarks may not reference folders within UAB Research Computing or other High Assurance endpoints.
 
         ![!Globus Collection Search Bookmarks tab showing four bookmarks.](./images/globus_006_bookmarks_tab.png)
 
-    4. The "Your Collections" tab shows all collections owned by you. For most researchers this will be one or more Globus Connect Personal collections.
+    1. The "Your Collections" tab shows all collections owned by you. For most researchers this will be one or more Globus Connect Personal collections.
 
         ![!Globus Collection Search Your Collections tab showing one endpoint.](./images/globus_007_your_collections_tab.png)
 
-    5. The "Shared With You" tab shows any private collections that have been shared with you by other users, possibly collaborators.
+    1. The "Shared With You" tab shows any private collections that have been shared with you by other users, possibly collaborators.
 
-5. When an endpoint/collection has been selected you will see a list of folders and files on the default path for that endpoint/collection in the bottom box. You can use the "Path" box to type a path to find the files you are looking for.
+1. When an endpoint/collection has been selected you will see a list of folders and files on the default path for that endpoint/collection in the bottom box. You can use the "Path" box to type a path to find the files you are looking for.
 
     ![!Globus File Manager interface with one endpoint selected showing files of default directory.](./images/globus_010_one_endpoint_done.png)
 
-6. Repeat the process of selecting an endpoint/collection for the other "Collection" text box.
+1. Repeat the process of selecting an endpoint/collection for the other "Collection" text box.
 
     ![!Globus File Manager interface with both endpoints selected showing files for both default directories.](./images/globus_011_two_endpoint_done.png)
 
-7. When both endpoints have been selected and you have chosen the correct paths for each collection, select files and/or folders on the side you wish to transfer FROM. We will call this side the source collection, and the other side the target collection. Selections may be made by clicking the checkboxes that appear when you hover over each file or folder.
+1. When both endpoints have been selected and you have chosen the correct paths for each collection, select files and/or folders on the side you wish to transfer FROM. We will call this side the source collection, and the other side the target collection. Selections may be made by clicking the checkboxes that appear when you hover over each file or folder.
 
     ![!Globus File Manager interface with files selected in left endpoint.](./images/globus_012_selected_files.png)
 
-8. When all files and folders have been selected from the source collection, click the "Start" button on the source collection side. This will start a transfer process from source to target. The files will be placed in the currently open path on the target collection.
+1. When all files and folders have been selected from the source collection, click the "Start" button on the source collection side. This will start a transfer process from source to target. The files will be placed in the currently open path on the target collection.
 
     ![!Pop-up showing Transfer request submitted successfully. Pop-up contains link to View details.](./images/globus_013_popup.png)
 
-9. A green pop-up notification will appear indicating the transfer has started. Click "View details \>" to be taken to the status of the transfer. You can also check on the status of any transfers by clicking the "Activity" button in the left-hand navigation pane.
+1. A green pop-up notification will appear indicating the transfer has started. Click "View details \>" to be taken to the status of the transfer. You can also check on the status of any transfers by clicking the "Activity" button in the left-hand navigation pane.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -103,20 +103,20 @@ Between the two "Start" buttons on the "File Manager" page is a "Transfer & Time
 ![!Transfer and Timer Options pane showing multiple options.](./images/globus_040_transfer_and_sync_options.png)
 
 1. sync - Sync files only, rather than create new files.
-2. delete files - Delete any files on the target that are not on the source. Useful for forcing identical filesystems when syncing.
-3. preserve source - Copies file "modified time" metadata.
-4. verify integrity - Verifies that checksums are identical on source and target after transfer completes. The default option is to verify integrity. Its highly recommended to leave this unchecked.
-5. encrypt transfer - Encrypts data before leaving source and decrypts after arriving at destination. Recommended for all transfers, required and enforced for all UAB endpoints. It is checked by default.
-6. skip files - Skips source files that cause errors during the transfer. Otherwise the entire transfer will stop when an error is encountered.
-7. quota fail - Fails instead of retries when the target storage quota is exceeded.
-8. Apply filter - Filter rules can be used to customize and fine-tune the transfer process, ensuring that only the desired files/directories are transferred while excluding others based on the rules defined.
+1. delete files - Delete any files on the target that are not on the source. Useful for forcing identical filesystems when syncing.
+1. preserve source - Copies file "modified time" metadata.
+1. verify integrity - Verifies that checksums are identical on source and target after transfer completes. The default option is to verify integrity. Its highly recommended to leave this unchecked.
+1. encrypt transfer - Encrypts data before leaving source and decrypts after arriving at destination. Recommended for all transfers, required and enforced for all UAB endpoints. It is checked by default.
+1. skip files - Skips source files that cause errors during the transfer. Otherwise the entire transfer will stop when an error is encountered.
+1. quota fail - Fails instead of retries when the target storage quota is exceeded.
+1. Apply filter - Filter rules can be used to customize and fine-tune the transfer process, ensuring that only the desired files/directories are transferred while excluding others based on the rules defined.
 
 Below the "Transfer Settings", there are additional options available that you can enable to customize notification of success/failure, and schedule the transfer to occur at specific time.
 
 ### Common Errors
 
 1. File Not Found - This may mean that a file was not readable by Globus. Check that the file hasn't moved or changed names during the transfer. It is recommended to not modify files while they are being transferred by Globus.
-2. Permission Denied - Globus is not able to access the files because permissions do not allow it. For Globus Connect Personal, be sure the containing folder is on the "Accessible Folders" list. Be sure that your Cheaha account has access to read the file.
+1. Permission Denied - Globus is not able to access the files because permissions do not allow it. For Globus Connect Personal, be sure the containing folder is on the "Accessible Folders" list. Be sure that your Cheaha account has access to read the file.
 
 ### Project Space Permissions
 
@@ -149,18 +149,18 @@ To use the UAB [LTS](../lts/index.md) Connector, [search for a collection/endpoi
 Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../lts/index.md#requesting-an-account) to the LTS endpoint. To do so, please follow the instructions given below.
 
 1. In your browser, navigate to <https://app.globus.org> and login using UAB SSO.
-2. Click "Collections" in the left-hand navigation pane.
-3. In the search field at the top of the "Collection" page, enter "UAB LTS" and then click the search button. Be sure to uncheck "Recently Used" if it is checked. You should see a collection titled "UAB Research Computing LTS (Long Term Storage aka S3)" appear in the search results.
-4. Click the right arrow indicator at the right-hand side of the "UAB Research Computing LTS" result. You should be taken to the Overview page for the "UAB Research Computing LTS" endpoint.
+1. Click "Collections" in the left-hand navigation pane.
+1. In the search field at the top of the "Collection" page, enter "UAB LTS" and then click the search button. Be sure to uncheck "Recently Used" if it is checked. You should see a collection titled "UAB Research Computing LTS (Long Term Storage aka S3)" appear in the search results.
+1. Click the right arrow indicator at the right-hand side of the "UAB Research Computing LTS" result. You should be taken to the Overview page for the "UAB Research Computing LTS" endpoint.
 
     ![!Image showing Globus collections page with UAB LTS in search box, UAB Research Computing LTS endpoint visible in results, and right arrow highlighted.](./images/globus-lts-s3-credentials-01.png)
 
-5. Near the top of the Overview page, click the "Credentials" tab". After some time, you should see a form requesting your "AWS IAM Access Key ID" and "AWS IAM Secret Key".
-6. Enter the two requested keys in the appropriate boxes, then press "Continue". For data security reasons, you may be asked to authenticate again with your UAB SSO credentials. If you have more than one set of keys, you will need to choose which to enter. At this time, there doesn't appear to be a way to enter or use more than one set of credentials at a time with Globus.
+1. Near the top of the Overview page, click the "Credentials" tab". After some time, you should see a form requesting your "AWS IAM Access Key ID" and "AWS IAM Secret Key".
+1. Enter the two requested keys in the appropriate boxes, then press "Continue". For data security reasons, you may be asked to authenticate again with your UAB SSO credentials. If you have more than one set of keys, you will need to choose which to enter. At this time, there doesn't appear to be a way to enter or use more than one set of credentials at a time with Globus.
 
     ![!Image showing Register a Credential form on the UAB Research Computing LTS endpoint Overview page showing artificial keys entered into the appropriate text fields.](./images/globus-lts-s3-credentials-02.png)
 
-7. You should be taken back to the UAB Research Computing LTS endpoint Overview page with the Credentials tab selected. There should now be one entry on this page showing your AWS IAM Access Key ID and your Globus Identity (i.e., your `BlazerID@uab.edu` email address). If you have multiple Access Keys and ever wish to change which one is being used with Globus, then click the "Trash Can" icon next to the entry on this page to delete it, and start the key entry process over from the previous step.
+1. You should be taken back to the UAB Research Computing LTS endpoint Overview page with the Credentials tab selected. There should now be one entry on this page showing your AWS IAM Access Key ID and your Globus Identity (i.e., your `BlazerID@uab.edu` email address). If you have multiple Access Keys and ever wish to change which one is being used with Globus, then click the "Trash Can" icon next to the entry on this page to delete it, and start the key entry process over from the previous step.
 
     ![!Image showing UAB Research Computing LTS endpoint Overview page showing Access Credentials entry with AWS IAM Access Key ID and Globus Identity.](./images/globus-lts-s3-credentials-03.png)
 
@@ -230,47 +230,47 @@ It is NOT RECOMMENDED to make Globus Connect Personal collections public as this
 
 1. Click "Collections" in the left-hand navigation pane.
 
-2. Click the "Administered By You" tab (or) you can search for the collections in search.
+1. Click the "Administered By You" tab (or) you can search for the collections in search.
 
     ![!Globus Endpoints page with Administered by You selected, showing two endpoints. One of the endpoints is a shared endpoint.](./images/globus_100_shared_search_collections.png)
 
-3. In the table, find the collections you wish to share data from and click its name. You will be taken to the page for that collection.
+1. In the table, find the collections you wish to share data from and click its name. You will be taken to the page for that collection.
 
-4. Click the "Collections" tab.
+1. Click the "Collections" tab.
 
     ![!Globus UAB RC Work Laptop page with Guest Collections tab selected showing one collection.](./images/globus_101_shared_collections.png)
 
-5. Click the "Add a Guest Collection" button.
+1. Click the "Add a Guest Collection" button.
 
-6. Fill out the form.
+1. Fill out the form.
 
     ![!Create New Guest Collection form.](./images/globus_102_shared_collection_form.png)
 
     1. Manually enter a path or click the Browse button to select a folder.
-    2. Give a short but memorable name for your shared collection. This information will be useful for your collaborators.
-    3. Optionally fill in a more detailed description of the shared collection for your records.
-    4. Optionally fill in searchable keywords.
-    5. Other additional options include, information link, contact email, organization/department.
-    6. Default directory, if left empty, is equivalent to the first field "Directory".
+    1. Give a short but memorable name for your shared collection. This information will be useful for your collaborators.
+    1. Optionally fill in a more detailed description of the shared collection for your records.
+    1. Optionally fill in searchable keywords.
+    1. Other additional options include, information link, contact email, organization/department.
+    1. Default directory, if left empty, is equivalent to the first field "Directory".
 
-7. Click "Create Collection" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged shared collection. Any further references to "an endpoint" will be about the newly created, shared collection.
+1. Click "Create Collection" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged shared collection. Any further references to "an endpoint" will be about the newly created, shared collection.
 
-8. Make sure you are on the "Permissions" tab. You should see a permissions table with your name in it.
+1. Make sure you are on the "Permissions" tab. You should see a permissions table with your name in it.
 
     ![!Newly created test endpoint page with Permissions tab selected.](./images/globus_103_shared_permissions.png)
 
-9. Click "Add Permissions -- Share With" to share your guest collection with other users.
+1. Click "Add Permissions -- Share With" to share your guest collection with other users.
 
-10. Fill out the form.
+1. Fill out the form.
 
     ![!Test endpoint Add Permissions Share With form.](./images/globus_104_shared_add_permissions.png)
 
     1. Optionally enter a path within the shared endpoint or use the Browse button. If you leave the path as just a slash, the entire shared endpoint will be shared with the permitted users.
-    2. Select who to share with.
+    1. Select who to share with.
         1. User - One or more users.
-        2. Group - All members of a group.
-        3. All Users - All globus users.
-        4. Public - Makes data accessible to everyone.
+        1. Group - All members of a group.
+        1. All Users - All globus users.
+        1. Public - Makes data accessible to everyone.
 
             <!-- markdownlint-disable MD046 -->
             !!! danger
@@ -278,7 +278,7 @@ It is NOT RECOMMENDED to make Globus Connect Personal collections public as this
                 It is important to note that options (iii) and (iv) poses a high risk in terms of security. Therefore, we strongly advise against this practice.This will expose information to everyone on Globus!
             <!-- markdownlint-disable MD046 -->
 
-    3. Search for users to add, or a group, depending on your choice above. You should be able to find any globus user using the search box.
+    1. Search for users to add, or a group, depending on your choice above. You should be able to find any globus user using the search box.
 
         <!-- markdownlint-disable MD046 -->
         !!! warning
@@ -286,10 +286,10 @@ It is NOT RECOMMENDED to make Globus Connect Personal collections public as this
             Be certain of which user you are selecting! Check the email address domain.
         <!-- markdownlint-disable MD046 -->
 
-    4. If adding users, optionally enter a message so they know why they are being added.
-    5. Select permissions. Read is automatically selected and cannot be changed. Write permissions are optional.
+    1. If adding users, optionally enter a message so they know why they are being added.
+    1. Select permissions. Read is automatically selected and cannot be changed. Write permissions are optional.
 
-11. Click "Add Permission" to add permissions for these users or groups.
+1. Click "Add Permission" to add permissions for these users or groups.
     You will be returned to the page for the shared collection and should
     be on the "Permissions" tab and should see the user or group in the table.
 
@@ -297,14 +297,14 @@ It is NOT RECOMMENDED to make Globus Connect Personal collections public as this
 
 1. Click "Collections" in the left-hand navigation pane, then
 
-2. Click the "Administered By You" tab.
+1. Click the "Administered By You" tab.
 
     ![!Globus Endpoints page with Administered by You tab selected, showing two endpoints.](./images/globus_105_shared_collections.png)
 
-3. Click the right caret ">" icon at the right side of the row with the collection you wish to delete. You will be taken to the information page for that collection.
+1. Click the right caret ">" icon at the right side of the row with the collection you wish to delete. You will be taken to the information page for that collection.
 
     ![!Globus Endpoints page with Shared Collection Overview.](./images/globus_106_shared_collection_overview.png)
 
-4. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the collection, or to cancel.
+1. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the collection, or to cancel.
 
     ![!Delete Collection confirmation dialog banner.](./images/globus_107_shared_delete.png)
