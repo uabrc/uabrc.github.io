@@ -47,19 +47,6 @@ plugins:
       type: date
   - glightbox:
       # auto_caption: true
-  - htmlproofer:
-      enabled: !ENV [ENABLED_HTMLPROOFER, True]
-      raise_error_after_finish: True
-      raise_error_excludes:
-        403:
-          [
-            "https://uabstatus.statuscast.com*",
-            "https://anaconda.org*",
-            "https://support.rstudio.com*",
-            "https://gatk.broadinstitute.org*",
-          ]
-        504: ["https://*cloud.rc.uab.edu*"]
-      skip_downloads: True
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md

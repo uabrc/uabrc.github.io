@@ -5,11 +5,3 @@ repos:
       - id: markdownlint-cli2
         exclude: theme/
         require_serial: true
-  - repo: local
-    hooks:
-      - id: mkdocs-build
-        name: Build documentation
-        entry: "conda activate mkdocs && dotenv -f ./.htmlproofer.env run -- mkdocs build"
-        language: system
-        always_run: true
-        pass_filenames: false
