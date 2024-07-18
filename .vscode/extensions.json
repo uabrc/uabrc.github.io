@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "DavidAnson.vscode-markdownlint",
+    "ms-python.python",
+    "redhat.vscode-yaml",
+    "yzhang.markdown-all-in-one"
+  ]
+}
