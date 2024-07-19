@@ -18,7 +18,7 @@ Research Computing at UAB provides shared resources for researchers, where respo
 
 ## How do I create a Research Computing account?
 
-- **Cheaha Account**: Creating a Cheaha account is currently a self-service process. Both UAB employees, students, and external collaborators can create a Cheaha account by visiting [creating a Cheaha account page](cheaha_account.md).
+- **Cheaha Account**: Creating a Cheaha account is currently a self-service process. Both UAB employees, students, and external collaborators can create a Cheaha account by visiting [creating a Cheaha account page](./cheaha_account.md).
 - **GitLab Account**: If you are a UAB-affiliated researcher and have a BlazerID, you may create an account by visiting [GitLab registration steps for UAB Employees and Students](./gitlab_account.md/#uab-gitlab-registration). If you are a collaborator with a XIAS account, you will need to follow the procedure in [External Collaborators registration](./gitlab_account.md/#xias-external-collaborator-registration).
 - **Cloud.rc Account**: To get your Cloud.rc account, please contact [Support](../help/support.md). For detail information on how to access it, please visit our [Cloud.rc](../uab_cloud/index.md) page.
 

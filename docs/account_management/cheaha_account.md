@@ -35,7 +35,7 @@ Our Cheaha system is robust, but errors may occur due to general platform connec
     - Try logging in on a Private Browsing window, then trying again.
     - Try waiting a few hours, then trying again.
 
-- **What do I need to do when added to a group on Cheaha?**
+- **What should I do to access shared storages and recognize my group membership after being added to a group on Cheaha?**
 
     - **Do you have any processes/connections on `cheaha.rc.uab.edu`**?
 
@@ -44,7 +44,7 @@ Our Cheaha system is robust, but errors may occur due to general platform connec
 
     - **Do you have an active Open OnDemand session?**
 
-        - In Open OnDemand ([https://rc.uab.edu](https://rc.uab.edu)), Click the menu `Developer` in the top right corner, then click `Restart Web Server`
+        - In Open OnDemand ([https://rc.uab.edu](https://rc.uab.edu)),  navigate to the green navigation bar in the top right corner. Look for the `Help` or `Developer` dropdown menu and click on it. Then, click `Restart Web Server`. Once the restart is complete, please try again.
 
     - **Do you have one or more OOD HPC Desktops running?**
 
