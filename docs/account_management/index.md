@@ -4,15 +4,15 @@
 
 Research Computing at UAB provides shared resources for researchers, where responsible and professional use of Cheaha accounts, storage, and computational resources is expected to maintain system integrity and support collaborative research. Please refer below for the eligibility requirements and responsibilities of Research Computing services users.
 
-{{ read_csv('account_management/usr/user_responsibilities.csv', keep_default_na=False) }}
+{{ read_csv('account_management/res/user_responsibilities.csv', keep_default_na=False) }}
 
 ### All Users Responsibilities
 
-- Regularly clearing `/scratch`
-- Adherence to [UAB IT policies](https://www.uab.edu/it/home/policies)
-- Request computational resources reasonably. Refer to our [compute resource estimation](../cheaha/job_efficiency.md/#estimating-compute-resources)
-- [Responsible Conduct of Research training](https://www.uab.edu/research/home/responsible-conduct-of-research)
-- [Annual account certification of Cheaha account](../account_management/cheaha_account/index.md/#account-requires-certification)
+- Regularly clearing `/scratch`.
+- Adherence to [UAB IT policies](https://www.uab.edu/it/home/policies).
+- Request computational resources reasonably. Refer to our [compute resource estimation](../cheaha/job_efficiency.md/#estimating-compute-resources).
+- [Responsible Conduct of Research training](https://www.uab.edu/research/home/responsible-conduct-of-research).
+- [Annual account certification of Cheaha account](../account_management/cheaha_account.md#account-requires-certification).
 - All Cheaha account users working with Protected Health Information (PHI) data are responsible to review [HIPAA policies](https://www.uab.edu/it/home/policies/compliance/hipaa) and
 [HIPAA training](https://www.uab.edu/compliance/areas-of-focus/privacy/training).
 
@@ -25,8 +25,8 @@ Research Computing at UAB provides shared resources for researchers, where respo
 ## How do I login to Research Computing Services?
 
 - **Cheaha**: To login to Cheaha:
-    - UAB Employees and Students: use your BlazerID
-    - External Collaborators: use your XIAS email address
+    - UAB Employees and Students: use your BlazerID.
+    - External Collaborators: use your XIAS email address.
     - For detail login information, please visit [accessing Cheaha](../cheaha/getting_started.md/#accessing-cheaha) page.  If accessing through Open OnDemand, our online portal, [Duo 2FA](https://www.uab.edu/it/home/security/2-factor) may be required.
 
 - **GitLab**: To login  to the GitLab, the UAB Employees and Students require a BlazerID, while External Collaborators require XIAS email. For detail login information visit the [UAB Employees and Students GitLab Registration](./gitlab_account.md/#uab-gitlab-registration) and [External Collaborators GitLab Registration](./gitlab_account.md/#xias-external-collaborator-registration) pages respectively.
