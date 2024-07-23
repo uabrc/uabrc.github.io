@@ -4,6 +4,8 @@ Profiling is essential for assessing how different parts of a program execute an
 
 In research contexts, where code often performs complex or resource-intensive tasks, profiling helps identify which parts of the code consume significant compute and memory resources. This insight guides optimizations aimed at reducing execution times and enhancing the overall efficiency of the program.
 
+## Who gets benefited by Profiling?
+
 ## Profiling Python Codes
 
 Three common profiling techniques used in analyzing Python codes are discussed briefly in this section.
@@ -11,6 +13,9 @@ Three common profiling techniques used in analyzing Python codes are discussed b
 1. Time Profiling
 2. Memory Profling
 3. CPU Profling
+
+!!! note
+The examples are tested on Cheaha.
 
 ### Time Profiling
 
@@ -84,5 +89,6 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     21         1         51.7     51.7    100.0      return np.sum(input_array)
 ```
 
-2. Function Profiling
-tracing each function call to generate a list detailing the frequency of function calls and the average time taken for each call. This helps identify which functions are called most often and their respective performance characteristics.
+### Function Profiling
+
+Function profiling is used to analyze the performance of each function in your code by identifying how much time each function takes to run. cProfile is a built-in Python library that performs this analysis for your entire program. It tracks every function call, showing which functions are called most often and how long each call takes on average. cProfile is included with Python.
