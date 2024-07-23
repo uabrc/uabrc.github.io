@@ -3,7 +3,7 @@ toc_depth: 3
 ---
 # Basic Workflow with LST and s3cmd
 
-This tutorial covers setting up and using S3 with LTS, including installing s3cmd, configuring your environment, creating and managing S3 buckets, and setting access permissions Cheaha.
+This tutorial covers setting up and using S3 with LTS, including installing s3cmd, configuring your environment, creating and managing S3 buckets, and setting access permissions on Cheaha.
 
 ## Setting Up Your Environment
 
@@ -68,8 +68,8 @@ Long Term Storage (LTS) services like Amazon S3 uses a specific data organizatio
 Once you have complete `s3cmd` configuration, you can create new buckets in your LTS storage. To create a bucket use a `mb`(make bucket) command:
 
 ```bash
- s3cmd mb s3://your_bucket_name
- ```
+s3cmd mb s3://your_bucket_name
+```
 
 Please replace `your_bucket_name` with your desired name. This command creates a new bucket that you named `your_bucket_name` in your LTS storage using the currently configured s3cmd profile.
 
