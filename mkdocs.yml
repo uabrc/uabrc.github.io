@@ -82,6 +82,7 @@ plugins:
 nav:
   - Home: index.md
   - Account Management:
+      - account_management/index.md
       - Cheaha Account: account_management/cheaha_account.md
       - External Collaborator Accounts (XIAS):
           - account_management/xias/index.md
