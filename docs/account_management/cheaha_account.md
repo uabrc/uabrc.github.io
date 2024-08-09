@@ -77,3 +77,30 @@ Periodically, we review all researcher accounts to ensure they are authorized to
 ![!Account authorization error page.](images/uab_auth_error.png)
 
 If you believe this to be in error, please [Contact Support](../help/support.md).
+
+## Cheaha Account and Group Membership FAQ
+
+Our Cheaha system is robust, but errors may occur due to general platform connectivity issues or missing components. Below are FAQs for self-service Cheaha account creation and a troubleshooting guide for common issues:
+
+- **Which credentials should I use?** Please visit [how do I login to research computing services](../account_management/index.md/#how-do-i-login-to-research-computing-services).
+- **What do I do if I'm waiting for it to finish for longer than a couple of minutes?**
+
+    - Try closing and restarting your browser, then trying again.
+    - Try clearing site data for [https://rc.uab.edu](https://rc.uab.edu), then trying again.
+    - Try logging in on a Private Browsing window, then trying again.
+    - Try waiting a few hours, then trying again.
+
+- **What should I do to access shared storages and recognize my group membership after being added to a group on Cheaha?**
+
+    - **Do you have any processes/connections on `cheaha.rc.uab.edu`**?
+
+        - Please exit and log back in.
+        - If you have active Tmux/Screen sessions, you will need to terminate those as well, log out, log back in and start Tmux.
+
+    - **Do you have an active Open OnDemand session?**
+
+        - In Open OnDemand ([https://rc.uab.edu](https://rc.uab.edu)),  navigate to the green navigation bar in the top right corner. Look for the `Help` or `Developer` dropdown menu and click on it. Then, click `Restart Web Server`. Once the restart is complete, please try again.
+
+    - **Do you have one or more OOD HPC Desktops running?**
+
+        - Terminate the desktops and start new ones.
