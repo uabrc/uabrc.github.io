@@ -50,7 +50,10 @@ To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From
 
 We can create a new environment, that houses all of the packages, modules, and libraries we need for our current Jupyter Notebook to implement functions and operations, run all of its cells and deliver desired outputs. Follow the steps below to accomplish this;
 
-1. Access the [terminal](../../workflow_solutions/using_anaconda.md#using-anaconda).
+1. Access the terminal using your preferred method.
+
+    - [OOD Terminal](./ood_layout.md#opening-a-terminal). Be sure to run the following steps in a job!
+    - [OOD HPC Desktop Job Terminal](./hpc_desktop.md). This method will ensure terminal commands are run in a job.
 
 1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) your new environment, following the linked steps.
 

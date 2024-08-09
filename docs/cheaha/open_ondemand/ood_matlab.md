@@ -18,8 +18,8 @@ This section is dedicated to using this feature with Anaconda on Cheaha. To use 
 
 1. Create an [HPC Interactive Desktop Job](hpc_desktop.md).
 1. Open a terminal in that job. The following steps should all be run in this terminal unless otherwise specified.
-1. [Load the Anaconda Module](../software/software.md#anaconda-on-cheaha).
-1. [Create an Environment](../../workflow_solutions/using_anaconda.md#using-anaconda) in Anaconda with the packages needed.
+1. [Load the Anaconda Module](../software/software.md#loading-anaconda).
+1. [Create an Environment](../../workflow_solutions/using_anaconda.md#create-an-environment) in Anaconda with the packages needed.
 1. [Activate the Environment](../../workflow_solutions/using_anaconda.md#activate-an-environment),
 1. Load the Matlab [Module](../software/modules.md).
 1. Start Matlab by entering the command `matlab`.
