@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../">
       
       
         <link rel="next" href="../xias/">
@@ -249,6 +249,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -266,16 +270,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Account Management
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
@@ -283,6 +295,8 @@
             Account Management
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -416,6 +430,17 @@
     
   </li>
       
+        <li class="md-nav__item">
+    <a href="#cheaha-account-and-group-membership-faq" class="md-nav__link">
+      <span class="md-ellipsis">
+        Cheaha Account and Group Membership FAQ
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
     </ul>
   
 </nav>
@@ -453,7 +478,7 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           
@@ -469,14 +494,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             External Collaborator Accounts (XIAS)
           </label>
@@ -2878,6 +2903,17 @@
     
   </li>
       
+        <li class="md-nav__item">
+    <a href="#cheaha-account-and-group-membership-faq" class="md-nav__link">
+      <span class="md-ellipsis">
+        Cheaha Account and Group Membership FAQ
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
     </ul>
   
 </nav>
@@ -2943,6 +2979,44 @@
 <p>Periodically, we review all researcher accounts to ensure they are authorized to use Cheaha based on affiliation status. If we find a researcher is no longer affiliated with UAB, we may disable the account. If you are not authorized to use Cheaha, you will see a page like the following.</p>
 <p><a class="glightbox" href="../images/uab_auth_error.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Account authorization error page." src="../images/uab_auth_error.png" /></a></p>
 <p>If you believe this to be in error, please <a href="../../help/support/">Contact Support</a>.</p>
+<h2 id="cheaha-account-and-group-membership-faq">Cheaha Account and Group Membership FAQ<a class="headerlink" href="#cheaha-account-and-group-membership-faq" title="Permanent link">&para;</a></h2>
+<p>Our Cheaha system is robust, but errors may occur due to general platform connectivity issues or missing components. Below are FAQs for self-service Cheaha account creation and a troubleshooting guide for common issues:</p>
+<ul>
+<li><strong>Which credentials should I use?</strong> Please visit <a href="../#how-do-i-login-to-research-computing-services">how do I login to research computing services</a>.</li>
+<li>
+<p><strong>What do I do if I'm waiting for it to finish for longer than a couple of minutes?</strong></p>
+<ul>
+<li>Try closing and restarting your browser, then trying again.</li>
+<li>Try clearing site data for <a href="https://rc.uab.edu">https://rc.uab.edu</a>, then trying again.</li>
+<li>Try logging in on a Private Browsing window, then trying again.</li>
+<li>Try waiting a few hours, then trying again.</li>
+</ul>
+</li>
+<li>
+<p><strong>What should I do to access shared storages and recognize my group membership after being added to a group on Cheaha?</strong></p>
+<ul>
+<li>
+<p><strong>Do you have any processes/connections on <code>cheaha.rc.uab.edu</code></strong>?</p>
+<ul>
+<li>Please exit and log back in.</li>
+<li>If you have active Tmux/Screen sessions, you will need to terminate those as well, log out, log back in and start Tmux.</li>
+</ul>
+</li>
+<li>
+<p><strong>Do you have an active Open OnDemand session?</strong></p>
+<ul>
+<li>In Open OnDemand (<a href="https://rc.uab.edu">https://rc.uab.edu</a>),  navigate to the green navigation bar in the top right corner. Look for the <code>Help</code> or <code>Developer</code> dropdown menu and click on it. Then, click <code>Restart Web Server</code>. Once the restart is complete, please try again.</li>
+</ul>
+</li>
+<li>
+<p><strong>Do you have one or more OOD HPC Desktops running?</strong></p>
+<ul>
+<li>Terminate the desktops and start new ones.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -2963,7 +3037,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 23, 2024</span>
   </span>
 
     
