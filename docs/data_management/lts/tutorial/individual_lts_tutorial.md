@@ -75,17 +75,17 @@ To manage a bucket, various commands can be used. Below are some common `s3cmd` 
 - To **delete/remove** an object, use command: `s3cmd del s3://your-bucket-name/your-object-name`.
 - To **delete/remove** a bucket, use command: `s3cmd rb s3://your-bucket-name`.
 
-<!-- markdownlint-disable MD046 -->
-!!! Note
+    <!-- markdownlint-disable MD046 -->
+    !!! Note
 
-    An S3 bucket cannot be deleted unless it is completely empty. If the bucket contains any objects, `s3cmd rb` will report an error, like `S3 error: 409 (BucketNotEmpty)` when you attempt to delete it. To remove all objects within the bucket, use: `s3cmd del -r s3://your-bucket-name --force`. You can then remove the bucket itself with: `s3cmd rb s3://your-bucket-name`.
-<!-- markdownlint-disable MD046 -->
+        An S3 bucket cannot be deleted unless it is completely empty. If the bucket contains any objects, `s3cmd rb` will report an error, like `S3 error: 409 (BucketNotEmpty)` when you attempt to delete it. To remove all objects within the bucket, use: `s3cmd del -r s3://your-bucket-name --force`. You can then remove the bucket itself with: `s3cmd rb s3://your-bucket-name`.
+    <!-- markdownlint-disable MD046 -->
 
-<!-- markdownlint-disable MD046 -->
-!!! danger
+    <!-- markdownlint-disable MD046 -->
+    !!! danger
 
-    Deleting objects and buckets cannot be undone. Once the delete command is entered, any data is lost permanently and cannot be restored.
-<!-- markdownlint-enable MD046 -->
+        Deleting objects and buckets cannot be undone. Once the delete command is entered, any data is lost permanently and cannot be restored.
+    <!-- markdownlint-enable MD046 -->
 
 You can find a variety of `s3cmd` commands in our documentation at [here](../../lts/interfaces.md/#s3cmd-commands) and on the [S3tools website](https://s3tools.org/usage). For quick reference, you can also use the `s3cmd --help` command to view available options directly in your terminal.
 
