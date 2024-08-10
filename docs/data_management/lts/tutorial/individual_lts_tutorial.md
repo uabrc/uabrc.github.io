@@ -1,7 +1,7 @@
 ---
 toc_depth: 3
 ---
-# Basic Workflow with Individual LST and s3cmd
+# Basic Workflow with Individual LTS and s3cmd
 
 In this tutorial, we will guide you through using `s3cmd` on the Cheaha system to effectively manage and interact with your individual LTS account. We will cover the installation and configuration of `s3cmd`, and demonstrate essential operations, including creating buckets, listing, copying, downloading, and deleting [buckets and objects](../index.md/#terminology) in your LTS account. In addition, we will show you how to set and manage read and write access for other accounts to your LTS buckets and objects.
 
@@ -9,9 +9,9 @@ In this tutorial, we will guide you through using `s3cmd` on the Cheaha system t
 
 ### Install s3cmd within Anaconda Environment on Cheaha
 
-To interact with LTS using S3, you need the `s3cmd` tool installed. It is recommended to install it using `pip` within an Anaconda environment on Cheaha. Please avoid using `conda install s3cmd`, as that version may not work as expected. Instead, follow the below steps to install `s3cmd` using `pip`.
+To interact with LTS using S3, you need the `s3cmd` tool installed. It is recommended to install it using `pip` within an Anaconda environment on Cheaha. Please avoid using `conda install s3cmd`, as that version will not work as expected. Instead, follow the below steps to install `s3cmd` using `pip`.
 
-First, access our interactive Open OnDemand (OOD) portal at [https://rc.uab.edu](https://rc.uab.edu) and create a job  on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on [installing and setting anaconda environment](../../../cheaha/tutorial/pytorch_tensorflow.md/#installing-anaconda-environments-using-terminal).
+First, access our interactive Open OnDemand (OOD) portal at [https://rc.uab.edu](https://rc.uab.edu) and create a job on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on [installing and setting anaconda environment](../../../cheaha/tutorial/pytorch_tensorflow.md/#installing-anaconda-environments-using-terminal).
 
 Once your interactive apps session is launched, open the terminal as described in [step 5 of the Anaconda tutorial page](../../../cheaha/tutorial/pytorch_tensorflow.md/#installing-anaconda-environments-using-terminal) and run the below commands.
 
@@ -50,53 +50,56 @@ Once the configuration is complete, `s3cmd` will generate a `.s3cfg` file in you
 
 ### Creating Buckets
 
-Long Term Storage (LTS) services like Amazon S3 uses a specific data organization model based on **buckets** and **objects**. Think of buckets as folders that contain individual pieces of data called objects. Each bucket has a unique name. We have documentation about basic terminology on s3 storage system [here](../index.md/#terminology) and a naming guide for LTS buckets [here](../index.md/#avoiding-duplicate-names-for-buckets).
+Long Term Storage (LTS) services like Amazon S3 uses a specific data organization model based on **buckets** and **objects**. Think of buckets as folders that contain individual pieces of data called objects. Each bucket has a unique name. We have documentation about basic terminology on s3 storage system [here](../index.md/#terminology).
 
 Once you have complete `s3cmd` configuration, you can create new buckets in your individual LTS storage. To create a bucket use a `mb`(make bucket) command:
 
 ```bash
-s3cmd mb s3://your_bucket_name
+s3cmd mb s3://your-bucket-name
 ```
 
-Please replace `your_bucket_name` with your desired name. This command creates a new bucket that you named `your_bucket_name` in your LTS storage using the currently configured `s3cmd` profile.
-
-The image below shows the LTS bucket created successfully after running the command.
+Please replace `your-bucket-name` with your desired name. This command creates a new bucket that you named `your-bucket-name` in your LTS storage using the currently configured `s3cmd` profile. For example, the image below shows an LTS bucket named `first-test-bucket` that was created successfully after running the command `s3cmd mb s3://first-test-bucket`.
 
 ![image-bucket](../images/create-bucket.png)
+
+Bucket names must be unique across all LTS, we have detailed information about bucket naming [here](../index.md/#avoiding-duplicate-names-for-buckets). If you try to create a bucket with `s3cmd mb` and the name is taken in another namespace, you will see an `S3 error: 409 (BucketAlreadyExists)`. However, if the name is already in use within your own namespace, `s3cmd mb` might not show an error and could falsely indicate that the bucket is created. Even if no error appears, the bucket won’t actually be created if the name is already taken. To avoid confusion and ensure you create a unique bucket within your own namespace, you can use `s3cmd ls` to check existing buckets and choose a different name.
 
 ### Managing Buckets
 
 To manage a bucket, various commands can be used. Below are some common `s3cmd` commands to interact with your LTS bucket and its objects:
 
-- To **lists all buckets** accessible with your current `s3cmd` profile, use command: `s3cmd ls`.
-- To **lists all files in a bucket** accessible with your current `s3cmd` profile, use command: `s3cmd ls s3://your_bucket_name`.
-- To **upload a file**  named `file.txt` to a bucket, use a command: `s3cmd put file.txt s3://your_bucket_name/`.
-- To **download a file** a file named `file.txt` from a bucket, use a command:`s3cmd get s3://your_bucket_name/file.txt`.
-- To **delete/remove** a bucket, use command: `s3cmd rb s3://your_bucket_name`.
-
-You can find a variety of `s3cmd` commands in our documentation at [here](../../lts/interfaces.md/#s3cmd-commands) and on the [S3tools website](https://s3tools.org/usage). For quick reference, you can also use the `s3cmd --help` command to view available options directly in your terminal.
-
-If you are continuing in the same session with your **conda environment already activated**, you can directly use the `s3cmd` commands. If you are starting a new session or returning at a later date, make sure to load the Anaconda module and activate your conda environment before using `s3cmd`.
+- To **list all buckets** with your current `s3cmd` profile, use command: `s3cmd ls`.
+- To **list all objects in a bucket** with your current `s3cmd` profile, use command: `s3cmd ls s3://your-bucket-name`.
+- To **upload a file**  named `file.txt` to a bucket, use a command: `s3cmd put file.txt s3://your-bucket-name/`.
+- To **download an object** named `file.txt` from a bucket, use a command:`s3cmd get s3://your-bucket-name/file.txt`.
+- To **delete/remove** an object, use command: `s3cmd del s3://your-bucket-name/your-object-name`.
+- To **delete/remove** a bucket, use command: `s3cmd rb s3://your-bucket-name`.
 
 <!-- markdownlint-disable MD046 -->
 !!! Note
 
-    An S3 bucket cannot be deleted unless it is completely empty. If the bucket contains any objects, `s3cmd` will return an error, like `S3 error: 409 (BucketNotEmpty)` when you attempt to delete it. To remove all objects within the bucket, use: `s3cmd del -r s3://your_bucket_name`. You can then remove the bucket itself with: `s3cmd rb s3://your_bucket_name`.
+    An S3 bucket cannot be deleted unless it is completely empty. If the bucket contains any objects, `s3cmd rb` will report an error, like `S3 error: 409 (BucketNotEmpty)` when you attempt to delete it. To remove all objects within the bucket, use: `s3cmd del -r s3://your-bucket-name --force`. You can then remove the bucket itself with: `s3cmd rb s3://your-bucket-name`.
 <!-- markdownlint-disable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Be cautious when deleting buckets, as this action is permanent and will remove all data within the bucket. Once data is deleted from LTS, it cannot be recovered.
+    Deleting objects and buckets cannot be undone. Once the delete command is entered, any data is lost permanently and cannot be restored.
 <!-- markdownlint-enable MD046 -->
+
+You can find a variety of `s3cmd` commands in our documentation at [here](../../lts/interfaces.md/#s3cmd-commands) and on the [S3tools website](https://s3tools.org/usage). For quick reference, you can also use the `s3cmd --help` command to view available options directly in your terminal.
+
+If you are continuing in the same session with your **conda environment already activated**, you can directly use the `s3cmd` commands. If you are starting a new session or returning at a later date, make sure to load the Anaconda module and activate your conda environment before using `s3cmd`.
 
 ### How to Grant Access to Other Accounts for your Buckets?
 
 Managing access to your buckets is essential for both collaboration and security. By setting up specific policies, you can control who can view or modify your bucket’s contents. Follow these steps to grant access:
 
 - Create a policy file: define a policy and save it as a `JSON` file. For guidance and details on creating and formatting policy files, refer to our [create a policy structure guide](../../lts/policies/#policy-structure). For example, you might create a policy file named `my_policy.json` with read permissions.
-- Apply the policy: Use the command like `s3cmd setpolicy policy_file.json s3://your_bucket_name` to apply your defined read policy to your bucket. Replace `policy_file.json` with the path to your policy file and `your_bucket_name` with the name of your bucket.
-- Verify the policy update: After applying the policy, you should see a `Policy updated` message if the operation was successful. You can also verify the applied policy by running: `s3cmd info s3://your_bucket_name`.
+- Apply the policy: Use the command like `s3cmd setpolicy policy_file.json s3://your-bucket-name` to apply your defined read policy to your bucket. Replace `policy_file.json` with the name of your policy file and `your-bucket-name` with the name of your bucket.
+- Verify the policy update: After applying the policy, you should see a `Policy updated` message if the operation was successful. You can also verify the applied policy by running: `s3cmd info s3://your-bucket-name`.
+
+Below is a screenshot showing how to apply a policy file named `my_policy.json` to a bucket named `first-test-bucket`, and the command to view information about this bucket, including the policy file that we defined and applied.
 
 ![policy-image](../images/policy.png)
 
@@ -108,6 +111,6 @@ Please note that the permissions granted are determined by the settings defined 
 
 - **Read/Write Access**
 
-    To grant another account the ability to both view and modify the contents of your bucket, use the [read/write permissions policy.](../policies.md/#read-write-permissions).
+    To grant another account the ability to both view and modify the contents of your bucket, use the [read/write permissions policy](../policies.md/#read-write-permissions).
 
 For detailed information on LTS bucket policies and instructions on how to apply and remove bucket policies, please refer to our  [policy structure](../../lts/policies/#policy-structure) and [apply bucket policy](../policies.md#applying-a-policy) guides.

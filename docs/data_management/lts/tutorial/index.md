@@ -1,7 +1,7 @@
 ---
 toc_depth: 3
 ---
-# LST and S3 Basic Tutorial
+# LTS and S3 Basic Tutorial
 
 Effective data management and sharing are essential for maintaining data integrity and facilitating collaboration in research. UAB’s Long-Term Storage (LTS) offers a robust solution for securely archiving data that may not be actively used but remains crucial for future research and compliance. The `s3cmd` command-line tool complements this by enabling efficient management and transfer of files to and from LTS.
 
