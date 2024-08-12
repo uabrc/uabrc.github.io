@@ -52,7 +52,7 @@ Once the configuration is complete, `s3cmd` will generate a `.s3cfg` file in you
 
 Long Term Storage (LTS) services like Amazon S3 uses a specific data organization model based on **buckets** and **objects**. Think of buckets as folders that contain individual pieces of data called objects. We have documentation about basic terminology on s3 storage system [here](../index.md/#terminology).
 
-Once you have complete `s3cmd` configuration, you can create new buckets in your individual LTS storage. To create a bucket use a `mb`(make bucket) command:
+Once you have complete `s3cmd` configuration, you can create new buckets in your individual LTS storage. To create a bucket use a `mb` (make bucket) command:
 
 ```bash
 s3cmd mb s3://your-bucket-name
@@ -113,6 +113,6 @@ Please note that the permissions granted are determined by the settings defined 
 
 - **Read/Write Access**
 
-    To grant another account the ability to both view and modify the contents of your bucket, use the [read/write permissions policy](../policies.md#read-write-permissions).
+    To grant another account the ability to both view and modify the contents of your bucket, use the [read/write permissions policy](../policies.md/#read-write-permissions).
 
 For detailed information on LTS bucket policies and instructions on how to apply and remove bucket policies, please refer to our [policy structure](../policies.md/#policy-structure) and [apply bucket policy](../policies.md/#applying-a-policy) guides.
