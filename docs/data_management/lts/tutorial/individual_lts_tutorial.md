@@ -50,7 +50,7 @@ Once the configuration is complete, `s3cmd` will generate a `.s3cfg` file in you
 
 ### Creating Buckets
 
-Long Term Storage (LTS) services like Amazon S3 uses a specific data organization model based on **buckets** and **objects**. Think of buckets as folders that contain individual pieces of data called objects. Each bucket has a unique name. We have documentation about basic terminology on s3 storage system [here](../index.md/#terminology).
+Long Term Storage (LTS) services like Amazon S3 uses a specific data organization model based on **buckets** and **objects**. Think of buckets as folders that contain individual pieces of data called objects. We have documentation about basic terminology on s3 storage system [here](../index.md/#terminology).
 
 Once you have complete `s3cmd` configuration, you can create new buckets in your individual LTS storage. To create a bucket use a `mb`(make bucket) command:
 
@@ -62,7 +62,9 @@ Please replace `your-bucket-name` with your desired name. This command creates a
 
 ![image-bucket](../images/create-bucket.png)
 
-Bucket names must be unique across all LTS, we have detailed information about bucket naming [here](../index.md/#avoiding-duplicate-names-for-buckets). If you try to create a bucket with `s3cmd mb` and the name is taken in another namespace, you will see an `S3 error: 409 (BucketAlreadyExists)`. However, if the name is already in use within your own namespace, `s3cmd mb` might not show an error and could falsely indicate that the bucket is created. Even if no error appears, the bucket won’t actually be created if the name is already taken. To avoid confusion and ensure you create a unique bucket within your own namespace, you can use `s3cmd ls` to check existing buckets and choose a different name.
+Bucket names must be unique across all LTS. For detailed information on bucket naming, please refer to our documentation on [valid bucket names in LTS](../lts_faq.md) and [avoiding duplicate names for buckets](../index.md/#avoiding-duplicate-names-for-buckets). 
+
+If you try to create a bucket with `s3cmd mb` and the name is taken in another namespace, you will see an `S3 error: 409 (BucketAlreadyExists)`. However, if the name is already in use within your own namespace, `s3cmd mb` might not show an error and will display a message like `Bucket s3://your-bucket-name created`. Even if this message appears, the bucket will not actually be created if the name is already taken. To avoid confusion and ensure you create a unique bucket within your own namespace, you can use `s3cmd ls` to check existing buckets and choose a different name.
 
 ### Managing Buckets
 
@@ -95,7 +97,7 @@ If you are continuing in the same session with your **conda environment already 
 
 Managing access to your buckets is essential for both collaboration and security. By setting up specific policies, you can control who can view or modify your bucket’s contents. Follow these steps to grant access:
 
-- Create a policy file: define a policy and save it as a `JSON` file. For guidance and details on creating and formatting policy files, refer to our [create a policy structure guide](../../lts/policies/#policy-structure). For example, you might create a policy file named `my_policy.json` with read permissions.
+- Create a policy file: define a policy and save it as a `JSON` file. For guidance and details on creating and formatting policy files, refer to our [create a policy structure guide](../policies.md/#policy-structure). For example, you might create a policy file named `my_policy.json` with read permissions.
 - Apply the policy: Use the command like `s3cmd setpolicy policy_file.json s3://your-bucket-name` to apply your defined read policy to your bucket. Replace `policy_file.json` with the name of your policy file and `your-bucket-name` with the name of your bucket.
 - Verify the policy update: After applying the policy, you should see a `Policy updated` message if the operation was successful. You can also verify the applied policy by running: `s3cmd info s3://your-bucket-name`.
 
@@ -111,6 +113,6 @@ Please note that the permissions granted are determined by the settings defined 
 
 - **Read/Write Access**
 
-    To grant another account the ability to both view and modify the contents of your bucket, use the [read/write permissions policy](../policies.md/#read-write-permissions).
+    To grant another account the ability to both view and modify the contents of your bucket, use the [read/write permissions policy](../policies.md#read-write-permissions).
 
-For detailed information on LTS bucket policies and instructions on how to apply and remove bucket policies, please refer to our  [policy structure](../../lts/policies/#policy-structure) and [apply bucket policy](../policies.md#applying-a-policy) guides.
+For detailed information on LTS bucket policies and instructions on how to apply and remove bucket policies, please refer to our [policy structure](../policies.md/#policy-structure) and [apply bucket policy](../policies.md/#applying-a-policy) guides.
