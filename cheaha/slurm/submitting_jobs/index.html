@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.4">
     
     
       
@@ -2689,16 +2689,51 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../education/research_computing_days/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../education/research_computing_days/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Research Computing Days
   </span>
   
 
-      </a>
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research Computing Days
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3339,7 +3374,7 @@
 <p>Batch jobs are typically submitted using scripts with <code>sbatch</code>. Using <code>sbatch</code> this way is the preferred method for submitting jobs to Slurm on Cheaha. It is more portable, shareable, reproducible and scripts can be version controlled using <a href="../../../workflow_solutions/git_collaboration/">Git</a>.</p>
 <p>For batch jobs, flags are typically included as directive comments at the top of the script like <code>#SBATCH --job-name=my-job</code>. Read on to see examples of batch jobs using <code>sbatch</code>.</p>
 <h3 id="a-simple-batch-job">A Simple Batch Job<a class="headerlink" href="#a-simple-batch-job" title="Permanent link">&para;</a></h3>
-<p>Below is an example batch job script. To test it, copy and paste it into a plain text file <code>testjob.sh</code> in your <a href="../../../data_management/storage/#home-directory">Home Directory</a> on Cheaha. Run it at the terminal by navigating to your home directory by entering <code>cd ~</code> and then entering <code>sbatch testjob.sh</code>. Momentarily, two text files with <code>.out</code> and <code>.err</code> suffixes will be produced in your home directory.</p>
+<p>Below is an example batch job script. To test it, copy and paste it into a plain text file <code>testjob.sh</code> in your <a href="../../../data_management/storage/#user-data-and-home-directories">Home Directory</a> on Cheaha. Run it at the terminal by navigating to your home directory by entering <code>cd ~</code> and then entering <code>sbatch testjob.sh</code>. Momentarily, two text files with <code>.out</code> and <code>.err</code> suffixes will be produced in your home directory.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -3388,7 +3423,7 @@
 </ol>
 <h3 id="batch-array-jobs-with-known-indices">Batch Array Jobs With Known Indices<a class="headerlink" href="#batch-array-jobs-with-known-indices" title="Permanent link">&para;</a></h3>
 <p>Building on the job script above, below is an array job. Array jobs are useful when you need to perform the same analysis on slightly different inputs with no interaction between those analyses. We call this situation "pleasingly parallel". We can take advantage of an array job using the variable <code>$SLURM_ARRAY_TASK_ID</code>, which will have an integer in the set of values we give to the <code>--array</code> flag.</p>
-<p>To test the script below, copy and paste it into a plain text file <code>testarrayjob.sh</code> in your <a href="../../../data_management/storage/#home-directory">Home Directory</a> on Cheaha. Run it at the terminal by navigating to your home directory by entering <code>cd ~</code> and then entering <code>sbatch testarrayjob.sh</code>. Momentarily, 16 text files with <code>.out</code> and <code>.err</code> suffixes will be produced in your home directory.</p>
+<p>To test the script below, copy and paste it into a plain text file <code>testarrayjob.sh</code> in your <a href="../../../data_management/storage/#user-data-and-home-directories">Home Directory</a> on Cheaha. Run it at the terminal by navigating to your home directory by entering <code>cd ~</code> and then entering <code>sbatch testarrayjob.sh</code>. Momentarily, 16 text files with <code>.out</code> and <code>.err</code> suffixes will be produced in your home directory.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -3443,6 +3478,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The limitations of <code>srun</code> is that the jobs/execution die if the internet connection is down, and you may have to rerun the job again.</p>
+<p>We recommend against using <code>srun</code> for any scientific or research computing or data analysis. Use a <a href="#batch-jobs-with-sbatch">batch job</a> or an <a href="../../open_ondemand/">Open OnDemand (OOD) interactive job</a> instead.</p>
 </div>
 <!-- markdownlint-disable MD046 -->
 
@@ -3554,7 +3590,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 23, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2024</span>
   </span>
 
     

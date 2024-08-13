@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.4">
     
     
       
@@ -2170,9 +2170,9 @@
           
           
             <li class="md-nav__item">
-    <a href="#installing-jupyter-notebook-server" class="md-nav__link">
+    <a href="#installing-jupyter-server" class="md-nav__link">
       <span class="md-ellipsis">
-        Installing Jupyter Notebook Server
+        Installing Jupyter Server
       </span>
     </a>
 
@@ -2660,16 +2660,51 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../education/research_computing_days/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../education/research_computing_days/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Research Computing Days
   </span>
   
 
-      </a>
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research Computing Days
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3050,9 +3085,9 @@
           
           
             <li class="md-nav__item">
-    <a href="#installing-jupyter-notebook-server" class="md-nav__link">
+    <a href="#installing-jupyter-server" class="md-nav__link">
       <span class="md-ellipsis">
-        Installing Jupyter Notebook Server
+        Installing Jupyter Server
       </span>
     </a>
 
@@ -3131,7 +3166,7 @@
 <p>If you intend to use your instance as a server host, you'll likely need to set up additional <a href="../tutorial/security/#creating-a-security-group">Security Groups</a> for any ports the server expects to communicate on. It can be helpful to verify that those ports are open before configuring the server software. Assuming you know which ports are needed, the simplest way to do this is outlined below.</p>
 <ol>
 <li>Set up <a href="../tutorial/security/#creating-a-security-group">Security Groups</a> for the ports your server will need to communicate on.</li>
-<li><a href="#streamlining-ssh">SSH</a> into the instance.</li>
+<li><a href="../remote_access/#setting-up-a-configuration-file">SSH</a> into the instance.</li>
 <li>Prepare the <code>netcat</code> software command <code>nc</code>:<ul>
 <li>For Ubuntu, the command <code>nc</code> should already be available.</li>
 <li>For other OSes, you may need to <a href="./">Install</a> <code>nc</code> or <code>netcat</code>.</li>
@@ -3273,7 +3308,7 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
-<h4 id="installing-jupyter-notebook-server">Installing Jupyter Notebook Server<a class="headerlink" href="#installing-jupyter-notebook-server" title="Permanent link">&para;</a></h4>
+<h4 id="installing-jupyter-server">Installing Jupyter Server<a class="headerlink" href="#installing-jupyter-server" title="Permanent link">&para;</a></h4>
 <p>Jupyter Notebooks are a staple of modern research computing, especially when developing new workflows or evaluating the usefulness of software packages.</p>
 <p>The setup process for <a href="../">cloud.rc</a> is more involved than for <a href="../../cheaha/getting_started/">Cheaha</a>. Before using cloud.rc for Jupyter Notebooks, be sure that <a href="../../cheaha/open_ondemand/ood_jupyter/">Open OnDemand on Cheaha</a> does not meet your needs.</p>
 <p>To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our <a href="../">Introduction</a> and follow the tutorial completely.</p>
@@ -3283,7 +3318,7 @@
 <li>A <a href="../tutorial/security/#creating-a-security-group">Security Group</a> for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to <code>9999</code>.</li>
 <li><a href="#installing-miniconda">Miniconda installed</a> on the instance. Miniconda is a lightweight version of Anaconda.</li>
 </ol>
-<p>Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an <a href="../../workflow_solutions/using_anaconda/#create-an-environment">Anaconda Environment</a> using a reproducible <a href="../../workflow_solutions/using_anaconda/#creating-an-environment-from-a-yaml-file">Environment File</a>. The steps below belong to the official Jupyter documentation available at <a href="https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#">https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#</a>.</p>
+<p>Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an <a href="../../workflow_solutions/using_anaconda/#create-an-environment">Anaconda Environment</a> using a reproducible <a href="../../workflow_solutions/using_anaconda/#creating-an-environment-from-a-yaml-file">Environment File</a>. The steps below belong to the official Jupyter documentation available at <a href="https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html">https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html</a>.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -3312,23 +3347,23 @@
 <li>
 <p>Because floating IPs are, by default, reachable by anyone on the UAB Campus Network, you'll need to secure the server using the steps below.</p>
 <ol>
-<li>Generate a notebook config file using <code>jupyter notebook --generate-config</code>. [<a href="https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#prerequisite-a-notebook-configuration-file">official docs</a>]</li>
-<li>Prepare a password using <code>jupyter notebook password</code>. [<a href="https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#automatic-password-setup">official docs</a>]</li>
+<li>Generate a notebook config file using <code>jupyter notebook --generate-config</code>. [<a href="https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#prerequisite-a-jupyter-server-configuration-file">official docs</a>]</li>
+<li>Prepare a password using <code>jupyter notebook password</code>. [<a href="https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#automatic-password-setup">official docs</a>]</li>
 <li>
-<p>Set up SSL for an encrypted connection. For now create a self-signed certificate using the following command. [<a href="https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication">official docs</a>]</p>
+<p>Set up SSL for an encrypted connection. For now create a self-signed certificate using the following command. [<a href="https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#using-ssl-for-encrypted-communication">official docs</a>]</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>openssl<span class="w"> </span>req<span class="w"> </span>-x509<span class="w"> </span>-nodes<span class="w"> </span>-days<span class="w"> </span><span class="m">365</span><span class="w"> </span>-newkey<span class="w"> </span>rsa:2048<span class="w"> </span>-keyout<span class="w"> </span>mykey.key<span class="w"> </span>-out<span class="w"> </span>mycert.pem
 </code></pre></div>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>When you connect to your Jupyter Server, your browser will warn you that the connection may be insecure. This is because self-signed certificates are not trusted by your operating system's root certificates. It is possible to fix this with some additional work using notes at the <a href="https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication">official docs</a>. Generally the security warning can be bypassed without issue <em>in this case</em>.</p>
+<p>When you connect to your Jupyter Server, your browser will warn you that the connection may be insecure. This is because self-signed certificates are not trusted by your operating system's root certificates. It is possible to fix this with some additional work using notes at the <a href="https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#using-ssl-for-encrypted-communication">official docs</a>. Generally the security warning can be bypassed without issue <em>in this case</em>.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 </li>
 </ol>
 </li>
 <li>
-<p>Configure the notebook server by locating lines like the following in <code>~/.jupyter/jupyter_notebook_config.py</code> and updating them with the right-hand side of each variable assignment (equals sign <code>=</code>). This file was created as part of the first step of these instructions. [<a href="https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#running-a-public-notebook-server">official docs</a>]</p>
+<p>Configure the notebook server by locating lines like the following in <code>~/.jupyter/jupyter_notebook_config.py</code> and updating them with the right-hand side of each variable assignment (equals sign <code>=</code>). This file was created as part of the first step of these instructions. [<a href="https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#running-a-public-notebook-server">official docs</a>]</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3382,7 +3417,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2024</span>
   </span>
 
     

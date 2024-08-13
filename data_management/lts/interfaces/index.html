@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.4">
     
     
       
@@ -786,13 +786,25 @@
           
           
             <li class="md-nav__item">
-    <a href="#installation-of-s3cmd-and-s5cmd-on-personal-system" class="md-nav__link">
+    <a href="#installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda" class="md-nav__link">
       <span class="md-ellipsis">
-        Installation of s3cmd and s5cmd on Personal System
+        Installation of s3cmd and s5cmd on Personal Systems without Anaconda
       </span>
     </a>
 
     <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="Installation of s3cmd and s5cmd on Personal Systems without Anaconda">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
     
   </li>
           
@@ -2622,16 +2634,51 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../education/research_computing_days/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../education/research_computing_days/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Research Computing Days
   </span>
   
 
-      </a>
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research Computing Days
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2967,13 +3014,25 @@
           
           
             <li class="md-nav__item">
-    <a href="#installation-of-s3cmd-and-s5cmd-on-personal-system" class="md-nav__link">
+    <a href="#installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda" class="md-nav__link">
       <span class="md-ellipsis">
-        Installation of s3cmd and s5cmd on Personal System
+        Installation of s3cmd and s5cmd on Personal Systems without Anaconda
       </span>
     </a>
 
     <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="Installation of s3cmd and s5cmd on Personal Systems without Anaconda">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
     
   </li>
           
@@ -3041,7 +3100,7 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>conda<span class="w"> </span>activate<span class="w"> </span>s3
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pip<span class="w"> </span>install<span class="w"> </span>s3cmd
 </code></pre></div>
-<p>Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your personal computer and LTS, you will need to install <code>s3cmd</code> or <code>s5cmd</code> on your machine. Please refer to this <a href="#installation-of-s3cmd-and-s5cmd-on-personal-system">section</a> for installation instructions specific to your operating system.</p>
+<p>Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your personal computer and LTS, you will need to install <code>s3cmd</code> or <code>s5cmd</code> on your machine. Please refer to this <a href="#installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda">section</a> for installation instructions specific to your operating system.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3216,16 +3275,14 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
-<h3 id="installation-of-s3cmd-and-s5cmd-on-personal-system">Installation of <code>s3cmd</code> and <code>s5cmd</code> on Personal System<a class="headerlink" href="#installation-of-s3cmd-and-s5cmd-on-personal-system" title="Permanent link">&para;</a></h3>
-<p>The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems.</p>
-<ul>
-<li>
-<p>Ubuntu</p>
-<p>To install <code>s3cmd</code> using the following command,</p>
+<h3 id="installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda">Installation of <code>s3cmd</code> and <code>s5cmd</code> on Personal Systems without Anaconda<a class="headerlink" href="#installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda" title="Permanent link">&para;</a></h3>
+<p>The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems. You may also use <a href="../../../workflow_solutions/using_anaconda/">Anaconda</a> to install either or both packages.</p>
+<h4 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h4>
+<p>To install <code>s3cmd</code> please use the following commands.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sudp<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>s3cmd
 </code></pre></div>
-<p>To install <code>s5cmd</code>, you will have to first install <code>go</code> software version 1.19+. Please refer to the <a href="https://go.dev/dl/">Download page</a>, and <a href="https://go.dev/doc/install">installation instruction</a> for further details. After intalling <code>go</code>, you can build <code>s5cmd</code> in your <code>$HOME</code> directory using the below steps.</p>
+<p>To install <code>s5cmd</code>, you will have to first install <code>go</code> software version <code>&gt;=1.19</code>. Please refer to the <a href="https://go.dev/dl/">Download page</a>, and <a href="https://go.dev/doc/install">installation instruction</a> for further details. After intalling <code>go</code>, you can build <code>s5cmd</code> in your <code>$HOME</code> directory using the below steps.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/peak/s5cmd/v2@master
 </code></pre></div>
@@ -3233,23 +3290,17 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=$PATH:$HOME/go/bin&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </code></pre></div>
-</li>
-<li>
-<p>Mac</p>
-<p>Following are installation commands for <code>s3cmd</code> and <code>s5cmd</code> on a Mac System.</p>
+<h4 id="mac">Mac<a class="headerlink" href="#mac" title="Permanent link">&para;</a></h4>
+<p>Use the following commands to install <code>s3cmd</code> and <code>s5cmd</code> on a Mac System.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>brew<span class="w"> </span>install<span class="w"> </span>s3cmd
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>brew<span class="w"> </span>install<span class="w"> </span>peak/tap/s5cmd
 </code></pre></div>
 <p>You may need to install <code>gpg</code> on a Mac using the below command,</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>brew<span class="w"> </span>install<span class="w"> </span>gnupg
 </code></pre></div>
-</li>
-<li>
-<p>Windows</p>
+<h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
 <p>To install <code>s3cmd</code> and <code>s5cmd</code> on a Windows system, you will first need to install <a href="../../../uab_cloud/remote_access/#windows-subsystem-for-linux-wsl">Windows Subsystem for Linux (WSL)</a>. Once WSL is installed, you can use the command line instructions for <a href="#ubuntu">Ubuntu</a> to install <code>s3cmd</code> and <code>s5cmd</code>.</p>
 <p>For more information on <code>s3cmd</code> and <code>s5cmd</code>, please refer to the official <a href="https://s3tools.org/download">s3tools Page</a>, and <a href="https://github.com/peak/s5cmd?tab=readme-ov-file">s5cmd page</a>.</p>
-</li>
-</ul>
 <h2 id="alternatives">Alternatives<a class="headerlink" href="#alternatives" title="Permanent link">&para;</a></h2>
 <p>There are other tools for interfacing with LTS such as rclone. Please see our <a href="../../transfer/rclone/">rclone documentation</a> for more details.</p>
 
@@ -3272,7 +3323,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2024</span>
   </span>
 
     

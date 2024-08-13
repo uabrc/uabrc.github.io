@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.4">
     
     
       
@@ -2630,16 +2630,51 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../education/research_computing_days/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../education/research_computing_days/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Research Computing Days
   </span>
   
 
-      </a>
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research Computing Days
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3142,7 +3177,7 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <span class="normal"><a href="#__codelineno-6-15">15</a></span>
 <span class="normal"><a href="#__codelineno-6-16">16</a></span>
 <span class="normal"><a href="#__codelineno-6-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1">#SBATCH --job-name=numpy            ### Name of the job            </span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1">#SBATCH --job-name=numpy            ### Name of the job</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">#SBATCH --nodes=1                   ### Number of Nodes</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1">#SBATCH --ntasks=1                  ### Number of Tasks</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="c1">#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU</span>
@@ -3164,7 +3199,7 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>numpy_26127143.err<span class="w">  </span>numpy_26127143.out<span class="w">  </span>numpy.job<span class="w">  </span>python_test.py<span class="w">  </span>testing.png
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">$cat</span><span class="w"> </span>numpy_26127143.out<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">$cat</span><span class="w"> </span>numpy_26127143.out
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="o">[</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">40</span><span class="o">]</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="o">[</span>-5.<span class="w">  </span>-4.5<span class="w"> </span>-4.<span class="w">  </span>-3.5<span class="w"> </span>-3.<span class="w">  </span>-2.5<span class="w"> </span>-2.<span class="w">  </span>-1.5<span class="w"> </span>-1.<span class="w">  </span>-0.5<span class="w">  </span><span class="m">0</span>.<span class="w">   </span><span class="m">0</span>.5<span class="w">  </span><span class="m">1</span>.<span class="w">   </span><span class="m">1</span>.5
@@ -3177,10 +3212,10 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <p>You can review detailed information about finished jobs using <code>sacct</code> command for a specific job id as shown below. For instance, this job was allocated with one CPU and has been successfully completed. The lines with ".ba+" and ".ex+" refer to batch step and external step within a job, but we will ignore them for simplicity in this and future examples. The exit code <code>0:0</code> signifies a normal exit with no errors.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>sacct<span class="w"> </span>-j<span class="w"> </span><span class="m">26127143</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">      </span>State<span class="w"> </span>ExitCode<span class="w"> </span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------<span class="w"> </span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="m">26127143</span><span class="w">          </span>numpy<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="m">26127143</span>.ba+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">      </span>State<span class="w"> </span>ExitCode
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="m">26127143</span><span class="w">          </span>numpy<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="m">26127143</span>.ba+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="m">26127143</span>.ex+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
 </code></pre></div>
 <h3 id="example-3-parallel-jobs">Example 3: Parallel Jobs<a class="headerlink" href="#example-3-parallel-jobs" title="Permanent link">&para;</a></h3>
@@ -3205,15 +3240,15 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <span class="normal"><a href="#__codelineno-10-18">18</a></span>
 <span class="normal"><a href="#__codelineno-10-19">19</a></span>
 <span class="normal"><a href="#__codelineno-10-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="c1">#SBATCH --job-name=multijob             ### Name of the job                </span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="c1">#SBATCH --job-name=multijob             ### Name of the job</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c1">#SBATCH --nodes=1                       ### Number of Nodes</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="c1">#SBATCH --ntasks=3                      ### Number of Tasks</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="c1">#SBATCH --cpus-per-task=1               ### Number of Tasks per CPU    </span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="c1">#SBATCH --cpus-per-task=1               ### Number of Tasks per CPU</span>
 <a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="c1">#SBATCH --mem=4G                        ### Memory required, 4 gigabyte</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="c1">#SBATCH --partition=express             ### Cheaha Partition    </span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="c1">#SBATCH --partition=express             ### Cheaha Partition</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="c1">#SBATCH --time=01:00:00                 ### Estimated Time of Completion, 1 hour</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="c1">#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id    </span>
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="c1">#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id    </span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="c1">#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="c1">#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id</span>
 <a id="__codelineno-10-11" name="__codelineno-10-11"></a>
 <a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="c1">### Loading Anaconda3 module to activate `pytools-env` conda environment</span>
 <a id="__codelineno-10-13" name="__codelineno-10-13"></a>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
@@ -3276,14 +3311,14 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <p>The <code>sacct</code> report indicates that three CPUs have been allocated. The python script executes with unique task IDs 27099591.0,27099591.1,27099591.2.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>sacct<span class="w"> </span>-j<span class="w"> </span><span class="m">27099591</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">      </span>State<span class="w"> </span>ExitCode<span class="w"> </span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------<span class="w"> </span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="m">27099591</span><span class="w">       </span>multijob<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">3</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="m">27099591</span>.ba+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">3</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="m">27099591</span>.ex+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">3</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="m">27099591</span>.0<span class="w">       </span>python<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="m">27099591</span>.1<span class="w">       </span>python<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="m">27099591</span>.2<span class="w">       </span>python<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">      </span>State<span class="w"> </span>ExitCode
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="m">27099591</span><span class="w">       </span>multijob<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">3</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="m">27099591</span>.ba+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">3</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="m">27099591</span>.ex+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">3</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="m">27099591</span>.0<span class="w">       </span>python<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="m">27099591</span>.1<span class="w">       </span>python<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="m">27099591</span>.2<span class="w">       </span>python<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
 </code></pre></div>
 <h3 id="example-4-array-job">Example 4: Array Job<a class="headerlink" href="#example-4-array-job" title="Permanent link">&para;</a></h3>
 <p>Array jobs are more effective when you have a larger number of similar tasks to be executed simultaneously with varied input data, unlike <code>srun</code> parallel jobs which are suitable for running a smaller number of tasks concurrently (e.g. less than 5). Array jobs are easier to manage and monitor multiple tasks through unique identifiers.</p>
@@ -3310,16 +3345,16 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <span class="normal"><a href="#__codelineno-14-20">20</a></span>
 <span class="normal"><a href="#__codelineno-14-21">21</a></span>
 <span class="normal"><a href="#__codelineno-14-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="c1">#SBATCH --job-name=slurm_array       ### Name of the job                                                      </span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="c1">#SBATCH --nodes=1                    ### Number of Nodes               </span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="c1">#SBATCH --job-name=slurm_array       ### Name of the job</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="c1">#SBATCH --nodes=1                    ### Number of Nodes</span>
 <a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="c1">#SBATCH --ntasks=1                   ### Number of Tasks</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="c1">#SBATCH --cpus-per-task=1            ### Number of Tasks per CPU </span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="c1">#SBATCH --cpus-per-task=1            ### Number of Tasks per CPU</span>
 <a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="c1">#SBATCH --mem=4G                     ### Memory required, 4 gigabyte</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="c1">#SBATCH --partition=express          ### Cheaha Partition </span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="c1">#SBATCH --partition=express          ### Cheaha Partition</span>
 <a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="c1">#SBATCH --time=01:00:00              ### Estimated Time of Completion, 1 hour</span>
 <a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="c1">#SBATCH --output=%x_%A_%a.out        ### Slurm Output file, %x is job name, %A is array job id, %a is array job index</span>
 <a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="c1">#SBATCH --error=%x_%A_%a.err         ### Slurm Error file, %x is job name, %A is array job id, %a is array job index</span>
-<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="c1">#SBATCH --array=1-3                  ### Number of Slurm array tasks, 3 tasks       </span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="c1">#SBATCH --array=1-3                  ### Number of Slurm array tasks, 3 tasks</span>
 <a id="__codelineno-14-12" name="__codelineno-14-12"></a>
 <a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="c1">### Loading Anaconda3 module to activate `pytools-env` conda environment</span>
 <a id="__codelineno-14-14" name="__codelineno-14-14"></a>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
@@ -3342,17 +3377,17 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <p>The <code>sacct</code> report indicates that the job <code>27101430</code> consists of three individual tasks, namely <code>27101430_1</code>, <code>27101430_2</code>, and <code>27101430_3</code>. Each task has been allocated one CPU resource.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>sacct<span class="w"> </span>-j<span class="w"> </span><span class="m">27101430</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">      </span>State<span class="w"> </span>ExitCode<span class="w"> </span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------<span class="w"> </span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>27101430_3<span class="w">   </span>slurm_arr+<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>27101430_3.+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>27101430_3.+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>27101430_1<span class="w">   </span>slurm_arr+<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>27101430_1.+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>27101430_1.+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>27101430_2<span class="w">   </span>slurm_arr+<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>27101430_2.+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>27101430_2.+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">      </span>State<span class="w"> </span>ExitCode
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>27101430_3<span class="w">   </span>slurm_arr+<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>27101430_3.+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>27101430_3.+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>27101430_1<span class="w">   </span>slurm_arr+<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>27101430_1.+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>27101430_1.+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>27101430_2<span class="w">   </span>slurm_arr+<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>27101430_2.+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>27101430_2.+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
 </code></pre></div>
 <h3 id="example-5-multithreaded-or-multicore-job">Example 5: Multithreaded or Multicore Job<a class="headerlink" href="#example-5-multithreaded-or-multicore-job" title="Permanent link">&para;</a></h3>
 <p>This Slurm script illustrates execution of a MATLAB script in a multithread/multicore environemnt. Save the script as <code>multithread.job</code>. The <code>%</code> symbol in this script denotes comments within MATLAB code. Line 16 runs the MATLAB script <code>parfor_sum_array</code>, with an input array size <code>100</code> passed as argument, using 4 CPU cores (as specified in Line 5).</p>
@@ -3372,12 +3407,12 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <span class="normal"><a href="#__codelineno-17-14">14</a></span>
 <span class="normal"><a href="#__codelineno-17-15">15</a></span>
 <span class="normal"><a href="#__codelineno-17-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="c1">#SBATCH --job-name=multithread          ### Name of the job                                   </span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="c1">#SBATCH --job-name=multithread          ### Name of the job</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="c1">#SBATCH --nodes=1                       ### Number of Nodes</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="c1">#SBATCH --ntasks=1                      ### Number of Tasks</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="c1">#SBATCH --cpus-per-task=4               ### Number of Tasks per CPU    </span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="c1">#SBATCH --cpus-per-task=4               ### Number of Tasks per CPU</span>
 <a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="c1">#SBATCH --mem=16G                       ### Memory required, 16 gigabyte</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="c1">#SBATCH --partition=express             ### Cheaha Partition    </span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="c1">#SBATCH --partition=express             ### Cheaha Partition</span>
 <a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="c1">#SBATCH --time=01:00:00                 ### Estimated Time of Completion, 1 hour</span>
 <a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="c1">#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id</span>
 <a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="c1">#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id</span>
@@ -3478,11 +3513,11 @@ To test this example, copy the below script in a file named <code>hostname.job</
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span>sacct<span class="w"> </span>-j<span class="w"> </span><span class="m">27105035</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">      </span>State<span class="w"> </span>ExitCode<span class="w"> </span>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------<span class="w"> </span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="m">27105035</span><span class="w">     </span>multithre+<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">4</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="m">27105035</span>.ba+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">4</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="m">27105035</span>.ex+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">4</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">      </span>State<span class="w"> </span>ExitCode
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="m">27105035</span><span class="w">     </span>multithre+<span class="w">    </span>express<span class="w">      </span>USER<span class="w">          </span><span class="m">4</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="m">27105035</span>.ba+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">4</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="m">27105035</span>.ex+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">4</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
 </code></pre></div>
 <h3 id="example-6-gpu-job">Example 6: GPU Job<a class="headerlink" href="#example-6-gpu-job" title="Permanent link">&para;</a></h3>
 <p>This slurm script shows the execution of Tensorflow job using GPU resources. Let us save this script as <code>gpu.job</code>. The Slurm parameter <code>--gres=gpu:2</code> in line 6, requests for 2 GPUs. In line 8, note that in order to run GPU-based jobs, either the <code>amperenodes</code> or <code>pascalnodes</code> partition must be used (please refer to our <a href="../gpu/">GPU page</a> for more information). Lines 14-15 loads the necessary CUDA modules, while lines 18-19 load the Anaconda module and activate a <code>conda</code> environment called <code>tensorflow</code>. Refer to <a href="https://www.tensorflow.org/">Tensorflow official page</a> for installation. The last line executes a python script that utilizes Tensorflow library to perform matrix multiplication across multiple GPUs.</p>
@@ -3508,16 +3543,16 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <span class="normal"><a href="#__codelineno-21-20">20</a></span>
 <span class="normal"><a href="#__codelineno-21-21">21</a></span>
 <span class="normal"><a href="#__codelineno-21-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="c1">#SBATCH --job-name=gpu              ### Name of the job                                             </span>
-<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="c1">#SBATCH --nodes=1                   ### Number of Nodes                    </span>
-<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="c1">#SBATCH --ntasks=1                  ### Number of Tasks                                 </span>
-<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="c1">#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU                          </span>
-<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="c1">#SBATCH --gres=gpu:2                ### Number of GPUs, 2 GPUs                  </span>
-<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="c1">#SBATCH --mem=16G                   ### Memory required, 16 gigabyte                  </span>
-<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="c1">#SBATCH --partition=amperenodes     ### Cheaha Partition                               </span>
-<a id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="c1">#SBATCH --time=01:00:00             ### Estimated Time of Completion, 1 hour                </span>
-<a id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="c1">#SBATCH --output=%x_%j.out          ### Slurm Output file, %x is job name, %j is job id                         </span>
-<a id="__codelineno-21-11" name="__codelineno-21-11"></a><span class="c1">#SBATCH --error=%x_%j.err           ### Slurm Error file, %x is job name, %j is job id                       </span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="c1">#SBATCH --job-name=gpu              ### Name of the job</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="c1">#SBATCH --nodes=1                   ### Number of Nodes</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="c1">#SBATCH --ntasks=1                  ### Number of Tasks</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="c1">#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="c1">#SBATCH --gres=gpu:2                ### Number of GPUs, 2 GPUs</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="c1">#SBATCH --mem=16G                   ### Memory required, 16 gigabyte</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="c1">#SBATCH --partition=amperenodes     ### Cheaha Partition</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="c1">#SBATCH --time=01:00:00             ### Estimated Time of Completion, 1 hour</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="c1">#SBATCH --output=%x_%j.out          ### Slurm Output file, %x is job name, %j is job id</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11"></a><span class="c1">#SBATCH --error=%x_%j.err           ### Slurm Error file, %x is job name, %j is job id</span>
 <a id="__codelineno-21-12" name="__codelineno-21-12"></a>
 <a id="__codelineno-21-13" name="__codelineno-21-13"></a><span class="c1">### Loading the required CUDA and cuDNN modules</span>
 <a id="__codelineno-21-14" name="__codelineno-21-14"></a>module<span class="w"> </span>load<span class="w"> </span>CUDA/12.2.0
@@ -3584,7 +3619,7 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <a id="__codelineno-22-26" name="__codelineno-22-26"></a><span class="w">    </span>print<span class="o">(</span>matmul_sum<span class="o">)</span>
 </code></pre></div></td></tr></table></div>
 <p>The results indicate that the Tensorflow version utilized is 2.15. The segments <code>/device:GPU:0</code> and <code>/device:GPU:1</code> specify that the computations were executed on two GPUs. The final results is a 4x4 matrix obtained by summing the matrix multiplication results. In the <code>sacct</code> report, the column <code>AllocGRES</code> shows that 2 GPUs are allocated for this job.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span>cat<span class="w"> </span>gpu_27107694.out<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span>cat<span class="w"> </span>gpu_27107694.out
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>TensorFlow<span class="w"> </span>version:<span class="w"> </span><span class="m">2</span>.15.0
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>Num<span class="w"> </span>GPUs<span class="w"> </span>Available:<span class="w">  </span><span class="m">2</span>
@@ -3598,11 +3633,11 @@ To test this example, copy the below script in a file named <code>hostname.job</
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$<span class="w"> </span>sacct<span class="w"> </span>-j<span class="w"> </span><span class="m">27107694</span><span class="w"> </span>--format<span class="o">=</span>JobID,JobName,Partition,Account,AllocCPUS,allocgres,State,ExitCode
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">    </span>AllocGRES<span class="w">      </span>State<span class="w"> </span>ExitCode<span class="w"> </span>
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>------------<span class="w"> </span>----------<span class="w"> </span>--------<span class="w"> </span>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="m">27107694</span><span class="w">            </span>gpu<span class="w"> </span>amperenod+<span class="w">      </span>USER<span class="w">          </span><span class="m">1</span><span class="w">        </span>gpu:2<span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="m">27107694</span>.ba+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">        </span>gpu:2<span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="m">27107694</span>.ex+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">        </span>gpu:2<span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">    </span>AllocGRES<span class="w">      </span>State<span class="w"> </span>ExitCode
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>------------<span class="w"> </span>----------<span class="w"> </span>--------
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="m">27107694</span><span class="w">            </span>gpu<span class="w"> </span>amperenod+<span class="w">      </span>USER<span class="w">          </span><span class="m">1</span><span class="w">        </span>gpu:2<span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="m">27107694</span>.ba+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">        </span>gpu:2<span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="m">27107694</span>.ex+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">1</span><span class="w">        </span>gpu:2<span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
 </code></pre></div>
 <h3 id="example-7-multinode-job">Example 7: Multinode Job<a class="headerlink" href="#example-7-multinode-job" title="Permanent link">&para;</a></h3>
 <p>The below Slurm script runs a Quantum Expresso job using the <code>pw.x</code> executable on multiple nodes. In this example, we request for 2 nodes on <code>amd-hdr100</code> partition in lines 4 and 7. The suitable Quantum Expresso module is loaded in line 13. The last line is configured for a parallel computation of Quantum Expresso simulation across 2 nodes <code>N 2</code> and 4 MPI processes <code>-nk 4</code> for the input parameters in <code>pw.scf.silicon.in</code>. The input file <code>pw.scf.silicon.in</code> and psuedo potential file is taken from the <a href="https://pranabdas.github.io/espresso/hands-on/scf/">github page</a>. However this input is subject to change, hence according to your use case you can change the inputs.</p>
@@ -3623,14 +3658,14 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <span class="normal"><a href="#__codelineno-25-15">15</a></span>
 <span class="normal"><a href="#__codelineno-25-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="ch">#!/bin/bash</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2"></a>
-<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="c1">#SBATCH --job-name=mpijob               ### Name of the job              </span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="c1">#SBATCH --job-name=mpijob               ### Name of the job</span>
 <a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="c1">#SBATCH --nodes=2                       ### Number of Nodes</span>
 <a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="c1">#SBATCH --ntasks 4                      ### Number of Tasks</span>
 <a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="c1">#SBATCH --mem=64G                       ### Memory required, 64 gigabyte</span>
 <a id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="c1">#SBATCH --partition=amd-hdr100          ### Cheaha Partition</span>
 <a id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="c1">#SBATCH --time=12:00:00                 ### Estimated Time of Completion, 12 hour</span>
-<a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="c1">#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id    </span>
-<a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="c1">#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id         </span>
+<a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="c1">#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="c1">#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id</span>
 <a id="__codelineno-25-11" name="__codelineno-25-11"></a>
 <a id="__codelineno-25-12" name="__codelineno-25-12"></a><span class="c1">### Load the suitable Quantum Expresso module</span>
 <a id="__codelineno-25-13" name="__codelineno-25-13"></a>module<span class="w"> </span>load<span class="w"> </span>QuantumESPRESSO/6.3-foss-2018b
@@ -3639,7 +3674,7 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <a id="__codelineno-25-16" name="__codelineno-25-16"></a>srun<span class="w"> </span>--mpi<span class="o">=</span>pmix_v3<span class="w"> </span>-N<span class="w"> </span><span class="m">2</span><span class="w"> </span>pw.x<span class="w"> </span>-nk<span class="w"> </span><span class="m">4</span><span class="w"> </span>-i<span class="w"> </span>pw.scf.silicon.in
 </code></pre></div></td></tr></table></div>
 <p>The below output shows that the workflow has been distributed across 2 nodes, with a total of 4 pools. The computations are performed based on these above-mentioned parallel execution configuration. Also, displays the metrics such as parallelization, overall performance, and successful job completion status. Note that the results only display essential information to aid in understanding the execution of this multi-node job. And, the <code>sacct</code> report indicates that the job is allocated with 4 CPUs across 2 nodes, and was completed successfully.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span>cat<span class="w"> </span>multinode_27108398.out<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span>cat<span class="w"> </span>multinode_27108398.out
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>Program<span class="w"> </span>PWSCF<span class="w"> </span>v.6.3MaX<span class="w"> </span>starts<span class="w"> </span>on<span class="w">  </span>8Mar2024<span class="w"> </span>at<span class="w"> </span><span class="m">13</span>:18:37
 <a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
@@ -3663,7 +3698,7 @@ To test this example, copy the below script in a file named <code>hostname.job</
 <a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="s2">     Max number of different atomic species (ntypx) = 10</span>
 <a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a><span class="s2">     Max number of k-points (npk) =  40000</span>
 <a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a><span class="s2">     Max angular momentum in pseudopotentials (lmaxx) =  3</span>
-<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a><span class="s2">     ..... </span>
+<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a><span class="s2">     .....</span>
 <a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a><span class="s2">     .....</span>
 <a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a><span class="s2">          Parallel routines</span>
 <a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a>
@@ -3676,12 +3711,12 @@ To test this example, copy the below script in a file named <code>hostname.job</
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$<span class="w"> </span>sacct<span class="w"> </span>-j<span class="w"> </span><span class="m">27108398</span><span class="w"> </span>--format<span class="o">=</span>JobID,JobName,Partition,Account,AllocCPUS,AllocNodes,State,ExitCode
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
-<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w"> </span>AllocNodes<span class="w">      </span>State<span class="w"> </span>ExitCode<span class="w"> </span>
-<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------<span class="w"> </span>
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="m">27108398</span><span class="w">      </span>multinode<span class="w"> </span>amd-hdr100<span class="w">      </span>USER<span class="w">          </span><span class="m">4</span><span class="w">          </span><span class="m">2</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="m">27108398</span>.ba+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">3</span><span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="m">27108398</span>.ex+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">4</span><span class="w">          </span><span class="m">2</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="m">27108398</span>.0<span class="w">         </span>pw.x<span class="w">                 </span>USER<span class="w">          </span><span class="m">4</span><span class="w">          </span><span class="m">2</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">       </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w"> </span>AllocNodes<span class="w">      </span>State<span class="w"> </span>ExitCode
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="m">27108398</span><span class="w">      </span>multinode<span class="w"> </span>amd-hdr100<span class="w">      </span>USER<span class="w">          </span><span class="m">4</span><span class="w">          </span><span class="m">2</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="m">27108398</span>.ba+<span class="w">      </span>batch<span class="w">                 </span>USER<span class="w">          </span><span class="m">3</span><span class="w">          </span><span class="m">1</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="m">27108398</span>.ex+<span class="w">     </span>extern<span class="w">                 </span>USER<span class="w">          </span><span class="m">4</span><span class="w">          </span><span class="m">2</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="m">27108398</span>.0<span class="w">         </span>pw.x<span class="w">                 </span>USER<span class="w">          </span><span class="m">4</span><span class="w">          </span><span class="m">2</span><span class="w">  </span>COMPLETED<span class="w">      </span><span class="m">0</span>:0
 </code></pre></div>
 
 
@@ -3703,7 +3738,7 @@ To test this example, copy the below script in a file named <code>hostname.job</
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 11, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2024</span>
   </span>
 
     

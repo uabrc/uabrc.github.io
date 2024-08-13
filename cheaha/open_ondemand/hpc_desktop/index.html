@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.4">
     
     
       
@@ -2565,16 +2565,51 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../education/research_computing_days/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../education/research_computing_days/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Research Computing Days
   </span>
   
 
-      </a>
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research Computing Days
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2945,11 +2980,11 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">commit_sha</span><span class="o">=</span>8b3775030ed1a69b13e4f4c628c612102e30a681
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>curl<span class="w"> </span>-L<span class="w"> </span><span class="s2">&quot;https://update.code.visualstudio.com/commit:</span><span class="si">${</span><span class="nv">commit_sha</span><span class="si">}</span><span class="s2">/server-linux-x64/stable&quot;</span><span class="w"> </span>-o<span class="w"> </span>vscode_server.tar.gz
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>mkdir<span class="w"> </span>-vp<span class="w"> </span>~/.vscode-server/bin/<span class="si">${</span><span class="nv">commit_sha</span><span class="si">}</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>tar<span class="w"> </span>--no-same-owner<span class="w"> </span>-xzv<span class="w"> </span>--strip-components<span class="o">=</span><span class="m">1</span><span class="w"> </span>-C<span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.vscode-server/bin/<span class="s2">&quot;</span><span class="si">${</span><span class="nv">commit_sha</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-f<span class="w"> </span>vscode_server.tar.gz<span class="w"> </span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>tar<span class="w"> </span>--no-same-owner<span class="w"> </span>-xzv<span class="w"> </span>--strip-components<span class="o">=</span><span class="m">1</span><span class="w"> </span>-C<span class="w"> </span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.vscode-server/bin/<span class="s2">&quot;</span><span class="si">${</span><span class="nv">commit_sha</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-f<span class="w"> </span>vscode_server.tar.gz
 </code></pre></div>
 <h4 id="adding-code-to-path">Adding code to PATH<a class="headerlink" href="#adding-code-to-path" title="Permanent link">&para;</a></h4>
 <p>To avoid typing <code>./code</code> for commands, try adding <code>${HOME}/bin</code> to <code>$PATH</code> in your <code>~/.bashrc</code> before starting a job. Then you will only need to type <code>code</code> for commands. You can do this from the terminal with the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export PATH=\$PATH:</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/bin&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.bashrc<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export PATH=\$PATH:</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/bin&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$HOME</span>/.bashrc
 </code></pre></div>
 <p>You only need to have this line or <code>export PATH=$PATH:${HOME}/bin:...</code> in your <code>.bashrc</code> once. You should check your <code>.bashrc</code> to make sure this line isn't already there before adding it.</p>
 <h3 id="starting-a-tunnel">Starting a Tunnel<a class="headerlink" href="#starting-a-tunnel" title="Permanent link">&para;</a></h3>
@@ -3002,7 +3037,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2024</span>
   </span>
 
     

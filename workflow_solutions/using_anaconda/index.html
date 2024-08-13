@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.4">
     
     
       
@@ -2785,16 +2785,51 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../education/research_computing_days/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../education/research_computing_days/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Research Computing Days
   </span>
   
 
-      </a>
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research Computing Days
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3600,10 +3635,10 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 </div>
-<p>There are issues with out-of-date software. It may have bugs that have since been fixed and so makes for less reproducible science. Documentation may be harder to find if it isn't also matched to the software version. Examining the README.md file for instructions may provide some good information on installing the package. You can also reach out to us for <a href="/docs/help/support.md">support</a> in installing a package.</p>
+<p>There are issues with out-of-date software. It may have bugs that have since been fixed and so makes for less reproducible science. Documentation may be harder to find if it isn't also matched to the software version. Examining the README.md file for instructions may provide some good information on installing the package. You can also reach out to us for <a href="../../help/support/">support</a> in installing a package.</p>
 <!-- markdownlint-enable MD046 -->
 
-<p>When we have a complete list of Anaconda packages and Channels, then we can create an environment from scratch with all the dependencies included. For Anaconda packages, add one line to dependencies for each software. For PyPI packages add - pip: under dependencies. Then under - pip:add <code>==</code> to pin the version, see below. The advantage to using an environment file is that it can be stored with your project in GitHub or GitLab, giving it all the benefits of <a href="/docs/workflow_solutions/git_collaboration.md">version control</a>.</p>
+<p>When we have a complete list of Anaconda packages and Channels, then we can create an environment from scratch with all the dependencies included. For Anaconda packages, add one line to dependencies for each software. For PyPI packages add - pip: under dependencies. Then under - pip:add <code>==</code> to pin the version, see below. The advantage to using an environment file is that it can be stored with your project in GitHub or GitLab, giving it all the benefits of <a href="../git_collaboration/">version control</a>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test-env</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nt">dependencies</span><span class="p">:</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">anaconda::matplotlib=3.8.4</span><span class="w">  </span><span class="c1"># Pinned version from anaconda channel</span>
@@ -3615,7 +3650,7 @@
 <a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://insert_package_link_here</span><span class="w">  </span><span class="c1"># For URL links</span>
 </code></pre></div>
 <p>For git repos, add them under <code>- pip:</code> based on examples <a href="https://pip.pypa.io/en/stable/cli/pip_install/#examples">here</a>. See the section <a href="#replicability-versus-portability">Replicability versus Portability</a> for more information.</p>
-<p>The above configuration is only for illustration purposes, to show how channels and dependencies can be used. It is best to install all of your packages from conda channels, to avoid your environment breaking. Only packages that are unavailable via conda, should be installed via pip. If you run into challenges please <a href="../../#contact-us">contact us</a>.</p>
+<p>The above configuration is only for illustration purposes, to show how channels and dependencies can be used. It is best to install all of your packages from conda channels, to avoid your environment breaking. Only packages that are unavailable via conda, should be installed via pip. If you run into challenges please <a href="../../#how-to-contact-us">contact us</a>.</p>
 <h5 id="key-things-to-remember">Key Things To Remember<a class="headerlink" href="#key-things-to-remember" title="Permanent link">&para;</a></h5>
 <ol>
 <li>
@@ -3656,7 +3691,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 13, 2024</span>
   </span>
 
     

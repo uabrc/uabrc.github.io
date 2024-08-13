@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.4">
     
     
       
@@ -2807,16 +2807,51 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../education/research_computing_days/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../education/research_computing_days/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Research Computing Days
   </span>
   
 
-      </a>
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research Computing Days
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3479,8 +3514,7 @@
 <h3 id="how-do-i-request-individual-long-term-storage">How Do I Request Individual Long-Term Storage?<a class="headerlink" href="#how-do-i-request-individual-long-term-storage" title="Permanent link">&para;</a></h3>
 <p>To request individual Long-Term Storage, please first read and understand how <a href="../lts/">Long-Term Storage</a> differs from traditional file systems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact <a href="../../help/support/">Support</a>.</p>
 <h2 id="what-shared-storage-solutions-are-available">What Shared Storage Solutions are Available?<a class="headerlink" href="#what-shared-storage-solutions-are-available" title="Permanent link">&para;</a></h2>
-<p>Shared Storage is available via two services. We have <a href="#project-directory">Project Storage</a> 
-(located in <code>/data/project</code> or Cheaha) and <a href="../lts/">Long-Term Storage (LTS)</a>. The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.</p>
+<p>Shared Storage is available via two services. We have <a href="#project-directory">Project Storage</a> (located in <code>/data/project</code> or Cheaha) and <a href="../lts/">Long-Term Storage (LTS)</a>. The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.</p>
 <p><a href="#project-directory">Project Storage</a> is best-suited for changing or dynamic data. Specifically::</p>
 <ul>
 <li>Data needing/undergoing analysis</li>
@@ -3524,7 +3558,7 @@
 <li>
 <p><strong>Name of Shared Storage:</strong> Please give us a generic name specific to your project/Lab.</p>
 <ul>
-<li>For Labs, we recommend using the format <code>&lt;PI_BlazerID&gt;_lab</code>, where <code>&lt;PI_BlazerID&gt;</code> is the BlazerID or name of the Principal Investigator (PI). For example: <code>PI_BlazerID_lab</code>, <code>PI_name_lab</code>. </li>
+<li>For Labs, we recommend using the format <code>&lt;PI_BlazerID&gt;_lab</code>, where <code>&lt;PI_BlazerID&gt;</code> is the BlazerID or name of the Principal Investigator (PI). For example: <code>PI_BlazerID_lab</code>, <code>PI_name_lab</code>.</li>
 <li>For Cores, we recommend using a shortened version of the Core name. For example: <code>core_facility_space</code></li>
 <li>For Project Storage, the name you choose will be used in the path <code>/data/project/&lt;PI_BlazerID&gt;_lab</code> on Cheaha. Also, this name,<code>&lt;PI_BlazerID&gt;_lab</code>, will be given to your shared LTS account.</li>
 </ul>
@@ -3651,7 +3685,7 @@
 <p>For PIs and project administrators:</p>
 <ul>
 <li>Please educate your staff and collaborators about the above permission setups, and any additional ACLs you may have in place, to minimize future challenges.</li>
-<li>If you have issues with permissions, please contact <a href="../../help/support/#contact-us">Support</a>. We can guide you through <a href="../../workflow_solutions/shell/#manage-permissions-of-files-and-directores-chmod">Managing Permissions</a> and <a href="../../workflow_solutions/shell/#manage-group-ownership-chgrp">Managing Group Ownership</a>.</li>
+<li>If you have issues with permissions, please contact <a href="../../#how-to-contact-us">Support</a>. We can guide you through <a href="../../workflow_solutions/shell/#manage-permissions-of-files-and-directores-chmod">Managing Permissions</a> and <a href="../../workflow_solutions/shell/#manage-group-ownership-chgrp">Managing Group Ownership</a>.</li>
 </ul>
 <h2 id="scratch">Scratch<a class="headerlink" href="#scratch" title="Permanent link">&para;</a></h2>
 <p>Two types of scratch space are provided for analyses currently being ran, network-mounted and local. These are spaces shared across users (though one user still cannot access another user's files without permission) and as such, data should be moved out of scratch when the analysis is finished.</p>
@@ -3758,7 +3792,7 @@
 </div>
 <!-- markdownlint-enable MD046 -->
 
-<p>A good practice for backing up data is to use the 3-2-1 rule, as <a href="https://www.cisa.gov/uscert/security-publications/data-backup-options">recommended by US-CERT</a>:</p>
+<p>A good practice for backing up data is to use the 3-2-1 rule, as <a href="https://www.cisa.gov/sites/default/files/publications/data_backup_options.pdf">recommended by US-CERT</a>:</p>
 <ul>
 <li><strong>3</strong>: Keep <strong>3</strong> copies of important data. 1 primary copy for use, 2 backup copies.</li>
 <li><strong>2</strong>: Store backup copies on <strong>2</strong> different media types to protect from media-specific hazards.</li>
@@ -3834,7 +3868,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 11, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2024</span>
   </span>
 
     
