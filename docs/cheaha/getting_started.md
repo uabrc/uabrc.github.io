@@ -77,7 +77,7 @@ The Login node can be accessed from the Cheaha landing page or through the `$HOM
 You are on the login node if:
 
 - terminal prompt looks like `[$USER@login004 ~]$`
-  
+
 ![!login node terminal prompt shows username@login004](images/login_node.png)
 
 You are on compute nodes if:
@@ -99,7 +99,7 @@ You are on compute nodes if:
 There might be scenarios where you see the terminal prompt display `bash-4.2$` like below, instead of the user prompt `[$USER@login004]`.
 
 ```bash
-bash-4.2$ 
+bash-4.2$
 ```
 
 The `bash-4.2$` prompt indicates that the files `$HOME/.bashrc` and/or `$HOME/.bash_profile` are missing or corrupted. To resolve this issue, we recommend following these steps:
@@ -127,7 +127,7 @@ bash-4.2$ ls .bash*
 
 ```bash
 bash-4.2$ source ~/.bashrc
-[$USER@login004 ~]$ 
+[$USER@login004 ~]$
 ```
 
 ##### Slurm and Slurm Jobs
