@@ -9,13 +9,13 @@ The main Slurm documentation can be found at [the Slurm site](https://slurm.sche
 ## Batch Job Workflow
 
 1. Stage data to `$USER_DATA`, `$USER_SCRATCH`, or a `/data/project/...` directory.
-2. Research how to run your directives in 'batch' mode. In other words, how to run your analysis pipeline from the command line, with no GUIs or researcher input.
-3. Identify the appropriate resources necessary to run the jobs (CPUs, time, memory, etc)
-4. Write a job script specifying these parameters using Slurm directives.
-5. Submit the job (`sbatch`)
-6. Monitor the job (`squeue`)
-7. Review the results, and modify/rerun if necessary (`sacct` and `seff`)
-8. Remove data from `$USER_SCRATCH`
+1. Research how to run your directives in 'batch' mode. In other words, how to run your analysis pipeline from the command line, with no GUIs or researcher input.
+1. Identify the appropriate resources necessary to run the jobs (CPUs, time, memory, etc)
+1. Write a job script specifying these parameters using Slurm directives.
+1. Submit the job (`sbatch`)
+1. Monitor the job (`squeue`)
+1. Review the results, and modify/rerun if necessary (`sacct` and `seff`)
+1. Remove data from `$USER_SCRATCH`
 
 For more details, please see [Submitting Jobs](submitting_jobs.md).
 
@@ -37,4 +37,4 @@ Given two or more jobs with equal priority, the job on the partition with the la
 
 The scheduler cannot predict the future. If a job enters the queue with a higher priority than yours, it will start before yours. This may lead to a situation where your job no longer fits on any of the nodes. If this happens your job will have to wait until sufficient space opens regardless of its priority value. A possible strategy to minimize the risk of preemption is to request fewer resources per node, to more readily fill available space.
 
-If you are unsure of the best queueing strategy for your workflow, please [Contact Us](../../index.md#contact-us) for a consultation, we are happy to help.
+If you are unsure of the best queueing strategy for your workflow, please [Contact Us](../../index.md#how-to-contact-us) for a consultation, we are happy to help.

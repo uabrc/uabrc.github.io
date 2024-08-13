@@ -43,8 +43,8 @@ We now have the `lolcow.sif` image we can run or share with other researchers. I
 There are 3 ways to run Singularity images, all with their unique purposes and are as follows:
 
 1. `singularity run`: run a container using a default command set by the author. Generally, this will be used when a container encompasses a full pipeline controlled by a single command. The general form for this command is `singularity run <image.sif> [options]` where `[options]` are defined by the default command. You can use `singularity run <image.sif> --help` to see what those options are.
-2. `singularity exec`: run any command available in the container. This provides more flexibility than `run` and would be useful in the cases where a container has more modular components as opposed to a single control script. The general form for this would be `singularity exec <image.sif> <command> [options]`. You can add the `--help` option to see what a given command does and its inputs.
-3. `singularity shell`: allow interactive use of the container through the terminal. This changes your active environment to that in the container. You can traverse the container's directory tree and search for various files and commands as if it was a virtual machine. This is very useful for interactive development as well as investigation of a container's contents. The general form of the command is `singularity shell <image.sif>`.
+1. `singularity exec`: run any command available in the container. This provides more flexibility than `run` and would be useful in the cases where a container has more modular components as opposed to a single control script. The general form for this would be `singularity exec <image.sif> <command> [options]`. You can add the `--help` option to see what a given command does and its inputs.
+1. `singularity shell`: allow interactive use of the container through the terminal. This changes your active environment to that in the container. You can traverse the container's directory tree and search for various files and commands as if it was a virtual machine. This is very useful for interactive development as well as investigation of a container's contents. The general form of the command is `singularity shell <image.sif>`.
 
 It's important to note that both `run` and `exec` enter the container as part of their execution and then exit back to the original shell environment afterwards whereas `shell` keeps you in the container until you either close the terminal or use the `exit` command.
 
@@ -169,7 +169,7 @@ We require numpy, scipy, and matplotlib libraries to execute the above Python sc
     mkdir miniconda
     ```
 
-2. Create a `Dockerfile` within the `miniconda` directory with the following contents. The file name `Dockerfile` is case-sensitive.
+1. Create a `Dockerfile` within the `miniconda` directory with the following contents. The file name `Dockerfile` is case-sensitive.
 
     ![!Containers create dockerfile.](./images/containers_create_dockerfile.png)
 
@@ -204,7 +204,7 @@ We require numpy, scipy, and matplotlib libraries to execute the above Python sc
     !!! note "Containers and Reproducibiliy"
         Always include version numbers for Anaconda, package managers, software you are installing, and the dependencies for those software. Containers are not by nature scientifically reproducible, but if you include versions for as much software in the container as possible, they can be reproducible years later.
 
-3. To build your container, change the directory to `miniconda` and use the below syntax to build the `Dockerfile`. Here we use `.` to say "current directory." This will only work if you are in the directory with the `Dockerfile`.
+1. To build your container, change the directory to `miniconda` and use the below syntax to build the `Dockerfile`. Here we use `.` to say "current directory." This will only work if you are in the directory with the `Dockerfile`.
 
     ```bash
     sudo docker build -t repository_name:tag .
@@ -294,14 +294,14 @@ If you prefer to share your container with a particular team/group, then the UAB
 The following steps help you to create a container registry in UAB GitLab:
 
 1. Create a UAB Gitlab account following the guidelines from the [UAB GitLab page](../account_management/gitlab_account.md).
-2. Create a `new_project` on UAB GitLab and click `Package and Registries`, and then go to `Container Registry`. Initially, the container registry looks empty because there are no container images in the registry.
+1. Create a `new_project` on UAB GitLab and click `Package and Registries`, and then go to `Container Registry`. Initially, the container registry looks empty because there are no container images in the registry.
 
     ![!Containers registry.](./images/containers_registry.png)
 
     !!! note
         Copy these CLI commands for future reference. It contains commands (1) to login to your project UAB GitLab container registry (2) Add an image to the registry using the push/build command. We will use the `push` command as we already have the existing container in our system.
 
-3. Login to UAB GitLab Registry using your `registry_name:ID`.
+1. Login to UAB GitLab Registry using your `registry_name:ID`.
 
     ```bash
     sudo docker login gitlab.rc.uab.edu:4567
@@ -316,7 +316,7 @@ The following steps help you to create a container registry in UAB GitLab:
     sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token
     ```
 
-4. Creating an Access Token: From the UAB GitLab page, you can create an access token instead of using a password to log in to the UAB GitLab registry. Goto Edit profile -> Click `Access Tokens`. Then enter:
+1. Creating an Access Token: From the UAB GitLab page, you can create an access token instead of using a password to log in to the UAB GitLab registry. Goto Edit profile -> Click `Access Tokens`. Then enter:
 
       - **Token name.**:Suggestion: "container"_"repository-name"
 

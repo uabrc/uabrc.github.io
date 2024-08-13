@@ -31,7 +31,7 @@ See our [Globus - Adding LTS Allocation Credentials](../transfer/globus.md#addin
 While globus is the recommended tool for most data transfers, command line tools are necessary for planned, regular transfers as well as managing permissions on buckets. We recommend the following two tools for different purposes:
 
 1. [s3cmd](https://github.com/s3tools/s3cmd) is a Python tool that we suggest using for managing bucket permissions as well as small transfers.
-2. [s5cmd](https://github.com/peak/s5cmd) is a Go package that transfers data much more quickly than s3cmd, especially as the file size and/or quanitity increases. It does not have full bucket management capabilities.
+1. [s5cmd](https://github.com/peak/s5cmd) is a Go package that transfers data much more quickly than s3cmd, especially as the file size and/or quanitity increases. It does not have full bucket management capabilities.
 
 ### Installation of `s3cmd` and `s5cmd` on Cheaha
 
@@ -44,7 +44,7 @@ conda activate s3
 pip install s3cmd
 ```
 
-Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your personal computer and LTS, you will need to install `s3cmd` or `s5cmd` on your machine. Please refer to this [section](#installation-of-s3cmd-and-s5cmd-on-personal-system) for installation instructions specific to your operating system.
+Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your personal computer and LTS, you will need to install `s3cmd` or `s5cmd` on your machine. Please refer to this [section](#installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda) for installation instructions specific to your operating system.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -117,7 +117,7 @@ Save settings? [y/N] y
 !!! important
 
     1. If you choose to test access using your credentials, the test may fail. Do not rely on the automatic test results, test access yourself by either creating a bucket or listing files from a existing bucket using the commands listed below.
-    2. To locate the appropriate "Path to GPG program" for Ubuntu and Mac operating systems, please use the command `which gpg`. The location may vary depending on your operating system.
+    1. To locate the appropriate "Path to GPG program" for Ubuntu and Mac operating systems, please use the command `which gpg`. The location may vary depending on your operating system.
 <!-- markdownlint-enable MD046 -->
 
 #### s3cmd Commands
@@ -249,53 +249,53 @@ It's important to note that the main functionality of s5cmd over s3cmd is the pa
     When setting the value for `--numworkers`, do not select a value beyond the number of CPUs you have requested for your job! This can cause high context switching (meaning individual CPUs are switching between multiple running processes) which can affect job performance for all jobs on a node.
 <!-- markdownlint-enable MD046 -->
 
-### Installation of `s3cmd` and `s5cmd` on Personal System
+### Installation of `s3cmd` and `s5cmd` on Personal Systems without Anaconda
 
-The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems.
+The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems. You may also use [Anaconda](../../workflow_solutions/using_anaconda.md) to install either or both packages.
 
-- Ubuntu
+#### Ubuntu
 
-    To install `s3cmd` using the following command,
+To install `s3cmd` please use the following commands.
 
-    ```bash
-    sudo apt update
-    sudp apt install s3cmd
-    ```
+```bash
+sudo apt update
+sudp apt install s3cmd
+```
 
-    To install `s5cmd`, you will have to first install `go` software version 1.19+. Please refer to the [Download page](https://go.dev/dl/), and [installation instruction](https://go.dev/doc/install) for further details. After intalling `go`, you can build `s5cmd` in your `$HOME` directory using the below steps.
+To install `s5cmd`, you will have to first install `go` software version `>=1.19`. Please refer to the [Download page](https://go.dev/dl/), and [installation instruction](https://go.dev/doc/install) for further details. After intalling `go`, you can build `s5cmd` in your `$HOME` directory using the below steps.
 
-    ```bash
-    cd $HOME
-    go install github.com/peak/s5cmd/v2@master
-    ```
+```bash
+cd $HOME
+go install github.com/peak/s5cmd/v2@master
+```
 
-    The below steps are to add `go` bin directory to your system's `PATH` which allows you to run `s5cmd` from any location in your terminal.
+The below steps are to add `go` bin directory to your system's `PATH` which allows you to run `s5cmd` from any location in your terminal.
 
-    ```bash
-    echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
-    source ~/.bashrc
-    ```
+```bash
+echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
+source ~/.bashrc
+```
 
-- Mac
+#### Mac
 
-    Following are installation commands for `s3cmd` and `s5cmd` on a Mac System.
+Use the following commands to install `s3cmd` and `s5cmd` on a Mac System.
 
-    ```bash
-    brew install s3cmd
-    brew install peak/tap/s5cmd
-    ```
+```bash
+brew install s3cmd
+brew install peak/tap/s5cmd
+```
 
-    You may need to install `gpg` on a Mac using the below command,
+You may need to install `gpg` on a Mac using the below command,
 
-    ```bash
-    brew install gnupg
-    ```
+```bash
+brew install gnupg
+```
 
-- Windows
+#### Windows
 
-    To install `s3cmd` and `s5cmd` on a Windows system, you will first need to install [Windows Subsystem for Linux (WSL)](../../uab_cloud/remote_access.md/#windows-subsystem-for-linux-wsl). Once WSL is installed, you can use the command line instructions for [Ubuntu](#ubuntu) to install `s3cmd` and `s5cmd`.
+To install `s3cmd` and `s5cmd` on a Windows system, you will first need to install [Windows Subsystem for Linux (WSL)](../../uab_cloud/remote_access.md/#windows-subsystem-for-linux-wsl). Once WSL is installed, you can use the command line instructions for [Ubuntu](#ubuntu) to install `s3cmd` and `s5cmd`.
 
-    For more information on `s3cmd` and `s5cmd`, please refer to the official [s3tools Page](https://s3tools.org/download), and [s5cmd page](https://github.com/peak/s5cmd?tab=readme-ov-file).
+For more information on `s3cmd` and `s5cmd`, please refer to the official [s3tools Page](https://s3tools.org/download), and [s5cmd page](https://github.com/peak/s5cmd?tab=readme-ov-file).
 
 ## Alternatives
 
