@@ -50,7 +50,7 @@ Once the configuration is complete, `s3cmd` will generate a `.s3cfg` file in you
 
 ### Creating Buckets
 
-Long Term Storage (LTS) services like Amazon S3 uses a specific data organization model based on **buckets** and **objects**. Think of buckets as folders that contain individual pieces of data called objects. We have documentation about basic terminology on s3 storage system [here](../index.md/#terminology).
+Long Term Storage (LTS) services like Amazon S3 use a flat data organization model based on **buckets** and **objects**. Think of buckets as folders that contain individual pieces of data called objects. We have documentation about basic terminology on s3 storage system [here](../index.md/#terminology).
 
 Once you have complete `s3cmd` configuration, you can create new buckets in your individual LTS storage. To create a bucket use a `mb` (make bucket) command:
 
@@ -62,18 +62,18 @@ Please replace `your-bucket-name` with your desired name. This command creates a
 
 ![image-bucket](../images/create-bucket.png)
 
-Bucket names must be unique across all LTS. For detailed information on bucket naming, please refer to our documentation on [valid bucket names in LTS](../lts_faq.md) and [avoiding duplicate names for buckets](../index.md/#avoiding-duplicate-names-for-buckets). 
+When creating a bucket, it is important to be aware of name uniqueness and naming conventions. For detailed information on bucket naming, please refer to our documentation on [valid bucket names in LTS](../lts_faq.md) and [avoiding duplicate names for buckets](../index.md/#avoiding-duplicate-names-for-buckets).
 
-If you try to create a bucket with `s3cmd mb` and the name is taken in another namespace, you will see an `S3 error: 409 (BucketAlreadyExists)`. However, if the name is already in use within your own namespace, `s3cmd mb` might not show an error and will display a message like `Bucket s3://your-bucket-name created`. Even if this message appears, the bucket will not actually be created if the name is already taken. To avoid confusion and ensure you create a unique bucket within your own namespace, you can use `s3cmd ls` to check existing buckets and choose a different name.
+If you try to create a bucket with `s3cmd mb` with the name that already exists within your namespace, the system will report success without making any changes. For example, if you run `s3cmd mb s3://existing-bucket-name` and that bucket name is already taken in your namespace, the command will complete successfully without creating a new bucket and showing an error. However, if you try to create a bucket with a name that is already used in someone else’s namespace, you will receive a `409 (BucketAlreadyExists)` error. To avoid receiving the `BucketAlreadyExists` error and ensure you create a unique bucket within your namespace, use s3cmd ls to check existing buckets and choose a different name based on this check. Follow the [avoiding duplicate names for buckets](../index.md/#avoiding-duplicate-names-for-buckets) guide to successfully create your bucket and maintain bucket uniqueness.
 
 ### Managing Buckets
 
 To manage a bucket, various commands can be used. Below are some common `s3cmd` commands to interact with your LTS bucket and its objects:
 
-- To **list all buckets** with your current `s3cmd` profile, use command: `s3cmd ls`.
-- To **list all objects in a bucket** with your current `s3cmd` profile, use command: `s3cmd ls s3://your-bucket-name`.
-- To **upload a file**  named `file.txt` to a bucket, use a command: `s3cmd put file.txt s3://your-bucket-name/`.
-- To **download an object** named `file.txt` from a bucket, use a command:`s3cmd get s3://your-bucket-name/file.txt`.
+- To **list all buckets** you own with your current `s3cmd` profile, use command: `s3cmd ls`.
+- To **list all objects in a bucket** accessible with your current `s3cmd` profile, use command: `s3cmd ls s3://your-bucket-name`.
+- To **upload a file** named `file.txt` to a bucket, use a command: `s3cmd put file.txt s3://your-bucket-name/`. For example, to upload the file `file.txt` from the `/data/user/$USER` directory on Cheaha to the bucket `your-bucket-name`, you can use the command: `s3cmd put /data/user/$USER/file.txt s3://your-bucket-name`.
+- To **download an object** named `file.txt` from a bucket, use a command:`s3cmd get s3://your-bucket-name/file.txt`. For example, to download the object `file.txt` from the bucket `your-bucket-name` to the `/data/user/$USER` directory on Cheaha, you can use a command `s3cmd get s3://your-bucket-name/file.txt /data/user/$USER`.
 - To **delete/remove** an object, use command: `s3cmd del s3://your-bucket-name/your-object-name`.
 - To **delete/remove** a bucket, use command: `s3cmd rb s3://your-bucket-name`.
 
