@@ -8,7 +8,7 @@ Breaking a bigger problem into set of tasks, and executing these tasks one by on
 
 Divide a larger problem into a series of smaller tasks and execute these tasks using multiple CPUs. The application should leverage parallelization technology to utilize multicore processors, multiple nodes, multiple GPUs, or a hybrid approach (such as combining CPUs and GPUs).
 
-## Parallelization Categories
+## Types of Parallelization
 
 ### Shared Memory Parallelization
 
@@ -20,7 +20,7 @@ For instance, OpenMP is a parallel directive that supports shared memory paralle
 
 Tasks can be distributed on different compute nodes and executed. The tasks communicate each other using message passing. A widely used standard to achieve this kind of parallelism is Message Passing Interface (MPI).
 
-## Software Packages that Support Parallelization
+## A Sampling of Parallel Software
 
 ### Gromacs
 
