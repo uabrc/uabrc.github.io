@@ -71,7 +71,7 @@ plugins:
         uab_cloud/network_setup_basic.md: uab_cloud/tutorial/networks.md
         uab_cloud/security_setup_basic.md: uab_cloud/tutorial/security.md
         uab_cloud/volume_setup_basic.md: uab_cloud/tutorial/volumes.md
-        welcome/rc_days.md: education/research_computing_days.md
+        welcome/rc_days.md: education/research_computing_days/index.md
         welcome/welcome.md: index.md
         workflow_solutions/getting_software_with_git.md: workflow_solutions/git_collaboration.md
         cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
@@ -114,10 +114,10 @@ nav:
       - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
-      - Tutorials: 
+      - Tutorials:
           - cheaha/tutorial/index.md
           - Anaconda Environment Tutorial: cheaha/tutorial/pytorch_tensorflow.md
-      - Cheaha Web Portal: 
+      - Cheaha Web Portal:
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
           - HPC Desktop: cheaha/open_ondemand/hpc_desktop.md
@@ -162,7 +162,8 @@ nav:
       - Descriptions: grants/publications.md
   - Outreach & Training:
       - Case Studies: education/case_studies.md
-      - Research Computing Days: education/research_computing_days.md
+      - Research Computing Days:
+          - education/research_computing_days/index.md
       - Offered Courses: education/courses.md
       - Training Resources: education/training_resources.md
   - Policies: policies.md
@@ -171,3 +172,14 @@ nav:
   - Help:
       - Support: help/support.md
       - FAQ: help/faq.md
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn

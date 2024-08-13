@@ -75,10 +75,10 @@ The Interactive Apps dropdown has a list of specific software setup to run on Ch
 The interactive apps have the following fields to customize the resources for your job:
 
 1. Number of Hours: the maximum number of hours the job will run for. Interactive apps will stay allocated for this amount of time unless the job is manually deleted or crashes. The selected number of hours should be less than or equal to the max runtime for your selected partition.
-2. Partition: the partition the job will be allocated in. See [here](../getting_started.md#partitions) for more information about which partition to choose for your job.
-3. Number of GPUs: Total number of GPUs to request (max of 4 on pascalnodes or 2 on amperenodes)
-4. Numer of CPUs: Total number of CPUs to request
-5. Memory Per CPU (GB): GB of memory multiplied by the requested number of CPUs.
+1. Partition: the partition the job will be allocated in. See [here](../getting_started.md#partitions) for more information about which partition to choose for your job.
+1. Number of GPUs: Total number of GPUs to request (max of 4 on pascalnodes or 2 on amperenodes)
+1. Numer of CPUs: Total number of CPUs to request
+1. Memory Per CPU (GB): GB of memory multiplied by the requested number of CPUs.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -131,13 +131,13 @@ The My Interactive Sessions page lists the available apps and your current inter
 For each job running via Open OnDemand, there will be a card listed on this page:
 
 1. **Job ID**: The jobID assigned by the SLURM scheduler for this specific job.
-2. **Host**: The node on which the job is currently running.
-3. **Time Remaining**: The amount of time remaining from the total requested time.
-4. **Session ID**: This is the unique ID for the OOD session for this job, which can be clicked to access the OOD log directory for troubleshooting.
-5. **Node, Cores and State**: Information about the number of node, cores assignment, and state of the job.
-6. **Launch Desktop in new tab**: Click this button to open your interactive VNC session.
-7. **Delete**: Click this button if you want to cancel/stop a running job, and/or delete the session if the job has already ended.
-8. **View Only (Share-able Link)**: Click this button to share the URL of your job with someone. It allows them to watch as you interact with the program and assist you. However, they can only view and cannot control or enter any data.
+1. **Host**: The node on which the job is currently running.
+1. **Time Remaining**: The amount of time remaining from the total requested time.
+1. **Session ID**: This is the unique ID for the OOD session for this job, which can be clicked to access the OOD log directory for troubleshooting.
+1. **Node, Cores and State**: Information about the number of node, cores assignment, and state of the job.
+1. **Launch Desktop in new tab**: Click this button to open your interactive VNC session.
+1. **Delete**: Click this button if you want to cancel/stop a running job, and/or delete the session if the job has already ended.
+1. **View Only (Share-able Link)**: Click this button to share the URL of your job with someone. It allows them to watch as you interact with the program and assist you. However, they can only view and cannot control or enter any data.
 
 The Job ID and Session ID are important for diagnosing issues you may encounter on Cheaha while using Open OnDemand. These interactive jobs can be stopped early by clicking the `Delete` button on the job card.
 
@@ -152,14 +152,14 @@ The Job ID and Session ID are important for diagnosing issues you may encounter 
 On occasion, interactive jobs created in OOD will crash on startup and cause the job card to disappear. Most of these failures are caused by improper environment setup prior to job creation. If you experiencing OOD job failures, retrieve the OOD job info using the following steps:
 
 1. Create a new job with the same setup as the job that failed.
-2. When the job is in queue, click the link in the `Session ID` field in the job card before the job fails (see the image below for an example). This will open a file browser in a new tab.
+1. When the job is in queue, click the link in the `Session ID` field in the job card before the job fails (see the image below for an example). This will open a file browser in a new tab.
 
     ![!Example Session ID Link](images/example_session_id_link.png)
 
-3. Wait for the job to fail. Afterwards, refresh the file browser, select all of the files (do not include the `desktops` or `..` folders), and click `Download`.
+1. Wait for the job to fail. Afterwards, refresh the file browser, select all of the files (do not include the `desktops` or `..` folders), and click `Download`.
 
    ![!Files to be downloaded and attached to the email](./images/ood_failed_job.png)
 
-4. Take all of the files that were downloaded, put them in a new folder, and zip the folder.
+1. Take all of the files that were downloaded, put them in a new folder, and zip the folder.
 
 [Submit a ticket](../../index.md#how-to-contact-us) to us explaining the issue with the zip folder created in Step 4 attached to the email, and we will be happy to assist. If you would like to inspect the log yourself for debugging, the `output.log` typically will contain the relevant error messages.

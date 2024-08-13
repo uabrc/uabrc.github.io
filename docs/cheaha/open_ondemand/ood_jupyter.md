@@ -50,15 +50,18 @@ To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From
 
 We can create a new environment, that houses all of the packages, modules, and libraries we need for our current Jupyter Notebook to implement functions and operations, run all of its cells and deliver desired outputs. Follow the steps below to accomplish this;
 
-1. Access the [terminal](..//..//workflow_solutions/using_anaconda.md#creating-and-activating-an-environment-using-cheaha-cli).
+1. Access the terminal using your preferred method.
 
-1. [Create](..//..//workflow_solutions/using_anaconda.md#create-an-environment) and [activate](..//..//workflow_solutions/using_anaconda.md#activate-an-environment) your new environment, following the linked steps.
+    - [OOD Terminal](./ood_layout.md#opening-a-terminal). Be sure to run the following steps in a job!
+    - [OOD HPC Desktop Job Terminal](./hpc_desktop.md). This method will ensure terminal commands are run in a job.
 
-1. [Install your desired packages into your activated environment](..//..//workflow_solutions/using_anaconda.md#install-packages).
+1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) your new environment, following the linked steps.
+
+1. [Install your desired packages into your activated environment](../../workflow_solutions/using_anaconda.md#install-packages).
 
 1. Remember to install 'ipykernel' in your activated environment, using `conda install ipykernel`.
 
-1. Go into your working Jupyter Notebook file, and [change to the created environment](..//..//workflow_solutions/using_anaconda.md#changing-environments-using-jupyter-notebook-gui).
+1. Go into your working Jupyter Notebook file, and [change to the created environment](#changing-environments-using-jupyter-notebook-gui).
 
 ### Changing Environments using Jupyter Notebook GUI
 
@@ -85,7 +88,7 @@ Having custom installs of Anaconda/Miniconda/ can cause the above similar issue.
 To identify a Python mismatch, use the commands `which python` and `python --version` to confirm the desired Python executable and version. Within the `conda` environment, `which python` prints the path of the Python executable (e.g. `~/.conda/envs/remora/bin/python`). If it doesn't match the expected version, an unexpected Python version may be in use.
 
 `conda init` append an incorrect version of Python to the front of the `$PATH`, an environment variable containing directories where the operating system looks for executable files. When you attempt to execute a Python-related command, the system will find the first matching executable in the directories listed in the modified `$PATH`. If the first entry corresponds to the version of Python added by `conda init`, that specific version will be used which lead to Python mismatch and hard-to-diagnose errors.
-  
+
 ### Unexpected/Silent Job Failure
 
 Having `conda activate` and `source activate` statements in the OOD Jupyter Notebooks' `Environment Setup` field can cause unexpected and silent job failure. Avoid using `conda activate` in the `Environment Setup` field.
@@ -97,7 +100,7 @@ If you encounter a "Failed to Connect" message while trying to open the job, and
 ### VNC Error When Launching OOD Jupyter Notebook
 
 While launching an OOD HPC Desktop Job or any OOD Applications, if the user gets errors, `Unable to contact settings server` and/or `Unable to load a failsafe session`, it is recommended to follow the below guidelines.
-  
+
 ![!OOD vnc error.](./images/ood_vncerror.png) ![!OOD vnc error_contd.](./images/ood_vncerror_contd.png)
 
 Using `conda init` causes a block of code automatically inserted into the `.bashrc` file in your `$HOME` directory. This code block may interfere with the proper functioning of various OOD applications, resulting in a VNC error. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
@@ -111,13 +114,13 @@ Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-p
 ```
 
 For the above case, resolving errors involve deleting the `~/.local` directory.
-  
+
 Here's an example of the correct procedure for installing `pip` packages within a `conda`:
 
 1. Load the `Anaconda3` module using `module load Anaconda3`.
-2. Create or activate the desired Anaconda environment. Please refer to the [Anaconda documentation](../../workflow_solutions/using_anaconda.md#create-an-environment)
-3. Install `pip` within the `conda` environment using `conda install pip` or `conda install python`. `pip` and `python` are packaged together, installing one will always install the other.
-4. Use `pip` when this `conda` environment is active to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_anaconda.md#installing-packages-with-pip)
+1. Create or activate the desired Anaconda environment. Please refer to the [Anaconda documentation](../../workflow_solutions/using_anaconda.md#create-an-environment)
+1. Install `pip` within the `conda` environment using `conda install pip` or `conda install python`. `pip` and `python` are packaged together, installing one will always install the other.
+1. Use `pip` when this `conda` environment is active to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_anaconda.md#installing-packages-with-pip)
 
 ### Tensorflow and PyTorch GPU issues
 

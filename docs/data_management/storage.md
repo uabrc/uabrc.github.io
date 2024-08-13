@@ -18,8 +18,7 @@ To request individual Long-Term Storage, please first read and understand how [L
 
 ## What Shared Storage Solutions are Available?
 
-Shared Storage is available via two services. We have [Project Storage](#project-directory) 
-(located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
+Shared Storage is available via two services. We have [Project Storage](#project-directory) (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
 
 [Project Storage](#project-directory) is best-suited for changing or dynamic data. Specifically::
 
@@ -64,7 +63,7 @@ Please provide the following information. Missing information can delay allocati
 - **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
 - **Name of Shared Storage:** Please give us a generic name specific to your project/Lab.
 
-    - For Labs, we recommend using the format `<PI_BlazerID>_lab`, where `<PI_BlazerID>` is the BlazerID or name of the Principal Investigator (PI). For example: `PI_BlazerID_lab`, `PI_name_lab`. 
+    - For Labs, we recommend using the format `<PI_BlazerID>_lab`, where `<PI_BlazerID>` is the BlazerID or name of the Principal Investigator (PI). For example: `PI_BlazerID_lab`, `PI_name_lab`.
     - For Cores, we recommend using a shortened version of the Core name. For example: `core_facility_space`
     - For Project Storage, the name you choose will be used in the path `/data/project/<PI_BlazerID>_lab` on Cheaha. Also, this name,`<PI_BlazerID>_lab`, will be given to your shared LTS account.
 
@@ -162,7 +161,7 @@ There are some known issues surrounding project directory permissions when files
 For PIs and project administrators:
 
 - Please educate your staff and collaborators about the above permission setups, and any additional ACLs you may have in place, to minimize future challenges.
-- If you have issues with permissions, please contact [Support](../help/support.md#contact-us). We can guide you through [Managing Permissions](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../workflow_solutions/shell.md#manage-group-ownership-chgrp).
+- If you have issues with permissions, please contact [Support](../index.md#how-to-contact-us). We can guide you through [Managing Permissions](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../workflow_solutions/shell.md#manage-group-ownership-chgrp).
 
 ## Scratch
 
@@ -284,7 +283,7 @@ A possible external resource for archival is available through University of Okl
     Backups of data are the responsibility of researchers using Cheaha.
 <!-- markdownlint-enable MD046 -->
 
-A good practice for backing up data is to use the 3-2-1 rule, as [recommended by US-CERT](https://www.cisa.gov/uscert/security-publications/data-backup-options):
+A good practice for backing up data is to use the 3-2-1 rule, as [recommended by US-CERT](https://www.cisa.gov/sites/default/files/publications/data_backup_options.pdf):
 
 - **3**: Keep **3** copies of important data. 1 primary copy for use, 2 backup copies.
 - **2**: Store backup copies on **2** different media types to protect from media-specific hazards.

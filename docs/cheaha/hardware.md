@@ -1,6 +1,6 @@
 # Hardware Information
 
-The following hardware summaries may be useful for selecting partitions for workflows and for grant proposal writing. If any information is missing that would be helpful to you, please be sure to [contact us](../index.md#contact-us) or create an issue on our [tracker](https://github.com/uabrc/uabrc.github.io/issues).
+The following hardware summaries may be useful for selecting partitions for workflows and for grant proposal writing. If any information is missing that would be helpful to you, please be sure to [contact us](../index.md#how-to-contact-us) or create an issue on our [tracker](https://github.com/uabrc/uabrc.github.io/issues).
 
 <!-- markdownlint-disable MD046 -->
 !!! tip

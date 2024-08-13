@@ -8,7 +8,7 @@ Cheaha is a High Performance Computing (HPC) resource intended primarily for bat
 
 ## Getting Help
 
-Please [Contact Us](../index.md#contact-us) with requests for support. Tips on getting effective support are [here](../help/support.md), and our frequently asked questions are [here](../help/faq.md).
+Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are [here](../help/support.md), and our frequently asked questions are [here](../help/faq.md).
 
 ## Account Creation
 
@@ -62,7 +62,7 @@ Please visit our [hardware](hardware.md#cheaha-hpc-cluster) for more details abo
 
 ### Etiquette
 
-[Quality-of-Service (QoS) limits](hardware.md#quality-of-service-qos-limits) are in place to ensure any one user can't monopolize all resources.
+[Quality-of-Service (QoS) limits](hardware.md#summary) are in place to ensure any one user can't monopolize all resources.
 
 #### Why you should avoid running jobs on Login Nodes
 
@@ -132,7 +132,7 @@ bash-4.2$ source ~/.bashrc
 
 ##### Slurm and Slurm Jobs
 
-Slurm Workload Manager is a widely used open-source job scheduler that manages the queue of jobs submitted to the compute nodes. It ensures efficient use of the cluster by allocating resources to jobs, prioritizing tasks, and managing queues of pending jobs. Starting Slurm jobs can be done in two primary ways: using Open OnDemand (OOD) or through the terminal. For more details on how to use Slurm on cheaha, please see our [slurm docs](..//cheaha/slurm/introduction.md).
+Slurm Workload Manager is a widely used open-source job scheduler that manages the queue of jobs submitted to the compute nodes. It ensures efficient use of the cluster by allocating resources to jobs, prioritizing tasks, and managing queues of pending jobs. Starting Slurm jobs can be done in two primary ways: using Open OnDemand (OOD) or through the terminal. For more details on how to use Slurm on cheaha, please see our [slurm docs](../cheaha/slurm/introduction.md).
 
 ##### What Should Run in Jobs?
 
