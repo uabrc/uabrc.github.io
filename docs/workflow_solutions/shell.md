@@ -8,6 +8,8 @@ Most commands are perfectly safe, and often when they do something unexpected it
 
 We are not responsible for accidental deletions or overwrites caused inadvertently, or otherwise, by any commands run by researchers. Be warned that directories, files and file contents that are deleted or overwritten cannot be restored by us under any circumstances. Researchers are responsible for maintaining backups of their files. If in doubt about a command please contact [Contact Us](../index.md#how-to-contact-us) for guidance.
 
+If you would prefer additional information or a tutorial to guide your use of the Shell, please see our [page](../education/training_resources.md#the-carpentries) containing links to educational content on Shell and other tools you may need.
+
 ### Educational Resources
 
 The internet has thousands of guides for using the shell. Rather than devise our own complete lesson plan for using the shell, we recommend finding and using one of the high-quality lessons available on the internet. The Software Carpentries group offers a number of high-quality online lesson plans for introductory computing and data science tools. While these lesson plans are intended to be delivered by an instructor in a classroom setting, they can be still be useful to follow solo. For the shell lesson, see <https://swcarpentry.github.io/shell-novice/>.
