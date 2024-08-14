@@ -44,6 +44,7 @@ plugins:
   - table-reader:
       data_path: docs
   - git-revision-date-localized:
+      strict: false
       type: date
   - glightbox:
       # auto_caption: true
