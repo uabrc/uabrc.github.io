@@ -109,6 +109,7 @@ nav:
   - Workflow Solutions:
       - Using the Shell: workflow_solutions/shell.md
       - Using Conda: workflow_solutions/using_conda.md
+      - Conda Migration FAQ: workflow_solutions/conda_migration_faq.md
       - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
       - Using Git: workflow_solutions/git.md
       - R Projects and Environments: workflow_solutions/r_environments.md
