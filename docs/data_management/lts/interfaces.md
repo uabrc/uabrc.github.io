@@ -35,7 +35,7 @@ While globus is the recommended tool for most data transfers, command line tools
 
 ### Installation of `s3cmd` and `s5cmd` on Cheaha
 
-To install the tools on Cheaha, you can request a compute node through Cheaha's [Open OnDemand web portal](../../cheaha/open_ondemand/ood_layout.md/#creating-an-interactive-job).Once your job is launched, open a terminal to execute the commands listed below. You do not need to install both tools if they aren't necessary. Both are available to install into [Anaconda](../../workflow_solutions/using_anaconda.md) environments. It's suggested to create a single environment named `s3` and install both s3cmd and s5cmd into it for easy access to both tools. Specific install and usage commands for each are given in their respective sections. You can create the general environment using the following commands:
+To install the tools on Cheaha, you can request a compute node through Cheaha's [Open OnDemand web portal](../../cheaha/open_ondemand/ood_layout.md/#creating-an-interactive-job).Once your job is launched, open a terminal to execute the commands listed below. You do not need to install both tools if they aren't necessary. Both are available to install into [Anaconda](../../workflow_solutions/using_conda.md) environments. It's suggested to create a single environment named `s3` and install both s3cmd and s5cmd into it for easy access to both tools. Specific install and usage commands for each are given in their respective sections. You can create the general environment using the following commands:
 
 ``` bash
 module load Anaconda3
@@ -251,7 +251,7 @@ It's important to note that the main functionality of s5cmd over s3cmd is the pa
 
 ### Installation of `s3cmd` and `s5cmd` on Personal Systems without Anaconda
 
-The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems. You may also use [Anaconda](../../workflow_solutions/using_anaconda.md) to install either or both packages.
+The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems. You may also use [Anaconda](../../workflow_solutions/using_conda.md) to install either or both packages.
 
 #### Ubuntu
 

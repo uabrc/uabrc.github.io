@@ -139,7 +139,7 @@ Below are a few examples of installing certain common softwares that may be usef
 
 #### Installing Miniconda
 
-Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important. We recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html) on cloud.rc instances, as opposed to Anaconda, to conserve storage space. For more information on how to use Anaconda see the [Using Anaconda](../workflow_solutions/using_anaconda.md#using-anaconda). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
+Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important. We recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html) on cloud.rc instances, as opposed to Anaconda, to conserve storage space. For more information on how to use Anaconda see the [Using Anaconda](../workflow_solutions/using_conda.md#using-anaconda). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
 1. `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
@@ -209,7 +209,7 @@ To install, you will need the following pre-requisites. If you are unfamiliar wi
 1. A [Security Group](tutorial/security.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
 1. [Miniconda installed](#installing-miniconda) on the instance. Miniconda is a lightweight version of Anaconda.
 
-Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_anaconda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_anaconda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html>.
+Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_conda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_conda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html>.
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
@@ -217,7 +217,7 @@ Once the prerequisites are complete, the following steps must be performed to in
     Leaving your Jupyter Notebook Server unsecured may mean that other people on the UAB Campus Network are able to access your notebooks and other files stored on that cloud instance.
 <!-- markdownlint-enable MD046 -->
 
-1. [Install](../workflow_solutions/using_anaconda.md#install-packages) Jupyter Notebook Server using [Miniconda](../workflow_solutions/using_anaconda.md). You will need the following packages.
+1. [Install](../workflow_solutions/using_conda.md#install-packages) Jupyter Notebook Server using [Miniconda](../workflow_solutions/using_conda.md). You will need the following packages.
 
     - `conda-forge` channel
         - `notebook`

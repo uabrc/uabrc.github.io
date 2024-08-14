@@ -40,7 +40,7 @@ We are using Visual Studio Code (VSCode) for development with several extensions
 
 VSCode may be obtained from [Visual Studio Code](https://code.visualstudio.com/) and documentation is available at [VSCode: Docs](https://code.visualstudio.com/docs). The extensions should automatically show up as recommendations when opening the repo, or they can be downloaded using the VSCode Extensions menu (++ctrl+shift+x++ on Windows or ++command+shift+x++ on Mac).
 
-We assume you have a `conda` distribution on your local machine. If you are affiliated with UAB, please install [Miniforge](https://conda-forge.org/miniforge/). For detailed installation instructions, see here: <https://github.com/conda-forge/miniforge/?tab=readme-ov-file#install>. For more information on using `conda`, see our [Anaconda page](../workflow_solutions/using_anaconda.md).
+We assume you have a `conda` distribution on your local machine. If you are affiliated with UAB, please install [Miniforge](https://conda-forge.org/miniforge/). For detailed installation instructions, see here: <https://github.com/conda-forge/miniforge/?tab=readme-ov-file#install>. For more information on using `conda`, see our [Anaconda page](../workflow_solutions/using_conda.md).
 
 ### Style Guide
 
@@ -163,7 +163,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
 ##### Verify your changes
 
-1. [Activate](../workflow_solutions/using_anaconda.md#activate-an-environment) your conda environment.
+1. [Activate](../workflow_solutions/using_conda.md#activate-an-environment) your conda environment.
     1. Open the file `test.py` in the repository to start the Python extension.
     1. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
 1. Open a VSCode terminal using ++ctrl+shift+grave++.

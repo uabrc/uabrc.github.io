@@ -21,7 +21,7 @@ For setup, use the following steps:
 1. In a terminal on a compute node, either in an HPC Desktop job or by clicking the blue Host button on any job card:
 
     1. Load the `Anaconda3` module
-    1. Create an Anaconda environment. More information about how to create Anaconda environments can be found [in our documentation](../../workflow_solutions/using_anaconda.md).
+    1. Create an Anaconda environment. More information about how to create Anaconda environments can be found [in our documentation](../../workflow_solutions/using_conda.md).
     1. Activate your environment and install your requuired python packages using either `pip install` or `conda install` depending on the package source.
 
     <!-- markdownlint-disable MD046 -->

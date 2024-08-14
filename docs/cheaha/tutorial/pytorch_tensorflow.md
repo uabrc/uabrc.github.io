@@ -34,7 +34,7 @@ The instructions below, provide a recommended step by step guide to creating and
 
 There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilising only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;
 
-1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in these links.
+1. [Create](../../workflow_solutions/using_conda.md#create-an-environment) and [activate](../../workflow_solutions/using_conda.md#activate-an-environment) an environment as stated in these links.
 
 1. Access the terminal following the steps [here](#installing-anaconda-environments-using-the-terminal).
 
@@ -63,7 +63,7 @@ module load CUDA/11.8.0
 
 ![!nvidia-smi output](images/CudaVersion.png)
 
-When your job has been created and your environment created and activated from the terminal (see above [instructions](../../workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
+When your job has been created and your environment created and activated from the terminal (see above [instructions](../../workflow_solutions/using_conda.md#create-an-environment)), run the below command.
 
 ```bash
 conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia
@@ -134,4 +134,4 @@ The image below shows an output that the TensorFlow library will utilize the ava
     The information (I) and warning (W) outputs notifies you of the installed Tensorflow binary and how it would function. The I output informs you that the installed Tensorflow library will utilize your CPU for additional speed when GPUs are not the most efficient way to do processing for these operations. The W output tells you TensorRT is not available, please note TensorRT is not currently supported on our systems.
 <!-- markdownlint-enable MD046 -->
 
-Now that you have completed the tutorial, you can find more Anaconda information here, [Using Anaconda page](../../workflow_solutions/using_anaconda.md#anaconda).
+Now that you have completed the tutorial, you can find more Anaconda information here, [Using Anaconda page](../../workflow_solutions/using_conda.md#anaconda).

@@ -63,7 +63,7 @@ plugins:
         data_management/LTS/sharing.md: data_management/lts/policies.md
         data_management/lts/lts.md: data_management/lts/index.md
         data_management/lts/sharing.md: data_management/lts/policies.md
-        environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
+        environment_management/anaconda_environments.md: workflow_solutions/using_conda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/git_collaboration.md
         uab_cloud/cloud_remote_access.md: uab_cloud/remote_access.md
@@ -79,6 +79,7 @@ plugins:
         cheaha/open_ondemand/ood_files.md: cheaha/open_ondemand/ood_layout.md
         cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
         cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
+        workflow_solutions/using_anaconda.md: workflow_solutions/using_conda.md
 
 nav:
   - Home: index.md
@@ -107,7 +108,7 @@ nav:
       - Code Storage: data_management/code_storage.md
   - Workflow Solutions:
       - Using the Shell: workflow_solutions/shell.md
-      - Using Anaconda: workflow_solutions/using_anaconda.md
+      - Using Conda: workflow_solutions/using_conda.md
       - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
       - Using Git: workflow_solutions/git.md
       - R Projects and Environments: workflow_solutions/r_environments.md
