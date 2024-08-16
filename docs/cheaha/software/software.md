@@ -1,6 +1,6 @@
 # Software Installation
 
-## Anaconda on Cheaha
+## `conda` on Cheaha
 
 For additional general information on using Anaconda please see [Anaconda Environments](../../workflow_solutions/using_conda.md).
 
