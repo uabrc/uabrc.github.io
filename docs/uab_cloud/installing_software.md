@@ -42,7 +42,7 @@ Most common software packages and NVIDIA drivers are available as `apt` packages
 
 If the software is available via `apt` then use `sudo apt install <package>`. An example would be `sudo apt install git` to install git software.
 
-If the software uses a custom installer, then follow the instructions provided by the software's documentation. An example would be [Miniconda](#installing-conda-via-miniforge), where a shell script is downloaded and then executed using `bash installer.sh`.
+If the software uses a custom installer, then follow the instructions provided by the software's documentation. An example would be [Miniforge](#installing-conda-via-miniforge), where a shell script is downloaded and then executed using `bash installer.sh`.
 
 ### Installing Server Software
 
