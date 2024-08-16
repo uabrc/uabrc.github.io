@@ -7,3 +7,4 @@ Have you encountered problems while using `conda` on Cheaha? We have provided th
 Below is a list of Tutorials we currently have Using `conda` on Cheaha;
 
 1. Using PyTorch and TensorFlow with `conda` on [Cheaha](../getting_started.md), click [here](../tutorial/pytorch_tensorflow.md).
+1. Using `conda` as part of parallel [Slurm](../slurm/introduction.md) workflows, click [here](../slurm/slurm_tutorial.md).
