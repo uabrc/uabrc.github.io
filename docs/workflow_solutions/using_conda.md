@@ -119,7 +119,7 @@ When building a `conda` environment, prefer to get all of your packages through 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Make sure `pip` is installed within the `conda` environment and use it for installing packages within the `conda` environment to prevent [Pip related issues](../cheaha/open_ondemand/ood_jupyter.md#pip-installs-packages-outside-of-environment).
+    When using `conda` and `pip` on Cheaha, make sure you are using a custom `conda` environment and that `pip` is installed before installing `pip` packages to prevent severe [`pip` related issues](../cheaha/software/software.md#installing-pip-packages-outside-of-your-environments).
 <!-- markdownlint-disable MD046 -->
 
 <!-- markdownlint-disable MD046 -->

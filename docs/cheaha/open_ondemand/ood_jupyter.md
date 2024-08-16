@@ -111,22 +111,17 @@ While launching an OOD HPC Desktop Job or any OOD Applications, if the user gets
 
 Using `conda init` causes a block of code automatically inserted into the `.bashrc` file in your `$HOME` directory. This code block may interfere with the proper functioning of various OOD applications, resulting in a VNC error. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
 
-### Pip Installs Packages Outside of Environment
+### Installing Pip Packages Outside of Your Environments
 
-When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` within the same conda environment and use `pip` from that environment. If `pip` is used outside of `conda` or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from `conda` environments, and shows the following error,
+<!-- markdownlint-disable MD046 -->
+!!! danger
 
-```bash
-Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)
-```
+    Using `pip install` without loading Miniforge3 will cause hard-to-diagnose errors and broken workflows.
 
-For the above case, resolving errors involve deleting the `~/.local` directory.
+    Using `pip install` in the `base` environment will cause the same hard-to-diagnose errors and broken workflows.
 
-Here's an example of the correct procedure for installing `pip` packages within a `conda`:
-
-1. Load the `Miniforge` module using `module load Miniforge3`.
-1. Create or activate the desired `conda` environment. Please refer to the [`conda` documentation](../../workflow_solutions/using_conda.md#create-an-environment)
-1. Install `pip` within the `conda` environment using `conda install pip` or `conda install python`. `pip` and `python` are packaged together, installing one will always install the other.
-1. Use `pip` when this `conda` environment is active to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_conda.md#installing-packages-with-pip)
+    Read more about this issue, and how to resolve it, [here](../software/software.md#installing-pip-packages-outside-of-your-environments).
+<!-- markdownlint-disable MD046 -->
 
 ### Tensorflow and PyTorch GPU issues
 

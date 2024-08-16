@@ -55,10 +55,27 @@ Once you have loaded the Miniforge module, `conda` on Cheaha works similarly to 
 
     Using `pip install` in the `base` environment will cause the same hard-to-diagnose errors and broken workflows.
 
-    Read more about this issue, and how to resolve it, [here](../open_ondemand/ood_jupyter.md#pip-installs-packages-outside-of-environment).
+    Read more about this issue, and how to resolve it, [here](#installing-pip-packages-outside-of-your-environments).
 <!-- markdownlint-enable MD046 -->
 
 For more information on usage with examples, see [`conda` Environments](../../workflow_solutions/using_conda.md). Need some hands-on experience? You can find instructions on how to install PyTorch and TensorFlow using `conda` in this [tutorial](../tutorial/pytorch_tensorflow.md).
+
+### Installing Pip Packages Outside of Your Environments
+
+When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` within the same conda environment and use `pip` from that environment. If `pip` is used outside of `conda` or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from `conda` environments, and shows the following error,
+
+```bash
+Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)
+```
+
+For the above case, resolving errors involve deleting the `~/.local` directory.
+
+Here's an example of the correct procedure for installing `pip` packages within a `conda`:
+
+1. Load the `Miniforge` module using `module load Miniforge3`.
+1. Create or activate the desired `conda` environment. Please refer to the [`conda` documentation](../../workflow_solutions/using_conda.md#create-an-environment)
+1. Install `pip` within the `conda` environment using `conda install pip` or `conda install python`. `pip` and `python` are packaged together, installing one will always install the other.
+1. Use `pip` when this `conda` environment is active to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_conda.md#installing-packages-with-pip)
 
 ## Singularity Containers
 
