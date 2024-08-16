@@ -14,7 +14,7 @@ Matlab is available for use graphically in your browser via OOD. As with other s
 
 Matlab has the ability to interoperate with Python from within Matlab. The official documentation for this featuer may be found at <https://www.mathworks.com/help/matlab/call-python-libraries.html>.
 
-This section is dedicated to using this feature with `conda` on Cheaha. To use Python contained in an `conda` Environment within Matlab, please use the following steps.
+This section is dedicated to using this feature with `conda` on Cheaha. To use Python contained in a `conda` Environment within Matlab, please use the following steps.
 
 1. Create an [HPC Interactive Desktop Job](hpc_desktop.md).
 1. Open a terminal in that job. The following steps should all be run in this terminal unless otherwise specified.
