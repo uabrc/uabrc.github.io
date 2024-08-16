@@ -6,7 +6,7 @@ For additional general information on using Anaconda please see [Anaconda Enviro
 
 If you are using Jupyter Notebook, please see our section on [Packages for Jupyter](../../workflow_solutions/using_conda.md#packages-for-jupyter).
 
-### Loading Anaconda
+### Loading `conda`
 
 Anaconda is installed on Cheaha as a family of modules, and does not need to be installed by Researchers. Instead, the most recent version of Anaconda installed on Cheaha may be loaded using the command `module load Anaconda3`. Other versions may be discovered using the command `module avail Anaconda`. We recommend always using the latest version.
 
