@@ -1,8 +1,8 @@
-# Anaconda Environment Tutorial for PyTorch and TensorFlow
+# `conda` Environment Tutorial for PyTorch and TensorFlow
 
-The below tutorial would show you steps on how to create an Anaconda environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access the terminal, as well as using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../open_ondemand/ood_layout.md#interactive-apps)
+The below tutorial will show you how to create a `conda` environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using a `conda` environment on Cheaha. There are also steps on how to access the terminal, as well as using Jupyter Notebook's Graphical User Interface (GUI) to work with `conda` environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../open_ondemand/ood_layout.md#interactive-apps)
 
-## Installing Anaconda Environments Using the Terminal
+## Installing `conda` Environments Using the Terminal
 
 To access the terminal (shell), please do the following.
 
@@ -36,7 +36,7 @@ There are two instances of PyTorch that can be installed, one requiring GPUs, an
 
 1. [Create](../../workflow_solutions/using_conda.md#create-an-environment) and [activate](../../workflow_solutions/using_conda.md#activate-an-environment) an environment as stated in these links.
 
-1. Access the terminal following the steps [here](#installing-anaconda-environments-using-the-terminal).
+1. Access the terminal following the steps [here](#installing-conda-environments-using-the-terminal).
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -134,4 +134,4 @@ The image below shows an output that the TensorFlow library will utilize the ava
     The information (I) and warning (W) outputs notifies you of the installed Tensorflow binary and how it would function. The I output informs you that the installed Tensorflow library will utilize your CPU for additional speed when GPUs are not the most efficient way to do processing for these operations. The W output tells you TensorRT is not available, please note TensorRT is not currently supported on our systems.
 <!-- markdownlint-enable MD046 -->
 
-Now that you have completed the tutorial, you can find more Anaconda information here, [Using Anaconda page](../../workflow_solutions/using_conda.md#why-use-conda).
+Now that you have completed the tutorial, you can find more `conda` information at our [Using `conda` page](../../workflow_solutions/using_conda.md#why-use-conda).
