@@ -46,8 +46,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: check
     permissions:
-      contents: read
-      pages: write
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
