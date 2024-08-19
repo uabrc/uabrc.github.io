@@ -35,6 +35,9 @@ jobs:
           activate-environment: build
 
       - name: Build pages
+        # only runs on main branch if a push event
+        # forbids changes to gh-pages branch on other events
         run: |
           conda activate build
           mkdocs gh-deploy --force --strict
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
