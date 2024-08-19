@@ -11,13 +11,13 @@ In this tutorial, we will guide you through using `s3cmd` on the Cheaha system t
 
 To interact with LTS using S3, you need the `s3cmd` tool installed. It is recommended to install it using `pip` within an Anaconda environment on Cheaha. Please avoid using `conda install s3cmd`, as that version will not work as expected. Instead, follow the below steps to install `s3cmd` using `pip`.
 
-First, access our interactive Open OnDemand (OOD) portal at [https://rc.uab.edu](https://rc.uab.edu) and create a job on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on [installing and setting anaconda environment](../../../cheaha/tutorial/pytorch_tensorflow.md/#installing-anaconda-environments-using-terminal).
+First, access our interactive Open OnDemand (OOD) portal at [https://rc.uab.edu](https://rc.uab.edu) and create a job on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on [installing and setting anaconda environment](../../../cheaha/tutorial/pytorch_tensorflow.md/#installing-anaconda-environments-using-the-terminal).
 
-Once your interactive apps session is launched, open the terminal as described in [step 5 of the Anaconda tutorial page](../../../cheaha/tutorial/pytorch_tensorflow.md/#installing-anaconda-environments-using-terminal) and run the below commands.
+Once your interactive apps session is launched, open the terminal as described in [step 5 of the Anaconda tutorial page](../../../cheaha/tutorial/pytorch_tensorflow.md/#installing-anaconda-environments-using-the-terminal) and run the below commands.
 
 ```bash
 module load Anaconda3
-conda create -n s3 
+conda create -n s3
 conda activate s3
 pip install s3cmd
 ```
@@ -28,13 +28,13 @@ Once these steps are completed, verify the installation by running `pip list | g
 
 ### Install s3cmd on Your Local Systems
 
-To install s3cmd on your local machine, please follow the instructions provided in [our s3cmd documentation for local installation](../../../data_management/lts/interfaces.md/#installation-of-s3cmd-and-s5cmd-on-personal-system).
+To install s3cmd on your local machine, please follow the instructions provided in [our s3cmd documentation for local installation](../../../data_management/lts/interfaces.md/#installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda).
 
 ### Configuring s3cmd for LTS Buckets
 
 Properly configuring `s3cmd` is important for working with LTS buckets and objects. The configuration process varies depending on whether you have a single LTS account or multiple accounts to manage. In this section, we will provide a step-by-step guide tailored specifically for the **Cheaha** system and a researcher with an **individual LTS account**.
 
-Open a terminal using one of the interactive apps on Cheaha. Activate your conda environment created in the [Install s3cmd using within Anaconda Environment](./individual_lts_tutorial.md/#install-s3cmd-within-anaconda-environment-on-cheaha) section, and then run the below command:
+Open a terminal using one of the interactive apps on Cheaha. Activate your conda environment created in the [Install s3cmd using within Anaconda Environment](./individual_lts_tutorial.md#install-s3cmd-within-anaconda-environment-on-cheaha) section, and then run the below command:
 
 ```bash
 s3cmd --configure
@@ -64,7 +64,7 @@ Please replace `your-bucket-name` with your desired name. This command creates a
 
 When creating a bucket, it is important to be aware of name uniqueness and naming conventions. For detailed information on bucket naming, please refer to our documentation on [valid bucket names in LTS](../lts_faq.md) and [avoiding duplicate names for buckets](../index.md/#avoiding-duplicate-names-for-buckets).
 
-If you try to create a bucket with `s3cmd mb` with the name that already exists within your namespace, the system will report success without making any changes. For example, if you run `s3cmd mb s3://existing-bucket-name` and that bucket name is already taken in your namespace, the command will complete successfully without creating a new bucket and showing an error. However, if you try to create a bucket with a name that is already used in someone else’s namespace, you will receive a `409 (BucketAlreadyExists)` error. To avoid receiving the `BucketAlreadyExists` error and ensure you create a unique bucket within your namespace, use s3cmd ls to check existing buckets and choose a different name based on this check. Follow the [avoiding duplicate names for buckets](../index.md/#avoiding-duplicate-names-for-buckets) guide to successfully create your bucket and maintain bucket uniqueness.
+If you try to create a bucket with `s3cmd mb` with the name that already exists within your namespace, the system will report success without making any changes. For example, if you run `s3cmd mb s3://existing-bucket-name` and that bucket name is already taken in your namespace, the command will complete successfully without creating a new bucket and showing an error. However, if you try to create a bucket with a name that is already used in someone else’s namespace, you will receive a `409 (BucketAlreadyExists)` error. To create a unique bucket within your namespace, first use `s3cmd ls` to list existing buckets and choose a name that is not already in use. To avoid the `409 (BucketAlreadyExists)` error and ensure your bucket name is unique, follow the [avoiding duplicate names for buckets](../index.md/#avoiding-duplicate-names-for-buckets) guide. This will help you create your bucket successfully and maintain its uniqueness.
 
 ### Managing Buckets
 
