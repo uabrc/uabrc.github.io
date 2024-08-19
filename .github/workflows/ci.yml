@@ -3,18 +3,20 @@ name: ci
 on:
   push:
     branches:
-      - dev
       - main
   pull_request:
     branches:
       - main
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -el {0}
 
+defaults:
+  run:
+    shell: bash -el {0}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
         with:
@@ -37,4 +39,37 @@ jobs:
       - name: Build pages
         run: |
           conda activate build
-          mkdocs gh-deploy --force --strict
+          mkdocs build --strict
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: check
+    permissions:
+      contents: read
+      pages: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Miniforge
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: latest
+          conda-solver: libmamba
+          environment-file: build_env.yml
+          activate-environment: build
+
+      - name: Build
+        # only runs on main branch if a push event
+        # forbids changes to gh-pages branch on other events
+        run: |
+          conda activate build
+          mkdocs build --strict
+
+      - name: Deploy
+        uses: oprypin/push-to-gh-pages@v3
+        with:
+          publish_dir: ./site
