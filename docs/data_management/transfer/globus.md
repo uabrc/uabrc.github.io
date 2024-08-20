@@ -190,21 +190,41 @@ Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
 
 When creating new buckets, the name must be unique across all buckets on the system. At first this may sound very restrictive, but it is quite simple to deal with in practice. See our LTS section on [good naming practice](../lts/index.md#avoiding-duplicate-names-for-buckets) for how to avoid duplicate names.
 
-If a duplicate bucket name is entered, a long error message will appear in a small space next to the new bucket name. The message reads like the following, expanded for readability.
+If a duplicate bucket name, for example `first-test-bucket`, is entered, a long error message will appear in a small space next to the new bucket name. For readability, the expanded message is shown below.
 
 ![!large error message in small space](images/globus_lts_duplicate_name_error_001.png)
 
 ```text
+Remote Endpoint Failure: Path already exists, Error (mkdir)
+Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
+Server: 138.26.220.68:443
+Message: Path '/first-test-bucket/' already exists
+```
+
+Similarly, if an invalid bucket name, such as `first_test_bucket`, is entered (due to the use of an underscore, which doesn’t follow LTS bucket naming rules), an error will also be displayed as shown below. To avoid this, please refer to the guidelines for [valid bucket name in LTS](../lts/lts_faq.md/#what-are-valid-bucket-names-in-lts).
+
+![!large invalid error message in small space](images/globus_lts_invalid_name_error_001.png)
+
+```text
 Bad Gateway: Endpoint Error, Error (mkdir)
 Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
-Server: m-b81a79.9ad93.a567.data.globus.org:443
-Command: MKD /test/
+Server: 138.26.220.68:443
+Command: MKD /first_test_bucket/
 Message: Fatal FTP Response ---
-Details: 553-
-  GlobusError: v=1 c=PATH_EXISTS\r\n553-
-  GridFTP-Path: (null)\r\n553-globus_gridftp_server_s3_base: S3
-  Error accessing "": ErrorBucketAlreadyExists: ErrorBucketAlreadyExists: \r\n553 End.\r\n
+Details: 500
+globus_gridftp_server_s3_base: S3
+Error accessing "": ErrorInvalidBucketName: ErrorInvalidBucketName: \r\n
 ```
+
+To cancel or dismiss these errors, click the `refresh list` button on the Globus collection panel, or scroll all the way to the right in the red area of the error message and click the `x` symbol as shown below.
+
+![!large error message cancellation](images/globus_lts_cancele_name_error_001.png)
+
+Uploading a top-level folder that does not follow the bucket naming rules will cause an error similar to the one encountered when creating a bucket with an invalid bucket name.
+
+When uploading a folder with a name similar to a bucket in your LTS, Globus will sync and save all sub-folders and files into that bucket. Note that sub-folders are not required to follow bucket naming rules. However, if you attempt to upload a folder with a name that matches an existing bucket in someone else's space, you will encounter a `permission denied error`, as shown below.
+
+![!large error message in small space](images/globus_lts_upload_error_001.png)
 
 ## Using Bookmarks
 
