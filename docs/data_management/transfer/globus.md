@@ -11,13 +11,13 @@ UAB Research Computing uses High Assurance Endpoints, meaning there are addition
 
 For more detailed information on High Assurance please see the Globus official pages below:
 
-- [High Assurance Security Overview](https://docs.globus.org/security/high-assurance-overview/)
-- [High Assurance Collections](https://docs.globus.org/high-assurance/)
+- [High Assurance Security Overview](https://docs.globus.org/guides/overviews/security/high-assurance-overview/)
+- [High Assurance Collections](https://docs.globus.org/guides/overviews/high-assurance/)
 
 ## Setting up Globus Connect Personal
 
 [Globus Connect Personal](https://www.globus.org/globus-connect-personal) is software meant to be installed on local machines such as laptops, desktops,
-workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on [MacOS](https://docs.globus.org/how-to/globus-connect-personal-mac/), [Linux](https://docs.globus.org/how-to/globus-connect-personal-linux) and [Windows](https://docs.globus.org/how-to/globus-connect-personal-windows).
+workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on [MacOS](https://docs.globus.org/globus-connect-personal/install/mac/), [Linux](https://docs.globus.org/globus-connect-personal/install/linux/) and [Windows](https://docs.globus.org/globus-connect-personal/install/windows/).
 
 To verify your installation is complete, please visit <https://app.globus.org> and log in. Click "Collections" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the collection you just created.
 
