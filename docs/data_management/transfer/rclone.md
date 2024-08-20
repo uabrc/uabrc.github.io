@@ -60,7 +60,7 @@ To instead install natively on Windows, you will need to use the following instr
 
 ### MacOS
 
-Follow the [online instructions](https://rclone.org/install/#macos-installation-with-brew) for installing with `brew`.
+Follow the [online instructions](https://rclone.org/install/#macos-brew) for installing with `brew`.
 
 ## Setting up Remotes
 
