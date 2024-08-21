@@ -188,9 +188,7 @@ Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
 
 #### Buckets Must Have Globally Unique Names
 
-When creating new buckets, the name must be unique across all buckets on the system. At first this may sound very restrictive, but it is quite simple to deal with in practice. See our LTS section on [good naming practice](../lts/index.md#avoiding-duplicate-names-for-buckets) for how to avoid duplicate names.
-
-If a duplicate bucket name, for example `first-test-bucket`, is entered, a long error message will appear in a small space next to the new bucket name. For readability, the expanded message is shown below.
+When creating new buckets, the name must be unique across all buckets on the system. If a duplicate bucket name, for example `first-test-bucket`, is entered, a long error message will appear in a small space next to the new bucket name. For readability, the expanded message is shown below.
 
 ![!large error message in small space](images/globus_lts_duplicate_name_error_001.png)
 
@@ -200,6 +198,10 @@ Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4
 Server: 138.26.220.68:443
 Message: Path '/first-test-bucket/' already exists
 ```
+
+At first using unique name across all buckets on the system may sound very restrictive, but it is quite simple to deal with in practice. See our LTS section on [good naming practice](../lts/index.md#avoiding-duplicate-names-for-buckets) for how to avoid duplicate names. For example, if you want to name a bucket `ai-lab` for storing data related to the entire AI lab or a specific dataset, you can append a universally unique identifier (UUID) to the name. To generate a UUID, visit <https://www.uuidgenerator.net/>, and a 16-byte UUID will be automatically generated. You can then copy it and append it to the name `ai-lab`, as shown below.
+
+![!large error message in small space](images/globus-uuid.png)
 
 Similarly, if an invalid bucket name, such as `first_test_bucket`, is entered (due to the use of an underscore, which doesn’t follow LTS bucket naming rules), an error will also be displayed as shown below. To avoid this, please refer to the guidelines for [valid bucket name in LTS](../lts/lts_faq.md/#what-are-valid-bucket-names-in-lts).
 
@@ -220,11 +222,11 @@ To cancel or dismiss these errors, click the `refresh list` button on the Globus
 
 ![!large error message cancellation](images/globus_lts_cancele_name_error_001.png)
 
-Uploading a top-level folder that does not follow the bucket naming rules will cause an error similar to the one encountered when creating a bucket with an invalid bucket name.
-
-When uploading a folder with a name similar to a bucket in your LTS, Globus will sync and save all sub-folders and files into that bucket. Note that sub-folders are not required to follow bucket naming rules. However, if you attempt to upload a folder with a name that matches an existing bucket in someone else's space, you will encounter a `permission denied error`, as shown below.
+Uploading a top-level folder that does not follow the bucket naming rules will cause an error similar to the one encountered when creating a bucket with an invalid name. When uploading a folder with a name similar to a bucket in your LTS, Globus will sync and save all sub-folders and files into that bucket. Sub-folders are not required to follow bucket naming rules. However, if you attempt to upload a folder with a name that matches an existing bucket in someone else's space, you will encounter a `permission denied error`, as shown below.
 
 ![!large error message in small space](images/globus_lts_upload_error_001.png)
+
+Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata.
 
 ## Using Bookmarks
 
