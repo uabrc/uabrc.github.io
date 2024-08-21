@@ -181,8 +181,7 @@ Error (transfer)
 Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
 Server: m-a201b5.9ad93.a567.data.globus.org:443
 Command: STOR /test.log
-Message: The connection to the server was broken
----
+Message: The connection to the server was broken ---
 Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
 ```
 
