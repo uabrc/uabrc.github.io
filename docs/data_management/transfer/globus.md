@@ -96,6 +96,10 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
     File permissions from the source will not be copied to the destination. Please read more at [this ask.ci FAQ](https://ask.cyberinfrastructure.org/t/why-cant-other-users-access-data-i-transferred-to-a-project-space-on-cheaha/2527/3).
 <!-- markdownlint-enable MD046 -->
 
+## How to Share Collections in Globus
+
+Sharing a collection in Globus is essential for facilitating collaboration across several entities and/or institutions, an important feature for research and researchers. Globus enables efficient data distribution, and provides access control. With Globus, shared collections help to archive and share research data, ensuring that collaborators have real-time access to the latest information while maintaining control over permissions and security.
+
 ### Transfer and Sync Options
 
 Between the two "Start" buttons on the "File Manager" page is a "Transfer & Timer Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options under "Transfer Settings" are...
