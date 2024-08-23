@@ -3308,7 +3308,7 @@
 <a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>--yes<span class="w"> </span>clean<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
 </code></pre></div>
-<p>This is the specification file. It provides Docker with the software information, and versions, it needs to build our new container. See the Docker Container documentation for more information <a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a>.</p>
+<p>This is the specification file. It provides Docker with the software information, and versions, it needs to build our new container. See the Docker Container documentation for more information <a href="https://docs.docker.com/reference/dockerfile/">https://docs.docker.com/reference/dockerfile/</a>.</p>
 <p>In the Dockerfile, we start with an existing container <code>continuumio/miniconda3:4.12.0</code>. This container is obtained from Dockerhub; here, <code>continuumio</code> is the producer, and the repo name is <code>continuumio/miniconda3</code>.</p>
 <p><a class="glightbox" href="../images/containers_dockerhub_miniconda.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Containers dockerhub miniconda." src="../images/containers_dockerhub_miniconda.png" /></a></p>
 <p>You may specify the required version from the <code>Tag</code> list. Here the tag/version is <code>4.12.0</code>. Also its a very good practice to specify the version of packages for numpy, scipy, and matplotlib for better reproducibility.</p>
@@ -3364,7 +3364,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>python<span class="w"> </span>python_test.py
 </code></pre></div>
 <p><a class="glightbox" href="../images/containers_python_script_execution.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Containers python script execution." src="../images/containers_python_script_execution.png" /></a></p>
-<p>More lessons on Docker can be found in this link: <a href="https://christinalk.github.io/docker-introduction/">Introduction to Docker</a> and <a href="https://docs.docker.com/engine/reference/builder/">Docker Documentation</a>.</p>
+<p>More lessons on Docker can be found in this link: <a href="https://christinalk.github.io/docker-introduction/">Introduction to Docker</a> and <a href="https://docs.docker.com/reference/dockerfile/">Docker Documentation</a>.</p>
 <h2 id="sharing-containers-using-uab-gitlab-container-registry">Sharing Containers Using UAB GitLab Container Registry<a class="headerlink" href="#sharing-containers-using-uab-gitlab-container-registry" title="Permanent link">&para;</a></h2>
 <p>If you prefer to share your container with a particular team/group, then the UAB GitLab container registry is the best and most secure option.</p>
 <p>The following steps help you to create a container registry in UAB GitLab:</p>
@@ -3411,7 +3411,7 @@
 <p><a class="glightbox" href="../images/containers_gitlab_login_success.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Containers gitlab login success." src="../images/containers_gitlab_login_success.png" /></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Running <code>docker login</code> leads to a warning message that your password is stored unencrypted in <code>/root/.docker/config.json</code> (or) <code>$HOME/.docker/config.json</code>. To ignore this warning, follow the instructions in this <a href="https://leimao.github.io/blog/Docker-Login-Encrypted-Credentials/">Github page</a> or the <a href="https://docs.docker.com/engine/reference/commandline/login/#credentials-store">Docker credentials store page</a>.</p>
+<p>Running <code>docker login</code> leads to a warning message that your password is stored unencrypted in <code>/root/.docker/config.json</code> (or) <code>$HOME/.docker/config.json</code>. To ignore this warning, follow the instructions in this <a href="https://leimao.github.io/blog/Docker-Login-Encrypted-Credentials/">Github page</a> or the <a href="https://docs.docker.com/reference/cli/docker/login/#credentials-store">Docker credentials store page</a>.</p>
 </div>
 <h3 id="push-alpine-container-from-your-system-to-uab-gitlab-container-registry">Push Alpine Container from your System to UAB GitLab Container Registry<a class="headerlink" href="#push-alpine-container-from-your-system-to-uab-gitlab-container-registry" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3471,7 +3471,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2024</span>
   </span>
 
     
