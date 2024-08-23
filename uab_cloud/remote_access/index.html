@@ -3389,7 +3389,7 @@
 <h3 id="install-an-ssh-client-windows">Install an SSH Client (Windows)<a class="headerlink" href="#install-an-ssh-client-windows" title="Permanent link">&para;</a></h3>
 <p>There are several options for installing an SSH client on Windows, described below. It is highly recommended to install Windows Subsystem for Linux (WSL) as it provides a complete Linux environment within Windows.</p>
 <h4 id="windows-subsystem-for-linux-wsl">Windows Subsystem For Linux (WSL)<a class="headerlink" href="#windows-subsystem-for-linux-wsl" title="Permanent link">&para;</a></h4>
-<p>Follow the instructions starting <a href="https://docs.microsoft.com/en-us/windows/wsl/about">here</a> to install Windows Subsystem for Linux.</p>
+<p>Follow the instructions starting <a href="https://learn.microsoft.com/en-us/windows/wsl/about">here</a> to install Windows Subsystem for Linux.</p>
 <p>WSL shells do not automatically start or share the <code>ssh-agent</code>. To fix this we recommend installing <code>keychain</code> to automatically manage the <code>ssh-agent</code>. Run the following command depending on your Linux distribution.</p>
 <ul>
 <li>DEB-based (Debian, Ubuntu): <code>sudo apt install keychain</code></li>
@@ -3407,7 +3407,7 @@
 <!-- markdownlint-enable MD046 -->
 
 <h4 id="openssh-for-windows">OpenSSH for Windows<a class="headerlink" href="#openssh-for-windows" title="Permanent link">&para;</a></h4>
-<p>Follow the instructions <a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">here</a> to install the OpenSSH client. Only install the OpenSSH server if you need it, otherwise skip that part.</p>
+<p>Follow the instructions <a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">here</a> to install the OpenSSH client. The client software is all that is needed to connect with instances from your Windows PC. Only install the OpenSSH server if you are sure you need it (this is very uncommon). The instructions at the link should work for Windows 10 and Windows 11.</p>
 <p>Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent service on your local machine to streamline adding and using keys.</p>
 <ul>
 <li>Open the Start Menu and search for "Services", and open the result shown in the image.
@@ -3451,7 +3451,7 @@
 <!-- markdownlint-disable MD046 -->
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Git Bash can also be used with <a href="#terminal-multiplexers">Windows Terminal</a> using this stackoverflow answer: <a href="https://stackoverflow.com/a/57369284">https://stackoverflow.com/a/57369284</a>.</p>
+<p>Git Bash can also be used with <a href="#terminal-multiplexers">Windows Terminal</a> using this stackoverflow answer: <a href="https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal/57369284">https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal/57369284</a>.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
 
@@ -3490,7 +3490,7 @@
 <!-- markdownlint-disable MD046 -->
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
-<p>For Linux users and <a href="https://docs.microsoft.com/en-us/windows/wsl/about">WSL</a> on Windows users. If you experience a <code>Warning: Unprotected Private Key File</code> error when using <code>ssh-add</code>, your <code>ssh</code> file and directory permissions may be incorrect. To fix, please use the following commands.</p>
+<p>For Linux users and <a href="https://learn.microsoft.com/en-us/windows/wsl/about">WSL</a> on Windows users. If you experience a <code>Warning: Unprotected Private Key File</code> error when using <code>ssh-add</code>, your <code>ssh</code> file and directory permissions may be incorrect. To fix, please use the following commands.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/&lt;private_key_file&gt;
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>~/.ssh/known_hosts<span class="w">  </span><span class="c1"># if you have ever connected to a remote machine</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>~/.ssh/config<span class="w">  </span><span class="c1"># if you have a config file</span>
@@ -3681,7 +3681,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2024</span>
   </span>
 
     
