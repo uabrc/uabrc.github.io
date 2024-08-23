@@ -34,7 +34,7 @@ For additional information please see [Support](./help/support.md).
 
 RCS is developed and supported by UAB IT's Research Computing Group. We are developing a core set of applications to help you to easily incorporate our services into your research processes and this documentation collection to help you leverage the resources already available. We follow the best practices of the Open Source community and develop our software in an open-source fashion.
 
-RCS is an out growth of the UABgrid pilot, launched in September 2007 which has focused on demonstrating the utility of unlimited analysis, storage, and application for research. RCS is built on the same technology foundations used by major cloud vendors and decades of distributed systems computing research, technology that powered the last ten years of large scale systems serving prominent national and international initiatives like the [Open Science Grid](https://opensciencegrid.org/), [XSEDE](https://www.xsede.org/), the [LHC Computing Grid](https://wlcg.web.cern.ch/), and [NCIP](https://datascience.cancer.gov/).
+RCS is an out growth of the UABgrid pilot, launched in September 2007 which has focused on demonstrating the utility of unlimited analysis, storage, and application for research. RCS is built on the same technology foundations used by major cloud vendors and decades of distributed systems computing research, technology that powered the last ten years of large scale systems serving prominent national and international initiatives like the [Open Science Grid](https://osg-htc.org/), [XSEDE](https://www.xsede.org/), the [LHC Computing Grid](https://wlcg.web.cern.ch/), and [NCIP](https://datascience.cancer.gov/).
 
 ## Outreach
 
