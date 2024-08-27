@@ -317,8 +317,8 @@ Cheaha is HIPAA compliant and can accept Protected Health Information (PHI) data
 For UAB policies surrounding PHI data, please see the following URLs.
 
 - [Data Classification](https://www.uab.edu/it/home/policies/data-classification/classification-overview)
-- [Data Protection and Security Policy](https://secure2.compliancebridge.com/uab/portal/getdoc.php?file=302)
-- [Data Access Policy](https://secure2.compliancebridge.com/uab/portal/getdoc.php?file=301)
+- [Data Protection and Security Policy](https://secure4.compliancebridge.com/uab/portal/getdoc.php?file=302)
+- [Data Access Policy](https://secure4.compliancebridge.com/uab/portal/getdoc.php?file=301)
 - [HIPAA Data Policy](https://www.uab.edu/it/home/policies/compliance/hipaa)
 
 <!-- markdownlint-disable MD046 -->
