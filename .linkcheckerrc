@@ -85,7 +85,7 @@ fileoutput=csv
 
 # CSV logger
 [csv]
-#filename=linkchecker-out.csv
+filename=out/linkchecker-out.csv
 separator=,
 #quotechar="
 #dialect=excel
