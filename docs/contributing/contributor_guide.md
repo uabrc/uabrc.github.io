@@ -264,6 +264,8 @@ We are using [linkchecker](https://github.com/linkchecker/linkchecker) to valida
 1. Run `python scripts/linkchecker.py`
 1. Review `out/linkchecker-out.csv` (feel free to ignore `out/linkchecker.log` unless you want verbose details)
 
+The `urlname` column contains the URL as it is written in the documentation. The `url` column contains the resulting URL after all forwarding is complete.
+
 #### Linting Known Issues
 
 There are known issues with the markdown linter and some of our non-standard plugins, especially admonitions (specifically a conflict involving fenced vs indented code blocks). To fix these cases please use one of the following methods. The `$MD_LINTER_CODE` can be found by hovering over the yellow squiggles in VSCode to bring up the warning lens.
