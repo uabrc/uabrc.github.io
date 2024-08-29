@@ -15,6 +15,7 @@ Benefits of `conda`:
 - Repeatability: environments can be rebuilt using those same YAML files. Libraries are pre-built and stored on remote servers for download instead of being built on your local machine or on Cheaha, so two computers with the same operating system, requesting the same package version, will end up using the same executable.
 - Simplicity: dependency matrices are computed and solved by `conda`, and
 - Ubiquity: nearly all Python developers are aware of the usage of `conda`, especially in scientific research, so there are many resources available for learning how to use it, and what to do if something goes wrong.
+- Open-source: Does not include any proprietary packages, adhering strictly to open-source principles.
 
 `conda` can also install `pip` and record which `pip` packages are installed, so `conda` can do everything Pip can, and more.
 
@@ -26,11 +27,11 @@ Benefits of `conda`:
 
 ## Important Terms
 
-- **`conda`**: Refers to the executable software program that researchers interact with to create and manage environements and install packages.
+- **`conda`**: Refers to the executable software program that researchers interact with to create and manage environments and install packages.
 - **Conda**: Refers to a software distribution containing `conda` and related software and features.
-- **package**: Reearch-related software installed and managed by `conda`, held in environments. Packages are selected from channels and downloaded from remote data servers.
+- **package**: Research-related software installed and managed by `conda`, held in environments. Packages are selected from channels and downloaded from remote data servers.
 - **environment**: A collection of packages that `conda` can manage. Users can switch between environments to allow for development of multiple projects that have different requirements.
-- **YAML file**: A structured, human-friendly file definining a single environment. Sharing the file with others allows for replication of an environment. These files enhance collaboration when added to your project's [version control](../workflow_solutions/git.md), especially when shared on [GitHub or GitLab](../workflow_solutions/git_collaboration.md). YAML stands for [Yet Another Markup Language](https://yaml.org/).
+- **YAML file**: A structured, human-friendly file defining a single environment. Sharing the file with others allows for replication of an environment. These files enhance collaboration when added to your project's [version control](../workflow_solutions/git.md), especially when shared on [GitHub or GitLab](../workflow_solutions/git_collaboration.md). YAML stands for [Yet Another Markup Language](https://yaml.org/).
 - **channel**: A listing of packages available for download.
     - The `anaconda` and `r` channels are subject to the Anaconda Terms of Service and may not be used for UAB business.
     - The `conda-forge` and `bioconda` channels are free to use.
@@ -143,7 +144,7 @@ pip install -r packages.txt   # multiple packages from a list in a text file
     The `anaconda` and `r` channels are subject to the Anaconda Terms of Service and may not be used for UAB business. The `conda-forge` and `bioconda` channels are free to use.
 <!-- markdownlint-enable MD046 -->
 
-To find packages available on `conda` channels, use a search engine like Google. Start by searching for `PACKAGE conda-forge`. Replace `PACKAGE` with the name of the package. You might also try `bioconda` instead of `conda-forge`. If the package has a name shared with non-software products or ideas, you may need to add `software` or `research`, or both, to the end of your search string. You can also search on <https://anaconda.org>, but be sure the package you find is not from a channel subject to the Anaconda Terms of Service.
+To find packages available on `conda` channels, use a search engine like Google. Start by searching for `PACKAGE conda-forge`. Replace `PACKAGE` with the name of the package. You might also try `bioconda` instead of `conda-forge`. If the package has a name shared with non-software products or ideas, you may need to add `software` or `research`, or both, to the end of your search string. You can also search on <https://anaconda.org>, but be sure the package you find is not from a channel (anaconda, default, or r channels) subject to the Anaconda Terms of Service.
 
 For packages in PyPI, repeat the process above but use `pypi` in place of `conda-forge` in the search string, or search directly on <https://pypi.org/>.
 
@@ -238,12 +239,12 @@ An environment with only `python 3.10.4`, `numpy 1.21.5` and `jinja2 2.11.2` ins
 There are other portability issues:
 
 - The `prefix: C:\...` line is not used by `conda` in any way and is deprecated. It also shares system information about file locations which is potentially sensitive information.
-- The `channels:` group uses `- defaults`, which may vary depending on how you or your collaborator has customized their `conda` installation. It may result in packages not being found, resulting in environment creation failure.
+- The `channels:` ensure your channels include the correct locations for where your packages can be found, this may vary depending on how you or your collaborator has customized their `conda` installation. It may result in packages not being found, resulting in environment creation failure.
 
 ```yaml
 name: test-env
 channels:
-  - defaults
+  - conda-forge
 dependencies:
   - blas=1.0=mkl
   - bzip2=1.0.8=he774522_0
@@ -281,7 +282,7 @@ To make this a more portable file, suitable for collaboration, some planning is 
 ```yaml
 name: test-env
 channels:
-  - anaconda
+  - conda-forge
 dependencies:
   - jinja2=2.11.2
   - numpy=1.21.5
@@ -295,7 +296,7 @@ For example, the package `markupsafe` made a not-backward-compatible change (a b
 ```yaml
 name: test-env
 channels:
-  - anaconda
+  - conda-forge
 dependencies:
   - jinja2=2.11.2
   - markupsafe=2.0.1
@@ -321,21 +322,29 @@ Finding `conda` software packages involves searching through the available chann
 
 If we find the package at one of the channel sources mentioned above, we can check the Platform version to ensure it is either "noarch" (if available) or linux. After noting the version, we can click the "source" or "repo" link (if available) or "homepage". Then we try to find the latest version. For a package found on GitHub, click "Releases" on the right-hand side. Verify that the latest Release is the same as, or very close to, the version on the `conda-forge` channel or PyPI. If so, the package is being maintained on `conda-forge` or PyPI and suitable for use. Note the exact software name, version, and channel (if not on PyPI). We prefer searching using the following methods, and usually have the most success in the order listed below.
 
-- Using Google: You may already be familiar with the exact `conda` package name you require. In the event this is not the case, a simple web engine search with key words usually finds the package. For example, a web search for a `conda` package would be something along the lines of "conda package for `Generic Topic Name`". Your search results, should return popular package names related to the topic you have searched for. In the sections below, there is an attempt to provide a detailed step-by-step guide on how to find Anaconda packages using "numpy" as an example.
+- Using Google: You may already be familiar with the exact `conda` package name you require. In the event this is not the case, a simple web engine search with key words usually finds the package. For example, a web search for a `conda` package would be something along the lines of "conda package for `Generic Topic Name`". Your search results, should return popular package names related to the topic you have searched for. In the sections below, there is an attempt to provide a detailed step-by-step guide on how to find Conda packages using "numpy" as an example.
 
-- Anaconda Cloud: Anaconda Cloud is the primary source for finding Anaconda packages. You can visit [Anaconda Cloud](https://anaconda.org/) and use the search bar to find the package you need. For example, when you get the package name from your web search (using numpy). You will enter name of the package in the search bar as shown below.
+- Conda-Forge: The conda-forge channel is the primary source for finding Conda packages while using Miniforge. You can visit [Conda-forge](https://conda-forge.org/packages/) and use the search bar to find the package you need. For example, when you get the package name from your web search (using numpy). You will enter name of the package in the search bar as shown below. But please take note to look for packages that show that package is available via the conda-forge channel.
 
-![!Landing page of anaconda.org showing search](images/anaconda_search.png)
+![!Landing page of conda-forge.org showing search](images/conda-forge_search.png)
 
-Review results of your search, it is advised to use "Artifacts" that are compatible with the platform you are working with, as well as have the most "Favorites" and "Downloads" numbers. Click on the portion that contains the name of the package (highlighted 3 in the image below). 1 highlights the Artifact, Favorite and Downloads numbers, the selection 2 highlights the channel where this package is stored.
+You may also search on the [Anaconda](https://anaconda.org) page. However, ensure you always use the package with the `conda-forge` Artifact. Enter the package name, then review results of your search, it is advised to use “Artifacts” that are compatible with the platform you are working with, as well as a package that has the most “Favorites” and “Downloads” numbers. Click on the portion that contains the name of the package (highlighted 3 in the image below). 1 highlights the Artifact, Favorite and Downloads numbers, the selection 2 highlights the Channel where this package is stored.
+
+Review results of your search, it is advised to use "Artifacts" that are compatible with the platform you are working with, as well as have the most "Favorites" and "Downloads" numbers. Click on the portion that contains the name of the package (highlighted 3 in the image below). 1 highlights the Artifact, Favorite and Downloads numbers, the selection 2 highlights the Channel where this package is stored. Always take note of this, as only packages installed from the conda-forge or bioconda channel are open-source and devoid of any usage restrictions.
 
 ![!Anaconda.org page showing download statistics](images/anaconda_channel_package.png)
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    The `anaconda` and `r` channels are subject to the Anaconda Terms of Service and may not be used for UAB business. The `conda-forge` and `bioconda` channels are free to use.
+<!-- markdownlint-enable MD046 -->
 
 Follow the installation instructions you see in the image below.
 
 ![!Anaconda.org page showing package installation instructions](images/install_anaconda_package.png)
 
-- Using the `conda` Search Command: You can use the `conda search <package_name>` command directly in your terminal to find packages. Replace `<package_name>` with the package you would like to search for. To do this on Cheaha, make sure to `module load Anaconda3` first, and follow the instructions to [activate](#activate-an-environment) an environment. Then do `conda search numpy`. You should get a long list of numpy packages. Review this output, but take note of the highlighted portions in the image. The section with a red selection shows the numpy versions that are available, The section with a blue selection shows the channel where each numpy version is stored.
+- Using the `conda` Search Command: You can use the `conda search <package_name>` command directly in your terminal to find packages. Replace `<package_name>` with the package you would like to search for. To do this on Cheaha, make sure to `module load Miniforge3` first, and follow the instructions to [activate](#activate-an-environment) an environment. Then do `conda search numpy`. You should get a long list of numpy packages. Review this output, but take note of the highlighted portions in the image. The section with a red selection shows the numpy versions that are available, The section with a blue selection shows the channel where each numpy version is stored. Ensure you pick the stable versions that are associated with either `conda-forge` or `bioconda`.
 
 ![!Search output from using conda search in Terminal](images/channel_conda_search.png)
 
@@ -344,16 +353,19 @@ You can then install numpy with a specific version and from a specific channel w
 ```bash
     conda install -c conda-forge numpy=2.0.0rc2
 ```
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    The `anaconda` and `r` channels are subject to the Anaconda Terms of Service and may not be used for UAB business. The `conda-forge` and `bioconda` channels are free to use.
+<!-- markdownlint-enable MD046 -->
 
 - Using Specific channels: You can also get packages using specific `conda` channels listed below.
-
-    - Anaconda Main channel: The default channel provided by Anaconda, Inc. Visit [Anaconda](https://anaconda.org)
 
     - Conda-Forge: A community-driven channel with a wide variety of packages.Visit [Conda-Forge](https://conda-forge.org/)
 
     - Bioconda: A channel specifically for bioinformatics packages. Visit [Bioconda](https://bioconda.github.io/)
 
-You can specify a channel in your search, and it will show you a list of the packages available in that channel using `conda search -c <channel_name> <package_name>`, remember to replace <channel_name> and <package_name> with the channel and package names you are searching for respectively.
+You should specify a channel in your search, and it will show you a list of the packages available in that channel, using `conda search -c <channel_name> <package_name>`, remember to replace <channel_name> and <package_name> with the channel and package names you are searching for respectively. An example would be.
 
 ```bash
     conda search -c conda-forge numpy
@@ -368,7 +380,7 @@ If we don't find a package using Google, or the `conda-forge` and PyPI pages are
 1. github "name".
 1. gitlab "name".
 
-Remember to replace name with name of Anaconda package.
+Remember to replace name with name of `conda` package.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -381,7 +393,7 @@ When we have a complete list of `conda` packages and channels, then we can creat
 ```yaml
 name: test-env
 dependencies:
-  - anaconda::matplotlib=3.8.4  # Pinned version from anaconda channel
+  - bioconda::methbat=0.13.2  # Pinned version from bioconda channel
   - conda-forge::python=3.10.4  # Pinned version from conda-forge channel
   - pip
   - pip:
@@ -396,7 +408,7 @@ The above configuration is only for illustration purposes, to show how channels 
 
 ##### Key Things To Remember
 
-1. Exploring Package Documentation: For each package, check the documentation to understand its features, version history, and compatibility. Documentation can often be found on the Anaconda Cloud package page under the "Documentation" or "Homepage" link shared above in this tutorial.
+1. Exploring Package Documentation: For each package, check the documentation to understand its features, version history, and compatibility.
 
 1. Regularly consider updating your environment file to manage dependencies and maintain compatible software environments. Also newer software tends to resolve older bugs, consequently improving the state of science.
 

@@ -159,33 +159,37 @@ plt.show()
 plt.savefig('testing.png')
 ```
 
-### Create a Dockerfile that has Miniconda Installed
+### Create a Dockerfile that has Miniforge Installed
 
-We require numpy, scipy, and matplotlib libraries to execute the above Python script. Following are the steps to create a specification file and build a container image.
+We require numpy, scipy, and matplotlib libraries to execute the above Python script. The following are steps to create a specification file and build a container image.
 
-1. Create an empty directory `miniconda`.
+1. Create an empty directory `miniforge`.
 
     ```bash
-    mkdir miniconda
+    mkdir miniforge
     ```
 
-1. Create a `Dockerfile` within the `miniconda` directory with the following contents. The file name `Dockerfile` is case-sensitive.
-
-    ![!Containers create dockerfile.](./images/containers_create_dockerfile.png)
+1. Create a `Dockerfile` within the `miniforge` directory with the following contents. The file name `Dockerfile` is case-sensitive.
 
     ```bash
-    # You may start with a base image
-    # Always use a specific tag like "4.10.3", never "latest"!
-    # The version referenced by "latest" can change, so the build will be
-    # more stable when building from a specific version tag.
-    FROM continuumio/miniconda3:4.12.0
+    nano Dockerfile
+    ```
 
-    # Use RUN to execute commands inside the miniconda image
+    ![!Containers create dockerfile.](./images/containers_create_dockerfileMF.png)
+
+    ```bash
+     # You may start with a base image
+     # Always use a specific tag like "24.3.0-0", never "latest"!
+     # The version referenced by "latest" can change, so the build will be
+     # more stable when building from a specific version tag.
+    FROM condaforge/miniforge-pypy3:24.3.0-0
+
+     # Use RUN to execute commands inside the miniforge image
     RUN conda install -y numpy">=1.16.5, <1.23.0"
 
-    # RUN multiple commands together
-    # Last two lines are cleaning out the local repository and removing the state
-    # information for installed package
+     # RUN multiple commands together
+     # Last two lines are cleaning out the local repository and removing the state
+     # information for installed package
     RUN apt-get update \
     && conda install -y scipy=1.7.3 \
     && conda install -y matplotlib=3.5.1 \
@@ -193,42 +197,42 @@ We require numpy, scipy, and matplotlib libraries to execute the above Python sc
     && rm -rf /var/lib/apt/lists/*
     ```
 
-    This is the specification file. It provides Docker with the software information, and versions, it needs to build our new container. See the Docker Container documentation for more information <https://docs.docker.com/engine/reference/builder/>.
+    This is the specification file. It provides Docker with the software information, and versions, it needs to build our new container. In this case we found the installation via a github page for the software container we want. See the Docker Container documentation for more information <https://docs.docker.com/engine/reference/builder/>.
 
-    In the Dockerfile, we start with an existing container `continuumio/miniconda3:4.12.0`. This container is obtained from Dockerhub; here, `continuumio` is the producer, and the repo name is `continuumio/miniconda3`.
+    In this Dockerfile, we start with an existing container `condaforge/miniforge-pypy3`. This container is obtained from Dockerhub; here, `condaforge` is the producer, and the repo name is `condaforge/miniforge-pypy3`.
 
-    ![!Containers dockerhub miniconda.](./images/containers_dockerhub_miniconda.png)
+    ![!Container Tag and Producer.](./images/containers_produce_tag.png)
 
-    You may specify the required version from the `Tag` list. Here the tag/version is `4.12.0`. Also its a very good practice to specify the version of packages for numpy, scipy, and matplotlib for better reproducibility.
+    You may specify the required version from the `Tag` list for a software container, you will want to use the format. Here the tag/version is `24.3.0-0`. Also its a very good practice to specify the version of packages for numpy, scipy, and matplotlib for better reproducibility.
 
-    !!! note "Containers and Reproducibiliy"
+    !!! note "Containers and Reproducibility"
         Always include version numbers for `conda`, package managers, software you are installing, and the dependencies for those software. Containers are not inherently scientifically reproducible, but they can be made reproducible for years if you include versions for as much software in the container as possible.
 
-1. To build your container, change the directory to `miniconda` and use the below syntax to build the `Dockerfile`. Here we use `.` to say "current directory." This will only work if you are in the directory with the `Dockerfile`.
+1. To build your container, make sure you are in the same folder as your `Dockerfile` otherwise change the directory to `miniforge` and use the below syntax to build the `Dockerfile`. Here we use `.` to say "current directory." This will only work if you are in the directory with the `Dockerfile`.
 
     ```bash
     sudo docker build -t repository_name:tag .
     ```
 
-    Here the repository_name is `py3-miniconda` and the tag is `2022-08`.
+    Here the repository_name can be `miniforge` and the tag is `24.8`. This are user defined, so whatever you decide to use is fine, just make sure it helps you remember what image you created.
 
     ```bash
-    cd miniconda
-    sudo docker build -t py3-miniconda:2022-08 .
+    cd miniforge
+    sudo docker build -t miniforge:24.8 .
     ```
 
-    ![!Containers build docker.](./images/containers_build_docker.png)
+    ![!Containers build docker.](./images/containers_build_dockerMF.png)
 
 !!! note
-    The `.` at the end of the command! This indicates that we're using the current directory as our build environment, including the Dockerfile inside. Also, you may rename the `repository_name` and `tag` as you prefer.
+    The `.` at the end of the command! indicates that we're using the current directory as our build environment, as well as the Dockerfile inside. You may rename the `repository_name` and `tag` as you prefer.
 
 ```bash
 sudo docker images
 ```
 
-![!Containers miniconda docker image.](./images/containers_miniconda_docker_image.png)
+![!Containers miniforge docker image.](./images/containers_miniforge_docker_imageMF.png)
 
-### Running the Built Miniconda Docker Container Interactively
+### Running the Built Miniforge Docker Container Interactively
 
 To run docker interactively and execute commands inside the container, use the below syntax. Here `run` executes the command in a new container, and `-it` starts an interactive shell inside the container. After executing this command, the command prompt will change and move into the bash shell.
 
@@ -236,24 +240,24 @@ To run docker interactively and execute commands inside the container, use the b
 sudo docker run -it repository_name:tag /bin/bash
 ```
 
-To execute your container `py3-miniconda` interactively, run this command with the tag `2022-08'.
+To execute your container `miniforge` interactively, run this command with the tag `24.8`.
 
 ```bash
-sudo docker run -it py3-miniconda:2022-08 /bin/bash
+sudo docker run -it miniforge:24.8 /bin/bash
 cd /opt/conda/bin/
 ```
 
 The `python` executables to execute our synthetic python script are within the directory structure `/opt/conda/bin`.
 
-![!Docker interactive.](./images/containers_docker_interactive.png)
+![!Docker interactive.](./images/containers_docker_interactiveMF.png)
 
-![!Python executable.](./images/containers_python_executable.png)
+![!Python executable.](./images/containers_python_executableMF.png)
 
 ### Mounting Data Onto a Container
 
-Before we mount data onto a container, remember you initially created the python script `python_test.py` when creating your own container. Move `python_test.py` within `miniconda` directory. Now you have your `miniconda/python_test.py` outside the container. To access the files outside the container you should mount the file path along with the `docker run` command.
+Before we mount data onto a container, remember you initially created the python script `python_test.py` when creating your own container. Move `python_test.py` into the `miniforge` directory. Now you have your `miniforge/python_test.py` outside the container. To access the files outside the container you should mount the file path along with the `docker run` command.
 
-![!Containers python script.](./images/containers_python_script.png)
+![!Containers python script.](./images/containers_python_scriptMF.png)
 
 To mount a host directory into your docker container, use the `-v` flag.
 
@@ -264,18 +268,18 @@ sudo docker run -v /host/directory/:/container/directory  -other-options
 So the command for our example will be,
 
 ```bash
-sudo docker run -v /home/ubuntu/:/home  -it py3-miniconda:2022-08 /bin/sh
+sudo docker run -v /home/ubuntu/:/home  -it miniforge:24.8 /bin/sh
 ```
 
 Here we are mounting the $HOME directory `/home/ubuntu` from a host into containers' $HOME directory. Note that you may mount a particular directory according to your preference. The following shows the list of files in containers' $HOME directory with and without mounting.
 
 Before mounting, there are no files found within the $HOME directory.
 
-![!Containers before mounting.](./images/containers_before_mounting.png)
+![!Containers before mounting.](./images/containers_before_mountingMF.png)
 
-After mounting using `-v` flag, files show up within the $HOME directory. The highlighted `miniconda` is our working directory with python script.
+After mounting using `-v` flag, files show up within the $HOME directory. The highlighted `miniforge` is our working directory with python script.
 
-![!Containers after mounting.](./images/containers_after_mounting.png)
+![!Containers after mounting.](./images/containers_after_mountingMF.png)
 
 We can now execute the script, python_test.py using this command.
 
@@ -283,7 +287,7 @@ We can now execute the script, python_test.py using this command.
 python python_test.py
 ```
 
-![!Containers python script execution.](./images/containers_python_script_execution.png)
+![!Containers python script execution.](./images/containers_python_script_executionMF.png)
 
 More lessons on Docker can be found in this link: [Introduction to Docker](https://christinalk.github.io/docker-introduction/) and [Docker Documentation](https://docs.docker.com/engine/reference/builder/).
 

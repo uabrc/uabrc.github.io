@@ -32,7 +32,7 @@ The instructions below, provide a recommended step by step guide to creating and
 
 ## Installing PyTorch Using the Terminal
 
-There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilising only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;
+There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilizing only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;
 
 1. [Create](../../workflow_solutions/using_conda.md#create-an-environment) and [activate](../../workflow_solutions/using_conda.md#activate-an-environment) an environment as stated in these links.
 

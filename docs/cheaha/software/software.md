@@ -70,7 +70,7 @@ Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-p
 
 For the above case, resolving errors involve deleting the `~/.local` directory.
 
-Here's an example of the correct procedure for installing `pip` packages within a `conda`:
+Here's an example of the correct procedure for installing `pip` packages within a `conda` environment:
 
 1. Load the `Miniforge` module using `module load Miniforge3`.
 1. Create or activate the desired `conda` environment. Please refer to the [`conda` documentation](../../workflow_solutions/using_conda.md#create-an-environment)

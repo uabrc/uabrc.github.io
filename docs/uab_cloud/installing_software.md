@@ -139,7 +139,7 @@ Below are a few examples of installing certain common softwares that may be usef
 
 #### Installing `conda` via Miniforge
 
-Miniforge is a free and open-source (FOSS) version of Anaconda. If you are a UAB employee, do not use Anaconda or Miniconda. See our [Conda Migration FAQ](../workflow_solutions/conda_migration_faq.md) to understand why.
+Miniforge is a free and open-source (FOSS) version same as Anaconda or Miniconda. If you are a UAB employee, do not use Anaconda or Miniconda due to recent changes. See our [Conda Migration FAQ](../workflow_solutions/conda_migration_faq.md) to understand why.
 
 For more information on how to use `conda` see the [Using `conda` page](../workflow_solutions/using_conda.md#using-conda). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using `conda` in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
 

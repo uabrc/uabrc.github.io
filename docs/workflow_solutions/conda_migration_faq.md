@@ -4,7 +4,7 @@
 
 In April, 2020, Anaconda changed from a free-for-everyone licensing model to a free-for-some licensing model. At that time, Anaconda was free to use by individuals for personal use, non-profit organizations of any size (including UAB), and for-profit organizations up to 200 employees.
 
-In March, 2024, Anaconda further restricted its licensing model. Anaconda is now free to use only for individuals for personal use, organizations up to 200 employees, and non-profit educational organizations when used by instructos and students in a curriculum-based course.
+In March, 2024, Anaconda further restricted its licensing model. Anaconda is now free to use only for individuals for personal use, organizations up to 200 employees, and non-profit educational organizations when used by instructors and students in a curriculum-based course.
 
 Use of Anaconda by UAB employees for research purposes violates the Anaconda Terms of Service.
 
@@ -18,7 +18,7 @@ Using the `conda` executable does not violate the terms of service, provided it 
 
 ## What is changing on Cheaha?
 
-We have installed Minforge as a module. To use it, **run `module load Miniforge3`** wherever you would have used `module load Anaconda3`. At a future date, we plan to archive old `Anaconda3` modules and alias the most recent on to the `Miniforge3`. When that has been completed, `module load Anaconda3` will emit a warning and then load the `Miniforge3` module instead. There will be ample notice as we roll out this change.
+We have installed Minforge as a module. To use it, **run`module load Miniforge3`** wherever you would have used `module load Anaconda3`. At a future date, we plan to archive old `Anaconda3` modules and alias the most recent on to the `Miniforge3`. When that has been completed, `module load Anaconda3` will emit a warning and then load the `Miniforge3` module instead. There will be ample notice as we roll out this change.
 
 ## Do I need to learn any new technologies?
 
@@ -37,6 +37,7 @@ To remedy this situation, you will need to transition from Anaconda to Miniforge
 - Stop using the `defaults`, `anaconda`, and `r` channels in `conda` commands.
     - Avoid `-c defaults`, `-c anaconda`, and `-c r` as part of `conda install` commands.
     - Avoid `conda install defaults::$package`, `... anaconda::$package`, and `... r::$package`.
+    - Instead use the `conda-forge` or `bioconda` channels in `conda install` commands to install packages.
 - If you encounter any errors building environments, please contact support.
 
 ## How can I migrate my existing environments?
@@ -59,7 +60,7 @@ If you encounter any errors please contact support.
 
 - Obtain a copy of the file from its original source.
 - Open the `$env_name.yml` file in a text editor
-- Using the text editor, remove the lines under `channels:` that read `- anaconda`, `- defaults`, and `- r`.
+- Using the text editor, remove the lines under `channels:` that read `- anaconda`, `- defaults`, and `- r`. You may include the `conda-forge` or `bioconda` channel names.
 - Save the file.
 - Install the environment with Miniforge using the command `conda env create --file $env_name.yml`.
 
@@ -72,12 +73,14 @@ If you encounter any errors please contact support.
 
 ## What do I do if I use Anaconda Navigator to build environments?
 
-At this time there does not appear to be a free-to-use alternative to Anaconda Navigator. You will need to use the terminal to create and manage environments. We have a tutorial and ample documentation covering this `<links>`. If you would like further assistance, please contact support.
+At this time there does not appear to be a free-to-use alternative to Anaconda Navigator. You will need to use the terminal to create and manage environments. We have a tutorial and ample documentation covering this [here](./using_conda.md#create-an-environment). If you would like further assistance, please contact support.
 
 ## What do all of the terms relating to `conda` mean?
 
 - **Anaconda** - An ambiguous term that may refer to the company, its package distribution channels, or its software distribution. Sometimes used to reference the package management software `conda`, though this is not correct.
 - **Anaconda Inc.** - The for-profit company that created the well-known ecosystem for scientific python packages. Website: <https://www.anaconda.com/>
 - **Anaconda Distribution** - The system owned and maintained by Anaconda Inc. that distributes software packages through the `conda` software.
+- **Anaconda Cloud** - Platform provided by Anaconda, Inc. that serves as a central repository and collaborative environment for data science projects.
 - **`anaconda` channel** - A channel for delivering packages owned and maintained by Anaconda Inc. that is subject to the Anaconda Terms of Service.
 - **`conda`** - The software used to manage environments and install packages from the Anaconda Distribution.
+- **Miniconda** - It is a minimal installer for `conda`, Miniconda is maintained by Anaconda, Inc.
