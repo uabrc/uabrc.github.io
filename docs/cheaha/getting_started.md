@@ -164,7 +164,7 @@ Slurm is our job queueing software used for submitting any number of job scripts
 
 A large variety of software is available on Cheaha as modules. To view and use these modules see [the following documentation](./software/modules.md).
 
-For new software installation, please try searching for [`conda` packages](../workflow_solutions/using_conda.md#good-practice-for-finding-software-packages-on-conda) first. If you still need help, please [send a support ticket](../help/support.md)
+For new software installation, please try searching for [`conda` packages](../cheaha/tutorial/conda_good_practice.md#step-by-step-guide-to-finding-conda-software-packages) first. If you still need help, please [send a support ticket](../help/support.md)
 
 ### Conda Packages
 
