@@ -289,7 +289,7 @@ python python_test.py
 
 ![!Containers python script execution.](./images/containers_python_script_executionMF.png)
 
-More lessons on Docker can be found in this link: [Introduction to Docker](https://christinalk.github.io/docker-introduction/) and [Docker Documentation](https://docs.docker.com/engine/reference/builder/).
+More lessons on Docker can be found in this link: [Introduction to Docker](https://christinalk.github.io/docker-introduction/) and [Docker Documentation](https://docs.docker.com/reference/dockerfile/).
 
 ## Sharing Containers Using UAB GitLab Container Registry
 
@@ -337,7 +337,7 @@ Once you create the token, copy the new personal access token since it’s a one
 ![!Containers gitlab login success.](./images/containers_gitlab_login_success.png)
 
 !!! warning
-    Running `docker login` leads to a warning message that your password is stored unencrypted in `/root/.docker/config.json` (or) `$HOME/.docker/config.json`. To ignore this warning, follow the instructions in this [Github page](https://leimao.github.io/blog/Docker-Login-Encrypted-Credentials/) or the [Docker credentials store page](https://docs.docker.com/engine/reference/commandline/login/#credentials-store).
+    Running `docker login` leads to a warning message that your password is stored unencrypted in `/root/.docker/config.json` (or) `$HOME/.docker/config.json`. To ignore this warning, follow the instructions in this [Github page](https://leimao.github.io/blog/Docker-Login-Encrypted-Credentials/) or the [Docker credentials store page](https://docs.docker.com/reference/cli/docker/login/#credentials-store).
 
 ### Push Alpine Container from your System to UAB GitLab Container Registry
 
