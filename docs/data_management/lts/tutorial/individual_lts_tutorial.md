@@ -15,7 +15,7 @@ You will also need an individual LTS account created by our team. If you believe
 
 ### Install s3cmd within Conda Environment on Cheaha
 
-To interact with LTS (Long-Term Storage) using [S3 (Simple Storage Service)](https://aws.amazon.com/s3/), you need the `s3cmd` tool installed. `s3cmd` is a command-line tool for managing files in cloud storage systems like S3. It's recommended to install it using `pip`, the standard package installer for Python, which allows you to install packages from the [Python Package Index (PyPI)](https://pypi.org/), within a [Conda environment](../../../workflow_solutions/using_anaconda.md/#create-an-environment) on Cheaha.
+To interact with LTS (Long-Term Storage) using [S3 (Simple Storage Service)](https://aws.amazon.com/s3/), you need the `s3cmd` tool installed.[`s3cmd`](https://s3tools.org/s3cmd) is a command-line tool for managing files in cloud storage systems like S3. It's recommended to install it using `pip`, the standard package installer for Python, which allows you to install packages from the [Python Package Index (PyPI)](https://pypi.org/), within a [Conda environment](../../../workflow_solutions/using_anaconda.md/#create-an-environment) on Cheaha.
 
 Please avoid using `conda install s3cmd`, as that version will not work as expected. Instead, follow the steps below to install `s3cmd` using `pip` within your Conda environment.
 
@@ -42,7 +42,7 @@ To install s3cmd on your local machine, please follow the instructions provided 
 
 Properly configuring `s3cmd` is important for working with LTS buckets and objects. The configuration process varies depending on whether you have a single LTS account or multiple accounts to manage. In this section, we will provide a step-by-step guide tailored specifically for the **Cheaha** system and a researcher with an **individual LTS account**.
 
-Open a terminal using one of the interactive apps on Cheaha. Activate your conda environment created in the [Install s3cmd using within Conda Environment](./individual_lts_tutorial.md#install-s3cmd-within-anaconda-environment-on-cheaha) section, and then run the below command:
+Open a terminal using one of the interactive apps on Cheaha. Activate your conda environment created in the [Install s3cmd using within Conda Environment](./individual_lts_tutorial.md/#install-s3cmd-within-conda-environment-on-cheaha) section, and then run the below command:
 
 ```bash
 s3cmd --configure
