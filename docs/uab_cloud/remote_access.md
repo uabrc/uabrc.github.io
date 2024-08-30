@@ -37,7 +37,7 @@ There are several options for installing an SSH client on Windows, described bel
 
 #### Windows Subsystem For Linux (WSL)
 
-Follow the instructions starting [here](https://docs.microsoft.com/en-us/windows/wsl/about) to install Windows Subsystem for Linux.
+Follow the instructions starting [here](https://learn.microsoft.com/en-us/windows/wsl/about) to install Windows Subsystem for Linux.
 
 WSL shells do not automatically start or share the `ssh-agent`. To fix this we recommend installing `keychain` to automatically manage the `ssh-agent`. Run the following command depending on your Linux distribution.
 
@@ -59,7 +59,7 @@ Then modify the `.*rc` file for your shell, generally `.bashrc` or `.zshrc`, to 
 
 #### OpenSSH for Windows
 
-Follow the instructions [here](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) to install the OpenSSH client. Only install the OpenSSH server if you need it, otherwise skip that part.
+Follow the instructions [here](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) to install the OpenSSH client. The client software is all that is needed to connect with instances from your Windows PC. Only install the OpenSSH server if you are sure you need it (this is very uncommon). The instructions at the link should work for Windows 10 and Windows 11.
 
 Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent service on your local machine to streamline adding and using keys.
 
@@ -108,7 +108,7 @@ fi
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    Git Bash can also be used with [Windows Terminal](#terminal-multiplexers) using this stackoverflow answer: <https://stackoverflow.com/a/57369284>.
+    Git Bash can also be used with [Windows Terminal](#terminal-multiplexers) using this stackoverflow answer: <https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal/57369284>.
 <!-- markdownlint-enable MD046 -->
 
 ### Generating Key Pairs
@@ -152,7 +152,7 @@ If `ssh-agent` isn't already running and you encounter an error, use the followi
     <!-- markdownlint-disable MD046 -->
     !!! bug
 
-        For Linux users and [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) on Windows users. If you experience a `Warning: Unprotected Private Key File` error when using `ssh-add`, your `ssh` file and directory permissions may be incorrect. To fix, please use the following commands.
+        For Linux users and [WSL](https://learn.microsoft.com/en-us/windows/wsl/about) on Windows users. If you experience a `Warning: Unprotected Private Key File` error when using `ssh-add`, your `ssh` file and directory permissions may be incorrect. To fix, please use the following commands.
 
         ```bash
         sudo chmod 600 ~/.ssh/<private_key_file>
