@@ -5,13 +5,21 @@ toc_depth: 3
 
 In this tutorial, we will guide you through using `s3cmd` on the Cheaha system to effectively manage and interact with your individual LTS account. We will cover the installation and configuration of `s3cmd`, and demonstrate essential operations, including creating buckets, listing, copying, downloading, and deleting [buckets and objects](../index.md/#terminology) in your LTS account. In addition, we will show you how to set and manage read and write access for other accounts to your LTS buckets and objects.
 
+## Prerequisites
+
+To get up to speed, you should have a basic understanding of how to use the shell/terminal. If you’re not familiar with these concepts, we recommend checking out our [learning resources on basic shell usage](../../../workflow_solutions/shell.md/#shell-reference).
+
+You will also need an individual LTS account created by our team. If you believe you need an account but do not have one, please [contact us](../../../index.md/#how-to-contact-us).
+
 ## Setting Up Your Environment
 
-### Install s3cmd within Anaconda Environment on Cheaha
+### Install s3cmd within Conda Environment on Cheaha
 
-To interact with LTS using S3, you need the `s3cmd` tool installed. It is recommended to install it using `pip` within an Anaconda environment on Cheaha. Please avoid using `conda install s3cmd`, as that version will not work as expected. Instead, follow the below steps to install `s3cmd` using `pip`.
+To interact with LTS (Long-Term Storage) using [S3 (Simple Storage Service)](https://aws.amazon.com/s3/), you need the `s3cmd` tool installed. `s3cmd` is a command-line tool for managing files in cloud storage systems like S3. It's recommended to install it using `pip`, the standard package installer for Python, which allows you to install packages from the [Python Package Index (PyPI)](https://pypi.org/), within a [Conda environment](../../../workflow_solutions/using_anaconda.md/#create-an-environment) on Cheaha.
 
-First, access our interactive Open OnDemand (OOD) portal at [https://rc.uab.edu](https://rc.uab.edu) and create a job on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on [installing and setting anaconda environment](../../../cheaha/tutorial/pytorch_tensorflow.md/#installing-anaconda-environments-using-the-terminal).
+Please avoid using `conda install s3cmd`, as that version will not work as expected. Instead, follow the steps below to install `s3cmd` using `pip` within your Conda environment.
+
+First, access our interactive Open OnDemand (OOD) portal at [https://rc.uab.edu](https://rc.uab.edu) and create a job on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on [installing and setting Conda environment](../../../cheaha/tutorial/pytorch_tensorflow.md/#installing-anaconda-environments-using-the-terminal).
 
 Once your interactive apps session is launched, open the terminal as described in [step 5 of the Anaconda tutorial page](../../../cheaha/tutorial/pytorch_tensorflow.md/#installing-anaconda-environments-using-the-terminal) and run the below commands.
 
@@ -34,7 +42,7 @@ To install s3cmd on your local machine, please follow the instructions provided 
 
 Properly configuring `s3cmd` is important for working with LTS buckets and objects. The configuration process varies depending on whether you have a single LTS account or multiple accounts to manage. In this section, we will provide a step-by-step guide tailored specifically for the **Cheaha** system and a researcher with an **individual LTS account**.
 
-Open a terminal using one of the interactive apps on Cheaha. Activate your conda environment created in the [Install s3cmd using within Anaconda Environment](./individual_lts_tutorial.md#install-s3cmd-within-anaconda-environment-on-cheaha) section, and then run the below command:
+Open a terminal using one of the interactive apps on Cheaha. Activate your conda environment created in the [Install s3cmd using within Conda Environment](./individual_lts_tutorial.md#install-s3cmd-within-anaconda-environment-on-cheaha) section, and then run the below command:
 
 ```bash
 s3cmd --configure
@@ -95,7 +103,7 @@ If you are continuing in the same session with your **conda environment already 
 
 ### How to Grant Access to Other Accounts for your Buckets?
 
-Managing access to your buckets is essential for both collaboration and security. By setting up specific policies, you can control who can view or modify your bucket’s contents. Follow these steps to grant access:
+Managing access to your buckets is essential for both collaboration and security. By setting up specific [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html), you can control who can view or modify your bucket’s contents. Follow these steps to grant access:
 
 - Create a policy file: define a policy and save it as a `JSON` file. For guidance and details on creating and formatting policy files, refer to our [create a policy structure guide](../policies.md/#policy-structure). For example, you might create a policy file named `my_policy.json` with read permissions.
 - Apply the policy: Use the command like `s3cmd setpolicy policy_file.json s3://your-bucket-name` to apply your defined read policy to your bucket. Replace `policy_file.json` with the name of your policy file and `your-bucket-name` with the name of your bucket.
