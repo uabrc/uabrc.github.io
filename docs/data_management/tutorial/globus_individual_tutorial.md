@@ -11,20 +11,20 @@ For this tutorial, you will need your BlazerID to authenticate using Single Sign
 
 Globus is a service that simplifies the process of transferring, sharing, and managing large datasets. It is widely used in research environments where data needs to be moved between different systems, institutions, or storage types.
 
-### Key Features of Globus
+**Some Features of Globus**:
 
 - It ensures that your data is protected during transfers with encryption.
 - It automatically retries failed transfers, and report the status of your data transfer.
 - It simplifies complex transfer tasks with an intuitive web interface.
 - It handles transfers of all sizes, from small files to multi-terabyte datasets.
 
-## Why you Use Globus?
+## Why You Use Globus?
 
 - Globus is optimized for high-performance environments, reducing transfer times.
 - It has a GUI and is accessible via a web browser, making it easy to initiate transfers from anywhere.
 - Globus allows you to easily share data with collaborators, regardless of their institution.
 
-## How Do you Get Onto Globus?
+## How Do You Get Onto Globus?
 
 Getting started with Globus involves a few steps. Here is how you can set up your account and start using the platform:
 
@@ -32,10 +32,10 @@ Getting started with Globus involves a few steps. Here is how you can set up you
 
     ![first-page-globus](/image/first-page-globus.png)
 
-- Click on "Log in" at the upper right corner.
+- Click on **Log in** at the upper right corner.
 - Select "University of Alabama at Birmingham" from the drop-down menu and click on **Continue**, as shown below.
   ![login-page-globus](/image/login-page-globus.png)
-- Enter your BlazerID and password, then click **Login**.
+- Enter your BlazerID and password, then click **Log in**.
 ![login-page-uab](/image/login-page-uab.png)
 - After logging in, you will be directed to the Globus file manager. Turn on **two-panel mode** by toggling the switch near the top right, as shown below.
 
