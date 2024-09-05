@@ -1,4 +1,4 @@
-# Setting up Globus as a Research Manager
+# Setting up Globus as a Research Manager for your Group
 
 This tutorial is designed to guide UAB research managers, such as Lab PIs, Core Directors, and their management staff, to help them set up and use Globus Connect Personal (GCP) for secure data sharing on their local/personal computers. GCP allows you to share data with collaborators efficiently meeting security and compliance standards for file sharing.
 
@@ -8,9 +8,8 @@ This tutorial is designed to guide UAB research managers, such as Lab PIs, Core 
 1. [How do you get onto Globus?](globus_group_tutorial.md#how-do-you-get-onto-globus)
 1. [Installing Globus Connect Personal on Windows](globus_group_tutorial.md#installing-gcp-on-windows)
 1. [Installing Globus Connect Personal on MacOS](globus_group_tutorial.md#installing-gcp-on-macos)
-1. [Configuring the GCP endpoint to share specific folders](globus_group_tutorial.md#configuring-the-gcp-endpoint-to-share-specific-folders)
-1. [Configuring a shared collection on your GCP endpoint](globus_group_tutorial.md#configuring-a-shared-collection-on-your-gcp-endpoint)
-1. [Sharing a collection with a collaborator](globus_group_tutorial.md#sharing-a-collection-with-a-collaborator)
+1. [Configuring the GCP endpoint to share specific folders](globus_group_tutorial.md#configuring-the-globus-connect-personal-endpoint-to-share-specific-folders)
+1. [Configuring and Sharing a Collection for your endpoint](globus_group_tutorial.md#configuring-and-sharing-a-collection-for-your-endpoint)
 
 ## What is Globus, and why you should use it?
 
@@ -28,7 +27,7 @@ Globus Connect Personal is available on the following Operating Systems, Linux, 
 
 The following steps will guide you to install `GCP` on your local machine running the `Windows OS`.
 
-1. Navigate to the [Globus Connect Personal page](https://www.globus.org/globus-connect-personal), scroll to look for the GCP Windows version. Click on the `**INSTALL NOW**` button highlighted red in the image below.
+1. Navigate to the [Globus Connect Personal page](https://www.globus.org/globus-connect-personal), scroll to look for the GCP Windows version. Click on the **`INSTALL NOW`** button highlighted red in the image below.
 
     ![!Install GCP for Windows](./images/gcp_install_windows.png)
 
@@ -78,82 +77,147 @@ The following steps will guide you to install `GCP` on your local machine runnin
 
 ### Installing GCP On MacOS
 
-Download the Installer:
+The following steps will guide you to install `GCP` on your local machine running the `Mac OS`.
 
-Go to the Globus Connect Personal download page.
-Click on "Download for MacOS."
-Install the Application:
+1. Navigate to the [Globus Connect Personal page](https://www.globus.org/globus-connect-personal), scroll to look for the GCP Mac OS version. Click on the `**INSTALL NOW**` button highlighted red in the image below.
 
-Open the downloaded .dmg file and drag the Globus Connect Personal icon into the Applications folder.
-Launch and Login:
+    ![!Install GCP for MacOS](./images/gcp_install_mac.png)
 
-Open the Globus Connect Personal app from your Applications folder.
-Log in using your Globus account credentials.
+1. Click the `Download Globus Connect Personal` link on this page, it would redirect you to download the GCP Installer.
 
-## Configuring the GCP endpoint to share specific folders
+    ![!Download GCP for Mac](./images/gcp_dl_mac.png)
+
+1. As shown in the image below,  click the `Download Globus Connect Personal for Mac` button preceded by the Finder Icon to download the `.dmg` file. This would download the file into your local computer.
+
+    ![!Download GCP .dmg file for mac](./images/gcp_download_button_mac.png)
+
+1. Navigate to where the file is downloaded on your local computer. Double click to open the downloaded file named **globusconnectpersonal-latest.dmg**
+
+    ![!Downloaded GCP .dmg file](./images/gcp_dmg_file.png)
+
+1. A new window will pop-up asking you to drag the Globus app into your Application folder on your Mac.
+
+    ![!Copy Mac GCP App into the Applications Folder](./images/gcp_click_install_mac.png)
+
+1. When the above step is completed, navigate to your Application folder and look for the `Globus Connect Personal` Application folder to open it.
+
+    ![!GCP Mac App in the Applications Folder](./images/gcp_mac_app.png)
+
+1. Click on Log In button after opening the Globus app.
+
+    ![!Authenticating GCP Setup highlighting Login button](./images/gcp_globus_login_mac.png)
+
+1. Grant the required consents to GCP setup. And include a name of your liking in the highlighted area.
+
+    ![!Granting GCP Setup required permissions](./images/gcp_consent.png)
+
+1. Enter the details for your GCP Collection, and click save to continue. In the image below, **1** should contain your preferred identity, if using a UAB Computer, please insert your `BlazerID@uab.edu` email address here. **2** Should contain the name for your Collection, already named in the previous step. **3** Should contain optional information to describe the collection, you can include the purpose for which the collection has been created. **4** If your collection would contain Protected Health Information (PHI) or sensitive information, please tick this box. You would need to be part of UAB's subscription to complete this, please send an email to support, so we can complete that process on your behalf.
+
+    ![!GCP Setup Details](./images/gcp_details.png)
+
+1. We have now completed set up of our GCP for a local computer operating the Mac OS. Exit the setup process, and open the Globus Web App to view collection details or move data to or from your collection.
+
+    ![!GCP Exit Setup](./images/gcp_exit_setup.png)
+
+1. After installation, you should now see a **g** Globus icon in the menu bar usually at the top of your screen. This indicates that Globus Connect Personal is running and your new collection is ready to be used.
+
+    ![!GCP Logo in Mac OS Menu bar](./images/gcp_logo_menu_mac.png)
+
+## Configuring the Globus Connect Personal Endpoint to Share Specific Folder(s)
 
 ### On Windows
 
-1. Open Globus Connect Personal:
+1. Open Globus Connect Personal: Open the GCP App, and/or click on the Globus icon in your taskbar.
 
-1. Click on the Globus icon in your taskbar.
-1. Select Folders to Share:
+    ![!GCP Logo shown in Taskbar](./images/gcp_logo_menu.png)
 
-1. Go to the “Folders” tab.
-1. Click “Add Folder” and navigate to the folder you want to share.
-1. Select the folder and click “OK.”
-1. Set Permissions:
+1. A drop-down menu containing a list of menu options would now be visible, click on `Options...`:
 
-1. Adjust the sharing permissions as needed for each folder.
+    ![!GCP Options Menu](./images/gcp_collection_options.png)
+
+1. A new window will appear showing a tab labelled `Access`. In that window you would see an interface that requires configuration, the image has been labelled with numbers to provide details. **1** Shows a list of filepath(s)/directory (or directories) you would like to share on Globus as a `Collection`. **2** and **3** Show the `Shareable` and `Writable` options to choose as you desire. The `Shareable` option will allow you to share this path on your local computer as an `Endpoint` that other users can access (This should be ticked, as you intend to share the `Collection`). The `Writable` option gives users permissions to upload, edit, or delete files, dependent on the level of access you grant individual users. These options can be selected for each file, folder or directory selected. **4** Gives you the option to add several filepaths or directories to Globus as a Collection. **5** Saves your preferred options.
+
+    ![!GCP Access tab from the Options Menu](./images/gcp_collection_access.png)
+
+1. The `General` tab should also be configured as shown below. **1** This allows you to specify whether you want Globus Connect Personal to run when Windows starts and allows you set, whether the software should automatically check for updates. Globus recommends that you leave the "Automatically check for updates" box checked, to ensure that you are running the most stable and secure version of Globus Connect Personal at all times. **2** Allows you set what your `Collections` Home Folder would be. Clicking on **3** saves your selected preferred options.
+
+    ![!GCP Web App showing search option in Collection](./images/gcp_web_collections_search.png)
 
 ### On MacOS
 
-1. Open Globus Connect Personal:
+1. Click the Globus Connect Personal icon (**g**) in the menu bar at the top right of your screen and select "Preferences…​" to configure Globus Connect Personal.
 
-1. Click on the Globus icon in your menu bar.
-1. Add Folders for Sharing:
+    ![!GCP Mac Preferences Menu](./images/gcp_collection_preference.png)
 
-1. In the “Folders” tab, click “Add Folder.”
-1. Navigate to the folder you wish to share and select it.
-1. Click “Open” to add it to the list of shared folders.
-1. Configure Permissions:
+    If you do not see the icon, go to your Applications folder and click on the Globus Connect Personal App. And repeat the above instructions.
 
-1. Set the permissions as per your requirements.
+    ![!GCP Mac App in the Applications Folder](./images/gcp_mac_app.png)
 
-**Prerequisites for Sharing a GCP Endpoint**
+1. The "General" preferences tab shows a couple of options on how the GCP works on your local Mac computer. You can change the color of the Globus Connect Personal status icon in the menu bar by ticking the `Use black and white menu bar icons`. You can also select the appropriate options for `Automatically check for updates` and `Automatically download updates`, this way Globus Connect Personal would always run on the newest version. Globus recommends leaving the `Automatically check for update` option selected to automatically make important security updates.
 
-1. Before you can share a GCP endpoint, ensure the following:
+    ![!General Preferences Tab in GCP Mac App](./images/gcp_mac_collection_general.png)
 
-1. Globus Account: You must have a Globus account associated with your institution.
-1. Institutional Subscription: You must join the UAB (HA) subscription group. Contact your institution’s IT department to verify your inclusion in the appropriate subscription group.
-1. Network Access: Ensure that your network firewall settings allow Globus traffic.
+1. The "Access" preferences tab shows a list of folders that are accessible for file transfer and sharing via Globus Connect Personal. This provides more control over what information is accessible on your Globus Connect Personal endpoint. By default, your home directory (e.g.: /Users/<username>) is read/write accessible. The `Deny access to hidden (e.g. security) files in your home directory` option controls whether or not you can access hidden files (i.e. filenames beginning with "."") in your home directory. By default, Globus Connect Personal does not allow access to files like: `~/.globusonline` and `~/.ssh.`
 
-## Configuring a Shared Collection on Your GCP Endpoint
+    ![!Access Preferences Tab in GCP Mac App](./images/gcp_mac_collection_access.png)
 
-1. Navigate to the Globus Web App:
+### Accessing your Endpoint from the Web
 
-1. Go to app.globus.org and log in with your credentials.
-1. Create a New Shared Collection:
+The below steps apply to all GCP applications on all platforms (Linux, MacOS, and Windows).
 
-1. Locate your GCP endpoint under "Endpoints."
-1. Click on the endpoint and select “Create a New Shared Collection.”
-1. Configure Collection Settings:
+1. Navigate to the Globus webpage, and authenticate if you have to. You would see the below image, showing the Globus web app, with all of its options. Click on the `Search` button in front of `Collection` from the `FILE MANAGER` menu option.
 
-1. Name your collection and provide a description.
-1. Select the folder you want to share.
-1. Set the appropriate access permissions.
+    ![!GCP Web App showing Collections](./images/gcp_web_collections_search.png)
 
-## Sharing a Collection with a Collaborator
+1. This would open up a new interface, please select the `Your Collections` option, and you should see the `Endpoint` you created for your local machine.
 
-1. Find Your Collection:
+    ![!GCP Web App showing created Endpoint](./images/gcp_web_endpoint.png)
 
-1. In the Globus Web App, locate the collection you created.
-1. Invite Collaborators:
+As you begin to use Globus, your recently used `Collections` would appear in the `Recent` tab.
 
-1. Click on the “Share” button next to your collection.
-1. Enter the email addresses of your collaborators.
-1. Set the desired permissions (read, write, etc.).
-1. Send the Invitation:
+![!GCP Web App showing recently used Collections](./images/gcp_web_collections_recent.png)
 
-1. Click “Save” to share the collection with your collaborators.
-1. Your collaborators will receive an email invitation to access the collection.
+1. Clicking on your `Endpoint` would open a new window showing you content from the `Collection` associated with the `Endpoint`. These will be the folders, directories or files you configured to be accessible to Globus from your local machine.
+
+    ![!GCP Web App showing files in a Collection](./images/gcp_web_local_machine.png)
+
+## What do I need to Share a GCP Endpoint?
+
+Before you can share a GCP endpoint, ensure the you have the following:
+
+1. **A Globus Account**: You must have a Globus account associated with UAB. There is a guide on how to do this here(./globus_individual_tutorial.md#how-do-you-get-on-globus)
+1. **Membership of UAB High Assurance (HA) Subscription**: You must be added to the UAB High Assurance (HA) subscription group. Send an email to UAB IT support: <askIT@uab.edu> to approve and verify your inclusion in UAB's HA subscription group.
+
+## Configuring and Sharing a Collection for Your Endpoint
+
+1. Navigate to the Globus Web App, and authenticate with your credentials. When you are logged in, click on `Collections`.
+
+    ![!GCP Web App showing Collection](./images/gcp_web_collection.png)
+
+1. Click on the `>` button to the right of your screen.
+
+    ![!GCP Web App highlighting button to configure Endpoint](./images/gcp_web_collection_share.png)
+
+1. This would open an `Overview` page, that contains information specific to your `Endpoint`. You should also see a `Collections` tab, click on this.
+
+    ![!GCP Web App showing Endpoint details](./images/gcp_web_endpoint_details.png)
+
+1. Click on the `Add Guest Collection` button in the new window.
+
+    ![!GCP Web App showing how to add a Shared Collection](./images/gcp_web_guest_collection.png)
+
+1. Configure the `Collection` in the new window. Leave the path as is, you will include the specific filepath (folder/director or file) you want to include in this `Collection` in the next step. Fill out the optional information to properly label this `Collection`.
+
+    ![!GCP Web App showing how to configure a Shared Collection](./images/gcp_web_config_collection.png)
+
+1. In this step, include the filepath in the textbox provided (you can use the browse button to navigate to the appropriate folder), you should also see content for that folder/directory. Name your `Collection` and provide a description. Click on `Create Guest Collection`.
+
+    ![!GCP Web App showing how to configure a Shared Collection for the specific folder](./images/gcp_web_config_collection_name.png)
+
+1. Now we have to set and grant permissions to our collaborators. Click the `Add Permissions - Share With` to configure the permissions for your just created `Collection`.
+
+    ![!GCP Web App showing how to set permissions for a specific folder on a shared Collection](./images/gcp_web_config_permission.png)
+
+    You can have different permissions for different collaborators accessing the same `Collection`. In the image below, **1** Highlights how you can enter the filepath or use the **Browse** button to navigate your local machine to the folder or directory you would like to share. **2** Gives you the option for which entities you would like to share your `Collection` with. **3** This is where you would enter the Identity details for your collaborators (email address, Globus ID). **4** These options grant the collaborator(s) `read` or `write` permissions access to your collection. **5** Click the `Add Permission` button to complete the process or press cancel to restart the configuration process.
+
+    ![!GCP Web App showing each step to set permissions for a specific folder on a shared Collection](./images/gcp_web_collection_permission.png)
