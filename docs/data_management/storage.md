@@ -183,6 +183,9 @@ Network scratch is available on the login node and each compute node. This stora
 !!! warning
 
     Research Computing expects each user to keep their scratch areas clean. **The cluster scratch areas are not to be used for archiving data.** In order to keep scratch clear and usable for everyone, files older than 30 days will be automatically deleted.
+
+    **note**: Data held in user scratch may be retained on the system for 30 days. After 30 days, we may delete data to free space. **The user scratch pool is a shared resource**, so please treat it as temporary storage.
+    
 <!-- markdownlint-enable MD046 -->
 
 ### Local Scratch
