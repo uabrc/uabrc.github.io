@@ -157,7 +157,7 @@ The following steps will guide you to install `GCP` on your local machine runnin
 
     ![!General Preferences Tab in GCP Mac App](./images/gcp_mac_collection_general.png)
 
-1. The "Access" preferences tab shows a list of folders that are accessible for file transfer and sharing via Globus Connect Personal. This provides more control over what information is accessible on your Globus Connect Personal endpoint. By default, your home directory (e.g.: /Users/<username>) is read/write accessible. The `Deny access to hidden (e.g. security) files in your home directory` option controls whether or not you can access hidden files (i.e. filenames beginning with "."") in your home directory. By default, Globus Connect Personal does not allow access to files like: `~/.globusonline` and `~/.ssh.`
+1. The "Access" preferences tab shows a list of folders that are accessible for file transfer and sharing via Globus Connect Personal. This provides more control over what information is accessible on your Globus Connect Personal endpoint. By default, your home directory (e.g.: /Users/`username`) is read/write accessible. The `Deny access to hidden (e.g. security) files in your home directory` option controls whether or not you can access hidden files (i.e. filenames beginning with "."") in your home directory. By default, Globus Connect Personal does not allow access to files like: `~/.globusonline` and `~/.ssh.`
 
     ![!Access Preferences Tab in GCP Mac App](./images/gcp_mac_collection_access.png)
 
