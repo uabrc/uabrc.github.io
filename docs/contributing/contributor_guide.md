@@ -261,8 +261,10 @@ We use `.markdownlint.json` to handle markdown formatting rules, rather than pla
 We are using [linkchecker](https://github.com/linkchecker/linkchecker) to validate external repository URLs.
 
 1. Install `build-env.yml` and activate
-1. Run `linkchecker --config=.linkcheckerrc docs > linkchecker.log`
-1. Review `linkchecker-out.csv` (feel free to ignore `linkchecker.log` unless you want verbose details)
+1. Run `python scripts/linkchecker.py`
+1. Review `out/linkchecker-out.csv` (feel free to ignore `out/linkchecker.log` unless you want verbose details)
+
+The `urlname` column contains the URL as it is written in the documentation. The `url` column contains the resulting URL after all forwarding is complete.
 
 #### Linting Known Issues
 
