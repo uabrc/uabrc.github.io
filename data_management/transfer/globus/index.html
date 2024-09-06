@@ -3419,24 +3419,35 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Server: m-a201b5.9ad93.a567.data.globus.org:443
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Command: STOR /test.log
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Message: The connection to the server was broken
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>---
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Message: The connection to the server was broken ---
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
 </code></pre></div>
 <h4 id="buckets-must-have-globally-unique-names">Buckets Must Have Globally Unique Names<a class="headerlink" href="#buckets-must-have-globally-unique-names" title="Permanent link">&para;</a></h4>
-<p>When creating new buckets, the name must be unique across all buckets on the system. At first this may sound very restrictive, but it is quite simple to deal with in practice. See our LTS section on <a href="../../lts/#avoiding-duplicate-names-for-buckets">good naming practice</a> for how to avoid duplicate names.</p>
-<p>If a duplicate bucket name is entered, a long error message will appear in a small space next to the new bucket name. The message reads like the following, expanded for readability.</p>
+<p>When creating new buckets, the name must be unique across all buckets on the system. If a duplicate bucket name, for example <code>first-test-bucket</code>, is entered, a long error message will appear in a small space next to the new bucket name. For readability, the expanded message is shown below.</p>
 <p><a class="glightbox" href="../images/globus_lts_duplicate_name_error_001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!large error message in small space" src="../images/globus_lts_duplicate_name_error_001.png" /></a></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Bad Gateway: Endpoint Error, Error (mkdir)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Remote Endpoint Failure: Path already exists, Error (mkdir)
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Server: m-b81a79.9ad93.a567.data.globus.org:443
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Command: MKD /test/
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Message: Fatal FTP Response ---
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Details: 553-
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  GlobusError: v=1 c=PATH_EXISTS\r\n553-
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  GridFTP-Path: (null)\r\n553-globus_gridftp_server_s3_base: S3
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  Error accessing &quot;&quot;: ErrorBucketAlreadyExists: ErrorBucketAlreadyExists: \r\n553 End.\r\n
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Server: 138.26.220.68:443
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Message: Path &#39;/first-test-bucket/&#39; already exists
 </code></pre></div>
+<p>At first glance, requiring unique names across all buckets on the system may sound very restrictive, but it is necessary for LTS to be as fast as it is. Fortunately, there is an easy way to deal with the limitation. See our LTS section on <a href="../../lts/#avoiding-duplicate-names-for-buckets">good naming practice</a> for how to avoid duplicate names. For example, if you want to name a bucket <code>ai-lab</code> for storing data related to the entire AI lab or a specific dataset, you can append a universally unique identifier (UUID) to the name. To generate a UUID, visit <a href="https://www.uuidgenerator.net/">https://www.uuidgenerator.net/</a>, and a 16-byte UUID will be automatically generated. You can then copy it and append it to the name <code>ai-lab</code>, as shown below.</p>
+<p><a class="glightbox" href="../images/globus-uuid.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!large error message in small space" src="../images/globus-uuid.png" /></a></p>
+<p>Similarly, if an invalid bucket name, such as <code>first_test_bucket</code>, is entered (due to the use of an underscore, which doesn’t follow LTS bucket naming rules), an error will also be displayed as shown below. To avoid this, please refer to the guidelines for <a href="../../lts/lts_faq/#what-are-valid-bucket-names-in-lts">valid bucket name in LTS</a>.</p>
+<p><a class="glightbox" href="../images/globus_lts_invalid_name_error_001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!large invalid error message in small space" src="../images/globus_lts_invalid_name_error_001.png" /></a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Bad Gateway: Endpoint Error, Error (mkdir)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Server: 138.26.220.68:443
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Command: MKD /first_test_bucket/
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Message: Fatal FTP Response ---
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Details: 500
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>globus_gridftp_server_s3_base: S3
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Error accessing &quot;&quot;: ErrorInvalidBucketName: ErrorInvalidBucketName: \r\n
+</code></pre></div>
+<p>To cancel or dismiss these errors, click the <code>refresh list</code> button on the Globus collection panel, or scroll all the way to the right in the red area of the error message and click the <code>x</code> symbol as shown below.</p>
+<p><a class="glightbox" href="../images/globus_lts_cancele_name_error_001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!large error message cancellation" src="../images/globus_lts_cancele_name_error_001.png" /></a></p>
+<p>Uploading a top-level folder that does not follow the bucket naming rules will cause an error similar to the one encountered when creating a bucket with an invalid name. When uploading a folder with a name similar to a bucket in your LTS, Globus will sync and save all sub-folders and files into that bucket. Subfolders also need to follow naming rules, but they inherit the uniqueness from the parent name. This is part of why we recommend random UUIDs. If you attempt to upload a folder with a name that matches an existing bucket in someone else's space, you will encounter a <code>permission denied error</code>, as shown below.</p>
+<p><a class="glightbox" href="../images/globus_lts_upload_error_001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!large error message in small space" src="../images/globus_lts_upload_error_001.png" /></a></p>
+<p>Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata. For guidance on defining policies for your bucket, please refer to our documentation on <a href="../../lts/policies/#policy-structure">policy structure</a> and <a href="../../lts/policies/#applying-a-policy">applying a policy</a>.</p>
 <h2 id="using-bookmarks">Using Bookmarks<a class="headerlink" href="#using-bookmarks" title="Permanent link">&para;</a></h2>
 <p>To save a bookmark, use the File Manager interface to select an collection and navigate to a path on that collection. Then click the "Create Bookmarks" button as shown below.</p>
 <p><a class="glightbox" href="../images/globus_060_create_bookmark.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus File Manager interface with mouse pointer hovering over Bookmark icon." src="../images/globus_060_create_bookmark.png" /></a></p>
@@ -3573,7 +3584,7 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2024</span>
   </span>
 
     
