@@ -225,6 +225,14 @@ rm -rf "$TMPDIR"
     Using `/local/$SLURM_JOB_ID` with MPI jobs takes additional consideration. If you do not need MPI, please use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node. If you need the performance of `/local/$SLURM_JOB_ID` in an MPI job, please contact [Support](../help/support.md) and read about the Slurm commands `sbcast` and `sgather`.
 <!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    By default the variable `$TMPDIR` points to `/scratch/local/` which in turn is a symbolic link to `/local/`. The variable `$LOCAL_SCRATCH` is identical to `$TMPDIR`.
+
+    We recommend overwriting `$TMPDIR`, as above, because it will ensure that jobs always write to a safe location on the same node the work is being done.
+<!-- markdownlint-enable MD046 -->
+
 ## Temporary Files (`tmp`)
 
 Please do not use the directory `tmp` as storage for temporary files. The `tmp` directory is local to each node, and a full `tmp` directory harms compute performance on that node for all users. Instead, please use [`/local/$SLURM_JOB_ID`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
