@@ -103,6 +103,8 @@ nav:
           - Globus: data_management/transfer/globus.md
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
+      - Tutorial:
+          - Globus Individual Tutorial: data_management/tutorial/globus_individual_tutorial.md
       - Code Storage: data_management/code_storage.md
   - Workflow Solutions:
       - Using the Shell: workflow_solutions/shell.md
