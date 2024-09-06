@@ -53,7 +53,7 @@ Globus allows users to share data collections with others. To view collections s
 
  ![file-manager-page-search](/image/file-manager-page-search.png)
 
-- Look for a section titled **Shared with You**. This filter shows all collections that have been shared specifically with your account.
+- Look for a button **Shared with You**. This filter shows all collections that have been shared specifically with your account.
 
 ![shared-with-you](/image/shared-with-you.png)
 
@@ -65,7 +65,7 @@ To find a specific collection by **name**, follow these steps:
 
  ![search-for-collection](/image/search-for-collection.png)
 
-- In the File Manager, click the collection search window and Use the the collection search bar to enter the name (or part of the name) of the collection you're looking for and click Search.
+- In the File Manager, click the collection search window and Use the the collection search bar to enter the name (or part of the name) of the collection you are looking for and click **Search**.
 
 - Once the search results appear, click on the desired collection to access or transfer files, as shown below.
 
