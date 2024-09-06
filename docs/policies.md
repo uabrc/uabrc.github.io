@@ -1,11 +1,5 @@
 # UAB Research Computing Policies
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    This page is a stub and is under construction.
-<!-- markdownlint-enable MD046 -->
-
 ## UAB IT Policies
 
 All users of UAB IT systems, including UAB Research Computing systems, must agree to all UAB relevant UAB IT policies. UAB IT policies may be found at <https://www.uab.edu/it/home/policies>.
