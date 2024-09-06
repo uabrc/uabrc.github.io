@@ -45,6 +45,7 @@ plugins:
       data_path: docs
   - git-revision-date-localized:
       type: date
+      strict: false
   - glightbox:
       # auto_caption: true
   - redirects:
