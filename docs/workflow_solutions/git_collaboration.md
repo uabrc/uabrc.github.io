@@ -94,7 +94,7 @@ The workflow assumes a central repository already exists within an organization 
     1. [Clone](git.md#cloning) the downstream fork to the local machine where the programming will happen.
 - Workflow
     1. Decide on a set of changes to make. Good practice is only working on one conceptual unit at a time. One feature, one bug fix, or one documentation page. Prefer fixing bugs before adding features.
-    1. Synchronize your downstream fork with the upstream fork to minimize risk of merge conflicts. [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) [GitLab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html#repository-mirroring)
+    1. Synchronize your downstream fork with the upstream fork to minimize risk of merge conflicts. [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) [GitLab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html#update-your-fork)
     1. [Pull the downstream fork main branch](git.md#fetching-and-pulling) to your local clone main branch.
     1. [Create a working branch](git.md#creating-new-branches) for intended changes. Give it a short, descriptive name like `feature-add-button` or `fix-broken-link`.
     1. [Checkout the working branch](git.md#checking-out-existing-branches).
@@ -117,7 +117,7 @@ Effective use of issue tracking can greatly reduce cognitive load and simplify c
 
 The typical issue lifecycle, at a high level, is something like below.
 
-1. Create an issue. [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) [GitLab](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#create-an-issue)
+1. Create an issue. [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) [GitLab](https://docs.gitlab.com/ee/user/project/issues/create_issues.html)
 1. Ask for clarifications and discuss as needed.
 1. Use the [Fork-Pull/Merge Request Workflow](#the-fork-pullmerge-request-workflow) to resolve the issue. In the Pull Request description, put the text `Fixes #...` where `...` should be replaced by the issue's number. When the request is merged, the issue will automatically be linked to the request and closed.
 

@@ -181,30 +181,51 @@ Error (transfer)
 Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
 Server: m-a201b5.9ad93.a567.data.globus.org:443
 Command: STOR /test.log
-Message: The connection to the server was broken
----
+Message: The connection to the server was broken ---
 Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
 ```
 
 #### Buckets Must Have Globally Unique Names
 
-When creating new buckets, the name must be unique across all buckets on the system. At first this may sound very restrictive, but it is quite simple to deal with in practice. See our LTS section on [good naming practice](../lts/index.md#avoiding-duplicate-names-for-buckets) for how to avoid duplicate names.
-
-If a duplicate bucket name is entered, a long error message will appear in a small space next to the new bucket name. The message reads like the following, expanded for readability.
+When creating new buckets, the name must be unique across all buckets on the system. If a duplicate bucket name, for example `first-test-bucket`, is entered, a long error message will appear in a small space next to the new bucket name. For readability, the expanded message is shown below.
 
 ![!large error message in small space](images/globus_lts_duplicate_name_error_001.png)
 
 ```text
+Remote Endpoint Failure: Path already exists, Error (mkdir)
+Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
+Server: 138.26.220.68:443
+Message: Path '/first-test-bucket/' already exists
+```
+
+At first glance, requiring unique names across all buckets on the system may sound very restrictive, but it is necessary for LTS to be as fast as it is. Fortunately, there is an easy way to deal with the limitation. See our LTS section on [good naming practice](../lts/index.md#avoiding-duplicate-names-for-buckets) for how to avoid duplicate names. For example, if you want to name a bucket `ai-lab` for storing data related to the entire AI lab or a specific dataset, you can append a universally unique identifier (UUID) to the name. To generate a UUID, visit <https://www.uuidgenerator.net/>, and a 16-byte UUID will be automatically generated. You can then copy it and append it to the name `ai-lab`, as shown below.
+
+![!large error message in small space](images/globus-uuid.png)
+
+Similarly, if an invalid bucket name, such as `first_test_bucket`, is entered (due to the use of an underscore, which doesn’t follow LTS bucket naming rules), an error will also be displayed as shown below. To avoid this, please refer to the guidelines for [valid bucket name in LTS](../lts/lts_faq.md/#what-are-valid-bucket-names-in-lts).
+
+![!large invalid error message in small space](images/globus_lts_invalid_name_error_001.png)
+
+```text
 Bad Gateway: Endpoint Error, Error (mkdir)
 Endpoint: UAB Research Computing LTS (Long Term Storage aka S3) (184408b4-d04b-4513-9912-8feeb6adcab3)
-Server: m-b81a79.9ad93.a567.data.globus.org:443
-Command: MKD /test/
+Server: 138.26.220.68:443
+Command: MKD /first_test_bucket/
 Message: Fatal FTP Response ---
-Details: 553-
-  GlobusError: v=1 c=PATH_EXISTS\r\n553-
-  GridFTP-Path: (null)\r\n553-globus_gridftp_server_s3_base: S3
-  Error accessing "": ErrorBucketAlreadyExists: ErrorBucketAlreadyExists: \r\n553 End.\r\n
+Details: 500
+globus_gridftp_server_s3_base: S3
+Error accessing "": ErrorInvalidBucketName: ErrorInvalidBucketName: \r\n
 ```
+
+To cancel or dismiss these errors, click the `refresh list` button on the Globus collection panel, or scroll all the way to the right in the red area of the error message and click the `x` symbol as shown below.
+
+![!large error message cancellation](images/globus_lts_cancele_name_error_001.png)
+
+Uploading a top-level folder that does not follow the bucket naming rules will cause an error similar to the one encountered when creating a bucket with an invalid name. When uploading a folder with a name similar to a bucket in your LTS, Globus will sync and save all sub-folders and files into that bucket. Subfolders also need to follow naming rules, but they inherit the uniqueness from the parent name. This is part of why we recommend random UUIDs. If you attempt to upload a folder with a name that matches an existing bucket in someone else's space, you will encounter a `permission denied error`, as shown below.
+
+![!large error message in small space](images/globus_lts_upload_error_001.png)
+
+Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata. For guidance on defining policies for your bucket, please refer to our documentation on [policy structure](../lts/policies.md/#policy-structure) and [applying a policy](../lts/policies.md#applying-a-policy).
 
 ## Using Bookmarks
 

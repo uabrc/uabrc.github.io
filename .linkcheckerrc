@@ -85,11 +85,11 @@ fileoutput=csv
 
 # CSV logger
 [csv]
-#filename=linkchecker-out.csv
-#separator=;
+filename=out/linkchecker-out.csv
+separator=,
 #quotechar="
 #dialect=excel
-#parts=all
+parts=result,urlname,parentname,line,column,url
 
 # SQL logger
 [sql]

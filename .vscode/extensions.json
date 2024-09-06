@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "charliermarsh.ruff",
     "DavidAnson.vscode-markdownlint",
     "ms-python.python",
     "redhat.vscode-yaml",

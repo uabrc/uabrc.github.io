@@ -2,22 +2,30 @@
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features",
     "editor.formatOnSave": true,
+    "editor.indentSize": 2,
+    "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features",
     "editor.formatOnSave": true,
+    "editor.indentSize": 2,
+    "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.wordWrap": "on"
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.formatOnSave": true,
+    "editor.indentSize": 2,
+    "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.formatOnSave": true,
+    "editor.indentSize": 2,
+    "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
   "[markdown]": {
@@ -26,8 +34,21 @@
     },
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
     "editor.formatOnSave": true,
+    "editor.indentSize": 4,
+    "editor.insertSpaces": true,
     "editor.tabSize": 4,
     "editor.wordWrap": "on"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.indentSize": 4,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
   },
   "[snippets]": {
     "editor.defaultFormatter": "vscode.json-language-features",
@@ -37,6 +58,8 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.formatOnSave": true,
+    "editor.indentSize": 2,
+    "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
   "files.insertFinalNewline": true,
