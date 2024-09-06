@@ -2,7 +2,21 @@
 
 ## How to transfer data from a shared collection to my project directory on Cheaha?
 
-### Transfer data from a Shared Collection to Cheaha's Project Directory
+To transfer data from a shared collection to a project directory on Cheaha, you may follow these steps:
+
+1. Select the Shared Collection:  Click on the Collection tab, then go to the "Shared With You" section and choose the appropriate collection name, for instance, "test collection cheaha". Once selected, you will see the data shared with you.
+
+1. On the other side of the Collection tab, select the UAB Cheaha collection. Authenticate your account if prompted, and navigate to your project directory, e.g., `/data/project/xxx`, where you want to transfer the data.
+
+1. Start the Transfer: Click the "Start" button on the shared collection side. The data, such as the folder `test`, will then be transferred to your specified project directory.
+
+<!--
+![!Globus Shared Collection](images/globus-shared-collection.png)
+-->
+
+<!--
+![!Globus Transfer Shared Collection To Cheaha Projdir](images/globus-transfer-shared-collection-to-cheaha-projdir.png)
+-->
 
 ## How to transfer data from a shared collection to my group's LTS allocation?
 
