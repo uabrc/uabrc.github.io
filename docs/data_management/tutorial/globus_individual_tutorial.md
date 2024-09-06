@@ -11,7 +11,7 @@ For this tutorial, you will need your BlazerID to authenticate using Single Sign
 
 Globus is a service that simplifies the process of transferring, sharing, and managing large datasets. It is widely used in research environments where data needs to be moved between different systems, institutions, or storage types.
 
-**Some Features of Globus**:
+**Key Features of Globus**:
 
 - It ensures that your data is protected during transfers with encryption.
 - It automatically retries failed transfers, and report the status of your data transfer.
@@ -41,4 +41,32 @@ Getting started with Globus involves a few steps. Here is how you can set up you
 
   ![file-manager-page-globus](/image/file-manager-page-globus.png)
 
-- Then, on the file transfer page, you will see two file browser windows: one on the left and one on the right. Each window will have an "Endpoint" field representing the two systems between which you wish to transfer files. Once set up, you can transfer files in either direction.
+- Then, on the file transfer page, you will see two file browser windows: one on the left and one on the right. Each window will have an **Endpoint** field representing the two systems between which you wish to transfer files. Once set up, you can transfer files in either direction.
+
+## How to Find Collections Shared with You
+
+Globus allows users to share data collections with others. To view collections shared with you, please follow these steps:
+
+- Log in to Globus using your credentials.
+
+- From the Globus dashboard, select **File Manager** from the sidebar or top navigation menu. In the **File Manager**, click on the Collection field to open the search window, as shown below.
+
+ ![file-manager-page-search](/image/file-manager-page-search.png)
+
+- Look for a section titled **Shared with You**. This filter shows all collections that have been shared specifically with your account.
+
+![shared-with-you](/image/shared-with-you.png)
+
+## How to Search for Collections by Name
+
+To find a specific collection by **name**, follow these steps:
+
+- Once logged in, open the File Manager from the dashboard, as shown below.
+
+ ![search-for-collection](/image/search-for-collection.png)
+
+- In the File Manager, click the collection search window and Use the the collection search bar to enter the name (or part of the name) of the collection you're looking for and click Search.
+
+- Once the search results appear, click on the desired collection to access or transfer files, as shown below.
+
+  ![search-for-collection-result](/image/search-for-collection-result.png)
