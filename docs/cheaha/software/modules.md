@@ -238,6 +238,6 @@ Symptoms of the bug include:
 - Inconsistent and varied PCT errors
 - Inability to start Matlab parpool
 
-To avoid the bug, please use the latest available version of MATLAB and no earlier than R2022a. Upgrading MATLAB versions requires acceptance testing, because MATLAB is not always backwards compatible. Be sure to test that your code works as expected on the new version before using it for research!
+To avoid the bug, please use the latest available version of MATLAB and no earlier than R2022a. Upgrading MATLAB versions may require some effort and testing of your code, because MATLAB is not always backwards compatible. Be sure to test that your code works as expected on the new version before using it for research.
 
-If you aren't able to use R2022a or newer, there is a workaround available. Please navigate to this [GitHub repository](https://github.com/wwarriner/matlab_parpool_slurm_fix) and follow the instructions in `README.md`. Some light MATLAB programming is required to effectively use the workaround.
+If you aren't able to use R2022a or newer, there is a workaround available. Please navigate to this [GitHub repository](https://github.com/wwarriner/matlab_parpool_slurm_fix) and follow the instructions in `README.md`. Some light MATLAB programming is required to effectively use the workaround. Please contact [Support](../../help/support.md) if you would like assistance.
