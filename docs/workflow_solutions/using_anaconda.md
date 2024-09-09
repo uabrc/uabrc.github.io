@@ -113,7 +113,7 @@ You may use the [Anaconda page](https://anaconda.org/) to search for packages on
 
 #### Packages for Jupyter
 
-For more information about using Anaconda with Jupyter, see the section [Working with Anaconda Environments](..//cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
+For more information about using Anaconda with Jupyter, see the section [Working with Anaconda Environments](../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
 
 ### Update packages in an environment
 
@@ -182,7 +182,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```
 
-2. Platform + Package Specific
+1. Platform + Package Specific
 
     Create .yml file to share, replace `<envname>` (represents the name of your environment) and `<env>` (represents the name of the file you want to export) with preferred names for file.
 
@@ -192,7 +192,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```
 
-3. Platform + Package + Channel Specific
+1. Platform + Package + Channel Specific
 
     ```bash
 
@@ -337,17 +337,17 @@ If we find the package at one of these sources, we check the Platform version to
 If we don't find a package using Google, or the Anaconda/PyPI pages are out of date, then it may become very hard to use the software in an Anaconda environment. It is possible to try installing a git repository using pip, but care must be taken to choose the right commit or tag. You can find more [info here](https://pip.pypa.io/en/stable/cli/pip_install/#examples). To search for a git repository try:
 
 1. github "name".
-2. gitlab "name".
+1. gitlab "name".
 
 Remember to replace name with name of Anaconda package.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-There are issues with out-of-date software. It may have bugs that have since been fixed and so makes for less reproducible science. Documentation may be harder to find if it isn't also matched to the software version. Examining the README.md file for instructions may provide some good information on installing the package. You can also reach out to us for [support](/docs/help/support.md) in installing a package.
+There are issues with out-of-date software. It may have bugs that have since been fixed and so makes for less reproducible science. Documentation may be harder to find if it isn't also matched to the software version. Examining the README.md file for instructions may provide some good information on installing the package. You can also reach out to us for [support](../help/support.md) in installing a package.
 <!-- markdownlint-enable MD046 -->
 
-When we have a complete list of Anaconda packages and Channels, then we can create an environment from scratch with all the dependencies included. For Anaconda packages, add one line to dependencies for each software. For PyPI packages add - pip: under dependencies. Then under - pip:add `==` to pin the version, see below. The advantage to using an environment file is that it can be stored with your project in GitHub or GitLab, giving it all the benefits of [version control](/docs/workflow_solutions/git_collaboration.md).
+When we have a complete list of Anaconda packages and Channels, then we can create an environment from scratch with all the dependencies included. For Anaconda packages, add one line to dependencies for each software. For PyPI packages add - pip: under dependencies. Then under - pip:add `==` to pin the version, see below. The advantage to using an environment file is that it can be stored with your project in GitHub or GitLab, giving it all the benefits of [version control](./git_collaboration.md).
 
 ```yaml
 name: test-env
@@ -363,7 +363,7 @@ dependencies:
 
  For git repos, add them under `- pip:` based on examples [here](https://pip.pypa.io/en/stable/cli/pip_install/#examples). See the section [Replicability versus Portability](#replicability-versus-portability) for more information.
 
-The above configuration is only for illustration purposes, to show how channels and dependencies can be used. It is best to install all of your packages from conda channels, to avoid your environment breaking. Only packages that are unavailable via conda, should be installed via pip. If you run into challenges please [contact us](../index.md#contact-us).
+The above configuration is only for illustration purposes, to show how channels and dependencies can be used. It is best to install all of your packages from conda channels, to avoid your environment breaking. Only packages that are unavailable via conda, should be installed via pip. If you run into challenges please [contact us](../index.md#how-to-contact-us).
 
 ##### Key Things To Remember
 

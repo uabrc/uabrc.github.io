@@ -32,17 +32,17 @@ This user guide provides comprehensive insight into different types of batch job
 
 1. [A Simple Slurm Batch Job](#example-1-a-simple-slurm-batch-job) is ideal for Cheaha users who are just starting with Slurm batch job submission. It uses a simple example to introduce new users to requesting resources with `sbatch`, printing the `hostname`, and monitoring batch job submission.
 
-2. [Sequential Job](#example-2-sequential-job) is used when tasks run one at a time sequentially. Adding more CPUs does not make a sequential job run faster. If you need to run many such sequential jobs simultaneously, you can submit it as an single [array job](#example-4-array-job). For instance, a Python or R script that executes a series of steps—such as data loading, extraction, analysis, and output reporting—where each step must be completed before the next can begin.
+1. [Sequential Job](#example-2-sequential-job) is used when tasks run one at a time sequentially. Adding more CPUs does not make a sequential job run faster. If you need to run many such sequential jobs simultaneously, you can submit it as an single [array job](#example-4-array-job). For instance, a Python or R script that executes a series of steps—such as data loading, extraction, analysis, and output reporting—where each step must be completed before the next can begin.
 
-3. [Parallel Jobs](#example-3-parallel-jobs) is suitable for executing multiple independent tasks/jobs simultaneously and efficiently distributing them across resources. This approach is particularly beneficial for small-scale tasks that cannot be split into parallel processes within the code itself. For example, consider a Python script that operates on different data set, in such a scenario, you can utilize `srun` to execute multiple instances of the script concurrently, each operating on a different dataset and on different resources.
+1. [Parallel Jobs](#example-3-parallel-jobs) is suitable for executing multiple independent tasks/jobs simultaneously and efficiently distributing them across resources. This approach is particularly beneficial for small-scale tasks that cannot be split into parallel processes within the code itself. For example, consider a Python script that operates on different data set, in such a scenario, you can utilize `srun` to execute multiple instances of the script concurrently, each operating on a different dataset and on different resources.
 
-4. [Array Job](#example-4-array-job) is used for submitting and running multiple large number of identical tasks in parallel. They share the same code and execute with similar resource requirements. Instead of submitting multiple [sequential job](#example-2-sequential-job), you can submit a single array job, which helps to manage and schedule a large number of similar tasks efficiently. This improves efficiency, resource utilization, scalability, and ease of debugging. For instance, array jobs can be designed for executing multiple instances of the same task with slight variations in inputs or parameters such as perform [FastQC](https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help) processing on 10 different samples.
+1. [Array Job](#example-4-array-job) is used for submitting and running multiple large number of identical tasks in parallel. They share the same code and execute with similar resource requirements. Instead of submitting multiple [sequential job](#example-2-sequential-job), you can submit a single array job, which helps to manage and schedule a large number of similar tasks efficiently. This improves efficiency, resource utilization, scalability, and ease of debugging. For instance, array jobs can be designed for executing multiple instances of the same task with slight variations in inputs or parameters such as perform [FastQC](https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help) processing on 10 different samples.
 
-5. [Mutlithreaded or Multicore Job](#example-5-multithreaded-or-multicore-job) is used when software inherently support multithreaded parallelism i.e  run independent tasks simultaneously on multicore processors. For instance, there are numerous software such as [MATLAB](https://www.mathworks.com/help/matlab/ref/parfor.html), [FEBio](https://help.febio.org/FebioUser/FEBio_um_3-4-Section-2.6.html), [Xplor-NIH](https://nmr.cit.nih.gov/xplor-nih/doc/current/helperPrograms/options.html) support running multiple tasks at the same time on multicore processors. Users or programmers do not need to modify the code; you can simply enable multithreaded parallelism by configuring the appropriate options.
+1. [Mutlithreaded or Multicore Job](#example-5-multithreaded-or-multicore-job) is used when software inherently support multithreaded parallelism i.e  run independent tasks simultaneously on multicore processors. For instance, there are numerous software such as [MATLAB](https://www.mathworks.com/help/matlab/ref/parfor.html), [FEBio](https://help.febio.org/FebioUser/FEBio_um_3-4-Section-2.6.html), [Xplor-NIH](https://nmr.cit.nih.gov/xplor-nih/doc/current/helperPrograms/options.html) support running multiple tasks at the same time on multicore processors. Users or programmers do not need to modify the code; you can simply enable multithreaded parallelism by configuring the appropriate options.
 
-6. [GPU Job](#example-6-gpu-job) utilizes the parallel GPUs, which contain numerous cores designed to perform the same mathematical operations simultaneously. GPU job is appropriate for pipelines and software that are designed to run on GPU-based systems and efficiently distribute tasks across cores to process large datasets in parallel. Example includes [Tensorflow](https://www.tensorflow.org/guide/gpu), [Parabricks](../../education/case_studies.md), [PyTorch](https://pytorch.org/tutorials/prototype/ios_gpu_workflow.html#prototype-use-ios-gpu-in-pytorch), etc.
+1. [GPU Job](#example-6-gpu-job) utilizes the parallel GPUs, which contain numerous cores designed to perform the same mathematical operations simultaneously. GPU job is appropriate for pipelines and software that are designed to run on GPU-based systems and efficiently distribute tasks across cores to process large datasets in parallel. Example includes [Tensorflow](https://www.tensorflow.org/guide/gpu), [Parabricks](../../education/case_studies.md), [PyTorch](https://pytorch.org/tutorials/prototype/ios_gpu_workflow.html#prototype-use-ios-gpu-in-pytorch), etc.
 
-7. [Multinode Job](#example-7-multinode-job) is for pipeline/software that can be distributed and run across multiple nodes. For example, MPI based applications/tools such as [Quantum Expresso](https://www.quantum-espresso.org/Doc/user_guide/node20.html), [Amber](https://usc-rc.github.io/tutorials/amber), [LAMMPS](https://docs.lammps.org/Run_basics.html), etc.
+1. [Multinode Job](#example-7-multinode-job) is for pipeline/software that can be distributed and run across multiple nodes. For example, MPI based applications/tools such as [Quantum Expresso](https://www.quantum-espresso.org/Doc/user_guide/node20.html), [Amber](https://usc-rc.github.io/tutorials/amber), [LAMMPS](https://docs.lammps.org/Run_basics.html), etc.
 
 ### Example 1: A Simple Slurm Batch Job
 
@@ -108,7 +108,7 @@ This example illustrate a Slurm job that runs a Python script involving [NumPy](
 
 ```bash linenums="1"
 #!/bin/bash
-#SBATCH --job-name=numpy            ### Name of the job            
+#SBATCH --job-name=numpy            ### Name of the job
 #SBATCH --nodes=1                   ### Number of Nodes
 #SBATCH --ntasks=1                  ### Number of Tasks
 #SBATCH --cpus-per-task=1           ### Number of Tasks per CPU
@@ -135,7 +135,7 @@ numpy_26127143.err  numpy_26127143.out  numpy.job  python_test.py  testing.png
 ```
 
 ```bash
-$cat numpy_26127143.out 
+$cat numpy_26127143.out
 
 [ 0 10 20 30 40]
 [-5.  -4.5 -4.  -3.5 -3.  -2.5 -2.  -1.5 -1.  -0.5  0.   0.5  1.   1.5
@@ -151,10 +151,10 @@ You can review detailed information about finished jobs using `sacct` command fo
 ```bash
 $ sacct -j 26127143
 
-       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
------------- ---------- ---------- ---------- ---------- ---------- -------- 
-26127143          numpy    express      USER          1  COMPLETED      0:0 
-26127143.ba+      batch                 USER          1  COMPLETED      0:0 
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+26127143          numpy    express      USER          1  COMPLETED      0:0
+26127143.ba+      batch                 USER          1  COMPLETED      0:0
 26127143.ex+     extern                 USER          1  COMPLETED      0:0
 ```
 
@@ -164,15 +164,15 @@ Multiple jobs or tasks can be executed simultaneously using `srun` within a sing
 
 ```bash linenums="1"
 #!/bin/bash
-#SBATCH --job-name=multijob             ### Name of the job                
+#SBATCH --job-name=multijob             ### Name of the job
 #SBATCH --nodes=1                       ### Number of Nodes
 #SBATCH --ntasks=3                      ### Number of Tasks
-#SBATCH --cpus-per-task=1               ### Number of Tasks per CPU    
+#SBATCH --cpus-per-task=1               ### Number of Tasks per CPU
 #SBATCH --mem=4G                        ### Memory required, 4 gigabyte
-#SBATCH --partition=express             ### Cheaha Partition    
+#SBATCH --partition=express             ### Cheaha Partition
 #SBATCH --time=01:00:00                 ### Estimated Time of Completion, 1 hour
-#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id    
-#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id    
+#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id
+#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id
 
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
 module load Anaconda3
@@ -225,14 +225,14 @@ The `sacct` report indicates that three CPUs have been allocated. The python scr
 ```bash
 $ sacct -j 27099591
 
-       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
------------- ---------- ---------- ---------- ---------- ---------- -------- 
-27099591       multijob    express      USER          3  COMPLETED      0:0 
-27099591.ba+      batch                 USER          3  COMPLETED      0:0 
-27099591.ex+     extern                 USER          3  COMPLETED      0:0 
-27099591.0       python                 USER          1  COMPLETED      0:0 
-27099591.1       python                 USER          1  COMPLETED      0:0 
-27099591.2       python                 USER          1  COMPLETED      0:0 
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+27099591       multijob    express      USER          3  COMPLETED      0:0
+27099591.ba+      batch                 USER          3  COMPLETED      0:0
+27099591.ex+     extern                 USER          3  COMPLETED      0:0
+27099591.0       python                 USER          1  COMPLETED      0:0
+27099591.1       python                 USER          1  COMPLETED      0:0
+27099591.2       python                 USER          1  COMPLETED      0:0
 ```
 
 ### Example 4: Array Job
@@ -243,16 +243,16 @@ The following Slurm script is an example of how you might convert the previous `
 
 ```bash linenums="1"
 #!/bin/bash
-#SBATCH --job-name=slurm_array       ### Name of the job                                                      
-#SBATCH --nodes=1                    ### Number of Nodes               
+#SBATCH --job-name=slurm_array       ### Name of the job
+#SBATCH --nodes=1                    ### Number of Nodes
 #SBATCH --ntasks=1                   ### Number of Tasks
-#SBATCH --cpus-per-task=1            ### Number of Tasks per CPU 
+#SBATCH --cpus-per-task=1            ### Number of Tasks per CPU
 #SBATCH --mem=4G                     ### Memory required, 4 gigabyte
-#SBATCH --partition=express          ### Cheaha Partition 
+#SBATCH --partition=express          ### Cheaha Partition
 #SBATCH --time=01:00:00              ### Estimated Time of Completion, 1 hour
 #SBATCH --output=%x_%A_%a.out        ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --error=%x_%A_%a.err         ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
-#SBATCH --array=1-3                  ### Number of Slurm array tasks, 3 tasks       
+#SBATCH --array=1-3                  ### Number of Slurm array tasks, 3 tasks
 
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
 module load Anaconda3
@@ -281,17 +281,17 @@ The `sacct` report indicates that the job `27101430` consists of three individua
 ```bash
 $ sacct -j 27101430
 
-       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
------------- ---------- ---------- ---------- ---------- ---------- -------- 
-27101430_3   slurm_arr+    express      USER          1  COMPLETED      0:0 
-27101430_3.+      batch                 USER          1  COMPLETED      0:0 
-27101430_3.+     extern                 USER          1  COMPLETED      0:0 
-27101430_1   slurm_arr+    express      USER          1  COMPLETED      0:0 
-27101430_1.+      batch                 USER          1  COMPLETED      0:0 
-27101430_1.+     extern                 USER          1  COMPLETED      0:0 
-27101430_2   slurm_arr+    express      USER          1  COMPLETED      0:0 
-27101430_2.+      batch                 USER          1  COMPLETED      0:0 
-27101430_2.+     extern                 USER          1  COMPLETED      0:0 
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+27101430_3   slurm_arr+    express      USER          1  COMPLETED      0:0
+27101430_3.+      batch                 USER          1  COMPLETED      0:0
+27101430_3.+     extern                 USER          1  COMPLETED      0:0
+27101430_1   slurm_arr+    express      USER          1  COMPLETED      0:0
+27101430_1.+      batch                 USER          1  COMPLETED      0:0
+27101430_1.+     extern                 USER          1  COMPLETED      0:0
+27101430_2   slurm_arr+    express      USER          1  COMPLETED      0:0
+27101430_2.+      batch                 USER          1  COMPLETED      0:0
+27101430_2.+     extern                 USER          1  COMPLETED      0:0
 ```
 
 ### Example 5: Multithreaded or Multicore Job
@@ -300,12 +300,12 @@ This Slurm script illustrates execution of a MATLAB script in a multithread/mult
 
 ```bash linenums="1"
 #!/bin/bash
-#SBATCH --job-name=multithread          ### Name of the job                                   
+#SBATCH --job-name=multithread          ### Name of the job
 #SBATCH --nodes=1                       ### Number of Nodes
 #SBATCH --ntasks=1                      ### Number of Tasks
-#SBATCH --cpus-per-task=4               ### Number of Tasks per CPU    
+#SBATCH --cpus-per-task=4               ### Number of Tasks per CPU
 #SBATCH --mem=16G                       ### Memory required, 16 gigabyte
-#SBATCH --partition=express             ### Cheaha Partition    
+#SBATCH --partition=express             ### Cheaha Partition
 #SBATCH --time=01:00:00                 ### Estimated Time of Completion, 1 hour
 #SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id
 #SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id
@@ -373,7 +373,7 @@ MATLAB is selecting SOFTWARE OPENGL rendering.
 
 To get started, type doc.
 For product information, visit www.mathworks.com.
- 
+
 Starting parallel pool (parpool) using the 'Processes' profile ...
 Connected to parallel pool with 4 workers.
 Sum of array is: 5050
@@ -383,11 +383,11 @@ Parallel pool using the 'Processes' profile is shutting down.
 ```bash
 $ sacct -j 27105035
 
-       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
------------- ---------- ---------- ---------- ---------- ---------- -------- 
-27105035     multithre+    express      USER          4  COMPLETED      0:0 
-27105035.ba+      batch                 USER          4  COMPLETED      0:0 
-27105035.ex+     extern                 USER          4  COMPLETED      0:0 
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+27105035     multithre+    express      USER          4  COMPLETED      0:0
+27105035.ba+      batch                 USER          4  COMPLETED      0:0
+27105035.ex+     extern                 USER          4  COMPLETED      0:0
 ```
 
 ### Example 6: GPU Job
@@ -396,16 +396,16 @@ This slurm script shows the execution of Tensorflow job using GPU resources. Let
 
 ```bash linenums="1"
 #!/bin/bash
-#SBATCH --job-name=gpu              ### Name of the job                                             
-#SBATCH --nodes=1                   ### Number of Nodes                    
-#SBATCH --ntasks=1                  ### Number of Tasks                                 
-#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU                          
-#SBATCH --gres=gpu:2                ### Number of GPUs, 2 GPUs                  
-#SBATCH --mem=16G                   ### Memory required, 16 gigabyte                  
-#SBATCH --partition=amperenodes     ### Cheaha Partition                               
-#SBATCH --time=01:00:00             ### Estimated Time of Completion, 1 hour                
-#SBATCH --output=%x_%j.out          ### Slurm Output file, %x is job name, %j is job id                         
-#SBATCH --error=%x_%j.err           ### Slurm Error file, %x is job name, %j is job id                       
+#SBATCH --job-name=gpu              ### Name of the job
+#SBATCH --nodes=1                   ### Number of Nodes
+#SBATCH --ntasks=1                  ### Number of Tasks
+#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU
+#SBATCH --gres=gpu:2                ### Number of GPUs, 2 GPUs
+#SBATCH --mem=16G                   ### Memory required, 16 gigabyte
+#SBATCH --partition=amperenodes     ### Cheaha Partition
+#SBATCH --time=01:00:00             ### Estimated Time of Completion, 1 hour
+#SBATCH --output=%x_%j.out          ### Slurm Output file, %x is job name, %j is job id
+#SBATCH --error=%x_%j.err           ### Slurm Error file, %x is job name, %j is job id
 
 ### Loading the required CUDA and cuDNN modules
 module load CUDA/12.2.0
@@ -453,7 +453,7 @@ if gpus:
 The results indicate that the Tensorflow version utilized is 2.15. The segments `/device:GPU:0` and `/device:GPU:1` specify that the computations were executed on two GPUs. The final results is a 4x4 matrix obtained by summing the matrix multiplication results. In the `sacct` report, the column `AllocGRES` shows that 2 GPUs are allocated for this job.
 
 ```bash
-$ cat gpu_27107694.out 
+$ cat gpu_27107694.out
 
 TensorFlow version: 2.15.0
 Num GPUs Available:  2
@@ -469,11 +469,11 @@ tf.Tensor(
 ```bash
 $ sacct -j 27107694 --format=JobID,JobName,Partition,Account,AllocCPUS,allocgres,State,ExitCode
 
-       JobID    JobName  Partition    Account  AllocCPUS    AllocGRES      State ExitCode 
------------- ---------- ---------- ---------- ---------- ------------ ---------- -------- 
-27107694            gpu amperenod+      USER          1        gpu:2  COMPLETED      0:0 
-27107694.ba+      batch                 USER          1        gpu:2  COMPLETED      0:0 
-27107694.ex+     extern                 USER          1        gpu:2  COMPLETED      0:0 
+       JobID    JobName  Partition    Account  AllocCPUS    AllocGRES      State ExitCode
+------------ ---------- ---------- ---------- ---------- ------------ ---------- --------
+27107694            gpu amperenod+      USER          1        gpu:2  COMPLETED      0:0
+27107694.ba+      batch                 USER          1        gpu:2  COMPLETED      0:0
+27107694.ex+     extern                 USER          1        gpu:2  COMPLETED      0:0
 ```
 
 ### Example 7: Multinode Job
@@ -483,14 +483,14 @@ The below Slurm script runs a Quantum Expresso job using the `pw.x` executable o
 ```bash linenums="1"
 #!/bin/bash
 
-#SBATCH --job-name=mpijob               ### Name of the job              
+#SBATCH --job-name=mpijob               ### Name of the job
 #SBATCH --nodes=2                       ### Number of Nodes
 #SBATCH --ntasks 4                      ### Number of Tasks
 #SBATCH --mem=64G                       ### Memory required, 64 gigabyte
 #SBATCH --partition=amd-hdr100          ### Cheaha Partition
 #SBATCH --time=12:00:00                 ### Estimated Time of Completion, 12 hour
-#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id    
-#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id         
+#SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id
+#SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id
 
 ### Load the suitable Quantum Expresso module
 module load QuantumESPRESSO/6.3-foss-2018b
@@ -502,7 +502,7 @@ srun --mpi=pmix_v3 -N 2 pw.x -nk 4 -i pw.scf.silicon.in
 The below output shows that the workflow has been distributed across 2 nodes, with a total of 4 pools. The computations are performed based on these above-mentioned parallel execution configuration. Also, displays the metrics such as parallelization, overall performance, and successful job completion status. Note that the results only display essential information to aid in understanding the execution of this multi-node job. And, the `sacct` report indicates that the job is allocated with 4 CPUs across 2 nodes, and was completed successfully.
 
 ```bash
-$ cat multinode_27108398.out 
+$ cat multinode_27108398.out
 
 Program PWSCF v.6.3MaX starts on  8Mar2024 at 13:18:37
 
@@ -526,7 +526,7 @@ Program PWSCF v.6.3MaX starts on  8Mar2024 at 13:18:37
      Max number of different atomic species (ntypx) = 10
      Max number of k-points (npk) =  40000
      Max angular momentum in pseudopotentials (lmaxx) =  3
-     ..... 
+     .....
      .....
           Parallel routines
 
@@ -541,10 +541,10 @@ Program PWSCF v.6.3MaX starts on  8Mar2024 at 13:18:37
 ```bash
 $ sacct -j 27108398 --format=JobID,JobName,Partition,Account,AllocCPUS,AllocNodes,State,ExitCode
 
-       JobID    JobName  Partition    Account  AllocCPUS AllocNodes      State ExitCode 
------------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
-27108398      multinode amd-hdr100      USER          4          2  COMPLETED      0:0 
-27108398.ba+      batch                 USER          3          1  COMPLETED      0:0 
-27108398.ex+     extern                 USER          4          2  COMPLETED      0:0 
-27108398.0         pw.x                 USER          4          2  COMPLETED      0:0 
+       JobID    JobName  Partition    Account  AllocCPUS AllocNodes      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- ---------- --------
+27108398      multinode amd-hdr100      USER          4          2  COMPLETED      0:0
+27108398.ba+      batch                 USER          3          1  COMPLETED      0:0
+27108398.ex+     extern                 USER          4          2  COMPLETED      0:0
+27108398.0         pw.x                 USER          4          2  COMPLETED      0:0
 ```

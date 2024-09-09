@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.13.0
+    hooks:
+      - id: markdownlint-cli2
+        require_serial: true
+  - repo: local
+    hooks:
+      - id: mkdocs-build
+        name: Build documentation
+        entry: "conda activate mkdocs && mkdocs build --strict"
+        language: system
+        always_run: true
+        pass_filenames: false

@@ -43,4 +43,4 @@ publication:
 
 ## Detailed Hardware Information
 
-For more detailed information on compute hardware please see: [Detailed Hardware Information](../cheaha/hardware.md#detailed-hardware-information)
+For more detailed information on compute hardware please see: [Detailed Hardware Information](../cheaha/hardware.md#details)

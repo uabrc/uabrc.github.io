@@ -1,0 +1,6 @@
+{
+  "fix": false,
+  "ignores": [
+    "theme/"
+  ]
+}

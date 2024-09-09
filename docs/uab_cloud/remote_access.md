@@ -18,8 +18,8 @@ There are two main steps to working with SSH efficiently. The first is to ensure
 
 Terminal multiplexers are software that aggregate multiple SSH client sessions into one location. They often have the added benefit of keeping sessions alive on the remote machine, so short internet outages won't require you to log in again.
 
-- For Linux, try using `tmux`: <https://github.com/tmux/tmux/wiki/Installing>
-- For Windows, try using Windows Terminal: <https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701>
+- For Linux, try using `tmux`: <https://github.com/tmux/tmux/wiki/Installing#installing-tmux>
+- For Windows, try using Windows Terminal: <https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-us&gl=US>
 
 ### Install an SSH Client (Linux)
 
@@ -37,7 +37,7 @@ There are several options for installing an SSH client on Windows, described bel
 
 #### Windows Subsystem For Linux (WSL)
 
-Follow the instructions starting [here](https://docs.microsoft.com/en-us/windows/wsl/about) to install Windows Subsystem for Linux.
+Follow the instructions starting [here](https://learn.microsoft.com/en-us/windows/wsl/about) to install Windows Subsystem for Linux.
 
 WSL shells do not automatically start or share the `ssh-agent`. To fix this we recommend installing `keychain` to automatically manage the `ssh-agent`. Run the following command depending on your Linux distribution.
 
@@ -59,7 +59,7 @@ Then modify the `.*rc` file for your shell, generally `.bashrc` or `.zshrc`, to 
 
 #### OpenSSH for Windows
 
-Follow the instructions [here](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) to install the OpenSSH client. Only install the OpenSSH server if you need it, otherwise skip that part.
+Follow the instructions [here](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) to install the OpenSSH client. The client software is all that is needed to connect with instances from your Windows PC. Only install the OpenSSH server if you are sure you need it (this is very uncommon). The instructions at the link should work for Windows 10 and Windows 11.
 
 Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent service on your local machine to streamline adding and using keys.
 
@@ -108,7 +108,7 @@ fi
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    Git Bash can also be used with [Windows Terminal](#terminal-multiplexers) using this stackoverflow answer: <https://stackoverflow.com/a/57369284>.
+    Git Bash can also be used with [Windows Terminal](#terminal-multiplexers) using this stackoverflow answer: <https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal/57369284>.
 <!-- markdownlint-enable MD046 -->
 
 ### Generating Key Pairs
@@ -116,9 +116,9 @@ fi
 The instructions for generating key pairs are identical for all operating systems. [GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) maintains excellent documentation on generating key pairs. The gist of those instructions follows.
 
 1. Open a terminal window.
-2. Use the command `ssh-keygen -t ed25519 -C "your_email@example.com"`
-3. You will be prompted to choose a location to store the key, including a file name.
-4. You will be prompted to enter a passphrase to secure the key. It is highly recommended to secure your key pair with a passphrase to minimize risk.
+1. Use the command `ssh-keygen -t ed25519 -C "your_email@example.com"`
+1. You will be prompted to choose a location to store the key, including a file name.
+1. You will be prompted to enter a passphrase to secure the key. It is highly recommended to secure your key pair with a passphrase to minimize risk.
 
 ### Managing Keys
 
@@ -152,7 +152,7 @@ If `ssh-agent` isn't already running and you encounter an error, use the followi
     <!-- markdownlint-disable MD046 -->
     !!! bug
 
-        For Linux users and [WSL](https://docs.microsoft.com/en-us/windows/wsl/about) on Windows users. If you experience a `Warning: Unprotected Private Key File` error when using `ssh-add`, your `ssh` file and directory permissions may be incorrect. To fix, please use the following commands.
+        For Linux users and [WSL](https://learn.microsoft.com/en-us/windows/wsl/about) on Windows users. If you experience a `Warning: Unprotected Private Key File` error when using `ssh-add`, your `ssh` file and directory permissions may be incorrect. To fix, please use the following commands.
 
         ```bash
         sudo chmod 600 ~/.ssh/<private_key_file>

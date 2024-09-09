@@ -3,8 +3,8 @@
 [UAB Core Facilities](https://www.uab.edu/cores/ircp/uab-ircp-core-facilities) provide access to research instruments and services for scientific and clinical investigators. Cores can generate large amounts of data very quickly for many labs and so have some unique data management concerns. These concerns can be summarized as follows:
 
 1. Data transfer off local machines
-2. Data organization
-3. Data distribution
+1. Data organization
+1. Data distribution
 
 UAB Cores can request a 75 TB allocation on LTS with possibilities for expansion to use for both storage and distribution of data. Together with Globus and CLI tools for transfer, LTS can be the basis for a full core data management plan. This documentation aims to provide details of general solutions for common problems with managing large amounts of data in a core.
 
@@ -24,7 +24,7 @@ Effectively organizing an LTS space will dictate where data are transferred with
 
 1. The core creates a bucket for each lab or group it services containing raw or analyzed data for that group. Permissions for each bucket are managed independently.
       1. Due to all buckets in LTS needing to have unique names, buckets should be named more descriptively than just the name of the group to which the data belong. Instead, the format `[core_name]-[group_name]` will be both specific and unique enough to work in most circumstances. For example, data analyzed by the Research MRI Core (RMRIC) core for group `smithlab` would be put in a bucket named `rmric-smithlab`. Keep in mind the [allowed characters](lts_faq.md#what-are-valid-bucket-names-in-lts) when creating bucket names.
-2. Within each bucket, data are generally organized by classification as raw or analyzed and then further organized by type of data or analysis. The exact form this takes is left up to the core itself. This style of organization lends itself to both structural clarity and automation of data transfer.
+1. Within each bucket, data are generally organized by classification as raw or analyzed and then further organized by type of data or analysis. The exact form this takes is left up to the core itself. This style of organization lends itself to both structural clarity and automation of data transfer.
 
 A simplified diagram illustrating this organization can be seen below.
 

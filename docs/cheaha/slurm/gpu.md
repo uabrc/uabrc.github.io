@@ -68,14 +68,14 @@ If you are using MATLAB R2022a or newer, then our `pascalnodes` P100 GPUs and `a
 If you are using R2021b and earlier, then follow the instructions below.
 
 1. Start an [HPC Interactive Desktop Job](../open_ondemand/hpc_desktop.md) with appropriate resources. Be sure to use one of the `pascalnodes*` [Partitions](#scheduling-gpus).
-2. Open a terminal.
-3. Load the appropriate [CUDA Module](#cuda-modules).
+1. Open a terminal.
+1. Load the appropriate [CUDA Module](#cuda-modules).
     - Determine which CUDA Modules are compatible with your required version of MATLAB using the table at the [MathWorks Site](https://www.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html).
     - Check the `Pascal (cc6.x)` column for the `pascalnodes` P100 GPUs and `Ampere (cc8.x)` column for the `amperenodes` A100 GPUs.
     - As of September, 2023, `module load CUDA/11.6.0` and newer should work fine with any version of MATLAB R2021b or older, with possible caveats for some functions.
-4. Load the appropriate MATLAB [Module](../software/modules.md).
-5. Start MATLAB by entering the command `matlab`.
-6. When MATLAB loads, enter the command `gpuDevice` in the MATLAB Command Window to verify it can identify the GPU.
+1. Load the appropriate MATLAB [Module](../software/modules.md).
+1. Start MATLAB by entering the command `matlab`.
+1. When MATLAB loads, enter the command `gpuDevice` in the MATLAB Command Window to verify it can identify the GPU.
 
 For more information and official MATLAB documentation please see this page: <https://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html>.
 
