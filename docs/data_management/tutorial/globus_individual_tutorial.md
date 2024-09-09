@@ -5,13 +5,13 @@ In this tutorial, we will guide you on how to effectively use Globus for managin
 
 ## Prerequisites
 
-For this tutorial, you will need your BlazerID to authenticate using Single Sign-On (SSO).
+For this tutorial, you will need your BlazerID and password to authenticate using Single Sign-On (SSO).
 
 ## What is Globus, and Why Would You Use It?
 
 Globus is a service that simplifies the process of transferring, sharing, and managing large datasets. It is widely used in research environments where data needs to be moved between different systems, institutions, or storage types.
 
-**Key Features of Globus**:
+### Key Features of Globus
 
 - It ensures that your data is protected during transfers with encryption.
 - It automatically retries failed transfers, and report the status of your data transfer.
@@ -28,45 +28,89 @@ Globus is a service that simplifies the process of transferring, sharing, and ma
 
 Getting started with Globus involves a few steps. Here is how you can set up your account and start using the platform:
 
-- To get to the Globus Web App, point your browser to <https://app.globus.org>
+- To get to the Globus Web App, navigate to [https://app.globus.org](https://app.globus.org), and you will land on a page as shown below.
 
+<!--
     ![first-page-globus](/image/first-page-globus.png)
+-->
 
-- Click on **Log in** at the upper right corner.
-- Select "University of Alabama at Birmingham" from the drop-down menu and click on **Continue**, as shown below.
-  ![login-page-globus](/image/login-page-globus.png)
-- Enter your BlazerID and password, then click **Log in**.
-![login-page-uab](/image/login-page-uab.png)
-- After logging in, you will be directed to the Globus file manager. Turn on **two-panel mode** by toggling the switch near the top right, as shown below.
+- Type your institution's name or a part of it in the search bar. For example,  if you type "UAB", it will match entries like "University of Alabama at Birmingham", as shown below.
 
+<!--
+  ![login-page-globus](/image/enter-institution-page-globus.png)
+-->
+
+- Select your institution from the drop-down menu and click "Continue" as shown below.
+
+<!--
+  ![login-page-globus](/image/continue-button-page-globus.png)
+-->
+
+- Enter your BlazerID and password, then click "Log in".
+
+<!--
+![login-page-uab](/image/authentication-page-uab.png)
+-->
+
+- After logging in, you will be directed to the Globus file manager.
+
+<!--
   ![file-manager-page-globus](/image/file-manager-page-globus.png)
+-->
 
-- Then, on the file transfer page, you will see two file browser windows: one on the left and one on the right. Each window will have an **Endpoint** field representing the two systems between which you wish to transfer files. Once set up, you can transfer files in either direction.
+- Enable two-panel mode by toggling the switch located near the top right corner, as shown below.
+
+<!--
+  ![two-panel-mode-toggle](/image/two-panel-mode-toggle.png)
+-->
+
+- Then, on the file transfer page, you will see two file browser windows: one on the left and one on the right. Each window will have an Endpoint field representing the two systems between which you wish to transfer files. Once set up, you can transfer files in either direction.
+
+<!--
+  ![two-file-browser-windows](/image/two-file-browser-windows.png)
+-->
 
 ## How to Find Collections Shared with You
 
-Globus allows users to share data collections with others. To view collections shared with you, please follow these steps:
+Globus allows users to share collections with others and also view what is shared with you. To view collections shared with you, please follow these steps:
 
 - Log in to Globus using your credentials.
 
-- From the Globus dashboard, select **File Manager** from the sidebar or top navigation menu. In the **File Manager**, click on the Collection field to open the search window, as shown below.
+- From the Globus dashboard, on the left sidebar of the Globus Web App, click on the "Collections" menu.
 
- ![file-manager-page-search](/image/file-manager-page-search.png)
+<!--
+ ![file-manager-page-search](/image/collection-search-menu.png)
+-->
 
-- Look for a button **Shared with You**. This filter shows all collections that have been shared specifically with your account.
+- Then, click the "Shared with You" button located in the top-right corner. This filter will display all collections that have been shared specifically with your account.
 
-![shared-with-you](/image/shared-with-you.png)
-
+<!--
+![shared-with-you](/image/collection-shared-with-you.png)
+-->
 ## How to Search for Collections by Name
 
-To find a specific collection by **name**, follow these steps:
+To find a specific collection by name, follow these steps:
 
-- Once logged in, open the File Manager from the dashboard, as shown below.
+- Log in to Globus and click on the "File Manager" from the dashboard, as shown below.
 
- ![search-for-collection](/image/search-for-collection.png)
+<!--
+ ![file-manager](/image/file-manager-globus.png)
+-->
 
-- In the File Manager, click the collection search window and Use the the collection search bar to enter the name (or part of the name) of the collection you are looking for and click **Search**.
+- In the File Manager, click the collection search window, as shown below.
 
-- Once the search results appear, click on the desired collection to access or transfer files, as shown below.
+<!--
+ ![click-search-field](/image/click-on-search-bar.png)
+-->
 
-  ![search-for-collection-result](/image/search-for-collection-result.png)
+- Enter the name (or part of the name) of the collection you are looking for in the search bar.
+
+<!--
+ ![collection-search-bar](/image/collection-search-bar.png)
+-->
+
+- Once the search results appear, click on the desired collection to access or transfer files.
+
+<!--
+  ![collection-results](/image/collection-results.png)
+-->
