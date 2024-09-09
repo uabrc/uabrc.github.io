@@ -20,6 +20,18 @@ To transfer data from a shared collection to a project directory on Cheaha, you 
 
 ## How to transfer data from a shared collection to my group's LTS allocation?
 
+To transfer data from a shared collection to the UAB Long Term Storage (LTS) lab space, start by selecting the LTS lab space collection and authenticating your identity. On the other end of the panel, click the collection and go to "Shared With You" tab and select the shared allocation, such as "test_lts_collection." Set the desired source and destination paths for both collections before proceeding with the transfer.
+
+Once everything is set, click the "Start" button on the shared collection panel to begin the transfer process, which will start automatically. You can monitor the progress by clicking the "refresh list" button on the lab space end to verify that the changes have been made.
+
+<!--
+![!Globus Shared Collection](images/globus-lts-shared-collection.png)
+-->
+
+<!--
+![!Globus Transfer Shared Collection To Cheaha Projdir](images/globus-lts-shared-collection-transfer-group-space.png)
+-->
+
 ## How to transfer data between LTS and Cheaha?
 
 You can transfer data between LTS and Cheaha using Globus. To do this, select the LTS collection on one side and the Cheaha collection on the other side in the transfer panel interface, and authenticate the identity.
