@@ -11,11 +11,11 @@ To transfer data from a shared collection to a project directory on Cheaha, you 
 1. Start the Transfer: Click the "Start" button on the shared collection side. The data, such as the folder `test`, will then be transferred to your specified project directory.
 
 <!--
-![!Globus Shared Collection](images/globus-shared-collection.png)
+![!Globus Shared Collection](./images/globus-shared-collection.png)
 -->
 
 <!--
-![!Globus Transfer Shared Collection To Cheaha Projdir](images/globus-transfer-shared-collection-to-cheaha-projdir.png)
+![!Globus Transfer Shared Collection To Cheaha Projdir](./images/globus-transfer-shared-collection-to-cheaha-projdir.png)
 -->
 
 ## How to transfer data from a shared collection to my group's LTS allocation?
@@ -25,11 +25,11 @@ To transfer data from a shared collection to the UAB Long Term Storage (LTS) lab
 Once everything is set, click the "Start" button on the shared collection panel to begin the transfer process, which will start automatically. You can monitor the progress by clicking the "refresh list" button on the lab space end to verify that the changes have been made.
 
 <!--
-![!Globus Shared Collection](images/globus-lts-shared-collection.png)
+![!Globus LTS Shared Collection](./images/globus-lts-shared-collection.png)
 -->
 
 <!--
-![!Globus Transfer Shared Collection To Cheaha Projdir](images/globus-lts-shared-collection-transfer-group-space.png)
+![!Globus LTS Shared Collection Transfer Group Space](./images/globus-lts-shared-collection-transfer-group-space.png)
 -->
 
 ## How to transfer data between LTS and Cheaha?
@@ -39,11 +39,11 @@ You can transfer data between LTS and Cheaha using Globus. To do this, select th
 To transfer data from LTS to Cheaha, make sure the paths are correctly set on both ends by navigating to the appropriate folders. Select the files or folders from the LTS side and click the "Start" button on the left-hand side panel. The data will be transferred and will appear in the right-hand side panel, which corresponds to the Cheaha end.
 
 <!--
-![!Globus Transfer Data From LTS To Cheaha](images/globus-transfer-lts-to-cheaha.png)
+![!Globus Transfer Data From LTS To Cheaha](./images/globus-transfer-lts-to-cheaha.png)
 -->
 
 Alternatively, to transfer data from Cheaha to LTS, follow the same procedure. Select the files or folders from the Cheaha side and click the "Start" button on the right-hand side panel. The data will then be transferred and will appear in the left-hand side panel, which corresponds to the LTS end.
 
 <!--
-![!Globus Transfer Data From Cheaha To LTS](images/globus-transfer-cheaha-to-lts.png)
+![!Globus Transfer Data From Cheaha To LTS](./images/globus-transfer-cheaha-to-lts.png)
 -->
