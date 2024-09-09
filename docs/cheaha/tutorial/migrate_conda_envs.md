@@ -3,19 +3,18 @@
 
 This tutorial will guide you through the steps necessary for migrating Conda environments originally installed with the `default`, `anaconda` or `r` channels to use the Miniforge module and the `conda-forge` or `bioconda` channels.
 
-## Prerequisites
+## Access to Terminal
 
-**Access to Terminal**
 Access the terminal on Cheaha. You can access the terminal for a compute node on Cheaha, after creating an interactive job. Click on the highlighted part of the image below to access the terminal.
 
 ![!Accessing the terminal from a created interactive job on Cheaha](images/comp_node_access.png)
 
 ## Steps for Migrating your Conda Environment
 
-**Load Anaconda Module**
+1. **Load Anaconda Module**
 You will need to load the Anaconda module using the `module load Anaconda3` command, in a terminal.
 
-**Activate the Original Conda Environment**
+1. **Activate the Original Conda Environment**
 Activate the environment you want to migrate:
 
 ```bash
@@ -32,7 +31,7 @@ conda activate newtest
 
    ![!Steps to export environment](images/anaconda_env_migration.png)
 
-**Export the Environment to a .txt File:**
+1. **Export the Environment to a .txt File:**
 Export the environment to a `.txt` file, which captures the list of installed packages and their versions:
 
    ```bash
@@ -49,10 +48,10 @@ Name the file as you see fit.
 
 When the file has been created, deactivate your Anaconda environment, and do a module reset using the `conda deactivate` and `module reset` commands respectively.
 
-**Load the Miniforge Module**
+1. **Load the Miniforge Module**
 The next step is to load the Miniforge module on Cheaha using the `module load Miniforge3` command.
 
-**Create a New Conda Environment:**
+1. **Create a New Conda Environment:**
 
 By default Miniforge creates a new environment using the `conda-forge` channel, but for this example we specifically include the option to use the conda-forge and bioconda channels:
 
@@ -74,7 +73,7 @@ After completing the above steps we will now need to update the environment usin
 
 ![!Creating a new environment with Miniforge](images/miniforge_create_env2.png)
 
-**Activate the New Environment:**
+1. **Activate the New Environment:**
 Activate the new environment you created:
 
    ```bash
@@ -82,7 +81,7 @@ Activate the new environment you created:
 
    ```
 
-**Update All Packages to Use the Conda-Forge Channel:**
+1. **Update All Packages to Use the Conda-Forge Channel:**
 
 Update all packages in the environment to ensure they are installed from the `conda-forge` or `bioconda` channels:
 
@@ -95,7 +94,7 @@ Update all packages in the environment to ensure they are installed from the `co
 
 Now we have created the environment and updated the packages inside the environment, we can verify packages within our environment by following the below steps.
 
-**Check Installed Packages:**
+1. **Check Installed Packages:**
 Verify that all packages have been correctly installed using the `conda-forge` or `bioconda` channels:
 
    ```bash
@@ -107,11 +106,11 @@ Look at the "channel" column to ensure most packages are from `conda-forge` or `
 
 ![!Conda list showing channels packages are gotten from](images/conda_list_channels.png)
 
-**Test the New Environment:**
+1. **Test the New Environment:**
 
 Run your scripts or workflows that depend on this environment to confirm that everything functions as expected. You may then decide to remove your old environments to free up space.
 
-**Remove the Old Environment:**
+1. **Remove the Old Environment:**
 
 If everything works correctly with your new environment, you can remove the old environment:
 
