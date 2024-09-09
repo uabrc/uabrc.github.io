@@ -3,184 +3,184 @@ repo_url: https://github.com/uabrc/uabrc.github.io/
 edit_uri: edit/main/docs/
 
 theme:
-	name: material
-	search_index_only: true
-	custom_dir: theme
-	language: en
-	features:
-		- navigation.indexes
-		- navigation.instant
-		- content.code.copy
-	favicon: images/favicon.png
-	logo: images/logo.png
+  name: material
+  search_index_only: true
+  custom_dir: theme
+  language: en
+  features:
+    - navigation.indexes
+    - navigation.instant
+    - content.code.copy
+  favicon: images/favicon.png
+  logo: images/logo.png
 
 extra_css:
-	- stylesheets/extra.css
+  - stylesheets/extra.css
 
 extra_javascript:
-	- javascripts/mathjax.js
-	- https://polyfill.io/v3/polyfill.min.js?features=es6
-	- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 copyright: Copyright &copy; 2021-2024 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
 
 markdown_extensions:
-	- admonition
-	- attr_list
-	- md_in_html
-	- pymdownx.arithmatex:
-		  generic: true
-	- pymdownx.details
-	- pymdownx.highlight:
-		  anchor_linenums: true
-	- pymdownx.keys
-	- pymdownx.superfences
-	- tables
-	- toc:
-		  permalink: true
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.keys
+  - pymdownx.superfences
+  - tables
+  - toc:
+      permalink: true
 
 plugins:
-	- search
-	- table-reader:
-		  data_path: docs
-	- git-revision-date-localized:
-		  type: date
-		  strict: false
-	- glightbox:
-		  # auto_caption: true
-	- redirects:
-		  redirect_maps:
-			  account_management/gitlab_researcher.md: account_management/gitlab_account.md
-			  account_management/uab_researcher.md: account_management/cheaha_account.md
-			  account_management/xias_guest.md: account_management/xias/guest_instructions.md
-			  account_management/xias_sites.md: account_management/xias/pi_site_management.md
-			  account_management/xias_users.md: account_management/xias/pi_guest_management.md
-			  cheaha/conda.md: cheaha/software/software.md#anaconda-on-cheaha
-			  cheaha/lmod.md: cheaha/software/modules.md
-			  cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
-			  contributor_guide.md: contributing/contributor_guide.md
-			  data_management/LTS/lts.md: data_management/lts/index.md
-			  data_management/LTS/sharing.md: data_management/lts/policies.md
-			  data_management/lts/lts.md: data_management/lts/index.md
-			  data_management/lts/sharing.md: data_management/lts/policies.md
-			  environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
-			  environment_management/containers.md: workflow_solutions/getting_containers.md
-			  environment_management/git.md: workflow_solutions/git_collaboration.md
-			  uab_cloud/cloud_remote_access.md: uab_cloud/remote_access.md
-			  uab_cloud/instance_setup_basic.md: uab_cloud/tutorial/instances.md
-			  uab_cloud/introduction.md: uab_cloud/index.md
-			  uab_cloud/network_setup_basic.md: uab_cloud/tutorial/networks.md
-			  uab_cloud/security_setup_basic.md: uab_cloud/tutorial/security.md
-			  uab_cloud/volume_setup_basic.md: uab_cloud/tutorial/volumes.md
-			  welcome/rc_days.md: education/research_computing_days/index.md
-			  welcome/welcome.md: index.md
-			  workflow_solutions/getting_software_with_git.md: workflow_solutions/git_collaboration.md
-			  cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
-			  cheaha/open_ondemand/ood_files.md: cheaha/open_ondemand/ood_layout.md
-			  cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
-			  cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
+  - search
+  - table-reader:
+      data_path: docs
+  - git-revision-date-localized:
+      type: date
+      strict: false
+  - glightbox:
+      # auto_caption: true
+  - redirects:
+      redirect_maps:
+        account_management/gitlab_researcher.md: account_management/gitlab_account.md
+        account_management/uab_researcher.md: account_management/cheaha_account.md
+        account_management/xias_guest.md: account_management/xias/guest_instructions.md
+        account_management/xias_sites.md: account_management/xias/pi_site_management.md
+        account_management/xias_users.md: account_management/xias/pi_guest_management.md
+        cheaha/conda.md: cheaha/software/software.md#anaconda-on-cheaha
+        cheaha/lmod.md: cheaha/software/modules.md
+        cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
+        contributor_guide.md: contributing/contributor_guide.md
+        data_management/LTS/lts.md: data_management/lts/index.md
+        data_management/LTS/sharing.md: data_management/lts/policies.md
+        data_management/lts/lts.md: data_management/lts/index.md
+        data_management/lts/sharing.md: data_management/lts/policies.md
+        environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
+        environment_management/containers.md: workflow_solutions/getting_containers.md
+        environment_management/git.md: workflow_solutions/git_collaboration.md
+        uab_cloud/cloud_remote_access.md: uab_cloud/remote_access.md
+        uab_cloud/instance_setup_basic.md: uab_cloud/tutorial/instances.md
+        uab_cloud/introduction.md: uab_cloud/index.md
+        uab_cloud/network_setup_basic.md: uab_cloud/tutorial/networks.md
+        uab_cloud/security_setup_basic.md: uab_cloud/tutorial/security.md
+        uab_cloud/volume_setup_basic.md: uab_cloud/tutorial/volumes.md
+        welcome/rc_days.md: education/research_computing_days/index.md
+        welcome/welcome.md: index.md
+        workflow_solutions/getting_software_with_git.md: workflow_solutions/git_collaboration.md
+        cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_files.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
 
 nav:
-	- Home: index.md
-	- Account Management:
-		  - account_management/index.md
-		  - Cheaha Account: account_management/cheaha_account.md
-		  - External Collaborator Accounts (XIAS):
-			    - account_management/xias/index.md
-			    - "For PIs - (1) Managing Projects & Sites": account_management/xias/pi_site_management.md
-			    - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
-			    - "For Guests - Account Creation": account_management/xias/guest_instructions.md
-		  - Gitlab Account: account_management/gitlab_account.md
-	- Data Management:
-		  - Cheaha Storage: data_management/storage.md
-		  - Storage Alternatives: data_management/alternate_storage.md
-		  - Long Term Storage:
-			    - data_management/lts/index.md
-			    - Interfacing with LTS: data_management/lts/interfaces.md
-			    - Bucket Permissions: data_management/lts/policies.md
-			    - UAB Core Accounts: data_management/lts/lts_cores.md
-			    - FAQ: data_management/lts/lts_faq.md
-		  - Transfer:
-			    - Globus: data_management/transfer/globus.md
-			    - RClone: data_management/transfer/rclone.md
-			    - FileZilla: data_management/transfer/filezilla.md
-		  - Code Storage: data_management/code_storage.md
-	- Workflow Solutions:
-		  - Using the Shell: workflow_solutions/shell.md
-		  - Using Anaconda: workflow_solutions/using_anaconda.md
-		  - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
-		  - Using Git: workflow_solutions/git.md
-		  - R Projects and Environments: workflow_solutions/r_environments.md
-		  - Software Containers: workflow_solutions/getting_containers.md
-		  - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
-	- Cheaha Guide:
-		  - Getting Started: cheaha/getting_started.md
-		  - Tutorials:
-			    - cheaha/tutorial/index.md
-			    - Anaconda Environment Tutorial: cheaha/tutorial/pytorch_tensorflow.md
-		  - Cheaha Web Portal:
-			    - cheaha/open_ondemand/index.md
-			    - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
-			    - HPC Desktop: cheaha/open_ondemand/hpc_desktop.md
-			    - Jupyter: cheaha/open_ondemand/ood_jupyter.md
-			    - RStudio: cheaha/open_ondemand/ood_rstudio.md
-			    - MATLAB: cheaha/open_ondemand/ood_matlab.md
-		  - Hardware: cheaha/hardware.md
-		  - Software:
-			    - Pre-installed Modules: cheaha/software/modules.md
-			    - Self-Installed Software: cheaha/software/software.md
-		  - SLURM:
-			    - Introduction: cheaha/slurm/introduction.md
-			    - Slurm Tutorial: cheaha/slurm/slurm_tutorial.md
-			    - Submitting Jobs: cheaha/slurm/submitting_jobs.md
-			    - Practical Batch Array Jobs: cheaha/slurm/practical_sbatch.md
-			    - Managing Jobs: cheaha/slurm/job_management.md
-			    - GPUs: cheaha/slurm/gpu.md
-		  - Job Efficiency: cheaha/job_efficiency.md
-	- UAB Cloud (cloud.rc) Guide:
-		  - uab_cloud/index.md
-		  - Tutorial:
-			    - uab_cloud/tutorial/index.md
-			    - (1) Networks: uab_cloud/tutorial/networks.md
-			    - (2) Security Policies: uab_cloud/tutorial/security.md
-			    - (3) Instances: uab_cloud/tutorial/instances.md
-			    - (4) Volumes (optional): uab_cloud/tutorial/volumes.md
-		  - Remote Access: uab_cloud/remote_access.md
-		  - Installing Software: uab_cloud/installing_software.md
-		  - Snapshots and Images: uab_cloud/snapshots.md
-		  - Sharing Cloud Environment: uab_cloud/sharing_cloud_environment.md
-	- UAB Kubernetes Guide:
-		  - Startup: kubernetes/startup.md
-	- National Research Computing Cyberinfrastructure:
-		  - national_ci/index.md
-		  - The Open Science Grid: national_ci/osg.md
-		  - NSF Cyberinfrastructure: national_ci/nsf_access.md
-		  - NIH Cyberinfrastructure: national_ci/nih.md
-	- Grants & Contracts:
-		  - Overview: grants/overview.md
-		  - Facilities and Plan: grants/facilities.md
-		  - Budgeting: grants/budgets.md
-		  - Descriptions: grants/publications.md
-	- Outreach & Training:
-		  - Case Studies: education/case_studies.md
-		  - Research Computing Days:
-			    - education/research_computing_days/index.md
-		  - Offered Courses: education/courses.md
-		  - Training Resources: education/training_resources.md
-	- Policies: policies.md
-	- Reporting Documentation Errors: contributing/reporting_errors.md
-	- Contributing Content: contributing/contributor_guide.md
-	- Help:
-		  - Support: help/support.md
-		  - FAQ: help/faq.md
+  - Home: index.md
+  - Account Management:
+      - account_management/index.md
+      - Cheaha Account: account_management/cheaha_account.md
+      - External Collaborator Accounts (XIAS):
+          - account_management/xias/index.md
+          - "For PIs - (1) Managing Projects & Sites": account_management/xias/pi_site_management.md
+          - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
+          - "For Guests - Account Creation": account_management/xias/guest_instructions.md
+      - Gitlab Account: account_management/gitlab_account.md
+  - Data Management:
+      - Cheaha Storage: data_management/storage.md
+      - Storage Alternatives: data_management/alternate_storage.md
+      - Long Term Storage:
+          - data_management/lts/index.md
+          - Interfacing with LTS: data_management/lts/interfaces.md
+          - Bucket Permissions: data_management/lts/policies.md
+          - UAB Core Accounts: data_management/lts/lts_cores.md
+          - FAQ: data_management/lts/lts_faq.md
+      - Transfer:
+          - Globus: data_management/transfer/globus.md
+          - RClone: data_management/transfer/rclone.md
+          - FileZilla: data_management/transfer/filezilla.md
+      - Code Storage: data_management/code_storage.md
+  - Workflow Solutions:
+      - Using the Shell: workflow_solutions/shell.md
+      - Using Anaconda: workflow_solutions/using_anaconda.md
+      - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
+      - Using Git: workflow_solutions/git.md
+      - R Projects and Environments: workflow_solutions/r_environments.md
+      - Software Containers: workflow_solutions/getting_containers.md
+      - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
+  - Cheaha Guide:
+      - Getting Started: cheaha/getting_started.md
+      - Tutorials:
+          - cheaha/tutorial/index.md
+          - Anaconda Environment Tutorial: cheaha/tutorial/pytorch_tensorflow.md
+      - Cheaha Web Portal:
+          - cheaha/open_ondemand/index.md
+          - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
+          - HPC Desktop: cheaha/open_ondemand/hpc_desktop.md
+          - Jupyter: cheaha/open_ondemand/ood_jupyter.md
+          - RStudio: cheaha/open_ondemand/ood_rstudio.md
+          - MATLAB: cheaha/open_ondemand/ood_matlab.md
+      - Hardware: cheaha/hardware.md
+      - Software:
+          - Pre-installed Modules: cheaha/software/modules.md
+          - Self-Installed Software: cheaha/software/software.md
+      - SLURM:
+          - Introduction: cheaha/slurm/introduction.md
+          - Slurm Tutorial: cheaha/slurm/slurm_tutorial.md
+          - Submitting Jobs: cheaha/slurm/submitting_jobs.md
+          - Practical Batch Array Jobs: cheaha/slurm/practical_sbatch.md
+          - Managing Jobs: cheaha/slurm/job_management.md
+          - GPUs: cheaha/slurm/gpu.md
+      - Job Efficiency: cheaha/job_efficiency.md
+  - UAB Cloud (cloud.rc) Guide:
+      - uab_cloud/index.md
+      - Tutorial:
+          - uab_cloud/tutorial/index.md
+          - (1) Networks: uab_cloud/tutorial/networks.md
+          - (2) Security Policies: uab_cloud/tutorial/security.md
+          - (3) Instances: uab_cloud/tutorial/instances.md
+          - (4) Volumes (optional): uab_cloud/tutorial/volumes.md
+      - Remote Access: uab_cloud/remote_access.md
+      - Installing Software: uab_cloud/installing_software.md
+      - Snapshots and Images: uab_cloud/snapshots.md
+      - Sharing Cloud Environment: uab_cloud/sharing_cloud_environment.md
+  - UAB Kubernetes Guide:
+      - Startup: kubernetes/startup.md
+  - National Research Computing Cyberinfrastructure:
+      - national_ci/index.md
+      - The Open Science Grid: national_ci/osg.md
+      - NSF Cyberinfrastructure: national_ci/nsf_access.md
+      - NIH Cyberinfrastructure: national_ci/nih.md
+  - Grants & Contracts:
+      - Overview: grants/overview.md
+      - Facilities and Plan: grants/facilities.md
+      - Budgeting: grants/budgets.md
+      - Descriptions: grants/publications.md
+  - Outreach & Training:
+      - Case Studies: education/case_studies.md
+      - Research Computing Days:
+          - education/research_computing_days/index.md
+      - Offered Courses: education/courses.md
+      - Training Resources: education/training_resources.md
+  - Policies: policies.md
+  - Reporting Documentation Errors: contributing/reporting_errors.md
+  - Contributing Content: contributing/contributor_guide.md
+  - Help:
+      - Support: help/support.md
+      - FAQ: help/faq.md
 
 validation:
-	nav:
-		omitted_files: warn
-		not_found: warn
-		absolute_links: warn
-	links:
-		not_found: warn
-		anchors: warn
-		absolute_links: warn
-		unrecognized_links: warn
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
