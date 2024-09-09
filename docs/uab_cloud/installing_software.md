@@ -151,7 +151,7 @@ To install Miniforge in your [instance](tutorial/instances.md)
 
 #### Installing Singularity
 
-Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quick_start.html#install-system-dependencies> under "Debian-based systems".
+Follow the instructions located at <https://docs.sylabs.io/guides/3.9/user-guide/quick_start.html#install-system-dependencies> under "Debian-based systems".
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
 1. Run the following
@@ -197,7 +197,7 @@ Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quic
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    For other versions of the Singularity documentation, visit <https://sylabs.io/docs/>.
+    For other versions of the Singularity documentation, visit <https://docs.sylabs.io/docs/>.
 <!-- markdownlint-enable MD046 -->
 
 #### Installing Jupyter Server
