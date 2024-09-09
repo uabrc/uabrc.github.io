@@ -105,7 +105,6 @@ nav:
                             - RClone: data_management/transfer/rclone.md
                             - FileZilla: data_management/transfer/filezilla.md
                   - Code Storage: data_management/code_storage.md
-                  - Tutorial: data_management/tutorial/globus_individual_tutorial.md
         - Workflow Solutions:
                   - Using the Shell: workflow_solutions/shell.md
                   - Using Anaconda: workflow_solutions/using_anaconda.md
