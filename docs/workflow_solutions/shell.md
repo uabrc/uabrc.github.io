@@ -600,6 +600,18 @@ For single files use `chgrp <new-group> <file>`.
 
 To change a directory and all of its contents recursively use `chgrp -hR <new-group> <file>`. The `-h` flag will avoid walking through the targets of symbolic links.
 
+As a best practice, there could also be instances where you will need to verify the parent directory/directories before you make changes, do the following, when a case like this arises;
+
+1. Check that the parent directory/directories have the `setgid` (i.e. `s`) bit in the file permission, when you run the `ls -l <file_or_directory_path>`.
+
+1. If the `setgid` bit is missing, change group ownership of the directory using the below `chgrp` command.
+
+    `chgrp <group_name> <directoryname>`
+
+1. We can now apply the `setgid` permission to the directory using this syntax.
+
+    `chmod g+s <directoryname>`
+
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
