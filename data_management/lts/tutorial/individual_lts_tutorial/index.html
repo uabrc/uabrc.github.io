@@ -12,19 +12,19 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../pi_guest_management/">
+        <link rel="next" href="../../interfaces/">
       
       
-      <link rel="icon" href="../../../images/favicon.png">
+      <link rel="icon" href="../../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.4">
     
     
       
-        <title>For PIs - (1) Managing Projects & Sites - Research Computing Documentation</title>
+        <title>LTS and s3cmd Workflow - Research Computing Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.50c56a3b.min.css">
       
       
 
@@ -43,16 +43,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -61,7 +61,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creating-a-uab-xias-projectsite" class="md-skip">
+        <a href="#basic-workflow-with-individual-lts-and-s3cmd" class="md-skip">
           Skip to content
         </a>
       
@@ -89,9 +89,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Research Computing Documentation" class="md-header__button md-logo" aria-label="Research Computing Documentation" data-md-component="logo">
+    <a href="../../../.." title="Research Computing Documentation" class="md-header__button md-logo" aria-label="Research Computing Documentation" data-md-component="logo">
       
-  <img src="../../../images/logo.png" alt="logo">
+  <img src="../../../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              For PIs - (1) Managing Projects & Sites
+              LTS and s3cmd Workflow
             
           </span>
         </div>
@@ -195,9 +195,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Research Computing Documentation" class="md-nav__button md-logo" aria-label="Research Computing Documentation" data-md-component="logo">
+    <a href="../../../.." title="Research Computing Documentation" class="md-nav__button md-logo" aria-label="Research Computing Documentation" data-md-component="logo">
       
-  <img src="../../../images/logo.png" alt="logo">
+  <img src="../../../../images/logo.png" alt="logo">
 
     </a>
     Research Computing Documentation
@@ -224,7 +224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -241,8 +241,6 @@
       
   
   
-    
-  
   
   
     
@@ -262,17 +260,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../../account_management/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -289,7 +287,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Account Management
@@ -305,7 +303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cheaha_account/" class="md-nav__link">
+      <a href="../../../../account_management/cheaha_account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -323,8 +321,6 @@
                 
   
   
-    
-  
   
   
     
@@ -344,17 +340,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../../account_management/xias/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -371,7 +367,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             External Collaborator Accounts (XIAS)
@@ -384,19 +380,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../account_management/xias/pi_site_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -405,7 +392,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -418,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pi_guest_management/" class="md-nav__link">
+      <a href="../../../../account_management/xias/pi_guest_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -439,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guest_instructions/" class="md-nav__link">
+      <a href="../../../../account_management/xias/guest_instructions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -468,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gitlab_account/" class="md-nav__link">
+      <a href="../../../../account_management/gitlab_account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -493,8 +479,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -512,12 +500,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -531,7 +519,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Data Management
@@ -545,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_management/storage/" class="md-nav__link">
+      <a href="../../../storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -566,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_management/alternate_storage/" class="md-nav__link">
+      <a href="../../../alternate_storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -584,6 +572,8 @@
                 
   
   
+    
+  
   
   
     
@@ -607,17 +597,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../data_management/lts/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -634,7 +624,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Long Term Storage
@@ -647,6 +637,8 @@
                 
   
   
+    
+  
   
   
     
@@ -662,17 +654,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../data_management/lts/tutorial/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -689,7 +681,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3_2">
             <span class="md-nav__icon md-icon"></span>
             Tutorial
@@ -702,10 +694,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../data_management/lts/tutorial/individual_lts_tutorial/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    LTS and s3cmd Workflow
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -714,6 +726,132 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#prerequisites" class="md-nav__link">
+      <span class="md-ellipsis">
+        Prerequisites
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#setting-up-your-environment" class="md-nav__link">
+      <span class="md-ellipsis">
+        Setting Up Your Environment
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="Setting Up Your Environment">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#install-s3cmd-within-conda-environment-on-cheaha" class="md-nav__link">
+      <span class="md-ellipsis">
+        Install s3cmd within Conda Environment on Cheaha
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#install-s3cmd-on-your-local-systems" class="md-nav__link">
+      <span class="md-ellipsis">
+        Install s3cmd on Your Local Systems
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#configuring-s3cmd-for-lts-buckets" class="md-nav__link">
+      <span class="md-ellipsis">
+        Configuring s3cmd for LTS Buckets
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#creating-buckets" class="md-nav__link">
+      <span class="md-ellipsis">
+        Creating Buckets
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#managing-buckets" class="md-nav__link">
+      <span class="md-ellipsis">
+        Managing Buckets
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#how-to-grant-access-to-other-accounts-for-your-buckets" class="md-nav__link">
+      <span class="md-ellipsis">
+        How to Grant Access to Other Accounts for your Buckets?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -734,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_management/lts/interfaces/" class="md-nav__link">
+      <a href="../../interfaces/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -755,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_management/lts/policies/" class="md-nav__link">
+      <a href="../../policies/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -776,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_management/lts/lts_cores/" class="md-nav__link">
+      <a href="../../lts_cores/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -797,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_management/lts/lts_faq/" class="md-nav__link">
+      <a href="../../lts_faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -871,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_management/transfer/globus/" class="md-nav__link">
+      <a href="../../../transfer/globus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -892,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_management/transfer/rclone/" class="md-nav__link">
+      <a href="../../../transfer/rclone/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -913,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_management/transfer/filezilla/" class="md-nav__link">
+      <a href="../../../transfer/filezilla/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -942,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_management/code_storage/" class="md-nav__link">
+      <a href="../../../code_storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1023,7 +1161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflow_solutions/shell/" class="md-nav__link">
+      <a href="../../../../workflow_solutions/shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1044,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflow_solutions/using_anaconda/" class="md-nav__link">
+      <a href="../../../../workflow_solutions/using_anaconda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1065,7 +1203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflow_solutions/using_workflow_managers/" class="md-nav__link">
+      <a href="../../../../workflow_solutions/using_workflow_managers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1086,7 +1224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflow_solutions/git/" class="md-nav__link">
+      <a href="../../../../workflow_solutions/git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1107,7 +1245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflow_solutions/r_environments/" class="md-nav__link">
+      <a href="../../../../workflow_solutions/r_environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1128,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflow_solutions/getting_containers/" class="md-nav__link">
+      <a href="../../../../workflow_solutions/getting_containers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1149,7 +1287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../workflow_solutions/git_collaboration/" class="md-nav__link">
+      <a href="../../../../workflow_solutions/git_collaboration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1230,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/getting_started/" class="md-nav__link">
+      <a href="../../../../cheaha/getting_started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1273,7 +1411,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../cheaha/tutorial/" class="md-nav__link ">
+            <a href="../../../../cheaha/tutorial/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1306,7 +1444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/tutorial/pytorch_tensorflow/" class="md-nav__link">
+      <a href="../../../../cheaha/tutorial/pytorch_tensorflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1365,7 +1503,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../cheaha/open_ondemand/" class="md-nav__link ">
+            <a href="../../../../cheaha/open_ondemand/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1398,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/open_ondemand/ood_layout/" class="md-nav__link">
+      <a href="../../../../cheaha/open_ondemand/ood_layout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1419,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/open_ondemand/hpc_desktop/" class="md-nav__link">
+      <a href="../../../../cheaha/open_ondemand/hpc_desktop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1440,7 +1578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/open_ondemand/ood_jupyter/" class="md-nav__link">
+      <a href="../../../../cheaha/open_ondemand/ood_jupyter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1461,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/open_ondemand/ood_rstudio/" class="md-nav__link">
+      <a href="../../../../cheaha/open_ondemand/ood_rstudio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1482,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/open_ondemand/ood_matlab/" class="md-nav__link">
+      <a href="../../../../cheaha/open_ondemand/ood_matlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1511,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/hardware/" class="md-nav__link">
+      <a href="../../../../cheaha/hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1575,7 +1713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/software/modules/" class="md-nav__link">
+      <a href="../../../../cheaha/software/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1596,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/software/software/" class="md-nav__link">
+      <a href="../../../../cheaha/software/software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1676,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/slurm/introduction/" class="md-nav__link">
+      <a href="../../../../cheaha/slurm/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1697,7 +1835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/slurm/slurm_tutorial/" class="md-nav__link">
+      <a href="../../../../cheaha/slurm/slurm_tutorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,7 +1856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/slurm/submitting_jobs/" class="md-nav__link">
+      <a href="../../../../cheaha/slurm/submitting_jobs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1739,7 +1877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/slurm/practical_sbatch/" class="md-nav__link">
+      <a href="../../../../cheaha/slurm/practical_sbatch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1760,7 +1898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/slurm/job_management/" class="md-nav__link">
+      <a href="../../../../cheaha/slurm/job_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1781,7 +1919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/slurm/gpu/" class="md-nav__link">
+      <a href="../../../../cheaha/slurm/gpu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1810,7 +1948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheaha/job_efficiency/" class="md-nav__link">
+      <a href="../../../../cheaha/job_efficiency/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1868,7 +2006,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../uab_cloud/" class="md-nav__link ">
+            <a href="../../../../uab_cloud/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1929,7 +2067,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../uab_cloud/tutorial/" class="md-nav__link ">
+            <a href="../../../../uab_cloud/tutorial/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1962,7 +2100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../uab_cloud/tutorial/networks/" class="md-nav__link">
+      <a href="../../../../uab_cloud/tutorial/networks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1983,7 +2121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../uab_cloud/tutorial/security/" class="md-nav__link">
+      <a href="../../../../uab_cloud/tutorial/security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2004,7 +2142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../uab_cloud/tutorial/instances/" class="md-nav__link">
+      <a href="../../../../uab_cloud/tutorial/instances/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2025,7 +2163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../uab_cloud/tutorial/volumes/" class="md-nav__link">
+      <a href="../../../../uab_cloud/tutorial/volumes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2054,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../uab_cloud/remote_access/" class="md-nav__link">
+      <a href="../../../../uab_cloud/remote_access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2075,7 +2213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../uab_cloud/installing_software/" class="md-nav__link">
+      <a href="../../../../uab_cloud/installing_software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2096,7 +2234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../uab_cloud/snapshots/" class="md-nav__link">
+      <a href="../../../../uab_cloud/snapshots/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2117,7 +2255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../uab_cloud/sharing_cloud_environment/" class="md-nav__link">
+      <a href="../../../../uab_cloud/sharing_cloud_environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2186,7 +2324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../kubernetes/startup/" class="md-nav__link">
+      <a href="../../../../kubernetes/startup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2240,7 +2378,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../national_ci/" class="md-nav__link ">
+            <a href="../../../../national_ci/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2273,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../national_ci/osg/" class="md-nav__link">
+      <a href="../../../../national_ci/osg/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2294,7 +2432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../national_ci/nsf_access/" class="md-nav__link">
+      <a href="../../../../national_ci/nsf_access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2315,7 +2453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../national_ci/nih/" class="md-nav__link">
+      <a href="../../../../national_ci/nih/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2390,7 +2528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../grants/overview/" class="md-nav__link">
+      <a href="../../../../grants/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2411,7 +2549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../grants/facilities/" class="md-nav__link">
+      <a href="../../../../grants/facilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2432,7 +2570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../grants/budgets/" class="md-nav__link">
+      <a href="../../../../grants/budgets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2453,7 +2591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../grants/publications/" class="md-nav__link">
+      <a href="../../../../grants/publications/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2528,7 +2666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../education/case_studies/" class="md-nav__link">
+      <a href="../../../../education/case_studies/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2569,7 +2707,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../education/research_computing_days/" class="md-nav__link ">
+            <a href="../../../../education/research_computing_days/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2605,7 +2743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../education/courses/" class="md-nav__link">
+      <a href="../../../../education/courses/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2626,7 +2764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../education/training_resources/" class="md-nav__link">
+      <a href="../../../../education/training_resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2654,7 +2792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../policies/" class="md-nav__link">
+      <a href="../../../../policies/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2674,7 +2812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/reporting_errors/" class="md-nav__link">
+      <a href="../../../../contributing/reporting_errors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2694,7 +2832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/contributor_guide/" class="md-nav__link">
+      <a href="../../../../contributing/contributor_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2757,7 +2895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../help/support/" class="md-nav__link">
+      <a href="../../../../help/support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2778,7 +2916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../help/faq/" class="md-nav__link">
+      <a href="../../../../help/faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2819,6 +2957,120 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#prerequisites" class="md-nav__link">
+      <span class="md-ellipsis">
+        Prerequisites
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#setting-up-your-environment" class="md-nav__link">
+      <span class="md-ellipsis">
+        Setting Up Your Environment
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="Setting Up Your Environment">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#install-s3cmd-within-conda-environment-on-cheaha" class="md-nav__link">
+      <span class="md-ellipsis">
+        Install s3cmd within Conda Environment on Cheaha
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#install-s3cmd-on-your-local-systems" class="md-nav__link">
+      <span class="md-ellipsis">
+        Install s3cmd on Your Local Systems
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#configuring-s3cmd-for-lts-buckets" class="md-nav__link">
+      <span class="md-ellipsis">
+        Configuring s3cmd for LTS Buckets
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#creating-buckets" class="md-nav__link">
+      <span class="md-ellipsis">
+        Creating Buckets
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#managing-buckets" class="md-nav__link">
+      <span class="md-ellipsis">
+        Managing Buckets
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#how-to-grant-access-to-other-accounts-for-your-buckets" class="md-nav__link">
+      <span class="md-ellipsis">
+        How to Grant Access to Other Accounts for your Buckets?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2835,51 +3087,91 @@
   
 
 
-<h1 id="creating-a-uab-xias-projectsite">Creating a UAB XIAS Project/Site<a class="headerlink" href="#creating-a-uab-xias-projectsite" title="Permanent link">&para;</a></h1>
+<h1 id="basic-workflow-with-individual-lts-and-s3cmd">Basic Workflow with Individual LTS and s3cmd<a class="headerlink" href="#basic-workflow-with-individual-lts-and-s3cmd" title="Permanent link">&para;</a></h1>
+<p>In this tutorial, we will guide you through using <code>s3cmd</code> on the Cheaha system to effectively manage and interact with your individual LTS account. We will cover the installation and configuration of <code>s3cmd</code>, and demonstrate essential operations, including creating buckets, listing, copying, downloading, and deleting <a href="../../#terminology">buckets and objects</a> in your LTS account. In addition, we will show you how to set and manage read and write access for other accounts to your LTS buckets and objects.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>To get up to speed, you should have a basic understanding of how to use the shell/terminal. If you’re not familiar with these concepts, we recommend checking out our <a href="../../../../workflow_solutions/shell/#shell-reference">learning resources on basic shell usage</a>.</p>
+<p>You will also need an individual LTS account created by our team. If you believe you need an account but do not have one, please <a href="../../../../#how-to-contact-us">contact us</a>.</p>
+<h2 id="setting-up-your-environment">Setting Up Your Environment<a class="headerlink" href="#setting-up-your-environment" title="Permanent link">&para;</a></h2>
+<h3 id="install-s3cmd-within-conda-environment-on-cheaha">Install s3cmd within Conda Environment on Cheaha<a class="headerlink" href="#install-s3cmd-within-conda-environment-on-cheaha" title="Permanent link">&para;</a></h3>
+<p>To interact with LTS (Long-Term Storage) using <a href="https://aws.amazon.com/s3/">S3 (Simple Storage Service)</a>, you need the <code>s3cmd</code> tool installed.<a href="https://s3tools.org/s3cmd"><code>s3cmd</code></a> is a command-line tool for managing files in cloud storage systems like S3. It's recommended to install it using <code>pip</code>, the standard package installer for Python, which allows you to install packages from the <a href="https://pypi.org/">Python Package Index (PyPI)</a>, within a <a href="../../../../workflow_solutions/using_anaconda/#create-an-environment">Conda environment</a> on Cheaha.</p>
+<p>Please avoid using <code>conda install s3cmd</code>, as that version will not work as expected. Instead, follow the steps below to install <code>s3cmd</code> using <code>pip</code> within your Conda environment.</p>
+<p>First, access our interactive Open OnDemand (OOD) portal at <a href="https://rc.uab.edu">https://rc.uab.edu</a> and create a job on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on <a href="../../../../cheaha/tutorial/pytorch_tensorflow/#installing-anaconda-environments-using-the-terminal">installing and setting Conda environment</a>.</p>
+<p>Once your interactive apps session is launched, open the terminal as described in <a href="../../../../cheaha/tutorial/pytorch_tensorflow/#installing-anaconda-environments-using-the-terminal">step 5 of the Anaconda tutorial page</a> and run the below commands.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>s3
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>conda<span class="w"> </span>activate<span class="w"> </span>s3
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pip<span class="w"> </span>install<span class="w"> </span>s3cmd
+</code></pre></div>
+<p>Once these steps are completed, verify the installation by running <code>pip list | grep "s3cmd"</code> in the terminal. If <code>s3cmd</code> is listed, as shown in the screenshot below, the package has been successfully installed.</p>
+<p><a class="glightbox" href="../../images/pip-s3cmd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image" src="../../images/pip-s3cmd.png" /></a></p>
+<h3 id="install-s3cmd-on-your-local-systems">Install s3cmd on Your Local Systems<a class="headerlink" href="#install-s3cmd-on-your-local-systems" title="Permanent link">&para;</a></h3>
+<p>To install s3cmd on your local machine, please follow the instructions provided in <a href="../../interfaces/#installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda">our s3cmd documentation for local installation</a>.</p>
+<h3 id="configuring-s3cmd-for-lts-buckets">Configuring s3cmd for LTS Buckets<a class="headerlink" href="#configuring-s3cmd-for-lts-buckets" title="Permanent link">&para;</a></h3>
+<p>Properly configuring <code>s3cmd</code> is important for working with LTS buckets and objects. The configuration process varies depending on whether you have a single LTS account or multiple accounts to manage. In this section, we will provide a step-by-step guide tailored specifically for the <strong>Cheaha</strong> system and a researcher with an <strong>individual LTS account</strong>.</p>
+<p>Open a terminal using one of the interactive apps on Cheaha. Activate your conda environment created in the <a href="./#install-s3cmd-within-conda-environment-on-cheaha">Install s3cmd using within Conda Environment</a> section, and then run the below command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>s3cmd<span class="w"> </span>--configure
+</code></pre></div>
+<p>This will prompt you to enter the access key and secret key associated with your individual LTS account. You will be asked for additional information, which will be displayed on the screen, as shown below. You can copy the necessary details from the example provided <a href="../../interfaces/#configuring-s3cmd">here</a>.</p>
+<p><a class="glightbox" href="../../images/config-s3cmd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-s3cmd" src="../../images/config-s3cmd.png" /></a></p>
+<p>Once the configuration is complete, <code>s3cmd</code> will generate a <code>.s3cfg</code> file in your home directory (<code>$HOME</code>), as shown below. To find your home directory in Cheaha and view the <code>.s3cfg</code> file, follow the instructions on our <a href="../../../../cheaha/open_ondemand/ood_layout/#navigating-open-ondemand">Navigating Open OnDemand</a> page. Be sure to check the <strong>Show Dotfiles</strong> option in the top right corner to make hidden files visible.</p>
+<p><a class="glightbox" href="../../images/s3cfg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="config-file" src="../../images/s3cfg.png" /></a></p>
+<h3 id="creating-buckets">Creating Buckets<a class="headerlink" href="#creating-buckets" title="Permanent link">&para;</a></h3>
+<p>Long Term Storage (LTS) services like Amazon S3 use a flat data organization model based on <strong>buckets</strong> and <strong>objects</strong>. Think of buckets as folders that contain individual pieces of data called objects. We have documentation about basic terminology on s3 storage system <a href="../../#terminology">here</a>.</p>
+<p>Once you have complete <code>s3cmd</code> configuration, you can create new buckets in your individual LTS storage. To create a bucket use a <code>mb</code> (make bucket) command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>s3cmd<span class="w"> </span>mb<span class="w"> </span>s3://your-bucket-name
+</code></pre></div>
+<p>Please replace <code>your-bucket-name</code> with your desired name. This command creates a new bucket that you named <code>your-bucket-name</code> in your LTS storage using the currently configured <code>s3cmd</code> profile. For example, the image below shows an LTS bucket named <code>first-test-bucket</code> that was created successfully after running the command <code>s3cmd mb s3://first-test-bucket</code>.</p>
+<p><a class="glightbox" href="../../images/create-bucket.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-bucket" src="../../images/create-bucket.png" /></a></p>
+<p>When creating a bucket, it is important to be aware of name uniqueness and naming conventions. For detailed information on bucket naming, please refer to our documentation on <a href="../../lts_faq/">valid bucket names in LTS</a> and <a href="../../#avoiding-duplicate-names-for-buckets">avoiding duplicate names for buckets</a>.</p>
+<p>If you try to create a bucket with <code>s3cmd mb</code> with the name that already exists within your namespace, the system will report success without making any changes. For example, if you run <code>s3cmd mb s3://existing-bucket-name</code> and that bucket name is already taken in your namespace, the command will complete successfully without creating a new bucket and showing an error. However, if you try to create a bucket with a name that is already used in someone else’s namespace, you will receive a <code>409 (BucketAlreadyExists)</code> error. To create a unique bucket within your namespace, first use <code>s3cmd ls</code> to list existing buckets and choose a name that is not already in use. To avoid the <code>409 (BucketAlreadyExists)</code> error and ensure your bucket name is unique, follow the <a href="../../#avoiding-duplicate-names-for-buckets">avoiding duplicate names for buckets</a> guide. This will help you create your bucket successfully and maintain its uniqueness.</p>
+<h3 id="managing-buckets">Managing Buckets<a class="headerlink" href="#managing-buckets" title="Permanent link">&para;</a></h3>
+<p>To manage a bucket, various commands can be used. Below are some common <code>s3cmd</code> commands to interact with your LTS bucket and its objects:</p>
+<ul>
+<li>To <strong>list all buckets</strong> you own with your current <code>s3cmd</code> profile, use command: <code>s3cmd ls</code>.</li>
+<li>To <strong>list all objects in a bucket</strong> accessible with your current <code>s3cmd</code> profile, use command: <code>s3cmd ls s3://your-bucket-name</code>.</li>
+<li>To <strong>upload a file</strong> named <code>file.txt</code> to a bucket, use a command: <code>s3cmd put file.txt s3://your-bucket-name/</code>. For example, to upload the file <code>file.txt</code> from the <code>/data/user/$USER</code> directory on Cheaha to the bucket <code>your-bucket-name</code>, you can use the command: <code>s3cmd put /data/user/$USER/file.txt s3://your-bucket-name</code>.</li>
+<li>To <strong>download an object</strong> named <code>file.txt</code> from a bucket, use a command:<code>s3cmd get s3://your-bucket-name/file.txt</code>. For example, to download the object <code>file.txt</code> from the bucket <code>your-bucket-name</code> to the <code>/data/user/$USER</code> directory on Cheaha, you can use a command <code>s3cmd get s3://your-bucket-name/file.txt /data/user/$USER</code>.</li>
+<li>To <strong>delete/remove</strong> an object, use command: <code>s3cmd del s3://your-bucket-name/your-object-name</code>.</li>
+<li>
+<p>To <strong>delete/remove</strong> a bucket, use command: <code>s3cmd rb s3://your-bucket-name</code>.</p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>These instructions are intended for use by UAB-employed PIs to organize external collaborators, also known as guests. UAB PIs: Please direct guests <a href="../guest_instructions/">here</a> for instructions on creating their accounts.</p>
+<p>An S3 bucket cannot be deleted unless it is completely empty. If the bucket contains any objects, <code>s3cmd rb</code> will report an error, like <code>S3 error: 409 (BucketNotEmpty)</code> when you attempt to delete it. To remove all objects within the bucket, use: <code>s3cmd del -r s3://your-bucket-name --force</code>. You can then remove the bucket itself with: <code>s3cmd rb s3://your-bucket-name</code>.</p>
+</div>
+<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-disable MD046 -->
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Deleting objects and buckets cannot be undone. Once the delete command is entered, any data is lost permanently and cannot be restored.</p>
 </div>
 <!-- markdownlint-enable MD046 -->
-
-<p>XIAS Project/Sites, or simply sites, tie external users to specific resources at UAB. By connecting people to the resource they use, UAB can maintain security and accountability. Creating a site is the first step to giving access to external collaborators, and the process can be thought of as "create once, use many times". All sites must have an expiration date for security reasons. To create a site you'll need at least one Uniform Resource Identifier (URI) relating to resources used by the site. If you aren't sure what URI(s) to list for your site, please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#85;&#115;&#101;&#114;&#83;&#101;&#114;&#118;&#105;&#99;&#101;&#115;&#64;&#117;&#97;&#98;&#46;&#101;&#100;&#117;">&#85;&#115;&#101;&#114;&#83;&#101;&#114;&#118;&#105;&#99;&#101;&#115;&#64;&#117;&#97;&#98;&#46;&#101;&#100;&#117;</a>.</p>
-<ol>
+</li>
+</ul>
+<p>You can find a variety of <code>s3cmd</code> commands in our documentation at <a href="../../interfaces/#s3cmd-commands">here</a> and on the <a href="https://s3tools.org/usage">S3tools website</a>. For quick reference, you can also use the <code>s3cmd --help</code> command to view available options directly in your terminal.</p>
+<p>If you are continuing in the same session with your <strong>conda environment already activated</strong>, you can directly use the <code>s3cmd</code> commands. If you are starting a new session or returning at a later date, make sure to load the Anaconda module and activate your conda environment before using <code>s3cmd</code>.</p>
+<h3 id="how-to-grant-access-to-other-accounts-for-your-buckets">How to Grant Access to Other Accounts for your Buckets?<a class="headerlink" href="#how-to-grant-access-to-other-accounts-for-your-buckets" title="Permanent link">&para;</a></h3>
+<p>Managing access to your buckets is essential for both collaboration and security. By setting up specific <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html">bucket policies</a>, you can control who can view or modify your bucket’s contents. Follow these steps to grant access:</p>
+<ul>
+<li>Create a policy file: define a policy and save it as a <code>JSON</code> file. For guidance and details on creating and formatting policy files, refer to our <a href="../../policies/#policy-structure">create a policy structure guide</a>. For example, you might create a policy file named <code>my_policy.json</code> with read permissions.</li>
+<li>Apply the policy: Use the command like <code>s3cmd setpolicy policy_file.json s3://your-bucket-name</code> to apply your defined read policy to your bucket. Replace <code>policy_file.json</code> with the name of your policy file and <code>your-bucket-name</code> with the name of your bucket.</li>
+<li>Verify the policy update: After applying the policy, you should see a <code>Policy updated</code> message if the operation was successful. You can also verify the applied policy by running: <code>s3cmd info s3://your-bucket-name</code>.</li>
+</ul>
+<p>Below is a screenshot showing how to apply a policy file named <code>my_policy.json</code> to a bucket named <code>first-test-bucket</code>, and the command to view information about this bucket, including the policy file that we defined and applied.</p>
+<p><a class="glightbox" href="../../images/policy.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="policy-image" src="../../images/policy.png" /></a></p>
+<p>Please note that the permissions granted are determined by the settings defined in your policy file. The policy demonstrated in this example is a <strong>read-only</strong> policy. Below, you can find examples of the different policies, including the read and write policies, you can set and apply for your buckets and objects in your individual LTS account.</p>
+<ul>
 <li>
-<p>To start go to the <a href="https://idm.uab.edu/cgi-cas/xrmi/sites">UAB XIAS Project/Site Management Webpage</a>.</p>
-<p><a class="glightbox" href="../images/xias_sites_add_000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!UAB XIAS Project/Site Management Webpage with Manage Projects/Sites selected and a New button available." src="../images/xias_sites_add_000.png" /></a></p>
+<p><strong>Read-only Access</strong></p>
+<p>To allow another account to view and copy files from your bucket without making any changes, use the <a href="../../policies/#read-only-for-all-files">read only permission policy</a>.</p>
 </li>
 <li>
-<p>Click "New" to open a form for creating a new Project/Site.</p>
-<p><a class="glightbox" href="../images/xias_sites_add_001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Empty UAB XIAS Project/Site creation form with several fields." src="../images/xias_sites_add_001.png" /></a></p>
+<p><strong>Read/Write Access</strong></p>
+<p>To grant another account the ability to both view and modify the contents of your bucket, use the <a href="../../policies/#read-write-permissions">read/write permissions policy</a>.</p>
 </li>
-<li>
-<p>Fill in the form. All fields are required.</p>
-<ol>
-<li><strong>Short name for project/site</strong> - A memorable name for your project or site.</li>
-<li><strong>Longer description</strong> - A complete yet concise description of the project or site and its resources.</li>
-<li><strong>Start date</strong> - The start date, can be today.</li>
-<li><strong>End date</strong> - An expiration date for the project or site.</li>
-<li>
-<p><strong>URIs</strong> - One or more uniform resource locators (URIs) associated with the site, to increase accountability.</p>
-<ol>
-<li>Cheaha URI: <code>https://rc.uab.edu</code></li>
-<li>Cloud URI: <code>https://cloud.rc.uab.edu</code></li>
-<li>GitLab URI: <code>https://gitlab.rc.uab.edu</code></li>
-</ol>
-</li>
-</ol>
-<p><a class="glightbox" href="../images/xias_sites_add_002.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Filled UAB XIAS Project/Site creation form." src="../images/xias_sites_add_002.png" /></a></p>
-</li>
-<li>
-<p>Click "Add" to submit the form. You should be taken to a page summarizing the created Project/Site.</p>
-<p><a class="glightbox" href="../images/xias_sites_add_003.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Summary page for created site reflecting user entered information." src="../images/xias_sites_add_003.png" /></a></p>
-</li>
-<li>
-<p>When you visit the "Manage Projects/Sites" page in the future, you will see a table with the newly created Project/Site listed. Click "View" to return to the page seen in the previous step. Click "Edit" to return to the form from [link]. Click "Users" to manage users for this site.</p>
-<p><a class="glightbox" href="../images/xias_sites_add_004.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Site table with newly created site listed. On that row are three buttons: View, Edit, Users. On the next row is the button New." src="../images/xias_sites_add_004.png" /></a></p>
-</li>
-</ol>
+</ul>
+<p>For detailed information on LTS bucket policies and instructions on how to apply and remove bucket policies, please refer to our <a href="../../policies/#policy-structure">policy structure</a> and <a href="../../policies/#applying-a-policy">apply bucket policy</a> guides.</p>
 
 
 
@@ -2900,7 +3192,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 17, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 30, 2024</span>
   </span>
 
     
@@ -2951,12 +3243,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.instant", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.indexes", "navigation.instant", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
