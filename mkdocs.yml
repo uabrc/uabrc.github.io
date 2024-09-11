@@ -45,6 +45,7 @@ plugins:
       data_path: docs
   - git-revision-date-localized:
       type: date
+      strict: false
   - glightbox:
       # auto_caption: true
   - redirects:
@@ -95,6 +96,9 @@ nav:
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
+          - Tutorial: 
+                - data_management/lts/tutorial/index.md
+                - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
           - Interfacing with LTS: data_management/lts/interfaces.md
           - Bucket Permissions: data_management/lts/policies.md
           - UAB Core Accounts: data_management/lts/lts_cores.md
