@@ -59,7 +59,7 @@ In the above run command,
 - `-nsteps 5000` Number of steps to run the simulation.
 -`-ntomp 10` Number of cores, which will be 10*4 MPI processes i.e, 40 cores
 - `-s topol.tpr` is the input parameter.
-  
+
 #### Performance Analysis
 
 ### Quantum Espresso
