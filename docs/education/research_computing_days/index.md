@@ -13,9 +13,10 @@ Since 2007, The [Office of the Vice President for Information Technology](https:
 - 2007 -- Co-hosted along with the ASA site visit, providing an overview of new services and upcoming launch of the UABgrid pilot. (No web record)
 - 2008 -- Focus on grid computing and collaboration technologies, in particular the caBIG program with guest speakers from Booz Allen Hamilton who managed the NCI caBIG program and SURA (agenda currently offline)
 - 2010 -- Featured introduction to Galaxy platform for genetic sequencing by Dell staff scientist (agenda currently offline)
-- [2011](https://docs.uabgrid.uab.edu/themegarden/2011) -- Understanding growth of research computing support at peer institutions UNC and Emory
-- [2012](https://docs.uabgrid.uab.edu/themegarden/2012) -- Growing data sciences at UAB
-- [2013](https://docs.uabgrid.uab.edu/themegarden/2013) -- OpenStack at UAB
-- [2016](https://docs.uabgrid.uab.edu/themegarden/RCDay2016) -- HPC Expansion
-- [2017](https://docs.uabgrid.uab.edu/themegarden/RCDay2017) -- GPU expansion
-- _Research Computing Day 2018_
+- [2011](https://docs.uabgrid.uab.edu/wiki/UAB_Research_Computing_Day_2011) -- Understanding growth of research computing support at peer institutions UNC and Emory
+- [2012](https://docs.uabgrid.uab.edu/wiki/Research_Computing_Day_2012) -- Growing data sciences at UAB
+- [2013](https://docs.uabgrid.uab.edu/wiki/Research_Computing_Day_2013) -- OpenStack at UAB
+- [2016](https://docs.uabgrid.uab.edu/wiki/RCDay2016) -- HPC Expansion
+- [2017](https://docs.uabgrid.uab.edu/wiki/RCDay2017) -- GPU expansion
+- [2018](https://docs.uabgrid.uab.edu/wiki/RCDay2018) -- Use Cases and Strategic Engagement
+- [2019](https://docs.uabgrid.uab.edu/wiki/RC_Day_2019) -- Building Gateways to Science

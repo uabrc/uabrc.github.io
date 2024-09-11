@@ -8,8 +8,8 @@ An overview of creating an external collaborator account:
 
 1. The sponsor must first:
     1. [Create and manage XIAS Sites](pi_site_management.md)
-    2. [Create and manage XIAS Guests](pi_guest_management.md)
-2. The guest must then [Create a XIAS Guest Account](guest_instructions.md)
+    1. [Create and manage XIAS Guests](pi_guest_management.md)
+1. The guest must then [Create a XIAS Guest Account](guest_instructions.md)
 
 We recommend the sponsor and guest stay in close contact during the process in case anything unexpected occurs. If you encounter difficulties with any part of the XIAS website process, please contact [AskIT](mailto:askit@uab.edu). If you encounter difficulties with the Cheaha account creation portion at the Open OnDemand web portal, please contact [Support](../../help/support.md)
 
@@ -28,4 +28,3 @@ For further guidance on how to proceed and what steps to take next, please refer
 - [How do I create a Cheaha account?](../cheaha_account.md)
 - [How do I get access to GitLab?](../gitlab_account.md)
 - [How do I get access to Cloud.rc (OpenStack)?](../../uab_cloud/tutorial/index.md)
-  

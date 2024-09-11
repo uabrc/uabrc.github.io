@@ -6,11 +6,18 @@ The shell is a powerful tool, and with great power comes great responsibility. T
 
 Most commands are perfectly safe, and often when they do something unexpected it can be fixed with some work. We will do our best to warn you of commands with greater potential for destruction, but no documentation is perfect.
 
-We are not responsible for accidental deletions or overwrites caused inadvertently, or otherwise, by any commands run by researchers. Be warned that directories, files and file contents that are deleted or overwritten cannot be restored by us under any circumstances. Researchers are responsible for maintaining backups of their files. If in doubt about a command please contact [Contact Us](../index.md#contact-us) for guidance.
+We are not responsible for accidental deletions or overwrites caused inadvertently, or otherwise, by any commands run by researchers. Be warned that directories, files and file contents that are deleted or overwritten cannot be restored by us under any circumstances. Researchers are responsible for maintaining backups of their files. If in doubt about a command please contact [Contact Us](../index.md#how-to-contact-us) for guidance.
+
+If you would prefer additional information or a tutorial to guide your use of the Shell, please see our [page](../education/training_resources.md#the-carpentries) containing links to educational content on Shell and other tools you may need.
 
 ### Educational Resources
 
 The internet has thousands of guides for using the shell. Rather than devise our own complete lesson plan for using the shell, we recommend finding and using one of the high-quality lessons available on the internet. The Software Carpentries group offers a number of high-quality online lesson plans for introductory computing and data science tools. While these lesson plans are intended to be delivered by an instructor in a classroom setting, they can be still be useful to follow solo. For the shell lesson, see <https://swcarpentry.github.io/shell-novice/>.
+
+There are also additional resources that aid in learning and verifying shell commands and scripts:
+
+- [Explain Shell](https://explainshell.com/): An educational tool providing detailed explanations of individual commands in relatively reasonably-plain English. This tool doesn't explain what a command does at a high level nor its purpose or intent, only the details of the parts making up the command.
+- [ShellCheck](https://www.shellcheck.net/): An online tool for conducting static analysis checks on shell scripts. The Git repository for this tool can be found [here](https://github.com/koalaman/shellcheck ) and it can also be installed via [Anaconda]( https://anaconda.org/conda-forge/shellcheck).
 
 At the shell prompt, you can also use the command `curl cheat.sh/<command>` to get a simple-to-understand explanation of what the command does and how to use it (see [curl](#download-files-from-internet-sources-curl)). Below is an example for the [pwd command](#show-working-directory-pwd).
 
@@ -42,7 +49,7 @@ The text `[required]` is for flags and inputs that _are_ required to run the com
 
 Flags start with the character `-` as with the `-l` flag in `ls -l` (see [ls](#list-files-and-directories-ls)). Flags that do not require input can be combined as `ls -al`. Flags that require input may not be combined as with the flags `-n` and `-m 2` in `grep -n -m 2 pattern textfile.txt` (see [grep](#search-for-text-grep)).
 
-All inputs are separated by the space character ++space++. If you wish to or must use a space character in an input, that input must be surrounded by quotation marks. Note that single quotes and double quotes have different behavior. Single quotes `''` interpret all characters between them literally. Double quotes `""` interprets [special characters](#special-characters). In most cases, especially with [variable](#environment-concepts) contents, double quotes `""` are preferred.
+All inputs are separated by the space character ++space++. If you wish to or must use a space character in an input, that input must be surrounded by quotation marks. Note that single quotes and double quotes have different behavior. Single quotes `''` interpret all characters between them literally. Double quotes `""` interprets [special characters](#special-escaped-characters). In most cases, especially with [variable](#environment-concepts) contents, double quotes `""` are preferred.
 
 All commands are run in a process. By default, commands run at the shell prompt are run in the shell process, and wait for execution to stop before returning control to you. It is possible to regain control earlier in a number of ways.
 
@@ -228,7 +235,7 @@ Below is a reference guide to various commands through the lens of problems to b
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you are using Cheaha and working with more than a few files or directories, or the files are large, please run your shell commands in a [Job Context](../cheaha/slurm/submitting_jobs.md#interactive-jobs-with-srun-at-the-terminal).
+    If you are using Cheaha and working with more than a few files or directories, or the files are large, please run your shell commands in a [Job Context](../cheaha/slurm/submitting_jobs.md#interactive-jobs-with-srun).
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
@@ -492,7 +499,7 @@ Permission management is an important part of managing access and control of fil
 
     Please carefully consider security when working in shared spaces like Cheaha. Setting private directories or files as readable by other users can inadvertently expose sensitive or protected information and may violate IT policy, FERPA, HIPAA or some combination.
 
-    There are legitimate use cases for truly shared spaces. Please [Contact Us](../index.md#contact-us) if you need to share information with other users or collaborators and aren't sure of how to do so securely.
+    There are legitimate use cases for truly shared spaces. Please [Contact Us](../index.md#how-to-contact-us) if you need to share information with other users or collaborators and aren't sure of how to do so securely.
 <!-- markdownlint-enable MD046 -->
 
 #### What Permissions Do
@@ -530,13 +537,13 @@ Two separate patterns can be used to set or change permissions on files and dire
         - `o` users outside the owner's group
         - `a` all users (same as `ugo`).
 
-    2. A symbol indicating how to change the permissions
+    1. A symbol indicating how to change the permissions
 
         - `=` set permissions
         - `-` remove permissions
         - `+` add permissions
 
-    3. A collection of letters denoting which permissions to change. Multiple letters may be used.
+    1. A collection of letters denoting which permissions to change. Multiple letters may be used.
 
         - `r` read
         - `w` write (change the contents)
@@ -554,7 +561,7 @@ Two separate patterns can be used to set or change permissions on files and dire
 
     ![!example of symbolic chmod](images/chmod_symbolic.png)
 
-2. Numerals
+1. Numerals
 
     Bit mask patterns are in the form `755`. Each digit is the sum of three binary bits. The bits are
 

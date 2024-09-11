@@ -23,18 +23,18 @@ The Carpentries is a 501(c)3 non-profit organization dedicated to educating rese
     - [Genomics Curriculum](https://datacarpentry.org/lessons/#genomics-workshop)
     - [Image Processing Curriculum](https://datacarpentry.org/lessons/#image-processing-curriculum)
 - [HPC Carpentries](https://www.hpc-carpentry.org/community-lessons/): a page dedicated to sharing HPC-oriented, high-quality, peer-reviewed lessons following Carpentries' teaching standards. Start your journey into High-Performance Computing with the [Introduction to HPC page](https://carpentries-incubator.github.io/hpc-intro/).
-  
+
 ### Rigor & Reproducibility Tools
 
 - [Community for Rigor](https://c4r.io/): a group of scientists from various universities and research institutions in the United States has collaborated to develop educational materials aimed at facilitating the teaching and learning of the principles and practices of scientific rigor.
 - [Rigor & Reproducibility Tool Repository](https://c4r.io/new-tool-repo/): Contains various tools related to rigor and reproducibility, along with links to relevant landing pages.
-  
+
 ### Other External Resources
 
 - [Rosalind.info](https://rosalind.info/problems/locations/): A platform for learning bioinformatics and programming.
 - [Transcriptomics](https://diytranscriptomics.com/): A course teaching students to independently analyze high-throughput sequencing data from gene expression (RNA-seq) studies using lightweight, open-source software and the R programming language with Bioconductor packages.
 - [MATLAB upcoming events](https://www.mathworks.com/company/events/search.html): MATLAB offers a range of upcoming events, including data-oriented, programming-oriented, and domain-specific training sessions. Many of these events are free to attend.
-  
+
 ### Suggested Reading
 
 - [Simple rules for efficient scientific programming](https://doi.org/10.1371/journal.pcbi.1008549): provide 10 rules for efficient code writing to boost research productivity.

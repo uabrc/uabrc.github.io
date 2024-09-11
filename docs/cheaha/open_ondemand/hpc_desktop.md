@@ -61,7 +61,7 @@ tar -xz -C ${HOME}/bin -f vscode_cli.tar.gz
 export commit_sha=8b3775030ed1a69b13e4f4c628c612102e30a681
 curl -L "https://update.code.visualstudio.com/commit:${commit_sha}/server-linux-x64/stable" -o vscode_server.tar.gz
 mkdir -vp ~/.vscode-server/bin/${commit_sha}
-tar --no-same-owner -xzv --strip-components=1 -C ${HOME}/.vscode-server/bin/"${commit_sha}" -f vscode_server.tar.gz 
+tar --no-same-owner -xzv --strip-components=1 -C ${HOME}/.vscode-server/bin/"${commit_sha}" -f vscode_server.tar.gz
 ```
 
 #### Adding code to PATH
@@ -69,7 +69,7 @@ tar --no-same-owner -xzv --strip-components=1 -C ${HOME}/.vscode-server/bin/"${c
 To avoid typing `./code` for commands, try adding `${HOME}/bin` to `$PATH` in your `~/.bashrc` before starting a job. Then you will only need to type `code` for commands. You can do this from the terminal with the following command:
 
 ``` bash
-echo "export PATH=\$PATH:${HOME}/bin" >> $HOME/.bashrc 
+echo "export PATH=\$PATH:${HOME}/bin" >> $HOME/.bashrc
 ```
 
 You only need to have this line or `export PATH=$PATH:${HOME}/bin:...` in your `.bashrc` once. You should check your `.bashrc` to make sure this line isn't already there before adding it.
@@ -79,30 +79,30 @@ You only need to have this line or `export PATH=$PATH:${HOME}/bin:...` in your `
 These steps should be performed each time you would like to create a tunnel.
 
 1. Start an HPC Desktop job on Cheaha with the required resources. Note that all VSCode processing, including debuggers, unit testing, Jupyter Notebook server, file access, etc., all happen in this same job context. Adjust resources in relation to your development needs.
-2. Within the HPC Desktop Job, open a terminal and run the command `code tunnel` (assumes you've added `code` to `$PATH`).
-3. Select whether you would like to login with a Microsoft or GitHub account. You should then see a URL and code.
+1. Within the HPC Desktop Job, open a terminal and run the command `code tunnel` (assumes you've added `code` to `$PATH`).
+1. Select whether you would like to login with a Microsoft or GitHub account. You should then see a URL and code.
 
     ![!Terminal showing VSCode Tunnel CLI with Microsoft Account selected and URL and authentication code.](./images/vscode_tunnel_ms_account.png)
 
     ![!Terminal showing VSCode Tunnel CLI with GitHub Account selected and URL and authentication code.](./images/vscode_tunnel_gh_account.png)
 
-4. In your local browser, navigate to the URL and enter the code. If you see a `https://vscode.dev/tunnel/...` URL, ignore it. It leads to an online-only instance of VSCode running on a Microsoft Cloud service, not to your local machine.
+1. In your local browser, navigate to the URL and enter the code. If you see a `https://vscode.dev/tunnel/...` URL, ignore it. It leads to an online-only instance of VSCode running on a Microsoft Cloud service, not to your local machine.
 
     ![!Browser crop image showing Microsoft Account device activation panel.](./images/vscode_activate_ms_account.png)
 
     ![!Browser crop image showing GitHub Account device activation panel.](./images/vscode_activate_gh_account.png)
 
-5. Open VSCode on your local machine and click the `><` button in the lower-left corner of the main VSCode window to open the Command Palette. Select "Connect to Tunnel..." to find your tunnel.
+1. Open VSCode on your local machine and click the `><` button in the lower-left corner of the main VSCode window to open the Command Palette. Select "Connect to Tunnel..." to find your tunnel.
 
     ![!VSCode "Connect To..." Button](./images/vscode_tunnel_connect_button.png)
 
     ![!VSCode Command Palette showing "Connect to Tunnel..." highlighted by mouse pointer.](./images/vscode_tunnel_palette_connect.png)
 
-6. Select the same login method as in step (3). You may be asked to login locally.
+1. Select the same login method as in step (3). You may be asked to login locally.
 
     ![!VSCode Command Palette showing tunnel account selection.](./images/vscode_tunnel_palette_login.png)
 
-7. Select your tunnel from the list.
+1. Select your tunnel from the list.
 
     ![!VSCode Command Palette showing tunnel selection with a tunnel highlighted.](./images/vscode_tunnel_palette_tunnel_selection.png)
 

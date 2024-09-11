@@ -7,7 +7,7 @@ Instead, sharing buckets must be done through the command line using [bucket pol
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Your username for LTS could potentially be `<blazerid>` or `<blazerid>@uab.edu` depending on when your account was created. It is very important when crafting these policies that the correct username is specified, and these two are not interchangeable. For users with XIAS accounts, your username should be the email address you signed up for the XIAS account with. The usernames are case-sensitive. If you do not remember what your username is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
+    Your username for LTS could potentially be `<BlazerID>` or `<BlazerID>@uab.edu` depending on when your account was created. It is very important when crafting these policies that the correct username is specified, and these two are not interchangeable. For users with XIAS accounts, your username should be the email address you signed up for the XIAS account with. The usernames are case-sensitive. If you do not remember what your username is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
 <!-- markdownlint-enable MD046 -->
 
 ## Policy Structure
@@ -30,10 +30,10 @@ Policies files are essentially built as a series of statements expressly allowin
 Each statement is made up of a few fields:
 
 1. Sid: a short decription of what the statement is for (i.e. "bucket-access")
-2. Effect: "Allow" or "Deny" permissions based on how you want to alter permissions
-3. Principal: Essentially a list of users to change permissions for. Have to formatted like `arn:aws:iam:::user/<lts_username>`.
-4. Action: A list of commands to allow or deny permission for, depending on the Effect value.
-5. Resource: The name of the bucket or objects to apply permissions to. Must be formatted like `arn:aws:s3:::<bucket[/path/objects]>`.
+1. Effect: "Allow" or "Deny" permissions based on how you want to alter permissions
+1. Principal: Essentially a list of users to change permissions for. Have to formatted like `arn:aws:iam:::user/<lts_username>`.
+1. Action: A list of commands to allow or deny permission for, depending on the Effect value.
+1. Resource: The name of the bucket or objects to apply permissions to. Must be formatted like `arn:aws:s3:::<bucket[/path/objects]>`.
 
 It is currently suggested to have at least two statements, one statement allowing access to the bucket itself, and another statement dictating permissions for objects in the bucket.
 
@@ -82,8 +82,8 @@ Critically, this does not allow the given users the ability to read, download, e
 This permission set allows `bob` and `jane@uab.edu` to download files but not to move, overwrite, delete, or otherwise interact with them. Notice that the Resource value has changed from just `bucket1` to `bucket1/*`. We can set this Resource value to different paths and objects to limit the permissions granted. For example:
 
 1. `bucket1/*`: Apply permissions to all objects in the entire bucket
-2. `bucket1/test_folder/*`: Apply permissions to all objects in folder `test_folder`
-3. `bucket1/test_folder/*jpg`: Apply read permissions to only JPGs within `test_folder`.
+1. `bucket1/test_folder/*`: Apply permissions to all objects in folder `test_folder`
+1. `bucket1/test_folder/*jpg`: Apply read permissions to only JPGs within `test_folder`.
 
 For the last two examples, `bob` and `jane@uab.edu` will not have permission to download any files outside of the `test_folder` folder. All permissions are implicitly denied unless explicitly given in the policy statements.
 
@@ -92,11 +92,11 @@ For the last two examples, `bob` and `jane@uab.edu` will not have permission to 
 Being able to download a file is only one possible action you may want to give permission for. Uploading files as well as altering the policy of the bucket may also be useful to give permissions for. Here is a short list of common actions you may want to give permissions for:
 
 1. `s3:ListBucket`: access to see but not interact with objects
-2. `s3:GetObject`: download objects
-3. `s3:PutObject`: upload objects
-4. `s3:DeleteObject`: remove objects
-5. `s3:GetBucketPolicy`: view the current bucket policy
-6. `s3:PutBucketPolicy`: change the current bucket policy
+1. `s3:GetObject`: download objects
+1. `s3:PutObject`: upload objects
+1. `s3:DeleteObject`: remove objects
+1. `s3:GetBucketPolicy`: view the current bucket policy
+1. `s3:PutBucketPolicy`: change the current bucket policy
 
 A full list of Actions for UAB LTS can be seen on the [Ceph docs](https://docs.ceph.com/en/quincy/radosgw/bucketpolicy/#limitations).
 

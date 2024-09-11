@@ -1,5 +1,7 @@
 # Storage
 
+Research Computing offers several data storage options to meet individual or shared needs of UAB researchers, depending on their requirement and use-cases. The types of storage available, procedures for requesting access, responsibilities, and usage guidelines are detailed in the following sections.
+
 ## What Type of Storage Do I Need?
 
 There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to help determine the storage platform we provide that best matches your needed use-case. If you need additional assistance, please contact [Support](../help/support.md).
@@ -8,19 +10,17 @@ There are multiple locations for data storage both on and off Cheaha each with a
 
 ## What Individual Storage Solutions are Available?
 
-Every researcher has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. These two locations are meant to store general data and can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, `$HOME` is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, `$USER_DATA` is intended to store datasets and results for individual research projects.
-
-Individual allocations on Long-Term Storage (LTS) are also available upon request.
+Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about [Long-Term Storage](./lts/index.md) and [User Data and Home Directories](#user-data-and-home-directories).
 
 ### How Do I Request Individual Long-Term Storage?
 
-To request individual Long-Term Storage, please first read and understand how [Long-Term Storage](./lts/index.md) differs from traditional filesystems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact [Support](../help/support.md).
+To request individual Long-Term Storage, please first read and understand how [Long-Term Storage](./lts/index.md) differs from traditional file systems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact [Support](../help/support.md).
 
 ## What Shared Storage Solutions are Available?
 
-Shared Storage is available via two services. We have Project Storage (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases, so please read on to determine which may be most suitable.
+Shared Storage is available via two services. We have [Project Storage](#project-directory) (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
 
-Project Storage is best-suited for changing or dynamic data. Specifically:
+[Project Storage](#project-directory) is best-suited for changing or dynamic data. Specifically::
 
 - Data needing/undergoing analysis
 - Exploratory data
@@ -40,15 +40,17 @@ Shared Storage is allocated on a per-organization basis, not on a per-person bas
 
 ### How Do I Request Shared Storage?
 
-To request shared Project Storage or Long-Term Storage, please contact [Support](../help/support.md). To ensure prompt allocation of Shared Storage, please follow the guidelines below.
+To request shared Project Storage or Long-Term Storage, please contact [Support](../help/support.md). To ensure prompt allocation of Shared Storage, please follow the guidelines below:
 
 - Requests must be made to <support@listserv.uab.edu> or via the [AskIT HelpDesk](https://www.uab.edu/it/home/).
-- Requests must come from one of the proposed owners.
-- All proposed owners must have created their [Research Computing accounts](../account_management/cheaha_account.md) at the time the request is made.
+- Requests must come from one of the proposed owners (a Lab PI, a Research Core director, or both).
+- The role of Lab PI entitles a person to a project space for that lab.
+- The role of Research Core director entitles a person to a project space for that core. If one person has both roles, they may have two shared Storage spaces, one for each role.
+- All proposed owners must have created their [Research Computing accounts](../account_management/cheaha_account.md) at the time of the request.
 
 Please provide the following information. Missing information can delay allocation of Shared Storage as we either look up the information, or ask followup questions.
 
-- **Responsible Party/Owner:** The BlazerID of the person claiming reponsibility for what happens and what is stored in the space. Typically this would be a Principal Investigator (PI) or a Core Director.
+- **Responsible Party/Owner:** The BlazerID of the person claiming responsibility for what happens and what is stored in the space. Typically this would be a Principal Investigator (PI) or a Core Director.
     - Multiple responsible parties are allowed.
     - We need one person declared as "primary" owner. This person will be the literal owner (in the Linux sense) for Project Storage.
 - **Members:** A list of BlazerIDs of people to give access to the space. (Note: this only applies to Project Storage. LTS access controls are managed differently.)
@@ -59,11 +61,11 @@ Please provide the following information. Missing information can delay allocati
 - **Internal UAB Collaborator Organizations:** The name(s) of any other UAB organizations participating in the Shared Storage.
 - **External Collaborator Organizations:** The name(s) of any external organizations participating in the Shared Storage.
 - **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
-- **Name of Shared Storage:** Please give us a generic name specific to your project/lab.
+- **Name of Shared Storage:** Please give us a generic name specific to your project/Lab.
 
-    - For Project Storage, this name will be used in the `/data/project/<name>` path on Cheaha.
-    - For Labs we recommend the format `<PI_blazerid>_lab`. Example: PI_blazerid_lab, PI_name_lab, PI_blazerid_group
-    - For Cores we recommend a shortened version of the Core name. Example: core_facility_space
+    - For Labs, we recommend using the format `<PI_BlazerID>_lab`, where `<PI_BlazerID>` is the BlazerID or name of the Principal Investigator (PI). For example: `PI_BlazerID_lab`, `PI_name_lab`.
+    - For Cores, we recommend using a shortened version of the Core name. For example: `core_facility_space`
+    - For Project Storage, the name you choose will be used in the path `/data/project/<PI_BlazerID>_lab` on Cheaha. Also, this name,`<PI_BlazerID>_lab`, will be given to your shared LTS account.
 
     <!-- markdownlint-disable MD046 -->
     !!! Tip
@@ -87,7 +89,7 @@ To request changes in Shared Storage membership, please contact [Support](../hel
 
 At this time, due to constraints on total GPFS storage, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [User Scratch](#user-scratch) for temporary storage of up to 100 TB of data for use during analysis.
 
-If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md).
+If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md). Please also note that project storage is not just for a single project only, it is meant as a storage for multiple projects.
 
 ### How Can I Get A Larger LTS Lab Allocation?
 
@@ -108,7 +110,7 @@ If you have additional questions _or_ wish to discuss further, please [Contact S
 
 One alternative we recommend is breaking your dataset into batches. A generic, template workflow might be something like below.
 
-- Copy a batch of data from LTS, or an internet source, to User Scratch.
+- Copy a batch of data from LTS, or an internet source, to [User Scratch](#user-scratch).
 - Perform analyses on copied data in User Scratch.
 - Store intermediate or final results in `/data/project/` or LTS.
 - Delete copied data from User Scratch.
@@ -117,6 +119,16 @@ One alternative we recommend is breaking your dataset into batches. A generic, t
 When all batches have been processed, begin processing or aggregating the resulting data.
 
 If you wish to discuss other alternatives tailored to your workflow, please [Contact Support](../help/support.md).
+
+## User Data and Home Directories
+
+Every user of Cheaha are given a storage space to store general data and data that can be used during active analysis. While there are no data retention policies in place, these spaces are not intended for long-term storage of data that changes infrequently. Traditionally, `$HOME` is intended to store scripts, supporting files, software configuration files, and toolboxes such as Anaconda virtual environments or R packages. In contrast, `$USER_DATA` is intended to store datasets and results for individual research projects, with access granted only to the user of that directory. Since the quotas for these directories are limited to 5TB, you may consider using [scratch](#scratch) space and/or [project directories](#project-directory) for storing, moving, and analyzing data.
+
+## Project Directory
+
+The Project Directories are larger than home directories and serves as a storage solution accessible to Labs led by a PI and Core facilities led by a director. It is intended for sharing data and code within a group of researchers or among lab members and collaborators, located under `/data/project/<project>`.
+
+The PI is the owner of the project directory, and when a directory `/data/project/<project>` is created, researchers permitted to collaborate on the project are added as members of this group, granting them access to the project directory. New members can be added or removed from the group upon PI approval. Currently, a project directory space is 25 TB, and this space is not designated for a single project only; it serves as storage for multiple projects.
 
 ### Project Directory Permissions
 
@@ -149,7 +161,7 @@ There are some known issues surrounding project directory permissions when files
 For PIs and project administrators:
 
 - Please educate your staff and collaborators about the above permission setups, and any additional ACLs you may have in place, to minimize future challenges.
-- If you have issues with permissions, please contact [Support](../help/support.md#contact-us). We can guide you through [Managing Permissions](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../workflow_solutions/shell.md#manage-group-ownership-chgrp).
+- If you have issues with permissions, please contact [Support](../index.md#how-to-contact-us). We can guide you through [Managing Permissions](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../workflow_solutions/shell.md#manage-group-ownership-chgrp).
 
 ## Scratch
 
@@ -271,7 +283,7 @@ A possible external resource for archival is available through University of Okl
     Backups of data are the responsibility of researchers using Cheaha.
 <!-- markdownlint-enable MD046 -->
 
-A good practice for backing up data is to use the 3-2-1 rule, as [recommended by US-CERT](https://www.cisa.gov/uscert/security-publications/data-backup-options):
+A good practice for backing up data is to use the 3-2-1 rule, as [recommended by US-CERT](https://www.cisa.gov/sites/default/files/publications/data_backup_options.pdf):
 
 - **3**: Keep **3** copies of important data. 1 primary copy for use, 2 backup copies.
 - **2**: Store backup copies on **2** different media types to protect from media-specific hazards.
@@ -305,8 +317,8 @@ Cheaha is HIPAA compliant and can accept Protected Health Information (PHI) data
 For UAB policies surrounding PHI data, please see the following URLs.
 
 - [Data Classification](https://www.uab.edu/it/home/policies/data-classification/classification-overview)
-- [Data Protection and Security Policy](https://secure2.compliancebridge.com/uab/portal/getdoc.php?file=302)
-- [Data Access Policy](https://secure2.compliancebridge.com/uab/portal/getdoc.php?file=301)
+- [Data Protection and Security Policy](https://secure4.compliancebridge.com/uab/portal/getdoc.php?file=302)
+- [Data Access Policy](https://secure4.compliancebridge.com/uab/portal/getdoc.php?file=301)
 - [HIPAA Data Policy](https://www.uab.edu/it/home/policies/compliance/hipaa)
 
 <!-- markdownlint-disable MD046 -->
