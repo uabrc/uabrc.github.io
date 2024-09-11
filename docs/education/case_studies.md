@@ -48,7 +48,7 @@ To install Parabricks using Singulairty, load the `Singularity 3.x` module from 
 module load Singularity/3.5.2-GCC-5.4.0-2.26
 ```
 
-Go to the NGC catalog page and copy the image path to pull the desired containers of Parabricks using Singularity. Here, the generic container is pulled using Singularity.  The image path is in “nvcr.io/nvidia/clara/clara-parabricks" and the tag is 4.2.0-1. The container image name `parabricks-4.2.0-1.sif` is an user-derived name.
+Go to the NGC catalog page and copy the image path to pull the desired containers of Parabricks using Singularity. Here, the generic container is pulled using Singularity.  The image path is in "nvcr.io/nvidia/clara/clara-parabricks" and the tag is 4.2.0-1. The container image name `parabricks-4.2.0-1.sif` is an user-derived name.
 
 ![!Parabricks container.](./images/parabricks_container.png)
 

@@ -1,6 +1,6 @@
 # Jupyter Apps
 
-Jupyter Notebooks and Jupyter Lab are both available as standalone apps in OOD. Jupyter is commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-anaconda-environments) below before continuing here.
+Jupyter Notebooks and Jupyter Lab are both available as standalone apps in OOD. Jupyter is commonly used with `conda` environments. If you are unfamiliar with `conda` environments please see the [Working with `conda` Environments section](#working-with-conda-environments) below before continuing here.
 
 To launch the Jupyter notebook, select the menus 'Interactive Apps -> Jupyter Notebook'. The job creation and submission form appears:
 
@@ -10,7 +10,7 @@ As with all interactive apps, you'll need to select the resources required using
 
 ## Environment Setup
 
-To modify the environment that Anaconda and Jupyter will run in, please use the Environment Setup field to load modules and modify the environment `$PATH`. Be aware that any changes to the environment made in this window will be inherited by terminals as well as notebooks opened within Jupyter.
+To modify the environment that `conda` and Jupyter will run in, please use the Environment Setup field to load modules and modify the environment `$PATH`. Be aware that any changes to the environment made in this window will be inherited by terminals as well as notebooks opened within Jupyter.
 
 ### CUDA
 
@@ -34,17 +34,17 @@ The `Extra Jupyter Arguments` field allows you to pass additional arguments to t
 
 ## Working with other programming languages within Jupyter Notebook
 
-To work with other programming languages within Jupyter Notebook, you need to install the corresponding kernel for each language, similar to the process used for Python with the `ipykernel`. This can be done using package managers such as `pip` or `conda`, or by following language-specific instructions. For example, to install `R kernel` for the R language, we can run the `conda install -c r r-essentials` command. Please ensure that the kernel is installed in your Anaconda environment. Then, select the desired language environment from the kernel dropdown menu.
+To work with other programming languages within Jupyter Notebook, you need to install the corresponding kernel for each language, similar to the process used for Python with the `ipykernel`. This can be done using package managers such as `pip` or `conda`, or by following language-specific instructions. For example, to install `R kernel` for the R language, we can run the `conda install -c r r-essentials` command. Please ensure that the kernel is installed in your `conda` environment. Then, select the desired language environment from the kernel dropdown menu.
 
 Once the necessary kernels are installed, if you wish, you can write and run multiple code cells in different languages within a single notebook. Easily switch between kernels and select the preferred one for each language, and then proceed to run the code cells in their respective languages.
 
-## Working with Anaconda Environments
+## Working with `conda` Environments
 
-By default, Jupyter notebooks will use the base environment that comes with the Anaconda3 module. This environment contains a large number of popular packages and may useful for something quick, dirty, and simple. However, for any analysis needing specific package versions or special packages, you will need to create your own environment and select it from the `Kernel` menu. For information on creating and managing Anaconda environments please see our [Using Anaconda page](../../workflow_solutions/using_anaconda.md). Then please review our [Cheaha-specific Anaconda page](../software/software.md#anaconda-on-cheaha) for important tips and how to avoid common pitfalls.
+By default, Jupyter notebooks will use the base environment that comes with the `Miniforge3` module. This environment contains a large number of popular packages and may useful for something quick, dirty, and simple. However, for any analysis needing specific package versions or special packages, you will need to create your own environment and select it from the `Kernel` menu. For information on creating and managing `conda` environments please see our [Using `conda` page](../../workflow_solutions/using_conda.md). Then please review our [Cheaha-specific `conda` page](../software/software.md#conda-on-cheaha) for important tips and how to avoid common pitfalls.
 
-To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From the list, choose the kernel corresponding to your desired Anaconda environment (see below for an example). If your environment isn't appearing, you may be missing the ipykernel package. To do so, use `conda install ipykernel` to get ipykernel packgae installed into your environment, so Jupyter can recognize your environment.
+To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From the list, choose the kernel corresponding to your desired `conda` environment (see below for an example). If your environment isn't appearing, you may be missing the ipykernel package. To do so, use `conda install ipykernel` to get ipykernel packgae installed into your environment, so Jupyter can recognize your environment.
 
-![! Select your Anaconda environment from the Kernel dropdown menu in Jupyter](images/jupyter_kernel.png)
+![! Select your `conda` environment from the Kernel dropdown menu in Jupyter](images/jupyter_kernel.png)
 
 ### Creating an Environment for use with Jupyter Notebook
 
@@ -55,9 +55,9 @@ We can create a new environment, that houses all of the packages, modules, and l
     - [OOD Terminal](./ood_layout.md#opening-a-terminal). Be sure to run the following steps in a job!
     - [OOD HPC Desktop Job Terminal](./hpc_desktop.md). This method will ensure terminal commands are run in a job.
 
-1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) your new environment, following the linked steps.
+1. [Create](../../workflow_solutions/using_conda.md#create-an-environment) and [activate](../../workflow_solutions/using_conda.md#activate-an-environment) your new environment, following the linked steps.
 
-1. [Install your desired packages into your activated environment](../../workflow_solutions/using_anaconda.md#install-packages).
+1. [Install your desired packages into your activated environment](../../workflow_solutions/using_conda.md#install-packages).
 
 1. Remember to install 'ipykernel' in your activated environment, using `conda install ipykernel`.
 
@@ -81,9 +81,15 @@ We can create a new environment, that houses all of the packages, modules, and l
 
 ### Python Executable Issues
 
-Jupyter Notebook by default loads `Anaconda3`. Hence do not load any versions of `Anaconda3` module in the `Environment Setup` field in the OOD Jupyter Notebook, as it causes Python mismatch, and the errors are hard to diagnose.
+Jupyter Notebook by default loads `Miniforge3`. Hence do not load any versions of `Miniforge3` module in the `Environment Setup` field in the OOD Jupyter Notebook, as it causes Python mismatch, and the errors are hard to diagnose.
 
-Having custom installs of Anaconda/Miniconda/ can cause the above similar issue. If you have installations of any of these software in your personal space, delete those directories and instead use the `Anaconda3` module.
+Having self-installed `conda` software can cause the above issue. This includes self-installed Anaconda, Miniconda, Mambaforge, or Miniforge. If you have installations of any of these software in your personal space, delete those directories and instead use the `Miniforge3` module.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    The Anaconda and Miniconda software are subject to the Anaconda Terms of Service and may not be used for UAB business.
+<!-- markdownlint-enable MD046 -->
 
 To identify a Python mismatch, use the commands `which python` and `python --version` to confirm the desired Python executable and version. Within the `conda` environment, `which python` prints the path of the Python executable (e.g. `~/.conda/envs/remora/bin/python`). If it doesn't match the expected version, an unexpected Python version may be in use.
 
@@ -105,22 +111,17 @@ While launching an OOD HPC Desktop Job or any OOD Applications, if the user gets
 
 Using `conda init` causes a block of code automatically inserted into the `.bashrc` file in your `$HOME` directory. This code block may interfere with the proper functioning of various OOD applications, resulting in a VNC error. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496).
 
-### Pip Installs Packages Outside of Environment
+### Installing Pip Packages Outside of Your Environments
 
-When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` within the same conda environment and use `pip` from that environment. If `pip` is used outside of Anaconda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments, and shows the following error,
+<!-- markdownlint-disable MD046 -->
+!!! danger
 
-```bash
-Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)
-```
+    Using `pip install` without loading Miniforge3 will cause hard-to-diagnose errors and broken workflows.
 
-For the above case, resolving errors involve deleting the `~/.local` directory.
+    Using `pip install` in the `base` environment will cause the same hard-to-diagnose errors and broken workflows.
 
-Here's an example of the correct procedure for installing `pip` packages within a `conda`:
-
-1. Load the `Anaconda3` module using `module load Anaconda3`.
-1. Create or activate the desired Anaconda environment. Please refer to the [Anaconda documentation](../../workflow_solutions/using_anaconda.md#create-an-environment)
-1. Install `pip` within the `conda` environment using `conda install pip` or `conda install python`. `pip` and `python` are packaged together, installing one will always install the other.
-1. Use `pip` when this `conda` environment is active to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_anaconda.md#installing-packages-with-pip)
+    Read more about this issue, and how to resolve it, [here](../software/software.md#installing-pip-packages-outside-of-your-environments).
+<!-- markdownlint-disable MD046 -->
 
 ### Tensorflow and PyTorch GPU issues
 
