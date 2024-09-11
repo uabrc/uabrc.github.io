@@ -82,7 +82,7 @@ If you believe this to be in error, please [Contact Support](../help/support.md)
 
 Our Cheaha system is robust, but errors may occur due to general platform connectivity issues or missing components. Below are FAQs for self-service Cheaha account creation and a troubleshooting guide for common issues:
 
-- **Which credentials should I use?** Please visit [how do I login to research computing services](../account_management/index.md/#how-do-i-login-to-research-computing-services).
+- **Which credentials should I use?** Please visit [how do I login to research computing services](../account_management/index.md#how-do-i-login-to-research-computing-services).
 - **What do I do if I'm waiting for it to finish for longer than a couple of minutes?**
 
     - Try closing and restarting your browser, then trying again.
