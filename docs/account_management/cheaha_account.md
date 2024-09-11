@@ -1,3 +1,7 @@
+---
+toc_depth: 3
+---
+
 # Cheaha Account Management
 
 These instructions are intended to guide researchers on creating new accounts and managing existing accounts.
@@ -82,25 +86,25 @@ If you believe this to be in error, please [Contact Support](../help/support.md)
 
 Research Computing offers services addressing a wide range of needs for researchers at UAB, including students, staff, and faculty, as well as for both Labs and research cores.
 
-We're always happy to provide support for your Research Computing needs, you need only [contact us](../index.md/#how-to-contact-us).
+We're always happy to provide support for your Research Computing needs, you need only [contact us](../index.md#how-to-contact-us).
 
 ### For Students, Staff, and Faculty
 
 - [Get Started with Open OnDemand](../cheaha/open_ondemand/index.md)
 - [Additional Learning Resources](../education/training_resources.md)
-- [Data Science Journal Club Course](../education/courses.md/#data-science-journal-club-course)
+- [Data Science Journal Club Course](../education/courses.md#data-science-journal-club-course)
 
 ### For Lab PIs and Core Directors
 
-- [No-cost storage offerings](../data_management/storage.md/#what-type-of-storage-do-i-need>)
-    - [GPFS](../data_management/storage.md/#what-shared-storage-solutions-are-available): Hot storage, compute adjacent, directly accessible from Cheaha
+- [No-cost storage offerings](../data_management/storage.md#what-type-of-storage-do-i-need)
+    - [GPFS](../data_management/storage.md#what-shared-storage-solutions-are-available): Hot storage, compute adjacent, directly accessible from Cheaha
     - [LTS](../data_management/lts/index.md): Cool storage, large capacity
 - [Batch computing](../cheaha/slurm/introduction.md)
     - [Desktop](../cheaha/open_ondemand/hpc_desktop.md), [Jupyter](../cheaha/open_ondemand/ood_jupyter.md), [RStudio](../cheaha/open_ondemand/ood_rstudio.md), [Matlab](../cheaha/open_ondemand/ood_matlab.md), and more
     - [GPUs](../cheaha/slurm/gpu.md)
 - [On-prem cloud computing](../uab_cloud/index.md)
     - [Tutorial](../uab_cloud/tutorial/index.md)
-    - [Web servers](../uab_cloud/remote_access.md/#make-instances-publically-accessible-from-the-internet)
+    - [Web servers](../uab_cloud/remote_access.md#make-instances-publically-accessible-from-the-internet)
 
   If you are unable to find what you need, please contact our team [here](../index.md#how-to-contact-us).
 
@@ -108,7 +112,7 @@ We're always happy to provide support for your Research Computing needs, you nee
 
 Our Cheaha system is robust, but errors may occur due to general platform connectivity issues or missing components. Below are FAQs for self-service Cheaha account creation and a troubleshooting guide for common issues:
 
-- **Which credentials should I use?** Please visit [how do I login to research computing services](../account_management/index.md/#how-do-i-login-to-research-computing-services).
+- **Which credentials should I use?** Please visit [how do I login to research computing services](../account_management/index.md#how-do-i-login-to-research-computing-services).
 - **What do I do if I'm waiting for it to finish for longer than a couple of minutes?**
 
     - Try closing and restarting your browser, then trying again.
