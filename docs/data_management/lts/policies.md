@@ -262,12 +262,16 @@ The optional `SID` field in IAM policies, though intended for uniquely identifyi
       "Sid": "This statement grants read access to all objects in bucket1",
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam:::user/jane@uab.edu"
+        "AWS":[
+            "arn:aws:iam:::user/bob",
+            "arn:aws:iam:::user/jane@uab.edu"
+        ]
       },
       "Action": [
         "s3:GetObject"
       ],
       "Resource": [
+        "arn:aws:s3:::bucket1",
         "arn:aws:s3:::bucket1/*"
       ]
     }
@@ -295,12 +299,16 @@ Here is an example IAM policy that grants all `S3` actions on bucket1 and all it
       "Sid": "This statement grants access to all S3 actions in bucket1",
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam:::user/jane@uab.edu"
+        "AWS":[
+             "arn:aws:iam:::user/bob",
+             "arn:aws:iam:::user/jane@uab.edu"
+        ]
       },
       "Action": [
         "s3:*"
       ],
       "Resource": [
+        "arn:aws:s3:::bucket1",
         "arn:aws:s3:::bucket1/*"
       ]
     }
