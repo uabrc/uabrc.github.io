@@ -18,57 +18,37 @@ Globus is a service that simplifies the process of transferring, sharing, and ma
 - It simplifies complex transfer tasks with an intuitive web interface.
 - It handles transfers of all sizes, from small files to multi-terabyte datasets.
 
-## Why You Use Globus?
+## How Do I Get Onto the Globus Web App?
 
-- Globus is optimized for high-performance environments, reducing transfer times.
-- It has a GUI and is accessible via a web browser, making it easy to initiate transfers from anywhere.
-- Globus allows you to easily share data with collaborators, regardless of their institution.
+- To get to the Globus web app navigate to <https://app.globus.org>. You should see a page like below.
 
-## How Do You Get Onto Globus?
+    ![Globus web app login page.](./images/gi-web-app-001-login.png)
 
-Getting started with Globus involves a few steps. Here is how you can set up your account and start using the platform:
+- Type "UAB" or "University of Alabama at Birmingham" into the search bar to locate UAB in the list. The image below shows the correct choice in a red box.
 
-- To get to the Globus Web App, navigate to [https://app.globus.org](https://app.globus.org), and you will land on a page as shown below.
+    ![Globus web app login search bar with UAB entered and University of Alabama at Birmingham in a red box.](./images/gi-web-app-002-search.png)
 
-<!--
-    ![first-page-globus](/image/first-page-globus.png)
--->
+- Select "University of Alabama at Birmingham" from the drop-down menu and click "Continue" to be taken to the UAB Single Sign-On (SSO) form.
 
-- Type your institution's name or a part of it in the search bar. For example,  if you type "UAB", it will match entries like "University of Alabama at Birmingham", as shown below.
+    ![Globus web app with University of Alabama at Birmingham selected showing activated Continue button.](./images/gi-web-app-003-continue.png)
 
-<!--
-  ![login-page-globus](/image/enter-institution-page-globus.png)
--->
+- Enter your BlazerID and password in the SSO form, then click "Log In".
 
-- Select your institution from the drop-down menu and click "Continue" as shown below.
-
-<!--
-  ![login-page-globus](/image/continue-button-page-globus.png)
--->
-
-- Enter your BlazerID and password, then click "Log in".
-
-<!--
-![login-page-uab](/image/authentication-page-uab.png)
--->
+    ![UAB Single Sign-On form.](./images/gi-web-app-004-sso.png)
 
 - After logging in, you will be directed to the Globus file manager.
 
-<!--
-  ![file-manager-page-globus](/image/file-manager-page-globus.png)
--->
+    ![Globus web app file manager single-panel view.](./images/gi-web-app-005-file-manager-single-panel.png)
 
-- Enable two-panel mode by toggling the switch located near the top right corner, as shown below.
+- Enable two-panel view mode by clicking the button located near the top right corner, as shown in the red box below. Of the three available view mode buttons, the two-panel view button is in the center. This is an optional step, but highly recommended. This step will make your life much simpler while using Globus, now and in the future.
 
-<!--
-  ![two-panel-mode-toggle](/image/two-panel-mode-toggle.png)
--->
+    ![Globus web app file manager two-panel view.](./images/gi-web-app-006-view-buttons.png)
 
-- Then, on the file transfer page, you will see two file browser windows: one on the left and one on the right. Each window will have an Endpoint field representing the two systems between which you wish to transfer files. Once set up, you can transfer files in either direction.
+- On the file transfer page, you will see two file browser windows: one on the left and one on the right. Each window will have an Endpoint field representing the two systems between which you wish to transfer files. Once set up, you can transfer files in either direction.
 
-<!--
-  ![two-file-browser-windows](/image/two-file-browser-windows.png)
--->
+    ![Globus web app file manager two-panel view.](./images/gi-web-app-007-file-manager-two-panel.png)
+
+The file manager will be your most frequently-visited page when using Globus for data transfers. It is central to usage of the Globus web application.Please take some time to familiarize yourself with its look and feel. As you progress in the tutorials, please take time to experiment with transferring data to better understand how the interface works.
 
 ## How to Find Collections Shared with You
 
