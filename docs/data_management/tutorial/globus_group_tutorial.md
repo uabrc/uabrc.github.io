@@ -4,20 +4,36 @@ This tutorial is designed to guide UAB research managers, such as Lab PIs, Core 
 
 **What You Will Learn:**
 
-1. [What is Globus, and why you should use it?](globus_group_tutorial.md#what-is-globus-and-why-you-should-use-it)
-1. [How do you get onto Globus?](globus_group_tutorial.md#how-do-you-get-onto-globus)
+1. [What is Globus, and why you should use it?](globus_group_tutorial.md#what-is-globus)
+1. [How do you get onto Globus?](globus_group_tutorial.md#how-do-i-get-onto-the-globus-web-app)
 1. [Installing Globus Connect Personal on Windows](globus_group_tutorial.md#installing-gcp-on-windows)
 1. [Installing Globus Connect Personal on MacOS](globus_group_tutorial.md#installing-gcp-on-macos)
 1. [Configuring the GCP endpoint to share specific folders](globus_group_tutorial.md#configuring-the-globus-connect-personal-endpoint-to-share-specific-folders)
 1. [Configuring and Sharing a Collection for your endpoint](globus_group_tutorial.md#configuring-and-sharing-a-collection-for-your-endpoint)
 
-## What is Globus, and why you should use it?
+## What is Globus?
 
-We have a guide here(./globus_individual_tutorial.md#what-is-globus) that explains Globus, and its features.
+Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions.
 
-## How do you get onto Globus?
+## Why use Globus?
 
-We have a guide here(./globus_individual_tutorial.md#how-do-you-get-on-globus) that shows how to access Globus.
+Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
+
+- Straight-forward, browser-based interface.
+- Compatible with [Long-Term Storage](../lts/index.md).
+- Can be used to share data with Research Core customers.
+- Can be used to transfer data between lab workstations, servers, and Cheaha.
+- Transfers are automatically retried in the event of network or computer system outages.
+- Transfers are encrypted end-to-end. Globus never sees your data.
+- Suitable for transferring PHI and HIPAA data. Note: a UAB Enterprise IT risk assessment is required.
+
+## How Does Globus Work?
+
+Globus is an ecosystem of software intended to make research data transfer simpler. The Globus web application at <https://app.globus.org> allows you to initiate transfers between any two endpoints you have authorization to access. The Globus Connect Personal (GCP) and Globus Connect Server (GCS) software let you turn any computer into a Globus endpoint. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two endpoints, the Globus application tells the two endpoints that they need to talk to each other and data is sent directly between them. The endpoints update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between endpoints is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
+
+## How Do I Get Onto the Globus Web App?
+
+Our [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
 
 ## Installing Globus Connect Personal
 
