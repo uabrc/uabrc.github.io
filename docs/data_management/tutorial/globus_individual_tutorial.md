@@ -1,22 +1,38 @@
 
-# Globus
+# Globus Tutorials for Individual Researchers
 
-In this tutorial, we will guide you on how to effectively use Globus for managing and transferring research data. We will explore what Globus is, why you might use it, and walk you through the essential steps to get started. You will also learn how to set up your Globus account, access the platform, find collections shared with you, and search for collections by name.
+These tutorials are intended for individual researchers who want to use Globus to do the following.
+
+- Transfer research data for their own use or for laboratory use.
+- Receive data from other individuals, labs, or Research Cores.
+
+If you need tutorials on using Globus for Research Core data management, please see our [Globus Tutorials for Research Groups](./globus_group_tutorial.md).
+
+The tutorials below will teach you how to effectively use Globus for managing and transferring research data. We will explore what Globus is, why you might use it, and walk you through the essential steps to get started. You will learn how to set up your Globus account, access the Globus application, find collections shared with you, and search for collections by name.
 
 ## Prerequisites
 
-For this tutorial, you will need your BlazerID and password to authenticate using Single Sign-On (SSO).
+For these tutorials, you will need your BlazerID or [XIAS ID](../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
 
-## What is Globus, and Why Would You Use It?
+## What is Globus?
 
-Globus is a service that simplifies the process of transferring, sharing, and managing large datasets. It is widely used in research environments where data needs to be moved between different systems, institutions, or storage types.
+Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions.
 
-### Key Features of Globus
+## Why use Globus?
 
-- It ensures that your data is protected during transfers with encryption.
-- It automatically retries failed transfers, and report the status of your data transfer.
-- It simplifies complex transfer tasks with an intuitive web interface.
-- It handles transfers of all sizes, from small files to multi-terabyte datasets.
+Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
+
+- Straight-forward, browser-based interface.
+- Compatible with [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
+- Compatible with [Long-Term Storage](../lts/index.md).
+- Can be used with your laptop, desktop, or lab workstation via Globus Connect Personal (GCP).
+- Transfers are automatically retried in the event of network or computer system outages.
+- Transfers are encrypted end-to-end. Globus never sees your data.
+- Suitable for transferring PHI and HIPAA data. Note: a UAB Enterprise IT risk assessment is required.
+
+## How Does Globus Work?
+
+Globus is an ecosystem of software intended to make research data transfer simpler. The Globus web application at <https://app.globus.org> allows you to initiate transfers between any two endpoints you have authorization to access. The Globus Connect Personal (GCP) software lets you turn any computer into a Globus endpoint. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two endpoints, the Globus application tells the two endpoints that they need to talk to each other and data is sent directly between them. The endpoints update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between endpoints is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
 
 ## How Do I Get Onto the Globus Web App?
 
@@ -142,3 +158,5 @@ Alternatively, to transfer data from Cheaha to LTS, follow the same procedure. S
 <!--
 ![!Globus Transfer Data From Cheaha To LTS](./images/globus-transfer-cheaha-to-lts.png)
 -->
+
+## Installing Globus Connect Personal
