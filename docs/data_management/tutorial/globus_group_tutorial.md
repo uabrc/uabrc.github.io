@@ -11,6 +11,10 @@ This tutorial is designed to guide UAB research managers, such as Lab PIs, Core 
 1. [Configuring the GCP endpoint to share specific folders](globus_group_tutorial.md#configuring-the-globus-connect-personal-endpoint-to-share-specific-folders)
 1. [Configuring and Sharing a Collection for your endpoint](globus_group_tutorial.md#configuring-and-sharing-a-collection-for-your-endpoint)
 
+## Prerequisites
+
+For these tutorials, you will need your BlazerID or [XIAS ID](../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
+
 ## What is Globus?
 
 Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions.
