@@ -1,15 +1,20 @@
-# Setting up Globus as a Research Manager for your Group
+# Globus Tutorials for Research Groups
 
 This tutorial is designed to guide UAB research managers, such as Lab PIs, Core Directors, and their management staff, to help them set up and use Globus Connect Personal (GCP) for secure data sharing on their local/personal computers. GCP allows you to share data with collaborators efficiently meeting security and compliance standards for file sharing.
 
 **What You Will Learn:**
 
-1. [What is Globus, and why you should use it?](globus_group_tutorial.md#what-is-globus)
-1. [How do you get onto Globus?](globus_group_tutorial.md#how-do-i-get-onto-the-globus-web-app)
-1. [Installing Globus Connect Personal on Windows](globus_group_tutorial.md#installing-gcp-on-windows)
-1. [Installing Globus Connect Personal on MacOS](globus_group_tutorial.md#installing-gcp-on-macos)
-1. [Configuring the GCP endpoint to share specific folders](globus_group_tutorial.md#configuring-the-globus-connect-personal-endpoint-to-share-specific-folders)
-1. [Configuring and Sharing a Collection for your endpoint](globus_group_tutorial.md#configuring-and-sharing-a-collection-for-your-endpoint)
+1. [What is Globus?](#what-is-globus)
+1. [Why Use Globus?](#why-use-globus)
+1. [How Does Globus Work?](#how-does-globus-work)
+1. [How Do I Get onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
+1. [How Do I Install Globus Connect Personal?](#how-do-i-install-globus-connect-personal)
+    - [Windows](#installing-gcp-on-windows)
+    - [MacOS](#installing-gcp-on-macos)
+1. [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-share-specific-folders-using-globus-connect-personal)
+1. [How Do I Share a Collection with Others?](#how-do-i-share-a-collection-with-others)
+
+If you are new to Globus, we recommend starting with our [Globus Tutorials for Individual Researchers](./globus_individual_tutorial.md) first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the tutorials on this page in order from start to finish, as later tutorials assume the previous tutorials have been completed.
 
 ## Prerequisites
 
@@ -19,7 +24,7 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../account_mana
 
 Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions.
 
-## Why use Globus?
+## Why Use Globus?
 
 Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
 
@@ -39,129 +44,128 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 
 Our [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
 
-## Installing Globus Connect Personal
+## How Do I Install Globus Connect Personal?
 
-Globus Connect Personal is available on the following Operating Systems, Linux, MacOS and Windows. The steps in this tutorial are curated from the Globus docs showing how to install Globus on [Windows](https://docs.globus.org/globus-connect-personal/install/windows/) and [MacOS](https://docs.globus.org/globus-connect-personal/install/mac/).
+Globus Connect Personal (GCP) is available on the following Operating Systems, Linux, MacOS and Windows. The steps in this tutorial are curated from the Globus docs showing how to install Globus on the following operating systems.
+
+- [Windows](#installing-gcp-on-windows)
+- [MacOS](#installing-gcp-on-macos).
 
 ### Installing GCP On Windows
 
-The following steps will guide you to install GCP on your local machine running the Windows OS.
+The following steps will guide you to install Globus Connect Personal (GCP) on your computer running Windows OS.
 
-1. Navigate to the [Globus Connect Personal page](https://www.globus.org/globus-connect-personal), scroll to look for the GCP Windows version. Click on the "INSTALL NOW" button highlighted red in the image below.
+1. Navigate to the [Globus Connect Personal official page](https://www.globus.org/globus-connect-personal) and scroll down to find the GCP Windows version. Click on the "INSTALL NOW" button in the red box in the image below to be taken to the official installation instructions and download link for GCP for Windows.
 
-    ![!Install GCP for Windows](./images/gcp_install_windows.png)
+    ![!Globus Connect Personal official page showing operating system options with links. Windows is in the center of the three.](./images/gg-gcp-install/win/001-select.png)
 
-1. Click the `Download Globus Connect Personal` link on this page, it would redirect you to download the GCP Installer.
+1. Click the `Download Globus Connect Personal` link on the instructions page, as shown below. This will redirect you to the GCP for Windows installer.
 
-    ![!Download GCP for Windows](./images/gcp_dl_installer_windows.png)
+    ![!Globus Connect Personal for Windows official instructions page with link to download GCP for Windows.](./images/gg-gcp-install/win/002-instructions.png)
 
-1. As shown in the image below,  click the "Download Globus Connect Personal for Windows" button preceded by the Microsoft/Windows logo to download the installer. This would download the application installer into your local computer.
+1. As shown in the image below, click the "Download Globus Connect Personal for Windows" button to download the installer to download the installer to your computer.
 
-    ![!Download GCP Installer for Windows](./images/gcp_download_button.png)
+    ![!Download GCP Installer for Windows](./images/gg-gcp-install/win/003-download.png)
 
-1. Navigate to where the file is downloaded on your local computer. Double click to open the downloaded file named "globusconnectpersonal-latest.exe"
+1. Find the installer on your computer and open it. Select where you would prefer to have your GCP installed and click the "Install" button.
 
-    ![!Downloaded GCP Installer for Windows file](./images/gcp_installer_file.png)
+    ![GCP installer window showing selected path and install button.](./images/gg-gcp-install/win/004-select-path.png)
 
-1. Select where you would prefer to have your GCP installed (by default it installs into your C:\ drive), and click the "Install" button.
+    Please note you must have administrator permissions, to do this. If you are unable to do so, you will need to contact the IT group managing your computer.
 
-    ![!Completing GCP Setup for Windows file highlighting Install button](./images/gcp_click_install.png)
+1. When the installation is complete, click the "Finish" button to complete the GCP installation.
 
-    Please note you must have administrator permissions, to do this. If you see the below image, please contact your local computer's administrator to complete the installation.
+    ![!Completing GCP Setup highlighting Finish button.](./images/gg-gcp-install/win/005-finish.png)
 
-    ![!Administrator privileges for GCP Installer](./images/gcp_admin_install.png)
+1. Following installation, GCP will launch in a new window. If it does not, look for it in your Start Menu.
 
-1. Allow the installation to complete, and click on "Finish". This will complete the GCP installation.
+    When GCP has started, click on "Log In" to authenticate with Globus to begin the Collection setup process. This is a one-time setup to configure GCP to allow your machine to act as an endpoint, enabling research data transfer with your computer.
 
-    ![!Completing GCP Setup highlighting Finish button](./images/gcp_click_finish.png)
+    ![!GCP Setup window with Log In button.](./images/gg-gcp-install/win/006-authenticate.png)
 
-1. Following installation, GCP will launch in a new window, click on "Log In" to authenticate with Globus, to begin the Collection Setup process.
+    Note that if you uninstall and reinstall GCP, you will need to complete this process again. You should not need to repeat this process otherwise.
 
-    ![!Authenticating GCP Setup highlighting Login button](./images/gcp_globus_login.png)
+1. Grant the required consents. This is required to set up your computer as an endpoint. Also provide a name for your endpoint. We recommend choosing a name that is short, memorable, and related to the purpose for the endpoint.
 
-1. Grant the required consents to GCP setup. And include a name of your liking in the highlighted area.
+    ![!GCP Setup form with required consents and endpoint name field.](./images/gg-gcp-install/common/007-consents.png)
 
-    ![!Granting GCP Setup required permissions](./images/gcp_consent.png)
+1. Enter the details for your GCP Collection, and click save to continue. The following list describes the fields in the form shown below.
 
-1. Enter the details for your GCP Collection, and click save to continue. In the image below,
-   - **1** should contain your preferred identity, if using a UAB Computer, please insert your `BlazerID@uab.edu` email address here.
-   - **2** Should contain the name for your Collection, already named in the previous step.
-   - **3** Should contain optional information to describe the collection, you can include the purpose for which the collection has been created.
-   - **4** If your collection would contain Protected Health Information (PHI) or sensitive information, please tick this box. You would need to be part of UAB's subscription to complete this, please send an email to support, so we can complete that process on your behalf.
+    - **Owner Identity:** is the person responsible for this endpoint. This field should already be filled with UAB Campus or XIAS email address. If not, please that email address here.
+    - **Collection Name:** is the name for the endpoint. This should be filled with the name of the endpoint from the previous step.
+    - **Description:** Feel free to enter descriptive information about the endpoint here. This information will be displayed in the Globus Web App when the endpoint is viewed by others.
+    - **High Assurance:** Only check this box if the endpoint has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
 
-    ![!GCP Setup Details](./images/gcp_details.png)
+    ![!GCP Setup collection details](./images/gg-gcp-install/common/008-collection-details.png)
 
-1. We have now completed set up of our GCP for a local computer operating the Windows OS. Exit the setup process, and open the Globus Web App to view collection details or move data to or from your collection.
+1. GCP Setup is now complete on your computer. Your computer is now a Globus endpoint and may be used to transfer data. Click "Exit Setup" to close the window.
 
-    ![!GCP Exit Setup](./images/gcp_exit_setup.png)
+1. After installation, you should see a lowercase letter "g" in a circle in your Windows system tray, typically at the bottom-right of the display. If you do not, try finding the Globus Connect Personal application in your start menu and starting the application.
 
-1. After installation, you should now see a "g" Globus icon in the menu bar at the bottom of your screen. This indicates that Globus Connect Personal is running and your new collection is ready to be used.
+    ![!GCP Icon in Windows system tray.](./images/gg-gcp-install/win/009-system-tray-icon.png)
 
-    ![!GCP Logo in Menu](./images/gcp_logo_menu.png)
+Continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-share-specific-folders-using-globus-connect-personal) or return to the [Top of the Page](#globus-tutorials-for-research-groups).
 
 ### Installing GCP On MacOS
 
-The following steps will guide you to install "GCP" on your local machine running the "Mac OS".
+The following steps will guide you to install Globus Connect Personal (GCP) on your computer running MacOS.
 
-1. Navigate to the [Globus Connect Personal page](https://www.globus.org/globus-connect-personal), scroll to look for the GCP Mac OS version. Click on the "INSTALL NOW" button highlighted red in the image below.
+1. Navigate to the [Globus Connect Personal official page](https://www.globus.org/globus-connect-personal) and scroll down to find the GCP MacOS version. Click on the "INSTALL NOW" button in the red box in the image below to be taken to the official installation instructions and download link for GCP for MacOS.
 
-    ![!Install GCP for MacOS](./images/gcp_install_mac.png)
+    ![!Globus Connect Personal official page showing operating system options with links. MacOS is the left of the three.](./images/gg-gcp-install/mac/001-select.png)
 
-1. Click the "Download Globus Connect Personal" link on this page, it would redirect you to download the GCP Installer.
+1. Click the `Download Globus Connect Personal` link on the instructions page, as shown below. This will redirect you to the GCP for MacOS installer.
 
-    ![!Download GCP for Mac](./images/gcp_dl_mac.png)
+    ![!Globus Connect Personal for MacOS official instructions page with link to download GCP for MacOS.](./images/gg-gcp-install/mac/002-instructions.png)
 
-1. As shown in the image below,  click the "Download Globus Connect Personal for Mac" button preceded by the Finder Icon to download the `.dmg` file. This would download the file into your local computer.
+1. As shown in the image below, click the "Download Globus Connect Personal for MacOS" button to download the installer to download the installer to your computer.
 
-    ![!Download GCP .dmg file for mac](./images/gcp_download_button_mac.png)
+    ![!Download GCP Installer for Windows](./images/gg-gcp-install/mac/003-download.png)
 
-1. Navigate to where the file is downloaded on your local computer. Double click to open the downloaded file named "globusconnectpersonal-latest.dmg"
+1. Find the installer on your computer and open it. A new window will pop-up asking you to drag the Globus Connect Personal app into the Application folder on your computer. Do so to install GCP.
 
-    ![!Downloaded GCP .dmg file](./images/gcp_dmg_file.png)
+    ![!Copy Mac GCP App into the Applications Folder](./images/gg-gcp-install/mac/004-install.png)
 
-1. A new window will pop-up asking you to drag the Globus app into your Application folder on your Mac.
+1. When the above step is completed navigate to your Application folder and look for the "Globus Connect Personal" application. Open it to proceed.
 
-    ![!Copy Mac GCP App into the Applications Folder](./images/gcp_click_install_mac.png)
+    ![!GCP application in the Applications Folder](./images/gg-gcp-install/mac/005-application.png)
 
-1. When the above step is completed, navigate to your Application folder and look for the "Globus Connect Personal" Application folder to open it.
+1. When GCP has started, click on "Log In" to authenticate with Globus to begin the Collection setup process. This is a one-time setup to configure GCP to allow your machine to act as an endpoint, enabling research data transfer with your computer.
 
-    ![!GCP Mac App in the Applications Folder](./images/gcp_mac_app.png)
+    ![GCP Setup window with Log In button.](./images/gg-gcp-install/mac/006-authenticate.png)
 
-1. Click on Log In button after opening the Globus app.
+    Note that if you uninstall and reinstall GCP, you will need to complete this process again. You should not need to repeat this process otherwise.
 
-    ![!Authenticating GCP Setup highlighting Login button](./images/gcp_globus_login_mac.png)
+1. Grant the required consents. This is required to set up your computer as an endpoint. Also provide a name for your endpoint. We recommend choosing a name that is short, memorable, and related to the purpose for the endpoint.
 
-1. Grant the required consents to GCP setup. And include a name of your liking in the highlighted area.
+    ![!GCP Setup form with required consents and endpoint name field.](./images/gg-gcp-install/common/007-consents.png)
 
-    ![!Granting GCP Setup required permissions](./images/gcp_consent.png)
+1. Enter the details for your GCP Collection, and click save to continue. The following list describes the fields in the form shown below.
 
-1. Enter the details for your GCP Collection, and click save to continue. In the image below,
-   - **1** should contain your preferred identity, if using a UAB Computer, please insert your `BlazerID@uab.edu` email address here.
-   - **2** Should contain the name for your Collection, already named in the previous step.
-   - **3** Should contain optional information to describe the collection, you can include the purpose for which the collection has been created.
-   - **4** If your collection would contain Protected Health Information (PHI) or sensitive information, please tick this box. You would need to be part of UAB's subscription to complete this, please send an email to support, so we can complete that process on your behalf.
+    - **Owner Identity:** is the person responsible for this endpoint. This field should already be filled with UAB Campus or XIAS email address. If not, please that email address here.
+    - **Collection Name:** is the name for the endpoint. This should be filled with the name of the endpoint from the previous step.
+    - **Description:** Feel free to enter descriptive information about the endpoint here. This information will be displayed in the Globus Web App when the endpoint is viewed by others.
+    - **High Assurance:** Only check this box if the endpoint has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
 
-    ![!GCP Setup Details](./images/gcp_details.png)
+    ![!GCP Setup collection details](./images/gg-gcp-install/common/008-collection-details.png)
 
-1. We have now completed set up of our GCP for a local computer operating the Mac OS. Exit the setup process, and open the Globus Web App to view collection details or move data to or from your collection.
+1. GCP Setup is now complete on your computer. Your computer is now a Globus endpoint and may be used to transfer data. Click "Exit Setup" to close the window.
 
-    ![!GCP Exit Setup](./images/gcp_exit_setup.png)
+1. After installation, you should see a lowercase letter "g" in a circle in your MacOS notification area, typically at the top-right of the display.
 
-1. After installation, you should now see a "g" Globus icon in the menu bar usually at the top of your screen. This indicates that Globus Connect Personal is running and your new collection is ready to be used.
+    ![!GCP Icon in MacOS notification area.](./images/gg-gcp-install/mac/009-notification-area-icon.png)
 
-    ![!GCP Logo in Mac OS Menu bar](./images/gcp_logo_menu_mac.png)
-
-## Configuring the Globus Connect Personal Endpoint to Share Specific Folder(s)
+## How Do I Share Specific Folders Using Globus Connect Personal?
 
 ### On Windows
 
 1. Open Globus Connect Personal: Open the GCP App, and/or click on the Globus icon in your taskbar.
 
-    ![!GCP Logo shown in Taskbar](./images/gcp_logo_menu.png)
+    <!--![!GCP Logo shown in Taskbar](./images/gcp_logo_menu.png)-->
 
 1. A drop-down menu containing a list of menu options would now be visible, click on "Options...":
 
-    ![!GCP Options Menu](./images/gcp_collection_options.png)
+    <!--![!GCP Options Menu](./images/gcp_collection_options.png)-->
 
 1. A new window will appear showing a tab labelled "Access". In that window you would see an interface that requires configuration, the image has been labelled with numbers to provide details.
    - **(1).** Shows a list of filepath(s)/directory (or directories) you would like to share on Globus as a "Collection".
@@ -187,7 +191,7 @@ The following steps will guide you to install "GCP" on your local machine runnin
 
     If you do not see the icon, go to your Applications folder and click on the Globus Connect Personal App. And repeat the above instructions.
 
-    ![!GCP Mac App in the Applications Folder](./images/gcp_mac_app.png)
+    <!--![!GCP Mac App in the Applications Folder](./images/gcp_mac_app.png)-->
 
 1. The "General" preferences tab shows a couple of options on how the GCP works on your local Mac computer. You can change the color of the Globus Connect Personal status icon in the menu bar by ticking the "Use black and white menu bar icons". You can also select the appropriate options for "Automatically check for updates" and "Automatically download updates", this way Globus Connect Personal would always run on the newest version. Globus recommends leaving the "Automatically check for update" option selected to automatically make important security updates.
 
@@ -224,7 +228,7 @@ Before you can share a GCP endpoint, ensure the you have the following:
 1. **A Globus Account**: You must have a Globus account associated with UAB. There is a guide on how to do this here(./globus_individual_tutorial.md#how-do-you-get-on-globus)
 1. **Membership of UAB High Assurance (HA) Subscription**: You must be added to the UAB High Assurance (HA) subscription group. Send an email to UAB IT support: <askIT@uab.edu> to approve and verify your inclusion in UAB's HA subscription group.
 
-## Configuring and Sharing a Collection for Your Endpoint
+## How Do I Share a Collection with Others?
 
 1. Navigate to the Globus Web App, and authenticate with your credentials. When you are logged in, click on "Collections".
 

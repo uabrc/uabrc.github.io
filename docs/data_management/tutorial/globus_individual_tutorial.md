@@ -38,31 +38,31 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 
 - To get to the Globus web app navigate to <https://app.globus.org>. You should see a page like below.
 
-    ![Globus web app login page.](./images/gi-web-app-001-login.png)
+    ![Globus web app login page.](./images/gi-web-app/001-login.png)
 
 - Type "UAB" or "University of Alabama at Birmingham" into the search bar to locate UAB in the list. The image below shows the correct choice in a red box.
 
-    ![Globus web app login search bar with UAB entered and University of Alabama at Birmingham in a red box.](./images/gi-web-app-002-search.png)
+    ![Globus web app login search bar with UAB entered and University of Alabama at Birmingham in a red box.](./images/gi-web-app/002-search.png)
 
 - Select "University of Alabama at Birmingham" from the drop-down menu and click "Continue" to be taken to the UAB Single Sign-On (SSO) form.
 
-    ![Globus web app with University of Alabama at Birmingham selected showing activated Continue button.](./images/gi-web-app-003-continue.png)
+    ![Globus web app with University of Alabama at Birmingham selected showing activated Continue button.](./images/gi-web-app/003-continue.png)
 
 - Enter your BlazerID and password in the SSO form, then click "Log In".
 
-    ![UAB Single Sign-On form.](./images/gi-web-app-004-sso.png)
+    ![UAB Single Sign-On form.](./images/gi-web-app/004-sso.png)
 
 - After logging in, you will be directed to the Globus file manager.
 
-    ![Globus web app file manager single-panel view.](./images/gi-web-app-005-file-manager-single-panel.png)
+    ![Globus web app file manager single-panel view.](./images/gi-web-app/005-file-manager-single-panel.png)
 
 - Enable two-panel view mode by clicking the button located near the top right corner, as shown in the red box below. Of the three available view mode buttons, the two-panel view button is in the center. This is an optional step, but highly recommended. This step will make your life much simpler while using Globus, now and in the future.
 
-    ![Globus web app file manager two-panel view.](./images/gi-web-app-006-view-buttons.png)
+    ![Globus web app file manager two-panel view.](./images/gi-web-app/006-view-buttons.png)
 
 - On the file transfer page, you will see two file browser windows: one on the left and one on the right. Each window will have an Endpoint field representing the two systems between which you wish to transfer files. Once set up, you can transfer files in either direction.
 
-    ![Globus web app file manager two-panel view.](./images/gi-web-app-007-file-manager-two-panel.png)
+    ![Globus web app file manager two-panel view.](./images/gi-web-app/007-file-manager-two-panel.png)
 
 The file manager will be your most frequently-visited page when using Globus for data transfers. It is central to usage of the Globus web application.Please take some time to familiarize yourself with its look and feel. As you progress in the tutorials, please take time to experiment with transferring data to better understand how the interface works.
 
