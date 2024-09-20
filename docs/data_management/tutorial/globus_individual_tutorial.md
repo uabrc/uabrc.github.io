@@ -70,52 +70,44 @@ The file manager will be your most frequently-visited page when using Globus for
 
 ## How Do I Find Collections Shared with Me?
 
-Globus allows users to share collections with others and also view what is shared with you. To view collections shared with you, please follow these steps:
+Globus allows users to share collections with others. Other researchers, labs, and Research Cores on campus may invite you to their collections to share data with you. The following instructions let you view collections shared with you.
 
-- Log in to Globus using your credentials.
+1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app)
 
-- From the Globus dashboard, on the left sidebar of the Globus Web App, click on the "Collections" menu.
+1. In the Globus web app, click "Collections" in the left navigation panel to go to the collections page, then click the "Shared With You" button shown in the red box in the image below.
 
-<!--
- ![file-manager-page-search](/image/collection-search-menu.png)
--->
+    ![Collections page of Globus web app. "Shared With You" button is boxed in red.](./images/gi-find-collections/001-search.png)
 
-- Then, click the "Shared with You" button located in the top-right corner. This filter will display all collections that have been shared specifically with your account.
+1. The list of collections will be filtered down to all collections others have granted you access to, which should help you find the collections you need.
 
-<!--
-![shared-with-you](/image/collection-shared-with-you.png)
--->
-## How to Search for Collections by Name
+    ![Collections page of Globus web app. "Shared With You" button is selected and the list of collections has been filtered down.](./images/gi-find-collections/002-list.png)
 
-To find a specific collection by name, follow these steps:
+If you can't find a particular collection this way, but know its name, try [searching for collections](#how-do-i-search-for-collections-by-name) or [return to the index](#globus-tutorials-for-individual-researchers).
 
-- Log in to Globus and click on the "File Manager" from the dashboard, as shown below.
+## How Do I Search For Collections By Name?
 
-<!--
- ![file-manager](/image/file-manager-globus.png)
--->
+Please follow these instructions to search for a specific collection by name.
 
-- In the File Manager, click the collection search window, as shown below.
+1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
+1. In the Globus web app, click "File Manager" in the left navigation panel to go to the file manager page, then click the "Collection Search" shown in the red box in the image below.
 
-<!--
- ![click-search-field](/image/click-on-search-bar.png)
--->
+    ![Globus file manager page showing collection search bar in a red box.](./images/gi-search-collections/001-search-bar.png)
 
-- Enter the name (or part of the name) of the collection you are looking for in the search bar.
+1. You will be taken to a collection search page. Enter part or all of the name of the collection you are searching for in the search box on this new page.
 
-<!--
- ![collection-search-bar](/image/collection-search-bar.png)
--->
+    ![Globus collection search page.](./images/gi-search-collections/002-collection-search.png)
 
-- Once the search results appear, click on the desired collection to access or transfer files.
+1. Search results should appear. In the example below, we located the UAB Box collection, which connects to UAB's Box.com service.
 
-<!--
-  ![collection-results](/image/collection-results.png)
--->
+    ![Globus collection search page showing results of searching for "UAB Box".](./images/gi-search-collections/003-results.png)
 
-## How to transfer data from a shared collection to my project directory on Cheaha?
+If you can't find a particular collection this way, but know it was shared with you, try [finding collections shared with me](#how-do-i-find-collections-shared-with-me) or [return to the index](#globus-tutorials-for-individual-researchers).
 
-To transfer data from a shared collection to a project directory on Cheaha, you may follow these steps:
+## How Do I Transfer from a Collection to Cheaha?
+
+Please use the following instructions to transfer data from a shared collection to a project directory on Cheaha. These instructions may also be used for other directories on Cheaha, provided you have access.
+
+1. [Find a collection shared with me](#how-do-i-find-collections-shared-with-me) or [Search for a collection by name](#how-do-i-search-for-collections-by-name).
 
 1. Select the Shared Collection:  Click on the Collection tab, then go to the "Shared With You" section and choose the appropriate collection name, for instance, "test collection cheaha". Once selected, you will see the data shared with you.
 
