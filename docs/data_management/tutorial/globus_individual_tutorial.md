@@ -10,6 +10,21 @@ If you need tutorials on using Globus for Research Core data management, please 
 
 The tutorials below will teach you how to effectively use Globus for managing and transferring research data. We will explore what Globus is, why you might use it, and walk you through the essential steps to get started. You will learn how to set up your Globus account, access the Globus application, find collections shared with you, and search for collections by name.
 
+**What You Will Learn:**
+
+1. [Prerequisites](#prerequisites)
+1. [What is Globus?](#what-is-globus)
+1. [Why Use Globus?](#why-use-globus)
+1. [How Does Globus Work?](#how-does-globus-work)
+1. [How Do I Get Onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
+1. [How Do I Find Collections Shared with Me?](#how-do-i-find-collections-shared-with-me)
+1. [How Do I Search For Collections By Name?](#how-do-i-search-for-collections-by-name)
+1. [How Do I Transfer from a Collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
+1. [How Do I Transfer from a Collection to LTS?](#how-do-i-transfer-from-a-collection-to-lts)
+1. [How Do I Transfer between LTS and Cheaha?](#how-to-transfer-data-between-lts-and-cheaha)
+
+If you are new to Globus, you are in the right place. If you represent a group looking to share data with others we recommend following these tutorials with our [Globus Tutorials for Research Groups](./globus_group_tutorial.md)
+
 ## Prerequisites
 
 For these tutorials, you will need your BlazerID or [XIAS ID](../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
