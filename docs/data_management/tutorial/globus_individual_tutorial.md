@@ -66,7 +66,9 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 
 The file manager will be your most frequently-visited page when using Globus for data transfers. It is central to usage of the Globus web application.Please take some time to familiarize yourself with its look and feel. As you progress in the tutorials, please take time to experiment with transferring data to better understand how the interface works.
 
-## How to Find Collections Shared with You
+[Return to the index.](#globus-tutorials-for-individual-researchers)
+
+## How Do I Find Collections Shared with Me?
 
 Globus allows users to share collections with others and also view what is shared with you. To view collections shared with you, please follow these steps:
 
@@ -129,7 +131,7 @@ To transfer data from a shared collection to a project directory on Cheaha, you 
 ![!Globus Transfer Shared Collection To Cheaha Projdir](./images/globus-transfer-shared-collection-to-cheaha-projdir.png)
 -->
 
-## How to transfer data from a shared collection to my group's LTS allocation?
+## How Do I Transfer from a Collection to LTS?
 
 To transfer data from a shared collection to the UAB Long Term Storage (LTS) lab space, start by selecting the LTS lab space collection and authenticating your identity. On the other end of the panel, click the collection and go to "Shared With You" tab and select the shared allocation, such as "test_lts_collection." Set the desired source and destination paths for both collections before proceeding with the transfer.
 
@@ -158,5 +160,3 @@ Alternatively, to transfer data from Cheaha to LTS, follow the same procedure. S
 <!--
 ![!Globus Transfer Data From Cheaha To LTS](./images/globus-transfer-cheaha-to-lts.png)
 -->
-
-## Installing Globus Connect Personal
