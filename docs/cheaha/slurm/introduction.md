@@ -37,4 +37,12 @@ Given two or more jobs with equal priority, the job on the partition with the la
 
 The scheduler cannot predict the future. If a job enters the queue with a higher priority than yours, it will start before yours. This may lead to a situation where your job no longer fits on any of the nodes. If this happens your job will have to wait until sufficient space opens regardless of its priority value. A possible strategy to minimize the risk of preemption is to request fewer resources per node, to more readily fill available space.
 
-If you are unsure of the best queueing strategy for your workflow, please [Contact Us](../../index.md#how-to-contact-us) for a consultation, we are happy to help.
+A lot of intelligent people have worked very hard to design the Slurm scheduler to be both smart and fair. Please allow it to do its job. If you have workloads that are very large and want advice or are unsure of the best queueing strategy for your workflow, please [Contact Us](../../index.md#how-to-contact-us) for a consultation, we are happy to help.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Please do not run `squeue`, or any other Slurm command, in a loop. All Slurm commands increase the load on the Slurm controller. Many commands in a short period of time can make Slurm unresponsive, unstable, or require a restart, which negatively impacts all researchers.
+
+    Instead, please simply let the Slurm scheduler do its job of managing.
+<!-- markdownlint-enable MD046 -->
