@@ -121,11 +121,11 @@ The following steps will guide you to install "GCP" on your local machine runnin
    - **3** Should contain optional information to describe the collection, you can include the purpose for which the collection has been created.
    - **4** If your collection would contain Protected Health Information (PHI) or sensitive information, please tick this box. You would need to be part of UAB's subscription to complete this, please send an email to support, so we can complete that process on your behalf.
 
-    ![!GCP Setup Details](./images/gcp_details.png)
+    ![!GCP Setup Details](./images/gcp_details_mac.png)
 
 1. We have now completed set up of our GCP for a local computer operating the Mac OS. Exit the setup process, and open the Globus Web App to view collection details or move data to or from your collection.
 
-    ![!GCP Exit Setup](./images/gcp_exit_setup.png)
+    ![!GCP Exit Setup](./images/gcp_exit_setup_mac.png)
 
 1. After installation, you should now see a "g" Globus icon in the menu bar usually at the top of your screen. This indicates that Globus Connect Personal is running and your new collection is ready to be used.
 
