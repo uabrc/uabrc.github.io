@@ -202,7 +202,7 @@ As you begin to use Globus, your recently used "Collections" would appear in the
 Before you can share a GCP endpoint, ensure the you have the following:
 
 1. **A Globus Account**: You must have a Globus account associated with UAB. There is a guide on how to do this here(./globus_individual_tutorial.md#how-do-you-get-on-globus)
-1. **Membership of UAB High Assurance (HA) Subscription**: You must be added to the UAB High Assurance (HA) subscription group. Send an email to UAB IT support: <askIT@uab.edu> to approve and verify your inclusion in UAB's HA subscription group.
+1. **Membership of UAB High Assurance (HA) Subscription**: You must be added to the UAB High Assurance (HA) subscription group. Create a ticket, by sending an email to UAB Research Computing: <support@listserv.uab.edu> to approve and verify your inclusion in the "UAB HA" subscription group. Your email should state why you should be added to the subscription.
 
 ## Configuring and Sharing a Collection for Your Endpoint
 
