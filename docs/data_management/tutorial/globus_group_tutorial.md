@@ -171,7 +171,7 @@ We have instructions for the following Operating Systems.
 
 ### Share Specific Folders on Windows
 
-1. In your Windows system tray, locate the icon that looks like a small letter "g" in a circle. If you cannot locate the icon in the system tray, then open the Globus Connect Personal app on your computer and look for it again.
+1. In your Windows system tray, locate the icon that looks like a small letter "g" in a circle. This is the icon for Globus Connect Personal. If you cannot locate the icon in the system tray, then open the Globus Connect Personal app on your computer and look for it again.
 
     ![Expanded system tray showing icon of a small letter "g" in a circle.](./images/gg-share-folder/win/001-sys-tray.png)
 
