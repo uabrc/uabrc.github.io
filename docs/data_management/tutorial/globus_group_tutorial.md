@@ -213,21 +213,24 @@ To verify the existence and accessibility of your endpoint proceed to [How Do I 
 
 ### Share Specific Folders on MacOS
 
-1. Click the Globus Connect Personal icon "g" in the menu bar at the top right of your screen and select "Preferences…​" to configure Globus Connect Personal.
+1. In your MacOS notification area, locate the icon that looks like a small letter "g" in a circle. This is the icon for Globus Connect Personal. If you cannot locate the icon in the notification area, then open the Globus Connect Personal app on your computer and look for it again.
 
-    ![!GCP Mac Preferences Menu](./images/gcp_collection_preference.png)
+    ![Notification area showing icon of a small letter "g" in a circle.](./images/gg-share-folder/mac/001-notification-area.png)
 
-    If you do not see the icon, go to your Applications folder and click on the Globus Connect Personal App. And repeat the above instructions.
+1. Right-click or command-click the icon to open the context menu. Click "Preferences…​".
 
-    <!--![!GCP Mac App in the Applications Folder](./images/gcp_mac_app.png)-->
+    ![Context menu of Globus system tray icon showing preferences.](./images/gg-share-folder/mac/002-context-menu.png)
 
-1. The "General" preferences tab shows a couple of options on how the GCP works on your local Mac computer. You can change the color of the Globus Connect Personal status icon in the menu bar by ticking the "Use black and white menu bar icons". You can also select the appropriate options for "Automatically check for updates" and "Automatically download updates", this way Globus Connect Personal would always run on the newest version. Globus recommends leaving the "Automatically check for update" option selected to automatically make important security updates.
+1. A new window will appear with a tab labelled "Access". Click the "Access" tab if it is not already selected. In this "Access" tab is an interface to configure folders available on your GCP endpoint. For most use cases, you should not check the writeable checkbox. Below is a summary of what each part of the menu does.
 
-    ![!General Preferences Tab in GCP Mac App](./images/gcp_mac_collection_general.png)
+   - **(1)** "Accessible Folders" table with "Folder", "Shareable" and "Writeable" columns. Any folder listed here will appear on your GCP endpoint. Your research data directory or directories must be listed here to be shareable.
+   - **(2)** "Shareable" column checkboxes controlling which folders can be shared with other users. Each of your research data directories must have this checkbox ticked to be shareable.
+   - **(3)** "Writeable" column checkboxes controlling which folders can be written to by other users. If a folder is shared with other users, then they will be able to add, delete, or change the contents. We recommend against ticking these boxes for Research Cores serving data to customers.
+   - **(4)** Plus `+` and minus `-` buttons that allow you to add or remove folders from the list.
 
-1. The "Access" preferences tab shows a list of folders that are accessible for file transfer and sharing via Globus Connect Personal. This provides more control over what information is accessible on your Globus Connect Personal endpoint. By default, your home directory (e.g.: /Users/`username`) is read/write accessible. The "Deny access to hidden (e.g. security) files in your home directory" option controls whether or not you can access hidden files (i.e. filenames beginning with "."") in your home directory. By default, Globus Connect Personal does not allow access to files like: `~/.globusonline` and `~/.ssh.`
+    ![Access tab of GCP options menu showing the default settings.](./images/gg-share-folder/win/003-access-tab-default.png)
 
-    ![!Access Preferences Tab in GCP Mac App](./images/gcp_mac_collection_access.png)
+1. Use the plus `+` and minus `-` buttons to add your research data folders and remove other folders, as needed. Click the "Shareable" checkbox next to each research data folder. Click "Save" when finished.
 
 To verify the existence and accessibility of your endpoint proceed to [How Do I Find Endpoints and Collections I Created or Own?](#how-do-i-find-endpoints-and-collections-i-created-or-own), or return to the [index](#globus-tutorials-for-research-groups).
 
