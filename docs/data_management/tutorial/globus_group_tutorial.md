@@ -4,6 +4,7 @@ This tutorial is designed to guide UAB research managers, such as Lab PIs, Core 
 
 **What You Will Learn:**
 
+1. [Prerequisites](#prerequisites)
 1. [What is Globus?](#what-is-globus)
 1. [Why Use Globus?](#why-use-globus)
 1. [How Does Globus Work?](#how-does-globus-work)
