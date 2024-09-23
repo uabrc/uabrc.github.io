@@ -18,7 +18,7 @@ The tutorials below will teach you how to effectively use Globus for managing an
 1. [How Does Globus Work?](#how-does-globus-work)
 1. [How Do I Get Onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
 1. [How Do I Find Collections Shared with Me?](#how-do-i-find-collections-shared-with-me)
-1. [How Do I Search For Collections By Name?](#how-do-i-search-for-collections-by-name)
+1. [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name)
 1. [How Do I Transfer from a Collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
 1. [How Do I Transfer from a Collection to LTS?](#how-do-i-transfer-from-a-collection-to-lts)
 1. [How Do I Transfer between LTS and Cheaha?](#how-do-i-transfer-data-between-lts-and-cheaha)
