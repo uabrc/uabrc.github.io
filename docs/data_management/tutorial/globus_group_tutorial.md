@@ -12,6 +12,9 @@ This tutorial is designed to guide UAB research managers, such as Lab PIs, Core 
     - [Windows](#installing-gcp-on-windows)
     - [MacOS](#installing-gcp-on-macos)
 1. [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-share-specific-folders-using-globus-connect-personal)
+    - [Windows](#share-specific-folders-on-windows)
+    - [MacOS](#share-specific-folders-on-macos)
+1. [How Do I Find Endpoints and Collections I Created or Own?](#how-do-i-find-endpoints-and-collections-i-created-or-own)
 1. [How Do I Share a Collection with Others?](#how-do-i-share-a-collection-with-others)
 
 If you are new to Globus, we recommend starting with our [Globus Tutorials for Individual Researchers](./globus_individual_tutorial.md) first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the tutorials on this page in order from start to finish, as later tutorials assume the previous tutorials have been completed.
@@ -155,35 +158,60 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
     ![!GCP Icon in MacOS notification area.](./images/gg-gcp-install/mac/009-notification-area-icon.png)
 
+Continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-share-specific-folders-using-globus-connect-personal) or return to the [Top of the Page](#globus-tutorials-for-research-groups).
+
 ## How Do I Share Specific Folders Using Globus Connect Personal?
 
-### On Windows
+Please follow the instructions in this section to share a folder on your computer with others through your [Globus Connect Personal (GCP) endpoint](#how-do-i-install-globus-connect-personal).
 
-1. Open Globus Connect Personal: Open the GCP App, and/or click on the Globus icon in your taskbar.
+We have instructions for the following Operating Systems.
 
-    <!--![!GCP Logo shown in Taskbar](./images/gcp_logo_menu.png)-->
+- [Windows](#share-specific-folders-on-windows)
+- [MacOS](#share-specific-folders-on-macos)
 
-1. A drop-down menu containing a list of menu options would now be visible, click on "Options...":
+### Share Specific Folders on Windows
 
-    <!--![!GCP Options Menu](./images/gcp_collection_options.png)-->
+1. In your Windows system tray, locate the icon that looks like a small letter "g" in a circle. If you cannot locate the icon in the system tray, then open the Globus Connect Personal app on your computer and look for it again.
 
-1. A new window will appear showing a tab labelled "Access". In that window you would see an interface that requires configuration, the image has been labelled with numbers to provide details.
-   - **(1).** Shows a list of filepath(s)/directory (or directories) you would like to share on Globus as a "Collection".
-   - **(2).** and **(3).** Show the "Shareable" and "Writable" options to choose as you desire. The "Shareable" option will allow you to share this path on your local computer as an "Endpoint" that other users can access (This should be ticked, as you intend to share the "Collection"). The "Writable" option gives users permissions to upload, edit, or delete files, dependent on the level of access you grant individual users. These options can be selected for each file, folder or directory selected.
-   - **(4).** Gives you the option to add several filepaths or directories to Globus as a Collection.
-   - **(5).** Saves your preferred options.
+    ![Expanded system tray showing icon of a small letter "g" in a circle.](./images/gg-share-folder/win/001-sys-tray.png)
 
-    ![!GCP Access tab from the Options Menu](./images/gcp_collection_access.png)
+1. Right-click the icon to open the context menu and click "Options...".
 
-1. The "General" tab should also be configured as shown in the image below.
+    ![Context menu of Globus system tray icon showing options.](./images/gg-share-folder/win/002-context-menu.png)
 
-   - **(1).** This allows you to specify whether you want Globus Connect Personal to run when Windows starts and allows you set, whether the software should automatically check for updates. Globus recommends that you leave the "Automatically check for updates" box checked, to ensure that you are running the most stable and secure version of Globus Connect Personal at all times.
-   - **(2).** Allows you set what your "Collections" Home Folder would be.
-   - **(3).** saves your selected preferred options.
+1. A new window will appear with a tab labelled "Access". In this "Access" tab is an interface to configure folders available on your GCP endpoint. For most use cases, you should not check the writeable checkbox. Below is a summary of what each part of the menu does.
 
-    ![!GCP Web App showing search option in Collection](./images/gcp_collections_general.png)
+   - **(1)** "Accessible Folders" table with "Folder", "Shareable" and "Writeable" columns. Any folder listed here will appear on your GCP endpoint. Your research data directory or directories must be listed here to be shareable.
+   - **(2)** "Shareable" column checkboxes controlling which folders can be shared with other users. Each of your research data directories must have this checkbox ticked to be shareable.
+   - **(3)** "Writeable" column checkboxes controlling which folders can be written to by other users. If a folder is shared with other users, then they will be able to add, delete, or change the contents. We recommend against ticking these boxes for Research Cores serving data to customers.
+   - **(4)** Plus `+` and minus `-` buttons that allow you to add or remove folders from the list.
+   - **(5)** "Save" button which saves changes made to this tab of the options.
 
-### On MacOS
+    ![Access tab of GCP options menu showing the default settings.](./images/gg-share-folder/win/003-access-tab-default.png)
+
+1. Use the plus `+` and minus `-` buttons to add your research data folders and remove other folders, as needed. Click the "Shareable" checkbox next to each research data folder. Click "Save" when finished.
+
+    In this example, we remove the default `C:/Users` directory with the minus `-` button and add `D:/data` with the `+` button and check the "Shareable" box. You will want to pick the directory where your research data is stored.
+
+    ![Access tab of GCP options menu showing new settings.](./images/gg-share-folder/win/004-access-tab-changed.png)
+
+1. Click the "General" tab. The "General" tab enables you to control some settings for the application itself and which folder is the default folder. The default folder will be the first one shown when accessing the endpoint.
+
+   - **(1)** "Run when Windows starts" checkbox that enables starting Globus Connect Personal when you start Windows. We recommend checking this box.
+   - **(2)** "Home Folder" text field that lets you choose which folder will be the default folder for your endpoint. We recommend setting this to your primary shared folder from the previous step.
+   - **(3)** "Save" button which saves changes made to this tab of the options. Be sure to click "Save" if you make changes here.
+
+    ![General tab of GCP options menu showing default settings.](./images/gg-share-folder/win/005-general-tab-default.png)
+
+1. Check "Run when Windows starts" if needed. Change the "Home Folder" to match your research data directory. Click "Save" when done.
+
+    In this example, we set the "Home Folder" to match the research data directory, `D:/data` we added in a previous step. If you have multiple research directories to share, you will need to choose just one for this field. Be sure to click save when you are done.
+
+    ![General tab of GCP options menu](./images/gg-share-folder/win/006-general-tab-changed.png)
+
+To verify the existence and accessibility of your endpoint proceed to [How Do I Find Endpoints and Collections I Created or Own?](#how-do-i-find-endpoints-and-collections-i-created-or-own), or return to the [index](#globus-tutorials-for-research-groups).
+
+### Share Specific Folders on MacOS
 
 1. Click the Globus Connect Personal icon "g" in the menu bar at the top right of your screen and select "Preferences…​" to configure Globus Connect Personal.
 
@@ -201,27 +229,29 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
     ![!Access Preferences Tab in GCP Mac App](./images/gcp_mac_collection_access.png)
 
-### Accessing your Endpoint from the Web
+To verify the existence and accessibility of your endpoint proceed to [How Do I Find Endpoints and Collections I Created or Own?](#how-do-i-find-endpoints-and-collections-i-created-or-own), or return to the [index](#globus-tutorials-for-research-groups).
+
+## How Do I Find Endpoints and Collections I Created or Own?
 
 The below steps apply to all GCP applications on all platforms (Linux, MacOS, and Windows).
 
-1. Navigate to the Globus webpage, and authenticate if you have to. You would see the below image, showing the Globus web app, with all of its options. Click on the "Search" button in front of "Collection" from the "FILE MANAGER" menu option.
+1. Navigate to the [Globus Web App](#how-do-i-get-onto-the-globus-web-app) using your browser. You should be at the "File Manager" page.
 
-    ![!GCP Web App showing Collections](./images/gcp_web_collections_search.png)
+    ![File Manager page of the Globus Web App](./images/gg-my-endpoints/007-file-manager.png)
 
-1. This would open up a new interface, please select the "Your Collections" option, and you should see the `Endpoint` you created for your local machine.
+1. Click either of the "Collection Search" bar at the top of the "File Manager" page. This will take you to the "Collection Search" page.
 
-    ![!GCP Web App showing created Endpoint](./images/gcp_web_endpoint.png)
+    ![Collection Search page of the Globus Web App](./images/gg-my-endpoints/008-collection-search.png)
 
-As you begin to use Globus, your recently used "Collections" would appear in the "Recent" tab.
+1. Click the "Your Collections" tab to display a list of collections you have created or own.
 
-![!GCP Web App showing recently used Collections](./images/gcp_web_collections_recent.png)
+    ![Your Collections tab showing a GCP endpoint.](./images/gg-my-endpoints/009-your-collections.png)
 
-1. Clicking on your `Endpoint` would open a new window showing you content from the `Collection` associated with the `Endpoint`. These will be the folders, directories or files you configured to be accessible to Globus from your local machine.
+1. Click the name of an endpoint in the list to return to the "File Manager" page and display its contents, suitable to start a transer.
 
-    ![!GCP Web App showing files in a Collection](./images/gcp_web_local_machine.png)
+    ![File Manager page showing the GCP endpoint contents.](./images/gg-my-endpoints/010-my-gcp-endpoint.png)
 
-## What do I need to Share a GCP Endpoint?
+## What do I need to Share a Collection?
 
 Before you can share a GCP endpoint, ensure the you have the following:
 
