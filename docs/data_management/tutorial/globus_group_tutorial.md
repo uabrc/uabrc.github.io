@@ -262,30 +262,57 @@ The below steps apply to all GCP applications on all platforms (Linux, MacOS, an
 
     ![File Manager page showing the GCP endpoint contents.](./images/gg-my-endpoints/010-my-gcp-endpoint.png)
 
-## What do I need to Share a Collection?
+## How Do I Enable Collection Sharing For My Globus Account?
 
-Before you can share a GCP endpoint, ensure the you have the following:
+## How Do I Create a Collection?
 
-1. **A Globus Account**: You must have a Globus account associated with UAB. There is a guide on how to do this here(./globus_individual_tutorial.md#how-do-you-get-on-globus)
-1. **Membership of UAB High Assurance (HA) Subscription**: You must be added to the UAB High Assurance (HA) subscription group. Send an email to UAB IT support: <askIT@uab.edu> to approve and verify your inclusion in UAB's HA subscription group.
+There are three ways to create a Collection.
+
+- Start from [an existing Collection you own](#how-do-i-find-collections-i-created-or-own).
+- [Install Globus Connect Personal](#how-do-i-install-globus-connect-personal) and [share a folder](#how-do-i-choose-specific-folders-to-share-through-globus-connect-personal) to create a Collection. This will [create a Collection you own](#how-do-i-find-collections-i-created-or-own).
+- Install and configure one or more Endpoints with Globus Connect Server. To do this, please [Contact Support](../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
+
+The instructions below assume you are starting from an existing Collection.
+
+1. [Get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app).
+1. [Find the existing Collection](#how-do-i-find-collections-i-created-or-own).
+1.
+1. click collections tab
+1. click add guest collection button
+1. fill out the form
+1. click create guest collection button, taken to permissions tab of collection page
+
+When you have created a Collection, you are ready to [share the Collection with others](#how-do-i-share-a-collection-with-others).
 
 ## How Do I Share a Collection with Others?
 
-1. Navigate to the Globus Web App, and authenticate with your credentials. When you are logged in, click on "Collections".
+Before sharing a Collection with others, you will need to first [create a Collection](#how-do-i-create-a-collection) you administer. If the Endpoint is a [Globus Connect Personal Endpoint](#how-do-i-install-globus-connect-personal), then you will also need to [enable Collection sharing for your Globus account](#how-do-i-enable-collection-sharing-for-my-globus-account). If these prerequisites have been met, then you are ready to setup a Collection to be shared with others. Please follow the instructions below.
 
-    ![!GCP Web App showing Collection](./images/gcp_web_collection.png)
+1. [Get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app).
+1. [Find the Collection](#how-do-i-find-collections-i-created-or-own) you wish to share. In this case we are looking for the "customer-share" Collection.
+1. On the "customer-share" Collection details page, click the "Permissions" tab.
 
-1. Click on the ">" button to the right of your screen.
+    ![Collection details page overview tab.](./images/gg-share-collection/001-collection-details-overview.png)
 
-    ![!GCP Web App highlighting button to configure Endpoint](./images/gcp_web_collection_share.png)
+1. Click the "Add Permissions &ndash; Share With" button.
 
-1. This would open an "Overview" page, that contains information specific to your `Endpoint`. You should also see a "Collections" tab, click on this.
+    ![Collection details page permissions tab.](./images/gg-share-collection/002-collection-details-permissions-before.png)
 
-    ![!GCP Web App showing Endpoint details](./images/gcp_web_endpoint_details.png)
+1. Fill in the form.
+    - The "Path" defaults to the root of the Collection. This may or may not be acceptable for your use case. Be sure to limit access to only the data that needs to be shared. Use the file browser available in the form to find the correct level of access. For now grant permission to the default.
+    - In almost all cases, you will want to share with a single user. Use the "User" search bar to find the specific user you wish to share with. If they have never accessed Globus before, they will not appear in the search results. You can safely enter their email address to add them anyway. For now grant permission to yourself.
+    - We recommend sending an email notification as a convenience.
+    - The "read" permission must be granted, as that is the point of sharing the Collection. You may additionally give "write" permission to create a two-way collaboration. We recommend Research Cores not grant "write" permission. If you are using a Globus Connect Personal Endpoint, then "write" permission requires you to correctly [configure your Collection](#how-do-i-choose-specific-folders-to-share-through-globus-connect-personal) to make your shared folder writable.
 
-1. Click on the "Add Guest Collection" button in the new window.
+    ![Add permissions form.](./images/gg-share-collection/003-add-permissions-form.png)
 
-    ![!GCP Web App showing how to add a Shared Collection](./images/gcp_web_guest_collection.png)
+1. Click the "Add Permission" button to grant permission. You should see a notification confirming the permissions granted. At this point permissions have been granted and the Collection is shared with another person. If you need to add more people, click the "Add another Permision" button and repeat the process. Otherwise click "Done". For now click "Done".
+
+    ![Permission confirmation notification.](./images/gg-share-collection/004-permissions-confirmation.png)
+
+1. When you click "Done" you should be taken back to the "Permissions" tab of the "customer-share" page. You should see a new entry with "Path: /". If you click the drop-down arrow you will see yourself listed with "Read" permission. If you need to revoke permissions, return to this page and click the icon that looks like a trash can.
+
+    ![Collection details page permissions tab showing new entry.](./images/gg-share-collection/005-colection-details-permissions-after.png)
 
 ## How Do I Share Data With a Research Core Customer?
 
