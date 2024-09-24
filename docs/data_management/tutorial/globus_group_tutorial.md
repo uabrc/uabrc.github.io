@@ -51,10 +51,16 @@ Our [Globus Tutorials for Individual Researchers Page](./globus_individual_tutor
 
 ## How Do I Install Globus Connect Personal?
 
-Globus Connect Personal (GCP) is available on the following Operating Systems, Linux, MacOS and Windows. The steps in this tutorial are curated from the Globus docs showing how to install Globus on the following operating systems.
+Globus Connect Personal (GCP) is available to install on the following Operating Systems. Linux is also available, but we do not cover the installation process here. If you need to install GCP on Linux, please refer to the [official documentation](https://docs.globus.org/globus-connect-personal/install/linux/).
+
+Managing data for a Research Core? Please stop here. You should know that Globus Connect Personal is _not_ suitable for production use with customers. Please [Contact Support](../../help/support.md#how-do-i-create-a-support-ticket) to discuss setting up Globus Connect Server for your Research Core.
+
+Representing a lab? Globus Connect Personal may be suitable for your use case. If you transfer data infrequently, or transfer small amounts of data, then GCP is probably sufficient. If you frequently transfer large amounts of data, then Globus Connect Server can enable higher data transfer rates through parallelization. Please [Contact Support](../../help/support.md) if you want to discuss installation of Globus Connect Server.
+
+GCP installation instructions for:
 
 - [Windows](#installing-gcp-on-windows)
-- [MacOS](#installing-gcp-on-macos).
+- [MacOS](#installing-gcp-on-macos)
 
 ### Installing GCP On Windows
 
