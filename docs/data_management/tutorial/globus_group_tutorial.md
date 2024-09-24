@@ -68,15 +68,15 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 1. Navigate to the [Globus Connect Personal official page](https://www.globus.org/globus-connect-personal) and scroll down to find the GCP Windows version. Click on the "INSTALL NOW" button in the red box in the image below to be taken to the official installation instructions and download link for GCP for Windows.
 
-    ![!Globus Connect Personal official page showing operating system options with links. Windows is in the center of the three.](./images/gg-gcp-install/win/001-select.png)
+    ![Globus Connect Personal official page showing operating system options with links. Windows is in the center of the three.](./images/gg-gcp-install/win/001-select.png)
 
 1. Click the `Download Globus Connect Personal` link on the instructions page, as shown below. This will redirect you to the GCP for Windows installer.
 
-    ![!Globus Connect Personal for Windows official instructions page with link to download GCP for Windows.](./images/gg-gcp-install/win/002-instructions.png)
+    ![Globus Connect Personal for Windows official instructions page with link to download GCP for Windows.](./images/gg-gcp-install/win/002-instructions.png)
 
 1. As shown in the image below, click the "Download Globus Connect Personal for Windows" button to download the installer to download the installer to your computer.
 
-    ![!Download GCP Installer for Windows](./images/gg-gcp-install/win/003-download.png)
+    ![Download GCP Installer for Windows](./images/gg-gcp-install/win/003-download.png)
 
 1. Find the installer on your computer and open it. Select where you would prefer to have your GCP installed and click the "Install" button.
 
@@ -86,13 +86,13 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 1. When the installation is complete, click the "Finish" button to complete the GCP installation.
 
-    ![!Completing GCP Setup highlighting Finish button.](./images/gg-gcp-install/win/005-finish.png)
+    ![Completing GCP Setup highlighting Finish button.](./images/gg-gcp-install/win/005-finish.png)
 
 1. Following installation, GCP will launch in a new window. If it does not, look for it in your Start Menu.
 
     When GCP has started, click on "Log In" to authenticate with Globus to begin the Collection setup process. This is a one-time setup to configure GCP to allow your machine to act as a Collection, enabling research data transfer with your computer.
 
-    ![!GCP Setup window with Log In button.](./images/gg-gcp-install/win/006-authenticate.png)
+    ![GCP Setup window with Log In button.](./images/gg-gcp-install/win/006-authenticate.png)
 
     Note that if you uninstall and reinstall GCP, you will need to complete this process again. You should not need to repeat this process otherwise.
 
@@ -113,7 +113,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 1. After installation, you should see a lowercase letter "g" in a circle in your Windows system tray, typically at the bottom-right of the display. If you do not, try finding the Globus Connect Personal application in your start menu and starting the application.
 
-    ![!GCP Icon in Windows system tray.](./images/gg-gcp-install/win/009-system-tray-icon.png)
+    ![GCP Icon in Windows system tray.](./images/gg-gcp-install/win/009-system-tray-icon.png)
 
 Continue on with [How Do I Choose Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-through-globus-connect-personal) or return to the [Top of the Page](#globus-tutorials-for-research-groups).
 
@@ -123,23 +123,23 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 1. Navigate to the [Globus Connect Personal official page](https://www.globus.org/globus-connect-personal) and scroll down to find the GCP MacOS version. Click on the "INSTALL NOW" button in the red box in the image below to be taken to the official installation instructions and download link for GCP for MacOS.
 
-    ![!Globus Connect Personal official page showing operating system options with links. MacOS is the left of the three.](./images/gg-gcp-install/mac/001-select.png)
+    ![Globus Connect Personal official page showing operating system options with links. MacOS is the left of the three.](./images/gg-gcp-install/mac/001-select.png)
 
 1. Click the `Download Globus Connect Personal` link on the instructions page, as shown below. This will redirect you to the GCP for MacOS installer.
 
-    ![!Globus Connect Personal for MacOS official instructions page with link to download GCP for MacOS.](./images/gg-gcp-install/mac/002-instructions.png)
+    ![Globus Connect Personal for MacOS official instructions page with link to download GCP for MacOS.](./images/gg-gcp-install/mac/002-instructions.png)
 
 1. As shown in the image below, click the "Download Globus Connect Personal for MacOS" button to download the installer to download the installer to your computer.
 
-    ![!Download GCP Installer for Windows](./images/gg-gcp-install/mac/003-download.png)
+    ![Download GCP Installer for Windows](./images/gg-gcp-install/mac/003-download.png)
 
 1. Find the installer on your computer and open it. A new window will pop-up asking you to drag the Globus Connect Personal app into the Application folder on your computer. Do so to install GCP.
 
-    ![!Copy Mac GCP App into the Applications Folder](./images/gg-gcp-install/mac/004-install.png)
+    ![Copy Mac GCP App into the Applications Folder](./images/gg-gcp-install/mac/004-install.png)
 
 1. When the above step is completed navigate to your Application folder and look for the "Globus Connect Personal" application. Open it to proceed.
 
-    ![!GCP application in the Applications Folder](./images/gg-gcp-install/mac/005-application.png)
+    ![GCP application in the Applications Folder](./images/gg-gcp-install/mac/005-application.png)
 
 1. When GCP has started, click on "Log In" to authenticate with Globus to begin the Collection setup process. This is a one-time setup to configure GCP to allow your machine to act as a Collection, enabling research data transfer with your computer.
 
@@ -164,7 +164,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 1. After installation, you should see a lowercase letter "g" in a circle in your MacOS notification area, typically at the top-right of the display.
 
-    ![!GCP Icon in MacOS notification area.](./images/gg-gcp-install/mac/009-notification-area-icon.png)
+    ![GCP Icon in MacOS notification area.](./images/gg-gcp-install/mac/009-notification-area-icon.png)
 
 Continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-through-globus-connect-personal) or return to the [Top of the Page](#globus-tutorials-for-research-groups).
 
