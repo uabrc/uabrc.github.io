@@ -43,7 +43,7 @@ Globus has many research data oriented features, making it ideal for many resear
 
 ## How Does Globus Work?
 
-Globus is an ecosystem of software intended to make research data transfer simpler. The Globus web application at <https://app.globus.org> allows you to initiate transfers between any two endpoints you have authorization to access. The Globus Connect Personal (GCP) and Globus Connect Server (GCS) software let you turn any computer into a Globus endpoint. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two endpoints, the Globus application tells the two endpoints that they need to talk to each other and data is sent directly between them. The endpoints update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between endpoints is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
+Globus is an ecosystem of software intended to make research data transfer simpler. The Globus web application at <https://app.globus.org> allows you to initiate transfers between any two Collections you have authorization to access. The Globus Connect Personal (GCP) and Globus Connect Server (GCS) software let you turn any computer into a Globus Collection. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two Collections, the Globus application tells the two Collections that they need to talk to each other and data is sent directly between them. The Collections update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between Collections is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
 
 ## How Do I Get Onto the Globus Web App?
 
@@ -84,26 +84,26 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 1. Following installation, GCP will launch in a new window. If it does not, look for it in your Start Menu.
 
-    When GCP has started, click on "Log In" to authenticate with Globus to begin the Collection setup process. This is a one-time setup to configure GCP to allow your machine to act as an endpoint, enabling research data transfer with your computer.
+    When GCP has started, click on "Log In" to authenticate with Globus to begin the Collection setup process. This is a one-time setup to configure GCP to allow your machine to act as a Collection, enabling research data transfer with your computer.
 
     ![!GCP Setup window with Log In button.](./images/gg-gcp-install/win/006-authenticate.png)
 
     Note that if you uninstall and reinstall GCP, you will need to complete this process again. You should not need to repeat this process otherwise.
 
-1. Grant the required consents. This is required to set up your computer as an endpoint. Also provide a name for your endpoint. We recommend choosing a name that is short, memorable, and related to the purpose for the endpoint.
+1. Grant the required consents. This is required to set up your computer as a Collection. Also provide a name for your consents. We recommend choosing a name that is short, memorable, and related to the purpose for the Collection.
 
-    ![!GCP Setup form with required consents and endpoint name field.](./images/gg-gcp-install/common/007-consents.png)
+    ![GCP Setup form with required consents and Collection name field.](./images/gg-gcp-install/common/007-consents.png)
 
 1. Enter the details for your GCP Collection, and click save to continue. The following list describes the fields in the form shown below.
 
-    - **Owner Identity:** is the person responsible for this endpoint. This field should already be filled with UAB Campus or XIAS email address. If not, please that email address here.
-    - **Collection Name:** is the name for the endpoint. This should be filled with the name of the endpoint from the previous step.
-    - **Description:** Feel free to enter descriptive information about the endpoint here. This information will be displayed in the Globus Web App when the endpoint is viewed by others.
-    - **High Assurance:** Only check this box if the endpoint has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
+    - **Owner Identity:** is the person responsible for this Collection. This field should already be filled with UAB Campus or XIAS email address. If not, please that email address here.
+    - **Collection Name:** is the name for the Collection. This should be filled with the name of the Collection from the previous step.
+    - **Description:** Feel free to enter descriptive information about the Collection here. This information will be displayed in the Globus Web App when the Collection is viewed by others.
+    - **High Assurance:** Only check this box if the Collection has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
 
-    ![!GCP Setup collection details](./images/gg-gcp-install/common/008-collection-details.png)
+    ![GCP Setup Collection details](./images/gg-gcp-install/common/008-collection-details.png)
 
-1. GCP Setup is now complete on your computer. Your computer is now a Globus endpoint and may be used to transfer data. Click "Exit Setup" to close the window.
+1. GCP Setup is now complete on your computer. Your computer is now serving Globus Collection and may be used to transfer data. Click "Exit Setup" to close the window.
 
 1. After installation, you should see a lowercase letter "g" in a circle in your Windows system tray, typically at the bottom-right of the display. If you do not, try finding the Globus Connect Personal application in your start menu and starting the application.
 
@@ -135,26 +135,26 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
     ![!GCP application in the Applications Folder](./images/gg-gcp-install/mac/005-application.png)
 
-1. When GCP has started, click on "Log In" to authenticate with Globus to begin the Collection setup process. This is a one-time setup to configure GCP to allow your machine to act as an endpoint, enabling research data transfer with your computer.
+1. When GCP has started, click on "Log In" to authenticate with Globus to begin the Collection setup process. This is a one-time setup to configure GCP to allow your machine to act as a Collection, enabling research data transfer with your computer.
 
     ![GCP Setup window with Log In button.](./images/gg-gcp-install/mac/006-authenticate.png)
 
     Note that if you uninstall and reinstall GCP, you will need to complete this process again. You should not need to repeat this process otherwise.
 
-1. Grant the required consents. This is required to set up your computer as an endpoint. Also provide a name for your endpoint. We recommend choosing a name that is short, memorable, and related to the purpose for the endpoint.
+1. Grant the required consents. This is required to set up your computer as a Collection. Also provide a name for your Collection. We recommend choosing a name that is short, memorable, and related to the purpose for the Collection.
 
-    ![!GCP Setup form with required consents and endpoint name field.](./images/gg-gcp-install/common/007-consents.png)
+    ![GCP Setup form with required consents and Collection name field.](./images/gg-gcp-install/common/007-consents.png)
 
 1. Enter the details for your GCP Collection, and click save to continue. The following list describes the fields in the form shown below.
 
-    - **Owner Identity:** is the person responsible for this endpoint. This field should already be filled with UAB Campus or XIAS email address. If not, please that email address here.
-    - **Collection Name:** is the name for the endpoint. This should be filled with the name of the endpoint from the previous step.
-    - **Description:** Feel free to enter descriptive information about the endpoint here. This information will be displayed in the Globus Web App when the endpoint is viewed by others.
-    - **High Assurance:** Only check this box if the endpoint has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
+    - **Owner Identity:** is the person responsible for this Collection. This field should already be filled with UAB Campus or XIAS email address. If not, please that email address here.
+    - **Collection Name:** is the name for the Collection. This should be filled with the name of the Collection from the previous step.
+    - **Description:** Feel free to enter descriptive information about the Collection here. This information will be displayed in the Globus Web App when the Collection is viewed by others.
+    - **High Assurance:** Only check this box if the Collection has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
 
-    ![!GCP Setup collection details](./images/gg-gcp-install/common/008-collection-details.png)
+    ![GCP Setup Collection details](./images/gg-gcp-install/common/008-collection-details.png)
 
-1. GCP Setup is now complete on your computer. Your computer is now a Globus endpoint and may be used to transfer data. Click "Exit Setup" to close the window.
+1. GCP Setup is now complete on your computer. Your computer is now a Globus Collection and may be used to transfer data. Click "Exit Setup" to close the window.
 
 1. After installation, you should see a lowercase letter "g" in a circle in your MacOS notification area, typically at the top-right of the display.
 
@@ -164,7 +164,7 @@ Continue on with [How Do I Share Specific Folders Using Globus Connect Personal?
 
 ## How Do I Choose Specific Folders To Share Through Globus Connect Personal?
 
-Please follow the instructions in this section to share a folder on your computer with others through your [Globus Connect Personal (GCP) endpoint](#how-do-i-install-globus-connect-personal).
+Please follow the instructions in this section to share a folder on your computer with others through your [Globus Connect Personal (GCP) Collection](#how-do-i-install-globus-connect-personal).
 
 We have instructions for the following Operating Systems.
 
@@ -181,9 +181,9 @@ We have instructions for the following Operating Systems.
 
     ![Context menu of Globus system tray icon showing options.](./images/gg-choose-folder/win/002-context-menu.png)
 
-1. A new window will appear with a tab labelled "Access". In this "Access" tab is an interface to configure folders available on your GCP endpoint. For most use cases, you should not check the writeable checkbox. Below is a summary of what each part of the menu does.
+1. A new window will appear with a tab labelled "Access". In this "Access" tab is an interface to configure folders available on your GCP Collection. For most use cases, you should not check the writeable checkbox. Below is a summary of what each part of the menu does.
 
-   - **(1)** "Accessible Folders" table with "Folder", "Shareable" and "Writeable" columns. Any folder listed here will appear on your GCP endpoint. Your research data directory or directories must be listed here to be shareable.
+   - **(1)** "Accessible Folders" table with "Folder", "Shareable" and "Writeable" columns. Any folder listed here will appear on your GCP Collection. Your research data directory or directories must be listed here to be shareable.
    - **(2)** "Shareable" column checkboxes controlling which folders can be shared with other users. Each of your research data directories must have this checkbox ticked to be shareable.
    - **(3)** "Writeable" column checkboxes controlling which folders can be written to by other users. If a folder is shared with other users, then they will be able to add, delete, or change the contents. We recommend against ticking these boxes for Research Cores serving data to customers.
    - **(4)** Plus `+` and minus `-` buttons that allow you to add or remove folders from the list.
@@ -197,10 +197,10 @@ We have instructions for the following Operating Systems.
 
     ![Access tab of GCP options menu showing new settings.](./images/gg-choose-folder/win/004-access-tab-changed.png)
 
-1. Click the "General" tab. The "General" tab enables you to control some settings for the application itself and which folder is the default folder. The default folder will be the first one shown when accessing the endpoint.
+1. Click the "General" tab. The "General" tab enables you to control some settings for the application itself and which folder is the default folder. The default folder will be the first one shown when accessing the Collection.
 
    - **(1)** "Run when Windows starts" checkbox that enables starting Globus Connect Personal when you start Windows. We recommend checking this box.
-   - **(2)** "Home Folder" text field that lets you choose which folder will be the default folder for your endpoint. We recommend setting this to your primary shared folder from the previous step.
+   - **(2)** "Home Folder" text field that lets you choose which folder will be the default folder for your Collection. We recommend setting this to your primary shared folder from the previous step.
    - **(3)** "Save" button which saves changes made to this tab of the options. Be sure to click "Save" if you make changes here.
 
     ![General tab of GCP options menu showing default settings.](./images/gg-choose-folder/win/005-general-tab-default.png)
@@ -223,9 +223,9 @@ To verify the existence and accessibility of your Collection proceed to [How Do 
 
     ![Context menu of Globus system tray icon showing preferences.](./images/gg-choose-folder/mac/002-context-menu.png)
 
-1. A new window will appear with a tab labelled "Access". Click the "Access" tab if it is not already selected. In this "Access" tab is an interface to configure folders available on your GCP endpoint. For most use cases, you should not check the writeable checkbox. Below is a summary of what each part of the menu does.
+1. A new window will appear with a tab labelled "Access". Click the "Access" tab if it is not already selected. In this "Access" tab is an interface to configure folders available on your GCP Collection. For most use cases, you should not check the writeable checkbox. Below is a summary of what each part of the menu does.
 
-   - **(1)** "Accessible Folders" table with "Folder", "Shareable" and "Writeable" columns. Any folder listed here will appear on your GCP endpoint. Your research data directory or directories must be listed here to be shareable.
+   - **(1)** "Accessible Folders" table with "Folder", "Shareable" and "Writeable" columns. Any folder listed here will appear on your GCP Collection. Your research data directory or directories must be listed here to be shareable.
    - **(2)** "Shareable" column checkboxes controlling which folders can be shared with other users. Each of your research data directories must have this checkbox ticked to be shareable.
    - **(3)** "Writeable" column checkboxes controlling which folders can be written to by other users. If a folder is shared with other users, then they will be able to add, delete, or change the contents. We recommend against ticking these boxes for Research Cores serving data to customers.
    - **(4)** Plus `+` and minus `-` buttons that allow you to add or remove folders from the list.
@@ -248,9 +248,9 @@ The below steps apply to all GCP applications on all platforms (Linux, MacOS, an
 
     ![Collection Search page of the Globus Web App](./images/gg-my-endpoints/008-collection-search.png)
 
-1. Click the "Your Collections" tab to display a list of collections you have created or own.
+1. Click the "Your Collections" tab to display a list of Collections you have created or own.
 
-    ![Your Collections tab showing a GCP endpoint.](./images/gg-my-endpoints/009-your-collections.png)
+    ![Your Collections tab showing a GCP Collection.](./images/gg-my-endpoints/009-your-collections.png)
 
 1. Click the name of an endpoint in the list to return to the "File Manager" page and display its contents, suitable to start a transer.
 
