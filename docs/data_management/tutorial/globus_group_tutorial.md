@@ -244,23 +244,29 @@ To verify the existence and accessibility of your Collection proceed to [How Do 
 
 ## How Do I Find Collections I Created or Own?
 
-The below steps apply to all GCP applications on all platforms (Linux, MacOS, and Windows).
+To find a Collection you own, use the following steps.
 
 1. Navigate to the [Globus Web App](#how-do-i-get-onto-the-globus-web-app) using your browser. You should be at the "File Manager" page.
 
-    ![File Manager page of the Globus Web App](./images/gg-my-endpoints/007-file-manager.png)
+    ![File Manager page of the Globus Web App](./images/gg-my-collections/007-file-manager.png)
 
 1. Click either of the "Collection Search" bar at the top of the "File Manager" page. This will take you to the "Collection Search" page.
 
-    ![Collection Search page of the Globus Web App](./images/gg-my-endpoints/008-collection-search.png)
+    ![Collection Search page of the Globus Web App](./images/gg-my-collections/008-collection-search.png)
 
 1. Click the "Your Collections" tab to display a list of Collections you have created or own.
 
-    ![Your Collections tab showing a GCP Collection.](./images/gg-my-endpoints/009-your-collections.png)
+    ![Your Collections tab showing a GCP Collection.](./images/gg-my-collections/009-your-collections.png)
 
-1. Click the name of an endpoint in the list to return to the "File Manager" page and display its contents, suitable to start a transer.
+1. From here there are two options:
 
-    ![File Manager page showing the GCP endpoint contents.](./images/gg-my-endpoints/010-my-gcp-endpoint.png)
+    - **(1)** Click the name of the Collection to select it for a file transfer and be taken back to the "File Manager" page.
+
+        ![File Manager page showing selected Collection on left-hand panel.](./images/gg-my-collections/010-file-manager-selection-made.png)
+
+    - **(2)** Click the three dots icon at the right side of the entry to be taken to the Collection details page.
+
+        ![Collectionm details page with overview tab selected.](./images/gg-my-collections/011-collection-details-page.png)
 
 ## How Do I Enable Collection Sharing For My Globus Account?
 
