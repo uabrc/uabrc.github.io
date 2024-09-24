@@ -264,6 +264,43 @@ The below steps apply to all GCP applications on all platforms (Linux, MacOS, an
 
 ## How Do I Enable Collection Sharing For My Globus Account?
 
+Before you can share Collections from your Globus Connect Personal (GCP) Collection with others, you must do a one-time setup for your account. You will need to join the "University of Alabama at Birmingham (HA)" (UAB HA) subscription group. Sharing any Collection requires a paid subscription with Globus. UAB Research Computing has a subscription, but Globus does not know your BlazerID is part of our subscription until you join the subscription group. So, Globus also does not know the GCP Collection you created is part of our subscription. By joining our UAB HA group, you and your GCP Collection are confirmed to be part of our subscription, and you can share Collections from the GCP Collection.
+
+To join the UAB HA group, we need to receive both a UAB support request, and a request to join the UAB HA group within the Globus Web App. We need both because we sometimes get spam applications through Globus. Having a Support Request helps us filter the spam. Please use the following steps to join.
+
+1. Submit a [Support Request](../../help/support.md#how-do-i-create-a-support-ticket). In the request please include the following.
+
+    - Your BlazerID.
+    - The text "Please add me to the Globus UAB HA subscription group."
+    - The reason you need to be able to share a Collection in Globus. For Research Cores, this would be to share data with your customers.
+
+1. In your browser [get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app).
+1. In the left hand navigation panel click "Groups" to be taken to the "Groups" page.
+
+    ![Globus groups page with no groups.](./images/gg-uab-ha-group-access/001-groups-page.png)
+
+1. Ensure the "MY GROUPS" box is unchecked. In the "Filter groups" search bar enter "University of Alabama at Birmingham" to locate the "University of Alabama at Birmingham (HA)" (UAB HA) group.
+
+    ![Globus group page showing search results with University of Alabama at Birmingham (HA) listed](./images/gg-uab-ha-group-access/002-groups-search.png)
+
+1. Click on the UAB HA group name to be taken to the group details page. The Overview tab should be selected.
+
+    ![UAB HA subscription group details page with overview tab selected.](./images/gg-uab-ha-group-access/003-uab-ha-overview.png)
+
+1. Click on the "Join this Subscription" button to be taken to the form to submit a request to join.
+
+    ![UAB HA subscription group join request form.](./images/gg-uab-ha-group-access/004-join-form.png)
+
+1. Fill in the form fields and click the "Submit Application" button when completed. This will send you to a page notifying you that your membership is pending. A request has been sent to Research Computing, so please wait until you see a reply in the support request.
+
+    ![Notice of pending membership.](./images/gg-uab-ha-group-access/005-pending.png)
+
+1. When your membership has been accepted, you can verify by [returning to the Globus Web App](#how-do-i-get-onto-the-globus-web-app) and navigating to the "Groups" page. Check the "MY GROUPS". You should see "University of Alabama at Birmingham (HA)" listed with a green, circled checkmark and the word "ACTIVE".
+
+    ![Groups page with my groups checked showing UAB HA subscription group](./images/gg-uab-ha-group-access/006-my-groups.png.png)
+
+When you have completed the steps in this section, proceed to [creating a Collection](#how-do-i-create-a-collection).
+
 ## How Do I Create a Collection?
 
 There are three ways to create a Collection.
