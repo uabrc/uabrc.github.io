@@ -320,12 +320,18 @@ There are three ways to create a Collection.
 The instructions below assume you are starting from an existing Collection.
 
 1. [Get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app).
-1. [Find the existing Collection](#how-do-i-find-collections-i-created-or-own).
-1.
-1. click collections tab
-1. click add guest collection button
-1. fill out the form
-1. click create guest collection button, taken to permissions tab of collection page
+1. [Find the existing Collection](#how-do-i-find-collections-i-created-or-own) and access its details page.
+1. Click the "Collection" tab.
+1. Click the "+ Add Guest Collection" button to be taken to a form to create the new Collection.
+1. Fill out the form.
+
+    - **You Are Sharing**: Shows which Collection you will be sharing all or part of. Helpful to verify you are sharing the right Collection
+    - **Path**: Which path you wish to share. By default, the "/" path is the root of the original Collection. This may not be appropriate for your use case. Generally, when creating one Collection from another, you will want to pick a subfolder of the original Collection. Do this with the "Browse" button.
+    - **Display Name**: The name people will see when accessing this Collection, and what they will search for when looking for the Collection.
+    - **Description**: An optional description for the Collection.
+    - **Keywords**: Optional keywords to help locating the Collection. May be useful for broadly or publicly shared data.
+
+1. Click the "Create Guest Collection" button to create the Collection. You will be taken to the details page of the new Collection, on the "Permissions" tab.
 
 When you have created a Collection, you are ready to [share the Collection with others](#how-do-i-share-a-collection-with-others).
 
