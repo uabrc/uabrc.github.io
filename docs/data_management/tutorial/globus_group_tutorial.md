@@ -2,6 +2,8 @@
 
 This tutorial is designed to guide UAB research managers, such as Lab PIs, Core Directors, and their management staff, to help them set up and use Globus Connect Personal (GCP) for secure data sharing on their local/personal computers. GCP allows you to share data with collaborators efficiently meeting security and compliance standards for file sharing.
 
+If you are new to Globus, we recommend starting with our [Globus Tutorials for Individual Researchers](./globus_individual_tutorial.md) first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the tutorials on this page in order from start to finish, as later tutorials assume the previous tutorials have been completed.
+
 Topics covered:
 
 1. [Prerequisites](#prerequisites)
@@ -12,14 +14,14 @@ Topics covered:
 1. [How Do I Install Globus Connect Personal?](#how-do-i-install-globus-connect-personal)
     - [Windows](#installing-gcp-on-windows)
     - [MacOS](#installing-gcp-on-macos)
-1. [How Do I Choose Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-through-globus-connect-personal)
+1. [How Do I Choose Specific Folders to Share Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal)
     - [Windows](#choose-specific-folders-on-windows)
     - [MacOS](#choose-specific-folders-on-macos)
 1. [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
-1. [How Do I Share Data with a Research Core Customer?](#how-do-i-share-data-with-a-research-core-customer)
+1. [How Do I Enable Sharing for My Globus Account?](#how-do-i-enable-collection-sharing-for-my-globus-account)
+1. [How Do I Create a Collection?](#how-do-i-create-a-collection)
 1. [How Do I Share a Collection with Others?](#how-do-i-share-a-collection-with-others)
-
-If you are new to Globus, we recommend starting with our [Globus Tutorials for Individual Researchers](./globus_individual_tutorial.md) first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the tutorials on this page in order from start to finish, as later tutorials assume the previous tutorials have been completed.
+1. [How Do I Share Data with a Research Core Customer?](#how-do-i-share-data-with-a-research-core-customer)
 
 ## Prerequisites
 
@@ -45,7 +47,7 @@ Globus has many research data oriented features, making it ideal for many resear
 
 Globus is an ecosystem of software intended to make research data transfer simpler. The Globus web application at <https://app.globus.org> allows you to initiate transfers between any two Collections you have authorization to access. The Globus Connect Personal (GCP) and Globus Connect Server (GCS) software let you turn any computer into a Globus Collection. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two Collections, the Globus application tells the two Collections that they need to talk to each other and data is sent directly between them. The Collections update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between Collections is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
 
-## How Do I Get Onto the Globus Web App?
+## How Do I Get onto the Globus Web App?
 
 Our [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
 
@@ -115,7 +117,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
     ![GCP Icon in Windows system tray.](./images/gg-gcp-install/win/009-system-tray-icon.png)
 
-Continue on with [How Do I Choose Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-through-globus-connect-personal) or return to the [Top of the Page](#globus-tutorials-for-research-groups).
+Continue on with [How Do I Choose Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) or return to the [Top of the Page](#globus-tutorials-for-research-groups).
 
 ### Installing GCP On MacOS
 
@@ -166,9 +168,9 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
     ![GCP Icon in MacOS notification area.](./images/gg-gcp-install/mac/009-notification-area-icon.png)
 
-Continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-through-globus-connect-personal) or return to the [Top of the Page](#globus-tutorials-for-research-groups).
+Continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) or return to the [Top of the Page](#globus-tutorials-for-research-groups).
 
-## How Do I Choose Specific Folders To Share Through Globus Connect Personal?
+## How Do I Choose Specific Folders to Share Using Globus Connect Personal?
 
 Please follow the instructions in this section to share a folder on your computer with others through your [Globus Connect Personal (GCP) Collection](#how-do-i-install-globus-connect-personal).
 
@@ -312,7 +314,7 @@ When you have completed the steps in this section, proceed to [creating a Collec
 There are three ways to create a Collection.
 
 - Start from [an existing Collection you own](#how-do-i-find-collections-i-created-or-own).
-- [Install Globus Connect Personal](#how-do-i-install-globus-connect-personal) and [share a folder](#how-do-i-choose-specific-folders-to-share-through-globus-connect-personal) to create a Collection. This will [create a Collection you own](#how-do-i-find-collections-i-created-or-own).
+- [Install Globus Connect Personal](#how-do-i-install-globus-connect-personal) and [share a folder](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to create a Collection. This will [create a Collection you own](#how-do-i-find-collections-i-created-or-own).
 - Install and configure one or more Endpoints with Globus Connect Server. To do this, please [Contact Support](../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
 
 The instructions below assume you are starting from an existing Collection.
@@ -345,7 +347,7 @@ Before sharing a Collection with others, you will need to first [create a Collec
     - The "Path" defaults to the root of the Collection. This may or may not be acceptable for your use case. Be sure to limit access to only the data that needs to be shared. Use the file browser available in the form to find the correct level of access. For now grant permission to the default.
     - In almost all cases, you will want to share with a single user. Use the "User" search bar to find the specific user you wish to share with. If they have never accessed Globus before, they will not appear in the search results. You can safely enter their email address to add them anyway. For now grant permission to yourself.
     - We recommend sending an email notification as a convenience.
-    - The "read" permission must be granted, as that is the point of sharing the Collection. You may additionally give "write" permission to create a two-way collaboration. We recommend Research Cores not grant "write" permission. If you are using a Globus Connect Personal Endpoint, then "write" permission requires you to correctly [configure your Collection](#how-do-i-choose-specific-folders-to-share-through-globus-connect-personal) to make your shared folder writable.
+    - The "read" permission must be granted, as that is the point of sharing the Collection. You may additionally give "write" permission to create a two-way collaboration. We recommend Research Cores not grant "write" permission. If you are using a Globus Connect Personal Endpoint, then "write" permission requires you to correctly [configure your Collection](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to make your shared folder writable.
 
     ![Add permissions form.](./images/gg-share-collection/003-add-permissions-form.png)
 
