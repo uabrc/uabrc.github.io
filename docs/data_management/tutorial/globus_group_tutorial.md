@@ -313,25 +313,35 @@ When you have completed the steps in this section, proceed to [creating a Collec
 
 There are three ways to create a Collection.
 
-- Start from [an existing Collection you own](#how-do-i-find-collections-i-created-or-own).
-- [Install Globus Connect Personal](#how-do-i-install-globus-connect-personal) and [share a folder](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to create a Collection. This will [create a Collection you own](#how-do-i-find-collections-i-created-or-own).
+- Start from [an existing Collection you created or own](#how-do-i-find-collections-i-created-or-own).
+- [Install Globus Connect Personal](#how-do-i-install-globus-connect-personal) and [share a folder](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to create a Collection you created or own.
 - Install and configure one or more Endpoints with Globus Connect Server. To do this, please [Contact Support](../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
 
-The instructions below assume you are starting from an existing Collection.
+The instructions below assume you are starting from an existing Collection you created or own.
 
 1. [Get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app).
 1. [Find the existing Collection](#how-do-i-find-collections-i-created-or-own) and access its details page.
 1. Click the "Collection" tab.
+
+    ![Overview tab of details page with Collection tab to the right.](./images/gg-create-collection/001-collection-tab.png)
+
 1. Click the "+ Add Guest Collection" button to be taken to a form to create the new Collection.
+
+    ![Collection tab of details page with Add Guest Collection button.](./images/gg-create-collection/002-add-guest-collection.png)
+
 1. Fill out the form.
 
-    - **You Are Sharing**: Shows which Collection you will be sharing all or part of. Helpful to verify you are sharing the right Collection
-    - **Path**: Which path you wish to share. By default, the "/" path is the root of the original Collection. This may not be appropriate for your use case. Generally, when creating one Collection from another, you will want to pick a subfolder of the original Collection. Do this with the "Browse" button.
-    - **Display Name**: The name people will see when accessing this Collection, and what they will search for when looking for the Collection.
-    - **Description**: An optional description for the Collection.
-    - **Keywords**: Optional keywords to help locating the Collection. May be useful for broadly or publicly shared data.
+    - **(1) You Are Sharing**: Shows which Collection you will be sharing all or part of. Helpful to verify you are sharing the right Collection
+    - **(2) Path**: Which path you wish to share. By default, the "/" path is the root of the original Collection. This may not be appropriate for your use case. Generally, when creating one Collection from another, you will want to pick a subfolder of the original Collection. Do this with the "Browse" button.
+    - **(3) Display Name**: The name people will see when accessing this Collection, and what they will search for when looking for the Collection.
+    - **(4) Description**: An optional description for the Collection.
+    - **(5) Keywords**: Optional keywords to help locating the Collection. May be useful for broadly or publicly shared data.
+
+    ![Collection creation form.](./images/gg-create-collection/003-form.png)
 
 1. Click the "Create Guest Collection" button to create the Collection. You will be taken to the details page of the new Collection, on the "Permissions" tab.
+
+    ![Permissions tab of new Collection details page.](./images/gg-create-collection/004-completion.png)
 
 When you have created a Collection, you are ready to [share the Collection with others](#how-do-i-share-a-collection-with-others).
 
