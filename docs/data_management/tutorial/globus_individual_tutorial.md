@@ -125,7 +125,7 @@ Please follow these instructions to search for a specific Collection by name.
 
 1. Click the name of the Collection to be taken back to the file manager page with the Collection filled in.
 
-    ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-collections/004-selected.png)
+    ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-shared-collections/004-selected.png)
 
 If you can't find a particular Collection this way, but know it was shared with you, try [finding Collections shared with me](#how-do-i-find-collections-shared-with-me). Proceed on to learn [how to find UAB storage Collections](#how-do-i-find-uab-storage-collections).
 
@@ -175,22 +175,21 @@ Proceed on to learn [how to find Collections shared with you](#how-do-i-find-uab
 Globus allows users to share Collections with others. Other researchers, labs, and Research Cores on campus may invite you to their Collections to share data with you. The following instructions let you view Collections shared with you.
 
 1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app)
+1. You should see the "File Manager" page. If not click "File Manager" in the left-hand navigation panel.
 
-1. In the Globus Web App, click "File Manager" in the left navigation panel to go to the file manager page, then click the "Collection Search" bar shown in the red box in the image below.
+    ![File Manager page.](./images/common/file-manager.png)
 
-    ![File Manager page of the Globus Web App. "Collection Search" bar is boxed in red.](./images/gi-find-collections/001-search.png)
+1. Click the "Collection Search" bar to open the "Collection Search" page.
 
-1. You will be taken to the "Collection Search" page. Click the "Shared With You" tab.
-
-    ![Collection Search page of the Globus Web App. The "Shared With You" tab is boxed in red.](./images/gi-find-collections/002-shared-tab.png)
+    ![Collection search page](./images/common/collection-search-page.png)
 
 1. The list of Collections will be filtered down to all Collections others have granted you access to, which should help you find the Collections you need.
 
-    ![Collection Search page of Globus Web App. "Shared With You" tab is selected and the list of Collections has been filtered down.](./images/gi-find-collections/003-list.png)
+    ![Collection Search page of Globus Web App. "Shared With You" tab is selected and the list of Collections has been filtered down.](./images/gi-find-shared-collections/003-list.png)
 
 1. Click the name of the Collection to be taken back to the file manager page with the Collection filled in.
 
-    ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-collections/004-selected.png)
+    ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-shared-collections/004-selected.png)
 
 If you can't find a particular Collection this way, but know its name, try [searching for Collections](#how-do-i-search-for-collections-by-name).
 
