@@ -238,11 +238,11 @@ These instructions can be generalized to any two Collections you have access to 
 
 1. Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.
 
-    ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-collection-to-cheaha/006-selection.png)
+    ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-collection-to-cheaha/008-selection.png)
 
 1. To start the transfer, click the "Start" button on the side you made your selections. A transfer will be started and you should see a green toast notification at the upper-right corner of the web page. Press the "X" button to dismiss the notification or click "View Details" to be taken to the "Activity" page to see more details about the transfer.
 
-    ![File Manager page with a toast notification indicating the file transfer started successfully.](./images/gi-transfer-collection-to-cheaha/007-transfer-started.png)
+    ![File Manager page with a toast notification indicating the file transfer started successfully.](./images/gi-transfer-collection-to-cheaha/009-transfer-started.png)
 
 From here you can proceed to other related tutorials to initiate other transfers or
 [return to the index](#globus-tutorials-for-individual-researchers).
@@ -283,11 +283,11 @@ These instructions can be generalized to any two Collections or Collections you 
 
 1. Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.
 
-    ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-collection-to-lts/006-selection.png)
+    ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-collection-to-lts/008-selection.png)
 
 1. To start the transfer, click the "Start" button on the side you made your selections. A transfer will be started and you should see a green toast notification at the upper-right corner of the web page. Press the "X" button to dismiss the notification or click "View Details" to be taken to the "Activity" page to see more details about the transfer.
 
-    ![File Manager page with a toast notification indicating the file transfer started successfully.](./images/gi-transfer-collection-to-lts/007-transfer-started.png)
+    ![File Manager page with a toast notification indicating the file transfer started successfully.](./images/gi-transfer-collection-to-lts/009-transfer-started.png)
 
 From here you can proceed to other related tutorials to initiate other transfers or
 [return to the index](#globus-tutorials-for-individual-researchers).
@@ -335,11 +335,11 @@ These instructions can be generalized to any two Collections or Collections you 
 
 1. Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.
 
-    ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-lts-to-cheaha/006-selection.png)
+    ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-lts-to-cheaha/008-selection.png)
 
 1. To start the transfer, click the "Start" button on the side you made your selections. A transfer will be started and you should see a green toast notification at the upper-right corner of the web page. Press the "X" button to dismiss the notification or click "View Details" to be taken to the "Activity" page to see more details about the transfer.
 
-    ![File Manager page with a toast notification indicating the file transfer started successfully.](./images/gi-transfer-lts-to-cheaha/007-transfer-started.png)
+    ![File Manager page with a toast notification indicating the file transfer started successfully.](./images/gi-transfer-lts-to-cheaha/009-transfer-started.png)
 
 From here you can proceed to other related tutorials to initiate other transfers or
 [return to the index](#globus-tutorials-for-individual-researchers).

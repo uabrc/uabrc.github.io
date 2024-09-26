@@ -95,7 +95,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 1. Grant the required consents. This is required to set up your computer as a Collection. Also provide a name for your consents. We recommend choosing a name that is short, memorable, and related to the purpose for the Collection.
 
-    ![GCP Setup form with required consents and Collection name field.](./images/gg-gcp-install/common/007-consents.png)
+    ![GCP Setup form with required consents and Collection name field.](./images/gg-gcp-install/common/consents.png)
 
 1. Enter the details for your GCP Collection, and click save to continue. The following list describes the fields in the form shown below.
 
@@ -104,7 +104,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
     - **Description:** Feel free to enter descriptive information about the Collection here. This information will be displayed in the Globus Web App when the Collection is viewed by others.
     - **High Assurance:** Only check this box if the Collection has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
 
-    ![GCP Setup Collection details](./images/gg-gcp-install/common/008-collection-details.png)
+    ![GCP Setup Collection details](./images/gg-gcp-install/common/collection-details.png)
 
 1. GCP Setup is now complete on your computer. Your computer is now serving Globus Collection and may be used to transfer data. Click "Exit Setup" to close the window.
 
@@ -146,7 +146,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 1. Grant the required consents. This is required to set up your computer as a Collection. Also provide a name for your Collection. We recommend choosing a name that is short, memorable, and related to the purpose for the Collection.
 
-    ![GCP Setup form with required consents and Collection name field.](./images/gg-gcp-install/common/007-consents.png)
+    ![GCP Setup form with required consents and Collection name field.](./images/gg-gcp-install/common/consents.png)
 
 1. Enter the details for your GCP Collection, and click save to continue. The following list describes the fields in the form shown below.
 
@@ -155,7 +155,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
     - **Description:** Feel free to enter descriptive information about the Collection here. This information will be displayed in the Globus Web App when the Collection is viewed by others.
     - **High Assurance:** Only check this box if the Collection has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
 
-    ![GCP Setup Collection details](./images/gg-gcp-install/common/008-collection-details.png)
+    ![GCP Setup Collection details](./images/gg-gcp-install/common/collection-details.png)
 
 1. GCP Setup is now complete on your computer. Your computer is now a Globus Collection and may be used to transfer data. Click "Exit Setup" to close the window.
 
@@ -253,17 +253,17 @@ To find a Collection you own, use the following steps.
 
 1. Click the "Your Collections" tab to display a list of Collections you have created or own.
 
-    ![Your Collections tab showing a GCP Collection.](./images/gg-my-collections/009-your-collections.png)
+    ![Your Collections tab showing a GCP Collection.](./images/gg-my-collections/003-your-collections.png)
 
 1. From here there are two options:
 
     - **(1)** Click the name of the Collection to select it for a file transfer and be taken back to the "File Manager" page.
 
-        ![File Manager page showing selected Collection on left-hand panel.](./images/gg-my-collections/010-file-manager-selection-made.png)
+        ![File Manager page showing selected Collection on left-hand panel.](./images/gg-my-collections/004-file-manager-selection-made.png)
 
     - **(2)** Click the three dots icon at the right side of the entry to be taken to the Collection details page.
 
-        ![Collectionm details page with overview tab selected.](./images/gg-my-collections/011-collection-details-page.png)
+        ![Collectionm details page with overview tab selected.](./images/gg-my-collections/005-collection-details-page.png)
 
 ## How Do I Enable Collection Sharing For My Globus Account?
 
