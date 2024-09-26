@@ -13,9 +13,9 @@ Topics:
 1. [How Does Globus Work?](#how-does-globus-work)
 1. [Tutorial Prerequisites](#prerequisites)
 1. [How Do I Get Onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
+1. [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name)
 1. [How Do I Find UAB Storage Collections?](#how-do-i-find-uab-storage-collections)
 1. [How Do I Find Collections Shared with Me?](#how-do-i-find-collections-shared-with-me)
-1. [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name)
 1. [How Do I Transfer from a Collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
 1. [How Do I Transfer from a Collection to LTS?](#how-do-i-transfer-from-a-collection-to-lts)
 1. [How Do I Transfer between LTS and Cheaha?](#how-do-i-transfer-data-between-lts-and-cheaha)
@@ -104,6 +104,30 @@ The file manager will be your most frequently-visited page when using Globus for
 
 From here you can proceed to [How Do I Find Collections Shared with Me?](#how-do-i-find-collections-shared-with-me) or [return to the top](#globus-tutorials-for-individual-researchers).
 
+## How Do I Search For Collections By Name?
+
+Please follow these instructions to search for a specific Collection by name.
+
+1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
+
+1. In the Globus Web App, click "File Manager" in the left navigation panel to go to the file manager page, then click the "Collection Search" shown in the red box in the image below.
+
+    ![Globus file manager page showing Collection search bar in a red box.](./images/gi-search-collections/001-search-bar.png)
+
+1. You will be taken to a Collection search page. Enter part or all of the name of the Collection you are searching for in the search box on this new page.
+
+    ![Globus Collection search page.](./images/gi-search-collections/002-collection-search.png)
+
+1. Search results should appear. In the example below, we located the UAB Box Collection, which connects to UAB's Box.com service.
+
+    ![Globus Collection search page showing results of searching for "UAB Box".](./images/gi-search-collections/003-results.png)
+
+1. Click the name of the Collection to be taken back to the file manager page with the Collection filled in.
+
+    ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-collections/004-selected.png)
+
+If you can't find a particular Collection this way, but know it was shared with you, try [finding Collections shared with me](#how-do-i-find-collections-shared-with-me) or [return to the index](#globus-tutorials-for-individual-researchers).
+
 ## How Do I Find UAB Storage Collections?
 
 UAB offers [multiple storage resources](../storage.md). The following resources may be accessed through Globus Collections.
@@ -162,30 +186,6 @@ Globus allows users to share Collections with others. Other researchers, labs, a
     ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-collections/004-selected.png)
 
 If you can't find a particular Collection this way, but know its name, try [searching for Collections](#how-do-i-search-for-collections-by-name) or [return to the index](#globus-tutorials-for-individual-researchers).
-
-## How Do I Search For Collections By Name?
-
-Please follow these instructions to search for a specific Collection by name.
-
-1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
-
-1. In the Globus Web App, click "File Manager" in the left navigation panel to go to the file manager page, then click the "Collection Search" shown in the red box in the image below.
-
-    ![Globus file manager page showing Collection search bar in a red box.](./images/gi-search-collections/001-search-bar.png)
-
-1. You will be taken to a Collection search page. Enter part or all of the name of the Collection you are searching for in the search box on this new page.
-
-    ![Globus Collection search page.](./images/gi-search-collections/002-collection-search.png)
-
-1. Search results should appear. In the example below, we located the UAB Box Collection, which connects to UAB's Box.com service.
-
-    ![Globus Collection search page showing results of searching for "UAB Box".](./images/gi-search-collections/003-results.png)
-
-1. Click the name of the Collection to be taken back to the file manager page with the Collection filled in.
-
-    ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-collections/004-selected.png)
-
-If you can't find a particular Collection this way, but know it was shared with you, try [finding Collections shared with me](#how-do-i-find-collections-shared-with-me) or [return to the index](#globus-tutorials-for-individual-researchers).
 
 ## How Do I Transfer from a Collection to Cheaha?
 
