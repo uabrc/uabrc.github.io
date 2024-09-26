@@ -1,21 +1,17 @@
 
 # Globus Tutorials for Individual Researchers
 
-These tutorials are intended for individual researchers who want to use Globus to do the following.
+Do you have data and need to move it to a different computer system? Want to use a graphical interface to do it? Want a service that will attempt to resume interrupted transfers? Want enforced encryption for your transfers? Then Globus is right for you.
 
-- Transfer research data for their own use or for laboratory use.
-- Receive data from other individuals, labs, or Research Cores.
+These tutorials are intended for individual researchers who need to move data from one location to another. If you manage a Research Core or lab and have never used Globus before, you'll want to start on this page. Then you will want to proceed to [Globus Tutorials for Research Groups](./globus_group_tutorial.md).
 
-If you need tutorials on using Globus for Research Core data management, please see our [Globus Tutorials for Research Groups](./globus_group_tutorial.md).
+The tutorials below will teach you how to effectively use Globus for managing and transferring research data. We will explore what Globus is, why you might use it, how it works, and we'll walk you through the essential steps to get started. You will learn how to set up your Globus account, access the Globus application, find Collections shared with you, and search for Collections by name.
 
-The tutorials below will teach you how to effectively use Globus for managing and transferring research data. We will explore what Globus is, why you might use it, and walk you through the essential steps to get started. You will learn how to set up your Globus account, access the Globus application, find collections shared with you, and search for collections by name.
+Topics:
 
-**What You Will Learn:**
-
-1. [Prerequisites](#prerequisites)
-1. [What is Globus?](#what-is-globus)
-1. [Why Use Globus?](#why-use-globus)
+1. [Why Globus?](#why-globus)
 1. [How Does Globus Work?](#how-does-globus-work)
+1. [Tutorial Prerequisites](#prerequisites)
 1. [How Do I Get Onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
 1. [How Do I Find UAB Storage Collections?](#how-do-i-find-uab-storage-collections)
 1. [How Do I Find Collections Shared with Me?](#how-do-i-find-collections-shared-with-me)
@@ -27,19 +23,11 @@ The tutorials below will teach you how to effectively use Globus for managing an
 
 If you are new to Globus, you are in the right place. If you represent a group looking to share data with others we recommend following these tutorials with our [Globus Tutorials for Research Groups](./globus_group_tutorial.md)
 
-## Prerequisites
+## Why Globus?
 
-For these tutorials, you will need your BlazerID or [XIAS ID](../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
+Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions. Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
 
-## What is Globus?
-
-Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions.
-
-## Why use Globus?
-
-Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
-
-- Straight-forward, browser-based interface.
+- Straight-forward, browser-based, graphical interface.
 - Compatible with [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
 - Compatible with [Long-Term Storage](../lts/index.md).
 - Can be used with your laptop, desktop, or lab workstation via Globus Connect Personal (GCP).
@@ -49,7 +37,11 @@ Globus has many research data oriented features, making it ideal for many resear
 
 ## How Does Globus Work?
 
-Globus is an ecosystem of software intended to make research data transfer simpler. The Globus web application at <https://app.globus.org> allows you to initiate transfers between any two endpoints you have authorization to access. The Globus Connect Personal (GCP) software lets you turn any computer into a Globus endpoint. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two endpoints, the Globus application tells the two endpoints that they need to talk to each other and data is sent directly between them. The endpoints update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between endpoints is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
+Globus is an ecosystem of software intended to make research data transfer simpler. The Globus Web Application at <https://app.globus.org> allows you to initiate transfers between any two endpoints you have authorization to access. The Globus Connect Personal (GCP) software lets you turn any computer into a Globus endpoint. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two endpoints, the Globus application tells the two endpoints that they need to talk to each other and data is sent directly between them. The endpoints update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between endpoints is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
+
+## Prerequisites
+
+For these tutorials, you will need your BlazerID or [XIAS ID](../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
 
 ## How Do I Get Onto the Globus Web App?
 
