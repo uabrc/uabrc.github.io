@@ -102,23 +102,24 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../account_mana
 
 The file manager will be your most frequently-visited page when using Globus for data transfers. It is central to usage of the Globus Web Application. Please take some time to familiarize yourself with its look and feel. As you progress in the tutorials, please take time to experiment with transferring data to better understand how the interface works. Feel free to return here for guidance.
 
-From here you can proceed to [How Do I Find Collections Shared with Me?](#how-do-i-find-collections-shared-with-me) or [return to the top](#globus-tutorials-for-individual-researchers).
+From here you can proceed to [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name).
+
+[Return to the top](#globus-tutorials-for-individual-researchers).
 
 ## How Do I Search For Collections By Name?
 
 Please follow these instructions to search for a specific Collection by name.
 
-1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
+1. [Get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app).
+1. You should see the "File Manager" page. If not click "File Manager" in the left-hand navigation panel.
 
-1. In the Globus Web App, click "File Manager" in the left navigation panel to go to the file manager page, then click the "Collection Search" shown in the red box in the image below.
+    ![File Manager page.](./images/common/file-manager.png)
 
-    ![Globus file manager page showing Collection search bar in a red box.](./images/gi-search-collections/001-search-bar.png)
+1. Click the "Collection Search" bar to open the "Collection Search" page.
 
-1. You will be taken to a Collection search page. Enter part or all of the name of the Collection you are searching for in the search box on this new page.
+    ![Collection search page](./images/common/collection-search-page.png)
 
-    ![Globus Collection search page.](./images/gi-search-collections/002-collection-search.png)
-
-1. Search results should appear. In the example below, we located the UAB Box Collection, which connects to UAB's Box.com service.
+1. In the example below, we typed "uab box" to search for the UAB Box Collection, which connects to UAB's Box.com service.
 
     ![Globus Collection search page showing results of searching for "UAB Box".](./images/gi-search-collections/003-results.png)
 
@@ -126,7 +127,9 @@ Please follow these instructions to search for a specific Collection by name.
 
     ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-collections/004-selected.png)
 
-If you can't find a particular Collection this way, but know it was shared with you, try [finding Collections shared with me](#how-do-i-find-collections-shared-with-me) or [return to the index](#globus-tutorials-for-individual-researchers).
+If you can't find a particular Collection this way, but know it was shared with you, try [finding Collections shared with me](#how-do-i-find-collections-shared-with-me). Proceed on to learn [how to find UAB storage Collections](#how-do-i-find-uab-storage-collections).
+
+[Return to the top](#globus-tutorials-for-individual-researchers).
 
 ## How Do I Find UAB Storage Collections?
 
@@ -138,7 +141,7 @@ UAB offers [multiple storage resources](../storage.md). The following resources 
 
 To find these resources on Globus, use the following steps.
 
-1. [Get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app)
+1. [Get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app).
 1. You should see the "File Manager" page. If not click "File Manager" in the left-hand navigation panel.
 
     ![File Manager page.](./images/common/file-manager.png)
