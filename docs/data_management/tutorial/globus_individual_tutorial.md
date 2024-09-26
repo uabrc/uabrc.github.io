@@ -11,7 +11,7 @@ Topics:
 
 1. [Why Globus?](#why-globus)
 1. [How Does Globus Work?](#how-does-globus-work)
-1. [Tutorial Prerequisites](#prerequisites)
+1. [Tutorial Prerequisites](#tutorial-prerequisites)
 1. [How Do I Get Onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
 1. [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name)
 1. [How Do I Find UAB Storage Collections?](#how-do-i-find-uab-storage-collections)
@@ -37,9 +37,9 @@ Globus is a data transfer ecosystem that simplifies the process of transferring,
 
 ## How Does Globus Work?
 
-Globus is an ecosystem of software intended to make research data transfer simpler. The Globus Web Application at <https://app.globus.org> allows you to initiate transfers between any two Collections you have authorization to access. The Globus Connect Personal (GCP) software lets you turn any computer into a Globus Collection. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two Collections, the Globus application tells the two Collections that they need to talk to each other and data is sent directly between them. The Collections update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between Collections is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
+Globus is an ecosystem of software intended to make research data transfer simpler. The Globus Web Application (Web App) at <https://app.globus.org> allows you to initiate transfers between any two Collections you have authorization to access. The Globus Connect Personal (GCP) software lets you turn any computer into a Globus Collection. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two Collections, the Globus application tells the two Collections that they need to talk to each other and data is sent directly between them. The Collections update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between Collections is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
 
-## Prerequisites
+## Tutorial Prerequisites
 
 For these tutorials, you will need your BlazerID or [XIAS ID](../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
 
