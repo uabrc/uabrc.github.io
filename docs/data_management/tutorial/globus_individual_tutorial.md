@@ -37,7 +37,7 @@ Globus is a data transfer ecosystem that simplifies the process of transferring,
 
 ## How Does Globus Work?
 
-Globus is an ecosystem of software intended to make research data transfer simpler. The Globus Web Application at <https://app.globus.org> allows you to initiate transfers between any two endpoints you have authorization to access. The Globus Connect Personal (GCP) software lets you turn any computer into a Globus endpoint. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two endpoints, the Globus application tells the two endpoints that they need to talk to each other and data is sent directly between them. The endpoints update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between endpoints is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
+Globus is an ecosystem of software intended to make research data transfer simpler. The Globus Web Application at <https://app.globus.org> allows you to initiate transfers between any two Collections you have authorization to access. The Globus Connect Personal (GCP) software lets you turn any computer into a Globus Collection. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two Collections, the Globus application tells the two Collections that they need to talk to each other and data is sent directly between them. The Collections update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between Collections is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
 
 ## Prerequisites
 
@@ -98,7 +98,7 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../account_mana
     - **(4) File Selection checkbox**: The file is currently selected for transfer.
     - **(5) Folder Selection checkbox**: The folder is currently not selected for transfer.
 
-    ![Globus Web App file manager two-panel view with collection selected showing a file and folder.](./images/gi-web-app/008-file-manager-two-panel-example.png)
+    ![Globus Web App file manager two-panel view with Collection selected showing a file and folder.](./images/gi-web-app/008-file-manager-two-panel-example.png)
 
 The file manager will be your most frequently-visited page when using Globus for data transfers. It is central to usage of the Globus Web Application. Please take some time to familiarize yourself with its look and feel. As you progress in the tutorials, please take time to experiment with transferring data to better understand how the interface works. Feel free to return here for guidance.
 
@@ -125,7 +125,7 @@ To find these resources on Globus, use the following steps.
 
 1. In the search bar, type one of the following, depending on which resource you need, and select the appropriate entry.
 
-    - **Cheaha Filesystem (GPFS)**: Type "UAB Cheaha". There are two endpoints, choose one based on where the other computer is located.
+    - **Cheaha Filesystem (GPFS)**: Type "UAB Cheaha". There are two Collections, choose one based on where the other computer is located.
         - **(1)** Transferring with a computer on the UAB Campus Network or UAB Wifi? Select "Cheaha cluster **on**-campus (UAB Science DMZ)".
         - **(2)** Transferring with a computer on other networks? select "Cheaha cluster **off**-campus (UAB Science DMZ)".
 
@@ -141,88 +141,88 @@ To find these resources on Globus, use the following steps.
 
 ## How Do I Find Collections Shared with Me?
 
-Globus allows users to share collections with others. Other researchers, labs, and Research Cores on campus may invite you to their collections to share data with you. The following instructions let you view collections shared with you.
+Globus allows users to share Collections with others. Other researchers, labs, and Research Cores on campus may invite you to their Collections to share data with you. The following instructions let you view Collections shared with you.
 
 1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app)
 
-1. In the Globus web app, click "File Manager" in the left navigation panel to go to the file manager page, then click the "Collection Search" bar shown in the red box in the image below.
+1. In the Globus Web App, click "File Manager" in the left navigation panel to go to the file manager page, then click the "Collection Search" bar shown in the red box in the image below.
 
-    ![File Manager page of the Globus web app. "Collection Search" bar is boxed in red.](./images/gi-find-collections/001-search.png)
+    ![File Manager page of the Globus Web App. "Collection Search" bar is boxed in red.](./images/gi-find-collections/001-search.png)
 
 1. You will be taken to the "Collection Search" page. Click the "Shared With You" tab.
 
-    ![Collection Search page of the Globus web app. The "Shared With You" tab is boxed in red.](./images/gi-find-collections/002-shared-tab.png)
+    ![Collection Search page of the Globus Web App. The "Shared With You" tab is boxed in red.](./images/gi-find-collections/002-shared-tab.png)
 
-1. The list of collections will be filtered down to all collections others have granted you access to, which should help you find the collections you need.
+1. The list of Collections will be filtered down to all Collections others have granted you access to, which should help you find the Collections you need.
 
-    ![Collection Search page of Globus web app. "Shared With You" tab is selected and the list of collections has been filtered down.](./images/gi-find-collections/003-list.png)
+    ![Collection Search page of Globus Web App. "Shared With You" tab is selected and the list of Collections has been filtered down.](./images/gi-find-collections/003-list.png)
 
-1. Click the name of the collection to be taken back to the file manager page with the collection filled in.
+1. Click the name of the Collection to be taken back to the file manager page with the Collection filled in.
 
-    ![File Manager page of the Globus web app. One of the "Collection Search" bars is filled in with the previously selected collection.](./images/gi-find-collections/004-selected.png)
+    ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-collections/004-selected.png)
 
-If you can't find a particular collection this way, but know its name, try [searching for collections](#how-do-i-search-for-collections-by-name) or [return to the index](#globus-tutorials-for-individual-researchers).
+If you can't find a particular Collection this way, but know its name, try [searching for Collections](#how-do-i-search-for-collections-by-name) or [return to the index](#globus-tutorials-for-individual-researchers).
 
 ## How Do I Search For Collections By Name?
 
-Please follow these instructions to search for a specific collection by name.
+Please follow these instructions to search for a specific Collection by name.
 
 1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
 
-1. In the Globus web app, click "File Manager" in the left navigation panel to go to the file manager page, then click the "Collection Search" shown in the red box in the image below.
+1. In the Globus Web App, click "File Manager" in the left navigation panel to go to the file manager page, then click the "Collection Search" shown in the red box in the image below.
 
-    ![Globus file manager page showing collection search bar in a red box.](./images/gi-search-collections/001-search-bar.png)
+    ![Globus file manager page showing Collection search bar in a red box.](./images/gi-search-collections/001-search-bar.png)
 
-1. You will be taken to a collection search page. Enter part or all of the name of the collection you are searching for in the search box on this new page.
+1. You will be taken to a Collection search page. Enter part or all of the name of the Collection you are searching for in the search box on this new page.
 
-    ![Globus collection search page.](./images/gi-search-collections/002-collection-search.png)
+    ![Globus Collection search page.](./images/gi-search-collections/002-collection-search.png)
 
-1. Search results should appear. In the example below, we located the UAB Box collection, which connects to UAB's Box.com service.
+1. Search results should appear. In the example below, we located the UAB Box Collection, which connects to UAB's Box.com service.
 
-    ![Globus collection search page showing results of searching for "UAB Box".](./images/gi-search-collections/003-results.png)
+    ![Globus Collection search page showing results of searching for "UAB Box".](./images/gi-search-collections/003-results.png)
 
-1. Click the name of the collection to be taken back to the file manager page with the collection filled in.
+1. Click the name of the Collection to be taken back to the file manager page with the Collection filled in.
 
-    ![File Manager page of the Globus web app. One of the "Collection Search" bars is filled in with the previously selected collection.](./images/gi-find-collections/004-selected.png)
+    ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-collections/004-selected.png)
 
-If you can't find a particular collection this way, but know it was shared with you, try [finding collections shared with me](#how-do-i-find-collections-shared-with-me) or [return to the index](#globus-tutorials-for-individual-researchers).
+If you can't find a particular Collection this way, but know it was shared with you, try [finding Collections shared with me](#how-do-i-find-collections-shared-with-me) or [return to the index](#globus-tutorials-for-individual-researchers).
 
 ## How Do I Transfer from a Collection to Cheaha?
 
-Please use the following instructions to transfer data from a shared collection to a [bucket on LTS](../lts/index.md). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
+Please use the following instructions to transfer data from a shared Collection to a [bucket on LTS](../lts/index.md). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
 
-The direction of transfer may also be reversed to transfer data from Cheaha to the shared collection. Note that some shared collections may not allow you to write data, such as Research Cores, in which case you will receive an error.
+The direction of transfer may also be reversed to transfer data from Cheaha to the shared Collection. Note that some shared Collections may not allow you to write data, such as Research Cores, in which case you will receive an error.
 
-These instructions can be generalized to any two collections or endpoints you have access to on Globus.
+These instructions can be generalized to any two Collections you have access to on Globus.
 
 1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
 
-1. Find a shared collection [by filtering](#how-do-i-find-collections-shared-with-me) or [by searching](#how-do-i-search-for-collections-by-name) in the left side "Collection Search" bar.
+1. Find a shared Collection [by filtering](#how-do-i-find-collections-shared-with-me) or [by searching](#how-do-i-search-for-collections-by-name) in the left side "Collection Search" bar.
 
-1. Once you have selected the shared collection you wish to transfer data from, repeat the process to [search](#how-do-i-search-for-collections-by-name) for a Cheaha endpoint in the "Collection Search" bar on the right side of the file manager page. Search for "Cheaha cluster" to find them.
+1. Once you have selected the shared Collection you wish to transfer data from, repeat the process to [search](#how-do-i-search-for-collections-by-name) for a Cheaha Collection in the "Collection Search" bar on the right side of the file manager page. Search for "Cheaha cluster" to find them.
 
-    Pay close attention in choosing which of the two you need. Choosing incorrectly could lead to slow transfers. Answer the following questions to help you decide. Is the first collection you selected...
+    Pay close attention in choosing which of the two you need. Choosing incorrectly could lead to slow transfers. Answer the following questions to help you decide. Is the first Collection you selected...
 
     - ...part of a lab or Research Core on campus? Select "on-campus".
     - ...on a computer on the UAB Campus Network or UAB Wifi or the UAB VPN? Select "on-campus".
     - ...at a different institution? Select "off-campus".
     - ...on a computer on a home network? Select "off-campus".
 
-1. When you select a Cheaha endpoint, or any other High Assurance (HA) collection or endpoint, you will be prompted to re-authenticate. Click the "Continue" button to do so, then select your UAB email address.
+1. When you select a Cheaha Collection, or any other High Assurance (HA) Collection or Collection, you will be prompted to re-authenticate. Click the "Continue" button to do so, then select your UAB email address.
 
     ![High Assurance request for reauthentication.](./images/common/ha-authenticate.png)
 
     ![Identity selection showing a UAB email address.](./images/common/select-identity.png)
 
-1. At this point, your file manager page should look something like the following image. Each "Collection Search" bar should have a collection or endpoint filled in. The left side should be the collection you wish to transfer from. The right side should be a Cheaha endpoint. You should see files and folders on both sides.
+1. At this point, your file manager page should look something like the following image. Each "Collection Search" bar should have a Collection or Collection filled in. The left side should be the Collection you wish to transfer from. The right side should be a Cheaha Collection. You should see files and folders on both sides.
 
-    ![File Manager page showing a shared collection and Cheaha endpoint.](./images/gi-transfer-collection-to-cheaha/005-ready-to-select.png)
+    ![File Manager page showing a shared Collection and Cheaha Collection.](./images/gi-transfer-collection-to-cheaha/005-ready-to-select.png)
 
-1. Locate the source path on the shared collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.
+1. Locate the source path on the shared Collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.
 
-1. Repeat the process on the Cheaha endpoint side to locate the destination path on the Cheaha endpoint side.
+1. Repeat the process on the Cheaha Collection side to locate the destination path on the Cheaha Collection side.
 
-1. Select the file and folders you wish to transfer on the shared collection side. Do so by clicking the checkboxes next to the file and folder names.
+1. Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.
 
     ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-collection-to-cheaha/006-selection.png)
 
@@ -234,38 +234,38 @@ From here you can proceed to other related tutorials to initiate other transfers
 [return to the index](#globus-tutorials-for-individual-researchers).
 
 - [How do I check transfer status?](#how-do-i-check-transfer-status)
-- [How do I transfer from a collection to LTS?](#how-do-i-transfer-from-a-collection-to-lts)
+- [How do I transfer from a Collection to LTS?](#how-do-i-transfer-from-a-collection-to-lts)
 - [How do I transfer data between LTS and Cheaha?](#how-do-i-transfer-data-between-lts-and-cheaha)
 
 ## How Do I Transfer from a Collection to LTS?
 
-Please use the following instructions to transfer data from a shared collection to a [bucket on LTS](../lts/index.md). These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.
+Please use the following instructions to transfer data from a shared Collection to a [bucket on LTS](../lts/index.md). These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.
 
-The direction of transfer may also be reversed to transfer data from LTS to the shared collection. Note that some shared collections may not allow you to write data, such as Research Cores, in which case you will receive an error.
+The direction of transfer may also be reversed to transfer data from LTS to the shared Collection. Note that some shared Collections may not allow you to write data, such as Research Cores, in which case you will receive an error.
 
-These instructions can be generalized to any two collections or endpoints you have access to on Globus.
+These instructions can be generalized to any two Collections or Collections you have access to on Globus.
 
 1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
 
-1. Find a shared collection [by filtering](#how-do-i-find-collections-shared-with-me) or [by searching](#how-do-i-search-for-collections-by-name) in the left side "Collection Search" bar.
+1. Find a shared Collection [by filtering](#how-do-i-find-collections-shared-with-me) or [by searching](#how-do-i-search-for-collections-by-name) in the left side "Collection Search" bar.
 
-1. Once you have selected the shared collection you wish to transfer data from, repeat the process to [search](#how-do-i-search-for-collections-by-name) for the LTS endpoint in the "Collection Search" bar on the right side of the file manager page. Search for "UAB LTS" to find it.
+1. Once you have selected the shared Collection you wish to transfer data from, repeat the process to [search](#how-do-i-search-for-collections-by-name) for the LTS Collection in the "Collection Search" bar on the right side of the file manager page. Search for "UAB LTS" to find it.
 
-1. When you select the LTS endpoint, or any other High Assurance (HA) collection or endpoint, you will be prompted to re-authenticate. Click the "Continue" button to do so, then select your UAB email address.
+1. When you select the LTS Collection, or any other High Assurance (HA) Collection or Collection, you will be prompted to re-authenticate. Click the "Continue" button to do so, then select your UAB email address.
 
     ![High Assurance request for reauthentication.](./images/common/ha-authenticate.png)
 
     ![Identity selection showing a UAB email address.](./images/common/select-identity.png)
 
-1. At this point, your file manager page should look something like the following image. Each "Collection Search" bar should have a collection or endpoint filled in. The left side should be the collection you wish to transfer from. The right side should be the Cheaha endpoint. You should see files and folders on both sides.
+1. At this point, your file manager page should look something like the following image. Each "Collection Search" bar should have a Collection or Collection filled in. The left side should be the Collection you wish to transfer from. The right side should be the Cheaha Collection. You should see files and folders on both sides.
 
-    ![File Manager page showing a shared collection and LTS endpoint.](./images/gi-transfer-collection-to-lts/005-ready-to-select.png)
+    ![File Manager page showing a shared Collection and LTS Collection.](./images/gi-transfer-collection-to-lts/005-ready-to-select.png)
 
-1. Locate the source path on the shared collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.
+1. Locate the source path on the shared Collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.
 
-1. Repeat the process on the LTS endpoint side to locate the destination path on the LTS endpoint side.
+1. Repeat the process on the LTS Collection side to locate the destination path on the LTS Collection side.
 
-1. Select the file and folders you wish to transfer on the shared collection side. Do so by clicking the checkboxes next to the file and folder names.
+1. Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.
 
     ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-collection-to-lts/006-selection.png)
 
@@ -277,7 +277,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 [return to the index](#globus-tutorials-for-individual-researchers).
 
 - [How do I check transfer status?](#how-do-i-check-transfer-status)
-- [How do I transfer from a collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
+- [How do I transfer from a Collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
 - [How do I transfer data between LTS and Cheaha?](#how-do-i-transfer-data-between-lts-and-cheaha)
 
 ## How Do I Transfer Data between LTS and Cheaha?
@@ -286,36 +286,36 @@ Please use the following instructions to transfer data from a [bucket on LTS](..
 
 The direction of transfer may also be reversed to transfer data from Cheaha to LTS.
 
-These instructions can be generalized to any two collections or endpoints you have access to on Globus.
+These instructions can be generalized to any two Collections or Collections you have access to on Globus.
 
 1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
 
-1. Find the LTS endpoint by [searching](#how-do-i-search-for-collections-by-name) in the "Collection Search" bar on the left side of the file manager page. Search for "UAB LTS" to find it.
+1. Find the LTS Collection by [searching](#how-do-i-search-for-collections-by-name) in the "Collection Search" bar on the left side of the file manager page. Search for "UAB LTS" to find it.
 
-1. Once you have selected the LTS endpoint, repeat the process to [search](#how-do-i-search-for-collections-by-name) for a Cheaha endpoint in the "Collection Search" bar on the right side of the file manager page. Search for "Cheaha cluster" to find it.
+1. Once you have selected the LTS Collection, repeat the process to [search](#how-do-i-search-for-collections-by-name) for a Cheaha Collection in the "Collection Search" bar on the right side of the file manager page. Search for "Cheaha cluster" to find it.
 
-    Pay close attention in choosing which of the two you need. Choosing incorrectly could lead to slow transfers. Answer the following questions to help you decide. Is the first collection you selected...
+    Pay close attention in choosing which of the two you need. Choosing incorrectly could lead to slow transfers. Answer the following questions to help you decide. Is the first Collection you selected...
 
     - ...part of a lab or Research Core on campus? Select "on-campus".
     - ...on a computer on the UAB Campus Network or UAB Wifi or the UAB VPN? Select "on-campus".
     - ...at a different institution? Select "off-campus".
     - ...on a computer on a home network? Select "off-campus".
 
-1. Both the LTS and Cheaha endpoints are High Assurance (HA) endpoints and you will be prompted to re-authenticate. Click the "Continue" button to do so, then select your UAB email address.
+1. Both the LTS and Cheaha Collections are High Assurance (HA) Collections and you will be prompted to re-authenticate. Click the "Continue" button to do so, then select your UAB email address.
 
     ![High Assurance request for reauthentication.](./images/common/ha-authenticate.png)
 
     ![Identity selection showing a UAB email address.](./images/common/select-identity.png)
 
-1. At this point, your file manager page should look something like the following image. Each "Collection Search" bar should have a collection or endpoint filled in. The left side should be the LTS endpoint. The right side should be a Cheaha endpoint. You should see files and folders on both sides.
+1. At this point, your file manager page should look something like the following image. Each "Collection Search" bar should have a Collection or Collection filled in. The left side should be the LTS Collection. The right side should be a Cheaha Collection. You should see files and folders on both sides.
 
-    ![File Manager page showing a shared collection and LTS endpoint.](./images/gi-transfer-lts-to-cheaha/005-ready-to-select.png)
+    ![File Manager page showing a shared Collection and LTS Collection.](./images/gi-transfer-lts-to-cheaha/005-ready-to-select.png)
 
-1. Locate the source path on the LTS endpoint side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.
+1. Locate the source path on the LTS Collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.
 
-1. Repeat the process on the Cheaha endpoint side to locate the destination path on the Cheaha endpoint side.
+1. Repeat the process on the Cheaha Collection side to locate the destination path on the Cheaha Collection side.
 
-1. Select the file and folders you wish to transfer on the shared collection side. Do so by clicking the checkboxes next to the file and folder names.
+1. Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.
 
     ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-lts-to-cheaha/006-selection.png)
 
@@ -327,8 +327,8 @@ From here you can proceed to other related tutorials to initiate other transfers
 [return to the index](#globus-tutorials-for-individual-researchers).
 
 - [How do I check transfer status?](#how-do-i-check-transfer-status)
-- [How do I transfer from a collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
-- [How do I transfer from a collection to LTS?](#how-do-i-transfer-from-a-collection-to-lts)
+- [How do I transfer from a Collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
+- [How do I transfer from a Collection to LTS?](#how-do-i-transfer-from-a-collection-to-lts)
 
 ## How Do I Check Transfer Status?
 
@@ -336,9 +336,9 @@ To check the status of your transfers, please follow the instructions below.
 
 1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
 
-1. In the Globus web app, click "Activity" in the left navigation panel to go to the activity page. There will be a list overview of transfers, with the most recent at the top.
+1. In the Globus Web App, click "Activity" in the left navigation panel to go to the activity page. There will be a list overview of transfers, with the most recent at the top.
 
-    ![Globus web app activity page showing a successful transfer and failed transfer.](./images/gi-check-transfer-status/001-activity.png)
+    ![Globus Web App activity page showing a successful transfer and failed transfer.](./images/gi-check-transfer-status/001-activity.png)
 
 1. To see more details about a transfer, click the transfer title. There will be two tabs. The "Overview" tab will have information and statistics about the transfer. The "Event Log" tab will have information about events that occurred during transfer, including start, stop, and any errors. The "Event Log" is useful for diagnosing issues with failed transfers.
 
