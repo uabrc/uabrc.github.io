@@ -17,6 +17,7 @@ The tutorials below will teach you how to effectively use Globus for managing an
 1. [Why Use Globus?](#why-use-globus)
 1. [How Does Globus Work?](#how-does-globus-work)
 1. [How Do I Get Onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
+1. [How Do I Find UAB Storage Collections?](#how-do-i-find-uab-storage-collections)
 1. [How Do I Find Collections Shared with Me?](#how-do-i-find-collections-shared-with-me)
 1. [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name)
 1. [How Do I Transfer from a Collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
@@ -110,6 +111,41 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 The file manager will be your most frequently-visited page when using Globus for data transfers. It is central to usage of the Globus Web Application. Please take some time to familiarize yourself with its look and feel. As you progress in the tutorials, please take time to experiment with transferring data to better understand how the interface works. Feel free to return here for guidance.
 
 From here you can proceed to [How Do I Find Collections Shared with Me?](#how-do-i-find-collections-shared-with-me) or [return to the top](#globus-tutorials-for-individual-researchers).
+
+## How Do I Find UAB Storage Collections?
+
+UAB offers [multiple storage resources](../storage.md). The following resources may be accessed through Globus Collections.
+
+- Cheaha file system (GPFS) including [individual directories](../storage.md#what-individual-storage-solutions-are-available) and [project directories](../storage.md#project-directory).
+- [Long-Term Storage (LTS)](../lts/index.md).
+- [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
+
+To find these resources on Globus, use the following steps.
+
+1. [Get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app)
+1. You should see the "File Manager" page. If not click "File Manager" in the left-hand navigation panel.
+
+    ![File Manager page.](./images/common/file-manager.png)
+
+1. Click the "Collection Search" bar to open the "Collection Search" page.
+
+    ![Collection search page](./images/common/collection-search-page.png)
+
+1. In the search bar, type one of the following, depending on which resource you need, and select the appropriate entry.
+
+    - **Cheaha Filesystem (GPFS)**: Type "UAB Cheaha". There are two endpoints, choose one based on where the other computer is located.
+        - **(1)** Transferring with a computer on the UAB Campus Network or UAB Wifi? Select "Cheaha cluster **on**-campus (UAB Science DMZ)".
+        - **(2)** Transferring with a computer on other networks? select "Cheaha cluster **off**-campus (UAB Science DMZ)".
+
+        ![UAB Box search results.](./images/gi-uab-collections/001-cheaha.png)
+
+    - **Long-Term Storage (LTS)**: Type "UAB LTS" and select the entry labeled "UAB Research Computing LTS (Long Term Storage aka S3)".
+
+        ![UAB Box search results.](./images/gi-uab-collections/002-lts.png)
+
+    - **UAB Box**: Type "UAB Box" and select the entry labeled "UAB Box".
+
+        ![UAB Box search results.](./images/gi-uab-collections/003-box.png)
 
 ## How Do I Find Collections Shared with Me?
 
