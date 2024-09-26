@@ -44,7 +44,9 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../account_mana
 
 ## How Do I Get onto the Globus Web App?
 
-To learn how to get onto the Globus Web App [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
+To learn how to get onto the Globus Web App [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished. Once you are familiar with
+
+[Return to the top](#globus-tutorials-for-research-groups).
 
 ## How Do I Install Globus Connect Personal?
 
@@ -58,6 +60,8 @@ GCP installation instructions for:
 
 - [Windows](#installing-gcp-on-windows)
 - [MacOS](#installing-gcp-on-macos)
+
+[Return to the top](#globus-tutorials-for-research-groups).
 
 ### Installing GCP On Windows
 
@@ -112,7 +116,9 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
     ![GCP Icon in Windows system tray.](./images/gg-gcp-install/win/009-system-tray-icon.png)
 
-Continue on with [How Do I Choose Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) or return to the [Top of the Page](#globus-tutorials-for-research-groups).
+Continue on with [How Do I Choose Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal).
+
+[Return to the top](#globus-tutorials-for-research-groups).
 
 ### Installing GCP On MacOS
 
@@ -163,7 +169,9 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
     ![GCP Icon in MacOS notification area.](./images/gg-gcp-install/mac/009-notification-area-icon.png)
 
-Continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) or return to the [Top of the Page](#globus-tutorials-for-research-groups).
+Continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal).
+
+[Return to the top](#globus-tutorials-for-research-groups).
 
 ## How Do I Choose Specific Folders to Share Using Globus Connect Personal?
 
@@ -173,6 +181,8 @@ We have instructions for the following Operating Systems.
 
 - [Windows](#choose-specific-folders-on-windows)
 - [MacOS](#choose-specific-folders-on-macos)
+
+[Return to the top](#globus-tutorials-for-research-groups).
 
 ### Choose Specific Folders on Windows
 
@@ -214,7 +224,9 @@ We have instructions for the following Operating Systems.
 
     ![General tab of GCP options menu](./images/gg-choose-folder/win/006-general-tab-changed.png)
 
-To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own), or return to the [index](#globus-tutorials-for-research-groups).
+To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own).
+
+[Return to the top](#globus-tutorials-for-research-groups).
 
 ### Choose Specific Folders on MacOS
 
@@ -237,7 +249,9 @@ To verify the existence and accessibility of your Collection proceed to [How Do 
 
 1. Use the plus `+` and minus `-` buttons to add your research data folders and remove other folders, as needed. Click the "Shareable" checkbox next to each research data folder. Click "Save" when finished.
 
-To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own), or return to the [index](#globus-tutorials-for-research-groups).
+To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own).
+
+[Return to the top](#globus-tutorials-for-research-groups).
 
 ## How Do I Find Collections I Created or Own?
 
@@ -264,6 +278,8 @@ To find a Collection you own, use the following steps.
     - **(2)** Click the three dots icon at the right side of the entry to be taken to the Collection details page.
 
         ![Collectionm details page with overview tab selected.](./images/gg-my-collections/005-collection-details-page.png)
+
+[Return to the top](#globus-tutorials-for-research-groups).
 
 ## How Do I Enable Collection Sharing For My Globus Account?
 
@@ -304,6 +320,8 @@ To join the UAB HA group, we need to receive both a UAB support request, and a r
 
 When you have completed the steps in this section, proceed to [creating a Collection](#how-do-i-create-a-collection).
 
+[Return to the top](#globus-tutorials-for-research-groups).
+
 ## How Do I Create a Collection?
 
 There are three ways to create a Collection.
@@ -340,6 +358,8 @@ The instructions below assume you are starting from an existing Collection you c
 
 When you have created a Collection, you are ready to [share the Collection with others](#how-do-i-share-a-collection-with-others).
 
+[Return to the top](#globus-tutorials-for-research-groups).
+
 ## How Do I Share a Collection with Others?
 
 Before sharing a Collection with others, you will need to first [create a Collection](#how-do-i-create-a-collection) you administer. If the Collection is a [Globus Connect Personal Collection](#how-do-i-install-globus-connect-personal), then you will also need to [enable Collection sharing for your Globus account](#how-do-i-enable-collection-sharing-for-my-globus-account). If these prerequisites have been met, then you are ready to setup a Collection to be shared with others. Please follow the instructions below.
@@ -370,6 +390,10 @@ Before sharing a Collection with others, you will need to first [create a Collec
 
     ![Collection details page permissions tab showing new entry.](./images/gg-share-collection/005-colection-details-permissions-after.png)
 
+[Return to the top](#globus-tutorials-for-research-groups).
+
 ## How Do I Share Data With a Research Core Customer?
 
 If you manage data for a Research Core, please [Contact Support](../../help/support.md#how-to-request-support) to start a conversation. The answer to this question is currently being developed, so we will need to work together to find the ideal solution.
+
+[Return to the top](#globus-tutorials-for-research-groups).
