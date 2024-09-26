@@ -6,10 +6,9 @@ If you are new to Globus, we recommend starting with our [Globus Tutorials for I
 
 Topics covered:
 
-1. [Prerequisites](#prerequisites)
-1. [What is Globus?](#what-is-globus)
-1. [Why Use Globus?](#why-use-globus)
+1. [Why Globus?](#why-globus)
 1. [How Does Globus Work?](#how-does-globus-work)
+1. [Tutorial Prerequisites](#tutorial-prerequisites)
 1. [How Do I Get onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
 1. [How Do I Install Globus Connect Personal?](#how-do-i-install-globus-connect-personal)
     - [Windows](#installing-gcp-on-windows)
@@ -23,17 +22,9 @@ Topics covered:
 1. [How Do I Share a Collection with Others?](#how-do-i-share-a-collection-with-others)
 1. [How Do I Share Data with a Research Core Customer?](#how-do-i-share-data-with-a-research-core-customer)
 
-## Prerequisites
+## Why Globus?
 
-For these tutorials, you will need your BlazerID or [XIAS ID](../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
-
-## What is Globus?
-
-Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions.
-
-## Why Use Globus?
-
-Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
+Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions. Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
 
 - Straight-forward, browser-based interface.
 - Compatible with [Long-Term Storage](../lts/index.md).
@@ -45,11 +36,15 @@ Globus has many research data oriented features, making it ideal for many resear
 
 ## How Does Globus Work?
 
-Globus is an ecosystem of software intended to make research data transfer simpler. The Globus web application at <https://app.globus.org> allows you to initiate transfers between any two Collections you have authorization to access. The Globus Connect Personal (GCP) and Globus Connect Server (GCS) software let you turn any computer into a Globus Collection. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two Collections, the Globus application tells the two Collections that they need to talk to each other and data is sent directly between them. The Collections update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between Collections is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
+Globus is an ecosystem of software intended to make research data transfer simpler. The Globus Web Application (Web App) at <https://app.globus.org> allows you to initiate transfers between any two Collections you have authorization to access. The Globus Connect Personal (GCP) and Globus Connect Server (GCS) software let you turn any computer into a Globus Collection. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two Collections, the Globus application tells the two Collections that they need to talk to each other and data is sent directly between them. The Collections update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between Collections is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
+
+## Tutorial Prerequisites
+
+For these tutorials, you will need your BlazerID or [XIAS ID](../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
 
 ## How Do I Get onto the Globus Web App?
 
-Our [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
+To learn how to get onto the Globus Web App [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
 
 ## How Do I Install Globus Connect Personal?
 
@@ -66,7 +61,7 @@ GCP installation instructions for:
 
 ### Installing GCP On Windows
 
-The following steps will guide you to install Globus Connect Personal (GCP) on your computer running Windows OS.
+The following steps will guide you to install Globus Connect Personal (GCP) on your computer running Windows.
 
 1. Navigate to the [Globus Connect Personal official page](https://www.globus.org/globus-connect-personal) and scroll down to find the GCP Windows version. Click on the "INSTALL NOW" button in the red box in the image below to be taken to the official installation instructions and download link for GCP for Windows.
 
@@ -250,11 +245,11 @@ To find a Collection you own, use the following steps.
 
 1. Navigate to the [Globus Web App](#how-do-i-get-onto-the-globus-web-app) using your browser. You should be at the "File Manager" page.
 
-    ![File Manager page of the Globus Web App](./images/gg-my-collections/007-file-manager.png)
+    ![File Manager page of the Globus Web App](./images/common/file-manager.png)
 
 1. Click either of the "Collection Search" bar at the top of the "File Manager" page. This will take you to the "Collection Search" page.
 
-    ![Collection Search page of the Globus Web App](./images/gg-my-collections/008-collection-search.png)
+    ![Collection Search page of the Globus Web App](./images/common/collection-search-page.png)
 
 1. Click the "Your Collections" tab to display a list of Collections you have created or own.
 
@@ -315,7 +310,7 @@ There are three ways to create a Collection.
 
 - Start from [an existing Collection you created or own](#how-do-i-find-collections-i-created-or-own).
 - [Install Globus Connect Personal](#how-do-i-install-globus-connect-personal) and [share a folder](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to create a Collection you created or own.
-- Install and configure one or more Endpoints with Globus Connect Server. To do this, please [Contact Support](../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
+- Install and configure one or more Collections with Globus Connect Server. To do this, please [Contact Support](../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
 
 The instructions below assume you are starting from an existing Collection you created or own.
 
@@ -347,7 +342,7 @@ When you have created a Collection, you are ready to [share the Collection with 
 
 ## How Do I Share a Collection with Others?
 
-Before sharing a Collection with others, you will need to first [create a Collection](#how-do-i-create-a-collection) you administer. If the Endpoint is a [Globus Connect Personal Endpoint](#how-do-i-install-globus-connect-personal), then you will also need to [enable Collection sharing for your Globus account](#how-do-i-enable-collection-sharing-for-my-globus-account). If these prerequisites have been met, then you are ready to setup a Collection to be shared with others. Please follow the instructions below.
+Before sharing a Collection with others, you will need to first [create a Collection](#how-do-i-create-a-collection) you administer. If the Collection is a [Globus Connect Personal Collection](#how-do-i-install-globus-connect-personal), then you will also need to [enable Collection sharing for your Globus account](#how-do-i-enable-collection-sharing-for-my-globus-account). If these prerequisites have been met, then you are ready to setup a Collection to be shared with others. Please follow the instructions below.
 
 1. [Get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app).
 1. [Find the Collection](#how-do-i-find-collections-i-created-or-own) you wish to share. In this case we are looking for the "customer-share" Collection.
@@ -363,7 +358,7 @@ Before sharing a Collection with others, you will need to first [create a Collec
     - The "Path" defaults to the root of the Collection. This may or may not be acceptable for your use case. Be sure to limit access to only the data that needs to be shared. Use the file browser available in the form to find the correct level of access. For now grant permission to the default.
     - In almost all cases, you will want to share with a single user. Use the "User" search bar to find the specific user you wish to share with. If they have never accessed Globus before, they will not appear in the search results. You can safely enter their email address to add them anyway. For now grant permission to yourself.
     - We recommend sending an email notification as a convenience.
-    - The "read" permission must be granted, as that is the point of sharing the Collection. You may additionally give "write" permission to create a two-way collaboration. We recommend Research Cores not grant "write" permission. If you are using a Globus Connect Personal Endpoint, then "write" permission requires you to correctly [configure your Collection](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to make your shared folder writable.
+    - The "read" permission must be granted, as that is the point of sharing the Collection. You may additionally give "write" permission to create a two-way collaboration. We recommend Research Cores not grant "write" permission. If you are using a Globus Connect Personal Collection, then "write" permission requires you to correctly [configure your Collection](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to make your shared folder writable.
 
     ![Add permissions form.](./images/gg-share-collection/003-add-permissions-form.png)
 
