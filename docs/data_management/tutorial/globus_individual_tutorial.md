@@ -16,9 +16,9 @@ Topics:
 1. [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name)
 1. [How Do I Find UAB Storage Collections?](#how-do-i-find-uab-storage-collections)
 1. [How Do I Find Collections Shared with Me?](#how-do-i-find-collections-shared-with-me)
-1. [How Do I Transfer from a Collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
-1. [How Do I Transfer from a Collection to LTS?](#how-do-i-transfer-from-a-collection-to-lts)
-1. [How Do I Transfer between LTS and Cheaha?](#how-do-i-transfer-data-between-lts-and-cheaha)
+1. [How Do I Transfer between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
+1. [How Do I Transfer between a Collection and LTS?](#how-do-i-transfer-between-a-collection-and-lts)
+1. [How Do I Transfer between LTS and Cheaha?](#how-do-i-transfer-between-lts-and-cheaha)
 1. [How Do I Check Transfer Status?](#how-do-i-check-transfer-status)
 
 If you are new to Globus, you are in the right place. If you represent a group looking to share data with others we recommend following these tutorials with our [Globus Tutorials for Research Groups](./globus_group_tutorial.md)
@@ -166,6 +166,10 @@ To find these resources on Globus, use the following steps.
 
         ![UAB Box search results.](./images/gi-uab-collections/003-box.png)
 
+Proceed on to learn [how to find Collections shared with you](#how-do-i-find-uab-storage-collections).
+
+[Return to the top](#globus-tutorials-for-individual-researchers).
+
 ## How Do I Find Collections Shared with Me?
 
 Globus allows users to share Collections with others. Other researchers, labs, and Research Cores on campus may invite you to their Collections to share data with you. The following instructions let you view Collections shared with you.
@@ -188,9 +192,17 @@ Globus allows users to share Collections with others. Other researchers, labs, a
 
     ![File Manager page of the Globus Web App. One of the "Collection Search" bars is filled in with the previously selected Collection.](./images/gi-find-collections/004-selected.png)
 
-If you can't find a particular Collection this way, but know its name, try [searching for Collections](#how-do-i-search-for-collections-by-name) or [return to the index](#globus-tutorials-for-individual-researchers).
+If you can't find a particular Collection this way, but know its name, try [searching for Collections](#how-do-i-search-for-collections-by-name).
 
-## How Do I Transfer from a Collection to Cheaha?
+Proceed on to learn how to transfer between Collections.
+
+- [Between a Collection and Cheaha](#how-do-i-transfer-between-a-collection-and-cheaha)
+- [Between a Collection and LTS](#how-do-i-transfer-between-a-collection-and-lts)
+- [Between LTS and Cheaha](#how-do-i-transfer-between-lts-and-cheaha)
+
+[Return to the top](#globus-tutorials-for-individual-researchers).
+
+## How Do I Transfer between a Collection and Cheaha?
 
 Please use the following instructions to transfer data from a shared Collection to a [bucket on LTS](../lts/index.md). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
 
@@ -236,11 +248,13 @@ These instructions can be generalized to any two Collections you have access to 
 From here you can proceed to other related tutorials to initiate other transfers or
 [return to the index](#globus-tutorials-for-individual-researchers).
 
-- [How do I check transfer status?](#how-do-i-check-transfer-status)
-- [How do I transfer from a Collection to LTS?](#how-do-i-transfer-from-a-collection-to-lts)
-- [How do I transfer data between LTS and Cheaha?](#how-do-i-transfer-data-between-lts-and-cheaha)
+- [How Do I check transfer status?](#how-do-i-check-transfer-status)
+- [How Do I Transfer Between a Collection and LTS?](#how-do-i-transfer-between-a-collection-and-lts)
+- [How Do I Transfer Between LTS and Cheaha?](#how-do-i-transfer-between-lts-and-cheaha)
 
-## How Do I Transfer from a Collection to LTS?
+[Return to the top](#globus-tutorials-for-individual-researchers).
+
+## How Do I Transfer between a Collection and LTS?
 
 Please use the following instructions to transfer data from a shared Collection to a [bucket on LTS](../lts/index.md). These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.
 
@@ -280,10 +294,12 @@ From here you can proceed to other related tutorials to initiate other transfers
 [return to the index](#globus-tutorials-for-individual-researchers).
 
 - [How do I check transfer status?](#how-do-i-check-transfer-status)
-- [How do I transfer from a Collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
-- [How do I transfer data between LTS and Cheaha?](#how-do-i-transfer-data-between-lts-and-cheaha)
+- [How Do I Transfer Between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
+- [How Do I Transfer Between LTS and Cheaha?](#how-do-i-transfer-between-lts-and-cheaha)
 
-## How Do I Transfer Data between LTS and Cheaha?
+[Return to the top](#globus-tutorials-for-individual-researchers).
+
+## How Do I Transfer between LTS and Cheaha?
 
 Please use the following instructions to transfer data from a [bucket on LTS](../lts/index.md) to a project directory on Cheaha. These instructions may also be used for other buckets on LTS and directories on Cheaha, provided you have access and know their file paths.
 
@@ -330,8 +346,10 @@ From here you can proceed to other related tutorials to initiate other transfers
 [return to the index](#globus-tutorials-for-individual-researchers).
 
 - [How do I check transfer status?](#how-do-i-check-transfer-status)
-- [How do I transfer from a Collection to Cheaha?](#how-do-i-transfer-from-a-collection-to-cheaha)
-- [How do I transfer from a Collection to LTS?](#how-do-i-transfer-from-a-collection-to-lts)
+- [How Do I Transfer Between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
+- [How Do I Transfer Between a Collection and LTS?](#how-do-i-transfer-between-a-collection-and-lts)
+
+[Return to the top](#globus-tutorials-for-individual-researchers).
 
 ## How Do I Check Transfer Status?
 
@@ -346,3 +364,5 @@ To check the status of your transfers, please follow the instructions below.
 1. To see more details about a transfer, click the transfer title. There will be two tabs. The "Overview" tab will have information and statistics about the transfer. The "Event Log" tab will have information about events that occurred during transfer, including start, stop, and any errors. The "Event Log" is useful for diagnosing issues with failed transfers.
 
     ![Overview page for unsuccessful transfer.](./images/gi-check-transfer-status/002-status.png)
+
+[Return to the top](#globus-tutorials-for-individual-researchers).
