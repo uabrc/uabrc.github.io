@@ -82,8 +82,8 @@ You are on the login node if:
 
 You are on compute nodes if:
 
-- using [Open OnDemand Interactive Apps](../cheaha/open_ondemand/ood_layout.md/#interactive-apps)
-- using [Interactive Jobs with `srun`](../cheaha/slurm/submitting_jobs.md/#interactive-jobs-with-srun)
+- using [Open OnDemand Interactive Apps](../cheaha/open_ondemand/ood_layout.md#interactive-apps)
+- using [Interactive Jobs with `srun`](../cheaha/slurm/submitting_jobs.md#interactive-jobs-with-srun)
 - terminal prompt looks like `[$USER@c0112 ~]$`
 
 ![!compute node terminal prompt shows username@c0112](images/comp_node.png)

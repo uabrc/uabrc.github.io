@@ -105,7 +105,7 @@ For jobs such as RStudio and Jupyter, some modules like CUDA need to be loaded b
 <!-- markdownlint-disable MD046 -->
 !!! Note
 
-    In the OOD session, the module is automatically reset at the beginning of every session by default. Therefore, avoid using `module reset` in the 'Environment Setup' box. See [best practice for loading modules](../software/modules.md/#best-practice-for-loading-modules) for more information.
+    In the OOD session, the module is automatically reset at the beginning of every session by default. Therefore, avoid using `module reset` in the 'Environment Setup' box. See [best practice for loading modules](../software/modules.md#best-practice-for-loading-modules) for more information.
 <!-- markdownlint-disable MD046 -->
 
 #### Launching Interactive Sessions
