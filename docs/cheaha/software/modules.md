@@ -226,7 +226,7 @@ Use of these software packages without authorization may be a violation of the [
 
 ### Matlab Issues
 
-There is a show-stopping, hard-to-diagnose MATLAB parpool bug in versions before R2022a.
+There is a critical, hard-to-diagnose MATLAB parpool bug in versions before R2022a.
 
 The issue arises when using a `parpool` for multiple jobs simultaneously, as with an `sbatch --array` job. MATLAB `parpool` can be started manually, or at the first `parfor` loop encountered, among other functionality. See the [MATLAB Documentation](https://www.mathworks.com/help/parallel-computing/run-code-on-parallel-pools.html) for more information and a complete list.
 
