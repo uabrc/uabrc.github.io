@@ -325,6 +325,12 @@ Copy the below MATLAB script as `parfor_sum_array.m`. At the beginning, the scri
     Make sure that the `SLURM_CPUS_PER_TASK > 1` in order to take advantage of multithreaded performance. It is important that the  `SLURM_CPUS_PER_TASK` does not exceed the number of workers and physical cores (i.e. CPU cores) available on the node. This is to prevent high context switching, where individual CPUs are constantly switching between multiple running processes, which can negatively impact job performance of all jobs running on the node. It may also lead to overhead during job execution and result in poorer performance. Please refer to our [Hardware page](../hardware.md/#hardware-information) to learn more about resource limits and selecting appropriate resources.
 <!-- markdownlint-disable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! bug
+
+    There is a known issue with `parpool` and other related multi-core parallel features such as `parfor` affecting R2022a and earlier. See our [Modules Known Issues section](../software/modules.md#matlab-issues) for more information.
+<!-- markdownlint-enable MD046 -->
+
 ```bash linenums="1"
 % Function to calculate the sum of an array in parallel. This function takes array_size as input from command-line arguments
 function sum_array(array_size)

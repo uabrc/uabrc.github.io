@@ -224,7 +224,7 @@ Use of these software packages without authorization may be a violation of the [
 
 ## Known Issues
 
-### Matlab
+### Matlab Issues
 
 There is a show-stopping, hard-to-diagnose MATLAB parpool bug in versions before R2022a.
 
