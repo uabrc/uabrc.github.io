@@ -3221,7 +3221,7 @@
 </ul>
 <h2 id="for-obtaining-software">For Obtaining Software<a class="headerlink" href="#for-obtaining-software" title="Permanent link">&para;</a></h2>
 <h3 id="cloning-from-github">Cloning from GitHub<a class="headerlink" href="#cloning-from-github" title="Permanent link">&para;</a></h3>
-<p>To do anything with GitHub, you will first need to navigate to their website <a href="https://github.com">https://github.com</a> and <a href="https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account">create an account</a>.</p>
+<p>To do anything with GitHub, you will first need to navigate to their website <a href="https://github.com">https://github.com</a> and <a href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">create an account</a>.</p>
 <p>To clone a repository, be sure you have the repository URL. Then, using <code>git</code> at a terminal, <a href="../git/#cloning">clone</a> the repository using whatever settings are appropriate. GitHub repository pages look something like the page for this documentation, shown below.</p>
 <p><a class="glightbox" href="../images/github-repo-interface.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!github repository page interface" src="../images/github-repo-interface.png" /></a></p>
 <p>You may also use the "Code" button on the page to see instructions for cloning the repository.</p>
@@ -3253,7 +3253,7 @@
 <li>Other trusted individuals can be made administrators as needed, to delegate important and sensitive tasks that require elevated permissions.</li>
 </ul>
 </li>
-<li>For each software project, create a repository within your organization. <a href="https://docs.github.com/en/get-started/quickstart/create-a-repo">GitHub</a>, <a href="https://docs.gitlab.com/ee/user/project/repository/">GitLab</a><ul>
+<li>For each software project, create a repository within your organization. <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories">GitHub</a>, <a href="https://docs.gitlab.com/ee/user/project/repository/">GitLab</a><ul>
 <li>By default, organization members will have access at their assigned role level. These can be changed by managing roles and using teams effectively, if needed. For smaller labs this is often not necessary.</li>
 <li>The created repository is the central one for the organization and should not be changed directly.</li>
 </ul>
@@ -3308,7 +3308,7 @@
 <p>The process for this has a few intricate steps that may be unfamiliar even to regular users of git, and has a few pitfalls.</p>
 <ol>
 <li>Use <code>git init</code> in the top-level code folder on the local machine, if it is not already a git repository. If it already is a repository, be sure the primary branch is called <code>main</code>. Use <code>git branch -m &lt;oldname&gt; main</code>.</li>
-<li>Create a repository on the remote server <a href="https://docs.github.com/en/get-started/quickstart/create-a-repo">GitHub</a>, <a href="https://docs.gitlab.com/ee/user/project/repository/#create-a-repository">GitLab</a></li>
+<li>Create a repository on the remote server <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories">GitHub</a>, <a href="https://docs.gitlab.com/ee/user/project/repository/#create-a-repository">GitLab</a></li>
 <li>Use <code>git remote add origin &lt;url&gt;</code> to add the remote URL to the local repository with the name <code>origin</code>.</li>
 <li>Verify the URL is correct with <code>git remote -v</code>. Fix it with <code>git remote set-url origin &lt;url&gt;</code> if needed.</li>
 <li>Checkout the main branch without <code>git checkout main</code>.</li>
@@ -3347,7 +3347,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 30, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 25, 2024</span>
   </span>
 
     
