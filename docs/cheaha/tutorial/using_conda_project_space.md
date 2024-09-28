@@ -10,7 +10,7 @@ Next, log in to Cheaha, and gain access to a Compute Node using the Terminal. Th
 module load Miniforge3
 ```
 
-![!Loading the Miniforge3 Module on a Cheaha Compute Node](images/module_load_miniforge.png)
+![Loading the Miniforge3 Module on a Cheaha Compute Node](images/module_load_miniforge.png)
 
 ## Create a Conda folder in your Project Space on Cheaha
 
@@ -20,7 +20,7 @@ module load Miniforge3
 cd /data/project/chosen/shared/location
 ```
 
-![!Navigating to your project space on Cheaha](images/cheaha_project_space.png)
+![Navigating to your project space on Cheaha](images/cheaha_project_space.png)
 
 **Create the Conda folder:**
 
@@ -30,7 +30,7 @@ mkdir conda_project
 cd conda_project
 ```
 
-![!Creating a directory for your conda files](images/created_conda_directory.png)
+![Creating a directory for your conda files](images/created_conda_directory.png)
 
 **You may need to adjust the permissions to ensure the folder is accessible by all members of your project space on Cheaha:**
 
@@ -38,7 +38,7 @@ cd conda_project
 chmod -R 770 conda_project
 ```
 
-![!Granting all members of the project space access to the Conda directory](images/create_access_group.png)
+![Granting all members of the project space access to the Conda directory](images/create_access_group.png)
 
 This command grants read, write, and execute permissions to the user and group (i.e. You as owner of the project space on Cheaha, as well as members of your project space), this will allow members of your project space on Cheaha access, and restrict others.
 
@@ -50,7 +50,7 @@ To create a Conda environment that can be shared with members of your project sp
 conda config --add envs_dirs /data/project/preferred/shared/location/conda_project/envs
 ```
 
-![!Creating conda directories inside your folder](images/add_conda_config_directory.png)
+![Creating conda directories inside your folder](images/add_conda_config_directory.png)
 
 This command sets the Conda environment directory to the shared folder within your project space on Cheaha.
 
@@ -62,17 +62,17 @@ Now, create a new Conda environment in the shared project folder:
 conda create --prefix /data/project/preferred/shared/location/conda_project/envs/my_env python=3.11
 ```
 
-![!Command showing the creation of A Conda env with the prefix flag](images/conda_prefix_env.png)
+![Command showing the creation of A Conda env with the prefix flag](images/conda_prefix_env.png)
 
 Replace `/data/project/preferred/shared/location/conda_project/envs/my_env` with the path to your shared folder and `python=3.11` with the desired version of Python or any other package you want to install. This will create a Conda environment named `my_env`. This can be replaced with an environment name of your choosing.
 
-Activate the environment:
+### Activate the environment
 
 ```bash
 conda activate /data/project/chosen/shared/location/conda_project/envs/my_env
 ```
 
-![!Command showing activation of A Conda env from a project space on Cheaha](images/conda_activate.png)
+![Command showing activation of A Conda env from a project space on Cheaha](images/conda_activate.png)
 
 ## Install Packages in the Conda Environment
 
@@ -82,13 +82,15 @@ Once the environment is activated, install any necessary packages:
 conda install <package name>
 ```
 
-In this example we installed the following packages;
+<package_name> is a placeholder for the actual name of the software package you want to install in your conda environment.
+
+For example, if you want to install numpy and matplotlib, you would replace <package_name> with numpy, and matplotlib like this:
 
 ```bash
 conda install numpy matplotlib
 ```
 
-![!Command installing Conda packages within the activated env file in the project space on Cheaha](images/conda_install_packages.png)
+![Command installing Conda packages within the activated env file in the project space on Cheaha](images/conda_install_packages.png)
 
 You can replace `numpy matplotlib` with the name(s) of package(s) required for your project. When you're done working, deactivate the environment:
 
@@ -107,4 +109,4 @@ conda activate /path/to/shared/location/my_project/envs/my_env
 
 ## Managing the Conda Environment
 
-We have [documentation](../../workflow_solutions/using_anaconda.md#using-anaconda) on managing Conda environments within your personal Cheaha account. That guide also applies to managing environments in a shared project space on Cheaha.
+We have [documentation](../../workflow_solutions/using_anaconda.md#using-anaconda) on managing Conda environments within your personal Cheaha account. That guide also applies to managing environments in a shared project space on Cheaha. The only exception would be to use the command [here](#activate-the-environment), that references the location of your environment within your project space to activate it.
