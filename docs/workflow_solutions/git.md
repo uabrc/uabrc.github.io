@@ -73,7 +73,7 @@ git init
 
 Forking a repository is not a git concept, but a concept of remote repository hosting services like GitHub and GitLab. Forking is cloning a repository from another users account to your own account on GitHub or GitLab.
 
-[GitHub fork documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+[GitHub fork documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 
 [GitLab fork documentation](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html).
 
