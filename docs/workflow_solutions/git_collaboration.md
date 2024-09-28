@@ -25,7 +25,7 @@ To summarize:
 
 ### Cloning from GitHub
 
-To do anything with GitHub, you will first need to navigate to their website <https://github.com> and [create an account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account).
+To do anything with GitHub, you will first need to navigate to their website <https://github.com> and [create an account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github).
 
 To clone a repository, be sure you have the repository URL. Then, using `git` at a terminal, [clone](git.md#cloning) the repository using whatever settings are appropriate. GitHub repository pages look something like the page for this documentation, shown below.
 
@@ -75,7 +75,7 @@ Below is a bulleted list of good practices for organizing a lab space. Each bull
 - Have an organization for your lab space. [GitHub](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations) [GitLab](https://docs.gitlab.com/ee/topics/set_up_organization.html)
     - The organization should have its PI or PIs as owners, i.e., the owner role. [GitHub](https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization) [GitLab](https://docs.gitlab.com/ee/user/permissions.html#permissions-and-roles)
     - Other trusted individuals can be made administrators as needed, to delegate important and sensitive tasks that require elevated permissions.
-- For each software project, create a repository within your organization. [GitHub](https://docs.github.com/en/get-started/quickstart/create-a-repo), [GitLab](https://docs.gitlab.com/ee/user/project/repository/)
+- For each software project, create a repository within your organization. [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories), [GitLab](https://docs.gitlab.com/ee/user/project/repository/)
     - By default, organization members will have access at their assigned role level. These can be changed by managing roles and using teams effectively, if needed. For smaller labs this is often not necessary.
     - The created repository is the central one for the organization and should not be changed directly.
 - For every individual, including owners and admins, work should be performed on a personal fork of the repository and then merged by submitting pull/merge requests.
@@ -128,7 +128,7 @@ The typical issue lifecycle, at a high level, is something like below.
 The process for this has a few intricate steps that may be unfamiliar even to regular users of git, and has a few pitfalls.
 
 1. Use `git init` in the top-level code folder on the local machine, if it is not already a git repository. If it already is a repository, be sure the primary branch is called `main`. Use `git branch -m <oldname> main`.
-1. Create a repository on the remote server [GitHub](https://docs.github.com/en/get-started/quickstart/create-a-repo), [GitLab](https://docs.gitlab.com/ee/user/project/repository/#create-a-repository)
+1. Create a repository on the remote server [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories), [GitLab](https://docs.gitlab.com/ee/user/project/repository/#create-a-repository)
 1. Use `git remote add origin <url>` to add the remote URL to the local repository with the name `origin`.
 1. Verify the URL is correct with `git remote -v`. Fix it with `git remote set-url origin <url>` if needed.
 1. Checkout the main branch without `git checkout main`.
