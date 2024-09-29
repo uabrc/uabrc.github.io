@@ -202,7 +202,7 @@ At first glance, requiring unique names across all buckets on the system may sou
 
 ![!large error message in small space](images/globus-uuid.png)
 
-Similarly, if an invalid bucket name, such as `first_test_bucket`, is entered (due to the use of an underscore, which doesn’t follow LTS bucket naming rules), an error will also be displayed as shown below. To avoid this, please refer to the guidelines for [valid bucket name in LTS](../lts/lts_faq.md/#what-are-valid-bucket-names-in-lts).
+Similarly, if an invalid bucket name, such as `first_test_bucket`, is entered (due to the use of an underscore, which doesn’t follow LTS bucket naming rules), an error will also be displayed as shown below. To avoid this, please refer to the guidelines for [valid bucket name in LTS](../lts/lts_faq.md#what-are-valid-bucket-names-in-lts).
 
 ![!large invalid error message in small space](images/globus_lts_invalid_name_error_001.png)
 
@@ -225,7 +225,7 @@ Uploading a top-level folder that does not follow the bucket naming rules will c
 
 ![!large error message in small space](images/globus_lts_upload_error_001.png)
 
-Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata. For guidance on defining policies for your bucket, please refer to our documentation on [policy structure](../lts/policies.md/#policy-structure) and [applying a policy](../lts/policies.md#applying-a-policy).
+Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata. For guidance on defining policies for your bucket, please refer to our documentation on [policy structure](../lts/policies.md#policy-structure) and [applying a policy](../lts/policies.md#applying-a-policy).
 
 ## Using Bookmarks
 
