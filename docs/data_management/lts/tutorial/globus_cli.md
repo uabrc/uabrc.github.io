@@ -108,7 +108,7 @@ Once you logged in to the Globus CLI, you can search for endpoints to identify t
 globus endpoint search "search_keyword"
 ```
 
-Please replace the `"search_keyword"` with a keyword that you wish to search the endpoint. The search term in the command globus endpoint search `"search_keyword"` does not have to be an exact match with the endpoint's display name. Instead, the search encompasses a wider range of criteria, including the display names of endpoints, words or phrases found in the endpoint's description and the owner's name or email associated with the endpoint.
+Please replace the `"search_keyword"` with a keyword that you wish to search the endpoint. The search term in the command globus endpoint `search_keyword` does not have to be an exact match with the endpoint's display name. Instead, the search encompasses a wider range of criteria, including the display names of endpoints, words or phrases found in the endpoint's description and the owner's name or email associated with the endpoint.
 
 For example, if you want to find an endpoint containing the name `bhbelay`, you would use the command globus endpoint search `bhbelay`. This will display the endpoint information that includes this keyword in the display name, description, or owner information.
 
@@ -116,6 +116,6 @@ For example, if you want to find an endpoint containing the name `bhbelay`, you 
 
 ### Listing Directories in Endpoints
 
-For transfers and and other file operations, you should use the ID of endpoints, as names are just convenient for users to identify the intended endpoint. Once you have the ID, you can list the visible directories with the following command:
+For transfers and other file operations, you should use the ID of endpoints, as names are just convenient for users to identify the intended endpoint. Once you have the ID, you can list the visible directories with the following command:
 
 ![list globus endpoint directories using the globus endpoint ID](../images/list-globus-endpoint-by-id.png)
