@@ -62,7 +62,7 @@ The installation instructions and software dependencies may differ depending on 
 
 Before creating a conda environment:
 
-- Create a file named environment.yml with the following content: `environment.yml` with below contents.
+- Create a file named environment.yml with the following content: `globus-cli-env.yml` with below contents.
 
 ```yaml
 name: globus-cli-env
@@ -73,7 +73,7 @@ dependencies:
   - globus-cli
 ```
 
-- Then open your terminal and navigate to the directory where you saved the `environment.yml`  file and then run the command: `conda env create -f environment.yml`.
+- Then open your terminal and navigate to the directory where you saved the `globus-cli-env.yml`  file and then run the command: `conda env create -f globus-cli-env.yml`.
 - After the environment is created, activate it with: `conda activate globus-cli-env`.
 - To verify that the Globus CLI is installed correctly and the version, run: `globus version`. Or `globus -h` you will see the different globus CLI commands.
 
@@ -91,4 +91,31 @@ You can then close that browser tab and proceed to run any Globus commands you w
 
 ## How to Transfer Data between Collections?
 
-To transfer data with Globus CLI, you need to login to the globus CLI first for. Please follow the steps given in the [How to Login to Globus CLI on Cheaha](#how-to-login-to-globus-cli-on-cheaha) and [How to login to the Globus CLI on Your Machine](#how-to-login-to-the-globus-cli-on-your-machine) sections.
+This section outlines the process for transferring data between collections using the Globus CLI. Follow the steps below to complete your data transfer successfully.
+
+### login to the Globus GLI
+
+Before you can transfer data, you need to log in to the Globus CLI. Depending on your environment, choose one of the following methods:
+
+- To login from Cheaha, follow the steps given in the [How to Login to Globus CLI on Cheaha](#how-to-login-to-globus-cli-on-cheaha) section.
+- To login from your local machine, please refer to the [How to login to the Globus CLI on Your Machine](#how-to-login-to-the-globus-cli-on-your-machine) section.
+
+### Search Endpoint
+
+Once you logged in to the Globus CLI, you can search for endpoints to identify the collections from which you want to transfer data. Use the following command:
+
+```bash
+globus endpoint search "search_keyword"
+```
+
+Please replace the `"search_keyword"` with a keyword that you wish to search the endpoint. The search term in the command globus endpoint search `"search_keyword"` does not have to be an exact match with the endpoint's display name. Instead, the search encompasses a wider range of criteria, including the display names of endpoints, words or phrases found in the endpoint's description and the owner's name or email associated with the endpoint.
+
+For example, if you want to find an endpoint containing the name `bhbelay`, you would use the command globus endpoint search `bhbelay`. This will display the endpoint information that includes this keyword in the display name, description, or owner information.
+
+![search globus endpoint](../images/search-globus-endpoint.png)
+
+### Listing Directories in Endpoints
+
+For transfers and and other file operations, you should use the ID of endpoints, as names are just convenient for users to identify the intended endpoint. Once you have the ID, you can list the visible directories with the following command:
+
+![list globus endpoint directories using the globus endpoint ID](../images/list-globus-endpoint-by-id.png)
