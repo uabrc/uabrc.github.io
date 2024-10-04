@@ -164,10 +164,9 @@ nav:
       - NSF Cyberinfrastructure: national_ci/nsf_access.md
       - NIH Cyberinfrastructure: national_ci/nih.md
   - Grants & Contracts:
-      - Overview: grants/overview.md
-      - Facilities and Plan: grants/facilities.md
-      - Budgeting: grants/budgets.md
-      - Descriptions: grants/publications.md
+      - RC Facilities Description: grants/facilities.md
+      - Acknowlding Us in Publications: grants/publications.md
+      - Funding Opportunities: grants/opportunities.md
   - Outreach & Training:
       - Case Studies: education/case_studies.md
       - Research Computing Days:
@@ -179,7 +178,7 @@ nav:
   - Contributing Content: contributing/contributor_guide.md
   - Help:
       - Support: help/support.md
-      - FAQ: help/faq.md
+      - FAQ - Frequently Asked Questions: help/faq.md
 
 validation:
   nav:
