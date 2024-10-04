@@ -114,7 +114,7 @@ For versions of PyTorch 1.13 and newer, use the following template instead.
 <!-- markdownlint-disable MD046 -->
 !!! Note
 
-     When loading modules, such as CUDA modules for jobs requiring one or more GPUs, always utilize `module reset` before loading modules, both at the terminal and within `sbatch` scripts. See [best practice for loading modules](../software/modules.md/#best-practice-for-loading-modules) for more information.
+     When loading modules, such as CUDA modules for jobs requiring one or more GPUs, always utilize `module reset` before loading modules, both at the terminal and within `sbatch` scripts. See [best practice for loading modules](../software/modules.md#best-practice-for-loading-modules) for more information.
 <!-- markdownlint-disable MD046 -->
 
 ## Reviewing GPU Jobs

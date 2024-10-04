@@ -199,7 +199,7 @@ To use the script, enter the command `bash main.sh` at the terminal.
 <!-- markdownlint-disable MD046 -->
 !!! Note
 
-    When writing `sbatch` scripts for job submission and managing modules, begin your script by resetting the module environment with `module reset` to ensure a clean environment for subsequent configurations. See [best practice for loading modules](../software/modules.md/#best-practice-for-loading-modules) for more information.
+    When writing `sbatch` scripts for job submission and managing modules, begin your script by resetting the module environment with `module reset` to ensure a clean environment for subsequent configurations. See [best practice for loading modules](../software/modules.md#best-practice-for-loading-modules) for more information.
 <!-- markdownlint-enable MD046 -->
 
 ## Putting it All Together

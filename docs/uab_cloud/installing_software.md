@@ -151,7 +151,7 @@ To install Miniforge in your [instance](tutorial/instances.md)
 
 #### Installing Singularity
 
-Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quick_start.html#install-system-dependencies> under "Debian-based systems".
+Follow the instructions located at <https://docs.sylabs.io/guides/3.9/user-guide/quick_start.html#install-system-dependencies> under "Debian-based systems".
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
 1. Run the following

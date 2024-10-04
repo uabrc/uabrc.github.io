@@ -2,7 +2,7 @@
 
 A major use for LTS is storage of data that should be accessible to multiple users from a lab or research group. By default, buckets are only visible and accessible to the owner of the bucket, and no mechanism exists to search for buckets other users have created.
 
-Instead, sharing buckets must be done through the command line using [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html). A bucket policy is a JSON formatted file that assigns user read and write permissions to the bucket and to objects within the bucket. If you have not worked with JSON files before, a brief explantion can be found [here](https://docs.fileformat.com/web/json/). It's important to note that the bucket owner will always retain the ability to perform all actions on a bucket and its contents and so do not need to be explicitly granted permissions.
+Instead, sharing buckets must be done through the command line using [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html). A bucket policy is a JSON formatted file that assigns user read and write permissions to the bucket and to objects within the bucket. If you have not worked with JSON files before, a brief explanation can be found [here](https://docs.fileformat.com/web/json/). It's important to note that the bucket owner will always retain the ability to perform all actions on a bucket and its contents and so do not need to be explicitly granted permissions.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -245,6 +245,74 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
          "arn:aws:s3:::bucket1/*"
         ]
     }]
+}
+```
+
+## Comments in S3 IAM Policies
+
+IAM policies for `S3`, used by LTS for object-level access control within buckets, are written in `JSON` format. Since `JSON` does not support comments natively, `AWS` does not provide a dedicated comment field in their IAM policy schema.
+
+The optional `SID` field in IAM policies, though intended for uniquely identifying statements, can also be used as an ad-hoc comment. In the example below, the `SID` field provides a description of the statement, serving as a comment.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "This statement grants read access to all objects in bucket1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS":[
+            "arn:aws:iam:::user/bob",
+            "arn:aws:iam:::user/jane@uab.edu"
+        ]
+      },
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::bucket1",
+        "arn:aws:s3:::bucket1/*"
+      ]
+    }
+  ]
+}
+```
+
+## Specifying "all actions" in IAM Policies
+
+To allow or deny all actions on a specific resource, such as an `S3` bucket or object, use the following `Action` block as part of a `Statement` object to specify that all actions are affected by the statement:
+
+```Json
+    "Action": [
+    "s3:*"
+    ],
+```
+
+Here is an example IAM policy that grants all `S3` actions on bucket1 and all its objects:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "This statement grants access to all S3 actions in bucket1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS":[
+             "arn:aws:iam:::user/bob",
+             "arn:aws:iam:::user/jane@uab.edu"
+        ]
+      },
+      "Action": [
+        "s3:*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::bucket1",
+        "arn:aws:s3:::bucket1/*"
+      ]
+    }
+  ]
 }
 ```
 

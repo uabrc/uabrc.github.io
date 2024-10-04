@@ -237,7 +237,7 @@ Alternatively, `srun` can also run MPI, OpenMP, hybrid MPI/OpenMP, and many more
 
 ## Environment Setup and Module Usage in Job Submission
 
-Before submitting a job using `sbatch`, it's crucial to establish a tailored environment, including software installations and loading necessary modules containing the required software packages. We highly recommend the practice of putting `module reset` before any `module load` calls in job scripts. The module system modifies the environment whenever the module list changes, and Slurm jobs inherit the environment from whatever called `sbatch` or `srun`. The module reset command normalizes the initial environment for the script, improving repeatability and minimizing the risk of hard-to-diagnose module conflicts. For examples and further information, please see [best practice for loading modules](../software/modules.md/#best-practice-for-loading-modules).
+Before submitting a job using `sbatch`, it's crucial to establish a tailored environment, including software installations and loading necessary modules containing the required software packages. We highly recommend the practice of putting `module reset` before any `module load` calls in job scripts. The module system modifies the environment whenever the module list changes, and Slurm jobs inherit the environment from whatever called `sbatch` or `srun`. The module reset command normalizes the initial environment for the script, improving repeatability and minimizing the risk of hard-to-diagnose module conflicts. For examples and further information, please see [best practice for loading modules](../software/modules.md#best-practice-for-loading-modules).
 
 ## Graphical Interactive Jobs
 

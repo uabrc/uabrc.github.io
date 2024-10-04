@@ -116,7 +116,7 @@ The workflow below assumes you are using VSCode and all of the prerequisites lis
 
 #### Obtaining a Working Copy of the Repository
 
-Before you can get started working on contributions, you'll need a copy of the repository. The first step, done only once, is to fork the repository in GitHub to your personal account. The repository is located at <https://github.com/uabrc/uabrc.github.io>. More in-depth documentation on forking can be found at [GitHub: Fork a Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+Before you can get started working on contributions, you'll need a copy of the repository. The first step, done only once, is to fork the repository in GitHub to your personal account. The repository is located at <https://github.com/uabrc/uabrc.github.io>. More in-depth documentation on forking can be found at [GitHub: Fork a Repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 
 Once the fork has been created, you can clone your fork using the Command Palette (++ctrl+shift+p++) and `Git: Clone...` in VSCode, or at the command line. More information on cloning can be found at [GitHub: Cloning a Repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). More information on using git can be found at our [git page](../workflow_solutions/git_collaboration.md).
 
@@ -261,8 +261,10 @@ We use `.markdownlint.json` to handle markdown formatting rules, rather than pla
 We are using [linkchecker](https://github.com/linkchecker/linkchecker) to validate external repository URLs.
 
 1. Install `build-env.yml` and activate
-1. Run `linkchecker --config=.linkcheckerrc docs > linkchecker.log`
-1. Review `linkchecker-out.csv` (feel free to ignore `linkchecker.log` unless you want verbose details)
+1. Run `python scripts/linkchecker.py`
+1. Review `out/linkchecker-out.csv` (feel free to ignore `out/linkchecker.log` unless you want verbose details)
+
+The `urlname` column contains the URL as it is written in the documentation. The `url` column contains the resulting URL after all forwarding is complete.
 
 #### Linting Known Issues
 

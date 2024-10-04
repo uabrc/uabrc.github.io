@@ -34,3 +34,7 @@ You may optionally verify that Python works correctly by entering `py.list(["hel
 ## Using a GPU with MATLAB
 
 Please see the [MATLAB Section on our GPU Page](../slurm/gpu.md#matlab).
+
+## Known Issues
+
+There is a known issue with `parpool` and other related multi-core parallel features such as `parfor` affecting R2022a and earlier. See our [Modules Known Issues section](../software/modules.md#matlab-issues) for more information.
