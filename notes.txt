@@ -1,0 +1,4 @@
+- normalize all screenshots to have "my-gcp-collection" instead of "my-gcp-endpoint"
+- add screenshots to "create collection"
+- bridge sections together and "go to top" links
+- make all "go to top" style links use the same language in both documents
