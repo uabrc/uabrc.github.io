@@ -12,16 +12,16 @@ RStudio is available for use graphically in your browser via OOD. As with other 
 
 ## RStudio and Python
 
-If you have a workflow that uses both R and Python, it is strongly recommended to use the [reticulate](https://rstudio.github.io/reticulate/) package along with Anaconda environments. Reticulate allows researchers to load Python packages into a native R session as objects. For instance, if someone prefer some functionality of the `pandas` package but has other code already written in R, they can import `pandas` to R and use both simultaneously.
+If you have a workflow that uses both R and Python, it is strongly recommended to use the [reticulate](https://rstudio.github.io/reticulate/) package along with `conda` environments. Reticulate allows researchers to load Python packages into a native R session as objects. For instance, if someone prefer some functionality of the `pandas` package but has other code already written in R, they can import `pandas` to R and use both simultaneously.
 
-This also allows researchers to download precompiled command line binaries into an Anaconda environment and easliy use them in their R scripts.
+This also allows researchers to download precompiled command line binaries into a `conda` environment and easily use them in their R scripts.
 
 For setup, use the following steps:
 
 1. In a terminal on a compute node, either in an HPC Desktop job or by clicking the blue Host button on any job card:
 
-    1. Load the `Anaconda3` module
-    1. Create an Anaconda environment. More information about how to create Anaconda environments can be found [in our documentation](../../workflow_solutions/using_anaconda.md).
+    1. Load the `Miniforge3` module
+    1. Create a `conda` environment. More information about how to create `conda` environments can be found [in our documentation](../../workflow_solutions/using_conda.md).
     1. Activate your environment and install your requuired python packages using either `pip install` or `conda install` depending on the package source.
 
     <!-- markdownlint-disable MD046 -->
@@ -32,16 +32,16 @@ For setup, use the following steps:
 
 1. In RStudio:
 
-    1. Add the command `module load Anaconda3` to the Environment Setup window when requesting the RStudio job.
+    1. Add the command `module load Miniforge3` to the Environment Setup window when requesting the RStudio job.
     1. If not already installed, install the `reticulate` package using either `install.packages` or the [renv](#rstudio-projects-and-renv) package.
-    1. Use `reticulate::use_condaenv('env_name')` to load your conda environment.
-    1. From here, you will be able to interact with all of the python packages and non-python precompiled binaries in your Anaconda environment using R and RStudio. Please read more about how to do that in [reticulate's documentation](https://rstudio.github.io/reticulate/#importing-python-modules).
+    1. Use `reticulate::use_condaenv('ENVIRONMENT')` to load your conda environment which has the name `ENVIRONMENT`.
+    1. From here, you will be able to interact with all of the python packages and non-python precompiled binaries in your `conda` environment using R and RStudio. Please read more about how to do that in [reticulate's documentation](https://rstudio.github.io/reticulate/#importing-python-modules).
 
-For cases where your R code only needs access to precompiled binaries or libraries and does not need to import any Python libraries, you can instead create your Anaconda environment and add the following lines into the Environment Setup window:
+For cases where your R code only needs access to precompiled binaries or libraries and does not need to import any Python libraries, you can instead create your `conda` environment and add the following lines into the Environment Setup window:
 
 ``` bash
-module load Anaconda3
-conda activate <env_name>
+module load Miniforge3
+conda activate ENVIRONMENT
 ```
 
 This will add those binaries and libraries to your environment `$PATH` which RStudio will inherit.

@@ -149,7 +149,7 @@ For a practical example with dynamic indices, please visit our [Practical `sbatc
 
 Jobs should be submitted to the Slurm job scheduler either using a [batch job](#batch-jobs-with-sbatch) or an [Open OnDemand (OOD) interactive job](../open_ondemand/index.md).
 
-You can use `srun` for working on short interactive tasks such as [creating an Anaconda environment](../../workflow_solutions/using_anaconda.md) and running [parallel tasks](#srun-for-running-parallel-jobs) within an sbatch script.
+You can use `srun` for working on short interactive tasks such as [creating a `conda` environment](../../workflow_solutions/using_conda.md) and running [parallel tasks](#srun-for-running-parallel-jobs) within an sbatch script.
 
 <!-- markdownlint-disable MD046 -->
 !!! warning

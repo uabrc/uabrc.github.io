@@ -42,7 +42,7 @@ Most common software packages and NVIDIA drivers are available as `apt` packages
 
 If the software is available via `apt` then use `sudo apt install <package>`. An example would be `sudo apt install git` to install git software.
 
-If the software uses a custom installer, then follow the instructions provided by the software's documentation. An example would be [Miniconda](#installing-miniconda), where a shell script is downloaded and then executed using `bash installer.sh`.
+If the software uses a custom installer, then follow the instructions provided by the software's documentation. An example would be [Miniforge](#installing-conda-via-miniforge), where a shell script is downloaded and then executed using `bash installer.sh`.
 
 ### Installing Server Software
 
@@ -137,13 +137,17 @@ Below are a few examples of installing certain common softwares that may be usef
 1. Find the line with "recommended" and install the package on that line with `sudo apt install nvidia-driver-###`
 1. Reboot the instance
 
-#### Installing Miniconda
+#### Installing `conda` via Miniforge
 
-Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important. We recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html) on cloud.rc instances, as opposed to Anaconda, to conserve storage space. For more information on how to use Anaconda see the [Using Anaconda](../workflow_solutions/using_anaconda.md#using-anaconda). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
+Miniforge is a free and open-source (FOSS) version of Anaconda. If you are a UAB employee, do not use Anaconda or Miniconda. See our [Conda Migration FAQ](../workflow_solutions/conda_migration_faq.md) to understand why.
+
+For more information on how to use `conda` see the [Using `conda` page](../workflow_solutions/using_conda.md#using-conda). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using `conda` in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
+
+To install Miniforge in your [instance](tutorial/instances.md)
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
-1. `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
-1. `bash Miniconda3-latest-Linux-x86_64.sh`
+1. `wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh`
+1. `bash Miniforge3-Linux-x86_64.sh`
 
 #### Installing Singularity
 
@@ -207,9 +211,9 @@ To install, you will need the following pre-requisites. If you are unfamiliar wi
 1. Run the commands in [Before Installing Software](#before-installing-software).
 1. A [Cloud Instance](tutorial/instances.md) with attached [Floating IP]network_setup_basic.md#floating-ips).
 1. A [Security Group](tutorial/security.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
-1. [Miniconda installed](#installing-miniconda) on the instance. Miniconda is a lightweight version of Anaconda.
+1. [`conda` installed](#installing-conda-via-miniforge) on the instance.
 
-Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_anaconda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_anaconda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html>.
+Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build a [`conda` Environment](../workflow_solutions/using_conda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_conda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html>.
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
@@ -217,16 +221,13 @@ Once the prerequisites are complete, the following steps must be performed to in
     Leaving your Jupyter Notebook Server unsecured may mean that other people on the UAB Campus Network are able to access your notebooks and other files stored on that cloud instance.
 <!-- markdownlint-enable MD046 -->
 
-1. [Install](../workflow_solutions/using_anaconda.md#install-packages) Jupyter Notebook Server using [Miniconda](../workflow_solutions/using_anaconda.md). You will need the following packages.
+1. [Install](../workflow_solutions/using_conda.md#install-packages) Jupyter Notebook Server using [`conda`](../workflow_solutions/using_conda.md). You will need the following packages.
 
-    - `conda-forge` channel
-        - `notebook`
-        - `nb_conda_kernels`
-        - [Optional] `jupyter_contrib_nbextensions`
-    - `anaconda` channel
-        - `ipykernel` for python users
-        - `r-irkernel` for R users
-        - [Optional] `pip`
+    - `notebook`
+    - `nb_conda_kernels`
+    - `ipykernel` for python users
+    - `r-irkernel` for R users
+    - [Optional] `jupyter_contrib_nbextensions`
 
 1. Because floating IPs are, by default, reachable by anyone on the UAB Campus Network, you'll need to secure the server using the steps below.
     1. Generate a notebook config file using `jupyter notebook --generate-config`. [[official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#prerequisite-a-jupyter-server-configuration-file)]

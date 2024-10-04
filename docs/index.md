@@ -7,13 +7,11 @@ The Research Computing System (RCS) provides a framework for sharing research da
 - _Application Development_: providing virtual machines and web-hosted development tools empowering researcher via our [cloud.rc](uab_cloud/index.md) fabric.
 
 <!-- markdownlint-disable MD046 -->
-!!! announcement
+!!! important
 
-    We have released new A100 gpus on Cheaha! For more information please see [GPUs](cheaha/slurm/gpu.md).
+    Anaconda has changed its [Terms of Service]. As a consequence, UAB employees are no longer allowed to use the Anaconda Distribution and Anaconda channels within the `conda` software. We are in the process of replacing Anaconda on Cheaha with Miniforge.
 
-    We have released new CUDA and cuDNN modules! For more information please see [CUDA Modules](cheaha/slurm/gpu.md#cuda-modules).
-
-    Also see our [A100 GPU Frequently Asked Questions (FAQ)](cheaha/slurm/gpu.md#frequently-asked-questions-faq-about-a100-gpus)
+    Read more about how this may affect you at our [Conda Migration FAQ](workflow_solutions/conda_migration_faq.md).
 <!-- markdownlint-enable MD046 -->
 
 ## How to Contact Us

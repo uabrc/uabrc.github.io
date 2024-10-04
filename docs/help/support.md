@@ -74,7 +74,7 @@ Please see our [Storage page](../data_management/storage.md) for more informatio
 
 ## How do I request new software installed?
 
-Before making a request for new software on Cheaha, please try searching our [modules](../cheaha/software/modules.md) or searching for packages on [Anaconda](../workflow_solutions/using_anaconda.md).
+Before making a request for new software on Cheaha, please try searching our [modules](../cheaha/software/modules.md) or searching for packages on [`conda`](../workflow_solutions/using_conda.md).
 
 If you are not able to find a suitable module or package and would like software installed on Cheaha, please [create a ticket](#how-do-i-create-a-support-ticket) with the name of the software, the version number, and a link to the installation instructions.
 

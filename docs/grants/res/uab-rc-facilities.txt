@@ -20,11 +20,11 @@ Cheaha provides researchers with both a web-based interface, via open OnDemand, 
 
 HIGH-PERFORMANCE COMPUTING (Cheaha) SOFTWARE TOOLS
 
-General research computing and scientific programming software are available on Cheaha, including Anaconda, R and RStudio, and MATLAB through the Lmod environment module system. RStudio, MATLAB, Jupyter Notebook server, and Jupyter Lab are all available on our Open OnDemand web portal as interactive applications, along with a general-use desktop environment via no-VNC, directly in the browser. Researchers are enabled to develop and share their own custom interactive applications through a sandbox application feature within Open OnDemand.
+General research computing and scientific programming software are available on Cheaha, including conda, R and RStudio, and MATLAB through the Lmod environment module system. RStudio, MATLAB, Jupyter Notebook server, and Jupyter Lab are all available on our Open OnDemand web portal as interactive applications, along with a general-use desktop environment via no-VNC, directly in the browser. Researchers are enabled to develop and share their own custom interactive applications through a sandbox application feature within Open OnDemand.
 
 The UAB Center for Clinical and Translational Science (CCTS) Informatics group has installed and supports a variety of bioinformatics tools that are available to be run from Cheaha. Standalone packages are available for quality control (fastQC, Picard Tools), alignment (Abyss, Velvet, BWA, Bowtie) visualization (IGV), variant calling (GATK, SnpEff, annoVar), RNAseq (Cufflinks, Cuffdiff, TopHat) and microbiome and metagenomic analysis (QIIME, HUMAnN, MEGAN).
 
-Additional scientific domain-specific software is also available, including Relion for cryo-electron microscopy analysis, AFNI for fMRI analysis, and ANSYS for simulations for research efforts of the UAB School of Engineering. Many other software packages are installed and maintained, and we encourage and facilitate researchers installing their own additional software using Anaconda, R and MATLAB package management where possible.
+Additional scientific domain-specific software is also available, including Relion for cryo-electron microscopy analysis, AFNI for fMRI analysis, and ANSYS for simulations for research efforts of the UAB School of Engineering. Many other software packages are installed and maintained, and we encourage and facilitate researchers installing their own additional software using conda, R and MATLAB package management where possible.
 
 
 

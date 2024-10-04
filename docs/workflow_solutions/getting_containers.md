@@ -202,7 +202,7 @@ We require numpy, scipy, and matplotlib libraries to execute the above Python sc
     You may specify the required version from the `Tag` list. Here the tag/version is `4.12.0`. Also its a very good practice to specify the version of packages for numpy, scipy, and matplotlib for better reproducibility.
 
     !!! note "Containers and Reproducibiliy"
-        Always include version numbers for Anaconda, package managers, software you are installing, and the dependencies for those software. Containers are not by nature scientifically reproducible, but if you include versions for as much software in the container as possible, they can be reproducible years later.
+        Always include version numbers for `conda`, package managers, software you are installing, and the dependencies for those software. Containers are not inherently scientifically reproducible, but they can be made reproducible for years if you include versions for as much software in the container as possible.
 
 1. To build your container, change the directory to `miniconda` and use the below syntax to build the `Dockerfile`. Here we use `.` to say "current directory." This will only work if you are in the directory with the `Dockerfile`.
 

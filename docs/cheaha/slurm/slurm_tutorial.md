@@ -118,15 +118,15 @@ This example illustrate a Slurm job that runs a Python script involving [NumPy](
 #SBATCH --output=%x_%j.out          ### Slurm Output file, %x is job name, %j is job id
 #SBATCH --error=%x_%j.err           ### Slurm Error file, %x is job name, %j is job id
 
-### Loading Anaconda3 module to activate `pytools-env` conda environment
-module load Anaconda3
+### Loading Miniforge3 module to activate `pytools-env` conda environment
+module load Miniforge3
 conda activate pytools-env
 
 ### Run the script `python_test.py`
 python python_test.py
 ```
 
- The batch job requires an input file `python_test.py` (line 17) for execution. Copy the input file from the [Containers page](../../workflow_solutions/getting_containers.md#create-your-own-docker-container). Place this file in the same folder as the `numpy.job`. This python script performs numerical integration and data visualization tasks, and it relies on the following packages: numpy, matplotlib, scipy for successful execution. These dependencies can be installed using [Anaconda](../../workflow_solutions/using_anaconda.md) within a `conda` environment named `pytools-env`. Prior to running the script, load the `Anaconda3` module and activate the `pytools-env` environment (line 13 and 14).  Once job is successfully completed, check the slurm output file for results. Additionally, a plot named `testing.png` will be generated.
+ The batch job requires an input file `python_test.py` (line 17) for execution. Copy the input file from the [Containers page](../../workflow_solutions/getting_containers.md/#create-your-own-docker-container). Place this file in the same folder as the `numpy.job`. This python script performs numerical integration and data visualization tasks, and it relies on the following packages: numpy, matplotlib, scipy for successful execution. These dependencies can be installed using [`conda`](../../workflow_solutions/using_conda.md) within a `conda` environment named `pytools-env`. Prior to running the script, load the `Miniforge3` module and activate the `pytools-env` environment (line 13 and 14).  Once job is successfully completed, check the slurm output file for results. Additionally, a plot named `testing.png` will be generated.
 
 ```bash
 $ ls
@@ -174,8 +174,8 @@ Multiple jobs or tasks can be executed simultaneously using `srun` within a sing
 #SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id
 #SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id
 
-### Loading Anaconda3 module to activate `pytools-env` conda environment
-module load Anaconda3
+### Loading Miniforge3 module to activate `pytools-env` conda environment
+module load Miniforge3
 conda activate pytools-env
 
 ### Runs the script `python_test.py` in parallel with distinct inputs and ensures synchronization
@@ -254,8 +254,8 @@ The following Slurm script is an example of how you might convert the previous `
 #SBATCH --error=%x_%A_%a.err         ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --array=1-3                  ### Number of Slurm array tasks, 3 tasks
 
-### Loading Anaconda3 module to activate `pytools-env` conda environment
-module load Anaconda3
+### Loading Miniforge3 module to activate `pytools-env` conda environment
+module load Miniforge3
 conda activate pytools-env
 
 ### Calculate the input range for each task
@@ -398,7 +398,7 @@ $ sacct -j 27105035
 
 ### Example 6: GPU Job
 
-This slurm script shows the execution of Tensorflow job using GPU resources. Let us save this script as `gpu.job`. The Slurm parameter `--gres=gpu:2` in line 6, requests for 2 GPUs. In line 8, note that in order to run GPU-based jobs, either the `amperenodes` or `pascalnodes` partition must be used (please refer to our [GPU page](../slurm/gpu.md) for more information). Lines 14-15 loads the necessary CUDA modules, while lines 18-19 load the Anaconda module and activate a `conda` environment called `tensorflow`. Refer to [Tensorflow official page](https://www.tensorflow.org/) for installation. The last line executes a python script that utilizes Tensorflow library to perform matrix multiplication across multiple GPUs.
+This slurm script shows the execution of Tensorflow job using GPU resources. Let us save this script as `gpu.job`. The Slurm parameter `--gres=gpu:2` in line 6, requests for 2 GPUs. In line 8, note that in order to run GPU-based jobs, either the `amperenodes` or `pascalnodes` partition must be used (please refer to our [GPU page](../slurm/gpu.md) for more information). Lines 14-15 loads the necessary CUDA modules, while lines 18-19 load the `Miniforge3` module and activate a `conda` environment called `tensorflow`. Refer to [Tensorflow official page](https://www.tensorflow.org/) for installation. The last line executes a python script that utilizes Tensorflow library to perform matrix multiplication across multiple GPUs.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -417,8 +417,8 @@ This slurm script shows the execution of Tensorflow job using GPU resources. Let
 module load CUDA/12.2.0
 module load cuDNN/8.9.2.26-CUDA-12.2.0
 
-### Loading the Anaconda module and activating the `tensorflow` environment
-module load Anaconda3
+### Loading the Miniforge3 module and activating the `tensorflow` environment
+module load Miniforge3
 conda activate tensorflow
 
 ### Executing the python script

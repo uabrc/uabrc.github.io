@@ -36,11 +36,11 @@ If you need assistance, please feel free to [contact us](../help/support.md).
 
 We understand that everyone has differing preferences when it comes to development environments, so please feel free to use the development environment of your choice. Please be aware that our content has been developed using VSCode and a collection of extensions, so the greatest level of support can be provided by us to you if you choose to use our tooling.
 
-We are using Visual Studio Code (VSCode) for development with several extensions installed, listed below. The extensions are also in `.vscode/extensions.json` and should pop up as recommendations when you open this repository. We use VSCode for the productivity benefits related to local Anaconda environment management, git integration, and dynamic formatters and linting. Linting is provided by pre-commit hooks and in our Continuous Integration definitions.
+We are using Visual Studio Code (VSCode) for development with several extensions installed, listed below. The extensions are also in `.vscode/extensions.json` and should pop up as recommendations when you open this repository. We use VSCode for the productivity benefits related to local `conda` environment management, git integration, and dynamic formatters and linting. Linting is provided by pre-commit hooks and in our Continuous Integration definitions.
 
 VSCode may be obtained from [Visual Studio Code](https://code.visualstudio.com/) and documentation is available at [VSCode: Docs](https://code.visualstudio.com/docs). The extensions should automatically show up as recommendations when opening the repo, or they can be downloaded using the VSCode Extensions menu (++ctrl+shift+x++ on Windows or ++command+shift+x++ on Mac).
 
-We assume you have a `conda` distribution on your local machine. If you are affiliated with UAB, please install [Miniforge](https://conda-forge.org/miniforge/). For detailed installation instructions, see here: <https://github.com/conda-forge/miniforge/?tab=readme-ov-file#install>. For more information on using `conda`, see our [Anaconda page](../workflow_solutions/using_anaconda.md).
+We assume you have a `conda` distribution on your local machine. If you are affiliated with UAB, please install [Miniforge](https://conda-forge.org/miniforge/) and _do not_ install Anaconda nor Miniconda. For more information on why, please see our [Conda Migration FAQ](../workflow_solutions/conda_migration_faq.md#why-do-i-need-to-stop-using-anaconda). For detailed installation instructions on installing Miniforge, see here: <https://github.com/conda-forge/miniforge/?tab=readme-ov-file#install>. For more information on using `conda`, see our [`conda` page](../workflow_solutions/using_conda.md).
 
 ### Style Guide
 
@@ -163,7 +163,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
 ##### Verify your changes
 
-1. [Activate](../workflow_solutions/using_anaconda.md#activate-an-environment) your conda environment.
+1. [Activate](../workflow_solutions/using_conda.md#activate-an-environment) your conda environment.
     1. Open the file `test.py` in the repository to start the Python extension.
     1. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
 1. Open a VSCode terminal using ++ctrl+shift+grave++.
@@ -312,7 +312,7 @@ This workaround is needed because `markdownlint` has no plans to add support for
 - Main headings are based on [UAB Research Computing services](https://www.uab.edu/it/home/research-computing/research-digital-marketplace)
 - Favor placing new pages and information into an existing section over creating
 - Approach documentation from a problem solving angle rather than a technology. Examples:
-    - Section title "Installing Software Yourself with Anaconda" vs "Anaconda"
+    - Section title "Installing Software Yourself with `conda`" vs "`conda`"
     - Section title "Running Analysis Jobs" vs "Slurm"
 - Put redirects for any page moves in case someone has bookmarked a page (see Redirect section below)
 

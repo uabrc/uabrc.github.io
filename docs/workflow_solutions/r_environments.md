@@ -1,6 +1,6 @@
 # R Projects and Environments
 
-When working on multiple projects, it's likely that different sets of external analysis packages and their dependencies will be needed for each project. Managing these different projects is simple in something like [Anaconda](using_anaconda.md) by creating a different virtual environment for each project, but this functionality is not fully built into RStudio by default.
+When working on multiple projects, it's likely that different sets of external analysis packages and their dependencies will be needed for each project. Managing these different projects is simple in something like [`conda`](using_conda.md) by creating a different virtual environment for each project, but this functionality is not fully built into RStudio by default.
 
 Instead, we suggest to take advantage of [R Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects) and the [renv](https://rstudio.github.io/renv/articles/renv.html) package to keep environments separate for each project you start.
 
