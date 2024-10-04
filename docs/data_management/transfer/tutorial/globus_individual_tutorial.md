@@ -29,7 +29,7 @@ Globus is a data transfer ecosystem that simplifies the process of transferring,
 
 - Straight-forward, browser-based, graphical interface.
 - Compatible with [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
-- Compatible with [Long-Term Storage](../lts/index.md).
+- Compatible with [Long-Term Storage](../../lts/index.md).
 - Can be used with your laptop, desktop, or lab workstation via Globus Connect Personal (GCP).
 - Transfers are automatically retried in the event of network or computer system outages.
 - Transfers are encrypted end-to-end. Globus never sees your data.
@@ -41,7 +41,7 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 
 ## Tutorial Prerequisites
 
-For these tutorials, you will need your BlazerID or [XIAS ID](../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
+For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
 
 ## How Do I Get Onto the Globus Web App?
 
@@ -54,7 +54,7 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../account_mana
     <!-- markdownlint-disable MD046 -->
     !!! note
 
-        If you are an external collaborator using a [XIAS account](../../account_management/xias/index.md) to interact with UAB-owned storage you will still need to search for "UAB" (this is uncommon). Do not use your home institution login to access UAB storage systems, as you will only have access with your XIAS credentials.
+        If you are an external collaborator using a [XIAS account](../../../account_management/xias/index.md) to interact with UAB-owned storage you will still need to search for "UAB" (this is uncommon). Do not use your home institution login to access UAB storage systems, as you will only have access with your XIAS credentials.
     <!-- markdownlint-enable MD046 -->
 
     ![Globus Web App login search bar with UAB entered and University of Alabama at Birmingham in a red box.](./images/gi-web-app/002-search.png)
@@ -133,10 +133,10 @@ If you can't find a particular Collection this way, but know it was shared with 
 
 ## How Do I Find UAB Storage Collections?
 
-UAB offers [multiple storage resources](../storage.md). The following resources may be accessed through Globus Collections.
+UAB offers [multiple storage resources](../../storage.md). The following resources may be accessed through Globus Collections.
 
-- Cheaha file system (GPFS) including [individual directories](../storage.md#what-individual-storage-solutions-are-available) and [project directories](../storage.md#project-directory).
-- [Long-Term Storage (LTS)](../lts/index.md).
+- Cheaha file system (GPFS) including [individual directories](../../storage.md#what-individual-storage-solutions-are-available) and [project directories](../../storage.md#project-directory).
+- [Long-Term Storage (LTS)](../../lts/index.md).
 - [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
 
 To find these resources on Globus, use the following steps.
@@ -203,7 +203,7 @@ Proceed on to learn how to transfer between Collections.
 
 ## How Do I Transfer between a Collection and Cheaha?
 
-Please use the following instructions to transfer data from a shared Collection to a [bucket on LTS](../lts/index.md). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
+Please use the following instructions to transfer data from a shared Collection to a [bucket on LTS](../../lts/index.md). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
 
 The direction of transfer may also be reversed to transfer data from Cheaha to the shared Collection. Note that some shared Collections may not allow you to write data, such as Research Cores, in which case you will receive an error.
 
@@ -255,7 +255,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 
 ## How Do I Transfer between a Collection and LTS?
 
-Please use the following instructions to transfer data from a shared Collection to a [bucket on LTS](../lts/index.md). These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.
+Please use the following instructions to transfer data from a shared Collection to a [bucket on LTS](../../lts/index.md). These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.
 
 The direction of transfer may also be reversed to transfer data from LTS to the shared Collection. Note that some shared Collections may not allow you to write data, such as Research Cores, in which case you will receive an error.
 
@@ -300,7 +300,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 
 ## How Do I Transfer between LTS and Cheaha?
 
-Please use the following instructions to transfer data from a [bucket on LTS](../lts/index.md) to a project directory on Cheaha. These instructions may also be used for other buckets on LTS and directories on Cheaha, provided you have access and know their file paths.
+Please use the following instructions to transfer data from a [bucket on LTS](../../lts/index.md) to a project directory on Cheaha. These instructions may also be used for other buckets on LTS and directories on Cheaha, provided you have access and know their file paths.
 
 The direction of transfer may also be reversed to transfer data from Cheaha to LTS.
 

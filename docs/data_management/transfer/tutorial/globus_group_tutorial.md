@@ -27,7 +27,7 @@ Topics covered:
 Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions. Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
 
 - Straight-forward, browser-based interface.
-- Compatible with [Long-Term Storage](../lts/index.md).
+- Compatible with [Long-Term Storage](../../lts/index.md).
 - Can be used to share data with Research Core customers.
 - Can be used to transfer data between lab workstations, servers, and Cheaha.
 - Transfers are automatically retried in the event of network or computer system outages.
@@ -40,7 +40,7 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 
 ## Tutorial Prerequisites
 
-For these tutorials, you will need your BlazerID or [XIAS ID](../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
+For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
 
 ## How Do I Get onto the Globus Web App?
 
@@ -52,9 +52,9 @@ To learn how to get onto the Globus Web App [Globus Tutorials for Individual Res
 
 Globus Connect Personal (GCP) is available to install on the following Operating Systems. Linux is also available, but we do not cover the installation process here. If you need to install GCP on Linux, please refer to the [official documentation](https://docs.globus.org/globus-connect-personal/install/linux/).
 
-Managing data for a Research Core? Please stop here. You should know that Globus Connect Personal is _not_ suitable for production use with customers. Please [Contact Support](../../help/support.md#how-do-i-create-a-support-ticket) to discuss setting up Globus Connect Server for your Research Core.
+Managing data for a Research Core? Please stop here. You should know that Globus Connect Personal is _not_ suitable for production use with customers. Please [Contact Support](../../../help/support.md#how-do-i-create-a-support-ticket) to discuss setting up Globus Connect Server for your Research Core.
 
-Representing a lab? Globus Connect Personal may be suitable for your use case. If you transfer data infrequently, or transfer small amounts of data, then GCP is probably sufficient. If you frequently transfer large amounts of data, then Globus Connect Server can enable higher data transfer rates through parallelization. Please [Contact Support](../../help/support.md) if you want to discuss installation of Globus Connect Server.
+Representing a lab? Globus Connect Personal may be suitable for your use case. If you transfer data infrequently, or transfer small amounts of data, then GCP is probably sufficient. If you frequently transfer large amounts of data, then Globus Connect Server can enable higher data transfer rates through parallelization. Please [Contact Support](../../../help/support.md) if you want to discuss installation of Globus Connect Server.
 
 GCP installation instructions for:
 
@@ -287,7 +287,7 @@ Before you can share Collections from your Globus Connect Personal (GCP) Collect
 
 To join the UAB HA group, we need to receive both a UAB support request, and a request to join the UAB HA group within the Globus Web App. We need both because we sometimes get spam applications through Globus. Having a Support Request helps us filter the spam. Please use the following steps to join.
 
-1. Submit a [Support Request](../../help/support.md#how-do-i-create-a-support-ticket). In the request please include the following.
+1. Submit a [Support Request](../../../help/support.md#how-do-i-create-a-support-ticket). In the request please include the following.
 
     - Your BlazerID.
     - The text "Please add me to the Globus UAB HA subscription group."
@@ -328,7 +328,7 @@ There are three ways to create a Collection.
 
 - Start from [an existing Collection you created or own](#how-do-i-find-collections-i-created-or-own).
 - [Install Globus Connect Personal](#how-do-i-install-globus-connect-personal) and [share a folder](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to create a Collection you created or own.
-- Install and configure one or more Collections with Globus Connect Server. To do this, please [Contact Support](../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
+- Install and configure one or more Collections with Globus Connect Server. To do this, please [Contact Support](../../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
 
 The instructions below assume you are starting from an existing Collection you created or own.
 
@@ -394,6 +394,6 @@ Before sharing a Collection with others, you will need to first [create a Collec
 
 ## How Do I Share Data With a Research Core Customer?
 
-If you manage data for a Research Core, please [Contact Support](../../help/support.md#how-to-request-support) to start a conversation. The answer to this question is currently being developed, so we will need to work together to find the ideal solution.
+If you manage data for a Research Core, please [Contact Support](../../../help/support.md#how-to-request-support) to start a conversation. The answer to this question is currently being developed, so we will need to work together to find the ideal solution.
 
 [Return to the top](#globus-tutorials-for-research-groups).
