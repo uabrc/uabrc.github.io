@@ -225,15 +225,23 @@ rm -rf "$TMPDIR"
     Using `/local/$SLURM_JOB_ID` with MPI jobs takes additional consideration. If you do not need MPI, please use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node. If you need the performance of `/local/$SLURM_JOB_ID` in an MPI job, please contact [Support](../help/support.md) and read about the Slurm commands `sbcast` and `sgather`.
 <!-- markdownlint-enable MD046 -->
 
-## Temporary Files (`tmp`)
+<!-- markdownlint-disable MD046 -->
+!!! note
 
-Please do not use the directory `tmp` as storage for temporary files. The `tmp` directory is local to each node, and a full `tmp` directory harms compute performance on that node for all users. Instead, please use [`/local/$SLURM_JOB_ID`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
+    By default the variable `$TMPDIR` points to `/scratch/local/` which in turn is a symbolic link to `/local/`. The variable `$LOCAL_SCRATCH` is identical to `$TMPDIR`.
 
-Some software defaults to using `tmp` without any warning or documentation, especially software designed for personal computers. We may reach out to inform you if your software fills `tmp`, as it can harm performance on that compute node. If that happens we will work with you to identify ways of redirecting temporary storage to one of the scratch spaces.
+    We recommend overwriting `$TMPDIR`, as above, because it will ensure that jobs always write to a safe location on the same node the work is being done.
+<!-- markdownlint-enable MD046 -->
 
-### Software Known to Use `tmp`
+## Temporary Files (`/tmp/` directory)
 
-The following software are known to use `tmp` by default, and can be worked around by using the listed flags. See [Local Scratch](#local-scratch) for more information about creating a local temporary directory.
+Please do not use the directory `/tmp/` as storage for temporary files. The `/tmp/` directory is local to each node, and a full `/tmp/` directory harms compute performance on that node for all users. Instead, please use [`/local/$SLURM_JOB_ID`](#local-scratch) for fast access and [`$USER_SCRATCH`](#user-scratch) for larger space.
+
+Some software defaults to using `/tmp/` without any warning or documentation, especially software designed for personal computers. We may reach out to inform you if your software fills `/tmp/`, as it can harm performance on that compute node. If that happens we will work with you to identify ways of redirecting temporary storage to one of the scratch spaces.
+
+### Software Known to Use `/tmp/`
+
+The following software are known to use `/tmp/` by default, and can be worked around by using the listed flags. See [Local Scratch](#local-scratch) for more information about creating a local temporary directory.
 
 - [Java](https://docs.oracle.com/cd/E63231_01/doc/BIAIN/GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1.htm#BIAIN-GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1): `java * -Djava.io.tmpdir=/local/$SLURM_JOB_ID`
 - [UMI Tools](https://umi-tools.readthedocs.io/en/latest/common_options.html): `umi_tools * --temp-dir=/local/$SLURM_JOB_ID`
@@ -243,7 +251,7 @@ The following software are known to use `tmp` by default, and can be worked arou
 - [FastQC](https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help): `fastqc * -d /local/$SLURM_JOB_ID`
 - [MACS2](https://manpages.org/macs2_callpeak): `macs2 callpeak * --tempdir /local/$SLURM_JOB_ID`
 
-Software known to use `tmp` by default with no know workaround.
+Software known to use `/tmp/` by default with no know workaround.
 
 - [Keras](https://github.com/tensorflow/tensorflow/blob/5bb81b7b0dd140a4304b92530614502c0c61a150/tensorflow/python/keras/utils/data_utils.py#L205) has `/tmp/.keras` hardcoded as a fallback cache directory if `~/.keras` is inaccessible. See [here](https://github.com/tensorflow/tensorflow/issues/38831) for a discussion of the issue.
 
