@@ -109,4 +109,4 @@ conda activate /path/to/shared/location/my_project/envs/my_env
 
 ## Managing the Conda Environment
 
-We have [documentation](../../workflow_solutions/using_anaconda.md#using-anaconda) on managing Conda environments within your personal Cheaha account. That guide also applies to managing environments in a shared project space on Cheaha. The only exception would be to use the command [here](#activate-the-environment), that references the location of your environment within your project space to activate it.
+We have [documentation](../../workflow_solutions/using_anaconda.md#using-anaconda) on managing Conda environments within your personal Cheaha account. That guide also applies to managing environments in a shared project space on Cheaha. The only exception would be to use the command [here](#activate-the-environment), that references the location of your environment within a project space you have access to, so you can activate it.
