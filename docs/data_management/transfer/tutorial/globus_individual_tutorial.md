@@ -102,7 +102,7 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_m
 
 The file manager will be your most frequently-visited page when using Globus for data transfers. It is central to usage of the Globus Web Application. Please take some time to familiarize yourself with its look and feel. As you progress in the tutorials, please take time to experiment with transferring data to better understand how the interface works. Feel free to return here for guidance.
 
-From here you can proceed to [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name).
+From here you can proceed to [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name)
 
 [Return to the top](#globus-tutorials-for-individual-researchers).
 
@@ -174,7 +174,7 @@ Proceed on to learn [how to find Collections shared with you](#how-do-i-find-uab
 
 Globus allows users to share Collections with others. Other researchers, labs, and Research Cores on campus may invite you to their Collections to share data with you. The following instructions let you view Collections shared with you.
 
-1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app)
+1. [Log in to Globus using your credentials](#how-do-i-get-onto-the-globus-web-app)
 1. You should see the "File Manager" page. If not click "File Manager" in the left-hand navigation panel.
 
     ![File Manager page.](./images/common/file-manager.png)
@@ -183,7 +183,7 @@ Globus allows users to share Collections with others. Other researchers, labs, a
 
     ![Collection search page](./images/common/collection-search-page.png)
 
-1. The list of Collections will be filtered down to all Collections others have granted you access to, which should help you find the Collections you need.
+1. Click the "Shared With You" tab. The list of Collections will be filtered down to all Collections others have granted you access to, which should help you find the Collections you need.
 
     ![Collection Search page of Globus Web App. "Shared With You" tab is selected and the list of Collections has been filtered down.](./images/gi-find-shared-collections/003-list.png)
 
@@ -203,13 +203,13 @@ Proceed on to learn how to transfer between Collections.
 
 ## How Do I Transfer between a Collection and Cheaha?
 
-Please use the following instructions to transfer data from a shared Collection to a [bucket on LTS](../../lts/index.md). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
+Please use the following instructions to transfer data from a shared Collection to [Cheaha GPFS](../../storage.md#what-type-of-storage-do-i-need). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
 
 The direction of transfer may also be reversed to transfer data from Cheaha to the shared Collection. Note that some shared Collections may not allow you to write data, such as Research Cores, in which case you will receive an error.
 
 These instructions can be generalized to any two Collections you have access to on Globus.
 
-1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
+1. [Log in to Globus using your credentials](#how-do-i-get-onto-the-globus-web-app).
 
 1. Find a shared Collection [by filtering](#how-do-i-find-collections-shared-with-me) or [by searching](#how-do-i-search-for-collections-by-name) in the left side "Collection Search" bar.
 
@@ -261,7 +261,7 @@ The direction of transfer may also be reversed to transfer data from LTS to the 
 
 These instructions can be generalized to any two Collections or Collections you have access to on Globus.
 
-1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
+1. [Log in to Globus using your credentials](#how-do-i-get-onto-the-globus-web-app).
 
 1. Find a shared Collection [by filtering](#how-do-i-find-collections-shared-with-me) or [by searching](#how-do-i-search-for-collections-by-name) in the left side "Collection Search" bar.
 
@@ -306,7 +306,7 @@ The direction of transfer may also be reversed to transfer data from Cheaha to L
 
 These instructions can be generalized to any two Collections or Collections you have access to on Globus.
 
-1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
+1. [Log in to Globus using your credentials](#how-do-i-get-onto-the-globus-web-app).
 
 1. Find the LTS Collection by [searching](#how-do-i-search-for-collections-by-name) in the "Collection Search" bar on the left side of the file manager page. Search for "UAB LTS" to find it.
 
@@ -354,7 +354,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 
 To check the status of your transfers, please follow the instructions below.
 
-1. [Log in to Globus using your credentials.](#how-do-i-get-onto-the-globus-web-app).
+1. [Log in to Globus using your credentials](#how-do-i-get-onto-the-globus-web-app).
 
 1. In the Globus Web App, click "Activity" in the left navigation panel to go to the activity page. There will be a list overview of transfers, with the most recent at the top.
 

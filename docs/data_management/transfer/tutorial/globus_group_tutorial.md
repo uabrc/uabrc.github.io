@@ -44,7 +44,7 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_m
 
 ## How Do I Get onto the Globus Web App?
 
-To learn how to get onto the Globus Web App [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished. Once you are familiar with
+To learn how to get onto the Globus Web App [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
 
 [Return to the top](#globus-tutorials-for-research-groups).
 
@@ -67,7 +67,7 @@ GCP installation instructions for:
 
 The following steps will guide you to install Globus Connect Personal (GCP) on your computer running Windows.
 
-1. Navigate to the [Globus Connect Personal official page](https://www.globus.org/globus-connect-personal) and scroll down to find the GCP Windows version. Click on the "INSTALL NOW" button in the red box in the image below to be taken to the official installation instructions and download link for GCP for Windows.
+1. Navigate to the [Globus Connect Personal official page](https://www.globus.org/globus-connect-personal) and scroll down to find the GCP Windows version. Click on the "INSTALL NOW" button in the red box, as shown in the image below, to be taken to the official installation instructions and download link for GCP for Windows. The "INSTALL NOW" button is located below the text Globus Connect Personal for Windows.
 
     ![Globus Connect Personal official page showing operating system options with links. Windows is in the center of the three.](./images/gg-gcp-install/win/001-select.png)
 
@@ -116,7 +116,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
     ![GCP Icon in Windows system tray.](./images/gg-gcp-install/win/009-system-tray-icon.png)
 
-Continue on with [How Do I Choose Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal).
+Continue on with [How Do I Choose Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal)
 
 [Return to the top](#globus-tutorials-for-research-groups).
 
@@ -169,7 +169,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
     ![GCP Icon in MacOS notification area.](./images/gg-gcp-install/mac/009-notification-area-icon.png)
 
-Continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal).
+Continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal)
 
 [Return to the top](#globus-tutorials-for-research-groups).
 
@@ -224,7 +224,7 @@ We have instructions for the following Operating Systems.
 
     ![General tab of GCP options menu](./images/gg-choose-folder/win/006-general-tab-changed.png)
 
-To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own).
+To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
 
 [Return to the top](#globus-tutorials-for-research-groups).
 
@@ -249,7 +249,7 @@ To verify the existence and accessibility of your Collection proceed to [How Do 
 
 1. Use the plus `+` and minus `-` buttons to add your research data folders and remove other folders, as needed. Click the "Shareable" checkbox next to each research data folder. Click "Save" when finished.
 
-To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own).
+To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
 
 [Return to the top](#globus-tutorials-for-research-groups).
 
