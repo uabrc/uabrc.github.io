@@ -2,12 +2,12 @@
 
 A major use for LTS is storage of data that should be accessible to multiple users from a lab or research group. By default, buckets are only visible and accessible to the owner of the bucket, and no mechanism exists to search for buckets other users have created.
 
-Instead, sharing buckets must be done through the command line using [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html). A bucket policy is a JSON formatted file that assigns user read and write permissions to the bucket and to objects within the bucket. If you have not worked with JSON files before, a brief explantion can be found [here](https://docs.fileformat.com/web/json/). It's important to note that the bucket owner will always retain the ability to perform all actions on a bucket and its contents and so do not need to be explicitly granted permissions.
+Instead, sharing buckets must be done through the command line using [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html). A bucket policy is a JSON formatted file that assigns user read and write permissions to the bucket and to objects within the bucket. If you have not worked with JSON files before, a brief explanation can be found [here](https://docs.fileformat.com/web/json/). It's important to note that the bucket owner will always retain the ability to perform all actions on a bucket and its contents and so do not need to be explicitly granted permissions.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Your username for LTS could potentially be `<blazerid>` or `<blazerid>@uab.edu` depending on when your account was created. It is very important when crafting these policies that the correct username is specified, and these two are not interchangeable. For users with XIAS accounts, your username should be the email address you signed up for the XIAS account with. The usernames are case-sensitive. If you do not remember what your username is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
+    Your username for LTS could potentially be `<BlazerID>` or `<BlazerID>@uab.edu` depending on when your account was created. It is very important when crafting these policies that the correct username is specified, and these two are not interchangeable. For users with XIAS accounts, your username should be the email address you signed up for the XIAS account with. The usernames are case-sensitive. If you do not remember what your username is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
 <!-- markdownlint-enable MD046 -->
 
 ## Policy Structure
@@ -30,10 +30,10 @@ Policies files are essentially built as a series of statements expressly allowin
 Each statement is made up of a few fields:
 
 1. Sid: a short decription of what the statement is for (i.e. "bucket-access")
-2. Effect: "Allow" or "Deny" permissions based on how you want to alter permissions
-3. Principal: Essentially a list of users to change permissions for. Have to formatted like `arn:aws:iam:::user/<lts_username>`.
-4. Action: A list of commands to allow or deny permission for, depending on the Effect value.
-5. Resource: The name of the bucket or objects to apply permissions to. Must be formatted like `arn:aws:s3:::<bucket[/path/objects]>`.
+1. Effect: "Allow" or "Deny" permissions based on how you want to alter permissions
+1. Principal: Essentially a list of users to change permissions for. Have to formatted like `arn:aws:iam:::user/<lts_username>`.
+1. Action: A list of commands to allow or deny permission for, depending on the Effect value.
+1. Resource: The name of the bucket or objects to apply permissions to. Must be formatted like `arn:aws:s3:::<bucket[/path/objects]>`.
 
 It is currently suggested to have at least two statements, one statement allowing access to the bucket itself, and another statement dictating permissions for objects in the bucket.
 
@@ -82,8 +82,8 @@ Critically, this does not allow the given users the ability to read, download, e
 This permission set allows `bob` and `jane@uab.edu` to download files but not to move, overwrite, delete, or otherwise interact with them. Notice that the Resource value has changed from just `bucket1` to `bucket1/*`. We can set this Resource value to different paths and objects to limit the permissions granted. For example:
 
 1. `bucket1/*`: Apply permissions to all objects in the entire bucket
-2. `bucket1/test_folder/*`: Apply permissions to all objects in folder `test_folder`
-3. `bucket1/test_folder/*jpg`: Apply read permissions to only JPGs within `test_folder`.
+1. `bucket1/test_folder/*`: Apply permissions to all objects in folder `test_folder`
+1. `bucket1/test_folder/*jpg`: Apply read permissions to only JPGs within `test_folder`.
 
 For the last two examples, `bob` and `jane@uab.edu` will not have permission to download any files outside of the `test_folder` folder. All permissions are implicitly denied unless explicitly given in the policy statements.
 
@@ -92,11 +92,11 @@ For the last two examples, `bob` and `jane@uab.edu` will not have permission to 
 Being able to download a file is only one possible action you may want to give permission for. Uploading files as well as altering the policy of the bucket may also be useful to give permissions for. Here is a short list of common actions you may want to give permissions for:
 
 1. `s3:ListBucket`: access to see but not interact with objects
-2. `s3:GetObject`: download objects
-3. `s3:PutObject`: upload objects
-4. `s3:DeleteObject`: remove objects
-5. `s3:GetBucketPolicy`: view the current bucket policy
-6. `s3:PutBucketPolicy`: change the current bucket policy
+1. `s3:GetObject`: download objects
+1. `s3:PutObject`: upload objects
+1. `s3:DeleteObject`: remove objects
+1. `s3:GetBucketPolicy`: view the current bucket policy
+1. `s3:PutBucketPolicy`: change the current bucket policy
 
 A full list of Actions for UAB LTS can be seen on the [Ceph docs](https://docs.ceph.com/en/quincy/radosgw/bucketpolicy/#limitations).
 
@@ -245,6 +245,74 @@ In some instances, the bucket owner (i.e. ideally the PI for the lab if this is 
          "arn:aws:s3:::bucket1/*"
         ]
     }]
+}
+```
+
+## Comments in S3 IAM Policies
+
+IAM policies for `S3`, used by LTS for object-level access control within buckets, are written in `JSON` format. Since `JSON` does not support comments natively, `AWS` does not provide a dedicated comment field in their IAM policy schema.
+
+The optional `SID` field in IAM policies, though intended for uniquely identifying statements, can also be used as an ad-hoc comment. In the example below, the `SID` field provides a description of the statement, serving as a comment.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "This statement grants read access to all objects in bucket1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS":[
+            "arn:aws:iam:::user/bob",
+            "arn:aws:iam:::user/jane@uab.edu"
+        ]
+      },
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::bucket1",
+        "arn:aws:s3:::bucket1/*"
+      ]
+    }
+  ]
+}
+```
+
+## Specifying "all actions" in IAM Policies
+
+To allow or deny all actions on a specific resource, such as an `S3` bucket or object, use the following `Action` block as part of a `Statement` object to specify that all actions are affected by the statement:
+
+```Json
+    "Action": [
+    "s3:*"
+    ],
+```
+
+Here is an example IAM policy that grants all `S3` actions on bucket1 and all its objects:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "This statement grants access to all S3 actions in bucket1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS":[
+             "arn:aws:iam:::user/bob",
+             "arn:aws:iam:::user/jane@uab.edu"
+        ]
+      },
+      "Action": [
+        "s3:*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::bucket1",
+        "arn:aws:s3:::bucket1/*"
+      ]
+    }
+  ]
 }
 ```
 

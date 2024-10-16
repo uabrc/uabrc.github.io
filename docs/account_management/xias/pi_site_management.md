@@ -12,28 +12,28 @@ XIAS Project/Sites, or simply sites, tie external users to specific resources at
 
     ![!UAB XIAS Project/Site Management Webpage with Manage Projects/Sites selected and a New button available.](./images/xias_sites_add_000.png)
 
-2. Click "New" to open a form for creating a new Project/Site.
+1. Click "New" to open a form for creating a new Project/Site.
 
     ![!Empty UAB XIAS Project/Site creation form with several fields.](./images/xias_sites_add_001.png)
 
-3. Fill in the form. All fields are required.
+1. Fill in the form. All fields are required.
 
     1. **Short name for project/site** - A memorable name for your project or site.
-    2. **Longer description** - A complete yet concise description of the project or site and its resources.
-    3. **Start date** - The start date, can be today.
-    4. **End date** - An expiration date for the project or site.
-    5. **URIs** - One or more uniform resource locators (URIs) associated with the site, to increase accountability.
+    1. **Longer description** - A complete yet concise description of the project or site and its resources.
+    1. **Start date** - The start date, can be today.
+    1. **End date** - An expiration date for the project or site.
+    1. **URIs** - One or more uniform resource locators (URIs) associated with the site, to increase accountability.
 
         1. Cheaha URI: `https://rc.uab.edu`
-        2. Cloud URI: `https://cloud.rc.uab.edu`
-        3. GitLab URI: `https://gitlab.rc.uab.edu`
+        1. Cloud URI: `https://cloud.rc.uab.edu`
+        1. GitLab URI: `https://gitlab.rc.uab.edu`
 
     ![!Filled UAB XIAS Project/Site creation form.](./images/xias_sites_add_002.png)
 
-4. Click "Add" to submit the form. You should be taken to a page summarizing the created Project/Site.
+1. Click "Add" to submit the form. You should be taken to a page summarizing the created Project/Site.
 
     ![!Summary page for created site reflecting user entered information.](./images/xias_sites_add_003.png)
 
-5. When you visit the "Manage Projects/Sites" page in the future, you will see a table with the newly created Project/Site listed. Click "View" to return to the page seen in the previous step. Click "Edit" to return to the form from \[link\]. Click "Users" to manage users for this site.
+1. When you visit the "Manage Projects/Sites" page in the future, you will see a table with the newly created Project/Site listed. Click "View" to return to the page seen in the previous step. Click "Edit" to return to the form from \[link\]. Click "Users" to manage users for this site.
 
     ![!Site table with newly created site listed. On that row are three buttons: View, Edit, Users. On the next row is the button New.](./images/xias_sites_add_004.png)

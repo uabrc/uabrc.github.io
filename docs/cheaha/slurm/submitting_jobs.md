@@ -63,9 +63,9 @@ For batch jobs, flags are typically included as directive comments at the top of
 
 ### A Simple Batch Job
 
-Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
+Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/storage.md#user-data-and-home-directories) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
 
-``` bash
+```bash linenums="1"
 #!/bin/bash
 #
 #SBATCH --job-name=test
@@ -85,7 +85,7 @@ echo "Hello Error" 1>&2
 There is a lot going on in the above script, so let's break it down. There are three main chunks of this script:
 
 1. Line 1 is the interpreter directive: `#!/bin/bash`. This tells the shell what application to use to execute this script. All `sbatch` scripts on Cheaha should start with this line.
-2. Lines 3-11 are the [`sbatch` flags](#slurm-flags-and-environment-variables) which tell the scheduler what resources you need and how to manage your job.
+1. Lines 3-11 are the [`sbatch` flags](#slurm-flags-and-environment-variables) which tell the scheduler what resources you need and how to manage your job.
 
     - Line 3: The job name is `test`.
     - Lines 4-7: The job will have 1 node, with 1 core and 1 GB of memory.
@@ -94,15 +94,15 @@ There is a lot going on in the above script, so let's break it down. There are t
     - Line 10: Any standard output (`stdout`) will be written to the file `test_$SLURM_JOB_ID.out` in the same directory as the script, whatever the `$SLURM_JOB_ID` happens to be when the job is submitted. The name comes from `%x` equal to `test`, the `--job-name`, and `%j` equal to the Job ID.
     - Line 11: Any error output (`stderr`) will be written to a different file `test_$SLURM_JOB_ID.err` in the same directory.
 
-3. Lines 13 and 14 are the payload, or tasks to be run. They will be executed in order from top to bottom just like any shell script. In this case, it is simply writing "Hello World" to the `--output` file and "Hello Error" to the `--error` file. The `1>&2` Means redirect a copy (`>&`) of `stdout` to `stderr`.
+1. Lines 13 and 14 are the payload, or tasks to be run. They will be executed in order from top to bottom just like any shell script. In this case, it is simply writing "Hello World" to the `--output` file and "Hello Error" to the `--error` file. The `1>&2` Means redirect a copy (`>&`) of `stdout` to `stderr`.
 
 ### Batch Array Jobs With Known Indices
 
 Building on the job script above, below is an array job. Array jobs are useful when you need to perform the same analysis on slightly different inputs with no interaction between those analyses. We call this situation "pleasingly parallel". We can take advantage of an array job using the variable `$SLURM_ARRAY_TASK_ID`, which will have an integer in the set of values we give to the `--array` flag.
 
-To test the script below, copy and paste it into a plain text file `testarrayjob.sh` in your [Home Directory](../../data_management/storage.md#home-directory) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testarrayjob.sh`. Momentarily, 16 text files with `.out` and `.err` suffixes will be produced in your home directory.
+To test the script below, copy and paste it into a plain text file `testarrayjob.sh` in your [Home Directory](../../data_management/storage.md#user-data-and-home-directories) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testarrayjob.sh`. Momentarily, 16 text files with `.out` and `.err` suffixes will be produced in your home directory.
 
-``` bash
+```bash linenums="1"
 #!/bin/bash
 #
 #SBATCH --job-name=test
@@ -155,6 +155,8 @@ You can use `srun` for working on short interactive tasks such as [creating an A
 !!! warning
 
     The limitations of `srun` is that the jobs/execution die if the internet connection is down, and you may have to rerun the job again.
+
+    We recommend against using `srun` for any scientific or research computing or data analysis. Use a [batch job](#batch-jobs-with-sbatch) or an [Open OnDemand (OOD) interactive job](../open_ondemand/index.md) instead.
 <!-- markdownlint-disable MD046 -->
 
 Let us see how to acquire a compute node quickly using `srun`. You can run interactive job using `srun` command with the `--pty /bin/bash` flag. Here is an example,
@@ -233,6 +235,10 @@ Alternatively, `srun` can also run MPI, OpenMP, hybrid MPI/OpenMP, and many more
     Instead of `srun`, please load one of the `OpenMPI` modules with an appropriate version. Please contact [Support](../../help/support.md) with any questions or concerns.
 <!-- markdownlint-enable MD046 -->
 
+## Environment Setup and Module Usage in Job Submission
+
+Before submitting a job using `sbatch`, it's crucial to establish a tailored environment, including software installations and loading necessary modules containing the required software packages. We highly recommend the practice of putting `module reset` before any `module load` calls in job scripts. The module system modifies the environment whenever the module list changes, and Slurm jobs inherit the environment from whatever called `sbatch` or `srun`. The module reset command normalizes the initial environment for the script, improving repeatability and minimizing the risk of hard-to-diagnose module conflicts. For examples and further information, please see [best practice for loading modules](../software/modules.md#best-practice-for-loading-modules).
+
 ## Graphical Interactive Jobs
 
 It is highly recommended to use the [Open OnDemand](../open_ondemand/index.md) web portal for [interactive apps](../open_ondemand/ood_layout.md#interactive-apps). Interactive sessions for certain software such as MATLAB and RStudio can be created directly from the browser while an HPC Desktop is available to access all of the other software on Cheaha. A terminal is also available through Open OnDemand.
@@ -247,9 +253,9 @@ Questions to ask yourself when requesting job resources:
 
 1. Can my scripts take advantage of multiple CPUs?
     1. For instance, RStudio generally works on a single thread. Requesting more than 1 CPU here would not improve performance.
-2. How large is the data I'm working with?
-3. Do my pipelines keep large amounts of data in memory?
-4. How long should my job take?
+1. How large is the data I'm working with?
+1. Do my pipelines keep large amounts of data in memory?
+1. How long should my job take?
     1. For example, do not request 50 hours time for a 15 hour process. Have a reasonable buffer included to account for unexpected processing delays, but do not request the maximum time on a partition if that's unnecessary.
 
 <!-- markdownlint-disable MD046 -->

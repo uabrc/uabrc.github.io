@@ -25,7 +25,7 @@ To summarize:
 
 ### Cloning from GitHub
 
-To do anything with GitHub, you will first need to navigate to their website <https://github.com> and [create an account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account).
+To do anything with GitHub, you will first need to navigate to their website <https://github.com> and [create an account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github).
 
 To clone a repository, be sure you have the repository URL. Then, using `git` at a terminal, [clone](git.md#cloning) the repository using whatever settings are appropriate. GitHub repository pages look something like the page for this documentation, shown below.
 
@@ -75,7 +75,7 @@ Below is a bulleted list of good practices for organizing a lab space. Each bull
 - Have an organization for your lab space. [GitHub](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations) [GitLab](https://docs.gitlab.com/ee/topics/set_up_organization.html)
     - The organization should have its PI or PIs as owners, i.e., the owner role. [GitHub](https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization) [GitLab](https://docs.gitlab.com/ee/user/permissions.html#permissions-and-roles)
     - Other trusted individuals can be made administrators as needed, to delegate important and sensitive tasks that require elevated permissions.
-- For each software project, create a repository within your organization. [GitHub](https://docs.github.com/en/get-started/quickstart/create-a-repo), [GitLab](https://docs.gitlab.com/ee/user/project/repository/)
+- For each software project, create a repository within your organization. [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories), [GitLab](https://docs.gitlab.com/ee/user/project/repository/)
     - By default, organization members will have access at their assigned role level. These can be changed by managing roles and using teams effectively, if needed. For smaller labs this is often not necessary.
     - The created repository is the central one for the organization and should not be changed directly.
 - For every individual, including owners and admins, work should be performed on a personal fork of the repository and then merged by submitting pull/merge requests.
@@ -91,18 +91,18 @@ The workflow assumes a central repository already exists within an organization 
 
 - One-time setup
     1. Fork an individual repository (downstream) from the central organization repository (upstream). [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) [GitLab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html)
-    2. [Clone](git.md#cloning) the downstream fork to the local machine where the programming will happen.
+    1. [Clone](git.md#cloning) the downstream fork to the local machine where the programming will happen.
 - Workflow
     1. Decide on a set of changes to make. Good practice is only working on one conceptual unit at a time. One feature, one bug fix, or one documentation page. Prefer fixing bugs before adding features.
-    2. Synchronize your downstream fork with the upstream fork to minimize risk of merge conflicts. [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) [GitLab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html#repository-mirroring)
-    3. [Pull the downstream fork main branch](git.md#fetching-and-pulling) to your local clone main branch.
-    4. [Create a working branch](git.md#creating-new-branches) for intended changes. Give it a short, descriptive name like `feature-add-button` or `fix-broken-link`.
-    5. [Checkout the working branch](git.md#checking-out-existing-branches).
-    6. Make changes to the code on the local machine using your preferred editor. Make small units of change at a time, try not to commit too much, but make sure your changes don't break the code. There is an art to this that comes with practice, but don't be afraid of trying.
-    7. [Commit those changes](git.md#staging-and-committing-changes) to the working branch. Keep making changes and committing until the set of changes is complete.
-    8. When all needed changes have been made, [push the working branch](git.md#pushing) to your fork.
-    9. Create a pull/merge request from the downstream working branch to the upstream main branch. [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-    10. Wait for reviews, make needed changes, and hopefully merging of your request.
+    1. Synchronize your downstream fork with the upstream fork to minimize risk of merge conflicts. [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) [GitLab](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html#update-your-fork)
+    1. [Pull the downstream fork main branch](git.md#fetching-and-pulling) to your local clone main branch.
+    1. [Create a working branch](git.md#creating-new-branches) for intended changes. Give it a short, descriptive name like `feature-add-button` or `fix-broken-link`.
+    1. [Checkout the working branch](git.md#checking-out-existing-branches).
+    1. Make changes to the code on the local machine using your preferred editor. Make small units of change at a time, try not to commit too much, but make sure your changes don't break the code. There is an art to this that comes with practice, but don't be afraid of trying.
+    1. [Commit those changes](git.md#staging-and-committing-changes) to the working branch. Keep making changes and committing until the set of changes is complete.
+    1. When all needed changes have been made, [push the working branch](git.md#pushing) to your fork.
+    1. Create a pull/merge request from the downstream working branch to the upstream main branch. [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
+    1. Wait for reviews, make needed changes, and hopefully merging of your request.
 
 Sometimes merging will be blocked because of a merge conflict. One programmer may make changes to code being worked on by another, and the two changes come into conflict. If this occurs, below are some steps that may help resolve the issue. In some cases, conflict resolution is straightforward, but in other cases thought will be necessary to disentangle what code should be kept, what should be discarded, and what should be modified.
 
@@ -117,9 +117,9 @@ Effective use of issue tracking can greatly reduce cognitive load and simplify c
 
 The typical issue lifecycle, at a high level, is something like below.
 
-1. Create an issue. [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) [GitLab](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#create-an-issue)
-2. Ask for clarifications and discuss as needed.
-3. Use the [Fork-Pull/Merge Request Workflow](#the-fork-pullmerge-request-workflow) to resolve the issue. In the Pull Request description, put the text `Fixes #...` where `...` should be replaced by the issue's number. When the request is merged, the issue will automatically be linked to the request and closed.
+1. Create an issue. [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) [GitLab](https://docs.gitlab.com/ee/user/project/issues/create_issues.html)
+1. Ask for clarifications and discuss as needed.
+1. Use the [Fork-Pull/Merge Request Workflow](#the-fork-pullmerge-request-workflow) to resolve the issue. In the Pull Request description, put the text `Fixes #...` where `...` should be replaced by the issue's number. When the request is merged, the issue will automatically be linked to the request and closed.
 
 ## Common Scenarios
 
@@ -128,13 +128,13 @@ The typical issue lifecycle, at a high level, is something like below.
 The process for this has a few intricate steps that may be unfamiliar even to regular users of git, and has a few pitfalls.
 
 1. Use `git init` in the top-level code folder on the local machine, if it is not already a git repository. If it already is a repository, be sure the primary branch is called `main`. Use `git branch -m <oldname> main`.
-2. Create a repository on the remote server [GitHub](https://docs.github.com/en/get-started/quickstart/create-a-repo), [GitLab](https://docs.gitlab.com/ee/user/project/repository/#create-a-repository)
-3. Use `git remote add origin <url>` to add the remote URL to the local repository with the name `origin`.
-4. Verify the URL is correct with `git remote -v`. Fix it with `git remote set-url origin <url>` if needed.
-5. Checkout the main branch without `git checkout main`.
-6. Use `git pull origin main --allow-unrelated-histories` to combine the main branches of the remote and local repository, within your local repository.
-7. Use `git push origin main` to push the combined histories to the remote repository.
-8. Be sure to verify the repository looks good at the GitHub/GitLab repository page (depending on which you used).
+1. Create a repository on the remote server [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories), [GitLab](https://docs.gitlab.com/ee/user/project/repository/#create-a-repository)
+1. Use `git remote add origin <url>` to add the remote URL to the local repository with the name `origin`.
+1. Verify the URL is correct with `git remote -v`. Fix it with `git remote set-url origin <url>` if needed.
+1. Checkout the main branch without `git checkout main`.
+1. Use `git pull origin main --allow-unrelated-histories` to combine the main branches of the remote and local repository, within your local repository.
+1. Use `git push origin main` to push the combined histories to the remote repository.
+1. Be sure to verify the repository looks good at the GitHub/GitLab repository page (depending on which you used).
 
 <!-- markdownlint-disable MD046 -->
 !!! note

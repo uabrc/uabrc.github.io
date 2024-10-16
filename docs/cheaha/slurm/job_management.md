@@ -16,7 +16,7 @@ The output of `squeue` will look like:
 
 ![!Output from squeue.](./images/squeue_output.png)
 
-By default the fields displayed are `jobid`, `partition`, `jobname` as `name`, blazerid as `user`, job state as `st`, total run time as `time`, number of nodes as `node`, and the list of nodes as `nodelist`, used for each job a researcher has submitted.
+By default the fields displayed are `jobid`, `partition`, `jobname` as `name`, BlazerID as `user`, job state as `st`, total run time as `time`, number of nodes as `node`, and the list of nodes as `nodelist`, used for each job a researcher has submitted.
 
 For array jobs, the JobID will be formatted as `jobid_arrayid`.
 
@@ -170,12 +170,12 @@ Durations are reported like the following.
 Job states report on where the job is in the overall Slurm process. If all goes well, you will see jobs move through the following states:
 
 1. `PENDING`
-2. `RUNNING`
-3. A terminal state depending on what happens
+1. `RUNNING`
+1. A terminal state depending on what happens
     1. `COMPLETED` if the job finished normally and returns exit code zero
-    2. `CANCELLED` if the researcher cancels the job
-    3. `FAILED` if there is a software error or non-zero exit code
-    4. `TIMEOUT` if the job had insufficient time
+    1. `CANCELLED` if the researcher cancels the job
+    1. `FAILED` if there is a software error or non-zero exit code
+    1. `TIMEOUT` if the job had insufficient time
 
 Other states are possible. A complete list of job states is available at the [Official Documentation](https://slurm.schedmd.com/sacct.html#SECTION_JOB-STATE-CODES).
 
