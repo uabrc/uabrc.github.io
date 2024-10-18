@@ -1,0 +1,3647 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../globus_group_tutorial/">
+      
+      
+      <link rel="icon" href="../../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Globus for Individuals - Research Computing Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#globus-tutorials-for-individual-researchers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Research Computing Documentation" class="md-header__button md-logo" aria-label="Research Computing Documentation" data-md-component="logo">
+      
+  <img src="../../../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Research Computing Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Globus for Individuals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uabrc/uabrc.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Research Computing Documentation" class="md-nav__button md-logo" aria-label="Research Computing Documentation" data-md-component="logo">
+      
+  <img src="../../../../images/logo.png" alt="logo">
+
+    </a>
+    Research Computing Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uabrc/uabrc.github.io/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../account_management/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Account Management
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Account Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../account_management/cheaha_account/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheaha Account
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../account_management/xias/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    External Collaborator Accounts (XIAS)
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            External Collaborator Accounts (XIAS)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../account_management/xias/pi_site_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For PIs - (1) Managing Projects & Sites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../account_management/xias/pi_guest_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For PIs - (2) Managing Guests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../account_management/xias/guest_instructions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    For Guests - Account Creation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../account_management/gitlab_account/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gitlab Account
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheaha Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alternate_storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage Alternatives
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Long Term Storage
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Long Term Storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lts/tutorial/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lts/tutorial/individual_lts_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LTS and s3cmd Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lts/interfaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfacing with LTS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lts/policies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bucket Permissions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lts/lts_cores/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UAB Core Accounts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lts/lts_faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Transfer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Transfer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Globus for Individuals
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Globus for Individuals
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#why-globus" class="md-nav__link">
+      <span class="md-ellipsis">
+        Why Globus?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-does-globus-work" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Does Globus Work?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#tutorial-prerequisites" class="md-nav__link">
+      <span class="md-ellipsis">
+        Tutorial Prerequisites
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-get-onto-the-globus-web-app" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Get Onto the Globus Web App?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-search-for-collections-by-name" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Search For Collections By Name?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-find-uab-storage-collections" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Find UAB Storage Collections?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-find-collections-shared-with-me" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Find Collections Shared with Me?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-transfer-between-a-collection-and-cheaha" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Transfer between a Collection and Cheaha?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-transfer-between-a-collection-and-lts" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Transfer between a Collection and LTS?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-transfer-between-lts-and-cheaha" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Transfer between LTS and Cheaha?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-check-transfer-status" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Check Transfer Status?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../globus_group_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Globus for Groups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../globus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Globus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rclone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RClone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filezilla/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FileZilla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../code_storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Workflow Solutions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Workflow Solutions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../workflow_solutions/shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../workflow_solutions/using_anaconda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Anaconda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../workflow_solutions/using_workflow_managers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Workflow Managers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../workflow_solutions/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../workflow_solutions/r_environments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R Projects and Environments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../workflow_solutions/getting_containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../workflow_solutions/git_collaboration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Collaboration with GitHub and GitLab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cheaha Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cheaha Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../cheaha/tutorial/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/tutorial/pytorch_tensorflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anaconda Environment Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../cheaha/open_ondemand/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Cheaha Web Portal
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cheaha Web Portal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/open_ondemand/ood_layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the Web Portal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/open_ondemand/hpc_desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HPC Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/open_ondemand/ood_jupyter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jupyter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/open_ondemand/ood_rstudio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RStudio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/open_ondemand/ood_matlab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MATLAB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/software/modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pre-installed Modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/software/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-Installed Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SLURM
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            SLURM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/slurm/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/slurm/slurm_tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/slurm/submitting_jobs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Submitting Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/slurm/practical_sbatch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practical Batch Array Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/slurm/job_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/slurm/gpu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GPUs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheaha/job_efficiency/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job Efficiency
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../uab_cloud/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    UAB Cloud (cloud.rc) Guide
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UAB Cloud (cloud.rc) Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../uab_cloud/tutorial/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uab_cloud/tutorial/networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    (1) Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uab_cloud/tutorial/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    (2) Security Policies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uab_cloud/tutorial/instances/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    (3) Instances
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uab_cloud/tutorial/volumes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    (4) Volumes (optional)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uab_cloud/remote_access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remote Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uab_cloud/installing_software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uab_cloud/snapshots/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshots and Images
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../uab_cloud/sharing_cloud_environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing Cloud Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UAB Kubernetes Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UAB Kubernetes Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../kubernetes/startup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Startup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../national_ci/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    National Research Computing Cyberinfrastructure
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            National Research Computing Cyberinfrastructure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../national_ci/osg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Open Science Grid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../national_ci/nsf_access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NSF Cyberinfrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../national_ci/nih/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NIH Cyberinfrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Grants & Contracts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Grants & Contracts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../grants/facilities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RC Facilities Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../grants/publications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acknowlding Us in Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../grants/opportunities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funding Opportunities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Outreach & Training
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Outreach & Training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../education/case_studies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Case Studies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../education/research_computing_days/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Research Computing Days
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research Computing Days
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../education/courses/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Offered Courses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../education/training_resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Training Resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../policies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Policies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contributing/reporting_errors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reporting Documentation Errors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contributing/contributor_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing Content
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Help
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Help
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../help/support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../help/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ - Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#why-globus" class="md-nav__link">
+      <span class="md-ellipsis">
+        Why Globus?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-does-globus-work" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Does Globus Work?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#tutorial-prerequisites" class="md-nav__link">
+      <span class="md-ellipsis">
+        Tutorial Prerequisites
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-get-onto-the-globus-web-app" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Get Onto the Globus Web App?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-search-for-collections-by-name" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Search For Collections By Name?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-find-uab-storage-collections" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Find UAB Storage Collections?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-find-collections-shared-with-me" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Find Collections Shared with Me?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-transfer-between-a-collection-and-cheaha" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Transfer between a Collection and Cheaha?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-transfer-between-a-collection-and-lts" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Transfer between a Collection and LTS?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-transfer-between-lts-and-cheaha" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Transfer between LTS and Cheaha?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#how-do-i-check-transfer-status" class="md-nav__link">
+      <span class="md-ellipsis">
+        How Do I Check Transfer Status?
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="globus-tutorials-for-individual-researchers">Globus Tutorials for Individual Researchers<a class="headerlink" href="#globus-tutorials-for-individual-researchers" title="Permanent link">&para;</a></h1>
+<p>Do you have data and need to move it to a different computer system? Want to use a graphical interface to do it? Want a service that will attempt to resume interrupted transfers? Want enforced encryption for your transfers? Then Globus is right for you.</p>
+<p>If you are new to Globus, you are in the right place. If you represent a group looking to share data with others we recommend following these tutorials with our <a href="../globus_group_tutorial/">Globus Tutorials for Research Groups</a>.</p>
+<p>These tutorials are intended for individual researchers who need to move data from one location to another. If you manage a Research Core or lab and have never used Globus before, you'll want to start on this page. Then you will want to proceed to <a href="../globus_group_tutorial/">Globus Tutorials for Research Groups</a>.</p>
+<p>The tutorials below will teach you how to effectively use Globus for managing and transferring research data. We will explore what Globus is, why you might use it, how it works, and we'll walk you through the essential steps to get started. You will learn how to set up your Globus account, access the Globus application, find Collections shared with you, and search for Collections by name.</p>
+<p>Topics covered:</p>
+<ol>
+<li><a href="#why-globus">Why Globus?</a></li>
+<li><a href="#how-does-globus-work">How Does Globus Work?</a></li>
+<li><a href="#tutorial-prerequisites">Tutorial Prerequisites</a></li>
+<li><a href="#how-do-i-get-onto-the-globus-web-app">How Do I Get Onto the Globus Web App?</a></li>
+<li><a href="#how-do-i-search-for-collections-by-name">How Do I Search for Collections by Name?</a></li>
+<li><a href="#how-do-i-find-uab-storage-collections">How Do I Find UAB Storage Collections?</a></li>
+<li><a href="#how-do-i-find-collections-shared-with-me">How Do I Find Collections Shared with Me?</a></li>
+<li><a href="#how-do-i-transfer-between-a-collection-and-cheaha">How Do I Transfer between a Collection and Cheaha?</a></li>
+<li><a href="#how-do-i-transfer-between-a-collection-and-lts">How Do I Transfer between a Collection and LTS?</a></li>
+<li><a href="#how-do-i-transfer-between-lts-and-cheaha">How Do I Transfer between LTS and Cheaha?</a></li>
+<li><a href="#how-do-i-check-transfer-status">How Do I Check Transfer Status?</a></li>
+</ol>
+<h2 id="why-globus">Why Globus?<a class="headerlink" href="#why-globus" title="Permanent link">&para;</a></h2>
+<p>Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions. Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.</p>
+<ul>
+<li>Straight-forward, browser-based, graphical interface.</li>
+<li>Compatible with <a href="https://www.uab.edu/it/home/tech-solutions/file-storage/box">UAB Box</a>.</li>
+<li>Compatible with <a href="../../../lts/">Long-Term Storage</a>.</li>
+<li>Can be used with your laptop, desktop, or lab workstation via Globus Connect Personal (GCP).</li>
+<li>Transfers are automatically retried in the event of network or computer system outages.</li>
+<li>Transfers are encrypted end-to-end. Globus never sees your data.</li>
+<li>Suitable for transferring PHI and HIPAA data. Note: a UAB Enterprise IT risk assessment is required.</li>
+</ul>
+<h2 id="how-does-globus-work">How Does Globus Work?<a class="headerlink" href="#how-does-globus-work" title="Permanent link">&para;</a></h2>
+<p>Globus is an ecosystem of software intended to make research data transfer simpler. The Globus Web Application (Web App) at <a href="https://app.globus.org">https://app.globus.org</a> allows you to initiate transfers between any two Collections you have authorization to access. The Globus Connect Personal (GCP) software lets you turn any computer into a Globus Collection. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two Collections, the Globus application tells the two Collections that they need to talk to each other and data is sent directly between them. The Collections update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between Collections is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.</p>
+<h2 id="tutorial-prerequisites">Tutorial Prerequisites<a class="headerlink" href="#tutorial-prerequisites" title="Permanent link">&para;</a></h2>
+<p>For these tutorials, you will need your BlazerID or <a href="../../../../account_management/xias/">XIAS ID</a> and password to authenticate using UAB Single Sign-On (SSO).</p>
+<h2 id="how-do-i-get-onto-the-globus-web-app">How Do I Get Onto the Globus Web App?<a class="headerlink" href="#how-do-i-get-onto-the-globus-web-app" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Use your browser to navigate to <a href="https://app.globus.org">https://app.globus.org</a>. You should see a login page like below.</p>
+<p><a class="glightbox" href="../images/gi-web-app/001-login.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Globus Web App login page." src="../images/gi-web-app/001-login.png" /></a></p>
+</li>
+<li>
+<p>To login, first you must find and select our institution. Type "UAB" or "University of Alabama at Birmingham" into the search bar to locate UAB in the list. The image below shows the correct choice in a red box.</p>
+<!-- markdownlint-disable MD046 -->
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are an external collaborator using a <a href="../../../../account_management/xias/">XIAS account</a> (this is uncommon) to interact with UAB-owned storage you will still need to search for "UAB". Do not use your home institution login to access UAB storage systems, as you will only have access to UAB storage with your XIAS credentials.</p>
+</div>
+<!-- markdownlint-enable MD046 -->
+<p><a class="glightbox" href="../images/gi-web-app/002-search.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Globus Web App login search bar with UAB entered and University of Alabama at Birmingham in a red box." src="../images/gi-web-app/002-search.png" /></a></p>
+</li>
+<li>
+<p>Select "University of Alabama at Birmingham" from the drop-down menu.</p>
+<p><a class="glightbox" href="../images/gi-web-app/003-select.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Globus Web App with University of Alabama at Birmingham selected showing activated Continue button." src="../images/gi-web-app/003-select.png" /></a></p>
+</li>
+<li>
+<p>Click "Continue" to be taken to the UAB Single Sign-On (SSO) form. Enter your BlazerID and password in the SSO form, then click "Log In". Complete the login process as usual.</p>
+<p><a class="glightbox" href="../images/gi-web-app/004-sso.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="UAB Single Sign-On form." src="../images/gi-web-app/004-sso.png" /></a></p>
+</li>
+<li>
+<p>You should be taken to the File Manager page of the Globus Web App. We will be revisiting this page frequently throughout the tutorials. We highly recommend taking some time to familiarize yourself with the page as you proceed. The next few steps outline the important features of the File Manager page and its purpose.</p>
+<p><a class="glightbox" href="../images/gi-web-app/005-file-manager-single-panel.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Globus Web App file manager single-panel view." src="../images/gi-web-app/005-file-manager-single-panel.png" /></a></p>
+</li>
+<li>
+<p>Recall that Globus is a data transfer application. A data transfer means moving data between two computers: source and destination. As we learn more about Globus, data stored on the source and destination will be visible on the File Manager page in the panels in the screenshot above.</p>
+<p>By default, only one panel is visible. We recommend selecting two-panel view mode for improved ease of use. Select two-panel view mode by clicking the button located near the top right corner, as shown in the red box below. Of the three available view mode buttons, the two-panel view mode button is in the center.</p>
+<p>From here on, tutorials will assume you are using two-panel view mode when we refer to the File Manager page.</p>
+<p><a class="glightbox" href="../images/gi-web-app/006-view-buttons.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Globus Web App file manager two-panel view." src="../images/gi-web-app/006-view-buttons.png" /></a></p>
+</li>
+<li>
+<p>Now that two-panel view mode has been selected, you will see two sets of features and panels side-by-side. Most of these features will be used extensively when using Globus.</p>
+<ul>
+<li><strong>(1) Collection Search bar</strong>: Clicking here will open the Collection Search page, allowing you to find Collections of data shared by others, or find your own Collections. The next step will demonstrate features of the Collection Search page.</li>
+<li><strong>(2) Path text field</strong>: After a Collection has been selected using (1), this text field allows you to enter the path to a specific folder, updating the files and folders shown in (5).</li>
+<li><strong>(3) Start Transfer button</strong>: When you have selected files and folders in (5), use this button to start transferring.</li>
+<li><strong>(4) Transfer Options drop down menu</strong>: Various options for the transfer are available in this menu. These options are not commonly needed and are not used in the tutorials.</li>
+<li><strong>(5) File Browser panel</strong>: After a Collection has been selected in (1), a list of files and folders will appear here for the path shown in (2). You may navigate the Collection here like you would on your operating system.</li>
+<li><strong>(6) Navigation panel</strong>: The blue bar at the left hand side of the Globus Web App is the navigation panel. It will be referred to and used many times throughout these tutorials.</li>
+</ul>
+<p><a class="glightbox" href="../images/gi-web-app/007-file-manager-two-panel.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Globus Web App file manager two-panel view." src="../images/gi-web-app/007-file-manager-two-panel.png" /></a></p>
+</li>
+<li>
+<p>To better prepare you for what to expect, the screenshot below shows the File Manager page with an example Collection selected, called "my-gcp-collection". This example shows a path in the Path text field and contents in the File Browser panel.</p>
+<ul>
+<li><strong>(1) Select All checkbox</strong>: Select or unselect all files in the currently displayed folder.</li>
+<li><strong>(2) Go Up One Level button</strong>: Go to the folder containing the currently displayed folder.</li>
+<li><strong>(3) Refresh button</strong>: Refreshes the view of the currently displayed folder.</li>
+<li><strong>(4) File Selection checkbox</strong>: If checked, then the file is selected for transfer. This file is selected.</li>
+<li><strong>(5) Folder Selection checkbox</strong>: If checked, then the folder is currently selected for transfer. This folder is not selected.</li>
+</ul>
+<p><a class="glightbox" href="../images/gi-web-app/008-file-manager-two-panel-example.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Globus Web App file manager two-panel view with Collection selected showing a file and folder." src="../images/gi-web-app/008-file-manager-two-panel-example.png" /></a></p>
+</li>
+</ol>
+<p>The File Manager page will be your most frequently-visited page when using Globus for data transfers. It is central to usage of the Globus Web Application. Please take some time to familiarize yourself with its look and feel. As you progress in the tutorials, please take time to experiment with transferring data to better understand how the interface works. Feel free to return here for guidance.</p>
+<p>From here you can proceed to <a href="#how-do-i-search-for-collections-by-name">How Do I Search for Collections by Name?</a></p>
+<p><a href="#globus-tutorials-for-individual-researchers">Return to the top</a>.</p>
+<h2 id="how-do-i-search-for-collections-by-name">How Do I Search For Collections By Name?<a class="headerlink" href="#how-do-i-search-for-collections-by-name" title="Permanent link">&para;</a></h2>
+<p>Please follow these instructions to search for a specific Collection by name.</p>
+<ol>
+<li><a href="#how-do-i-get-onto-the-globus-web-app">Get onto the Globus Web App</a>.</li>
+<li>
+<p>You should see the File Manager page. If not click File Manager in the left-hand navigation panel.</p>
+<p><a class="glightbox" href="../images/common/file-manager.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page." src="../images/common/file-manager.png" /></a></p>
+</li>
+<li>
+<p>Click the Collection Search bar to open the Collection Search page.</p>
+<p><a class="glightbox" href="../images/common/collection-search-page.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Collection search page" src="../images/common/collection-search-page.png" /></a></p>
+</li>
+<li>
+<p>In the example below, we typed "uab box" to search for the UAB Box Collection, which connects to UAB's Box.com service.</p>
+<p><a class="glightbox" href="../images/gi-search-collections/003-results.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Globus Collection search page showing results of searching for &quot;UAB Box&quot;." src="../images/gi-search-collections/003-results.png" /></a></p>
+</li>
+<li>
+<p>Click the name of the Collection to be taken back to the file manager page with the Collection filled in.</p>
+<p><a class="glightbox" href="../images/gi-find-shared-collections/004-selected.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page of the Globus Web App. One of the Collection Search bars is filled in with the previously selected Collection." src="../images/gi-find-shared-collections/004-selected.png" /></a></p>
+</li>
+</ol>
+<p>If you can't find a particular Collection this way, but know it was shared with you, try <a href="#how-do-i-find-collections-shared-with-me">finding Collections shared with me</a>. Proceed on to learn <a href="#how-do-i-find-uab-storage-collections">how to find UAB storage Collections</a>.</p>
+<p><a href="#globus-tutorials-for-individual-researchers">Return to the top</a>.</p>
+<h2 id="how-do-i-find-uab-storage-collections">How Do I Find UAB Storage Collections?<a class="headerlink" href="#how-do-i-find-uab-storage-collections" title="Permanent link">&para;</a></h2>
+<p>UAB offers <a href="../../../storage/">multiple storage resources</a>. The following resources may be accessed through Globus Collections.</p>
+<ul>
+<li>Cheaha file system (GPFS) including <a href="../../../storage/#what-individual-storage-solutions-are-available">individual directories</a> and <a href="../../../storage/#project-directory">project directories</a>.</li>
+<li><a href="../../../lts/">Long-Term Storage (LTS)</a>.</li>
+<li><a href="https://www.uab.edu/it/home/tech-solutions/file-storage/box">UAB Box</a>.</li>
+</ul>
+<p>To find these resources on Globus, use the following steps.</p>
+<ol>
+<li><a href="#how-do-i-get-onto-the-globus-web-app">Get onto the Globus Web App</a>.</li>
+<li>
+<p>You should see the File Manager page. If not click File Manager in the left-hand navigation panel.</p>
+<p><a class="glightbox" href="../images/common/file-manager.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page." src="../images/common/file-manager.png" /></a></p>
+</li>
+<li>
+<p>Click the Collection Search bar to open the Collection Search page.</p>
+<p><a class="glightbox" href="../images/common/collection-search-page.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Collection search page" src="../images/common/collection-search-page.png" /></a></p>
+</li>
+<li>
+<p>In the search bar, type one of the following, depending on which resource you need, and select the appropriate entry.</p>
+<ul>
+<li>
+<p><strong>Cheaha Filesystem (GPFS)</strong>: Type "UAB Cheaha". There are two Collections, choose one based on where the other computer is located.</p>
+<ul>
+<li><strong>(1)</strong> Transferring with a computer on the UAB Campus Network or UAB Wifi? Select "Cheaha cluster <strong>on</strong>-campus (UAB Science DMZ)".</li>
+<li><strong>(2)</strong> Transferring with a computer on other networks? select "Cheaha cluster <strong>off</strong>-campus (UAB Science DMZ)".</li>
+</ul>
+<p><a class="glightbox" href="../images/gi-uab-collections/001-cheaha.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="UAB Box search results." src="../images/gi-uab-collections/001-cheaha.png" /></a></p>
+</li>
+<li>
+<p><strong>Long-Term Storage (LTS)</strong>: Type "UAB LTS" and select the entry labeled "UAB Research Computing LTS (Long Term Storage aka S3)".</p>
+<p><a class="glightbox" href="../images/gi-uab-collections/002-lts.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="UAB Box search results." src="../images/gi-uab-collections/002-lts.png" /></a></p>
+</li>
+<li>
+<p><strong>UAB Box</strong>: Type "UAB Box" and select the entry labeled "UAB Box".</p>
+<p><a class="glightbox" href="../images/gi-uab-collections/003-box.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="UAB Box search results." src="../images/gi-uab-collections/003-box.png" /></a></p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Proceed on to learn <a href="#how-do-i-find-uab-storage-collections">how to find Collections shared with you</a>.</p>
+<p><a href="#globus-tutorials-for-individual-researchers">Return to the top</a>.</p>
+<h2 id="how-do-i-find-collections-shared-with-me">How Do I Find Collections Shared with Me?<a class="headerlink" href="#how-do-i-find-collections-shared-with-me" title="Permanent link">&para;</a></h2>
+<p>Globus allows users to share Collections with others. Other researchers, labs, and Research Cores on campus may invite you to their Collections to share data with you. The following instructions let you view Collections shared with you.</p>
+<ol>
+<li><a href="#how-do-i-get-onto-the-globus-web-app">Log in to Globus using your credentials</a></li>
+<li>
+<p>You should see the File Manager page. If not click File Manager in the left-hand navigation panel.</p>
+<p><a class="glightbox" href="../images/common/file-manager.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page." src="../images/common/file-manager.png" /></a></p>
+</li>
+<li>
+<p>Click the Collection Search bar to open the Collection Search page.</p>
+<p><a class="glightbox" href="../images/common/collection-search-page.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Collection search page" src="../images/common/collection-search-page.png" /></a></p>
+</li>
+<li>
+<p>Click the Shared With You tab. The list of Collections will be filtered down to all Collections others have granted you access to, which should help you find the Collections you need.</p>
+<p><a class="glightbox" href="../images/gi-find-shared-collections/003-list.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Collection Search page of Globus Web App. Shared With You tab is selected and the list of Collections has been filtered down." src="../images/gi-find-shared-collections/003-list.png" /></a></p>
+</li>
+<li>
+<p>Click the name of the Collection to be taken back to the file manager page with the Collection filled in.</p>
+<p><a class="glightbox" href="../images/gi-find-shared-collections/004-selected.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page of the Globus Web App. One of the Collection Search bars is filled in with the previously selected Collection." src="../images/gi-find-shared-collections/004-selected.png" /></a></p>
+</li>
+</ol>
+<p>If you can't find a particular Collection this way, but know its name, try <a href="#how-do-i-search-for-collections-by-name">searching for Collections</a>.</p>
+<p>Proceed on to learn how to transfer between Collections.</p>
+<ul>
+<li><a href="#how-do-i-transfer-between-a-collection-and-cheaha">Between a Collection and Cheaha</a></li>
+<li><a href="#how-do-i-transfer-between-a-collection-and-lts">Between a Collection and LTS</a></li>
+<li><a href="#how-do-i-transfer-between-lts-and-cheaha">Between LTS and Cheaha</a></li>
+</ul>
+<p><a href="#globus-tutorials-for-individual-researchers">Return to the top</a>.</p>
+<h2 id="how-do-i-transfer-between-a-collection-and-cheaha">How Do I Transfer between a Collection and Cheaha?<a class="headerlink" href="#how-do-i-transfer-between-a-collection-and-cheaha" title="Permanent link">&para;</a></h2>
+<p>Please use the following instructions to transfer data from a shared Collection to <a href="../../../storage/#what-type-of-storage-do-i-need">Cheaha GPFS</a>. These instructions may also be used for other buckets on LTS, provided you have access and know their file path.</p>
+<p>The direction of transfer may also be reversed to transfer data from Cheaha to the shared Collection. Note that some shared Collections may not allow you to transfer data back, such as some of those provided by Research Cores.</p>
+<p>These instructions can be generalized to any two Collections you have access to on Globus.</p>
+<ol>
+<li>
+<p><a href="#how-do-i-get-onto-the-globus-web-app">Log in to Globus using your credentials</a>.</p>
+</li>
+<li>
+<p>Find a shared Collection <a href="#how-do-i-find-collections-shared-with-me">by filtering</a> or <a href="#how-do-i-search-for-collections-by-name">by searching</a> in the left side Collection Search bar.</p>
+</li>
+<li>
+<p>Once you have selected the shared Collection you wish to transfer data from, repeat the process to <a href="#how-do-i-search-for-collections-by-name">search</a> for a Cheaha Collection in the Collection Search bar on the right side of the file manager page. Search for "Cheaha cluster" to find them.</p>
+<p>Pay close attention in choosing which of the two you need. Choosing incorrectly could lead to slow transfers. Answer the following questions to help you decide. Is the first Collection you selected...</p>
+<ul>
+<li>...part of a lab or Research Core on campus? Select "on-campus".</li>
+<li>...on a computer on the UAB Campus Network or UAB Wifi or the UAB VPN? Select "on-campus".</li>
+<li>...at a different institution? Select "off-campus".</li>
+<li>...on a computer on a home network? Select "off-campus".</li>
+</ul>
+</li>
+<li>
+<p>When you select a Cheaha Collection, or any other High Assurance (HA) Collection or Collection, you will be prompted to re-authenticate. Click the Continue button to do so, then select your UAB email address.</p>
+<p><a class="glightbox" href="../images/common/ha-authenticate.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="High Assurance request for reauthentication." src="../images/common/ha-authenticate.png" /></a></p>
+<p><a class="glightbox" href="../images/common/select-identity.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Identity selection showing a UAB email address." src="../images/common/select-identity.png" /></a></p>
+</li>
+<li>
+<p>At this point, your file manager page should look something like the following image. At this point, both Collection Search bars should have a Collection or Collection filled in. The left side should be the Collection you wish to transfer from. The right side should be a Cheaha Collection. You should see files and folders on both sides.</p>
+<p><a class="glightbox" href="../images/gi-transfer-collection-to-cheaha/005-ready-to-select.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page showing a shared Collection and Cheaha Collection." src="../images/gi-transfer-collection-to-cheaha/005-ready-to-select.png" /></a></p>
+</li>
+<li>
+<p>Locate the source path on the shared Collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.</p>
+</li>
+<li>
+<p>Repeat the process on the Cheaha Collection side to locate the destination path on the Cheaha Collection side.</p>
+</li>
+<li>
+<p>Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.</p>
+<p><a class="glightbox" href="../images/gi-transfer-collection-to-cheaha/008-selection.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page with a file selected in the left selection area. The start button is boxed in red." src="../images/gi-transfer-collection-to-cheaha/008-selection.png" /></a></p>
+</li>
+<li>
+<p>To start the transfer, click the "Start" button on the side you made your selections. A transfer will be started and you should see a green toast notification at the upper-right corner of the web page. Press the "X" button to dismiss the notification or click "View Details" to be taken to the Activity page to see more details about the transfer.</p>
+<p><a class="glightbox" href="../images/gi-transfer-collection-to-cheaha/009-transfer-started.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page with a toast notification indicating the file transfer started successfully." src="../images/gi-transfer-collection-to-cheaha/009-transfer-started.png" /></a></p>
+</li>
+</ol>
+<p>From here you can proceed to other related tutorials to initiate other transfers or
+<a href="#globus-tutorials-for-individual-researchers">return to the index</a>.</p>
+<ul>
+<li><a href="#how-do-i-check-transfer-status">How Do I check transfer status?</a></li>
+<li><a href="#how-do-i-transfer-between-a-collection-and-lts">How Do I Transfer Between a Collection and LTS?</a></li>
+<li><a href="#how-do-i-transfer-between-lts-and-cheaha">How Do I Transfer Between LTS and Cheaha?</a></li>
+</ul>
+<p><a href="#globus-tutorials-for-individual-researchers">Return to the top</a>.</p>
+<h2 id="how-do-i-transfer-between-a-collection-and-lts">How Do I Transfer between a Collection and LTS?<a class="headerlink" href="#how-do-i-transfer-between-a-collection-and-lts" title="Permanent link">&para;</a></h2>
+<p>Please use the following instructions to transfer data from a shared Collection to a <a href="../../../lts/">bucket on LTS</a>. These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.</p>
+<p>The direction of transfer may also be reversed to transfer data from LTS to the shared Collection. Note that some shared Collections may not allow you to transfer data back, such as some of those provided by Research Cores.</p>
+<p>These instructions can be generalized to any two Collections or Collections you have access to on Globus.</p>
+<ol>
+<li>
+<p><a href="#how-do-i-get-onto-the-globus-web-app">Log in to Globus using your credentials</a>.</p>
+</li>
+<li>
+<p>Find a shared Collection <a href="#how-do-i-find-collections-shared-with-me">by filtering</a> or <a href="#how-do-i-search-for-collections-by-name">by searching</a> in the left side Collection Search bar.</p>
+</li>
+<li>
+<p>Once you have selected the shared Collection you wish to transfer data from, repeat the process to <a href="#how-do-i-search-for-collections-by-name">search</a> for the LTS Collection in the Collection Search bar on the right side of the file manager page. Search for "UAB LTS" to find it.</p>
+</li>
+<li>
+<p>When you select the LTS Collection, or any other High Assurance (HA) Collection or Collection, you will be prompted to re-authenticate. Click the "Continue" button to do so, then select your UAB email address.</p>
+<p><a class="glightbox" href="../images/common/ha-authenticate.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="High Assurance request for reauthentication." src="../images/common/ha-authenticate.png" /></a></p>
+<p><a class="glightbox" href="../images/common/select-identity.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Identity selection showing a UAB email address." src="../images/common/select-identity.png" /></a></p>
+</li>
+<li>
+<p>At this point, your file manager page should look something like the following image. Both Collection Search bars should have a Collection or Collection filled in. The left side should be the Collection you wish to transfer from. The right side should be the Cheaha Collection. You should see files and folders on both sides.</p>
+<p><a class="glightbox" href="../images/gi-transfer-collection-to-lts/005-ready-to-select.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page showing a shared Collection and LTS Collection." src="../images/gi-transfer-collection-to-lts/005-ready-to-select.png" /></a></p>
+</li>
+<li>
+<p>Locate the source path on the shared Collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.</p>
+</li>
+<li>
+<p>Repeat the process on the LTS Collection side to locate the destination path on the LTS Collection side.</p>
+</li>
+<li>
+<p>Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.</p>
+<p><a class="glightbox" href="../images/gi-transfer-collection-to-lts/008-selection.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page with a file selected in the left selection area. The start button is boxed in red." src="../images/gi-transfer-collection-to-lts/008-selection.png" /></a></p>
+</li>
+<li>
+<p>To start the transfer, click the "Start" button on the side you made your selections. A transfer will be started and you should see a green toast notification at the upper-right corner of the web page. Press the "X" button to dismiss the notification or click "View Details" to be taken to the Activity page to see more details about the transfer.</p>
+<p><a class="glightbox" href="../images/gi-transfer-collection-to-lts/009-transfer-started.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page with a toast notification indicating the file transfer started successfully." src="../images/gi-transfer-collection-to-lts/009-transfer-started.png" /></a></p>
+</li>
+</ol>
+<p>From here you can proceed to other related tutorials to initiate other transfers or
+<a href="#globus-tutorials-for-individual-researchers">return to the index</a>.</p>
+<ul>
+<li><a href="#how-do-i-check-transfer-status">How do I check transfer status?</a></li>
+<li><a href="#how-do-i-transfer-between-a-collection-and-cheaha">How Do I Transfer Between a Collection and Cheaha?</a></li>
+<li><a href="#how-do-i-transfer-between-lts-and-cheaha">How Do I Transfer Between LTS and Cheaha?</a></li>
+</ul>
+<p><a href="#globus-tutorials-for-individual-researchers">Return to the top</a>.</p>
+<h2 id="how-do-i-transfer-between-lts-and-cheaha">How Do I Transfer between LTS and Cheaha?<a class="headerlink" href="#how-do-i-transfer-between-lts-and-cheaha" title="Permanent link">&para;</a></h2>
+<p>Please use the following instructions to transfer data from a <a href="../../../lts/">bucket on LTS</a> to a project directory on Cheaha. These instructions may also be used for other buckets on LTS and directories on Cheaha, provided you have access and know their file paths.</p>
+<p>The direction of transfer may also be reversed to transfer data from Cheaha to LTS.</p>
+<p>These instructions can be generalized to any two Collections or Collections you have access to on Globus.</p>
+<ol>
+<li>
+<p><a href="#how-do-i-get-onto-the-globus-web-app">Log in to Globus using your credentials</a>.</p>
+</li>
+<li>
+<p>Find the LTS Collection by <a href="#how-do-i-search-for-collections-by-name">searching</a> in the Collection Search bar on the left side of the file manager page. Search for "UAB LTS" to find it.</p>
+</li>
+<li>
+<p>Once you have selected the LTS Collection, repeat the process to <a href="#how-do-i-search-for-collections-by-name">search</a> for a Cheaha Collection in the Collection Search bar on the right side of the file manager page. Search for "Cheaha cluster" to find it.</p>
+<p>Pay close attention in choosing which of the two you need. Choosing incorrectly could lead to slow transfers. Answer the following questions to help you decide. Is the first Collection you selected...</p>
+<ul>
+<li>...part of a lab or Research Core on campus? Select "on-campus".</li>
+<li>...on a computer on the UAB Campus Network or UAB Wifi or the UAB VPN? Select "on-campus".</li>
+<li>...at a different institution? Select "off-campus".</li>
+<li>...on a computer on a home network? Select "off-campus".</li>
+</ul>
+</li>
+<li>
+<p>Both the LTS and Cheaha Collections are High Assurance (HA) Collections and you will be prompted to re-authenticate. Click the "Continue" button to do so, then select your UAB email address.</p>
+<p><a class="glightbox" href="../images/common/ha-authenticate.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="High Assurance request for reauthentication." src="../images/common/ha-authenticate.png" /></a></p>
+<p><a class="glightbox" href="../images/common/select-identity.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Identity selection showing a UAB email address." src="../images/common/select-identity.png" /></a></p>
+</li>
+<li>
+<p>At this point, your file manager page should look something like the following image. Both Collection Search bars should have a Collection or Collection filled in. The left side should be the LTS Collection. The right side should be a Cheaha Collection. You should see files and folders on both sides.</p>
+<p><a class="glightbox" href="../images/gi-transfer-lts-to-cheaha/005-ready-to-select.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page showing a shared Collection and LTS Collection." src="../images/gi-transfer-lts-to-cheaha/005-ready-to-select.png" /></a></p>
+</li>
+<li>
+<p>Locate the source path on the LTS Collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.</p>
+</li>
+<li>
+<p>Repeat the process on the Cheaha Collection side to locate the destination path on the Cheaha Collection side.</p>
+</li>
+<li>
+<p>Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.</p>
+<p><a class="glightbox" href="../images/gi-transfer-lts-to-cheaha/008-selection.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page with a file selected in the left selection area. The start button is boxed in red." src="../images/gi-transfer-lts-to-cheaha/008-selection.png" /></a></p>
+</li>
+<li>
+<p>To start the transfer, click the "Start" button on the side you made your selections. A transfer will be started and you should see a green toast notification at the upper-right corner of the web page. Press the "X" button to dismiss the notification or click "View Details" to be taken to the Activity page to see more details about the transfer.</p>
+<p><a class="glightbox" href="../images/gi-transfer-lts-to-cheaha/009-transfer-started.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="File Manager page with a toast notification indicating the file transfer started successfully." src="../images/gi-transfer-lts-to-cheaha/009-transfer-started.png" /></a></p>
+</li>
+</ol>
+<p>From here you can proceed to other related tutorials to initiate other transfers or
+<a href="#globus-tutorials-for-individual-researchers">return to the index</a>.</p>
+<ul>
+<li><a href="#how-do-i-check-transfer-status">How do I check transfer status?</a></li>
+<li><a href="#how-do-i-transfer-between-a-collection-and-cheaha">How Do I Transfer Between a Collection and Cheaha?</a></li>
+<li><a href="#how-do-i-transfer-between-a-collection-and-lts">How Do I Transfer Between a Collection and LTS?</a></li>
+</ul>
+<p><a href="#globus-tutorials-for-individual-researchers">Return to the top</a>.</p>
+<h2 id="how-do-i-check-transfer-status">How Do I Check Transfer Status?<a class="headerlink" href="#how-do-i-check-transfer-status" title="Permanent link">&para;</a></h2>
+<p>To check the status of your transfers, please follow the instructions below.</p>
+<ol>
+<li>
+<p><a href="#how-do-i-get-onto-the-globus-web-app">Log in to Globus using your credentials</a>.</p>
+</li>
+<li>
+<p>In the Globus Web App, click "Activity" in the left navigation panel to go to the Activity page. There will be a list overview of transfers, with the most recent at the top.</p>
+<p><a class="glightbox" href="../images/gi-check-transfer-status/001-activity.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Globus Web App Activity page showing a successful transfer and failed transfer." src="../images/gi-check-transfer-status/001-activity.png" /></a></p>
+</li>
+<li>
+<p>To see more details about a transfer, click the transfer title. There will be two tabs. The Overview tab will have information and statistics about the transfer. The Event Log tab will have information about events that occurred during transfer, including start, stop, and any errors. The Event Log is useful for diagnosing issues with failed transfers.</p>
+<p><a class="glightbox" href="../images/gi-check-transfer-status/002-status.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Overview page for unsuccessful transfer." src="../images/gi-check-transfer-status/002-status.png" /></a></p>
+</li>
+</ol>
+<p><a href="#globus-tutorials-for-individual-researchers">Return to the top</a>.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021-2024 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.indexes", "navigation.instant", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
