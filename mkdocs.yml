@@ -96,14 +96,18 @@ nav:
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
-          - Tutorial: 
-                - data_management/lts/tutorial/index.md
-                - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
+          - Tutorial:
+              - data_management/lts/tutorial/index.md
+              - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
           - Interfacing with LTS: data_management/lts/interfaces.md
           - Bucket Permissions: data_management/lts/policies.md
           - UAB Core Accounts: data_management/lts/lts_cores.md
           - FAQ: data_management/lts/lts_faq.md
       - Transfer:
+          - Tutorial:
+              - data_management/transfer/tutorial/index.md
+              - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
+              - Globus for Groups: data_management/transfer/tutorial/globus_group_tutorial.md
           - Globus: data_management/transfer/globus.md
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
