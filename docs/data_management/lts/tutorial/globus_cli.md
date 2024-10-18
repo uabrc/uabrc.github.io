@@ -116,6 +116,52 @@ For example, if you want to find an endpoint containing the name `bhbelay`, you 
 
 ### Listing Directories in Endpoints
 
-For transfers and other file operations, you should use the ID of endpoints, as names are just convenient for users to identify the intended endpoint. Once you have the ID, you can list the visible directories with the following command:
+When performing transfers or other file operations, we should use the endpoint's ID rather than its name, as the ID uniquely identifies the endpoint. Once you have the ID, you can list the available directories with the following command.
 
 ![list globus endpoint directories using the globus endpoint ID](../images/list-globus-endpoint-by-id.png)
+
+### Research Data Transfer with Globus CLI
+
+To transfer research data between endpoints, you need the full path for both the source and destination endpoints. Use a command like `globus transfer <source_endpoint_path>  <destination_endpoint_path>`, See the example below:
+
+`globus transfer 47b34245-aa1c-4581-973a-11e773a3ce80:test.png  3fdc934c-d03e-4546-b0aa-e2ffb0b8410b:test-data`
+
+After submitting the transfer command, you will receive a confirmation message with a task ID, indicating that the transfer has been accepted and queued:
+
+```bash
+Message: The transfer has been accepted and a task has been created and queued for execution`
+Task ID: d7fc1ff0-8d7e-11ef-bf66-cf076a6040b9
+```
+
+To check the status of the transfer, use the globus task show command. For example, to monitor the status of the above task, run:
+
+`globus task show d7fc1ff0-8d7e-11ef-bf66-cf076a6040b9`
+
+This will display the current status of the transfer.
+
+```bash
+Label:                        None
+Task ID:                      d7fc1ff0-8d7e-11ef-bf66-cf076a6040b9
+Is Paused:                    False
+Type:                         TRANSFER
+Directories:                  0
+Files:                        1
+Status:                       SUCCEEDED
+Request Time:                 2024-10-18T18:29:01+00:00
+Faults:                       0
+Total Subtasks:               2
+Subtasks Succeeded:           2
+Subtasks Pending:             0
+Subtasks Retrying:            0
+Subtasks Failed:              0
+Subtasks Canceled:            0
+Subtasks Expired:             0
+Subtasks with Skipped Errors: 0
+Completion Time:              2024-10-18T18:29:04+00:00
+Source Endpoint:              test-1
+Source Endpoint ID:           47b34245-aa1c-4581-973a-11e773a3ce80
+Destination Endpoint:         test_lts_collection
+Destination Endpoint ID:      3fdc934c-d03e-4546-b0aa-e2ffb0b8410b
+Bytes Transferred:            27936
+Bytes Per Second:             8775
+```
