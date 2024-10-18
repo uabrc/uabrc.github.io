@@ -102,6 +102,7 @@ nav:
           - Interfacing with LTS: data_management/lts/interfaces.md
           - Bucket Permissions: data_management/lts/policies.md
           - UAB Core Accounts: data_management/lts/lts_cores.md
+          - Top-level LTS Permissions: data_management/lts/top_level_lts_permission.md
           - FAQ: data_management/lts/lts_faq.md
       - Transfer:
           - Tutorial:
