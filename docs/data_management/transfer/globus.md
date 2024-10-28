@@ -233,7 +233,7 @@ To save a bookmark, use the File Manager interface to select an collection and n
 
 ![!Globus File Manager interface with mouse pointer hovering over Bookmark icon.](./images/globus_060_create_bookmark.png)
 
-To manage bookmarks, click "Bookmarks" in the left-hand navigation pane. Click the "Pencil" icon to edit a bookmark. Click the "Trash Bin" icon to delete a bookmark.
+To manage bookmarks, click on the Collection search bar, then select the Bookmarks tab. To edit a bookmark, click the 'Pencil' icon. To delete a bookmark, click the 'Trash Bin' icon.
 
 ![!Globus Bookmarks interface showing four bookmarks.](./images/globus_061_manage_bookmarks.png)
 
