@@ -1,4 +1,4 @@
-# Globus Tutorials for Research Groups
+# Globus Tutorials for UAB Research Organizations
 
 This tutorial is designed to guide UAB research managers, such as Lab PIs, Core Directors, and their management staff, to help them set up and use Globus Connect Personal (GCP) for secure data sharing on their local/personal computers. GCP allows you to share data with collaborators efficiently meeting security and compliance standards for file sharing.
 
@@ -46,7 +46,7 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_m
 
 To learn how to get onto the Globus Web App [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Install Globus Connect Personal?
 
@@ -61,7 +61,7 @@ GCP installation instructions for:
 - [Windows](#installing-gcp-on-windows)
 - [MacOS](#installing-gcp-on-macos)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ### Installing GCP On Windows
 
@@ -83,7 +83,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
     ![GCP installer window showing selected path and install button.](./images/gg-gcp-install/win/004-select-path.png)
 
-    Please note you must have administrator permissions, to do this. If you are unable to do so, you will need to contact the IT group managing your computer.
+    Please note you must have administrator permissions, to do this. If you are unable to do so, you will need to contact the IT department responsible for managing your computer.
 
 1. When the installation is complete, click the "Finish" button to complete the GCP installation.
 
@@ -118,7 +118,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 By default your Documents folder (typically `C:/Users/%username%/Documents`) is listed in your new Globus Collection. To change it continue on with [How Do I Choose Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ### Installing GCP On MacOS
 
@@ -171,7 +171,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 By default the `/Users/` folder is listed in your new Globus Collection. To change it continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Choose Specific Folders to Share Using Globus Connect Personal?
 
@@ -182,7 +182,7 @@ We have instructions for the following Operating Systems.
 - [Windows](#choose-specific-folders-on-windows)
 - [MacOS](#choose-specific-folders-on-macos)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ### Choose Specific Folders on Windows
 
@@ -226,7 +226,7 @@ We have instructions for the following Operating Systems.
 
 To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ### Choose Specific Folders on MacOS
 
@@ -259,7 +259,7 @@ To verify the existence and accessibility of your Collection proceed to [How Do 
 
 To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Find Collections I Created or Own?
 
@@ -287,7 +287,7 @@ To find a Collection you own, use the following steps.
 
         ![Collectionm details page with overview tab selected.](./images/gg-my-collections/005-collection-details-page.png)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Enable Collection Sharing For My Globus Account?
 
@@ -328,7 +328,7 @@ To join the UAB HA group, we need to receive both a UAB support request, and a r
 
 When you have completed the steps in this section, proceed to [creating a Collection](#how-do-i-create-a-collection).
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Create a Collection?
 
@@ -366,7 +366,7 @@ The instructions below assume you are starting from an existing Collection. The 
 
 When you have created a Collection, you are ready to [share the Collection with others](#how-do-i-share-a-collection-with-others).
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Share a Collection with Others?
 
@@ -402,10 +402,10 @@ Before sharing a Collection with others, you will need to first [create a Collec
 
     ![Collection details page permissions tab showing new entry.](./images/gg-share-collection/005-colection-details-permissions-after.png)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Share Data With a Research Core Customer?
 
 If you manage data for a Research Core, please [Contact Support](../../../help/support.md#how-to-request-support) to start a conversation. The answer to this question is currently being developed, so we will need to work together to find the ideal solution.
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
