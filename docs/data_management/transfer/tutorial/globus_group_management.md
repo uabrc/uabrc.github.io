@@ -55,3 +55,11 @@
 1. If you clicked the "Accept Invitation" button, you will be taken to a form. Fill out the form and click "Accept Invitation" to join the group. Other groups may have additional fields to fill out.
 
     ![Accept invitation form.](./images/gg-accept-group/003-form.png)
+
+## How Do I Leave a Group?
+
+1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
+1. [Find the Group you wish to leave](./globus_group_management.md#how-do-i-find-a-group).
+1. Click the "Leave Group" button. This action cannot be undone, but you may [Rejoin the Group](#how-do-i-request-to-join-a-group) or be [Invited to Rejoin](#how-do-i-find-and-accept-an-invitation-from-a-group).
+
+    ![Leave group button on the groups page.](./images/gg-leave-group/001-leave-button.png)
