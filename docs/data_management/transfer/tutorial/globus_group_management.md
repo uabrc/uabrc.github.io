@@ -63,3 +63,19 @@
 1. Click the "Leave Group" button. This action cannot be undone, but you may [Rejoin the Group](#how-do-i-request-to-join-a-group) or be [Invited to Rejoin](#how-do-i-find-and-accept-an-invitation-from-a-group).
 
     ![Leave group button on the groups page.](./images/gg-leave-group/001-leave-button.png)
+
+## How Do I Delete My Core's Group?
+
+1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
+1. [Find the Group you wish to delete](./globus_group_management.md#how-do-i-find-a-group). It may help to check the "MY GROUPS" Checkbox.
+1. Click the "Delete Group" button to delete the group. This action is highly destructive and cannot be undone. Be absolutely certain you know what you are doing before deleting a group.
+
+    Subgroups will no longer have this group as their parent and cannot be added as subgroups of other groups. The parent-child relationship between this group and its subgroups will be permanently destroyed. Subgroups will become independent groups following deletion and will not be deleted.
+
+    <!-- markdownlint-disable MD046 -->
+    !!! danger
+
+        Deleting a group is a highly destructive action. Deleting a group cannot be undone. Be absolutely certain you know what you are doing before deleting a group.
+    <!-- markdownlint-enable MD046 -->
+
+    ![Delete group button.](./images/gg-delete-group/001-delete-button.png)
