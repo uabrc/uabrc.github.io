@@ -26,7 +26,7 @@
 ## How Do I Request to Join a Group?
 
 1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
-1. [Find the Group you wish to join](./globus_group_management.md#how-do-i-find-a-group). Be sure the "MY GROUPS" checkbox is unchecked.
+1. [Find the Group you wish to join](./globus_group_management.md#how-do-i-find-a-group). Be sure the "MY GROUPS" Checkbox is unchecked.
 1. Click the "Join this Group" button.
 
     ![Join this Group button on the Groups page.](./images/gg-join-group/001-general-page-button.png)
@@ -44,7 +44,7 @@
 ## How Do I Find and Accept an Invitation From a Group?
 
 1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
-1. Be sure the "MY GROUPS" checkbox is checked. When checked, you should see any pending invitations in the list of groups.
+1. Be sure the "MY GROUPS" Checkbox is checked. When checked, you should see any pending invitations in the list of groups.
 
     ![Pending invitation for group in the Groups page with the my groups checkbox checked.](./images/gg-accept-group/001-pending.png)
 
@@ -59,7 +59,7 @@
 ## How Do I Leave a Group?
 
 1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
-1. [Find the Group you wish to leave](./globus_group_management.md#how-do-i-find-a-group).
+1. [Find the Group you wish to leave](./globus_group_management.md#how-do-i-find-a-group). It may help to check the "MY GROUPS" Checkbox.
 1. Click the "Leave Group" button. This action cannot be undone, but you may [Rejoin the Group](#how-do-i-request-to-join-a-group) or be [Invited to Rejoin](#how-do-i-find-and-accept-an-invitation-from-a-group).
 
     ![Leave group button on the groups page.](./images/gg-leave-group/001-leave-button.png)
