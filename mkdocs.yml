@@ -109,6 +109,7 @@ nav:
               - data_management/transfer/tutorial/index.md
               - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
               - Globus for Organizations: data_management/transfer/tutorial/globus_organization_tutorial.md
+              - Globus Group Management: data_management/transfer/tutorial/globus_group_management.md
           - Globus: data_management/transfer/globus.md
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
