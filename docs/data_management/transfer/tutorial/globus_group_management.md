@@ -79,3 +79,33 @@
     <!-- markdownlint-enable MD046 -->
 
     ![Delete group button.](./images/gg-delete-group/001-delete-button.png)
+
+## How Do I Invite My Staff to My Core's Group?
+
+1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
+1. [Find the Group you wish to invite others to join](./globus_group_management.md#how-do-i-find-a-group). It may help to check the "MY GROUPS" Checkbox.
+1. Click the "Invite Others" button to invite others to your group.
+
+    ![Invite others button on group specific page.](./images/gg-invite-to-group/001-invite-button.png)
+
+1. Type the name, email, or BlazerID of the person you wish to add into the search bar and click "Add".
+
+    ![Search bar and add button to find a user.](./images/gg-invite-to-group/002-search-and-add.png)
+
+1. Select the role to give the user when adding them. See [What Role is Appropriate?](#what-role-is-appropriate) to help decide.
+
+    ![Select role from listed roles.](./images/gg-invite-to-group/003-select-role.png)
+
+1. Click "Send Invitation" to invite the user. You should see the following confirmation page. They will need to follow instructions at [How Do I Find and Accept an Invitation From a Group?](#how-do-i-find-and-accept-an-invitation-from-a-group) to join.
+
+    ![Invitation confirmation page.](./images/gg-invite-to-group/004-confirmation.png)
+
+## What Role is Appropriate?
+
+- For Research Core data management
+    - Will the person be managing subgroups and memberships? Give them the "Manager" role.
+    - Will the person need to be in charge of operations? Give them the "Administrator" role.
+- For PI labs in Research Core customer pickup subgroups?
+    - Will the person need only access to the data? Give them the "Member" role.
+    - Will the person need to manage membership? Give them the "Manager" role.
+    - Will the person need to be in charge of operations? Give them the "Administrator" role.
