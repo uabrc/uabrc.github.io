@@ -12,7 +12,7 @@ This article will walk you through how to set up a Sandbox app. For ease of unde
 
 ## Setting up Sandbox for your Cheaha Account
 
-Setting up sandbox is pretty simple and straightforward.
+The following steps would guide you to set up Sandbox for your Cheaha account.
 
 You need to create a dev folder in your `$USER/ondemand` folder by following these steps:
 
