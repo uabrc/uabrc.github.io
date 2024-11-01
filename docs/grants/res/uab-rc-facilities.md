@@ -56,28 +56,25 @@ We provide coverage for support requests during standard business hours, and gre
 
 UAB IT Research Computing currently maintains a support staff of 13 led by the Assistant Vice President for Research Computing and includes one HPC Architect-Manager, one Research Facilitation and Data Manager, four Software developers, two Research Facilitation Scientists, three system administrators and a project coordinator.
 
-## UAB Cybersecurity Policies and Practices
+## UAB IT Security Policies and Practices
 
-UAB IT maintains a unified and comprehensive privacy and information security program that preserves and protects the confidentiality, availability and integrity of all information assets including patients, research, customer, and business data. The integrated security program upholds values and provides high standards of service, trust, confidentiality and responsiveness to patients, customers, employees, and business associates. The IT Security program encompasses regulatory requirements in a practical approach that preserves and protects the confidentiality, availability and integrity of information assets including patient, customer, and business data.
+UAB IT maintains a comprehensive privacy and information security program that preserves and protects the confidentiality, availability and integrity of all information assets including patients, research, customer and business data. The security program upholds values and provides high standards of service, trust, confidentiality and responsiveness. The security program include the following:
 
-The UAB IT security program includes the following:
-
-- IT security policies designed to ensure a secure state of operations and information management.
+- IT security policies designed to help ensure a secure state of operations and information management.
 - Technical security standards that document baseline security requirements for key technologies and platforms such as major operating systems, databases, network device operating systems, firewalls, web-server security, email, encryption, secure file transfer protocols, virus defense, media reuse and media disposal.
-- A comprehensive qualitative risk management program.
+- A comprehensive risk management program based on the NIST Cybersecurity Framework (CSF).
+- A data classification rule to assist the UAB community in the classification of data and systems to determine the appropriate level of security.  All UAB data stored, processed, or transmitted must be classified in accordance with this rule.  Based on classification; users are required to implement appropriate security controls.
+- A data protection rule to assist the UAB research community in the protections requirements of data and systems.  All UAB research data stored, processed, or transmitted must be protected in accordance with these standards. Based on the regulatory or contractual requirements of the award; researchers are required to implement appropriate security controls.
 - A computer security incident response plan that is supported by cross-functional response and recovery teams.
-- User system access that is tightly controlled and meets standards required by various regulations and accrediting agencies including HIPAA, JCAHO and CAP. Two-factor authentication is utilized for access to all shared systems. Users must agree to maintain password confidentiality, log-off terminals at the end of each user session and alert management when security violations become known. We also routinely demonstrate compliance with Federal granting agencies such as the NIH, FISMA and and the VA and the corresponding security requirements.
-- An Institutional Firewall for perimeter and layered protection.
-- Network Intrusion Detection Systems (NIDS) have been strategically deployed to continuously monitor Internet, Extranet and Internal communications.
-- Zero Day Desktop and Server Centralized Microsoft Patch Update Services.
-- A centralized firewall protected Email Microsoft Exchange system with Spam Scoring and Virus Scanning.
-- 168bit 3DES encrypted IPSec tunnels for business associates, staff remote access, or partner VPN connectivity,
-- Capability to support encrypted secure file transfers.
-- Virus protection agents and comprehensive patch management programs installed on all computer workstations and servers to protect against malware infections.
-- PGP whole disk encryption software is required for all portable and high-risk devices
-- In-depth security training is provided for all faculty, staff and students. UAB has an extensive infrastructure to secure HIPAA-defined Electronic Protected Health Information (ePHI) from its creation and throughout its lifecycle. Secure web portals are utilized to make the required information accessible only to those who need access. The existing wireless infrastructure and secure VLAN architecture make the required ePHI portable but secure. Portable devices do not cache the data local to the device and transmissions are encrypted.
-
-UAB applications are designed and developed using a comprehensive set of security standards. Areas addressed within application security standards include password construction, strength and control, browser technologies authentication and access control, security administration, and logging, auditing, and monitoring.
-
-Internet applications mandate TLS encryption with strong cipher suites for the transmission of any sensitive data. Before going into production, all new Internet applications must be submitted for security testing. All identified security issues that could impact the confidentiality or integrity of our data must be corrected prior to production release. Applications are retested on a regular schedule that coincides with major release cycles. A comprehensive change management system is utilized for updates, production changes, quality control and revision management.
-ent.
+- User system access is tightly controlled and meets standards required by various regulations (e.g. HIPAA, FERPA, etc.). Two-factor authentication is utilized for many of the shared systems. Users must agree to the requirements set forth in the password rule. We also must routinely demonstrate compliance with Federal granting agencies and the corresponding security requirements such as the NIH, FISMA and the VA.
+- An enterprise firewall platform for perimeter, datacenter and customer layered protection and segmentation.  The firewall also consists of an Intrusion Prevention System (IPS) as well as content filtering and malware sandboxing.
+- An enterprise centralized logging solution (aka SIEM tool) to store logs and generate alerts to the Security Operations team for items that might need attention.
+- In addition to the Security Operations team (SOC) who handles incident response, forensics, EDR management, firewall management, etc., we also have a Threat and Vulnerability Team (TVT) that handles penetration testing, vulnerability scanning, phishing simulations and threat hunting.  We also have a Risk Management team that handles application/business unit risk assessments, 3rd party risk assessments, MFA administration, Security Awareness and Training.  We also have a Security Architect who handles architectural discussions for all sorts of projects across the campus.
+- UAB maintains an IoT policy to ensure all IoT devices that reside on the UAB network (wired or wireless) must be proactively managed and adhere to the university’s IoT security strategy.
+- Email is monitored with the highest level of defense offered from Microsoft with their XDR platform.  This includes safe attachments, impersonation and other anti-phishing methods.  UAB also utilizes DMARC, DKIM and SPF for additional email best practices.  We also maintain email guidelines for the UAB community to adhere to.
+- Encrypted VPN tunnels for business associates, staff remote access, or partner VPN connectivity.
+- Capability to support encrypted secure file transfers with Globus for HPC and other cloud-based solutions for traditional cloud-based storage needs.
+- Endpoint Detection / Response (EDR) agents and comprehensive patch management programs installed on all UAB managed computer workstations and servers to protect against malware infections.  The EDR logs are monitored 24x7x365 by a third party to give full oversight and attention to needed items on the systems.
+- A vulnerability management rule describes the process used by University of Alabama at Birmingham Information Technology (UAB IT) in mitigating the risks from computer security vulnerabilities.
+- In-depth security awareness training that is provided for all Faculty, Staff.
+- UAB also maintains an IT Governance program that will, in consultation with strategic campus partners, provide a review that evaluates the risk associated with the above items.  This review is also intended to prevent duplication of technology while complying with security and regulatory requirements.
