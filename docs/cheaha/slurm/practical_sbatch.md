@@ -157,11 +157,11 @@ simulate $SEED $INPUT_FILE $OUTPUT_FILE
 
 The `main` shell script will determine the upper bound `$N` of the `--array` flag, and then call `sbatch --array=1-$N job.sh`. It will be up to `job.sh` to determine how to use `$SLURM_ARRAY_TASK_ID`. Before we go too much further, it may be helpful to think of `sbatch --array=1-$N job.sh` as creating an indexed loop, from 1 to `$N`, and running `job.sh` on each of those index values. The important point is that the loop indices are run in parallel, so whatever happens in each call to `job.sh` must be independent. The `main.sh` file is the same for all languages and is shown in the code block below. The comments describe what each segment of code is doing.
 
- <!-- markdownlint-disable MD046 -->
-!!!important
+<!-- markdownlint-disable MD046 -->
+!!! important
 
-To effectively manage resource usage, it's essential to implement [throttling](./submitting_jobs.md#throttling-in-slurm-array-job) by limiting the number of concurrent jobs that can run at the same time. This helps prevent the overloading of computing resources. For example, you can limit the number of simultaneously running array jobs to `4` in your submission command: sbatch --array=1-$N%4 job.sh.
- <!-- markdownlint-disable MD046 -->
+    To effectively manage resource usage, it's essential to implement [throttling](./submitting_jobs.md#throttling-in-slurm-array-job) by limiting the number of concurrent jobs that can run at the same time. This helps prevent the overloading of computing resources. For example, you can limit the number of simultaneously running array jobs to `4` in your submission command: `sbatch --array=1-$N%4 job.sh`.
+<!-- markdownlint-enable MD046 -->
 
 ```bash title="main.sh"
 #! /bin/bash

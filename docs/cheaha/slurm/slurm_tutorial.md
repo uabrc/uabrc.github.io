@@ -241,6 +241,12 @@ Array jobs are more effective when you have a larger number of similar tasks to 
 
 The following Slurm script is an example of how you might convert the previous `multijob` script to an array job. To start, copy the below script to a file named, `slurm_array.job`. The script requires the input file `python_script_new.py` and the `conda` environment `pytools-env`, similar to those used in [example2](../slurm/slurm_tutorial.md#example-2-sequential-job) and [example 3](../slurm/slurm_tutorial.md#example-3-parallel-jobs). Line 11 specifies the script as an array job, treating each task within the array as an independent job. For each task, lines 18-19 calculates the input range. `SLURM_ARRAY_TASK_ID` identifies the task executed using indexes, and is automatically set for array jobs. The python script (line 22) runs individual array task concurrently on respective input range. The command `awk` is used to prepend each output line with the unique task identifier and then append the results to the file, `output_all_tasks.txt`. For more details on on parameters of array jobs, please refer to [Batch Array Jobs](../slurm/submitting_jobs.md#batch-array-jobs-with-known-indices) and [Practical Batch Array Jobs](../slurm/practical_sbatch.md#).
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    For larger array jobs (i.e., when the array job size exceeds 10), implementing throttling is significant for achieving better performance. Throttling will limit the number of concurrent jobs that can run simultaneously.
+<!-- markdownlint-enable MD046 -->
+
 ```bash linenums="1"
 #!/bin/bash
 #SBATCH --job-name=slurm_array       ### Name of the job
