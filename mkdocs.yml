@@ -96,7 +96,7 @@ nav:
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
-          - Tutorial: 
+          - Tutorial:
                 - data_management/lts/tutorial/index.md
                 - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
           - Interfacing with LTS: data_management/lts/interfaces.md

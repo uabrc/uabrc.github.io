@@ -101,12 +101,12 @@ This simulation execution gives detailed information about the settings of the m
 
 ##### Water System Inputs
 
-Total Atoms (natoms): 1,536,000
-Number of Steps: 5,000
-Distribution: Domain Decomposition
-MPI Ranks: 6
-Average Atoms per Domain: 256,000
-Domain Decomposition Grid: 6 x 1 x 1
+- Total Atoms (natoms): 1,536,000
+- Number of Steps: 5,000
+- Distribution: Domain Decomposition
+- MPI Ranks: 6
+- Average Atoms per Domain: 256,000
+- Domain Decomposition Grid: 6 x 1 x 1
 
 ```bash
 $export OMP_NUM_THREADS=6
@@ -123,10 +123,13 @@ In the above run command,
 
 ##### Performance Analysis
 
-{{ read_csv('../software/res/parallelism_gromacs.csv', keep_default_na=False) }}
+{{ read_csv('../software/res/parallelism_gromacs_cpu.csv', keep_default_na=False) }}
 
 The majority of the computational time and resources were spent on force calculations and PME mesh operations, indicating these are the most computationally intensive tasks in this simulation. The system achieved good load balancing, reflected in the distribution of tasks across the available ranks and threads.
 
+{{ read_csv('../software/res/parallelism_gromacs_gpu.csv', keep_default_na=False) }}
+
+{{ read_csv('../software/res/parallelism_gromacs_gpu_hybrid.csv', keep_default_na=False) }}
 <!---
 ### Computational Metrics
 
