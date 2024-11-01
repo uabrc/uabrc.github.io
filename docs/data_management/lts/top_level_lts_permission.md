@@ -13,7 +13,7 @@ Understanding top-level access rights for Long-Term Storage (LTS) spaces is esse
 
 - **Stewards**: Stewards are individuals responsible for managing an allocation. Stewards need a full access key pair to perform tasks like creating, deleting, and maintaining buckets. Each steward must maintain separate key pairs for their allocations and any lab/Core allocations they manage.
 - **Lab/Core PIs**: Lab/core PIs are the owners of allocations. They are responsible for overseeing the management of allocated storage spaces, ensuring compliance with data management policies, and designating appropriate stewards, if needed, to assist in the management of allocation.
-- **Bucket Policy**: A bucket policy is a JSON formatted file that you can use to grant access permissions to your LTS bucket and the objects in it. Please refer to [sharing buckets and bucket policy structure](../lts/policies.md#sharing-buckets) for more details.
+- **Bucket Policy**: A bucket policy is a [JSON formatted file](https://docs.fileformat.com/web/json/) that you can use to grant access permissions to your LTS bucket and the objects in it. Please refer to [sharing buckets and bucket policy structure](../lts/policies.md#sharing-buckets) for more details.
 
 ## Shared LTS Allocations
 
@@ -28,7 +28,7 @@ Understanding top-level access rights for Long-Term Storage (LTS) spaces is esse
 ### How do I gain access to my role?
 
 - Owners and stewards have key sets for the allocation(s) they manage. These key sets are distinct, one per person per allocation, and separate from the key set they use for their individual allocations.
-- Members are granted access by [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html) for each bucket they need access to.  For more details, please refer to our documentation on [sharing buckets and bucket policy structure](../lts/policies.md#sharing-buckets).
+- Members are granted access by [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html) for each bucket they need access to. For more details, please refer to our documentation on [sharing buckets and bucket policy structure](../lts/policies.md#sharing-buckets).
 
 ## Individual LTS Allocations
 
