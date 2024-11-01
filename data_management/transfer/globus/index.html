@@ -3431,7 +3431,7 @@
 <ol>
 <li>You will be prompted to prove authorization each time you access a UAB Research Computing endpoint or attempt to download files to your local machine from such an endpoint. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.</li>
 <li>Bookmarks are not allowed in High Assurance endpoints.</li>
-<li>In the newer version, Globus "Endpoints" have been moved under "Console", which can be located in the in the left-hand navigation pane.
+<li>In the newer version, Globus "Endpoints" have been moved under "Console", which can be located in the left-hand navigation pane.
        <a class="glightbox" href="../images/globus_108_console_endpoint.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus endpoints moved under console" src="../images/globus_108_console_endpoint.png" /></a></li>
 </ol>
 <p>For more detailed information on High Assurance please see the Globus official pages below:</p>
@@ -3559,6 +3559,7 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 <!-- markdownlint-enable MD046 -->
 
 <p>To use the UAB <a href="../../lts/">LTS</a> Connector, <a href="#moving-data-between-collections">search for a collection/endpoint</a> like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a <a href="../../lts/#terminology">bucket</a> in LTS. To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.</p>
+<p><a class="glightbox" href="../images/globus-create-lts-bucket.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="create bucket via globus" src="../images/globus-create-lts-bucket.png" /></a></p>
 <h4 id="adding-lts-allocation-credentials">Adding LTS Allocation Credentials<a class="headerlink" href="#adding-lts-allocation-credentials" title="Permanent link">&para;</a></h4>
 <p>Before you can manage an LTS allocation using Globus, you'll need to add the <a href="../../lts/#requesting-an-account">LTS S3 Access and Secret Keys</a> to the LTS endpoint. To do so, please follow the instructions given below.</p>
 <ol>
@@ -3623,7 +3624,7 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
 <h2 id="using-bookmarks">Using Bookmarks<a class="headerlink" href="#using-bookmarks" title="Permanent link">&para;</a></h2>
 <p>To save a bookmark, use the File Manager interface to select an collection and navigate to a path on that collection. Then click the "Create Bookmarks" button as shown below.</p>
 <p><a class="glightbox" href="../images/globus_060_create_bookmark.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus File Manager interface with mouse pointer hovering over Bookmark icon." src="../images/globus_060_create_bookmark.png" /></a></p>
-<p>To manage bookmarks, click "Bookmarks" in the left-hand navigation pane. Click the "Pencil" icon to edit a bookmark. Click the "Trash Bin" icon to delete a bookmark.</p>
+<p>To manage bookmarks, click on the Collection search bar, then select the Bookmarks tab. To edit a bookmark, click the 'Pencil' icon. To delete a bookmark, click the 'Trash Bin' icon.</p>
 <p><a class="glightbox" href="../images/globus_061_manage_bookmarks.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="!Globus Bookmarks interface showing four bookmarks." src="../images/globus_061_manage_bookmarks.png" /></a></p>
 <!-- markdownlint-disable MD046 -->
 <div class="admonition note">
@@ -3756,7 +3757,7 @@ workstations and self-owned, local-scale servers. Globus maintains excellent doc
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 11, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 31, 2024</span>
   </span>
 
     
