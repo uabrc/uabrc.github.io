@@ -54,7 +54,7 @@ We provide coverage for support requests during standard business hours, and gre
 
 ## Research Computing Personnel
 
-UAB IT Research Computing currently maintains a support staff of 13 led by the Assistant Vice President for Research Computing and includes one HPC Architect-Manager, one Research Facilitation and Data Manager, four Software developers, two Research Facilitation Scientists, three system administrators and a project coordinator.
+UAB IT Research Computing currently maintains a support staff of 14 led by the Assistant Vice President for Research Computing and includes one HPC Architect-Manager, one Research Facilitation and Data Manager, four Software developers, four Research Facilitation Scientists, and three system administrators.
 
 ## UAB IT Security Policies and Practices
 
