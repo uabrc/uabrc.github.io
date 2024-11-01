@@ -80,6 +80,15 @@ plugins:
         cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
         cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
 
+exclude_docs: |
+  /**/res/*.md
+
+not_in_nav: |
+  /**/res/*.md
+
+hooks:
+  - scripts/pre_build.py
+
 nav:
   - Home: index.md
   - Account Management:
