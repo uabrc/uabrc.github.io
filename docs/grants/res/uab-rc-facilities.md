@@ -1,7 +1,5 @@
 # UAB IT Research Computing (UABRC) Resources and Cybersecurity Facilities Document
 
-Last Updated 2023-10-01
-
 ## Introduction
 
 UAB IT Research Computing (UABRC) maintains the Research Computing System (RCS), an integrated computing platform that provides access to enhanced compute, storage, and network capacity for UAB investigators and their collaborators. The RCS compute resources include a high-performance compute (HPC) cluster for large scale modeling and analysis workloads, an on-site cloud platform for highly customizable virtual machine (VM) based workloads, and a container orchestration platform for cloud-native workloads. The RCS storage resources include a high-speed GPFS file system attached to the HPC cluster to support data analysis workloads and large-capacity block and object storage to support the cloud and container workloads. The RCS networking infrastructure connects the computing and storage systems via 800 Gb/s Ethernet interconnect that provides ample capacity for data access and movement between the compute and storage resources. RCS networking also includes connectivity to the UAB Campus Network, a dedicated EDR/HDR Infiniband fabric for low-latency data exchange on the HPC cluster, and a 40 Gb/s ScienceDMZ for high-speed data transfers with national research and education networks.
