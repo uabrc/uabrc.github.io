@@ -60,7 +60,7 @@ We provide coverage for support requests during standard business hours, and gre
 
 UAB IT Research Computing currently maintains a support staff of 14 led by the Assistant Vice President for Research Computing and includes one HPC Architect-Manager, one Research Facilitation and Data Manager, four Software developers, four Research Facilitation Scientists, and three system administrators.
 
-## UAB IT Security Policies and Practices
+## UAB Cybersecurity Policies and Practices
 
 UAB IT maintains a comprehensive privacy and information security program that preserves and protects the confidentiality, availability and integrity of all information assets including patients, research, customer and business data. The security program upholds values and provides high standards of service, trust, confidentiality and responsiveness. The security program include the following:
 
