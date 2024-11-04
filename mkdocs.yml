@@ -81,6 +81,15 @@ plugins:
         welcome/welcome.md: index.md
         workflow_solutions/getting_software_with_git.md: workflow_solutions/git_collaboration.md
 
+exclude_docs: |
+  /**/res/*.md
+
+not_in_nav: |
+  /**/res/*.md
+
+hooks:
+  - scripts/pre_build.py
+
 nav:
   - Home: index.md
   - Account Management:
