@@ -47,6 +47,7 @@ class Doc:
             str(self._input_path),
             to=_format,
             outputfile=str(self._output_path.with_suffix(suffix)),
+            extra_args=["--wrap=preserve"],
         )
 
 
