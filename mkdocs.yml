@@ -80,6 +80,15 @@ plugins:
         cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
         cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
 
+exclude_docs: |
+  /**/res/*.md
+
+not_in_nav: |
+  /**/res/*.md
+
+hooks:
+  - scripts/pre_build.py
+
 nav:
   - Home: index.md
   - Account Management:
@@ -105,6 +114,10 @@ nav:
           - Top-level LTS Permissions: data_management/lts/top_level_lts_permission.md
           - FAQ: data_management/lts/lts_faq.md
       - Transfer:
+          - Tutorial:
+              - data_management/transfer/tutorial/index.md
+              - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
+              - Globus for Groups: data_management/transfer/tutorial/globus_group_tutorial.md
           - Globus: data_management/transfer/globus.md
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
