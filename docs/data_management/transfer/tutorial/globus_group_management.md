@@ -90,6 +90,25 @@
 
     ![Group details page on the Overview tab showing additional properties.](./images/gg-create-group/003-group-details-page.png)
 
+## How Do I Create a Subgroup?
+
+Subgroups are also full-fledged groups that happen to have a parent-child relationship with another group. Specifically, subgroups have a parent, and the subgroup is a child of the parent group. As a consequence, all members of the child subgroup are also members of the parent group. Subgroups may also have subgroups of their own. Otherwise, subgroups behave like any other group.
+
+1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
+1. [Find the Group you wish to leave](./globus_group_management.md#how-do-i-find-a-group). It may help to check the "MY GROUPS" Checkbox to only show Groups you are a member of.
+
+    ![My Groups checkbox checked](./images/common/groups-checked.png)
+
+1. On the Group's details page, click the "Subgroups" tab.
+
+    ![Group Overview tab with add a subgroup button.](./images/gg-create-subgroup/001-subgroup-tab.png)
+
+1. On the "Subgroups" tab, click the "Add a Subgroup" button.
+
+    ![Group Overview tab with add a subgroup button.](./images/gg-create-subgroup/002-create-subgroup.png)
+
+1. You should be taken to the Group Creation form. Proceed from here as though you are [Creating a Group](#how-do-i-create-a-group).
+
 1. [Find the Group you wish to delete](./globus_group_management.md#how-do-i-find-a-group). It may help to check the "MY GROUPS" Checkbox.
 1. Click the "Delete Group" button to delete the group. This action is highly destructive and cannot be undone. Be absolutely certain you know what you are doing before deleting a group.
 
