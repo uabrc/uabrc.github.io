@@ -28,13 +28,18 @@
 
 ## How Do I Request to Join a Group?
 
-1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
-1. [Find the Group you wish to join](./globus_group_management.md#how-do-i-find-a-group). Be sure the "MY GROUPS" Checkbox is unchecked.
-1. Click the "Join this Group" button.
+1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
+1. [Find the Group you wish to join](./globus_group_management.md#how-do-i-find-a-group). Be sure the "MY GROUPS" Checkbox is unchecked or you will not be able to see new Groups in the search results.
+
+    ![My Groups checkbox unchecked](./images/common/groups-unchecked.png)
+
+1. Click the "Join this Group" button. You can find this button on the main Groups page after searching for the Group. Note that some Groups may not allow invitation requests. To join restricted-access groups you will need to communicate with the Group's administrators.
 
     ![Join this Group button on the Groups page.](./images/gg-join-group/001-general-page-button.png)
 
-    ![Join this Group button on the group-specific page.](./images/gg-join-group/001-specific-page-button.png)
+    You can also find the button on the Group's details page.
+
+    ![Join this Group button on the Group details page.](./images/gg-join-group/001-specific-page-button.png)
 
 1. Fill in the form and click the "Submit Application" button. Other groups may have additional fields to fill out.
 
