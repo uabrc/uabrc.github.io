@@ -239,4 +239,4 @@ Different roles have different purposes. The Administrator role is intended to b
 
 1. The page should update to reflect the change immediately. Instead of the "Remove Membership" button, you should see "Add Membership" and "Send Invitation" buttons.
 
-    ![Membership page with highlighted remove member button.](./images/gg-modify-members-remove/002-membership-page.png)
+    ![Membership page with highlighted remove member button.](./images/gg-modify-members-remove/003-membership-page-after.png)
