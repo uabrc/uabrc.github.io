@@ -1,11 +1,11 @@
 # Globus Group Management
 
-## How Do I Find a Group?
+## Where Can I Find the Groups Page in the Globus Web App?
 
 1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
 1. Click Groups in the left-hand navigation panel.
 
-    ![Groups page.](./images/common/groups.png)
+## How Do I Find a Group?
 
 1. If you are looking for new groups, ensure the "MY GROUPS" Checkbox is unchecked. If you are looking for groups you are already a member of, ensure the "MY GROUPS" Checkbox is checked.
 
@@ -92,7 +92,7 @@
 
     ![Search bar and add button to find a user.](./images/gg-invite-to-group/002-search-and-add.png)
 
-1. Select the role to give the user when adding them. See [What Role is Appropriate?](#what-role-is-appropriate) to help decide.
+1. Select the role to give the user when adding them. See [What Does Each Role Mean?](#what-does-each-role-mean) to help decide.
 
     ![Select role from listed roles.](./images/gg-invite-to-group/003-select-role.png)
 
@@ -100,7 +100,32 @@
 
     ![Invitation confirmation page.](./images/gg-invite-to-group/004-confirmation.png)
 
-## What Role is Appropriate?
+## How Do I Modify Group Members?
+
+1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
+1. [Find the Group you wish to change](#how-do-i-find-a-group).
+1. On the Group's details page, click the Members tab to see a list of Group members.
+
+    ![Members tab of Group details page.](./images/gg-modify-members/001-members-tab.png)
+
+1. Locate the member. Click the right arrow button at the right-hand side of the member's entry to be taken to their membership page.
+
+    ![Member's membership page.](./images/gg-modify-members/002-membership-page.png)
+
+## How Do I Change a Group Member's Role Level?
+
+1. [Prepare to modify Group memberships](#how-do-i-modify-group-members).
+1. Click the pencil icon just to the right of the member's role to make changes to the role as highlighted in the image.
+
+    ![Edit role icon in the member's membership page.](./images/gg-modify-members-role/003-pencil-edit.png)
+
+1. After clicking the icon, new controls become available in place of the existing role. Select the new role from the drop-down menu, then click "Save" to make the change permanent.
+
+    ![Controls to modify member role.](./images/gg-modify-members-role/004-role-controls.png)
+
+## What Does Each Role Mean?
+
+{{ read_csv('data_management/transfer/tutorial/res/globus-group-roles.csv', keep_default_na=False, colalign=("left","center","center","center")) }}
 
 - For Research Core data management
     - Will the person be managing subgroups and memberships? Give them the "Manager" role.
@@ -109,3 +134,14 @@
     - Will the person need only access to the data? Give them the "Member" role.
     - Will the person need to manage membership? Give them the "Manager" role.
     - Will the person need to be in charge of operations? Give them the "Administrator" role.
+
+## How Do I Remove a Group Member?
+
+1. [Prepare to modify Group memberships](#how-do-i-modify-group-members).
+1. Click the "Remove Membership" button to immediately remove the member from the group. There is no confirmation for this action.
+
+    ![Membership page with highlighted remove member button.](./images/gg-modify-members-remove/002-membership-page.png)
+
+1. The page should update to reflect the change immediately. Instead of the "Remove Membership" button, you should see "Add Membership" and "Send Invitation" buttons.
+
+    ![Membership page with highlighted remove member button.](./images/gg-modify-members-remove/002-membership-page.png)
