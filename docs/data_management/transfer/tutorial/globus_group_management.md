@@ -138,6 +138,9 @@ Subgroups are also full-fledged groups that happen to have a parent-child relati
 
     ![Group settings page with group visibility controls highlighted.](./images/gg-modify-group-hide-group/001-hide-group-radio-button.png)
 
+## How Do I Delete a Group or Subgroup?
+
+1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
 1. [Find the Group you wish to delete](./globus_group_management.md#how-do-i-find-a-group). It may help to check the "MY GROUPS" Checkbox.
 1. Click the "Delete Group" button to delete the group. This action is highly destructive and cannot be undone. Be absolutely certain you know what you are doing before deleting a group.
 
