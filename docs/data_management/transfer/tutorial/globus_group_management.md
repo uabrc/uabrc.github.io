@@ -1,5 +1,36 @@
 # Globus Group Management
 
+Organizations can manage students, staff, collaborators, and customers in Globus using the Group feature. Representatives can create groups and subgroups to manage and document associations between related people. With a Group, you can grant access to a Shared Collection to many people at once.
+
+If you are new to Globus, we recommend starting with our [Globus Tutorials for Individual Researchers](./globus_individual_tutorial.md) first to familiarize yourself with how Globus is used.
+
+Below is a list of topics covered in this article.
+
+- General information:
+    - [Where Can I Find the Groups Page in the Globus Web App?](#where-can-i-find-the-groups-page-in-the-globus-web-app)
+    - [How Do I Find a Group?](#how-do-i-find-a-group)
+- For Group members:
+    - [How Do I Request to Join a Group?](#how-do-i-request-to-join-a-group)
+    - [How Do I Find and Accept an Invitation From a Group?](#how-do-i-find-and-accept-an-invitation-from-a-group)
+    - [How Do I Leave a Group?](#how-do-i-leave-a-group)
+- For Group administrators:
+    - Managing Groups and Subgroups
+        - [How Do I Create a Group?](#how-do-i-create-a-group)
+        - [How Do I Create a Subgroup?](#how-do-i-create-a-subgroup)
+        - [How Do I See Subgroups of a Group?](#how-do-i-see-subgroups-of-a-group)
+        - [How Do I Modify a Group or Subgroup?](#how-do-i-modify-a-group-or-subgroup)
+            - [How Do I Make My Group Invite Only?](#how-do-i-make-a-group-invite-only)
+            - [How Do I Hide My Group from Others?](#how-do-i-hide-a-group-from-others)
+            - [How Do I Keep Members from Seeing Each Other?](#how-do-i-keep-group-members-from-seeing-each-other)
+        - [How Do I Delete a Group or Subgroup?](#how-do-i-delete-a-group-or-subgroup)
+    - Managing Group Members and Roles
+        - [How Do I Invite Others to a Group?](#how-do-i-invite-others-to-a-group)
+        - [How Do I See Group Members?](#how-do-i-see-group-members)
+        - [How Do I Modify Group Members?](#how-do-i-modify-group-members)
+            - [How Do I Change a Group Member's Role Level?](#how-do-i-change-a-group-members-role-level)
+            - [What Does Each Role Mean?](#what-does-each-role-mean)
+            - [How Do I Remove a Group Member?](#how-do-i-remove-a-group-member)
+
 ## Where Can I Find the Groups Page in the Globus Web App?
 
 1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
