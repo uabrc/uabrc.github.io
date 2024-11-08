@@ -46,12 +46,12 @@
 
 ## How Do I Find and Accept an Invitation From a Group?
 
-1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
+1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
 1. Be sure the "MY GROUPS" Checkbox is checked. When checked, you should see any pending invitations in the list of groups.
 
     ![Pending invitation for group in the Groups page with the my groups checkbox checked.](./images/gg-accept-group/001-pending.png)
 
-1. Click the name of the group with a pending invitation, or the right arrow at the right side of the table entry. You will be taken to the group specific page. Click "Accept Invitation" to join the group. Click "Decline Invitation" to dismiss the invitation without joining.
+1. Click the name of the group with a pending invitation, or the right arrow at the right side of the table entry. You will be taken to the Group's details page. Click "Accept Invitation" to join the group. Click "Decline Invitation" to dismiss the invitation without joining.
 
     ![Group specific page with Accept Invitiation and Decline Invitation buttons.](./images/gg-accept-group/002-buttons.png)
 
