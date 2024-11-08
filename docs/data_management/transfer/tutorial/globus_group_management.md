@@ -226,15 +226,9 @@ Subgroups are also full-fledged groups that happen to have a parent-child relati
 
 ## What Does Each Role Mean?
 
-{{ read_csv('data_management/transfer/tutorial/res/globus-group-roles.csv', keep_default_na=False, colalign=("left","center","center","center")) }}
+Different roles have different purposes. The Administrator role is intended to be for managing both the group itself and its members. The Manager role is for managing members of the group. The Member role is purely for granting access to collections associated with the group. The table below contains more details.
 
-- For Research Core data management
-    - Will the person be managing subgroups and memberships? Give them the "Manager" role.
-    - Will the person need to be in charge of operations? Give them the "Administrator" role.
-- For PI labs in Research Core customer pickup subgroups?
-    - Will the person need only access to the data? Give them the "Member" role.
-    - Will the person need to manage membership? Give them the "Manager" role.
-    - Will the person need to be in charge of operations? Give them the "Administrator" role.
+{{ read_csv('data_management/transfer/tutorial/res/globus-group-roles.csv', keep_default_na=False, colalign=("left","center","center","center")) }}
 
 ## How Do I Remove a Group Member?
 
