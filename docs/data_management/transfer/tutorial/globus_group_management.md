@@ -120,6 +120,14 @@ Subgroups are also full-fledged groups that happen to have a parent-child relati
 
 1. You should be taken to the Group Creation form. Proceed from here as though you are [Creating a Group](#how-do-i-create-a-group).
 
+## How Do I See Subgroups of a Group?
+
+1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
+1. [Find the Group](./globus_group_management.md#how-do-i-find-a-group).
+1. On the Group's details page, click the "Subroups" tab. Subgroups will be listed here. In this case, the only subgroup is "uab-rc-facilitation".
+
+    ![Subgroup tab of group details page.](./images/gg-view-subgroups/001-subgroup-tab-page.png)
+
 ## How Do I Modify a Group or Subgroup?
 
 1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
