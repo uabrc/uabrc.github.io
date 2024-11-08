@@ -165,9 +165,9 @@ Subgroups are also full-fledged groups that happen to have a parent-child relati
 
     ![Delete group button.](./images/gg-delete-group/001-delete-button.png)
 
-## How Do I Invite My Staff to My Core's Group?
+## How Do I Invite Others to a Group?
 
-1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
+1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
 1. [Find the Group you wish to invite others to join](./globus_group_management.md#how-do-i-find-a-group). It may help to check the "MY GROUPS" Checkbox.
 1. Click the "Invite Others" button to invite others to your group.
 
