@@ -3,7 +3,9 @@
 ## Where Can I Find the Groups Page in the Globus Web App?
 
 1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
-1. Click Groups in the left-hand navigation panel.
+1. In the left-hand navigation panel, click Groups to be taken to the Groups page. All Group management activities in this tutorial document start on this page, so take some time to familiarize yourself with getting to this point.
+
+    ![Groups page of the Globus Web App.](./images/common/groups.png)
 
 ## How Do I Find a Group?
 
