@@ -193,6 +193,14 @@ Subgroups are also full-fledged groups that happen to have a parent-child relati
 
     ![Invitation confirmation page.](./images/gg-invite-to-group/004-confirmation.png)
 
+## How Do I See Group Members?
+
+1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
+1. [Find the Group](./globus_group_management.md#how-do-i-find-a-group).
+1. On the Group's details page, click the "Members" tab. Members will be listed here.
+
+    ![Members tab of group details page.](./images/gg-view-members/001-members-tab-page.png)
+
 ## How Do I Modify Group Members?
 
 1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
