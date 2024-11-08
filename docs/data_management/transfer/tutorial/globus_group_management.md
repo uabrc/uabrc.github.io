@@ -64,9 +64,32 @@
 
     ![Leave group button on the groups page.](./images/gg-leave-group/001-leave-button.png)
 
-## How Do I Delete My Core's Group?
+## How Do I Create a Group?
 
-1. [Get onto the Globus Web App](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app).
+1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
+1. Click the "Create New Group" button at the top-right of the window.
+
+    ![Create new Group button on Groups page](./images/gg-create-group/001-create-group-button.png)
+
+1. Fill in the form. More information about each field is below. When you have finished, click the "Create Group" button to create the group.
+
+    If you need to change the Group settings later, you can modify the group.
+
+    1. **Group Name**: Enter a group name here.
+    1. **Description** (optional): Describe the purpose and scope of the group here.
+    1. **Terms & Conditions** (optional): should not be necessary for UAB groups.
+    1. **Enable High Assurance** checkbox: Check if your group will deal with PHI, HIPAA, or other protected data.
+    1. **Users may request to join this group** checkbox: Uncheck to make the group invite-only. Core administrators should consider leaving this box checked for their top-level group to avoid work filtering invitations and reduce noise.
+    1. **Signup Fields** buttons: First Name, Last Name, and Organization are always required. We recommend also selecting "Project", "Department", and "Field of Science". Feel free to select any fields you wish.
+    1. **Group Visibility** radio buttons: Click "Members of this Group" to hide the group from non-members.
+    1. **Membership Visibility** radio buttons: Click "Administrators and Managers Only" to hide member names from each other. Core adminstrators should consider using the "Administrators and Managers Only" option for their top-level groups because it improves the user experience when members are looking for administrator names.
+
+    ![Create Group form.](./images/gg-create-group/002-create-group-form.png)
+
+1. Once the Group is created you should be taken to the newly-created Group's details page. Veryify the settings you picked are correct by clicking the "Additional Properties" drop down label to expand it, as highlighted below.
+
+    ![Group details page on the Overview tab showing additional properties.](./images/gg-create-group/003-group-details-page.png)
+
 1. [Find the Group you wish to delete](./globus_group_management.md#how-do-i-find-a-group). It may help to check the "MY GROUPS" Checkbox.
 1. Click the "Delete Group" button to delete the group. This action is highly destructive and cannot be undone. Be absolutely certain you know what you are doing before deleting a group.
 
