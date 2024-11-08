@@ -73,7 +73,7 @@
 
 1. Fill in the form. More information about each field is below. When you have finished, click the "Create Group" button to create the group.
 
-    If you need to change the Group settings later, you can modify the group.
+    If you need to change the Group settings later, you can [Modify the Group](#how-do-i-modify-a-group-or-subgroup).
 
     1. **Group Name**: Enter a group name here.
     1. **Description** (optional): Describe the purpose and scope of the group here.
@@ -108,6 +108,35 @@ Subgroups are also full-fledged groups that happen to have a parent-child relati
     ![Group Overview tab with add a subgroup button.](./images/gg-create-subgroup/002-create-subgroup.png)
 
 1. You should be taken to the Group Creation form. Proceed from here as though you are [Creating a Group](#how-do-i-create-a-group).
+
+## How Do I Modify a Group or Subgroup?
+
+1. [Get to the Groups page of the Globus Web App](#where-can-i-find-the-groups-page-in-the-globus-web-app).
+1. [Find the Group You Want to Modify](#how-do-i-find-a-group).
+1. Click the Settings tab and modify the settings as necessary. To review what the fields are used for, see [How Do I Create a Group?](#how-do-i-create-a-group)
+
+    ![Settings tab of Group details page](./images/gg-modify-group/001-settings-tab.png)
+
+## How Do I Make a Group Invite Only?
+
+1. [Prepare to modify the Group](#how-do-i-modify-a-group-or-subgroup).
+1. Under "Policies" find the "Membership Visibility" controls and select "Administrators and Managers Only" to hide Group members from each other. This can be useful for groups with many members to make it easier to find managers and administrators.
+
+    ![Group settings page with group visibility controls highlighted.](./images/gg-modify-group-invite-only/001-request-to-join-checkbox.png)
+
+## How Do I Keep Group Members from Seeing Each Other?
+
+1. [Prepare to modify the Group](#how-do-i-modify-a-group-or-subgroup).
+1. Under "Policies" find the "Membership Visibility" controls and select "Administrators and Managers Only" to hide Group members from each other. This can be useful for groups with many members to make it easier to find managers and administrators.
+
+    ![Group settings page with group visibility controls highlighted.](./images/gg-modify-group-hide-members/001-hide-members-radio-button.png)
+
+## How Do I Hide a Group from Others?
+
+1. [Prepare to modify the Group](#how-do-i-modify-a-group-or-subgroup).
+1. Under "Policies" find the "Group Visibility" controls and select "Members of the Group" to hide your group from non-members. This can be useful for groups with restricted or controlled access.
+
+    ![Group settings page with group visibility controls highlighted.](./images/gg-modify-group-hide-group/001-hide-group-radio-button.png)
 
 1. [Find the Group you wish to delete](./globus_group_management.md#how-do-i-find-a-group). It may help to check the "MY GROUPS" Checkbox.
 1. Click the "Delete Group" button to delete the group. This action is highly destructive and cannot be undone. Be absolutely certain you know what you are doing before deleting a group.
