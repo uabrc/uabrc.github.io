@@ -244,7 +244,7 @@ The following Slurm script is an example of how you might convert the previous `
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    For large array jobs, implementing [throttling](./submitting_jobs.md#throttling-in-slurm-array-jobs) helps control the number of concurrent jobs, preventing resource contention. Running too many jobs at once can cause competition for CPU, memory, or I/O, which may negatively impact performance.
+    For large array jobs, implementing [throttling](./submitting_jobs.md#throttling-in-slurm-array-jobs) helps control the number of concurrent jobs, preventing resource contention across the Cheaha cluster. Running too many jobs at once can cause competition for CPU, memory, or I/O, which may negatively impact performance.
 <!-- markdownlint-enable MD046 -->
 
 ```bash linenums="1"
