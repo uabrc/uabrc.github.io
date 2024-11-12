@@ -244,7 +244,7 @@ The following Slurm script is an example of how you might convert the previous `
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    For larger array jobs (i.e., when the array job size exceeds 10), implementing throttling is significant for achieving better performance. Throttling will limit the number of concurrent jobs that can run simultaneously.
+    For large array jobs, implementing [throttling](./submitting_jobs.md#throttling-in-slurm-array-jobs) helps control the number of concurrent jobs, preventing resource contention. Running too many jobs at once can cause competition for CPU, memory, or I/O, which may negatively impact performance.
 <!-- markdownlint-enable MD046 -->
 
 ```bash linenums="1"

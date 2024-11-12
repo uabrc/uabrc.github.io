@@ -160,7 +160,7 @@ The `main` shell script will determine the upper bound `$N` of the `--array` fla
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    To effectively manage resource usage, it's essential to implement [throttling](./submitting_jobs.md#throttling-in-slurm-array-job) by limiting the number of concurrent jobs that can run at the same time. This helps prevent the overloading of computing resources. For example, you can limit the number of simultaneously running array jobs to `4` in your submission command: `sbatch --array=1-$N%4 job.sh`.
+    To effectively manage resource usage, it's essential to implement [throttling](./submitting_jobs.md#throttling-in-slurm-array-job) by limiting the number of concurrent jobs that can run at the same time. This helps prevent the overloading of computing resources. For example, you can limit the number of simultaneously running array jobs to `4` with the percent `%` symbol in your submission command: `sbatch --array=1-$N%4 job.sh`.
 <!-- markdownlint-enable MD046 -->
 
 ```bash title="main.sh"
@@ -198,7 +198,7 @@ sbatch --array=0-$FILE_COUNT%4 job.sh
         Double parentheses with a leading dollar sign like `$((...))` are used for evaluating integer arithmetic to a variable.
     <!-- markdownlint-enable MD046 -->
 
-1. The line `sbatch --array=0-$FILE_COUNT%4 job.sh` puts the array tasks in the Slurm queue using the `job.sh` script. The number of tasks runs from `0` to `$FILE_COUNT` as compute above.
+1. The line `sbatch --array=0-$FILE_COUNT%4 job.sh` puts the array tasks in the Slurm queue using the `job.sh` script. The array of tasks runs from 0 to $FILE_COUNT as determined earlier, with the %4 limit restricting the number of tasks that can run simultaneously to 4.
 
 To use the script, enter the command `bash main.sh` at the terminal.
 

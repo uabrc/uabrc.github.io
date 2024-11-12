@@ -141,7 +141,7 @@ For more details on using `sbatch` please see the [official documentation](https
     If you are using bash or shell arrays, it is crucial to note they use 0-based indexing. Plan your `--array` flag indices accordingly.
 <!-- markdownlint-enable MD046 -->
 
-#### Throttling in Slurm Array Job
+#### Throttling in Slurm Array Jobs
 
 Throttling in Slurm array jobs refers to limiting the number of concurrent jobs that can run simultaneously. This approach prevents the overloading of computing resources and ensures fair distribution of resources among users. From a performance perspective, throttling helps optimize overall job performance by reducing resource contention. When too many jobs run at the same time, they may compete for CPU, memory, or I/O, which can negatively impact performance.
 
