@@ -44,8 +44,6 @@ You need to create a dev folder in your `$USER/ondemand` folder by following the
 
 Now that Sandbox is set up on your account, we can create an App. The instructions below detail how to create your first example dev app via a container:
 
-### FEBio Studio
-
 ### FSL
 
 This example using the FSL (FMRIB Software Library) shows how to create a simple Sandbox App on Cheaha.
@@ -118,7 +116,5 @@ Click on Launch FSL, and submit the job with desired parameters. You should have
 ![Interactive App Screen](images/sandbox_launchFSL.png)
 
 ### More info
-
-To get more example apps to build or to build passenger apps, look here.
 
 [Contact us](../index.md#how-to-contact-us) if you run into any issues, or to discuss any new app.
