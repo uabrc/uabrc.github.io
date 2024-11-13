@@ -193,7 +193,7 @@ Follow the instructions located at <https://docs.sylabs.io/guides/3.9/user-guide
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    For other versions of the Singularity documentation, visit <https://docs.sylabs.io/docs/>.
+    For other versions of the Singularity documentation, visit <https://sylabs.io/docs/>.
 <!-- markdownlint-enable MD046 -->
 
 #### Installing Jupyter Server
