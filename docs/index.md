@@ -38,7 +38,7 @@ RCS is an out growth of the UABgrid pilot, launched in September 2007 which has 
 
 ## How Can I Follow up on ServiceNow Tickets?
 
-If you are unable to find a reference or correspondence for your already submitted ServcieNow ticket, you can now visit UAB's [ServiceNow portal](https://uabprod.service-now.com/service_portal) to track and follow up your submitted tickets. At the website, click the "Log in" button to sign in with your UAB SSO (Single Sign On).
+If you are unable to find a reference or correspondence for your already submitted ServcieNow ticket, you can now visit UAB's [ServiceNow portal](https://uabprod.service-now.com/service_portal) to track and follow up your submitted tickets. At the website, click the "Log in" button to sign in with your UAB SSO (Single Sign On) credentials.
 
 ![Landing page of ServiceNow Portal with the "Log in" button highlighted](images/servicenow_landing_page.png)
 
