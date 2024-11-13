@@ -197,7 +197,7 @@ sbatch --array=0-$FILE_COUNT%4 job.sh
         Double parentheses with a leading dollar sign like `$((...))` are used for evaluating integer arithmetic to a variable.
     <!-- markdownlint-enable MD046 -->
 
-1. The line `sbatch --array=0-$FILE_COUNT%4 job.sh` puts the array tasks in the Slurm queue using the `job.sh` script. The array of tasks runs from 0 to $FILE_COUNT as determined earlier, with the %4 limit restricting the number of tasks that can run simultaneously to 4.
+1. The line `sbatch --array=0-$FILE_COUNT%4 job.sh` puts the array tasks in the Slurm queue using the `job.sh` script. The array of tasks runs from 0 to $FILE_COUNT as determined earlier, where %4 limits the number of simultaneous tasks to 4.
 
 To use the script, enter the command `bash main.sh` at the terminal.
 
