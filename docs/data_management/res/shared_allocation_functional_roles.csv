@@ -1,6 +1,6 @@
-﻿ Permissions/Responsibilities,Owner,Steward,Member
-Responsible for allocation,<span>&#x2714;</span>,,
-Create bucket,<span>&#x2714;</span>,<span>&#x2714;</span>,
-Delete bucket,<span>&#x2714;</span>,<span>&#x2714;</span>,
-Rename bucket,<span>&#x2714;</span>,<span>&#x2714;</span>,
-All other operations,<span>&#x2714;</span>,<span>&#x2714;</span>,per bucket policy
+﻿Permissions/Responsibilities,Owner,Steward,Member
+Responsible for allocation,Yes ✔️,,
+Create bucket,Yes ✔️,Yes ✔️,
+Delete bucket,Yes ✔️,Yes ✔️,
+Rename bucket,Yes ✔️,Yes ✔️,
+All other operations,Yes ✔️,Yes ✔️,per bucket policy

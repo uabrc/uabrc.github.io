@@ -1,6 +1,6 @@
-﻿ Permissions/Responsibilities,Alloacted user,Other user
-Responsible for allocation,<span>&#x2714;</span>,
-Create bucket,<span>&#x2714;</span>,
-Delete bucket,<span>&#x2714;</span>,
-Rename bucket,<span>&#x2714;</span>,
-All other operations,<span>&#x2714;</span>,per bucket policy
+﻿Permissions/Responsibilities,Alloacted user,Other user
+Responsible for allocation,Yes ✔️,
+Create bucket,Yes ✔️,
+Delete bucket,Yes ✔️,
+Rename bucket,Yes ✔️,
+All other operations,Yes ✔️,per bucket policy

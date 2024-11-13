@@ -1,4 +1,3 @@
-
 # Top-level LTS Permissions
 
 Understanding top-level access rights for Long-Term Storage (LTS) spaces is essential for effective data management and security. This section aims to clarify common misconceptions regarding ownership and access rights in LTS space.
@@ -7,13 +6,12 @@ Understanding top-level access rights for Long-Term Storage (LTS) spaces is esse
 
 - **Allocation**: An allocation represents a designated storage space with a unique name.
 - **Keys**: Keys are the credentials that grant access to an allocation. There are two types of keys:
-
     - Access Key: The public identifier used to access the allocation, similar to a username.
     - Secret Key: The private password-like credential that must be kept confidential.
-
 - **Stewards**: Stewards are individuals responsible for managing an allocation. Stewards need a full access key pair to perform tasks like creating, deleting, and maintaining buckets. Each steward must maintain separate key pairs for their allocations and any lab/Core allocations they manage.
-- **Lab PIs**: Lab PIs manage the storage allocations for their Labs. They are responsible for ensuring compliance with data management policies and may assign stewards to assist with managing the allocations.
-- **Core Director**: Core Directors manage the storage allocations for Core facilities. They also ensure compliance with data management policies, and designate stewards, if necessary, to assist with the management of the allocation.
+- **Owner**: owners responsible for overseeing the management of allocated storage spaces, ensuring compliance with data management policies, and designating appropriate stewards, if needed, to assist in the management of allocation. Owners can include:
+    - **Lab PIs**: Manage allocated storage spaces for their respective labs.
+    - **Core Director**: Manage allocated storage spaces for Core facilities.
 - **Bucket Policy**: A bucket policy is a [JSON formatted file](https://docs.fileformat.com/web/json/) that you can use to grant access permissions to your LTS bucket and the objects in it. Please refer to [sharing buckets and bucket policy structure](../lts/policies.md#sharing-buckets) for more details.
 
 ## Shared LTS Allocations
@@ -21,6 +19,19 @@ Understanding top-level access rights for Long-Term Storage (LTS) spaces is esse
 Shared LTS allocations are storage spaces designed for collaborative use by groups and are available to Lab PIs and Core Directors. If a PI is also a Core Director, they are eligible for independent storage allocations for each organization: one for the Lab and one for the Core. The shared LTS allocation provides 75 TB of storage. These allocations can be named according to the preference of the PI or Core Director. For recommended naming guidelines, refer to our [Naming Shared Storage](../../data_management/storage.md#how-do-i-request-shared-storage) documentation.
 
 {{ read_csv('data_management/res/shared_allocation_functional_roles.csv', keep_default_na=False) }}
+
+### How do I grant other users access to my shared LTS Allocation?
+
+By default, only the allocated owner, and stewards if designated, can manage and access a shared LTS allocation using their specific key pairs. Keys from other allocations, such as those for individual LTS allocations, will not grant access to shared lab or core allocations. If you manage both lab and core allocations, ensure you use the corresponding keys, as keys for one cannot access the other.
+
+To grant other users access to your shared allocation:
+
+- The Owners, or a steward if one has been designated, can set permissions using a [bucket policy](../lts/policies.md#sharing-buckets).
+- Access can be granted to any user with system access, including those with individual LTS allocations and an active Cheaha account.
+
+### How do I assign a steward?
+
+Owners can assign stewards either when requesting LTS account creation or at a later time by sending a request via [Contact Us](../../index.md#how-to-contact-us). The request should include the steward's BlazerID and specify the LTS allocation they should manage. Once assigned, stewards will have the same management permissions as the owner, except for the ability to assign other stewards.
 
 ### Who can have what role?
 
@@ -39,7 +50,7 @@ Individual LTS allocations are intended for personal or individual use and are a
 
 {{ read_csv('data_management/res/individual_allocation_functional_roles.csv', keep_default_na=False) }}
 
-### How do I grant other users access to my Allocation?
+### How do I grant other users access to my Individual LTS Allocation?
 
 By default, only the allocated user can manage and access their individual LTS allocation using only their designated key pairs. Keys for other allocations, such as those assigned to you as a steward or for shared allocations, do not provide access to your individual LTS allocation.
 
