@@ -159,7 +159,6 @@ The `main` shell script will determine the upper bound `$N` of the `--array` fla
 
 <!-- markdownlint-disable MD046 -->
 !!! important
-*
     To effectively manage resource usage, it's essential to implement [throttling](./submitting_jobs.md#throttling-in-slurm-array-jobs) by limiting the number of concurrent jobs that can run at the same time. This helps prevent the overloading of computing resources. For example, you can limit the number of simultaneously running array jobs to 4 with the percent `%` symbol in your submission command: `sbatch --array=1-$N%4 job.sh`.
 <!-- markdownlint-enable MD046 -->
 
