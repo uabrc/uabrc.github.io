@@ -182,7 +182,7 @@ Network scratch is available on the login node and each compute node. This stora
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Research Computing expects each user to keep their scratch areas clean. **The cluster scratch areas are not to be used for archiving data.** In order to keep scratch clear and usable for everyone, files older than 30 days will be automatically deleted.
+    Research Computing expects each user to keep their scratch areas clean. **The cluster scratch areas are not to be used for archiving data.** In order to keep scratch clear and usable for everyone, files older than 30 days will be eligible for deletion.
 <!-- markdownlint-enable MD046 -->
 
 ### Local Scratch
@@ -342,4 +342,4 @@ Managing PHI data can be challenging. There are experts on Campus who can provid
 Data stored in `/scratch` is subject to two limited retention policies.
 
 - Each user will have a quota of 50 TB of scratch storage.
-- Files will be retained for a maximum of 30 days.
+- Files will be retained for a maximum of 30 days, after which they become eligible for deletion.
