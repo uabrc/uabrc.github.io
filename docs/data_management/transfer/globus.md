@@ -6,7 +6,7 @@ UAB Research Computing uses High Assurance Endpoints, meaning there are addition
 
 1. You will be prompted to prove authorization each time you access a UAB Research Computing endpoint or attempt to download files to your local machine from such an endpoint. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.
 1. Bookmarks are not allowed in High Assurance endpoints.
-1. In the newer version, Globus "Endpoints" have been moved under "Console", which can be located in the in the left-hand navigation pane.
+1. In the newer version, Globus "Endpoints" have been moved under "Console", which can be located in the left-hand navigation pane.
        ![!Globus endpoints moved under console](./images/globus_108_console_endpoint.png)
 
 For more detailed information on High Assurance please see the Globus official pages below:
@@ -144,6 +144,8 @@ To use the UAB Box Connector, [search for a collection/endpoint](#moving-data-be
 
 To use the UAB [LTS](../lts/index.md) Connector, [search for a collection/endpoint](#moving-data-between-collections) like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a [bucket](../lts/index.md#terminology) in LTS. To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.
 
+  ![create bucket via globus](./images/globus-create-lts-bucket.png)
+
 #### Adding LTS Allocation Credentials
 
 Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../lts/index.md#requesting-an-account) to the LTS endpoint. To do so, please follow the instructions given below.
@@ -233,7 +235,7 @@ To save a bookmark, use the File Manager interface to select an collection and n
 
 ![!Globus File Manager interface with mouse pointer hovering over Bookmark icon.](./images/globus_060_create_bookmark.png)
 
-To manage bookmarks, click "Bookmarks" in the left-hand navigation pane. Click the "Pencil" icon to edit a bookmark. Click the "Trash Bin" icon to delete a bookmark.
+To manage bookmarks, click on the Collection search bar, then select the Bookmarks tab. To edit a bookmark, click the 'Pencil' icon. To delete a bookmark, click the 'Trash Bin' icon.
 
 ![!Globus Bookmarks interface showing four bookmarks.](./images/globus_061_manage_bookmarks.png)
 
