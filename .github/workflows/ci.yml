@@ -32,9 +32,10 @@ jobs:
         uses: conda-incubator/setup-miniconda@v3
         with:
           miniforge-version: latest
-          conda-solver: libmamba
           environment-file: build_env.yml
           activate-environment: build
+          channels: conda-forge
+          conda-remove-defaults: "true"
 
       - name: Build pages
         run: mkdocs build --strict
