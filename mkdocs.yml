@@ -43,6 +43,9 @@ plugins:
   - search
   - table-reader:
       data_path: docs
+  - gen-files:
+      scripts:
+        - scripts/pandoc_generator.py
   - git-revision-date-localized:
       type: date
       strict: false
@@ -86,9 +89,6 @@ exclude_docs: |
 
 not_in_nav: |
   /**/res/*.md
-
-hooks:
-  - scripts/pre_build.py
 
 nav:
   - Home: index.md
@@ -201,3 +201,6 @@ validation:
     anchors: warn
     absolute_links: warn
     unrecognized_links: warn
+
+watch:
+  - scripts
