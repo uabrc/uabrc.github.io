@@ -7,3 +7,10 @@ Have you encountered problems while using Anaconda on Cheaha? We have provided t
 Below is a list of Tutorials we currently have Using Anaconda on Cheaha;
 
 1. Using PyTorch and TensorFlow with Anaconda on Cheaha, click [here.](../tutorial/pytorch_tensorflow.md)
+
+## Getting Started with Parallelism on Cheaha
+
+The tutorial covers usage of the following parallelization-based software installed in Cheaha. To use parllelization based software on Cheaha, [click here](./parallelism.md).
+
+1. [Gromacs](https://www.gromacs.org/):  Used for High-performance molecular dynamics and analysis.
+1. [Quantum Expresso](https://www.quantum-espresso.org/): Used for electronic-structure calculations and materials modeling.
