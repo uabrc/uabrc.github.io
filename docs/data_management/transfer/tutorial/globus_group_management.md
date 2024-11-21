@@ -117,14 +117,14 @@ Below is a list of topics covered in this article.
 
     If you need to change the Group settings later, you can [Modify the Group](#how-do-i-modify-a-group-or-subgroup).
 
-    1. **Group Name**: Enter a group name here.
-    1. **Description** (optional): Describe the purpose and scope of the group here.
-    1. **Terms & Conditions** (optional): should not be necessary for UAB groups.
-    1. **Enable High Assurance** checkbox: Check if your group will deal with PHI, HIPAA, or other protected data.
-    1. **Users may request to join this group** checkbox: Uncheck to make the group invite-only. Core administrators should consider leaving this box checked for their top-level group to avoid work filtering invitations and reduce noise.
-    1. **Signup Fields** buttons: First Name, Last Name, and Organization are always required. We recommend also selecting "Project", "Department", and "Field of Science". Feel free to select any fields you wish.
-    1. **Group Visibility** radio buttons: Click "Members of this Group" to hide the group from non-members.
-    1. **Membership Visibility** radio buttons: Click "Administrators and Managers Only" to hide member names from each other. Core adminstrators should consider using the "Administrators and Managers Only" option for their top-level groups because it improves the user experience when members are looking for administrator names.
+    - **(1) Group Name**: Enter a group name here.
+    - **(2) Description** (optional): Describe the purpose and scope of the group here.
+    - **(3) Terms & Conditions** (optional): should not be necessary for UAB groups.
+    - **(4) Enable High Assurance** checkbox: Check if your group will deal with PHI, HIPAA, or other protected data.
+    - **(5) Users may request to join this group** checkbox: Uncheck to make the group invite-only. Core administrators should consider leaving this box checked for their top-level group to avoid work filtering invitations and reduce noise.
+    - **(6) Signup Fields** buttons: First Name, Last Name, and Organization are always required. We recommend also selecting "Project", "Department", and "Field of Science". Feel free to select any fields you wish.
+    - **(7) Group Visibility** radio buttons: Click "Members of this Group" to hide the group from non-members.
+    - **(8) Membership Visibility** radio buttons: Click "Administrators and Managers Only" to hide member names from each other. Core adminstrators should consider using the "Administrators and Managers Only" option for their top-level groups because it improves the user experience when members are looking for administrator names.
 
     ![Create Group form.](./images/gg-create-group/002-create-group-form.png)
 
