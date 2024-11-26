@@ -287,6 +287,52 @@ python python_test.py
 
 More lessons on Docker can be found in this link: [Introduction to Docker](https://christinalk.github.io/docker-introduction/) and [Docker Documentation](https://docs.docker.com/reference/dockerfile/).
 
+## How to access and use Community Containers in the GitLab Container Registry
+
+In our university’s GitLab instance, we provide certain community containers—prebuilt, these containers are standardized environments that grant you access to a variety of software tools. This article will provide an understanding as to what community containers are, where they can be found, and how you can make use of them.
+
+### What Kinds of Software We Support in Building Community Containers
+
+We provide community containers that cover a broad range of software to support your research needs. Below are the general types of software we have created containers for and are included in our Container Registry;
+
+1. Software or application with specific licensing restrictions – to ensure compliance with licensing terms.
+1. Software or application with compatibility/dependency issues – for example, when a software requires a package or kernel version that is incompatible with Cheaha, or has other system-specific dependencies.
+1. Software not available on Docker Hub – when you need to containerize a software and its dependencies for sharing within your group or organization. And you are unable to get one on DockerHub or anywhere else open-source containers can be found.
+
+### Where Can I Find These Containers
+
+Our community containers are housed in the university’s GitLab repository. You can access them at [gitlab.rc.uab.edu//rc-data-science/community-containers](https://gitlab.rc.uab.edu/rc-data-science/community-containers).
+
+Each container is organized in a folder, making it easy to find specific software or environments. Each container also includes a README file with documentation on the container’s purpose, software included, and setup instructions. If you have a container, you would like to include in the container registry, please reach out to us <support@listserv.uab.edu>, and we would be happy to set you up so your container can be included.
+
+### How to Run these Containers
+
+To use a container from the registry, navigate to the preferred container. On the left pane, you will see an option "Deploy", select this and a list of options will show up. Click on "Container Registry" and then click the copy icon next to the preferred container image. This will copy the container's image path.
+
+#### Cheaha
+
+On Cheaha, you can pull a container using Singularity by running the `singularity pull` command, see below. Ensure you are in the preferred location you would like to use the container from, or you can use an absolute path.
+
+``` bash
+
+singularity pull <preferredName.sif> docker://gitlab.rc.uab.edu:<0000>/rc-data-science/community-containers/<name of container/tag>
+
+```
+
+You can run your container once it pulls the container and creates the singularity file, using the `singularity run` or `singularity exec` commands with the appropriate options.
+
+#### Virtual Machine
+
+You can also pull this container on Docker assuming you are running a Virtual Machine (VM) on a cloud instance. You can pull a container from the registry by running the command.
+
+``` bash
+
+docker pull docker://gitlab.rc.uab.edu:0000/rc-data-science/community-containers/<name of container>
+
+```
+
+This will pull the image and setup the container for use. As with all Docker containers, `docker run` along with the right flags/option will run the container for use.
+
 ## Sharing Containers Using UAB GitLab Container Registry
 
 If you prefer to share your container with a particular team/group, then the UAB GitLab container registry is the best and most secure option.
