@@ -2,9 +2,9 @@
 toc_depth: 3
 ---
 
-# LTS Access Control and Permissions
+# LTS Identity and Access Management
 
-Understanding access rights and permissions for Long-Term Storage (LTS) spaces is essential for effective data management and security. This section aims to clarify common misconceptions regarding ownership, steward roles, access control, and how bucket policies help manage permissions in LTS spaces.
+LTS Identity and Access Management is a framework for managing identities, roles, and permissions in Long-Term Storage (LTS)solutions, ensuring secure and efficient access to storage spaces like [buckets](./index.md#terminology) or [objects](./index.md#terminology). Understanding access rights and permissions for LTS spaces is essential for effective data management and security.This section aims to clarify common misconceptions regarding ownership, steward roles, access control, and how bucket policies help manage permissions in LTS spaces.
 
 ## Terminology
 
@@ -16,7 +16,8 @@ Understanding access rights and permissions for Long-Term Storage (LTS) spaces i
 - **Owner**: owners responsible for overseeing the management of allocated storage spaces, ensuring compliance with data management policies, and designating appropriate stewards, if needed, to assist in the management of allocation. Owners can include:
     - **Lab PIs**: Manage allocated storage spaces for their respective labs.
     - **Core Director**: Manage allocated storage spaces for Core facilities.
-- **Bucket Policy**: A bucket policy is a [JSON formatted file](https://docs.fileformat.com/web/json/) that you can use to grant access permissions to your LTS bucket and the objects in it. Please refer to [sharing buckets and bucket policy structure](../lts/policies.md#sharing-buckets) for more details.
+- **Bucket Policy**: A bucket policy is a [JSON formatted file](https://docs.fileformat.com/web/json/) that you can use to grant access permissions to your LTS bucket and the objects in it. Please refer to [sharing buckets and bucket policy structure](../lts/iam_and_policies.md#sharing-buckets) for more details.
+- **Identity and Access Management (IAM)**: IAM is a framework of policies, processes, and technologies used to manage digital identities and control access to resources.
 
 ## Shared LTS Allocations
 
@@ -30,7 +31,7 @@ By default, only the allocated owner, and stewards if designated, can manage and
 
 To grant other users access to your shared allocation:
 
-- The Owners, or a steward if one has been designated, can set permissions using a [bucket policy](../lts/policies.md#sharing-buckets).
+- The Owners, or a steward if one has been designated, can set permissions using a [bucket policy](../lts/iam_and_policies.md#sharing-buckets).
 - Access can be granted to any user with system access, including those with individual LTS allocations and an active Cheaha account.
 
 ### How do I assign a steward?
@@ -46,7 +47,7 @@ Owners can assign stewards either when requesting LTS account creation or at a l
 ### How do I gain access to my role?
 
 - Owners and stewards have key sets for the allocation(s) they manage. These key sets are distinct, one per person per allocation, and separate from the key set they use for their individual allocations.
-- Members are granted access by [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html) for each bucket they need access to. For more details, please refer to our documentation on [sharing buckets and bucket policy structure](../lts/policies.md#sharing-buckets).
+- Members are granted access by [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html) for each bucket they need access to. For more details, please refer to our documentation on [sharing buckets and bucket policy structure](../lts/iam_and_policies.md#sharing-buckets).
 
 ## Individual LTS Allocations
 
@@ -60,7 +61,7 @@ By default, only the allocated user can manage and access their individual LTS a
 
 If you want to grant other users access to your allocation:
 
-- You can set permissions using a [bucket policy](../lts/policies.md#sharing-buckets).
+- You can set permissions using a [bucket policy](../lts/iam_and_policies.md#sharing-buckets).
 - Any user with system access, including those with their own individual LTS allocation and an active Cheaha account, can be granted access.
 
 ## Key Handling and Ownership
