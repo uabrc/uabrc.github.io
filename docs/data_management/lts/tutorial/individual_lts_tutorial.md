@@ -105,7 +105,7 @@ If you are continuing in the same session with your **conda environment already 
 
 Managing access to your buckets is essential for both collaboration and security. By setting up specific [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html), you can control who can view or modify your bucket’s contents. Follow these steps to grant access:
 
-- Create a policy file: define a policy and save it as a `JSON` file. For guidance and details on creating and formatting policy files, refer to our [create a policy structure guide](../policies.md#policy-structure). For example, you might create a policy file named `my_policy.json` with read permissions.
+- Create a policy file: define a policy and save it as a `JSON` file. For guidance and details on creating and formatting policy files, refer to our [create a policy structure guide](../iam_and_policies.md#policy-structure). For example, you might create a policy file named `my_policy.json` with read permissions.
 - Apply the policy: Use the command like `s3cmd setpolicy policy_file.json s3://your-bucket-name` to apply your defined read policy to your bucket. Replace `policy_file.json` with the name of your policy file and `your-bucket-name` with the name of your bucket.
 - Verify the policy update: After applying the policy, you should see a `Policy updated` message if the operation was successful. You can also verify the applied policy by running: `s3cmd info s3://your-bucket-name`.
 
@@ -117,10 +117,10 @@ Please note that the permissions granted are determined by the settings defined 
 
 - **Read-only Access**
 
-    To allow another account to view and copy files from your bucket without making any changes, use the [read only permission policy](../policies.md#read-only-for-all-files).
+    To allow another account to view and copy files from your bucket without making any changes, use the [read only permission policy](../iam_and_policies.md#read-only-for-all-files).
 
 - **Read/Write Access**
 
-    To grant another account the ability to both view and modify the contents of your bucket, use the [read/write permissions policy](../policies.md#read-write-permissions).
+    To grant another account the ability to both view and modify the contents of your bucket, use the [read/write permissions policy](../iam_and_policies.md#read-write-permissions).
 
-For detailed information on LTS bucket policies and instructions on how to apply and remove bucket policies, please refer to our [policy structure](../policies.md#policy-structure) and [apply bucket policy](../policies.md#applying-a-policy) guides.
+For detailed information on LTS bucket policies and instructions on how to apply and remove bucket policies, please refer to our [policy structure](../iam_and_policies.md#policy-structure) and [apply bucket policy](../iam_and_policies.md#applying-a-policy) guides.

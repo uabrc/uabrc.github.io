@@ -1,0 +1,6 @@
+﻿Permissions/Responsibilities,Owner,Steward,Member
+Responsible for allocation,Yes ✔️,,
+Create bucket,Yes ✔️,Yes ✔️,
+Delete bucket,Yes ✔️,Yes ✔️,
+Rename bucket,Yes ✔️,Yes ✔️,
+All other operations,Yes ✔️,Yes ✔️,per bucket policy
