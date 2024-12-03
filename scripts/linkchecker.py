@@ -4,6 +4,12 @@ from typing import Optional
 
 import pandas as pd
 
+"""
+How to use:
+
+python ./scripts/linkchecker.py
+"""
+
 # Cleans up output of linkchecker
 
 OUTPUT = PurePath("out")
@@ -108,13 +114,13 @@ if __name__ == "__main__":
     # special ignore rules
     df = ignore_rows_containing(
         df, URL_IN_MARKDOWN, "https://doi.org", if_result_code="200"
-    )
+    )  # doi.org always redirects, that's its purpose, so we ignore
     df = ignore_rows_containing(
         df, URL_IN_MARKDOWN, "https://anaconda.org", if_result_code="403"
-    )
+    )  # if anaconda.org goes down we'll surely hear about it
     df = ignore_rows_containing(
         df, URL_AFTER_REDIRECTION, "https://padlock.idm.uab.edu", if_result_code="423"
-    )
+    )  # padlock urls means we would need to check manually anyway
 
     # organize
     df = df.sort_values(by=[RESULT, URL_IN_MARKDOWN, MARKDOWN_FILE, LINE, COLUMN])
