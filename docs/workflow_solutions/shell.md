@@ -608,8 +608,50 @@ To change a directory and all of its contents recursively use `chgrp -hR <new-gr
 
 ### Manage researcher access to files and directories (`getfacl`, `setfacl`)
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
+Access Control Lists (ACLs) provide the ability to set permissions for individual users or groups on specific files and directories.
 
-    Under construction.
-<!-- markdownlint-enable MD046 -->
+**Key ACl commands**:
+
+- `getfacl`: Command to get the ACL of a file or directory.
+- `setfacl`: Command to set or modify the ACL of a file or directory.
+
+#### Viewing Current ACLs (`getfacl`)
+
+The `getfacl` command is used to view the current ACLs set on a file or directory. When you run this command on a file, for example `test.txt`, the command `getfacl test.txt` will display detailed information about the ACLs, including who has access to the file and what permissions they have.
+
+```bash
+# file: test.txt
+# owner: bhbelay
+# group: rc-datasci
+user::rw-
+group::rw-
+other::r--
+```
+
+The output shows that for the file `test.txt`, the owner is `bhbelay` and the group associated with the file is `rc-datasci`. The other lines of the output:
+
+- `user::rw-`: specifies the permissions for the owner of the file, `bhbelay`. The owner has read (`r`) and write (`w`) permissions, but no execute permissions (`-`).
+
+- `group::rw-`: specifies the permissions for the group associated with the file, `rc-datasci`. Members of the group have read (`r`) and write (`w`) permissions, but no execute permissions (`-`).
+
+- `other::r--`: specifies the permissions for others (users who are neither the owner nor members of the group). Others have only read (`r`) permission, with no write or execute permissions (`--`).
+
+#### Modifying ACLs (setfacl)
+
+The `setfacl` command used to grant or restrict access to files and directories for individual users or groups. The general syntax for the `setfacl` command: `setfacl <options> <permissions> <file/directory>`.
+
+- Options:
+    - `-m`: Modify ACL (add or update permissions).
+    - `-x`: Remove ACL.
+    - `-b`: Remove all ACL entries.
+    - `-d`: Set default ACL (applies to new files/directories).
+    - `-R`: Apply changes recursively.
+- permissions:
+    - `r` read
+    - `w` write (change the contents)
+    - `x` execute
+
+**Examples of Modifying ACLs (setfacl)**:
+
+- Grant read and write permissions to a user with `setfacl -m u:bhbelay:rw- test.txt`. The `-m` flag modifies the ACL, and `u:bhbelay:rw-` grants read and write access to the specified user on `test.txt`.
+- Grant read access to all users in the group, `rc-datasci`, with `setfacl -m g:rc-datasci:r-- test.txt`. The `g:rc-datasci:r--` grants read-only (`r`) access to the group `rc-datasci`.
