@@ -1,0 +1,6 @@
+Role,Member,Manager,Administrator
+Access to associated Collections,Yes ✔️,Yes ✔️,Yes ✔️
+Can add or remove Members,,Yes ✔️,Yes ✔️
+Can add or remove Managers,,Yes ✔️,Yes ✔️
+Can add or remove Administrators,,,Yes ✔️
+Can modify group settings and policies,,,Yes ✔️
