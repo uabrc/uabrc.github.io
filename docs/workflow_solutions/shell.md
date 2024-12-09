@@ -651,7 +651,7 @@ The `setfacl` command used to grant or restrict access to files and directories 
     - `w` write (change the contents)
     - `x` execute
 
-Below are examples of Modifying ACLs (`setfacl`):
+Below are examples of modifying ACLs (`setfacl`):
 
 - Grant read and write permissions to a user with `setfacl -m u:$USER:rw- test.txt`. The `-m` flag modifies the ACL, and `u:$USER:rw-` grants read and write access to the specified user on the file `test.txt`.
 - Grant read access to all users in the group, `$GROUP`, with `setfacl -m g:$GROUP:r-- test.txt`. The `g:$GROUP:r--` grants read-only (`r`) access to the group `$GROUP`.
