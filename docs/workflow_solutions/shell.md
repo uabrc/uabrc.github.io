@@ -636,7 +636,7 @@ The output shows that for the file `test.txt`, the owner is `bhbelay` and the gr
 
 - `other::r--`: specifies the permissions for others (users who are neither the owner nor members of the group). Others have only read (`r`) permission, with no write or execute permissions (`--`).
 
-#### Modifying ACLs (setfacl)
+#### Modifying ACLs (`setfacl`)
 
 The `setfacl` command used to grant or restrict access to files and directories for individual users or groups. The general syntax for the `setfacl` command: `setfacl <options> <permissions> <file/directory>`.
 
