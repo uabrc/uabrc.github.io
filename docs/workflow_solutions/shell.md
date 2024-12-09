@@ -651,7 +651,13 @@ The `setfacl` command used to grant or restrict access to files and directories 
     - `w` write (change the contents)
     - `x` execute
 
-**Examples of Modifying ACLs (setfacl)**:
+Below are examples of Modifying ACLs (`setfacl`):
 
-- Grant read and write permissions to a user with `setfacl -m u:$USER:rw- test.txt`. The `-m` flag modifies the ACL, and `u:$USER:rw-` grants read and write access to the specified user on `test.txt`.
+- Grant read and write permissions to a user with `setfacl -m u:$USER:rw- test.txt`. The `-m` flag modifies the ACL, and `u:$USER:rw-` grants read and write access to the specified user on the file `test.txt`.
 - Grant read access to all users in the group, `$GROUP`, with `setfacl -m g:$GROUP:r-- test.txt`. The `g:$GROUP:r--` grants read-only (`r`) access to the group `$GROUP`.
+- Remove ACL for a specific user with `setfacl -x u:$USER test.txt`. The `-x` flag removes the ACL entry for the user `$USER` on the file `test.txt`, so they `$USER` no longer have any permissions on
+- Set default permissions for a directory (i.e it will apply to new files and directories created inside this directory)with `setfacl -d -m u:$USER:rw- $DIR`. The `-d` flag sets a default ACL. Here, `u:$USER:rw-` grants read (`r`) and write (`W`) access to the user `$USER` for any new files or directories created within the `$DIR` directory ( but it does not apply to existing files in `$DIR`).
+- Apply ACL changes recursively to all files and subdirectories within a directory with `setfacl -R -m u:$USER:rw- $DIR`. The `-R` flag applies the ACL changes recursively. This command grants read and write access to the user `$USER` for all files and subdirectories under `$DIR`.
+- Remove all ACL entries for a file or directory with `setfacl -b test.txt`. The `-b` flag removes all ACL entries, restoring the default file system permissions to the file `test.txt`.
+
+If you need assistance setting permissions, feel free to contact us via <support@listserv.uab.edu>, providing the user's BlazerID and the directory or file you wish to modify, along with the permissions you want to grant or remove.
