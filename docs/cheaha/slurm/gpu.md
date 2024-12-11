@@ -93,6 +93,15 @@ If a specific version of CUDA is needed but not installed, please send an instal
 
 If working with deep neural networks (DNNs, CNNs, LSTMs, LLMs, etc.), you will need to load a `cuDNN` module as well. The `cuDNN` modules are built to be compatible with a sibling `CUDA` module and are named with the corresponding version. For example, if you are loading `CUDA/12.2.0`, you will also need to load `cuDNN/8.9.2.26-CUDA-12.2.0`.
 
+### CUDA Compute Capability Known Issues
+
+GPU-based software requires a compatible CUDA Compute Capability to function properly. The table illustrates the CUDA Compute Capability of Cheaha GPU partition. If the software does not meet the required CUDA version, it will result in an error.
+
+Some software that requires a CUDA Compute Capability of greater than 7.0 include:
+
+Triton
+Parabricks
+
 ### Tensorflow Compatibility
 
 To check which CUDA Module version is required for your version of Tensorflow, see the toolkit requirements chart here <https://www.tensorflow.org/install/source#gpu>.
