@@ -157,6 +157,11 @@ simulate $SEED $INPUT_FILE $OUTPUT_FILE
 
 The `main` shell script will determine the upper bound `$N` of the `--array` flag, and then call `sbatch --array=1-$N job.sh`. It will be up to `job.sh` to determine how to use `$SLURM_ARRAY_TASK_ID`. Before we go too much further, it may be helpful to think of `sbatch --array=1-$N job.sh` as creating an indexed loop, from 1 to `$N`, and running `job.sh` on each of those index values. The important point is that the loop indices are run in parallel, so whatever happens in each call to `job.sh` must be independent. The `main.sh` file is the same for all languages and is shown in the code block below. The comments describe what each segment of code is doing.
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+    To effectively manage resource usage, it's essential to implement [throttling](./submitting_jobs.md#throttling-in-slurm-array-jobs) by limiting the number of concurrent jobs that can run at the same time. This helps prevent the overloading of computing resources. For example, you can limit the number of simultaneously running array jobs to 4 with the percent `%` symbol in your submission command: `sbatch --array=1-$N%4 job.sh`.
+<!-- markdownlint-enable MD046 -->
+
 ```bash title="main.sh"
 #! /bin/bash
 
@@ -167,7 +172,7 @@ input_files=(../inputs/**/dice.csv)
 FILE_COUNT=${#input_files[@]}
 FILE_COUNT=$(( $FILE_COUNT - 1 ))
 
-sbatch --array=0-$FILE_COUNT job.sh
+sbatch --array=0-$FILE_COUNT%4 job.sh
 ```
 
 1. The line `#! /bin/bash` instructs the operating system what interpreter to use if called without an explicit interpreter, like `./main.sh`. It is best practice to have this line for scripts running in `bash`. Other lines are possible for other interpreters.
@@ -192,7 +197,7 @@ sbatch --array=0-$FILE_COUNT job.sh
         Double parentheses with a leading dollar sign like `$((...))` are used for evaluating integer arithmetic to a variable.
     <!-- markdownlint-enable MD046 -->
 
-1. The line `sbatch --array=0-$FILE_COUNT job.sh` puts the array tasks in the Slurm queue using the `job.sh` script. The number of tasks runs from `0` to `$FILE_COUNT` as compute above.
+1. The line `sbatch --array=0-$FILE_COUNT%4 job.sh` puts the array tasks in the Slurm queue using the `job.sh` script. The array of tasks runs from 0 to $FILE_COUNT as determined earlier, where %4 limits the number of simultaneous tasks to 4.
 
 To use the script, enter the command `bash main.sh` at the terminal.
 
@@ -262,5 +267,5 @@ input_files=(../inputs/**/dice.csv)
 FILE_COUNT=${#input_files[@]}
 FILE_COUNT=$(( $FILE_COUNT - 1 ))
 
-sbatch --array=0-$FILE_COUNT job.sh
+sbatch --array=0-$FILE_COUNT%4 job.sh
 ```
