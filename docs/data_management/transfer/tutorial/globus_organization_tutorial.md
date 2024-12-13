@@ -1,4 +1,4 @@
-# Globus Tutorials for Research Groups
+# Globus Tutorials for UAB Research Organizations
 
 This tutorial is designed to guide UAB research managers, such as Lab PIs, Core Directors, and their management staff, to help them set up and use Globus Connect Personal (GCP) for secure data sharing on their local/personal computers. GCP allows you to share data with collaborators efficiently meeting security and compliance standards for file sharing.
 
@@ -46,7 +46,7 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_m
 
 To learn how to get onto the Globus Web App [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Install Globus Connect Personal?
 
@@ -61,7 +61,7 @@ GCP installation instructions for:
 - [Windows](#installing-gcp-on-windows)
 - [MacOS](#installing-gcp-on-macos)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ### Installing GCP On Windows
 
@@ -69,37 +69,37 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 1. Navigate to the [Globus Connect Personal official page](https://www.globus.org/globus-connect-personal) and scroll down to find the GCP Windows version. Click on the "INSTALL NOW" button in the red box, as shown in the image below, to be taken to the official installation instructions and download link for GCP for Windows. The "INSTALL NOW" button is located below the text "Globus Connect Personal for Windows".
 
-    ![Globus Connect Personal official page showing operating system options with links. Windows is in the center of the three.](./images/gg-gcp-install/win/001-select.png)
+    ![Globus Connect Personal official page showing operating system options with links. Windows is in the center of the three.](./images/go-gcp-install/win/001-select.png)
 
 1. Click the "Download Globus Connect Personal" link on the instructions page, as shown below. This will redirect you to the GCP for Windows installer.
 
-    ![Globus Connect Personal for Windows official instructions page with link to download GCP for Windows.](./images/gg-gcp-install/win/002-instructions.png)
+    ![Globus Connect Personal for Windows official instructions page with link to download GCP for Windows.](./images/go-gcp-install/win/002-instructions.png)
 
 1. As shown in the image below, click the "Download Globus Connect Personal for Windows" button to download the installer to download the installer to your computer.
 
-    ![Download GCP Installer for Windows](./images/gg-gcp-install/win/003-download.png)
+    ![Download GCP Installer for Windows](./images/go-gcp-install/win/003-download.png)
 
 1. Find the installer on your computer and open it. Select where you would prefer to have your GCP installed and click the "Install" button.
 
-    ![GCP installer window showing selected path and install button.](./images/gg-gcp-install/win/004-select-path.png)
+    ![GCP installer window showing selected path and install button.](./images/go-gcp-install/win/004-select-path.png)
 
-    Please note you must have administrator permissions, to do this. If you are unable to do so, you will need to contact the IT group managing your computer.
+    Please note you must have administrator permissions, to do this. If you are unable to do so, you will need to contact the IT department responsible for managing your computer.
 
 1. When the installation is complete, click the "Finish" button to complete the GCP installation.
 
-    ![Completing GCP Setup highlighting Finish button.](./images/gg-gcp-install/win/005-finish.png)
+    ![Completing GCP Setup highlighting Finish button.](./images/go-gcp-install/win/005-finish.png)
 
 1. Following installation, GCP will launch in a new window. If it does not, look for it in your Start Menu.
 
     When GCP has started, click the "Log In" button to authenticate with Globus to begin the Collection setup process. This is a one-time setup to configure GCP to allow your machine to act as a Collection, enabling research data transfer with your computer.
 
-    ![GCP Setup window with Log In button.](./images/gg-gcp-install/win/006-authenticate.png)
+    ![GCP Setup window with Log In button.](./images/go-gcp-install/win/006-authenticate.png)
 
     Note that if you uninstall and reinstall GCP, you will need to complete this process again. You should not need to repeat this process otherwise.
 
 1. Grant the required consents. This is required to set up your computer as a Collection. Also provide a name for your consents. We recommend choosing a name that is short, memorable, and related to the purpose for the Collection.
 
-    ![GCP Setup form with required consents and Collection name field.](./images/gg-gcp-install/common/consents.png)
+    ![GCP Setup form with required consents and Collection name field.](./images/go-gcp-install/common/consents.png)
 
 1. Enter the details for your GCP Collection, and click save to continue. The following list describes the fields in the form shown below.
 
@@ -108,17 +108,17 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
     - **Description:** Feel free to enter descriptive information about the Collection here. This information will be displayed in the Globus Web App when the Collection is viewed by others.
     - **High Assurance:** Only check this box if the Collection has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
 
-    ![GCP Setup Collection details](./images/gg-gcp-install/common/collection-details.png)
+    ![GCP Setup Collection details](./images/go-gcp-install/common/collection-details.png)
 
 1. GCP Setup is now complete on your computer. Your computer is now serving your new Globus Collection and may be used to transfer data. Click "Exit Setup" to close the window.
 
 1. After installation, locate your Windows System Tray. In it you should see a white lowercase letter "g" in a filled blue circle. If you do not, try finding the Globus Connect Personal application in your start menu and starting the application.
 
-    ![GCP Icon in Windows system tray.](./images/gg-gcp-install/win/009-system-tray-icon.png)
+    ![GCP Icon in Windows system tray.](./images/go-gcp-install/win/009-system-tray-icon.png)
 
 By default your Documents folder (typically `C:/Users/%username%/Documents`) is listed in your new Globus Collection. To change it continue on with [How Do I Choose Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ### Installing GCP On MacOS
 
@@ -126,33 +126,33 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
 
 1. Navigate to the [Globus Connect Personal official page](https://www.globus.org/globus-connect-personal) and scroll down to find the GCP MacOS version. Click on the "INSTALL NOW" button in the red box in the image below to be taken to the official installation instructions and download link for GCP for MacOS. The "INSTALL NOW" button is located below the text "Globus Connect Personal for Mac".
 
-    ![Globus Connect Personal official page showing operating system options with links. MacOS is the left of the three.](./images/gg-gcp-install/mac/001-select.png)
+    ![Globus Connect Personal official page showing operating system options with links. MacOS is the left of the three.](./images/go-gcp-install/mac/001-select.png)
 
 1. Click the "Download Globus Connect Personal" link on the instructions page, as shown below. This will redirect you to the GCP for MacOS installer.
 
-    ![Globus Connect Personal for MacOS official instructions page with link to download GCP for MacOS.](./images/gg-gcp-install/mac/002-instructions.png)
+    ![Globus Connect Personal for MacOS official instructions page with link to download GCP for MacOS.](./images/go-gcp-install/mac/002-instructions.png)
 
 1. As shown in the image below, click the "Download Globus Connect Personal for MacOS" button to download the installer to download the installer to your computer.
 
-    ![Download GCP Installer for Windows](./images/gg-gcp-install/mac/003-download.png)
+    ![Download GCP Installer for Windows](./images/go-gcp-install/mac/003-download.png)
 
 1. Find the installer on your computer and open it. A new window will pop-up asking you to drag the Globus Connect Personal app into the Application folder on your computer. Do so to install GCP.
 
-    ![Copy Mac GCP App into the Applications Folder](./images/gg-gcp-install/mac/004-install.png)
+    ![Copy Mac GCP App into the Applications Folder](./images/go-gcp-install/mac/004-install.png)
 
 1. When the above step is completed navigate to your Application folder and look for the "Globus Connect Personal" application. Open it to proceed.
 
-    ![GCP application in the Applications Folder](./images/gg-gcp-install/mac/005-application.png)
+    ![GCP application in the Applications Folder](./images/go-gcp-install/mac/005-application.png)
 
 1. When GCP has started, click on "Log In" to authenticate with Globus to begin the Collection setup process. This is a one-time setup to configure GCP to allow your machine to act as a Collection, enabling research data transfer with your computer.
 
-    ![GCP Setup window with Log In button.](./images/gg-gcp-install/mac/006-authenticate.png)
+    ![GCP Setup window with Log In button.](./images/go-gcp-install/mac/006-authenticate.png)
 
     Note that if you uninstall and reinstall GCP, you will need to complete this process again. You should not need to repeat this process otherwise.
 
 1. Grant the required consents. This is required to set up your computer as a Collection. Also provide a name for your Collection. We recommend choosing a name that is short, memorable, and related to the purpose for the Collection.
 
-    ![GCP Setup form with required consents and Collection name field.](./images/gg-gcp-install/common/consents.png)
+    ![GCP Setup form with required consents and Collection name field.](./images/go-gcp-install/common/consents.png)
 
 1. Enter the details for your GCP Collection, and click save to continue. The following list describes the fields in the form shown below.
 
@@ -161,17 +161,17 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
     - **Description:** Feel free to enter descriptive information about the Collection here. This information will be displayed in the Globus Web App when the Collection is viewed by others.
     - **High Assurance:** Only check this box if the Collection has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
 
-    ![GCP Setup Collection details](./images/gg-gcp-install/common/collection-details.png)
+    ![GCP Setup Collection details](./images/go-gcp-install/common/collection-details.png)
 
 1. GCP Setup is now complete on your computer. Your computer is now serving your new Globus Collection and may be used to transfer data. Click "Exit Setup" to close the window.
 
 1. After installation locate your MacOS notification, generally at the top-right of your display. In it you should see a white lowercase letter "g" in a fille black circle.
 
-    ![GCP Icon in MacOS notification area.](./images/gg-gcp-install/mac/009-notification-area-icon.png)
+    ![GCP Icon in MacOS notification area.](./images/go-gcp-install/mac/009-notification-area-icon.png)
 
 By default the `/Users/` folder is listed in your new Globus Collection. To change it continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Choose Specific Folders to Share Using Globus Connect Personal?
 
@@ -182,17 +182,17 @@ We have instructions for the following Operating Systems.
 - [Windows](#choose-specific-folders-on-windows)
 - [MacOS](#choose-specific-folders-on-macos)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ### Choose Specific Folders on Windows
 
 1. In your Windows system tray, locate the icon that looks like a small letter "g" in a circle. This is the icon for Globus Connect Personal. If you cannot locate the icon in the system tray, then open the Globus Connect Personal app on your computer and look for it again.
 
-    ![Expanded system tray showing icon of a small letter "g" in a circle.](./images/gg-choose-folder/win/001-sys-tray.png)
+    ![Expanded system tray showing icon of a small letter "g" in a circle.](./images/go-choose-folder/win/001-sys-tray.png)
 
 1. Right-click the icon to open the context menu and click "Options...".
 
-    ![Context menu of Globus system tray icon showing options.](./images/gg-choose-folder/win/002-context-menu.png)
+    ![Context menu of Globus system tray icon showing options.](./images/go-choose-folder/win/002-context-menu.png)
 
 1. A new window will appear with a tab labelled Access. In the Access tab is an interface to configure folders available on your GCP Collection. For most use cases, you should not check the writeable checkbox. Below is a summary of what each part of the menu does.
 
@@ -202,13 +202,13 @@ We have instructions for the following Operating Systems.
    - **(4) Plus `+` and minus `-` buttons** that allow you to add or remove folders from the list.
    - **(5) Save** button which saves changes made to this tab of the options.
 
-    ![Access tab of GCP options menu showing the default settings.](./images/gg-choose-folder/win/003-access-tab-default.png)
+    ![Access tab of GCP options menu showing the default settings.](./images/go-choose-folder/win/003-access-tab-default.png)
 
 1. Use the plus `+` and minus `-` buttons to add your research data folders and remove other folders, as needed. Click the "Shareable" checkbox next to each research data folder. Click "Save" when finished.
 
     In this example, we removed the default `C:/Users/%username%/Documents` folder with the minus `-` button and added the `D:/data` folder with the `+` button and check the "Shareable" box. You will want to pick the folder where your research data is stored.
 
-    ![Access tab of GCP options menu showing new settings.](./images/gg-choose-folder/win/004-access-tab-changed.png)
+    ![Access tab of GCP options menu showing new settings.](./images/go-choose-folder/win/004-access-tab-changed.png)
 
 1. Click the "General" tab. The "General" tab enables you to control some settings for the application itself and which folder is the default folder. The default folder will be the first one shown when accessing the Collection.
 
@@ -216,27 +216,27 @@ We have instructions for the following Operating Systems.
    - **(2) Home Folder** text field that lets you choose which folder will be the default folder for your Collection. We recommend setting this to your primary shared folder from the previous step to simplify navigating your Collection in the Globus Web App.
    - **(3) Save** button which saves changes made to this tab of the options. Be sure to click "Save" if you make changes here.
 
-    ![General tab of GCP options menu showing default settings.](./images/gg-choose-folder/win/005-general-tab-default.png)
+    ![General tab of GCP options menu showing default settings.](./images/go-choose-folder/win/005-general-tab-default.png)
 
 1. Check "Run when Windows starts" if needed. Change the "Home Folder" to match your research data folder. Click "Save" when done.
 
     In this example, we set the "Home Folder" to match the research data folder, `D:/data` we added in a previous step. If you have multiple research directories to share, you will need to choose just one for this field. Be sure to click save when you are done.
 
-    ![General tab of GCP options menu](./images/gg-choose-folder/win/006-general-tab-changed.png)
+    ![General tab of GCP options menu](./images/go-choose-folder/win/006-general-tab-changed.png)
 
 To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ### Choose Specific Folders on MacOS
 
 1. In your MacOS notification area, locate the icon that looks like a small letter "g" in a circle. This is the icon for Globus Connect Personal. If you cannot locate the icon in the notification area, then open the Globus Connect Personal app on your computer and look for it again.
 
-    ![Notification area showing icon of a small letter "g" in a circle.](./images/gg-choose-folder/mac/001-notification-area.png)
+    ![Notification area showing icon of a small letter "g" in a circle.](./images/go-choose-folder/mac/001-notification-area.png)
 
 1. Right-click or command-click the icon to open the context menu. Click "Preferences…​".
 
-    ![Context menu of Globus system tray icon showing preferences.](./images/gg-choose-folder/mac/002-context-menu.png)
+    ![Context menu of Globus system tray icon showing preferences.](./images/go-choose-folder/mac/002-context-menu.png)
 
 1. A new window will appear with a tab labelled "Access". Click the "Access" tab if it is not already selected. In this "Access" tab is an interface to configure folders available on your GCP Collection. For most use cases, you should not check the writeable checkbox. Below is a summary of what each part of the menu does.
 
@@ -253,13 +253,13 @@ To verify the existence and accessibility of your Collection proceed to [How Do 
     - **(3) Writeable** column checkboxes controlling which folders can be written to by other users. If a folder is shared with other users, then they will be able to add, delete, or change the contents. We recommend against ticking these boxes for Research Cores serving data to customers. **Check this box only if you want others to be able to change your data.**
     - **(4) Plus `+` and minus `-`** buttons that allow you to add or remove folders from the list.
 
-    ![Access tab of GCP options menu showing the default settings.](./images/gg-choose-folder/mac/003-access-tab.png)
+    ![Access tab of GCP options menu showing the default settings.](./images/go-choose-folder/mac/003-access-tab.png)
 
 1. Use the plus `+` and minus `-` buttons to add your research data folders and remove other folders, as needed. Click the "Shareable" checkbox next to each research data folder. Click "Save" when finished.
 
 To verify the existence and accessibility of your Collection proceed to [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Find Collections I Created or Own?
 
@@ -275,19 +275,19 @@ To find a Collection you own, use the following steps.
 
 1. Click the Your Collections tab to display a list of Collections you have created or own.
 
-    ![Your Collections tab showing a GCP Collection.](./images/gg-my-collections/003-your-collections.png)
+    ![Your Collections tab showing a GCP Collection.](./images/go-my-collections/003-your-collections.png)
 
 1. From here there are two options:
 
     1. Click the name of the Collection to select it for a file transfer and be taken back to the File Manager page.
 
-        ![File Manager page showing selected Collection on left-hand panel.](./images/gg-my-collections/004-file-manager-selection-made.png)
+        ![File Manager page showing selected Collection on left-hand panel.](./images/go-my-collections/004-file-manager-selection-made.png)
 
     1. Click the three dots icon at the right side of the entry to be taken to the Collection details page.
 
-        ![Collectionm details page with overview tab selected.](./images/gg-my-collections/005-collection-details-page.png)
+        ![Collectionm details page with overview tab selected.](./images/go-my-collections/005-collection-details-page.png)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Enable Collection Sharing For My Globus Account?
 
@@ -304,31 +304,31 @@ To join the UAB HA group, we need to receive both a UAB support request, and a r
 1. In your browser [get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app).
 1. In the left hand navigation panel click "Groups" to be taken to the Groups page.
 
-    ![Globus groups page with no groups.](./images/gg-uab-ha-group-access/001-groups-page.png)
+    ![Globus groups page with no groups.](./images/go-uab-ha-group-access/001-groups-page.png)
 
 1. Ensure the "MY GROUPS" box is unchecked. In the "Filter groups" search bar enter "University of Alabama at Birmingham" to locate the "University of Alabama at Birmingham (HA)" (UAB HA) group.
 
-    ![Globus group page showing search results with University of Alabama at Birmingham (HA) listed](./images/gg-uab-ha-group-access/002-groups-search.png)
+    ![Globus group page showing search results with University of Alabama at Birmingham (HA) listed](./images/go-uab-ha-group-access/002-groups-search.png)
 
 1. Click on the UAB HA group name to be taken to the group details page. The Overview tab should be selected.
 
-    ![UAB HA subscription group details page with overview tab selected.](./images/gg-uab-ha-group-access/003-uab-ha-overview.png)
+    ![UAB HA subscription group details page with overview tab selected.](./images/go-uab-ha-group-access/003-uab-ha-overview.png)
 
 1. Click on the "Join this Subscription" button to be taken to the form to submit a request to join.
 
-    ![UAB HA subscription group join request form.](./images/gg-uab-ha-group-access/004-join-form.png)
+    ![UAB HA subscription group join request form.](./images/go-uab-ha-group-access/004-join-form.png)
 
 1. Fill in the form fields and click the "Submit Application" button when completed. This will send you to a page notifying you that your membership is pending. A request has been sent to Research Computing, so please wait until you see a reply in the support request.
 
-    ![Notice of pending membership.](./images/gg-uab-ha-group-access/005-pending.png)
+    ![Notice of pending membership.](./images/go-uab-ha-group-access/005-pending.png)
 
 1. When your membership has been accepted, you can verify by [returning to the Globus Web App](#how-do-i-get-onto-the-globus-web-app) and navigating to the Groups page. Check the "MY GROUPS". You should see "University of Alabama at Birmingham (HA)" listed with a green, circled checkmark and the word "ACTIVE".
 
-    ![Groups page with my groups checked showing UAB HA subscription group](./images/gg-uab-ha-group-access/006-my-groups.png.png)
+    ![Groups page with my groups checked showing UAB HA subscription group](./images/go-uab-ha-group-access/006-my-groups.png.png)
 
 When you have completed the steps in this section, proceed to [creating a Collection](#how-do-i-create-a-collection).
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Create a Collection?
 
@@ -344,11 +344,11 @@ The instructions below assume you are starting from an existing Collection. The 
 1. [Find the existing Collection](#how-do-i-find-collections-i-created-or-own) and access its details page.
 1. Click the "Collection" tab.
 
-    ![Overview tab of details page with Collection tab to the right.](./images/gg-create-collection/001-collection-tab.png)
+    ![Overview tab of details page with Collection tab to the right.](./images/go-create-collection/001-collection-tab.png)
 
 1. Click the "+ Add Guest Collection" button to be taken to a form to create the new Collection.
 
-    ![Collection tab of details page with Add Guest Collection button.](./images/gg-create-collection/002-add-guest-collection.png)
+    ![Collection tab of details page with Add Guest Collection button.](./images/go-create-collection/002-add-guest-collection.png)
 
 1. Fill out the form.
 
@@ -358,15 +358,15 @@ The instructions below assume you are starting from an existing Collection. The 
     - **(4) Description**: An optional description for the Collection.
     - **(5) Keywords**: Optional keywords to help locating the Collection. May be useful for broadly or publicly shared data.
 
-    ![Collection creation form.](./images/gg-create-collection/003-form.png)
+    ![Collection creation form.](./images/go-create-collection/003-form.png)
 
 1. Click the "Create Guest Collection" button to create the Collection. You will be taken to the details page of the new Collection, on the Permissions tab.
 
-    ![Permissions tab of new Collection details page.](./images/gg-create-collection/004-completion.png)
+    ![Permissions tab of new Collection details page.](./images/go-create-collection/004-completion.png)
 
 When you have created a Collection, you are ready to [share the Collection with others](#how-do-i-share-a-collection-with-others).
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Share a Collection with Others?
 
@@ -376,11 +376,11 @@ Before sharing a Collection with others, you will need to first [create a Collec
 1. [Find the Collection](#how-do-i-find-collections-i-created-or-own) you wish to share. In this case we are looking for the "customer-share" Collection.
 1. On the "customer-share" Collection details page, click the Permissions tab.
 
-    ![Collection details page overview tab.](./images/gg-share-collection/001-collection-details-overview.png)
+    ![Collection details page overview tab.](./images/go-share-collection/001-collection-details-overview.png)
 
 1. Click the "Add Permissions &ndash; Share With" button.
 
-    ![Collection details page permissions tab.](./images/gg-share-collection/002-collection-details-permissions-before.png)
+    ![Collection details page permissions tab.](./images/go-share-collection/002-collection-details-permissions-before.png)
 
 1. Fill in the form.
 
@@ -392,20 +392,20 @@ Before sharing a Collection with others, you will need to first [create a Collec
         - **Message** text entry field: the optional content to send in the email message.
     - **Permissions** The "read" permission must be granted, as that is the point of sharing the Collection. You may additionally give "write" permission to create a two-way collaboration. We recommend Research Cores not grant "write" permission. If you are using a Globus Connect Personal Collection, then "write" permission requires you to correctly [configure your Collection](#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to make your shared folder writable.
 
-    ![Add permissions form.](./images/gg-share-collection/003-add-permissions-form.png)
+    ![Add permissions form.](./images/go-share-collection/003-add-permissions-form.png)
 
 1. Click the "Add Permission" button to grant permission. You should see a notification confirming the permissions granted. At this point permissions have been granted and the Collection is shared with another person. If you need to add more people, click the "Add another Permision" button and repeat the process. Otherwise click "Done". For now click "Done".
 
-    ![Permission confirmation notification.](./images/gg-share-collection/004-permissions-confirmation.png)
+    ![Permission confirmation notification.](./images/go-share-collection/004-permissions-confirmation.png)
 
 1. When you click "Done" you should be taken back to the Permissions tab of the Customer Share page. You should see a new entry with "Path: /". If you click the drop-down arrow you will see yourself listed with "Read" permission. If you need to revoke permissions, return to this page and click the icon that looks like a trash can.
 
-    ![Collection details page permissions tab showing new entry.](./images/gg-share-collection/005-colection-details-permissions-after.png)
+    ![Collection details page permissions tab showing new entry.](./images/go-share-collection/005-colection-details-permissions-after.png)
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
 
 ## How Do I Share Data With a Research Core Customer?
 
 If you manage data for a Research Core, please [Contact Support](../../../help/support.md#how-to-request-support) to start a conversation. The answer to this question is currently being developed, so we will need to work together to find the ideal solution.
 
-[Return to the top](#globus-tutorials-for-research-groups).
+[Return to the top](#globus-tutorials-for-uab-research-organizations).
