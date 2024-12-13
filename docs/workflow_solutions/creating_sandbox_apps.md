@@ -1,12 +1,12 @@
 # Open OnDemand
 
-[Open OnDemand](https://rc.uab.edu)(OOD) is the web interface to Cheaha HPC resources. We have setup multiple general purpose apps, such as HPC Desktop, Jupyter, RStudio etc, on Cheaha, to make the process of accessing these basic softwares easier. OOD also allows users to setup their own personal applications, as Sandbox apps.
+[Open OnDemand](https://rc.uab.edu) (OOD) is the web interface to Cheaha HPC resources. We have setup multiple general purpose apps, such as HPC Desktop, Jupyter, RStudio etc, on Cheaha, to make the process of accessing these basic softwares easier. OOD also allows users to setup their own personal applications, as Sandbox apps.
 
 This article will walk you through how to set up an OOD Sandbox app. For ease of understanding, the article is split into the following sections:
 
 1. [Setting up OOD Sandbox for your Cheaha Account](#setting-up-ood-sandbox-for-your-cheaha-account)
 1. [Building your first dev app](#building-your-first-dev-app)
-   - [FSL](#fsl)
+   - Tutorial: [FSL](#fsl)
 1. [Launching your OOD Sandbox App](#launching-your-ood-sandbox-app)
 1. [More info](#more-info)
 
@@ -16,7 +16,6 @@ The following steps will guide you to set up Sandbox for your Cheaha account.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
-
     This is a one time setup, and would not need to be repeated for subsequent apps you would like to create.
 <!-- markdownlint-enable MD046 -->
 
@@ -42,11 +41,11 @@ Create a dev folder in your `$USER/ondemand` folder by following these steps:
 
 ## Building Your First Dev App
 
-Now that Sandbox is set up on your account, we can create an App. The instructions below detail how to create your first example dev app via a container:
+Now that Sandbox is set up on your account, the next step is to create an App. Follow the instructions in the subsection below to create the FSL application using a container. If there are additional options or applications you’d like to explore, refer to the appropriate sections below.
 
 ### FSL
 
-This example using the FSL (FMRIB Software Library) shows how to create a simple Sandbox App on Cheaha.
+This example using the FSL (FMRIB Software Library) App, shows how to create a simple Sandbox App on Cheaha.
 
 1. Under the "Develop" tab , click on "My SandBox Apps (Development)"
 
@@ -58,7 +57,6 @@ This example using the FSL (FMRIB Software Library) shows how to create a simple
 
     <!-- markdownlint-disable MD046 -->
     !!! note
-
         You can ignore the message "No SSH key was found. You will need to generate a locally installed SSH key to clone the git repo using SSH" since you can clone the repo using https. The warning would apply if you would like to clone the repo using SSH's authentication.
     <!-- markdownlint-enable MD046 -->
 
@@ -67,11 +65,8 @@ This example using the FSL (FMRIB Software Library) shows how to create a simple
     ![Form for new Sandbox App](images/sandbox_new_app_form.png)
 
     We will add the following values in the form:
-
     - **Directory Name:** FSL
-
     - **Git Remote:** `https://gitlab.rc.uab.edu/rc/bc_uab_igv.git`
-
     After completing the above steps, then click "**Submit**"
 
 1. When this is done successfully, you should see the below screen also showing your new FSL Sandbox App.
@@ -79,7 +74,6 @@ This example using the FSL (FMRIB Software Library) shows how to create a simple
 
     <!-- markdownlint-disable MD046 -->
     !!! note
-
         You can also check the option "Create a new Git Project from this?", about creating a new git repo, if you want to use it to maintain your own instance of the app. In this tutorial, we will not be selecting this option.
     <!-- markdownlint-enable MD046 -->
 
@@ -87,8 +81,7 @@ This example using the FSL (FMRIB Software Library) shows how to create a simple
 
     ![File list for Sandbox App](images/file_sandbox_app.png)
 
-    1. We first modify "manifest.yml" file (highlight the file, and click on edit) to change metadata for the sandbox app.
-       Change the variables appropriately. In this case we will change the following:
+    1. We first modify "manifest.yml" file (highlight the file, and click on edit) to change metadata for the sandbox app. Change the variables appropriately. In this case we will change the following:
 
         ![Metadata contained in manifest.yml file](images/manifest_yml_sandbox.png)
 
@@ -155,7 +148,12 @@ This example using the FSL (FMRIB Software Library) shows how to create a simple
 
         ```
 
-    Here we are specifying what the form for the app is going to look like, and changing relevant parameters for Cheaha.
+    Here we are specifying what the form for the app is going to look like.
+
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+        In this tutorial we used the OOD file editor to make changes to the fils, but you will be better served to use an IDE like VSCode to efficiently edit the files you have to make changes to.
+    <!-- markdownlint-enable MD046 -->
 
 1. Next, we edit the "script.sh.erb" file. This file can also be found in the "template" folder. Edit this file by adding the lines below to the end of the file. This is the actual job script that will be submitted to the cluster, just like you would submit a job with "sbatch" from the command line.
 
