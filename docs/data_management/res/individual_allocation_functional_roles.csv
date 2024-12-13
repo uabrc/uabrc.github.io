@@ -1,0 +1,6 @@
+﻿Permissions/Responsibilities,Alloacted user,Other user
+Responsible for allocation,Yes ✔️,
+Create bucket,Yes ✔️,
+Delete bucket,Yes ✔️,
+Rename bucket,Yes ✔️,
+All other operations,Yes ✔️,per bucket policy
