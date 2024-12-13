@@ -131,6 +131,7 @@ nav:
       - R Projects and Environments: workflow_solutions/r_environments.md
       - Software Containers: workflow_solutions/getting_containers.md
       - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
+      - Creating Sandbox Apps: workflow_solutions/creating_sandbox_apps.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
       - Tutorials:
