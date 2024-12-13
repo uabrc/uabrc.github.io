@@ -14,7 +14,7 @@ LTS Identity and Access Management (IAM) is a framework for managing identities,
     - Secret Key: The private password-like credential that must be kept confidential.
 - **Stewards**: Stewards are individuals responsible for managing an allocation. Stewards need a full access key pair to perform tasks like creating, deleting, and maintaining buckets. Each steward must maintain separate key pairs for their allocations and any Lab/Core allocations they manage.
 - **Owner**: owners responsible for overseeing the management of allocated storage spaces, ensuring compliance with data management policies, and designating appropriate stewards, if needed, to assist in the management of allocation. Owners can include:
-    - **Lab PIs**: Manage allocated storage spaces for their respective labs.
+    - **Lab PIs**: Manage allocated storage spaces for their respective Labs.
     - **Core Director**: Manage allocated storage spaces for Core facilities.
 - **Bucket Policy**: A bucket policy is a [JSON formatted file](https://docs.fileformat.com/web/json/) that you can use to grant access permissions to your LTS bucket and the objects in it. Please refer to [sharing buckets and bucket policy structure](../lts/iam_and_policies.md#sharing-buckets) for more details.
 - **Identity and Access Management (IAM)**: IAM is a framework of policies, processes, and technologies used to manage digital identities and control access to resources.
@@ -27,7 +27,7 @@ Shared LTS allocations are storage spaces designed for collaborative use by grou
 
 ### How do I grant other users access to my shared LTS Allocation?
 
-By default, only the allocated owner, and stewards if designated, can manage and access a shared LTS allocation using their specific key pairs. Keys from other allocations, such as those for individual LTS allocations, will not grant access to shared lab or Core allocations. If you manage both lab and Core allocations, ensure you use the corresponding keys, as keys for one cannot access the other.
+By default, only the allocated owner, and stewards if designated, can manage and access a shared LTS allocation using their specific key pairs. Keys from other allocations, such as those for individual LTS allocations, will not grant access to shared Lab or Core allocations. If you manage both Lab and Core allocations, ensure you use the corresponding keys, as keys for one cannot access the other.
 
 To grant other users access to your shared allocation:
 
@@ -62,7 +62,7 @@ By default, only the allocated user can manage and access their individual LTS a
 If you want to grant other users access to your allocation:
 
 - You can set permissions using a [bucket policy](../lts/iam_and_policies.md#sharing-buckets).
-- Any user with system access, including those with their own individual LTS allocation and an active Cheaha account, can be granted access.
+- Any user with an individual LTS allocation can be granted access.
 
 ## Key Handling and Ownership
 
@@ -80,7 +80,7 @@ If you, as a Lab/Core PI, do not wish to manage the LTS space yourself, we recom
 
 ## Sharing Buckets
 
-A major use for LTS is storage of data that should be accessible to multiple users from a lab or research group. By default, buckets are only visible and accessible to the owner of the bucket, and no mechanism exists to search for buckets other users have created.
+A major use for LTS is storage of data that should be accessible to multiple users from a Lab or research group. By default, buckets are only visible and accessible to the owner of the bucket, and no mechanism exists to search for buckets other users have created.
 
 Instead, sharing buckets must be done through the command line using [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html). A bucket policy is a JSON formatted file that assigns user read and write permissions to the bucket and to objects within the bucket. If you have not worked with JSON files before, a brief explanation can be found [here](https://docs.fileformat.com/web/json/). It's important to note that the bucket owner will always retain the ability to perform all actions on a bucket and its contents and so do not need to be explicitly granted permissions.
 
@@ -270,7 +270,7 @@ This will give read, write, and delete permissions to `bob` and `jane@uab.edu` s
 
 #### Tiered Permissions
 
-In some instances, the bucket owner (i.e. ideally the PI for the lab if this is a shared lab space) will want to allow certain users to have permissions to alter the policies for new or departing lab members. This example will give standard read-write permissions to both our lab members, but only policy altering permissions to `jane@uab.edu`.
+In some instances, the bucket owner (i.e. ideally the PI for the Lab if this is a shared Lab space) will want to allow certain users to have permissions to alter the policies for new or departing Lab members. This example will give standard read-write permissions to both our Lab members, but only policy altering permissions to `jane@uab.edu`.
 
 ``` json
 {
@@ -433,7 +433,7 @@ It is suggested to keep the number of people who have permission to delete data 
 
 #### Bucket Ownership
 
-For labs using LTS to store data from their Cheaha Project Storage directory, it is highly advised that the PI for the lab creates and owns the bucket and then gives policy changing permissions to another researcher for day-to-day maintenance if desired. For instance, if a lab manager creates the bucket and then leaves the university without giving policy permissions to other users, the lab will not be able to change the policies for those data.
+For Labs using LTS to store data from their Cheaha Project Storage directory, it is highly advised that the PI for the Lab creates and owns the bucket and then gives policy changing permissions to another researcher for day-to-day maintenance if desired. For instance, if a Lab manager creates the bucket and then leaves the university without giving policy permissions to other users, the Lab will not be able to change the policies for those data.
 
 #### Sharing Multiple Datasets with Different Groups
 
