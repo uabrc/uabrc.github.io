@@ -4,13 +4,17 @@
 
 Breaking a bigger problem into set of tasks, and executing these tasks one by one on a single CPU.
 
-![](../tutorial/images/parallelism_serial_execution.drawio)
+<!-- markdownlint-disable MD045 -->
+![](images/parallelism_serial_execution.drawio)
+<!-- markdownlint-enable MD045 -->
 
 ## Parallel Execution
 
 Divide a larger problem into a series of smaller tasks and execute these tasks using multiple CPUs. The application should leverage parallelization technology to utilize multicore processors, multiple nodes, multiple GPUs, or a hybrid approach (such as combining CPUs and GPUs).
 
-![](../tutorial/images/parallelism_parallel_execution.drawio)
+<!-- markdownlint-disable MD045 -->
+![](images/parallelism_parallel_execution.drawio)
+<!-- markdownlint-enable MD045 -->
 
 ## Types of Parallelization
 
