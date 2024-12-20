@@ -4,7 +4,7 @@ toc_depth: 3
 
 # LTS Identity and Access Management
 
-LTS Identity and Access Management (IAM) is a framework for managing identities, roles, and permissions in Long-Term Storage (LTS) solutions, ensuring secure and efficient access to storage spaces like [buckets](./index.md#terminology) or [objects](./index.md#terminology). Understanding access rights and permissions for LTS spaces is essential for effective data management and security.This section aims to clarify common misconceptions regarding ownership, steward roles, access control, and how bucket policies help manage permissions in LTS spaces.
+LTS Identity and Access Management (IAM) is a framework for managing identities, roles, and permissions in Long-Term Storage (LTS) solutions, ensuring secure and efficient access to storage spaces like [buckets](./index.md#terminology) or [objects](./index.md#terminology). Understanding access rights and permissions for LTS spaces is essential for effective data management and security. This section aims to clarify common misconceptions regarding ownership, steward roles, access control, and how bucket policies help manage permissions in LTS spaces.
 
 ## Terminology
 
