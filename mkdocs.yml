@@ -26,7 +26,11 @@ copyright: Copyright &copy; 2021-2024 The University of Alabama at Birmingham.<b
 
 markdown_extensions:
   - admonition
+  - abbr
   - attr_list
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - md_in_html
   - pymdownx.arithmatex:
       generic: true
@@ -41,6 +45,13 @@ markdown_extensions:
 
 plugins:
   - search
+  - ezglossary:
+      ignore_case: true
+      plurals: en
+      tooltip: full
+      sections:
+        - section
+
   - table-reader:
       data_path: docs
   - git-revision-date-localized:
@@ -172,7 +183,7 @@ nav:
   - Help:
       - Support: help/support.md
       - FAQ: help/faq.md
-
+  - Glossary: glossary.md
 validation:
   nav:
     omitted_files: warn

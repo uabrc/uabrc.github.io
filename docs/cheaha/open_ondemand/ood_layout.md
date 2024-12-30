@@ -134,7 +134,7 @@ For each job running via Open OnDemand, there will be a card listed on this page
 1. **Host**: The node on which the job is currently running.
 1. **Time Remaining**: The amount of time remaining from the total requested time.
 1. **Session ID**: This is the unique ID for the OOD session for this job, which can be clicked to access the OOD log directory for troubleshooting.
-1. **Node, Cores and State**: Information about the number of node, cores assignment, and state of the job.
+1. **Node, Cores and State**: Information about the number of <section:node>, <section:cores> assignment, and <section:state> of the job.
 1. **Launch Desktop in new tab**: Click this button to open your interactive VNC session.
 1. **Delete**: Click this button if you want to cancel/stop a running job, and/or delete the session if the job has already ended.
 1. **View Only (Share-able Link)**: Click this button to share the URL of your job with someone. It allows them to watch as you interact with the program and assist you. However, they can only view and cannot control or enter any data.

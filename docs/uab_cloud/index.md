@@ -26,7 +26,7 @@ Once logged in, you will see the OpenStack dashboard. An example is shown below.
 
 To get the most out of cloud.rc, you'll want to make sure you have a working familiarity with the [Linux terminal](../workflow_solutions/shell.md).
 
-Cloud.rc runs on Openstack. If you are new to Openstack or to cloud.rc, it is highly recommended to follow our [Tutorial](tutorial/index.md) to learn how to set up all of the necessary components of a virtual machine (VM) setup. The tutorial is intended to be followed in order. Doing it out of order may result in errors and issues. If you encounter any unexpected issues, unclear instructions or have questions or comments, please contact [Support](../help/support.md).
+Cloud.rc runs on Openstack. If you are new to Openstack or to cloud.rc, it is highly recommended to follow our [Tutorial](tutorial/index.md) to learn how to set up all of the necessary components of a <section:virtual machine (VM)> setup. The tutorial is intended to be followed in order. Doing it out of order may result in errors and issues. If you encounter any unexpected issues, unclear instructions or have questions or comments, please contact [Support](../help/support.md).
 
 ## Cloud Usage Philosophy
 
@@ -42,7 +42,7 @@ The downside to disposable machines is losing configuration specifics. Software 
 
 ## Naming Conventions
 
-Entities on cloud.rc must be named a certain way or difficult-to-diagnose errors may occur. Entities includes instances, volumes, networks, routers, and anything else that you are allowed to give a name to.
+Entities on cloud.rc must be named a certain way or difficult-to-diagnose errors may occur. Entities includes instances, <section:volumes>, networks, routers, and anything else that you are allowed to give a name to.
 
 Please use the following rules when naming entities:
 

@@ -1,6 +1,6 @@
 # Storage
 
-Research Computing offers several data storage options to meet individual or shared needs of UAB researchers, depending on their requirement and use-cases. The types of storage available, procedures for requesting access, responsibilities, and usage guidelines are detailed in the following sections.
+Research Computing offers several data storage options to meet individual or shared needs of UAB researchers, depending on their requirement and use-cases. The types of <section:storage> available, procedures for requesting access, responsibilities, and usage guidelines are detailed in the following sections.
 
 ## What Type of Storage Do I Need?
 
@@ -14,7 +14,7 @@ Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) a
 
 ### How Do I Request Individual Long-Term Storage?
 
-To request individual Long-Term Storage, please first read and understand how [Long-Term Storage](./lts/index.md) differs from traditional file systems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact [Support](../help/support.md).
+To request individual <section:Long-Term Storage>, please first read and understand how [Long-Term Storage](./lts/index.md) differs from traditional file systems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact [Support](../help/support.md).
 
 ## What Shared Storage Solutions are Available?
 
@@ -87,7 +87,7 @@ To request changes in Shared Storage membership, please contact [Support](../hel
 
 ### How Can I Get A Larger `/data/project/` (GPFS) Allocation?
 
-At this time, due to constraints on total GPFS storage, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [User Scratch](#user-scratch) for temporary storage of up to 100 TB of data for use during analysis.
+At this time, due to constraints on total <section:GPFS storage>, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [User Scratch](#user-scratch) for temporary storage of up to 100 TB of data for use during analysis.
 
 If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md). Please also note that project storage is not just for a single project only, it is meant as a storage for multiple projects.
 

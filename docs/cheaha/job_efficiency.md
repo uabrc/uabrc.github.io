@@ -24,7 +24,7 @@ Questions to ask yourself before requesting resources:
 
 1. How large is the data I'm working with?
 
-    - Start by requesting memory equal to double the size of one file, no less than 2 GB per core.
+    - Start by requesting <section:memory> equal to double the size of one file, no less than 2 GB per core.
     - If that isn't enough, increase the request by 50% until there are no more memory errors.
     - Example: If your data file is 4 GB, try starting out by requesting 8 GB of memory, then 12 GB, 16 GB, etc.
 
