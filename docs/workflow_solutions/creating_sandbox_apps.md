@@ -16,7 +16,7 @@ The following steps will guide you to set up Sandbox for your Cheaha account.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
-    This is a one time setup, and would not need to be repeated for subsequent apps you would like to create.
+    This is a one time setup, and will not need to be repeated for subsequent apps you would like to create.
 <!-- markdownlint-enable MD046 -->
 
 Create a dev folder in your `$USER/ondemand` folder by following these steps:
@@ -85,9 +85,14 @@ This example using the FSL (FMRIB Software Library) App, shows how to create a s
 
         ![Metadata contained in manifest.yml file](images/manifest_yml_sandbox.png)
 
-    1. Next, select "form.yml.erb" and click on "Edit" . Replace the content of this file with the .yml file below.
+    1. Next, select "form.yml.erb" and click on "Edit" . Replace the content of this file with the .yml file below. Here we are specifying what the form for the app is going to look like.
 
-        ``` yaml
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+        In this tutorial we used the OOD file editor to make changes to the files, but you will be better served to use an IDE like VSCode to efficiently edit the files you have to make changes to.
+    <!-- markdownlint-enable MD046 -->
+
+    ``` yaml
 
             <%-
         partitions = OodAppkit.clusters[:SLURM_CLUSTER].custom_config[:partitions]
@@ -146,14 +151,7 @@ This example using the FSL (FMRIB Software Library) App, shows how to create a s
         - bc_num_mems
         - bc_email_on_started
 
-        ```
-
-    Here we are specifying what the form for the app is going to look like.
-
-    <!-- markdownlint-disable MD046 -->
-    !!! note
-        In this tutorial we used the OOD file editor to make changes to the fils, but you will be better served to use an IDE like VSCode to efficiently edit the files you have to make changes to.
-    <!-- markdownlint-enable MD046 -->
+    ```
 
 1. Next, we edit the "script.sh.erb" file. This file can also be found in the "template" folder. Edit this file by adding the lines below to the end of the file. This is the actual job script that will be submitted to the cluster, just like you would submit a job with "sbatch" from the command line.
 
