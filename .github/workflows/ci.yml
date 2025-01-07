@@ -32,22 +32,22 @@ jobs:
         uses: conda-incubator/setup-miniconda@v3
         with:
           miniforge-version: latest
-          conda-solver: libmamba
           environment-file: build_env.yml
           activate-environment: build
+          channels: conda-forge
+          conda-remove-defaults: "true"
 
       - name: Build pages
-        run: |
-          conda activate build
-          mkdocs build --strict
+        run: mkdocs build --strict
 
-  deploy:
+  build:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: check
     permissions:
-      contents: write
-
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -61,12 +61,29 @@ jobs:
           environment-file: build_env.yml
           activate-environment: build
 
-      - name: Build
-        # only runs on main branch if a push event
-        # forbids changes to gh-pages branch on other events
+      - name: Build pages
         run: mkdocs build --strict
 
-      - name: Deploy
-        uses: oprypin/push-to-gh-pages@v3
+      - name: Setup
+        uses: actions/configure-pages@v5
+
+      - name: Upload
+        uses: actions/upload-pages-artifact@v3
         with:
-          publish_dir: ./site
+          path: ./site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy
+        uses: actions/deploy-pages@v4
