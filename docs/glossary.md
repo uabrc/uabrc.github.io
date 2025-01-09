@@ -28,14 +28,14 @@ This glossary defines key terms related to the Research Computing system to help
 
 ### C
 
-**section:cores**
-:   Individual processing units within a CPU that can execute tasks.
-
 **section:Cheaha**
 :   A shared cluster computing environment for UAB researchers
 
 **section:Compute node**
 :   A dedicated server in an Cheaha cluster designed to perform computational tasks.
+
+**section:Core**
+:   Individual processing unit within a CPU that can execute tasks.
 
 ### D
 
@@ -54,7 +54,7 @@ This glossary defines key terms related to the Research Computing system to help
 **section: GPFS storage**
 :   General Parallel File System (GPFS) storage provides scalable and distributed storage to manage large amounts of data efficiently. For example, Cheaha project directory is a GPFS storage.
 
-**section:GPUs**
+**section:GPU**
 :   Graphics Processing Units (GPUs), specialized hardware for parallel processing, often used in machine learning, deep learning, and other computationally intensive tasks.
 
 ### H
@@ -108,7 +108,7 @@ This glossary defines key terms related to the Research Computing system to help
 
 ### P
 
-**section:Partitions**
+**section:Partition**
 :   A logical group of nodes that are organized based on their hardware, usage type, or priority.
 
 **section:PyTorch**
@@ -119,7 +119,7 @@ This glossary defines key terms related to the Research Computing system to help
 **section:Quality of Service (QoS) Limits**
 :   QoS limits allow us to balance usage and ensure fairness for all researchers using the cluster.
 
-**section:Quotas**
+**section:Quota**
 :   Limits on resources such as storage or computational time allocated to a user.
 
 ### R
