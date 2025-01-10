@@ -101,7 +101,7 @@ GPU-based software requires a compatible [CUDA Compute Capability](../slurm/gpu.
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    We recommend using the `amperenodes` partition for GPU software that requires a CUDA Compute Capability>6.0 as the  `pascalnodes` partition has a compute capability of 6.0.
+    We recommend using the `amperenodes` partition for GPU software that requires a CUDA Compute Capability greater than 6.0 as the  `pascalnodes` partition has a CUDA Compute Capability of 6.0.
 <!-- markdownlint-disable MD046 -->
 
 ### Tensorflow Compatibility
