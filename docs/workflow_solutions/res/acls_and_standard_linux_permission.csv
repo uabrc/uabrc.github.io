@@ -1,0 +1,5 @@
+ ,Standard Linux Perminsion,ACLs
+"Set Permissions","Applies to owner, group and others","Can set permissions for files/subdirectories"
+"Command Usage","`chmod` and `chgrp`","`getfacl` and `setfacl`"
+"Flexiblity","Fixed: Permissions apply to owner, group and others","Flexible: Permissions can be set for any number of specific users/groups"
+"For temporary permissions","Required ownership/group Change","Can be granted directly without ownership or group changes"
