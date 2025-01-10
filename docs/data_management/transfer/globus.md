@@ -227,7 +227,7 @@ Uploading a top-level folder that does not follow the bucket naming rules will c
 
 ![!large error message in small space](images/globus_lts_upload_error_001.png)
 
-Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata. For guidance on defining policies for your bucket, please refer to our documentation on [policy structure](../lts/policies.md#policy-structure) and [applying a policy](../lts/policies.md#applying-a-policy).
+Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata. For guidance on defining policies for your bucket, please refer to our documentation on [policy structure](../lts/iam_and_policies.md#policy-structure) and [applying a policy](../lts/iam_and_policies.md#applying-a-policy).
 
 ## Using Bookmarks
 
