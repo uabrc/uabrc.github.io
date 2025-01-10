@@ -139,6 +139,15 @@ The majority of the computational time and resources were spent on force calcula
 
 {{ read_csv('../software/res/parallelism_gromacs_gpu_hybrid.csv', keep_default_na=False) }}
 
+### Quantum Espresso
+
+Quantum Espresso (QE) is an open-source suite of codes for electronic-structure calculations and materials modeling based on density functional theory (DFT), plane waves, and pseudopotentials. It is used to study the properties of materials at the atomic scale.
+
+Quantum Expresso is available as a module in Cheaha and can be loaded as,
+
+```bash
+$module load QuantumESPRESSO/6.3-foss-2018b
+```
 <!---
 ### Computational Metrics
 
