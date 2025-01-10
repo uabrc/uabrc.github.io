@@ -141,6 +141,18 @@ For more details on using `sbatch` please see the [official documentation](https
     If you are using bash or shell arrays, it is crucial to note they use 0-based indexing. Plan your `--array` flag indices accordingly.
 <!-- markdownlint-enable MD046 -->
 
+#### Throttling in Slurm Array Jobs
+
+Throttling in Slurm array jobs refers to limiting the number of concurrent jobs that can run simultaneously. This approach prevents the overloading of computing resources and ensures fair distribution of resources among users. From a performance perspective, throttling helps optimize overall job performance by reducing resource contention across the Cheaha cluster. When too many jobs run at the same time, they may compete for CPU, memory, or I/O, which can negatively impact performance. Please [contact us](../../index.md#how-to-contact-us) if your research needs exceed our capacity.
+
+To limit the number of concurrent jobs in a SLURM array, you can use the `%` separator. Here’s how to use it in the above example:
+
+```bash
+sbatch --array=0-9%4 job.sh
+```
+
+In this example, only 4 jobs will run concurrently, regardless of the total number of jobs (10) in the array.
+
 ### Batch Array Jobs With Dynamic or Computed Indices
 
 For a practical example with dynamic indices, please visit our [Practical `sbatch` Examples](practical_sbatch.md)

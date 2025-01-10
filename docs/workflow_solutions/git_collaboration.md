@@ -117,7 +117,7 @@ Effective use of issue tracking can greatly reduce cognitive load and simplify c
 
 The typical issue lifecycle, at a high level, is something like below.
 
-1. Create an issue. [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) [GitLab](https://docs.gitlab.com/ee/user/project/issues/create_issues.html)
+1. Create an issue. [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) [GitLab](https://docs.gitlab.com/ee/user/project/issues/create_issues.html)
 1. Ask for clarifications and discuss as needed.
 1. Use the [Fork-Pull/Merge Request Workflow](#the-fork-pullmerge-request-workflow) to resolve the issue. In the Pull Request description, put the text `Fixes #...` where `...` should be replaced by the issue's number. When the request is merged, the issue will automatically be linked to the request and closed.
 
