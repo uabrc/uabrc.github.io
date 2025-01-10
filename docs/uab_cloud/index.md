@@ -38,7 +38,7 @@ With that in mind, there are many possible use-cases for cloud.rc. Broadly speak
 1. Packaging software into [Containers](../workflow_solutions/getting_containers.md#create-your-own-docker-container).
 1. Temporary hosting of server software for scientific development or workflows.
 
-The downside to disposable machines is losing configuration specifics. Software exists that can assist with reproducible virtual machine configuration, including [Ansible](https://www.ansible.com/), or even just a custom shell script. We are unable to provide assistance with deployment of virtual machine internals.
+The downside to disposable machines is losing configuration specifics. Software exists that can assist with reproducible virtual machine configuration, including [Ansible](https://www.redhat.com/en/ansible-collaborative?intcmp=7015Y000003t7aWQAQ), or even just a custom shell script. We are unable to provide assistance with deployment of virtual machine internals.
 
 ## Naming Conventions
 
