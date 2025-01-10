@@ -17,13 +17,13 @@ A license is no longer required to use Clara Parabricks 4.x and later versions, 
 ### Minimum Hardware requirements to run Parabricks on Cheaha GPUs
 
 1. Access to the internet.
-1. Any GPU that supports CUDA architecture/compute capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0.
+1. Any GPU that supports CUDA Compute Capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0.
 1. The GPU has 16 GB of GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs. For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md).
 1. An NVIDIA driver with version 525.60.13 or greater.
 
 <!-- markdownlint-disable MD046 -->
 !!! Note
-The recent versions of Parabricks requires 16GB of GPU RAM or more. If this requirement is not satisfied, it will lead to `out of memory` error. Therefore, `Pascalnodes` partition are not recommended to run Parabricks pipeline as it does not meet the hardware requirement.
+    The recent versions of Parabricks requires 16GB of GPU RAM or more. If this requirement is not satisfied, it will lead to `out of memory` error. Therefore, `Pascalnodes` partition are not recommended to run Parabricks pipeline as it does not meet the hardware requirement.
 <!-- markdownlint-enable MD046 -->
 
 #### System Requirements
