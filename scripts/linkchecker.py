@@ -4,6 +4,12 @@ from typing import Optional
 
 import pandas as pd
 
+"""
+How to use:
+
+python ./scripts/linkchecker.py
+"""
+
 # Cleans up output of linkchecker
 
 OUTPUT = PurePath("out")
@@ -94,6 +100,9 @@ if __name__ == "__main__":
     # drop good urls
     df = ignore_ok_with_no_redirects(df)
 
+    # change 200 OK to 300 Redirect for human clarity
+    df[RESULT] = replace_lines_containing(df[RESULT], "200 OK", "300 Redirect")
+
     # replace long error messages with short codes
     df[RESULT] = replace_lines_containing(df[RESULT], "ConnectTimeout", "408 Timeout")
 
@@ -107,11 +116,11 @@ if __name__ == "__main__":
 
     # special ignore rules
     df = ignore_rows_containing(
-        df, URL_IN_MARKDOWN, "https://doi.org", if_result_code="200"
-    )
+        df, URL_IN_MARKDOWN, "https://doi.org", if_result_code="300"
+    )  # doi.org always redirects, that's its purpose, so we ignore
     df = ignore_rows_containing(
         df, URL_IN_MARKDOWN, "https://anaconda.org", if_result_code="403"
-    )
+    )  # if anaconda.org goes down we'll surely hear about it
     df = ignore_rows_containing(
         df, URL_AFTER_REDIRECTION, "https://padlock.idm.uab.edu", if_result_code="423"
     )
