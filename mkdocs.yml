@@ -114,7 +114,7 @@ nav:
           - Identity and Access Management: data_management/lts/iam_and_policies.md
           - UAB Core Accounts: data_management/lts/lts_cores.md
           - FAQ: data_management/lts/lts_faq.md
-      - Transfer:
+      - Data Transfer Tools:
           - Tutorial:
               - data_management/transfer/tutorial/index.md
               - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
