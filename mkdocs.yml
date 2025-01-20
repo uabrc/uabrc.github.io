@@ -201,13 +201,8 @@ nav:
   - Contributing Content: contributing/contributor_guide.md
   - Help:
       - Support: help/support.md
-<<<<<<< HEAD
-      - FAQ: help/faq.md
-  - Glossary: glossary.md
-=======
       - FAQ - Frequently Asked Questions: help/faq.md
-
->>>>>>> main
+  - Glossary: glossary.md
 validation:
   nav:
     omitted_files: warn
