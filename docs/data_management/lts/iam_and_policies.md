@@ -4,8 +4,6 @@ toc_depth: 3
 
 # LTS Identity and Access Management
 
-<<<<<<< HEAD:docs/data_management/lts/policies.md
-=======
 LTS Identity and Access Management (IAM) is a framework for managing identities, roles, and permissions in Long-Term Storage (LTS) solutions, ensuring secure and efficient access to storage spaces like [buckets](./index.md#terminology) or [objects](./index.md#terminology). Understanding access rights and permissions for LTS spaces is essential for effective data management and security. This section aims to clarify common misconceptions regarding ownership, steward roles, access control, and how bucket policies help manage permissions in LTS spaces.
 
 ## Terminology
@@ -84,7 +82,6 @@ If you, as a Lab/Core PI, do not wish to manage the LTS space yourself, we recom
 
 A major use for LTS is storage of data that should be accessible to multiple users from a Lab or research group. By default, buckets are only visible and accessible to the owner of the bucket, and no mechanism exists to search for buckets other users have created.
 
->>>>>>> main:docs/data_management/lts/iam_and_policies.md
 Instead, sharing buckets must be done through the command line using [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html). A bucket policy is a JSON formatted file that assigns user read and write permissions to the bucket and to objects within the bucket. If you have not worked with JSON files before, a brief explanation can be found [here](https://docs.fileformat.com/web/json/). It's important to note that the bucket owner will always retain the ability to perform all actions on a bucket and its contents and so do not need to be explicitly granted permissions.
 
 <!-- markdownlint-disable MD046 -->
