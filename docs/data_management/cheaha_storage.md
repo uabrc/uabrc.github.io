@@ -1,4 +1,6 @@
-# Cheaha Storage(GPFS)
+# Cheaha Storage (GPFS)
+
+The Cheaha storage, also known as GPFS (General Parallel File System), is a distributed file system designed for managing dynamic data and serves as a storage solution on Cheaha. We provide the following Cheaha storage solutions.
 
 ## User Data and Home Directories
 
@@ -146,5 +148,5 @@ Quota reports are updated nightly, so they may be out of date if you move data a
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    Running out of space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/index.md).
+    Running out of Cheaha Storage space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/index.md).
 <!-- markdownlint-enable MD046 -->
