@@ -30,7 +30,7 @@ A simplified diagram illustrating this organization can be seen below.
 
 ![!Suggested organization of LTS buckets and data](images/simplified-lts-core-diagram.png)
 
-Due to data sensitivity, we advise against storing data from different groups in the same bucket. Managing permissions for a bucket where many groups can only access specific portions of a bucket is cumbersome and prone to error. Instead, separate [policy files](policies.md) should be kept for each bucket specifying which researchers from each lab or group should be able to access the stored data. These policy files can be kept in a single location owned by the core for future modification. This also facilitates future transfer of bucket ownership from the core to the lab or group to whom the data belongs after data collection or analysis is complete.
+Due to data sensitivity, we advise against storing data from different groups in the same bucket. Managing permissions for a bucket where many groups can only access specific portions of a bucket is cumbersome and prone to error. Instead, separate [policy files](iam_and_policies.md) should be kept for each bucket specifying which researchers from each lab or group should be able to access the stored data. These policy files can be kept in a single location owned by the core for future modification. This also facilitates future transfer of bucket ownership from the core to the lab or group to whom the data belongs after data collection or analysis is complete.
 
 ## Transferring From Local Machines to LTS
 
@@ -48,7 +48,7 @@ For situations where data either needs to be transferred from multiple machines 
 
 While uploading and/or managing data for other groups, data in any buckets the core owns will count against the quota for the core. Data will need to be distributed in some way to the groups who own the data to free up storage in the core's account once those data have been fully collected or analyzed. It is not currently possible to directly the change the owner of a bucket without submitting a ticket to research computing, however it is possible to set permissions on a bucket to allow the data owners to copy the data to a new bucket under their ownership. Once the data are copied, the original bucket can be moved onto a physical disc as an archive or deleted.
 
-Permission to copy data is granted via a [policy file](policies.md). Policy files can be customized extensively, but a general file can be seen below.
+Permission to copy data is granted via a [policy file](iam_and_policies.md). Policy files can be customized extensively, but a general file can be seen below.
 
 ``` json
 {

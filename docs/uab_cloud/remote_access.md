@@ -18,8 +18,8 @@ There are two main steps to working with SSH efficiently. The first is to ensure
 
 Terminal multiplexers are software that aggregate multiple SSH client sessions into one location. They often have the added benefit of keeping sessions alive on the remote machine, so short internet outages won't require you to log in again.
 
-- For Linux, try using `tmux`: <https://github.com/tmux/tmux/wiki/Installing>
-- For Windows, try using Windows Terminal: <https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701>
+- For Linux, try using `tmux`: <https://github.com/tmux/tmux/wiki/Installing#installing-tmux>
+- For Windows, try using Windows Terminal: <https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-us&gl=US>
 
 ### Install an SSH Client (Linux)
 

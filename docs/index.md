@@ -36,6 +36,18 @@ RCS is developed and supported by UAB IT's Research Computing Group. We are deve
 
 RCS is an out growth of the UABgrid pilot, launched in September 2007 which has focused on demonstrating the utility of unlimited analysis, storage, and application for research. RCS is built on the same technology foundations used by major cloud vendors and decades of distributed systems computing research, technology that powered the last ten years of large scale systems serving prominent national and international initiatives like the [Open Science Grid](https://osg-htc.org/), [XSEDE](https://www.xsede.org/), the [LHC Computing Grid](https://wlcg.web.cern.ch/), and [NCIP](https://datascience.cancer.gov/).
 
+## How Can I Follow up on ServiceNow Tickets?
+
+If you are unable to find a reference or correspondence for your already submitted ServcieNow ticket, you can now visit UAB's [ServiceNow portal](https://uabprod.service-now.com/service_portal) to track and follow up your submitted tickets. At the website, click the "Log in" button to sign in with your UAB SSO (Single Sign On) credentials.
+
+![Landing page of ServiceNow Portal with the "Log in" button highlighted](images/servicenow_landing_page.png)
+
+When logged in you will see in the top right corner a "My tickets" button. Click on this and you will see two options: "View all open tickets" and "View all tickets".
+
+![ServiceNow Portal after Logging in, highlighting "My tickets" options](images/servicenow_landing_page_tickets.png)
+
+Select the option appropriate for your need. The "View all open tickets" will show you a list of tickets you currently have open (i.e. unresolved), while the "View all tickets" option would show you a list of tickets you have ever submitted, open or closed.
+
 ## Outreach
 
 The UAB IT Research Computing Group has collaborated with a number of prominent research projects at UAB to identify use cases and develop requirements. Our collaborators include, but are not limited to, the Center for Clinical and Translational Science (CCTS), Heflin Genomics Center, the Comprehensive Cancer Center (CCC), the Department of Computer and Information Sciences (CIS), the Department of Mechanical Engineering (ME), Lister Hill Library, the School of Optometry's Center for the Development of Functional Imaging, and Health System Information Services (HSIS).

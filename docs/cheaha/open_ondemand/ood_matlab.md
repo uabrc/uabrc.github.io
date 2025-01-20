@@ -12,7 +12,7 @@ Matlab is available for use graphically in your browser via OOD. As with other s
 
 ## Using Anaconda Python from within Matlab
 
-Matlab has the ability to interoperate with Python from within Matlab. The official documentation for this featuer may be found at <https://www.mathworks.com/help/matlab/call-python-libraries.html>.
+Matlab has the ability to interoperate with Python from within Matlab. The official documentation for this feature may be found at <https://www.mathworks.com/help/matlab/call-python-libraries.html>.
 
 This section is dedicated to using this feature with Anaconda on Cheaha. To use Python contained in an Anaconda Environment within Matlab, please use the following steps.
 
@@ -34,3 +34,7 @@ You may optionally verify that Python works correctly by entering `py.list(["hel
 ## Using a GPU with MATLAB
 
 Please see the [MATLAB Section on our GPU Page](../slurm/gpu.md#matlab).
+
+## Known Issues
+
+There is a known issue with `parpool` and other related multi-core parallel features such as `parfor` affecting R2022a and earlier. See our [Modules Known Issues section](../software/modules.md#matlab-issues) for more information.
