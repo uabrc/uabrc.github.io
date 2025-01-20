@@ -67,10 +67,10 @@ plugins:
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
         contributor_guide.md: contributing/contributor_guide.md
         data_management/LTS/lts.md: data_management/lts/index.md
-        data_management/LTS/sharing.md: data_management/lts/policies.md
+        data_management/LTS/sharing.md: data_management/lts/iam_and_policies.md
         data_management/lts/lts.md: data_management/lts/index.md
-        data_management/lts/sharing.md: data_management/lts/policies.md
-        data_management/transfer/tutorial/globus_group_tutorial.md: data_management/transfer/tutorial/globus_organization_tutorial.md
+        data_management/lts/policies.md: data_management/lts/iam_and_policies.md
+        data_management/lts/sharing.md: data_management/lts/iam_and_policies.md
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/git_collaboration.md
@@ -110,7 +110,7 @@ nav:
               - data_management/lts/tutorial/index.md
               - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
           - Interfacing with LTS: data_management/lts/interfaces.md
-          - Bucket Permissions: data_management/lts/policies.md
+          - Identity and Access Management: data_management/lts/iam_and_policies.md
           - UAB Core Accounts: data_management/lts/lts_cores.md
           - FAQ: data_management/lts/lts_faq.md
       - Transfer:
@@ -131,6 +131,7 @@ nav:
       - R Projects and Environments: workflow_solutions/r_environments.md
       - Software Containers: workflow_solutions/getting_containers.md
       - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
+      - Creating Sandbox Apps: workflow_solutions/creating_sandbox_apps.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
       - Tutorials:
