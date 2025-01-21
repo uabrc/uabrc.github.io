@@ -87,7 +87,7 @@ This glossary defines key terms related to the Research Computing system to help
 **section:Docker Image**
 :  A snapshot of the libraries and dependencies required inside a container for an application to run.
 
-**section: Duo 2FA**
+**section:Duo 2FA**
 :  A two-factor authentication system used for securing user access.
 
 ### E
@@ -110,6 +110,7 @@ This glossary defines key terms related to the Research Computing system to help
 
 **section:Globus CLI**
 :  A command line tool that allows users to manage file transfers, automate workflows, and interact with Globus services without using the web interface.
+
 **section:Globus Collection**
 :  A logical representation of data storage that is accessible via the Globus service.
 
