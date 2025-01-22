@@ -21,6 +21,15 @@
     ],
     "description": "Disables warning Markdown Lint MD046 for the selected block."
   },
+  "Disable Markdown Lint MD045 for a DrawIO Diagram": {
+    "prefix": "md045 disable",
+    "body": [
+      "<!-- markdownlint-disable MD045 -->",
+      "$TM_SELECTED_TEXT",
+      "<!-- markdownlint-enable MD045 -->"
+    ],
+    "description": "Disables warning Markdown Lint MD045 for the selected DrawIO Diagram."
+  },
   "Stub Page": {
     "prefix": "stub",
     "body": [
