@@ -68,3 +68,19 @@ If your invite code has expired, you can have a new invite code sent to you by c
 For more information on UAB IT policies and other useful and helpful information, please click the "UABIT Guest User info" link.
 
 ![!Guest IT Info landing page.](./images/xias_guest_it_info.png)
+
+## What is next and how to login to services?
+
+To login to the [Cheaha](../../cheaha/getting_started.md) and [GitLab](../gitlab_account.md) services, you need to use your XIAS email address and the password used to create your XIAS account. To access the Cloud.rc, you first need to request an account. Please follow [Cloud.rc](../../uab_cloud/index.md#first-steps) to initiate the request.
+
+For further guidance on how to proceed and what steps to take next, please refer to the following documentation pages.
+
+<!-- markdownlint-disable MD046-->
+!!! warning
+
+    Before proceeding with any of the resources below, be sure you have been granted authorization to those particular resources by your Sponsor.
+<!-- markdownlint-enable MD046 -->
+
+- [How do I create a Cheaha account?](../cheaha_account.md)
+- [How do I get access to GitLab?](../gitlab_account.md)
+- [How do I get access to Cloud.rc (OpenStack)?](../../uab_cloud/tutorial/index.md)
