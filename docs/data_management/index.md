@@ -63,9 +63,9 @@ Please provide the following information. Missing information can delay allocati
 - **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
 - **Name of Shared Storage:** Please give us a generic name specific to your project/Lab.
 
-    - For Labs, we recommend using the format `<PI_BlazerID>_lab`, where `<PI_BlazerID>` is the BlazerID or name of the Principal Investigator (PI). For example: `PI_BlazerID_lab`, `PI_name_lab`.
+    - For labs, we recommend using the format `<BlazerID>_lab`, where `<BlazerID>` is the BlazerID of the Principal Investigator (PI). Alternatively, the PI may choose to use their first or last name instead of the BlazerID.
     - For Cores, we recommend using a shortened version of the Core name. For example: `core_facility_space`
-    - For Project Storage, the name you choose will be used in the path `/data/project/<PI_BlazerID>_lab` on Cheaha. Also, this name,`<PI_BlazerID>_lab`, will be given to your shared LTS account.
+    - For Project Storage, the name you choose will be used in the path `/data/project/<BlazerID>_lab` on Cheaha. Also, this name,`<BlazerID>_lab`, will be given to your shared LTS allocation.
 
     <!-- markdownlint-disable MD046 -->
     !!! Tip
@@ -187,10 +187,3 @@ For UAB policies surrounding PHI data, please see the following URLs.
 <!-- markdownlint-enable MD046 -->
 
 Managing PHI data can be challenging. There are experts on Campus who can provide assistance. Please contact [Support](../help/support.md) if you intend to use Research Computing services in combination with PHI and PHI-derived data.
-
-### Scratch Retention Policy
-
-Data stored in `/scratch` is subject to two limited retention policies.
-
-- Each user will have a quota of 50 TB of scratch storage.
-- Files will be retained for a maximum of 30 days, after which they become eligible for deletion.

@@ -150,3 +150,10 @@ Quota reports are updated nightly, so they may be out of date if you move data a
 
     Running out of Cheaha Storage space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/index.md).
 <!-- markdownlint-enable MD046 -->
+
+### Scratch Retention Policy
+
+Data stored in `/scratch` is subject to two limited retention policies.
+
+- Each user will have a quota of 100 TB of scratch storage.
+- Files will be retained for a maximum of 30 days, after which they become eligible for deletion.
