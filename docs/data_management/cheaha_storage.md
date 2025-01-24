@@ -52,7 +52,7 @@ Two types of scratch space are provided for analyses currently being ran, networ
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Starting January 2023, scratch data will have limited retention. See [Scratch Retention Policy](./index.md#scratch-retention-policy) for more information.
+    Starting January 2023, scratch data will have limited retention. See [Scratch Retention Policy](#scratch-retention-policy) for more information.
 <!-- markdownlint-enable MD046 -->
 
 ### User Scratch
