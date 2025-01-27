@@ -608,13 +608,6 @@ To change a directory and all of its contents recursively use `chgrp -hR <new-gr
 
 ### Manage researcher access to files and directories (`getfacl`, `setfacl`)
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-<<<<<<< HEAD
-    Under construction.
-<!-- markdownlint-enable MD046 -->
-=======
 {{ read_csv('workflow_solutions/res/acls_and_standard_linux_permission.csv', keep_default_na=False) }}
 
 **Key ACl commands**:
@@ -669,4 +662,3 @@ Below are examples of modifying ACLs (`setfacl`): `<USER>`, `<GROUP>`,and `<DIRY
 - To remove all ACL entries recursively for all files and subdirectories within a directory `<DIRY>`, use a command `setfacl -bR <DIRY>`. The `-b` flag removes all ACL entries, and `-R` applies it recursively to the directory `<DIRY>` and its contents.
 
 If you need assistance setting permissions, feel free to contact us via <support@listserv.uab.edu>, providing the user's BlazerID and the directory or file you wish to modify, along with the permissions you want to grant or remove.
->>>>>>> main
