@@ -1,3 +1,7 @@
+---
+toc_depth: 4
+---
+
 # Shell Reference
 
 ## Introductory Guides
@@ -607,6 +611,8 @@ To change a directory and all of its contents recursively use `chgrp -hR <new-gr
 <!-- markdownlint-enable MD046 -->
 
 ### Manage researcher access to files and directories (`getfacl`, `setfacl`)
+
+In research environments, managing access to files and directories is key for security and collaboration. While the [standard Linux permissions (`rwx`)](#manage-permissions-of-files-and-directores-chmod) are useful, they lack the flexibility required to set different levels of access. Access Control Lists (ACLs) offer a more flexible solution, allowing settings for individual users or groups based on specific needs without affecting the group structure of files and directories. ACLs are particularly useful in research settings, where multiple collaborators may require varying levels of access to the same data.
 
 {{ read_csv('workflow_solutions/res/acls_and_standard_linux_permission.csv', keep_default_na=False) }}
 
