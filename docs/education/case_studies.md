@@ -17,13 +17,13 @@ A license is no longer required to use Clara Parabricks 4.x and later versions, 
 ### Minimum Hardware requirements to run Parabricks on Cheaha GPUs
 
 1. Access to the internet.
-1. Any GPU that supports CUDA architecture/compute capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0.
+1. Any GPU that supports CUDA Compute Capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0.
 1. The GPU has 16 GB of GPU RAM or more. It has been tested on NVIDIA V100, NVIDIA A100, and NVIDIA T4 GPUs. For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md).
 1. An NVIDIA driver with version 525.60.13 or greater.
 
 <!-- markdownlint-disable MD046 -->
 !!! Note
-The recent versions of Parabricks requires 16GB of GPU RAM or more. If this requirement is not satisfied, it will lead to `out of memory` error. Therefore, `Pascalnodes` partition are not recommended to run Parabricks pipeline as it does not meet the hardware requirement.
+    The recent versions of Parabricks requires 16GB of GPU RAM or more. If this requirement is not satisfied, it will lead to `out of memory` error. Therefore, `Pascalnodes` partition are not recommended to run Parabricks pipeline as it does not meet the hardware requirement.
 <!-- markdownlint-enable MD046 -->
 
 #### System Requirements
@@ -65,9 +65,7 @@ singularity shell parabricks-4.2.0-1.sif
 ```
 
 ```bash
-Singularity> ls /bin/pbrun
-/bin/pbrun
-Singularity> /bin/pbrun version
+Singularity> pbrun version
 Please visit https://docs.nvidia.com/clara/#parabricks for detailed documentation
 
 pbrun: 4.2.0-1
@@ -91,7 +89,7 @@ tar -xzvf parabricks_sample.tar.gz
 
 ### Parabricks Testing on `amperenodes` on Cheaha
 
-Once the sample data is downloaded, you can execute the pipeline using the executable `pbrun` which is located in /bin/pbrun within the container.
+Once the sample data is downloaded, you can execute the pipeline using the executable `pbrun` within the container.
 
 You will have to load the compatible `CUDA` module to access GPUs as below.
 
@@ -99,10 +97,10 @@ You will have to load the compatible `CUDA` module to access GPUs as below.
 module load CUDA/11.6.0
 ```
 
-In the below script, the `--nv` option enables the use of NVIDIA GPUs within the container. The singualrity container `parabricks-4.2.0-1.sif` is executed using the command `singualrity run` over the executable `/bin/pbrun`.
+In the below script, the `--nv` option enables the use of NVIDIA GPUs within the container. The singualrity container `parabricks-4.2.0-1.sif` is executed using the command `singualrity run` over the executable `pbrun`.
 
 ```bash
-singularity run --nv parabricks-4.2.0-1.sif /bin/pbrun fq2bam \
+singularity run --nv parabricks-4.2.0-1.sif pbrun fq2bam \
 --ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta \
 --in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz \
 --out-bam output.bam
@@ -127,7 +125,7 @@ module load Singularity/3.5.2-GCC-5.4.0-2.26
 module load CUDA/11.6.0
 
 #Run the "pbrun" executable from the singularity image "parabricks-4.2.0-1.sif", and pass the CUDA lib path to make it accessible within the container
-singularity run --nv parabricks-4.2.0-1.sif /bin/pbrun fq2bam \
+singularity run --nv parabricks-4.2.0-1.sif pbrun fq2bam \
 --ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta \
 --in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz \
 --out-bam output.bam
@@ -268,4 +266,4 @@ Parabricks is tested and works with CUDA version >= 11.6.0 on Cheaha. Empirical 
 
 {{ read_csv('education/res/parabricks_exec_time.csv', keep_default_na=False) }}
 
-Applications show 2x performance with Parabricks > 4.0 version. You can refer [here](https://docs.nvidia.com/clara/parabricks/latest/bestperformance.html#best-performance-for-germline-pipeline) to performance tuning ideas to achieve best performance with Parabricks.
+Applications show 2x performance with Parabricks greater than 4.0 version. You can refer [here](https://docs.nvidia.com/clara/parabricks/latest/bestperformance.html#best-performance-for-germline-pipeline) to performance tuning ideas to achieve best performance with Parabricks.

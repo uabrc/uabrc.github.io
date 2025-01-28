@@ -18,6 +18,7 @@ When requesting a job using `sbatch`, you will need to include the Slurm flag `-
 !!! note
 
     It is suggested that at least 2 CPUs are requested for every GPU to begin with. The user should monitor and adjust the number of cores on subsequent job submissions if necessary. Look at [Managing Jobs](./job_management.md#managing-jobs) for more information.
+
 <!-- markdownlint-enable MD046 -->
 
 ## Ensuring IO Performance With A100 GPUs
@@ -93,6 +94,16 @@ If a specific version of CUDA is needed but not installed, please send an instal
 
 If working with deep neural networks (DNNs, CNNs, LSTMs, LLMs, etc.), you will need to load a `cuDNN` module as well. The `cuDNN` modules are built to be compatible with a sibling `CUDA` module and are named with the corresponding version. For example, if you are loading `CUDA/12.2.0`, you will also need to load `cuDNN/8.9.2.26-CUDA-12.2.0`.
 
+### CUDA Compute Capability and Known Issues
+
+GPU-based software requires a compatible [CUDA Compute Capability](../slurm/gpu.md/#available-devices) to function correctly. Each GPU card has a fixed CUDA Compute Capability version. For the software to run as expected, this version must be at least as large as the minimum CUDA Compute Capability required by the software; otherwise, the software will fail to run as expected, often resulting in runtime errors. Some of the known issues are reported in the [FAQ Entry](#frequently-asked-questions-faq-about-a100-gpus). For more information on CUDA Compute Capability, please refer [here](https://developer.nvidia.com/cuda-gpus).
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    We recommend using the `amperenodes` partition for GPU software that requires a CUDA Compute Capability greater than 6.0 as the `pascalnodes` partition has a CUDA Compute Capability of 6.0.
+<!-- markdownlint-disable MD046 -->
+
 ### Tensorflow Compatibility
 
 To check which CUDA Module version is required for your version of Tensorflow, see the toolkit requirements chart here <https://www.tensorflow.org/install/source#gpu>.
@@ -147,3 +158,6 @@ As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct
 - **What else should I be aware of?**
     - Please be sure to clean your data off of `/local/$SLURM_JOB_ID` as soon as you no longer need it, before the job finishes.
     - We have updated the CUDA and cuDNN modules to improve reliability and ease of use. Please see the section on [CUDA Modules](#cuda-modules) for more information.
+    - GPU-based software, such as Parabricks, Triton, etc., requires a [CUDA Compute Capability](../slurm/gpu.md/#available-devices) greater than 6.0 for proper execution and should be run on the `amperenodes` partition. Some of the software that encountered runtime errors due to the underlying issues were,
+        - [Parabricks](../../education/case_studies.md/#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus)
+        - [Triton](https://docs.nvidia.com/deeplearning/triton-inference-server/archives/triton_inference_server_1140/user-guide/docs/build.html#configure-triton-build)
