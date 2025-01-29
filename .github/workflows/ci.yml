@@ -1,3 +1,5 @@
+%YAML 1.2
+---
 name: ci
 
 on:
@@ -7,10 +9,6 @@ on:
   pull_request:
     branches:
       - main
-
-defaults:
-  run:
-    shell: bash -el {0}
 
 jobs:
   check:
