@@ -85,11 +85,11 @@ fileoutput=csv
 
 # CSV logger
 [csv]
-#filename=linkchecker-out.csv
-#separator=;
+filename=out/linkchecker-raw.csv
+separator=,
 #quotechar="
 #dialect=excel
-#parts=all
+parts=result,urlname,parentname,line,column,url
 
 # SQL logger
 [sql]
@@ -190,7 +190,7 @@ recursionlevel=1
 
 ##################### filtering options ##########################
 [filtering]
-#ignore=
+ignore=rc.uab.edu
 # ignore everything with 'lconline' in the URL name
 #  lconline
 # and ignore everything with 'bookmark' in the URL name

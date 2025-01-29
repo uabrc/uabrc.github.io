@@ -24,7 +24,7 @@ When talking about S3 storage, some terms are different compared to a normal fil
 
     Never give access and secret keys for personal or lab accounts to anyone! Bad actors who are given keys to accounts which own important buckets can change access permissions and delete any and all data!
 
-    If you need to give elevated permissions to other users to view, upload, download, delete, etc. any data from a bucket, those permissions can be changed via [bucket policies](policies.md) without giving out keys. Please [contact Research Computing](../../index.md#how-to-contact-us) for help setting up and applying policies if you need it
+    If you need to give elevated permissions to other users to view, upload, download, delete, etc. any data from a bucket, those permissions can be changed via [bucket policies](iam_and_policies.md) without giving out keys. Please [contact Research Computing](../../index.md#how-to-contact-us) for help setting up and applying policies if you need it
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->

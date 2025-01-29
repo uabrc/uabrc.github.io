@@ -43,8 +43,12 @@ plugins:
   - search
   - table-reader:
       data_path: docs
+  - gen-files:
+      scripts:
+        - scripts/pandoc_generator.py
   - git-revision-date-localized:
       type: date
+      strict: false
   - glightbox:
       # auto_caption: true
   - redirects:
@@ -56,12 +60,17 @@ plugins:
         account_management/xias_users.md: account_management/xias/pi_guest_management.md
         cheaha/conda.md: cheaha/software/software.md#anaconda-on-cheaha
         cheaha/lmod.md: cheaha/software/modules.md
+        cheaha/open_ondemand/ood_files.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
+        cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
         contributor_guide.md: contributing/contributor_guide.md
         data_management/LTS/lts.md: data_management/lts/index.md
-        data_management/LTS/sharing.md: data_management/lts/policies.md
+        data_management/LTS/sharing.md: data_management/lts/iam_and_policies.md
         data_management/lts/lts.md: data_management/lts/index.md
-        data_management/lts/sharing.md: data_management/lts/policies.md
+        data_management/lts/policies.md: data_management/lts/iam_and_policies.md
+        data_management/lts/sharing.md: data_management/lts/iam_and_policies.md
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/git_collaboration.md
@@ -74,14 +83,17 @@ plugins:
         welcome/rc_days.md: education/research_computing_days/index.md
         welcome/welcome.md: index.md
         workflow_solutions/getting_software_with_git.md: workflow_solutions/git_collaboration.md
-        cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
-        cheaha/open_ondemand/ood_files.md: cheaha/open_ondemand/ood_layout.md
-        cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
-        cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
+
+exclude_docs: |
+  /**/res/*.md
+
+not_in_nav: |
+  /**/res/*.md
 
 nav:
   - Home: index.md
   - Account Management:
+      - account_management/index.md
       - Cheaha Account: account_management/cheaha_account.md
       - External Collaborator Accounts (XIAS):
           - account_management/xias/index.md
@@ -94,11 +106,19 @@ nav:
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
+          - Tutorial:
+              - data_management/lts/tutorial/index.md
+              - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
           - Interfacing with LTS: data_management/lts/interfaces.md
-          - Bucket Permissions: data_management/lts/policies.md
+          - Identity and Access Management: data_management/lts/iam_and_policies.md
           - UAB Core Accounts: data_management/lts/lts_cores.md
           - FAQ: data_management/lts/lts_faq.md
       - Transfer:
+          - Tutorial:
+              - data_management/transfer/tutorial/index.md
+              - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
+              - Globus for Organizations: data_management/transfer/tutorial/globus_organization_tutorial.md
+              - Globus Group Management: data_management/transfer/tutorial/globus_group_management.md
           - Globus: data_management/transfer/globus.md
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
@@ -111,6 +131,7 @@ nav:
       - R Projects and Environments: workflow_solutions/r_environments.md
       - Software Containers: workflow_solutions/getting_containers.md
       - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
+      - Creating Sandbox Apps: workflow_solutions/creating_sandbox_apps.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
       - Tutorials:
@@ -155,10 +176,9 @@ nav:
       - NSF Cyberinfrastructure: national_ci/nsf_access.md
       - NIH Cyberinfrastructure: national_ci/nih.md
   - Grants & Contracts:
-      - Overview: grants/overview.md
-      - Facilities and Plan: grants/facilities.md
-      - Budgeting: grants/budgets.md
-      - Descriptions: grants/publications.md
+      - RC Facilities Description: grants/facilities.md
+      - Acknowlding Us in Publications: grants/publications.md
+      - Funding Opportunities: grants/opportunities.md
   - Outreach & Training:
       - Case Studies: education/case_studies.md
       - Research Computing Days:
@@ -170,7 +190,7 @@ nav:
   - Contributing Content: contributing/contributor_guide.md
   - Help:
       - Support: help/support.md
-      - FAQ: help/faq.md
+      - FAQ - Frequently Asked Questions: help/faq.md
 
 validation:
   nav:
@@ -182,3 +202,6 @@ validation:
     anchors: warn
     absolute_links: warn
     unrecognized_links: warn
+
+watch:
+  - scripts

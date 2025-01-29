@@ -34,7 +34,7 @@ The instructions below, provide a recommended step by step guide to creating and
 
 There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilising only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;
 
-1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in the links.
+1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in these links.
 
 1. Access the terminal following the steps [here](#installing-anaconda-environments-using-the-terminal).
 
@@ -48,7 +48,6 @@ There are two instances of PyTorch that can be installed, one requiring GPUs, an
 For a correct installation of pytorch, we have to ensure some conditions are met. See partition [docs](../hardware.md#details) for a guide. One of such conditions, is to load CUDA toolkit using the below command in your environment setup form (see image below).
 
 ```bash
-
 module load CUDA/11.8.0
 
 ```
@@ -67,7 +66,6 @@ module load CUDA/11.8.0
 When your job has been created and your environment created and activated from the terminal (see above [instructions](../../workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
 
 ```bash
-
 conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia
 
 ```
@@ -75,7 +73,6 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvid
 This commands will install a GPU compatible PyTorch version into your environment. To verify PyTorch is installed, and to see what version you have installed in your environment, use the below command.
 
 ```bash
-
 conda list | grep "torch"
 
 ```
@@ -91,7 +88,6 @@ The same process can be followed for installing another Deep Learning library Te
 As an example we will be using a sample Jupyter Notebook with just a simple torch function to test if a GPU will be utilized with PyTorch functions. Run the command in a cell, and if your output is `True`, then you have your GPU setup to support PyTorch functions.
 
 ```python
-
 import torch
 
 print(torch.cuda.is_available())
