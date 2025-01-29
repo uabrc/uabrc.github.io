@@ -11,6 +11,9 @@ rules:
   commas: enable
   comments:
     level: warning
+    require-starting-space: true
+    ignore-shebangs: true
+    min-spaces-from-content: 1
   comments-indentation:
     level: error
   document-end: disable
@@ -32,6 +35,5 @@ rules:
     level: warning
 
 ignore:
-  - .trunk/
   - .git/
   - site/

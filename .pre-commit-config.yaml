@@ -8,7 +8,7 @@ repos:
     rev: v1.35.1
     hooks:
       - id: yamllint
-        entry: yamllint -c .yamllint
+        args: [-c, .yamllint.yaml, --strict]
   - repo: local
     hooks:
       - id: mkdocs-build
