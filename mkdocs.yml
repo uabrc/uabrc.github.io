@@ -49,8 +49,7 @@ plugins:
   - git-revision-date-localized:
       type: date
       strict: false
-  - glightbox:
-      # auto_caption: true
+  - glightbox
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
