@@ -1,0 +1,10 @@
+Permissions/Responsibilities,Research Computing,Members,Manager,PI
+Create a project directory,Upon PI request,,,
+Request a project directory,,,,Yes ✔️
+Add/remove member to/from the project space,Upon PI approval/Manager request,,,
+Grant access to users to a specific folder,Upon PI approval/Manager request,,Yes ✔️,Yes ✔️
+Periodically check group membership,,,Yes ✔️,Yes ✔️
+Verify and update access controls,,,Yes ✔️,Yes ✔️
+Move unused shared data to LTS/archive,,Yes ✔️,Yes ✔️,Yes ✔️
+Manage backup and recovery,,Yes ✔️,Yes ✔️,Yes ✔️
+Ensure proper usage of shared storage,,Yes ✔️,Yes ✔️,Yes ✔️
