@@ -198,3 +198,30 @@ Click "Delete Volume" again to delete the volume permanently.
 
     It will not be possible to delete a volume if it has an associated [volume snapshot](../snapshots.md). The snapshot will need to be deleted first.
 <!-- markdownlint-enable MD046 -->
+
+## Increasing a Persistent Volume
+
+In this tutorial, we'll guide you through the process of resizing your volumes directly from the dashboard. Whether you need more storage or want to optimize your resource allocation, you can achieve either with just a few clicks. Follow the steps below to update your volume size.
+
+**Step 1: Accessing the Dashboard**
+Log into your Cloud.rc account, and locate the sidebar on the main dashboard. Click on the Volumes option. Within the Volumes section, select Volumes again to view your list of available volumes.
+
+**Step 2: Locating the Volume to Extend**
+With your list of volumes displayed, identify the volume you wish to resize. You may use the search/filter option if you have multiple volumes set up. Use the checkbox to select your preferred volume to be resized.
+
+![Image showing a list of Volumes in a cloud.rc account](./images/cloudrc-volume-list.png)
+
+**Step 3: Initiating the Volume Extension**
+Once you have selected your volume, it's time to initiate the resizing process. Click on the dropdown menu located to the far right under "Actions". From the dropdown options, select "Extend Volume"
+
+![Image showing the dropdown menu and the "Extend Volume" option](./images/cloudrc-extend-volume.png)
+
+**Step 4: Entering the New Volume Size**
+After selecting "Extend Volume," a prompt will appear asking you to specify the new size. Enter the desired size for your volume in the provided field. Make sure to enter a value that meets your current and future storage needs. Verify that the new size is within any limitations specified by our system for your account.
+
+![Image showing the "Extend Volume" dialog box](./images/cloudrc-dialog-extend-volume.png)
+
+**Final Step: Confirming the Changes**
+Once you've entered the new size, confirm your action to finalize the volume extension by clicking "Extend Volume". Wait for a few seconds for the system to process your request and update the volume size accordingly. When this process completes you should see the new Volume size.
+
+![Image showing the new volume size](./images/cloudrc-new-volume.png).
