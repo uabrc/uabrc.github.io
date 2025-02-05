@@ -14,7 +14,7 @@ Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) a
 
 ### How Do I Request Individual Cheaha (`GPFS`) Storage?
 
-An individual Cheaha (`GPFS`) Storage? that is created automatically as part of the Cheaha account creation. No separate request is required.
+An individual Cheaha (`GPFS`) storage is automatically created as part of the Cheaha account setup. No separate request is required.
 
 ### How Do I Request Individual Long-Term Storage?
 
