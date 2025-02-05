@@ -102,6 +102,7 @@ nav:
           - "For Guests - Account Creation": account_management/xias/guest_instructions.md
       - Gitlab Account: account_management/gitlab_account.md
   - Data Management:
+      - data_management/index.md
       - Cheaha Storage: data_management/storage.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
@@ -114,6 +115,7 @@ nav:
           - UAB Core Accounts: data_management/lts/lts_cores.md
           - FAQ: data_management/lts/lts_faq.md
       - Transfer:
+          - data_management/transfer/index.md
           - Tutorial:
               - data_management/transfer/tutorial/index.md
               - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
@@ -169,6 +171,7 @@ nav:
       - Snapshots and Images: uab_cloud/snapshots.md
       - Sharing Cloud Environment: uab_cloud/sharing_cloud_environment.md
   - UAB Kubernetes Guide:
+      - kubernetes/index.md
       - Startup: kubernetes/startup.md
   - National Research Computing Cyberinfrastructure:
       - national_ci/index.md
@@ -189,6 +192,7 @@ nav:
   - Reporting Documentation Errors: contributing/reporting_errors.md
   - Contributing Content: contributing/contributor_guide.md
   - Help:
+      - help/index.md
       - Support: help/support.md
       - FAQ - Frequently Asked Questions: help/faq.md
 
