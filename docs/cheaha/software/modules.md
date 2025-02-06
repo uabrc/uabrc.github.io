@@ -227,7 +227,7 @@ Use of these software packages without authorization may be a violation of the [
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Versions of rsync prior to `3.4.0` contain [six known vulnerabilities](https://www.openwall.com/lists/oss-security/2025/01/14/3), some of which allow for arbitrary code execution. The risk to our system is minimal because of scoped user permissions. Nevertheless, Cheaha is now using version 3.4.1. Older versions have been removed, apologies for any inconvenience.
+    Versions of Rsync prior to `3.4.0` contain [six known vulnerabilities](https://www.openwall.com/lists/oss-security/2025/01/14/3), some of which allow for arbitrary code execution. The risk to our system is minimal because of scoped user permissions. Nevertheless, Cheaha is now using version 3.4.1. Older versions have been removed, apologies for any inconvenience.
 <!-- markdownlint-enable MD046 -->
 
 ## Known Issues
