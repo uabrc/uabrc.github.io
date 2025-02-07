@@ -179,7 +179,7 @@ The volume is now mounted to your instance and ready for use and re-use across s
 
 ## Increasing a Persistent Volume
 
-In the event you need more storage or want to optimize your resource allocation, you can achieve either with just a few clicks. Follow the steps below to update your volume size.
+In the event you need to increase your resource allocation, you can achieve this with just a few clicks. Follow the steps below to increase your volume size.
 
 1. Accessing the Dashboard
     1. Log into your Cloud.rc account, and locate the sidebar on the main dashboard.
@@ -187,14 +187,14 @@ In the event you need more storage or want to optimize your resource allocation,
 
     ![Image showing how to select Volumes in a cloud.rc account](./images/cloudrc-volume-select.png)
 
-1. Locating the Volume to Extend
-    1. With your list of volumes displayed, identify the volume you wish to resize. You may use the search/filter option if you have multiple volumes set up.
-    1. Use the checkbox to select your preferred volume to resize.
+1. Locating the Volume to Increase
+    1. With your list of volumes displayed, identify the volume you wish to increase its size. You may use the search/filter option if you have multiple volumes set up.
+    1. Use the checkbox to select your preferred volume to increase its size.
 
     ![Image showing a list of Volumes in a cloud.rc account](./images/cloudrc-volume-list.png)
 
 1. Initiating the Volume Extension
-    1. Once you have selected your volume, it's time to initiate the resizing process.
+    1. Once you have selected your volume, it's time to initiate the process for increasing it.
     1. Click on the dropdown menu located to the far right under "Actions".
     1. From the dropdown options, select "Extend Volume"
 
@@ -217,7 +217,7 @@ In the event you need more storage or want to optimize your resource allocation,
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Be aware you cannot size volumes down even if you have free storage on it, you can only size them up.
+    Be aware you cannot size volumes down even if you have free storage on it, you can only size them up (i.e. increase them).
 <!-- markdownlint-disable MD046 -->
 
 ## Deleting a Volume
