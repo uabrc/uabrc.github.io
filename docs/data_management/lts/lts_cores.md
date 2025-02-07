@@ -2,7 +2,7 @@
 
 [UAB Core Facilities](https://www.uab.edu/cores/ircp/uab-ircp-core-facilities) provide access to research instruments and services for scientific and clinical investigators. Cores can generate large amounts of data very quickly for many labs and so have some unique data management concerns. These concerns can be summarized as follows:
 
-1. Data transfer off local machines
+1. <section:Data transfer> off local machines
 1. Data organization
 1. Data distribution
 

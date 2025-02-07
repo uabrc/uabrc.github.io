@@ -1,6 +1,6 @@
 # Open OnDemand
 
-Open OnDemand (OOD) is web portal to access Cheaha. On it, you can submit interactive jobs in easy to use forms. These jobs include a generic desktop as well as specific apps such as RStudio or MATLAB. There is also access to a basic file manager for viewing and moving files.
+Open OnDemand (OOD) is web portal to access Cheaha. On it, you can submit interactive jobs in easy to use forms. These jobs include a generic desktop as well as specific apps such as <section:RStudio> or <section:MATLAB>. There is also access to a basic file manager for viewing and moving files.
 
 The web portal can be accessed at [https://rc.uab.edu](https://rc.uab.edu) and is available both on and off campus.
 
