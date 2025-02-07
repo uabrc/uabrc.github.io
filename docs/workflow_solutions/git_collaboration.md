@@ -49,7 +49,7 @@ You may also use the "Clone" button on the page to see instructions for cloning 
 
 ![!gitlab repository clone button instructions](images/gitlab-repo-clone-instructions.png)
 
-More in-depth instructions, including for SSH cloning, are provided at the [official documentation](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html#clone-a-repository).
+More in-depth instructions, including for SSH cloning, are provided at the [official documentation](https://docs.gitlab.com/ee/topics/git/commands.html#clone-a-repository).
 
 ## For Collaborating
 
