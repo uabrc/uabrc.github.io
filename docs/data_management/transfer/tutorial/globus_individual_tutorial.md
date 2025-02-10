@@ -133,9 +133,9 @@ If you can't find a particular Collection this way, but know it was shared with 
 
 ## How Do I Find UAB Storage Collections?
 
-UAB offers [multiple storage resources](../../storage.md). The following resources may be accessed through Globus Collections.
+UAB offers [multiple storage resources](../../index.md). The following resources may be accessed through Globus Collections.
 
-- Cheaha file system (GPFS) including [individual directories](../../storage.md#what-individual-storage-solutions-are-available) and [project directories](../../storage.md#project-directory).
+- Cheaha file system (GPFS) including [individual directories](../../index.md#what-individual-storage-solutions-are-available) and [project directories](../../cheaha_gpfs_storage.md#project-directory).
 - [Long-Term Storage (LTS)](../../lts/index.md).
 - [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
 
@@ -203,7 +203,7 @@ Proceed on to learn how to transfer between Collections.
 
 ## How Do I Transfer between a Collection and Cheaha?
 
-Please use the following instructions to transfer data from a shared Collection to [Cheaha GPFS](../../storage.md#what-type-of-storage-do-i-need). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
+Please use the following instructions to transfer data from a shared Collection to [Cheaha GPFS](../../index.md#what-type-of-storage-do-i-need). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
 
 The direction of transfer may also be reversed to transfer data from Cheaha to the shared Collection. Note that some shared Collections may not allow you to transfer data back, such as some of those provided by Research Cores.
 
