@@ -14,7 +14,9 @@ Personal cheaha accounts are intended for personal or individual use and are ava
 
 {{ read_csv('data_management/res/cheaha_individual_account.csv', keep_default_na=False) }}
 
-## Data Responsibilities and Procedures
+## Data Archival and Backup Procedures
+
+Proper data archival and backup practices ensure efficient storage utilization and data protection. IT is the responsibility of researchers and users of Cheaha to organize data, archive inactive files, and back up critical data.
 
 ### Archival
 
