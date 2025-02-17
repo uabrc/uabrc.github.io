@@ -36,7 +36,11 @@ These instructions are for guests who have been registered by UAB faculty and st
 
     ![!Registration success page with additional instructions and suggestions.](./images/xias_guest_009.png)
 
+<<<<<<< HEAD
     Following this step, your account registration is complete and you should be able to access the resources you have been granted permission to use. Most internal UAB systems use a Single Sign-On (SSO) to simplify and standardize logging in. For those sites that don't you will need to activate your account manually. Please follow the guide found [here](index.md#what-is-next-and-how-to-login-to-services) to access [Cheaha](https://rc.uab.edu) via your XIAS account.
+=======
+    Following this step, your account registration is complete and you should be able to access the resources you have been granted permission to use. Most internal UAB systems use a Single Sign-On (SSO) to simplify and standardize logging in. For those sites that don't you will need to activate your account manually.
+>>>>>>> f9c66f5d ('Services' edit)
 
 1. To manually activate accounts for resources that do not use SSO click the "Activate (Sync) Accounts" link on the left hand navigation pane. Fill out the form using the email used to register the XIAS account and the current password.
 
@@ -68,19 +72,3 @@ If your invite code has expired, you can have a new invite code sent to you by c
 For more information on UAB IT policies and other useful and helpful information, please click the "UABIT Guest User info" link.
 
 ![!Guest IT Info landing page.](./images/xias_guest_it_info.png)
-
-## What is next and how to login to services?
-
-To login to the [Cheaha](../../cheaha/getting_started.md) and [GitLab](../gitlab_account.md) services, you need to use your XIAS email address and the password used to create your XIAS account. To access the Cloud.rc, you first need to request an account. Please follow [Cloud.rc](../../uab_cloud/index.md#first-steps) to initiate the request.
-
-For further guidance on how to proceed and what steps to take next, please refer to the following documentation pages.
-
-<!-- markdownlint-disable MD046-->
-!!! warning
-
-    Before proceeding with any of the resources below, be sure you have been granted authorization to those particular resources by your Sponsor.
-<!-- markdownlint-enable MD046 -->
-
-- [How do I create a Cheaha account?](../cheaha_account.md)
-- [How do I get access to GitLab?](../gitlab_account.md)
-- [How do I get access to Cloud.rc (OpenStack)?](../../uab_cloud/tutorial/index.md)
