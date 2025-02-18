@@ -300,6 +300,69 @@ $ sacct -j 27101430
 27101430_2.+     extern                 USER          1  COMPLETED      0:0
 ```
 
+#### Example 4.1: Count Number of Words From a File List in Parallel
+
+This example job script is designed to count the number of words in multiple files in parallel using a job array. First, let us create a directory to store the input files:
+
+```bash
+$mkdir input_files
+
+$cd input_files
+```
+
+Next, copy and paste the following script into your terminal to generate five random text files, each containing a different number of randomly selected words:
+
+```bash
+for i in {1..5}; do
+    shuf -n $(($RANDOM % 500 + 1)) /usr/share/dict/words > "random_file_$i.txt"
+    echo "random_file_$i.txt" >> file_list.txt
+done
+```
+
+The script selects a random number between 1 and 500, then generates a file containing that many random words sourced from the executable `words` found in `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of words. It also keeps track of the generated 5 filenames in `file_list.txt`.
+
+Next, copy the following SLURM array job script to count the number of words in the five generated files in parallel. Save it as `word_count.job`. You will have to create a directory named `logs` to redirect the output and error files using,
+
+```bash
+$mkdir logs
+```
+
+<!-- markdownlint-enable MD046 -->
+
+```bash linenums="1"
+
+#!/bin/bash
+#SBATCH --job-name=word_count
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=4G                      # Memory per task
+#SBATCH --partition=express
+#SBATCH --time=00:15:00               # Max job run time
+#SBATCH --output=logs/%x_%A_%a.out   # Output log for each task
+#SBATCH --error=logs/%x_%A_%a.err    # Error log for each task
+#SBATCH --array=1-5                  # Adjust based on the number of files
+
+# Load necessary modules if needed
+#module load Anaconda3
+
+# Define working directory
+WORKDIR="$HOME/input_files"
+FILELIST="$WORKDIR/file_list.txt"
+
+# Get the file corresponding to the current task ID
+FILE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" $FILELIST)
+
+# Check if file exists
+if [[ -f "$WORKDIR/$FILE" ]]; then
+    # Count words and save result
+    wc -w "$WORKDIR/$FILE" > "$WORKDIR/${FILE}.wordcount"
+    echo "Processed $WORKDIR/$FILE"
+else
+    echo "File not found: $WORKDIR/$FILE"
+fi
+```
+
+The above SLURM job script runs a word count operation in parallel on multiple files using a job array (1-5). It reads a list of filenames from `file_list.txt` in `$HOME/input_files`. Each task in the job array processes a different file based on its task ID (SLURM_ARRAY_TASK_ID). If the file exists, it counts the number of words using wc -w and saves the output as `<filename>.wordcount`, and logs standard output and errors for each task separately.
+
 ### Example 5: Multithreaded or Multicore Job
 
 This Slurm script illustrates execution of a MATLAB script in a multithread/multicore environemnt. Save the script as `multithread.job`. The `%` symbol in this script denotes comments within MATLAB code. Line 16 runs the MATLAB script `parfor_sum_array`, with an input array size `100` passed as argument, using 4 CPU cores (as specified in Line 5).
