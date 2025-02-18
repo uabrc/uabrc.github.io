@@ -193,7 +193,7 @@ In the event you need to increase your resource allocation, you can achieve this
 
     ![Image showing a list of Volumes in a cloud.rc account](./images/cloudrc-volume-list.png)
 
-1. Initiating the Volume Extension
+1. Initiating the Volume Increase
     1. Once you have selected your volume, it's time to initiate the process for increasing it.
     1. Click on the dropdown menu located to the far right under "Actions".
     1. From the dropdown options, select "Extend Volume"
