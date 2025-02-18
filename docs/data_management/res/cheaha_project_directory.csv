@@ -2,9 +2,9 @@ Responsibilities,PI,Manager,Members,Research Computing
 Move unused shared data to LTS/archive,Yes ✔️,Yes ✔️,Yes ✔️,
 Manage backup and recovery,Yes ✔️,Yes ✔️,Yes ✔️,
 Ensure proper usage of shared storage,Yes ✔️,Yes ✔️,Yes ✔️,
-Grant access to users to a specific folder,Yes ✔️,Yes ✔️,,Upon PI approval/Manager request
+Add/remove member to/from the project space,Yes ✔️,Yes ✔️,,Upon PI/Manager request
 Periodically check group membership,Yes ✔️,Yes ✔️,,
-Verify and update access controls,Yes ✔️,Yes ✔️,,
+Grant access to users to a specific folder,Yes ✔️,Yes ✔️,,
+Oversee and update access controls,Yes ✔️,Yes ✔️,,
 Request a project directory,Yes ✔️,,,
-Add/remove member to/from the project space,,,,Upon PI approval/Manager request
-Create a project directory,,,,Upon PI request
+Creating a project directory,,,,Upon PI's request
