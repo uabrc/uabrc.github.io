@@ -51,21 +51,11 @@ What hazards can cause data loss?
 - Accidental file deletion.
     - Example: mistakenly deleting the wrong files when using the [shell command](../workflow_solutions/shell.md#delete-files-and-directories-rm-rmdir) `rm`.
     - Files deleted with `rm` or any similar command can not be recovered by us under any circumstances.
-    - Please restore from a backup.
 - Natural disasters.
     - Examples: tornado; hurricane.
     - All of our data sits in one geographical location at the UAB Technology Innovation Center (TIC).
     - Plans to add geographical data redundancy are being considered.
-    - Please restore from an offsite backup.
-- Unusable backups.
-    - Examples: backup software bug; media destroyed; natural disaster at offsite location.
-    - Regularly test data restoration from all backups.
-
-How can I ensure data integrity?
-
-- Regularly back up your (and your lab's) data in an offsite location.
-- [S3 based long-term storage (LTS)](lts/index.md) can be used for short-term onsite backup.
-- Crashplan licenses are available for automatic offsite backups, please contact [Support](../help/support.md) for more information.
+If you have backup needs, we can discuss options based on your use case. We want to engage in a conversation. please send us a support ticket via <support@listserv.uab.edu>.
 
 ## Security Exceptions for Accessing Former UAB Personnel Data
 
@@ -79,4 +69,10 @@ To simplify data access and management, it is recommended to store critical rese
 
 ## User responsibilities with UAB-IT policies
 
-All PIs, Core directors, researchers, students, users of UAB-owned computer systems, including Research Computing system, are responsible for adhering to the data and computing infrastructure policies set by UAB-IT, such as [Overall IT policy page](https://www.uab.edu/it/home/policies), [Acceptable Use Policy (AUP)](https://secure4.compliancebridge.com/uab/portal/getdoc.php?file=300), [Data Protection and Security Policy](https://secure4.compliancebridge.com/uab/portal/getdoc.php?file=302), [Data Access Policy](https://secure4.compliancebridge.com/uab/portal/getdoc.php?file=301), and [Data Classification](https://www.uab.edu/it/home/policies/data-classification/classification-overview).
+All PIs, Core directors, researchers, students, users of UAB-owned computer systems, including Research Computing system, are responsible for adhering to the data and computing infrastructure policies set by UAB-IT.
+
+- [Overall IT policy page](https://www.uab.edu/it/home/policies).
+- [Acceptable Use Policy](https://secure4.compliancebridge.com/uab/portal/getdoc.php?file=300).
+- [Data Protection and Security Policy](https://secure4.compliancebridge.com/uab/portal/getdoc.php?file=302).
+- [Data Access Policy](https://secure4.compliancebridge.com/uab/portal/getdoc.php?file=301).
+- [Data Classification](https://www.uab.edu/it/home/policies/data-classification/classification-overview).

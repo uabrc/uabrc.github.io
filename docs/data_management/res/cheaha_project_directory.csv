@@ -7,7 +7,9 @@ Hardware capital expenses,beyond default quota,,,up to default quota
 Periodically check group membership,Yes ✔️,Yes ✔️,,
 Grant access to users to a specific folder,Yes ✔️,Yes ✔️,,
 Oversee and update access controls,Yes ✔️,Yes ✔️,,
-"Data Management and Storage:<br>&nbsp;  - Administrative (authorization and access) <br> &nbsp; - Technical (encryption, firewall, etc.) <br> &nbsp;  - Physical(locks, cameras, sign-ins, etc.)", <br>Yes ✔️,,,<br><br>Yes ✔️ <br>Yes ✔️
+"Data Management and Storage: <br> Administrative (authorization and access)",Yes ✔️,,,
+"Data Management and Storage: <br> Technical (encryption, firewall, etc.)" ,,,,Yes ✔️
+"Data Management and Storage: <br> Physical (locks, cameras, sign-ins, etc.)" ,,,,Yes ✔️
 Request a project directory,Yes ✔️,,,
 Obtaining security exceptions when required,Yes ✔️,,,
 Creating and maintaining metadata,Yes ✔️,,,
