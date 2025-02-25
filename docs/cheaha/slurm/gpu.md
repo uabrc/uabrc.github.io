@@ -70,7 +70,7 @@ If you are using R2021b and earlier, then follow the instructions below.
 
 1. Start an [HPC Interactive Desktop Job](../open_ondemand/hpc_desktop.md) with appropriate resources. Be sure to use one of the `pascalnodes*` [Partitions](#scheduling-gpus).
 1. Open a terminal.
-1. Load the appropriate [CUDA Module](#cuda-modules).
+1. Load the appropriate [CUDA Module](#cuda-and-cudnn-modules).
     - Determine which CUDA Modules are compatible with your required version of MATLAB using the table at the [MathWorks Site](https://www.mathworks.com/help/releases/R2021b/parallel-computing/gpu-support-by-release.html).
     - Check the `Pascal (cc6.x)` column for the `pascalnodes` P100 GPUs and `Ampere (cc8.x)` column for the `amperenodes` A100 GPUs.
     - As of September, 2023, `module load CUDA/11.6.0` and newer should work fine with any version of MATLAB R2021b or older, with possible caveats for some functions.
@@ -80,7 +80,7 @@ If you are using R2021b and earlier, then follow the instructions below.
 
 For more information and official MATLAB documentation please see this page: <https://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html>.
 
-## CUDA Modules
+## CUDA and cuDNN Modules
 
 You will need to load a CUDA module to make use of GPUs on Cheaha. Depending on which version of software you are using, different versions of CUDA module may be required. For instance, tensorflow version `2.13.0` requires the `CUDA/11.8.0` module. To see which versions are available on Cheaha, use the following command at the terminal.
 
@@ -88,11 +88,13 @@ You will need to load a CUDA module to make use of GPUs on Cheaha. Depending on 
 module -r spider 'CUDA/*'
 ```
 
-If a specific version of CUDA is needed but not installed, please send an install request to <support@listserv.uab.edu>.
+As of 2025-02-25, we offer CUDA modules up to version `12.6.0`. If you need a newer version, please use [Conda](../software/software.md#anaconda-on-cheaha) to install CUDA software from the `conda-forge` channel. The packages and relevant commands to install into your newly created [environment](../../workflow_solutions/using_anaconda.md#create-an-environment) are available at the URLs in the following table. Note that you should use different packages depending on the CUDA version you need for your software!
 
-### cuDNN Modules
+{{ read_csv('cheaha/slurm/res/cuda_conda_package_versions.csv', keep_default_na=False) }}
 
-If working with deep neural networks (DNNs, CNNs, LSTMs, LLMs, etc.), you will need to load a `cuDNN` module as well. The `cuDNN` modules are built to be compatible with a sibling `CUDA` module and are named with the corresponding version. For example, if you are loading `CUDA/12.2.0`, you will also need to load `cuDNN/8.9.2.26-CUDA-12.2.0`.
+If working with deep neural networks (DNNs, CNNs, LSTMs, LLMs, AI, etc.), you will need to load a `cuDNN` module as well. The `cuDNN` modules are built to be compatible with a sibling `CUDA` module and are named with the corresponding version. For example, if you are loading `CUDA/12.2.0`, you will also need to load `cuDNN/8.9.2.26-CUDA-12.2.0`.
+
+As of 2025-02-25, we offer cuDNN modules compatible with CUDA up to version `12.3.0`. If you need a newer version, please use [Conda](../software/software.md#anaconda-on-cheaha) to install cuDNN software from the `conda-forge` channel. The packages and relevant commands to install into your newly created [environment](../../workflow_solutions/using_anaconda.md#create-an-environment) are available at <https://anaconda.org/conda-forge/cudnn>.
 
 ### CUDA Compute Capability and Known Issues
 
@@ -107,6 +109,12 @@ GPU-based software requires a compatible [CUDA Compute Capability](../slurm/gpu.
 ### Tensorflow Compatibility
 
 To check which CUDA Module version is required for your version of Tensorflow, see the toolkit requirements chart here <https://www.tensorflow.org/install/source#gpu>.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest CUDA and cuDNN are now available from [Conda](#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
 
 ### PyTorch Compatibility
 
@@ -127,6 +135,12 @@ For versions of PyTorch 1.13 and newer, use the following template instead.
 
      When loading modules, such as CUDA modules for jobs requiring one or more GPUs, always utilize `module reset` before loading modules, both at the terminal and within `sbatch` scripts. See [best practice for loading modules](../software/modules.md#best-practice-for-loading-modules) for more information.
 <!-- markdownlint-disable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest CUDA and cuDNN are now available from [Conda](#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
 
 ## Reviewing GPU Jobs
 
@@ -157,7 +171,7 @@ As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct
     We intend to retain all of the 18 existing P100 GPU nodes, of which  9 nodes are available now. The remaining 9 nodes have been temporarily taken offline as we reconfigure hardware, and will be reallocated based on demand and other factors.
 - **What else should I be aware of?**
     - Please be sure to clean your data off of `/local/$SLURM_JOB_ID` as soon as you no longer need it, before the job finishes.
-    - We have updated the CUDA and cuDNN modules to improve reliability and ease of use. Please see the section on [CUDA Modules](#cuda-modules) for more information.
+    - We have updated the CUDA and cuDNN modules to improve reliability and ease of use. Please see the section on [CUDA Modules](#cuda-and-cudnn-modules) for more information.
     - GPU-based software, such as Parabricks, Triton, etc., requires a [CUDA Compute Capability](../slurm/gpu.md/#available-devices) greater than 6.0 for proper execution and should be run on the `amperenodes` partition. Some of the software that encountered runtime errors due to the underlying issues were,
         - [Parabricks](../../education/case_studies.md/#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus)
         - [Triton](https://docs.nvidia.com/deeplearning/triton-inference-server/archives/triton_inference_server_1140/user-guide/docs/build.html#configure-triton-build)

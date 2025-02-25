@@ -115,6 +115,10 @@ You may use the [Anaconda page](https://anaconda.org/) to search for packages on
 
 For more information about using Anaconda with Jupyter, see the section [Working with Anaconda Environments](../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
 
+#### CUDA and cuDNN packages for GPU Usage
+
+For more information about finding CUDA and cuDNN packages for use with GPUs, see the section [CUDA and cuDNN Modules](../cheaha/slurm/gpu.md#cuda-and-cudnn-modules)
+
 ### Update packages in an environment
 
 To ensure packages and their dependencies are all up to date, it is a best practice to regularly update installed packages, and libraries in your activated environment.
