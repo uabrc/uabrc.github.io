@@ -187,7 +187,13 @@ Network scratch is available on the login node and each compute node. This stora
 
 ### Local Scratch
 
-Each compute node has a local scratch directory that is accessible via `/local/$SLURM_JOB_ID`. At this time, you will need to create the directory manually using `mkdir -p /local/$SLURM_JOB_ID`. If your job performs a lot of file I/O, the job should use `/local/$SLURM_JOB_ID` rather than `$USER_SCRATCH` to prevent bogging down the network scratch file system. It's important to recognize that most jobs run on the cluster do not fall under this category.
+Each compute node has a local scratch directory that is accessible via `/local/$SLURM_JOB_ID`. At this time, you will need to create the directory manually using `mkdir -p /local/$SLURM_JOB_ID`. If your job performs a lot of file I/O, the job should use `/local/$SLURM_JOB_ID` rather than `$USER_SCRATCH` to prevent bogging down the network scratch file system. It's important to recognize that most jobs run on the cluster do not fall under this category. However, any work that requires frequent disk access or high-bandwidth disk access are good candidates for using local scratch.
+
+Some known examples, not an exhaustive list:
+
+- AI and deep learning training on [A100 GPUs](../cheaha/slurm/gpu.md).
+- Large-scale genome annotation.
+- Reading/writing hundreds of thousands or more files in a single job.
 
 If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to `/local/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor performance. For more information please see [Ensuring IO Performance With A100 GPUs](../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
 
