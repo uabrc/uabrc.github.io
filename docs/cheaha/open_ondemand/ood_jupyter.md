@@ -14,7 +14,7 @@ To modify the environment that Anaconda and Jupyter will run in, please use the 
 
 ### CUDA
 
-For GPU applications you'll need to load a `CUDA/*` module to have the CUDA toolkit available. If working with deep learning workflows, you may also need to load the `cuDNN/*-CUDA-*` module corresponding to your choice of `CUDA/*` module version. These are required for popular ML/DL/AI libraries like TensorFlow, Keras, and PyTorch. Use `module spider cuda/` and `module spider cudnn` to view the list of appropriate modules. An example of what to put in the Environment Setup field when using a version of Tensorflow compatible with CUDA version 12.2.0 is shown below.
+For GPU applications you'll need to load a `CUDA/*` module to have the CUDA toolkit available. If working with deep learning workflows, you may also need to load the `cuDNN/*-CUDA-*` module corresponding to your choice of `CUDA/*` module version. These are required for popular ML/DL/AI libraries like <section:TensorFlow>, <section:Keras>, and <section:PyTorch>. Use `module spider cuda/` and `module spider cudnn` to view the list of appropriate modules. An example of what to put in the Environment Setup field when using a version of Tensorflow compatible with CUDA version 12.2.0 is shown below.
 
 ```shell
 # ENVIRONMENT SETUP
