@@ -23,7 +23,7 @@ When requesting a job using `sbatch`, you will need to include the Slurm flag `-
 
 ## Ensuring IO Performance With A100 GPUs
 
-If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to `/local/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor performance.
+If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to the [local scratch](../../data_management/storage.md#local-scratch) at `/local/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor performance.
 
 The following script is provided as an example, and can be used to wrap your existing workflows. It will automatically create a temporary directory `$TMPDIR` and delete it when your workflow is finished. You'll need to supply the original source of your data as `$MY_DATA_DIR`. The script is not guaranteed to delete the temporary directory if the job ends before it reaches the final line, so please be mindful and periodically check for any extra temporary directories and delete them as needed. You may need to use more recent versions of the `CUDA` and `cuDNN` modules, as well as any others required for your workflow.
 
