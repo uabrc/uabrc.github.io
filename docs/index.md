@@ -11,9 +11,9 @@ The Research Computing System (RCS) provides a framework for sharing research da
 
     We have released new A100 gpus on Cheaha! For more information please see [GPUs](cheaha/slurm/gpu.md).
 
-    We have released new CUDA and cuDNN modules! For more information please see [CUDA Modules](cheaha/slurm/gpu.md#cuda-modules).
+    The latest CUDA and cuDNN software is now available from [Conda](./cheaha/slurm/gpu.md#cuda-and-cudnn-modules).
 
-    Also see our [A100 GPU Frequently Asked Questions (FAQ)](cheaha/slurm/gpu.md#frequently-asked-questions-faq-about-a100-gpus)
+    Also see our [A100 GPU Frequently Asked Questions (FAQ)](cheaha/slurm/gpu.md#frequently-asked-questions-faq-about-a100-gpus).
 <!-- markdownlint-enable MD046 -->
 
 ## How to Contact Us
