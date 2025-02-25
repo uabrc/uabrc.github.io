@@ -36,11 +36,7 @@ These instructions are for guests who have been registered by UAB faculty and st
 
     ![!Registration success page with additional instructions and suggestions.](./images/xias_guest_009.png)
 
-    Following this step, your account registration is complete and you
-should be able to access the resources you have been granted permission
-to use. Most internal UAB systems use a Single Sign-On (SSO) to simplify
-and standardize logging in. For those sites that don't you will need to
-activate your account manually.
+    Following this step, your account registration is complete and you should be able to access the resources you have been granted permission to use. Most internal UAB systems use a Single Sign-On (SSO) to simplify and standardize logging in. For those sites that don't you will need to activate your account manually. Please follow the guide found [here](index.md#what-is-next-and-how-to-login-to-services) to access [Cheaha](https://rc.uab.edu) via your XIAS account
 
 1. To manually activate accounts for resources that do not use SSO click the "Activate (Sync) Accounts" link on the left hand navigation pane. Fill out the form using the email used to register the XIAS account and the current password.
 
@@ -57,23 +53,18 @@ Below is a list of Research Computing services and their required software.
 
 ## Change Password and Recover From Lost Password
 
-To change your password, or recover your account in case of a lost
-password, please click the "Change XIAS Password" link in the left hand
-panel of the main page. Once there, follow the instructions on the form.
+To change your password, or recover your account in case of a lost password, please click the "Change XIAS Password" link in the left hand panel of the main page. Once there, follow the instructions on the form.
 
 ![!Change XIAS Password page.](./images/xias_guest_change_password.png)
 
 ## Resend Invite Code
 
-If your invite code has expired, you can have a new invite code sent to
-you by clicking the "Resend Invite Code" link in the left hand panel of
-the main page. Once there, follow the instructions on the form.
+If your invite code has expired, you can have a new invite code sent to you by clicking the "Resend Invite Code" link in the left hand panel of the main page. Once there, follow the instructions on the form.
 
 ![!Resend Invite Code page.](./images/xias_guest_resend.png)
 
 ## Guest IT Info
 
-For more information on UAB IT policies and other useful and helpful
-information, please click the "UABIT Guest User info" link.
+For more information on UAB IT policies and other useful and helpful information, please click the "UABIT Guest User info" link.
 
 ![!Guest IT Info landing page.](./images/xias_guest_it_info.png)
