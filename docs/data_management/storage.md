@@ -197,7 +197,13 @@ Some known examples, not an exhaustive list:
 
 If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to `/local/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor performance. For more information please see [Ensuring IO Performance With A100 GPUs](../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
 
-Be sure to clean up `/local/$SLURM_JOB_ID` after your job is complete! An example script to automate this process is shown below.
+Important caveats:
+
+Be sure that your files will fit in `/local/` before starting. You can test disk size using `df -h | grep "local"`. Most nodes have 1.0 TB, the `amperenodes` have 6.0 TB.
+
+Be sure to clean up `/local/$SLURM_JOB_ID` after your job is complete!
+
+An example script to automate this process is shown below. This example shows how you can wrap your workflow with deployment and cleanup of local scratch. The following sample script only applies if you are running a small number of jobs (less than one hundred). If you need to run many jobs all using the same data, such as with a large array using the `--array` flag, please [contact us](../help/support.md) about preloading the data onto your desired nodes. This will avoid the per-job overhead of copying and deleting files.
 
 ```bash
 #!/bin/bash

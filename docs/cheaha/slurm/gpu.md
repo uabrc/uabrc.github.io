@@ -23,38 +23,9 @@ When requesting a job using `sbatch`, you will need to include the Slurm flag `-
 
 ## Ensuring IO Performance With A100 GPUs
 
-If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to the [local scratch](../../data_management/storage.md#local-scratch) at `/local/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor performance.
+If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to the [local scratch](../../data_management/storage.md#local-scratch) at `/local/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Network file mounts, such as `$USER_SCRATCH`, `/scratch/`, `/data/user/` and `/data/project/`, do not have sufficient bandwidth to keep the GPU busy. So, your processing pipeline will slow down to network speeds, instead of GPU speeds.
 
-The following script is provided as an example, and can be used to wrap your existing workflows. It will automatically create a temporary directory `$TMPDIR` and delete it when your workflow is finished. You'll need to supply the original source of your data as `$MY_DATA_DIR`. The script is not guaranteed to delete the temporary directory if the job ends before it reaches the final line, so please be mindful and periodically check for any extra temporary directories and delete them as needed. You may need to use more recent versions of the `CUDA` and `cuDNN` modules, as well as any others required for your workflow.
-
-```bash
-#!/bin/bash
-#SBATCH ...
-#SBATCH --partition=amperenodes
-#SBATCH --gres=gpu:1
-
-# LOAD CUDA MODULES
-module load CUDA/12.1.1
-module load cuDNN/12.1.1
-
-# CREATE TEMPORARY DIRECTORY
-# WARNING! $TMPDIR will be deleted at the end of the script!
-# Changing the following line can cause permanent, unintended deletion of important data.
-TMPDIR="/local/$USER/$SLURM_JOB_ID"
-mkdir -p "$TMPDIR"
-
-# COPY RESEARCH DATA TO LOCAL TEMPORARY DIRECTORY
-# Replace $MY_DATA_DIR with the path to your data folder
-cp -r "$MY_DATA_DIR" "$TMPDIR"
-
-# YOUR ORIGINAL WORKFLOW GOES HERE
-# be sure to load files from "$TMPDIR"!
-
-# CLEAN UP TEMPORARY DIRECTORY
-# WARNING!
-# Changing the following line can cause permanent, unintended deletion of important data.
-rm -rf "$TMPDIR"
-```
+Please see our [Local Scratch Storage section](../../data_management/storage.md#local-scratch) for more details and an example script.
 
 ### Open OnDemand
 
