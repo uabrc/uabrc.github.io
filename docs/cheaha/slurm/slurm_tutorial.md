@@ -323,7 +323,7 @@ for i in {1..5}; do
 done
 ```
 
-Let us use these input files for [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [Example 4.2](#example-42-count-number-of-words-from-a-file-list-in-parallel).
+Let us use these input files for [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [Example 4.2](#example-42-counting-words-in-multiple-files-using-a-slurm-job-array).
 
 Save the following script as `line_word_count.job`. This SLURM job ensures that each task in the job array processes a single line from the input file and counts the number of words in that line.
 
