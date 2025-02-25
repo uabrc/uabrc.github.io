@@ -302,7 +302,30 @@ $ sacct -j 27101430
 
 #### Example 4.1: Slurm Array Job for Line-by-Line Word Count
 
-This SLURM job script processes a text file line by line using an array job. Each task in the job array handles a single line and counts the number of words in it.
+This SLURM job script processes a text file line by line using an array job. First, let us create a directory to create and store the input files:
+
+```bash
+$mkdir input_files
+
+$cd input_files
+```
+
+Next, copy and paste the following script into your terminal to generate five random text files, each containing a different number of randomly selected words. The script creates a file with 1 to 10 randomly generated lines, where each line contains 5 to 20 randomly selected words from `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of lines and words per line. Additionally, the names of the generated files are tracked in `file_list.txt`.
+
+```bash
+for i in {1..5}; do
+    num_lines=$(($RANDOM % 10 + 1))  # Random number of lines (1-10)
+    for _ in $(seq 1 $num_lines); do
+        num_words=$(($RANDOM % 20 + 5))  # Random words per line (5-20)
+        shuf -n $num_words /usr/share/dict/words | paste -s -d " "
+    done > "random_file_$i.txt"
+    echo "random_file_$i.txt" >> file_list.txt
+done
+```
+
+Let us use these input files for [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [Example 4.2](#example-42-count-number-of-words-from-a-file-list-in-parallel).
+
+Save the following script as `line_word_count.job`. This SLURM job ensures that each task in the job array processes a single line from the input file and counts the number of words in that line.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -325,37 +348,21 @@ WORD_COUNT=$(echo "$LINE" | wc -w)
 echo "Task $SLURM_ARRAY_TASK_ID: $WORD_COUNT words"
 ```
 
+Before running the above SLURM job, determine the number of lines in the input file (e.g., random_file_2.txt) using the following command:
+
 ```bash
 MAX_TASKS=$(wc -l < $HOME/input_files/random_file_2.txt)
+```
+
+Next, submit the array job using the command below, which creates an array of tasks from 1 to the maximum number of lines in the file.
+
+```bash
 sbatch --array=1-"$MAX_TASKS" line_word_count.job
 ```
 
-#### Example 4.2: Count Number of Words From a File List in Parallel
+#### Example 4.2: Counting Words in Multiple Files Using a Slurm Job Array
 
-This example job script is designed to count the number of words in multiple files in parallel using a job array. First, let us create a directory to store the input files:
-
-```bash
-$mkdir input_files
-
-$cd input_files
-```
-
-Next, copy and paste the following script into your terminal to generate five random text files, each containing a different number of randomly selected words:
-
-```bash
-for i in {1..5}; do
-    num_lines=$(($RANDOM % 10 + 1))  # Random number of lines (1-10)
-    for _ in $(seq 1 $num_lines); do
-        num_words=$(($RANDOM % 20 + 5))  # Random words per line (5-20)
-        shuf -n $num_words /usr/share/dict/words | paste -s -d " "
-    done > "random_file_$i.txt"
-    echo "random_file_$i.txt" >> file_list.txt
-done
-```
-
-The script selects a random number between 1 and 500, then generates a file containing that many random words sourced from the executable `words` found in `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of words. It also keeps track of the generated 5 filenames in `file_list.txt`.
-
-Next, copy the following SLURM array job script to count the number of words in the five generated files in parallel. Save it as `word_count.job`. You will have to create a directory named `logs` to redirect the output and error files using,
+This example job script is designed to count the number of words in multiple files in parallel using a job array. Copy the following SLURM array job script to count the number of words in the five generated files in parallel. Save it as `word_count.job`. You will have to create a directory named `logs` to redirect the output and error files using,
 
 ```bash
 $mkdir logs
