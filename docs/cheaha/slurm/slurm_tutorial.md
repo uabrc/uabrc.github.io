@@ -300,7 +300,37 @@ $ sacct -j 27101430
 27101430_2.+     extern                 USER          1  COMPLETED      0:0
 ```
 
-#### Example 4.1: Count Number of Words From a File List in Parallel
+#### Example 4.1: Slurm Array Job for Line-by-Line Word Count
+
+This SLURM job script processes a text file line by line using an array job. Each task in the job array handles a single line and counts the number of words in it.
+
+```bash linenums="1"
+#!/bin/bash
+#SBATCH --job-name=line_word_count  ### Name of the job
+#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU
+#SBATCH --mem=2G                    ### Memory required, 2 gigabyte
+#SBATCH --partition=express         ### Cheaha Partition
+#SBATCH --time=00:10:00             ### Estimated Time of Completion, 10 minutes
+#SBATCH --output=logs/%x_%A_%a.out  ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --error=logs/%x_%A_%a.err   ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
+
+### Define the input file
+INPUT_FILE="$HOME/input_files/random_file_2.txt"
+
+### Extract the line corresponding to the current Slurm task ID
+LINE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" "$INPUT_FILE")
+
+### Count words in the line and print the result
+WORD_COUNT=$(echo "$LINE" | wc -w)
+echo "Task $SLURM_ARRAY_TASK_ID: $WORD_COUNT words"
+```
+
+```bash
+MAX_TASKS=$(wc -l < $HOME/input_files/random_file_2.txt)
+sbatch --array=1-"$MAX_TASKS" line_word_count.job
+```
+
+#### Example 4.2: Count Number of Words From a File List in Parallel
 
 This example job script is designed to count the number of words in multiple files in parallel using a job array. First, let us create a directory to store the input files:
 
@@ -314,7 +344,11 @@ Next, copy and paste the following script into your terminal to generate five ra
 
 ```bash
 for i in {1..5}; do
-    shuf -n $(($RANDOM % 500 + 1)) /usr/share/dict/words > "random_file_$i.txt"
+    num_lines=$(($RANDOM % 10 + 1))  # Random number of lines (1-10)
+    for _ in $(seq 1 $num_lines); do
+        num_words=$(($RANDOM % 20 + 5))  # Random words per line (5-20)
+        shuf -n $num_words /usr/share/dict/words | paste -s -d " "
+    done > "random_file_$i.txt"
     echo "random_file_$i.txt" >> file_list.txt
 done
 ```
@@ -327,10 +361,7 @@ Next, copy the following SLURM array job script to count the number of words in 
 $mkdir logs
 ```
 
-<!-- markdownlint-enable MD046 -->
-
 ```bash linenums="1"
-
 #!/bin/bash
 #SBATCH --job-name=word_count
 #SBATCH --cpus-per-task=1
