@@ -75,7 +75,7 @@ Forking a repository is not a git concept, but a concept of remote repository ho
 
 [GitHub fork documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 
-[GitLab fork documentation](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html).
+[GitLab fork documentation](https://docs.gitlab.com/user/project/repository/forking_workflow/).
 
 #### Cloning
 
