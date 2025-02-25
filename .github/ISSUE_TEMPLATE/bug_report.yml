@@ -10,7 +10,9 @@ body:
     id: what-happened
     attributes:
       label: What happened?
-      description: Please describe what happened. Screenshots and URLs of affected parts are welcome.
+      description:
+        Please describe what happened. Screenshots and URLs of affected parts
+        are welcome.
       placeholder: Tell us what you see!
     validations:
       required: true
