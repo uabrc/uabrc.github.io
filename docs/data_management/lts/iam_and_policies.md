@@ -21,7 +21,7 @@ LTS Identity and Access Management (IAM) is a framework for managing identities,
 
 ## Shared LTS Allocations
 
-Shared LTS allocations are storage spaces designed for collaborative use by groups and are available to Lab PIs and Core Directors. If a PI is also a Core Director, they are eligible for independent storage allocations for each organization: one for the Lab and one for the Core. Each shared LTS allocation provides 75 TB of storage. These allocations can be named according to the preference of the Lab PI or Core Director. For recommended naming guidelines, refer to our [Naming Shared Storage](../../data_management/storage.md#how-do-i-request-shared-storage) documentation.
+Shared LTS allocations are storage spaces designed for collaborative use by groups and are available to Lab PIs and Core Directors. If a PI is also a Core Director, they are eligible for independent storage allocations for each organization: one for the Lab and one for the Core. Each shared LTS allocation provides 75 TB of storage. These allocations can be named according to the preference of the Lab PI or Core Director. For recommended naming guidelines, refer to our [Naming Shared Storage](../../data_management/index.md#how-do-i-request-shared-storage) documentation.
 
 {{ read_csv('data_management/res/shared_allocation_functional_roles.csv', keep_default_na=False) }}
 

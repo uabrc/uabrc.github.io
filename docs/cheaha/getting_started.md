@@ -44,7 +44,7 @@ All researchers are granted 5 TB of individual storage when they [create their R
 
 Shared storage is available to all Lab Groups and Core Facilities on campus. Shared storage is also available to UAB Administration groups.
 
-Please visit our [Storage page](../data_management/storage.md) for detailed information about our individual and shared storage options.
+Please visit our [Storage page](../data_management/index.md) for detailed information about our individual and shared storage options.
 
 ### Partitions
 
