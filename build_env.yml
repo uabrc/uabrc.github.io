@@ -40,3 +40,4 @@ dependencies:
       - linkchecker==10.4.0
       - pre-commit==3.7.1
       - python-dotenv[cli]==1.0.1
+      - mkdocs-drawio==1.7.0

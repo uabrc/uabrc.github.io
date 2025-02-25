@@ -21,6 +21,8 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://viewer.diagrams.net/js/viewer-static.min.js
+  - javascripts/drawio-reload.js
 
 copyright: Copyright &copy; 2021-2024 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
 
@@ -40,6 +42,7 @@ markdown_extensions:
       permalink: true
 
 plugins:
+  - drawio
   - search
   - table-reader:
       data_path: docs
@@ -107,8 +110,8 @@ nav:
       - Long Term Storage:
           - data_management/lts/index.md
           - Tutorial:
-              - data_management/lts/tutorial/index.md
-              - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
+                - data_management/lts/tutorial/index.md
+                - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
           - Interfacing with LTS: data_management/lts/interfaces.md
           - Identity and Access Management: data_management/lts/iam_and_policies.md
           - UAB Core Accounts: data_management/lts/lts_cores.md
@@ -137,6 +140,7 @@ nav:
       - Tutorials:
           - cheaha/tutorial/index.md
           - Anaconda Environment Tutorial: cheaha/tutorial/pytorch_tensorflow.md
+          - Parallelism Tutorial: cheaha/tutorial/parallelism.md
       - Cheaha Web Portal:
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
