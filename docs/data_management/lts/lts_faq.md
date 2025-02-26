@@ -14,7 +14,7 @@ In some cases, you may not be actively managing data in a bucket even though you
 
 This is ultimately up to the bucket owner, but there are a couple of single-bucket solutions depending on your specific use-case for LTS:
 
-1. Semi-synced copy of everything in the project space.
+1. Semi-synced copy of everything in the project allocation.
     - **General permissions:** Data stewards and the bucket owner would have permission to delete any files. All other users would be able to upload and download files only. All users would be able to see all files uploaded by all other users to that bucket./
     - **Purpose:** This fulfills more of a pure backup role compared to option 2. While all users can upload files
     - **Benefits:** The policy file for these permissions is much simpler to create and manage. Limits the number of people who can remove files that might be needed down the line.
@@ -22,7 +22,7 @@ This is ultimately up to the bucket owner, but there are a couple of single-buck
     - [Example Policy File](res/example-synced-project-policy.json){: download="example-synced-project-policy.json" }
 1. Active and collaborative external storage. All users would have a specific prefix/folder they have complete control where they can add or remove data at will.
     - **General permissions:** Data stewards and the bucket owner would have permission to delete any files. Regular users would only be able to upload to and delete files from their owned prefix/folder. All users would be able to see and download any files from any other user.
-    - **Purpose:** This satisfies the need for expanded storage accessible from Cheaha (via the terminal or Globus). All users have their own space they can use as they see fit within the bucket for extra storage while still being able to access, but not alter, files from other users in cases they need to be shared. Part of the bucket, or a separate bucket entirely, can also be used as a backup for old or current datasets where users only have read permissions.
+    - **Purpose:** This satisfies the need for expanded storage accessible from Cheaha (via the terminal or Globus). All users have their own allocation they can use as they see fit within the bucket for extra storage while still being able to access, but not alter, files from other users in cases they need to be shared. Part of the bucket, or a separate bucket entirely, can also be used as a backup for old or current datasets where users only have read permissions.
     - **Benefits:** How the bucket can be used is much more malleable and up to the individual users. Empowers them to add and remove data from their own prefix/folder without oversight from stewards or the bucket owner.
     - **Drawbacks:** The policy file is more difficult to craft and manage when researchers needed to be added or removed from the bucket. Allowing users to delete their uploaded data at their discretion may conflict with the owner's view of those data.
     - [Example Policy File](res/example-active-external-storage-policy.json){: download="example-active-external-storage-policy.json" }
@@ -35,7 +35,7 @@ Automatic backups are not available by default. If you would like to periodicall
 
 ## Why Can I Not Interact With A File In My Bucket?
 
-While S3's object storage system does not have POSIX permissions seen in a Linux system entirely, we have found that users who upload files to a shared space have ownership permissions on those objects, and the bucket owner and stewards cannot interact with those objects by default. Instead, owners and stewards need to be given explicit permissions to move or delete all objects in a bucket. This can be dealt with by adding the following sections to the policy file:
+While S3's object storage system does not have POSIX permissions seen in a Linux system entirely, we have found that users who upload files to a shared allocation have ownership permissions on those objects, and the bucket owner and stewards cannot interact with those objects by default. Instead, owners and stewards need to be given explicit permissions to move or delete all objects in a bucket. This can be dealt with by adding the following sections to the policy file:
 
 ``` json
 {

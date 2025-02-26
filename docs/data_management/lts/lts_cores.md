@@ -20,7 +20,7 @@ Core LTS allocations behave the same as lab LTS allocations. The base allocation
 
 ## Data Organization
 
-Effectively organizing an LTS space will dictate where data are transferred within it. The suggested storage structure can be summarized as follows:
+Effectively organizing an LTS allocation will dictate where data are transferred within it. The suggested storage structure can be summarized as follows:
 
 1. The core creates a bucket for each lab or group it services containing raw or analyzed data for that group. Permissions for each bucket are managed independently.
       1. Due to all buckets in LTS needing to have unique names, buckets should be named more descriptively than just the name of the group to which the data belong. Instead, the format `[core_name]-[group_name]` will be both specific and unique enough to work in most circumstances. For example, data analyzed by the Research MRI Core (RMRIC) core for group `smithlab` would be put in a bucket named `rmric-smithlab`. Keep in mind the [allowed characters](lts_faq.md#what-are-valid-bucket-names-in-lts) when creating bucket names.
