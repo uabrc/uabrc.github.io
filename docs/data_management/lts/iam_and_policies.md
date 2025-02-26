@@ -36,7 +36,7 @@ To grant other users access to your shared allocation:
 
 ### How do I assign a steward?
 
-Owners can assign stewards either when requesting LTS account creation or at a later time by sending a request via [Contact Us](../../index.md#how-to-contact-us). The request should include the steward's BlazerID and specify the LTS allocation they should manage. Once assigned, stewards will have the same management permissions as the owner, except for the ability to assign other stewards.
+Owners can assign stewards either when requesting LTS allocation creation or at a later time by sending a request via [Contact Us](../../index.md#how-to-contact-us). The request should include the steward's BlazerID and specify the LTS allocation they should manage. Once assigned, stewards will have the same management permissions as the owner, except for the ability to assign other stewards.
 
 ### Who can have what role?
 
@@ -74,7 +74,7 @@ Everyone is responsible for managing their key pairs and ensuring they use the c
 
 ## Lost LTS Key Reset
 
-If you have lost your LTS keys, you can request a reset by creating a support ticket via [Contact Us](../../index.md#how-to-contact-us). Please include your BlazerID and specify the LTS account (individual and/or shared) for which you need the key reset, so we can process your request accordingly. Then you will receive an email with a link to a UAB Box text file containing the corresponding key pairs (access key and secret key).
+If you have lost your LTS keys, you can request a reset by creating a support ticket via [Contact Us](../../index.md#how-to-contact-us). Please include your BlazerID and specify the LTS allocation (individual and/or shared) for which you need the key reset, so we can process your request accordingly. Then you will receive an email with a link to a UAB Box text file containing the corresponding key pairs (access key and secret key).
 
 If you, as a Lab/Core PI, do not wish to manage the LTS space yourself, we recommend assigning data Steward permissions to someone who is both trustworthy and has knowledge of, or willingness to learn, [JSON](https://docs.fileformat.com/web/json/#google_vignette) and parts of the [Amazon AWS S3 API](https://docs.aws.amazon.com/AmazonS3/latest/API/Type_API_Reference.html). If you need help or have concerns about making this decision, please [Contact Us](../../index.md#how-to-contact-us).
 
@@ -87,7 +87,7 @@ Instead, sharing buckets must be done through the command line using [bucket pol
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Your username for LTS could potentially be `<BlazerID>` or `<BlazerID>@uab.edu` depending on when your account was created. It is very important when crafting these policies that the correct username is specified, and these two are not interchangeable. For users with XIAS accounts, your username should be the email address you signed up for the XIAS account with. The usernames are case-sensitive. If you do not remember what your username is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
+    Your username for LTS could potentially be `<BlazerID>` or `<BlazerID>@uab.edu` depending on when your allocation was created. It is very important when crafting these policies that the correct username is specified, and these two are not interchangeable. For users with XIAS accounts, your username should be the email address you signed up for the XIAS account with. The usernames are case-sensitive. If you do not remember what your username is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
 <!-- markdownlint-enable MD046 -->
 
 ### Policy Structure
