@@ -44,7 +44,7 @@ conda activate s3
 pip install s3cmd
 ```
 
-Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your personal computer and LTS, you will need to install `s3cmd` or `s5cmd` on your machine. Please refer to this [section](#installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda) for installation instructions specific to your operating system.
+Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your individual computer and LTS, you will need to install `s3cmd` or `s5cmd` on your machine. Please refer to this [section](#installation-of-s3cmd-and-s5cmd-on-individual-systems-without-anaconda) for installation instructions specific to your operating system.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -64,7 +64,7 @@ Configuring s3cmd is necessary to establish a secure connection for accessing yo
 s3cmd --configure [-c $HOME/profile_name]
 ```
 
-You can run the configuration either with or without the `[-c]` option. If you use it, a file named `profile_name` will be created in your home directory with your login credentials and other information. If you omit the `-c` option, a file called `$HOME/.s3cfg` will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform and are only managing a single allocation, it's suggested to omit the `-c` option. If you are a PI or data manager and are managing both a personal and lab/core LTS allocation, you will need to make a separate profile for each allocation.
+You can run the configuration either with or without the `[-c]` option. If you use it, a file named `profile_name` will be created in your home directory with your login credentials and other information. If you omit the `-c` option, a file called `$HOME/.s3cfg` will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform and are only managing a single allocation, it's suggested to omit the `-c` option. If you are a PI or data manager and are managing both a individual and lab/core LTS allocation, you will need to make a separate profile for each allocation.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -203,12 +203,12 @@ aws_secret_access_key = <secret_key>
     Do not include the `<>` symbols in the credentials file when saving your keys
 <!-- markdownlint-enable MD046 -->
 
-One of the benefits of this credential method is that multiple sets of credentials can be kept in the same file. For instance, if you have both a lab/core LTS allocation and a personal allocation, you could set your personal allocation as the default profile and then add your lab credentials under a named profile like so:
+One of the benefits of this credential method is that multiple sets of credentials can be kept in the same file. For instance, if you have both a lab/core LTS allocation and a individual allocation, you could set your individual allocation as the default profile and then add your lab credentials under a named profile like so:
 
 ``` text
 [default]
-aws_access_key_id = <personal_access_key>
-aws_secret_access_key = <personal_secret_key>
+aws_access_key_id = <individual_access_key>
+aws_secret_access_key = <individual_secret_key>
 
 [example-lab]
 aws_access_key_id = <lab_access_key>
@@ -249,7 +249,7 @@ It's important to note that the main functionality of s5cmd over s3cmd is the pa
     When setting the value for `--numworkers`, do not select a value beyond the number of CPUs you have requested for your job! This can cause high context switching (meaning individual CPUs are switching between multiple running processes) which can affect job performance for all jobs on a node.
 <!-- markdownlint-enable MD046 -->
 
-### Installation of `s3cmd` and `s5cmd` on Personal Systems without Anaconda
+### Installation of `s3cmd` and `s5cmd` on Individual Systems without Anaconda
 
 The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems. You may also use [Anaconda](../../workflow_solutions/using_anaconda.md) to install either or both packages.
 

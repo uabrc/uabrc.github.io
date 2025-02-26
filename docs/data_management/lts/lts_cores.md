@@ -10,7 +10,7 @@ UAB Cores can request a 75 TB allocation on LTS with possibilities for expansion
 
 ## Specifics of Core LTS Allocations
 
-Core LTS allocations behave the same as lab LTS allocations. The base allocation is 75 TB across 100 buckets with possibilities for expansion over time based on the needs of the core. The allocation will be a separate entity that owns its own buckets and data. Either the director data manager of the core will own the credentials for the core allocation and so will receive a set of access and secret keys separate from their personal and lab keys.
+Core LTS allocations behave the same as lab LTS allocations. The base allocation is 75 TB across 100 buckets with possibilities for expansion over time based on the needs of the core. The allocation will be a separate entity that owns its own buckets and data. Either the director data manager of the core will own the credentials for the core allocation and so will receive a set of access and secret keys separate from their individual and lab keys.
 
 <!-- markdownlint-disable MD046 -->
 !!! warning

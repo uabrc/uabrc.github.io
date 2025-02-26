@@ -36,7 +36,7 @@ Once these steps are completed, verify the installation by running `pip list | g
 
 ### Install s3cmd on Your Local Systems
 
-To install s3cmd on your local machine, please follow the instructions provided in [our s3cmd documentation for local installation](../../../data_management/lts/interfaces.md#installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda).
+To install s3cmd on your local machine, please follow the instructions provided in [our s3cmd documentation for local installation](../../../data_management/lts/interfaces.md#installation-of-s3cmd-and-s5cmd-on-individual-systems-without-anaconda).
 
 ### Configuring s3cmd for LTS Buckets
 

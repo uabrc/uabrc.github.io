@@ -51,7 +51,7 @@ Owners can assign stewards either when requesting LTS allocation creation or at 
 
 ## Individual LTS Allocations
 
-Individual LTS allocations are intended for personal or individual use and are available to all UAB affiliated individuals. These allocations are tied to the individual’s email and provide 5 TB of storage.
+Individual LTS allocations are intended for individual use and are available to all UAB affiliated individuals. These allocations are tied to the individual’s email and provide 5 TB of storage.
 
 {{ read_csv('data_management/res/individual_allocation_functional_roles.csv', keep_default_na=False) }}
 
