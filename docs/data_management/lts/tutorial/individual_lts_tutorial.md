@@ -3,13 +3,13 @@ toc_depth: 3
 ---
 # Basic Workflow with Individual LTS and s3cmd
 
-In this tutorial, we will guide you through using `s3cmd` on the Cheaha system to effectively manage and interact with your individual LTS account. We will cover the installation and configuration of `s3cmd`, and demonstrate essential operations, including creating buckets, listing, copying, downloading, and deleting [buckets and objects](../index.md#terminology) in your LTS account. In addition, we will show you how to set and manage read and write access for other accounts to your LTS buckets and objects.
+In this tutorial, we will guide you through using `s3cmd` on the Cheaha system to effectively manage and interact with your individual LTS allocation. We will cover the installation and configuration of `s3cmd`, and demonstrate essential operations, including creating buckets, listing, copying, downloading, and deleting [buckets and objects](../index.md#terminology) in your LTS allocation. In addition, we will show you how to set and manage read and write access for other allocations to your LTS buckets and objects.
 
 ## Prerequisites
 
 To get up to speed, you should have a basic understanding of how to use the shell/terminal. If you’re not familiar with these concepts, we recommend checking out our [learning resources on basic shell usage](../../../workflow_solutions/shell.md#shell-reference).
 
-You will also need an individual LTS account created by our team. If you believe you need an account but do not have one, please [contact us](../../../index.md#how-to-contact-us).
+You will also need an individual LTS allocation created by our team. If you believe you need an allocation but do not have one, please [contact us](../../../index.md#how-to-contact-us).
 
 ## Setting Up Your Environment
 
@@ -40,7 +40,7 @@ To install s3cmd on your local machine, please follow the instructions provided 
 
 ### Configuring s3cmd for LTS Buckets
 
-Properly configuring `s3cmd` is important for working with LTS buckets and objects. The configuration process varies depending on whether you have a single LTS account or multiple accounts to manage. In this section, we will provide a step-by-step guide tailored specifically for the **Cheaha** system and a researcher with an **individual LTS account**.
+Properly configuring `s3cmd` is important for working with LTS buckets and objects. The configuration process varies depending on whether you have a single LTS allocation or multiple allocations to manage. In this section, we will provide a step-by-step guide tailored specifically for the **Cheaha** system and a researcher with an **individual LTS allocation**.
 
 Open a terminal using one of the interactive apps on Cheaha. Activate your conda environment created in the [Install s3cmd using within Conda Environment](./individual_lts_tutorial.md#install-s3cmd-within-conda-environment-on-cheaha) section, and then run the below command:
 
@@ -48,7 +48,7 @@ Open a terminal using one of the interactive apps on Cheaha. Activate your conda
 s3cmd --configure
 ```
 
-This will prompt you to enter the access key and secret key associated with your individual LTS account. You will be asked for additional information, which will be displayed on the screen, as shown below. You can copy the necessary details from the example provided [here](../interfaces.md#configuring-s3cmd).
+This will prompt you to enter the access key and secret key associated with your individual LTS allocation. You will be asked for additional information, which will be displayed on the screen, as shown below. You can copy the necessary details from the example provided [here](../interfaces.md#configuring-s3cmd).
 
 ![image-s3cmd](../images/config-s3cmd.png)
 
@@ -101,7 +101,7 @@ You can find a variety of `s3cmd` commands in our documentation at [here](../../
 
 If you are continuing in the same session with your **conda environment already activated**, you can directly use the `s3cmd` commands. If you are starting a new session or returning at a later date, make sure to load the Anaconda module and activate your conda environment before using `s3cmd`.
 
-### How to Grant Access to Other Accounts for your Buckets?
+### How to Grant Access to Other Allocations for your Buckets?
 
 Managing access to your buckets is essential for both collaboration and security. By setting up specific [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html), you can control who can view or modify your bucket’s contents. Follow these steps to grant access:
 
@@ -113,14 +113,14 @@ Below is a screenshot showing how to apply a policy file named `my_policy.json` 
 
 ![policy-image](../images/policy.png)
 
-Please note that the permissions granted are determined by the settings defined in your policy file. The policy demonstrated in this example is a **read-only** policy. Below, you can find examples of the different policies, including the read and write policies, you can set and apply for your buckets and objects in your individual LTS account.
+Please note that the permissions granted are determined by the settings defined in your policy file. The policy demonstrated in this example is a **read-only** policy. Below, you can find examples of the different policies, including the read and write policies, you can set and apply for your buckets and objects in your individual LTS allocation.
 
 - **Read-only Access**
 
-    To allow another account to view and copy files from your bucket without making any changes, use the [read only permission policy](../iam_and_policies.md#read-only-for-all-files).
+    To allow another allocation to view and copy files from your bucket without making any changes, use the [read only permission policy](../iam_and_policies.md#read-only-for-all-files).
 
 - **Read/Write Access**
 
-    To grant another account the ability to both view and modify the contents of your bucket, use the [read/write permissions policy](../iam_and_policies.md#read-write-permissions).
+    To grant another allocation the ability to both view and modify the contents of your bucket, use the [read/write permissions policy](../iam_and_policies.md#read-write-permissions).
 
 For detailed information on LTS bucket policies and instructions on how to apply and remove bucket policies, please refer to our [policy structure](../iam_and_policies.md#policy-structure) and [apply bucket policy](../iam_and_policies.md#applying-a-policy) guides.

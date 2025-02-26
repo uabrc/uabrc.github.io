@@ -8,14 +8,14 @@
 
 UAB Cores can request a 75 TB allocation on LTS with possibilities for expansion to use for both storage and distribution of data. Together with Globus and CLI tools for transfer, LTS can be the basis for a full core data management plan. This documentation aims to provide details of general solutions for common problems with managing large amounts of data in a core.
 
-## Specifics of Core LTS Accounts
+## Specifics of Core LTS Allocations
 
-Core LTS accounts behave the same as lab LTS accounts. The base allocation is 75 TB across 100 buckets with possibilities for expansion over time based on the needs of the core. The account will be a separate entity that owns its own buckets and data. Either the director data manager of the core will own the credentials for the core account and so will receive a set of access and secret keys separate from their personal and lab keys.
+Core LTS allocations behave the same as lab LTS allocations. The base allocation is 75 TB across 100 buckets with possibilities for expansion over time based on the needs of the core. The allocation will be a separate entity that owns its own buckets and data. Either the director data manager of the core will own the credentials for the core allocation and so will receive a set of access and secret keys separate from their personal and lab keys.
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Do not share these keys with anyone. A person with core LTS keys have essentially admin access on all data stored in core buckets. This allows them to change who can access data as well as delete any and all data in the core LTS account.
+    Do not share these keys with anyone. A person with core LTS keys have essentially admin access on all data stored in core buckets. This allows them to change who can access data as well as delete any and all data in the core LTS allocation.
 <!-- markdownlint-enable MD046 -->
 
 ## Data Organization
@@ -46,7 +46,7 @@ For situations where data either needs to be transferred from multiple machines 
 
 ## Distributing to Data Owners
 
-While uploading and/or managing data for other groups, data in any buckets the core owns will count against the quota for the core. Data will need to be distributed in some way to the groups who own the data to free up storage in the core's account once those data have been fully collected or analyzed. It is not currently possible to directly the change the owner of a bucket without submitting a ticket to research computing, however it is possible to set permissions on a bucket to allow the data owners to copy the data to a new bucket under their ownership. Once the data are copied, the original bucket can be moved onto a physical disc as an archive or deleted.
+While uploading and/or managing data for other groups, data in any buckets the core owns will count against the quota for the core. Data will need to be distributed in some way to the groups who own the data to free up storage in the core's allocation once those data have been fully collected or analyzed. It is not currently possible to directly the change the owner of a bucket without submitting a ticket to research computing, however it is possible to set permissions on a bucket to allow the data owners to copy the data to a new bucket under their ownership. Once the data are copied, the original bucket can be moved onto a physical disc as an archive or deleted.
 
 Permission to copy data is granted via a [policy file](iam_and_policies.md). Policy files can be customized extensively, but a general file can be seen below.
 
@@ -74,7 +74,7 @@ Permission to copy data is granted via a [policy file](iam_and_policies.md). Pol
 }
 ```
 
-This policy file allows the `lab-group` LTS account permission to list and copy all objects in the bucket. Data should typically only be copied from a core bucket to a lab bucket, not to a specific individual's bucket. The owner of `lab-group` will need to initiate the transfer. General commands for creating a bucket and transferring data to it can be found below for convenience. These commands use [s5cmd](interfaces.md#s5cmd) for transfer and assume the credentials used are for the `lab-group`.
+This policy file allows the `lab-group` LTS allocation permission to list and copy all objects in the bucket. Data should typically only be copied from a core bucket to a lab bucket, not to a specific individual's bucket. The owner of `lab-group` will need to initiate the transfer. General commands for creating a bucket and transferring data to it can be found below for convenience. These commands use [s5cmd](interfaces.md#s5cmd) for transfer and assume the credentials used are for the `lab-group`.
 
 ``` bash
 # Create a new bucket to hold the data
@@ -90,7 +90,7 @@ s5cmd --endpoint-url https://s3.lts.rc.uab.edu --numworkers 10 cp --concurrency 
     The `cp` command above specifies 10 CPUs to use for transfer to increase throughput. This value should be changed based on the number of cores available in your job if you're copying using Cheaha.
 <!-- markdownlint-enable MD046 -->
 
-[Globus](interfaces.md#globus) is another option for transferring data using a GUI as opposed to a command line. When using Globus, you will need to set up the LTS endpoint using the credentials for the lab account. Access the LTS endpoint in both window panes and type the names of the buckets to transfer to and from. See the image below as an example
+[Globus](interfaces.md#globus) is another option for transferring data using a GUI as opposed to a command line. When using Globus, you will need to set up the LTS endpoint using the credentials for the lab allocation. Access the LTS endpoint in both window panes and type the names of the buckets to transfer to and from. See the image below as an example
 
 ![!Example for transferring data from core LTS bucket to lab LTS bucket](images/globus-transfer-from-core.png)
 

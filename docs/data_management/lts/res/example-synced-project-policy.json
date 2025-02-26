@@ -1,62 +1,62 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-		{
-			"Sid": "admin",
-			"Effect": "Allow",
-			"Principal": {
-				"AWS": [
-					"arn:aws:iam:::user/example_core",
-					"arn:aws:iam:::user/account_owner@uab.edu"
-				]
-			},
-			"Action": [
-				"s3:*"
-			],
-			"Resource": [
-				"arn:aws:s3:::bucket",
-				"arn:aws:s3:::bucket/*"
-			]
-		},
-		{
-			"Sid": "data-steward",
-			"Effect": "Allow",
-			"Principal": {
-				"AWS": [
-					"arn:aws:iam:::user/steward_1@uab.edu"
-				]
-			},
-			"Action": [
-				"s3:ListBucket",
-				"s3:GetObject",
-				"s3:PutObject",
-				"s3:DeleteObject",
-				"s3:GetBucketPolicy",
-				"s3:PutBucketPolicy"
-			],
-			"Resource": [
-				"arn:aws:s3:::bucket",
-				"arn:aws:s3:::bucket/*"
-			]
-		},
-		{
-			"Sid": "base-user",
-			"Effect": "Allow",
-			"Principal": {
-				"AWS": [
-					"arn:aws:iam:::user/user_1@uab.edu",
-					"arn:aws:iam:::user/user_2@uab.edu"
-				]
-			},
-			"Action": [
-				"s3:ListBucket",
-				"s3:GetObject",
-				"s3:PutObject"
-			],
-			"Resource": [
-				"arn:aws:s3:::bucket",
-				"arn:aws:s3:::bucket/*"
-			]
-		}
-	]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "admin",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam:::user/example_core",
+          "arn:aws:iam:::user/allocation_owner@uab.edu"
+        ]
+      },
+      "Action": [
+        "s3:*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::bucket",
+        "arn:aws:s3:::bucket/*"
+      ]
+    },
+    {
+      "Sid": "data-steward",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam:::user/steward_1@uab.edu"
+        ]
+      },
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy"
+      ],
+      "Resource": [
+        "arn:aws:s3:::bucket",
+        "arn:aws:s3:::bucket/*"
+      ]
+    },
+    {
+      "Sid": "base-user",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam:::user/user_1@uab.edu",
+          "arn:aws:iam:::user/user_2@uab.edu"
+        ]
+      },
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::bucket",
+        "arn:aws:s3:::bucket/*"
+      ]
+    }
+  ]
 }
