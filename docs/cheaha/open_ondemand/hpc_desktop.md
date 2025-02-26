@@ -38,12 +38,6 @@ To use this method you will need either a GitHub account or Microsoft account. M
 
 ### Downloading and Installing VSCode and VSCode Server
 
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    Current versions of VSCode are not supported on older Linux distributions, including CentOS 7 running on Cheaha. Cheaha is only compatible with VSCode version 1.85.2 or lower. The following instructions will show you how to install this specific version. If VSCode does not work and is giving messages saying `GLIBC_2.18 (or greater) not found (required by ./code)`, your installation of VSCode is too new and needs to be downgraded to 1.85.2.
-<!-- markdownlint-enable MD046 -->
-
 First, open a terminal on Cheaha. Run the following commands if you have used VSCode before to remove some hidden files. If you are installing VSCode for the first time, skip to the next code block.
 
 ``` bash
