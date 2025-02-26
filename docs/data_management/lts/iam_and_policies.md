@@ -9,7 +9,7 @@ LTS Identity and Access Management (IAM) is a framework for managing identities,
 ## Terminology
 
 - **Allocation**: An allocation represents designated data storage with a unique name.
-- **Keys**: Keys are the credentials that grant access to an allocation. There are two types of keys:
+- **Keys**: Credentials granting access to an allocation, made up of an Access Key and Secret Key. Referred to formally, and in certain software, as "Credentials". We use both "Keys" and "Credentials" in our documentation to best fit the topic.
     - Access Key: The public identifier used to access the allocation, similar to a username.
     - Secret Key: The private password-like credential that must be kept confidential.
 - **Stewards**: Stewards are individuals responsible for managing an allocation. Stewards need a full access key pair to perform tasks like creating, deleting, and maintaining buckets. Each steward must maintain separate key pairs for their individual allocations and any shared allocations they manage.
