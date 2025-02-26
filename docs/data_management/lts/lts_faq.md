@@ -56,11 +56,11 @@ While S3's object storage system does not have POSIX permissions seen in a Linux
     ]
 },
 {
-    "Sid": "data-steward",
+    "Sid": "data-manager",
     "Effect": "Allow",
     "Principal": {
         "AWS": [
-            "arn:aws:iam:::user/steward_1@uab.edu"
+            "arn:aws:iam:::user/blazerid@uab.edu"
         ]
     },
     "Action": [

@@ -64,7 +64,7 @@ Configuring s3cmd is necessary to establish a secure connection for accessing yo
 s3cmd --configure [-c $HOME/profile_name]
 ```
 
-You can run the configuration either with or without the `[-c]` option. If you use it, a file named `profile_name` will be created in your home directory with your login credentials and other information. If you omit the `-c` option, a file called `$HOME/.s3cfg` will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform and are only managing a single allocation, it's suggested to omit the `-c` option. If you are a PI or data manager and are managing both a individual and lab/core LTS allocation, you will need to make a separate profile for each allocation.
+You can run the configuration either with or without the `[-c]` option. If you use it, a file named `profile_name` will be created in your home directory with your login credentials and other information. If you omit the `-c` option, a file called `$HOME/.s3cfg` will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform and are only managing a single allocation, it's suggested to omit the `-c` option. If you are a PI or data manager and are managing both an individual and a shared allocation, you will need to make a separate profile for each allocation.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -182,7 +182,7 @@ s5cmd is a parallel transfer tool suggested for period transfers of large and/or
 
 #### Configuring s5cmd
 
-s5cmd does not use the same authentication file as s3cmd. Instead, it uses official AWS SDK to access S3 including LTS. The default credentials file for AWS CLI would found at `${HOME}/.aws/credentials`. This file is then populated with different profiles and their access and secret keys. You can create the necessary file with the following commands.
+The s5cmd software does not use the same authentication file as s3cmd. Instead, it uses official AWS SDK to access S3 including LTS. The default credentials file for AWS CLI would found at `${HOME}/.aws/credentials`. This file is then populated with different profiles and their access and secret keys. You can create the necessary file with the following commands.
 
 ``` bash
 mkdir ${HOME}/.aws
@@ -203,17 +203,19 @@ aws_secret_access_key = <secret_key>
     Do not include the `<>` symbols in the credentials file when saving your keys
 <!-- markdownlint-enable MD046 -->
 
-One of the benefits of this credential method is that multiple sets of credentials can be kept in the same file. For instance, if you have both a lab/core LTS allocation and a individual allocation, you could set your individual allocation as the default profile and then add your lab credentials under a named profile like so:
+One of the benefits of this credential method is that multiple sets of credentials can be kept in the same file. For instance, if you have both a shared allocation and an individual allocation, you could set your individual allocation as the default profile and then add your shared allocation keys under a named profile like so:
 
 ``` text
 [default]
 aws_access_key_id = <individual_access_key>
 aws_secret_access_key = <individual_secret_key>
 
-[example-lab]
-aws_access_key_id = <lab_access_key>
-aws_secret_access_key = <lab_secret_key>
+[shared-allocation]
+aws_access_key_id = <shared_access_key>
+aws_secret_access_key = <shared_secret_key>
 ```
+
+If you have multiple shared allocations, i.e. for both a lab and a Core, you could add another entry like `[shared-allocation]` with a distinct name.
 
 #### s5cmd Commands
 

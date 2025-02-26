@@ -22,7 +22,7 @@ When talking about S3 storage, some terms are different compared to a normal fil
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Never give access and secret keys for individual or lab allocations to anyone! Bad actors who are given keys to allocations which own important buckets can change access permissions and delete any and all data!
+    Never give access and secret keys for individual or shared allocations to anyone! Treat them as usename and password, respectively.
 
     If you need to give elevated permissions to other users to view, upload, download, delete, etc. any data from a bucket, those permissions can be changed via [bucket policies](iam_and_policies.md) without giving out keys. Please [contact Research Computing](../../index.md#how-to-contact-us) for help setting up and applying policies if you need it
 <!-- markdownlint-enable MD046 -->
@@ -41,6 +41,8 @@ UAB researchers do not have automatic access to LTS, and currently, single sign 
 
 ## Avoiding Duplicate Names for Buckets
 
-Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names, make them specific and/or unique. For example, davislab for storing data for the entire Davis lab or the name of a specific dataset that is being stored. Do not make names like trial or my-storage.
+Bucket names are shared across all LTS. This means you cannot create a bucket with a name that has already been created by someone else, even if that bucket is not shared with you. When creating bucket names make them specific and/or unique.
 
-Good practice when naming buckets is to use a short, descriptive and memorable name, then append a universally unique identifier (UUID) to the end. Websites like <https://www.uuidgenerator.net/> may be used to generate and copy UUIDs. There are $5.3\times 10^{36}$ possible UUIDs, which means the chance of duplicating one is virtually zero. Please see [Wikipedia](https://en.wikipedia.org/wiki/Universally_unique_identifier#Collisions) for math supporting the low rate of duplication.
+At minimum, use something like "blazeridlab" for storing data for your entire lab. Or, use the name of a specific dataset that is being stored. Avoid generic names like "trial" or "my-storage" or "test" or "lab".
+
+Better practice when naming buckets is to use a short, descriptive and memorable name, then append a universally unique identifier (UUID) to the end. Websites like <https://www.uuidgenerator.net/> may be used to generate and copy UUIDs. There are $5.3\times 10^{36}$ possible UUIDs, which means the chance of duplicating one is virtually zero. Please see [Wikipedia](https://en.wikipedia.org/wiki/Universally_unique_identifier#Collisions) for math supporting the low rate of duplication.
