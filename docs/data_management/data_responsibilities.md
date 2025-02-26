@@ -55,7 +55,7 @@ What hazards can cause data loss?
     - Examples: tornado; hurricane.
     - All of our data sits in one geographical location at the UAB Technology Innovation Center (TIC).
     - Plans to add geographical data redundancy are being considered.
-If you have backup needs, we can discuss options based on your use case. We want to engage in a conversation. please send us a support ticket via <support@listserv.uab.edu>.
+If you have backup needs, we can discuss options based on your use case. Please send us a support ticket via <support@listserv.uab.edu>.
 
 ## Security Exceptions for Accessing Former UAB Personnel Data
 
@@ -65,7 +65,7 @@ To request access to data of former UAB user, the first step is to fill out the 
 
 If the owner of the data was your student or staff in your lab, then the first choice is probably best (two-levels up supervisor). If the data owner was in a different department or special approval is required (for example a professor in the dept of medicine wanting access to data from a student in the school of engineering), select "Dean, C-level, or Trusted Designee" for the "Approval Type" field. If written approval can be provided directly by the former personnel, you can bypassed completing the form for request.
 
-To simplify data access and management, it is recommended to store critical research data in shared storage areas that are accessible to or owned by the responsible PI, with ownership transfer initiated as needed. If you need help with data management process, please send a support ticket via <support@listserv.uab.edu>, and we will guide you through these steps.
+To simplify data access and management, it is recommended to store critical research data in shared storage areas that are accessible to or owned by the responsible PI, with ownership transfer initiated as needed. If you need help with data management processes, please send us a support ticket via <support@listserv.uab.edu>, and we will guide you through these steps.
 
 ## User responsibilities with UAB-IT policies
 
