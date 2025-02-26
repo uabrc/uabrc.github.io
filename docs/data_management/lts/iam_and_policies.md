@@ -9,8 +9,8 @@ LTS Identity and Access Management (IAM) is a framework for managing identities,
 ## Terminology
 
 - **Allocation**: An allocation represents designated data storage with a unique name.
-- **Keys**: Credentials granting access to an allocation, made up of an Access Key and Secret Key. Referred to formally, and in certain software, as "Credentials". We use both "Keys" and "Credentials" in our documentation to best fit the topic.
-    - Access Key: The public identifier used to access the allocation, similar to a username.
+- **Keys**: Credentials authenticating access to an allocation, made up of an Access Key and Secret Key. Referred to formally, and in certain software, as "Credentials". We use both "Keys" and "Credentials" in our documentation to best fit the topic.
+    - Access Key: A username-like identifier used to access the allocation,.
     - Secret Key: The private password-like credential that must be kept confidential.
 - **Stewards**: Stewards are individuals responsible for managing an allocation. Stewards need a full access key pair to perform tasks like creating, deleting, and maintaining buckets. Each steward must maintain separate key pairs for their individual allocations and any shared allocations they manage.
 - **Owner**: owners responsible for overseeing the management of allocated storage, ensuring compliance with data management policies, and designating appropriate stewards, if needed, to assist in the management of allocation. Owners can include:
@@ -87,7 +87,7 @@ Instead, sharing buckets must be done through the command line using [bucket pol
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Your username for LTS could potentially be `<BlazerID>` or `<BlazerID>@uab.edu` depending on when your allocation was created. It is very important when crafting these policies that the correct username is specified, and these two are not interchangeable. For users with XIAS accounts, your username should be the email address you signed up for the XIAS account with. The usernames are case-sensitive. If you do not remember what your username is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
+    Your IAM Name for LTS could potentially be `<BlazerID>` or `<BlazerID>@uab.edu` depending on when your allocation was created. It is very important when crafting these policies that the correct IAM Name is specified, and these two are not interchangeable. For users with XIAS accounts, your IAM Name should be the email address you signed up for the XIAS account with. The IAM Names are case-sensitive. If you do not remember what your IAM Name is, see the email you received with your access key and secret key information or submit a support ticket to support@listserv.uab.edu.
 <!-- markdownlint-enable MD046 -->
 
 ### Policy Structure
