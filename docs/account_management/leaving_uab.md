@@ -2,7 +2,9 @@
 
 If your life and career plans take you away from UAB, then this article is designed to help you. We hope to give you a better understanding of your responsibilities and what to expect for your account and data.
 
-If you are in doubt after reading this article, we highly recommend [contacting us](../help/support.md).
+All research data produced as part of UAB research is owned by UAB, and certain funding agencies (e.g. NIH) have strict data retention and sharing regulations. Transferring UAB-owned data requires the involvement of the [Office of Research](https://www.uab.edu/research/home/about/contact-us), specifically the [Office of Sponsored Programs (OSP)](https://www.uab.edu/research/home/osp-about/contact).
+
+If you have questions, concerns, or any doubt after reading this page, we highly recommend [contacting us](../help/support.md).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -41,18 +43,18 @@ If you plan to continue collaborating with other researchers and need to manage 
 
 ## What Are My Responsibilities For Lab Shared Allocations?
 
-If you are responsible for lab shared allocations on Research Computing storage platforms, you have certain responsibilities for the data within them. All research data produced as part of UAB research is owned by UAB, and certain funding agencies (e.g. NIH) have strict data retention and sharing regulations. With that in mind, you will need to consider how to handle data for each project. Please feel free to [contact us](../help/support.md) for assistance.
+If you are responsible for lab shared allocations on Research Computing storage platforms, you have certain responsibilities for the data within them. Transferring UAB-owned data requires the involvement of the [Office of Research](https://www.uab.edu/research/home/about/contact-us), specifically the [Office of Sponsored Programs (OSP)](https://www.uab.edu/research/home/osp-about/contact).
 
-For each dataset or project, which option is ideal depends on the state of the project and what you are comfortable with.
+For each dataset or project, which option is ideal depends on the state of the project.
 
 - Transfer responsibility of the data to a successor (retiring)?
 
-    1. Make the appropriate arrangements with relevant administrative units (e.g., Office of Research).
+    1. Make the appropriate arrangements with relevant administrative units (e.g., Office of Research and OSP).
     1. [Globus](../data_management/transfer/globus.md) may be used to efficiently and robustly transfer the data from one directory on Cheaha to another. Please [contact us](../help/support.md) for more details.
 
 - Transfer the data to a new instutition (moving)?
 
-    1. Contact the Office of Research to create a "Data Use Agreement" with your new institution.
+    1. Contact the Office of Research to create a "Data Use Agreement" with your new institution. Read more on the [OSP Site](https://www.uab.edu/research/home/osp-federal-contracts/fc-other/data-use-agreements).
     1. [Contact us](../help/support.md) and your new institution's Research Computing equivalent to determine how to transfer data efficiently.
 
 - Comply with funding agency data retention regulations (retiring)?
