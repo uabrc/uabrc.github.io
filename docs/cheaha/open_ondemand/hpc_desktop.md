@@ -35,7 +35,7 @@ The VSCode Remote Tunnel extension uses the Dev Tunnels software product. The De
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    When using a tunnel, all information visible within VSCode is end-to-end encrypted and sent from Cheaha to your local machine through a third-party service (the tunnel). Use of any third party services and encryption for Restricted/PHI Data may require a risk assessment first.
+    When using a tunnel, all information visible within VSCode is end-to-end encrypted and sent from Cheaha to your local machine through a third-party service (the tunnel). Use of any third party services and encryption for Restricted/PHI Data may require a risk assessment first. Please [contact us](../../help/support.md) if you need to use VSCode to work with PHI or other restricted data.
 <!-- markdownlint-enable MD046 -->
 
 ### Downloading and Installing VSCode and VSCode Server
