@@ -65,7 +65,9 @@ Please provide the following information. Missing information can delay allocati
 
     - For Labs, we recommend using the format `<PI_BlazerID>_lab`, where `<PI_BlazerID>` is the BlazerID or name of the Principal Investigator (PI). For example: `PI_BlazerID_lab`, `PI_name_lab`.
     - For Cores, we recommend using a shortened version of the Core name. For example: `core_facility_space`
-    - For Project Storage, the name you choose will be used in the path `/data/project/<PI_BlazerID>_lab` on Cheaha. Also, this name,`<PI_BlazerID>_lab`, will be given to your shared LTS account.
+    - For Project Storage, the name you choose will be used for the name of your storage.
+        - On GPFS (Cheaha) the path will be `/data/project/<PI_BlazerID>_lab`.
+        - On LTS the IAM Name of the allocation will be `<PI_BlazerID>_lab`.
 
     <!-- markdownlint-disable MD046 -->
     !!! Tip
