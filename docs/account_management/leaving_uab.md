@@ -22,7 +22,7 @@ If you anticipate needing more than 30 days to finalize transfers, [contact us](
 
 ## What Happens to data in my Individual Storage Allocations?
 
-Data in your individual storage allocations, on all storage platforms, will be retained for the full grace period.
+Data in your individual storage allocations, on all storage platforms, will be retained for the full grace period. We recommend making a plan for your data. Download any personal, non-UAB-owned data you wish to keep. [Transfer any UAB-owned data to an appropriate location.](#what-should-i-do-with-uab-owned-data)
 
 ## What Should I Do With UAB-Owned Data?
 
@@ -39,7 +39,7 @@ Your data will be available for the full grace period. If your hire date is late
 
 ## What If I Plan To Have An Ongoing Collaboration?
 
-If you plan to continue collaborating with other researchers and need to manage data or perform analyses on Cheaha, you will need to create a [XIAS account](./xias/index.md). Once the account has been created, please contact us and we can assist with transferring data in your former individual storage allocation to your new allocation.
+If you plan to continue collaborating with other researchers and need to manage data or perform analyses on Cheaha, you will need to create a [XIAS account](./xias/index.md). To create the account, you will need a UAB-affiliated sponsor. Once the account has been created, please contact us and we can assist with transferring data in your former individual storage allocation to your new allocation.
 
 ## What Are My Responsibilities For Lab Shared Allocations?
 
