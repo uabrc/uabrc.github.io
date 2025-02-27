@@ -23,17 +23,19 @@ It is possible to remotely access Cheaha using an HPC Desktop job as a host for 
 To use this method you will need either a GitHub account or Microsoft account. Microsoft accounts can be obtained using your SSO credentials through Microsoft.
 
 <!-- markdownlint-disable MD046 -->
-!!! danger
-
-    Do _NOT_ use the remote tunnel extension if you intend to view or work with [Restricted/PHI Data](https://www.uab.edu/it/home/policies/data-classification/classification-overview) while using VSCode.
-
-    When using a tunnel, all information visible within VSCode is end-to-end encrypted and sent from Cheaha to your local machine through a third-party service (the tunnel). Use of any third party services and encryption for Restricted/PHI Data requires a risk assessment first, on a case-by-case basis.
-<!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
 !!! warning
 
     Do not use "Remote - SSH" to access Cheaha, as all processes run on the login node. VSCode Server, and associated processes, running on the login node may be shut down at any time to free login node resources. Instead, please use "Remote - Tunnels" as described below.
+<!-- markdownlint-enable MD046 -->
+
+### What Security does VSCode Remote Tunnel Use?
+
+The VSCode Remote Tunnel extension uses the Dev Tunnels software product. The Dev Tunnels uses your GitHub or Microsoft credentials to authenticate, and data transfers through the tunnel are end-to-end encrypted. To learn more about Dev Tunnels security, please read <https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/security>
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    When using a tunnel, all information visible within VSCode is end-to-end encrypted and sent from Cheaha to your local machine through a third-party service (the tunnel). Use of any third party services and encryption for Restricted/PHI Data may require a risk assessment first.
 <!-- markdownlint-enable MD046 -->
 
 ### Downloading and Installing VSCode and VSCode Server
