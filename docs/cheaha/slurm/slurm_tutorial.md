@@ -327,7 +327,11 @@ ls random_file_*.txt  > file_list.txt
 
 Let us use these input files for [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [Example 4.2](#example-42-counting-words-in-multiple-files-using-a-slurm-job-array).
 
-Save the following script as `line_word_count.job`. This SLURM job ensures that each task in the job array processes a single line from an input file and counts the number of words in that line.
+Save the following Slurm script as `line_word_count.job`. This SLURM job ensures that each task in the job array processes a single line from an input file and counts the number of words in that line. You will have to create a directory named `logs` to redirect the output and error files using the command:
+
+```bash
+$mkdir logs
+```
 
 ```bash linenums="1"
 #!/bin/bash
@@ -378,7 +382,7 @@ Task 3: 6 words
 
 #### Example 4.2: Counting Words in Multiple Files Using a Slurm Job Array
 
-This example job script is designed to count the number of words in multiple files in parallel using a job array. Copy the following SLURM array job script to count the number of words in the five generated files in parallel. Save it as `word_count.job`. You will have to create a directory named `logs` to redirect the output and error files using,
+This example job script is designed to count the number of words in multiple files in parallel using a job array. The input files are created using the script depicted in [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count) Copy the following SLURM array job script to count the number of words in the five generated files in parallel. Save it as `file_word_count.job`. You will have to create a directory named `logs` to redirect the output and error files using the command:
 
 ```bash
 $mkdir logs
@@ -386,36 +390,52 @@ $mkdir logs
 
 ```bash linenums="1"
 #!/bin/bash
-#SBATCH --job-name=word_count
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=4G                      # Memory per task
-#SBATCH --partition=express
-#SBATCH --time=00:15:00               # Max job run time
-#SBATCH --output=logs/%x_%A_%a.out   # Output log for each task
-#SBATCH --error=logs/%x_%A_%a.err    # Error log for each task
-#SBATCH --array=1-5                  # Adjust based on the number of files
+#SBATCH --job-name=file_word_count   ### Name of the job
+#SBATCH --cpus-per-task=1            ### Number of Tasks per CPU
+#SBATCH --mem=4G                     ### Memory required, 4 gigabyte
+#SBATCH --partition=express          ### Cheaha Partition
+#SBATCH --time=00:15:00              ### Estimated Time of Completion, 10 minutes
+#SBATCH --output=logs/%x_%A_%a.out   ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --error=logs/%x_%A_%a.err    ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --array=1-5                  ### Adjust based on the number of files
 
-# Load necessary modules if needed
-#module load Anaconda3
-
-# Define working directory
+### Define working directory
 WORKDIR="$HOME/input_files"
 FILELIST="$WORKDIR/file_list.txt"
 
-# Get the file corresponding to the current task ID
+### Get the file corresponding to the current task ID
 FILE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" $FILELIST)
+BASENAME=$(basename "$FILE" .txt)
 
-# Check if file exists
-if [[ -f "$WORKDIR/$FILE" ]]; then
+### Check if file exists and count words from file
+if [[ -f "$FILE" ]]; then
     # Count words and save result
-    wc -w "$WORKDIR/$FILE" > "$WORKDIR/${BASENAME}.wordcount"
-    echo "Processed $WORKDIR/$FILE"
+    wc -w "$FILE" > "$WORKDIR/${BASENAME}.wordcount"
+    echo "Processed $FILE"
 else
-    echo "File not found: $WORKDIR/$FILE"
+    echo "File not found: $FILE"
 fi
 ```
 
-The above SLURM job script runs a word count operation in parallel on multiple files using a job array (1-5). It reads a list of filenames from `file_list.txt` in `$HOME/input_files`. Each task in the job array processes a different file based on its task ID (SLURM_ARRAY_TASK_ID). If the file exists, it counts the number of words using wc -w and saves the output as `<filename>.wordcount`, and logs standard output and errors for each task separately.
+The above SLURM job script runs a word count operation in parallel on multiple files using a job array (1-5). It reads a list of filenames along with its path from `file_list.txt` located in `$HOME/input_files`. Each task in the job array processes a different file based on its task ID (SLURM_ARRAY_TASK_ID). If the file exists, it counts the number of words using wc -w and saves the output as `<filename>.wordcount`, and logs standard output and errors for each task separately.
+
+In the output below, each file was processed independently by a SLURM array task. The task IDs 1, 2, 3, 4, and 5 correspond to the five different files being processed. The SLURM Job ID is `31934540`. Each output file contains the word count for a specific text file handled by its respective SLURM array task.
+
+The command `cat random_file*.wordcount` displays the word count for all processed input files.
+
+```bash
+
+$ ls file_word_count*.out
+file_word_count_31934540_1.out  file_word_count_31934540_3.out  file_word_count_31934540_5.out
+file_word_count_31934540_2.out  file_word_count_31934540_4.out
+
+$ cat random_file*.wordcount
+142 random_file_1.txt
+82 random_file_2.txt
+55 random_file_3.txt
+61 random_file_4.txt
+92 random_file_5.txt
+```
 
 ### Example 5: Multithreaded or Multicore Job
 
