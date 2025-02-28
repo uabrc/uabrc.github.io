@@ -397,7 +397,6 @@ $mkdir logs
 #SBATCH --time=00:15:00              ### Estimated Time of Completion, 10 minutes
 #SBATCH --output=logs/%x_%A_%a.out   ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --error=logs/%x_%A_%a.err    ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
-#SBATCH --array=1-5                  ### Adjust based on the number of files
 
 ### Define working directory
 WORKDIR="$HOME/input_files"
@@ -418,6 +417,18 @@ fi
 ```
 
 The above SLURM job script runs a word count operation in parallel on multiple files using a job array (1-5). It reads a list of filenames along with its path from `file_list.txt` located in `$HOME/input_files`. Each task in the job array processes a different file based on its task ID (SLURM_ARRAY_TASK_ID). If the file exists, it counts the number of words using wc -w and saves the output as `<filename>.wordcount`, and logs standard output and errors for each task separately.
+
+Before running the above SLURM job, determine the number of files in the directory and its subdirectories using the following command. The command counts the number of files matching the pattern random_file_*.txt in the path `$HOME/input_files` directory and its subdirectories, and stores the result in the variable `MAX_TASKS`.
+
+```bash
+MAX_TASKS=$(find $HOME/input_files -type f -name "random_file_*.txt" | wc -l)
+```
+
+Next, submit the array job using the command below, which creates an array of tasks from 1 to the value of MAX_TASKS, where each task corresponds to processing a different file listed in the array.
+
+```bash
+sbatch --array=1-"$MAX_TASKS" line_word_count.job
+```
 
 In the output below, each file was processed independently by a SLURM array task. The task IDs 1, 2, 3, 4, and 5 correspond to the five different files being processed. The SLURM Job ID is `31934540`. Each output file contains the word count for a specific text file handled by its respective SLURM array task.
 
