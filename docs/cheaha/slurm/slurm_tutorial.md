@@ -310,7 +310,7 @@ $mkdir input_files
 $cd input_files
 ```
 
-Next, copy and paste the following script into your terminal to generate five random text files, each containing a different number of randomly selected words. The script creates a file with 1 to 10 randomly generated lines, where each line contains 5 to 20 randomly selected words from `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of lines and words per line. Additionally, the names of the generated files are tracked in `file_list.txt`.
+Next, copy and paste the following script into your terminal to generate five random text files, each containing a different number of randomly selected words. The script creates a file with 1 to 10 randomly generated lines, where each line contains 5 to 20 randomly selected words from `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of lines and words per line. The input files along with its path are tracked in `file_list.txt`.
 
 ```bash
 for i in {1..5}; do
@@ -319,13 +319,15 @@ for i in {1..5}; do
         num_words=$(($RANDOM % 20 + 5))  # Random words per line (5-20)
         shuf -n $num_words /usr/share/dict/words | paste -s -d " "
     done > "random_file_$i.txt"
-    echo "random_file_$i.txt" >> file_list.txt
 done
+
+# Use globbing to get all generated files and save them to file_list.txt
+ls random_file_*.txt  > file_list.txt
 ```
 
 Let us use these input files for [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [Example 4.2](#example-42-counting-words-in-multiple-files-using-a-slurm-job-array).
 
-Save the following script as `line_word_count.job`. This SLURM job ensures that each task in the job array processes a single line from the input file and counts the number of words in that line.
+Save the following script as `line_word_count.job`. This SLURM job ensures that each task in the job array processes a single line from an input file and counts the number of words in that line.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -337,13 +339,13 @@ Save the following script as `line_word_count.job`. This SLURM job ensures that 
 #SBATCH --output=logs/%x_%A_%a.out  ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --error=logs/%x_%A_%a.err   ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
 
-### Define the input file
+### Define the input file, for instance, random_file_2.txt
 INPUT_FILE="$HOME/input_files/random_file_2.txt"
 
-### Extract the line corresponding to the current Slurm task ID
+### Extract the line corresponding to the current Slurm array task ID
 LINE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" "$INPUT_FILE")
 
-### Count words in the line and print the result
+### Count words in the line and print the result for each task
 WORD_COUNT=$(echo "$LINE" | wc -w)
 echo "Task $SLURM_ARRAY_TASK_ID: $WORD_COUNT words"
 ```
@@ -358,6 +360,20 @@ Next, submit the array job using the command below, which creates an array of ta
 
 ```bash
 sbatch --array=1-"$MAX_TASKS" line_word_count.job
+```
+
+The below output comes from the SLURM job array script (line_word_count.job), where each task processes one line from random_file_2.txt. Since the file has 3 lines, SLURM created 3 tasks (Task 1, Task 2, Task 3), each counting words in its respective line.
+
+```bash
+$ wc -l ../input_files/random_file_2.txt #counts the number of lines in the file, for instance, random_file_2.txt
+3 ../input_files/random_file_2.txt
+```
+
+```bash
+$ cat line_word_count_$JOB_ID_*.out
+Task 1: 8 words
+Task 2: 19 words
+Task 3: 6 words
 ```
 
 #### Example 4.2: Counting Words in Multiple Files Using a Slurm Job Array
@@ -392,7 +408,7 @@ FILE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" $FILELIST)
 # Check if file exists
 if [[ -f "$WORKDIR/$FILE" ]]; then
     # Count words and save result
-    wc -w "$WORKDIR/$FILE" > "$WORKDIR/${FILE}.wordcount"
+    wc -w "$WORKDIR/$FILE" > "$WORKDIR/${BASENAME}.wordcount"
     echo "Processed $WORKDIR/$FILE"
 else
     echo "File not found: $WORKDIR/$FILE"
