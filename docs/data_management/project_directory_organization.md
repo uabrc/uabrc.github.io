@@ -30,7 +30,7 @@ Below is a recommended directory structure to help keep project files, shared re
     Example:
 
     ```bash
-    /data/project/<your-shared-allocation-name/repos
+    /data/project/<your-shared-allocation-name>/<repos>
         |-- common-software-tool-1
         |-- common-software-tool-2
     ```
@@ -42,7 +42,7 @@ Below is a recommended directory structure to help keep project files, shared re
     Example:
 
     ```bash
-    /data/project/<your-shared-allocation-name/common-data
+    /data/project/<your-shared-allocation-name>/<common-data>
         |-- some-data-used-by-multiple-projects
         |-- other-shared-data
     ```
@@ -54,7 +54,7 @@ Below is a recommended directory structure to help keep project files, shared re
     Example:
 
     ```bash
-    /data/project/your-allocation/environments
+    /data/project/<your-shared-allocation-name>/<environments>
         |-- conda-env-1
         |-- conda-env-2
     ```
