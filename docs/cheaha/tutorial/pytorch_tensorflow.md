@@ -2,6 +2,12 @@
 
 The below tutorial would show you steps on how to create an Anaconda environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access the terminal, as well as using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../open_ondemand/ood_layout.md#interactive-apps)
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    CUDA modules are used in this tutorial. Please note that the latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules). The tutorial provides good practices, but ages over time. You may need to modify the scripts to be suitable for your work.
+<!-- markdownlint-enable MD046 -->
+
 ## Installing Anaconda Environments Using the Terminal
 
 To access the terminal (shell), please do the following.
@@ -57,8 +63,7 @@ module load CUDA/11.8.0
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    The cudatoolkit version may vary, as at the time of this tutorial, 11.8 is the version used. Running `nvidia-smi`, as in the image below, will show you the status, version and other information on GPUs in your created job session. The CUDA version is highlighted. The GPU CUDA Version available on Cheaha at the time of this tutorial is 12.3. Because the toolkit version used is lower than the Cheaha GPU version, it works.
-
+    The cudatoolkit version may vary, as at the time of this tutorial, 11.8 is the version used. Running `nvidia-smi`, as in the image below, will show you the status, version and other information on GPUs in your created job session. The CUDA version is highlighted. The GPU CUDA Version available on Cheaha as of 2025-02-25 is `12.6.0`. Newer versions are available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules). Because the toolkit version used is lower than the Cheaha GPU version, it works.
 <!-- markdownlint-enable MD046 -->
 
 ![!nvidia-smi output](images/CudaVersion.png)

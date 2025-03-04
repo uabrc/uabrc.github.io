@@ -48,6 +48,10 @@ Anaconda on Cheaha works like it does on any other system, once the module has b
 
 For more information on usage with examples, see [Anaconda Environments](../../workflow_solutions/using_anaconda.md). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../tutorial/pytorch_tensorflow.md).
 
+### Obtaining the Latest CUDA and cuDNN Modules
+
+Please see our [CUDA and cuDNN section of the GPU page](../slurm/gpu.md#cuda-and-cudnn-modules).
+
 ## Singularity Containers
 
 Containers are a very useful resource for installing software without needing administrator permission. Please read the full documentation about singularity and containers on our [main Singularity page](../../workflow_solutions/getting_containers.md#containers-on-cheaha).
