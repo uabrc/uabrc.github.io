@@ -10,12 +10,12 @@ LTS is not available as a mounted filesystem on local computers or Cheaha. You m
 
 [Globus](../transfer/globus.md#long-term-storage-s3-lts-connector) is a general file transfer system that operates through a web browser and is recommended for most file transfer needs. UAB has an S3 connector for Globus that can transfer data to and from LTS as long as the user has access to the desired buckets.
 
-To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in the search bar and enter your access and secret keys given to you by Research Computing staff. You will be able to see the buckets owned by the account associated with the keys you entered.
+To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in the search bar and enter your access and secret keys given to you by Research Computing staff. You will be able to see the buckets owned by the allocation associated with the keys you entered.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If your LTS account was given permission to access a bucket owned by another account, it will not automatically appear in the Globus file browser. You can access buckets you have `s3:ListBucket` permissions on by typing `/<bucket-name>/` in the Path field under the LTS endpoint.
+    If your LTS allocation was given permission to access a bucket owned by another allocation, it will not automatically appear in the Globus file browser. You can access buckets you have `s3:ListBucket` permissions on by typing `/<bucket-name>/` in the Path field under the LTS endpoint.
 
     ![!Access a shared bucket in Globus](images/globus-bucket.png)
 <!-- markdownlint-enable MD046 -->
@@ -44,7 +44,7 @@ conda activate s3
 pip install s3cmd
 ```
 
-Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your personal computer and LTS, you will need to install `s3cmd` or `s5cmd` on your machine. Please refer to this [section](#installation-of-s3cmd-and-s5cmd-on-personal-systems-without-anaconda) for installation instructions specific to your operating system.
+Please note that the instructions mentioned above are specific to the Cheaha system. To transfer data between your individual computer and LTS, you will need to install `s3cmd` or `s5cmd` on your machine. Please refer to this [section](#installation-of-s3cmd-and-s5cmd-on-individual-systems-without-anaconda) for installation instructions specific to your operating system.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -64,7 +64,7 @@ Configuring s3cmd is necessary to establish a secure connection for accessing yo
 s3cmd --configure [-c $HOME/profile_name]
 ```
 
-You can run the configuration either with or without the `[-c]` option. If you use it, a file named `profile_name` will be created in your home directory with your login credentials and other information. If you omit the `-c` option, a file called `$HOME/.s3cfg` will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform and are only managing a single account, it's suggested to omit the `-c` option. If you are a PI or data manager and are managing both a personal and lab/core LTS account, you will need to make a separate profile for each account.
+You can run the configuration either with or without the `[-c]` option. If you use it, a file named `profile_name` will be created in your home directory with your login credentials and other information. If you omit the `-c` option, a file called `$HOME/.s3cfg` will be created by default. This can be helpful if you have multiple S3 profiles you are using. If you use UAB LTS as your only S3 storage platform and are only managing a single allocation, it's suggested to omit the `-c` option. If you are a PI or data manager and are managing both an individual and a shared allocation, you will need to make a separate profile for each allocation.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -182,7 +182,7 @@ s5cmd is a parallel transfer tool suggested for period transfers of large and/or
 
 #### Configuring s5cmd
 
-s5cmd does not use the same authentication file as s3cmd. Instead, it uses official AWS SDK to access S3 including LTS. The default credentials file for AWS CLI would found at `${HOME}/.aws/credentials`. This file is then populated with different profiles and their access and secret keys. You can create the necessary file with the following commands.
+The s5cmd software does not use the same authentication file as s3cmd. Instead, it uses official AWS SDK to access S3 including LTS. The default credentials file for AWS CLI would found at `${HOME}/.aws/credentials`. This file is then populated with different profiles and their access and secret keys. You can create the necessary file with the following commands.
 
 ``` bash
 mkdir ${HOME}/.aws
@@ -203,17 +203,19 @@ aws_secret_access_key = <secret_key>
     Do not include the `<>` symbols in the credentials file when saving your keys
 <!-- markdownlint-enable MD046 -->
 
-One of the benefits of this credential method is that multiple sets of credentials can be kept in the same file. For instance, if you have both a lab/core LTS account and a personal account, you could set your personal account as the default profile and then add your lab credentials under a named profile like so:
+One of the benefits of this credential method is that multiple sets of credentials can be kept in the same file. For instance, if you have both a shared allocation and an individual allocation, you could set your individual allocation as the default profile and then add your shared allocation keys under a named profile like so:
 
 ``` text
 [default]
-aws_access_key_id = <personal_access_key>
-aws_secret_access_key = <personal_secret_key>
+aws_access_key_id = <individual_access_key>
+aws_secret_access_key = <individual_secret_key>
 
-[example-lab]
-aws_access_key_id = <lab_access_key>
-aws_secret_access_key = <lab_secret_key>
+[shared-allocation]
+aws_access_key_id = <shared_access_key>
+aws_secret_access_key = <shared_secret_key>
 ```
+
+If you have multiple shared allocations, i.e. for both a lab and a Core, you could add another entry like `[shared-allocation]` with a distinct name.
 
 #### s5cmd Commands
 
@@ -223,7 +225,7 @@ s5cmd has the following general form.
 s5cmd --endpoint-url https://s3.lts.rc.uab.edu [global_options] command [command options] [arguments]
 ```
 
-Here, global options must be kept separate from command specific options. For instance, the `--endpoint-url` option is a global option that specifies the URL for the S3 server. This must be included with every s5cmd command to communicate with UAB LTS, otherwise it will default to accessing AWS servers. Other global options include `--numworkers` and `--profile`, the number of available CPUs and which account to use in the `credentials` file, respectively. You can see a list of global options and the list of available commands by running `s5cmd --help`. A selection of commands are listed below.
+Here, global options must be kept separate from command specific options. For instance, the `--endpoint-url` option is a global option that specifies the URL for the S3 server. This must be included with every s5cmd command to communicate with UAB LTS, otherwise it will default to accessing AWS servers. Other global options include `--numworkers` and `--profile`, the number of available CPUs and which allocation to use in the `credentials` file, respectively. You can see a list of global options and the list of available commands by running `s5cmd --help`. A selection of commands are listed below.
 
 ``` bash
 # copy all files from a local directory to a bucket using a single CPU
@@ -249,7 +251,7 @@ It's important to note that the main functionality of s5cmd over s3cmd is the pa
     When setting the value for `--numworkers`, do not select a value beyond the number of CPUs you have requested for your job! This can cause high context switching (meaning individual CPUs are switching between multiple running processes) which can affect job performance for all jobs on a node.
 <!-- markdownlint-enable MD046 -->
 
-### Installation of `s3cmd` and `s5cmd` on Personal Systems without Anaconda
+### Installation of `s3cmd` and `s5cmd` on Individual Systems without Anaconda
 
 The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems. You may also use [Anaconda](../../workflow_solutions/using_anaconda.md) to install either or both packages.
 

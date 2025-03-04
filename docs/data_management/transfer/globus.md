@@ -148,7 +148,7 @@ To use the UAB [LTS](../lts/index.md) Connector, [search for a collection/endpoi
 
 #### Adding LTS Allocation Credentials
 
-Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../lts/index.md#requesting-an-account) to the LTS endpoint. To do so, please follow the instructions given below.
+Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../lts/index.md#requesting-an-allocation) to the LTS endpoint. To do so, please follow the instructions given below.
 
 1. In your browser, navigate to <https://app.globus.org> and login using UAB SSO.
 1. Click "Collections" in the left-hand navigation pane.
