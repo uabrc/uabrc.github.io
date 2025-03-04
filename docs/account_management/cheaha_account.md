@@ -8,11 +8,11 @@ These instructions are intended to guide researchers on creating new accounts an
 
 ## Creating a New Account
 
-Creating a new account is a simple, automated, self-service process. To start, navigate to <https://rc.uab.edu>, our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal, and authenticate. The authentication process differs depending on your affiliation. Accounts are available to researchers with the following situations.
+Creating a new <section:account> is a simple, automated, self-service process. To start, navigate to <https://rc.uab.edu>, our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal, and authenticate. The authentication process differs depending on your affiliation. Accounts are available to researchers with the following situations.
 
-- If you are affiliated with UAB and have a BlazerID, please authenticate using Single Sign-On (SSO).
+- If you are affiliated with UAB and have a <section:BlazerID>, please authenticate using Single Sign-On (SSO).
 - If you are affiliated with UAB Medicine, you will need to use your BlazerID to authenticate via Single Sign-On (SSO) instead of your UABMC authentication process.
-- If you are an external collaborator and have a XIAS account with access to Cheaha, please authenticate using your XIAS email address as the ID, not automatically generated `xias-XXXXXX-1` ID.
+- If you are an external collaborator and have a XIAS account with access to <section:Cheaha>, please authenticate using your XIAS email address as the ID, not automatically generated `xias-XXXXXX-1` ID.
 - If you are an external collaborator and do not have a XIAS account, you will need a UAB-affiliated sponsor and will need to follow our [XIAS Guest Account Instructions](xias/guest_instructions.md). Your sponsor will need to follow our [XIAS Site Management](xias/pi_site_management.md) and [XIAS Guest Management](xias/pi_guest_management.md) documentation pages.
 
 Once you have authenticated, you should see a page that looks like the following.

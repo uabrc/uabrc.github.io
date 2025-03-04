@@ -42,13 +42,13 @@ A full list of the available hardware can be found on our [hardware page](./hard
 
 All researchers are granted 5 TB of individual storage when they [create their Research Computing account](../account_management/cheaha_account.md).
 
-Shared storage is available to all Lab Groups and Core Facilities on campus. Shared storage is also available to UAB Administration groups.
+<section:Shared storage> is available to all Lab Groups and Core Facilities on campus. Shared storage is also available to UAB Administration groups.
 
 Please visit our [Storage page](../data_management/storage.md) for detailed information about our individual and shared storage options.
 
 ### Partitions
 
-Compute nodes are divided into groups called partitions each with specific qualities suitable for different kinds of workflows or software. In order to submit a compute job, a partition must be chosen in the Slurm options. The partitions can be roughly grouped as such:
+<section:Compute nodes> are divided into groups called <section:partitions> each with specific qualities suitable for different kinds of workflows or software. In order to submit a compute job, a partition must be chosen in the Slurm options. The partitions can be roughly grouped as such:
 
 |  Use | Partition Names | Notes |
 |---|---|---|
@@ -70,7 +70,7 @@ To effectively manage and provide high-performance computing (HPC) resources to 
 
 ##### Login vs. Compute Nodes
 
-Like with most HPC clusters, cheaha nodes are divided into two, the login node and compute nodes. The login node acts as the gateway for users to access the cluster, submit jobs, and manage files. Compute nodes, on the other hand, are like the engines of the cluster, designed to perform the heavy lifting of data processing and computation.
+Like with most HPC clusters, cheaha nodes are divided into two, the <section:login node> and <section:compute nodes>. The login node acts as the gateway for users to access the cluster, <section:submit jobs>, and manage files. Compute nodes, on the other hand, are like the engines of the cluster, designed to perform the heavy lifting of data processing and computation.
 
 The Login node can be accessed from the Cheaha landing page or through the `$HOME` directory. You can see in the images below, how to identify if you’re within a login node or compute node.
 
@@ -140,11 +140,11 @@ Ideally, only non-intensive tasks like editing files, or managing job submission
 
 ##### How to start SLURM Jobs?
 
-There are two straightforward ways to start SLURM jobs on cheaha, and they are detailed below.
+There are two straightforward ways to start <section:SLURM> jobs on cheaha, and they are detailed below.
 
 ###### Open OnDemand (OOD)
 
-UAB uses the OOD platform, a web-based interface for providing access to cluster resources without the need for command-line tools. Users can easily submit jobs, manage files, and even use interactive applications directly from their browsers. One of the standout features of OOD is the ability to launch interactive applications, such as a virtual desktop environment. This feature allows users to work within the cluster as if they were on a local desktop, providing a user-friendly interface for managing tasks and running applications. For an overview of how the page works, and to read more details see our docs on [Navigating Open OnDemand](../cheaha/open_ondemand/index.md). After logging into OOD, users can access various applications designed for job management, file editing, and more.
+UAB uses the <section:OOD> platform, a web-based interface for providing access to cluster resources without the need for command-line tools. Users can easily submit jobs, manage files, and even use interactive applications directly from their browsers. One of the standout features of OOD is the ability to launch interactive applications, such as a virtual desktop environment. This feature allows users to work within the cluster as if they were on a local desktop, providing a user-friendly interface for managing tasks and running applications. For an overview of how the page works, and to read more details see our docs on [Navigating Open OnDemand](../cheaha/open_ondemand/index.md). After logging into OOD, users can access various applications designed for job management, file editing, and more.
 
 ###### Terminal (sbatch Jobs)
 
@@ -162,7 +162,7 @@ Slurm is our job queueing software used for submitting any number of job scripts
 
 ## Software
 
-A large variety of software is available on Cheaha as modules. To view and use these modules see [the following documentation](./software/modules.md).
+A large variety of software is available on Cheaha as <section:modules>. To view and use these modules see [the following documentation](./software/modules.md).
 
 For new software installation, please try searching [Anaconda](../workflow_solutions/using_anaconda.md) for packages first. If you still need help, please [send a support ticket](../help/support.md)
 
