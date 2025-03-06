@@ -13,11 +13,11 @@ UAB Long-term storage (LTS) is an S3 object-storage platform hosted at UAB. This
 When talking about S3 storage, some terms are different compared to a normal filesystem. This section is here to briefly explain some differences in case you go to other documentation and see these terms instead.
 
 - `object`: any unit (i.e. file) stored in LTS. Typical folders and files do not exist in S3.
-- `bucket`: The root which objects are stored in. Each allocation can have a certain number of buckets and each bucket can be shared individually with other users. Bucket names are unique across the entire LTS platform (see the section on [duplicate names](#avoiding-duplicate-names-for-buckets))
+- `bucket`: The root which objects are stored in. Each allocation can have a certain number of buckets and each bucket can be shared individually with other users. Bucket names are unique across the entire LTS platform (see the section on [duplicate names](#avoiding-duplicate-names-for-buckets)).
 - `prefix`: Used in place of a file path to an object, and so can be used to represent an object's place in a typical filesystem. Stored as metadata in each object, prefixes are used for searches in a bucket.
 - `policy`: sets permissions for whole buckets and individual objects. Policies allow or deny access to buckets for individual allocations. These are controlled by the owner of the bucket.
 - `access key`: a unique identifier given to each user for access to LTS, similar to a username. A user's access key is preset and given to them after allocation setup.
-- `secret key`: a credential string similar to a password given to each user for access to LTS. The secret key is preset and given to the user after allocation setup
+- `secret key`: a credential string similar to a password given to each user for access to LTS. The secret key is preset and given to the user after allocation setup.
 
 <!-- markdownlint-disable MD046 -->
 !!! danger

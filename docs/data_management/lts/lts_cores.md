@@ -46,7 +46,7 @@ For situations where data either needs to be transferred from multiple machines 
 
 ## Distributing to Data Owners
 
-While uploading and/or managing data for other groups, data in any buckets the Core owns will count against the quota for the Core. Data will need to be distributed in some way to the groups who own the data to free up storage in the Core's allocation once those data have been fully collected or analyzed. It is not currently possible to directly the change the owner of a bucket without submitting a ticket to research computing, however it is possible to set permissions on a bucket to allow the data owners to copy the data to a new bucket under their ownership. Once the data are copied, the original bucket can be moved onto a physical disc as an archive or deleted.
+While uploading and/or managing data for other groups, data in any buckets the Core owns will count against the quota for the Core. Data will need to be distributed in some way to the groups who own the data to free up storage in the Core's allocation once those data have been fully collected or analyzed. It is not currently possible to directly change the owner of a bucket without submitting a ticket to research computing. However, it is possible to set permissions on a bucket to allow the data owners to copy the data to a new bucket under their ownership. Once the data are copied, the original bucket can be moved onto a physical disc as an archive or deleted.
 
 Permission to copy data is granted via a [policy file](iam_and_policies.md). Policy files can be customized extensively, but a general file can be seen below.
 

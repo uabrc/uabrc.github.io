@@ -117,8 +117,8 @@ Policies files are essentially built as a series of statements expressly allowin
 
 Each statement is made up of a few fields:
 
-1. Sid: a short decription of what the statement is for (i.e. "bucket-access")
-1. Effect: "Allow" or "Deny" permissions based on how you want to alter permissions
+1. Sid: a short decription of what the statement is for (i.e. "bucket-access").
+1. Effect: "Allow" or "Deny" permissions based on how you want to alter permissions.
 1. Principal: Essentially a list of users to change permissions for. Have to formatted like `arn:aws:iam:::user/<lts_iam_name>`.
 1. Action: A list of commands to allow or deny permission for, depending on the Effect value.
 1. Resource: The name of the bucket or objects to apply permissions to. Must be formatted like `arn:aws:s3:::<bucket[/path/objects]>`.
