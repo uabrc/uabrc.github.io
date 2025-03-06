@@ -92,9 +92,9 @@ As of 2025-02-25, we offer CUDA modules up to version `12.6.0`. If you need a ne
 
 {{ read_csv('cheaha/slurm/res/cuda_conda_package_versions.csv', keep_default_na=False) }}
 
-If working with deep neural networks (DNNs, CNNs, LSTMs, LLMs, AI, etc.), you will need to load a `cuDNN` module as well. The `cuDNN` modules are built to be compatible with a sibling `CUDA` module and are named with the corresponding version. For example, if you are loading `CUDA/12.2.0`, you will also need to load `cuDNN/8.9.2.26-CUDA-12.2.0`.
+If you are working with deep neural networks (DNNs, CNNs, LSTMs, LLMs, AI, etc.), you will also need to load a `cuDNN`. The `cuDNN` modules are built to be compatible with a sibling `CUDA` module and are named with the corresponding `CUDA` version. For example, if you are loading `CUDA/12.2.0`, you will also need to load `cuDNN/8.9.2.26-CUDA-12.2.0`. Note the trailing `12.2.0`.
 
-As of 2025-02-25, we offer cuDNN modules compatible with CUDA up to version `12.3.0`. If you need a newer version, please use [Conda](../software/software.md#anaconda-on-cheaha) to install cuDNN software from the `conda-forge` channel. The packages and relevant commands to install into your newly created [environment](../../workflow_solutions/using_anaconda.md#create-an-environment) are available at <https://anaconda.org/conda-forge/cudnn>.
+As of 2025-02-25, we offer cuDNN modules for CUDA up to `12.3.0`. If you need a newer version, please use [Conda](../software/software.md#anaconda-on-cheaha) to install cuDNN software from the `conda-forge` channel. More details on how to install `CUDA` and `cuDNN` into your [environment](../../workflow_solutions/using_anaconda.md#create-an-environment) are available at <https://anaconda.org/conda-forge/cudnn>.
 
 ### CUDA Compute Capability and Known Issues
 
