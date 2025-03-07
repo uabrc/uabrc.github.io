@@ -108,6 +108,12 @@ For jobs such as RStudio and Jupyter, some modules like CUDA need to be loaded b
     In the OOD session, the module is automatically reset at the beginning of every session by default. Therefore, avoid using `module reset` in the 'Environment Setup' box. See [best practice for loading modules](../software/modules.md#best-practice-for-loading-modules) for more information.
 <!-- markdownlint-disable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
+
 #### Launching Interactive Sessions
 
 Once you have completed the form fields with the necessary parameter for the job, click on the blue `Launch` button. The interactive session will be initiated and placed into the scheduling queue, changing the job state to `Queued`.
