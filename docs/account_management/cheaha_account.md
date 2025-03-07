@@ -96,8 +96,8 @@ We're always happy to provide support for your Research Computing needs, you nee
 
 ### For Lab PIs and Core Directors
 
-- [No-cost storage offerings](../data_management/storage.md#what-type-of-storage-do-i-need)
-    - [GPFS](../data_management/storage.md#what-shared-storage-solutions-are-available): Hot storage, compute adjacent, directly accessible from Cheaha
+- [No-cost storage offerings](../data_management/index.md#what-type-of-storage-do-i-need)
+    - [GPFS](../data_management/index.md#what-shared-storage-solutions-are-available): Hot storage, compute adjacent, directly accessible from Cheaha
     - [LTS](../data_management/lts/index.md): Cool storage, large capacity
     - [Transfer data with Globus](../data_management/transfer/globus.md)
 - [Batch computing](../cheaha/slurm/introduction.md)

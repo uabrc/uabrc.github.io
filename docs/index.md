@@ -3,7 +3,7 @@
 The Research Computing System (RCS) provides a framework for sharing research data, accessing computing power, and collaborating with peers on campus and around the globe. Our goal is to construct a dynamic "network of services" that you can use to organize, study and share your research data. Research Computing provides services to researchers in these core areas:
 
 - _Data Analysis_: using the High Performance Computing (HPC) fabric [Cheaha](cheaha/getting_started.md) for batch data processing.
-- _Data Sharing_: supporting trusted information exchange to spark new ideas via our [Storage](data_management/storage.md) system.
+- _Data Sharing_: supporting trusted information exchange to spark new ideas via our [Storage](data_management/index.md) system.
 - _Application Development_: providing virtual machines and web-hosted development tools empowering researcher via our [cloud.rc](uab_cloud/index.md) fabric.
 
 <!-- markdownlint-disable MD046 -->
