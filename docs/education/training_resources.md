@@ -29,6 +29,10 @@ The Carpentries is a 501(c)3 non-profit organization dedicated to educating rese
 - [Community for Rigor](https://c4r.io/): a group of scientists from various universities and research institutions in the United States has collaborated to develop educational materials aimed at facilitating the teaching and learning of the principles and practices of scientific rigor.
 - [Rigor & Reproducibility Tool Repository](https://c4r.io/new-tool-repo/): Contains various tools related to rigor and reproducibility, along with links to relevant landing pages.
 
+### Data Management
+
+- [Globus Events Calendar](https://www.globus.org/events/)
+
 ### Other External Resources
 
 - [Rosalind.info](https://rosalind.info/problems/locations/): A platform for learning bioinformatics and programming.
