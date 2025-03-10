@@ -67,7 +67,7 @@ Please provide the following information. Missing information can delay allocati
 - **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
 - **Name of Shared Storage:** Please give us a generic name specific to your project/Lab.
 
-    - For labs, we recommend using the format `<BlazerID>_lab`, where `<BlazerID>` is the BlazerID of the Principal Investigator (PI). Alternatively, the PI may choose to use their first or last name instead of the BlazerID.
+    - For Labs, we recommend using the format `<BlazerID>_lab`, where `<BlazerID>` is the BlazerID of the Principal Investigator (PI). Alternatively, the PI may choose to use their first or last name instead of the BlazerID.
     - For Cores, we recommend using a shortened version of the Core name. For example: `core_facility_space`
     - For Project Storage, the name you choose will be used in the path `/data/project/<BlazerID>_lab` on Cheaha. Also, this name,`<BlazerID>_lab`, will be given to your shared LTS allocation.
 
@@ -133,6 +133,55 @@ Keep files well-organized and clearly named, back up regularly, and archive or d
 
 Periodically review permissions, clean up unused data, and follow institutional Storage and security policies.
 <!-- will be cross-linked to our new  data responsibilities page -->
+
+## Data Responsibilities and Procedures
+
+### Archival
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Archival of data is the responsibility of researchers using Cheaha.
+<!-- markdownlint-enable MD046 -->
+
+At this time, Research Computing does not offer a method of archival. If you have need for archival, please feel free to contact [Support](../help/support.md) to start a conversation.
+
+A possible external resource for archival is available through University of Oklahoma (OU) Supercomputing Center for Education and Research (OSCER). Please see the following link for details: <https://www.ou.edu/oscer/resources/ourrstore--ou---regional-research-store>.
+
+### Backups
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Backups of data are the responsibility of researchers using Cheaha.
+<!-- markdownlint-enable MD046 -->
+
+A good practice for backing up data is to use the 3-2-1 rule, as [recommended by US-CERT](https://www.cisa.gov/sites/default/files/publications/data_backup_options.pdf):
+
+- **3**: Keep **3** copies of important data. 1 primary copy for use, 2 backup copies.
+- **2**: Store backup copies on **2** different media types to protect from media-specific hazards.
+- **1**: Store **1** backup copy offsite, located geographically distant from the primary copy.
+
+What hazards can cause data loss?
+
+- Accidental file deletion.
+    - Example: mistakenly deleting the wrong files when using the [shell command](../workflow_solutions/shell.md#delete-files-and-directories-rm-rmdir) `rm`.
+    - Files deleted with `rm` or any similar command can not be recovered by us under any circumstances.
+    - Please restore from a backup.
+- Natural disasters.
+    - Examples: tornado; hurricane.
+    - All of our data sits in one geographical location at the UAB Technology Innovation Center (TIC).
+    - Plans to add geographical data redundancy are being considered.
+    - Please restore from an offsite backup.
+- Unusable backups.
+    - Examples: backup software bug; media destroyed; natural disaster at offsite location.
+    - Regularly test data restoration from all backups.
+
+How can I ensure data integrity?
+
+- Regularly back up your (and your lab's) data in an offsite location.
+- [S3 based long-term storage (LTS)](lts/index.md) can be used for short-term onsite backup.
+- Crashplan licenses are available for automatic offsite backups, please contact [Support](../help/support.md) for more information.
 
 ### HIPAA Compliance
 
