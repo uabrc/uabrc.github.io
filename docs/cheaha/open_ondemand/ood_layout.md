@@ -108,6 +108,12 @@ For jobs such as RStudio and Jupyter, some modules like CUDA need to be loaded b
     In the OOD session, the module is automatically reset at the beginning of every session by default. Therefore, avoid using `module reset` in the 'Environment Setup' box. See [best practice for loading modules](../software/modules.md#best-practice-for-loading-modules) for more information.
 <!-- markdownlint-disable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
+
 #### Launching Interactive Sessions
 
 Once you have completed the form fields with the necessary parameter for the job, click on the blue `Launch` button. The interactive session will be initiated and placed into the scheduling queue, changing the job state to `Queued`.
@@ -149,7 +155,13 @@ The Job ID and Session ID are important for diagnosing issues you may encounter 
 
 #### Debugging OOD Job Failures
 
-On occasion, interactive jobs created in OOD will crash on startup and cause the job card to disappear. Most of these failures are caused by improper environment setup prior to job creation. If you experiencing OOD job failures, retrieve the OOD job info using the following steps:
+On occasion, interactive jobs created in OOD will crash on startup and cause the job card to disappear. Most of these failures are caused by improper environment setup prior to job creation. To troubleshoot OOD applications, retrieving logs from failed jobs is essential. These logs are stored in `/data/user/$USER/ondemand/batch_connect/sys`, but each log directory is named using a hash value rather than a recognizable `JobID`, making it difficult to identify logs for a specific job after it has ended. To retrieve the correct log directory, use the following command:
+
+`sacct -j <jobid> -o jobid,workdir --parsable`
+
+This command retrieves the job's working directory, where the logs are stored. Replace `<jobid>` with the failed job ID when running the command.  Then, you can download the logs, zip them, and attach the ZIP file to a support ticket for our review. If you are unable to run the `sacct` command, please email <support@listserv.uab.edu>, and we will provide you with the necessary download link.
+
+Alternatively, you can create a new job and follow the steps below to retrieve and submit the log files.
 
 1. Create a new job with the same setup as the job that failed.
 1. When the job is in queue, click the link in the `Session ID` field in the job card before the job fails (see the image below for an example). This will open a file browser in a new tab.
@@ -158,7 +170,7 @@ On occasion, interactive jobs created in OOD will crash on startup and cause the
 
 1. Wait for the job to fail. Afterwards, refresh the file browser, select all of the files (do not include the `desktops` or `..` folders), and click `Download`.
 
-   ![!Files to be downloaded and attached to the email](./images/ood_failed_job.png)
+    ![!Files to be downloaded and attached to the email](images/ood_failed_job.png)
 
 1. Take all of the files that were downloaded, put them in a new folder, and zip the folder.
 
