@@ -70,7 +70,7 @@ Please do not try to attach executable files to tickets. If you have a legitimat
 
 ## How Do I Request Or Change Shared Storage?
 
-Please see our [Storage page](../data_management/storage.md) for more information.
+Please see our [Storage page](../data_management/index.md) for more information.
 
 ## How do I request new software installed?
 

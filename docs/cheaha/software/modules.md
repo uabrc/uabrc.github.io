@@ -156,6 +156,12 @@ When using modules in Cheaha, we recommend users to follow these best practices 
 
 Using `module reset` before loading modules separates what software is loaded in the working shell from the software loaded in the script shell. Be aware that forked processes (like scripts) and Slurm commands inherit the environment variables of the working shell, including loaded modules. Here is an example that shows module conflict between cuda11.8 and cuda11.4 versions that may lead to unexpected behavior or an erroneous output.
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
+
 ```bash
 # Working shell where you may try testing module load and your run script
 $ module load cuda11.4/toolkit
