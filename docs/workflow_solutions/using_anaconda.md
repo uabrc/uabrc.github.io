@@ -107,6 +107,12 @@ pip install \<package\>==version
 pip install -r packages.txt
 ```
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you see an output message like "Requirement already satisfied: $package in /home/$USER/.local/lib/python3.xx/site-packages". Please see steps [here](../cheaha/open_ondemand/ood_jupyter.md#pip-installs-packages-outside-of-environment) on how to address this.
+<!-- markdownlint-enable MD046 -->
+
 #### Finding Packages
 
 You may use the [Anaconda page](https://anaconda.org/) to search for packages on Anaconda, or use Google with something like `<package name> conda`. To find packages in PyPI, either use the [PyPI page](https://pypi.org/) to search, or use Google with something like `<package name> pip`.
