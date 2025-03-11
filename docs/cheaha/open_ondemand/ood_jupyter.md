@@ -113,7 +113,18 @@ When installing packages within a `conda` environment using `pip`, it's crucial 
 Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)
 ```
 
-For the above case, resolving errors involve deleting the `~/.local` directory.
+For the above case, resolving this error involves deleting the `~/.local` directory.
+
+```bash
+rm -rf /home/$USER/.local/lib/python3.xx/site-packages
+```
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Please note, using the `rm -rf` command would permanently delete the specified file or specified directory and its contents. Ensure you input the correct file path, it is safer to just copy the filepath found in the output "Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)".
+<!-- markdownlint-enable MD046 -->
+
+Replace `python3.xx` in the command with the appropriate Python version (e.g., python3.8).
 
 Here's an example of the correct procedure for installing `pip` packages within a `conda`:
 
