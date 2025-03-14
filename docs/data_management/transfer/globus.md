@@ -120,7 +120,7 @@ Below the "Transfer Settings", there are additional options available that you c
 
 ### Project Space Permissions
 
-Globus does not preserve permissions nor ownership when data is transferred, instead using whatever permissions are default at the target location, and making the owner the authenticated user who initiated the transfer. Typically this is not an issue, but may cause problems for [Project Storage directories](../storage.md#what-shared-storage-solutions-are-available). Please see our [Project Directory Permissions Section](../storage.md#project-directory-permissions) for more information.
+Globus does not preserve permissions nor ownership when data is transferred, instead using whatever permissions are default at the target location, and making the owner the authenticated user who initiated the transfer. Typically this is not an issue, but may cause problems for [Project Storage directories](../index.md#what-shared-storage-solutions-are-available). Please see our [Project Directory Permissions Section](../cheaha_gpfs_storage.md#project-directory-permissions) for more information.
 
 ### More Information
 
@@ -148,7 +148,7 @@ To use the UAB [LTS](../lts/index.md) Connector, [search for a collection/endpoi
 
 #### Adding LTS Allocation Credentials
 
-Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../lts/index.md#requesting-an-account) to the LTS endpoint. To do so, please follow the instructions given below.
+Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../lts/index.md#requesting-an-allocation) to the LTS endpoint. To do so, please follow the instructions given below.
 
 1. In your browser, navigate to <https://app.globus.org> and login using UAB SSO.
 1. Click "Collections" in the left-hand navigation pane.
@@ -331,3 +331,8 @@ It is NOT RECOMMENDED to make Globus Connect Personal collections public as this
 1. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the collection, or to cancel.
 
     ![!Delete Collection confirmation dialog banner.](./images/globus_107_shared_delete.png)
+
+## Where Can I Learn More About Globus?
+
+- See our [Tutorials](./tutorial/index.md)
+- Visit the [Globus Events Calendar](https://www.globus.org/events) for official learning opportunities.

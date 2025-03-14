@@ -156,6 +156,12 @@ When using modules in Cheaha, we recommend users to follow these best practices 
 
 Using `module reset` before loading modules separates what software is loaded in the working shell from the software loaded in the script shell. Be aware that forked processes (like scripts) and Slurm commands inherit the environment variables of the working shell, including loaded modules. Here is an example that shows module conflict between cuda11.8 and cuda11.4 versions that may lead to unexpected behavior or an erroneous output.
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
+
 ```bash
 # Working shell where you may try testing module load and your run script
 $ module load cuda11.4/toolkit
@@ -220,6 +226,14 @@ Use of these software packages without authorization may be a violation of the [
 !!! danger
 
     Versions of GSEA prior to `4.2.3` use a compromised version of log4j. Those versions are affected by a serious [remote code execution issue](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44832). Please transition your software to use versions of GSEA >= `4.2.3`.
+<!-- markdownlint-enable MD046 -->
+
+### Rsync
+
+<!-- markdownlint-disable MD046 -->
+!!! danger
+
+    Versions of Rsync prior to `3.4.0` contain [six known vulnerabilities](https://www.openwall.com/lists/oss-security/2025/01/14/3), some of which allow for arbitrary code execution. The risk to our system is minimal because of scoped user permissions. Nevertheless, Cheaha is now using version 3.4.1. Older versions have been removed, apologies for any inconvenience.
 <!-- markdownlint-enable MD046 -->
 
 ## Known Issues
