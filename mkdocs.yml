@@ -104,6 +104,7 @@ nav:
   - Data Management:
       - data_management/index.md
       - Cheaha (GPFS) Storage: data_management/cheaha_gpfs_storage.md
+      - Tutorial: data_management/tutorial/access_permission_project_allocation.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md

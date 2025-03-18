@@ -1,0 +1,9 @@
+"Transfer tool/methods",Properties
+`cp`,Respects ACLs and setgid.
+"`cp -a` / `cp -p`",Ignores ACLs and setgid.
+"`scp` / `rsync`","Behave like cp, ignoring ACLs".
+"`rclone copy`",Respects ACLs but removes `x` execute permission from files.
+`mv`,Ignores ACLs and setgid.
+"`mkdir` / `touch`",Follow ACLs and setgid correctly.
+Globus,Respects ACLs and setgid.
+"UAB LTS (S3 storage)","[Uses policy](../lts/iam_and_policies.md#how-do-i-grant-other-users-access-to-my-lts-allocation), ACLs don't apply".
