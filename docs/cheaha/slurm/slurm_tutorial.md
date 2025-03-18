@@ -309,12 +309,13 @@ In the examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count) a
 
 ##### Setup
 
-Before we run the Slurm array examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [4.2](#example-42-counting-words-in-multiple-files-using-a-slurm-job-array), we need to prepare the environment. This involves creating a directory and generating the input files. First, let us create a directory to create and store the input files:
+Before executing the Slurm array examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [4.2](#example-42-counting-words-in-multiple-files-using-a-slurm-job-array), we need to set up the environment. This includes creating a main directory, `example_4`, to store all job files and scripts. Within it, we will create two subdirectories: `input_files` to store the generated input files and `logs` to organize output and error logs. Let us create and structure these directories.
 
 ```bash
+$mkdir example_4
+$cd example_4
 $mkdir input_files
-
-$cd input_files
+$mkdir logs
 ```
 
 Save the following script as `generate_input.sh`. This script generates five random text files, each containing a different number of randomly selected words. The script creates a file with 1 to 10 randomly generated lines, where each line contains 5 to 20 randomly selected words from `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of lines and words per line. The input files along with its path are tracked in `file_list.txt`. For more details refer to [script concepts](../../workflow_solutions/shell.md#script-concepts) and [bash scripting example](../../cheaha/software/modules.md#best-practice-for-loading-modules).
@@ -337,12 +338,6 @@ You can execute the script as shown below. The first command `chmod` grants exec
 ```bash
 $chmod +x generate_input.sh
 $./generate_input.sh
-```
-
-Let us use these input files for [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [Example 4.2](#example-42-counting-words-in-multiple-files-using-a-slurm-job-array). You will also have to create a directory named `logs` to redirect the output and error files using the command:
-
-```bash
-$mkdir logs
 ```
 
 ##### Running the Slurm Array Job
