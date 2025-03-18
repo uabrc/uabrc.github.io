@@ -4,9 +4,9 @@ In this tutorial, we will guide you through how to manage access to files and di
 
 ## Prerequisites
 
-To get up to speed, you should have a basic understanding of how to use the shell/terminal, project directory structure, file/directory permissions (`chmod`), Access Control Lists (ACLs) (`setfacl`, `getfacl`), and data transfer tool/methods (`cp`, `scp`, `rsync`, `rclone`, `Globus`).
+To get up to speed, you should have a basic understanding of how to use the shell/terminal, project directory structure, Linux permissions (`chmod`, `chgrp`), Access Control Lists (ACLs) (`setfacl`, `getfacl`), and data transfer tools/methods (`cp`, `scp`, `rsync`, `rclone`, Globus).
 
-If you’re not familiar with these concepts, we recommend checking out our learning resources on:
+If you are not familiar with these concepts, we recommend checking out our learning resources on:
 
 - [Basic shell usage](../../workflow_solutions/shell.md).
 - Project Directory Structure.
@@ -45,7 +45,13 @@ Different data transfer tools/methods and their effect on file permissions and A
 
 {{ read_csv('data_management/res/transfer_tool_properties.csv', keep_default_na=False) }}
 
-Therefore,  we recommend users to considerations the below points when moving and copying files and directories.
+Therefore,  we recommend users to consider the below points when moving and copying files and directories in shared allocations.
 
 - Avoid `cp -a`, `cp -p`, `scp`, and `mv` for preserving ACLs.
 - Use `rclone`, and Globus  to copy/transferring data, as they respects ACLs.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Before making permission changes, ensure that there are no special cases that need to be preserved within a directory and its files.
+<!-- markdownlint-enable MD046 -->
