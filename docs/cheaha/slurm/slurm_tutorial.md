@@ -302,14 +302,14 @@ $ sacct -j 27101430
 
 #### Example 4.1: Slurm Array Job for Line-by-Line Word Count
 
-In the examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [4.2](#example-42-counting-words-in-multiple-files-using-a-slurm-job-array), we will explore how to use a Slurm Array Job to process text files in parallel. To keep things organized, we divide the process into two main sections:
+In the examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count), [4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files-dynamically-using-a-slurm-job-array), and [4.3](#example-43-counting-words-in-multiple-files-from-a-file-list-using-a-slurm-job-array), we will explore how to use a Slurm Array Job to process text files in parallel. To keep things organized, we divide the process into two main sections:
 
 (i) Setup: This section covers creating the necessary directories and input files. Since this setup is common for both examples, we will do it once before moving on.
 (ii) Running the Slurm Array Job: Here, we focus on understanding and executing an example Slurm array job.
 
 ##### Setup
 
-Before executing the Slurm array examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [4.2](#example-42-counting-words-in-multiple-files-using-a-slurm-job-array), we need to set up the environment. This includes creating a main directory, `example_4`, to store all job files and scripts. Within it, we will create two subdirectories: `input_files` to store the generated input files and `logs` to organize output and error logs. Let us create and structure these directories.
+Before executing the Slurm array examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files-dynamically-using-a-slurm-job-array) and [4.3](#example-43-counting-words-in-multiple-files-from-a-file-list-using-a-slurm-job-array), we need to set up the environment. This includes creating a main directory, `example_4`, to store all job files and scripts. Within it, we will create two subdirectories: `input_files` to store the generated input files and `logs` to organize output and error logs. Let us create and structure these directories.
 
 ```bash
 $mkdir example_4
