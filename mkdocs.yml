@@ -65,6 +65,7 @@ plugins:
         cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
         contributor_guide.md: contributing/contributor_guide.md
+        data_management/cheaha_gpfs_storage.md: data_management/cheaha_storage_gpfs/index.md
         data_management/LTS/lts.md: data_management/lts/index.md
         data_management/LTS/sharing.md: data_management/lts/iam_and_policies.md
         data_management/lts/lts.md: data_management/lts/index.md
@@ -103,7 +104,8 @@ nav:
       - Gitlab Account: account_management/gitlab_account.md
   - Data Management:
       - data_management/index.md
-      - Cheaha (GPFS) Storage: data_management/cheaha_gpfs_storage.md
+      - Cheaha Storage (GPFS):
+          - data_management/cheaha_storage_gpfs/index.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
