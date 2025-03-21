@@ -43,7 +43,7 @@ There are some known issues surrounding project directory permissions when files
 For PIs and project administrators:
 
 - Please educate your staff and collaborators about the above permission setups, and any additional ACLs you may have in place, to minimize future challenges.
-- If you have issues with permissions, please contact [Support](../index.md#how-to-contact-us). We can guide you through [Managing Permissions](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../workflow_solutions/shell.md#manage-group-ownership-chgrp).
+- If you have issues with permissions, please contact [Support](../help/support.md). We can guide you through [Managing Permissions](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../workflow_solutions/shell.md#manage-group-ownership-chgrp).
 
 ## Scratch
 
@@ -173,7 +173,7 @@ Quota reports are updated nightly, so they may be out of date if you move data a
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    Running out of Cheaha Storage space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](lts/index.md).
+    Running out of Cheaha Storage space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](./lts/index.md).
 <!-- markdownlint-enable MD046 -->
 
 ### Scratch Retention Policy
