@@ -316,9 +316,10 @@ $mkdir example_4
 $cd example_4
 $mkdir input_files
 $mkdir logs
+$cd input_files
 ```
 
-Save the following script as `generate_input.sh`. This script generates five random text files, each containing a different number of randomly selected words. The script creates a file with 1 to 10 randomly generated lines, where each line contains 5 to 20 randomly selected words from `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of lines and words per line. The input files along with its path are tracked in `file_list.txt`. For more details refer to [script concepts](../../workflow_solutions/shell.md#script-concepts) and [bash scripting example](../../cheaha/software/modules.md#best-practice-for-loading-modules).
+The next step involves generating input files using a pseudo-random text generation script. Save the following script as `generate_input.sh` inside the `input_files` folder. This script generates five random text files, each containing a different number of randomly selected words. The script creates a file with 1 to 10 randomly generated lines, where each line contains 5 to 20 randomly selected words from `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of lines and words per line. The input files along with its path are tracked in `file_list.txt`. For more details refer to [script concepts](../../workflow_solutions/shell.md#script-concepts) and [bash scripting example](../../cheaha/software/modules.md#best-practice-for-loading-modules).
 
 ```bash
 #!/bin/bash
@@ -329,8 +330,9 @@ for i in {1..5}; do
         shuf -n $num_words /usr/share/dict/words | paste -s -d " "
     done > "random_file_$i.txt"
 done
-# Use globbing to get all generated files and save them to file_list.txt
-ls random_file_*.txt  > file_list.txt
+
+# Use find and globbing to list all generated files in the current directory and subdirectories. The absolute path of each file is tracked in the file_list.txt
+find $(pwd) -type f -name "random_file_*.txt" | sort > file_list.txt
 ```
 
 You can execute the script as shown below. The first command `chmod` grants execute permission to the script so it can be run directly. The second command runs the script to generate the required input files. For more details on usage of bash scripting, refer to [Script Concepts](../../workflow_solutions/shell.md/#script-concepts)
@@ -355,12 +357,15 @@ This SLURM job script processes a text file line by line using an array job. Sav
 #SBATCH --error=logs/%x_%A_%a.err   ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
 
 ### Define the input file, for instance, random_file_2.txt
-INPUT_FILE="$HOME/input_files/random_file_2.txt"
+INPUT_FILE="$HOME/example_4/input_files/random_file_2.txt"
 
-### `sed` is a shell command and stream editor for manipulating text. Here, `sed` reads $INPUT_FILE and extracts the line corresponding to SLURM_ARRAY_TASK_ID.
+### `sed` is a shell command and stream editor for manipulating text.
+### Here, `sed` reads $INPUT_FILE and extracts the line corresponding to SLURM_ARRAY_TASK_ID.
 LINE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" "$INPUT_FILE")
 
-### The command `wc -w` counts the number of words in the extracted line ($LINE), while echo "$LINE" prints the line of text. The pipe (|) then passes this text from echo "$LINE" to wc -w, which counts the words in the line for each task.
+### The command `wc -w` counts the number of words in the extracted line ($LINE),
+### while echo "$LINE" prints the line of text. The pipe (|) then passes this text from echo "$LINE" to
+### wc -w, which counts the words in the line for each task.
 WORD_COUNT=$(echo "$LINE" | wc -w)
 echo "Task $SLURM_ARRAY_TASK_ID: $WORD_COUNT words"
 ```
@@ -391,7 +396,50 @@ Task 2: 19 words
 Task 3: 6 words
 ```
 
-#### Example 4.2: Counting Words in Multiple Files Using a Slurm Job Array
+#### Example 4.2: Dynamically Reading and Counting Words in Multiple Files dynamically Using a Slurm Job Array
+
+```bash linenums="1"
+#!/bin/bash
+#SBATCH --job-name=file_word_count   ### Name of the job
+#SBATCH --cpus-per-task=1            ### Number of Tasks per CPU
+#SBATCH --mem=4G                     ### Memory required, 4 gigabyte
+#SBATCH --partition=express          ### Cheaha Partition
+#SBATCH --time=00:15:00              ### Estimated Time of Completion, 15 minutes
+#SBATCH --output=logs/%x_%A_%a.out   ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --error=logs/%x_%A_%a.err    ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
+
+### Define working directory
+WORKDIR="$HOME/example_4/input_files"
+
+### Find all files in the working directory ($WORKDIR) that match the pattern "random_file_*.txt"
+### Pass the list of these files to the 'sort' command via the pipe ('|')
+### The sorted file paths are then captured and stored in the FILES array.
+FILES=($(find "$WORKDIR" -type f -name "random_file_*.txt" | sort))
+
+### Selects the file corresponding to the current Slurm Array task ID.
+### The task IDs are assigned starting from 1, but in bash, array indexing starts from 0.
+### To align the task ID with bash’s 0-based array indexing, we subtract 1 from the task ID.
+FILE="${FILES[$SLURM_ARRAY_TASK_ID-1]}"
+
+### Extract the directory part of the file path. This will give the full directory path of the selected file.
+DIRNAME=$(dirname "$FILE")
+
+### Extract the base name of the file (without the extension)
+BASENAME=$(basename "$FILE" .txt)
+
+### Check if file exists and count words from file
+if [[ -f "$FILE" ]]; then
+    ### If the file exists, count the number of words in the file using 'wc -w'
+    ### The result is saved to a file with the same name as the original file,
+    ### but with a '.wordcount' extension in the same directory as the original file.
+    wc -w "$FILE" > "$DIRNAME/${BASENAME}.wordcount"
+    echo "Processed $FILE"
+else
+    echo "File not found: $FILE"
+fi
+```
+
+#### Example 4.3: Counting Words in Multiple Files from a File List Using a Slurm Job Array
 
 This example job script is designed to count the number of words in multiple files in parallel using a job array. It utilizes the same input files from [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count) as described in the [Setup](#setup) section. Copy the following SLURM array job script to count the number of words in the five generated files in parallel. Save it as `file_word_count.job`.
 
