@@ -23,9 +23,9 @@ When requesting a job using `sbatch`, you will need to include the Slurm flag `-
 
 ## Ensuring IO Performance With A100 GPUs
 
-If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to the [local scratch](../../data_management/cheaha_gpfs_storage.md#local-scratch) at `/local/$USER/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Network file mounts, such as `$USER_SCRATCH`, `/scratch/`, `/data/user/` and `/data/project/`, do not have sufficient bandwidth to keep the GPU busy. So, your processing pipeline will slow down to network speeds, instead of GPU speeds.
+If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to the [local scratch](../../data_management/cheaha_storage_gpfs/index.md#local-scratch) at `/local/$USER/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Network file mounts, such as `$USER_SCRATCH`, `/scratch/`, `/data/user/` and `/data/project/`, do not have sufficient bandwidth to keep the GPU busy. So, your processing pipeline will slow down to network speeds, instead of GPU speeds.
 
-Please see our [Local Scratch Storage section](../../data_management/cheaha_gpfs_storage.md#local-scratch) for more details and an example script.
+Please see our [Local Scratch Storage section](../../data_management/cheaha_storage_gpfs/index.md#local-scratch) for more details and an example script.
 
 ### Open OnDemand
 
