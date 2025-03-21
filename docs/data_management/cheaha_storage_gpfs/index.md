@@ -22,7 +22,7 @@ Every project directory has a group that is unique system-wide, and not used any
     Some early group names may not match their project directory, but should be reasonably close.
 <!-- markdownlint-enable MD046 -->
 
-Members of the project directory group have permissions to access that project directory. Adding and removing members from the project directory group is how Research Computing controls access to, and ownership of, project directories. We do not use access control lists (ACLs) to manage permissions ourselves, but use of ACLs is allowed and encouraged for PIs and project administrators who want more fine-grained control. Please see our [section on ACLs](../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl) for more information.
+Members of the project directory group have permissions to access that project directory. Adding and removing members from the project directory group is how Research Computing controls access to, and ownership of, project directories. We do not use access control lists (ACLs) to manage permissions ourselves, but use of ACLs is allowed and encouraged for PIs and project administrators who want more fine-grained control. Please see our [section on ACLs](../../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl) for more information.
 
 Be default, project space permissions are set up in the following way:
 
@@ -43,7 +43,7 @@ There are some known issues surrounding project directory permissions when files
 For PIs and project administrators:
 
 - Please educate your staff and collaborators about the above permission setups, and any additional ACLs you may have in place, to minimize future challenges.
-- If you have issues with permissions, please contact [Support](../help/support.md). We can guide you through [Managing Permissions](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../workflow_solutions/shell.md#manage-group-ownership-chgrp).
+- If you have issues with permissions, please contact [Support](../../help/support.md). We can guide you through [Managing Permissions](../../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../../workflow_solutions/shell.md#manage-group-ownership-chgrp).
 
 ## Scratch
 
@@ -77,11 +77,11 @@ At this time you will need to make local scratch subdirectories yourself with `m
 
 Some known examples of tasks benefiting from local scratch, not an exhaustive list:
 
-- AI and deep learning training on [A100 GPUs](../cheaha/slurm/gpu.md).
+- AI and deep learning training on [A100 GPUs](../../cheaha/slurm/gpu.md).
 - Large-scale genome annotation.
 - Reading/writing hundreds of thousands or more files in a single job.
 
-If you are using `amperenodes` and the A100 GPUs, then you should use local scratch for your data to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor GPU performance. For more information please see [Ensuring IO Performance With A100 GPUs](../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
+If you are using `amperenodes` and the A100 GPUs, then you should use local scratch for your data to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor GPU performance. For more information please see [Ensuring IO Performance With A100 GPUs](../../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -89,7 +89,7 @@ If you are using `amperenodes` and the A100 GPUs, then you should use local scra
     Be sure to clean up `/local/$USER/$SLURM_JOB_ID` after your job is complete!
 <!-- markdownlint-enable MD046 -->
 
-An example script to automate this process is shown below. This example shows how you can wrap your workflow with deployment and cleanup of local scratch. The following sample script only applies if you are running a small number of jobs (less than one hundred). If you need to run many jobs all using the same data, such as with a large array using the `--array` flag, please [contact us](../help/support.md) about preloading the data onto your desired nodes. This will avoid the per-job overhead of copying and deleting files.
+An example script to automate this process is shown below. This example shows how you can wrap your workflow with deployment and cleanup of local scratch. The following sample script only applies if you are running a small number of jobs (less than one hundred). If you need to run many jobs all using the same data, such as with a large array using the `--array` flag, please [contact us](../../help/support.md) about preloading the data onto your desired nodes. This will avoid the per-job overhead of copying and deleting files.
 
 ```bash
 #!/bin/bash
@@ -121,7 +121,7 @@ rm -rf "$TMPDIR"
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Using `/local/$USER/$SLURM_JOB_ID` with MPI jobs takes additional consideration. If you do not need MPI, please use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node. If you need the performance of `/local/$USER/$SLURM_JOB_ID` in an MPI job, please contact [Support](../help/support.md) and read about the Slurm commands `sbcast` and `sgather`.
+    Using `/local/$USER/$SLURM_JOB_ID` with MPI jobs takes additional consideration. If you do not need MPI, please use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node. If you need the performance of `/local/$USER/$SLURM_JOB_ID` in an MPI job, please contact [Support](../../help/support.md) and read about the Slurm commands `sbcast` and `sgather`.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
@@ -134,11 +134,11 @@ rm -rf "$TMPDIR"
 
 #### What If My Data Won't Fit In Local Scratch?
 
-Be sure that your files will fit in `/local/` before starting. You can determine disk size and current usage using `df -h | grep "local"`. Most nodes have 1.0 TB total capacity, while the `amperenodes` have 6.0 TB. If you data won't fit in the current usage, or on the drives, please [Contact Us](../help/support.md). We can work with you to identify a solution.
+Be sure that your files will fit in `/local/` before starting. You can determine disk size and current usage using `df -h | grep "local"`. Most nodes have 1.0 TB total capacity, while the `amperenodes` have 6.0 TB. If you data won't fit in the current usage, or on the drives, please [Contact Us](../../help/support.md). We can work with you to identify a solution.
 
 #### What If I Have A Large Amount of Data for Local Scratch?
 
-If you have a large amount of data but each job takes very little time to run, performance can be further improved by avoiding frequent data copies and deletions. In these cases, preloading the data onto local scratch only once and then reusing it makes more sense. If this is the case for you, or you think you might benefit, please [Contact Us](../help/support.md) and we can discuss creating a temporary node reservation to allow one-time data preloading.
+If you have a large amount of data but each job takes very little time to run, performance can be further improved by avoiding frequent data copies and deletions. In these cases, preloading the data onto local scratch only once and then reusing it makes more sense. If this is the case for you, or you think you might benefit, please [Contact Us](../../help/support.md) and we can discuss creating a temporary node reservation to allow one-time data preloading.
 
 ## Temporary Files (`/tmp/` directory)
 
@@ -166,14 +166,14 @@ Software known to use `/tmp/` by default with no known workaround:
 
 - **Individual Storage**: use the command `quota-report` to see usage in `/data/user/$USER` and `/scratch/$USER`.
 - **Project Storage**: use the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name, i.e., `/data/project/<project>`. Be sure to _not_ use a trailing slash. Use `proj-quota-report mylab` not `proj-quota-report mylab/`.
-- **Long-Term Storage**: please contact [Support](../help/support.md).
+- **Long-Term Storage**: please contact [Support](../../help/support.md).
 
 Quota reports are updated nightly, so they may be out of date if you move data around before running these commands.
 
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    Running out of Cheaha Storage space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](./lts/index.md).
+    Running out of Cheaha Storage space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](../lts/index.md).
 <!-- markdownlint-enable MD046 -->
 
 ### Scratch Retention Policy

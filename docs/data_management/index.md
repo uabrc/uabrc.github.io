@@ -10,7 +10,7 @@ There are multiple locations for data storage both on and off Cheaha each with a
 
 ## What Individual Storage Solutions are Available?
 
-Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about [Long-Term Storage](./lts/index.md) and [User Data and Home Directories](./cheaha_storage_gpfs.md#user-data-and-home-directories).
+Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about [Long-Term Storage](./lts/index.md) and [User Data and Home Directories](./cheaha_storage_gpfs/index.md#user-data-and-home-directories).
 
 ### How Do I Request Individual Cheaha (`GPFS`) Storage?
 
@@ -22,9 +22,9 @@ To request individual Long-Term Storage, please first read and understand how [L
 
 ## What Shared Storage Solutions are Available?
 
-Shared Storage is available via two services. We have [Project Storage](./cheaha_storage_gpfs.md#project-directory) (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
+Shared Storage is available via two services. We have [Project Storage](./cheaha_storage_gpfs/index.md#project-directory) (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
 
-[Project Storage](./cheaha_storage_gpfs.md#project-directory) is best-suited for changing or dynamic data. Specifically::
+[Project Storage](./cheaha_storage_gpfs/index.md#project-directory) is best-suited for changing or dynamic data. Specifically::
 
 - Data needing/undergoing analysis
 - Exploratory data
@@ -91,7 +91,7 @@ To request changes in Shared Storage membership, please contact [Support](../hel
 
 ### How Can I Get A Larger `/data/project/` (GPFS) Allocation?
 
-At this time, due to constraints on total GPFS storage, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [User Scratch](./cheaha_storage_gpfs.md#user-scratch) for temporary storage of up to 100 TB of data for use during analysis.
+At this time, due to constraints on total GPFS storage, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [User Scratch](./cheaha_storage_gpfs/index.md#user-scratch) for temporary storage of up to 100 TB of data for use during analysis.
 
 If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md). Please also note that project storage is not just for a single project only, it is meant as a storage for multiple projects.
 
@@ -114,7 +114,7 @@ If you have additional questions _or_ wish to discuss further, please [Contact S
 
 One alternative we recommend is breaking your dataset into batches. A generic, template workflow might be something like below.
 
-- Copy a batch of data from LTS, or an internet source, to [User Scratch](./cheaha_storage_gpfs.md#user-scratch).
+- Copy a batch of data from LTS, or an internet source, to [User Scratch](./cheaha_storage_gpfs/index.md#user-scratch).
 - Perform analyses on copied data in User Scratch.
 - Store intermediate or final results in `/data/project/` or LTS.
 - Delete copied data from User Scratch.
