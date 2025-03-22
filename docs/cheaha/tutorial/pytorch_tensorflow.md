@@ -38,24 +38,12 @@ The instructions below, provide a recommended step by step guide to creating and
 
 ## Installing PyTorch Using the Terminal
 
-There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilising only CPUs. GPUs generally improve project compute speeds and are preferred. For both instances of pytorch, please follow these steps;
+There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilizing only CPUs. The use of GPUs improve compute speeds and are preferred. For both instances of pytorch, please follow these steps;
 
-1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in these links.
-
-1. Access the terminal following the steps [here](#installing-anaconda-environments-using-the-terminal).
-
-<!-- markdownlint-disable MD046 -->
-!!! note
-
-    When installing packages, modules and libraries into environments, remember to also install `ipykernel` using `conda install ipykernel`. This way your activated environment would appear in the list of kernels in your Jupyter Notebook.
-
-<!-- markdownlint-enable MD046 -->
-
-For a correct installation of pytorch, we have to ensure some conditions are met. See partition [docs](../hardware.md#details) for a guide. One of such conditions, is to load CUDA toolkit using the below command in your environment setup form (see image below).
+1. For a correct installation of pytorch using GPUs, we have to ensure some conditions are met. See partition [docs](../hardware.md#details) for a guide. One of such conditions, is to load the CUDA toolkit using the below command in your environment setup form (see image below).
 
 ```bash
 module load CUDA/11.8.0
-
 ```
 
 ![!load CUDA](images/module_load_cuda.png)
@@ -68,18 +56,27 @@ module load CUDA/11.8.0
 
 ![!nvidia-smi output](images/CudaVersion.png)
 
-When your job has been created and your environment created and activated from the terminal (see above [instructions](../../workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
+1. Access the terminal following the steps [here](#installing-anaconda-environments-using-the-terminal).
+
+1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in these links.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    When installing packages, modules and libraries into environments, remember to also install `ipykernel` using `conda install ipykernel`. This way your activated environment would appear in the list of kernels in your Jupyter Notebook. We have a [section](../../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments) in our docs detailing how to switch conda environments.
+
+<!-- markdownlint-enable MD046 -->
+
+1. When your job has been created and your environment created and activated from the terminal (see above [instructions](../../workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
 
 ```bash
 conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia
-
 ```
 
-This commands will install a GPU compatible PyTorch version into your environment. To verify PyTorch is installed, and to see what version you have installed in your environment, use the below command.
+These commands will install a GPU compatible PyTorch version into your environment. To verify PyTorch is installed, and to see what version you have installed in your environment, use the below command.
 
 ```bash
 conda list | grep "torch"
-
 ```
 
 You should get an output like the below image.
@@ -98,7 +95,6 @@ import torch
 print(torch.cuda.is_available())
 x = torch.cuda.current_device()
 print(torch.cuda.get_device_name(x))
-
 ```
 
 ![!PyTorch Jupyter Notebook Output](images/pytorch_output.png)
@@ -108,25 +104,25 @@ print(torch.cuda.get_device_name(x))
 1. Create a new environment that is compatible with supported tensorflow versions, use the below command to do this. For this tutorial we will use Python 3.11.
 
     ```bash
-
     conda create -n tensorflow python=3.11
-
     ```
 
-1. The TensorFlow CPU and GPU versions requires pip to be up-to-date, to install and upgrade pip to the latest version use the below command.
+1. Activate the conda environment created in Step 1.
 
     ```bash
+    conda activate tensorflow
+    ```
 
+1. The TensorFlow CPU and GPU versions requires pip to be up-to-date, to install and upgrade pip to the latest version, within your conda environment use the below command. See our [section](../../cheaha/open_ondemand/ood_jupyter.md#pip-installs-packages-outside-of-environment), on why installing pip within a conda environment is advised.
+
+    ```bash
     pip install --upgrade pip
-
     ```
 
 1. Install TensorFlow with pip
 
     ```bash
-
     pip install tensorflow[and-cuda]
-
     ```
 
 The image below shows an output that the TensorFlow library will utilize the available GPU.
