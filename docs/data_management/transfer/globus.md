@@ -19,7 +19,7 @@ For more detailed information on High Assurance please see the Globus official p
 [Globus Connect Personal](https://www.globus.org/globus-connect-personal) is software meant to be installed on local machines such as laptops, desktops,
 workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on [MacOS](https://docs.globus.org/globus-connect-personal/install/mac/), [Linux](https://docs.globus.org/globus-connect-personal/install/linux/) and [Windows](https://docs.globus.org/globus-connect-personal/install/windows/).
 
-To verify your installation is complete, please visit <https://app.globus.org> and log in. Click "Collections" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the collection you just created.
+To verify your installation is complete, please visit <https://app.globus.org> and log in. Click "Collections" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the guest collection you just created.
 
 ## Managing Identities
 
@@ -231,7 +231,7 @@ Globus can create buckets. By default, buckets are created without a policy, mea
 
 ## Using Bookmarks
 
-To save a bookmark, use the File Manager interface to select an collection and navigate to a path on that collection. Then click the "Create Bookmarks" button as shown below.
+To save a bookmark, use the File Manager interface to select a collection and navigate to a path on that collection. Then click the "Create Bookmarks" button as shown below.
 
 ![!Globus File Manager interface with mouse pointer hovering over Bookmark icon.](./images/globus_060_create_bookmark.png)
 
@@ -245,11 +245,11 @@ To manage bookmarks, click on the Collection search bar, then select the Bookmar
     It is not possible to create bookmarks within High Assurance Endpoints.
 <!-- markdownlint-enable MD046 -->
 
-## Managing Shared Collections from a Globus Connect Personal Endpoint
+## Managing Guest Collections from a Globus Connect Personal Endpoint
 
-It is NOT RECOMMENDED to make Globus Connect Personal collections public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal collection than for a shared collection. Shared collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use shared collections!
+It is NOT RECOMMENDED to make Globus Connect Personal guest collections public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal collection than for a guest collection. Guest collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use guest collections!
 
-### Creating a Shared Collection
+### Creating a Guest Collection
 
 1. Click "Collections" in the left-hand navigation pane.
 
@@ -270,13 +270,13 @@ It is NOT RECOMMENDED to make Globus Connect Personal collections public as this
     ![!Create New Guest Collection form.](./images/globus_102_shared_collection_form.png)
 
     1. Manually enter a path or click the Browse button to select a folder.
-    1. Give a short but memorable name for your shared collection. This information will be useful for your collaborators.
-    1. Optionally fill in a more detailed description of the shared collection for your records.
+    1. Give a short but memorable name for your guest collection. This information will be useful for your collaborators.
+    1. Optionally fill in a more detailed description of the guest collection for your records.
     1. Optionally fill in searchable keywords.
     1. Other additional options include, information link, contact email, organization/department.
     1. Default directory, if left empty, is equivalent to the first field "Directory".
 
-1. Click "Create Collection" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged shared collection. Any further references to "an endpoint" will be about the newly created, shared collection.
+1. Click "Create Collection" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged guest collection. Any further references to "an endpoint" will be about the newly created, guest collection.
 
 1. Make sure you are on the "Permissions" tab. You should see a permissions table with your name in it.
 
@@ -312,11 +312,9 @@ It is NOT RECOMMENDED to make Globus Connect Personal collections public as this
     1. If adding users, optionally enter a message so they know why they are being added.
     1. Select permissions. Read is automatically selected and cannot be changed. Write permissions are optional.
 
-1. Click "Add Permission" to add permissions for these users or groups.
-    You will be returned to the page for the shared collection and should
-    be on the "Permissions" tab and should see the user or group in the table.
+1. Click "Add Permission" to add permissions for these users or groups. You will be returned to the page for the guest collection and should be on the "Permissions" tab and should see the user or group in the table.
 
-### Deleting a Shared Collection
+### Deleting a Guest Collection
 
 1. Click "Collections" in the left-hand navigation pane, then
 
@@ -328,7 +326,7 @@ It is NOT RECOMMENDED to make Globus Connect Personal collections public as this
 
     ![!Globus Endpoints page with Shared Collection Overview.](./images/globus_106_shared_collection_overview.png)
 
-1. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the collection, or to cancel.
+1. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the guest collection, or to cancel.
 
     ![!Delete Collection confirmation dialog banner.](./images/globus_107_shared_delete.png)
 

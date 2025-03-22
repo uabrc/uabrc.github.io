@@ -203,17 +203,17 @@ Proceed on to learn how to transfer between Collections.
 
 ## How Do I Transfer between a Collection and Cheaha?
 
-Please use the following instructions to transfer data from a shared Collection to [Cheaha GPFS](../../index.md#what-type-of-storage-do-i-need). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
+Please use the following instructions to transfer data from a Collection to [Cheaha GPFS](../../index.md#what-type-of-storage-do-i-need). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
 
-The direction of transfer may also be reversed to transfer data from Cheaha to the shared Collection. Note that some shared Collections may not allow you to transfer data back, such as some of those provided by Research Cores.
+The direction of transfer may also be reversed to transfer data from Cheaha to a Collection. Note that some Collections may not allow you to transfer data back, such as some of those provided by Research Cores.
 
 These instructions can be generalized to any two Collections you have access to on Globus.
 
 1. [Log in to Globus using your credentials](#how-do-i-get-onto-the-globus-web-app).
 
-1. Find a shared Collection [by filtering](#how-do-i-find-collections-shared-with-me) or [by searching](#how-do-i-search-for-collections-by-name) in the left side Collection Search bar.
+1. Find the Collection [by filtering](#how-do-i-find-collections-shared-with-me) or [by searching](#how-do-i-search-for-collections-by-name) in the left side Collection Search bar.
 
-1. Once you have selected the shared Collection you wish to transfer data from, repeat the process to [search](#how-do-i-search-for-collections-by-name) for a Cheaha Collection in the Collection Search bar on the right side of the file manager page. Search for "Cheaha cluster" to find them.
+1. Once you have selected the Collection you wish to transfer data from, repeat the process to [search](#how-do-i-search-for-collections-by-name) for a Cheaha Collection in the Collection Search bar on the right side of the file manager page. Search for "Cheaha cluster" to find them.
 
     Pay close attention in choosing which of the two you need. Choosing incorrectly could lead to slow transfers. Answer the following questions to help you decide. Is the first Collection you selected...
 
@@ -222,21 +222,21 @@ These instructions can be generalized to any two Collections you have access to 
     - ...at a different institution? Select "off-campus".
     - ...on a computer on a home network? Select "off-campus".
 
-1. When you select a Cheaha Collection, or any other High Assurance (HA) Collection or Collection, you will be prompted to re-authenticate. Click the Continue button to do so, then select your UAB email address.
+1. When you select a Cheaha Collection, or any other High Assurance (HA) Collection or Guest Collection, you will be prompted to re-authenticate. Click the Continue button to do so, then select your UAB email address.
 
     ![High Assurance request for reauthentication.](./images/common/ha-authenticate.png)
 
     ![Identity selection showing a UAB email address.](./images/common/select-identity.png)
 
-1. At this point, your file manager page should look something like the following image. At this point, both Collection Search bars should have a Collection or Collection filled in. The left side should be the Collection you wish to transfer from. The right side should be a Cheaha Collection. You should see files and folders on both sides.
+1. At this point, your file manager page should look something like the following image. At this point, both Collection Search bars should have a Collection filled in. The left side should be the Collection you wish to transfer from. The right side should be a Cheaha Collection. You should see files and folders on both sides.
 
-    ![File Manager page showing a shared Collection and Cheaha Collection.](./images/gi-transfer-collection-to-cheaha/005-ready-to-select.png)
+    ![File Manager page showing a Collection and Cheaha Collection.](./images/gi-transfer-collection-to-cheaha/005-ready-to-select.png)
 
-1. Locate the source path on the shared Collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.
+1. Locate the path on the source Collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.
 
 1. Repeat the process on the Cheaha Collection side to locate the destination path on the Cheaha Collection side.
 
-1. Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.
+1. Select the file and folders you wish to transfer on the source Collection side. Do so by clicking the checkboxes next to the file and folder names.
 
     ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-collection-to-cheaha/008-selection.png)
 
@@ -255,33 +255,33 @@ From here you can proceed to other related tutorials to initiate other transfers
 
 ## How Do I Transfer between a Collection and LTS?
 
-Please use the following instructions to transfer data from a shared Collection to a [bucket on LTS](../../lts/index.md). These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.
+Please use the following instructions to transfer data from a Collection to a [bucket on LTS](../../lts/index.md). These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.
 
-The direction of transfer may also be reversed to transfer data from LTS to the shared Collection. Note that some shared Collections may not allow you to transfer data back, such as some of those provided by Research Cores.
+The direction of transfer may also be reversed to transfer data from LTS to the destination Collection. Note that some Collections may not allow you to transfer data back, such as some of those provided by Research Cores.
 
-These instructions can be generalized to any two Collections or Collections you have access to on Globus.
+These instructions can be generalized to any two Collections you have access to on Globus.
 
 1. [Log in to Globus using your credentials](#how-do-i-get-onto-the-globus-web-app).
 
-1. Find a shared Collection [by filtering](#how-do-i-find-collections-shared-with-me) or [by searching](#how-do-i-search-for-collections-by-name) in the left side Collection Search bar.
+1. Find a Collection [by filtering](#how-do-i-find-collections-shared-with-me) or [by searching](#how-do-i-search-for-collections-by-name) in the left side Collection Search bar.
 
 1. Once you have selected the shared Collection you wish to transfer data from, repeat the process to [search](#how-do-i-search-for-collections-by-name) for the LTS Collection in the Collection Search bar on the right side of the file manager page. Search for "UAB LTS" to find it.
 
-1. When you select the LTS Collection, or any other High Assurance (HA) Collection or Collection, you will be prompted to re-authenticate. Click the "Continue" button to do so, then select your UAB email address.
+1. When you select the LTS Collection, or an High Assurance (HA) Collection, you will be prompted to re-authenticate. Click the "Continue" button to do so, then select your UAB email address.
 
-    ![High Assurance request for reauthentication.](./images/common/ha-authenticate.png)
+    ![High Assurance request for re-authentication.](./images/common/ha-authenticate.png)
 
     ![Identity selection showing a UAB email address.](./images/common/select-identity.png)
 
-1. At this point, your file manager page should look something like the following image. Both Collection Search bars should have a Collection or Collection filled in. The left side should be the Collection you wish to transfer from. The right side should be the Cheaha Collection. You should see files and folders on both sides.
+1. At this point, your file manager page should look something like the following image. Both Collection Search bars should have a Collection filled in. The left side should be the Collection you wish to transfer from. The right side should be the "UAB Research Computing LTS (Long Term Storage aka S3)" Collection. You should see files and folders on both sides.
 
-    ![File Manager page showing a shared Collection and LTS Collection.](./images/gi-transfer-collection-to-lts/005-ready-to-select.png)
+    ![File Manager page showing a Collection and LTS Collection.](./images/gi-transfer-collection-to-lts/005-ready-to-select.png)
 
-1. Locate the source path on the shared Collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.
+1. Locate the path on the source Collection side. Either type the path into the Path field manually, or use the graphical selection field to click on folder names to navigate the filesystem.
 
 1. Repeat the process on the LTS Collection side to locate the destination path on the LTS Collection side.
 
-1. Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.
+1. Select the file and folders you wish to transfer on the source Collection side. Do so by clicking the checkboxes next to the file and folder names.
 
     ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-collection-to-lts/008-selection.png)
 
@@ -325,7 +325,7 @@ These instructions can be generalized to any two Collections or Collections you 
 
     ![Identity selection showing a UAB email address.](./images/common/select-identity.png)
 
-1. At this point, your file manager page should look something like the following image. Both Collection Search bars should have a Collection or Collection filled in. The left side should be the LTS Collection. The right side should be a Cheaha Collection. You should see files and folders on both sides.
+1. At this point, your file manager page should look something like the following image. Both Collection Search bars should have a Collection name filled in. The left side should be the LTS Collection. The right side should be a Cheaha Collection. You should see files and folders on both sides.
 
     ![File Manager page showing a shared Collection and LTS Collection.](./images/gi-transfer-lts-to-cheaha/005-ready-to-select.png)
 
@@ -333,7 +333,7 @@ These instructions can be generalized to any two Collections or Collections you 
 
 1. Repeat the process on the Cheaha Collection side to locate the destination path on the Cheaha Collection side.
 
-1. Select the file and folders you wish to transfer on the shared Collection side. Do so by clicking the checkboxes next to the file and folder names.
+1. Select the file and folders you wish to transfer on the source Collection side. Do so by clicking the checkboxes next to the file and folder names.
 
     ![File Manager page with a file selected in the left selection area. The start button is boxed in red.](./images/gi-transfer-lts-to-cheaha/008-selection.png)
 
