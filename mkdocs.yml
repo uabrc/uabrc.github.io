@@ -106,6 +106,7 @@ nav:
       - data_management/index.md
       - Cheaha Storage (GPFS):
           - data_management/cheaha_storage_gpfs/index.md
+          - Project Directory organization: data_management/cheaha_storage_gpfs/project_directory_organization.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
@@ -127,7 +128,6 @@ nav:
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
       - Code Storage: data_management/code_storage.md
-      - Project Directory organization: data_management/project_directory_organization.md
   - Workflow Solutions:
       - Using the Shell: workflow_solutions/shell.md
       - Using Anaconda: workflow_solutions/using_anaconda.md

@@ -1,6 +1,6 @@
 # Project Directory Organization
 
-Effective research data management starts with a well organized directory structure, especially when working on multiple projects under shared allocations. A well organized project directory structure ensures scalability, simplifies collaboration, and makes it easier to manage permissions.
+Effective research data management starts with a well organized directory structure, especially for researchers working on multiple projects under shared allocations. A well organized project directory structure ensures scalability, simplifies collaboration, and makes it easier to manage permissions.
 
 To maintain long-term organization, create a new subdirectory each time your group begins a distinct project. Assign [permissions](#permissions-and-access-control) based on access needs to ensure security while allowing collaboration.
 
@@ -37,7 +37,7 @@ Below is a recommended directory structure to help keep project files, shared re
 
 1. Shared Research Data
 
-    Having a separate directory for  research data that is common across projects helps prevent duplication and ensures that everyone is working with the same dataset.
+    Having a separate directory for research data that is common across projects helps prevent duplication and ensures that everyone is working with the same dataset.
 
     Example:
 
@@ -61,6 +61,6 @@ Below is a recommended directory structure to help keep project files, shared re
 
 ## Permissions and Access Control
 
-Permissions for each directory can be managed by either being a member of the group associated with the top-level project directory or by using [Linux permissions](../data_management/cheaha_gpfs_storage.md#project-directory-permissions) or [Access Control Lists (ACLs)](../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl). Managing proper permissions ensures that team members can access only the resources they need, while protecting sensitive data.
+Permissions for each directory can be managed by either being a member of the group associated with the top-level project directory or by using [Linux permissions](../cheaha_storage_gpfs/index.md#project-directory-permissions) or [Access Control Lists (ACLs)](../../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl). Managing proper permissions ensures that team members can access only the resources they need, while protecting sensitive data.
 
-If you plan managing multiple projects and would like assistance with organizing your project directories or managing permissions, please send us a [support](../help/support.md/#how-do-i-create-a-support-ticket) ticket.
+If you plan managing multiple projects and would like assistance with organizing your project directories or managing permissions, please send us a [support ticket](../../help/support.md/#how-do-i-create-a-support-ticket).
