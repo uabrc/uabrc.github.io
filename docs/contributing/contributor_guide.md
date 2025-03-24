@@ -34,7 +34,7 @@ If you need assistance, please feel free to [contact us](../help/support.md).
 
 We understand that everyone has differing preferences when it comes to development environments, so please feel free to use the development environment of your choice. Please be aware that our content has been developed using VSCode and a collection of extensions, so the greatest level of support can be provided by us to you if you choose to use our tooling.
 
-We are using Visual Studio Code (VSCode) for development with several extensions installed, listed below. The extensions are also in `.vscode/extensions.json` and should pop up as recommendations when you open this repository. We use VSCode for the productivity benefits related to local Anaconda environment management, git integration, and dynamic formatters and linting. Linting is provided by pre-commit hooks and in our Continuous Integration definitions.
+We are using Visual Studio Code (VSCode) for development with several extensions installed, listed below. The extensions are also in `.vscode/extensions.json` and should pop up as recommendations when you open this repository. We use VSCode for the productivity benefits related to local Conda environment management, git integration, and dynamic formatters and linting. Linting is provided by pre-commit hooks and in our Continuous Integration definitions.
 
 VSCode may be obtained from [Visual Studio Code](https://code.visualstudio.com/) and documentation is available at [VSCode: Docs](https://code.visualstudio.com/docs). The extensions should automatically show up as recommendations when opening the repo, or they can be downloaded using the VSCode Extensions menu (++ctrl+shift+x++ on Windows or ++command+shift+x++ on Mac).
 
@@ -141,10 +141,10 @@ With the repository open for editing in VSCode, open a VSCode terminal window an
 1. Configure the Conda environment. This is the backbone of everything that makes the documentation work.
     1. Install `conda` on your machine using [Miniforge](https://conda-forge.org/miniforge/), if you haven't already.
     1. Configure `conda` to be visible to VSCode. The Miniforge default install choices will help do this correctly for your operating system. **Important:** On Windows, do _not_ add `conda` to your `PATH` variable as it can disrupt proper operating system functioning.
-    1. Install the conda environment from `build_env.yml` using the following command
+    1. Install the conda environment from `build_env.yml` using the following command.
 
         ```shell
-        conda env create -f build_env.yml
+        conda env create --file build_env.yml
         ```
 
 1. Register the Conda environment with this repository in VSCode:
@@ -165,6 +165,14 @@ With the repository open for editing in VSCode, open a VSCode terminal window an
 Now the [pre-commit hooks](#pre-commit-hooks) should function as expected and manual validation is available on your local machine. You will also be able to build and serve the documentation locally to help you check your contributions before making a pull request.
 
 To build the documentation locally, press ++f5++ in VSCode to start a local server and open the docs in your browser. This is provided by the `.vscode/launch.json` file. Alternatively, use `mkdocs serve --open` in a terminal to get the same effect. Be sure you've got your `conda` environment activated! We recommend trying this now to test your setup.
+
+##### Updating the Conda Environment
+
+Run the following command to update the existing environment.
+
+```shell
+conda env update --name mkdocs --file build_env.yml --prune
+```
 
 #### Development Workflow
 
@@ -492,7 +500,7 @@ Reviewing a pull request means obtaining a copy of the pull request branch and [
 
 Building hardware tables is a semi-automated script based on a manually curated table. The repository is located here: <https://gitlab.rc.uab.edu/rc-data-science/metrics/rc-hardware>. The repository is only accessible to developers at this time.
 
-Building Partition and QoS tables is automated based on `scontrol` output. The repository is located here: <https://github.com/wwarriner/slurm_status_tools>. To use, install the conda environment at the linked repo, activate it, and run the following commands.
+Building Partition and QoS tables is automated based on `scontrol` output. The repository is located here: <https://github.com/wwarriner/slurm_status_tools>. To use, install the Conda environment at the linked repo, activate it, and run the following commands.
 
 ```bash
 python -u sstatus.py -c partitions > partitions.csv
