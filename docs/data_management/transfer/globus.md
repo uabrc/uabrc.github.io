@@ -19,7 +19,7 @@ For more detailed information on High Assurance please see the Globus official p
 [Globus Connect Personal](https://www.globus.org/globus-connect-personal) is software meant to be installed on local machines such as laptops, desktops,
 workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on [MacOS](https://docs.globus.org/globus-connect-personal/install/mac/), [Linux](https://docs.globus.org/globus-connect-personal/install/linux/) and [Windows](https://docs.globus.org/globus-connect-personal/install/windows/).
 
-To verify your installation is complete, please visit <https://app.globus.org> and log in. Click "Collections" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the guest collection you just created.
+To verify your installation is complete, please visit <https://app.globus.org> and log in. Click "Collections" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the Guest Collection you just created.
 
 ## Managing Identities
 
@@ -49,7 +49,7 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
 
     ![!Panels selection widget with center icon selected. Center icon appears to be two side-by-side panes.](./images/globus_003_panels.png)
 
-1. Click the "Search" icon in the "Collection" text box near the top-left or top-right of the page to locate an endpoint/collection. An endpoint is a server that provides access to data stored in a cluster. A collection can be a mapped collection or guest collection, which represents a user's own collection of files or directories mapped from storage endpoints to their Globus account for easy management, sharing and accessing. Please refer to the [Globus endpoints and collections](https://docs.globus.org/guides/overviews/collections-and-endpoints/) to know more. There are multiple ways to find an endpoint. For some endpoints you may be asked to log in, which is true of all UAB endpoints. Some UAB endpoints may also require that you be on the UAB Campus VPN.
+1. Click the "Search" icon in the "Collection" text box near the top-left or top-right of the page to locate an endpoint/collection. An endpoint is a server that provides access to data stored in a cluster. A Collection can be a Mapped Collection or Guest Collection, which represents a user's own collection of files or directories mapped from storage endpoints to their Globus account for easy management, sharing and accessing. Please refer to the [Globus endpoints and collections](https://docs.globus.org/guides/overviews/collections-and-endpoints/) to know more. There are multiple ways to find an endpoint. For some endpoints you may be asked to log in, which is true of all UAB endpoints. Some UAB endpoints may also require that you be on the UAB Campus VPN.
 
     ![!Globus File Manager interface with mouse pointer over left-hand Collection Search box.](./images/globus_004_search_bar.png)
 
@@ -247,7 +247,7 @@ To manage bookmarks, click on the Collection search bar, then select the Bookmar
 
 ## Managing Guest Collections from a Globus Connect Personal Endpoint
 
-It is NOT RECOMMENDED to make Globus Connect Personal guest collections public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal collection than for a guest collection. Guest collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use guest collections!
+It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal Collection than for a Guest Collection. Guest collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use Guest Collections!
 
 ### Creating a Guest Collection
 
@@ -270,19 +270,19 @@ It is NOT RECOMMENDED to make Globus Connect Personal guest collections public a
     ![!Create New Guest Collection form.](./images/globus_102_shared_collection_form.png)
 
     1. Manually enter a path or click the Browse button to select a folder.
-    1. Give a short but memorable name for your guest collection. This information will be useful for your collaborators.
-    1. Optionally fill in a more detailed description of the guest collection for your records.
+    1. Give a short but memorable name for your Guest Collection. This information will be useful for your collaborators.
+    1. Optionally fill in a more detailed description of the Guest Collection for your records.
     1. Optionally fill in searchable keywords.
     1. Other additional options include, information link, contact email, organization/department.
     1. Default directory, if left empty, is equivalent to the first field "Directory".
 
-1. Click "Create Collection" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged guest collection. Any further references to "an endpoint" will be about the newly created, guest collection.
+1. Click "Create Collection" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged Guest Collection. Any further references to "an endpoint" will be about the newly created, Guest Collection.
 
 1. Make sure you are on the "Permissions" tab. You should see a permissions table with your name in it.
 
     ![!Newly created test endpoint page with Permissions tab selected.](./images/globus_103_shared_permissions.png)
 
-1. Click "Add Permissions -- Share With" to share your guest collection with other users.
+1. Click "Add Permissions -- Share With" to share your Guest Collection with other users.
 
 1. Fill out the form.
 
@@ -312,7 +312,7 @@ It is NOT RECOMMENDED to make Globus Connect Personal guest collections public a
     1. If adding users, optionally enter a message so they know why they are being added.
     1. Select permissions. Read is automatically selected and cannot be changed. Write permissions are optional.
 
-1. Click "Add Permission" to add permissions for these users or groups. You will be returned to the page for the guest collection and should be on the "Permissions" tab and should see the user or group in the table.
+1. Click "Add Permission" to add permissions for these users or groups. You will be returned to the page for the Guest Collection and should be on the "Permissions" tab and should see the user or group in the table.
 
 ### Deleting a Guest Collection
 
@@ -326,7 +326,7 @@ It is NOT RECOMMENDED to make Globus Connect Personal guest collections public a
 
     ![!Globus Endpoints page with Shared Collection Overview.](./images/globus_106_shared_collection_overview.png)
 
-1. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the guest collection, or to cancel.
+1. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the Guest Collection, or to cancel.
 
     ![!Delete Collection confirmation dialog banner.](./images/globus_107_shared_delete.png)
 
