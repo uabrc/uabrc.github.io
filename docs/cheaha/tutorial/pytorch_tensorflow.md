@@ -40,7 +40,7 @@ The instructions below, provide a recommended step by step guide to creating and
 
 There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilizing only CPUs. The use of GPUs improve compute speeds and are preferred. For both instances of pytorch, please follow these steps;
 
-1. For a correct installation of pytorch using GPUs, we have to ensure some conditions are met. See partition [docs](../hardware.md#details) for a guide. One of such conditions, is to load the CUDA toolkit using the below command in your environment setup form (see image below).
+1. For a correct installation of pytorch using GPUs, we have to ensure some conditions are met (Request a partition that has GPUs, and then load the requisite `CUDA` module). You can see our [documentation](../hardware.md#details) for details on our Partition offerings. The command below shows how to load the CUDA toolkit in your environment setup form (see image below) when requesting for resources.
 
 ```bash
 module load CUDA/11.8.0
@@ -67,7 +67,7 @@ module load CUDA/11.8.0
 
 <!-- markdownlint-enable MD046 -->
 
-1. When your job has been created and your environment created and activated from the terminal (see above [instructions](../../workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
+1. When your job has started and your environment created and activated from the terminal (see above [instructions](../../workflow_solutions/using_anaconda.md#create-an-environment)), run the below command.
 
 ```bash
 conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia
@@ -82,6 +82,20 @@ conda list | grep "torch"
 You should get an output like the below image.
 
 ![!PyTorch Env Output](images/pytorchversion_output.png)
+
+```bash
+
+# Package details
+
+# Name        Version   Build                           Channel
+ffmpeg        4.3       hf484d3e_0                      pytorch
+libjpeg-turbo 2.0.0     h9bf148f_0                      pytorch
+pytorch       2.2.0     py3.12_cuda11.8_cudnn8.7.0_0    pytorch
+pytorch-cuda  11.8      h7e8668a_5                      pytorch
+pytorch-mutex 1.0       cuda                            pytorch
+torchaudio    2.2.0     py312_cu118                     pytorch
+torchvision   0.17.0    py312_cu118                     pytorch
+```
 
 The same process can be followed for installing another Deep Learning library Tensorflow (see instructions [below](#install-tensorflow-gpu-using-the-terminal)) with some minute differences. You may decide to install the TensorFlow library into the same environment or create a new one. As a best practice, you may want to install these libraries in different environments.
 
@@ -113,7 +127,7 @@ print(torch.cuda.get_device_name(x))
     conda activate tensorflow
     ```
 
-1. The TensorFlow CPU and GPU versions requires pip to be up-to-date, to install and upgrade pip to the latest version, within your conda environment use the below command. See our [section](../../cheaha/open_ondemand/ood_jupyter.md#pip-installs-packages-outside-of-environment), on why installing pip within a conda environment is advised.
+1. The TensorFlow CPU and GPU versions requires pip to be up-to-date. To install and upgrade pip to the latest version, within your conda environment use the below command. See our [section](../../cheaha/open_ondemand/ood_jupyter.md#pip-installs-packages-outside-of-environment), on why installing pip within a conda environment is advised.
 
     ```bash
     pip install --upgrade pip
