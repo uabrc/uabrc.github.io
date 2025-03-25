@@ -302,14 +302,15 @@ $ sacct -j 27101430
 
 #### Example 4.1: Slurm Array Job for Line-by-Line Word Count
 
-In the examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count), [4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files-dynamically-using-a-slurm-job-array), and [4.3](#example-43-counting-words-in-multiple-files-from-a-file-list-using-a-slurm-job-array), we will explore how to use a Slurm Array Job to process text files in parallel. To keep things organized, we divide the process into two main sections:
+In the examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count), [4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files-dynamically-using-a-slurm-job-array), and [4.3](#example-43-counting-words-in-multiple-files-from-a-file-list-using-a-slurm-job-array), let us explore how to use a Slurm Array Job to process text files in parallel. To keep things organized, we divide the process into two main sections:
 
 (i) Setup: This section covers creating the necessary directories and input files. Since this setup is common for both examples, we will do it once before moving on.
+
 (ii) Running the Slurm Array Job: Here, we focus on understanding and executing an example Slurm array job.
 
 ##### Setup
 
-Before executing the Slurm array examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files-dynamically-using-a-slurm-job-array) and [4.3](#example-43-counting-words-in-multiple-files-from-a-file-list-using-a-slurm-job-array), we need to set up the environment. This includes creating a main directory, `example_4`, to store all job files and scripts. Within it, we will create two subdirectories: `input_files` to store the generated input files and `logs` to organize output and error logs. Let us create and structure these directories.
+Before executing the Slurm array examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files-dynamically-using-a-slurm-job-array) and [4.3](#example-43-counting-words-in-multiple-files-from-a-file-list-using-a-slurm-job-array), we need to set up the environment. This includes creating a main directory, `example_4`, to store all job files and scripts. Within it, we will create two subdirectories: `input_files` to store the generated input text files and `logs` to organize output and error logs. Let us create and structure these directories.
 
 ```bash
 $mkdir example_4
@@ -319,20 +320,27 @@ $mkdir logs
 $cd input_files
 ```
 
-The next step involves generating input files using a pseudo-random text generation script. Save the following script as `generate_input.sh` inside the `input_files` folder. This script generates five random text files, each containing a different number of randomly selected words. The script creates a file with 1 to 10 randomly generated lines, where each line contains 5 to 20 randomly selected words from `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of lines and words per line. For more details refer to [script concepts](../../workflow_solutions/shell.md#script-concepts) and [bash scripting example](../../cheaha/software/modules.md#best-practice-for-loading-modules).
+The next step involves generating input files using a pseudo-random text generation script. Save the following script as `generate_input.sh` within the `input_files` folder. This script generates five random text files, each containing a different number of randomly selected words. The script creates a file with 1 to 10 randomly generated lines, where each line contains 5 to 20 randomly selected words from `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of lines and words per line. For more details refer to [script concepts](../../workflow_solutions/shell.md#script-concepts) and [bash scripting example](../../cheaha/software/modules.md#best-practice-for-loading-modules).
 
 ```bash
 #!/bin/bash
+
+### Loop to create 5 random files
 for i in {1..5}; do
-    num_lines=$(($RANDOM % 10 + 1))  # Random number of lines (1-10)
+    ### Generate a random number of lines (1-10)
+    num_lines=$(($RANDOM % 10 + 1))
     for _ in $(seq 1 $num_lines); do
-        num_words=$(($RANDOM % 20 + 5))  # Random words per line (5-20)
+    ### Generate a random words per line (5-20)
+        num_words=$(($RANDOM % 20 + 5))
+        ### Use 'shuf' to pick $num_words random words from the dictionary file.
+        ### The pipe ('|') sends these selected words to 'paste', which combines them into a single line,
+        ### separating each word with a space (using the '-d " "' option).
         shuf -n $num_words /usr/share/dict/words | paste -s -d " "
     done > "random_file_$i.txt"
 done
 ```
 
-You can execute the script as shown below. The first command `chmod` grants execute permission to the script so it can be run directly. The second command runs the script to generate the required input files. For more details on usage of bash scripting, refer to [Script Concepts](../../workflow_solutions/shell.md/#script-concepts)
+You can execute the `generate_input.sh` script as shown below. The first command `chmod` grants execute permission to the script so it can be run directly. The second command runs the script to generate the required input files. For more details on usage of bash scripting, refer to [Script Concepts](../../workflow_solutions/shell.md/#script-concepts)
 
 ```bash
 $chmod +x generate_input.sh
@@ -341,7 +349,7 @@ $./generate_input.sh
 
 ##### Running the Slurm Array Job
 
-This SLURM job script processes a text file line by line using an array job. Save the following Slurm script as `line_word_count.job`. This SLURM job ensures that each task in the job array processes a single line from an input file and counts the number of words in that line.
+The following Slurm job script processes a text file line by line using an array job. Save the following Slurm script as `line_word_count.job` within `example_4` folder. This SLURM job ensures that each task in the job array processes a single line from an input file and counts the number of words in that line.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -370,23 +378,25 @@ echo "Task $SLURM_ARRAY_TASK_ID: $WORD_COUNT words"
 Before running the above SLURM job, determine the number of lines in the input file (e.g., random_file_2.txt) using the following command:
 
 ```bash
-MAX_TASKS=$(wc -l < $HOME/input_files/random_file_2.txt)
+$MAX_TASKS=$(wc -l < $HOME/input_files/random_file_2.txt)
 ```
 
 Next, submit the array job using the command below, which creates an array of tasks from 1 to the maximum number of lines in the file.
 
 ```bash
-sbatch --array=1-"$MAX_TASKS" line_word_count.job
+$sbatch --array=1-"$MAX_TASKS" line_word_count.job
 ```
 
 The below output comes from the SLURM job array script (line_word_count.job), where each task processes one line from random_file_2.txt. Since the file has 3 lines, SLURM created 3 tasks (Task 1, Task 2, Task 3), each counting words in its respective line.
 
 ```bash
-$ wc -l $HOME/input_files/random_file_2.txt #counts the number of lines in the file, for instance, random_file_2.txt
+### counts the number of lines in the file, for instance, random_file_2.txt
+$ wc -l $HOME/input_files/random_file_2.txt
 3 $HOME/input_files/random_file_2.txt
 ```
 
 ```bash
+### Print and verify the output using the `cat` command
 $ cat line_word_count_$JOB_ID_*.out
 Task 1: 8 words
 Task 2: 19 words
