@@ -33,6 +33,10 @@ The Carpentries is a 501(c)3 non-profit organization dedicated to educating rese
 
 - [Globus Events Calendar](https://www.globus.org/events/)
 
+### Data Science and Engineering
+
+- [Datapen.io Free Courses](https://www.datapen.io/resources/free-course-resources)
+
 ### Other External Resources
 
 - [Rosalind.info](https://rosalind.info/problems/locations/): A platform for learning bioinformatics and programming.
