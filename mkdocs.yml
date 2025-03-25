@@ -189,6 +189,7 @@ nav:
           - education/research_computing_days/index.md
       - Offered Courses: education/courses.md
       - Training Resources: education/training_resources.md
+      - Research Operations Software: education/research_operations_software.md
   - Policies: policies.md
   - Reporting Documentation Errors: contributing/reporting_errors.md
   - Contributing Content: contributing/contributor_guide.md
