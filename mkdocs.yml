@@ -185,11 +185,14 @@ nav:
       - Funding Opportunities: grants/opportunities.md
   - Outreach & Training:
       - Case Studies: education/case_studies.md
+      - Research Computing Courses: education/courses.md
+      - Training Resources: education/training_resources.md
+      - Scientific Domain-Specific Analysis Software:
+          - education/domain_specific_software/index.md
+          - Genetics & Omics: education/domain_specific_software/omics.md
+      - Research Operations Software: education/research_operations_software.md
       - Research Computing Days:
           - education/research_computing_days/index.md
-      - Offered Courses: education/courses.md
-      - Training Resources: education/training_resources.md
-      - Research Operations Software: education/research_operations_software.md
   - Policies: policies.md
   - Reporting Documentation Errors: contributing/reporting_errors.md
   - Contributing Content: contributing/contributor_guide.md
