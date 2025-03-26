@@ -103,6 +103,7 @@ nav:
           - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
           - "For Guests - Account Creation": account_management/xias/guest_instructions.md
       - Gitlab Account: account_management/gitlab_account.md
+      - Leaving UAB: account_management/leaving_uab.md
   - Data Management:
       - data_management/index.md
       - Cheaha Storage (GPFS):
