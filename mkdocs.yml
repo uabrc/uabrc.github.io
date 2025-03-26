@@ -93,6 +93,7 @@ not_in_nav: |
 
 nav:
   - Home: index.md
+  - News: news.md
   - Account Management:
       - account_management/index.md
       - Cheaha Account: account_management/cheaha_account.md
