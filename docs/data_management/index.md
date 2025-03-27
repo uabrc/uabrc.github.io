@@ -15,7 +15,7 @@ When you have different types of data with varying storage needs, choosing the r
 - **I have lots of data that does not ever change, or rarely changes**:
     - If your data is large and does not change frequently, [Long-Term Storage (LTS)](../data_management/lts/index.md) is your ideal option.
 - **I need to do a lot of processing on the data**:
-    - If your data is frequently accessed or modified, [Cheaha Storage (GPFS)](../data_management/cheaha_storage_gpfs/index.md) is a perfect for your use case.
+    - If your data is frequently accessed or modified, [Cheaha Storage (GPFS)](../data_management/cheaha_storage_gpfs/index.md) is a perfect option for your use case.
 - **I am just learning how to use Cheaha for very small personal projects**:
     - If you are new to Cheaha and working with small personal projects, you do not need a complex storage solution. [User Data](../data_management/cheaha_storage_gpfs/index.md#user-data-and-home-directories) is a simple and accessible option for beginners and smaller datasets.
 - **I need somewhere to store lots of temporary files while I do my processing**:
@@ -191,7 +191,7 @@ What hazards can cause data loss?
 - Unusable backups.
     - Examples: backup software bug; media destroyed; natural disaster at offsite location.
 
-If you need backup services, [please contact us](../help/support.md#how-to-request-support), and we can discuss options based on your specific use case.
+If you need backup services, please [Contact Us](../help/support.md#how-to-request-support), and we can discuss options based on your specific use case.
 
 ### HIPAA Compliance
 
