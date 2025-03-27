@@ -8,6 +8,23 @@ There are multiple locations for data storage both on and off Cheaha each with a
 
 {{ read_csv('data_management/res/storage_overview.csv', keep_default_na=False) }}
 
+### How to Choose the Right Storage for My Use Case?
+
+When you have different types of data with varying storage needs, choosing the right storage is not an easy task. Below, we will walk you through common data storage needs and use cases.
+
+- **I have lots of data that does not ever change, or rarely changes**:
+    - If your data is large and does not change frequently, [Long-Term Storage (LTS)](../data_management/lts/index.md) is your ideal option.
+- **I need to do a lot of processing on the data**:
+    - If your data is frequently accessed or modified, [Cheaha Storage (GPFS)](../data_management/cheaha_storage_gpfs/index.md) is a perfect for your use case.
+- **I am just learning how to use Cheaha for very small personal projects**:
+    - If you are new to Cheaha and working with small personal projects, you do not need a complex storage solution. [User Data](../data_management/cheaha_storage_gpfs/index.md#user-data-and-home-directories) is a simple and accessible option for beginners and smaller datasets.
+- **I need somewhere to store lots of temporary files while I do my processing**:
+    - If you need a place to store lots of temporary files while processing data, [User Scratch](../data_management/cheaha_storage_gpfs/index.md#user-scratch) is the best option.
+- **I am working with high-throughput or I/O bound applications, like AI training or evaluation**:
+    - For high-performance tasks, like AI training, [Local Scratch](../data_management/cheaha_storage_gpfs/index.md#local-scratch) provides fast, high-throughput data access optimized for heavy I/O bound applications.
+- **I have multiple needs and can not decide**:
+    - If your use case spans across multiple types of storage needs, [Contact Us](../help/support.md#how-to-request-support) to discuss your requirements, and we wll help you find the best solution.
+
 ## What Individual Storage Solutions are Available?
 
 Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about [Long-Term Storage](./lts/index.md) and [User Data and Home Directories](./cheaha_storage_gpfs/index.md#user-data-and-home-directories).
@@ -167,21 +184,14 @@ What hazards can cause data loss?
 - Accidental file deletion.
     - Example: mistakenly deleting the wrong files when using the [shell command](../workflow_solutions/shell.md#delete-files-and-directories-rm-rmdir) `rm`.
     - Files deleted with `rm` or any similar command can not be recovered by us under any circumstances.
-    - Please restore from a backup.
 - Natural disasters.
     - Examples: tornado; hurricane.
     - All of our data sits in one geographical location at the UAB Technology Innovation Center (TIC).
     - Plans to add geographical data redundancy are being considered.
-    - Please restore from an offsite backup.
 - Unusable backups.
     - Examples: backup software bug; media destroyed; natural disaster at offsite location.
-    - Regularly test data restoration from all backups.
 
-How can I ensure data integrity?
-
-- Regularly back up your (and your lab's) data in an offsite location.
-- [S3 based long-term storage (LTS)](lts/index.md) can be used for short-term onsite backup.
-- Crashplan licenses are available for automatic offsite backups, please contact [Support](../help/support.md) for more information.
+If you need backup services, [please contact us](../help/support.md#how-to-request-support), and we can discuss options based on your specific use case.
 
 ### HIPAA Compliance
 
