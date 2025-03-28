@@ -93,6 +93,14 @@ def ignore_rows_containing(
     return out
 
 
+def modify_file_uris(_s: pd.Series) -> pd.Series:
+    keep = _s.str.startswith("file:") & _s.str.contains("repos/uabrc.github.io")
+    df = _s.str.split("repos/uabrc.github.io", expand=True)
+    out = _s.copy()
+    out[keep] = df.iloc[:, -1][keep]
+    return out
+
+
 if __name__ == "__main__":
     run_linkchecker()
     df = load_output()
@@ -124,6 +132,9 @@ if __name__ == "__main__":
     df = ignore_rows_containing(
         df, URL_AFTER_REDIRECTION, "https://padlock.idm.uab.edu", if_result_code="423"
     )
+
+    # modify file uris
+    df[MARKDOWN_FILE] = modify_file_uris(df[MARKDOWN_FILE])
 
     # organize
     df = df.sort_values(by=[RESULT, URL_IN_MARKDOWN, MARKDOWN_FILE, LINE, COLUMN])
