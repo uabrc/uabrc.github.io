@@ -300,9 +300,9 @@ $ sacct -j 27101430
 27101430_2.+     extern                 USER          1  COMPLETED      0:0
 ```
 
-#### Example 4.1: Slurm Array Job for Line-by-Line Word Count
+#### Example 4.1: Line-by-Line Word Count
 
-In the examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count), [4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files-dynamically-using-a-slurm-job-array), and [4.3](#example-43-counting-words-in-multiple-files-from-a-file-list-using-a-slurm-job-array), let us explore how to use a Slurm Array Job to process text files in parallel. To keep things organized, we divide the process into two main sections:
+In the examples [4.1](#example-41-line-by-line-word-count), [4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files), and [4.3](#example-43-counting-words-in-multiple-files-from-a-file-list), let us explore how to use a Slurm Array Job to process text files in parallel. To keep things organized, we divide the process into two main sections:
 
 (i) Setup: This section covers creating the necessary directories and input files. Since this setup is common for both examples, we will do it once before moving on.
 
@@ -310,7 +310,7 @@ In the examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count), 
 
 ##### Setup
 
-Before executing the Slurm array examples [4.1](#example-41-slurm-array-job-for-line-by-line-word-count) and [4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files-dynamically-using-a-slurm-job-array) and [4.3](#example-43-counting-words-in-multiple-files-from-a-file-list-using-a-slurm-job-array), we need to set up the environment. This includes creating a main directory, `example_4`, to store all job files and scripts. Within it, we will create two subdirectories: `input_files` to store the generated input text files and `logs` to organize output and error logs. Let us create and structure these directories.
+Before executing the Slurm array examples [4.1](#example-41-line-by-line-word-count) and [4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files) and [4.3](#example-43-counting-words-in-multiple-files-from-a-file-list), we need to set up the environment. This includes creating a main directory, `example_4`, to store all job files and scripts. Within it, we will create two subdirectories: `input_files` to store the generated input text files and `logs` to organize output and error logs. Let us create and structure these directories.
 
 ```bash
 $mkdir example_4
@@ -346,8 +346,6 @@ You can execute the `generate_input.sh` script as shown below. The first command
 $chmod +x generate_input.sh
 $./generate_input.sh
 ```
-
-##### Running the Slurm Array Job
 
 The following Slurm job script processes a text file line by line using an array job. Save the following Slurm script as `line_word_count.job` within `example_4` folder. This SLURM job ensures that each task in the job array processes a single line from an input file and counts the number of words in that line.
 
@@ -403,9 +401,9 @@ Task 2: 19 words
 Task 3: 6 words
 ```
 
-#### Example 4.2: Dynamically Reading and Counting Words in Multiple Files dynamically Using a Slurm Job Array
+#### Example 4.2: Dynamically Reading and Counting Words in Multiple Files
 
-This example job script performs the same function as [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count), but instead of counting the number of words in a single file line by line, it is designed to dynamically count the number of words across multiple files. Save the below script as `dynamic_file_word_count.job` within the `example_4` folder. It utilizes the same input files from [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count) as described in the [Setup](#setup) section.
+This example job script performs the same function as [Example 4.1](#example-41-line-by-line-word-count), but instead of counting the number of words in a single file line by line, it is designed to dynamically count the number of words across multiple files. Save the below script as `dynamic_file_word_count.job` within the `example_4` folder. It utilizes the same input files from [Example 4.1](#example-41-line-by-line-word-count) as described in the [Setup](#setup) section.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -484,9 +482,9 @@ $ find $HOME/example_4/input_files/ -type f -name "random_file*.wordcount" -exec
 114 /home/$USER/Tutorial/slurm_tutorial/example4/input_files/random_file_4.txt
 ```
 
-#### Example 4.3: Counting Words in Multiple Files from a File List Using a Slurm Job Array
+#### Example 4.3: Counting Words in Multiple Files from a File List
 
-This example job script is similar to [Example 4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files-dynamically-using-a-slurm-job-array), but instead of dynamically reading files from the directory, it counts the number of words in multiple files in parallel using a SLURM job array, with the files listed in a separate file list. This example utilizes the same input files from [Example 4.1](#example-41-slurm-array-job-for-line-by-line-word-count) as described in the [Setup](#setup) section.
+This example job script is similar to [Example 4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files), but instead of dynamically reading files from the directory, it counts the number of words in multiple files in parallel using a SLURM job array, with the files listed in a separate file list. This example utilizes the same input files from [Example 4.1](#example-41-line-by-line-word-count) as described in the [Setup](#setup) section.
 
 To create a file list by tracking all the files in the `input_files` directory, use the find command along with globbing to list all generated files in the current directory and its subdirectories. The input files along with its absolute path are tracked in `file_list.txt`.
 
@@ -549,7 +547,7 @@ Next, submit the array job using the command below, which creates an array of ta
 $sbatch --array=1-"$MAX_TASKS" file_list_word_count.job
 ```
 
-The output generated will be similar to [Example 4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files-dynamically-using-a-slurm-job-array), as the functionality is the same, but the method of handling the input data differs.
+The output generated will be similar to [Example 4.2](#example-42-dynamically-reading-and-counting-words-in-multiple-files), as the functionality is the same, but the method of handling the input data differs.
 
 ### Example 5: Multithreaded or Multicore Job
 
