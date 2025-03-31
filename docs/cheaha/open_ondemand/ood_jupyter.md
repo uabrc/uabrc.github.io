@@ -125,13 +125,12 @@ For the above case, deleting the `~/.local` directory and then installing `pip` 
 rm -rf /home/$USER/.local/lib/python3.xx/site-packages
 ```
 
-Replace `python3.xx` in the command with the appropriate Python version (e.g., python3.8).
+Replace `python3.11` in the command with the appropriate Python version.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
     Please note, using the `rm -rf` command would permanently delete the specified file or specified directory and its contents.
-
 <!-- markdownlint-enable MD046 -->
 
 Here's an example of the correct procedure for installing `pip` packages within a `conda`:
