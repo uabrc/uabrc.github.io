@@ -39,7 +39,7 @@ If your account is in good standing you should see a page like the following.
 
 ### Account Requires Certification
 
-We review accounts periodically to ensure the system is being used fairly and as intended. Part of this process is to certify that researchers with accounts still wish to make use of Cheaha. Once per year every researcher will be required to certify their account before making use of Cheaha. In addition, all accounts require certification after being placed on hold (see our [Account on Hold section](#account-on-hold)). This way, we ensure users are engaged in the process of reactivating their account to use our resources. If your account requires certification, you will see the below notification page, when logging into our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal.
+We review accounts periodically to ensure the system is being used fairly and as intended. Part of this process is to certify that researchers with accounts still wish to make use of Cheaha. Once per year every researcher will be required to certify their account before making use of Cheaha. In addition, all accounts require certification after being placed on hold (see our [Account on Hold section](#account-on-hold)). This way, we ensure users are engaged in the process of reactivating their account to use our resources. If your account requires certification, you will see the below notification page when logging into our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal.
 
 ![!Account certification notification page.](images/uab_certify_001.png).
 
