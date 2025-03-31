@@ -1,3 +1,4 @@
+import os
 import subprocess
 from pathlib import Path, PurePath
 from typing import Optional
@@ -96,8 +97,14 @@ def ignore_rows_containing(
 def modify_file_uris(_s: pd.Series) -> pd.Series:
     keep = _s.str.startswith("file:") & _s.str.contains("repos/uabrc.github.io")
     df = _s.str.split("repos/uabrc.github.io", expand=True)
+
+    fixes = df.iloc[:, -1][keep]
+    fixes = fixes.apply(lambda x: PurePath(x))  # type: ignore
+    fixes = fixes.astype(str)
+    fixes = fixes.str.lstrip(os.sep)
+
     out = _s.copy()
-    out[keep] = df.iloc[:, -1][keep]
+    out[keep] = fixes
     return out
 
 
