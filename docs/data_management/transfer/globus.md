@@ -120,7 +120,7 @@ Below the "Transfer Settings", there are additional options available that you c
 
 ### Project Space Permissions
 
-Globus does not preserve permissions nor ownership when data is transferred, instead using whatever permissions are default at the target location, and making the owner the authenticated user who initiated the transfer. Typically this is not an issue, but may cause problems for [Project Storage directories](../index.md#what-shared-storage-solutions-are-available). Please see our [Project Directory Permissions Section](../cheaha_gpfs_storage.md#project-directory-permissions) for more information.
+Globus does not preserve permissions nor ownership when data is transferred, instead using whatever permissions are default at the target location, and making the owner the authenticated user who initiated the transfer. Typically this is not an issue, but may cause problems for [Project Storage directories](../index.md#what-shared-storage-solutions-are-available). Please see our [Project Directory Permissions Section](../cheaha_storage_gpfs/index.md#project-directory-permissions) for more information.
 
 ### More Information
 
