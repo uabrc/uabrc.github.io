@@ -9,7 +9,7 @@ Below are scientific software you may find useful for 'Omics analyses.
 
 ## Genome Sequencing
 
-- Parabricks - GPU accelerated sequencing software
+- Parabricks - GPU accelerated sequencing software:
     - Container on NGC service: <https://catalog.ngc.nvidia.com/orgs/nvidia/collections/claraparabricks>
     - See our [Research Computing Parabricks Case Study](../case_studies.md#parabricks-for-performing-gpu-accelerated-genome-sequencing-analysis)
 
@@ -20,7 +20,7 @@ Below are scientific software you may find useful for 'Omics analyses.
     - blog: <https://developer.nvidia.com/blog/gpu-accelerated-single-cell-rna-analysis-with-rapids-singlecell/>
     - docs: <https://rapids-singlecell.readthedocs.io/en/latest/>
     - examples at ngc: <https://catalog.ngc.nvidia.com/orgs/nvidia/teams/clara/containers/single-cell-examples_rapids>
-- Geneformer
+- Geneformer:
     - AI transformer model for SC transcriptomics
     - NGC: <https://catalog.ngc.nvidia.com/orgs/nvidia/teams/clara/models/geneformer_100m>
 
@@ -28,8 +28,8 @@ Below are scientific software you may find useful for 'Omics analyses.
 
 - MONAI Vista:
     - Generalized GPU accelerated spatial genomics image segmentation
-    - Vista2D
+    - Vista2D:
         - NGC: <https://catalog.ngc.nvidia.com/orgs/nvidia/teams/monaitoolkit/models/monai_vista2d>
         - Blog: <https://developer.nvidia.com/blog/advancing-cell-segmentation-and-morphology-analysis-with-nvidia-ai-foundation-model-vista-2d/>
-    - Vista3D
+    - Vista3D:
         - NGC: <https://catalog.ngc.nvidia.com/orgs/nvidia/teams/monaitoolkit/models/monai_vista3d>

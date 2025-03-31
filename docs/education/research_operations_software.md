@@ -7,6 +7,6 @@ Below are tools you may find useful in managing the operations of your research 
 - **BioRender**:
     - Rapidly generate publication-quality scientific figures.
     - UAB Page: <https://www.uab.edu/research/home/rtc/biorender-premium>
-- **Lab Archives**
+- **Lab Archives**:
     - Electronic lab notebook software.
     - UAB Page: <https://www.uab.edu/research/home/labarchives-resources>
