@@ -17,10 +17,10 @@ Below is a recommended directory structure to help keep project files, shared re
     Example:
 
     ```bash
-    /data/project/mylab/
-        |-- project-1/
-        |-- project-2/
-        |-- project-3/
+    /data/project/mylab/project/
+    |-- project-1/
+    |-- project-2/
+    |-- project-3/
     ```
 
 1. Repositories
@@ -30,9 +30,9 @@ Below is a recommended directory structure to help keep project files, shared re
     Example:
 
     ```bash
-    `/data/project/mylab/repository/
-        |-- common-software-tool-1/
-        |-- common-software-tool-2/
+    /data/project/mylab/repository/
+    |-- common-software-tool-1/
+    |-- common-software-tool-2/
     ```
 
 1. Shared Research Data
@@ -43,8 +43,8 @@ Below is a recommended directory structure to help keep project files, shared re
 
     ```bash
     /data/project/mylab/common-data/
-        |-- some-data-used-by-multiple-projects/
-        |-- other-shared-data/
+    |-- some-data-used-by-multiple-projects/
+    |-- other-shared-data/
     ```
 
 1. Environments
@@ -55,9 +55,27 @@ Below is a recommended directory structure to help keep project files, shared re
 
     ```bash
     /data/project/mylab/environments/
-        |-- shared-conda-env-1.yml
-        |-- shared-conda-env-2.yml
+    |-- shared-conda-env-1.yml
+    |-- shared-conda-env-2.yml
     ```
+
+To provide a clearer picture, here is how all the components fit together in the overall structure:
+
+```bash
+/data/project/mylab/
+|-- project/
+|   |-- project-1/
+|   |-- ...
+|-- repository/
+|   |-- common-software-tool-1/
+|   |-- ...
+|-- common-data/
+|   |-- some-data-used-by-multiple-projects/
+|   |-- ...
+|-- environments/
+|   |-- shared-conda-env-1.yml
+|   |-- ...
+```
 
 ## Permissions and Access Control
 
