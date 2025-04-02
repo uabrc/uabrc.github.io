@@ -4,7 +4,7 @@ Research Computing offers several data storage options to meet individual or sha
 
 ## What Type of Storage Do I Need?
 
-There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to help determine the storage platform we provide that best matches your needed use-case. If you need additional assistance, please contact [Support](../help/support.md).
+There are multiple locations for data storage both on and off Cheaha each with a specific purpose. You can look at the table below to help determine the storage platform we provide that best matches your needed use-case. After reviewing the table, proceed to the [How to Choose the Right Storage for My Use Case](#how-to-choose-the-right-storage-for-my-use-case) section for additional guidance on selecting the most suitable storage for your needs. If you need additional assistance, please contact [Support](../help/support.md).
 
 {{ read_csv('data_management/res/storage_overview.csv', keep_default_na=False) }}
 
@@ -12,17 +12,19 @@ There are multiple locations for data storage both on and off Cheaha each with a
 
 When you have different types of data with varying storage needs, choosing the right storage is not an easy task. Below, we will walk you through common data storage needs and use cases.
 
-- **I have lots of data that does not ever change, or rarely changes**:
+- **I have lots of data that rarely or never changes**:
     - If your data is large and does not change frequently, [Long-Term Storage (LTS)](../data_management/lts/index.md) is your ideal option.
 - **I need to do a lot of processing on the data**:
     - If your data is frequently accessed or modified, [Cheaha Storage (GPFS)](../data_management/cheaha_storage_gpfs/index.md) is a perfect option for your use case.
+    - When you have finished working with the data, please consider putting it into [LTS](../data_management/lts/index.md). Please [Contact Us](../help/support.md#how-to-request-support) for more information.
 - **I am just learning how to use Cheaha for very small personal projects**:
     - If you are new to Cheaha and working with small personal projects, you do not need a complex storage solution. [User Data](../data_management/cheaha_storage_gpfs/index.md#user-data-and-home-directories) is a simple and accessible option for beginners and smaller datasets.
+    - If you find your project growing, or you need to collaborate with others at UAB, consider a shared allocation on [GPFS](../data_management/cheaha_storage_gpfs/index.md) and/or [LTS](../data_management/lts/index.md). Please refer to the instructions on [how to request a shared allocation](#how-do-i-request-shared-storage).
 - **I need somewhere to store lots of temporary files while I do my processing**:
-    - If you need a place to store lots of temporary files while processing data, [User Scratch](../data_management/cheaha_storage_gpfs/index.md#user-scratch) is the best option.
-- **I am working with high-throughput or I/O bound applications, like AI training or evaluation**:
-    - For high-performance tasks, like AI training, [Local Scratch](../data_management/cheaha_storage_gpfs/index.md#local-scratch) provides fast, high-throughput data access optimized for heavy I/O bound applications.
-- **I have multiple needs and can not decide**:
+    - If you need a place to store large amount of temporary data while processing data, [User Scratch](../data_management/cheaha_storage_gpfs/index.md#user-scratch) is the best option.
+- **I am working with high-throughput or I/O bound applications, like AI training or evaluation, or I have many very small files**:
+    - For high-performance tasks, like AI training, [Local Scratch](../data_management/cheaha_storage_gpfs/index.md#local-scratch) provides fast and optimized data access for intensive I/O workloads..
+- **I have a combination of needs and am unsure of how to proceed**:
     - If your use case spans across multiple types of storage needs, [Contact Us](../help/support.md#how-to-request-support) to discuss your requirements, and we wll help you find the best solution.
 
 ## What Individual Storage Solutions are Available?
