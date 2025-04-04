@@ -8,6 +8,13 @@ LTS is not available as a mounted filesystem on local computers or Cheaha. You m
 
 ## Globus
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Globus is not recommended for transferring data larger than a few hundred GB between a POSIX filesystem (i.e. Cheaha and all standard desktop OS) and LTS due to issues with transfer rate. Please use [s5cmd](#installation-of-s3cmd-and-s5cmd-on-cheaha) for those cases. Smaller data can be transferred using Globus without issue.
+
+<!-- markdown-lint-enable MD046 -->
+
 [Globus](../transfer/globus.md#long-term-storage-s3-lts-connector) is a general file transfer system that operates through a web browser and is recommended for most file transfer needs. UAB has an S3 connector for Globus that can transfer data to and from LTS as long as the user has access to the desired buckets.
 
 To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in the search bar and enter your access and secret keys given to you by Research Computing staff. You will be able to see the buckets owned by the allocation associated with the keys you entered.
