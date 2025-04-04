@@ -136,3 +136,7 @@ Our Cheaha system is robust, but errors may occur due to general platform connec
     - **Do you have one or more OOD HPC Desktops running?**
 
         - Terminate the desktops and start new ones.
+
+## Leaving UAB
+
+Please see our [Leaving UAB page](./leaving_uab.md).
