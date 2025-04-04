@@ -2,6 +2,20 @@
 
 The Research Computing System (RCS) provides a framework for sharing research data, accessing computing power, and collaborating with peers on campus and around the globe. We have deployed a dynamic "network of services" to facilitate organizing, studying, and sharing research data.
 
+## News
+
+<!-- markdownlint-disable MD046 -->
+!!! announcement
+
+    Planned maintenance window affecting Cheaha GPU nodes and Cloud.rc. These resources will be unavailable at the planned times.
+
+    Planned times: April 21-27, 2025
+
+    Read more at our [News page](./news.md#2025-04-21-planned-maintenance-window)
+<!-- markdownlint-enable MD046 -->
+
+**Check our [News page](./news.md) for other recent developments.**
+
 ## How Do I Get Started?
 
 Create [your Cheaha Account](./account_management/cheaha_account.md), then check out our [Featured Tutorials](#featured-tutorials) below. If you have a specific goal in mind, try searching our documentation, or see our [Success Stories](#success-stories) for inspiration on what we can do. Represent an internal organization and want to start a collaboration? See our [Outreach](#outreach) section. If you still can't find what you need, please [Contact Us](#how-to-contact-us).
