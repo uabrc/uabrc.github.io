@@ -1,6 +1,8 @@
 # Research Data Responsibilities
 
-Data access authorization and responsibility are critical aspect of managing and securing research data and resources. It ensures that only authorized individuals have access to specific data, maintaining security, compliance, and operational efficiency.
+Data access responsibilities are a critical part of managing and securing research data and resources. These responsibilities ensure only authorized individuals have access to specified data, and maintain security, compliance, and operational efficiency.
+
+Data access responsibilities come from applicable laws and regulations, grant funding agency requirements, and UAB institutional policies. If you have questions, concerns, or wish to discuss, please [Contact Us](../help/support.md).
 
 ## Shared Allocation
 
