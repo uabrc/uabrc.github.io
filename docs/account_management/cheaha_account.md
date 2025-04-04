@@ -39,7 +39,7 @@ If your account is in good standing you should see a page like the following.
 
 ### Account Requires Certification
 
-We review accounts periodically to ensure the system is being used fairly and as intended. Part of this process is to certify that researchers with accounts still wish to make use of Cheaha. Once per year every researcher will be required to certify their account before making use of Cheaha. If your account requires certification, when logging in to our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal you will see the following notification page.
+We review accounts periodically to ensure the system is being used fairly and as intended. Part of this process is to certify that researchers with accounts still wish to make use of Cheaha. Once per year every researcher will be required to certify their account before making use of Cheaha. In addition, all accounts require certification after being placed on hold (see our [Account on Hold section](#account-on-hold)). This way, we ensure users are engaged in the process of reactivating their account to use our resources. If your account requires certification, you will see the below notification page when logging into our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal.
 
 ![!Account certification notification page.](images/uab_certify_001.png).
 
@@ -57,6 +57,7 @@ Mistakes happen, and sometimes what we thought we programmed wasn't quite what w
 
 Other reasons for holds include, but are not limited to:
 
+- If your account shows no logged usage of our resources for an extended period
 - Misuse (intentional or not) of Research Computing resources
 - [IT Policy](https://www.uab.edu/it/home/policies) violations
 - [HIPAA](https://www.uab.edu/it/home/policies/compliance/hipaa) or [FERPA](https://www.uab.edu/registrar/ferpa) violations related to use of Cheaha
@@ -135,3 +136,7 @@ Our Cheaha system is robust, but errors may occur due to general platform connec
     - **Do you have one or more OOD HPC Desktops running?**
 
         - Terminate the desktops and start new ones.
+
+## Leaving UAB
+
+Please see our [Leaving UAB page](./leaving_uab.md).

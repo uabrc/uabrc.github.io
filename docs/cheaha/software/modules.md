@@ -63,7 +63,7 @@ module reset
 
 ## Saving Modules using Collections
 
-To save time in typing in long list of modules everytime you work on a project, you can save the desired list of modules using module collection. To acheive this, load the desired modules and save them to a collection using a module collection name, as shown below.
+To save time typing in a long list of modules everytime you work on a project, you can save the desired list of modules using module collection. To achieve this, load the desired modules and save them to a collection using a module collection name, as shown below.
 
 ```bash
 module load module_1 module_2 ...
