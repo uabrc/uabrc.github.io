@@ -46,3 +46,7 @@ Bucket names are shared across all LTS. This means you cannot create a bucket wi
 At minimum, use something like "blazeridlab" for storing data for your entire lab. Or, use the name of a specific dataset that is being stored. Avoid generic names like "trial" or "my-storage" or "test" or "lab".
 
 Better practice when naming buckets is to use a short, descriptive and memorable name, then append a universally unique identifier (UUID) to the end. Websites like <https://www.uuidgenerator.net/> may be used to generate and copy UUIDs. There are $5.3\times 10^{36}$ possible UUIDs, which means the chance of duplicating one is virtually zero. Please see [Wikipedia](https://en.wikipedia.org/wiki/Universally_unique_identifier#Collisions) for math supporting the low rate of duplication.
+
+## What to Do With Data When I Leave UAB?
+
+See our [Leaving UAB page](../../account_management/leaving_uab.md).
