@@ -2,7 +2,7 @@
 
 If your life and career plans take you away from UAB, then this article is designed to help you. We hope to give you a better understanding of your responsibilities and what to expect for your account and data.
 
-All research data produced as part of UAB research is owned by UAB, and certain funding agencies (e.g. NIH) have strict data retention and sharing regulations. Transferring UAB-owned data requires the involvement of the [Office of Research](https://www.uab.edu/research/home/about/contact-us), specifically the [Office of Sponsored Programs (OSP)](https://www.uab.edu/research/home/osp-about/contact).
+All research data produced as part of UAB research is, by policy, owned by UAB. Funding agencies (e.g. NIH) often have strict data retention and sharing regulations. Transferring UAB-owned and/or agency funded data requires the involvement of the [Office of Research](https://www.uab.edu/research/home/about/contact-us), specifically the [Office of Sponsored Programs (OSP)](https://www.uab.edu/research/home/osp-about/contact).
 
 If you have questions, concerns, or any doubt after reading this page, we highly recommend [contacting us](../help/support.md).
 
@@ -62,7 +62,7 @@ For each dataset or project, which option is ideal depends on the state of the p
     - Find a UAB-affiliated successor to manage the data for you in your absence.
     - _OR_ Find an archival service suitable for long term data retention.
 
-- Something else? Please [contact us](../help/support.md)
+- Something else? Please [contact us](../help/support.md).
 
 ## What Are My Responsibilities For Core Shared Allocations?
 
@@ -72,7 +72,7 @@ If the Core will continue operating, then it is assumed there will be a successo
 
 - [GPFS (Cheaha) shared allocation](../data_management/cheaha_storage_gpfs/index.md#project-directory).
 - [LTS shared allocation](../data_management/lts/index.md).
-- [OpenStack Shared Projects](../uab_cloud/sharing_cloud_environment.md)
-- Service account, shared mailboxes, and other shared resources not managed by Research Computing, but which may have an impact on Core operations relating to Research Data acquisition and transfer, such as [Globus](../data_management/transfer/globus.md)
+- [OpenStack Shared Projects](../uab_cloud/sharing_cloud_environment.md).
+- Service account, shared mailboxes, and other shared resources not managed by Research Computing, but which may have an impact on Core operations relating to Research Data acquisition and transfer, such as [Globus](../data_management/transfer/globus.md).
 
 If the Core will cease operating, please [contact us](../help/support.md) to make arrangements to ensure final disposition of all research data.

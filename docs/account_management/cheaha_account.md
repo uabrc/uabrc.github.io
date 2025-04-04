@@ -138,4 +138,4 @@ Our Cheaha system is robust, but errors may occur due to general platform connec
 
 ## Leaving UAB
 
-Please see our [Leaving UAB page](./leaving_uab.md)
+Please see our [Leaving UAB page](./leaving_uab.md).
