@@ -1,0 +1,17 @@
+Responsibilities,PI,Manager,Members,Research Computing
+Move unused shared data to LTS/archive,Yes ✔️,Yes ✔️,Yes ✔️,
+Manage backup and recovery,Yes ✔️,Yes ✔️,Yes ✔️,
+Ensure proper usage of shared storage,Yes ✔️,Yes ✔️,Yes ✔️,
+Add/remove member to/from the project space,Yes ✔️,Yes ✔️,,Must be approved by PI/Manager
+Hardware capital expenses,beyond default quota,,,up to default quota
+"Data center hosting expenses <br> (until end of vendor service contract)",,,,Yes ✔️
+Periodically check group membership,Yes ✔️,Yes ✔️,,
+Grant access to users to a specific folder,Yes ✔️,Yes ✔️,,
+Oversee and update access controls,Yes ✔️,Yes ✔️,,
+"Data Security Controls: <br> Administrative (authorization and access)",Yes ✔️,,,
+"Data Security Controls: <br> Technical (encryption, firewall, etc.)" ,,,,Yes ✔️
+"Data Security Controls: <br> Physical (locks, cameras, sign-ins, etc.)" ,,,,Yes ✔️
+Request a project directory,Yes ✔️,,,
+Obtaining security exceptions when required,Yes ✔️,,,
+Creating and maintaining metadata,Yes ✔️,,,
+Creating a project directory,,,,Upon PI's request
