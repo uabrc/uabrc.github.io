@@ -1,0 +1,8 @@
+Responsibilities,User,Supervisor,Research Computing
+Sponsor external collaborator,Yes ✔️,Yes ✔️,Yes ✔️
+Create personal Cheaha account,Yes ✔️,,
+Move unused data to LTS or archive,Yes ✔️,,
+Manage backup plans,Yes ✔️,,
+"Data Security Control <br> Administrative (authorization and access)",Yes ✔️,[With Security Exception](#security-exceptions-for-accessing-former-uab-personnel-data),
+"Data Security Controls: <br> Technical (encryption, firewall, etc.)" ,,,Yes ✔️
+"Data Security Controls: <br> Physical (locks, cameras, sign-ins, etc.)" ,,,Yes ✔️
