@@ -40,6 +40,14 @@ The VSCode Remote Tunnel extension uses the Dev Tunnels software product. The De
 
 ### Downloading and Installing VSCode and VSCode Server
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest VSCode release that supports Cheaha's current OS, CentOS 7, is version 1.98.2. The following instructions download and install that version specifically. You will also need to install that same version of VSCode on your local machine. See their [documentation](https://code.visualstudio.com/updates/v1_98) for links to installers for your OS.  It is important to deny any update requests for both VSCode CLI on Cheaha and your local VSCode. They will need to be the same version to connect effectively.
+
+    See their [instructions](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-opt-out-of-vs-code-autoupdates) for how to disable automatic updates
+<!-- markdownlint-enable MD046 -->
+
 First, open a terminal on Cheaha. Run the following commands if you have used VSCode before to remove some hidden files. If you are installing VSCode for the first time, skip to the next code block.
 
 ``` bash
