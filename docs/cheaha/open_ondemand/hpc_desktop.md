@@ -50,11 +50,11 @@ rm -r ${HOME}/.vscode-cli
 Next, use the following commands to install both VSCode and VSCode Server:
 
 ``` bash
-curl -L -o vscode_cli.tar.gz 'https://update.code.visualstudio.com/1.85.2/cli-alpine-x64/stable'
+curl -L -o vscode_cli.tar.gz 'https://update.code.visualstudio.com/1.98.2/cli-alpine-x64/stable'
 mkdir $HOME/bin
 tar -xz -C ${HOME}/bin -f vscode_cli.tar.gz
 
-export commit_sha=8b3775030ed1a69b13e4f4c628c612102e30a681
+export commit_sha='ddc367ed5c8936efe395cffeec279b04ffd7db78'
 curl -L "https://update.code.visualstudio.com/commit:${commit_sha}/server-linux-x64/stable" -o vscode_server.tar.gz
 mkdir -vp ~/.vscode-server/bin/${commit_sha}
 tar --no-same-owner -xzv --strip-components=1 -C ${HOME}/.vscode-server/bin/"${commit_sha}" -f vscode_server.tar.gz
