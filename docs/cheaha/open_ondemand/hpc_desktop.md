@@ -40,6 +40,14 @@ The VSCode Remote Tunnel extension uses the Dev Tunnels software product. The De
 
 ### Downloading and Installing VSCode and VSCode Server
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest VSCode release that supports Cheaha's current OS, CentOS 7, is version 1.98.2. The following instructions download and install that version specifically. You will also need to install that same version of VSCode on your local machine. See their [documentation](https://code.visualstudio.com/updates/v1_98) for links to installers for your OS.  It is important to deny any update requests for both VSCode CLI on Cheaha and your local VSCode. They will need to be the same version to connect effectively.
+
+    See their [instructions](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-opt-out-of-vs-code-autoupdates) for how to disable automatic updates
+<!-- markdownlint-enable MD046 -->
+
 First, open a terminal on Cheaha. Run the following commands if you have used VSCode before to remove some hidden files. If you are installing VSCode for the first time, skip to the next code block.
 
 ``` bash
@@ -50,11 +58,11 @@ rm -r ${HOME}/.vscode-cli
 Next, use the following commands to install both VSCode and VSCode Server:
 
 ``` bash
-curl -L -o vscode_cli.tar.gz 'https://update.code.visualstudio.com/1.85.2/cli-alpine-x64/stable'
+curl -L -o vscode_cli.tar.gz 'https://update.code.visualstudio.com/1.98.2/cli-alpine-x64/stable'
 mkdir $HOME/bin
 tar -xz -C ${HOME}/bin -f vscode_cli.tar.gz
 
-export commit_sha=8b3775030ed1a69b13e4f4c628c612102e30a681
+export commit_sha='ddc367ed5c8936efe395cffeec279b04ffd7db78'
 curl -L "https://update.code.visualstudio.com/commit:${commit_sha}/server-linux-x64/stable" -o vscode_server.tar.gz
 mkdir -vp ~/.vscode-server/bin/${commit_sha}
 tar --no-same-owner -xzv --strip-components=1 -C ${HOME}/.vscode-server/bin/"${commit_sha}" -f vscode_server.tar.gz
