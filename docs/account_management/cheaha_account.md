@@ -57,11 +57,14 @@ Mistakes happen, and sometimes what we thought we programmed wasn't quite what w
 
 Other reasons for holds include, but are not limited to:
 
-- If your account shows no logged usage of our resources for an extended period
+- If your account shows no logged usage of our resources for an extended period (at least one year)
 - Misuse (intentional or not) of Research Computing resources
 - [IT Policy](https://www.uab.edu/it/home/policies) violations
 - [HIPAA](https://www.uab.edu/it/home/policies/compliance/hipaa) or [FERPA](https://www.uab.edu/registrar/ferpa) violations related to use of Cheaha
 - As part of a required investigation
+- Annual attestation (on a specific date, all accounts must go in and take their account off hold)
+- [Affiliation with UAB ends](./leaving_uab.md)
+- Unsubscribing from the `hpc-announce LISTSERV` mailing list
 
 In rare circumstances, we may also place a hold on your account if you possess the sole copy of data not owned by you.
 
