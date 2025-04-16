@@ -52,6 +52,10 @@ For more information on usage with examples, see [Anaconda Environments](../../w
 
 Please see our [CUDA and cuDNN section of the GPU page](../slurm/gpu.md#cuda-and-cudnn-modules).
 
+## Cell Ranger
+
+CellRanger is subject to the End User License Agreement (EULA) terms, which can be reviewed [here](https://github.com/10XGenomics/cellranger/blob/main/LICENSE).
+
 ## Singularity Containers
 
 Containers are a very useful resource for installing software without needing administrator permission. Please read the full documentation about singularity and containers on our [main Singularity page](../../workflow_solutions/getting_containers.md#containers-on-cheaha).
