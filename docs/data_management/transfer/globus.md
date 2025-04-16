@@ -1,5 +1,11 @@
 # Globus
 
+<!-- markdownlint-disable MD046 -->
+!!! announcement
+
+    We are aware of reduced transfer speed into and out of [Long-Term Storage (LTS)] when using Globus and are working on a solution. For some use-cases, [`s5cmd`](../lts/interfaces.md#s5cmd) may be a faster alternative. Please see [Our News Section](../../news.md#2025-04-07-reduced-lts-transfer-speeds-on-globus) for more information.
+<!-- markdownlint-enable MD046 -->
+
 Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is recommended for most single-use, day-to-day data transfer use-cases.
 
 UAB Research Computing uses High Assurance Endpoints, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions/changes.

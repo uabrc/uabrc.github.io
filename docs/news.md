@@ -36,3 +36,11 @@ To explain further, as part of our storage platform upgrade from GPFS4 to GPFS5,
 The Proxy Node and GPFS5 OOD are both hosted on equipment that will be unavailable during the maintenance window (Cloud.rc/OpenStack). We will make the GPFS5 Login Node available directly, behind the UAB Firewall, with a specified IP address (to be determined).
 
 How do I use the UAB VPN? Please see: <https://www.uab.edu/it/home/tech-solutions/network/vpn>.
+
+### 2025-04-07 Reduced LTS Transfer Speeds on Globus
+
+We are aware of increased transfer times into and out of LTS when using Globus. Transfer times are taking substantially longer than expected. The issue is occurring because of a bug in our version of Ceph, the LTS backend storage system. A bugfix is in the work by the vendor and we will communicate once we know more.
+
+At this time, we recommend preferring to use [`s5cmd`](https://docs.rc.uab.edu/data_management/lts/interfaces/#s5cmd) to transfer large amounts of data into and out of LTS.
+
+Please feel free to [Contact Us](./help/support.md) for more information or alternative solutions.
