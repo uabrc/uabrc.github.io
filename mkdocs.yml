@@ -103,6 +103,7 @@ nav:
                 - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
                 - "For Guests - Account Creation": account_management/xias/guest_instructions.md
           - Gitlab Account: account_management/gitlab_account.md
+          - Leaving UAB: account_management/leaving_uab.md
     - Data Management:
           - data_management/index.md
           - Cheaha Storage (GPFS):
@@ -128,6 +129,7 @@ nav:
                 - RClone: data_management/transfer/rclone.md
                 - FileZilla: data_management/transfer/filezilla.md
           - Code Storage: data_management/code_storage.md
+          - Research Data Responsibilities: data_management/research_data_responsibilities.md
     - Workflow Solutions:
           - Using the Shell: workflow_solutions/shell.md
           - Using Anaconda: workflow_solutions/using_anaconda.md
@@ -146,8 +148,7 @@ nav:
                 - cheaha/open_ondemand/index.md
                 - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
                 - HPC Desktop: cheaha/open_ondemand/hpc_desktop.md
-                - Jupyter Notebook: cheaha/open_ondemand/ood_jupyter.md
-                - JupyterLab: cheaha/open_ondemand/ood_jupyterlab.md
+                - Jupyter: cheaha/open_ondemand/ood_jupyter.md
                 - RStudio: cheaha/open_ondemand/ood_rstudio.md
                 - MATLAB: cheaha/open_ondemand/ood_matlab.md
           - Hardware: cheaha/hardware.md
@@ -187,10 +188,14 @@ nav:
           - Funding Opportunities: grants/opportunities.md
     - Outreach & Training:
           - Case Studies: education/case_studies.md
+          - Research Computing Courses: education/courses.md
+          - Training Resources: education/training_resources.md
+          - Scientific Domain-Specific Analysis Software:
+                - education/domain_specific_software/index.md
+                - Genetics & Omics: education/domain_specific_software/omics.md
+          - Research Operations Software: education/research_operations_software.md
           - Research Computing Days:
                 - education/research_computing_days/index.md
-          - Offered Courses: education/courses.md
-          - Training Resources: education/training_resources.md
     - Policies: policies.md
     - Reporting Documentation Errors: contributing/reporting_errors.md
     - Contributing Content: contributing/contributor_guide.md
