@@ -113,7 +113,7 @@ You may use the [Anaconda page](https://anaconda.org/) to search for packages on
 
 #### Packages for Jupyter
 
-For more information about using Anaconda with Jupyter, see the section [Working with Anaconda Environments](../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
+For more information about using Anaconda with Jupyter (Jupyter Notebook and JupyterLab), see the section [Working with Anaconda Environments](../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
 
 #### CUDA and cuDNN packages for GPU Usage
 

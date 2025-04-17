@@ -32,7 +32,7 @@ An alternative method suited for developers using VSCode, is to use the "Remote 
 
 ## Open OnDemand Features
 
-The Open OnDemand portal features a [file browser](./open_ondemand/ood_layout.md#file-browser) and various interactive applications including a [remote desktop](./open_ondemand/hpc_desktop.md), [Jupyter](./open_ondemand/ood_jupyter.md), [RStudio](./open_ondemand/ood_rstudio.md) and [MATLAB](./open_ondemand/ood_matlab.md), among others. There is also a [terminal](./open_ondemand/ood_layout.md#opening-a-terminal) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](./open_ondemand/index.md).
+The Open OnDemand portal features a [file browser](./open_ondemand/ood_layout.md#file-browser) and various interactive applications including a [remote desktop](./open_ondemand/hpc_desktop.md), [Jupyter Notebook](./open_ondemand/ood_jupyter.md), [RStudio](./open_ondemand/ood_rstudio.md) and [MATLAB](./open_ondemand/ood_matlab.md), among others. There is also a [terminal](./open_ondemand/ood_layout.md#opening-a-terminal) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](./open_ondemand/index.md).
 
 ## Hardware
 
