@@ -21,7 +21,7 @@ When you have different types of data with varying storage needs, choosing the r
     - If you are new to Cheaha and working with small personal projects, you do not need a complex storage solution. [User Data](../data_management/cheaha_storage_gpfs/index.md#user-data-and-home-directories) is a simple and accessible option for beginners and smaller datasets.
     - If you find your project growing, or you need to collaborate with others at UAB, consider a shared allocation on [GPFS](../data_management/cheaha_storage_gpfs/index.md) and/or [LTS](../data_management/lts/index.md). Please refer to the instructions on [how to request a shared allocation](#how-do-i-request-shared-storage).
 - **I need somewhere to store lots of temporary files while I do my processing**:
-    - If you need a place to store large amount of temporary data while processing data, [User Scratch](../data_management/cheaha_storage_gpfs/index.md#user-scratch) is the best option.
+    - If you need a place to store large amounts of temporary data while processing data, [User Scratch](../data_management/cheaha_storage_gpfs/index.md#user-scratch) is the best option.
 - **I am working with high-throughput or I/O bound applications, like AI training or evaluation, or I have many very small files**:
     - For high-performance tasks, like AI training, [Local Scratch](../data_management/cheaha_storage_gpfs/index.md#local-scratch) provides fast and optimized data access for intensive I/O workloads..
 - **I have a combination of needs and am unsure of how to proceed**:
