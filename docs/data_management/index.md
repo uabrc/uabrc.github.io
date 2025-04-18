@@ -126,7 +126,7 @@ If you wish to discuss other alternatives tailored to your workflow, please [Con
 
 ### How can I effectively manage my data?
 
-Keep files well-organized and clearly named, back up regularly, and archive or delete unused data.  For more information on user responsibilities, please review our [Research Data Responsibilities](./research_data_responsibilities.md#research-data-responsibilities) page.
+Keep files well-organized and clearly named, back up regularly, and archive or delete unused data.
 
 ### What are my responsibilities for data management?
 
