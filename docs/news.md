@@ -39,7 +39,7 @@ How do I use the UAB VPN? Please see: <https://www.uab.edu/it/home/tech-solution
 
 ### 2025-04-07 Reduced LTS Transfer Speeds on Globus
 
-We are aware of increased transfer times into and out of LTS when using Globus. Transfer times are taking substantially longer than expected. The issue is occurring because of a bug in our version of Ceph, the LTS backend storage system. A bugfix is in the work by the vendor and we will communicate once we know more.
+We are aware of increased transfer times into and out of LTS when using Globus. Transfer times are taking substantially longer than expected. The issue is occurring because of a bug in our version of Ceph, the LTS backend storage system. A bugfix is in the works by the vendor and we will communicate once we know more.
 
 At this time, we recommend preferring to use [`s5cmd`](https://docs.rc.uab.edu/data_management/lts/interfaces/#s5cmd) to transfer large amounts of data into and out of LTS.
 
