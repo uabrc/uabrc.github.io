@@ -34,7 +34,7 @@ To access the terminal (shell), please do the following.
 
 ## How do we create a custom environment for PyTorch and TensorFlow
 
-The instructions below, provide a recommended step by step guide to creating and activating an environment that has PyTorch and/or TensorFlow installed and ready to use for deep learning projects.
+The instructions below, provide a recommended step by step guide to creating and activating an environment that has PyTorch and/or TensorFlow installed and ready to use for deep learning projects. You can find a link to an introductory deep learning course from Software Carpentries on our page for [training resources](../../education/training_resources.md#the-carpentries).
 
 ## Installing PyTorch Using the Terminal
 
