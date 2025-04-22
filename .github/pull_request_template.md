@@ -26,6 +26,22 @@ Write down which pages have changed.
 old/page.md -> new/page.md
 -->
 
+## Accessibility Checklist
+
+- [ ] All images have appropriate alt text. [Guidelines](https://www.wcag.com/blog/good-alt-text-bad-alt-text-making-your-content-perceivable/)
+- [ ] Text-based images have appropriate contrast ratio. [Checker](https://webaim.org/resources/contrastchecker/)
+- [ ] Text-based image content is transcribed in body text.
+- [ ] Abbreviations are introduced before usage in body text.
+
+## Style Checklist
+
+- [ ] My content crosslinks to other relevant pages.
+- [ ] Other relevant pages crosslink to my content.
+- [ ] I have added redirects for any moved headers or pages.
+- [ ] New jargon terms are defined in the glossary.
+- [ ] Existing jargon terms are crosslinked to the glossary.
+- [ ] Proper nouns and branded names are written and/or introduced properly.
+
 ## Related Issues
 
 <!--
