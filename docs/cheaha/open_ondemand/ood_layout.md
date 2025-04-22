@@ -136,7 +136,7 @@ The My Interactive Sessions page lists the available apps and your current inter
 
 For each job running via Open OnDemand, there will be a card listed on this page:
 
-1. **Job ID**: The jobID assigned by the SLURM scheduler for this specific job.
+1. **Job ID**: The jobID assigned by the Slurm scheduler for this specific job.
 1. **Host**: The node on which the job is currently running.
 1. **Time Remaining**: The amount of time remaining from the total requested time.
 1. **Session ID**: This is the unique ID for the OOD session for this job, which can be clicked to access the OOD log directory for troubleshooting.

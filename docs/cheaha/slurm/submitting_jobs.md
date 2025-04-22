@@ -145,7 +145,7 @@ For more details on using `sbatch` please see the [official documentation](https
 
 Throttling in Slurm array jobs refers to limiting the number of concurrent jobs that can run simultaneously. This approach prevents the overloading of computing resources and ensures fair distribution of resources among users. From a performance perspective, throttling helps optimize overall job performance by reducing resource contention across the Cheaha cluster. When too many jobs run at the same time, they may compete for CPU, memory, or I/O, which can negatively impact performance. Please [contact us](../../index.md#how-to-contact-us) if your research needs exceed our capacity.
 
-To limit the number of concurrent jobs in a SLURM array, you can use the `%` separator. Here’s how to use it in the above example:
+To limit the number of concurrent jobs in a Slurm array, you can use the `%` separator. Here’s how to use it in the above example:
 
 ```bash
 sbatch --array=0-9%4 job.sh

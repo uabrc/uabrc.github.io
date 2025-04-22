@@ -16,7 +16,7 @@ Cheaha is a campus high-performance computing (HPC) resource dedicated to enhanc
 - Gen 10 (Q4 2021): 34 nodes, 2x64 core (4352 cores total) 2.0 GHz AMD Epyc 7713 Milan compute nodes each with 512 GB RAM and EDR InfiniBand interconnect.
 - Gen 11 (Q4 2023): 20 nodes, 2x64 core (2560 cores total) 2.0 GHz AMD Epyc 7713 Milan compute nodes each with 512 GB RAM and 2 A100 80 GB GPUs.
 
-Cheaha provides researchers with both a web-based interface, via open OnDemand, and a traditional command-line interactive environment, via SSH. These interfaces provide access to many scientific tools that can leverage a dedicated pool of on-premises compute resources via the SLURM batch scheduler. The on-premises compute pool provides access to four recent generations of hardware based on the x86 64-bit architecture.
+Cheaha provides researchers with both a web-based interface, via open OnDemand, and a traditional command-line interactive environment, via SSH. These interfaces provide access to many scientific tools that can leverage a dedicated pool of on-premises compute resources via the Slurm batch scheduler. The on-premises compute pool provides access to four recent generations of hardware based on the x86 64-bit architecture.
 
 ## High-performance Computing Software Tools (Cheaha)
 
