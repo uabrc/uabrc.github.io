@@ -44,12 +44,12 @@ These instructions are for guests who have been registered by UAB faculty and st
 
 ## Required Software for Research Computing Access
 
-Research computing software requires security software be installed on your devices in order to login. [Duo two-factor authentication (2FA)](https://www.uab.edu/it/home/security/2-factor) software is required on your mobile to device to access any Single Sign-on services. [VPN access software](https://www.uab.edu/it/home/tech-solutions/network/vpn) is required for some services when connected from outside the UAB internal network. Accessing the VPN also requires Duo 2FA.
+Research computing software requires security software be installed on your devices in order to login. [Duo two-factor authentication (2FA)](https://www.uab.edu/it/home/security/2-factor) software is required on your mobile to device to access any Single Sign-on services. [UAB Campus VPN access software](https://www.uab.edu/it/home/tech-solutions/network/vpn) is required for some services when connected from outside the UAB internal network. Accessing the UAB Campus VPN also requires Duo 2FA.
 
 Below is a list of Research Computing services and their required software.
 
 - Cheaha: Duo 2FA
-- Cloud.rc: VPN and Duo 2FA if off-campus
+- Cloud.rc: UAB Campus VPN and Duo 2FA if off-campus
 
 ## Change Password and Recover From Lost Password
 

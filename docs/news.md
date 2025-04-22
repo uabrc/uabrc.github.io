@@ -29,13 +29,13 @@ We plan to do this in three phases.
 #### For GPFS5 Early Adopters
 
 - Open OnDemand will be unavailable for the duration of the maintenance window.
-- SSH will be available through an IP address, to be determined. To access this IP address you will need to be on the UAB VPN.
+- SSH will be available through an IP address, to be determined. To access this IP address you will need to be on the UAB Campus VPN.
 
 To explain further, as part of our storage platform upgrade from GPFS4 to GPFS5, we have duplicated essential login services. These include OOD and the Login Node, as well as a transparent Proxy Node. When you SSH into Cheaha the Proxy Node forwards your connection to the appropriate Login Node automatically.
 
 The Proxy Node and GPFS5 OOD are both hosted on equipment that will be unavailable during the maintenance window (Cloud.rc/OpenStack). We will make the GPFS5 Login Node available directly, behind the UAB Firewall, with a specified IP address (to be determined).
 
-How do I use the UAB VPN? Please see: <https://www.uab.edu/it/home/tech-solutions/network/vpn>.
+How do I use the UAB Campus VPN? Please see: <https://www.uab.edu/it/home/tech-solutions/network/vpn>.
 
 ### 2025-04-07 Reduced LTS Transfer Speeds on Globus
 
