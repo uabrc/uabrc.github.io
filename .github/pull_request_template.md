@@ -40,7 +40,7 @@ old/page.md -> new/page.md
 - [ ] I have added redirects for any moved headers or pages.
 - [ ] New jargon terms are defined in the glossary.
 - [ ] Existing jargon terms are crosslinked to the glossary.
-- [ ] Proper nouns and branded names are written and/or introduced properly.
+- [ ] Proper nouns and branded names are written and/or introduced properly. [List here](https://docs.rc.uab.edu/contributing/contributor_guide/#terminology).
 
 ## Related Issues
 
