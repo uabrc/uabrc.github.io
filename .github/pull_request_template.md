@@ -10,6 +10,22 @@
 
 <!-- Provide specific details of what is changing -->
 
+### Changes to Section Headers
+
+<!--
+Write down which headers have changed.
+
+old-header -> new-header
+-->
+
+### Changes to Page URLs
+
+<!--
+Write down which pages have changed.
+
+old/page.md -> new/page.md
+-->
+
 ## Related Issues
 
 <!--
