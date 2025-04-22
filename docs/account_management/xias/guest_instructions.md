@@ -48,8 +48,8 @@ Research computing software requires security software be installed on your devi
 
 Below is a list of Research Computing services and their required software.
 
-- Cheaha: 2FA
-- Cloud.rc: VPN and 2FA if off-campus
+- Cheaha: Duo 2FA
+- Cloud.rc: VPN and Duo 2FA if off-campus
 
 ## Change Password and Recover From Lost Password
 
