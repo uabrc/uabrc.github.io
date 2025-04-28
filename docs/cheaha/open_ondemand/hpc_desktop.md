@@ -40,6 +40,16 @@ The VSCode Remote Tunnel extension uses the Dev Tunnels software product. The De
 
 ### Downloading and Installing VSCode and VSCode Server
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Support for the Cheaha operating system (CentOS 7) ended with version 1.99 of VSCode, released in March, 2025. Versions 1.98.2 and earlier are still supported.
+
+    The following instructions show how to download and install version 1.98.2. You will also need to install the same version of VSCode on your local computer. See the [VSCode documentation](https://code.visualstudio.com/updates/v1_98) for links to installers for the operating system on your local computer.
+
+    It is important to deny any update requests for both VSCode CLI on Cheaha and your local VSCode. Connection between your local computer and Cheaha requires the same version on both ends. See [Automatically Rejecting Updates](#automatically-rejecting-updates) to learn how to automatically deny update requests.
+<!-- markdownlint-enable MD046 -->
+
 First, open a terminal on Cheaha. Run the following commands if you have used VSCode before to remove some hidden files. If you are installing VSCode for the first time, skip to the next code block.
 
 ``` bash
@@ -50,15 +60,19 @@ rm -r ${HOME}/.vscode-cli
 Next, use the following commands to install both VSCode and VSCode Server:
 
 ``` bash
-curl -L -o vscode_cli.tar.gz 'https://update.code.visualstudio.com/1.85.2/cli-alpine-x64/stable'
+curl -L -o vscode_cli.tar.gz 'https://update.code.visualstudio.com/1.98.2/cli-alpine-x64/stable'
 mkdir $HOME/bin
 tar -xz -C ${HOME}/bin -f vscode_cli.tar.gz
 
-export commit_sha=8b3775030ed1a69b13e4f4c628c612102e30a681
+export commit_sha='ddc367ed5c8936efe395cffeec279b04ffd7db78'
 curl -L "https://update.code.visualstudio.com/commit:${commit_sha}/server-linux-x64/stable" -o vscode_server.tar.gz
 mkdir -vp ~/.vscode-server/bin/${commit_sha}
 tar --no-same-owner -xzv --strip-components=1 -C ${HOME}/.vscode-server/bin/"${commit_sha}" -f vscode_server.tar.gz
 ```
+
+#### Automatically Rejecting Updates
+
+See the [VSCode automatic updates documentation](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-opt-out-of-vs-code-autoupdates).
 
 #### Adding code to PATH
 
