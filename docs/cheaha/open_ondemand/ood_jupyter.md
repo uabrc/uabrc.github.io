@@ -24,7 +24,13 @@ module load cuDNN/8.9.2.26-CUDA-12.2.0
 
 For information on which versions of CUDA to load for Tensorflow and PyTorch, please see [Tensorflow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
 
-For information on partition and GPU selection, please review our [hardware information page](../hardware.md) and [GPU Page](../slurm/gpu.md)
+For information on partition and GPU selection, please review our [hardware information page](../hardware.md) and [GPU Page](../slurm/gpu.md).
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
 
 ## Extra Jupyter Arguments
 
@@ -107,13 +113,25 @@ Using `conda init` causes a block of code automatically inserted into the `.bash
 
 ### Pip Installs Packages Outside of Environment
 
-When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` within the same conda environment and use `pip` from that environment. If `pip` is used outside of Anaconda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments, and shows the following error,
+When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` first within the same conda environment and use `pip` from that environment. If `pip` is used outside of conda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments, and shows the following error,
 
 ```bash
 Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)
 ```
 
-For the above case, resolving errors involve deleting the `~/.local` directory.
+For the above case, deleting the `~/.local` directory and then installing `pip` within an environment, will fix this error. Ensure you input the correct file path, we suggest copying the filepath found in the output "Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)".
+
+```bash
+rm -rf /home/$USER/.local/lib/python3.xx/site-packages
+```
+
+Replace `python3.11` in the command with the appropriate Python version.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Please note, using the `rm -rf` command would permanently delete the specified file or specified directory and its contents.
+<!-- markdownlint-enable MD046 -->
 
 Here's an example of the correct procedure for installing `pip` packages within a `conda`:
 

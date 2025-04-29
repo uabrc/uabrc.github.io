@@ -68,9 +68,21 @@ To ensure your files are attached to tickets as expected, try the following.
 
 Please do not try to attach executable files to tickets. If you have a legitimate need to give us executable files, mention it in the ticket and we can find a path forward on a case-by-case basis.
 
+## How Can I Follow up on ServiceNow Tickets?
+
+If you are unable to find a reference or correspondence for your already submitted ServcieNow ticket, you can now visit UAB's [ServiceNow portal](https://uabprod.service-now.com/service_portal) to track and follow up your submitted tickets. At the website, click the "Log in" button to sign in with your UAB SSO (Single Sign On) credentials.
+
+![Landing page of ServiceNow Portal with the "Log in" button highlighted](images/servicenow_landing_page.png)
+
+When logged in you will see in the top right corner a "My tickets" button. Click on this and you will see two options: "View all open tickets" and "View all tickets".
+
+![ServiceNow Portal after Logging in, highlighting "My tickets" options](images/servicenow_landing_page_tickets.png)
+
+Select the option appropriate for your need. The "View all open tickets" will show you a list of tickets you currently have open (i.e. unresolved), while the "View all tickets" option would show you a list of tickets you have ever submitted, open or closed.
+
 ## How Do I Request Or Change Shared Storage?
 
-Please see our [Storage page](../data_management/storage.md) for more information.
+Please see our [Storage page](../data_management/index.md) for more information.
 
 ## How do I request new software installed?
 

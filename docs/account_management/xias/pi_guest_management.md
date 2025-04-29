@@ -79,5 +79,5 @@ Users cannot have their XIAS account deleted. However, privileges may be revoked
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you need to urgently revoke privileges, please also notify UAB IT by emailing <AskIT@uab.edu> as soon as possible. Please be clear about what is needed and when.
+    If you need to urgently revoke privileges, please also notify UAB IT by emailing <askit@uab.edu> as soon as possible. Please be clear about what is needed and when.
 <!-- markdownlint-enable MD046 -->

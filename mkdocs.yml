@@ -49,8 +49,7 @@ plugins:
   - git-revision-date-localized:
       type: date
       strict: false
-  - glightbox:
-      # auto_caption: true
+  - glightbox
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
@@ -66,11 +65,13 @@ plugins:
         cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
         contributor_guide.md: contributing/contributor_guide.md
+        data_management/cheaha_gpfs_storage.md: data_management/cheaha_storage_gpfs/index.md
         data_management/LTS/lts.md: data_management/lts/index.md
         data_management/LTS/sharing.md: data_management/lts/iam_and_policies.md
         data_management/lts/lts.md: data_management/lts/index.md
         data_management/lts/policies.md: data_management/lts/iam_and_policies.md
         data_management/lts/sharing.md: data_management/lts/iam_and_policies.md
+        data_management/storage.md: data_management/index.md
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/git_collaboration.md
@@ -92,6 +93,7 @@ not_in_nav: |
 
 nav:
   - Home: index.md
+  - News: news.md
   - Account Management:
       - account_management/index.md
       - Cheaha Account: account_management/cheaha_account.md
@@ -101,8 +103,11 @@ nav:
           - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
           - "For Guests - Account Creation": account_management/xias/guest_instructions.md
       - Gitlab Account: account_management/gitlab_account.md
+      - Leaving UAB: account_management/leaving_uab.md
   - Data Management:
-      - Cheaha Storage: data_management/storage.md
+      - data_management/index.md
+      - Cheaha Storage (GPFS):
+          - data_management/cheaha_storage_gpfs/index.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
@@ -113,7 +118,8 @@ nav:
           - Identity and Access Management: data_management/lts/iam_and_policies.md
           - UAB Core Accounts: data_management/lts/lts_cores.md
           - FAQ: data_management/lts/lts_faq.md
-      - Transfer:
+      - Data Transfer Tools:
+          - data_management/transfer/index.md
           - Tutorial:
               - data_management/transfer/tutorial/index.md
               - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
@@ -123,6 +129,7 @@ nav:
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
       - Code Storage: data_management/code_storage.md
+      - Research Data Responsibilities: data_management/research_data_responsibilities.md
   - Workflow Solutions:
       - Using the Shell: workflow_solutions/shell.md
       - Using Anaconda: workflow_solutions/using_anaconda.md
@@ -182,10 +189,14 @@ nav:
       - Funding Opportunities: grants/opportunities.md
   - Outreach & Training:
       - Case Studies: education/case_studies.md
+      - Research Computing Courses: education/courses.md
+      - Training Resources: education/training_resources.md
+      - Scientific Domain-Specific Analysis Software:
+          - education/domain_specific_software/index.md
+          - Genetics & Omics: education/domain_specific_software/omics.md
+      - Research Operations Software: education/research_operations_software.md
       - Research Computing Days:
           - education/research_computing_days/index.md
-      - Offered Courses: education/courses.md
-      - Training Resources: education/training_resources.md
   - Policies: policies.md
   - Reporting Documentation Errors: contributing/reporting_errors.md
   - Contributing Content: contributing/contributor_guide.md

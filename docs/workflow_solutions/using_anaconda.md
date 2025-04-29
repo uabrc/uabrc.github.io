@@ -107,6 +107,12 @@ pip install \<package\>==version
 pip install -r packages.txt
 ```
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you see an output message like "Requirement already satisfied: $package in /home/$USER/.local/lib/python3.xx/site-packages". Please see steps [here](../cheaha/open_ondemand/ood_jupyter.md#pip-installs-packages-outside-of-environment) on how to address this.
+<!-- markdownlint-enable MD046 -->
+
 #### Finding Packages
 
 You may use the [Anaconda page](https://anaconda.org/) to search for packages on Anaconda, or use Google with something like `<package name> conda`. To find packages in PyPI, either use the [PyPI page](https://pypi.org/) to search, or use Google with something like `<package name> pip`.
@@ -114,6 +120,10 @@ You may use the [Anaconda page](https://anaconda.org/) to search for packages on
 #### Packages for Jupyter
 
 For more information about using Anaconda with Jupyter, see the section [Working with Anaconda Environments](../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
+
+#### CUDA and cuDNN packages for GPU Usage
+
+For more information about finding CUDA and cuDNN packages for use with GPUs, see the section [CUDA and cuDNN Modules](../cheaha/slurm/gpu.md#cuda-and-cudnn-modules)
 
 ### Update packages in an environment
 
@@ -284,7 +294,7 @@ Now we can be sure that the correct versions of the software will be installed o
 
 #### Good Practice for Finding Software Packages on Anaconda
 
-Finding Anaconda software packages involves searching through the available “Channels” and repositories to locate the specific packages that contain functions that you need for your environment. Channels are Anaconda's way of organizing packages. Channels instruct Anaconda where to look for packages when installation is to be done. The following are Anaconda Channels that are readily used to house majority of the packages used in scientific research. Anaconda, Conda-Forge, BioConda, other Channels also exist. If you want more information on Anaconda Channels please see their [docs](https://docs.anaconda.com/).
+Finding Anaconda software packages involves searching through the available “Channels” and repositories to locate the specific packages that contain functions that you need for your environment. Channels are Anaconda's way of organizing packages. Channels instruct Anaconda where to look for packages when installation is to be done. The following are Anaconda Channels that are readily used to house majority of the packages used in scientific research. Anaconda, Conda-Forge, BioConda, other Channels also exist. If you want more information on Anaconda Channels please see their [docs](https://www.anaconda.com/docs/main).
 
 In the sections below, you will see information on how to find key packages you intend to use, ensure the packages are up-to-date, figure out the best way to install them, and finally compose an environment file for portability and replicability.
 
