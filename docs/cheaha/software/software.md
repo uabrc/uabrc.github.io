@@ -54,7 +54,17 @@ Please see our [CUDA and cuDNN section of the GPU page](../slurm/gpu.md#cuda-and
 
 ## Cell Ranger
 
-CellRanger is subject to the End User License Agreement (EULA) terms, which can be reviewed [here](https://github.com/10XGenomics/cellranger/blob/main/LICENSE).
+Cell Ranger is a proprietary software developed by 10x Genomics.
+
+### Licensing
+
+(i) Usage of Cell Ranger is governed by the terms of their [End User License Agreement (EULA)](https://www.10xgenomics.com/legal/end-user-software-license-agreement). Each UAB researcher must individually review and accept the EULA to install and use the software.
+
+(ii) Cell Ranger is strictly licensed for use with data generated on 10x Genomics instruments and may not be used with data from other platforms.
+
+### Installation
+
+ Cell Ranger can be installed within a researcher’s individual user account on Cheaha. Installation instructions are available on the official [10x Genomics website](https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-in#download).
 
 ## Singularity Containers
 
