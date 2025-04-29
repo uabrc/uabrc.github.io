@@ -309,8 +309,8 @@ The following Slurm script is an example of how you might convert the previous [
 #SBATCH --mem=4G                     ### Memory required, 4 gigabyte
 #SBATCH --partition=express          ### Cheaha Partition
 #SBATCH --time=01:00:00              ### Estimated Time of Completion, 1 hour
-#SBATCH --output=logs/%x_%A_%a.out        ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
-#SBATCH --error=logs/%x_%A_%a.err         ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --output=logs/%x_%A_%a.out   ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --error=logs/%x_%A_%a.err    ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --array=1-3                  ### Number of Slurm array tasks, 3 tasks
 
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
@@ -322,7 +322,16 @@ start=$((($SLURM_ARRAY_TASK_ID - 1) * 100000 + 1))
 end=$(($SLURM_ARRAY_TASK_ID * 100000))
 
 ### Run the python script with input arguments and append the results to a .txt file for each task
-python python_script_new.py $start $end 2>&1 | awk -v task_id=$SLURM_ARRAY_TASK_ID '{print "array task " task_id, $0}' >> output_all_tasks.txt
+python python_script_new.py $start $end 2>&1 \
+  | awk -v task_id=$SLURM_ARRAY_TASK_ID '{print "array task " task_id, $0}' \
+  >> output_all_tasks.txt
+```
+
+Submit the script `slurm_array` for execution using the command,
+
+```bash
+$cd array_example
+$sbatch slurm_array.job
 ```
 
 The output shows the sum of different input range computed by individual task, making it easy to track using a task identifier, such as array task 1/2/3.
