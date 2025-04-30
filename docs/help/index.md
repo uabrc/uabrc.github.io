@@ -1,15 +1,19 @@
 # Help
 
-## How to Contact Us
+This section is your guide to getting the right support when you need it. Whether you're just getting started with using our services on Cheaha, troubleshooting an issue, or exploring advanced features, we’re here to help. You'll find multiple ways to reach out for support, from exploring our detailed documentation, to submitting support tickets, or joining our virtual office hours and connecting with our team of Facilitators for live assistance, we will like to help. Please choose one of the options that best fits you, and we’ll do our best to support your research computing needs.
 
-Please reach out to us via email at <support@listserv.uab.edu> to create a support ticket.
+## Ways we can help
 
-For face-to-face support please visit us in our Zoom office hours held weekly:
+### UAB Research Computing Documentation
 
-- Mondays 10:00 AM to 12:00 PM:
-[Zoom](https://uab.zoom.us/j/81783104592?pwd=L21OOWNlY2doWXova3MzOGFRcE4zQT09)
+You can look through sections in our [documentation](../index.md) to answer many common questions you may have. You can also look up the various setup guides we have for the services we provide. We provide some step-by-step tutorials, troubleshooting tips, and examples to support your research workflow needs.
 
-- Thursdays 10:00 AM to 12:00 PM:
-[Zoom](https://uab.zoom.us/j/81783104592?pwd=L21OOWNlY2doWXova3MzOGFRcE4zQT09)
+### Send a Support Ticket
 
-Please see our [FAQ](./faq.md) page to address some common inquiries. However, if you require additional information please visit [Support](./support.md).
+Please reach out to us via email at <support@listserv.uab.edu> to create a support ticket. We address technical issues related to our Research Computing services, such as account management, data and storage needs, GPU usage, resource allocation and reservation, and cloud RC. We also provide limited support for research tools and software native to the platforms we provide or support.
+
+### Attend Virtual Office Hours
+
+You can also attend our virtual office hours on Mondays and Thursdays weekly. Our Research Facilitation team provides live support during these hours to resolve your needs. The meetings are held on Zoom, please find detailed information on this [link](../index.md#how-to-contact-us) containing meeting times, and the link to join our bi-weekly office hours.
+
+For additional information please see our [Support page](./support.md).
