@@ -440,7 +440,10 @@ Navigate to the working directory to prepare for following steps.
 cd ~/slurm_tutorials/example_6
 ```
 
-Let us create a file named `matmul_tensorflow.py` and copy the following script into it to prepare for the tutorials. Use your favorite text editor. On Cheaha, you can use [`nano` at the terminal](../../workflow_solutions/shell.md#edit-plain-text-files-nano), or `gedit` to open a graphical editor in an [HPC Interactive Desktop job](../open_ondemand/hpc_desktop.md).
+Let us create a file named `matmul_tensorflow.py` and copy the following script into it to prepare for the tutorials. You are welcomet to use your favorite text editor. On Cheaha, there are two built-in options.
+
+- At any terminal on Cheaha, use [nano]. Type [`nano matmul_tensorflow.py` at the terminal](../../workflow_solutions/shell.md#edit-plain-text-files-nano) to create and start editing the file.
+- In an HPC Desktop job terminal, type `gedit matmul_tensorflow.py` to create the file and open a graphical editor.
 
 ```bash linenums="1"
 import tensorflow as tf
