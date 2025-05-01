@@ -434,16 +434,18 @@ Let's create a working directory using [shell commands](../../workflow_solutions
 mkdir -p ~/slurm_tutorials/example_6
 ```
 
-Navigate to the working directory to prepare for following steps.
+Navigate to the working directory to prepare for following steps. All of the following steps will take place in this directory.
 
 ```bash
 cd ~/slurm_tutorials/example_6
 ```
 
-Let us create a file named `matmul_tensorflow.py` and copy the following script into it to prepare for the tutorials. You are welcomet to use your favorite text editor. On Cheaha, there are two built-in options.
+Let us create a file named `matmul_tensorflow.py` and copy the script below into it to prepare for the tutorials. You are welcome to use your favorite text editor. On Cheaha, there are two built-in options, just before the script below.
 
 - At any terminal on Cheaha, use [nano]. Type [`nano matmul_tensorflow.py` at the terminal](../../workflow_solutions/shell.md#edit-plain-text-files-nano) to create and start editing the file.
 - In an HPC Desktop job terminal, type `gedit matmul_tensorflow.py` to create the file and open a graphical editor.
+
+Below is the script to copy into the new file.
 
 ```bash linenums="1"
 import tensorflow as tf
