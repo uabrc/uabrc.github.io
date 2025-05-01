@@ -2,7 +2,7 @@
 
 ## Parabricks for Performing GPU-accelerated Genome Sequencing Analysis
 
-A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found at <https://www.nvidia.com/en-us/clara/genomics/>, see the FAQ under "Does Parabricks match the results of open-source tools?"
+A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found at <https://www.nvidia.com/en-us/clara/genomics/#faq>, see the FAQ under "Does Parabricks match the results of open-source tools?"
 
 For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md).
 
