@@ -34,7 +34,9 @@ Please see [Cheaha Hardware](../hardware.md#summary) for more information. Remem
 
 ### Requesting GPUs
 
-Please see the [GPUs page](gpu.md) for more information.
+Please see the [GPUs page](gpu.md) for more information. Take note that you'll need to take special care of how you submit GPU jobs to maximize performance. See our [Making the Most of GPUs Section](./gpu.md#making-the-most-of-gpus)
+
+See our [GPU Jobs Tutorial](./slurm_tutorial.md#example-6-gpu-jobs) for an introduction.
 
 ### Dynamic `--output` and `--error` File Names
 
@@ -145,7 +147,7 @@ For more details on using `sbatch` please see the [official documentation](https
 
 Throttling in Slurm array jobs refers to limiting the number of concurrent jobs that can run simultaneously. This approach prevents the overloading of computing resources and ensures fair distribution of resources among users. From a performance perspective, throttling helps optimize overall job performance by reducing resource contention across the Cheaha cluster. When too many jobs run at the same time, they may compete for CPU, memory, or I/O, which can negatively impact performance. Please [contact us](../../index.md#how-to-contact-us) if your research needs exceed our capacity.
 
-To limit the number of concurrent jobs in a SLURM array, you can use the `%` separator. Here’s how to use it in the above example:
+To limit the number of concurrent jobs in a Slurm array, you can use the `%` separator. Here’s how to use it in the above example:
 
 ```bash
 sbatch --array=0-9%4 job.sh

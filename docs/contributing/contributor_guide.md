@@ -509,6 +509,9 @@ python -u sstatus.py -c qos > qos.csv
 
 ## Terminology
 
+- `Duo 2FA` for the two-factor authentication solution used to authenticate UAB BlazerID credentials.
 - `Research Computing (RC)` for the IT group supporting campus HPC resources.
+- `Slurm` instead of "SLURM" for the HPC job scheduler.
 - `UAB Campus Network` for the hard-wired network physically located on UAB campus, and the UAB WiFi Network ("UABSecure").
-- `UAB Campus VPN` for the VPN to tunnel remote connections through the UAB Campus Network.
+- `UAB Campus VPN` for the virtual private network to tunnel remote connections through the UAB Campus Network.
+- `NVIDIA Clara Parabricks` for the NVIDIA sequencing software. Use once to introduce, then use simply "Parabricks".

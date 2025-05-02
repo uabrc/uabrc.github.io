@@ -218,7 +218,7 @@ These instructions can be generalized to any two Collections you have access to 
     Pay close attention in choosing which of the two you need. Choosing incorrectly could lead to slow transfers. Answer the following questions to help you decide. Is the first Collection you selected...
 
     - ...part of a lab or Research Core on campus? Select "on-campus".
-    - ...on a computer on the UAB Campus Network or UAB Wifi or the UAB VPN? Select "on-campus".
+    - ...on a computer on the UAB Campus Network or the UAB Campus VPN? Select "on-campus".
     - ...at a different institution? Select "off-campus".
     - ...on a computer on a home network? Select "off-campus".
 
@@ -315,7 +315,7 @@ These instructions can be generalized to any two Collections or Collections you 
     Pay close attention in choosing which of the two you need. Choosing incorrectly could lead to slow transfers. Answer the following questions to help you decide. Is the first Collection you selected...
 
     - ...part of a lab or Research Core on campus? Select "on-campus".
-    - ...on a computer on the UAB Campus Network or UAB Wifi or the UAB VPN? Select "on-campus".
+    - ...on a computer on the UAB Campus Network or UAB Wifi or the UAB Campus VPN? Select "on-campus".
     - ...at a different institution? Select "off-campus".
     - ...on a computer on a home network? Select "off-campus".
 
