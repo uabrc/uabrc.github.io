@@ -12,6 +12,12 @@ For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/g
     CUDA modules are used in this case study. Please note that the latest CUDA and cuDNN are now available from [Conda](../cheaha/slurm/gpu.md#cuda-and-cudnn-modules).
 <!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Be mindful that there are special considerations when submitting GPU jobs to maximize performance. See [Making the Most of GPUs](../cheaha/slurm/gpu.md#making-the-most-of-gpus) for more information. This case study predates our knowledge and understanding of these considerations and does not make use of them.
+<!-- markdownlint-enable MD046 -->
+
 ### Licensing Policy
 
 A license is no longer required to use Clara Parabricks 4.x and later versions, and is free for the following groups,
