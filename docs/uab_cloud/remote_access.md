@@ -234,7 +234,7 @@ It is possible to make [instances](./tutorial/instances.md) publically accessibl
 
 ### Expectations
 
-The expectation of making an instance publically accessible is to advance UAB's mission, so be sure you've configured and thoroughly tested your instance in the UAB Network before proceeding. The following list is intended as a helpful reminder.
+The expectation of making an instance publically accessible is to advance UAB's mission, so be sure you've configured and thoroughly tested your instance in the UAB Campus Network before proceeding. The following list is intended as a helpful reminder.
 
 - Have an instance with some research application or server that advances UAB's mission.
 - The instance is configured with a floating IP address.
