@@ -35,6 +35,14 @@ You may optionally verify that Python works correctly by entering `py.list(["hel
 
 Please see the [MATLAB Section on our GPU Page](../slurm/gpu.md#matlab).
 
+For more information on GPU efficiency please see [Making the Most of GPUs](../slurm/gpu.md#making-the-most-of-gpus).
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    April 21, 2025: Currently, GPU-core affinity is not considered for GPU jobs on interactive apps. This may mean selecting multiple GPUs results in some GPUs not being used.
+<!-- markdownlint-enable MD046 -->
+
 ## Known Issues
 
 There is a known issue with `parpool` and other related multi-core parallel features such as `parfor` affecting R2022a and earlier. See our [Modules Known Issues section](../software/modules.md#matlab-issues) for more information.

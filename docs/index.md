@@ -35,7 +35,7 @@ Create [your Cheaha Account](./account_management/cheaha_account.md), then check
 
 - December 17th, 2024: [Cheaha helps Cardenas lab speed up work](https://www.uab.edu/it/news/item/cheaha-helps-cardenas-lab-speed-up-work)
 - March 19th, 2024: [Open Science Grid Gives Power of Multiple Cheahas](https://www.uab.edu/it/news/item/open-science-grid)
-- March 19th, 2024: [Parabricks Tool Speeds Genomic Analysis for UAB Researchers](https://www.uab.edu/it/news/item/parabricks-speeds-genomic-analysis)
+- March 19th, 2024: [NVIDIA Clara Parabricks Tool Speeds Genomic Analysis for UAB Researchers](https://www.uab.edu/it/news/item/parabricks-speeds-genomic-analysis)
 - [more stories...](https://www.uab.edu/it/news/research-computing)
 
 ### Outreach
