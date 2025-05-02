@@ -1,8 +1,8 @@
 # Case Studies
 
-## Parabricks for Performing GPU-accelerated Genome Sequencing Analysis
+## NVIDIA Clara Parabricks for Performing GPU-accelerated Genome Sequencing Analysis
 
-A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found at <https://www.nvidia.com/en-us/clara/genomics/#faq>, see the FAQ under "Does Parabricks match the results of open-source tools?"
+A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks, which we will refer to as Parabricks, for short. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found at <https://www.nvidia.com/en-us/clara/genomics/#faq>, see the FAQ under "Does Parabricks match the results of open-source tools?"
 
 For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md).
 
@@ -10,6 +10,12 @@ For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/g
 !!! note
 
     CUDA modules are used in this case study. Please note that the latest CUDA and cuDNN are now available from [Conda](../cheaha/slurm/gpu.md#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Be mindful that there are special considerations when submitting GPU jobs to maximize performance. See [Making the Most of GPUs](../cheaha/slurm/gpu.md#making-the-most-of-gpus) for more information. This case study predates our knowledge and understanding of these considerations and does not make use of them.
 <!-- markdownlint-enable MD046 -->
 
 ### Licensing Policy
