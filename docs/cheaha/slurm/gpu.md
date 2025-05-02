@@ -143,6 +143,6 @@ As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct
 - **What else should I be aware of?**
     - Please be sure to clean your data off of `/local/$USER/$SLURM_JOB_ID` as soon as you no longer need it, before the job finishes.
     - We have updated the CUDA and cuDNN modules to improve reliability and ease of use. Please see the section on [CUDA Modules](#cuda-and-cudnn-modules) for more information.
-    - GPU-based software, such as Parabricks, Triton, etc., requires a [CUDA Compute Capability](../slurm/gpu.md/#available-devices) greater than 6.0 for proper execution and should be run on the `amperenodes` partition. Some of the software that encountered runtime errors due to the underlying issues were,
-        - [Parabricks](../../education/case_studies.md/#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus)
+    - GPU-based software, such as NVIDIA Clara Parabricks, Triton, etc., requires a [CUDA Compute Capability](../slurm/gpu.md/#available-devices) greater than 6.0 for proper execution and should be run on the `amperenodes` partition. Some of the software that encountered runtime errors due to the underlying issues were,
+        - [NVIDIA Clara Parabricks](../../education/case_studies.md/#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus)
         - [Triton](https://docs.nvidia.com/deeplearning/triton-inference-server/archives/triton_inference_server_1140/user-guide/docs/build.html#configure-triton-build)
