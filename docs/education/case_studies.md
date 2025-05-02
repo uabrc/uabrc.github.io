@@ -2,7 +2,7 @@
 
 ## NVIDIA Clara Parabricks for Performing GPU-accelerated Genome Sequencing Analysis
 
-A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks, which we will refer to as Parabricks, for short. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found [here](https://resources.nvidia.com/en-us-genomics-ep/genomics-appliance-for-research?lx=OhKlSJ).
+A GPU-accelerated genome sequencing analysis with high speedup and more accurate results can be achieved with NVIDIA Clara Parabricks, which we will refer to as Parabricks, for short. Pararbricks is a software suite for genomic analysis. Parabricks delivers accelerated analysis of next generation sequencing (NGS) data for researchers, RNA-seq, population studies, and many more usecases. More insights on its performance can be found at <https://www.nvidia.com/en-us/clara/genomics/#faq>, see the FAQ under "Does Parabricks match the results of open-source tools?"
 
 For more information on Cheaha GPUs, please see our [GPU Page](../cheaha/slurm/gpu.md).
 
@@ -278,4 +278,4 @@ Parabricks is tested and works with CUDA version >= 11.6.0 on Cheaha. Empirical 
 
 {{ read_csv('education/res/parabricks_exec_time.csv', keep_default_na=False) }}
 
-Applications show 2x performance with Parabricks greater than 4.0 version. You can refer [here](https://docs.nvidia.com/clara/parabricks/latest/bestperformance.html#best-performance-for-germline-pipeline) to performance tuning ideas to achieve best performance with Parabricks.
+Applications show 2x performance with Parabricks greater than 4.0 version. For performance tuning ideas, please refer to: <https://docs.nvidia.com/clara/parabricks/latest/gettingstarted/bestperformance.html>.
