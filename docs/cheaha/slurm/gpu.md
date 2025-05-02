@@ -21,11 +21,76 @@ When requesting a job using `sbatch`, you will need to include the Slurm flag `-
 
 <!-- markdownlint-enable MD046 -->
 
-## Ensuring IO Performance With A100 GPUs
+### Making the Most of GPUs
+
+#### Ensuring IO Performance With A100 GPUs
 
 If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to the [local scratch](../../data_management/cheaha_storage_gpfs/index.md#local-scratch) at `/local/$USER/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Network file mounts, such as `$USER_SCRATCH`, `/scratch/`, `/data/user/` and `/data/project/`, do not have sufficient bandwidth to keep the GPU busy. So, your processing pipeline will slow down to network speeds, instead of GPU speeds.
 
 Please see our [Local Scratch Storage section](../../data_management/cheaha_storage_gpfs/index.md#local-scratch) for more details and an example script.
+
+#### Using Multiple GPUs
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    To effectively use multiple GPUs per node, you'll need to get in the mindset of doing some light unit canceling, multiplication, and division. Please be mindful.
+<!-- markdownlint-enable MD046 -->
+
+When using multiple GPUs on the `amperenodes*` or `pascalnodes*` partitions, an additional Slurm directive is required to ensure the GPUs can all be put to use by your research software: `--ntasks-per-socket`. You will need to explicitly set the `--ntasks` directive to an integer multiple of the number of GPUs in `--gres=gpu`, then set `--ntasks-per-socket` to the multiplier.
+
+Most researchers, in most scenarios, should find the following examples to be sufficient. It is very important to note that `--ntasks-per-socket` times `--gres=gpu` equals `--ntasks` (1 times 3 equals 3). You will need to supply other directives, as usual, remembering that total CPUs is equal to `--cpus-per-task` times `--ntasks`, and that the total number of CPUs per node cannot exceed the actual number of physical cores on the node, and cannot exceed any quotas for the partition. See [Hardware](../hardware.md#cheaha-hpc-cluster) for more information about hardware and quota limits on Cheaha.
+
+Pascalnodes:
+
+```bash
+#SBATCH --partition=pascalnodes   # up to 28 cpus per node
+#SBATCH --ntasks-per-socket=1
+#SBATCH --gres=gpu:4
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=7         # 7 cpus-per-task times 4 tasks = 28 cpus
+```
+
+Amperenodes:
+
+```bash
+#SBATCH --partition=amperenodes   # up to 64 cpus per job
+#SBATCH --ntasks-per-socket=1
+#SBATCH --gres=gpu:2
+#SBATCH --ntasks=2
+#SBATCH --cpus-per-task=32        # 32 cpus-per-task times 2 tasks = 64 cpus
+```
+
+If `--ntasks-per-socket` is not used, or used incorrectly, it is possible that some of the GPUs requested may go unused, reducing performance and increasing job runtimes. For more information, please read the [GPU-Core Affinity Details](#gpu-core-affinity-details) below.
+
+##### GPU-Core Affinity Details
+
+Important terminology:
+
+- **[node](https://en.wikipedia.org/wiki/Node_(networking)#Distributed_systems)**: A single computer in a cluster.
+- **[mainboard](https://en.wikipedia.org/wiki/Motherboard)**: The central circuit board of a computer, where the components of the node all integrate.
+- **[CPU](https://en.wikipedia.org/wiki/Central_processing_unit)**: Central Processing Unit, where general calculations are performed during operation of the node. Often contains multiple cores. Sometimes conflated with "core". We use the term "CPU die" in this section to avoid ambiguity.
+- **[socket](https://en.wikipedia.org/wiki/CPU_socket)**: A connector on the mainboard for electrical connection to a CPU die. Some mainboards have a single socket, others have multiple sockets.
+- **[core](https://en.wikipedia.org/wiki/Processor_core)**: A single physical processor of computer instructions. One core can carry out one computation at a time. Part of a CPU. Also called "processor core". Sometimes conflated with "CPU".
+- **[GPU](https://en.wikipedia.org/wiki/Graphics_processing_unit)**: Graphics Processing Unit, trades off generalized computing for faster computation with a limited set of operations. Often used for AI processing. Contains many, specialied cores. Increasingly called "accelerator" in the context of clusters and high-performance computing (HPC).
+
+Nodes in both the `amperenodes*` and `*pascalnodes` partition are configured as follows:
+
+- Each node has a single mainboard.
+- Each mainboard has two sockets.
+- Each socket has a single CPU die.
+- Each CPU die has multiple cores:
+    - `amperenodes*`: 128 cores per CPU die
+    - `pascalnodes*`: 28 cores per CPU die
+- Each socket is connected with a subset of the GPUs:
+    - `amperenodes*`: 1 GPU per socket (2 per mainboard)
+    - `pascalnodes*`: 2 GPUs per socket (4 per mainboard)
+
+Communication between each socket and its connected GPUs is relatively very fast. Communication between GPUs connected to different sockets is much slower, so we want to make sure that the Slurm knows which cores in each socket are associated with each GPU to allow for optimal performance of applications. The association between cores and GPUs is called "GPU-core affinity". Slurm is made explicitly aware of GPU-core affinity in the file located at `/etc/slurm/gres.conf`.
+
+When a researcher submits an sbatch script, the use of `--ntasks-per-socket` informs slurm that tasks should be distributed across sockets, rather than the default behavior of "first available". Often, the default behavior results in all cores being allocated from a single socket, leaving some of the GPUs unavailable to your software, or with lower than expected performance.
+
+To ensure the capability for optimal performance, ensure use of the `--ntasks-per-socket`.
 
 ### Open OnDemand
 
@@ -143,6 +208,6 @@ As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct
 - **What else should I be aware of?**
     - Please be sure to clean your data off of `/local/$USER/$SLURM_JOB_ID` as soon as you no longer need it, before the job finishes.
     - We have updated the CUDA and cuDNN modules to improve reliability and ease of use. Please see the section on [CUDA Modules](#cuda-and-cudnn-modules) for more information.
-    - GPU-based software, such as Parabricks, Triton, etc., requires a [CUDA Compute Capability](../slurm/gpu.md/#available-devices) greater than 6.0 for proper execution and should be run on the `amperenodes` partition. Some of the software that encountered runtime errors due to the underlying issues were,
-        - [Parabricks](../../education/case_studies.md/#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus)
+    - GPU-based software, such as NVIDIA Clara Parabricks, Triton, etc., requires a [CUDA Compute Capability](../slurm/gpu.md/#available-devices) greater than 6.0 for proper execution and should be run on the `amperenodes` partition. Some of the software that encountered runtime errors due to the underlying issues were,
+        - [NVIDIA Clara Parabricks](../../education/case_studies.md/#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus)
         - [Triton](https://docs.nvidia.com/deeplearning/triton-inference-server/archives/triton_inference_server_1140/user-guide/docs/build.html#configure-triton-build)
