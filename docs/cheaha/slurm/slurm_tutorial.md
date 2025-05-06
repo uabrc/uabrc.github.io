@@ -249,9 +249,62 @@ $ sacct -j 27099591
 
 ### Example 4: Array Job
 
-Array jobs are more effective when you have a larger number of similar tasks to be executed simultaneously with varied input data, unlike `srun` parallel jobs which are suitable for running a smaller number of tasks concurrently (e.g. less than 5). Array jobs are easier to manage and monitor multiple tasks through unique identifiers.
+Array jobs are more effective when you have a larger number of similar tasks to be executed simultaneously with varied input data, unlike `srun` parallel jobs which are suitable for running a smaller number of tasks concurrently (e.g. less than 5). Array jobs are easier to manage and monitor multiple tasks through unique identifiers. However, with the increased power come more moving parts, so the example here requires some setup.
 
-The following Slurm script is an example of how you might convert the previous `multijob` script to an array job. To start, copy the below script to a file named, `slurm_array.job`. The script requires the input file `python_script_new.py` and the `conda` environment `pytools-env`, similar to those used in [example2](../slurm/slurm_tutorial.md#example-2-sequential-job) and [example 3](../slurm/slurm_tutorial.md#example-3-parallel-jobs). Line 11 specifies the script as an array job, treating each task within the array as an independent job. For each task, lines 18-19 calculates the input range. `SLURM_ARRAY_TASK_ID` identifies the task executed using indexes, and is automatically set for array jobs. The python script (line 22) runs individual array task concurrently on respective input range. The command `awk` is used to prepend each output line with the unique task identifier and then append the results to the file, `output_all_tasks.txt`. For more details on on parameters of array jobs, please refer to [Batch Array Jobs](../slurm/submitting_jobs.md#batch-array-jobs-with-known-indices) and [Practical Batch Array Jobs](../slurm/practical_sbatch.md#).
+#### Environment Setup for Slurm Array Execution
+
+To keep things organized, let us first structure the directories and implement necessary preprocessing step required for the subsequent Slurm array examples.
+
+**(i) Setup**: This part of the section covers creating the necessary directories and input files. Since this setup is common for all the following examples, we will do it once before moving on.
+
+Before executing the Slurm array examples [4.1](#example-41-running-parallel-python-tasks-with-dynamic-input-ranges), [4.2](#example-42-line-by-line-word-count) and [4.3](#example-43-dynamically-reading-and-counting-words-in-multiple-files) and [4.4](#example-44-counting-words-in-multiple-files-from-a-file-list), let us set up the environment. This includes creating a main directory, `array_example`, to store all job files and scripts. Within it, we will create a directory `logs` to organize output and error logs. Let us create and structure these directories.
+
+```bash
+$mkdir array_example
+$cd array_example
+$mkdir logs
+```
+
+**(ii) Input File Generation**: For the slurm array examples [4.2](#example-42-line-by-line-word-count) and [4.3](#example-43-dynamically-reading-and-counting-words-in-multiple-files) and [4.4](#example-44-counting-words-in-multiple-files-from-a-file-list), let us create subdirectory `input_files` within the `array_example` folder to store a set of generated input text files.
+
+```bash
+$cd array_example
+$mkdir input_files
+$cd input_files
+```
+
+The next step involves generating input files using a pseudo-random text generation script. Save the following script as `generate_input.sh` within the `input_files` folder. This script generates five random text files, each containing a different number of randomly selected words. The script creates a file with 1 to 10 randomly generated lines, where each line contains 5 to 20 randomly selected words from `/usr/share/dict/words`. The output is saved in files named random_file_1.txt, random_file_2.txt, ..., random_file_5.txt, with each file containing a unique, randomly determined number of lines and words per line. For more details refer to [script concepts](../../workflow_solutions/shell.md#script-concepts) and [bash scripting example](../../cheaha/software/modules.md#best-practice-for-loading-modules).
+
+```bash
+#!/bin/bash
+
+### Loop to create 5 random files
+for i in {1..5}; do
+    ### Generate a random number of lines (1-10)
+    num_lines=$(($RANDOM % 10 + 1))
+    for _ in $(seq 1 $num_lines); do
+    ### Generate a random words per line (5-20)
+        num_words=$(($RANDOM % 20 + 5))
+        ### Use 'shuf' to pick $num_words random words from the dictionary file.
+        ### The pipe ('|') sends these selected words to 'paste', which combines them into a single line,
+        ### separating each word with a space (using the '-d " "' option).
+        shuf -n $num_words /usr/share/dict/words | paste -s -d " "
+    done > "random_file_$i.txt"
+done
+```
+
+You can execute the `generate_input.sh` script as shown below. The first command `chmod` grants execute permission to the script so it can be run directly. The second command runs the script to generate the required input files. For more details on usage of bash scripting, refer to [Script Concepts](../../workflow_solutions/shell.md/#script-concepts)
+
+```bash
+$chmod +x generate_input.sh
+$./generate_input.sh
+```
+
+Now that the general environment and preprocessing setup are complete, the following sections will walk you through four detailed Slurm array job examples.
+
+#### Example 4.1: Running Parallel Python Tasks with Dynamic Input Ranges
+
+The following Slurm script is an example of how you might convert the previous [parallel job example](#example-3-parallel-jobs) script to an array job. To start, copy and save the below script to a file named, `slurm_array.job` within the `array_example` folder. The script requires the input file `python_script_new.py` and the `conda` environment `pytools-env`, similar to those used in [example2](../slurm/slurm_tutorial.md#example-2-sequential-job) and [example 3](../slurm/slurm_tutorial.md#example-3-parallel-jobs). Line 11 specifies the script as an array job, treating each task within the array as an independent job. For each task, lines 18-19 calculates the input range. `SLURM_ARRAY_TASK_ID` identifies the task executed using indexes, and is automatically set for array jobs. The python script (line 22) runs individual array task concurrently on respective input range. The command `awk` is used to prepend each output line with the unique task identifier and then append the results to the file, `output_all_tasks.txt`. For more details on on parameters of array jobs, please refer to [Batch Array Jobs](../slurm/submitting_jobs.md#batch-array-jobs-with-known-indices) and [Practical Batch Array Jobs](../slurm/practical_sbatch.md#).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -268,8 +321,8 @@ The following Slurm script is an example of how you might convert the previous `
 #SBATCH --mem=4G                     ### Memory required, 4 gigabyte
 #SBATCH --partition=express          ### Cheaha Partition
 #SBATCH --time=01:00:00              ### Estimated Time of Completion, 1 hour
-#SBATCH --output=%x_%A_%a.out        ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
-#SBATCH --error=%x_%A_%a.err         ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --output=logs/%x_%A_%a.out   ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --error=logs/%x_%A_%a.err    ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --array=1-3                  ### Number of Slurm array tasks, 3 tasks
 
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
@@ -281,13 +334,22 @@ start=$((($SLURM_ARRAY_TASK_ID - 1) * 100000 + 1))
 end=$(($SLURM_ARRAY_TASK_ID * 100000))
 
 ### Run the python script with input arguments and append the results to a .txt file for each task
-python python_script_new.py $start $end 2>&1 | awk -v task_id=$SLURM_ARRAY_TASK_ID '{print "array task " task_id, $0}' >> output_all_tasks.txt
+python python_script_new.py $start $end 2>&1 \
+  | awk -v task_id=$SLURM_ARRAY_TASK_ID '{print "array task " task_id, $0}' \
+  >> output_all_tasks.txt
+```
+
+Submit the script `slurm_array` for execution using the command,
+
+```bash
+$cd array_example
+$sbatch slurm_array.job
 ```
 
 The output shows the sum of different input range computed by individual task, making it easy to track using a task identifier, such as array task 1/2/3.
 
 ```bash
-$ cat output_all_tasks.txt
+$ cat $HOME/array_example/output_all_tasks.txt
 
 array task 2 Input Range: 100001 to 200000, Sum: 14999850000
 array task 3 Input Range: 200001 to 300000, Sum: 24999750000
@@ -311,6 +373,214 @@ $ sacct -j 27101430
 27101430_2.+      batch                 USER          1  COMPLETED      0:0
 27101430_2.+     extern                 USER          1  COMPLETED      0:0
 ```
+
+In the following three examples, we will explore additional Slurm array job scenarios that are commonly used in scientific simulations.
+
+#### Example 4.2: Line-by-Line Word Count
+
+In the examples [4.2](#example-42-line-by-line-word-count), [4.3](#example-43-dynamically-reading-and-counting-words-in-multiple-files), and [4.4](#example-44-counting-words-in-multiple-files-from-a-file-list), let us explore how to use a Slurm Array Job to process text files in parallel.
+
+The following Slurm job script processes a text file line by line using an array job. Save the following Slurm script as `line_word_count.job` within `array_example` folder. Prior to running this job make sure to complete the [input file generation](#example-4-array-job) step. This SLURM job ensures that each task in the job array processes a single line from an input file and counts the number of words in that line.
+
+```bash linenums="1"
+#!/bin/bash
+#SBATCH --job-name=line_word_count  ### Name of the job
+#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU
+#SBATCH --mem=2G                    ### Memory required, 2 gigabyte
+#SBATCH --partition=express         ### Cheaha Partition
+#SBATCH --time=00:10:00             ### Estimated Time of Completion, 10 minutes
+#SBATCH --output=logs/%x_%A_%a.out  ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --error=logs/%x_%A_%a.err   ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
+
+### Define the input file, for instance, random_file_2.txt
+INPUT_FILE="$HOME/array_example/input_files/random_file_2.txt"
+
+### `sed` is a shell command and stream editor for manipulating text.
+### Here, `sed` reads $INPUT_FILE and extracts the line corresponding to SLURM_ARRAY_TASK_ID.
+LINE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" "$INPUT_FILE")
+
+### The command `wc -w` counts the number of words in the extracted line ($LINE),
+### while echo "$LINE" prints the line of text. The pipe (|) then passes this text from echo "$LINE" to
+### wc -w, which counts the words in the line for each task.
+WORD_COUNT=$(echo "$LINE" | wc -w)
+echo "Task $SLURM_ARRAY_TASK_ID: $WORD_COUNT words"
+```
+
+Before running the above SLURM job, determine the number of lines in the input file (e.g., random_file_2.txt) using the following command:
+
+```bash
+$MAX_TASKS=$(wc -l < $HOME/array_example/input_files/random_file_2.txt)
+```
+
+Next, submit the array job using the command below, which creates an array of tasks from 1 to the maximum number of lines in the file.
+
+```bash
+$sbatch --array=1-"$MAX_TASKS" line_word_count.job
+```
+
+The below output comes from the SLURM job array script (line_word_count.job), where each task processes one line from random_file_2.txt. Since the file has 3 lines, SLURM created 3 tasks (Task 1, Task 2, Task 3), each counting words in its respective line.
+
+```bash
+### counts the number of lines in the file, for instance, random_file_2.txt
+$ wc -l /home/$USER/array_example/input_files/random_file_2.txt
+3 $HOME/array_example/input_files/random_file_2.txt
+```
+
+```bash
+### Print and verify the output using the `cat` command
+$ cat /home/$USER/array_example/logs/line_word_count_$JOB_ID_*.out
+Task 1: 8 words
+Task 2: 19 words
+Task 3: 6 words
+```
+
+#### Example 4.3: Dynamically Reading and Counting Words in Multiple Files
+
+This example job script performs the same function as [Example 4.2](#example-42-line-by-line-word-count), but instead of counting the number of words in a single file line by line, it is designed to dynamically count the number of words across multiple files. Save the below script as `dynamic_file_word_count.job` within the `array_example` folder. It utilizes the same input files generated from the [Input File Generation](#example-4-array-job) section.
+
+```bash linenums="1"
+#!/bin/bash
+#SBATCH --job-name=dynamic_file_word_count   ### Name of the job
+#SBATCH --cpus-per-task=1                    ### Number of Tasks per CPU
+#SBATCH --mem=4G                             ### Memory required, 4 gigabyte
+#SBATCH --partition=express                  ### Cheaha Partition
+#SBATCH --time=00:15:00                      ### Estimated Time of Completion, 15 minutes
+#SBATCH --output=logs/%x_%A_%a.out           ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --error=logs/%x_%A_%a.err            ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
+
+### Define working directory
+WORKDIR="$HOME/array_example/input_files"
+
+### Find all files in the working directory ($WORKDIR) that match the pattern "random_file_*.txt"
+### Pass the list of these files to the 'sort' command via the pipe ('|')
+### The sorted file paths are then captured and stored in the FILES array.
+FILES=($(find "$WORKDIR" -type f -name "random_file_*.txt" | sort))
+
+### Selects the file corresponding to the current Slurm Array task ID.
+### The task IDs are assigned starting from 1, but in bash, array indexing starts from 0.
+### To align the task ID with bash’s 0-based array indexing, we subtract 1 from the task ID.
+FILE="${FILES[$SLURM_ARRAY_TASK_ID-1]}"
+
+### Extract the directory part of the file path. This will give the full directory path of the selected file.
+DIRNAME=$(dirname "$FILE")
+
+### Extract the base name of the file (without the extension)
+BASENAME=$(basename "$FILE" .txt)
+
+### Check if file exists and count words from file
+if [[ -f "$FILE" ]]; then
+    ### If the file exists, count the number of words in the file using 'wc -w'
+    ### The result is saved to a file with the same name as the original file,
+    ### but with a '.wordcount' extension in the same directory as the original file.
+    wc -w "$FILE" > "$DIRNAME/${BASENAME}.wordcount"
+    echo "Processed $FILE"
+else
+    echo "File not found: $FILE"
+fi
+```
+
+The script begins by setting up the Slurm array job with required resources. The working directory is defined, and the script uses the `find` command to search for files matching the pattern random_file_*.txt within that working directory and its subdirectories, passing the resulting list of file paths to the sort command to ensure they are processed in order. The file corresponding to the current Slurm array task ID is selected, and its directory and base name are extracted. If the file exists, the script counts the words in the file using the `wc -w` command and saves the word count to a new file with a `.wordcount` extension in the same directory. If the file is not found, an error message is displayed.
+
+Before you run the script `dynamic_file_word_count.job`, determine the number of files in the directory and its subdirectories using the following command. The command counts the number of files matching the pattern random_file_*.txt in the path`$HOME/array_example/input_files` directory and its subdirectories, and stores the result in the variable `MAX_TASKS`.
+
+```bash
+$MAX_TASKS=$(find $HOME/array_example/input_files -type f -name "random_file_*.txt" | wc -l)
+```
+
+Next, submit the array job using the command below, which creates an array of tasks from 1 to the value of MAX_TASKS, where each task corresponds to processing a different file listed in the array.
+
+```bash
+$sbatch --array=1-"$MAX_TASKS" dynamic_file_word_count.job
+```
+
+In the output below, each file was processed independently by a Slurm job array task. The task IDs 1, 2, 3, 4, and 5 correspond to the five different files being processed. For instance, here the Slurm Job ID is `31934540`. Each output file contains the word count for a specific text file handled by its respective Slurm array task.
+
+The `find` command in the output shows the word counts for each of the random_file*.txt files, where each `.wordcount` file contains the word count for its corresponding input file.
+
+```bash
+### Listing all the output files generated by the Slurm from the `logs` directory
+$ cd $HOME/array_example/logs/
+$ ls dynamic_file_word_count*.out
+dynamic_file_word_count_31934540_1.out  dynamic_file_word_count_31934540_3.out
+dynamic_file_word_count_31934540_2.out  dynamic_file_word_count_31934540_4.out
+dynamic_file_word_count_31934540_5.out
+
+### This command finds all files with names matching "random_file*.wordcount" in the specified directory and subdirectories.
+### For each file found, concatenate and display its contents (using 'cat') to show the word count and their file path.
+$ find $HOME/array_example/input_files/ -type f -name "random_file*.wordcount" -exec cat {} \;
+81 /home/$USER/Tutorial/slurm_tutorial/example4/input_files/random_file_1.txt
+117 /home/$USER/Tutorial/slurm_tutorial/example4/input_files/random_file_5.txt
+33 /home/$USER/Tutorial/slurm_tutorial/example4/input_files/random_file_2.txt
+104 /home/$USER/Tutorial/slurm_tutorial/example4/input_files/random_file_3.txt
+114 /home/$USER/Tutorial/slurm_tutorial/example4/input_files/random_file_4.txt
+```
+
+#### Example 4.4: Counting Words in Multiple Files from a File List
+
+This example job script is similar to [Example 4.3](#example-43-dynamically-reading-and-counting-words-in-multiple-files), but instead of dynamically reading files from the directory, it counts the number of words in multiple files in parallel using a SLURM job array, with the files listed in a separate file list. This example utilizes the same input files from [Example 4](#example-4-array-job) as described in the `Input File Generation` section.
+
+To create a file list by tracking all the files in the `input_files` directory, use the find command along with globbing to list all generated files in the current directory and its subdirectories. The input files along with its absolute path are tracked in `file_list.txt`.
+
+```bash
+### Change to the "array_example" directory.
+cd array_example
+### Search for all files in the "input_files" directory matching the pattern "random_file_*.txt".
+### For each matching file, the 'realpath' command is used to get the absolute path of the file.
+### The output is then sorted and written to "file_list.txt".
+find $HOME/array_example/input_files -type f -name "random_file_*.txt" -exec realpath {} \; | sort > file_list.txt
+```
+
+Copy the following SLURM array job script to a file naming `file_list_word_count.job` within the `array_example` folder. This Slurm array job script count the number of words across multiple files listed in a file list `file_list.txt`.
+
+```bash linenums="1"
+#!/bin/bash
+#SBATCH --job-name=file_list_word_count   ### Name of the job
+#SBATCH --cpus-per-task=1            ### Number of Tasks per CPU
+#SBATCH --mem=4G                     ### Memory required, 4 gigabyte
+#SBATCH --partition=express          ### Cheaha Partition
+#SBATCH --time=00:15:00              ### Estimated Time of Completion, 15 minutes
+#SBATCH --output=logs/%x_%A_%a.out   ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
+#SBATCH --error=logs/%x_%A_%a.err    ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
+
+### Define working directory
+WORKDIR="$HOME/array_example/input_files"
+FILELIST="file_list.txt"
+
+### Get the file corresponding to the current task ID
+### 'sed' picks the file from the $FILELIST based on the task ID (SLURM_ARRAY_TASK_ID).
+FILE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" $FILELIST)
+
+### Extract the base name of the file (without the .txt extension)
+BASENAME=$(basename "$FILE" .txt)
+
+### Check if file exists and count words from file
+if [[ -f "$FILE" ]]; then
+    ### 'wc -w' counts the words in the file, and the result is saved in a new file with '.wordcount' added to the name.
+    wc -w "$FILE" > "$WORKDIR/${BASENAME}.wordcount"
+    echo "Processed $FILE"
+else
+    echo "File not found: $FILE"
+fi
+```
+
+The above SLURM job script runs a word count operation in parallel on multiple files using a job array (1-5). It reads a list of filenames along with its path from `file_list.txt` located in `$HOME/array_example/input_files`. Each task in the job array processes a different file based on its task ID (SLURM_ARRAY_TASK_ID). If the file exists, it counts the number of words using `wc -w` and saves the output as `<filename>.wordcount`, and logs standard output and errors for each task separately.
+
+Before running the above SLURM job, determine the number of files in the directory and its subdirectories using the following command. The command counts the number of files matching the pattern random_file_*.txt in the path `$HOME/array_example/input_files` directory and its subdirectories, and stores the result in the variable `MAX_TASKS`.
+
+```bash
+### Get the total number of tasks by counting the lines in 'file_list.txt'
+### 'wc -l' counts the number of lines in the file, which represents the number of tasks.
+$MAX_TASKS=$(wc -l < $HOME/array_example/file_list.txt)
+```
+
+Next, submit the array job using the command below, which creates an array of tasks from 1 to the value of MAX_TASKS, where each task corresponds to processing a different file listed in the array.
+
+```bash
+### Submit a job array with tasks ranging from 1 to MAX_TASKS
+$sbatch --array=1-"$MAX_TASKS" file_list_word_count.job
+```
+
+The output generated will be similar to [Example 4.3](#example-43-dynamically-reading-and-counting-words-in-multiple-files), as the functionality is the same, but the method of handling the input data differs.
 
 ### Example 5: Multithreaded or Multicore Job
 
