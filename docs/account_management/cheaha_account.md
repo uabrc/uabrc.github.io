@@ -57,7 +57,6 @@ Mistakes happen, and sometimes what we thought we programmed wasn't quite what w
 
 Other reasons for holds include, but are not limited to:
 
-- Annual attestation: on each anniversary of account creation, users must log in to attest to their continued need for Research Computing services.
 - Inactivity: extended account inactivity.
 - Affiliation: [end of affiliation with, or employment by, UAB](./leaving_uab.md).
 - Subscription: unsubscribing from the `hpc-announce LISTSERV` mailing list.
