@@ -54,7 +54,7 @@ Please see our [CUDA and cuDNN section of the GPU page](../slurm/gpu.md#cuda-and
 
 ## Cell Ranger
 
-Cell Ranger is a proprietary software developed by 10x Genomics.
+Cell Ranger is a proprietary software developed by [10x Genomics](https://www.10xgenomics.com/support/software/cell-ranger/latest).
 
 ### Licensing
 
@@ -65,6 +65,34 @@ Cell Ranger is a proprietary software developed by 10x Genomics.
 ### Installation
 
  Cell Ranger can be installed within a researcher’s individual user account on Cheaha. Installation instructions are available on the official [10x Genomics website](https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-in#download).
+
+#### User-Based Installation
+
+CellRanger can be installed on individual user accounts. You will have to use a compute node to install and run the software. For more information refer to [compute and login nodes](../../cheaha/getting_started.md#login-vs-compute-nodes). Following are the steps to install Cell Ranger in Cheaha.
+
+(i) [Register](https://www.10xgenomics.com/products/cell-ranger/downloads/eula?closeUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links&redirectUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links%3Fstart%3Dcellranger-9.0.1.tar.gz) and download the desired version of `Cellranger` from the [10X Genomics site](https://www.10xgenomics.com/support/software/cell-ranger/downloads).
+
+(ii) Use "curl" or "get" to download the .tar.gz package.
+
+```bash
+
+```
+
+```bash
+
+```
+
+3. Extract the package with, tar -zxvf cellranger-8.0.1.tar.gz
+
+4. Navigate to the bin directory: cd cellranger-8.0.1/bin
+
+5. Copy the path displayed by using the command `pwd`, then add it to your "$HOME/.bashrc" file as,
+export PATH=/path/to/cellranger-8.0.1/bin:$PATH
+
+6. Close the terminal and open a new one for the changes to take effect. You can verify if cellranger 8.0.1 is installed using,
+cellranger --version.
+
+Please let us know if you have any questions.
 
 ## Singularity Containers
 
