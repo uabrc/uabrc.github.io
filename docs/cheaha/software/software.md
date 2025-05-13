@@ -58,61 +58,75 @@ Cell Ranger is a proprietary software developed by [10x Genomics](https://www.10
 
 ### Licensing
 
-(i) Usage of Cell Ranger is governed by the terms of their [End User License Agreement (EULA)](https://www.10xgenomics.com/legal/end-user-software-license-agreement). Each UAB researcher must individually review and accept the EULA to install and use the software.
+(i) Usage of Cell Ranger is governed by the terms of their [End User License Agreement (EULA)](https://www.10xgenomics.com/legal/end-user-software-license-agreement).
 
 (ii) Cell Ranger is strictly licensed for use with data generated on 10x Genomics instruments and may not be used with data from other platforms.
 
 ### Installation
 
- Cell Ranger can be installed within a researcher’s individual user account on Cheaha. Installation instructions are available on the official [10x Genomics website](https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-in#download).
+ Cell Ranger can be installed within a researcher’s individual user account on Cheaha. Installation instructions are available on the official [10x Genomics website](https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-in#download). You will have to use a compute node in Cheaha to install and run the software. For more information refer to [Login Vs Compute Nodes](../../cheaha/getting_started.md#login-vs-compute-nodes). Following are the steps to install Cell Ranger in Cheaha.
 
-#### User-Based Installation
+- [Register](https://www.10xgenomics.com/products/cell-ranger/downloads/eula?closeUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links&redirectUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links%3Fstart%3Dcellranger-9.0.1.tar.gz) and download the desired version of `Cell Ranger` from the [10X Genomics site](https://www.10xgenomics.com/support/software/cell-ranger/downloads).
 
-CellRanger can be installed on individual user accounts. You will have to use a compute node to install and run the software. For more information refer to [Login Vs Compute Nodes](../../cheaha/getting_started.md#login-vs-compute-nodes). Following are the steps to install Cell Ranger in Cheaha.
+- Once registration is complete, you will be redirected to the download page with installation instructions. To begin, use the `curl` or `wget` command to download the `.tar.gz` package.
 
-(i) [Register](https://www.10xgenomics.com/products/cell-ranger/downloads/eula?closeUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links&redirectUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links%3Fstart%3Dcellranger-9.0.1.tar.gz) and download the desired version of `Cellranger` from the [10X Genomics site](https://www.10xgenomics.com/support/software/cell-ranger/downloads).
+- Next, extract the Cell Ranger package using the command below. In this example, version 9.0.1 is used:
 
-(ii) After registration is complete. You will be redirected to the download page with installation instructions. First, use "curl" or "wget" command to download the .tar.gz package.
+    ```bash
+    $tar -zxvf cellranger-9.0.1.tar.gz
+    ```
 
-(iii) Extract the Cellranger package with the following command, for instance,
+- After the extraction is complete, navigate to the cellranger directory’s bin folder and print its path using the `pwd` command, as shown below:
 
-```bash
- tar -zxvf cellranger-9.0.1.tar.gz
-```
+    ```bash
+    $cd cellranger-9.0.1/bin
+    $pwd
+    ```
 
-(iv) Navigate to the cellranger directory's bin folder and print its path using the "pwd" command as shown below,
+    The `pwd` command will display the full path to the `bin` directory. For example:
+    `/home/$USER/cellranger-9.0.1/bin`
 
-```bash
-$cd cellranger-9.0.1/bin
-$pwd
-```
+    <!-- markdownlint-disable MD046 -->
+    !!! note
 
-The `pwd` command will output the full path to the "bin" directory. For instance,
-/home/$USER/cellranger-9.0.1/bin
+        The actual path may vary depending on where the folder is located in your account.
+    <!-- markdownlint-enable MD046 -->
 
-<!-- markdownlint-disable MD046 -->
-!!! note
-    The actual path may vary depending on where the folder is located in your account.
-<!-- markdownlint-enable MD046 -->
+- To add the above path to your .bashrc file, run the following command,
 
-(v)  To add this path to your .bashrc file, run the following command,
+    ```bash
+    $echo "export PATH=\$PATH:/home/$USER/cellranger-9.0.1/bin" >> $HOME/.bashrc
+    ```
 
-echo "export PATH=\$PATH:/home/siyer/cellranger-9.0.1/bin" >> $HOME/.bashrc
+    This will append the export line to the end of your .bashrc file. You should see an entry similar to the following:
 
-At the end of your .bashrc file, you will see an entry like the following.
-export PATH=$PATH:/home/siyer/cellranger-8.0.1/bin
+    ```bash
+    $export PATH=$PATH:/home/$USER/cellranger-9.0.1/bin
+    ```
 
-You can confirm this by running:
+    You can verify the addition by running:
 
-```bash
-cat $HOME/.bashrc
-```
+    ```bash
+    $cat $HOME/.bashrc
+    ```
 
-(vi) Close the terminal and open a new one for the changes to take effect. You can verify if cellranger 9.0.1 is installed using,
+- To apply the changes, either close the terminal and open a new one, or run the following command:
 
-```bash
-cellranger --version.
-```
+    ```bash
+    $source ~/.bashrc
+    ```
+
+- Then, verify that Cell Ranger 9.0.1 is correctly installed by running:
+
+    ```bash
+    $cellranger --version.
+    ```
+
+    You should see an output like:
+
+    ```bash
+    $cellranger cellranger-9.0.1
+    ```
 
 ## Singularity Containers
 
