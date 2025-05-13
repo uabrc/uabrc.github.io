@@ -68,31 +68,51 @@ Cell Ranger is a proprietary software developed by [10x Genomics](https://www.10
 
 #### User-Based Installation
 
-CellRanger can be installed on individual user accounts. You will have to use a compute node to install and run the software. For more information refer to [compute and login nodes](../../cheaha/getting_started.md#login-vs-compute-nodes). Following are the steps to install Cell Ranger in Cheaha.
+CellRanger can be installed on individual user accounts. You will have to use a compute node to install and run the software. For more information refer to [Login Vs Compute Nodes](../../cheaha/getting_started.md#login-vs-compute-nodes). Following are the steps to install Cell Ranger in Cheaha.
 
 (i) [Register](https://www.10xgenomics.com/products/cell-ranger/downloads/eula?closeUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links&redirectUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links%3Fstart%3Dcellranger-9.0.1.tar.gz) and download the desired version of `Cellranger` from the [10X Genomics site](https://www.10xgenomics.com/support/software/cell-ranger/downloads).
 
-(ii) Use "curl" or "get" to download the .tar.gz package.
+(ii) After registration is complete. You will be redirected to the download page with installation instructions. First, use "curl" or "wget" command to download the .tar.gz package.
+
+(iii) Extract the Cellranger package with the following command, for instance,
 
 ```bash
-
+ tar -zxvf cellranger-9.0.1.tar.gz
 ```
+
+(iv) Navigate to the cellranger directory's bin folder and print its path using the "pwd" command as shown below,
 
 ```bash
-
+$cd cellranger-9.0.1/bin
+$pwd
 ```
 
-3. Extract the package with, tar -zxvf cellranger-8.0.1.tar.gz
+The `pwd` command will output the full path to the "bin" directory. For instance,
+/home/$USER/cellranger-9.0.1/bin
 
-4. Navigate to the bin directory: cd cellranger-8.0.1/bin
+<!-- markdownlint-disable MD046 -->
+!!! note
+    The actual path may vary depending on where the folder is located in your account.
+<!-- markdownlint-enable MD046 -->
 
-5. Copy the path displayed by using the command `pwd`, then add it to your "$HOME/.bashrc" file as,
-export PATH=/path/to/cellranger-8.0.1/bin:$PATH
+(v)  To add this path to your .bashrc file, run the following command,
 
-6. Close the terminal and open a new one for the changes to take effect. You can verify if cellranger 8.0.1 is installed using,
+echo "export PATH=\$PATH:/home/siyer/cellranger-9.0.1/bin" >> $HOME/.bashrc
+
+At the end of your .bashrc file, you will see an entry like the following.
+export PATH=$PATH:/home/siyer/cellranger-8.0.1/bin
+
+You can confirm this by running:
+
+```bash
+cat $HOME/.bashrc
+```
+
+(vi) Close the terminal and open a new one for the changes to take effect. You can verify if cellranger 9.0.1 is installed using,
+
+```bash
 cellranger --version.
-
-Please let us know if you have any questions.
+```
 
 ## Singularity Containers
 
