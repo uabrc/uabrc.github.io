@@ -8,6 +8,12 @@ The below tutorial would show you steps on how to create an Anaconda environment
     CUDA modules are used in this tutorial. Please note that the latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules). The tutorial provides good practices, but ages over time. You may need to modify the scripts to be suitable for your work.
 <!-- markdownlint-enable MD046 -->
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Be mindful that there are special considerations when submitting GPU jobs to maximize performance. See [Making the Most of GPUs](../slurm/gpu.md#making-the-most-of-gpus) for more information. This is not necessary for the tutorial in this page, but may benefit your research computation.
+<!-- markdownlint-enable MD046 -->
+
 ## Installing Anaconda Environments Using the Terminal
 
 To access the terminal (shell), please do the following.

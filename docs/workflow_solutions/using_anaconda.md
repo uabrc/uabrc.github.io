@@ -125,6 +125,10 @@ For more information about using Anaconda with Jupyter (Jupyter Notebook and Jup
 
 For more information about finding CUDA and cuDNN packages for use with GPUs, see the section [CUDA and cuDNN Modules](../cheaha/slurm/gpu.md#cuda-and-cudnn-modules)
 
+#### Performance Considerations for GPUs
+
+See our [Making the Most of GPUs](../cheaha/slurm/gpu.md#making-the-most-of-gpus) for more information about maximizing the performance of GPUs on Cheaha.
+
 ### Update packages in an environment
 
 To ensure packages and their dependencies are all up to date, it is a best practice to regularly update installed packages, and libraries in your activated environment.

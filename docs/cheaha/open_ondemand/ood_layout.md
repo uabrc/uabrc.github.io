@@ -94,6 +94,14 @@ The interactive apps have the following fields to customize the resources for yo
 
 Every interactive app has resources only allocated on a single node, and resources are shared among all processes running in the app. Make sure the amount of memory you request is less than or equal to the max amount per node for the partition you choose. We have a table with [memory available per node](../hardware.md#cheaha-hpc-cluster) for each partition.
 
+For more information on GPU efficiency please see [Making the Most of GPUs](../slurm/gpu.md#making-the-most-of-gpus).
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    April 21, 2025: Currently, GPU-core affinity is not considered for GPU jobs on interactive apps. This may mean selecting multiple GPUs results in some GPUs not being used.
+<!-- markdownlint-enable MD046 -->
+
 #### Environment Setup Window
 
 In addition to requesting general resources, for some apps you will have the option to add commands to be run during job startup in an Environment Setup Window. See below for an example showing how to load CUDA into a Jupyter job so it can use a GPU.
@@ -136,7 +144,7 @@ The My Interactive Sessions page lists the available apps and your current inter
 
 For each job running via Open OnDemand, there will be a card listed on this page:
 
-1. **Job ID**: The jobID assigned by the SLURM scheduler for this specific job.
+1. **Job ID**: The jobID assigned by the Slurm scheduler for this specific job.
 1. **Host**: The node on which the job is currently running.
 1. **Time Remaining**: The amount of time remaining from the total requested time.
 1. **Session ID**: This is the unique ID for the OOD session for this job, which can be clicked to access the OOD log directory for troubleshooting.

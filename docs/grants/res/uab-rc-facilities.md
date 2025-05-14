@@ -16,7 +16,7 @@ Cheaha is a campus high-performance computing (HPC) resource dedicated to enhanc
 - Gen 10 (Q4 2021): 34 nodes, 2x64 core (4352 cores total) 2.0 GHz AMD Epyc 7713 Milan compute nodes each with 512 GB RAM and EDR InfiniBand interconnect.
 - Gen 11 (Q4 2023): 20 nodes, 2x64 core (2560 cores total) 2.0 GHz AMD Epyc 7713 Milan compute nodes each with 512 GB RAM and 2 A100 80 GB GPUs.
 
-Cheaha provides researchers with both a web-based interface, via open OnDemand, and a traditional command-line interactive environment, via SSH. These interfaces provide access to many scientific tools that can leverage a dedicated pool of on-premises compute resources via the SLURM batch scheduler. The on-premises compute pool provides access to four recent generations of hardware based on the x86 64-bit architecture.
+Cheaha provides researchers with both a web-based interface, via open OnDemand, and a traditional command-line interactive environment, via SSH. These interfaces provide access to many scientific tools that can leverage a dedicated pool of on-premises compute resources via the Slurm batch scheduler. The on-premises compute pool provides access to four recent generations of hardware based on the x86 64-bit architecture.
 
 ## High-performance Computing Software Tools (Cheaha)
 
@@ -74,7 +74,7 @@ UAB IT maintains a comprehensive privacy and information security program that p
 - An enterprise firewall platform for perimeter, datacenter and customer layered protection and segmentation.  The firewall also consists of an Intrusion Prevention System (IPS) as well as content filtering and malware sandboxing.
 - An enterprise centralized logging solution (aka SIEM tool) to store logs and generate alerts to the Security Operations team for items that might need attention.
 - In addition to the Security Operations team (SOC) who handles incident response, forensics, EDR management, firewall management, etc., we also have a Threat and Vulnerability Team (TVT) that handles penetration testing, vulnerability scanning, phishing simulations and threat hunting.  We also have a Risk Management team that handles application/business unit risk assessments, 3rd party risk assessments, MFA administration, Security Awareness and Training.  We also have a Security Architect who handles architectural discussions for all sorts of projects across the campus.
-- UAB maintains an IoT policy to ensure all IoT devices that reside on the UAB network (wired or wireless) must be proactively managed and adhere to the university’s IoT security strategy.
+- UAB maintains an IoT policy to ensure all IoT devices that reside on the UAB Campus Network (wired or wireless) must be proactively managed and adhere to the university’s IoT security strategy.
 - Email is monitored with the highest level of defense offered from Microsoft with their XDR platform.  This includes safe attachments, impersonation and other anti-phishing methods.  UAB also utilizes DMARC, DKIM and SPF for additional email best practices.  We also maintain email guidelines for the UAB community to adhere to.
 - Encrypted VPN tunnels for business associates, staff remote access, or partner VPN connectivity.
 - Capability to support encrypted secure file transfers with Globus for HPC and other cloud-based solutions for traditional cloud-based storage needs.

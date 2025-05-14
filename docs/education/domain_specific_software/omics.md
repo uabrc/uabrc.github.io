@@ -9,9 +9,9 @@ Below are scientific software you may find useful for 'Omics analyses.
 
 ## Genome Sequencing
 
-- Parabricks - GPU accelerated sequencing software:
+- NVIDIA Clara Parabricks - GPU accelerated sequencing software:
     - Container on NGC service: <https://catalog.ngc.nvidia.com/orgs/nvidia/collections/claraparabricks>
-    - See our [Research Computing Parabricks Case Study](../case_studies.md#parabricks-for-performing-gpu-accelerated-genome-sequencing-analysis)
+    - See our [Research Computing NVIDIA Clara Parabricks Case Study](../case_studies.md#nvidia-clara-parabricks-for-performing-gpu-accelerated-genome-sequencing-analysis)
 
 ## Single-Cell Transcriptomics
 
