@@ -336,7 +336,7 @@ $cd array_example
 $sbatch slurm_array.job
 ```
 
-The output shows the sum of different input range computed by individual task, making it easy to track using a task identifier, such as array task 1/2/3.
+The output shows the sum of different input range computed by individual task, making it easy to track using a task identifier, such as array task 1/2/3. While each task is clearly labeled (e.g., "array task 1"), the order in which these outputs appear in the file may not be in order. This is because Slurm array tasks run in parallel and write to the output file concurrently, so the write order is not guaranteed.
 
 ```bash
 $ cat $HOME/array_example/output_all_tasks.txt
@@ -346,7 +346,7 @@ array task 3 Input Range: 200001 to 300000, Sum: 24999750000
 array task 1 Input Range: 1 to 100000, Sum: 4999950000
 ```
 
-The `sacct` report indicates that the job `27101430` consists of three individual tasks, namely `27101430_1`, `27101430_2`, and `27101430_3`. Each task has been allocated one CPU resource.
+The `sacct` report indicates that the job `27101430` consists of three individual tasks, namely `27101430_1`, `27101430_2`, and `27101430_3`. Each task was allocated one CPU resource.
 
 ```bash
 $ sacct -j 27101430
