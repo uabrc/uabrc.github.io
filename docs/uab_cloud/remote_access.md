@@ -105,12 +105,6 @@ elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
 fi
 ```
 
-<!-- markdownlint-disable MD046 -->
-!!! tip
-
-    Git Bash can also be used with [Windows Terminal](#terminal-multiplexers) using this stackoverflow answer: <https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal/57369284>.
-<!-- markdownlint-enable MD046 -->
-
 ### Generating Key Pairs
 
 The instructions for generating key pairs are identical for all operating systems. [GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) maintains excellent documentation on generating key pairs. The gist of those instructions follows.
