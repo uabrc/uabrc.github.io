@@ -1,4 +1,10 @@
-# UAB Kubernetes
+# Starting up with UAB Kubernetes
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Kubernetes is not yet available as a service to our research community, but we are putting the infrastructure and system in place to provide this. If you would like to help us test and explore our UAB Research Computing Kubernetes Instance please [contact us](../index.md#how-to-contact-us)
+<!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! construction
@@ -6,9 +12,7 @@
     This page is a stub and is under construction.
 <!-- markdownlint-enable MD046 -->
 
-Kubernetes (K8s, named because there are 8 letters between 'K' and 's') can be used to automate workflows of all kinds. Researchers can use KSoftware engineers can use it to create GitLab runners to execute continuous integration workflows to deploy code updates seemlessly.
-
-## UAB Kubernetes Computation Resources
+## UAB Kubernetes Computation Resources (to be rolled out)
 
 - 4 DGX A100 nodes
     - GPUs aren’t virtualized, but one DGX node can be split into 1/7th of a GPU
