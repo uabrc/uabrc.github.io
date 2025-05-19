@@ -147,7 +147,7 @@ With the repository open for editing in VSCode, open a VSCode terminal window an
         conda env create --file build_env.yml
         ```
 
-1. Register the Conda environment with this repository in VSCode:
+1. Register the Conda environment with this repository in VSCode. Once this is done, the Conda environment should automatically load and be used when viewing any Python files, and should automatically activate in any new terminal windows within VSCode.
     1. Open the Command Palette (++ctrl+shift+p++).
     1. Search for "Python: Select Interpreter" and select it.
     1. Search for the installed environment and select it.
