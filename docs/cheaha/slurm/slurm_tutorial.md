@@ -292,7 +292,7 @@ Now that the general environment and preprocessing setup are complete, the follo
 
 #### Example 4.1: Running Parallel Python Tasks with Dynamic Input Ranges
 
-The following Slurm script is an example of how you might convert the previous [parallel job example](#example-3-parallel-jobs) script to an array job. To start, copy and save the below script to a file named, `slurm_array.job` within the `array_example` folder. The script requires the input file `python_script_new.py` and the `conda` environment `pytools-env`, similar to those used in [example2](../slurm/slurm_tutorial.md#example-2-sequential-job) and [example 3](../slurm/slurm_tutorial.md#example-3-parallel-jobs). Line 11 specifies the script as an array job, treating each task within the array as an independent job. For each task, lines 18-19 calculates the input range. `SLURM_ARRAY_TASK_ID` identifies the task executed using indexes, and is automatically set for array jobs. The python script (line 22) runs individual array task concurrently on respective input range. The command `awk` is used to prepend each output line with the unique task identifier and then append the results to the file, `output_all_tasks.txt`. For more details on on parameters of array jobs, please refer to [Batch Array Jobs](../slurm/submitting_jobs.md#batch-array-jobs-with-known-indices) and [Practical Batch Array Jobs](../slurm/practical_sbatch.md#).
+The following Slurm script is an example of how you might convert the previous [parallel job example](#example-3-parallel-jobs) script to an array job. To start, copy and save the below script to a file named, `slurm_array.job` within the `array_example` folder. The script requires the input file `python_script_new.py` and the `conda` environment `pytools-env`, similar to those used in [example2](../slurm/slurm_tutorial.md#example-2-sequential-job) and [example 3](../slurm/slurm_tutorial.md#example-3-parallel-jobs). Line 11 specifies the script as an array job, treating each task within the array as an independent job. For each task, lines 18-19 calculates the input range. `SLURM_ARRAY_TASK_ID` identifies the task executed using indexes, and is automatically set for array jobs. The python script (line 24) runs individual array task concurrently on respective input range. The command `awk` is used to prepend each output line with the unique task identifier and then append the results to the file, `output_all_tasks.txt`. For more details on on parameters of array jobs, please refer to [Batch Array Jobs](../slurm/submitting_jobs.md#batch-array-jobs-with-known-indices) and [Practical Batch Array Jobs](../slurm/practical_sbatch.md#).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -313,15 +313,15 @@ The following Slurm script is an example of how you might convert the previous [
 #SBATCH --output=logs/%x_%A_%a.out
 ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --error=logs/%x_%A_%a.err
-#SBATCH --array=1-3                  ### Number of Slurm array tasks, 3 tasks
+#SBATCH --array=0-2                  ### Number of Slurm array tasks, 3 tasks
 
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
 module load Anaconda3
 conda activate pytools-env
 
 ### Calculate the input range for each task
-start=$((($SLURM_ARRAY_TASK_ID - 1) * 100000 + 1))
-end=$(($SLURM_ARRAY_TASK_ID * 100000))
+start=$((($SLURM_ARRAY_TASK_ID) * 100000 + 1))
+end=$((($SLURM_ARRAY_TASK_ID + 1) * 100000))
 
 ### Run the python script with input arguments and append the results to a .txt file for each task
 python python_script_new.py $start $end 2>&1 \
@@ -341,27 +341,27 @@ The output shows the sum of different input range computed by individual task, m
 ```bash
 $ cat $HOME/array_example/output_all_tasks.txt
 
-array task 2 Input Range: 100001 to 200000, Sum: 14999850000
-array task 3 Input Range: 200001 to 300000, Sum: 24999750000
-array task 1 Input Range: 1 to 100000, Sum: 4999950000
+array task 2 Input Range: 200001 to 300000, Sum: 24999750000
+array task 1 Input Range: 100001 to 200000, Sum: 14999850000
+array task 0 Input Range: 1 to 100000, Sum: 4999950000
 ```
 
-The `sacct` report indicates that the job `27101430` consists of three individual tasks, namely `27101430_1`, `27101430_2`, and `27101430_3`. Each task was allocated one CPU resource.
+The `sacct` report indicates that the job `33509888` consists of three individual tasks, namely `33509888_0`, `33509888_1`, and `33509888_2`. Each task was allocated one CPU resource.
 
 ```bash
-$ sacct -j 27101430
+$ sacct -j 33509888
 
        JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
 ------------ ---------- ---------- ---------- ---------- ---------- --------
-27101430_3   slurm_arr+    express      USER          1  COMPLETED      0:0
-27101430_3.+      batch                 USER          1  COMPLETED      0:0
-27101430_3.+     extern                 USER          1  COMPLETED      0:0
-27101430_1   slurm_arr+    express      USER          1  COMPLETED      0:0
-27101430_1.+      batch                 USER          1  COMPLETED      0:0
-27101430_1.+     extern                 USER          1  COMPLETED      0:0
-27101430_2   slurm_arr+    express      USER          1  COMPLETED      0:0
-27101430_2.+      batch                 USER          1  COMPLETED      0:0
-27101430_2.+     extern                 USER          1  COMPLETED      0:0
+33509888_2   slurm_arr+    express      prema          1  COMPLETED      0:0
+33509888_2.+      batch                 prema          1  COMPLETED      0:0
+33509888_2.+     extern                 prema          1  COMPLETED      0:0
+33509888_0   slurm_arr+    express      prema          1  COMPLETED      0:0
+33509888_0.+      batch                 prema          1  COMPLETED      0:0
+33509888_0.+     extern                 prema          1  COMPLETED      0:0
+33509888_1   slurm_arr+    express      prema          1  COMPLETED      0:0
+33509888_1.+      batch                 prema          1  COMPLETED      0:0
+33509888_1.+     extern                 prema          1  COMPLETED      0:0
 ```
 
 In the following three examples, we will explore additional Slurm array job scenarios that are commonly used in scientific simulations.
@@ -388,8 +388,8 @@ The following Slurm job script processes a text file line by line using an array
 INPUT_FILE="$HOME/array_example/input_files/random_file_2.txt"
 
 ### `sed` is a shell command and stream editor for manipulating text.
-### Here, `sed` reads $INPUT_FILE and extracts the line corresponding to SLURM_ARRAY_TASK_ID.
-LINE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" "$INPUT_FILE")
+### It extracts the line from $INPUT_FILE matching the task ID (adjusted for zero-based indexing)
+LINE=$(sed -n "$((SLURM_ARRAY_TASK_ID + 1))p" "$INPUT_FILE")
 
 ### The command `wc -w` counts the number of words in the extracted line ($LINE),
 ### while echo "$LINE" prints the line of text. The pipe (|) then passes this text from echo "$LINE"
@@ -404,26 +404,26 @@ Before running the above SLURM job, determine the number of lines in the input f
 $MAX_TASKS=$(wc -l < $HOME/array_example/input_files/random_file_2.txt)
 ```
 
-Next, submit the array job using the command below, which creates an array of tasks from 1 to the maximum number of lines in the file.
+Next, submit the array job using the command below. It creates an array of tasks starting from 0 up to (MAX_TASKS – 1), matching the zero-based indexing used in the script.
 
 ```bash
-$sbatch --array=1-"$MAX_TASKS" line_word_count.job
+$sbatch --array=0-$(($MAX_TASKS - 1)) line_word_count.job
 ```
 
-The below output comes from the SLURM job array script (line_word_count.job), where each task processes one line from random_file_2.txt. Since the file has 3 lines, SLURM created 3 tasks (Task 1, Task 2, Task 3), each counting words in its respective line.
+The below output comes from the SLURM job array script (line_word_count.job), where each task processes one line from random_file_2.txt. Since the file has 3 lines, SLURM created 3 tasks (Task 0, Task 1, Task 2), each counting words in its respective line.
 
 ```bash
 ### counts the number of lines in the file, for instance, random_file_2.txt
-$ wc -l /home/$USER/array_example/input_files/random_file_2.txt
+$ wc -l $HOME/array_example/input_files/random_file_2.txt
 3 $HOME/array_example/input_files/random_file_2.txt
 ```
 
 ```bash
 ### Print and verify the output using the `cat` command
-$ cat /home/$USER/array_example/logs/line_word_count_$JOB_ID_*.out
-Task 1: 8 words
-Task 2: 19 words
-Task 3: 6 words
+$ cat $HOME/array_example/logs/line_word_count_$JOB_ID_*.out
+Task 0: 8 words
+Task 1: 19 words
+Task 2: 6 words
 ```
 
 #### Example 4.3: Dynamically Reading and Counting Words in Multiple Files
