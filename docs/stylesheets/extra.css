@@ -1,7 +1,7 @@
 /* UAB theming */
 :root {
-    --md-primary-fg-color: #1e6b52;
-    --md-primary-fg-color--dark: #1e6b52;
+    --md-primary-fg-color: #1a5632;
+    --md-primary-fg-color--dark: #1a5632;
 }
 
 /* logo fix */
@@ -88,18 +88,18 @@ html .md-footer-meta.md-typeset a.supportemail {
 /* construction admonition */
 .md-typeset .admonition.announcement,
 .md-typeset details.announcement {
-    border-color: #64dd17;
+    border-color: #90D408;
 }
 
 .md-typeset .announcement>.admonition-title,
 .md-typeset .announcement>summary {
-    background-color: rgba(100, 221, 23, 0.1);
-    border-color: #64dd17;
+    background-color: rgba(144, 212, 8, 0.1);
+    border-color: #90D408;
 }
 
 .md-typeset .announcement>.admonition-title::before,
 .md-typeset .announcement>summary::before {
-    background-color: #64dd17;
+    background-color: #90D408;
     -webkit-mask-image: var(--md-admonition-icon--warning);
     mask-image: var(--md-admonition-icon--warning);
 }
