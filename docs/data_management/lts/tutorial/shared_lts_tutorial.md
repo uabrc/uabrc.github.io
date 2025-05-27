@@ -25,8 +25,15 @@ Once the configuration is complete, `s3cmd` will generate a file in your home di
 
 ![config-shared-lts-file](../images/abc-lab.png)
 
-## Creating  Shared LTS Buckets
+## Switching between Individual and Shared LTS allocation Profiles
 
-## Managing Shared LTS Buckets
+ If you own or manage more than one LTS allocation, such as individual and shared LYS allocations, you will need to switch between them to manage your buckets effectively.
 
-## How to Grant Access to Other Allocations for your shred LTS Buckets?
+ In this section, we focus on the two configurations: [individual LTS configuration](./individual_lts_tutorial.md#configuring-s3cmd-for-lts-buckets) and [shared LTS configuration](#configuring-s3cmd-for-shared-lts-buckets). The individual profile uses the default `.s3cfg` file, so you can run `s3cmd` commands without specifying the `-c` option. Refer our  individual LTS tutorials on [creating](./individual_lts_tutorial.md#creating-buckets) and [managing](./individual_lts_tutorial.md#managing-buckets) buckets for examples.
+
+ For the shared profile ( `abc-lab`), you will need to explicitly pass the config file using the `-c` option along with your usual `s3cmd` commands as shown in the below examples.
+
+- To **creating buckets** in your shared LTS, use the command `s3cmd -c abc-lab mb s3://your-bucket-name`
+- To **list all buckets** you own with your shared LTS, use command: `s3cmd -c abc-lab ls`
+
+## How to Grant Access to Other Allocations for Buckets in your shred LTS?
