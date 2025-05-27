@@ -113,7 +113,7 @@ nav:
           - data_management/lts/index.md
           - Tutorial:
               - data_management/lts/tutorial/index.md
-              - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
+              - Individual LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
               - Shared LTS and s3cmd Workflow: data_management/lts/tutorial/shared_lts_tutorial.md
           - Interfacing with LTS: data_management/lts/interfaces.md
           - Identity and Access Management: data_management/lts/iam_and_policies.md
