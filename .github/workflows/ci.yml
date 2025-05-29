@@ -34,6 +34,9 @@ jobs:
           yamllint_strict: true
           yamllint_comment: true
 
+      - name: Ruff
+        run: ruff check --output-format=github .
+
       - name: Setup Miniforge
         uses: conda-incubator/setup-miniconda@v3
         with:
