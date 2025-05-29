@@ -28,19 +28,19 @@ old/page.md -> new/page.md
 
 ## Accessibility Checklist
 
-- [ ] All images have appropriate alt text. [Guidelines](https://www.wcag.com/blog/good-alt-text-bad-alt-text-making-your-content-perceivable/)
-- [ ] Text-based images have appropriate contrast ratio. [Checker](https://webaim.org/resources/contrastchecker/)
-- [ ] Text-based image content is transcribed in body text.
-- [ ] Abbreviations are introduced before usage in body text.
+- [ ] I have ensured all images have appropriate alt text. [Guidelines](https://www.wcag.com/blog/good-alt-text-bad-alt-text-making-your-content-perceivable/)
+- [ ] I have ensured text-based images have sufficient contrast ratio. [Checker](https://webaim.org/resources/contrastchecker/)
+- [ ] I have ensured text-based image content is transcribed or adequately described in body text.
+- [ ] I have ensured technical terms, jargon, and abbreviations are introduced before they are used.
 
 ## Style Checklist
 
-- [ ] My content crosslinks to other relevant pages.
-- [ ] Other relevant pages crosslink to my content.
+- [ ] I have searched for other relevant pages and crosslinked from my content to them.
+- [ ] I have searched for other relevant pages and crosslinked from them to my content.
 - [ ] I have added redirects for any moved headers or pages.
-- [ ] New jargon terms are defined in the glossary.
-- [ ] Existing jargon terms are crosslinked to the glossary.
-- [ ] Proper nouns and branded names are written and/or introduced properly. [List here](https://docs.rc.uab.edu/contributing/contributor_guide/#terminology).
+- [ ] I have defined new technical terms, jargon, and abbreviations in the glossary.
+- [ ] I have searched for existing technical terms, jargon, and abbreviations in the glossary and added crosslinks to them.
+- [ ] I have properly formatted and introduced key branding terms. [List here](https://docs.rc.uab.edu/contributing/contributor_guide/#terminology).
 
 ## Related Issues
 
