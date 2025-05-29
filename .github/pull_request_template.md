@@ -1,29 +1,25 @@
 # Pull Request
 
-<!-- PLEASE READ THE COMMENTS BELOW -->
-
-## Overview
-
-<!-- Briefly summarize the proposed changes -->
+## Intent
+<!-- Describe the intent of the changes. -->
 
 ## Proposed Changes
-
-<!-- Provide specific details of what is changing -->
+<!-- Provide specific details of what is changing. -->
 
 ### Changes to Section Headers
-
-<!--
-Write down which headers have changed.
-
+<!-- Write down which headers have changed.
 old-header -> new-header
 -->
 
 ### Changes to Page URLs
-
-<!--
-Write down which pages have changed.
-
+<!-- Write down which pages have changed.
 old/page.md -> new/page.md
+-->
+
+## Related or Fixed Issues
+<!-- Examples:
+Fixes #123
+Related to #101
 -->
 
 ## Accessibility Checklist
@@ -41,11 +37,3 @@ old/page.md -> new/page.md
 - [ ] I have defined new technical terms, jargon, and abbreviations in the glossary.
 - [ ] I have searched for existing technical terms, jargon, and abbreviations in the glossary and added crosslinks to them.
 - [ ] I have properly formatted and introduced key branding terms. [List here](https://docs.rc.uab.edu/contributing/contributor_guide/#terminology).
-
-## Related Issues
-
-<!--
-Examples:
-Fixes #123
-Related to #101
--->
