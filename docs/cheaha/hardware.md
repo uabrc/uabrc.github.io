@@ -27,6 +27,8 @@ Examples of how to make use of the table:
 
 The full table can be downloaded [here](./res/hardware_summary_cheaha.csv).
 
+Information about GPU efficiency can be found at [Making the Most of GPUs](./slurm/gpu.md#making-the-most-of-gpus).
+
 ### Details
 
 Detailed hardware information, including processor and GPU makes and models, core clock frequencies, and other information for current hardware are in the table below.

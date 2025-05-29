@@ -16,7 +16,7 @@ The benefits of creating and using a Shared Cloud Environment for your Lab/Core 
 
 ## How Do I Create a Shared Cloud Environment for My Lab/Core
 
-To use the shared cloud resources available, you will need to send in a request to the UAB IT Research Computing Team via email [support@listserv.uab.edu](mailto:support@listserv.uab.edu). In the email, please state clearly your needs and the resources you would require for your lab. Your request should also include members of your lab to be included in the Shared Cloud Environment, and a preferred name (usually same as lab project folder on Cheaha). Please follow the naming conventions for requesting a [shared storage](../data_management/index.md#how-do-i-request-shared-storage) on our platforms in your request.
+To use the shared cloud resources available, you will need to send in a request to the UAB IT Research Computing Team via email <support@listserv.uab.edu>. In the email, please state clearly your needs and the resources you would require for your lab. Your request should also include members of your lab to be included in the Shared Cloud Environment, and a preferred name (usually same as lab project folder on Cheaha). Please follow the naming conventions for requesting a [shared storage](../data_management/index.md#how-do-i-request-shared-storage) on our platforms in your request.
 
 ## How Do I Switch Project Spaces?
 

@@ -32,6 +32,14 @@ For information on partition and GPU selection, please review our [hardware info
     The latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules).
 <!-- markdownlint-enable MD046 -->
 
+For more information on GPU efficiency please see [Making the Most of GPUs](../slurm/gpu.md#making-the-most-of-gpus).
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    April 21, 2025: Currently, GPU-core affinity is not considered for GPU jobs on interactive apps. This may mean selecting multiple GPUs results in some GPUs not being used.
+<!-- markdownlint-enable MD046 -->
+
 ## Extra Jupyter Arguments
 
 The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
@@ -113,13 +121,25 @@ Using `conda init` causes a block of code automatically inserted into the `.bash
 
 ### Pip Installs Packages Outside of Environment
 
-When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` within the same conda environment and use `pip` from that environment. If `pip` is used outside of Anaconda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments, and shows the following error,
+When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` first within the same conda environment and use `pip` from that environment. If `pip` is used outside of conda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments, and shows the following error,
 
 ```bash
 Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)
 ```
 
-For the above case, resolving errors involve deleting the `~/.local` directory.
+For the above case, deleting the `~/.local` directory and then installing `pip` within an environment, will fix this error. Ensure you input the correct file path, we suggest copying the filepath found in the output "Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)".
+
+```bash
+rm -rf /home/$USER/.local/lib/python3.xx/site-packages
+```
+
+Replace `python3.11` in the command with the appropriate Python version.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Please note, using the `rm -rf` command would permanently delete the specified file or specified directory and its contents.
+<!-- markdownlint-enable MD046 -->
 
 Here's an example of the correct procedure for installing `pip` packages within a `conda`:
 

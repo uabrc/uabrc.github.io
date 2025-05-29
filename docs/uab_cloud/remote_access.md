@@ -105,12 +105,6 @@ elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
 fi
 ```
 
-<!-- markdownlint-disable MD046 -->
-!!! tip
-
-    Git Bash can also be used with [Windows Terminal](#terminal-multiplexers) using this stackoverflow answer: <https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal/57369284>.
-<!-- markdownlint-enable MD046 -->
-
 ### Generating Key Pairs
 
 The instructions for generating key pairs are identical for all operating systems. [GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) maintains excellent documentation on generating key pairs. The gist of those instructions follows.
@@ -234,7 +228,7 @@ It is possible to make [instances](./tutorial/instances.md) publically accessibl
 
 ### Expectations
 
-The expectation of making an instance publically accessible is to advance UAB's mission, so be sure you've configured and thoroughly tested your instance in the UAB Network before proceeding. The following list is intended as a helpful reminder.
+The expectation of making an instance publically accessible is to advance UAB's mission, so be sure you've configured and thoroughly tested your instance in the UAB Campus Network before proceeding. The following list is intended as a helpful reminder.
 
 - Have an instance with some research application or server that advances UAB's mission.
 - The instance is configured with a floating IP address.
