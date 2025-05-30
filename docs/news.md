@@ -49,7 +49,7 @@ The [survey](https://uab.co1.qualtrics.com/jfe/form/SV_dbaFBqVXIVkSbum) is desig
 - Anticipated End: 2025-04-28 12:00 AM
 - Impacted Resources: Cloud.rc, Cheaha "amperenodes," "pascalnodes," and "intel-dcb" partitions.
 
-Cloud.rc (OpenStack) and Cheaha nodes within DC Blox will be undergoing maintenance during the week of April 21, 2025. Cloud.rc and Cheaha "amperenodes,” "pascalnodes,” and "intel-dcb" partitions will be inaccessible during maintenance. Note this means all GPU nodes will be inaccessible. Planned growth requires us to move hardware within the DC BLOX data center. Please plan your Research Computing needs around this maintenance window. If you need additional assistance, please reply to this email or reach out to [support@listserv.uab.edu](mailto:support@listserv.uab.edu).
+Cloud.rc (OpenStack) and Cheaha nodes within DC Blox will be undergoing maintenance during the week of April 21, 2025. Cloud.rc and Cheaha "amperenodes,” "pascalnodes,” and "intel-dcb" partitions will be inaccessible during maintenance. Note this means all GPU nodes will be inaccessible. Planned growth requires us to move hardware within the DC BLOX data center. Please plan your Research Computing needs around this maintenance window. If you need additional assistance, please reply to this email or reach out to <support@listserv.uab.edu>.
 
 The overall plan, which will increase capacity for planned hardware growth, includes:
 
