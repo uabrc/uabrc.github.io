@@ -1,6 +1,6 @@
 site_name: Research Computing Documentation
 repo_url: https://github.com/uabrc/uabrc.github.io/
-edit_uri: edit/main/docs/
+edit_uri: blob/main/docs/
 
 theme:
   name: material
