@@ -108,6 +108,7 @@ nav:
       - data_management/index.md
       - Cheaha Storage (GPFS):
           - data_management/cheaha_storage_gpfs/index.md
+          - Project Directory organization: data_management/cheaha_storage_gpfs/project_directory_organization.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
@@ -176,6 +177,7 @@ nav:
       - Snapshots and Images: uab_cloud/snapshots.md
       - Sharing Cloud Environment: uab_cloud/sharing_cloud_environment.md
   - UAB Kubernetes Guide:
+      - kubernetes/index.md
       - Startup: kubernetes/startup.md
   - National Research Computing Cyberinfrastructure:
       - national_ci/index.md
@@ -200,6 +202,7 @@ nav:
   - Reporting Documentation Errors: contributing/reporting_errors.md
   - Contributing Content: contributing/contributor_guide.md
   - Help:
+      - help/index.md
       - Support: help/support.md
       - FAQ - Frequently Asked Questions: help/faq.md
 
