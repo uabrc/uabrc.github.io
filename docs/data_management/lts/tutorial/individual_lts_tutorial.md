@@ -25,7 +25,7 @@ Once your interactive apps session is launched, open the terminal as described i
 
 ```bash
 module load Anaconda3
-conda create -n s3
+conda create -n s3 -c conda-forge pip
 conda activate s3
 pip install s3cmd
 ```
