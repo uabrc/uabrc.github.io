@@ -6,8 +6,6 @@ toc_depth: 2
 
 We appreciate any and all opportunities to improve our documentation, and your contributions are welcome! To ensure a high-quality documentation experience, we have some guidelines for contributors who wish to create.
 
-<!-- TODO this file needs to be updated. Absorb some of what is in the README right now as well -->
-
 ## FAQ
 
 ### How do I report content inaccuracies or errors?
@@ -36,7 +34,7 @@ If you need assistance, please feel free to [contact us](../help/support.md).
 
 We understand that everyone has differing preferences when it comes to development environments, so please feel free to use the development environment of your choice. Please be aware that our content has been developed using VSCode and a collection of extensions, so the greatest level of support can be provided by us to you if you choose to use our tooling.
 
-We are using Visual Studio Code (VSCode) for development with several extensions installed, listed below. The extensions are also in `.vscode/extensions.json` and should pop up as recommendations when you open this repository. We use VSCode for the productivity benefits related to local Anaconda environment management, git integration, and dynamic formatters and linting. Linting is provided by pre-commit hooks and in our Continuous Integration definitions.
+We are using Visual Studio Code (VSCode) for development with several extensions installed, listed below. The extensions are also in `.vscode/extensions.json` and should pop up as recommendations when you open this repository. We use VSCode for the productivity benefits related to local Conda environment management, git integration, and dynamic formatters and linting. Linting is provided by pre-commit hooks and in our Continuous Integration definitions.
 
 VSCode may be obtained from [Visual Studio Code](https://code.visualstudio.com/) and documentation is available at [VSCode: Docs](https://code.visualstudio.com/docs). The extensions should automatically show up as recommendations when opening the repo, or they can be downloaded using the VSCode Extensions menu (++ctrl+shift+x++ on Windows or ++command+shift+x++ on Mac).
 
@@ -138,22 +136,43 @@ Once the fork has been created, you can clone your fork using the Command Palett
 
 #### Local Machine Setup (Laptop/Desktop)
 
-1. Install `conda` on your machine using [Miniforge](https://conda-forge.org/miniforge/).
-1. Configure `conda` to be visible to VSCode. The Miniforge default install choices will help do this correctly for your operating system. **Important:** On Windows, do _not_ add `conda` to your `PATH` variable as it can disrupt proper operating system functioning.
-1. Install the conda environment from `build_env.yml` using the following command
+With the repository open for editing in VSCode, open a VSCode terminal window and follow the steps below.
 
-    ```shell
-    conda env create -f build_env.yml
-    ```
+1. Configure the Conda environment. This is the backbone of everything that makes the documentation work.
+    1. Install `conda` on your machine using [Miniforge](https://conda-forge.org/miniforge/), if you haven't already.
+    1. Configure `conda` to be visible to VSCode. The Miniforge default install choices will help do this correctly for your operating system. **Important:** On Windows, do _not_ add `conda` to your `PATH` variable as it can disrupt proper operating system functioning.
+    1. Install the conda environment from `build_env.yml` using the following command.
 
-1. Register the environment with this repository in VSCode:
+        ```shell
+        conda env create --file build_env.yml
+        ```
+
+1. Register the Conda environment with this repository in VSCode. Once this is done, the Conda environment should automatically load and be used when viewing any Python files, and should automatically activate in any new terminal windows within VSCode.
     1. Open the Command Palette (++ctrl+shift+p++).
     1. Search for "Python: Select Interpreter" and select it.
     1. Search for the installed environment and select it.
 
-Now pre-commit hooks should function as expected and manual validation is available on your local machine. You will also be able to build and serve the documentation locally to help you check your contributions before making a pull request.
+1. Install pre-commit hooks to enable automatic validation of files as you commit.
+    - Run the terminal command `pre-commit install`
+
+1. Install recommended extensions to enable automatic linting and formatting as you type and save your contributions.
+    1. Open the VSCode Extensions browser.
+        - Windows and Linux: ++ctrl+shift+x++
+        - MacOS: ++cmd+shift+x++
+    1. Type `@recommended` in the search field.
+    1. Install the extensions from the list.
+
+Now the [pre-commit hooks](#pre-commit-hooks) should function as expected and manual validation is available on your local machine. You will also be able to build and serve the documentation locally to help you check your contributions before making a pull request.
 
 To build the documentation locally, press ++f5++ in VSCode to start a local server and open the docs in your browser. This is provided by the `.vscode/launch.json` file. Alternatively, use `mkdocs serve --open` in a terminal to get the same effect. Be sure you've got your `conda` environment activated! We recommend trying this now to test your setup.
+
+##### Updating the Conda Environment
+
+Run the following command to update the existing environment.
+
+```shell
+conda env update --name mkdocs --file build_env.yml --prune
+```
 
 #### Development Workflow
 
@@ -231,106 +250,15 @@ From here your pull request will go through a review process. The following crit
 
 We will do our best to check information for accuracy, as well as proofread the text. Bear in mind Research Computing staff time is limited and we are not infallible, so please double-check your pull requests! Your audience is your research colleagues at UAB and beyond, and possibly even you at a future date!
 
-### Automation
-
-#### CI/CD
-
-CI/CD is used to ensure consistency and formatting of markdown files via linting. Internal links are also checked for validity.
-
-- Linting: `markdownlint` runs via [markdownlint-cli2-action](https://github.com/DavidAnson/markdownlint-cli2-action).
-- Internal links are validated by the `mkdocs build` [validation configuration](https://www.mkdocs.org/user-guide/configuration/#validation).
-
-#### Pre-commit Hooks
-
-We use [pre-commit hooks](https://pre-commit.com/) to ensure contributions match our standards for consistency, formatting, and URL validity prior to pull requests.
-
-- Pre-commit runs [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) on markdown files.
-- Pre-commit runs `mkdocs build` to validate links.
-    - Internal links are validated by the `mkdocs build` [validation configuration](https://www.mkdocs.org/user-guide/configuration/#validation).
-
-The `mkdocs-htmlproofer-plugin` can take substantial time to run. To disable it modify the file `.htmlproofer.env` to read `ENABLED_HTMLPROOFER=False`. Be sure not to commit this change! It is recommended to discard this change and re-run validaitions before submitting a pull request.
-
-To use the pre-commit hooks, you _must_ have `conda` on your system `PATH` and have installed the bundled `build_env.yml` environment.
-
-#### Manual Validation
-
-Use the command `pre-commit run --all-files > pre-commit-out.log 2>&1` to run all [pre-commit hooks](#pre-commit-hooks) and store the results in the file `out.log` for simpler review within VSCode.
-
-##### Manual Markdown Linting
-
-We are using [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) for markdown linting.
-
-1. Install `build-env.yml` and activate
-1. Run `markdownlint-cli2 "**/*.md" "#node_modules" 2> markdownlint-cli2-out.log`
-1. Review `markdownlint-cli2-out.log`
-
-We use `.markdownlint.json` to handle markdown formatting rules, rather than placing it in `.markdownlint.json`.
-
-##### Manual Documentation Build
-
-1. Install `build-env.yml` and activate
-1. Run `mkdocs build --strict > mkdocs-build-out.log 2>&1`
-1. Review `mkdocs-build-out.log`
-
-#### External URL Validation
-
-We are using [linkchecker](https://github.com/linkchecker/linkchecker) to validate external repository URLs.
-
-1. Install `build-env.yml` and activate
-1. Run `python scripts/linkchecker.py`
-1. Review `out/linkchecker-out.csv` (feel free to ignore `out/linkchecker.log` unless you want verbose details)
-
-The `urlname` column contains the URL as it is written in the documentation. The `url` column contains the resulting URL after all forwarding is complete.
-
-#### Linting Known Issues
-
-There are known issues with the markdown linter and some of our non-standard plugins, especially admonitions (specifically a conflict involving fenced vs indented code blocks). To fix these cases please use one of the following methods. The `$MD_LINTER_CODE` can be found by hovering over the yellow squiggles in VSCode to bring up the warning lens.
-
-Please do not use these to silence all linter warnings, only for fixing known issues. Please read the warning lenses given by VSCode to identify the cause of the warning.
-
-##### Silence Linter Warning for a Block
-
-```markdown
-<!-- markdownlint-disable $MD_LINTER_CODE -->
-`linter error here`
-
-`maybe multiple lines`
-<!-- markdownlint-enable $MD_LINTER_CODE -->
-```
-
-##### Silence Linter Warning for a Single Line
-
-We encourage denoting the warning being silenced here by filling out the `$MD_LINTER_CODE`, though it isn't required for the single line case.
-
-```markdown
-<!-- markdownlint-disable-next-line $MD_LINTER_CODE -->
-`linter error here just for this line`
-```
-
-##### False Positive Lint Warnings from Admonitions
-
-We allow and encourage the use of [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types) in our documentation, where appropriate. Because these are created using a plugin and are "non-standard" `markdown`, the VSCode `markdownlint` extension does not recognize admonitions and may produce a false positive warning about inconsistent code block styles.
-
-Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. All admonitions are assigned the warning [`MD046`](https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md046---code-block-style), which can be disabled by placing all admonitions in between the following comment block fences. The comment lines must be indented to the same level as the start of the admonition.
-
-```markdown
-<!-- markdownlint-disable MD046 -->
-
-<!-- markdownlint-enable MD046 -->
-```
-
-The process can be simplified in VSCode using the `md046 disable` snippet, included in this repository at `.vscode/markdown.code-snippets`. When used, the snippet will automatically surround selected text with the appropriate fencing to disable markdownlint MD046. To use the snippet, select all of the lines belonging to the admonition, open the Command Palette (++ctrl+shift+p++), select "Snippets: Insert Snippet", then search for `md046 disable` and select it.
-
-This workaround is needed because `markdownlint` has no plans to add support for admonitions. There is no `markdownlint` plugin for that support either, and we don't have the ability to develop such a plugin.
-
 ### File Organization
 
 - Main headings are based on [UAB Research Computing services](https://www.uab.edu/it/home/research-computing/research-digital-marketplace)
-- Favor placing new pages and information into an existing section over creating
+- Favor placing new pages and information into an existing navigation section over creating a new section.
 - Approach documentation from a problem solving angle rather than a technology. Examples:
     - Section title "Installing Software Yourself with Anaconda" vs "Anaconda"
     - Section title "Running Analysis Jobs" vs "Slurm"
-- Put redirects for any page moves in case someone has bookmarked a page (see Redirect section below)
+- Add redirects for any pages that move, in case someone has bookmarked a page, see [redirects](#redirects)
+- Images for a given page must be placed in a directory called `images/` at the same level as the page itself.
 
 ### Redirects
 
@@ -377,6 +305,165 @@ To create a section index page:
 - Brand colors: <https://www.uab.edu/toolkit/brand-basics/colors>
 - Copyright guidance: <https://www.uab.edu/toolkit/trademarks-licensing/uab-trademarks>
 
+## Automation
+
+We strive to have CI/CD and pre-commit hooks aligned. This is achieved by using configuration files and consistent tool versioning where possible, and keeping-up-to-date where not.
+
+### Configuration Files
+
+- `.github/workflows/ci.yml`: Defines the pipeline used for pull-request validation and the build process.
+- `.linkcheckerrc`: Defines configuration for linkchecker, a non-automated process for identifying broken and redirected URLs in the documentation.
+- `.markdownlint-cli2.jsonc`: Defines constraints and configuration for the `markdownlint-cli2` command-line application.
+- `.markdownlint.json`: Defines markdownlint rules.
+- `.pre-commit-config.yaml`: Defines configuration of pre-commit hooks.
+- `.yamllint.yaml`: Defines yaml lint rules.
+- `build_env.yml`: Defines the Conda environment used to support this project's automation.
+- `mkdocs.yml`: Defines the documentation content configuration.
+
+### CI/CD
+
+CI/CD is used to ensure consistency and formatting of markdown and YAML files via linting. This stage of validation checks for errors during the Pull Review process and during the build process on GitHub.
+
+- Linting: `markdownlint` runs via [markdownlint-cli2-action](https://github.com/DavidAnson/markdownlint-cli2-action).
+- Internal links are validated by the `mkdocs build` [validation configuration](https://www.mkdocs.org/user-guide/configuration/#validation).
+
+Relevant files:
+
+- `.github/workflows/ci.yml`
+- `.markdownlint-cli2.jsonc`
+- `.markdownlint.json`
+- `.yamllint.yaml`
+- `build_env.yml`
+- `mkdocs.yml`
+
+### Pre-commit Hooks
+
+We use [pre-commit hooks](https://pre-commit.com/) to ensure contributions match our standards for consistency, formatting, and URL validity prior to pull requests.
+
+- Pre-commit runs [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) on markdown files.
+- Pre-commit runs `mkdocs build` to validate links.
+    - Internal links are validated by the `mkdocs build` [validation configuration](https://www.mkdocs.org/user-guide/configuration/#validation).
+
+The `mkdocs-htmlproofer-plugin` can take substantial time to run. To disable it modify the file `.htmlproofer.env` to read `ENABLED_HTMLPROOFER=False`. Be sure not to commit this change! It is recommended to discard this change and re-run validaitions before submitting a pull request.
+
+To use the pre-commit hooks, you _must_ have `conda` on your system `PATH` and have installed the bundled `build_env.yml` environment.
+
+Relevant files:
+
+- `.markdownlint-cli2.jsonc`
+- `.markdownlint.json`
+- `.pre-commit-config.yaml`
+- `.yamllint.yaml`
+- `build_env.yml`
+- `mkdocs.yml`
+
+### Manual Validation
+
+#### Pre-Commit Hooks
+
+We are using [pre-commit](https://github.com/pre-commit/pre-commit) to automate commit validation. This includes [markdown linting](#manual-markdown-linting), [YAML linting](#manual-yaml-linting), and a [strict build of the documentation](#manual-documentation-build).
+
+Relevant files:
+
+- `pre-commit-config.yaml`
+
+#### Manual Markdown Linting
+
+We are using [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) for markdown linting.
+
+To run this command in isolation, without `pre-commit`, takes additional setup. The command-line interface and engine are not available through Conda. Instead you will need the Node Package Manager on your system. See the repo referenced above for installation instructions.
+
+Run `markdownlint-cli2 "**/*.md" "#node_modules" 2> markdownlint-cli2-out.log` and review the output.
+
+Relevant files:
+
+- `.markdownlint-cli2.jsonc`
+- `.markdownlint.json`
+
+#### Manual YAML Linting
+
+We are using [yamllint](https://github.com/adrienverge/yamllint) for YAML linting.
+
+Run `yamllint . 2> yamllint-out.log`.
+
+Relevant files:
+
+- `.yamllint.yaml`
+
+#### Manual Documentation Build
+
+Run `mkdocs build --strict > mkdocs-build-out.log 2>&1`
+
+Relevant files:
+
+- `mkdocs.yml`
+
+#### External URL Validation
+
+We are using [linkchecker](https://github.com/linkchecker/linkchecker) to validate external repository URLs.
+
+1. Run `python scripts/linkchecker.py`
+1. Review `out/linkchecker-out.csv` (feel free to ignore `out/linkchecker.log` unless you want verbose details)
+
+Output columns:
+
+- `document-url`: URL as it is written in the documentation.
+- `url-after-redirect`: URL after all redirection is complete.
+- `document`: Location of the file containing the URL on the local filesystem.
+- `line`: Line number where the URL is located.
+- `column`: Column number of the first character in the URL.
+
+Relevant files:
+
+- `.linkcheckerrc`
+
+### Known Issues
+
+#### Linting Known Issues
+
+There are known issues with the markdown linter and some of our non-standard plugins, especially admonitions (specifically a conflict involving fenced vs indented code blocks). To fix these cases please use one of the following methods. The `$MD_LINTER_CODE`, referenced below, looks like `MD046` with various integers. The code specific to your issue can be found by hovering over the yellow squiggles in VSCode to bring up the warning lens.
+
+This should only be used to silence the specific known issues below. In all other cases, please read the warning lenses given by VSCode to identify the cause of the warning and what can be done about them. Please contact our maintainers if you need assistance.
+
+##### How To Silence Linter Warnings
+
+###### Silence Linter Warning for a Block
+
+```markdown
+<!-- markdownlint-disable $MD_LINTER_CODE -->
+`linter error here`
+
+`maybe multiple lines`
+<!-- markdownlint-enable $MD_LINTER_CODE -->
+```
+
+###### Silence Linter Warning for a Single Line
+
+We encourage denoting the warning being silenced here by filling out the `$MD_LINTER_CODE`, though it isn't required for the single line case.
+
+```markdown
+<!-- markdownlint-disable-next-line $MD_LINTER_CODE -->
+`linter error here just for this line`
+```
+
+##### False Positive Lint Warnings from Admonitions
+
+We allow and encourage the use of [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types) in our documentation, where appropriate. Because these are created using a plugin and are "non-standard" `markdown`, the VSCode `markdownlint` extension does not recognize admonitions and may produce a false positive warning about inconsistent code block styles.
+
+Two styles of code block are allowed in `markdown`: `fenced` and `indented`. To work around the false positive warning about admonitions, we require all code blocks to be `fenced`. All admonitions are assigned the warning [`MD046`](https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md046---code-block-style), which can be disabled by placing all admonitions in between the following comment block fences. The comment lines must be indented to the same level as the start of the admonition.
+
+```markdown
+<!-- markdownlint-disable MD046 -->
+!!! admonition
+
+    Admonition Content
+<!-- markdownlint-enable MD046 -->
+```
+
+The process can be simplified in VSCode using the `md046 disable` snippet, included in this repository at `.vscode/markdown.code-snippets`. When used, the snippet will automatically surround selected text with the appropriate fencing to disable markdownlint MD046. To use the snippet, select all of the lines belonging to the admonition, open the Command Palette (++ctrl+shift+p++), select "Snippets: Insert Snippet", then search for `md046 disable` and select it.
+
+This workaround is needed because `markdownlint` has no plans to add support for admonitions. There is no `markdownlint` plugin for that support either, and we don't have the ability to develop such a plugin.
+
 ## Reviewer Guidance
 
 <!-- markdownlint-disable MD046 -->
@@ -413,7 +500,7 @@ Reviewing a pull request means obtaining a copy of the pull request branch and [
 
 Building hardware tables is a semi-automated script based on a manually curated table. The repository is located here: <https://gitlab.rc.uab.edu/rc-data-science/metrics/rc-hardware>. The repository is only accessible to developers at this time.
 
-Building Partition and QoS tables is automated based on `scontrol` output. The repository is located here: <https://github.com/wwarriner/slurm_status_tools>. To use, install the conda environment at the linked repo, activate it, and run the following commands.
+Building Partition and QoS tables is automated based on `scontrol` output. The repository is located here: <https://github.com/wwarriner/slurm_status_tools>. To use, install the Conda environment at the linked repo, activate it, and run the following commands.
 
 ```bash
 python -u sstatus.py -c partitions > partitions.csv
