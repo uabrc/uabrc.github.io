@@ -9,6 +9,11 @@ repos:
     hooks:
       - id: yamllint
         args: [-c, .yamllint.yaml, --strict]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.10
+    hooks:
+      - id: ruff
+      - id: ruff-format
   - repo: local
     hooks:
       - id: mkdocs-build

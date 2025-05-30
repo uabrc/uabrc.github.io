@@ -317,6 +317,7 @@ We strive to have CI/CD and pre-commit hooks aligned. This is achieved by using 
 - `.markdownlint.json`: Defines markdownlint rules.
 - `.pre-commit-config.yaml`: Defines configuration of pre-commit hooks.
 - `.yamllint.yaml`: Defines yaml lint rules.
+- `.ruff.toml`: Defines Python lint rules for the ruff linter.
 - `build_env.yml`: Defines the Conda environment used to support this project's automation.
 - `mkdocs.yml`: Defines the documentation content configuration.
 
@@ -333,6 +334,7 @@ Relevant files:
 - `.markdownlint-cli2.jsonc`
 - `.markdownlint.json`
 - `.yamllint.yaml`
+- `.ruff.toml`
 - `build_env.yml`
 - `mkdocs.yml`
 
@@ -354,6 +356,7 @@ Relevant files:
 - `.markdownlint.json`
 - `.pre-commit-config.yaml`
 - `.yamllint.yaml`
+- `.ruff.toml`
 - `build_env.yml`
 - `mkdocs.yml`
 
