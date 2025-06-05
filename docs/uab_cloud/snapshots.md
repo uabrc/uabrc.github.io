@@ -1,4 +1,4 @@
-# Working with Snapshots
+# Working With Snapshots
 
 Snapshots are instances or volumes frozen at a moment in time, able to be used in the future. Think of snapshots as a photograph of the state of an instance or volume. Anything done to an instance or volume after the snapshot is taken won't affect the snapshot. We can also create a new instance or volume from an existing snapshot, and continue from that point in time.
 
@@ -29,7 +29,7 @@ Images are a helpful way to store the state of an instance for later use. Repeat
         Notice the image has a size of zero bytes, which is expected and does not affect the ability to create instances. Images are a convenience pointer to the underlying volume snapshot, so they have no size themselves. The underlying volume snapshot does have a fixed size. To see the size of the underlying volume snapshot, click "Volumes" and then "Snapshots" in the left hand navigation menu.
     <!-- markdownlint-enable MD046 -->
 
-### Creating an Instance from an Image
+### Creating an Instance From an Image
 
 To create an instance from an image, follow the directions below, assuming you have [Created an Image](#creating-an-image).
 

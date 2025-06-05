@@ -8,7 +8,7 @@ We appreciate any and all opportunities to improve our documentation, and your c
 
 ## FAQ
 
-### How do I report content inaccuracies or errors?
+### How Do I Report Content Inaccuracies or Errors?
 
 - Prepare to write write down what you've found:
     - Note the URL of the page using your browser's address bar.
@@ -176,7 +176,7 @@ conda env update --name mkdocs --file build_env.yml --prune
 
 #### Development Workflow
 
-##### Create a working branch
+##### Create a Working Branch
 
 You'll need to create a new branch on your local machine (the working branch). The purpose of a branch is to encapsulate a coherent set of changes to add or deprecate a feature, or fix a bug. Typically each bug is associated with one issue, or a set of very closely-related issues. See our [Issue Tracker](https://github.com/uabrc/uabrc.github.io/issues) for available issues.
 
@@ -186,7 +186,7 @@ You'll need to create a new branch on your local machine (the working branch). T
 - For new features or pages, use names like `feat-lts-page` or `feat-accessibility-improvement`.
 - Command to create new branch in terminal: `git checkout -b <name>`.
 
-##### Implement your changes
+##### Implement Your Changes
 
 You'll need to add, remove or otherwise modify files as appropriate to implement the changes you intend.
 
@@ -196,7 +196,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
     ![!stages and changes in vscode](images/contrib-workflow-vscode-stage-commit.png)
 
-##### Verify your changes
+##### Verify Your Changes
 
 1. [Activate](../workflow_solutions/using_anaconda.md#activate-an-environment) your conda environment.
     1. Open the file `test.py` in the repository to start the Python extension.
@@ -211,7 +211,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
     ![!browser with changes made](images/contrib-workflow-verify-changes-in-browser.png)
 
-##### Make a pull request
+##### Make a Pull Request
 
 1. [Push](../workflow_solutions/git.md#pushing) your local working branch to your GitHub remote repository.
 1. Navigate to the upstream repository at <https://github.com/uabrc/uabrc.github.io>.
@@ -237,7 +237,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
     ![!pull request creation form](images/contributor-workflow-github-open-pull-request-form.png)
 
-##### Wait for review
+##### Wait for Review
 
 From here your pull request will go through a review process. The following criteria are checked.
 
@@ -336,7 +336,7 @@ Relevant files:
 - `build_env.yml`
 - `mkdocs.yml`
 
-### Pre-commit Hooks
+### Pre-Commit Hooks
 
 We use [pre-commit hooks](https://pre-commit.com/) to ensure contributions match our standards for consistency, formatting, and URL validity prior to pull requests.
 
@@ -359,7 +359,7 @@ Relevant files:
 
 ### Manual Validation
 
-#### Pre-Commit Hooks
+#### Manual Pre-Commit Hooks
 
 We are using [pre-commit](https://github.com/pre-commit/pre-commit) to automate commit validation. This includes [markdown linting](#manual-markdown-linting), [YAML linting](#manual-yaml-linting), and a [strict build of the documentation](#manual-documentation-build).
 
@@ -398,7 +398,7 @@ Relevant files:
 
 - `mkdocs.yml`
 
-#### External URL Validation
+#### Manual External URL Validation
 
 We are using [linkchecker](https://github.com/linkchecker/linkchecker) to validate external repository URLs.
 
@@ -425,7 +425,7 @@ There are known issues with the markdown linter and some of our non-standard plu
 
 This should only be used to silence the specific known issues below. In all other cases, please read the warning lenses given by VSCode to identify the cause of the warning and what can be done about them. Please contact our maintainers if you need assistance.
 
-##### How To Silence Linter Warnings
+##### How to Silence Linter Warnings
 
 ###### Silence Linter Warning for a Block
 
@@ -446,7 +446,7 @@ We encourage denoting the warning being silenced here by filling out the `$MD_LI
 `linter error here just for this line`
 ```
 
-##### False Positive Lint Warnings from Admonitions
+##### False Positive Lint Warnings From Admonitions
 
 We allow and encourage the use of [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#supported-types) in our documentation, where appropriate. Because these are created using a plugin and are "non-standard" `markdown`, the VSCode `markdownlint` extension does not recognize admonitions and may produce a false positive warning about inconsistent code block styles.
 
@@ -474,11 +474,11 @@ This workaround is needed because `markdownlint` has no plans to add support for
 
 Reviewing a pull request means obtaining a copy of the pull request branch and [Verifying the Changes](#verify-your-changes) on your local machine or on your fork. GitHub provides a facility for obtaining pull request branches directly from the upstream repository.
 
-### Add upstream remote
+### Add Upstream Remote
 
 [Add the Upstream Remote](../workflow_solutions/git.md#managing-remotes) using `git remote add upstream https://github.com/uabrc/uabrc.github.io.git`.
 
-### Pull the pull request
+### Pull the Pull Request
 
 1. [Fetch](../workflow_solutions/git.md#fetching-and-pulling) the pull request with `git fetch upstream pull/<id>/head:<branch-name>`.
 
