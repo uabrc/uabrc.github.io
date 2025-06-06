@@ -1,9 +1,10 @@
---array
---error
---output
---partition
-/data/project
-/tmp/
+`--array`
+`--error`
+`--output`
+`--partition`
+`.title-casing-ignore`
+`/data/project/`
+`/tmp/`
 `$USER@login004`
 `bash-4.2$`
 `cat`
