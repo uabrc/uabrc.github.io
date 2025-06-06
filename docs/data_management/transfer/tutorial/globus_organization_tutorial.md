@@ -42,7 +42,7 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 
 For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
 
-## How Do I Get onto the Globus Web App?
+## How Do I Get Onto the Globus Web App?
 
 To learn how to get onto the Globus Web App [Globus Tutorials for Individual Researchers Page](./globus_individual_tutorial.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
 
@@ -63,7 +63,7 @@ GCP installation instructions for:
 
 [Return to the top](#globus-tutorials-for-uab-research-organizations).
 
-### Installing GCP On Windows
+### Installing GCP on Windows
 
 The following steps will guide you to install Globus Connect Personal (GCP) on your computer running Windows.
 
@@ -120,7 +120,7 @@ By default your Documents folder (typically `C:/Users/%username%/Documents`) is 
 
 [Return to the top](#globus-tutorials-for-uab-research-organizations).
 
-### Installing GCP On MacOS
+### Installing GCP on MacOS
 
 The following steps will guide you to install Globus Connect Personal (GCP) on your computer running MacOS.
 
@@ -289,7 +289,7 @@ To find a Collection you own, use the following steps.
 
 [Return to the top](#globus-tutorials-for-uab-research-organizations).
 
-## How Do I Enable Collection Sharing For My Globus Account?
+## How Do I Enable Collection Sharing for My Globus Account?
 
 Before you can share Collections from your Globus Connect Personal (GCP) Collection with others, you must do a one-time setup for your account. You will need to join the "University of Alabama at Birmingham (HA)" (UAB HA) subscription group. Sharing any Collection requires a paid subscription with Globus. UAB Research Computing has a subscription, but Globus does not know your BlazerID is part of our subscription until you join the subscription group. So, Globus also does not know the GCP Collection you created is part of our subscription. By joining our UAB HA group, you and your GCP Collection are confirmed to be part of our subscription, and you can share Collections from the GCP Collection.
 
@@ -368,7 +368,7 @@ When you have created a Collection, you are ready to [share the Collection with 
 
 [Return to the top](#globus-tutorials-for-uab-research-organizations).
 
-## How Do I Share a Collection with Others?
+## How Do I Share a Collection With Others?
 
 Before sharing a Collection with others, you will need to first [create a Collection](#how-do-i-create-a-collection) you administer. If the Collection is a [Globus Connect Personal Collection](#how-do-i-install-globus-connect-personal), then you will also need to [enable Collection sharing for your Globus account](#how-do-i-enable-collection-sharing-for-my-globus-account). If these prerequisites have been met, then you are ready to setup a Collection to be shared with others. Please follow the instructions below.
 

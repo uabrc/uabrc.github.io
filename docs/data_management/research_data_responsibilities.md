@@ -32,7 +32,7 @@ If the owner of the data was your student or staff in your lab, then the first c
 
 To simplify data access and management, it is recommended to store critical research data in shared storage areas that are accessible to or owned by the responsible PI, with ownership transfer initiated as needed. If you need help with data management processes, please send us a support ticket via <support@listserv.uab.edu>, and we will guide you through these steps.
 
-## User responsibilities with UAB-IT policies
+## User Responsibilities With UAB-IT Policies
 
 All PIs, Core directors, researchers, students, users of UAB-owned computer systems, including Research Computing system, are responsible for adhering to the data and computing infrastructure policies set by UAB-IT.
 

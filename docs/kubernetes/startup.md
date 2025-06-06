@@ -1,4 +1,4 @@
-# Starting up with UAB Kubernetes
+# Starting Up With UAB Kubernetes
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -12,7 +12,7 @@
     This page is a stub and is under construction.
 <!-- markdownlint-enable MD046 -->
 
-## UAB Kubernetes Computation Resources (to be rolled out)
+## UAB Kubernetes Computation Resources
 
 - 4 DGX A100 nodes
     - GPUs aren’t virtualized, but one DGX node can be split into 1/7th of a GPU

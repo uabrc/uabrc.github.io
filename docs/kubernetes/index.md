@@ -8,11 +8,11 @@ With the rise of containerization and cloud-native application and uses, Kuberne
     Kubernetes is not yet available as a service to our research community, but we are putting the infrastructure and system in place to provide this. If you would like to help us test and explore our UAB Research Computing Kubernetes Instance please [contact us](../index.md#how-to-contact-us)
 <!-- markdownlint-enable MD046 -->
 
-## What is Kubernetes?
+## What Is Kubernetes?
 
 Kubernetes (also known as `K8s`, named because there are 8 letters between 'K' and 's') can be used to automate workflows of all kinds. K8s are usually open-source systems for automating deployment, scaling and managing containerized applications. Think of it as an operating system for a cluster of computers, giving you the tools to run your research software in reliable, scalable, and portable ways.
 
-## Why use Kubernetes?
+## Why Use Kubernetes?
 
 Below are some widely known benefits/uses of Kubernetes for researchers;
 

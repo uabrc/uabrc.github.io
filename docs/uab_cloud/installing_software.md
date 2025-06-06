@@ -105,7 +105,7 @@ If you intend to use your instance as a server host, you'll likely need to set u
 
 Now you should have more information on whether your VM port configuration was successful. Feel free to repeat the steps above for each port, as needed.
 
-#### Verify Server Software is Listening
+#### Verify Server Software Is Listening
 
 Once you have the server set up, you can check which processes are listening on which ports using the following command.
 
@@ -129,7 +129,7 @@ An example of the output is shown below. The most useful columns for us are `Loc
 
 Below are a few examples of installing certain common softwares that may be useful to scientific applications. We are not able to provide diagnostic or troubleshooting support for installation of any software. If you believe these instructions are outdated or in error, please [reach out and let us know](../contributing/reporting_errors.md#how-do-i-report-inaccurate-information).
 
-#### Installing NVidia Drivers
+#### Installing NVIDIA Drivers
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
 1. `sudo apt install ubuntu-drivers-common`

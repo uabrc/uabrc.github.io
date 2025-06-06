@@ -52,11 +52,11 @@ Please note that the instructions mentioned above are specific to the Cheaha sys
     We manually install pip into the conda environment so that `pip` will install `s3cmd` into the conda environment as opposed to `$HOME/.local`. This way, you do not need to add the `.local` folder to your path whenever you want to use `s3cmd`.
 <!-- markdownlint-enable MD046 -->
 
-### s3cmd
+### `s3cmd`
 
 s3cmd is a tool used for managing buckets and objects in Amazon S3 (Simple Storage Service). s3cmd is our suggested tool for operations such as listing buckets, managing bucket permissions, synchronizing directories with s3 buckets, and for small periodic file transfers. If high-speed transfer of a large files is required, we recommend using [s5cmd](#s5cmd). See the [preceding section](#command-line) for instructions on how to install both it and s5cmd into an Anaconda environment.
 
-#### Configuring s3cmd
+#### Configuring `s3cmd`
 
 Configuring s3cmd is necessary to establish a secure connection for accessing your LTS bucket in Amazon S3. Once you have s3cmd installed and the environment active, you can start the configuration process like so:
 
@@ -120,7 +120,7 @@ Save settings? [y/N] y
     1. To locate the appropriate "Path to GPG program" for Ubuntu and Mac operating systems, please use the command `which gpg`. The location may vary depending on your operating system.
 <!-- markdownlint-enable MD046 -->
 
-#### s3cmd Commands
+#### `s3cmd` Commands
 
 ``` bash
 # General command structure for s3cmd
@@ -176,11 +176,11 @@ s3cmd info s3://<bucket>
     When using `ls` to list buckets, it will only show the buckets you own, not buckets you have been given permissions on. This is a limitation of the S3 system. You can still interact with any buckets you have been given relevant permissions on, but you will need to remember the names of the buckets you don't own.
 <!-- markdownlint-enable MD046 -->
 
-### s5cmd
+### `s5cmd`
 
 s5cmd is a parallel transfer tool suggested for period transfers of large and/or many files at a time. It has options for customizing how many processors are available for transferring data as well as how many chunks files can be broken into during transfer to minimize transfer time. See the [preceding section](#command-line) for instructions on how to install both it and s3cmd into an Anaconda environment
 
-#### Configuring s5cmd
+#### Configuring `s5cmd`
 
 The s5cmd software does not use the same authentication file as s3cmd. Instead, it uses official AWS SDK to access S3 including LTS. The default credentials file for AWS CLI would found at `${HOME}/.aws/credentials`. This file is then populated with different profiles and their access and secret keys. You can create the necessary file with the following commands.
 
@@ -217,7 +217,7 @@ aws_secret_access_key = <shared_secret_key>
 
 If you have multiple shared allocations, i.e. for both a lab and a Core, you could add another entry like `[shared-allocation]` with a distinct name.
 
-#### s5cmd Commands
+#### `s5cmd` Commands
 
 s5cmd has the following general form.
 
@@ -251,7 +251,7 @@ It's important to note that the main functionality of s5cmd over s3cmd is the pa
     When setting the value for `--numworkers`, do not select a value beyond the number of CPUs you have requested for your job! This can cause high context switching (meaning individual CPUs are switching between multiple running processes) which can affect job performance for all jobs on a node.
 <!-- markdownlint-enable MD046 -->
 
-### Installation of `s3cmd` and `s5cmd` on Individual Systems without Anaconda
+### Installation of `s3cmd` and `s5cmd` on Individual Systems Without Anaconda
 
 The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems. You may also use [Anaconda](../../workflow_solutions/using_anaconda.md) to install either or both packages.
 

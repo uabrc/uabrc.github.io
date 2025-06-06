@@ -1,7 +1,7 @@
 ---
 toc_depth: 3
 ---
-# Basic Workflow with Individual LTS and s3cmd
+# Basic Workflow With Individual LTS and `s3cmd`
 
 In this tutorial, we will guide you through using `s3cmd` on the Cheaha system to effectively manage and interact with your individual LTS allocation. We will cover the installation and configuration of `s3cmd`, and demonstrate essential operations, including creating buckets, listing, copying, downloading, and deleting [buckets and objects](../index.md#terminology) in your LTS allocation. In addition, we will show you how to set and manage read and write access for other allocations to your LTS buckets and objects.
 
@@ -13,7 +13,7 @@ You will also need an individual LTS allocation created by our team. If you beli
 
 ## Setting Up Your Environment
 
-### Install s3cmd within Conda Environment on Cheaha
+### Install `s3cmd` Within Conda Environment on Cheaha
 
 To interact with LTS (Long-Term Storage) using [S3 (Simple Storage Service)](https://aws.amazon.com/s3/), you need the `s3cmd` tool installed.[`s3cmd`](https://s3tools.org/s3cmd) is a command-line tool for managing files in cloud storage systems like S3. It's recommended to install it using `pip`, the standard package installer for Python, which allows you to install packages from the [Python Package Index (PyPI)](https://pypi.org/), within a [Conda environment](../../../workflow_solutions/using_anaconda.md#create-an-environment) on Cheaha.
 
@@ -34,11 +34,11 @@ Once these steps are completed, verify the installation by running `pip list | g
 
 ![image](../images/pip-s3cmd.png)
 
-### Install s3cmd on Your Local Systems
+### Install `s3cmd` on Your Local Systems
 
 To install s3cmd on your local machine, please follow the instructions provided in [our s3cmd documentation for local installation](../../../data_management/lts/interfaces.md#installation-of-s3cmd-and-s5cmd-on-individual-systems-without-anaconda).
 
-### Configuring s3cmd for LTS Buckets
+### Configuring `s3cmd` for LTS Buckets
 
 Properly configuring `s3cmd` is important for working with LTS buckets and objects. The configuration process varies depending on whether you have a single LTS allocation or multiple allocations to manage. In this section, we will provide a step-by-step guide tailored specifically for the **Cheaha** system and a researcher with an **individual LTS allocation**.
 
@@ -101,7 +101,7 @@ You can find a variety of `s3cmd` commands in our documentation at [here](../../
 
 If you are continuing in the same session with your **conda environment already activated**, you can directly use the `s3cmd` commands. If you are starting a new session or returning at a later date, make sure to load the Anaconda module and activate your conda environment before using `s3cmd`.
 
-### How to Grant Access to Other Allocations for your Buckets?
+### How to Grant Access to Other Allocations for Your Buckets?
 
 Managing access to your buckets is essential for both collaboration and security. By setting up specific [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html), you can control who can view or modify your bucket’s contents. Follow these steps to grant access:
 

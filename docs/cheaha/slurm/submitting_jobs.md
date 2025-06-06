@@ -1,4 +1,4 @@
-# Submitting Jobs with Slurm
+# Submitting Jobs With Slurm
 
 Processing computational tasks with Cheaha at the terminal requires submitting jobs to the Slurm scheduler. Slurm offers two commands to submit jobs: `sbatch` and `srun`. Always use `sbatch` to submit jobs to the scheduler, unless you need an [interactive terminal](#interactive-jobs-with-srun). Otherwise only use `srun` within `sbatch` for submitting job steps within an [`sbatch` script](#batch-jobs-with-sbatch) context.
 
@@ -51,7 +51,7 @@ For example if using `--job-name=my-job`, then to create an output file like `my
 
 If also using `--array=0-4`, then to create an output file like `my-job-12345678-0` use `--output=%x-%A-%a`.
 
-## Batch Jobs with `sbatch`
+## Batch Jobs With `sbatch`
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -159,7 +159,7 @@ In this example, only 4 jobs will run concurrently, regardless of the total numb
 
 For a practical example with dynamic indices, please visit our [Practical `sbatch` Examples](practical_sbatch.md)
 
-## Interactive Jobs with `srun`
+## Interactive Jobs With `srun`
 
 Jobs should be submitted to the Slurm job scheduler either using a [batch job](#batch-jobs-with-sbatch) or an [Open OnDemand (OOD) interactive job](../open_ondemand/index.md).
 
@@ -184,7 +184,7 @@ srun: job 21648044 has been allocated resources
 
 The above example allocates a compute node with a 8GB of RAM on a `medium` partition with `--ntasks=2` to run short tasks.
 
-### `srun` for running parallel jobs
+### `srun` for Running Parallel Jobs
 
 `srun` is used to run executables in parallel, and is used within `sbatch` script. Let us see an example where `srun` is used to launch multiple (parallel) instances of a job.
 
@@ -280,6 +280,6 @@ Questions to ask yourself when requesting job resources:
 
 To get the most out of your Cheaha experience and ensure your jobs get through the queue as fast as possible, please read about [Job Efficiency](../job_efficiency.md).
 
-## Faster Queuing with Job Efficiency
+## Faster Queuing With Job Efficiency
 
 Please see our page on [Job Efficiency](../job_efficiency.md) for more information on making the best use of cluster resources to minimize your queue wait times.

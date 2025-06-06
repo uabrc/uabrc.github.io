@@ -86,7 +86,7 @@ Periodically, we review all researcher accounts to ensure they are authorized to
 
 If you believe this to be in error, please [Contact Support](../help/support.md).
 
-## What can I do with my account?
+## What Can I Do With My Account?
 
 Research Computing offers services addressing a wide range of needs for researchers at UAB, including students, staff, and faculty, as well as for both Labs and research cores.
 

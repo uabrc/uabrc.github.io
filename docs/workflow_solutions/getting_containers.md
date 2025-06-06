@@ -89,7 +89,7 @@ sudo apt-get update
 sudo apt install docker.io
 ```
 
-### Using a Docker Container from DockerHub
+### Using a Docker Container From DockerHub
 
 We can start pulling a container named `alpine` from the Docker hub. `alpine` is a general-purpose Linux distribution. Look for the container `alpine` in the docker hub, copy the pull command, and paste it into your terminal.
 
@@ -159,7 +159,7 @@ plt.show()
 plt.savefig('testing.png')
 ```
 
-### Create a Dockerfile that has Miniconda Installed
+### Create a Dockerfile That Has Miniconda Installed
 
 We require numpy, scipy, and matplotlib libraries to execute the above Python script. Following are the steps to create a specification file and build a container image.
 
@@ -317,7 +317,7 @@ Click on "Container Registry" and then click the container, usually in the forma
 
 The next set of instructions will guide you through how to complete the install process for the container on Cheaha or on other platforms.
 
-#### Run UAB RC Community Containers on Cheaha using Singularity
+#### Run UAB RC Community Containers on Cheaha Using Singularity
 
 On Cheaha, you can pull a container using Singularity by running the `singularity pull` command, an example is shown below. Ensure you are in the preferred location you would like to use the container from.
 
@@ -337,7 +337,7 @@ After the singularity file (.sif) is created, you can run your container using t
 
 ![Output after running singularity pull command](./images/singularity-terminal-ouput.png)
 
-#### Run UAB RC Community Containers on a Virtual Machine (e.g. cloud.rc) or on Windows using Docker
+#### Run UAB RC Community Containers on a Virtual Machine (e.g. cloud.rc) or on Windows Using Docker
 
 You can also pull this container using either Docker or Singularity, assuming you are running a Virtual Machine (VM) on a cloud instance or on a Windows machine. You will need to have either Docker or Singularity installed, then pull a container from the registry by running the command in your machine's terminal. The instructions for using Singularity are same as for running [Singularity on Cheaha](#run-uab-rc-community-containers-on-cheaha-using-singularity). See instructions on how to pull a container using Docker in your VM's terminal.
 
@@ -395,7 +395,7 @@ Once you create the token, copy the new personal access token since it’s a one
 !!! warning
     Running `docker login` leads to a warning message that your password is stored unencrypted in `/root/.docker/config.json` (or) `$HOME/.docker/config.json`. To ignore this warning, follow the instructions in this [Github page](https://leimao.github.io/blog/Docker-Login-Encrypted-Credentials/) or the [Docker credentials store page](https://docs.docker.com/reference/cli/docker/login/#credentials-store).
 
-### Push Alpine Container from your System to UAB GitLab Container Registry
+### Push Alpine Container From Your System to UAB GitLab Container Registry
 
 - List the docker images on your local computer using the `docker images` command. An `alpine` image exists already on this computer. Your container will likely have a different name.
 

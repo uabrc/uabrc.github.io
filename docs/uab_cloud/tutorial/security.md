@@ -88,7 +88,7 @@ Click "Delete Security Group" again to delete the security group permanently.
 
 ![!Delete security group confirmation dialog.](./images/delete_security_group_002.png)
 
-## Creating a Key pair
+## Creating a Key Pair
 
 A Key Pair is required for SSH access to cloud.rc instances for security reasons. To use a Key Pair and SSH, you will need to [Install an SSH Client](../remote_access.md#install-an-ssh-client) on your local machine.
 

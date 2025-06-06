@@ -106,7 +106,7 @@ From here you can proceed to [How Do I Search for Collections by Name?](#how-do-
 
 [Return to the top](#globus-tutorials-for-individual-researchers).
 
-## How Do I Search For Collections By Name?
+## How Do I Search for Collections by Name?
 
 Please follow these instructions to search for a specific Collection by name.
 
@@ -170,7 +170,7 @@ Proceed on to learn [how to find Collections shared with you](#how-do-i-find-uab
 
 [Return to the top](#globus-tutorials-for-individual-researchers).
 
-## How Do I Find Collections Shared with Me?
+## How Do I Find Collections Shared With Me?
 
 Globus allows users to share Collections with others. Other researchers, labs, and Research Cores on campus may invite you to their Collections to share data with you. The following instructions let you view Collections shared with you.
 
@@ -201,7 +201,7 @@ Proceed on to learn how to transfer between Collections.
 
 [Return to the top](#globus-tutorials-for-individual-researchers).
 
-## How Do I Transfer between a Collection and Cheaha?
+## How Do I Transfer Between a Collection and Cheaha?
 
 Please use the following instructions to transfer data from a Collection to [Cheaha GPFS](../../index.md#what-type-of-storage-do-i-need). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
 
@@ -253,7 +253,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 
 [Return to the top](#globus-tutorials-for-individual-researchers).
 
-## How Do I Transfer between a Collection and LTS?
+## How Do I Transfer Between a Collection and LTS?
 
 Please use the following instructions to transfer data from a Collection to a [bucket on LTS](../../lts/index.md). These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.
 
@@ -298,7 +298,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 
 [Return to the top](#globus-tutorials-for-individual-researchers).
 
-## How Do I Transfer between LTS and Cheaha?
+## How Do I Transfer Between LTS and Cheaha?
 
 Please use the following instructions to transfer data from a [bucket on LTS](../../lts/index.md) to a project directory on Cheaha. These instructions may also be used for other buckets on LTS and directories on Cheaha, provided you have access and know their file paths.
 

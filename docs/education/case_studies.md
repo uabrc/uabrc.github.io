@@ -26,7 +26,7 @@ A license is no longer required to use Clara Parabricks 4.x and later versions, 
 1. Research by non-profit institutions.
 1. For development, test and evaluation purposes without use in production.
 
-### Minimum Hardware requirements to run Parabricks on Cheaha GPUs
+### Minimum Hardware Requirements to Run Parabricks on Cheaha GPUs
 
 1. Access to the internet.
 1. Any GPU that supports CUDA Compute Capability 7.0, 7.5, 8.0, 8.6, 8.9 or 9.0.
@@ -149,7 +149,7 @@ You can also request the required resources using `srun` using the below command
 srun --ntasks=24 --mem=100G --time=1:00:00 --partition=amperenodes --job-name=parabricks-ampere --gres=gpu:2 --pty /bin/bash
 ```
 
-#### Illustration on `fq2bam` tool analyses
+#### Illustration on `fq2bam` Tool Analyses
 
 The above execution script performs `fq2bam` pipeline analyses. The `fq2bam` tool aligns, sorts (by coordinate), and marks duplicates in pair-ended FASTQ file data. The data files used in this example are taken from the sample data downloaded in the previous section.
 

@@ -12,7 +12,7 @@ If you have questions, concerns, or any doubt after reading this page, we highly
     The contents of this article apply only to research data. For administrative data you will need to discuss with the approriate UAB Administrative units. You can contact <askit@uab.edu> for more information on what to do with administrative data.
 <!-- markdownlint-enable MD046 -->
 
-## What Happens to my Cheaha Account?
+## What Happens to My Cheaha Account?
 
 Your Cheaha account will be available and accessible for 30 days following your last day in a UAB-affiliated position. The purpose of this grace period is to give you time to execute and finalize data transfers.
 
@@ -20,7 +20,7 @@ The same grace period applies to all other Research Computing platform accounts.
 
 If you anticipate needing more than 30 days to finalize transfers, [contact us](../help/support.md) as soon as possible so we can make arrangements or work to improve data transfer efficiency.
 
-## What Happens to data in my Individual Storage Allocations?
+## What Happens to Data in My Individual Storage Allocations?
 
 Data in your individual storage allocations, on all storage platforms, will be retained for the full grace period. We recommend making a plan for your data. Download any personal, non-UAB-owned data you wish to keep. [Transfer any UAB-owned data to an appropriate location.](#what-should-i-do-with-uab-owned-data)
 
@@ -33,15 +33,15 @@ If you are a faculty supervisor or Core director, what to do with the data depen
 - [Lab Shared Storage](#what-are-my-responsibilities-for-lab-shared-allocations)
 - [Core Shared Storage](#what-are-my-responsibilities-for-core-shared-allocations)
 
-## What If I Will Be Hired or Rehired in a New Role?
+## What if I Will Be Hired or Rehired in a New Role?
 
 Your data will be available for the full grace period. If your hire date is later than the end of the grace period, please [contact us](../help/support.md) to discuss.
 
-## What If I Plan To Have An Ongoing Collaboration?
+## What if I Plan to Have an Ongoing Collaboration?
 
 If you plan to continue collaborating with other researchers and need to manage data or perform analyses on Cheaha, you will need to create a [XIAS account](./xias/index.md). To create the account, you will need a UAB-affiliated sponsor. Once the account has been created, please contact us and we can assist with transferring data in your former individual storage allocation to your new allocation.
 
-## What Are My Responsibilities For Lab Shared Allocations?
+## What Are My Responsibilities for Lab Shared Allocations?
 
 If you are responsible for lab shared allocations on Research Computing storage platforms, you have certain responsibilities for the data within them. Transferring UAB-owned data requires the involvement of the [Office of Research](https://www.uab.edu/research/home/about/contact-us), specifically the [Office of Sponsored Programs (OSP)](https://www.uab.edu/research/home/osp-about/contact).
 
@@ -64,7 +64,7 @@ For each dataset or project, which option is ideal depends on the state of the p
 
 - Something else? Please [contact us](../help/support.md).
 
-## What Are My Responsibilities For Core Shared Allocations?
+## What Are My Responsibilities for Core Shared Allocations?
 
 Cores should not assume responsibility for any of the research data they produce or acquire.
 

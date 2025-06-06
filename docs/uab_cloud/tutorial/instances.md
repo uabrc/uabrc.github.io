@@ -241,11 +241,11 @@ Click "Delete Instance" again to delete the instance permanently.
     It is highly recommended to shut off an instance before deleting it.
 <!-- markdownlint-enable MD046 -->
 
-## Help my Instance is Stuck or not Working
+## Help My Instance Is Stuck or Not Working
 
 If your instance is stuck or otherwise not working as expected, first try deleting it and starting over. If you are unable to delete it or it gets stuck while deleting, please contact [Support](../../help/support.md) and copy the the instance ID as shown below.
 
-### Where is my Instance ID?
+### Where Is My Instance ID?
 
 To find your instance ID, navigate to the "Instances" table. Click the "Instance Name" for the instance you are interested in to load an information page for that instance.
 
