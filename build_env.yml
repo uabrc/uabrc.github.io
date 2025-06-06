@@ -3,7 +3,7 @@ dependencies:
   - conda-forge::click=8.1.7
   - conda-forge::jinja2=3.1.2
   - conda-forge::libffi=3.4.2
-  - conda-forge::markdown=3.5.2
+  - conda-forge::markdown=3.8.0
   - conda-forge::markupsafe=2.1.4
   - conda-forge::mergedeep=1.3.4
   - conda-forge::mkdocs=1.6.1
