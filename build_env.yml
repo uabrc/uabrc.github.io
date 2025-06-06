@@ -29,7 +29,7 @@ dependencies:
   - conda-forge::tk=8.6.13
   - conda-forge::xz=5.8.1
   - conda-forge::yaml=0.2.5
-  - conda-forge::yamllint=1.35.1
+  - conda-forge::yamllint=1.37.1
   - pip:
       - mkdocs-gen-files==0.5.0
       - mkdocs-glightbox==0.3.7
