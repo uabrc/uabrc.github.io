@@ -241,13 +241,13 @@ s5cmd --endpoint-url https://s3.lts.rc.uab.edu sync /path/to/directory/ s3://buc
 s5cmd --endpoint-url https://s3.lts.rc.uab.edu rm s3://bucket/prefix/*
 ```
 
-#### Switching Between LTS Allocations
+#### Switching Between LTS Allocations Profiles
 
-By default, `s5cmd` uses the `[default]` profile. To use a different profile, set the environment variable `AWS_PROFILE`. For example, to copy all files from a local directory to a bucket in a shared LTS allocation using a single CPU, use the below command:
+By default, `s5cmd` uses the `[default]` profile. To use a different profile, specify the `--profile` flag. For example, to copy all files from a local directory to a bucket in a shared LTS allocation using a single CPU, run the following command:
 
-`AWS_PROFILE=<shared-allocation-profile-name> s5cmd --endpoint-url https://s3.lts.rc.uab.edu cp /path/to/directory/* s3://bucket/`
+`s5cmd --endpoint-url https://s3.lts.rc.uab.edu --profile <shared-allocation-profile-name> cp /path/to/directory/* s3://bucket/`
 
-Replace `<shared-allocation-profile-name>` with the name defined for your shared account in your `~/.aws/credentials` file.
+Replace `<shared-allocation-profile-name>` with the profile name defined for your shared LTS allocation in your `~/.aws/credentials` file.
 
 As with s3cmd, be very careful using the `sync` and `rm` commands as these can/will delete files either locally or on LTS. There are many more commands s5cmd can use as well as a number of command options that can be used to customize how an operation is performed. Please see the help documentation for a full list.
 
