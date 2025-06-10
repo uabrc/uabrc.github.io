@@ -241,6 +241,14 @@ s5cmd --endpoint-url https://s3.lts.rc.uab.edu sync /path/to/directory/ s3://buc
 s5cmd --endpoint-url https://s3.lts.rc.uab.edu rm s3://bucket/prefix/*
 ```
 
+#### Switching Between LTS Allocations
+
+By default, `s5cmd` uses the `[default]` profile. To use a different profile, set the environment variable `AWS_PROFILE`. For example, to copy all files from a local directory to a bucket in a shared LTS allocation using a single CPU, use the below command:
+
+`WS_PROFILE=<shared-allocation-profile-name> s5cmd --endpoint-url https://s3.lts.rc.uab.edu cp /path/to/directory/* s3://bucket/`
+
+Replace `<shared-allocation-profile-name>` with the name defined for your shared account in your `~/.aws/credentials` file.
+
 As with s3cmd, be very careful using the `sync` and `rm` commands as these can/will delete files either locally or on LTS. There are many more commands s5cmd can use as well as a number of command options that can be used to customize how an operation is performed. Please see the help documentation for a full list.
 
 It's important to note that the main functionality of s5cmd over s3cmd is the parallelization options given by the `--numworkers` global option and the `--concurrency` local option for `cp` and `sync` commands. Choosing not to use these options will result in unoptimized performance.
