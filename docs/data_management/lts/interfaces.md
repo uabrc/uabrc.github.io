@@ -245,7 +245,7 @@ s5cmd --endpoint-url https://s3.lts.rc.uab.edu rm s3://bucket/prefix/*
 
 By default, `s5cmd` uses the `[default]` profile. To use a different profile, set the environment variable `AWS_PROFILE`. For example, to copy all files from a local directory to a bucket in a shared LTS allocation using a single CPU, use the below command:
 
-`WS_PROFILE=<shared-allocation-profile-name> s5cmd --endpoint-url https://s3.lts.rc.uab.edu cp /path/to/directory/* s3://bucket/`
+`AWS_PROFILE=<shared-allocation-profile-name> s5cmd --endpoint-url https://s3.lts.rc.uab.edu cp /path/to/directory/* s3://bucket/`
 
 Replace `<shared-allocation-profile-name>` with the name defined for your shared account in your `~/.aws/credentials` file.
 
