@@ -11,6 +11,7 @@ theme:
     - navigation.indexes
     - navigation.instant
     - content.code.copy
+    - content.action.edit
   favicon: images/favicon.png
   logo: images/logo.png
 
