@@ -17,28 +17,32 @@ Once you have `s3cmd` installed and your environment activated as done for in [o
 
 `s3cmd --configure -c $HOME/<lts-profile-name>`
 
-In the same way, you can configure multiple LTS profiles if you own or manage more than one LTS allocation. Just use the corresponding access and secret keys, and replace `<lts-profile-name>` with an appropriate name for each profile. During configuration, you will be prompted to enter additional details, which will appear on screen as show below.
+In the same way, you can configure multiple LTS profiles if you own or manage more than one LTS allocation. Just use the corresponding access and secret keys, and replace `<lts-profile-name>` with an appropriate name for each profile.
+
+To start configuration, for example for the `my-lab` profile, run the command `s3cmd --configure -c $HOME/my-lab` in your terminal. During the configuration process, you will be prompted to enter various details, such as the Access Key, Secret Key, S3 Endpoint, and DNS-style bucket template.
+
+The screenshot below shows the full terminal output of `s3cmd --configure -c $HOME/my-lab` using the `my-lab` profile as an example. When prompted, enter the Access Key and Secret Key provided by your lab. Use `https://s3.lts.rc.uab.edu` as the S3 endpoint. For the DNS-style bucket template, enter `%(bucket).s3.lts.rc.uab.edu`. Leave the remaining fields at their default values or blank. When asked to test the credentials, type `n` for `no`. Then, type `y` to save your configuration. For more details, please refer our [generic s3cmd configuration](../interfaces.md#configuring-s3cmd) guide.
 
 ![image-shared-s3cmd](../images/shared-lts-config.png)
 
-Once the configuration is complete, `s3cmd` will generate a file in your home directory `$HOME` using the profile name you provided. For example, if you name your shared LTS profile `abc-lab`, the configuration file will be saved as a$ `HOME/abc-lab`. This will be in addition to the default `.s3cfg` file that was previously configured for your individual LTS, as shown below.
+Once the configuration is complete, `s3cmd` will generate a file in your home directory `$HOME` using the profile name you provided. For example, if you name your shared LTS profile `my-lab`, the configuration file will be saved as `$HOME/my-lab`. This will be in addition to the default `.s3cfg` file that was previously configured for your individual LTS, as shown below. The screenshot displays a window listing files in the user's home directory. Among the listed files, `.s3cfg` appears alongside other dotfiles, and `my-lab` appears as a separate, non-hidden file. These entries confirm the presence of both configuration files created by `s3cmd`. To locate your home directory on Cheaha and view  both the `.s3cfg`  and `my-lab`files, follow the instructions on our [Navigating Open OnDemand](../../../cheaha/open_ondemand/ood_layout.md#navigating-open-ondemand) page. Make sure to enable the "Show Dotfiles" option in the top-right corner to to make hidden files visible.
 
-![config-shared-lts-file](../images/abc-lab.png)
+![config-shared-lts-file](../images/my-lab.png)
 
 ## Switching between Individual and Shared LTS allocation Profiles
 
- If you own or manage more than one LTS allocations, such as individual and shared LTS allocations, you will need to switch between them to manage your buckets effectively.
+If you own or manage more than one LTS allocation, such as individual and shared LTS allocations, you will need to switch between them to manage your buckets effectively.
 
- In this section, we focus on the two configurations: [individual LTS configuration](./individual_lts_tutorial.md#configuring-s3cmd-for-lts-buckets) and [shared LTS configuration](#configuring-s3cmd-for-shared-lts-buckets). The individual profile uses the default `.s3cfg` file, so you can run `s3cmd` commands without specifying the `-c` option. Refer our  individual LTS tutorials on [creating](./individual_lts_tutorial.md#creating-buckets) and [managing](./individual_lts_tutorial.md#managing-buckets) buckets for examples.
+In this section, we focus on the two configurations: [individual LTS](./individual_lts_tutorial.md#configuring-s3cmd-for-lts-buckets) and [shared LTS](#configuring-s3cmd-for-shared-lts-buckets). The individual profile uses the default `.s3cfg` file, so you can run `s3cmd` commands without specifying the `-c` option. Refer our  individual LTS tutorials on [creating](./individual_lts_tutorial.md#creating-buckets) and [managing](./individual_lts_tutorial.md#managing-buckets) buckets for examples.
 
- For the shared profile ( `abc-lab`), you will need to explicitly pass the configuration file using the `-c` option followed by the profile configuration name with your usual `s3cmd` commands.
+For the shared profile ( `my-lab`), you will need to explicitly pass the configuration file using the `-c` option followed by the profile configuration name with your usual `s3cmd` commands.
 
 Here are examples for creating and listing buckets, and apply bucket policies:
 
-- To **creating buckets** in your shared LTS, use the command: `s3cmd -c abc-lab mb s3://your-bucket-name`.
-- To **list all buckets** you own with your shared LTS, use command: `s3cmd -c abc-lab ls`.
-- To **apply a bucket policy** (e.g., write access from a policy file `my-policy.json`), use the command: `s3cmd -c abc-lab setpolicy /path/to/my-policy.json s3://your-bucket-name`.
+- To **create buckets** in your shared LTS, use the command: `s3cmd -c my-lab mb s3://your-bucket-name`; note that `mb` is short for "make bucket".
+- To **list all buckets** you own with your shared LTS, use command: `s3cmd -c my-lab ls`. Please that this command will list only the buckets you own. For buckets you have access to but do not own, you will need to remember the bucket names as they  will not appear in this list.
+- To **apply a bucket policy** (e.g., write access from a policy file `my-policy.json`), use the command: `s3cmd -c my-lab setpolicy /path/to/my-policy.json s3://your-bucket-name`.
 
-Follow this same pattern for all other [`s3cmd` commands previously used to manage your individual LTS buckets](./individual_lts_tutorial.md#managing-buckets), just add the `-c` option followed by the shared LTS profile configuration name (`abc-lab` in this example) right after `s3cmd`.
+To manage your shared LTS buckets, repeat what you did with your [individual buckets](./individual_lts_tutorial.md#managing-buckets), and add the `-c my-lab` option.
 
 If you have any questions about configuring LTS, switching between LTS allocations, or managing bucket access across multiple LTS profiles, please [Contact Us](../../../index.md#how-to-contact-us).
