@@ -64,7 +64,9 @@ Cell Ranger is a proprietary software developed by [10x Genomics](https://www.10
 
 ### Installation
 
- Cell Ranger can be installed within a researcher’s individual user account on Cheaha. Installation instructions are available on the official [10x Genomics website](https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-in#download). You will have to use a compute node in Cheaha to install and run the software. For more information refer to [Login Vs Compute Nodes](../../cheaha/getting_started.md#login-vs-compute-nodes). Following are the steps to install Cell Ranger in Cheaha.
+ Cell Ranger can be installed within a researcher’s individual user account on Cheaha. Installation instructions are available on the official [10x Genomics website](https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-in#download). You will have to use a compute node in Cheaha to install and run the software. For more information refer to [Login Vs Compute Nodes](../../cheaha/getting_started.md#login-vs-compute-nodes).
+
+ Following are steps to install Cell Ranger in Cheaha, based on the instructions provided in the official site, linked above, as of 2025-06-01. Actual instruction steps may change over time.
 
 - [Register](https://www.10xgenomics.com/products/cell-ranger/downloads/eula?closeUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links&redirectUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links%3Fstart%3Dcellranger-9.0.1.tar.gz) and download the desired version of `Cell Ranger` from the [10X Genomics site](https://www.10xgenomics.com/support/software/cell-ranger/downloads).
 
