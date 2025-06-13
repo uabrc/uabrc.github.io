@@ -73,7 +73,7 @@ Owners can assign stewards either when requesting LTS allocation creation or at 
 - Owners and stewards have key sets for the allocation(s) they manage. These key sets are distinct, one per person per allocation, and separate from the key set they use for their individual allocations.
 - Members are granted access by [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html) for each bucket they need access to. For more details, please refer to our documentation on [sharing buckets and bucket policy structure](../lts/iam_and_policies.md#how-do-i-grant-other-users-access-to-my-lts-allocation).
 
-## How do I Grant Other Users Access to my LTS Allocation?
+## How Do I Grant Other Users Access to My LTS Allocation?
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -367,7 +367,7 @@ The optional `SID` field in IAM policies, though intended for uniquely identifyi
 }
 ```
 
-### Specifying "all actions" in IAM Policies
+### Specifying "All Actions" in IAM Policies
 
 To allow or deny all actions on a specific resource, such as an `S3` bucket or object, use the following `Action` block as part of a `Statement` object to specify that all actions are affected by the statement:
 
@@ -435,7 +435,7 @@ s3cmd delpolicy s3://<bucket>
     Policies can be very complicated depending on how many people need access to the bucket and how you want to tier permissions (i.e. which people are read-only, read-write, admin-esq priveleges, etc.). If you need help structuring your policy files please [visit us during office hours](../../help/support.md#office-hours) and we will be happy to help structure your policy file to your needs.
 <!-- markdownlint-enable MD046 -->
 
-#### Admin-like Priveleges
+#### Admin-Like Priveleges
 
 It is suggested to keep the number of people who have permission to delete data and alter policies to a minimum. Inexperience with policies can result in permissions being granted to incorrect users which can potentially lead to irrecoverable consequences. Syncing data without purposeful thought can result in the undesired loss of data.
 
@@ -443,7 +443,7 @@ It is suggested to keep the number of people who have permission to delete data 
 
 For Labs using LTS to store data from their Cheaha Project Storage directory, it is highly advised that the PI for the Lab creates and owns the bucket and then gives policy changing permissions to another researcher for day-to-day maintenance if desired. For instance, if a Lab manager creates the bucket and then leaves the university without giving policy permissions to other users, the Lab will not be able to change the policies for those data.
 
-#### Sharing Multiple Datasets with Different Groups
+#### Sharing Multiple Datasets With Different Groups
 
 Some groups on campus may distribute datasets to other research groups using LTS. If you are distributing data to multiple groups, and those groups should not have access to each other's data, it is highly advised to store those datasets in separate buckets as opposed to separate directories in a single bucket.
 

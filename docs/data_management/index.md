@@ -27,7 +27,7 @@ When you have different types of data with varying storage needs, choosing the r
 - **I have a combination of needs and am unsure of how to proceed**:
     - If your use case spans across multiple types of storage needs, [Contact Us](../help/support.md#how-to-request-support) to discuss your requirements, and we wll help you find the best solution.
 
-## What Individual Storage Solutions are Available?
+## What Individual Storage Solutions Are Available?
 
 Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about [Long-Term Storage](./lts/index.md) and [User Data and Home Directories](./cheaha_storage_gpfs/index.md#user-data-and-home-directories).
 
@@ -39,7 +39,7 @@ An individual Cheaha (`GPFS`) storage is automatically created as part of the Ch
 
 To request individual Long-Term Storage, please first read and understand how [Long-Term Storage](./lts/index.md) differs from traditional file systems, like GPFS on Cheaha. Decide if it is suitable for your needs. Then please feel free to contact [Support](../help/support.md).
 
-## What Shared Storage Solutions are Available?
+## What Shared Storage Solutions Are Available?
 
 Shared Storage is available via two services. We have [Project Storage](./cheaha_storage_gpfs/index.md#project-directory) (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
 
@@ -108,13 +108,13 @@ To request changes in Shared Storage membership, please contact [Support](../hel
 - The exact name of the Shared Storage. If it is Project Storage, the path to the storage location, i.e., `/data/project/...`.
 - Please give BlazerIDs of members to add or remove.
 
-### How Can I Get A Larger `/data/project/` (GPFS) Allocation?
+### How Can I Get a Larger `/data/project/` (GPFS) Allocation?
 
 At this time, due to constraints on total GPFS storage, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [User Scratch](./cheaha_storage_gpfs/index.md#user-scratch) for temporary storage of up to 100 TB of data for use during analysis.
 
 If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md). Please also note that project storage is not just for a single project only, it is meant as a storage for multiple projects.
 
-### How Can I Get A Larger LTS Lab Allocation?
+### How Can I Get a Larger LTS Lab Allocation?
 
 At this time, due to constraints on total [LTS](./lts/index.md) storage, increasing an LTS allocation requires purchasing additional hardware. Below are some facts about purchasing additional storage nodes.
 
@@ -143,11 +143,11 @@ When all batches have been processed, begin processing or aggregating the result
 
 If you wish to discuss other alternatives tailored to your workflow, please [Contact Support](../help/support.md).
 
-### How can I effectively manage my data?
+### How Can I Effectively Manage My Data?
 
 Keep files well-organized and clearly named, back up regularly, and archive or delete unused data.
 
-### What are my responsibilities for data management?
+### What Are My Responsibilities for Data Management?
 
 Periodically review permissions, clean up unused data, and follow institutional Storage and security policies. Please review our [Research Data Responsibilities](./research_data_responsibilities.md#research-data-responsibilities) page for details.
 

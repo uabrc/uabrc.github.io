@@ -28,7 +28,7 @@ To use this method you will need either a GitHub account or Microsoft account. M
     Do not use "Remote - SSH" to access Cheaha, as all processes run on the login node. VSCode Server, and associated processes, running on the login node may be shut down at any time to free login node resources. Instead, please use "Remote - Tunnels" as described below.
 <!-- markdownlint-enable MD046 -->
 
-### What Security does VSCode Remote Tunnel Use?
+### What Security Does VSCode Remote Tunnel Use?
 
 The VSCode Remote Tunnel extension uses the Dev Tunnels software product. The Dev Tunnels uses your GitHub or Microsoft credentials to authenticate, and data transfers through the tunnel are end-to-end encrypted. To learn more about Dev Tunnels security, please read <https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/security>
 
@@ -74,7 +74,7 @@ tar --no-same-owner -xzv --strip-components=1 -C ${HOME}/.vscode-server/bin/"${c
 
 See the [VSCode automatic updates documentation](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-opt-out-of-vs-code-autoupdates).
 
-#### Adding code to PATH
+#### Adding `code` to PATH
 
 To avoid typing `./code` for commands, try adding `${HOME}/bin` to `$PATH` in your `~/.bashrc` before starting a job. Then you will only need to type `code` for commands. You can do this from the terminal with the following command:
 
