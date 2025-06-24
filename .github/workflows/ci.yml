@@ -34,6 +34,12 @@ jobs:
           yamllint_strict: true
           yamllint_comment: true
 
+      - name: Ruff
+        uses: astral-sh/ruff-action@v3
+        with:
+          version: "0.11.10"
+      - run: ruff check
+
       - name: Setup Miniforge
         uses: conda-incubator/setup-miniconda@v3
         with:

@@ -1,7 +1,25 @@
 /* UAB theming */
 :root {
-  --md-primary-fg-color: #1a5632;
-  --md-primary-fg-color--dark: #1a5632;
+  /* uab colors in approximate order of prioritization */
+  --uab-color-uab-green: #1a5632;
+  --uab-color-uab-gold: #fdb913;
+  --uab-color-dragons-lair-green: #033319;
+  --uab-color-campus-green: #90d408;
+  --uab-color-ever-loyal-green: #17b045;
+  --uab-color-bham-sky-blue: #42caf0;
+
+  /* uab color usage */
+  --md-primary-fg-color: var(--uab-color-uab-green);
+  --md-primary-fg-color--dark: var(--uab-color-uab-green);
+  --announcement-admonition-bd-color: #90d408;
+  --announcement-admonition-bg-color: color-mix(in srgb, var(--announcement-admonition-bd-color) 10%, transparent);
+
+  /* other color usage */
+  --construction-admonition-bd-color: #eed202;
+  --construction-admonition-bg-color: color-mix(in srgb, var(--construction-admonition-bd-color) 10%, transparent);
+  --support-email-color: #aaaaff;
+  --edit-page-icon-color: #5555ff;
+  --lightbox-shadow-color: rgba(0, 0, 0, 0.08);
 }
 
 /* logo fix */
@@ -26,7 +44,12 @@
 }
 
 html .md-footer-meta.md-typeset a.supportemail {
-  color: #aaaaff;
+  color: var(--support-email-color);
+}
+
+/* "Edit on GitHub" button color adjustment */
+.md-icon[title="Edit this page"] svg {
+  fill: var(--edit-page-icon-color);
 }
 
 /* header accessiblity/readability */
@@ -69,18 +92,18 @@ html .md-footer-meta.md-typeset a.supportemail {
 /* construction admonition */
 .md-typeset .admonition.construction,
 .md-typeset details.construction {
-  border-color: #eed202;
+  border-color: var(--construction-admonition-bd-color);
 }
 
 .md-typeset .construction>.admonition-title,
 .md-typeset .construction>summary {
-  background-color: rgba(238, 210, 2, 0.1);
-  border-color: #eed202;
+  background-color: var(--construction-admonition-bg-color);
+  border-color: var(--construction-admonition-bd-color);
 }
 
 .md-typeset .construction>.admonition-title::before,
 .md-typeset .construction>summary::before {
-  background-color: #eed202;
+  background-color: var(--announcement-admonition-bd-color);
   -webkit-mask-image: var(--md-admonition-icon--warning);
   mask-image: var(--md-admonition-icon--warning);
 }
@@ -88,18 +111,18 @@ html .md-footer-meta.md-typeset a.supportemail {
 /* announcement admonition */
 .md-typeset .admonition.announcement,
 .md-typeset details.announcement {
-  border-color: #90d408;
+  border-color: var(--announcement-admonition-bd-color);
 }
 
 .md-typeset .announcement>.admonition-title,
 .md-typeset .announcement>summary {
-  background-color: rgba(144, 212, 8, 0.1);
-  border-color: #90d408;
+  background-color: var(--announcement-admonition-bg-color);
+  border-color: var(--announcement-admonition-bd-color);
 }
 
 .md-typeset .announcement>.admonition-title::before,
 .md-typeset .announcement>summary::before {
-  background-color: #90d408;
+  background-color: var(--announcement-admonition-bd-color);
   -webkit-mask-image: var(--md-admonition-icon--warning);
   mask-image: var(--md-admonition-icon--warning);
 }
@@ -120,7 +143,7 @@ a.glightbox {
 /* adding the drop shadow,margin and keeping the images at 50 viewport width */
 a.glightbox img {
   max-width: 50vw;
-  box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
+  box-shadow: 5px 5px 13px var(--lightbox-shadow-color);
   margin-bottom: 1rem;
 }
 

@@ -2,7 +2,7 @@
 
 This section is your guide to getting the right support when you need it. Whether you're just getting started with using our services on Cheaha, troubleshooting an issue, or exploring advanced features, we’re here to help. You'll find multiple ways to reach out for support, from exploring our detailed documentation, to submitting support tickets, or joining our virtual office hours and connecting with our team of Facilitators for live assistance, we will like to help. Please choose one of the options that best fits you, and we’ll do our best to support your research computing needs.
 
-## Ways we can help
+## Ways We Can Help
 
 ### UAB Research Computing Documentation
 
