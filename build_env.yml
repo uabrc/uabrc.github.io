@@ -38,3 +38,4 @@ dependencies:
       - mkdocs-table-reader-plugin==2.0.3
       - linkchecker==10.4.0
       - pre-commit==3.7.1
+      - git+https://github.com/uabrc/mkdocs-title-casing-plugin.git@stable
