@@ -1,4 +1,4 @@
-# Matlab
+# MATLAB
 
 Matlab is available for use graphically in your browser via OOD. As with other standalone programs, you'll need to select the resources required using the job creation form. The form is shown below.
 
@@ -10,7 +10,7 @@ Matlab is available for use graphically in your browser via OOD. As with other s
     Matlab tends to consume substantial memory at startup. You may experience difficulty with job errors below 20 GB of total memory.
 <!-- markdownlint-enable MD046 -->
 
-## Using Anaconda Python from within Matlab
+## Using Anaconda Python From Within MATLAB
 
 Matlab has the ability to interoperate with Python from within Matlab. The official documentation for this feature may be found at <https://www.mathworks.com/help/matlab/call-python-libraries.html>.
 
@@ -31,7 +31,7 @@ This section is dedicated to using this feature with Anaconda on Cheaha. To use 
 
 You may optionally verify that Python works correctly by entering `py.list(["hello", "world"])`. A python list object should appear in the workspace.
 
-## Using a GPU with MATLAB
+## Using a GPU With MATLAB
 
 Please see the [MATLAB Section on our GPU Page](../slurm/gpu.md#matlab).
 
