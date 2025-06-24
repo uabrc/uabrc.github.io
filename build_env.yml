@@ -18,7 +18,7 @@ dependencies:
   - conda-forge::pypandoc=1.15
   - conda-forge::pyparsing=3.0.9
   - conda-forge::python=3.13.3
-  - conda-forge::python-dateutil=2.8.2
+  - conda-forge::python-dateutil=2.9.0
   - conda-forge::pytz=2025.2
   - conda-forge::pyyaml=6.0.2
   - conda-forge::ruff=0.11.13
