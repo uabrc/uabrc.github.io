@@ -132,15 +132,15 @@ rm -rf "$TMPDIR"
     We recommend overwriting `$TMPDIR`, as above, because it will ensure that jobs always write to a safe location on the same node the work is being done.
 <!-- markdownlint-enable MD046 -->
 
-#### What If My Data Won't Fit In Local Scratch?
+#### What if My Data Won't Fit in Local Scratch?
 
 Be sure that your files will fit in `/local/` before starting. You can determine disk size and current usage using `df -h | grep "local"`. Most nodes have 1.0 TB total capacity, while the `amperenodes` have 6.0 TB. If you data won't fit in the current usage, or on the drives, please [Contact Us](../../help/support.md). We can work with you to identify a solution.
 
-#### What If I Have A Large Amount of Data for Local Scratch?
+#### What if I Have a Large Amount of Data for Local Scratch?
 
 If you have a large amount of data but each job takes very little time to run, performance can be further improved by avoiding frequent data copies and deletions. In these cases, preloading the data onto local scratch only once and then reusing it makes more sense. If this is the case for you, or you think you might benefit, please [Contact Us](../../help/support.md) and we can discuss creating a temporary node reservation to allow one-time data preloading.
 
-## Temporary Files (`/tmp/` directory)
+## Temporary Files (`/tmp/` Directory)
 
 Please do not use the directory `/tmp/` as storage for temporary files. The `/tmp/` directory is local to each node, and a full `/tmp/` directory harms compute performance on that node for all users. Instead, please use [local scratch](#local-scratch) for fastest access and [`$USER_SCRATCH`](#user-scratch) for largest space.
 
@@ -162,7 +162,7 @@ Software known to use `/tmp/` by default with no known workaround:
 
 - [Keras](https://github.com/tensorflow/tensorflow/blob/5bb81b7b0dd140a4304b92530614502c0c61a150/tensorflow/python/keras/utils/data_utils.py#L205) has `/tmp/.keras` hardcoded as a fallback cache directory if `~/.keras` is inaccessible. See [here](https://github.com/tensorflow/tensorflow/issues/38831) for a discussion of the issue.
 
-## How much space do I have left?
+## How Much Space Do I Have Left?
 
 - **Individual Storage**: use the command `quota-report` to see usage in `/data/user/$USER` and `/scratch/$USER`.
 - **Project Storage**: use the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name, i.e., `/data/project/<project>`. Be sure to _not_ use a trailing slash. Use `proj-quota-report mylab` not `proj-quota-report mylab/`.

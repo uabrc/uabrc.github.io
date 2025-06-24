@@ -19,7 +19,7 @@ GitLab can be used:
     - Unlimited private repositories for internal code projects.
     - Set behind UAB authentication.
 
-### For Software Developers (and Researchers!)
+### For Software Developers (And Researchers!)
 
 UAB GitLab is useful for software developers. It is a single application for the entire software development lifecycle. From project planning and source code management to continuous integration (CI) and continuous deployment (CD), monitoring, and security.
 
@@ -75,7 +75,7 @@ The available default roles within a group/project are listed in the table;
 
 A user assigned the "Guest" role has the least permissions, and the "Owner" has the most permissions. The table summarizes key features and permissions per user role in a Group/Project. For a complete list of permissions each role can perform, please see [GitLab documentation for user permissions](https://docs.gitlab.com/user/permissions/). In the section [Assigning a User's GitLab Role](#assigning-a-users-gitlab-role), you will see a guide to create, and assign user roles within your GitLab project.
 
-## Why Groups and Projects are Important
+## Why Groups and Projects Are Important
 
 With UAB GitLab’s instance of Group and Project structure, we offer a powerful way to mirror how your research lab or programs are structured. When we consider the organizational setup at UAB, where a Core oversees several specialized Labs. Each lab is led by a different PI, researcher or department. Within each Lab, multiple projects are being run, possibly by different teams, postdocs, or students. GitLab’s inheritance Group to Project model, shows Groups can contain subgroups and projects, making it possible to organize this exact structure digitally (Core->Lab/Department->Projects). The Core entity at UAB can be represented as a top-level group, each Lab as a subgroup, and individual projects (e.g., datasets, analysis pipelines, or software tools) as repositories within those subgroups.
 
@@ -153,7 +153,7 @@ As a Maintainer or Owner you can create Projects from within a Group. Steps 1 an
 
     ![!image showing the list of Members in a Project](./images/uab-gitlab-projectlist.png)
 
-### Add and Assign User Roles within a Group or Project
+### Add and Assign User Roles Within a Group or Project
 
 1. Click on the Group/Project, you have requisite permissions to (Owner for Groups, Owner or Maintainer for Projects). From within your Group/Project, click on the "Manage" pane located to the left of your Group/Project. And then click on "Invite members". If you are already part of another Group, dependent on the permissions you have in those Groups, you may be able to add all members of a Group with the "Invite a group" option, but for this guide, we are focusing on the "Invite members" option.
 
