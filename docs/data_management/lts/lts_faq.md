@@ -1,6 +1,6 @@
 # LTS FAQ
 
-## What Are Valid Bucket Names In LTS?
+## What Are Valid Bucket Names in LTS?
 
 Bucket names must be comprised only of lowercase letters, numbers, and hyphens. No capital letters or underscores are allowed. Trying to create a bucket with the disallowed characters will return an error.
 
@@ -33,7 +33,7 @@ While these are two simple solutions, a combination of both can be implemented w
 
 Automatic backups are not available by default. If you would like to periodically sync your bucket to a directory on your local machine or Cheaha, you will need to set up a cron task to submit a Slurm job that will run a sync. IF you would like to implement this for your own bucket, please [contact us](../../index.md#how-to-contact-us).
 
-## Why Can I Not Interact With A File In My Bucket?
+## Why Can I Not Interact With a File in My Bucket?
 
 While S3's object storage system does not have POSIX permissions seen in a Linux system entirely, we have found that users who upload files to a shared allocation have ownership permissions on those objects, and the bucket owner and stewards cannot interact with those objects by default. Instead, owners and stewards need to be given explicit permissions to move or delete all objects in a bucket. This can be dealt with by adding the following sections to the policy file:
 
@@ -78,7 +78,7 @@ While S3's object storage system does not have POSIX permissions seen in a Linux
 }
 ```
 
-## How Can I Share A Bucket With All LTS Users?
+## How Can I Share a Bucket With All LTS Users?
 
 The following policy file will give read permission to all LTS users for all objects in a bucket:
 
@@ -123,6 +123,6 @@ The following policy file will give read permission to all LTS users for all obj
 }
 ```
 
-## Can I Change Permissions On A Bucket Via Globus?
+## Can I Change Permissions on a Bucket via Globus?
 
 As of now, there is no way to change permissions on a bucket via [Globus](../transfer/globus.md). The only way to change permissions is via the command line.

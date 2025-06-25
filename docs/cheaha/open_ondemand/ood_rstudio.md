@@ -52,11 +52,11 @@ This will add those binaries and libraries to your environment `$PATH` which RSt
     If you're wanting to directly use any Python package in R, **DO NOT** include the `conda activate` command in the Environment Setup. Use `reticulate` instead as described above.
 <!-- markdownlint-enable MD046 -->
 
-## RStudio Projects and renv
+## RStudio Projects and `renv`
 
 The most recent versions of RStudio installed on Cheaha support R Projects as well as package management through the `renv` package. Please read more about improving analysis reproducibility using both of these tools in our [workflow solutions](../../workflow_solutions/r_environments.md)
 
-## Using Pandoc and `knitr` within RStudio
+## Using Pandoc and `knitr` Within RStudio
 
 If you want to use RMarkdown to create reports in RStudio, R modules using version 4.2.0 and later include `knitr` compatibility. Please use the latest versions of both R and Rstudio for fully integrated `knitr` functionality.
 
