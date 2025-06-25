@@ -12,4 +12,4 @@ runs:
 
     - name: Build Pages # this is both a build and check step
       run: mkdocs build --strict
-      shell: bash -l {0}
+      shell: bash -l {0} # must have -l because conda requires login shell to function in subsequent steps
