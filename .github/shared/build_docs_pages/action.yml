@@ -12,4 +12,4 @@ runs:
 
     - name: Build Pages # this is both a build and check step
       run: mkdocs build --strict
-      shell: bash
+      shell: bash -l {0}
