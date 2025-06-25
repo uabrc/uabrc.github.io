@@ -24,7 +24,8 @@ ignore = [
 ]
 
 [lint.per-file-ignores]
-"scripts/*" = ["INP001"]
+"build_scripts/*" = ["INP001"]
+"verification_scripts/*" = ["INP001"]
 
 [format]
 indent-style = "space"
