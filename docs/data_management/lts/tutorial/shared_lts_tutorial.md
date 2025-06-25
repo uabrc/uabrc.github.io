@@ -27,7 +27,7 @@ The screenshot below shows the full terminal output of `s3cmd --configure -c $HO
 
 Once the configuration is complete, `s3cmd` will generate a file in your home directory `$HOME` using the profile name you provided. For example, if you name your shared LTS profile `my-lab`, the configuration file will be saved as `$HOME/my-lab`. This will be in addition to the default `.s3cfg` file that was previously configured for your individual LTS, as shown below. The screenshot displays a window listing files in the user's home directory. Among the listed files, `.s3cfg` appears alongside other dotfiles, and `my-lab` appears as a separate, non-hidden file. These entries confirm the presence of both configuration files created by `s3cmd`. To locate your home directory on Cheaha and view  both the `.s3cfg`  and `my-lab`files, follow the instructions on our [Navigating Open OnDemand](../../../cheaha/open_ondemand/ood_layout.md#navigating-open-ondemand) page. Make sure to enable the "Show Dotfiles" option in the top-right corner to make hidden files visible.
 
-![The shared and individual LTS profiles shown as 'my-lab` and `.s3cfg` configuration files in your home directory](../images/my-lab.png)
+![The shared and individual LTS profiles shown as `my-lab` and `.s3cfg` configuration files in your home directory](../images/my-lab.png)
 
 ## Switching Between Individual and Shared LTS Allocation Profiles
 
