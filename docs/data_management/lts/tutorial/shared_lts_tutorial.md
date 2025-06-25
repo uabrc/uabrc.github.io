@@ -1,7 +1,7 @@
 ---
 toc_depth: 3
 ---
-# Basic Workflow with shared LTS and s3cmd
+# Basic Workflow With Shared LTS and `s3cmd`
 
 This tutorial is intended for PIs, Core Directors, as well as their managers and stewards, who are responsible for managing shared LTS allocations for their Lab or Core. While the installation of `s3cmd` is the same as covered in [our individual LTS tutorial](./individual_lts_tutorial.md#install-s3cmd-within-conda-environment-on-cheaha), this tutorial focuses on configuring and using s3cmd for shared LTS allocations especially when you manage both individual and shared LTS.
 
@@ -11,7 +11,7 @@ We will walk through how to configure access for a shared LTS, switch between yo
 
 To follow this tutorial effectively, you should have a basic understanding of the [prerequisites covered in our individual LTS tutorial](individual_lts_tutorial.md#prerequisites). In addition, you should have a shared LTS allocation already created by our team either with you as the owner or designated as a manager or steward for your Lab's or Core's shared LTS allocation.
 
-## Configuring s3cmd for Shared LTS Buckets
+## Configuring `s3cmd` for Shared LTS Buckets
 
 Once you have `s3cmd` installed and your environment activated as done for in [our individual LTS tutorial](./individual_lts_tutorial.md#install-s3cmd-within-conda-environment-on-cheaha), you can begin the configuration process using the following command:
 
@@ -29,7 +29,7 @@ Once the configuration is complete, `s3cmd` will generate a file in your home di
 
 ![The shared and individual LTS profiles shown as 'my-lab` and `.s3cfg` configuration files in your home directory](../images/my-lab.png)
 
-## Switching between Individual and Shared LTS allocation Profiles
+## Switching Between Individual and Shared LTS Allocation Profiles
 
 If you own or manage more than one LTS allocation, such as individual and shared LTS allocations, you will need to switch between them to manage your buckets effectively.
 
