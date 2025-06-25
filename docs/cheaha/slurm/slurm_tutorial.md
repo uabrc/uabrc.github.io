@@ -4,7 +4,7 @@ toc_depth: 3
 
 # Writing Slurm Batch Jobs
 
-This Slurm tutorial serves as a hands-on guide for users to create Slurm batch scripts based on their specific software needs and apply them for their respective usecases.  It covers basic examples for beginners and advanced ones, including sequential and parallel jobs, array jobs, multithreaded jobs, GPU utilization jobs, and MPI (Message Passing Interface) jobs. To know which type of batch jobs are suitable for your pipeline/usecase, please refer to the [User Guide](#slurm-batch-job-user-guide) section.
+This Slurm tutorial serves as a hands-on guide for users to create Slurm batch scripts based on their specific software needs and apply them for their respective usecases. It covers basic examples for beginners and advanced ones, including sequential and parallel jobs, array jobs, multithreaded jobs, GPU utilization jobs, and MPI (Message Passing Interface) jobs. To know which type of batch jobs are suitable for your pipeline/usecase, please refer to the [User Guide](#slurm-batch-job-user-guide) section.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -138,7 +138,7 @@ conda activate pytools-env
 python python_test.py
 ```
 
- The batch job requires an input file `python_test.py` (line 17) for execution. Copy the input file from the [Containers page](../../workflow_solutions/getting_containers.md#create-your-own-docker-container). Place this file in the same folder as the `numpy.job`. This python script performs numerical integration and data visualization tasks, and it relies on the following packages: numpy, matplotlib, scipy for successful execution. These dependencies can be installed using [Anaconda](../../workflow_solutions/using_anaconda.md) within a `conda` environment named `pytools-env`. Prior to running the script, load the `Anaconda3` module and activate the `pytools-env` environment (line 13 and 14).  Once job is successfully completed, check the slurm output file for results. Additionally, a plot named `testing.png` will be generated.
+ The batch job requires an input file `python_test.py` (line 17) for execution. Copy the input file from the [Containers page](../../workflow_solutions/getting_containers.md#create-your-own-docker-container). Place this file in the same folder as the `numpy.job`. This python script performs numerical integration and data visualization tasks, and it relies on the following packages: numpy, matplotlib, scipy for successful execution. These dependencies can be installed using [Anaconda](../../workflow_solutions/using_anaconda.md) within a `conda` environment named `pytools-env`. Prior to running the script, load the `Anaconda3` module and activate the `pytools-env` environment (line 13 and 14). Once job is successfully completed, check the slurm output file for results. Additionally, a plot named `testing.png` will be generated.
 
 ```bash
 $ ls

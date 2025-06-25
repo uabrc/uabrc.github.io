@@ -25,7 +25,7 @@ Examples of how to make use of the table:
 {{ read_csv('cheaha/res/hardware_summary_cheaha.csv', keep_default_na=False) }}
 <!-- fix headers -->
 
-The full table can be downloaded [here](./res/hardware_summary_cheaha.csv).
+[Download the full table](./res/hardware_summary_cheaha.csv).
 
 Information about GPU efficiency can be found at [Making the Most of GPUs](./slurm/gpu.md#making-the-most-of-gpus).
 
@@ -35,13 +35,13 @@ Detailed hardware information, including processor and GPU makes and models, cor
 
 {{ read_csv('cheaha/res/hardware_full_all.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](./res/hardware_full_all.csv).
+[Download the full table](./res/hardware_full_all.csv).
 
 The table below is a theoretical analysis of FLOPS (floating point operations per second) based on processor instructions and core counts, and is not a reflection of efficiency in practice.
 
 {{ read_csv('cheaha/res/flops_hpc.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](./res/flops_hpc.csv).
+[Download the full table](./res/flops_hpc.csv).
 
 For information on using Cheaha, see our dedicated [section](./getting_started.md).
 
@@ -51,13 +51,13 @@ The Cloud service hardware consists of 5 Intel nodes and 4 DGX-A100 nodes. A des
 
 {{ read_csv('cheaha/res/hardware_short_cloud.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](./res/hardware_short_cloud.csv).
+[Download the full table](./res/hardware_short_cloud.csv).
 
 The table below is a theoretical analysis of FLOPS (floating point operations per second) based on processor instructions and core counts, and is not a reflection of efficiency in practice.
 
 {{ read_csv('cheaha/res/flops_cloud.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](./res/flops_cloud.csv).
+[Download the full table](./res/flops_cloud.csv).
 
 For information on using our Cloud service at cloud.rc, see our dedicated [section](../uab_cloud/index.md).
 
@@ -73,10 +73,10 @@ The Kubernetes container service hardware consists of 5 Intel nodes and 4 DGX-A1
 
 {{ read_csv('cheaha/res/hardware_short_container.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](./res/hardware_short_container.csv).
+[Download the full table](./res/hardware_short_container.csv).
 
 The table below is a theoretical analysis of FLOPS (floating point operations per second) based on processor instructions and core counts, and is not a reflection of efficiency in practice.
 
 {{ read_csv('cheaha/res/flops_container.csv', keep_default_na=False) }}
 
-The full table can be downloaded [here](./res/flops_container.csv).
+[Download the full table](./res/flops_container.csv).

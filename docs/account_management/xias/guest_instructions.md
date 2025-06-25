@@ -36,7 +36,7 @@ These instructions are for guests who have been registered by UAB faculty and st
 
     ![!Registration success page with additional instructions and suggestions.](./images/xias_guest_009.png)
 
-    Following this step, your account registration is complete and you should be able to access the resources you have been granted permission to use. Most internal UAB systems use a Single Sign-On (SSO) to simplify and standardize logging in. For those sites that don't you will need to activate your account manually. Please follow the guide found [here](index.md#what-is-next-and-how-to-login-to-services) to access [Cheaha](https://rc.uab.edu) via your XIAS account
+    Following this step, your account registration is complete and you should be able to access the resources you have been granted permission to use. Most internal UAB systems use a Single Sign-On (SSO) to simplify and standardize logging in. For those sites that don't you will need to activate your account manually. Please follow the [Next Steps Guide](index.md#what-is-next-and-how-to-login-to-services) to access [Cheaha](https://rc.uab.edu) via your XIAS account.
 
 1. To manually activate accounts for resources that do not use SSO click the "Activate (Sync) Accounts" link on the left hand navigation pane. Fill out the form using the email used to register the XIAS account and the current password.
 
