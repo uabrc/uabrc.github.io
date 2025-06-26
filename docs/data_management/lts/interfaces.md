@@ -251,6 +251,14 @@ It's important to note that the main functionality of s5cmd over s3cmd is the pa
     When setting the value for `--numworkers`, do not select a value beyond the number of CPUs you have requested for your job! This can cause high context switching (meaning individual CPUs are switching between multiple running processes) which can affect job performance for all jobs on a node.
 <!-- markdownlint-enable MD046 -->
 
+#### Switching Between LTS Allocations Profiles
+
+By default, `s5cmd` uses the `[default]` profile. To use a different profile, specify the `--profile` flag. For example, to copy all files from a local directory to a bucket in a shared LTS allocation using a single CPU, run the following command:
+
+`s5cmd --endpoint-url https://s3.lts.rc.uab.edu --profile <shared-allocation-profile-name> cp /path/to/directory/* s3://bucket/`
+
+Replace `<shared-allocation-profile-name>` with the profile name defined for your shared LTS allocation in your `~/.aws/credentials` file.
+
 ### Installation of `s3cmd` and `s5cmd` on Individual Systems Without Anaconda
 
 The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems. You may also use [Anaconda](../../workflow_solutions/using_anaconda.md) to install either or both packages.
