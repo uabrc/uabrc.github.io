@@ -21,9 +21,9 @@ The following steps will guide you to set up Sandbox for your Cheaha account.
 
 Create a dev folder in your `$USER/ondemand` folder by following these steps:
 
-1. Create an HPC Desktop Interactive Job on Cheaha. There is a detailed guide [here](../cheaha/open_ondemand/ood_layout.md#creating-an-interactive-job) on how to do this.
+1. Create an HPC Desktop Interactive Job on Cheaha. [Please see our detailed guide](../cheaha/open_ondemand/ood_layout.md#creating-an-interactive-job) for details on how to do this.
 
-1. Access the terminal within your HPC Desktop Job. There is a guide on how to access the terminal [here](../cheaha/tutorial/pytorch_tensorflow.md#installing-anaconda-environments-using-the-terminal)
+1. Access the terminal within your HPC Desktop Job. [Please see our guide on how to access the terminal](../cheaha/tutorial/pytorch_tensorflow.md#installing-anaconda-environments-using-the-terminal) for details on how to do this.
 
     ![Terminal button from Interactive sessions page on Cheaha](images/cheaha_sandbox_shell_button.png)
 

@@ -121,7 +121,7 @@ Our Cheaha system is robust, but errors may occur due to general platform connec
 - **What do I do if I'm waiting for it to finish for longer than a couple of minutes?**
 
     - Try closing and restarting your browser, then trying again.
-    - Try clearing site data for [https://rc.uab.edu](https://rc.uab.edu), then trying again.
+    - Try clearing site data for <https://rc.uab.edu>, then trying again.
     - Try logging in on a Private Browsing window, then trying again.
     - Try waiting a few hours, then trying again.
 
@@ -134,7 +134,7 @@ Our Cheaha system is robust, but errors may occur due to general platform connec
 
     - **Do you have an active Open OnDemand session?**
 
-        - In Open OnDemand ([https://rc.uab.edu](https://rc.uab.edu)), navigate to the green navigation bar in the top right corner. Look for the `Help` or `Developer` dropdown menu and click on it. Then, click `Restart Web Server`. Once the restart is complete, please try again.
+        - In Open OnDemand (<https://rc.uab.edu>), navigate to the green navigation bar in the top right corner. Look for the `Help` or `Developer` dropdown menu and click on it. Then, click `Restart Web Server`. Once the restart is complete, please try again.
 
     - **Do you have one or more OOD HPC Desktops running?**
 

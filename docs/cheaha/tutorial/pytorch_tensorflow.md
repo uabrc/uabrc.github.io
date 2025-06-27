@@ -22,7 +22,9 @@ To access the terminal (shell), please do the following.
 
 1. Create a job on Cheaha using the Interactive Apps dropdown option.![!Interactive Apps Dropdown Menu](images/interactive_dropdown.png)
 
-1. Select Jupyter Notebook, and fill out the options, as per your project needs, then click Launch.  For more information on compute needs, and a guide for selecting the right options click [here](../job_efficiency.md#estimating-compute-resources). ![!Jupyter Launch Button](images/jupyter_launch.png)
+1. Select Jupyter Notebook and fill out the options, as per your project needs, then click Launch. For more information on compute needs, and a guide for selecting the right options, please see our [Job Efficiency - Estimating Resources](../job_efficiency.md#estimating-compute-resources) page.
+
+    ![!Jupyter Launch Button](images/jupyter_launch.png)
 
 1. Click the Connect to Jupyter button ![!Connect to Jupyter Button](images/connect_to_jupyt_button.png)
 
@@ -62,7 +64,7 @@ module load CUDA/11.8.0
 
 ![!nvidia-smi output](images/CudaVersion.png)
 
-1. Access the terminal following the steps [here](#installing-anaconda-environments-using-the-terminal).
+1. [Access the terminal](#installing-anaconda-environments-using-the-terminal).
 
 1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) an environment as stated in these links.
 
@@ -103,7 +105,7 @@ torchaudio    2.2.0     py312_cu118                     pytorch
 torchvision   0.17.0    py312_cu118                     pytorch
 ```
 
-The same process can be followed for installing another Deep Learning library Tensorflow (see instructions [below](#install-tensorflow-gpu-using-the-terminal)) with some minute differences. You may decide to install the TensorFlow library into the same environment or create a new one. As a best practice, you may want to install these libraries in different environments.
+The same process can be followed for installing the deep learning library Tensorflow, with some diffrences. See the [Install Tensorflow GPU Using the Terminal](#install-tensorflow-gpu-using-the-terminal) section below. You may decide to install the TensorFlow library into the same environment or create a new one. As a best practice, you may want to install these libraries in different environments.
 
 ## Using PyTorch on Jupyter Notebook
 

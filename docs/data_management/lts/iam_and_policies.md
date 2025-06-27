@@ -94,7 +94,7 @@ There are multiple ways to share data with LTS:
 
 ### Bucket Policies
 
-Sharing buckets may be done through the command line using [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html). A bucket policy is a JSON formatted file that assigns user read and write permissions to the bucket and to objects within the bucket. If you have not worked with JSON files before, a brief explanation can be found [here](https://docs.fileformat.com/web/json/). It's important to note that the bucket owner will always retain the ability to perform all actions on a bucket and its contents and so do not need to be explicitly granted permissions.
+Sharing buckets may be done through the command line using [bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html). A bucket policy is a JSON formatted file that assigns user read and write permissions to the bucket and to objects within the bucket. If you have not worked with JSON files before, please read a brief explanation at the official documentation: <https://docs.fileformat.com/web/json/>. It's important to note that the bucket owner will always retain the ability to perform all actions on a bucket and its contents and so do not need to be explicitly granted permissions.
 
 See [Policy Structure](#policy-structure) for a reference guide on policies, and see our [Individual LTS Tutorial](./tutorial/individual_lts_tutorial.md) for an example of how to use bucket policies.
 
