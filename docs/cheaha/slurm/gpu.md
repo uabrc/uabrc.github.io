@@ -134,7 +134,7 @@ As of 2025-02-25, we offer cuDNN modules for CUDA up to `12.3.0`. If you need a 
 
 ### CUDA Compute Capability and Known Issues
 
-GPU-based software requires a compatible [CUDA Compute Capability](../slurm/gpu.md/#available-devices) to function correctly. Each GPU card has a fixed CUDA Compute Capability version. For the software to run as expected, this version must be at least as large as the minimum CUDA Compute Capability required by the software; otherwise, the software will fail to run as expected, often resulting in runtime errors. Some of the known issues are reported in the [FAQ Entry](#frequently-asked-questions-faq-about-a100-gpus). For more information on CUDA Compute Capability please see the [official documentation](https://developer.nvidia.com/cuda-gpus).
+GPU-based software requires a compatible [CUDA Compute Capability](../slurm/gpu.md#available-devices) to function correctly. Each GPU card has a fixed CUDA Compute Capability version. For the software to run as expected, this version must be at least as large as the minimum CUDA Compute Capability required by the software; otherwise, the software will fail to run as expected, often resulting in runtime errors. Some of the known issues are reported in the [FAQ Entry](#frequently-asked-questions-faq-about-a100-gpus). For more information on CUDA Compute Capability please see the [official documentation](https://developer.nvidia.com/cuda-gpus).
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -208,6 +208,6 @@ As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct
 - **What else should I be aware of?**
     - Please be sure to clean your data off of `/local/$USER/$SLURM_JOB_ID` as soon as you no longer need it, before the job finishes.
     - We have updated the CUDA and cuDNN modules to improve reliability and ease of use. Please see the section on [CUDA Modules](#cuda-and-cudnn-modules) for more information.
-    - GPU-based software, such as NVIDIA Clara Parabricks, Triton, etc., requires a [CUDA Compute Capability](../slurm/gpu.md/#available-devices) greater than 6.0 for proper execution and should be run on the `amperenodes` partition. Some of the software that encountered runtime errors due to the underlying issues were,
-        - [NVIDIA Clara Parabricks](../../education/case_studies.md/#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus)
+    - GPU-based software, such as NVIDIA Clara Parabricks, Triton, etc., requires a [CUDA Compute Capability](../slurm/gpu.md#available-devices) greater than 6.0 for proper execution and should be run on the `amperenodes` partition. Some of the software that encountered runtime errors due to the underlying issues were,
+        - [NVIDIA Clara Parabricks](../../education/case_studies.md#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus)
         - [Triton](https://docs.nvidia.com/deeplearning/triton-inference-server/archives/triton_inference_server_1140/user-guide/docs/build.html#configure-triton-build)
