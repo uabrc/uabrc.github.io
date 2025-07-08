@@ -23,4 +23,4 @@ jobs:
       - uses: astral-sh/ruff-action@eaf0ecdd668ceea36159ff9d91882c9795d89b49 # 3.4.0
         with:
           args: "format --check --diff"
-          version-file: ".ruff.toml"
+          version: ==0.12.0
