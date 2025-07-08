@@ -1,3 +1,5 @@
+# builds mkdocs, reusable by other checks
+
 name: Build Docs Pages
 description: Build Docs Pages for mkdocs workflows.
 

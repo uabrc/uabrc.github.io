@@ -1,3 +1,5 @@
+# deploys documentation to gh-pages
+
 name: docs
 
 on: # yamllint disable-line rule:truthy

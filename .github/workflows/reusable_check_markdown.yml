@@ -1,3 +1,6 @@
+# checks markdown files for markdown specific linting and formatting issues
+# reusable by other checks
+
 name: markdown
 
 on: # yamllint disable-line rule:truthy

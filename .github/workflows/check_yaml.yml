@@ -1,3 +1,5 @@
+# checks yaml for yaml-specific linting and formatting issues
+
 name: yaml
 
 on: # yamllint disable-line rule:truthy

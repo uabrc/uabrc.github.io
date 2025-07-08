@@ -1,3 +1,5 @@
+# checks for mkdocs specific issues
+
 name: docs
 
 on: # yamllint disable-line rule:truthy
