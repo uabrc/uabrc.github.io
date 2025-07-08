@@ -1,3 +1,5 @@
+# checks python files for python linting and formatting issues
+
 name: python
 
 on: # yamllint disable-line rule:truthy
@@ -26,4 +28,4 @@ jobs:
       - uses: astral-sh/ruff-action@eaf0ecdd668ceea36159ff9d91882c9795d89b49 # 3.4.0
         with:
           args: ${{ matrix.args }}
-          version: ==0.12.0
+          version: 0.12.0
