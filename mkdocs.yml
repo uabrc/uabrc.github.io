@@ -110,6 +110,10 @@ nav:
       - data_management/index.md
       - Cheaha Storage (GPFS):
           - data_management/cheaha_storage_gpfs/index.md
+          - data_management/cheaha_storage_gpfs/individual_directories.md
+          - data_management/cheaha_storage_gpfs/scratch.md
+          - data_management/cheaha_storage_gpfs/temporary_files.md
+          - data_management/cheaha_storage_gpfs/project_directory.md
           - Project Directory Organization: data_management/cheaha_storage_gpfs/project_directory_organization.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
