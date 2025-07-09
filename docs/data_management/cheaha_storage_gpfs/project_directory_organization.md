@@ -79,6 +79,6 @@ To provide a clearer picture, here is how all the components fit together in the
 
 ## Permissions and Access Control
 
-Permissions for each directory can be managed by either being a member of the group associated with the top-level project directory or by using [Linux permissions](../cheaha_storage_gpfs/index.md#project-directory-permissions) or [Access Control Lists (ACLs)](../../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl). Managing proper permissions ensures that team members can access only the resources they need, while protecting sensitive data.
+Permissions for each directory can be managed by either being a member of the group associated with the top-level project directory or by using [Linux permissions](../cheaha_storage_gpfs/project_directory.md#project-directory-permissions) or [Access Control Lists (ACLs)](../../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl). Managing proper permissions ensures that team members can access only the resources they need, while protecting sensitive data.
 
 If you plan managing multiple projects and would like assistance with organizing your project directories or managing permissions, please send us a [support ticket](../../help/support.md#how-do-i-create-a-support-ticket).
