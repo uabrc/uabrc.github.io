@@ -70,7 +70,7 @@ The created Image can then be launched, following the same instructions for crea
 
 ### Creating an Image From a Volume
 
-There are detailed instructions on how to create an image from a Volume, [here](snapshots.md#creating-a-volume-snapshot).
+Please see [detailed instructions on how to create an image from a Volume](snapshots.md#creating-a-volume-snapshot).
 
 ### Using a Key Pair to SSH
 

@@ -1,19 +1,23 @@
 repos:
+  # check markdown
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.13.0
+    rev: v0.18.1
     hooks:
       - id: markdownlint-cli2
         require_serial: true
+  # check yaml
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.35.1
+    rev: v1.37.1
     hooks:
       - id: yamllint
         args: [-c, .yamllint.yaml, --strict]
+  # check python
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.10
+    rev: v0.12.0
     hooks:
-      - id: ruff
+      - id: ruff-check
       - id: ruff-format
+  # check mkdocs-specific issues
   - repo: local
     hooks:
       - id: mkdocs-build
