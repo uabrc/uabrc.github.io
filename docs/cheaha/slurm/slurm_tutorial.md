@@ -565,7 +565,7 @@ else
 fi
 ```
 
-The above Slurm job script runs a word count operation in parallel on multiple files using a job array (--array=0-4). It reads a list of filenames along with its path from `file_list.txt` located in `$HOME/array_example/input_files`. Since `sed` uses 1-based line numbers but Slurm task IDs start at 0, the script adds 1 to the task ID (SLURM_ARRAY_TASK_ID + 1) when using sed to select the matched file. Each task processes its assigned file, counts words with `wc -w`, and saves the result as <filename>.wordcount. Output and errors are logged separately per task.
+The above Slurm job script runs a word count operation in parallel on multiple files using a job array (--array=0-4). It reads a list of filenames along with its path from `file_list.txt` located in `$HOME/array_example/input_files`. Since `sed` uses 1-based line numbers but Slurm task IDs start at 0, the script adds 1 to the task ID (SLURM_ARRAY_TASK_ID + 1) when using sed to select the matched file. Each task processes its assigned file, counts words with `wc -w`, and saves the result as `<filename>.wordcount`. Output and errors are logged separately per task.
 
 Before running the above Slurm job, determine the number of files in the directory and its subdirectories using the following command. The command counts the number of files matching the pattern random_file_*.txt in the path `$HOME/array_example/input_files` directory and its subdirectories, and stores the result in the variable `MAX_TASKS`.
 
@@ -575,7 +575,7 @@ Before running the above Slurm job, determine the number of files in the directo
 $MAX_TASKS=$(wc -l < $HOME/array_example/file_list.txt)
 ```
 
-Next, submit the array job using the command below, which creates an array of tasks from 1 to the value of MAX_TASKS, where each task corresponds to processing a different file listed in the array.
+Next, submit the array job using the command below, which creates an array of tasks from 1 to the value of MAX_TASclearKS, where each task corresponds to processing a different file listed in the array.
 
 ```bash
 ### Submit a job array with tasks ranging from 0 to (MAX_TASKS-1)
