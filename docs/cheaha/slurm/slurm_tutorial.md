@@ -579,7 +579,7 @@ Next, submit the array job using the command below, which creates an array of ta
 
 ```bash
 ### Submit a job array with tasks ranging from 0 to (MAX_TASKS-1)
-$sbatch --array=0-$(($MAX_TASKS - 1)) file_list_word_count.job
+$ sbatch --array=0-$(($MAX_TASKS - 1)) file_list_word_count.job
 ```
 
 The output generated will be similar to example [dynamic-word-count-multiple-files](#example-43-dynamically-reading-and-counting-words-in-multiple-files), as the functionality is the same, but the method of handling the input data differs.
