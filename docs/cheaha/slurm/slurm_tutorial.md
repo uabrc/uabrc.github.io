@@ -613,7 +613,7 @@ Copy the below MATLAB script as `parfor_sum_array.m`. At the beginning, the scri
 !!! important
 
     Make sure that the `SLURM_CPUS_PER_TASK > 1` in order to take advantage of multithreaded performance. It is important that the  `SLURM_CPUS_PER_TASK` does not exceed the number of workers and physical cores (i.e. CPU cores) available on the node. This is to prevent high context switching, where individual CPUs are constantly switching between multiple running processes, which can negatively impact job performance of all jobs running on the node. It may also lead to overhead during job execution and result in poorer performance. Please refer to our [Hardware page](../hardware.md#hardware-information) to learn more about resource limits and selecting appropriate resources.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! bug
