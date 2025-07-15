@@ -1,6 +1,6 @@
 # Globus Group Management
 
-Organizations can manage students, staff, collaborators, and customers in Globus using the Group feature. Representatives can create groups and subgroups to manage and document associations between related people. With a Group, you can grant access to a Shared Collection to many people at once.
+Organizations can manage students, staff, collaborators, and customers in Globus using the Group feature. Representatives can create groups and subgroups to manage and document associations between related people. With a Group, you can grant access to a Guest Collection to many people at once.
 
 If you are new to Globus, we recommend starting with our [Globus Tutorials for Individual Researchers](./globus_individual_tutorial.md) first to familiarize yourself with how Globus is used.
 
@@ -174,14 +174,14 @@ Subgroups are also full-fledged groups that happen to have a parent-child relati
 
     ![Group settings page with group visibility controls highlighted.](./images/gg-modify-group-invite-only/001-request-to-join-checkbox.png)
 
-## How Do I Keep Group Members from Seeing Each Other?
+## How Do I Keep Group Members From Seeing Each Other?
 
 1. [Prepare to modify the Group](#how-do-i-modify-a-group-or-subgroup).
 1. Under "Policies" find the "Membership Visibility" controls and select "Administrators and Managers Only" to hide Group members from each other. This can be useful for groups with many members to make it easier to find managers and administrators.
 
     ![Group settings page with group visibility controls highlighted.](./images/gg-modify-group-hide-members/001-hide-members-radio-button.png)
 
-## How Do I Hide a Group from Others?
+## How Do I Hide a Group From Others?
 
 1. [Prepare to modify the Group](#how-do-i-modify-a-group-or-subgroup).
 1. Under "Policies" find the "Group Visibility" controls and select "Members of the Group" to hide your group from non-members. This can be useful for groups with restricted or controlled access.

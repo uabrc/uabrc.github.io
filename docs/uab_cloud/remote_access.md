@@ -35,7 +35,7 @@ If you are on version Leopard `10.5.1` or lower, you may want to have the `ssh-a
 
 There are several options for installing an SSH client on Windows, described below. It is highly recommended to install Windows Subsystem for Linux (WSL) as it provides a complete Linux environment within Windows.
 
-#### Windows Subsystem For Linux (WSL)
+#### Windows Subsystem for Linux (WSL)
 
 Follow the instructions starting [here](https://learn.microsoft.com/en-us/windows/wsl/about) to install Windows Subsystem for Linux.
 
@@ -71,7 +71,7 @@ Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent se
 - The "Start" button under the horizontal line should become enabled. Click it to start the `ssh-agent` service now.
     ![!OpenSSH Authentication Agent Properties dialog box.](./images/openssh_ssh_agent_service_dialog.png)
 
-#### Git Bash terminal (Git for Windows)
+#### Git Bash Terminal (Git for Windows)
 
 The fine folks at Git have worked very hard to package everything needed to use Git on Windows into one installer. This includes a Linux command line interface emulator, Bash and SSH. Visit <https://git-scm.com> to download and install. Follow the installer instructions. It is recommended to use all of the default installation options. Once installed, locate "Git Bash" on your machine to open the Bash terminal. It should be searchable in the Start Menu.
 
@@ -104,12 +104,6 @@ elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
     ssh-add
 fi
 ```
-
-<!-- markdownlint-disable MD046 -->
-!!! tip
-
-    Git Bash can also be used with [Windows Terminal](#terminal-multiplexers) using this stackoverflow answer: <https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal/57369284>.
-<!-- markdownlint-enable MD046 -->
 
 ### Generating Key Pairs
 
@@ -198,7 +192,7 @@ Run `ssh-keygen -R <hostname>` where `<hostname>` is the URL or IP address of th
 
 ![!image showing remote host identification has changed error](./images/instances_ssh_host_key_error.png)
 
-### Setting up a Configuration File
+### Setting Up a Configuration File
 
 SSH configuration files help streamline the process of logging in to remote terminals by storing commonly-used arguments and flags for each host. To create a configuration file, navigate to your `.ssh` directory. Create a new plain text file called `config` with no extension. Open the file and add content like the following. Note that indent matters. Variable values in `<>` will be replaced with appropriate values before saving.
 
@@ -234,7 +228,7 @@ It is possible to make [instances](./tutorial/instances.md) publically accessibl
 
 ### Expectations
 
-The expectation of making an instance publically accessible is to advance UAB's mission, so be sure you've configured and thoroughly tested your instance in the UAB Network before proceeding. The following list is intended as a helpful reminder.
+The expectation of making an instance publically accessible is to advance UAB's mission, so be sure you've configured and thoroughly tested your instance in the UAB Campus Network before proceeding. The following list is intended as a helpful reminder.
 
 - Have an instance with some research application or server that advances UAB's mission.
 - The instance is configured with a floating IP address.
@@ -242,7 +236,7 @@ The expectation of making an instance publically accessible is to advance UAB's 
 - For public-facing portions of the server which requiring login information, each authorized user must have their own independent credentials.
 - Thoroughly test your application on the UAB Campus Network prior to requesting public access.
 
-### Process For Granting Public Access
+### Process for Granting Public Access
 
 Proceed to the [UAB IT Security Exception (Firewall Rule Change) form](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=daf70746374ce3c0daa253b543990e7f) at UAB ServiceNow and fill it in. You may need to login with your UAB BlazerID credentials. We have included information on a few of the
 

@@ -29,7 +29,7 @@ Click `Quickconnect` and you will be connected to the remote storage system. The
 
 When connecting in the future, you will be able to select the connection from the dropdown arrow next to the Quickconnect button.
 
-In both the local and remote panes, you can navigate to the directories you are transferring from and to. You only have access to directories you can normally access on Cheaha, so your [Individual Storage](../storage.md#what-individual-storage-solutions-are-available) as well as any [Project Storage](../storage.md#what-shared-storage-solutions-are-available) directories you have been added to.
+In both the local and remote panes, you can navigate to the directories you are transferring from and to. You only have access to directories you can normally access on Cheaha, so your [Individual Storage](../index.md#what-individual-storage-solutions-are-available) as well as any [Project Storage](../index.md#what-shared-storage-solutions-are-available) directories you have been added to.
 
 ### Transferring Data
 

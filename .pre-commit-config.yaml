@@ -4,11 +4,21 @@ repos:
     hooks:
       - id: markdownlint-cli2
         require_serial: true
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        args: [-c, .yamllint.yaml, --strict]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.10
+    hooks:
+      - id: ruff
+      - id: ruff-format
   - repo: local
     hooks:
       - id: mkdocs-build
         name: Build documentation
-        entry: "conda activate mkdocs && mkdocs build --strict"
+        entry: conda run -n mkdocs mkdocs build --strict
         language: system
         always_run: true
         pass_filenames: false
