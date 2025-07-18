@@ -42,3 +42,11 @@ For PIs and project administrators:
 To check the storage space left from your project directory, use the command `proj-quota-report <project>`. Replace `<project>` with the appropriate project directory name, i.e., `/data/project/<project>`. Be sure to _not_ use a trailing slash. Use `proj-quota-report mylab` not `proj-quota-report mylab/`.
 
 ## Policies & Expectations
+
+This section outlines key storage policies and exceptions, including access control and data management, conditions for administrative access or quota increases in Project directory.
+
+- Storage Entitlement: A shared project allocation of 25 TB is available to research labs led by a PI and to Core Facilities headed by a Director. A shared project allocation is intended to support active research and collaboration.
+- Quota Increase: At this time, we do not provide additional quota increase for shared project allocation. If you require more storage for your work, please consider requesting and using an [LTS](../../data_management/lts/index.md).
+- Data Management: The owner the shared Project allocation is responsible for organizing, cleaning, and backing up their data in their shared Project allocation.
+- Permission and Access Control Management: Access to shared project allocation can be managed using Access Control Lists (ACLs). New members can be added to or removed from the group access based on PI approval.
+- HIPAA Compliance: Shared project allocation is HIPAA compliant and can accept Protected Health Information (PHI) data. For HIPAA Compliance and UAB policies surrounding PHI data, please refer the [HIPAA Compliance](../../data_management/index.md#hipaa-compliance)page.
