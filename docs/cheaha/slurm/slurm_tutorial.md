@@ -6,6 +6,12 @@ toc_depth: 3
 
 This Slurm tutorial serves as a hands-on guide for users to create Slurm batch scripts based on their specific software needs and apply them for their respective usecases.  It covers basic examples for beginners and advanced ones, including sequential and parallel jobs, array jobs, multithreaded jobs, GPU utilization jobs, and MPI (Message Passing Interface) jobs. To know which type of batch jobs are suitable for your pipeline/usecase, please refer to the [User Guide](#slurm-batch-job-user-guide) section.
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    CUDA modules are used in some of these tutorials. Please note that the latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules). The tutorials provide good practices, but age over time. You may need to modify the scripts to be suitable for your work.
+<!-- markdownlint-enable MD046 -->
+
 ## Structure of a Slurm Batch Job
 
 Below is the template for a typical Slurm job submission in the Cheaha high-performance computing (HPC) system. The script begins with `#!/bin/bash`, indicating it is a bash script. The next step would be to declare Slurm configuration options, specifying the required resources for job execution. This section typically comprises parameters such as CPU count, partition, memory allocation, time limit, etc. Following the configuration, the script may include sections for loading necessary software or libraries required for the job.
@@ -28,6 +34,12 @@ If you're new to using Unix/Linux commands and bash scripting, we suggest going 
 
 ## Slurm Batch Job User Guide
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    All parts of the tutorials here should be run in a job context, instead of on the login node. If you are new to Cheaha, the simplest way to get started is to use an [Open OnDemand HPC Desktop Job](../open_ondemand/hpc_desktop.md).
+<!-- markdownlint-enable MD046 -->
+
 This user guide provides comprehensive insight into different types of batch jobs, facilitating in identifying the most suitable job type for your specific tasks. With clear explanations and practical examples, you will gain a deeper understanding of sequential, parallel, array, multicore, GPU, and multi-node jobs, assisting to make informed decisions when submitting jobs on the Cheaha system.
 
 1. [A Simple Slurm Batch Job](#example-1-a-simple-slurm-batch-job) is ideal for Cheaha users who are just starting with Slurm batch job submission. It uses a simple example to introduce new users to requesting resources with `sbatch`, printing the `hostname`, and monitoring batch job submission.
@@ -40,7 +52,7 @@ This user guide provides comprehensive insight into different types of batch job
 
 1. [Mutlithreaded or Multicore Job](#example-5-multithreaded-or-multicore-job) is used when software inherently support multithreaded parallelism i.e  run independent tasks simultaneously on multicore processors. For instance, there are numerous software such as [MATLAB](https://www.mathworks.com/help/matlab/ref/parfor.html), [FEBio](https://help.febio.org/FebioUser/FEBio_um_3-4-Section-2.6.html), [Xplor-NIH](https://nmr.cit.nih.gov/xplor-nih/doc/current/helperPrograms/options.html) support running multiple tasks at the same time on multicore processors. Users or programmers do not need to modify the code; you can simply enable multithreaded parallelism by configuring the appropriate options.
 
-1. [GPU Job](#example-6-gpu-job) utilizes the parallel GPUs, which contain numerous cores designed to perform the same mathematical operations simultaneously. GPU job is appropriate for pipelines and software that are designed to run on GPU-based systems and efficiently distribute tasks across cores to process large datasets in parallel. Example includes [Tensorflow](https://www.tensorflow.org/guide/gpu), [Parabricks](../../education/case_studies.md), [PyTorch](https://pytorch.org/tutorials/prototype/ios_gpu_workflow.html#prototype-use-ios-gpu-in-pytorch), etc.
+1. [GPU Jobs](#example-6-gpu-jobs) utilizes the parallel GPUs, which contain numerous cores designed to perform the same mathematical operations simultaneously. These examples may be helpful for users with pipelines and software that are designed to run on GPU-based systems and efficiently distribute tasks across cores to process large datasets in parallel. Examples of such software include, but are not limited to, [Tensorflow](https://www.tensorflow.org/guide/gpu), [Parabricks](../../education/case_studies.md#nvidia-clara-parabricks-for-performing-gpu-accelerated-genome-sequencing-analysis), and [PyTorch](https://pytorch.org/get-started/locally/).
 
 1. [Multinode Job](#example-7-multinode-job) is for pipeline/software that can be distributed and run across multiple nodes. For example, MPI based applications/tools such as [Quantum Expresso](https://www.quantum-espresso.org/Doc/user_guide/node20.html), [Amber](https://usc-rc.github.io/tutorials/amber), [LAMMPS](https://docs.lammps.org/Run_basics.html), etc.
 
@@ -241,6 +253,12 @@ Array jobs are more effective when you have a larger number of similar tasks to 
 
 The following Slurm script is an example of how you might convert the previous `multijob` script to an array job. To start, copy the below script to a file named, `slurm_array.job`. The script requires the input file `python_script_new.py` and the `conda` environment `pytools-env`, similar to those used in [example2](../slurm/slurm_tutorial.md#example-2-sequential-job) and [example 3](../slurm/slurm_tutorial.md#example-3-parallel-jobs). Line 11 specifies the script as an array job, treating each task within the array as an independent job. For each task, lines 18-19 calculates the input range. `SLURM_ARRAY_TASK_ID` identifies the task executed using indexes, and is automatically set for array jobs. The python script (line 22) runs individual array task concurrently on respective input range. The command `awk` is used to prepend each output line with the unique task identifier and then append the results to the file, `output_all_tasks.txt`. For more details on on parameters of array jobs, please refer to [Batch Array Jobs](../slurm/submitting_jobs.md#batch-array-jobs-with-known-indices) and [Practical Batch Array Jobs](../slurm/practical_sbatch.md#).
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    For large array jobs, implementing [throttling](./submitting_jobs.md#throttling-in-slurm-array-jobs) helps control the number of concurrent jobs, preventing resource contention across the Cheaha cluster. Running too many jobs at once can cause competition for CPU, memory, or I/O, which may negatively impact performance.
+<!-- markdownlint-enable MD046 -->
+
 ```bash linenums="1"
 #!/bin/bash
 #SBATCH --job-name=slurm_array       ### Name of the job
@@ -396,36 +414,38 @@ $ sacct -j 27105035
 27105035.ex+     extern                 USER          4  COMPLETED      0:0
 ```
 
-### Example 6: GPU Job
+### Example 6: GPU Jobs
 
-This slurm script shows the execution of Tensorflow job using GPU resources. Let us save this script as `gpu.job`. The Slurm parameter `--gres=gpu:2` in line 6, requests for 2 GPUs. In line 8, note that in order to run GPU-based jobs, either the `amperenodes` or `pascalnodes` partition must be used (please refer to our [GPU page](../slurm/gpu.md) for more information). Lines 14-15 loads the necessary CUDA modules, while lines 18-19 load the Anaconda module and activate a `conda` environment called `tensorflow`. Refer to [Tensorflow official page](https://www.tensorflow.org/) for installation. The last line executes a python script that utilizes Tensorflow library to perform matrix multiplication across multiple GPUs.
+GPUs are a resource for speeding up computation in many scientific domains, so understanding how to use them effectively is important for accelerating scientific discovery. Always make sure you know your software's capabilities. Not all software can take advantage of GPUs, or multiple GPUs. Even if it can, be sure you understand what information or parameters you will need to supply to your software.
 
-```bash linenums="1"
-#!/bin/bash
-#SBATCH --job-name=gpu              ### Name of the job
-#SBATCH --nodes=1                   ### Number of Nodes
-#SBATCH --ntasks=1                  ### Number of Tasks
-#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU
-#SBATCH --gres=gpu:2                ### Number of GPUs, 2 GPUs
-#SBATCH --mem=16G                   ### Memory required, 16 gigabyte
-#SBATCH --partition=amperenodes     ### Cheaha Partition
-#SBATCH --time=01:00:00             ### Estimated Time of Completion, 1 hour
-#SBATCH --output=%x_%j.out          ### Slurm Output file, %x is job name, %j is job id
-#SBATCH --error=%x_%j.err           ### Slurm Error file, %x is job name, %j is job id
+In this section there are two tutorials that show how to use (a) a single GPU, and (b) multiple GPUs. Before we get started with the specifics, we need a working directory and software to work with. Our software will be a short script performing some low-level tensor operations with Tensorflow. It is programmed to take advantage of multiple GPUs automatically, to put the focus on the job scripts and the GPUs, rather than on the software used.
 
-### Loading the required CUDA and cuDNN modules
-module load CUDA/12.2.0
-module load cuDNN/8.9.2.26-CUDA-12.2.0
+<!-- markdownlint-disable MD046 -->
+!!! note
 
-### Loading the Anaconda module and activating the `tensorflow` environment
-module load Anaconda3
-conda activate tensorflow
+    For real applications, especially AI and other large-data applications, we recommend pre-loading data onto [Local Scratch](../../data_management/cheaha_storage_gpfs/index.md#local-scratch) to [ensure good performance](../slurm/gpu.md#ensuring-io-performance-with-a100-gpus). Don't worry about doing this for the current tutorial, but do make a note of it for your own scientific work. The difference in performance is huge, especially for AI and large-data applications.
+<!-- markdownlint-enable MD046 -->
 
-### Executing the python script
-python matmul_tensorflow.py
+#### Initial Setup
+
+Let's create a working directory using [shell commands](../../workflow_solutions/shell.md).
+
+```bash
+mkdir -p ~/slurm_tutorials/example_6
 ```
 
-Let us now create a file named `matmul_tensorflow.py` and copy the following script into it. This python script demonstrates the utilization of Tensorflow library to distribute computational tasks among multiple GPUs, in order to perform matrix multiplication in parallel (Lines 11-19). Lines 8-9 retrieve the logical GPUs and enable device placement logging, which helps to analyze which device is used for each operation. The final results are aggregated and the sum is computed on the CPU device (lines 22-23).
+Navigate to the working directory to prepare for following steps. All of the following steps will take place in this directory.
+
+```bash
+cd ~/slurm_tutorials/example_6
+```
+
+Let us create a file named `matmul_tensorflow.py` and copy the script below into it to prepare for the tutorials. You are welcome to use your favorite text editor. On Cheaha, there are two built-in options, just before the script below.
+
+- At any terminal on Cheaha, use [nano]. Type [`nano matmul_tensorflow.py` at the terminal](../../workflow_solutions/shell.md#edit-plain-text-files-nano) to create and start editing the file.
+- In an HPC Desktop job terminal, type `gedit matmul_tensorflow.py` to create the file and open a graphical editor.
+
+Below is the script to copy into the new file.
 
 ```bash linenums="1"
 import tensorflow as tf
@@ -456,7 +476,130 @@ if gpus:
     print(matmul_sum)
 ```
 
-The results indicate that the Tensorflow version utilized is 2.15. The segments `/device:GPU:0` and `/device:GPU:1` specify that the computations were executed on two GPUs. The final results is a 4x4 matrix obtained by summing the matrix multiplication results. In the `sacct` report, the column `AllocGRES` shows that 2 GPUs are allocated for this job.
+We will also need to set up a [Conda environment](../software/software.md#anaconda-on-cheaha) suitable for executing this Tensorflow-based code. Please do not try to install Pip packages outside of a Conda environment, as it can result in [hard-to-diagnose errors](../../workflow_solutions/using_anaconda.md#). Copy the following into a file `environment.yml`.
+
+```yaml
+name: tensorflow
+dependencies:
+  - conda-forge::pip==25.0.1
+  - conda-forge::python==3.11.0
+  - pip:
+    - tensorflow==2.15.0
+```
+
+To create the environment, run the following commands. This is a one-time setup for this tutorial. Please see our [Module page](../software/modules.md) and our [Conda page](../software/software.md#anaconda-on-cheaha) for more information about each.
+
+```bash
+module load Anaconda3
+conda env create --file environment.yml
+```
+
+Each time you start a new session and want to use the environment, you'll need to use the following command to activate it. This should be done before moving on to the two GPU tutorials below.
+
+```bash
+module load Anaconda3   # unless it is already loaded in this session
+conda activate tensorflow
+```
+
+#### Example 6a: Single GPU Job
+
+The following slurm script can be used to run our script with a single GPU. The Slurm parameter `--gres=gpu:1` in line 6 requests the GPU. In line 8, note that in order to run GPU-based jobs, either the `amperenodes` or `pascalnodes` partition must be used (please refer to our [GPU page](../slurm/gpu.md) for more information). Lines 14-15 load the necessary modules, while lines 18-19 load the Anaconda module and activate a Conda environment called `tensorflow`.The last line executes the python script from the introduction.
+
+As before, copy this script to a new file `gpu-single.job`.
+
+```bash linenums="1"
+#!/bin/bash
+#SBATCH --job-name=gpu              ### Name of the job
+#SBATCH --nodes=1                   ### Number of Nodes
+#SBATCH --ntasks=1                  ### Number of Tasks
+#SBATCH --cpus-per-task=1           ### Number of Tasks per CPU
+#SBATCH --gres=gpu:1                ### Number of GPUs
+#SBATCH --mem=16G                   ### Memory required, 16 gigabyte
+#SBATCH --partition=amperenodes     ### Cheaha Partition
+#SBATCH --time=01:00:00             ### Requested Time, 1 hour
+
+# Slurm Output and Error files, %x is job name, %j is job id
+#SBATCH --output=%x_%j.out
+#SBATCH --error=%x_%j.err
+
+### Loading the required CUDA and cuDNN modules
+module load CUDA/12.2.0
+module load cuDNN/8.9.2.26-CUDA-12.2.0
+
+### Loading the Anaconda module and activating the `tensorflow` environment
+module load Anaconda3
+conda activate tensorflow
+
+### Executing the python script
+python matmul_tensorflow.py
+```
+
+To submit the job, use the following command from within your working directory.
+
+```bash
+sbatch gpu-single.job
+```
+
+When the job has completed, check the results using `cat` to read the Slurm output log. The results indicate that the Tensorflow version used is 2.15. The segment `/device:GPU:0` specifies which GPU the computation was executed on. The final result is a 4x4 matrix obtained by summing the matrix multiplication results. Note that the name of your output file will have a different job ID number.
+
+```bash
+$ cat gpu_27107693.out
+
+TensorFlow version: 2.15.0
+Num GPUs Available:  1
+Computation on GPU: /device:GPU:0
+tf.Tensor(
+[[0.7417870 0.436646  0.0565315 0.5258054]
+ [0.7313270 0.8445346 0.885784  0.0902905]
+ [1.176963  0.9857005 1.9687731 0.6279962]
+ [1.2957641 0.9410924 0.4280013 0.2470699]], shape=(4, 4), dtype=float32)
+```
+
+#### Example 6b: Multiple GPU Job
+
+Using multiple GPUs is very similar to the single GPU job, with a couple of small, but important, changes. You must also be sure that your software is able to take advantage of multiple GPUs. Some software is designed for single-GPU usage only and, in that case, requesting more GPUs wastes resources. In this tutorial we've already designed our software to take advantage of multiple GPUs automatically.
+
+First, we need to request two GPUs with `--gres=gpu:2`. We also need to instruct Slurm how to use CPU cores that are assigned to each GPU with `--ntasks-per-socket=1`. We also need to instruct Slurm we have two tasks, one for each socket, by using `--ntasks=2` instead of `1`. Much more detail is available at our [Using Multiple GPUs](../slurm/gpu.md#using-multiple-gpus) section.
+
+All of the other parts of our script can remain the same, because we programmed it with multiple GPU use in mind.. That may not be the case for all software, so be sure to check its documentation.
+
+Let us save this script as `gpu-multiple.job`.
+
+```bash linenums="1"
+#!/bin/bash
+#SBATCH --job-name=gpu            ###       Name of the job
+#SBATCH --nodes=1                 ###       Number of Nodes
+#SBATCH --ntasks=2                ### DIFF  Number of Tasks, one for each socket
+#SBATCH --ntasks-per-socket       ### NEW   Number of Tasks per Socket
+#SBATCH --cpus-per-task=1         ###       Number of Tasks per CPU
+#SBATCH --gres=gpu:2              ### DIFF  Number of GPUs, 2 GPUs
+#SBATCH --mem=16G                 ###       Memory required, 16 gigabyte
+#SBATCH --partition=amperenodes   ###       Cheaha Partition
+#SBATCH --time=01:00:00           ###       Requested Time, 1 hour
+
+# Slurm Output and Error files, %x is job name, %j is job id
+#SBATCH --output=%x_%j.out
+#SBATCH --error=%x_%j.err
+
+### Loading the required CUDA and cuDNN modules
+module load CUDA/12.2.0
+module load cuDNN/8.9.2.26-CUDA-12.2.0
+
+### Loading the Anaconda module and activating the `tensorflow` environment
+module load Anaconda3
+conda activate tensorflow
+
+### Executing the python script
+python matmul_tensorflow.py
+```
+
+We will use the same `matmul_tensorflow.py`, since we programmed it to take advantage of multiple GPUs. To submit the job, use the following command.
+
+```bash
+sbatch gpu-multiple.job
+```
+
+As before, the results indicate that the Tensorflow version used is 2.15. The segments `/device:GPU:0` and `/device:GPU:1` specify that the computations were executed on two GPUs. The final results is a 4x4 matrix obtained by summing the matrix multiplication results. In the `sacct` report, the column `AllocGRES` shows that 2 GPUs are allocated for this job.
 
 ```bash
 $ cat gpu_27107694.out

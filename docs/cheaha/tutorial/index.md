@@ -1,4 +1,4 @@
-# Getting Started with Using Anaconda on Cheaha
+# Getting Started With Using Anaconda on Cheaha
 
 Python is a high level programming language that is widely used in many branches of science. As a result, many scientific packages have been developed in Python, leading to the development of a package manager called Anaconda. Anaconda is a widely used Python package manager for scientific research. Consequently Anaconda is used on Cheaha for managing environments and packages.
 
@@ -8,7 +8,7 @@ Below is a list of Tutorials we currently have Using Anaconda on Cheaha;
 
 1. Using PyTorch and TensorFlow with Anaconda on Cheaha, click [here.](../tutorial/pytorch_tensorflow.md)
 
-## Getting Started with Parallelism on Cheaha
+## Getting Started With Parallelism on Cheaha
 
 The tutorial covers usage of the following parallelization-based software installed in Cheaha. To use parllelization based software on Cheaha, [click here](./parallelism.md).
 

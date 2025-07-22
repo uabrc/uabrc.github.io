@@ -1,4 +1,4 @@
-# Tutorial on Usage of Parallelization-based Software in Cheaha
+# Tutorial on Usage of Parallelization-Based Software in Cheaha
 
 ## Sequential Execution
 

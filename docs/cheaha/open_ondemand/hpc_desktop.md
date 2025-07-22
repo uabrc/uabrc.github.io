@@ -14,7 +14,7 @@ Once you click the tab, you'll see the control panel appear. The second option f
 
 ![!VNC clipboard](images/ood_desktop_copy_paste.png)
 
-To copy from the VNC to your personal machine, highlight the text you want to copy in the VNC session, and that text will appear in the clipboard. Select the text in the clipboard, copy it, and then paste it on your local machine. Images cannot be copy-pasted through this clipboard. Instead, images should be saved as a file and then transferred through tools such as [Globus](../../data_management/transfer/globus.md), [rclone](../../data_management/transfer/rclone.md), or an [scp utility](https://kb.iu.edu/d/agye).
+To copy from the VNC to your personal machine, highlight the text you want to copy in the VNC session, and that text will appear in the clipboard. Select the text in the clipboard, copy it, and then paste it on your local machine. Images cannot be copy-pasted through this clipboard. Instead, images should be saved as a file and then transferred through tools such as [Globus](../../data_management/transfer/globus.md), [rclone](../../data_management/transfer/rclone.md), or an [scp utility](https://servicenow.iu.edu/kb?id=kb_article_view&sysparm_article=KB0024361).
 
 ## Visual Studio Code Remote Tunnel
 
@@ -23,25 +23,31 @@ It is possible to remotely access Cheaha using an HPC Desktop job as a host for 
 To use this method you will need either a GitHub account or Microsoft account. Microsoft accounts can be obtained using your SSO credentials through Microsoft.
 
 <!-- markdownlint-disable MD046 -->
-!!! danger
-
-    Do _NOT_ use the remote tunnel extension if you intend to view or work with [Restricted/PHI Data](https://www.uab.edu/it/home/policies/data-classification/classification-overview) while using VSCode.
-
-    When using a tunnel, all information visible within VSCode is end-to-end encrypted and sent from Cheaha to your local machine through a third-party service (the tunnel). Use of any third party services and encryption for Restricted/PHI Data requires a risk assessment first, on a case-by-case basis.
-<!-- markdownlint-enable MD046 -->
-
-<!-- markdownlint-disable MD046 -->
 !!! warning
 
     Do not use "Remote - SSH" to access Cheaha, as all processes run on the login node. VSCode Server, and associated processes, running on the login node may be shut down at any time to free login node resources. Instead, please use "Remote - Tunnels" as described below.
 <!-- markdownlint-enable MD046 -->
 
+### What Security Does VSCode Remote Tunnel Use?
+
+The VSCode Remote Tunnel extension uses the Dev Tunnels software product. The Dev Tunnels uses your GitHub or Microsoft credentials to authenticate, and data transfers through the tunnel are end-to-end encrypted. To learn more about Dev Tunnels security, please read <https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/security>
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    When using a tunnel, all information visible within VSCode is end-to-end encrypted and sent from Cheaha to your local machine through a third-party service (the tunnel). Use of any third party services and encryption for Restricted/PHI Data may require a risk assessment first. Please [contact us](../../help/support.md) if you need to use VSCode to work with PHI or other restricted data.
+<!-- markdownlint-enable MD046 -->
+
 ### Downloading and Installing VSCode and VSCode Server
 
 <!-- markdownlint-disable MD046 -->
-!!! important
+!!! note
 
-    Current versions of VSCode are not supported on older Linux distributions, including CentOS 7 running on Cheaha. Cheaha is only compatible with VSCode version 1.85.2 or lower. The following instructions will show you how to install this specific version. If VSCode does not work and is giving messages saying `GLIBC_2.18 (or greater) not found (required by ./code)`, your installation of VSCode is too new and needs to be downgraded to 1.85.2.
+    Support for the Cheaha operating system (CentOS 7) ended with version 1.99 of VSCode, released in March, 2025. Versions 1.98.2 and earlier are still supported.
+
+    The following instructions show how to download and install version 1.98.2. You will also need to install the same version of VSCode on your local computer. See the [VSCode documentation](https://code.visualstudio.com/updates/v1_98) for links to installers for the operating system on your local computer.
+
+    It is important to deny any update requests for both VSCode CLI on Cheaha and your local VSCode. Connection between your local computer and Cheaha requires the same version on both ends. See [Automatically Rejecting Updates](#automatically-rejecting-updates) to learn how to automatically deny update requests.
 <!-- markdownlint-enable MD046 -->
 
 First, open a terminal on Cheaha. Run the following commands if you have used VSCode before to remove some hidden files. If you are installing VSCode for the first time, skip to the next code block.
@@ -54,17 +60,21 @@ rm -r ${HOME}/.vscode-cli
 Next, use the following commands to install both VSCode and VSCode Server:
 
 ``` bash
-curl -L -o vscode_cli.tar.gz 'https://update.code.visualstudio.com/1.85.2/cli-alpine-x64/stable'
+curl -L -o vscode_cli.tar.gz 'https://update.code.visualstudio.com/1.98.2/cli-alpine-x64/stable'
 mkdir $HOME/bin
 tar -xz -C ${HOME}/bin -f vscode_cli.tar.gz
 
-export commit_sha=8b3775030ed1a69b13e4f4c628c612102e30a681
+export commit_sha='ddc367ed5c8936efe395cffeec279b04ffd7db78'
 curl -L "https://update.code.visualstudio.com/commit:${commit_sha}/server-linux-x64/stable" -o vscode_server.tar.gz
 mkdir -vp ~/.vscode-server/bin/${commit_sha}
 tar --no-same-owner -xzv --strip-components=1 -C ${HOME}/.vscode-server/bin/"${commit_sha}" -f vscode_server.tar.gz
 ```
 
-#### Adding code to PATH
+#### Automatically Rejecting Updates
+
+See the [VSCode automatic updates documentation](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-opt-out-of-vs-code-autoupdates).
+
+#### Adding `code` to PATH
 
 To avoid typing `./code` for commands, try adding `${HOME}/bin` to `$PATH` in your `~/.bashrc` before starting a job. Then you will only need to type `code` for commands. You can do this from the terminal with the following command:
 
@@ -107,3 +117,7 @@ These steps should be performed each time you would like to create a tunnel.
     ![!VSCode Command Palette showing tunnel selection with a tunnel highlighted.](./images/vscode_tunnel_palette_tunnel_selection.png)
 
 After the previous step, you should be connected to your tunnel. Now your local VSCode window is acting as a front-end for processing and file access occuring on Cheaha.
+
+### VSCode Remote Tunnel Known Issues
+
+- VSCode Remote Tunnel may not work over the "eduroam" wifi network. To work around this issue, try connecting to the [UAB VPN](../getting_started.md#accessing-cheaha) while on the "eduroam" wifi network.

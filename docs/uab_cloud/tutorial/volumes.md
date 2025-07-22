@@ -177,6 +177,49 @@ Mounting a volume needs to be done once per instance it will be attached to. It 
 
 The volume is now mounted to your instance and ready for use and re-use across sessions and reboots.
 
+## Increasing a Persistent Volume
+
+In the event you need to increase your resource allocation, you can achieve this with just a few clicks. Follow the steps below to increase your volume size.
+
+1. Accessing the Dashboard
+    1. Log into your Cloud.rc account, and locate the sidebar on the main dashboard.
+    1. Click on the Volumes option. Within the Volumes section, select Volumes again to view your list of available volumes.
+
+    ![Image showing how to select Volumes in a cloud.rc account](./images/cloudrc-volume-select.png)
+
+1. Locating the Volume to Increase
+    1. With your list of volumes displayed, identify the volume you wish to increase its size. You may use the search/filter option if you have multiple volumes set up.
+    1. Use the checkbox to select your preferred volume to increase its size.
+
+    ![Image showing a list of Volumes in a cloud.rc account](./images/cloudrc-volume-list.png)
+
+1. Initiating the Volume Increase
+    1. Once you have selected your volume, it's time to initiate the process for increasing it.
+    1. Click on the dropdown menu located to the far right under "Actions".
+    1. From the dropdown options, select "Extend Volume"
+
+    ![Image showing the dropdown menu and the "Extend Volume" option](./images/cloudrc-extend-volume.png)
+
+1. Entering the New Volume Size
+    1. After selecting "Extend Volume," a prompt will appear asking you to specify the new size.
+    1. Enter the desired size for your volume in the provided field. Make sure to enter a value that meets your current and future storage needs.
+    1. Verify that the new size is within any limitations specified by our system for your account.
+
+    ![Image showing the "Extend Volume" dialog box](./images/cloudrc-dialog-extend-volume.png)
+
+1. Confirming the Changes
+    1. Once you've entered the new size, confirm your action to finalize the volume extension by clicking "Extend Volume".
+    1. Wait for a few seconds for the system to process your request and update the volume size accordingly.
+    1. When this process completes you should see the new Volume size.
+
+    ![Image showing the new volume size](./images/cloudrc-new-volume.png).
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Be aware you cannot size volumes down even if you have free storage on it, you can only size them up (i.e. increase them).
+<!-- markdownlint-disable MD046 -->
+
 ## Deleting a Volume
 
 <!-- markdownlint-disable MD046 -->
