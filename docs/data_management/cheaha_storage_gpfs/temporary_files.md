@@ -1,6 +1,6 @@
 # Temporary Files (`/tmp/` Directory)
 
-Please do not use the directory `/tmp/` as storage for temporary files. The `/tmp/` directory is local to each node, and a full `/tmp/` directory harms compute performance on that node for all users. Instead, please use [local scratch](./scratch.md#local-scratch) for fastest access and [`$USER_SCRATCH`](./scratch.md#user-scratch) for largest space.
+The `/tmp/` directory is local to each node, and a full `/tmp/` directory harms compute performance on that node for all users. Please do not use the directory `/tmp/` as storage for temporary files. Instead, please use [local scratch](./scratch.md#local-scratch) for fastest access and [`$USER_SCRATCH`](./scratch.md#user-scratch) for largest space.
 
 Some software packages default to using `/tmp/` without any warning or documentation, especially software designed for personal computers. We may reach out to inform you if your software fills `/tmp/`, as it can harm performance on that compute node. If that happens we will work with you to identify ways of redirecting temporary storage to one of the scratch spaces.
 
