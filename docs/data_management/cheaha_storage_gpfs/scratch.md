@@ -1,6 +1,11 @@
 # Scratch Directories
 
-Two types of scratch space are provided for analyses currently being ran, network-mounted and local. These are spaces shared across users (though one user still cannot access another user's files without permission) and as such, data should be moved out of scratch when the analysis is finished.
+Scratch directories provide temporary, high-performance storage for data used in active computations. There are two types of scratch space:
+
+- User Scratch: is available on login nod and also shared across compute nodes.
+- Local scratch: is available only on individual compute nodes.
+
+Scratch Directories are meant for short-term storage of intermediate or in progress data and should not be used for long-term retention.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
