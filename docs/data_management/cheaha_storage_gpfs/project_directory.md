@@ -1,6 +1,6 @@
 # Project Directory
 
-The Project Directories are larger than user data directories and serve as a storage solution accessible to Labs led by a PI and Core facilities led by a director. It is intended for sharing data and code within a group of researchers or among lab members and collaborators, located under `/data/project/<project>`.
+The Project Directory is larger than home and user data directories and serves as a storage solution accessible to Labs led by a Principal Investigator (PI) and Core facilities led by a director. It is intended for sharing data and code within a group of researchers or among lab members and collaborators, located under `/data/project/<project>`.
 
 The PI is the owner of the project directory, and when a directory `/data/project/<project>` is created, researchers permitted to collaborate on the project are added as members of this group, granting them access to the project directory. New members can be added or removed from the group upon PI approval. Currently, a project directory space is 25 TB, and this space is not designated for a single project only; it serves as storage for multiple projects.
 

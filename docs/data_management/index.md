@@ -18,7 +18,7 @@ When you have different types of data with varying storage needs, choosing the r
     - If your data is frequently accessed or modified, [Cheaha Storage (GPFS)](../data_management/cheaha_storage_gpfs/index.md) is a perfect option for your use case.
     - When you have finished working with the data, please consider putting it into [LTS](../data_management/lts/index.md). Please [Contact Us](../help/support.md#how-to-request-support) for more information.
 - **I am just learning how to use Cheaha for very small personal projects**:
-    - If you are new to Cheaha and working with small personal projects, you do not need a complex storage solution. [User Data](../data_management/cheaha_storage_gpfs/individual_directories.md#user-data-and-home-directories) is a simple and accessible option for beginners and smaller datasets.
+    - If you are new to Cheaha and working with small personal projects, you do not need a complex storage solution. [User Data](../data_management/cheaha_storage_gpfs/individual_directories.md#home-and-user-data-directories) is a simple and accessible option for beginners and smaller datasets.
     - If you find your project growing, or you need to collaborate with others at UAB, consider a shared allocation on [GPFS](../data_management/cheaha_storage_gpfs/index.md) and/or [LTS](../data_management/lts/index.md). Please refer to the instructions on [how to request a shared allocation](#how-do-i-request-shared-storage).
 - **I need somewhere to store lots of temporary files while I do my processing**:
     - If you need a place to store large amounts of temporary data while processing data, [User Scratch](../data_management/cheaha_storage_gpfs/scratch.md#user-scratch) is the best option.
@@ -29,7 +29,7 @@ When you have different types of data with varying storage needs, choosing the r
 
 ## What Individual Storage Solutions Are Available?
 
-Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about [Long-Term Storage](./lts/index.md) and [User Data and Home Directories](./cheaha_storage_gpfs/individual_directories.md#user-data-and-home-directories).
+Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about [Long-Term Storage](./lts/index.md) and [User Data and Home Directories](./cheaha_storage_gpfs/individual_directories.md#home-and-user-data-directories).
 
 ### How Do I Request Individual Cheaha (`GPFS`) Storage?
 
