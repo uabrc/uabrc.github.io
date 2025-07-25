@@ -117,7 +117,7 @@ pip install -r packages.txt
 
 You may use the [Anaconda page](https://anaconda.org/) to search for packages on Anaconda, or use Google with something like `<package name> conda`. To find packages in PyPI, either use the [PyPI page](https://pypi.org/) to search, or use Google with something like `<package name> pip`.
 
-#### Packages for Jupyter
+#### Package Management for Jupyter
 
 For more information about using Anaconda with Jupyter (Jupyter Notebook and JupyterLab), see the section [Working with Anaconda Environments](../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
 
