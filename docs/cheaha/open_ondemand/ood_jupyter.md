@@ -14,7 +14,7 @@ To modify the environment that Anaconda and Jupyter Notebook will run in, please
 
 ### CUDA
 
-For GPU applications you'll need to load a `CUDA/*` module to have the CUDA toolkit available. If working with deep learning workflows, you may also need to load the `cuDNN/*-CUDA-*` module corresponding to your choice of `CUDA/*` module version. These are required for popular ML/DL/AI libraries like TensorFlow, Keras, and PyTorch. Use `module spider cuda/` and `module spider cudnn` to view the list of appropriate modules. An example of what to put in the Environment Setup field when using a version of Tensorflow compatible with CUDA version 12.2.0 is shown below. You can find a link to an introductory deep learning course from Software Carpentries on the page for [training resources](../../education/training_resources.md#the-carpentries).
+For GPU applications, we load a `CUDA/*` module to make the CUDA toolkit available. If a computation involves deep learning workflows, it is recommended to load the `cuDNN/*-CUDA-*` module that corresponds to the version of a `CUDA/*` module loaded. These are required for popular Machine Learning/Deep Learning/Artificial Intelligence libraries like TensorFlow, Keras, and PyTorch. Using the commands `module spider cuda/` and `module spider cudnn` while show you the list of available modules. An example of what to put in the Environment Setup field when using a version of Tensorflow compatible with CUDA version 12.2.0 is shown below. Please see link to an introductory deep learning course from Software Carpentries on the page for [training resources](../../education/training_resources.md#the-carpentries).
 
 ```shell
 # ENVIRONMENT SETUP
@@ -37,15 +37,7 @@ For more information on GPU efficiency please see [Making the Most of GPUs](../s
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    April 21, 2025: Currently, GPU-core affinity is not considered for GPU jobs on interactive apps. This may mean selecting multiple GPUs results in some GPUs not being used.
-<!-- markdownlint-enable MD046 -->
-
-For more information on GPU efficiency please see [Making the Most of GPUs](../slurm/gpu.md#making-the-most-of-gpus).
-
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    April 21, 2025: Currently, GPU-core affinity is not considered for GPU jobs on interactive apps. This may mean selecting multiple GPUs results in some GPUs not being used.
+    April 21, 2025: Currently, GPU-core affinity is not considered for GPU jobs on interactive apps. This may mean selecting multiple GPUs results in some GPUs not being used. To mitigate this, it is recommended that you only request for 1 GPU for your jobs. Please note, this applies to GPU nodes available on the amperenodes partition.
 <!-- markdownlint-enable MD046 -->
 
 ## Extra Jupyter Notebook Arguments
