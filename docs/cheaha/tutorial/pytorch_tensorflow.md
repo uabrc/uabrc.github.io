@@ -38,7 +38,7 @@ To access the terminal (shell), please do the following.
 
 1. In this interface, you can create, and activate environments, as well as install packages, modules and libraries into your activated environment.
 
-## How do we create a custom environment for PyTorch and TensorFlow
+## How Do We Create a Custom Environment for PyTorch and TensorFlow
 
 The instructions below, provide a recommended step by step guide to creating and activating an environment that has PyTorch and/or TensorFlow installed and ready to use for deep learning projects. You can find a link to an introductory deep learning course from Software Carpentries on our page for [training resources](../../education/training_resources.md#the-carpentries).
 

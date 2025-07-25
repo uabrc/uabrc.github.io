@@ -10,7 +10,7 @@ toc_depth: 3
 
 Cheaha compute nodes located at the Technology Innovation Center on campus will be undergoing maintenance from June 16-22, resulting in reduced CPU and GPU capacity during those days, as well as reduced memory limits for jobs. Please plan Research Computing needs around the maintenance window.
 
-#### What you can expect
+#### What You Can Expect
 
 - Total CPU capacity will be reduced to 25 percent.
 - “pascalnode” (P100) GPU capacity will be reduced to 50 percent.
@@ -20,19 +20,19 @@ Cheaha compute nodes located at the Technology Innovation Center on campus will 
 
 We will monitor job performance throughout the week and may adjust quality of service values to ensure fairness.
 
-#### Why we are making changes
+#### Why We Are Making Changes
 
 Planned growth requires UAB IT to move compute hardware from the TIC to the new data hall in the DC BLOX data center.
 
-#### Other upcoming changes
+#### Other Upcoming Changes
 
 In preparation for this maintenance, we will also be updating the hostname resolution for the OnDemand web endpoint rc.uab.edu and SSH endpoint cheaha.rc.uab.edu. These changes will be announced when scheduled and completed. They should not impact operations or user experience.
 
-#### Data migration update
+#### Data Migration Update
 
 We are continuing the migration of all data from GPFS4 to GPFS5. This will be followed by deprecation of GPFS4. We encourage researchers to reach out to us if they want to migrate to GPFS5 at an earlier date of their choosing. GPFS4 is continuously close to capacity and allocations are over-subscribed. Migrating early will help us, your colleagues, and may help you avoid contention for limited space. If you wish to discuss early migration to GPFS5, please contact us.
 
-#### Where to get help
+#### Where to Get Help
 
 If you need assistance, or have questions or concerns, please reply to this email or reach out to <support@listserv.uab.edu>.
 
@@ -49,7 +49,7 @@ The [survey](https://uab.co1.qualtrics.com/jfe/form/SV_dbaFBqVXIVkSbum) is desig
 - Anticipated End: 2025-04-28 12:00 AM
 - Impacted Resources: Cloud.rc, Cheaha "amperenodes," "pascalnodes," and "intel-dcb" partitions.
 
-Cloud.rc (OpenStack) and Cheaha nodes within DC Blox will be undergoing maintenance during the week of April 21, 2025. Cloud.rc and Cheaha "amperenodes,” "pascalnodes,” and "intel-dcb" partitions will be inaccessible during maintenance. Note this means all GPU nodes will be inaccessible. Planned growth requires us to move hardware within the DC BLOX data center. Please plan your Research Computing needs around this maintenance window. If you need additional assistance, please reply to this email or reach out to [support@listserv.uab.edu](mailto:support@listserv.uab.edu).
+Cloud.rc (OpenStack) and Cheaha nodes within DC Blox will be undergoing maintenance during the week of April 21, 2025. Cloud.rc and Cheaha "amperenodes,” "pascalnodes,” and "intel-dcb" partitions will be inaccessible during maintenance. Note this means all GPU nodes will be inaccessible. Planned growth requires us to move hardware within the DC BLOX data center. Please plan your Research Computing needs around this maintenance window. If you need additional assistance, please reply to this email or reach out to <support@listserv.uab.edu>.
 
 The overall plan, which will increase capacity for planned hardware growth, includes:
 
@@ -78,6 +78,6 @@ How do I use the UAB VPN? Please see: <https://www.uab.edu/it/home/tech-solution
 
 We are aware of increased transfer times into and out of LTS when using Globus. Transfer times are taking substantially longer than expected. The issue is occurring because of a bug in our version of Ceph, the LTS backend storage system. A bugfix is in the works by the vendor and we will communicate once we know more.
 
-At this time, we recommend preferring to use [`s5cmd`](https://docs.rc.uab.edu/data_management/lts/interfaces/#s5cmd) to transfer large amounts of data into and out of LTS.
+At this time, we recommend preferring to use [`s5cmd`](https://docs.rc.uab.edu/data_management/lts/interfaces#s5cmd) to transfer large amounts of data into and out of LTS.
 
 Please feel free to [Contact Us](./help/support.md) for more information or alternative solutions.

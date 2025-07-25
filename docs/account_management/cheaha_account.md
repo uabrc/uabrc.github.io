@@ -57,11 +57,14 @@ Mistakes happen, and sometimes what we thought we programmed wasn't quite what w
 
 Other reasons for holds include, but are not limited to:
 
-- If your account shows no logged usage of our resources for an extended period
-- Misuse (intentional or not) of Research Computing resources
-- [IT Policy](https://www.uab.edu/it/home/policies) violations
-- [HIPAA](https://www.uab.edu/it/home/policies/compliance/hipaa) or [FERPA](https://www.uab.edu/registrar/ferpa) violations related to use of Cheaha
-- As part of a required investigation
+- Inactivity: extended account inactivity.
+- Affiliation: [end of affiliation with, or employment by, UAB](./leaving_uab.md).
+- Subscription: unsubscribing from the `hpc-announce LISTSERV` mailing list.
+- Non-compliance:
+    - Misuse of Research Computing resources.
+    - [IT Policy](https://www.uab.edu/it/home/policies) non-compliance.
+    - [HIPAA](https://www.uab.edu/it/home/policies/compliance/hipaa) or [FERPA](https://www.uab.edu/registrar/ferpa) non-compliance related to use of Cheaha.
+- Investigation: issues identified as part of a required review of the account.
 
 In rare circumstances, we may also place a hold on your account if you possess the sole copy of data not owned by you.
 
@@ -83,7 +86,7 @@ Periodically, we review all researcher accounts to ensure they are authorized to
 
 If you believe this to be in error, please [Contact Support](../help/support.md).
 
-## What can I do with my account?
+## What Can I Do With My Account?
 
 Research Computing offers services addressing a wide range of needs for researchers at UAB, including students, staff, and faculty, as well as for both Labs and research cores.
 

@@ -10,7 +10,7 @@ This article will walk you through how to set up an OOD Sandbox app. For ease of
 1. [Launching your OOD Sandbox App](#launching-your-ood-sandbox-app)
 1. [More info](#more-info)
 
-## Setting up OOD Sandbox for your Cheaha Account
+## Setting Up OOD Sandbox for Your Cheaha Account
 
 The following steps will guide you to set up Sandbox for your Cheaha account.
 
@@ -165,12 +165,12 @@ Save the file, and close the tab. This script runs the app executable after load
 
 ![Content of script.sh.erb](images/sandbox_scriptShErb.png)
 
-### Launching your OOD Sandbox App
+### Launching Your OOD Sandbox App
 
 Click on Launch FSL, and submit the job with desired parameters. You should have your first dev app (FSL) running.
 
 ![Interactive App Screen](images/sandbox_launchFSL.png)
 
-### More info
+### More Info
 
 [Contact us](../index.md#how-to-contact-us) if you run into any issues, or to discuss any new app.

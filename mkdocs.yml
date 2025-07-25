@@ -1,6 +1,6 @@
 site_name: Research Computing Documentation
 repo_url: https://github.com/uabrc/uabrc.github.io/
-edit_uri: edit/main/docs/
+edit_uri: blob/main/docs/
 
 theme:
   name: material
@@ -11,6 +11,7 @@ theme:
     - navigation.indexes
     - navigation.instant
     - content.code.copy
+    - content.action.edit
   favicon: images/favicon.png
   logo: images/logo.png
 
@@ -41,6 +42,7 @@ markdown_extensions:
 
 plugins:
   - search
+  - title-casing
   - table-reader:
       data_path: docs
   - gen-files:
@@ -102,19 +104,21 @@ nav:
           - "For PIs - (1) Managing Projects & Sites": account_management/xias/pi_site_management.md
           - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
           - "For Guests - Account Creation": account_management/xias/guest_instructions.md
-      - Gitlab Account: account_management/gitlab_account.md
+      - GitLab Account: account_management/gitlab_account.md
       - Leaving UAB: account_management/leaving_uab.md
   - Data Management:
       - data_management/index.md
       - Cheaha Storage (GPFS):
           - data_management/cheaha_storage_gpfs/index.md
+          - Project Directory Organization: data_management/cheaha_storage_gpfs/project_directory_organization.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
           - Tutorial:
               - data_management/lts/tutorial/index.md
-              - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
-          - Interfacing with LTS: data_management/lts/interfaces.md
+              - Individual LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
+              - Shared LTS and s3cmd Workflow: data_management/lts/tutorial/shared_lts_tutorial.md
+          - Interfacing With LTS: data_management/lts/interfaces.md
           - Identity and Access Management: data_management/lts/iam_and_policies.md
           - UAB Core Accounts: data_management/lts/lts_cores.md
           - FAQ: data_management/lts/lts_faq.md
@@ -137,7 +141,7 @@ nav:
       - Using Git: workflow_solutions/git.md
       - R Projects and Environments: workflow_solutions/r_environments.md
       - Software Containers: workflow_solutions/getting_containers.md
-      - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
+      - Software Collaboration With GitHub and GitLab: workflow_solutions/git_collaboration.md
       - Creating Sandbox Apps: workflow_solutions/creating_sandbox_apps.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
@@ -154,9 +158,9 @@ nav:
           - MATLAB: cheaha/open_ondemand/ood_matlab.md
       - Hardware: cheaha/hardware.md
       - Software:
-          - Pre-installed Modules: cheaha/software/modules.md
+          - Pre-Installed Modules: cheaha/software/modules.md
           - Self-Installed Software: cheaha/software/software.md
-      - SLURM:
+      - Slurm:
           - Introduction: cheaha/slurm/introduction.md
           - Slurm Tutorial: cheaha/slurm/slurm_tutorial.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md
@@ -171,12 +175,13 @@ nav:
           - (1) Networks: uab_cloud/tutorial/networks.md
           - (2) Security Policies: uab_cloud/tutorial/security.md
           - (3) Instances: uab_cloud/tutorial/instances.md
-          - (4) Volumes (optional): uab_cloud/tutorial/volumes.md
+          - (4) Volumes (Optional): uab_cloud/tutorial/volumes.md
       - Remote Access: uab_cloud/remote_access.md
       - Installing Software: uab_cloud/installing_software.md
       - Snapshots and Images: uab_cloud/snapshots.md
       - Sharing Cloud Environment: uab_cloud/sharing_cloud_environment.md
   - UAB Kubernetes Guide:
+      - kubernetes/index.md
       - Startup: kubernetes/startup.md
   - National Research Computing Cyberinfrastructure:
       - national_ci/index.md
@@ -201,6 +206,7 @@ nav:
   - Reporting Documentation Errors: contributing/reporting_errors.md
   - Contributing Content: contributing/contributor_guide.md
   - Help:
+      - help/index.md
       - Support: help/support.md
       - FAQ - Frequently Asked Questions: help/faq.md
 

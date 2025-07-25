@@ -20,7 +20,7 @@ For more detailed information on High Assurance please see the Globus official p
 - [High Assurance Security Overview](https://docs.globus.org/guides/overviews/security/high-assurance-overview/)
 - [High Assurance Collections](https://docs.globus.org/guides/overviews/high-assurance/)
 
-## Setting up Globus Connect Personal
+## Setting Up Globus Connect Personal
 
 [Globus Connect Personal](https://www.globus.org/globus-connect-personal) is software meant to be installed on local machines such as laptops, desktops,
 workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on [MacOS](https://docs.globus.org/globus-connect-personal/install/mac/), [Linux](https://docs.globus.org/globus-connect-personal/install/linux/) and [Windows](https://docs.globus.org/globus-connect-personal/install/windows/).
@@ -140,7 +140,7 @@ UAB Researcher Computing has subscriptions to connectors for cloud services and 
 
 To use the UAB Box Connector, [search for a collection/endpoint](#moving-data-between-collections) like usual and enter "UAB Box" into the search box. Select the endpoint labeled "UAB Box". You should see a list of files and folders that are available to you at <https://uab.app.box.com>. File transfers work as they would with any other endpoint or collection.
 
-### Long-term Storage S3 (LTS) Connector
+### Long-Term Storage S3 (LTS) Connector
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -174,7 +174,7 @@ Before you can manage an LTS allocation using Globus, you'll need to add the [LT
 
 At this point you are able to access the LTS allocation associated with the Access Key you entered, and any buckets which have granted access to that Access Key. If you have more than one Access Key, e.g. for each of your personal and project allocations, you will need to choose which key to enter above. If you ever wish to change credentials, then click the "Trash Can" icon next to the entry shown in step 6, above, and start the key entry process over.
 
-#### Data Must be in Buckets
+#### Data Must Be in Buckets
 
 All data transferred to LTS must be placed in a bucket, and may _not_ be placed directly into the root directory. Attempting to move data to the root directory will result in an unhelpful error message in the "Activity" window.
 
@@ -251,7 +251,7 @@ To manage bookmarks, click on the Collection search bar, then select the Bookmar
     It is not possible to create bookmarks within High Assurance Endpoints.
 <!-- markdownlint-enable MD046 -->
 
-## Managing Guest Collections from a Globus Connect Personal Endpoint
+## Managing Guest Collections From a Globus Connect Personal Endpoint
 
 It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal Collection than for a Guest Collection. Guest collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use Guest Collections!
 

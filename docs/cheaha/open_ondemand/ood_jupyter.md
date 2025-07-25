@@ -46,13 +46,13 @@ The `Extra Jupyter Notebook Arguments` field allows you to pass additional argum
 
 ![!Jupyter Notebook job request form Extra jupyter arguments field.](./images/ood_jupyter_notebook_extra_args_box.png)
 
-## Working with other programming languages within Jupyter Notebook
+## Working With Other Programming Languages Within Jupyter Notebook
 
 To work with other programming languages within Jupyter Notebook, you need to install the corresponding kernel for each language, similar to the process used for Python with the `ipykernel`. This can be done using package managers such as `pip` or `conda`, or by following language-specific instructions. For example, to install `R kernel` for the R language, we can run the `conda install -c r r-essentials` command. Please ensure that the kernel is installed in your Anaconda environment. Then, select the desired language environment from the kernel dropdown menu.
 
 Once the necessary kernels are installed, if you wish, you can write and run multiple code cells in different languages within a single notebook. Easily switch between kernels and select the preferred one for each language, and then proceed to run the code cells in their respective languages.
 
-## Working with Anaconda Environments
+## Working With Anaconda Environments
 
 By default, Jupyter Notebooks will use the base environment that comes with the Anaconda3 module. This environment contains a large number of popular packages and may useful for something quick, dirty, and simple. However, for any analysis needing specific package versions or special packages, you will need to create your own environment and select it from the `Kernel` menu. For information on creating and managing Anaconda environments please see our [Using Anaconda page](../../workflow_solutions/using_anaconda.md). Then please review our [Cheaha-specific Anaconda page](../software/software.md#anaconda-on-cheaha) for important tips and how to avoid common pitfalls.
 
@@ -60,7 +60,7 @@ To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From
 
 ![! Select your Anaconda environment from the Kernel dropdown menu in Jupyter](images/jupyter_kernel.png)
 
-### Creating an Environment for use with Jupyter Notebook
+### Creating an Environment for Use With Jupyter Notebook
 
 We can create a new environment, that houses all of the packages, modules, and libraries we need for our current Jupyter Notebook to implement functions and operations, run all of its cells and deliver desired outputs. Follow the steps below to accomplish this;
 
@@ -77,7 +77,7 @@ We can create a new environment, that houses all of the packages, modules, and l
 
 1. Go into your working Jupyter Notebook file, and [change to the created environment](#changing-environments-using-jupyter-notebook-gui).
 
-### Changing Environments using Jupyter Notebook GUI
+### Changing Environments Using Jupyter Notebook GUI
 
 1. When your Jupyter Notebook Job has been created on Cheaha, and you want to load an environment you have already created. Select from the dropdown menu "New". You can find this in the top right corner of the Jupyter Notebook landing page. ![!Select Environment](images/selectenvsjupyter.png)
 
@@ -148,6 +148,6 @@ Here's an example of the correct procedure for installing `pip` packages within 
 1. Install `pip` within the `conda` environment using `conda install pip` or `conda install python`. `pip` and `python` are packaged together, installing one will always install the other.
 1. Use `pip` when this `conda` environment is active to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_anaconda.md#installing-packages-with-pip)
 
-### Tensorflow and PyTorch GPU issues
+### Tensorflow and PyTorch GPU Issues
 
 If you are using Jupyter Notebook with TensorFlow or PyTorch and no GPU is found, please see our Slurm GPU page sections on [TensorFlow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).

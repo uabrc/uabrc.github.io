@@ -1,4 +1,4 @@
-# Pre-installed Modules
+# Pre-Installed Modules
 
 Most software available on Cheaha is installed as modules, managed by the Lmod system. This document will provide a basic rundown of using Lmod commands to customize a software environment. `module` is the main command used to interface with module files in Lmod.
 
@@ -61,7 +61,7 @@ If you want to revert to the default modules, you can use:
 module reset
 ```
 
-## Saving Modules using Collections
+## Saving Modules Using Collections
 
 To save time typing in a long list of modules everytime you work on a project, you can save the desired list of modules using module collection. To achieve this, load the desired modules and save them to a collection using a module collection name, as shown below.
 
@@ -238,7 +238,7 @@ Use of these software packages without authorization may be a violation of the [
 
 ## Known Issues
 
-### Matlab Issues
+### MATLAB Issues
 
 There is a critical, hard-to-diagnose MATLAB parpool bug in versions before R2022a.
 

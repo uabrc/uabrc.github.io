@@ -1,4 +1,4 @@
-# How to Collaborate with Git
+# How to Collaborate With Git
 
 [Git](git.md) is a powerful tool for version control of software and other plain-text information. However, Git alone is not ideal for enabling and facilitating collaboration between many users working on the same research software project. Be sure to check the [Important Note on Terms](#important-note-on-terms) if you aren't familiar with Git.
 
@@ -23,7 +23,7 @@ To summarize:
 
 ## For Obtaining Software
 
-### Cloning from GitHub
+### Cloning From GitHub
 
 To do anything with GitHub, you will first need to navigate to their website <https://github.com> and [create an account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github).
 
@@ -37,7 +37,7 @@ You may also use the "Code" button on the page to see instructions for cloning t
 
 More in-depth instructions, including for SSH cloning, are provided at the [official documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
-### Cloning from GitLab
+### Cloning From GitLab
 
 To do anything with our GitLab instance, you will first need to create an account. Please see our [GitLab Account Management page](../account_management/gitlab_account.md).
 
@@ -59,7 +59,7 @@ Both services use organizations to manage projects across a team of people: [Git
 
 An important feature, used extensively for this documentation's GitHub repository, is the issue tracker. Both [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) and [GitLab](https://docs.gitlab.com/user/project/issues/) have per-repository issue trackers. Collaborators can create and manage issues, label them, and resolve them.
 
-### How do I Choose Between GitHub and GitLab?
+### How Do I Choose Between GitHub and GitLab?
 
 - Want to collaborate publicly and outside UAB? Consider using GitHub.
 - Want your project private or internal to UAB? Consider using our GitLab instance.

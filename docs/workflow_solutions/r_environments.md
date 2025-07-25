@@ -83,7 +83,7 @@ Projects are designed to be portable and so use relative paths the vast majority
 
 As well, opening a project will automatically set the working directory to be at the top level of the project. It's inadvisable to the change the working directory location while a project is open.
 
-## renv
+## `renv`
 
 Most, if not all, projects will use some combination of the thousands of packages available in R such as the `tidyverse`. The `renv` package helps manage all of your project's package dependencies as well as provide a way to easily share package environments with other researchers. This functionality is very similar to `conda` and `virtualenv` environments for Python users. More information about `renv` can be found on [their site](https://rstudio.github.io/renv/articles/renv.html). It's suggested to keep a record of the packages your project uses with either `renv` or another tool for general reproducibility.
 
