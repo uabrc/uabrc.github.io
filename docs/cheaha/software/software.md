@@ -4,7 +4,7 @@
 
 For additional general information on using Anaconda please see [Anaconda Environments](../../workflow_solutions/using_anaconda.md).
 
-If you are using Jupyter Notebook, please see our section on [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#packages-for-jupyter).
+If you are using Jupyter Notebook, please see our section on [Packages for Jupyter](../../workflow_solutions/using_anaconda.md#package-management-for-jupyter).
 
 ### Loading Anaconda
 

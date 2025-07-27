@@ -21,11 +21,11 @@ See [Jupyter Notebook CUDA](./ood_jupyter.md#cuda) section.
 
 See [Jupyter Notebook Arguments](./ood_jupyter.md#extra-jupyter-notebook-arguments) section.
 
-## Working with other programming languages within JupyterLab
+## Working With Other Programming Languages Within JupyterLab
 
 Please follow the instructions found in [Working with other programming languages within Jupyter Notebook](./ood_jupyter.md#working-with-other-programming-languages-within-jupyter-notebook)
 
-## Working with Conda Environments using JupyterLab
+## Working With Conda Environments Using JupyterLab
 
 By default, JupyterLab on Cheaha will launch using the `base` conda environment. While this default environment includes a wide range of popular packages and can be helpful for quick or exploratory tasks, it is not recommended for research workflows that require specific package versions or custom dependencies. For reproducible and stable analysis, it’s best to create and use a dedicated Conda environment tailored to your project or research workflow. Once created, you can register the environment as a Jupyter kernel and select it directly from within JupyterLab. For information on creating and managing Conda environments please see our [Using Anaconda page](../../workflow_solutions/using_anaconda.md). Then please review our [Cheaha-specific Anaconda page](../software/software.md#anaconda-on-cheaha) for important tips and how to avoid common pitfalls.
 
@@ -33,7 +33,7 @@ By default, JupyterLab on Cheaha will launch using the `base` conda environment.
 
 The python icons you see in the image above, are Conda environments that open into a Notebook (like with Jupyter Notebooks) interface with the selected environment activated.
 
-### Creating a Conda Environment for use with JupyterLab
+### Creating a Conda Environment for Use With JupyterLab
 
 Please see instructions for creating a Conda environment in the [Creating an Environment for use with Jupyter Notebook](./ood_jupyter.md#creating-an-environment-for-use-with-jupyter-notebook) section.
 
@@ -61,6 +61,6 @@ See the [Python Executable Issues](./ood_jupyter.md#python-executable-issues) se
 
 See our [Unexpected/Silent Job Failure](./ood_jupyter.md#unexpectedsilent-job-failure) section for Jupyter Notebook.
 
-### Tensorflow and PyTorch GPU issues
+### Tensorflow and PyTorch GPU Issues
 
 Refer to [Tensorflow and PyTorch GPU issues](./ood_jupyter.md#tensorflow-and-pytorch-gpu-issues) section for Jupyter Notebook.
