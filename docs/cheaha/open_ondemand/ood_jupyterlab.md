@@ -37,7 +37,7 @@ The python icons you see in the image above, are Conda environments that open in
 
 Please see instructions for creating a Conda environment in the [Creating an Environment for use with Jupyter Notebook](./ood_jupyter.md#creating-an-environment-for-use-with-jupyter-notebook) section.
 
-### Changing Environments using JupyterLab GUI
+### Changing Environments Using JupyterLab GUI
 
 1. From the JupyterLab interface, click on the "Kernel" menu in the top navigation bar, and choose the "Change Kernel" option.
 
