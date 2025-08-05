@@ -1,6 +1,10 @@
 # HPC Desktop
 
-The HPC Desktop is a general desktop interface for Cheaha. It can run all software installed on Cheaha including those with graphical interfaces which can't be run from a base terminal. It has the same functionality as a standard Centos 7 desktop including a web browser for accessing the internet. The HPC Desktop is a standard tool used for pipeline and analysis development when creating scripts to use in batch jobs. Below, you can see an example of the basic available desktop.
+The HPC Desktop is a general desktop interface for Cheaha. It can run all software installed on Cheaha including those with graphical interfaces which can't be run from a base terminal. To launch the HPC Desktop app, please navigate to the "Interactive Apps" menu option and select "HPC Desktop". A job creation form will appear, allowing you to configure the options you require to run your HPC Desktop session. Below the form, you will find a checkbox if you would like to receive an email notification when your session starts, as well as a blue "Launch" button to initiate the session.
+
+![!Job submission and creation form for a HPC Desktop](images/ood_hpc_desktop_form.png)
+
+It has the same functionality as a standard Centos 7 desktop including a web browser for accessing the internet. The HPC Desktop is a standard tool used for pipeline and analysis development when creating scripts to use in batch jobs. Below, you can see an example of the basic available desktop.
 
 ![!General HPC Desktop](images/ood_hpc_desktop.png)
 
