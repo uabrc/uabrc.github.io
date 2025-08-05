@@ -34,21 +34,31 @@ Below are examples of using appropriate commands within the terminal to;
 
 `vi scirpt.sh` - This will open the referenced file using another text editor called "Vim".
 
+### Clipboard Functions to Cut, Copy, and Paste
+
+You can also copy, cut and paste into a terminal on the HPC desktop job. To do this, please see our section [Copy-Paste Into HPC Desktop](./hpc_desktop.md#copy-paste-into-hpc-desktop).
+
 We recommend the Software Carpentries tutorial for getting familiar with terminal/shell commands, you can find details about this and other recommended tutorials in our page for [Training Resources](https://docs.rc.uab.edu/education/training_resources/#the-carpentries).
+
+## Accessing the Terminal
 
 The Terminal is available within the HPC Desktop App on Cheaha, and can be accessed several ways;
 
 1. From the HPC Desktop, you can access the terminal by clicking on its icon. This will open the shell, by default you will see an output showing your home directory.
 
-![!Accessing the HPC Desktop Terminal Through the Icon](images/ood_hpc_terminal_icon.png)
+    ![!Accessing the HPC Desktop Terminal Through the Icon](images/ood_hpc_terminal_icon.png)
 
 1. You can also open the terminal from within a directory/folder, by right-clicking on the directory/folder, and then selecting the "Open Terminal Here" menu option. This will open the terminal in that directory.
 
-![!Accessing the HPC Desktop Terminal Through a Directory](images/ood_hpc_terminal_directory.png)
+    ![!Accessing the HPC Desktop Terminal Through a Directory](images/ood_hpc_terminal_directory.png)
 
 1. You can also access the terminal, by clicking on the "Applications" button in the top left corner of an open HPC Desktop Interactive session. From the list of applications, select the "Terminal Emulator" option, this will also open a terminal for you to use.
 
-![!Accessing the HPC Desktop Terminal from the Applications Menu](images/ood_hpc_terminal_app.png)
+    ![!Accessing the HPC Desktop Terminal from the Applications Menu](images/ood_hpc_terminal_app.png)
+
+1. Alternatively, a terminal can also be accessed from the blue "Host" button on a created interactive job. This will open a terminal in the compute node for that job to run commands as needed.
+
+    ![!Desktop session in running state with host button highlighted](./images/ood_desktop_running_host_button.png)
 
 ## Copy-Paste Into HPC Desktop
 
