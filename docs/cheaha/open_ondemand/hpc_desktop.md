@@ -10,7 +10,7 @@ The terminal (also known as the command line, unix shell or shell) allows users 
 
 Below are examples of using appropriate commands within the terminal to;
 
-### Navigate directories
+### Navigate Directories
 
 `cd /path/to/your/folder` - This will change the location within terminal, to the directory specified.
 
