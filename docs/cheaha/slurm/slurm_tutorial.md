@@ -4,7 +4,7 @@ toc_depth: 3
 
 # Writing Slurm Batch Jobs
 
-This Slurm tutorial serves as a hands-on guide for users to create Slurm batch scripts based on their specific software needs and apply them for their respective usecases.  It covers basic examples for beginners and advanced ones, including sequential and parallel jobs, array jobs, multithreaded jobs, GPU utilization jobs, and MPI (Message Passing Interface) jobs. To know which type of batch jobs are suitable for your pipeline/usecase, please refer to the [User Guide](#slurm-batch-job-user-guide) section.
+This Slurm tutorial serves as a hands-on guide for users to create Slurm batch scripts based on their specific software needs and apply them for their respective usecases. It covers basic examples for beginners and advanced ones, including sequential and parallel jobs, array jobs, multithreaded jobs, GPU utilization jobs, and MPI (Message Passing Interface) jobs. To know which type of batch jobs are suitable for your pipeline/usecase, please refer to the [User Guide](#slurm-batch-job-user-guide) section.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -44,17 +44,17 @@ This user guide provides comprehensive insight into different types of batch job
 
 1. [A Simple Slurm Batch Job](#example-1-a-simple-slurm-batch-job) is ideal for Cheaha users who are just starting with Slurm batch job submission. It uses a simple example to introduce new users to requesting resources with `sbatch`, printing the `hostname`, and monitoring batch job submission.
 
-1. [Sequential Job](#example-2-sequential-job) is used when tasks run one at a time sequentially. Adding more CPUs does not make a sequential job run faster. If you need to run many such sequential jobs simultaneously, you can submit it as an single [array job](#example-4-array-job). For instance, a Python or R script that executes a series of steps—such as data loading, extraction, analysis, and output reporting—where each step must be completed before the next can begin.
+1. [Sequential Job](#example-2-sequential-job) is used when tasks run one at a time sequentially. Adding more CPUs does not make a sequential job run faster. If you need to run many such sequential jobs simultaneously, you can submit it as an [array job](#example-4-array-jobs). For instance, a Python or R script that executes a series of steps—such as data loading, extraction, analysis, and output reporting—where each step must be completed before the next can begin.
 
-1. [Parallel Jobs](#example-3-parallel-jobs) is suitable for executing multiple independent tasks/jobs simultaneously and efficiently distributing them across resources. This approach is particularly beneficial for small-scale tasks that cannot be split into parallel processes within the code itself. For example, consider a Python script that operates on different data set, in such a scenario, you can utilize `srun` to execute multiple instances of the script concurrently, each operating on a different dataset and on different resources.
+1. [Parallel Jobs](#example-3-parallel-jobs) are suitable for executing multiple independent tasks/jobs simultaneously and efficiently distributing them across resources. This approach is particularly beneficial for small-scale tasks that cannot be split into parallel processes within the code itself. For example, consider a Python script that operates on different data set, in such a scenario, you can utilize `srun` to execute multiple instances of the script concurrently, each operating on a different dataset and on different resources.
 
-1. [Array Job](#example-4-array-job) is used for submitting and running multiple large number of identical tasks in parallel. They share the same code and execute with similar resource requirements. Instead of submitting multiple [sequential job](#example-2-sequential-job), you can submit a single array job, which helps to manage and schedule a large number of similar tasks efficiently. This improves efficiency, resource utilization, scalability, and ease of debugging. For instance, array jobs can be designed for executing multiple instances of the same task with slight variations in inputs or parameters such as perform [FastQC](https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help) processing on 10 different samples.
+1. [Array Jobs](#example-4-array-jobs) are used for submitting and running multiple large number of identical tasks in parallel. They share the same code and execute with similar resource requirements. Instead of submitting multiple [sequential job](#example-2-sequential-job), you can submit a single array job, which helps to manage and schedule a large number of similar tasks efficiently. This improves efficiency, resource utilization, scalability, and ease of debugging. Array jobs can be designed for executing multiple instances of the same task with slight variations in inputs or parameters, such as perform [FastQC](https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help) processing on 10 different samples.
 
-1. [Mutlithreaded or Multicore Job](#example-5-multithreaded-or-multicore-job) is used when software inherently support multithreaded parallelism i.e  run independent tasks simultaneously on multicore processors. For instance, there are numerous software such as [MATLAB](https://www.mathworks.com/help/matlab/ref/parfor.html), [FEBio](https://help.febio.org/FebioUser/FEBio_um_3-4-Section-2.6.html), [Xplor-NIH](https://nmr.cit.nih.gov/xplor-nih/doc/current/helperPrograms/options.html) support running multiple tasks at the same time on multicore processors. Users or programmers do not need to modify the code; you can simply enable multithreaded parallelism by configuring the appropriate options.
+1. [Mutlithreaded or Multicore Jobs](#example-5-multithreaded-or-multicore-job) are used when software inherently supports multithreaded parallelism, i.e, run independent tasks simultaneously on multicore processors. For instance, there are numerous software such as [MATLAB](https://www.mathworks.com/help/matlab/ref/parfor.html), [FEBio](https://help.febio.org/FebioUser/FEBio_um_3-4-Section-2.6.html), [Xplor-NIH](https://nmr.cit.nih.gov/xplor-nih/doc/current/helperPrograms/options.html) support running multiple tasks at the same time on multicore processors. Users or programmers do not need to modify the code; you can simply enable multithreaded parallelism by configuring the appropriate options.
 
-1. [GPU Jobs](#example-6-gpu-jobs) utilizes the parallel GPUs, which contain numerous cores designed to perform the same mathematical operations simultaneously. These examples may be helpful for users with pipelines and software that are designed to run on GPU-based systems and efficiently distribute tasks across cores to process large datasets in parallel. Examples of such software include, but are not limited to, [Tensorflow](https://www.tensorflow.org/guide/gpu), [Parabricks](../../education/case_studies.md#nvidia-clara-parabricks-for-performing-gpu-accelerated-genome-sequencing-analysis), and [PyTorch](https://pytorch.org/get-started/locally/).
+1. [GPU Jobs](#example-6-gpu-jobs) use massively parallel GPUs, which contain numerous cores designed to perform the same mathematical operations simultaneously. These examples can speed up pipelines and software designed to run on GPU-based systems and efficiently distribute tasks across cores to process large datasets in parallel. The software must be specially programmed to make use of GPUs, or no gains will be seen. Some software can automatically detect available GPUs, and others may require you to supply some sort of configuration. AI, deep learning and machine learning software benefit well from GPUs. Examples of software using GPUs include, but are not limited to, [Tensorflow](https://www.tensorflow.org/guide/gpu), [PyTorch](https://pytorch.org/get-started/locally/), and [Parabricks](../../education/case_studies.md#nvidia-clara-parabricks-for-performing-gpu-accelerated-genome-sequencing-analysis).
 
-1. [Multinode Job](#example-7-multinode-job) is for pipeline/software that can be distributed and run across multiple nodes. For example, MPI based applications/tools such as [Quantum Expresso](https://www.quantum-espresso.org/Doc/user_guide/node20.html), [Amber](https://usc-rc.github.io/tutorials/amber), [LAMMPS](https://docs.lammps.org/Run_basics.html), etc.
+1. [Multinode Jobs](#example-7-multinode-jobs) are for pipeline/software that can be distributed and run across multiple nodes. For example, MPI based applications/tools such as [Quantum Expresso](https://www.quantum-espresso.org/Doc/user_guide/node20.html), [Amber](https://usc-rc.github.io/tutorials/amber), [LAMMPS](https://docs.lammps.org/Run_basics.html), etc.
 
 ### Example 1: A Simple Slurm Batch Job
 
@@ -90,7 +90,7 @@ $sbatch hostname.job
 Submitted batch job 26035322
 ```
 
-After submitting the job, Slurm will create the output and error files with job name `hostname` and id `26035322`  as,
+After submitting the job, Slurm will create the output and error files with job name `hostname` and id `26035322` as,
 
 ```bash
 $ ls
@@ -107,7 +107,7 @@ JOBID      PARTITION    NAME        USER    ST       TIME  NODES NODELIST(REASON
 26035322   express      hostname    USER    CG       0:01      1 c0156
 ```
 
-The above output provides a snapshot of the job's status, resource usage,  indicating that it is currently running on one node (c0156). The term `CG` refers to completing its execution. For more details refer to [Managing Slurm jobs](../slurm/job_management.md). If the job is successful, the `hostname_26035322.err` file will be empty/without error statement. You can print the result using,
+The above output provides a snapshot of the job's status, resource usage, indicating that it is currently running on one node (c0156). The term `CG` refers to completing its execution. For more details refer to [Managing Slurm jobs](../slurm/job_management.md). If the job is successful, the `hostname_26035322.err` file will be empty/without error statement. You can print the result using,
 
 ```bash
 $ cat hostname_26035322.out
@@ -138,7 +138,7 @@ conda activate pytools-env
 python python_test.py
 ```
 
- The batch job requires an input file `python_test.py` (line 17) for execution. Copy the input file from the [Containers page](../../workflow_solutions/getting_containers.md#create-your-own-docker-container). Place this file in the same folder as the `numpy.job`. This python script performs numerical integration and data visualization tasks, and it relies on the following packages: numpy, matplotlib, scipy for successful execution. These dependencies can be installed using [Anaconda](../../workflow_solutions/using_anaconda.md) within a `conda` environment named `pytools-env`. Prior to running the script, load the `Anaconda3` module and activate the `pytools-env` environment (line 13 and 14).  Once job is successfully completed, check the slurm output file for results. Additionally, a plot named `testing.png` will be generated.
+The batch job requires an input file `python_test.py` (line 17) for execution. Copy the input file from the [Containers page](../../workflow_solutions/getting_containers.md#create-your-own-docker-container). Place this file in the same folder as the `numpy.job`. This python script performs numerical integration and data visualization tasks, and it relies on the following packages: numpy, matplotlib, scipy for successful execution. These dependencies can be installed using [Anaconda](../../workflow_solutions/using_anaconda.md) within a `conda` environment named `pytools-env`. Prior to running the script, load the `Anaconda3` module and activate the `pytools-env` environment (line 13 and 14). Once job is successfully completed, check the slurm output file for results. Additionally, a plot named `testing.png` will be generated.
 
 ```bash
 $ ls
@@ -247,7 +247,7 @@ $ sacct -j 27099591
 27099591.2       python                 USER          1  COMPLETED      0:0
 ```
 
-### Example 4: Array Job
+### Example 4: Array Jobs
 
 Array jobs are more effective when you have a larger number of similar tasks to be executed simultaneously with varied input data, unlike `srun` parallel jobs which are suitable for running a smaller number of tasks concurrently (e.g. less than 5). Array jobs are easier to manage and monitor multiple tasks through unique identifiers. However, with the increased power come more moving parts, so the example here requires some setup.
 
@@ -546,11 +546,11 @@ Copy the following Slurm array job script to a file naming `file_list_word_count
 
 ```bash linenums="1"
 #!/bin/bash
-#SBATCH --job-name=file_list_word_count   ### Name of the job
-#SBATCH --cpus-per-task=1            ### Number of Tasks per CPU
-#SBATCH --mem=4G                     ### Memory required, 4 gigabyte
-#SBATCH --partition=express          ### Cheaha Partition
-#SBATCH --time=00:15:00              ### Estimated Time of Completion, 15 minutes
+#SBATCH --job-name=file_list_word_count  ### Name of the job
+#SBATCH --cpus-per-task=1                ### Number of Tasks per CPU
+#SBATCH --mem=4G                         ### Memory required, 4 gigabyte
+#SBATCH --partition=express              ### Cheaha Partition
+#SBATCH --time=00:15:00                  ### Maximum Job Time, 15 minutes
 ### Slurm Output file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --output=logs/%x_%A_%a.out
 ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
@@ -624,7 +624,7 @@ Copy the below MATLAB script as `parfor_sum_array.m`. At the beginning, the scri
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Make sure that the `SLURM_CPUS_PER_TASK > 1` in order to take advantage of multithreaded performance. It is important that the  `SLURM_CPUS_PER_TASK` does not exceed the number of workers and physical cores (i.e. CPU cores) available on the node. This is to prevent high context switching, where individual CPUs are constantly switching between multiple running processes, which can negatively impact job performance of all jobs running on the node. It may also lead to overhead during job execution and result in poorer performance. Please refer to our [Hardware page](../hardware.md#hardware-information) to learn more about resource limits and selecting appropriate resources.
+    Make sure that the `SLURM_CPUS_PER_TASK > 1` in order to take advantage of multithreaded performance. It is important that the `SLURM_CPUS_PER_TASK` does not exceed the number of workers and physical cores (i.e. CPU cores) available on the node. This is to prevent high context switching, where individual CPUs are constantly switching between multiple running processes, which can negatively impact job performance of all jobs running on the node. It may also lead to overhead during job execution and result in poorer performance. Please refer to our [Hardware page](../hardware.md#hardware-information) to learn more about resource limits and selecting appropriate resources.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
@@ -667,7 +667,7 @@ function sum_array(array_size)
 end
 ```
 
-The below result summarizes the parallel pool initialization and its utilization of 4 workers for  computation of sum of an array. Followed by, the `sacct` report illustrates that the multithreaded job was allocated with 4 CPUs and was successfully completed.
+The below result summarizes the parallel pool initialization and its utilization of 4 workers for computation of sum of an array. Followed by, the `sacct` report illustrates that the multithreaded job was allocated with 4 CPUs and was successfully completed.
 
 ```bash
 $ cat multithread_27105035.out
@@ -781,7 +781,7 @@ conda env create --file environment.yml
 Each time you start a new session and want to use the environment, you'll need to use the following command to activate it. This should be done before moving on to the two GPU tutorials below.
 
 ```bash
-module load Anaconda3   # unless it is already loaded in this session
+module load Anaconda3  # unless it is already loaded in this session
 conda activate tensorflow
 ```
 
@@ -909,7 +909,7 @@ $ sacct -j 27107694 --format=JobID,JobName,Partition,Account,AllocCPUS,allocgres
 27107694.ex+     extern                 USER          1        gpu:2  COMPLETED      0:0
 ```
 
-### Example 7: Multinode Job
+### Example 7: Multinode Jobs
 
 The below Slurm script runs a Quantum Expresso job using the `pw.x` executable on multiple nodes. In this example, we request for 2 nodes on `amd-hdr100` partition in lines 4 and 7. The suitable Quantum Expresso module is loaded in line 13. The last line is configured for a parallel computation of Quantum Expresso simulation across 2 nodes `N 2` and 4 MPI processes `-nk 4` for the input parameters in `pw.scf.silicon.in`. The input file `pw.scf.silicon.in` and psuedo potential file is taken from the [github page](https://pranabdas.github.io/espresso/hands-on/scf/). However this input is subject to change, hence according to your use case you can change the inputs.
 
