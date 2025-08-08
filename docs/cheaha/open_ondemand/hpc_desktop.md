@@ -1,12 +1,72 @@
 # HPC Desktop
 
-The HPC Desktop is a general desktop interface for Cheaha. It can run all software installed on Cheaha including those with graphical interfaces which can't be run from a base terminal. It has the same functionality as a standard Centos 7 desktop including a web browser for accessing the internet. The HPC Desktop is a standard tool used for pipeline and analysis development when creating scripts to use in batch jobs. Below, you can see an example of the basic available desktop.
+The HPC Desktop is a general desktop interface for Cheaha. It can run all software installed on Cheaha including those with graphical interfaces which can't be run from a base terminal. To launch the HPC Desktop app, please navigate to the "Interactive Apps" menu option and select "HPC Desktop". A job creation form will appear, allowing you to configure the options you require to run your HPC Desktop session. Below the form, you will find a checkbox if you would like to receive an email notification when your session starts, as well as a blue "Launch" button to initiate the session.
+
+![!Job submission and creation form for a HPC Desktop](images/ood_hpc_desktop_form.png)
+
+It has the same functionality as a standard Centos 7 desktop including a web browser for accessing the internet. The HPC Desktop is a standard tool used for pipeline and analysis development when creating scripts to use in batch jobs. Below, you can see an example of the basic available desktop.
 
 ![!General HPC Desktop](images/ood_hpc_desktop.png)
 
+## Using the Terminal
+
+The terminal (also known as the command line, unix shell or shell) allows users to interact with the system using text-based commands. The Terminal is commonly used in HPC environments like ours, for file management, module loading, job submission, and more. Common commands include navigating directories (`cd`), listing files (`ls`), moving or copying files (`mv`, `cp`), and checking your current working directory (`pwd`).
+
+We recommend the Software Carpentries tutorial for getting familiar with terminal and shell commands. You can find details about the terminal and other recommended tutorials in our [Training Resources](../../education/training_resources.md#the-carpentries) page. Additional information is available in our documentation on the [shell](../../workflow_solutions/shell.md).
+
+Below are examples of using appropriate commands within the terminal to;
+
+### Navigate Directories
+
+`cd /path/to/your/folder` - This will change the location within terminal, to the directory specified.
+
+`ls` - This will list all files found in the directory.
+
+`pwd` - This will return as an output the filepath of terminal's current location
+
+### Run Commands
+
+`module load Miniconda3` - This will load a module.
+
+`conda activate myenv` - This will activate an already created Conda environment.
+
+### File Management
+
+`touch script.sh` - This will create an empty file named "script.sh".
+
+`rm script.sh` - This will delete the referenced file.
+
+`nano script.sh` - This will allow you to open the referenced file using a text editor called "Nano".
+
+`vi scirpt.sh` - This will open the referenced file using another text editor called "Vim".
+
+### Clipboard Functions to Cut, Copy, and Paste
+
+You can also copy, cut and paste into a terminal on the HPC desktop job. To do this, please see our section [Copy-Paste Into HPC Desktop](./hpc_desktop.md#copy-paste-into-hpc-desktop).
+
+## Accessing the Terminal
+
+The Terminal is available within the HPC Desktop App on Cheaha, and can be accessed several ways;
+
+1. From the HPC Desktop, you can access the terminal by clicking on its icon. This will open the shell, by default you will see an output showing your home directory.
+
+    ![!Accessing the HPC Desktop Terminal Through the Icon](images/ood_hpc_terminal_icon.png)
+
+1. You can also open the terminal from within a directory/folder, by right-clicking on the directory/folder, and then selecting the "Open Terminal Here" menu option. This will open the terminal in that directory.
+
+    ![!Accessing the HPC Desktop Terminal Through a Directory](images/ood_hpc_terminal_directory.png)
+
+1. You can also access the terminal, by clicking on the "Applications" button in the top left corner of an open HPC Desktop Interactive session. From the list of applications, select the "Terminal Emulator" option, this will also open a terminal for you to use.
+
+    ![!Accessing the HPC Desktop Terminal from the Applications Menu](images/ood_hpc_terminal_app.png)
+
+1. Alternatively, a terminal can also be accessed from the blue "Host" button on a created interactive job. This will open a terminal in the compute node for that job to run commands as needed.
+
+    ![!Desktop session in running state with host button highlighted](./images/ood_desktop_running_host_button.png)
+
 ## Copy-Paste Into HPC Desktop
 
-The HPC Desktop app is run through [noVNC](https://novnc.com/info.html). This setup means it is not possible to conventially copy-paste text between the Desktop tab and other tabs or software on the host machine (i.e. a lab workstation or personal laptop). To copy-paste text, noVNC provides a control panel with a clipboard for passing text between the VNC session and the host machine. The control panel is available by clicking a tab on the far left of the screen, halfway down (see the red rectangle in the image below).
+The HPC Desktop app is run through [noVNC](https://novnc.com/info.html). This setup means it is not possible to conventionally copy-paste text between the Desktop tab and other tabs or software on the host machine (i.e. a lab workstation or personal laptop). To copy-paste text, noVNC provides a control panel with a clipboard for passing text between the VNC session and the host machine. The control panel is available by clicking a tab on the far left of the screen, halfway down (see the red rectangle in the image below).
 
 ![!Tab to open the VNC control panel](images/ood_vnc_control_panel.png)
 
