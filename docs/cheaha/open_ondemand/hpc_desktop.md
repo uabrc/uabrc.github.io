@@ -10,7 +10,7 @@ It has the same functionality as a standard Centos 7 desktop including a web bro
 
 ## Using the Terminal
 
-The terminal (also known as the command line, unix shell or shell) allows users to interact with the system using text-based commands. The Terminal is commonly used in HPC environments like ours, for file management, module loading, job submission, and more.
+The terminal (also known as the command line, unix shell or shell) allows users to interact with the system using text-based commands. The Terminal is commonly used in HPC environments like ours, for file management, module loading, job submission, and more. We recommend the Software Carpentries tutorial for getting familiar with terminal and shell commands. You can find details about this and other recommended tutorials our [Training Resources](../../education/training_resources.md#the-carpentries) page. Additional information is available in our documentation on the [shell](../../workflow_solutions/shell.md).
 
 Below are examples of using appropriate commands within the terminal to;
 
@@ -41,8 +41,6 @@ Below are examples of using appropriate commands within the terminal to;
 ### Clipboard Functions to Cut, Copy, and Paste
 
 You can also copy, cut and paste into a terminal on the HPC desktop job. To do this, please see our section [Copy-Paste Into HPC Desktop](./hpc_desktop.md#copy-paste-into-hpc-desktop).
-
-We recommend the Software Carpentries tutorial for getting familiar with terminal/shell commands, you can find details about this and other recommended tutorials in our page for [Training Resources](https://docs.rc.uab.edu/education/training_resources/#the-carpentries).
 
 ## Accessing the Terminal
 
