@@ -10,7 +10,9 @@ It has the same functionality as a standard Centos 7 desktop including a web bro
 
 ## Using the Terminal
 
-The terminal (also known as the command line, unix shell or shell) allows users to interact with the system using text-based commands. The Terminal is commonly used in HPC environments like ours, for file management, module loading, job submission, and more. We recommend the Software Carpentries tutorial for getting familiar with terminal and shell commands. You can find details about this and other recommended tutorials our [Training Resources](../../education/training_resources.md#the-carpentries) page. Additional information is available in our documentation on the [shell](../../workflow_solutions/shell.md).
+The terminal (also known as the command line, unix shell or shell) allows users to interact with the system using text-based commands. The Terminal is commonly used in HPC environments like ours, for file management, module loading, job submission, and more. Common commands include navigating directories (`cd`), listing files (`ls`), moving or copying files (`mv`, `cp`), and checking your current working directory (`pwd`).
+
+We recommend the Software Carpentries tutorial for getting familiar with terminal and shell commands. You can find details about the terminal and other recommended tutorials in our [Training Resources](../../education/training_resources.md#the-carpentries) page. Additional information is available in our documentation on the [shell](../../workflow_solutions/shell.md).
 
 Below are examples of using appropriate commands within the terminal to;
 
