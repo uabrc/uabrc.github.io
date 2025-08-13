@@ -1,12 +1,12 @@
 # Temporary Files (`/tmp/` Directory)
 
-The `/tmp/` directory is local to each node, and a full `/tmp/` directory harms compute performance on that node for all users. Please do not use the directory `/tmp/` as storage for temporary files. Instead, please use [local scratch](./scratch.md#local-scratch) for fastest access and [`$USER_SCRATCH`](./scratch.md#user-scratch) for largest space.
+The `/tmp/` directory is local to each node, and a full `/tmp/` directory harms compute performance on that node for all users. Please do not use the directory `/tmp/` as storage for temporary files. Instead, please use [local scratch](./local_scratch.md) for fastest access and [`$USER_SCRATCH`](./global_scratch.md) for largest space.
 
 Some software packages default to using `/tmp/` without any warning or documentation, especially software designed for personal computers. We may reach out to inform you if your software fills `/tmp/`, as it can harm performance on that compute node. If that happens we will work with you to identify ways of redirecting temporary storage to one of the scratch spaces.
 
 ## Software Known to Use `/tmp/`
 
-The following software are known to use `/tmp/` by default, and can be worked around by using the listed flags. See [Local Scratch](scratch.md#local-scratch) for more information about creating a local temporary directory. You may need to manually create (and clean) `/local/$USER/$SLURM_JOB_ID/`.
+The following software are known to use `/tmp/` by default, and can be worked around by using the listed flags. See [Local Scratch](local_scratch.md) for more information about creating a local temporary directory. You may need to manually create (and clean) `/local/$USER/$SLURM_JOB_ID/`.
 
 - [Java](https://docs.oracle.com/cd/E63231_01/doc/BIAIN/GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1.htm#BIAIN-GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1): `java * -Djava.io.tmpdir=/local/$USER/$SLURM_JOB_ID`
 - [UMI Tools](https://umi-tools.readthedocs.io/en/latest/common_options.html): `umi_tools * --temp-dir=/local/$USER/SLURM_JOB_ID`

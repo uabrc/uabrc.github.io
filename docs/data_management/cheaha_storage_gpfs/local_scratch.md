@@ -1,31 +1,4 @@
-# Scratch Directories
-
-Scratch directories provide temporary, high-performance storage for data used in active computations. There are two types of scratch space:
-
-- User Scratch: is available on login nod and also shared across compute nodes.
-- Local scratch: is available only on individual compute nodes.
-
-Scratch Directories are meant for short-term storage of intermediate or in progress data and should not be used for long-term retention.
-
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    Starting January 2023, scratch data will have limited retention. See [Scratch Retention Policy](#policies-and-expectations) for more information.
-<!-- markdownlint-enable MD046 -->
-
-## User Scratch
-
-All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in `/scratch/$USER` or `$USER_SCRATCH`. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.
-
-Network scratch is available on the login node and each compute node. This storage is a GPFS high performance file system providing roughly 1 PB of storage. If using scratch, this should be your jobs' primary working directory, unless the job would benefit from local scratch (see below).
-
-<!-- markdownlint-disable MD046 -->
-!!! warning
-
-    Research Computing expects each user to keep their scratch areas clean. **The cluster scratch areas are not to be used for archiving data.** In order to keep scratch clear and usable for everyone, files older than 30 days will be eligible for deletion.
-<!-- markdownlint-enable MD046 -->
-
-## Local Scratch
+# Local Scratch
 
 Each compute node has a local scratch directory that is accessible via `/local/`. We recommend creating a subdirectory `/local/$USER/` to simplify data management avoid confusing your files for those of others working on the same node. You can further separate data needed for different jobs you are running with the subdirectory `/local/$USER/$SLURM_JOB_ID`.
 
@@ -90,17 +63,10 @@ rm -rf "$TMPDIR"
     We recommend overwriting `$TMPDIR`, as above, because it will ensure that jobs always write to a safe location on the same node the work is being done.
 <!-- markdownlint-enable MD046 -->
 
-### What if My Data Won't Fit in Local Scratch?
+## What if My Data Won't Fit in Local Scratch?
 
 Be sure that your files will fit in `/local/` before starting. You can determine disk size and current usage using `df -h | grep "local"`. Most nodes have 1.0 TB total capacity, while the `amperenodes` have 6.0 TB. If you data won't fit in the current usage, or on the drives, please [Contact Us](../../help/support.md). We can work with you to identify a solution.
 
-### What if I Have a Large Amount of Data for Local Scratch?
+## What if I Have a Large Amount of Data for Local Scratch?
 
 If you have a large amount of data but each job takes very little time to run, performance can be further improved by avoiding frequent data copies and deletions. In these cases, preloading the data onto local scratch only once and then reusing it makes more sense. If this is the case for you, or you think you might benefit, please [Contact Us](../../help/support.md) and we can discuss creating a temporary node reservation to allow one-time data preloading.
-
-## Policies and Expectations
-
-Data stored in `/scratch` is subject to two limited retention policies.
-
-- Each user will have a quota of 100 TB of scratch storage.
-- Files will be retained for a maximum of 30 days, after which they become eligible for deletion.
