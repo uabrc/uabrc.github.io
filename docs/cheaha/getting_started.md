@@ -8,7 +8,7 @@ Cheaha is a High Performance Computing (HPC) resource intended primarily for bat
 
 ## Getting Help
 
-Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are [here](../help/support.md), and our frequently asked questions are [here](../help/faq.md).
+Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are available in the [Support Guide](../help/support.md), and answers to common questions can be found in our section for [frequently asked questions](../help/faq.md).
 
 ## Account Creation
 
@@ -32,7 +32,16 @@ An alternative method suited for developers using VSCode, is to use the "Remote 
 
 ## Open OnDemand Features
 
-The Open OnDemand portal features a [file browser](./open_ondemand/ood_layout.md#file-browser) and various interactive applications including a [remote desktop](./open_ondemand/hpc_desktop.md), [Jupyter Notebook](./open_ondemand/ood_jupyter.md), [RStudio](./open_ondemand/ood_rstudio.md) and [MATLAB](./open_ondemand/ood_matlab.md), among others. There is also a [terminal](./open_ondemand/ood_layout.md#opening-a-terminal) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](./open_ondemand/index.md).
+The Open OnDemand portal features a [terminal](./open_ondemand/ood_layout.md#opening-a-terminal) usable directly in the browser for basic functions such as file management. More detailed documentation can be found on our [Open OnDemand page](./open_ondemand/index.md).
+
+The portal also features a number of interactive apps;
+
+- [File Browser](./open_ondemand/ood_layout.md#file-browser).
+- [Remote Desktop](./open_ondemand/hpc_desktop.md).
+- [Jupyter Notebook](./open_ondemand/ood_jupyter.md).
+- [Jupyter Lab](./open_ondemand/ood_jupyterlab.md).
+- [RStudio](./open_ondemand/ood_rstudio.md).
+- [MATLAB](./open_ondemand/ood_matlab.md), among others.
 
 ## Hardware
 
