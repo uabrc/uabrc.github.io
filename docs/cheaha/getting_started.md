@@ -8,7 +8,7 @@ Cheaha is a High Performance Computing (HPC) resource intended primarily for bat
 
 ## Getting Help
 
-Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are [here](../help/support.md), and our frequently asked questions are [here](../help/faq.md).
+Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are available in the [Support Guide](../help/support.md), and answers to common questions can be found in our section for [frequently asked questions](../help/faq.md).
 
 ## Account Creation
 
@@ -20,14 +20,14 @@ The primary method for accessing Cheaha is through our online portal website, Op
 
 [SSH](../uab_cloud/remote_access.md#command-line-via-ssh) may be used to access Cheaha. Connect to host `cheaha.rc.uab.edu` on port `22`.
 
-### With VSCode
+### With Integrated Development Environments (IDEs)
 
-An alternative method suited for developers using VSCode, is to use the "Remote - Tunnels" extension to connect to an [HPC Desktop Interactive Job](./open_ondemand/hpc_desktop.md). More details on this process are available in the [VSCode Tunnel](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel) section.
+An alternative method suited for developers is to use IDEs like VSCode, using the "Remote - Tunnels" extension to connect to an [HPC Desktop Interactive Job](./open_ondemand/hpc_desktop.md). You can find more information for setting this up in the [VSCode Tunnel](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel) section.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Please do not use VSCode "Remote - SSH" to connect to Cheaha. All processes happen on the login node. Use the link above to use "Remote - Tunnel" instead.
+    Please do not use IDEs like VSCode "Remote - SSH" or Cursor Server to connect to Cheaha. These methods run all of their processes on the login node, which are automatically terminated. Instead, use "Remote - Tunnel" as described in the [VSCode Tunnel](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel) section.
 <!-- markdownlint-enable MD046 -->
 
 ## Open OnDemand Features
@@ -171,6 +171,28 @@ For new software installation, please try searching [Anaconda](../workflow_solut
 A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see our [Anaconda page](./software/software.md#anaconda-on-cheaha).
 
 If the software installation instructions tell you to use either `conda install` or `pip install` commands, the software and its dependencies can be installed using a virtual environment.
+
+## AI Usage Guidelines for IDEs and Cloud Services
+
+All use of AI-powered tools, whether inside IDEs or via web interfaces, must comply with UAB’s [AI Guidelines](https://www.uab.edu/ai/guidelines-principles/generative-ai-and-uab-policy) and other [IT Policies](https://www.uab.edu/ai/guidelines-principles).
+
+Do not use any cloud-based AI service (where data is sent to external servers) with sensitive or restricted data unless you’ve received formal approval.
+
+Examples of prohibited services without approval include:
+    - Web Chat AI Tools: [ChatGPT](http://chatgpt.com), [Gemini](https://gemini.google.com), [Claude](https://claude.ai), [Grok](https://grok.com), [DeepSeek](https://www.deepseek.com).
+    - IDE Extensions and AI Assistants: [Cursor](https://cursor.com), [Cline](https://cline.bot), [Windsurf](https://windsurf.com), [Trae](https://www.trae.ai).
+
+To request approval for AI usage in your project, complete the [UAB IT AI Request Form](https://uabprod.service-now.com/now/nav/ui/classic/params/target/com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D421769291b8502506bd68552604bcba5).
+
+The following AI tools are permitted for use with UAB Single Sign-On (SSO) credentials, as they offer enterprise-grade protections for institutional data:
+    - [Copilot Web](https://copilot.microsoft.com/)
+    - Copilot 365 in Office 365. Requires a paid subscription see relevant [section](https://www.uab.edu/it/home/tech-solutions/ai/copilot-365)
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    GitHub Copilot is currently not approved for use on Cheaha.
+<!-- markdownlint-enable MD046 -->
 
 ## How to Get Help
 
