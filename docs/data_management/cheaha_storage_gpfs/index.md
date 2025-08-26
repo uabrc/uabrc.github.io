@@ -156,7 +156,8 @@ The following software are known to use `/tmp/` by default, and can be worked ar
 - [GATK Tool](https://gatk.broadinstitute.org/hc/en-us/community/posts/360072269012--tmp-dir-option-user-error): `gatk --java-options * --tmp-dir /local/$USER/$SLURM_JOB_ID`
 - [NVIDIA Clara Parabricks](https://docs.nvidia.com/clara/parabricks/latest/gettingstarted.html): `pbrun * --tmp-dir=/local/$USER/$SLURM_JOB_ID`.
 - [FastQC](https://home.cc.umanitoba.ca/~psgendb/doc/fastqc.help): `fastqc * -d /local/$USER/$SLURM_JOB_ID`
-- [MACS2](https://manpages.org/macs2_callpeak): `macs2 callpeak * --tempdir /local/$USER/$SLURM_JOB_ID`
+- [MACS2 and MACS3](https://macs3-project.github.io/MACS/docs/callpeak.html): `macs2 callpeak * --tempdir /local/$USER/$SLURM_JOB_ID`
+    - Note the `--tempdir` option is undocumented but functions as expected.
 
 Software known to use `/tmp/` by default with no known workaround:
 
