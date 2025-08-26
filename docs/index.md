@@ -11,10 +11,10 @@ The Research Computing System (RCS) provides a framework for sharing research da
 
     Planned times: June 16-22, 2025
 
-    Read more at our [News page](./news.md#2025-05-13-planned-maintenance-window)
+    Read more at our [News page](./news/posts/2025-05-13-planned-maintenance.md)
 <!-- markdownlint-enable MD046 -->
 
-**Check our [News page](./news.md) for recent developments.**
+**Check our [News page](./news/index.md) for recent developments.**
 
 ## How Do I Get Started?
 

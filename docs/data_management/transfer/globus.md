@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD046 -->
 !!! announcement
 
-    We are aware of reduced transfer speed into and out of [Long-Term Storage (LTS)] when using Globus and are working on a solution. For some use cases, [`s5cmd`](../lts/interfaces.md#s5cmd) may be a faster alternative. Please see [Our News Section](../../news.md#2025-04-07-reduced-lts-transfer-speeds-on-globus) for more information.
+    We are aware of reduced transfer speed into and out of [Long-Term Storage (LTS)] when using Globus and are working on a solution. For some use cases, [`s5cmd`](../lts/interfaces.md#s5cmd) may be a faster alternative. Please see [Our News Section](../../news/posts/2025-04-07-reduced-lts-transfer-speeds-on-globus.md) for more information.
 <!-- markdownlint-enable MD046 -->
 
 Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is recommended for most single-use, day-to-day data transfer use-cases.
