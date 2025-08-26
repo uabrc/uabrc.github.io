@@ -5,13 +5,11 @@ The Research Computing System (RCS) provides a framework for sharing research da
 ## News
 
 <!-- markdownlint-disable MD046 -->
+<!--
 !!! announcement
 
-    Planned maintenance window affecting Cheaha. Resource capacity will be reduced.
-
-    Planned times: June 16-22, 2025
-
-    Read more at our [News page](./news.md#2025-05-13-planned-maintenance-window)
+    Put important announcements here and remove the surrounding comments.
+-->
 <!-- markdownlint-enable MD046 -->
 
 **Check our [News page](./news.md) for recent developments.**
