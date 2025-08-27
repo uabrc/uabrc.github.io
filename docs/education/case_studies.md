@@ -50,17 +50,17 @@ Parabricks software can be installed and used in the Cheaha platform on `amperen
 
 ### Parabricks 4.x Installation on Cheaha
 
-Parbaricks 4.x are available as containers in the [NGC Catalog](https://catalog.ngc.nvidia.com/orgs/nvidia/collections/claraparabricks/entities). It has generic container that comprises all the analyses pipeline that are referred in the [Nvidia Documentation](https://docs.nvidia.com/clara/parabricks/latest/toolreference.html). It also has containers for specific tool category. The recent Parabricks 4.x documentation is available [here](https://docs.nvidia.com/clara/parabricks/latest/index.html).
+Parbaricks 4.x are available as containers in the [NGC Catalog](https://catalog.ngc.nvidia.com/orgs/nvidia/collections/claraparabricks/entities). The page has a generic container that comprises all the analyses pipeline that are referred in the [Nvidia Documentation](https://docs.nvidia.com/clara/parabricks/latest/toolreference.html). It also has containers for specific tool categories. For more information about Parabricks, please see the [official documentation](https://docs.nvidia.com/clara/parabricks/latest/index.html).
 
-Parabricks 4.x container image can be installed on Cheaha using a Singularity container. More details on usage of Singularity container on Cheaha can be found in the [Containers Page](../workflow_solutions/getting_containers.md).
+Parabricks 4.x container images can be installed on Cheaha using a Singularity container. More details on usage of Singularity container on Cheaha can be found in the [Containers Page](../workflow_solutions/getting_containers.md).
 
-To install Parabricks using Singulairty, load the `Singularity 3.x` module from Cheaha as,
+To install Parabricks using Singulairty, load the `Singularity 3.x` module from Cheaha as follows.
 
 ```bash
 module load Singularity/3.5.2-GCC-5.4.0-2.26
 ```
 
-Go to the NGC catalog page and copy the image path to pull the desired containers of Parabricks using Singularity. Here, the generic container is pulled using Singularity.  The image path is in “nvcr.io/nvidia/clara/clara-parabricks" and the tag is 4.2.0-1. The container image name `parabricks-4.2.0-1.sif` is an user-derived name.
+Go to the NGC catalog page and copy the image path to pull the desired containers of Parabricks using Singularity. Here, the generic container is pulled using Singularity. The image path is in “nvcr.io/nvidia/clara/clara-parabricks" and the tag is 4.2.0-1. The container image name `parabricks-4.2.0-1.sif` is an user-derived name.
 
 ![!Parabricks container.](./images/parabricks_container.png)
 
@@ -87,7 +87,7 @@ If the above commands are successfully executed, then the Parabricks software is
 
 ### Downloading Parabricks Sample Use Case
 
-Sample test case for Parabricks can be found [here](https://docs.nvidia.com/clara/parabricks/latest/tutorials/gettingthesampledata.html). Download the sample data using `wget`,
+A sample test case for Parabricks can be found at the NVidia docs: <https://docs.nvidia.com/clara/parabricks/latest/tutorials/gettingthesampledata.html>. Download the sample data using `wget`,
 
 ```bash
 wget -O parabricks_sample.tar.gz https://s3.amazonaws.com/parabricks.sample/parabricks_sample.tar.gz

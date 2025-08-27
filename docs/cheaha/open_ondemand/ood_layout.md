@@ -75,7 +75,7 @@ The Interactive Apps dropdown has a list of specific software setup to run on Ch
 The interactive apps have the following fields to customize the resources for your job:
 
 1. Number of Hours: the maximum number of hours the job will run for. Interactive apps will stay allocated for this amount of time unless the job is manually deleted or crashes. The selected number of hours should be less than or equal to the max runtime for your selected partition.
-1. Partition: the partition the job will be allocated in. See [here](../getting_started.md#partitions) for more information about which partition to choose for your job.
+1. Partition: the partition the job will be allocated in. See our [Partitions](../getting_started.md#partitions) section for more information about which partition to choose for your job.
 1. Number of GPUs: Total number of GPUs to request (max of 4 on pascalnodes or 2 on amperenodes)
 1. Numer of CPUs: Total number of CPUs to request
 1. Memory Per CPU (GB): GB of memory multiplied by the requested number of CPUs.
@@ -167,7 +167,7 @@ On occasion, interactive jobs created in OOD will crash on startup and cause the
 
 `sacct -j <jobid> -o jobid,workdir --parsable`
 
-This command retrieves the job's working directory, where the logs are stored. Replace `<jobid>` with the failed job ID when running the command.  Then, you can download the logs, zip them, and attach the ZIP file to a support ticket for our review. If you are unable to run the `sacct` command, please email <support@listserv.uab.edu>, and we will provide you with the necessary download link.
+This command retrieves the job's working directory, where the logs are stored. Replace `<jobid>` with the failed job ID when running the command. Then, you can download the logs, zip them, and attach the ZIP file to a support ticket for our review. If you are unable to run the `sacct` command, please email <support@listserv.uab.edu>, and we will provide you with the necessary download link.
 
 Alternatively, you can create a new job and follow the steps below to retrieve and submit the log files.
 

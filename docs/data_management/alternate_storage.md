@@ -1,18 +1,18 @@
 # Alternative Storage Options
 
-UAB Offers alternative storage options to faculty, staff, and students. You can find all of those details [here.](https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options)
+UAB IT offers alternative storage options to faculty, staff, and students. These storage options are supported by UAB IT and can be used to augment your research operations. Please see the following URL for more details about each option: <https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options>.
 
-Please note, these services are maintained by UAB IT, and Ask IT manages usage and access to these services.
+Please note these services are maintained by other groups within UAB IT. If you encounter issues, please [contact AskIT](https://www.uab.edu/it/home/) for assistance.
 
 ## Box Storage
 
-To find information on Box, and how to log in to your Box account, please find those details [here.](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
+To find information on Box, and how to log in to your Box account, please see the [UAB IT documentation](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
 
 ### Finding Your Box Storage Total
 
 The following steps will guide you on how to access your Box Storage total, how much Box storage you have used, and how much storage you have left.
 
-1. When you are logged into Box, click on the Profile/Account Icon. This is usually in the top right corner of the Box landing page, and should be your intials in the format "FL" (F = First Name; L = Last Name).
+1. When you are logged into Box, click on your Profile Icon. This should be at the top-right corner of any UAB Box page. The icon should contain your intials in the format "FL" where "F" is the first letter of your first name or given name and "L" is from your last name. For example, Jordan Smith would have "JS" in the icon.
 
 1. On the drop down menu select "Account Settings". A tab named "Account" should now be visible.
 
