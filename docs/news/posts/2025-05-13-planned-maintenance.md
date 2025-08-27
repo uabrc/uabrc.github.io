@@ -8,6 +8,8 @@ categories:
 
 Cheaha compute nodes located at the Technology Innovation Center on campus will be undergoing maintenance from June 16-22, resulting in reduced CPU and GPU capacity during those days, as well as reduced memory limits for jobs. Please plan Research Computing needs around the maintenance window.
 
+<!-- more -->
+
 ## What You Can Expect
 
 - Total CPU capacity will be reduced to 25 percent.

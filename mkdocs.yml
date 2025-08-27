@@ -43,13 +43,14 @@ markdown_extensions:
 plugins:
   - blog:
       blog_dir: news
-      archive_date_format: MM/yyyy
+      post_date_format: full
+      post_excerpt: required
+      post_readtime: false
       categories_allowed:
         - Known Issues
         - Maintenance
         - Outreach
         - Survey
-      categories_toc: true
   - gen-files:
       scripts:
         - scripts/pandoc_generator.py
@@ -105,7 +106,8 @@ not_in_nav: |
 
 nav:
   - Home: index.md
-  - News: news/index.md
+  - News:
+      - news/index.md
   - Account Management:
       - account_management/index.md
       - Cheaha Account: account_management/cheaha_account.md

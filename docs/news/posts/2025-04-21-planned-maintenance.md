@@ -12,6 +12,8 @@ categories:
 
 Cloud.rc (OpenStack) and Cheaha nodes within DC Blox will be undergoing maintenance during the week of April 21, 2025. Cloud.rc and Cheaha "amperenodes,” "pascalnodes,” and "intel-dcb" partitions will be inaccessible during maintenance. Note this means all GPU nodes will be inaccessible. Planned growth requires us to move hardware within the DC BLOX data center. Please plan your Research Computing needs around this maintenance window. If you need additional assistance, please reply to this email or reach out to <support@listserv.uab.edu>.
 
+<!-- more -->
+
 The overall plan, which will increase capacity for planned hardware growth, includes:
 
 - Migrating all our compute, compute-adjacent storage (GPFS), and cloud hardware to a new data hall in the DC BLOX data center.
