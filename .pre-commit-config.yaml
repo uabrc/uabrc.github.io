@@ -5,7 +5,7 @@ repos:
       - id: markdownlint-cli2
         require_serial: true
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.35.1
+    rev: v1.37.1
     hooks:
       - id: yamllint
         args: [-c, .yamllint.yaml, --strict]
