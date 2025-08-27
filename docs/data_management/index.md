@@ -65,8 +65,8 @@ Shared Storage is allocated on a per-organization basis, not on a per-person bas
 
 You can request one or both storage platforms, depending on your project’s needs.
 
-- Request Cheaha (GPFS) Storage if you need fast, cluster-integrated storage to support active analysis or collaboration on Cheaha.
-- Request Long-Term Storage (LTS) if you need to store, or share data that does not change frequently.
+- Request [Cheaha Storage (GPFS)](./cheaha_storage_gpfs/index.md) if you need fast, cluster-integrated storage to support active analysis or collaboration on Cheaha.
+- Request [Long-Term Storage (LTS)](./lts/index.md) if you need to store, or share data that does not change frequently.
 
 You can benefit from requesting and using both platforms: keeping active and changing data in GPFS during analysis, then moving completed or less active data into LTS for long-term preservation, and bringing it back from LTS to GPFS when further work is needed.
 
