@@ -1,1 +1,1 @@
-# Research Computing News
+# News
