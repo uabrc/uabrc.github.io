@@ -16,7 +16,44 @@ The benefits of creating and using a Shared Cloud Environment for your Lab/Core 
 
 ## How Do I Create a Shared Cloud Environment for My Lab/Core
 
-To use the shared cloud resources available, you will need to send in a request to the UAB IT Research Computing Team via email <support@listserv.uab.edu>. In the email, please state clearly your needs and the resources you would require for your lab. Your request should also include members of your lab to be included in the Shared Cloud Environment, and a preferred name (usually same as lab project folder on Cheaha). Please follow the naming conventions for requesting a [shared storage](../data_management/index.md#how-do-i-request-shared-storage) on our platforms in your request.
+To use the shared cloud resources available, you will need to send in a request to the UAB IT Research Computing Team via email <support@listserv.uab.edu>. In the email, please state clearly your needs and the resources you would require for your lab. Your request should also include members of your lab to be included in the Shared Cloud Environment, and a preferred name (usually same as lab project folder on Cheaha).
+
+To ensure prompt allocation of Shared Cloud Environment, please follow the guidelines below:
+
+- Requests must be made to <support@listserv.uab.edu> or via the [AskIT HelpDesk](https://www.uab.edu/it/home/).
+- Requests must come from one of the proposed owners (a Lab PI, a Research Core director, or both).
+- The role of Lab PI entitles a person to a project space for that lab.
+- The role of Research Core director entitles a person to a project space for that core. If one person has both roles, they may have two shared Storage spaces, one for each role.
+- All proposed owners must have created their UAB cloud.rc account at the time of the request. cloud.rc accounts are only created by contacting [support](../help/support.md).
+- All members needing access to the Shared Cloud Environment must have also created their cloud.rc accounts.
+
+Please provide the following information. Missing information can delay allocation of a Shared Cloud Environment as we either look up the information, or ask followup questions.
+
+- **Responsible Party/Owner:** The BlazerID of the person claiming responsibility for what happens and what the shared space will be used for. Typically this would be a Principal Investigator (PI) or a Core Director.
+    - Multiple responsible parties are allowed.
+    - We need one person declared as "primary" owner. This person will be the literal owner for the Shared Cloud Environment.
+- **Members:** A list of cloud.rc accounts (Blazer email `BlazerID@uab.edu`) to give access to the space. (Note: this only applies to cloud.rc).
+- **Type of Organization:** Is the Shared Cloud Environment request for a lab, core, campus administrative group, or something else?
+- **Name of Organization:** The _specific_ name of the organization the Shared Cloud Environment request is for.
+- **Parent Organization:** The name of the parent organization for your organization. Please be as detailed as possible.
+- **Purpose of Shared Cloud Environment:** The research purpose/use for the Shared Cloud Environment, how do you intend to use it? Please feel free to be as detailed as you like, but please limit to a few sentences at most.
+- **Internal UAB Collaborator Organizations:** The name(s) of any other UAB organizations participating in the Shared Cloud Environment.
+- **External Collaborator Organizations:** The name(s) of any external organizations participating in the Shared Cloud Environment.
+- **Regulatory Requirements:** List any regulatory requirements or agencies affecting data to be stored in the space. Possibilities include, but are not limited to: IRB, EHR, HIPAA, PHI, FERPA.
+- **Name of Shared Cloud Environment:** Please give us a generic name specific to your project/Lab/Core.
+
+    - For Labs, we recommend using the format `<BlazerID>_lab`, where `<BlazerID>` is the BlazerID of the Principal Investigator (PI). Alternatively, the PI may choose to use their first or last name instead of the BlazerID.
+    - For Cores, we recommend using a shortened version of the Core name. For example: `core_facility_space`
+
+    <!-- markdownlint-disable MD046 -->
+    !!! Tip
+
+        - Keep the name short, memorable, and relevant.
+        - Use `underscores (_)` or `hyphen (-)` to separate words.
+        - To serve future projects, consider names that are generic.
+    <!-- markdownlint-disable MD046 -->
+
+If some members have not created their accounts at the time of the request, we will proceed with allocating the Shared Cloud Environment. Additional members may be added at a later time in a new service request.
 
 ## How Do I Switch Project Spaces?
 
@@ -25,6 +62,14 @@ As a UAB Cloud user, you can easily switch between your Individual Cloud Environ
 ![!RC Dashboard Screenshot showing Project Spaces](images/rc_move_project.png)
 
 The project space with your `BlazerID` is your Individual Cloud Environment, other project spaces listed are the Shared Cloud Environments for Labs, Cores or Projects you are a part of. As of this time only a Lab Principal Investigator (PI), and/or a Research Core Director can request for a shared Shared Cloud Environment.
+
+## How Do I Make Changes to a Shared Cloud Environment Membership?
+
+To request changes in Shared Cloud Environment Membership, please contact [Support](../help/support.md). Please take note of the following guidelines to ensure changes can be made promptly.
+
+- We must have written approval from an owner to make membership changes.
+- The exact name of the Shared Cloud Environment.
+- Please give full username of members to add or remove (e.g. `BlazerID@uab.edu`).
 
 ## Creating an Instance in a Shared Cloud Environment
 
