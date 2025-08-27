@@ -134,7 +134,7 @@ As of 2025-02-25, we offer cuDNN modules for CUDA up to `12.3.0`. If you need a 
 
 ### CUDA Compute Capability and Known Issues
 
-GPU-based software requires a compatible [CUDA Compute Capability](../slurm/gpu.md#available-devices) to function correctly. Each GPU card has a fixed CUDA Compute Capability version. For the software to run as expected, this version must be at least as large as the minimum CUDA Compute Capability required by the software; otherwise, the software will fail to run as expected, often resulting in runtime errors. Some of the known issues are reported in the [FAQ Entry](#frequently-asked-questions-faq-about-a100-gpus). For more information on CUDA Compute Capability, please refer [here](https://developer.nvidia.com/cuda-gpus).
+GPU-based software requires a compatible [CUDA Compute Capability](../slurm/gpu.md#available-devices) to function correctly. Each GPU card has a fixed CUDA Compute Capability version. For the software to run as expected, this version must be at least as large as the minimum CUDA Compute Capability required by the software; otherwise, the software will fail to run as expected, often resulting in runtime errors. Some of the known issues are reported in the [FAQ Entry](#frequently-asked-questions-faq-about-a100-gpus). For more information on CUDA Compute Capability please see the [official documentation](https://developer.nvidia.com/cuda-gpus).
 
 <!-- markdownlint-disable MD046 -->
 !!! note

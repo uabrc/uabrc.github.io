@@ -21,7 +21,7 @@ The internet has thousands of guides for using the shell. Rather than devise our
 There are also additional resources that aid in learning and verifying shell commands and scripts:
 
 - [Explain Shell](https://explainshell.com/): An educational tool providing detailed explanations of individual commands in relatively reasonably-plain English. This tool doesn't explain what a command does at a high level nor its purpose or intent, only the details of the parts making up the command.
-- [ShellCheck](https://www.shellcheck.net/): An online tool for conducting static analysis checks on shell scripts. The Git repository for this tool can be found [here](https://github.com/koalaman/shellcheck ) and it can also be installed via [Anaconda]( https://anaconda.org/conda-forge/shellcheck).
+- [ShellCheck](https://www.shellcheck.net/): An online tool for conducting static analysis checks on shell scripts. The Git repository for this tool can be found at <https://github.com/koalaman/shellcheck> and it can also be installed via [Anaconda]( https://anaconda.org/conda-forge/shellcheck).
 
 At the shell prompt, you can also use the command `curl cheat.sh/<command>` to get a simple-to-understand explanation of what the command does and how to use it (see [curl](#download-files-from-internet-sources-curl)). Below is an example for the [pwd command](#show-working-directory-pwd).
 

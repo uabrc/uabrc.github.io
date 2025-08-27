@@ -83,13 +83,13 @@ This structure helps to maintain a clear navigation system, it also ensures effi
 
 ## Assigning a User's GitLab Role
 
-For UAB's GitLab instance, only a user with the role "Owner" can assign or change a GitLab role for a user across "Projects" or "Groups". Whereas, a "Maintainer" has project-level privileges and can only manage users that are part of a "Project" within a "Group", the "Owner" has group-wide privileges that extend to the "Projects" under their "Group". Remember, for a User to be added to a Group, they would need to have a UAB GitLab account set up, see instructions [here](#uab-affiliated-researcher-registration) for setting one up.
+For UAB's GitLab instance, only a user with the role "Owner" can assign or change a GitLab role for a user across "Projects" or "Groups". Whereas, a "Maintainer" has project-level privileges and can only manage users that are part of a "Project" within a "Group", the "Owner" has group-wide privileges that extend to the "Projects" under their "Group". Remember, for a User to be added to a Group, they would need to have a UAB GitLab account set up. Please see the [UAB Affiliated Researcher Registration](#uab-affiliated-researcher-registration) page for setting one up.
 
 The following instructions are to guide you in creating a group and/or assigning user roles as a group owner.
 
 ### Creating a Group in UAB's GitLab Instance
 
-1. Log in to the UAB Research Computing GitLab instance [here](https://gitlab.rc.uab.edu/users/sign_in) using your UAB Credentials.
+1. Log in to the [UAB Research Computing GitLab instance](https://gitlab.rc.uab.edu/users/sign_in) using your UAB Credentials.
 
     ![!image showing UAB RC GitLab Landing Page](./images/uab-gitlab-landingpage.png)
 
@@ -115,7 +115,7 @@ The following instructions are to guide you in creating a group and/or assigning
         GitLab allows you to define Group visibility using "Public", "Internal", or "Private" settings. A public Group is visible to and can be cloned by anyone, even without a GitLab account. An internal Group is visible to any authenticated UAB GitLab user, but access to contribute is still controlled by roles. A private Group is only visible and accessible to users who have been explicitly granted access. These settings work in tandem with permissions to control both who sees what and what they can do in a Group. See [GitLab documentation](https://docs.gitlab.com/user/public_access/) for more information.
     <!-- markdownlint-enable MD046 -->
 
-1. Now that your group has been created, we can now add users with varying roles that grant different user permissions. See how to do this [here](#add-and-assign-user-roles-within-a-group-or-project)
+1. Now that your group has been created, we can [add users with varying roles](#add-and-assign-user-roles-within-a-group-or-project) that grant different user permissions.
 
     ![!image showing a list of Groups](./images/uab-gitlab-grplist.png)
 
@@ -123,7 +123,7 @@ The following instructions are to guide you in creating a group and/or assigning
 
 As a Maintainer or Owner you can create Projects from within a Group. Steps 1 and 2 are same as the instructions for [Creating a Group](#creating-a-group-in-uabs-gitlab-instance), there is a slight deviation at the third step.
 
-1. Log in to the UAB Research Computing GitLab instance [here](https://gitlab.rc.uab.edu/users/sign_in) using your UAB Credentials.
+1. Log in to the [UAB Research Computing GitLab instance](https://gitlab.rc.uab.edu/users/sign_in) using your UAB Credentials.
 
     ![!image showing UAB RC GitLab Landing Page](./images/uab-gitlab-landingpage.png)
 
@@ -149,7 +149,7 @@ As a Maintainer or Owner you can create Projects from within a Group. Steps 1 an
         GitLab allows you to define project visibility using "Public", "Internal", or "Private" settings like in a group. A public project is visible to and can be cloned by anyone, even without a GitLab account. An internal project is visible to any authenticated UAB GitLab user, but access to contribute is still controlled by roles. A private project is only visible and accessible to users who have been explicitly granted access. These settings work in tandem with role-based permissions that control who can see what and what they can do in a project. See [GitLab documentation](https://docs.gitlab.com/user/public_access/) for more information.
     <!-- markdownlint-enable MD046 -->
 
-1. Now that your Project has been created, we can now add users with varying roles that grant different user permissions.  See how to do this [here](#add-and-assign-user-roles-within-a-group-or-project). To see members in your project, select the "Manage" option  and then select the "Members" option. This will take you to the list of members who are part of that project.
+1. Now that your project has been created, we can [add users with varying roles](#add-and-assign-user-roles-within-a-group-or-project) that grant different user permissions. To see members in your project, select the "Manage" option  and then select the "Members" option. This will take you to the list of members who are part of that project.
 
     ![!image showing the list of Members in a Project](./images/uab-gitlab-projectlist.png)
 

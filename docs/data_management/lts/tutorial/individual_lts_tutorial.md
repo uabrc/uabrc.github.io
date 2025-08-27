@@ -19,7 +19,7 @@ To interact with LTS (Long-Term Storage) using [S3 (Simple Storage Service)](htt
 
 Please avoid using `conda install s3cmd`, as that version will not work as expected. Instead, follow the steps below to install `s3cmd` using `pip` within your Conda environment.
 
-First, access our interactive Open OnDemand (OOD) portal at [https://rc.uab.edu](https://rc.uab.edu) and create a job on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on [installing and setting Conda environment](../../../cheaha/tutorial/pytorch_tensorflow.md#installing-anaconda-environments-using-the-terminal).
+First, access our interactive Open OnDemand (OOD) portal at <https://rc.uab.edu> and create a job on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on [installing and setting Conda environment](../../../cheaha/tutorial/pytorch_tensorflow.md#installing-anaconda-environments-using-the-terminal).
 
 Once your interactive apps session is launched, open the terminal as described in [step 5 of the Anaconda tutorial page](../../../cheaha/tutorial/pytorch_tensorflow.md#installing-anaconda-environments-using-the-terminal) and run the below commands.
 
@@ -48,7 +48,7 @@ Open a terminal using one of the interactive apps on Cheaha. Activate your conda
 s3cmd --configure
 ```
 
-This will prompt you to enter the access key and secret key associated with your individual LTS allocation. You will be asked for additional information, which will be displayed on the screen, as shown below. You can copy the necessary details from the example provided [here](../interfaces.md#configuring-s3cmd).
+This will prompt you to enter the access key and secret key associated with your individual LTS allocation. You will be asked for additional information, which will be displayed on the screen, as shown below. You can copy the necessary details from [an example of S3 configuration](../interfaces.md#configuring-s3cmd).
 
 ![image-s3cmd](../images/config-s3cmd.png)
 
@@ -58,7 +58,7 @@ Once the configuration is complete, `s3cmd` will generate a `.s3cfg` file in you
 
 ### Creating Buckets
 
-Long Term Storage (LTS) services like Amazon S3 use a flat data organization model based on **buckets** and **objects**. Think of buckets as folders that contain individual pieces of data called objects. We have documentation about basic terminology on s3 storage system [here](../index.md#terminology).
+Long Term Storage (LTS) services like Amazon S3 use a flat data organization model based on **buckets** and **objects**. Think of buckets as folders that contain individual pieces of data called objects. For more information about S3 terminology please see the [terminology section](../index.md#terminology).
 
 Once you have complete `s3cmd` configuration, you can create new buckets in your individual LTS storage. To create a bucket use a `mb` (make bucket) command:
 
@@ -97,7 +97,7 @@ To manage a bucket, various commands can be used. Below are some common `s3cmd` 
         Deleting objects and buckets cannot be undone. Once the delete command is entered, any data is lost permanently and cannot be restored.
     <!-- markdownlint-enable MD046 -->
 
-You can find a variety of `s3cmd` commands in our documentation at [here](../../lts/interfaces.md#s3cmd-commands) and on the [S3tools website](https://s3tools.org/usage). For quick reference, you can also use the `s3cmd --help` command to view available options directly in your terminal.
+You can find a variety of `s3cmd` commands at our [`s3cmd` commands page](../../lts/interfaces.md#s3cmd-commands) and on the [S3tools website](https://s3tools.org/usage). For quick reference, you can also use the `s3cmd --help` command to view available options directly in your terminal.
 
 If you are continuing in the same session with your **conda environment already activated**, you can directly use the `s3cmd` commands. If you are starting a new session or returning at a later date, make sure to load the Anaconda module and activate your conda environment before using `s3cmd`.
 
