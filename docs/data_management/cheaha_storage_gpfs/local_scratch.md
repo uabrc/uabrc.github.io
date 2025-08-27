@@ -1,8 +1,8 @@
 # Local Scratch
 
-Each compute node has a local scratch directory that is accessible via `/local/`. We recommend creating a subdirectory `/local/$USER/` to simplify data management avoid confusing your files for those of others working on the same node. You can further separate data needed for different jobs you are running with the subdirectory `/local/$USER/$SLURM_JOB_ID`.
+Local scratch is temporary, high-speed storage located on individual compute nodes and accessible only on the node where a job runs, making it ideal for large intermediate files needed for single-node computations. Each compute node has a local scratch directory that is accessible via `/local/`. We recommend creating a subdirectory `/local/$USER/` to simplify data management avoid confusing your files for those of others working on the same node. You can further separate data needed for different jobs you are running with the subdirectory `/local/$USER/$SLURM_JOB_ID`.
 
-If your job performs a lot of file I/O, the job should use local scratch rather than `$USER_SCRATCH` to ensure adequate performance and avoid impacting other users. When using local scratch, file reading and writing stays on the node doing the processing, freeing up network resources for other tasks. It's important to recognize that most jobs run on the cluster do not fall under this category. However, any work that requires frequent disk access or high-bandwidth disk access are good candidates for using local scratch.
+If your job performs a lot of file I/O, the job should use local scratch rather than [global scratch](./global_scratch.md) to ensure adequate performance and avoid impacting other users. When using local scratch, file reading and writing stays on the node doing the processing, freeing up network resources for other tasks. It's important to recognize that most jobs run on the cluster do not fall under this category. However, any work that requires frequent disk access or high-bandwidth disk access are good candidates for using local scratch.
 
 At this time you will need to make local scratch subdirectories yourself with `mkdir -p /local/$USER` and `mkdir -p /local/$USER/$SLURM_JOB_ID`. Note that `$SLURM_JOB_ID` is only defined within a job context. If you need to keep files separated among jobs, use `/local/$USER/$SLURM_JOB_ID`. If you need to share files on one node among multiple jobs use `/local/$USER/` instead.
 
@@ -12,7 +12,7 @@ Some known examples of tasks benefiting from local scratch, not an exhaustive li
 - Large-scale genome annotation.
 - Reading/writing hundreds of thousands or more files in a single job.
 
-If you are using `amperenodes` and the A100 GPUs, then you should use local scratch for your data to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor GPU performance. For more information please see [Ensuring IO Performance With A100 GPUs](../../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
+If you are using `amperenodes` and the A100 GPUs, then you should use local scratch for your data to ensure adequate GPU performance. Using global scratch, or other network file locations, will starve the GPU of data, resulting in poor GPU performance. For more information please see [Ensuring IO Performance With A100 GPUs](../../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
 
 <!-- markdownlint-disable MD046 -->
 !!! important

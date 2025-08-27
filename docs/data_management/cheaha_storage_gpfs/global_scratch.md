@@ -1,23 +1,12 @@
-# Scratch Directories
+# Global/User Scratch
 
-Scratch directories provide temporary, high-performance storage for data used in active computations. There are two types of scratch space:
-
-- User Scratch: is available on login nod and also shared across compute nodes.
-- Local scratch: is available only on individual compute nodes.
-
-Scratch Directories are meant for short-term storage of intermediate or in progress data and should not be used for long-term retention.
+Global/User Scratch, also known as network scratch, provides temporary, high-performance storage for data used in active computations. It is available on login nodes and also shared across compute nodes, making it suitable for data that needs to be accessed during jobs running on multiple nodes. Each user has access to this directory at `/scratch/$USER` or `$USER_SCRATCH`. Use it directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at any given time.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
     Starting January 2023, scratch data will have limited retention. See [Scratch Retention Policy](#policies-and-expectations) for more information.
 <!-- markdownlint-enable MD046 -->
-
-## User Scratch
-
-All users have access to a large, temporary, work-in-progress directory for storing data, called a scratch directory in `/scratch/$USER` or `$USER_SCRATCH`. Use this directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at once.
-
-Network scratch is available on the login node and each compute node. This storage is a GPFS high performance file system providing roughly 1 PB of storage. If using scratch, this should be your jobs' primary working directory, unless the job would benefit from local scratch (see below).
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
