@@ -57,6 +57,9 @@ html .md-footer-meta.md-typeset a.supportemail {
   color: var(--md-default-fg-color);
   font-weight: 600;
   font-size: 2em;
+}
+
+.md-typeset:not(.md-blog-header) h1 {
   margin-bottom: 0;
 }
 
