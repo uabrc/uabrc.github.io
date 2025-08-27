@@ -234,3 +234,4 @@ validation:
 
 watch:
   - scripts
+  - theme
