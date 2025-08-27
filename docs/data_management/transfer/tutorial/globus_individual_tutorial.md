@@ -135,7 +135,7 @@ If you can't find a particular Collection this way, but know it was shared with 
 
 UAB offers [multiple storage resources](../../index.md). The following resources may be accessed through Globus Collections.
 
-- Cheaha file system (GPFS) including [individual directories](../../index.md#what-individual-storage-solutions-are-available) and [project directories](../../cheaha_storage_gpfs/index.md#project-directory).
+- Cheaha file system (GPFS) including [individual directories](../../index.md#what-individual-storage-solutions-are-available) and [project directories](../../cheaha_storage_gpfs/project_directories.md).
 - [Long-Term Storage (LTS)](../../lts/index.md).
 - [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
 

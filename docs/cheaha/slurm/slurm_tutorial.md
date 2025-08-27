@@ -712,7 +712,7 @@ In this section there are two tutorials that show how to use (a) a single GPU, a
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    For real applications, especially AI and other large-data applications, we recommend pre-loading data onto [Local Scratch](../../data_management/cheaha_storage_gpfs/index.md#local-scratch) to [ensure good performance](../slurm/gpu.md#ensuring-io-performance-with-a100-gpus). Don't worry about doing this for the current tutorial, but do make a note of it for your own scientific work. The difference in performance is huge, especially for AI and large-data applications.
+    For real applications, especially AI and other large-data applications, we recommend pre-loading data onto [Local Scratch](../../data_management/cheaha_storage_gpfs/local_scratch.md) to [ensure good performance](../slurm/gpu.md#ensuring-io-performance-with-a100-gpus). Don't worry about doing this for the current tutorial, but do make a note of it for your own scientific work. The difference in performance is huge, especially for AI and large-data applications.
 <!-- markdownlint-enable MD046 -->
 
 #### Initial Setup

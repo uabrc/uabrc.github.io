@@ -70,7 +70,7 @@ Cores should not assume responsibility for any of the research data they produce
 
 If the Core will continue operating, then it is assumed there will be a successor. Take whatever necessary administrative steps to transfer control and responsibility for Core operations. Things that may need to be transfered:
 
-- [GPFS (Cheaha) shared allocation](../data_management/cheaha_storage_gpfs/index.md#project-directory).
+- [GPFS (Cheaha) shared allocation](../data_management/cheaha_storage_gpfs/project_directories.md).
 - [LTS shared allocation](../data_management/lts/index.md).
 - [OpenStack Shared Projects](../uab_cloud/sharing_cloud_environment.md).
 - Service account, shared mailboxes, and other shared resources not managed by Research Computing, but which may have an impact on Core operations relating to Research Data acquisition and transfer, such as [Globus](../data_management/transfer/globus.md).
