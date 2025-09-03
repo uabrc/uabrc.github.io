@@ -157,6 +157,7 @@ nav:
           - MATLAB: cheaha/open_ondemand/ood_matlab.md
       - Hardware: cheaha/hardware.md
       - Software:
+          - How Do I Get a Software on Cheaha: cheaha/software/find_software_on_cheaha.md
           - Pre-Installed Modules: cheaha/software/modules.md
           - Self-Installed Software: cheaha/software/software.md
       - Slurm:

@@ -1,10 +1,10 @@
-Software,Restricted to...,License Holder
-Amber,"Lab Specific",Lab PI
-Ansys,"School of Engineering affiliated people",School of Engineering
-[Cell Ranger](../software/software.md#cell-ranger),"Named individual",Individuals
-Gurobi,"Named individual",Individuals
-LS-Dyna,"School of Engineering affiliated people",School of Engineering
-Matlab,"UAB affiliated people",The University of Alabama System
-Mathematica,"UAB affiliated people",UAB Campus
-SAS,"UAB affiliated people",UAB Campus
-Stata,"UAB affiliated people",UAB Campus
+Software,Restricted to...,License Holder,How do I get access?
+Amber,"Lab Specific",Lab PI, Request access through an existing license owner
+Ansys,"School of Engineering affiliated people",School of Engineering,[Contact School of Engineering](https://www.uab.edu/engineering/home/about/contact-us)
+[Cell Ranger](../software/software.md#cell-ranger),"Named individual",Individuals,[Refer our documentation on Cell Ranger](software.md#cell-ranger)
+Gurobi,"Named individual",Individuals, [Installed as a module on Cheaha](#listing-and-searching-modules)
+LS-Dyna,"School of Engineering affiliated people",School of Engineering,[Contact School of Engineering](https://www.uab.edu/engineering/home/about/contact-us)
+Matlab,"UAB affiliated people",The University of Alabama System,On Cheaha:<br>&nbsp;  - [Interactive Apps](../open_ondemand/ood_matlab.md#matlab) <br>&nbsp;  - [Batch jobs](#listing-and-searching-modules) <br> [Personal machine](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=3f7ccad337109b0024a67c1643990eea)
+Mathematica,"UAB affiliated people",UAB Campus,On Cheaha:<br>&nbsp;  - [Interactive Apps](../open_ondemand/hpc_desktop.md) <br>&nbsp;  - [Batch jobs](#listing-and-searching-modules) <br> [Personal machine]( https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=294c0ed337109b0024a67c1643990e24)
+SAS,"UAB affiliated people",UAB Campus,On Cheaha:<br>&nbsp;  - [Interactive Apps](../open_ondemand/hpc_desktop.md) <br>&nbsp;  - [Batch jobs](#listing-and-searching-modules) <br> [Personal machine](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=275e025737109b0024a67c1643990eec)
+Stata,"UAB affiliated people",UAB Campus,On Cheaha:<br>&nbsp;  - [Interactive Apps](../open_ondemand/hpc_desktop.md) <br>&nbsp;  - [Batch jobs](#listing-and-searching-modules) <br> [Personal machine](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=64d876ae371b974024a67c1643990e86)
