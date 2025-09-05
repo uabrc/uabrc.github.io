@@ -4,8 +4,8 @@ The link below contains a plain-text facilities document designed to support res
 
 Download the facilities document file as:
 
-- [Word (.docx)](./res/facilities.docx)
-- [plaintext (.txt)](./res/facilities.txt)
+- [Word (.docx)](./res/uab-rc-facilities.docx)
+- [plaintext (.txt)](./res/uab-rc-facilities.txt)
 
 If you believe that information within is inaccurate or there are missing details, please feel free to contact [Support](../help/support.md).
 
