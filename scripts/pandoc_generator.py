@@ -58,7 +58,7 @@ class Doc:
 
 def generate() -> None:
     """Generate docs based on list supplied below."""
-    doc = Doc(PurePath("grants") / "res" / "facilities.md")
+    doc = Doc(PurePath("grants") / "res" / "uab-rc-facilities.md")
     doc.to_plaintext()
     doc.to_docx()
 
