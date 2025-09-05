@@ -29,7 +29,7 @@ UAB IT has a process for granting access to data of former researchers or collab
 To request access to data of former UAB user, the first step is to fill out the [Third-Party Data Access form](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=bd3721e2374c27c0daa253b543990e5d). We highly recommend requesting access to all three private storage areas. Consider adding the following to the "Justification/Description" box in the security exception form as you fill it out. Replace `<BlazerID>` with the BlazerID of the user you are requesting access for.
 
 ```text
- Please grant access to "/data/user/", "/home/", "/scratch/" directories of `<BlazerID>`.
+Please grant access to "/data/user/", "/home/", "/scratch/" directories of `<BlazerID>`.
 ```
 
 Once the form is submitted, a Service Request will be created. After the request is reviewed and authorized by appropriate parties, we will reach out to you.
