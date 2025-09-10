@@ -109,7 +109,7 @@ You will have to load the compatible `CUDA` module to access GPUs as below.
 module load CUDA/11.6.0
 ```
 
-In the below script, the `--nv` option enables the use of NVIDIA GPUs within the container. The singualrity container `parabricks-4.2.0-1.sif` is executed using the command `singualrity run` over the executable `pbrun`.
+In the below script, the `--nv` option enables the use of NVIDIA GPUs within the container. For more details, please refer to section: [Running Singularity Containers With GPU Support](../workflow_solutions/getting_containers.md#running-singularity-containers-with-gpu-support). The singualrity container `parabricks-4.2.0-1.sif` is executed using the command `singualrity run` over the executable `pbrun`.
 
 ```bash
 singularity run --nv parabricks-4.2.0-1.sif pbrun fq2bam \
