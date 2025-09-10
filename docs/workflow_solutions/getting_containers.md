@@ -61,7 +61,7 @@ To run GPU-enabled applications within a Singularity container, you must explici
 Both the `Pascalnodes` and `Amperenodes` partitions use NVIDIA GPUs. Therefore, you will have to run Singularity with the `--nv` option to enable GPU support:
 
 ```bash
-singularity run --nv <image.sif> [options]
+singularity run --nv [other-run-flags] <image.sif> [image-software-flags]
 ```
 
 The `--nv` tells Singularity to bind the NVIDIA driver libraries and GPU devices into the container. This ensures your containerized application can access the GPU as if it were running on the host. An example tutorial demonstrating how to run Parabricks software with GPU support using the `--nv` flag can be found [here](../education/case_studies.md/#parabricks-testing-on-amperenodes-on-cheaha). For more details on usage of `--nv` flag refer to the [Singulairty Official Documentation](https://docs.sylabs.io/guides/3.5/user-guide/gpu.html).
