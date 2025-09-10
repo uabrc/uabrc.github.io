@@ -1,0 +1,5 @@
+"GPU","tmpi","omp","Execution Time","Speedup","Partition"
+"1","1","1","230.62","23.30","amperenodes"
+"2","1","1","230.30","23.33","amperenodes"
+"1","1","1","337.53","15.92","pascalnodes"
+"2","1","1","346.84","15.49","pascalnodes"
