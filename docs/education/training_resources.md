@@ -37,10 +37,14 @@ The Carpentries is a 501(c)3 non-profit organization dedicated to educating rese
 
 - [Datapen.io Free Courses](https://www.datapen.io/resources/free-course-resources)
 
-### Other External Resources
+### Bioinformatics, Genetics, and Genomics
 
 - [Rosalind.info](https://rosalind.info/problems/locations/): A platform for learning bioinformatics and programming.
 - [Transcriptomics](https://diytranscriptomics.com/): A course teaching students to independently analyze high-throughput sequencing data from gene expression (RNA-seq) studies using lightweight, open-source software and the R programming language with Bioconductor packages.
+- [Alphafold](https://www.ebi.ac.uk/training/online/courses/alphafold/): The tutorial is provided by the European Molecular Biology Laboratory (EMBL) under the Creative Commons Attribution 4.0 International (CC BY 4.0) license. The course includes activities, quizzes, and videos designed to help users understand the fundamental concepts behind AlphaFold, learn how to run protein predictions, and explore how AlphaFold has been used to advance research.
+
+### Other External Resources
+
 - [MATLAB upcoming events](https://www.mathworks.com/company/events/search.html): MATLAB offers a range of upcoming events, including data-oriented, programming-oriented, and domain-specific training sessions. Many of these events are free to attend.
 
 ### Suggested Reading

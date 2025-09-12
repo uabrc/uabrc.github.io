@@ -217,7 +217,7 @@ Use of these software packages without authorization may be a violation of the [
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Versions of IGV prior to `2.11.9` use a compromised version of log4j. Those versions are affected by a serious [remote code execution issue](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44832). Please transition your software to use versions of IGV >= `2.11.9`.
+    Versions of IGV prior to `2.11.9` use a compromised version of log4j. Those versions are affected by a serious [remote code execution issue](https://www.cve.org/CVERecord?id=CVE-2021-44832). Please transition your software to use versions of IGV >= `2.11.9`.
 <!-- markdownlint-enable MD046 -->
 
 ### GSEA
