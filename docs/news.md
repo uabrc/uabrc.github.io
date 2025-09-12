@@ -6,6 +6,18 @@ toc_depth: 3
 
 ## 2025
 
+### 2025-09-11 Planned Maintenance Window
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    This window applies only to researchers using GPFS5.
+<!-- markdownlint-enable MD046 -->
+
+We will be performing upgrades on the GPFS5 storage system to optimize stability. During this process, researchers on the GPFS5 side will be unable to login via SSH, and Open OnDemand (<https://rc.uab.edu>) will appear unresponsive.
+
+The maintenance window is scheduled for the morning of Tuesday, September 16, 2025, from 6:00 AM through 6:00 PM. We expect the process to take no more than 12 hours. We will restore service as soon as work is complete.
+
 ### 2025-05-13 Planned Maintenance Window
 
 Cheaha compute nodes located at the Technology Innovation Center on campus will be undergoing maintenance from June 16-22, resulting in reduced CPU and GPU capacity during those days, as well as reduced memory limits for jobs. Please plan Research Computing needs around the maintenance window.
