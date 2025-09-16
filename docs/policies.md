@@ -13,5 +13,3 @@ The list of policies below are those that may be most relevant to typical use ca
 ### Data Classification
 
 [Data Classification](https://www.uab.edu/it/home/policies/data-classification/classification-overview)
-
-### AI Policies
