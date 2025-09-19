@@ -1,20 +1,22 @@
-# Jupyter Apps
+# Jupyter Notebook
 
-Jupyter Notebooks and Jupyter Lab are both available as standalone apps in OOD. Jupyter is commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-anaconda-environments) below before continuing here.
+Jupyter Notebooks and [Jupyter Lab](./ood_jupyterlab.md) are both available as standalone apps in OOD. Jupyter is commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-anaconda-environments) below before continuing here.
 
-To launch the Jupyter notebook, select the menus 'Interactive Apps -> Jupyter Notebook'. The job creation and submission form appears:
+To launch the Jupyter Notebook, select the menus 'Interactive Apps -> Jupyter Notebook'. The job creation and submission form appears:
 
 ![!Jupyter Notebook home form](./images/ood_jupyter_notebook_home_form.png)
 
-As with all interactive apps, you'll need to select the resources required using the job creation form. Jupyter may also require additional initial setup before the app launches.
+As with all interactive apps, you'll need to select the resources required using the job creation form. Jupyter Notebook may also require additional initial setup before the app launches.
 
 ## Environment Setup
 
-To modify the environment that Anaconda and Jupyter will run in, please use the Environment Setup field to load modules and modify the environment `$PATH`. Be aware that any changes to the environment made in this window will be inherited by terminals as well as notebooks opened within Jupyter.
+To modify the environment that Anaconda and Jupyter Notebook will run in, please use the Environment Setup field to load modules and modify the environment `$PATH`. Be aware that any changes to the environment made in this window will be inherited by terminals as well as notebooks opened within Jupyter Notebook.
 
 ### CUDA
 
-For GPU applications you'll need to load a `CUDA/*` module to have the CUDA toolkit available. If working with deep learning workflows, you may also need to load the `cuDNN/*-CUDA-*` module corresponding to your choice of `CUDA/*` module version. These are required for popular ML/DL/AI libraries like TensorFlow, Keras, and PyTorch. Use `module spider cuda/` and `module spider cudnn` to view the list of appropriate modules. An example of what to put in the Environment Setup field when using a version of Tensorflow compatible with CUDA version 12.2.0 is shown below.
+For GPU applications, we load a `CUDA/*` module to make the CUDA toolkit available. If a computation involves deep learning workflows, it is recommended to load the `cuDNN/*-CUDA-*` module that corresponds to the version of a `CUDA/*` module loaded. These are required for popular Machine Learning/Deep Learning/Artificial Intelligence libraries like TensorFlow, Keras, and PyTorch. Using the commands `module spider cuda/` and `module spider cudnn` while show you the list of available modules. An example of what to put in the Environment Setup field when using a version of Tensorflow compatible with CUDA version 12.2.0 is shown below.
+
+Please see our [Training Resources page](../../education/training_resources.md#the-carpentries) for a link to an introductory deep learning course.
 
 ```shell
 # ENVIRONMENT SETUP
@@ -37,12 +39,12 @@ For more information on GPU efficiency please see [Making the Most of GPUs](../s
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    April 21, 2025: Currently, GPU-core affinity is not considered for GPU jobs on interactive apps. This may mean selecting multiple GPUs results in some GPUs not being used.
+    April 21, 2025: Currently, GPU-core affinity is not considered for GPU jobs on interactive apps. This may mean selecting multiple GPUs results in some GPUs not being used. To mitigate this, it is recommended that you only request for 1 GPU for your jobs. Please note, this applies to GPU nodes available on the amperenodes partition.
 <!-- markdownlint-enable MD046 -->
 
-## Extra Jupyter Arguments
+## Extra Jupyter Notebook Arguments
 
-The `Extra Jupyter Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
+The `Extra Jupyter Notebook Arguments` field allows you to pass additional arguments to the Jupyter Server as it is being started. It can be helpful to point the server to the folder containing your notebook. To do this, assuming your notebooks are stored in `/data/user/$USER`, also known as `$USER_DATA`, put `--notebook-dir=$USER_DATA` in this field. You will be able to navigate to the notebook if it is in a subdirectory of `notebook-dir`, but you won't be able to navigate to any other directories. An example is shown below.
 
 ![!Jupyter Notebook job request form Extra jupyter arguments field.](./images/ood_jupyter_notebook_extra_args_box.png)
 
@@ -54,9 +56,9 @@ Once the necessary kernels are installed, if you wish, you can write and run mul
 
 ## Working With Anaconda Environments
 
-By default, Jupyter notebooks will use the base environment that comes with the Anaconda3 module. This environment contains a large number of popular packages and may useful for something quick, dirty, and simple. However, for any analysis needing specific package versions or special packages, you will need to create your own environment and select it from the `Kernel` menu. For information on creating and managing Anaconda environments please see our [Using Anaconda page](../../workflow_solutions/using_anaconda.md). Then please review our [Cheaha-specific Anaconda page](../software/software.md#anaconda-on-cheaha) for important tips and how to avoid common pitfalls.
+By default, Jupyter Notebooks will use the base environment that comes with the Anaconda3 module. This environment contains a large number of popular packages and may useful for something quick, dirty, and simple. However, for any analysis needing specific package versions or special packages, you will need to create your own environment and select it from the `Kernel` menu. For information on creating and managing Anaconda environments please see our [Using Anaconda page](../../workflow_solutions/using_anaconda.md). Then please review our [Cheaha-specific Anaconda page](../software/software.md#anaconda-on-cheaha) for important tips and how to avoid common pitfalls.
 
-To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From the list, choose the kernel corresponding to your desired Anaconda environment (see below for an example). If your environment isn't appearing, you may be missing the ipykernel package. To do so, use `conda install ipykernel` to get ipykernel packgae installed into your environment, so Jupyter can recognize your environment.
+To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From the list, choose the kernel corresponding to your desired Anaconda environment (see below for an example). If your environment isn't appearing, you may be missing the ipykernel package. To do so, use `conda install ipykernel` to get the `ipykernel` package installed into your environment, so Jupyter can recognize your environment.
 
 ![! Select your Anaconda environment from the Kernel dropdown menu in Jupyter](images/jupyter_kernel.png)
 
@@ -73,7 +75,7 @@ We can create a new environment, that houses all of the packages, modules, and l
 
 1. [Install your desired packages into your activated environment](../../workflow_solutions/using_anaconda.md#install-packages).
 
-1. Remember to install 'ipykernel' in your activated environment, using `conda install ipykernel`.
+1. Remember to install `ipykernel` in your activated environment, using `conda install ipykernel`.
 
 1. Go into your working Jupyter Notebook file, and [change to the created environment](#changing-environments-using-jupyter-notebook-gui).
 
@@ -91,7 +93,7 @@ We can create a new environment, that houses all of the packages, modules, and l
 
     1. Your selected environment would appear in the top right corner.![!Selected Environment](images/selected_env.png)
 
-## Common Issues in OOD Jupyter
+## Common Issues in OOD Jupyter Notebooks
 
 ### Python Executable Issues
 
@@ -150,4 +152,4 @@ Here's an example of the correct procedure for installing `pip` packages within 
 
 ### Tensorflow and PyTorch GPU Issues
 
-If you are using Jupyter with TensorFlow or PyTorch and no GPU is found, please see our Slurm GPU page sections on [TensorFlow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
+If you are using Jupyter Notebook with TensorFlow or PyTorch and no GPU is found, please see our Slurm GPU page sections on [TensorFlow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
