@@ -6,6 +6,10 @@ toc_depth: 3
 
 ## 2025
 
+### 2025-08-26 Use of Integrated Development Environments (IDEs)
+
+Please do not use IDEs like VSCode "Remote - SSH" or Cursor Server to connect to Cheaha. These methods run all of their processes on the login node, which are automatically terminated. Instead, use "Remote - Tunnel" as described in the [VSCode Tunnel](./cheaha/open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel) section.
+
 ### 2025-05-13 Planned Maintenance Window
 
 Cheaha compute nodes located at the Technology Innovation Center on campus will be undergoing maintenance from June 16-22, resulting in reduced CPU and GPU capacity during those days, as well as reduced memory limits for jobs. Please plan Research Computing needs around the maintenance window.
