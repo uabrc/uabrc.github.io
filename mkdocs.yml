@@ -73,6 +73,7 @@ plugins:
         data_management/lts/lts.md: data_management/lts/index.md
         data_management/lts/policies.md: data_management/lts/iam_and_policies.md
         data_management/lts/sharing.md: data_management/lts/iam_and_policies.md
+        data_management/cheaha_storage_gpfs/project_directory_organization.md: data_management/cheaha_storage_gpfs/project_directories.md#project-directory-organization
         data_management/storage.md: data_management/index.md
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
@@ -110,7 +111,11 @@ nav:
       - data_management/index.md
       - Cheaha Storage (GPFS):
           - data_management/cheaha_storage_gpfs/index.md
-          - Project Directory Organization: data_management/cheaha_storage_gpfs/project_directory_organization.md
+          - User and Home Directories: data_management/cheaha_storage_gpfs/individual_directories.md
+          - Project Directories: data_management/cheaha_storage_gpfs/project_directories.md
+          - Network Scratch: data_management/cheaha_storage_gpfs/network_scratch.md
+          - Local Scratch: data_management/cheaha_storage_gpfs/local_scratch.md
+          - Temporary Files (/tmp/ Directory): data_management/cheaha_storage_gpfs/temporary_files.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
