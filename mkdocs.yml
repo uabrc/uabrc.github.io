@@ -113,7 +113,7 @@ nav:
           - data_management/cheaha_storage_gpfs/index.md
           - User and Home Directories: data_management/cheaha_storage_gpfs/individual_directories.md
           - Project Directories: data_management/cheaha_storage_gpfs/project_directories.md
-          - Global Scratch: data_management/cheaha_storage_gpfs/global_scratch.md
+          - Network Scratch: data_management/cheaha_storage_gpfs/network_scratch.md
           - Local Scratch: data_management/cheaha_storage_gpfs/local_scratch.md
           - Temporary Files (/tmp/ Directory): data_management/cheaha_storage_gpfs/temporary_files.md
       - Storage Alternatives: data_management/alternate_storage.md

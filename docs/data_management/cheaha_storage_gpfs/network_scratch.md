@@ -1,6 +1,6 @@
-# Global/User Scratch
+# Network Scratch
 
-Global/User Scratch, also known as network scratch, provides temporary, high-performance storage for data used in active computations. It is available on login nodes and also shared across compute nodes, making it suitable for data that needs to be accessed during jobs running on multiple nodes. Each user has access to this directory at `/scratch/$USER` or `$USER_SCRATCH`. Use it directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at any given time.
+Network scratch, also known as global scratch or user scratch, provides temporary, high-performance storage for data used in active computations. It is available on login nodes and also shared across compute nodes, making it suitable for data that needs to be accessed during jobs running on multiple nodes. Each user has access to this directory at `/scratch/$USER` or `$USER_SCRATCH`. Use it directory to store very large datasets or temporary pipeline intermediates for a short period of time while running your jobs. The maximum amount of data a single user can store in network scratch is 100 TB at any given time.
 
 <!-- markdownlint-disable MD046 -->
 !!! important

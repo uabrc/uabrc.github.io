@@ -11,9 +11,9 @@ The landing page contains information about current updates to the system, a mes
 You can open a file browser in a new tab by clicking the `Files` dropdown and selecting which default directory you would like to access from the following options.
 
 - [Home Directory](../../data_management/cheaha_storage_gpfs/individual_directories.md)
-- [/data/scratch/$USER](../../data_management/cheaha_storage_gpfs/global_scratch.md) (global scratch)
+- [/data/scratch/$USER](../../data_management/cheaha_storage_gpfs/network_scratch.md) (network scratch)
 - [/data/user/$USER](../../data_management/cheaha_storage_gpfs/individual_directories.md)
-- [/scratch/$USER](../../data_management/cheaha_storage_gpfs/global_scratch.md) (global scratch)
+- [/scratch/$USER](../../data_management/cheaha_storage_gpfs/network_scratch.md) (network scratch)
 
 <!-- markdownlint-disable MD046 -->
 !!! note

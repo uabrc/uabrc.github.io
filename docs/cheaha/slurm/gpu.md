@@ -25,7 +25,7 @@ When requesting a job using `sbatch`, you will need to include the Slurm flag `-
 
 #### Ensuring IO Performance With A100 GPUs
 
-If you are using `amperenodes` and the A100 GPUs, then we strongly recommend moving your input files to [local scratch](../../data_management/cheaha_storage_gpfs/local_scratch.md). Local scratch on the A100 nodes are fast, striped solid state drives (SSDs) and are have enough throughput to keep the A100 GPUs busy. Network storage systems, including [global scratch](../../data_management/cheaha_storage_gpfs/global_scratch.md), [project directories](../../data_management/cheaha_storage_gpfs/project_directories.md), and [individual directories](../../data_management/cheaha_storage_gpfs/individual_directories.md), have lower throughput. To optimize A100 efficiency, use local scratch.
+If you are using `amperenodes` and the A100 GPUs, then we strongly recommend moving your input files to [local scratch](../../data_management/cheaha_storage_gpfs/local_scratch.md). Local scratch on the A100 nodes are fast, striped solid state drives (SSDs) and are have enough throughput to keep the A100 GPUs busy. Network storage systems, including [network scratch](../../data_management/cheaha_storage_gpfs/network_scratch.md), [project directories](../../data_management/cheaha_storage_gpfs/project_directories.md), and [individual directories](../../data_management/cheaha_storage_gpfs/individual_directories.md), have lower throughput. To optimize A100 efficiency, use local scratch.
 
 Please see our [Local Scratch page](../../data_management/cheaha_storage_gpfs/local_scratch.md) for more details and a template script.
 
