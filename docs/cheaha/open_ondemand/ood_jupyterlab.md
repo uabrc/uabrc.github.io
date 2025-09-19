@@ -15,15 +15,15 @@ To modify the environment that Conda and your JupyterLab will run in, please use
 
 ### CUDA
 
-See [Jupyter Notebook CUDA](./ood_jupyter.md#cuda) section.
+See our [Jupyter Notebook CUDA section](./ood_jupyter_notebook.md#cuda).
 
 ## Extra JupyterLab Arguments
 
-See [Jupyter Notebook Arguments](./ood_jupyter.md#extra-jupyter-notebook-arguments) section.
+See our [Jupyter Notebook Arguments section](./ood_jupyter_notebook.md#extra-jupyter-notebook-arguments).
 
 ## Working With Other Programming Languages Within JupyterLab
 
-Please follow the instructions found in [Working with other programming languages within Jupyter Notebook](./ood_jupyter.md#working-with-other-programming-languages-within-jupyter-notebook)
+Please follow the instructions found in our [Working With Other Programming Languages Within Jupyter Notebook section](./ood_jupyter_notebook.md#working-with-other-programming-languages-within-jupyter-notebook).
 
 ## Working With Conda Environments Using JupyterLab
 
@@ -35,7 +35,7 @@ The python icons you see in the image above, are Conda environments that open in
 
 ### Creating a Conda Environment for Use With JupyterLab
 
-Please see instructions for creating a Conda environment in the [Creating an Environment for use with Jupyter Notebook](./ood_jupyter.md#creating-an-environment-for-use-with-jupyter-notebook) section.
+Please see instructions for creating a Conda environment in the [Creating an Environment for use with Jupyter Notebook section](./ood_jupyter_notebook.md#creating-an-environment-for-use-with-jupyter-notebook).
 
 ### Changing Environments Using JupyterLab GUI
 
@@ -55,12 +55,12 @@ Please see instructions for creating a Conda environment in the [Creating an Env
 
 ### Python Executable Issues
 
-See the [Python Executable Issues](./ood_jupyter.md#python-executable-issues) section for Jupyter Notebook.
+See our [Python Executable Issues section](./ood_jupyter_notebook.md#python-executable-issues) on our [Jupyter Notebook page](./ood_jupyter_notebook.md).
 
 ### Unexpected/Silent Job Failure
 
-See our [Unexpected/Silent Job Failure](./ood_jupyter.md#unexpectedsilent-job-failure) section for Jupyter Notebook.
+See our [Unexpected/Silent Job Failure section](./ood_jupyter_notebook.md#unexpectedsilent-job-failure) on our [Jupyter Notebook page](./ood_jupyter_notebook.md).
 
 ### Tensorflow and PyTorch GPU Issues
 
-Refer to [Tensorflow and PyTorch GPU issues](./ood_jupyter.md#tensorflow-and-pytorch-gpu-issues) section for Jupyter Notebook.
+See our [Tensorflow and PyTorch GPU Issues section](./ood_jupyter_notebook.md#tensorflow-and-pytorch-gpu-issues) on our [Jupyter Notebook page](./ood_jupyter_notebook.md).

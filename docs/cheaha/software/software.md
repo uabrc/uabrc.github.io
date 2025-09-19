@@ -13,7 +13,7 @@ Anaconda is installed on Cheaha as a family of modules, and does not need to be 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    If you are using [Open OnDemand Jupyter Notebook](../open_ondemand/ood_jupyter.md) you do not need to use the `module load` command as part of creating the job.
+    If you are using [Open OnDemand Jupyter Notebook](../open_ondemand/ood_jupyter_notebook.md) you do not need to use the `module load` command as part of creating the job.
 <!-- markdownlint-enable MD046 -->
 
 ### Using Anaconda

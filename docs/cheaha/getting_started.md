@@ -38,7 +38,7 @@ Interactive apps are available directly in your browser, including the following
 
 - [File Browser](./open_ondemand/ood_layout.md#file-browser)
 - [Remote Desktop](./open_ondemand/hpc_desktop.md)
-- [Jupyter Notebook](./open_ondemand/ood_jupyter.md)
+- [Jupyter Notebook](./open_ondemand/ood_jupyter_notebook.md)
 - [Jupyter Lab](./open_ondemand/ood_jupyterlab.md)
 - [RStudio](./open_ondemand/ood_rstudio.md)
 - [MATLAB](./open_ondemand/ood_matlab.md)
