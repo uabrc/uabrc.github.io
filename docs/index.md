@@ -12,7 +12,7 @@ The Research Computing System (RCS) provides a framework for sharing research da
 -->
 <!-- markdownlint-enable MD046 -->
 
-**Check our [News page](./news.md) for recent developments.**
+**Check our [News page](./news/index.md) for recent developments.**
 
 ## How Do I Get Started?
 

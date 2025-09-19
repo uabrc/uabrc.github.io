@@ -41,10 +41,16 @@ markdown_extensions:
       permalink: true
 
 plugins:
-  - search
-  - title-casing
-  - table-reader:
-      data_path: docs
+  - blog:
+      blog_dir: news
+      post_date_format: full
+      post_excerpt: required
+      post_readtime: false
+      categories_allowed:
+        - Known Issues
+        - Maintenance
+        - Outreach
+        - Survey
   - gen-files:
       scripts:
         - scripts/pandoc_generator.py
@@ -52,6 +58,11 @@ plugins:
       type: date
       strict: false
   - glightbox
+  - meta
+  - search
+  - table-reader:
+      data_path: docs
+  - title-casing
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
@@ -95,7 +106,8 @@ not_in_nav: |
 
 nav:
   - Home: index.md
-  - News: news.md
+  - News:
+      - news/index.md
   - Account Management:
       - account_management/index.md
       - Cheaha Account: account_management/cheaha_account.md
@@ -222,3 +234,4 @@ validation:
 
 watch:
   - scripts
+  - theme
