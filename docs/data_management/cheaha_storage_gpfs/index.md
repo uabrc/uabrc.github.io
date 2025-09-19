@@ -81,7 +81,7 @@ Some known examples of tasks benefiting from local scratch, not an exhaustive li
 - Large-scale genome annotation.
 - Reading/writing hundreds of thousands or more files in a single job.
 
-If you are using `amperenodes` and the A100 GPUs, then you should use local scratch for your data to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor GPU performance. For more information please see [Ensuring IO Performance With A100 GPUs](../../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus). You can also find a link to an introductory deep learning course from Software Carpentries on the page for [training resources](../../education/training_resources.md#the-carpentries).
+If you are using `amperenodes` and the A100 GPUs, then you should use local scratch for your data to ensure adequate GPU performance. Using `$USER_SCRATCH`, or other network file locations, will starve the GPU of data, resulting in poor GPU performance. For more information please see [Ensuring IO Performance With A100 GPUs](../../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
 
 <!-- markdownlint-disable MD046 -->
 !!! important

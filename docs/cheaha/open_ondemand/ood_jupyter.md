@@ -1,4 +1,4 @@
-# Jupyter Apps
+# Jupyter Notebook
 
 Jupyter Notebooks and [Jupyter Lab](./ood_jupyterlab.md) are both available as standalone apps in OOD. Jupyter is commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-anaconda-environments) below before continuing here.
 
@@ -14,7 +14,9 @@ To modify the environment that Anaconda and Jupyter Notebook will run in, please
 
 ### CUDA
 
-For GPU applications, we load a `CUDA/*` module to make the CUDA toolkit available. If a computation involves deep learning workflows, it is recommended to load the `cuDNN/*-CUDA-*` module that corresponds to the version of a `CUDA/*` module loaded. These are required for popular Machine Learning/Deep Learning/Artificial Intelligence libraries like TensorFlow, Keras, and PyTorch. Using the commands `module spider cuda/` and `module spider cudnn` while show you the list of available modules. An example of what to put in the Environment Setup field when using a version of Tensorflow compatible with CUDA version 12.2.0 is shown below. Please see link to an introductory deep learning course from Software Carpentries on the page for [training resources](../../education/training_resources.md#the-carpentries).
+For GPU applications, we load a `CUDA/*` module to make the CUDA toolkit available. If a computation involves deep learning workflows, it is recommended to load the `cuDNN/*-CUDA-*` module that corresponds to the version of a `CUDA/*` module loaded. These are required for popular Machine Learning/Deep Learning/Artificial Intelligence libraries like TensorFlow, Keras, and PyTorch. Using the commands `module spider cuda/` and `module spider cudnn` while show you the list of available modules. An example of what to put in the Environment Setup field when using a version of Tensorflow compatible with CUDA version 12.2.0 is shown below.
+
+Please see our [Training Resources page](../../education/training_resources.md#the-carpentries) for a link to an introductory deep learning course.
 
 ```shell
 # ENVIRONMENT SETUP
