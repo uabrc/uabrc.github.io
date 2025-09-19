@@ -13,7 +13,7 @@ In contrast, the user data directory ($USER_DATA) is designed for storing:
 - Data and results specific to your individual research projects
 - Files accessible only to you
 
-The combined storage quota for $HOME and $USER_DATA is 5 TB. For larger data or intensive workflows, consider using [scratch](./global_scratch.md) space and/or [project directory](./project_directories.md) for storing, moving, and analyzing data.
+The combined storage quota for `$HOME` and `$USER_DATA` is 5 TB. For larger data or intensive workflows, consider using [global scratch](./global_scratch.md) space or a [project directory](./project_directories.md) for storing, moving, and analyzing data.
 
 ## How Much Space Do I Have Left?
 
