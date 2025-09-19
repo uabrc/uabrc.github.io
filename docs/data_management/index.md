@@ -61,6 +61,15 @@ Shared Storage is available for labs headed by a PI _and_ for Core facilities he
 
 Shared Storage is allocated on a per-organization basis, not on a per-person basis. If an individual researcher manages both a lab and a Core, they may request independent storage allocations for each organization. Each organization may request both Project Storage and Long-Term Storage.
 
+### Which Platform Do I Need an Allocation For?
+
+You can request one or both storage platforms, depending on your project’s needs.
+
+- Request [Cheaha Storage (GPFS)](./cheaha_storage_gpfs/index.md) if you need fast, cluster-integrated storage to support active analysis or collaboration on Cheaha.
+- Request [Long-Term Storage (LTS)](./lts/index.md) if you need to store, or share data that does not change frequently.
+
+You can benefit from requesting and using both platforms: keeping active and changing data in GPFS during analysis, then moving completed or less active data into LTS for long-term preservation, and bringing it back from LTS to GPFS when further work is needed.
+
 ### How Do I Request Shared Storage?
 
 To request shared Project Storage or Long-Term Storage, please contact [Support](../help/support.md). To ensure prompt allocation of Shared Storage, please follow the guidelines below:
