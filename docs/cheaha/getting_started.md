@@ -6,7 +6,7 @@ toc_depth: 3
 
 Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing of research computing software. We offer a user-friendly portal website Open OnDemand with graphical interfaces to the most common features, all in one place. Read on to learn more about our resources and how to access them.
 
-## Getting Help
+## What if I Need Help?
 
 Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are available in the [Support Guide](../help/support.md), and answers to common questions can be found in our section for [frequently asked questions](../help/faq.md).
 
@@ -180,7 +180,3 @@ For new software installation, please try searching [Anaconda](../workflow_solut
 A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see our [Anaconda page](./software/software.md#anaconda-on-cheaha).
 
 If the software installation instructions tell you to use either `conda install` or `pip install` commands, the software and its dependencies can be installed using a virtual environment.
-
-## How to Get Help
-
-For questions, you can reach out via our various [channels](../help/support.md).
