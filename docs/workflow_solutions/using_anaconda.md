@@ -117,17 +117,17 @@ pip install -r packages.txt
 
 You may use the [Anaconda page](https://anaconda.org/) to search for packages on Anaconda, or use Google with something like `<package name> conda`. To find packages in PyPI, either use the [PyPI page](https://pypi.org/) to search, or use Google with something like `<package name> pip`.
 
-#### Package Management for Jupyter
+#### Jupyter Package Management
 
-For more information about using Anaconda with Jupyter (Jupyter Notebook and JupyterLab), see the section [Working with Anaconda Environments](../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
+For more information about using Anaconda with Jupyter Notebooks and JupyterLab, see the [Working with Anaconda Environments section](../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
 
 #### CUDA and cuDNN Package for GPU Usage
 
-For more information about finding CUDA and cuDNN packages for use with GPUs, see the section [CUDA and cuDNN Modules](../cheaha/slurm/gpu.md#cuda-and-cudnn-modules)
+For more information about finding CUDA and cuDNN packages for use with GPUs, see the [CUDA and cuDNN Modules section](../cheaha/slurm/gpu.md#cuda-and-cudnn-modules)
 
 #### Performance Considerations for GPUs
 
-See our [Making the Most of GPUs](../cheaha/slurm/gpu.md#making-the-most-of-gpus) for more information about maximizing the performance of GPUs on Cheaha.
+See our [Making the Most of GPUs section](../cheaha/slurm/gpu.md#making-the-most-of-gpus) for more information about maximizing the performance of GPUs on Cheaha.
 
 ### Update Package in an Environment
 
