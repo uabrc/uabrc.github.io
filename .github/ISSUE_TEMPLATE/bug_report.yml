@@ -1,6 +1,6 @@
 name: Bug Report
 description: Let us know about bugs!
-labels: ["fix: bug"]
+labels: ["fix: bug 🐞"]
 body:
   - type: markdown
     attributes:

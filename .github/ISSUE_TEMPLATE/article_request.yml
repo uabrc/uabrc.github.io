@@ -1,6 +1,6 @@
 name: Article Request
 description: Let us know about articles and sections you would like to see
-labels: ["req: article"]
+labels: ["style: article/section 📝"]
 body:
   - type: markdown
     attributes:

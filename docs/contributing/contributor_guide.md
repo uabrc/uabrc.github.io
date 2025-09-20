@@ -331,8 +331,16 @@ We strive to have CI/CD and pre-commit hooks aligned. This is achieved by using 
 
 ### Configuration Files
 
-- `.github/workflows/ci.yml`: Defines the pipeline used for pull-request validation and the build process.
-- `.linkcheckerrc`: Defines configuration for linkchecker, a non-automated process for identifying broken and redirected URLs in the documentation.
+- `.github/`
+    - `workflows/`
+        - `check_docs.yml`: Defines the pipeline for building the docs to verify integrity as part of pull requests only. Requires `reusable_check_markdown.yml` and `shared/build_docs_pages/action.yml`.
+        - `check_python.yml`: Defines the pipeline for linting python code files.
+        - `check_yaml.yml`: Defines the pipeline for linting yaml files.
+        - `deploy_docs.yml`: Defines the pipeline for deploying the docs to GitHub Pages. Requires `reusable_check_markdown.yml` and `shared/build_docs_pages/action.yml`.
+        - `reusable_check_markdown.yml`: Defines the pipeline for linting Markdown files.
+    - `shared/`
+        - `build_docs_pages/action.yml`: Defines a composite pipeline for building the docs.
+- `.linkcheckerrc`: Defines configuration for linkchecker, a non-automated process for identifying broken and redirected URLs in the documentation. See `verification_scripts/linkchecker.py`.
 - `.markdownlint-cli2.jsonc`: Defines constraints and configuration for the `markdownlint-cli2` command-line application.
 - `.markdownlint.json`: Defines markdownlint rules.
 - `.pre-commit-config.yaml`: Defines configuration of pre-commit hooks.
@@ -341,6 +349,7 @@ We strive to have CI/CD and pre-commit hooks aligned. This is achieved by using 
 - `.ruff.toml`: Defines Python lint rules for the ruff linter.
 - `build_env.yml`: Defines the Conda environment used to support this project's automation.
 - `mkdocs.yml`: Defines the documentation content configuration.
+    - See also `build_scripts/` for scripts used during the mkdocs build process.
 
 ### CI/CD
 
@@ -351,7 +360,7 @@ CI/CD is used to ensure consistency and formatting of markdown and YAML files vi
 
 Relevant files:
 
-- `.github/workflows/ci.yml`
+- `.github/**/*.yml`
 - `.markdownlint-cli2.jsonc`
 - `.markdownlint.json`
 - `.title-casing-ignore`

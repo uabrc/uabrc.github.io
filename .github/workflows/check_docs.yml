@@ -1,0 +1,30 @@
+# checks for mkdocs specific issues
+
+name: docs
+
+on: # yamllint disable-line rule:truthy
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "build_env.yml"
+      - "mkdocs.yml"
+      - "build_scripts/**"
+      - "docs/**"
+  workflow_dispatch:
+
+jobs:
+  check_markdown:
+    uses: "./.github/workflows/reusable_check_markdown.yml"
+    with:
+      globs: "docs/**/*.md"
+  check_docs:
+    needs: check_markdown
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # 4.2.2
+        with:
+          fetch-depth: 0 # mkdocs-git-revision-date-localized-plugin
+      - uses: "./.github/shared/build_docs_pages/"

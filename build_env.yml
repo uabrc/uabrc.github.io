@@ -21,7 +21,7 @@ dependencies:
   - conda-forge::python-dateutil=2.9.0
   - conda-forge::pytz=2025.2
   - conda-forge::pyyaml=6.0.2
-  - conda-forge::ruff=0.11.13
+  - conda-forge::ruff=0.12.0
   - conda-forge::setuptools=80.9.0
   - conda-forge::six=1.17.0
   - conda-forge::sqlite=3.50.0

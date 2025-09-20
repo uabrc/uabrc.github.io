@@ -1,6 +1,6 @@
 name: Inaccuracy Report
 description: Let us know about inaccurate or outdated information
-labels: ["fix: inaccuracy"]
+labels: ["fix: inaccuracy ⚠️"]
 body:
   - type: markdown
     attributes:
