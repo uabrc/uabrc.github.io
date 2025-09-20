@@ -1,0 +1,56 @@
+# checks markdown files for markdown specific linting and formatting issues
+# reusable by other checks
+
+name: markdown
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+    paths:
+      - "**.md"
+      - "!docs/**" # covered by check_docs.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "**.md"
+      - "!docs/**" # covered by check_docs.yml
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      globs:
+        type: string
+
+jobs:
+  check_markdown:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # 4.2.2
+      - name: Configure Globs
+        id: globs
+        run: |
+          if [ -n "${{ inputs.globs }}" ]; then
+            GLOBS_STRING="${{ inputs.globs }}"
+          else
+            GLOBS_STRING='**/*.md !docs/**/*.md'
+          fi
+
+          IFS=' ' read -r -a GLOBS_ARRAY <<< "$GLOBS_STRING"
+          NEWLINE_DELIMITED_GLOBS=""
+          for glob in "${GLOBS_ARRAY[@]}"; do
+            if [ -n "$NEWLINE_DELIMITED_GLOBS" ]; then
+              NEWLINE_DELIMITED_GLOBS+=$'\n'
+            fi
+            NEWLINE_DELIMITED_GLOBS+="$glob"
+          done
+
+          echo "globs<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$NEWLINE_DELIMITED_GLOBS" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+      - uses: DavidAnson/markdownlint-cli2-action@992badcdf24e3b8eb7e87ff9287fe931bcb00c6e # 20.0.0
+        with:
+          config: ".markdownlint-cli2.jsonc"
+          globs: "${{ steps.globs.outputs.globs }}"

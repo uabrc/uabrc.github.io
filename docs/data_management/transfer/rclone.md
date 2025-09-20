@@ -93,7 +93,7 @@ RClone connects two personal computers or servers using SFTP which is built on S
     - `key_file_pass>` The passphrase used to secure the private key file (optional, but highly recommended)
 1. Verify by using `rclone lsd <name>`.
 
-The official docuemntation for `rclone sftp` is [here](https://rclone.org/sftp/).
+The official documentation for `rclone sftp` can be found at <https://rclone.org/sftp/>.
 
 ### Setting Up UAB Cloud Remotes
 

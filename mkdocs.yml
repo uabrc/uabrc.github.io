@@ -47,7 +47,7 @@ plugins:
       data_path: docs
   - gen-files:
       scripts:
-        - scripts/pandoc_generator.py
+        - build_scripts/pandoc_generator.py
   - git-revision-date-localized:
       type: date
       strict: false
@@ -221,4 +221,4 @@ validation:
     unrecognized_links: warn
 
 watch:
-  - scripts
+  - build_scripts/

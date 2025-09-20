@@ -333,7 +333,7 @@ A sample code is shown below
 singularity pull alphafold3.sif docker://gitlab.rc.uab.edu:4567/rc-data-science/community-containers/alphafold3/alphafold3:cd48cee5
 ```
 
-After the singularity file (.sif) is created, you can run your container using the `singularity run` or `singularity exec` commands with the appropriate options. Please refer to the `README` file provided in the container repository or look for documentation specific to the container. We have a guide for using Containers (with singularity) on Cheaha, you can find it [here](#containers-on-cheaha).You should see an output like in the image below.
+After the singularity file (.sif) is created, you can run your container using the `singularity run` or `singularity exec` commands with the appropriate options. Please refer to the `README` file provided in the container repository or look for documentation specific to the container. Please see our [guide for using Containers (with singularity) on Cheaha](#containers-on-cheaha).You should see an output like in the image below.
 
 ![Output after running singularity pull command](./images/singularity-terminal-ouput.png)
 
@@ -345,7 +345,7 @@ You can also pull this container using either Docker or Singularity, assuming yo
 docker pull docker://gitlab.rc.uab.edu:0000/rc-data-science/community-containers/<name of container>
 ```
 
-This will pull the image and setup the container for use. As with all containers, `docker run` along with the right flags/option will run the container. Please refer to the `README` file provided in the container repository, or look for documentation specific to the container. We have documentation for using Singularity on a cloud instance <cloud.rc.uab.edu> [here](#using-containers-on-uab-rc-cloud-cloudrcuabedu).
+This will pull the image and setup the container for use. As with all containers, `docker run` along with the right flags/option will run the container. Please refer to the `README` file provided in the container repository, or look for documentation specific to the container. Please see our documentation for [using Singularity on a cloud instance](#using-containers-on-uab-rc-cloud-cloudrcuabedu).
 
 ## Sharing Containers Using UAB GitLab Container Registry
 
