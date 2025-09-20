@@ -29,17 +29,18 @@
 }
 
 /* link color correction */
-.md-content a,
-.md-content a:visited {
+
+.md-content>:not(.md-sidebar) a,
+.md-content>:not(.md-sidebar) a:visited {
   color: revert;
 }
 
-.md-content a:hover {
+.md-content>:not(.md-sidebar) a:hover {
   color: revert;
   border-bottom: 1px solid;
 }
 
-.md-typeset .headerlink:hover {
+.md-content a.headerlink:hover {
   border-bottom: none;
 }
 
