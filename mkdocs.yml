@@ -40,9 +40,14 @@ markdown_extensions:
   - toc:
       permalink: true
 
-plugins:
+plugins: # order matters!
+  - search
+  - meta
   - blog:
+      archive_date_format: MMMM yyyy
+      archive_url_date_format: yyyy/MM
       blog_dir: news
+      blog_toc: true
       post_date_format: full
       post_excerpt: required
       post_readtime: false
@@ -58,8 +63,6 @@ plugins:
       type: date
       strict: false
   - glightbox
-  - meta
-  - search
   - table-reader:
       data_path: docs
   - title-casing
