@@ -81,5 +81,9 @@
   "markdown.extension.tableFormatter.enabled": false,
   "markdown.extension.toc.updateOnSave": false,
   "markdown.validate.unusedLinkDefinitions.enabled": "warning",
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "yaml.customTags": [
+    "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+    "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji"
+  ],
 }
