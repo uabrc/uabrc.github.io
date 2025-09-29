@@ -155,9 +155,10 @@ nav:
           - Jupyter: cheaha/open_ondemand/ood_jupyter.md
           - RStudio: cheaha/open_ondemand/ood_rstudio.md
           - MATLAB: cheaha/open_ondemand/ood_matlab.md
+          - SAS: cheaha/open_ondemand/ood_sas.md
       - Hardware: cheaha/hardware.md
       - Software:
-          - How Do I Get a Software on Cheaha: cheaha/software/find_software_on_cheaha.md
+          - cheaha/software/index.md
           - Pre-Installed Modules: cheaha/software/modules.md
           - Self-Installed Software: cheaha/software/software.md
       - Slurm:
