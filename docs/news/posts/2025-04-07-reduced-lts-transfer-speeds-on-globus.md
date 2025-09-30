@@ -10,6 +10,6 @@ We are aware of increased transfer times into and out of LTS when using Globus. 
 
 <!-- more -->
 
-At this time, we recommend preferring to use [`s5cmd`](../../data_management/lts/interfaces.md) to transfer large amounts of data into and out of LTS.
+At this time, we recommend preferring to use [`s5cmd`](../../data_management/lts/interfaces.md#s5cmd) to transfer large amounts of data into and out of LTS.
 
 Please feel free to [Contact Us](../../help/support.md) for more information or alternative solutions.
