@@ -536,7 +536,7 @@ Reviewing a pull request means obtaining a copy of the pull request branch and [
 
 ### Slurm Hardware, Partitions, QoS Tables
 
-Building hardware tables is a semi-automated script based on a manually curated table. The repository is located here: <https://gitlab.rc.uab.edu/rc-data-science/metrics/rc-hardware>. The repository is only accessible to developers at this time.
+Building the hardware tables used in the docs is a semi-automated script based on a manually curated table. The repository is located here: <https://code.rc.uab.edu/rc-data-science/metrics/rc-hardware>. The repository is only accessible to developers at this time.
 
 Building Partition and QoS tables is automated based on `scontrol` output. The repository is located here: <https://github.com/wwarriner/slurm_status_tools>. To use, install the Conda environment at the linked repo, activate it, and run the following commands.
 

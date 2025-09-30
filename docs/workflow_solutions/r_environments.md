@@ -56,7 +56,7 @@ Another useful part of Projects is Git integration. Normally, you would need to 
     To read more about how to get started with Git, please read our [git documentation](git_collaboration.md)
 <!-- markdownlint-enable MD046 -->
 
-1. To begin, you should create an empty repository either at [Github](https://github.com/) or [UAB's Gitlab](https://gitlab.rc.uab.edu/users/sign_in) where your project will be stored. this will open a new page with instructions on linking this remote repository with your local project. Keep these instructions open for later. A picture of the important piece can be seen below.
+1. To begin, you should create an empty repository either at [Github](https://github.com/) or the UAB Research Computing on-premises [Gitlab instance](https://code.rc.uab.edu/users/sign_in) where your project will be stored. this will open a new page with instructions on linking this remote repository with your local project. Keep these instructions open for later. A picture of the important piece can be seen below.
 
     ![! Instructions on how to link an existing local repository with the created remote repository](images/r_push_existing_repo_instructions.png)
 

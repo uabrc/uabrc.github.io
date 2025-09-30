@@ -66,7 +66,7 @@ This example using the FSL (FMRIB Software Library) App, shows how to create a s
 
     We will add the following values in the form:
     - **Directory Name:** FSL
-    - **Git Remote:** `https://gitlab.rc.uab.edu/rc/bc_uab_igv.git`
+    - **Git Remote:** `https://code.rc.uab.edu/rc/bc_uab_igv.git`
     After completing the above steps, then click "**Submit**"
 
 1. When this is done successfully, you should see the below screen also showing your new FSL Sandbox App.
