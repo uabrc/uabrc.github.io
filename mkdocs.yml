@@ -183,6 +183,7 @@ nav:
   - UAB Kubernetes Guide:
       - kubernetes/index.md
       - Startup: kubernetes/startup.md
+      - Hardware: kubernetes/hardware.md
   - National Research Computing Cyberinfrastructure:
       - national_ci/index.md
       - The Open Science Grid: national_ci/osg.md

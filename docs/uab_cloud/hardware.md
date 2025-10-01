@@ -1,4 +1,4 @@
-# Hardware Information of Cloud.rc
+# Hardware Information for Cloud.rc
 
 The Cloud service hardware consists of 5 Intel nodes and 4 DGX-A100 nodes. A description of the available hardware are summarized in the following table.
 
