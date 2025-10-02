@@ -6,6 +6,10 @@ toc_depth: 3
 
 ## 2025
 
+### 2025-10-06 Cheaha Data Migration
+
+Over the coming weeks, we will be performing a rolling data migration from our current GPFS 4 storage system to our new GPFS 5 storage system as part of a critical update to our hardware. This will result in staggered, temporary loss of access to Cheaha for all users. Please see [our migration overview](./cheaha/migration_overview.md) for more information on our strategy as well as changes coming to Cheaha during and after the migration.
+
 ### 2025-05-13 Planned Maintenance Window
 
 Cheaha compute nodes located at the Technology Innovation Center on campus will be undergoing maintenance from June 16-22, resulting in reduced CPU and GPU capacity during those days, as well as reduced memory limits for jobs. Please plan Research Computing needs around the maintenance window.
