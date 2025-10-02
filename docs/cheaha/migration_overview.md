@@ -8,6 +8,12 @@
 - Plan to lose access to Cheaha for up to **2 days**
 - Once migration is complete, account certification will be required through the [web portal](https://rc.uab.edu)
 
+## Potential Sections of Interest
+
+- [Migraton Procedure](#migration-procedure)
+- [General Timeline](#general-timeline)
+- [Summary of Available Compute During the Migration](#gpfs-5-compute-nodes)
+
 ## Overview
 
 Research Computing will be performing a cluster migration for all data on Cheaha from our current GPFS 4 storage system to our new GPFS 5 storage system over the coming weeks. This migration is necessary due to GPFS 4 reaching end-of-life and losing vendor support as well as allowing us to perform further, necessary upgrades to Cheaha over the coming months and years. This is a large scale migration covering [INSERT NUMBER OF FILES] files and [INSERT NUMBER OF PiB] petabytes of data, and so to facilitate a migration of this size, a more intricate process was necessary beyond a whole-cluster shutdown and move. This page is to provide you with information covering the migration plan, our rationale behind certain decisions, and how your account will be affected pre- and post-migration.
@@ -44,6 +50,21 @@ The following procedure is performed on a **per-community** basis.
 1. **Post-Migration Cleanup**
     1. After migration for a batch ends, held jobs will be released.
     1. Compute node availability differs between GPFS 4 and GPFS 5. See [below](#gpfs-5-compute-nodes) for more details.
+
+### General Timeline
+
+As explained above, the migration can be thought of as a series of, at most, 4-day windows. Each window will see one or more community migration(s) performed from start to finish.
+
+1. Day 0: Community members receive an email notifying them of their impending migration
+1. Day 2: Community members are put on hold and lose access to Cheaha
+1. Day 2-4: Access to Cheaha is restored post-migration
+1. Repeat for the next community
+
+Due to high variability in file structure and content across users and communities, it's not feasible to predict how long any given community's migration will take. Therefore, we cannot give expected dates for when a given group's migration will begin and end as it's solely dependent on migrations of prior groups. Here are some dates to remember though:
+
+- **Monday, October 6**: Initial announcement concerning the migration is sent to the Cheaha userbase
+- **Wednesday, October 8**: Notification of impending migration sent to members of community 1
+- **Friday, October 10**: Migration for community 1 begins
 
 ## GPFS 5 Data Tiering
 
@@ -93,6 +114,12 @@ In summary, **users should not take tiered storage into account when using Cheah
 ### Initial Interaction with Files
 
 After migration to GPFS 5, loading a given file will be slow during the initial read but will return to normal for all subsequent reads. This is an expected behavior of our new tiered file system compared to our GPFS 4 system. This will be especially evident during startup of interactive apps from the web portal and during activation and use of virtual environments such as `conda` due to the large number of files these tools use. Please be patient when starting an app such as Jupyter Notebook or reading an especially large file for the first time post-migration due to the delay caused by initial file reads.
+
+### Jobs Requeued Prior to Migration
+
+As mentioned in the [migration procedure](#migration-procedure), jobs running at the time accounts are put on hold will be requeued and held. This is not a pause, it is essentially a resubmission of that job under the same job ID. For most software, jobs restarting like this will not pose issues. The job will start from the beginning of the script and either perform the same tasks as previously until reaching the end or will continue from where it left off if the tool being used has that as an option and the script has accounted for it (rare across all software, see machine learning checkpointing as an example).
+
+Some software have checks built-in to make sure previously generated data are not being overwritten accidentally. If these software detect some amount of standard outputs already exist, they may fail as opposed to overwriting the existing data. As example of this is the MRI analysis software FreeSurfer. This is a hazard when requeueing running jobs which will immediately cancel any command being run in the job and exit. Once you have been notified of your migration time, please be cognizant of potential effects of requeuing your planned jobs if you're not certain they will finish before the migration begins.
 
 ### GPFS 5 Compute Nodes
 
