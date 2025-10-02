@@ -43,7 +43,50 @@ The following procedure is performed on a **per-community** basis.
 
 1. **Post-Migration Cleanup**
     1. After migration for a batch ends, held jobs will be released.
-    1. Compute node availability differs between GPFS 4 and GPFS 5. See below for more details.
+    1. Compute node availability differs between GPFS 4 and GPFS 5. See [below](#gpfs-5-compute-nodes) for more details.
+
+## GPFS 5 Data Tiering
+
+With the upgrade to GPFS 5, we are introducing a data tiering strategy to help us balance increasing storage demands with rising costs for high performance storage systems. GPFS will still be used as the primary parallel performance storage system and will store all files smaller than 4 MiB and all other active files. Inactive files will be transparently moved to a CephFS storage tier to reduce system pressure on GPFS. Inactivity will be determined by time since last file access. Files stored on CephFS leave a stub behind on GPFS. The stub contains all relevant metadata for the file and will appear to the user as if the file is still on GPFS. Reading a file stub will cause the file to be automatically transferred from CephFS back to GPFS.
+
+### What CephFS IS NOT
+
+1. **CephFS is NOT a replacement for LTS**.
+    1. Data you know you will not use for an extended period of time should be moved to [LTS](../data_management/lts/index.md).
+    1. Storage quotas will be enforced across both GPFS and CephFS. This means for a standard project quota, only 25 TiB can be stored in a project across both GPFS and Ceph.
+1. **CephFS is NOT a backup**
+    1. A file's data will only exist on either Ceph or GPFS, **never on both**.
+    1. If a file reaches the age limit, its data is automatically moved from GPFS to Ceph leaving behind a stub containing only file metadata.
+    1. When reading a file stub on GPFS, its data is moved from Ceph to GPFS leaving nothing on Ceph.
+1. **CephFS is NOT high performance storage for analysis**
+    1. Ceph only stores data deemed to be inactive on Cheaha.
+1. **CephFS is NOT something users will interact with**
+    1. Users will never make direct contact with Ceph. All of this is purely informational and provides background to some changes and behavior explained below.
+    1. All data transfer to and from Ceph is done transparently, without any direct action from the user. Do not change how you interact with Cheaha on account of this tiered storage.
+
+<!-- markdownlint-disable MD046 -->
+!!! critical
+    It is imperative to understand that tiered storage does not equal a backup. We do not provide a traditional, automatic backup for data stored on Cheaha. All data are erasure-encoded in case of hardware failure, they are not backed up in case of user error. Please see information about [LTS](../data_management/lts/index.md) for a potential backup solution.
+<!-- markdownlint-enable MD046 -->
+
+### What CephFS IS
+
+1. Cost-efficient, expandable storage on Cheaha.
+    1. Increasing GPFS storage capacity is cost-prohibitive and has severely limited our ability to grant increases to project space quotas.
+    1. CephFS provides a **FUTURE** avenue for expandable storage. **This is not currently an option**. More details will be provided when appropriate.
+1. Tunable data sink
+    1. With Ceph, we are able to tune which files are offloaded from GPFS based on user behavior and activity without interfering with ongoing analysis or burdening the researcher with quickly moving data to another storage system.
+    1. This allows us a powerful option to address potential GPFS storage constraints that has not been available previously.
+
+### Tiered Storage Summary
+
+In summary, **users should not take tiered storage into account when using Cheaha**.
+
+- There will be no changes in user experience when traversing a directory tree as file stubs will appear as normal files from the user's perspective.
+- Slight delays when fetching old data should be expected as the data is migrated from Ceph to GPFS. See [below](#initial-interaction-with-files)
+- Tiered storage is NOT back-up storage
+- Tiered storage IS a new tool to improve storage needs on Cheaha.
+- See notes on [quotas](#quotas) below
 
 ## GPFS 5 Notes Post-Migration
 
@@ -108,3 +151,17 @@ In order to smooth the transition to GPFS 5, we have provided symlinks that mimi
 <!-- markdownlint-enable MD046 -->
 
 As you use GPFS 5, we suggest switching to the new path structure in your scripts as the symlinks will eventually be deprecated.
+
+### Quotas
+
+Existing quotas on project spaces have not been altered as part of the migration in order to smoothly accommodate existing data. Quotas will be enforced as the sum of storage used across both GPFS and CephFS. Future changes to quotas will be communicated when appropriate.
+
+### Scratch
+
+Network scratch space (`/scratch` or `/gpfs/scratch`) will have a couple of major changes moving forward
+
+1. Total `/scratch` capacity will be reduced from 800 TiB to **500 TiB** for all users. This is a consequence of a necessary reduction in total GPFS capacity.
+1. Scratch policies regarding old data will be enforced. Files older than 30 days will be automatically offloaded for deletion.
+1. Scratch does not obey the same tiered storage principles as explained [above](#gpfs-5-data-tiering). Data offloaded from scratch due to age will be subject to deletion as opposed to indefinite storage on Ceph.
+
+Please be cognizant of these changes moving forward and remember that `/gpfs/scratch` is a shared storage space.
