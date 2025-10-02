@@ -18,7 +18,7 @@
 
 Research Computing will be performing a cluster migration for all data on Cheaha from our current GPFS 4 storage system to our new GPFS 5 storage system over the coming weeks. This migration is necessary due to GPFS 4 reaching end-of-life and losing vendor support as well as allowing us to perform further, necessary upgrades to Cheaha over the coming months and years. This is a large scale migration covering [INSERT NUMBER OF FILES] files and [INSERT NUMBER OF PiB] petabytes of data, and so to facilitate a migration of this size, a more intricate process was necessary beyond a whole-cluster shutdown and move. This page is to provide you with information covering the migration plan, our rationale behind certain decisions, and how your account will be affected pre- and post-migration.
 
-### Batching Accounts into Communities
+### Batching Accounts Into Communities
 
 In order to reliably replicate user data during the migration, it's imperative that those data are quiescent. While a whole-cluster shutdown would address that, the estimated downtime would be overly burdensome to all researchers. Instead, we have split the Cheaha userbase into a number of communities (batches) based on shared access to project spaces. This means for each project space, to the best of our ability, we will be migrating every member of that project at the same time. Our goal is to minimize both individual account downtime as well as overall migration time while making sure each researcher has access to the data they need pre- and post-migration.
 
@@ -111,7 +111,7 @@ In summary, **users should not take tiered storage into account when using Cheah
 
 ## GPFS 5 Notes Post-Migration
 
-### Initial Interaction with Files
+### Initial Interaction With Files
 
 After migration to GPFS 5, loading a given file will be slow during the initial read but will return to normal for all subsequent reads. This is an expected behavior of our new tiered file system compared to our GPFS 4 system. This will be especially evident during startup of interactive apps from the web portal and during activation and use of virtual environments such as `conda` due to the large number of files these tools use. Please be patient when starting an app such as Jupyter Notebook or reading an especially large file for the first time post-migration due to the delay caused by initial file reads.
 
