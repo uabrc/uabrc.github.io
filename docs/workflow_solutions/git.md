@@ -28,7 +28,7 @@ Denser and more complete documentation is available at <https://git-scm.com/doc>
     - Repositories are decentralized, so that two people can work independently on parts of the same project and then merge their changes later.
     - A **local repository** is a repository that is housed on the same machine you are working on.
     - A **remote repository** or **remote** is a repository that is housed on a machine other than the one you are working on.
-    - Remotes are often housed on internet repository services like <https://github.com> and <https://about.gitlab.com>. UAB also maintains a private Gitlab instance at <https://gitlab.rc.uab.edu>.
+    - Remotes are often housed on internet repository services like <https://github.com> and <https://about.gitlab.com>. UAB Research Computing also maintains an on-premises Gitlab instance at <https://code.rc.uab.edu>.
 - The **working tree** is the structure used to model repository contents and history.
 - The **index** contains changes since the most recent commit.
 - The **staging area**, a subset of the index, contains changes ready to be committed.
