@@ -65,7 +65,7 @@ For batch jobs, flags are typically included as directive comments at the top of
 
 ### A Simple Batch Job
 
-Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/cheaha_storage_gpfs/index.md#user-data-and-home-directories) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
+Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/cheaha_storage_gpfs/individual_directories.md#home-and-user-data-directories) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -102,7 +102,7 @@ There is a lot going on in the above script, so let's break it down. There are t
 
 Building on the job script above, below is an array job. Array jobs are useful when you need to perform the same analysis on slightly different inputs with no interaction between those analyses. We call this situation "pleasingly parallel". We can take advantage of an array job using the variable `$SLURM_ARRAY_TASK_ID`, which will have an integer in the set of values we give to the `--array` flag.
 
-To test the script below, copy and paste it into a plain text file `testarrayjob.sh` in your [Home Directory](../../data_management/cheaha_storage_gpfs/index.md#user-data-and-home-directories) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testarrayjob.sh`. Momentarily, 16 text files with `.out` and `.err` suffixes will be produced in your home directory.
+To test the script below, copy and paste it into a plain text file `testarrayjob.sh` in your [Home Directory](../../data_management/cheaha_storage_gpfs/individual_directories.md#home-and-user-data-directories) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testarrayjob.sh`. Momentarily, 16 text files with `.out` and `.err` suffixes will be produced in your home directory.
 
 ```bash linenums="1"
 #!/bin/bash
