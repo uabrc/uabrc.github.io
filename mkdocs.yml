@@ -40,18 +40,32 @@ markdown_extensions:
   - toc:
       permalink: true
 
-plugins:
+plugins: # order matters!
   - search
-  - title-casing
-  - table-reader:
-      data_path: docs
+  - meta
+  - blog:
+      archive_date_format: MMMM yyyy
+      archive_url_date_format: yyyy/MM
+      blog_dir: news
+      blog_toc: true
+      post_date_format: full
+      post_excerpt: required
+      post_readtime: false
+      categories_allowed:
+        - Known Issues
+        - Maintenance
+        - Outreach
+        - Survey
   - gen-files:
       scripts:
-        - build_scripts/pandoc_generator.py
+        - scripts/pandoc_generator.py
   - git-revision-date-localized:
       type: date
       strict: false
   - glightbox
+  - table-reader:
+      data_path: docs
+  - title-casing
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
@@ -73,6 +87,7 @@ plugins:
         data_management/lts/lts.md: data_management/lts/index.md
         data_management/lts/policies.md: data_management/lts/iam_and_policies.md
         data_management/lts/sharing.md: data_management/lts/iam_and_policies.md
+        data_management/cheaha_storage_gpfs/project_directory_organization.md: data_management/cheaha_storage_gpfs/project_directories.md#project-directory-organization
         data_management/storage.md: data_management/index.md
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
@@ -95,7 +110,8 @@ not_in_nav: |
 
 nav:
   - Home: index.md
-  - News: news.md
+  - News:
+      - news/index.md
   - Account Management:
       - account_management/index.md
       - Cheaha Account: account_management/cheaha_account.md
@@ -110,7 +126,11 @@ nav:
       - data_management/index.md
       - Cheaha Storage (GPFS):
           - data_management/cheaha_storage_gpfs/index.md
-          - Project Directory Organization: data_management/cheaha_storage_gpfs/project_directory_organization.md
+          - User and Home Directories: data_management/cheaha_storage_gpfs/individual_directories.md
+          - Project Directories: data_management/cheaha_storage_gpfs/project_directories.md
+          - Network Scratch: data_management/cheaha_storage_gpfs/network_scratch.md
+          - Local Scratch: data_management/cheaha_storage_gpfs/local_scratch.md
+          - Temporary Files (/tmp/ Directory): data_management/cheaha_storage_gpfs/temporary_files.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
@@ -177,11 +197,13 @@ nav:
           - (4) Volumes (Optional): uab_cloud/tutorial/volumes.md
       - Remote Access: uab_cloud/remote_access.md
       - Installing Software: uab_cloud/installing_software.md
+      - Hardware: uab_cloud/hardware.md
       - Snapshots and Images: uab_cloud/snapshots.md
       - Sharing Cloud Environment: uab_cloud/sharing_cloud_environment.md
   - UAB Kubernetes Guide:
       - kubernetes/index.md
       - Startup: kubernetes/startup.md
+      - Hardware: kubernetes/hardware.md
   - National Research Computing Cyberinfrastructure:
       - national_ci/index.md
       - The Open Science Grid: national_ci/osg.md
@@ -221,4 +243,5 @@ validation:
     unrecognized_links: warn
 
 watch:
-  - build_scripts/
+  - scripts
+  - theme
