@@ -1,0 +1,31 @@
+# checks python files for python linting and formatting issues
+
+name: python
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+    paths:
+      - "**.py"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "**.py"
+  workflow_dispatch:
+
+jobs:
+  check_python:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        args: ["check", "format --check --diff"]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # 4.2.2
+      - uses: astral-sh/ruff-action@eaf0ecdd668ceea36159ff9d91882c9795d89b49 # 3.4.0
+        with:
+          args: ${{ matrix.args }}
+          version: 0.12.0

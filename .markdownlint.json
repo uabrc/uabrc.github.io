@@ -1,10 +1,12 @@
 {
+  "MD001": true,
   "MD003": {
     "style": "atx"
   },
   "MD004": {
     "style": "dash"
   },
+  "MD005": true,
   "MD007": {
     "indent": 4,
     "start_indented": false
@@ -15,17 +17,32 @@
   "MD010": {
     "code_blocks": true
   },
+  "MD011": true,
   "MD012": {
     "maximum": 1
   },
   "MD013": false,
+  "MD014": true,
+  "MD018": true,
+  "MD019": true,
+  "MD020": true,
+  "MD021": true,
   "MD022": {
     "lines_above": 1,
     "lines_below": 1
   },
+  "MD023": true,
+  "MD024": true,
   "MD025": {
     "level": 1
   },
+  "MD026": {
+    "punctuation": ".,;:!。，；：！"
+  },
+  "MD027": {
+    "list_items": true
+  },
+  "MD028": true,
   "MD029": {
     "style": "one"
   },
@@ -38,18 +55,27 @@
   "MD031": {
     "list_items": true
   },
+  "MD032": true,
   "MD033": {
     "allowed_elements": []
   },
+  "MD034": true,
   "MD035": {
     "style": "---"
   },
+  "MD036": {
+    "punctuation": ".,;:!?。，；：！？"
+  },
+  "MD037": true,
+  "MD038": true,
+  "MD039": true,
   "MD040": {
     "language_only": false
   },
   "MD041": {
     "level": 1
   },
+  "MD042": true,
   "MD043": false,
   "MD044": {
     "code_blocks": false,
@@ -60,9 +86,11 @@
       "UAB Research Computing"
     ]
   },
+  "MD045": true,
   "MD046": {
     "style": "fenced"
   },
+  "MD047": true,
   "MD048": {
     "style": "backtick"
   },
@@ -72,7 +100,30 @@
   "MD050": {
     "style": "asterisk"
   },
+  "MD051": true,
+  "MD052": true,
+  "MD053": true,
+  "MD054": {
+    "autolink": true,
+    "inline": true,
+    "full": true,
+    "collapsed": false,
+    "shortcut": false,
+    "url_inline": false
+  },
   "MD055": {
     "style": "leading_and_trailing"
+  },
+  "MD056": true,
+  "MD058": true,
+  "MD059": {
+    "prohibited_texts": [
+      "click here",
+      "here",
+      "link",
+      "more",
+      "above",
+      "below"
+    ]
   }
 }
