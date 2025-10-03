@@ -54,6 +54,18 @@ It's important to note that both `run` and `exec` enter the container as part of
     `singularity shell` is not executable via shell scripts. Any singularity commands in a batch script should be `run` or `exec` instead.
 <!-- markdownlint-enable MD046 -->
 
+### Running Singularity Containers With GPU Support
+
+To run GPU-enabled applications within a Singularity container, you must explicitly enable GPU access when launching the container. Singularity provides specific flags to expose the host system’s GPU devices and drivers inside the container.
+
+Both the `Pascalnodes` and `Amperenodes` partitions use NVIDIA GPUs. Therefore, you will have to run Singularity with the `--nv` option to enable GPU support:
+
+```bash
+singularity run --nv [other-run-flags] <image.sif> [image-software-flags]
+```
+
+The `--nv` tells Singularity to bind the NVIDIA driver libraries and GPU devices into the container. This ensures your containerized application can access the GPU as if it were running on the host. An example tutorial demonstrating how to run Parabricks software with GPU support using the `--nv` flag can be found [here](../education/case_studies.md/#parabricks-testing-on-amperenodes-on-cheaha). For more details on usage of `--nv` flag refer to the [Singulairty Official Documentation](https://docs.sylabs.io/guides/3.5/user-guide/gpu.html).
+
 ### Singularity Paths
 
 By default, Singularity containers have limited access to the general filesystem. Containers get default access to the `/home` directory as well as the directory the container was run from. If you run the container from `$HOME` but try to access files in `$USER_DATA`, you will see an error. In order to give a container access to other directories, use the `-B` or `--bind` option when invoking the container. For instance, if I wanted to use `run` on a container that had an input option called `-i` and give the container access to a subfolder called `my_data` in a project space called `UABRC`, the singularity command would look like:
