@@ -27,11 +27,11 @@ Research Computing at UAB provides shared resources for researchers, where respo
 - **Cheaha**: To login to Cheaha:
     - UAB Employees and Students: use your BlazerID.
     - External Collaborators: use your XIAS email address.
-    - For detail login information, please visit [accessing Cheaha](../cheaha/getting_started.md#accessing-cheaha) page.  If accessing through Open OnDemand, our online portal, [Duo 2FA](https://www.uab.edu/it/home/security/2-factor) may be required.
+    - For detail login information, please visit [accessing Cheaha](../cheaha/getting_started.md#accessing-cheaha) page. If accessing through Open OnDemand, our online portal, [Duo 2FA](https://www.uab.edu/it/home/security/2-factor) may be required.
 
 - **GitLab**: To login  to the GitLab, the UAB Employees and Students require a BlazerID, while External Collaborators require XIAS email. For detail login information visit the [UAB Employees and Students GitLab Registration](./gitlab_account.md#uab-gitlab-registration) and [External Collaborators GitLab Registration](./gitlab_account.md#xias-external-collaborator-registration) pages respectively.
 
 - **Cloud.rc**: To access the Cloud.rc, you must be on the campus network. For off-campus access, use the [UAB Campus VPN](https://www.uab.edu/it/home/tech-solutions/network/vpn), which requires [Duo 2FA](https://www.uab.edu/it/home/security/2-factor).
 UAB employees and students can log in using their BlazerID, while External Collaborators use their XIAS email. For login details, visit our [Cloud.rc](../uab_cloud/index.md#first-steps) page.
 
-If you are unable to find what you need, please contact our team [here](../index.md#how-to-contact-us).
+If you are unable to find what you need, please [Contact Support](../index.md#how-to-contact-us).

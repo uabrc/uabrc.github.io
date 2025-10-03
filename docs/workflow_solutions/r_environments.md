@@ -28,7 +28,7 @@ To begin, projects start at a parent or root directory within which most, if not
 
     ![!Choose which type of project you are wanting to create. This will initialize some files that correspond to specific types of projects depending on what you choose.](images/r_project_type.png)
 
-1. Finally, you will choose your project name, the location for the project directory, as well as choose whether you want to initialize a git repo for the project. In addition, you can choose to use `renv` for package dependency management. Please read more about `renv` [here](#renv). It's highly suggested to use `renv` for future environment reproducibility.
+1. Finally, you will choose your project name, the location for the project directory, as well as choose whether you want to initialize a git repo for the project. In addition, you can choose to use `renv` for package dependency management. More information is available at the [renv section](#renv). It's highly suggested to use `renv` for future environment reproducibility.
 
     ![!Choose the project name and location as well as whether to initialize a git repo and use renv](images/r_name_project.png)
 

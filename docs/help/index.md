@@ -2,6 +2,8 @@
 
 This section is your guide to getting the right support when you need it. Whether you're just getting started with using our services on Cheaha, troubleshooting an issue, or exploring advanced features, we’re here to help. You'll find multiple ways to reach out for support, from exploring our detailed documentation, to submitting support tickets, or joining our virtual office hours and connecting with our team of Facilitators for live assistance, we will like to help. Please choose one of the options that best fits you, and we’ll do our best to support your research computing needs.
 
+For more details please see our [Support page](./support.md).
+
 ## Ways We Can Help
 
 ### UAB Research Computing Documentation
@@ -14,6 +16,4 @@ Please reach out to us via email at <support@listserv.uab.edu> to create a suppo
 
 ### Attend Virtual Office Hours
 
-You can also attend our virtual office hours on Mondays and Thursdays weekly. Our Research Facilitation team provides live support during these hours to resolve your needs. The meetings are held on Zoom, please find detailed information on this [link](../index.md#how-to-contact-us) containing meeting times, and the link to join our bi-weekly office hours.
-
-For additional information please see our [Support page](./support.md).
+You can also attend our virtual office hours on Mondays and Thursdays weekly. Our Research Facilitation team provides live support during these hours to resolve your needs. The meetings are held on Zoom. Times and URLs are available at our [How to Contact Us](../index.md#how-to-contact-us) section.
