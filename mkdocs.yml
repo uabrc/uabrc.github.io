@@ -164,7 +164,6 @@ nav:
       - Software Collaboration With GitHub and GitLab: workflow_solutions/git_collaboration.md
       - Creating Sandbox Apps: workflow_solutions/creating_sandbox_apps.md
   - Cheaha Guide:
-      - Cluster Migration: cheaha/migration_overview.md
       - Getting Started: cheaha/getting_started.md
       - Tutorials:
           - cheaha/tutorial/index.md

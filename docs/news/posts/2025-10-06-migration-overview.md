@@ -1,35 +1,47 @@
+---
+date: 2025-10-06T12:00:00-05:00
+categories:
+    - Maintenance
+---
+
 # Cheaha Data Migration
 
 ## User Impact Summary
 
-- All user and project data will be migrated on a rolling basis over the coming weeks
+- All user and project data will be migrated to a new storage systems on a rolling basis over the coming weeks
 - Users will receive two day notice before their account is migrated
 - During migration, access to Cheaha will be revoked and all jobs will be requeued and held
 - Plan to lose access to Cheaha for up to **2 days**
 - Once migration is complete, account certification will be required through the [web portal](https://rc.uab.edu)
+- Wait times for jobs are expected to increase during the migration. Please see our [expected impact](#effects-on-queue-times) for more details
+
+<!-- more -->
 
 ## Potential Sections of Interest
 
 - [Migraton Procedure](#migration-procedure)
 - [General Timeline](#general-timeline)
 - [Summary of Available Compute During the Migration](#gpfs-5-compute-nodes)
+    - [Impact on Job Wait Times](#effects-on-queue-times)
+- [Changes to Scratch](#scratch)
 
 ## Overview
 
-Research Computing will be performing a cluster migration for all data on Cheaha from our current GPFS 4 storage system to our new GPFS 5 storage system over the coming weeks. This migration is necessary due to GPFS 4 reaching end-of-life and losing vendor support as well as allowing us to perform further, necessary upgrades to Cheaha over the coming months and years. This is a large scale migration covering [INSERT NUMBER OF FILES] files and [INSERT NUMBER OF PiB] petabytes of data, and so to facilitate a migration of this size, a more intricate process was necessary beyond a whole-cluster shutdown and move. This page is to provide you with information covering the migration plan, our rationale behind certain decisions, and how your account will be affected pre- and post-migration.
+Research Computing will be performing a data migration for all data on Cheaha from our current GPFS 4 storage system to our new GPFS 5 storage system over the coming weeks. This migration is necessary due to GPFS 4 reaching end-of-life and losing vendor support as well as allowing us to perform further, necessary upgrades to Cheaha over the coming months and years. This is a large scale migration covering [INSERT NUMBER OF FILES] files and [INSERT NUMBER OF PiB] petabytes of data, and so to facilitate a migration of this size, a more intricate process was necessary beyond a whole-cluster shutdown and move. This page is to provide you with technical information covering the migration plan, our rationale behind certain decisions, and how your account will be affected pre- and post-migration.
 
 ### Batching Accounts Into Communities
 
-In order to reliably replicate user data during the migration, it's imperative that those data are quiescent. While a whole-cluster shutdown would address that, the estimated downtime would be overly burdensome to all researchers. Instead, we have split the Cheaha userbase into a number of communities (batches) based on shared access to project spaces. This means for each project space, to the best of our ability, we will be migrating every member of that project at the same time. Our goal is to minimize both individual account downtime as well as overall migration time while making sure each researcher has access to the data they need pre- and post-migration.
+In order to reliably replicate user data during the migration, it's imperative that those data are unchanging. We have weighed the available options and decided against a whole-cluster shutdown due to estimate downtime. Instead, we have split the Cheaha userbase into a number of **communities** (batches) based on shared access to project spaces. This means for each project space, to the best of our ability, we will be migrating every member of that project at the same time. Our goal is to minimize both individual account downtime as well as overall migration time while making sure each researcher has access to the data they need pre- and post-migration.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
+
     It was not possible to make sure all users were transferred with all of their projects while also keeping community sizes manageable. We have minimized the number of people this affects as much as possible. We will notify users if they are part of groups being migrated in a different community when that occurs.
 <!-- markdownlint-enable MD046 -->
 
 ## Migration Procedure
 
-The following procedure is performed on a **per-community** basis.
+Each community, or batch of user groups, should expect the following procedure when it is their turn to migrate.
 
 1. **Notice of Pending Migration**
     1. Two days prior to migration, each user in a given community will receive a notification via email.
@@ -50,6 +62,7 @@ The following procedure is performed on a **per-community** basis.
 1. **Post-Migration Cleanup**
     1. After migration for a batch ends, held jobs will be released.
     1. Compute node availability differs between GPFS 4 and GPFS 5. See [below](#gpfs-5-compute-nodes) for more details.
+        1. Compute availability will affect expected wait times for jobs during the migration, especially for GPU compute.
 
 ### General Timeline
 
@@ -66,6 +79,8 @@ Due to high variability in file structure and content across users and communiti
 - **Wednesday, October 8**: Notification of impending migration sent to members of community 1
 - **Friday, October 10**: Migration for community 1 begins
 
+The migration will proceed through our predefined communities continuously until finished. Beyond the dates given, we cannot predict when each community will be transferred. The full migration is expected to last through the end of October.
+
 ## GPFS 5 Data Tiering
 
 With the upgrade to GPFS 5, we are introducing a data tiering strategy to help us balance increasing storage demands with rising costs for high performance storage systems. GPFS will still be used as the primary parallel performance storage system and will store all files smaller than 4 MiB and all other active files. Inactive files will be transparently moved to a CephFS storage tier to reduce system pressure on GPFS. Inactivity will be determined by time since last file access. Files stored on CephFS leave a stub behind on GPFS. The stub contains all relevant metadata for the file and will appear to the user as if the file is still on GPFS. Reading a file stub will cause the file to be automatically transferred from CephFS back to GPFS.
@@ -73,7 +88,7 @@ With the upgrade to GPFS 5, we are introducing a data tiering strategy to help u
 ### What CephFS IS NOT
 
 1. **CephFS is NOT a replacement for LTS**.
-    1. Data you know you will not use for an extended period of time should be moved to [LTS](../data_management/lts/index.md).
+    1. Data you know you will not use for an extended period of time should be moved to [LTS](../../data_management/lts/index.md).
     1. Storage quotas will be enforced across both GPFS and CephFS. This means for a standard project quota, only 25 TiB can be stored in a project across both GPFS and Ceph.
 1. **CephFS is NOT a backup**
     1. A file's data will only exist on either Ceph or GPFS, **never on both**.
@@ -87,7 +102,8 @@ With the upgrade to GPFS 5, we are introducing a data tiering strategy to help u
 
 <!-- markdownlint-disable MD046 -->
 !!! critical
-    It is imperative to understand that tiered storage does not equal a backup. We do not provide a traditional, automatic backup for data stored on Cheaha. All data are erasure-encoded in case of hardware failure, they are not backed up in case of user error. Please see information about [LTS](../data_management/lts/index.md) for a potential backup solution.
+
+    It is imperative to understand that tiered storage does not equal a backup. We do not provide a traditional, automatic backup for data stored on Cheaha. All data are erasure-encoded in case of hardware failure, they are not backed up in case of user error. Please see information about [LTS](../../data_management/lts/index.md) for a potential backup solution.
 <!-- markdownlint-enable MD046 -->
 
 ### What CephFS IS
@@ -113,7 +129,9 @@ In summary, **users should not take tiered storage into account when using Cheah
 
 ### Initial Interaction With Files
 
-After migration to GPFS 5, loading a given file will be slow during the initial read but will return to normal for all subsequent reads. This is an expected behavior of our new tiered file system compared to our GPFS 4 system. This will be especially evident during startup of interactive apps from the web portal and during activation and use of virtual environments such as `conda` due to the large number of files these tools use. Please be patient when starting an app such as Jupyter Notebook or reading an especially large file for the first time post-migration due to the delay caused by initial file reads.
+After migration to GPFS 5, loading a given file may take longer than expected during the initial read but will return to normal for all subsequent reads. This is an expected behavior of our new tiered file system compared to our GPFS 4 system. This will be especially evident during startup of interactive apps from the web portal and during activation and use of virtual environments such as `conda` due to the large number of files these tools use.
+
+Please be patient when starting an app such as Jupyter Notebook or reading an especially large file for the first time post-migration due to the delay caused by initial file reads.
 
 ### Jobs Requeued Prior to Migration
 
@@ -137,7 +155,7 @@ Compute nodes are only able to run jobs from one of GPFS 4 or GPFS 5 so compute 
 
 On GPFS 4, all nodes in the interactive/express/short/medium/long (mainline) partitions have Intel processors while the `amd-hdr100` nodes have AMD processors. On GPFS 5, the mainline partitions use nodes that were previously migrated from the `amd-hdr100` partition and so now use AMD CPUs.
 
-In rare cases, tools compiled on on Intel processor can cause `Illegal Instruction` errors when run on AMD CPUs. If your jobs were submitted to one of the mainline partitions and show this error after migration, please [contact support](../index.md#how-to-contact-us). As the migration continues, the standard Intel nodes will also be migrated from GPFS 4 to GPFS 5 and added to the mainline partitions.
+In rare cases, tools compiled on on Intel processor can cause `Illegal Instruction` errors when run on AMD CPUs. If your jobs were submitted to one of the mainline partitions and show this error after migration, please [contact support](../../index.md#how-to-contact-us). As the migration continues, the standard Intel nodes will also be migrated from GPFS 4 to GPFS 5 and added to the mainline partitions.
 
 #### Compute Migration
 
@@ -152,6 +170,12 @@ To best accommodate workloads on both clusters during data migration, compute no
 
 - 5 amperenodes (20 total on GPFS 5)
 - All largemem nodes (14 total on GPFS 5)
+
+#### Effects on Queue Times
+
+During the migration, be aware that job wait times are expected to increase based on when you are migrated relative to the [compute migration](#compute-migration). For instance, users migrated prior to the initial compute migration will experience longer wait times due to initially lower compute capacity on GPFS 5 while users still on GPFS 4 will experience somewhat reduced wait times due to fewer jobs competing for resources on that platform. This will flip after the initial compute migration where users on GPFS 5 will have reduced wait times from the influx of compute nodes, and users on GPFS 4 will have longer wait times.
+
+**This will be especially apparent for jobs on pascalnodes and amperenodes.** Prior to the initial compute migration, there will be a 100%:0% split of pascalnodes and 75%:25% split of amperenodes on GPFS4 and GPFS 5, respectively. After the initial compute migration, the splits will be 0%:100% for pascalnodes and 25%:75% for amperenodes on GPFS 4 and GPFS 5, respectively. We understand this will have a large impact on job throughput for individual users and will endeavor to complete the migration swiftly to prevent undue burden on our community. Thank you for understanding.
 
 ### Directory Paths
 
@@ -174,6 +198,7 @@ In order to smooth the transition to GPFS 5, we have provided symlinks that mimi
 
 <!-- markdownlint-disable MD046 -->
 !!! critical
+
     It is **not** necessary to immediately make changes to your paths in your scripts. The provided symlinks ensure backwards compatibility with GPFS 4 path structure in existing scripts in 99% of cases. Requeued and pending jobs submitted using GPFS 4 paths will not be impacted by these path changes.
 <!-- markdownlint-enable MD046 -->
 
