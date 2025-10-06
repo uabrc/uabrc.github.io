@@ -27,7 +27,7 @@ categories:
 
 ## Overview
 
-Research Computing will be performing a data migration for all data on Cheaha from our current GPFS 4 storage system to our new GPFS 5 storage system over the coming weeks. This migration is necessary due to GPFS 4 reaching end-of-life and losing vendor support as well as allowing us to perform further, necessary upgrades to Cheaha over the coming months and years. This is a large scale migration covering [INSERT NUMBER OF FILES] files and [INSERT NUMBER OF PiB] petabytes of data, and so to facilitate a migration of this size, a more intricate process was necessary beyond a whole-cluster shutdown and move. This page is to provide you with technical information covering the migration plan, our rationale behind certain decisions, and how your account will be affected pre- and post-migration.
+Research Computing will be performing a data migration for all data on Cheaha from our current GPFS 4 storage system to our new GPFS 5 storage system over the coming weeks. This migration is necessary due to GPFS 4 reaching end-of-life and losing vendor support as well as allowing us to perform further, necessary upgrades to Cheaha over the coming months and years. This is a large-scale migration covering 1.3 billion files and 4.7 petabytes of data, and so to facilitate a migration of this size, a more intricate process was necessary beyond a whole-cluster shutdown and move. This page is to provide you with technical information covering the migration plan, our rationale behind certain decisions, and how your account will be affected pre- and post-migration.
 
 ### Batching Accounts Into Communities
 
