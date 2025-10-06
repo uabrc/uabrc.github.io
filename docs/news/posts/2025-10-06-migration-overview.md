@@ -61,7 +61,7 @@ Each community, or batch of user groups, should expect the following procedure w
 
 1. **Post-Migration Cleanup**
     1. After migration for a batch ends, held jobs will be released.
-    1. Compute node availability differs between GPFS 4 and GPFS 5. See [below](#gpfs-5-compute-nodes) for more details.
+    1. Compute node availability differs between GPFS 4 and GPFS 5. See our [compute node](#gpfs-5-compute-nodes) section for more details.
         1. Compute availability will affect expected wait times for jobs during the migration, especially for GPU compute.
 
 ### General Timeline
@@ -120,7 +120,7 @@ With the upgrade to GPFS 5, we are introducing a data tiering strategy to help u
 In summary, **users should not take tiered storage into account when using Cheaha**.
 
 - There will be no changes in user experience when traversing a directory tree as file stubs will appear as normal files from the user's perspective.
-- Slight delays when fetching old data should be expected as the data is migrated from Ceph to GPFS. See [below](#initial-interaction-with-files)
+- Slight delays when fetching old data should be expected as the data is migrated from Ceph to GPFS. See the section on [initial interaction with files](#initial-interaction-with-files)
 - Tiered storage is NOT back-up storage
 - Tiered storage IS a new tool to improve storage needs on Cheaha.
 - See notes on [quotas](#quotas) below
@@ -145,7 +145,7 @@ Compute nodes are only able to run jobs from one of GPFS 4 or GPFS 5 so compute 
 
 | Partition | Available Nodes | Notes |
 |---|---|---|
-| mainline | 20 (2560 cores) | Include AMD CPUs. See [below](#changes-to-mainline-partitions) for details |
+| mainline | 20 (2560 cores) | Include AMD CPUs. See the [list of changes](#changes-to-mainline-partitions) for details |
 | pascalnodes | 0 | All pascalnodes will be moved during the 1st compute migration |
 | amperenodes | 5 (10 A100s) | 10 amperenodes will be added during the 1st compute migration with the remaining 5 added once the migration completes |
 | amperenodes-medium | 1 (2 A100s) | Nodes will be added to the amperenodes-medium partition during both compute migrations |
@@ -214,6 +214,6 @@ Network scratch space (`/scratch` or `/gpfs/scratch`) will have a couple of majo
 
 1. Total `/scratch` capacity will be reduced from 800 TiB to **500 TiB** for all users. This is a consequence of a necessary reduction in total GPFS capacity.
 1. Scratch policies regarding old data will be enforced. Files older than 30 days will be automatically offloaded for deletion.
-1. Scratch does not obey the same tiered storage principles as explained [above](#gpfs-5-data-tiering). Data offloaded from scratch due to age will be subject to deletion as opposed to indefinite storage on Ceph.
+1. Scratch does not obey the same tiered storage principles as explained in the [data tiering](#gpfs-5-data-tiering) section. Data offloaded from scratch due to age will be subject to deletion as opposed to indefinite storage on Ceph.
 
 Please be cognizant of these changes moving forward and remember that `/gpfs/scratch` is a shared storage space.
