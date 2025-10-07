@@ -59,9 +59,9 @@ The following are reasons why you might choose JupyterLab over Jupyter Notebook.
 
 Jupyter Notebook offers the classic, streamlined experience that focuses on a single document at a time. The Jupyter Notebook interface is ideal for teaching, learning, or lightweight research tasks. The interface is what many users are already familiar with. The following are reasons why you might use Jupyter Notebook over JupyterLab.
 
-1. - Easy for beginners — fewer menus, faster to learn.
-1. Great for teaching or workshops — minimal distractions.
-1. Perfect for quick tests and plots — launch and code right away.
+1. Easy for beginners, it has fewer menus, that are quicker to learn.
+1. Great for teaching or workshops, as there are minimal distractions.
+1. Perfect for quick tests and plots, you can launch and code right away.
 
 In the screenshot below, you can see a Jupyter Notebook, showing a workbook with sample code and output.
 ![!Screenshot of Jupyter Notebook showing a single notebook open with code and output.](./images/jupyternotebooksample.png)
