@@ -41,7 +41,7 @@ More in-depth instructions, including for SSH cloning, are provided at the [offi
 
 To do anything with our GitLab instance, you will first need to create an account. Please see our [GitLab Account Management page](../account_management/gitlab_account.md).
 
-To clone a repository, be sure you have the repository URL. Then, using `git` at a terminal, [clone](git.md#cloning) the repository using whatever settings are appropriate. Be sure to append `.git` to the end of the repository or the clone will note be successful. For example, if the URL is `https://gitlab.rc.uab.edu/user/repository` then you will clone `https://gitlab.rc.uab.edu/user/repository.git`. GitLab repository pages look like the example shown below.
+To clone a repository, be sure you have the repository URL. Then, using `git` at a terminal, [clone](git.md#cloning) the repository using whatever settings are appropriate. Be sure to append `.git` to the end of the repository or the clone will note be successful. For example, if the URL is `https://code.rc.uab.edu/user/repository` then you will clone `https://code.rc.uab.edu/user/repository.git`. GitLab repository pages look like the example shown below.
 
 ![!gitlab repository page interface](images/gitlab-repo-interface.png)
 

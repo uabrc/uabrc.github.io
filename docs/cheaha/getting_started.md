@@ -8,7 +8,7 @@ Cheaha is a High Performance Computing (HPC) resource intended primarily for bat
 
 ## What if I Need Help?
 
-Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are available in the [Support Guide](../help/support.md), and answers to common questions can be found in our section for [frequently asked questions](../help/faq.md).
+Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Please read our [Tips on Getting Effective Support](../help/support.md), and our [Frequently Asked Questions](../help/faq.md).
 
 ## Account Creation
 
