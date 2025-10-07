@@ -22,12 +22,12 @@ categories:
 - [Migraton Procedure](#migration-procedure)
 - [General Timeline](#general-timeline)
 - [Summary of Available Compute During the Migration](#gpfs-5-compute-nodes)
-    - [Impact on Job Wait Times](#effects-on-queue-times)
+- [Impact on Job Wait Times](#effects-on-queue-times)
 - [Changes to Scratch](#scratch)
 
 ## Overview
 
-Research Computing will be performing a data migration for all data on Cheaha from our current GPFS 4 storage system to our new GPFS 5 storage system over the coming weeks. This migration is necessary due to GPFS 4 reaching end-of-life. The new GPFS 5 storage system will also support future upgrades and planned growth for Cheaha. This is a large-scale migration covering 1.3 billion files and 4.7 petabytes of data. To facilitate a migration of this size, we developed a more flexible, phased process to avoid an extended cluster shutdown for all user simultaneously. This page is to provide you with technical information covering the migration plan, our rationale behind certain decisions, and how your account will be affected pre- and post-migration.
+Research Computing will be performing a data migration for all data on Cheaha from our current GPFS 4 storage system to our new GPFS 5 storage system over the coming weeks. This migration is necessary due to GPFS 4 reaching end-of-life, and the physical hardware and vendor support to increase storage capacity on GPFS 4 does not exist. The new GPFS 5 storage system will support future upgrades and planned growth for Cheaha. This is a large-scale migration covering 1.3 billion files and 4.7 petabytes of data. To facilitate a migration of this size, we developed a more flexible, phased process to avoid an extended cluster shutdown for all user simultaneously. This page is to provide you with technical information covering the migration plan, our rationale behind certain decisions, and how your account will be affected pre- and post-migration.
 
 ### Batching Accounts Into Communities
 
@@ -52,7 +52,12 @@ Each community, or batch of user groups, should expect the following procedure w
     1. All jobs for these accounts will be requeued if they are running and placed on hold.
         1. Requeued jobs are essentially cancelled and resubmitted to queue under the same Job ID. **These jobs start from the beginning of the submitted script**.
     1. After migration, each account will require certification by going to our [web portal](https://rc.uab.edu). You will not be able to access Cheaha until your account has been certified.
-        1. This is part of a new annual account certification process we are adopting to ensure cluster resources are associated only with active, valid accounts
+
+    <!--markdownlint-disable MD046 -->
+    !!! note
+
+        The certification step is part of a new annual process we are adopting to ensure cluster resources are associated only with active, valid accounts. This will improve system security and ensure compliance with expectations, responsibilities, and policies. Part of the review process is confirming each researcher intends to continue using RCS services
+    <!--markdownlint-enable MD046 -->
 
 1. **Migration Schedule**
     1. Plan to lose access to Cheaha for up to **2 days** during migration.
@@ -76,15 +81,15 @@ As explained above, the migration can be thought of as a series of, at most, 4-d
 
 Due to high variability in file structure and content across users and communities, it's not feasible to predict how long any given community's migration will take. Therefore, we cannot give expected dates for when a given group's migration will begin and end as it's solely dependent on migrations of prior groups. Here are some dates to remember though:
 
-- **Monday, October 6**: Initial announcement concerning the migration is sent to the Cheaha userbase
-- **Wednesday, October 8**: Notification of impending migration sent to members of community 1
-- **Friday, October 10**: Migration for community 1 begins
+- **Tuesday, October 7**: Initial announcement concerning the migration is sent to the Cheaha userbase
+- **Thursday, October 9**: Notification of impending migration sent to members of community 1
+- **Saturday, October 11**: Migration for community 1 begins
 
 The migration will proceed through our predefined communities continuously until finished. Beyond the dates given, we cannot predict when each community will be transferred. The full migration is expected to last through the end of October.
 
 ## GPFS 5 Data Tiering
 
-To effectively manage growing storage needs while controlling the costs associated with high-performance storage, our upgrade to GPFS 5 introduces a new data tiering strategy. GPFS will remain the parallel storage system for Cheaha continuing to provide high-performance access for all active files. Inactive files, defined as those not accessed within a set period (currently over one year since last access), will have their content transparently migrated to a backing storage tier provided by CephFS. This process reduces storage pressure on GPFS by freeing up capacity, while leaving a file stub containing all relevant metadata behind on GPFS. This stub makes the file appear to the user as if it's still on GPFS, and reading the file will automatically and transparently transfer the content back from CephFS to GPFS for active use. This flexible tiering approach allows for balanced storage use based on performance needs and application use cases.
+To effectively manage growing storage needs while controlling the costs associated with high-performance storage, our upgrade to GPFS 5 introduces a new data tiering strategy. Tiering is not visible to the user and requires no adjustments to user workflows on Cheaha. These details on the tiering architecture are informational only and do not require any awareness or action by the user. GPFS will remain the parallel storage system for Cheaha continuing to provide high-performance access for all active files. Inactive files, defined as those not accessed within a set period (currently over one year since last access), will have their content transparently migrated to a backing storage tier provided by CephFS. This process reduces storage pressure on GPFS by freeing up capacity, while leaving a file stub containing all relevant metadata behind on GPFS. This stub makes the file appear to the user as if it's still on GPFS, and reading the file will automatically and transparently transfer the content back from CephFS to GPFS for active use. This flexible tiering approach allows for balanced storage use based on performance needs and application use cases.
 
 ### What GPFS Tiering IS NOT
 
@@ -120,7 +125,7 @@ To effectively manage growing storage needs while controlling the costs associat
 
 In summary, **users should not take tiered storage into account when using Cheaha**.
 
-- There will be no changes in user experience when traversing a directory tree as file stubs will appear as normal files from the user's perspective.
+- There will be no changes in user experience when traversing a directory tree. Active and inactive files will appear as ordinary files from the user's perspective.
 - Slight delays when fetching old data should be expected as the data is migrated from Ceph to GPFS. See the section on [initial interaction with files](#initial-interaction-with-files)
 - Tiered storage is NOT back-up storage
 - Tiered storage IS a new tool to improve storage demands on Cheaha.
@@ -130,7 +135,7 @@ In summary, **users should not take tiered storage into account when using Cheah
 
 ### Initial Interaction With Files
 
-After migration to GPFS 5, loading a given file may take longer than expected during the initial read but will return to normal for all subsequent reads. This is expected post-migration behavior of our new tiered file system compared to our GPFS 4 system. This will be especially evident during startup of interactive apps from the web portal and during activation and use of virtual environments such as `conda` due to the large number of files these tools use.
+After migration to GPFS 5, loading a given file may take longer than expected during the initial read but will return to normal for all subsequent reads. This is expected post-migration behavior of our new tiered file system compared to our GPFS 4 system. This may be especially evident during startup of interactive apps from the web portal and during activation and use of virtual environments such as `conda` due to the large number of files these tools use.
 
 Please be patient when starting an app such as Jupyter Notebook or reading an especially large file for the first time post-migration due to the delay caused by initial file reads.
 
