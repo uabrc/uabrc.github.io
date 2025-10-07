@@ -146,6 +146,8 @@ Some software have checks built-in to make sure previously generated data are no
 
 Compute nodes are only able to run jobs from one of GPFS 4 or GPFS 5 so compute power has been split between the two storage systems. Due to hardware configuration constraints, some changes were made to the partitions on GPFS 5 that could potentially impact jobs.
 
+**Current GPFS 5 Compute Capacity Pre-Migration**:
+
 | Partition | Available Nodes | Notes |
 |---|---|---|
 | mainline | 20 (2560 cores) | Include AMD CPUs. See the [list of changes](#changes-to-mainline-partitions) for details |
