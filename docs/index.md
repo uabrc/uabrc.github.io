@@ -5,11 +5,9 @@ The Research Computing System (RCS) provides a framework for sharing research da
 ## News
 
 <!-- markdownlint-disable MD046 -->
-<!--
 !!! announcement
 
-    Put important announcements here and remove the surrounding comments.
--->
+    Research Computing will be performing a data migration for Cheaha beginning Saturday, October 11 and lasting through the end of the month. Please see our [migration overview](./news/posts/2025-10-07-migration-overview.md) for more information on what to expect during this time.
 <!-- markdownlint-enable MD046 -->
 
 **Check our [News page](./news/index.md) for recent developments.**
