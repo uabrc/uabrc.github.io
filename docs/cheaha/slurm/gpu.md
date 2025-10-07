@@ -182,6 +182,10 @@ For versions of PyTorch 1.13 and newer, use the following template instead.
     The latest CUDA and cuDNN are now available from [Conda](#cuda-and-cudnn-modules).
 <!-- markdownlint-enable MD046 -->
 
+## Educational Resources
+
+Please see our [Training Resources page](../../education/training_resources.md) for information on learning how to leverage GPUs for computational science workflows.
+
 ## Reviewing GPU Jobs
 
 As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct) to review GPU jobs. Quantity of GPUs may be reviewed using the `reqtres` and `alloctres` [fields](job_management.md#sacct-fields).
