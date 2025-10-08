@@ -39,7 +39,7 @@ Always restrict access to only the intended directories or buckets. Examples of 
 
 ### Frequent Transfer of Your Data
 
-If you frequently exchange data, the same principles that you did for infrequent data transfer apply, but automation becomes important Globus still works well for frequent transfers. Consider using Globus Flows or Globus Compute for automated and repeatable workflows. When multiple collaborators need to analyze the same data simultaneously, Globus may no longer be the best option. In that case, use a shared allocation((../cheaha_storage_gpfs/project_directories.md) or [LTS](../lts/index.md)) so everyone can work directly with the data in place.
+If you frequently exchange data, the same principles that you did for infrequent data transfer still apply, but automation becomes important. Consider using Globus Flows or Globus Compute for automated and repeatable workflows. When multiple collaborators need to analyze the same data simultaneously, Globus may no longer be the best option. In that case, use a shared allocation([GPFS](../cheaha_storage_gpfs/project_directories.md) or [LTS](../lts/index.md)) so everyone can work directly with the data in place.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
