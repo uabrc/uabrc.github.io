@@ -29,17 +29,18 @@
 }
 
 /* link color correction */
-.md-content a,
-.md-content a:visited {
+
+.md-content>:not(.md-sidebar) a,
+.md-content>:not(.md-sidebar) a:visited {
   color: revert;
 }
 
-.md-content a:hover {
+.md-content>:not(.md-sidebar) a:hover {
   color: revert;
   border-bottom: 1px solid;
 }
 
-.md-typeset .headerlink:hover {
+.md-content a.headerlink:hover {
   border-bottom: none;
 }
 
@@ -57,6 +58,9 @@ html .md-footer-meta.md-typeset a.supportemail {
   color: var(--md-default-fg-color);
   font-weight: 600;
   font-size: 2em;
+}
+
+.md-typeset:not(.md-blog-header) h1 {
   margin-bottom: 0;
 }
 

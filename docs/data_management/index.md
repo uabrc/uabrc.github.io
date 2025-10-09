@@ -18,18 +18,18 @@ When you have different types of data with varying storage needs, choosing the r
     - If your data is frequently accessed or modified, [Cheaha Storage (GPFS)](../data_management/cheaha_storage_gpfs/index.md) is a perfect option for your use case.
     - When you have finished working with the data, please consider putting it into [LTS](../data_management/lts/index.md). Please [Contact Us](../help/support.md#how-to-request-support) for more information.
 - **I am just learning how to use Cheaha for very small personal projects**:
-    - If you are new to Cheaha and working with small personal projects, you do not need a complex storage solution. [User Data](../data_management/cheaha_storage_gpfs/index.md#user-data-and-home-directories) is a simple and accessible option for beginners and smaller datasets.
+    - If you are new to Cheaha and working with small personal projects, you do not need a complex storage solution. [User Data](../data_management/cheaha_storage_gpfs/individual_directories.md#home-and-user-data-directories) is a simple and accessible option for beginners and smaller datasets.
     - If you find your project growing, or you need to collaborate with others at UAB, consider a shared allocation on [GPFS](../data_management/cheaha_storage_gpfs/index.md) and/or [LTS](../data_management/lts/index.md). Please refer to the instructions on [how to request a shared allocation](#how-do-i-request-shared-storage).
 - **I need somewhere to store lots of temporary files while I do my processing**:
-    - If you need a place to store large amounts of temporary data while processing data, [User Scratch](../data_management/cheaha_storage_gpfs/index.md#user-scratch) is the best option.
+    - If you need a place to store large amounts of temporary data while processing data, [Network Scratch](../data_management/cheaha_storage_gpfs/network_scratch.md) is the best option.
 - **I am working with high-throughput or I/O bound applications, like AI training or evaluation, or I have many very small files**:
-    - For high-performance tasks, like AI training, [Local Scratch](../data_management/cheaha_storage_gpfs/index.md#local-scratch) provides fast and optimized data access for intensive I/O workloads..
+    - For high-performance tasks, like AI training, [Local Scratch](../data_management/cheaha_storage_gpfs/local_scratch.md) provides fast and optimized data access for intensive I/O workloads..
 - **I have a combination of needs and am unsure of how to proceed**:
     - If your use case spans across multiple types of storage needs, [Contact Us](../help/support.md#how-to-request-support) to discuss your requirements, and we wll help you find the best solution.
 
 ## What Individual Storage Solutions Are Available?
 
-Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about [Long-Term Storage](./lts/index.md) and [User Data and Home Directories](./cheaha_storage_gpfs/index.md#user-data-and-home-directories).
+Every Cheaha user has personal directories found at `/home/$USER` (or `$HOME`) and `/data/user/$USER` (or `$USER_DATA`), which are created automatically during account registration. In addition, individual allocations on Long-Term Storage (LTS) are also available upon request. Please read more about [Long-Term Storage](./lts/index.md) and [User Data and Home Directories](./cheaha_storage_gpfs/individual_directories.md#home-and-user-data-directories).
 
 ### How Do I Request Individual Cheaha (`GPFS`) Storage?
 
@@ -41,9 +41,9 @@ To request individual Long-Term Storage, please first read and understand how [L
 
 ## What Shared Storage Solutions Are Available?
 
-Shared Storage is available via two services. We have [Project Storage](./cheaha_storage_gpfs/index.md#project-directory) (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
+Shared Storage is available via two services. We have [Project Storage](./cheaha_storage_gpfs/project_directories.md) (located in `/data/project` or Cheaha) and [Long-Term Storage (LTS)](./lts/index.md). The two offerings are suited to different sets of use-cases and are available upon request, so please read on to determine which may be most suitable.
 
-[Project Storage](./cheaha_storage_gpfs/index.md#project-directory) is best-suited for changing or dynamic data. Specifically::
+[Project Storage](./cheaha_storage_gpfs/project_directories.md) is best-suited for changing or dynamic data. Specifically::
 
 - Data needing/undergoing analysis
 - Exploratory data
@@ -119,7 +119,7 @@ To request changes in Shared Storage membership, please contact [Support](../hel
 
 ### How Can I Get a Larger `/data/project/` (GPFS) Allocation?
 
-At this time, due to constraints on total GPFS storage, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [User Scratch](./cheaha_storage_gpfs/index.md#user-scratch) for temporary storage of up to 100 TB of data for use during analysis.
+At this time, due to constraints on total GPFS storage, we are not able to increase `/data/project/` allocations. Please consider batching your analyses by leveraging a combination of [LTS](./lts/index.md) to store raw and/or input data, and [Network Scratch](./cheaha_storage_gpfs/network_scratch.md) for temporary storage of up to 100 TB of data for use during analysis.
 
 If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md). Please also note that project storage is not just for a single project only, it is meant as a storage for multiple projects.
 
@@ -142,10 +142,10 @@ If you have additional questions _or_ wish to discuss further, please [Contact S
 
 One alternative we recommend is breaking your dataset into batches. A generic, template workflow might be something like below.
 
-- Copy a batch of data from LTS, or an internet source, to [User Scratch](./cheaha_storage_gpfs/index.md#user-scratch).
-- Perform analyses on copied data in User Scratch.
+- Copy a batch of data from LTS, or an internet source, to [Network Scratch](./cheaha_storage_gpfs/network_scratch.md).
+- Perform analyses on copied data in network scratch.
 - Store intermediate or final results in `/data/project/` or LTS.
-- Delete copied data from User Scratch.
+- Delete copied data from network scratch.
 - Start again with the next batch.
 
 When all batches have been processed, begin processing or aggregating the resulting data.
