@@ -23,7 +23,7 @@ def define_env(env: MacrosPlugin) -> None:
     renderer = CardRenderer(page_url_getter(env))  # replace with macros fix_url()
 
     cards_path = PurePath("res/grid_cards.yml")
-    with Path(cards_path).open("r") as f:
+    with Path(cards_path).open("r", encoding="utf-8") as f:
         content = yaml.safe_load(f)
     cards = CardNamespace.from_yaml("cards", content)
 
@@ -46,7 +46,22 @@ def define_env(env: MacrosPlugin) -> None:
         return "".join(lines)
 
     def to_docs_abs_url(rel_url: str) -> PurePath:
+        page = env.page
+
         link_url = PurePath(rel_url)
-        page_url = PurePath(env.page.url).parent
+        page_url = PurePath(page.url)
+        if not page.is_index:
+            page_url = page_url.parent
         docs_dir = PurePath(env.conf["docs_dir"])
         return docs_dir / os.path.normpath(page_url / link_url)
+
+    @env.filter
+    def to_page_rel_url(docs_dir_url: str) -> str:
+        page = env.page
+        docs_dir = PurePath(env.conf["docs_dir"])
+        target_url = docs_dir / docs_dir_url
+        page_url = docs_dir / page.url
+        if not page.is_index:
+            page_url = page_url.parent
+        out = PurePath(os.path.relpath(target_url, page_url))
+        return out.as_posix()

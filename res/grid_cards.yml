@@ -1,0 +1,152 @@
+account:
+  xias_create:
+    title_text: Create Account (External)
+    icon_name: ":material-account-network:"
+    content: |
+      Are you an external collaborator?
+      Do you need to sponsor an external collaborator?
+      Create an external collaborator (XIAS) account today!
+    link_url: "account/xias/index.md"
+  leaving:
+    title_text: Leaving UAB?
+    icon_name: ":material-account-off:"
+    content: |
+      Planning to leave UAB?
+      Want to learn happens to your data and system access?
+    link_url: "account/leaving.md"
+  responsibilities:
+    title_text: Responsibilities and Policies
+    icon_name: ":material-clipboard-check-multiple:"
+    content: |
+      Want to learn who is responsible for what?
+      Learn more about what to expect on our systems.
+      Become familiar with RCS responsibilities and policies.
+    link_url: "account/responsibilities.md"
+
+  code_rc_create:
+    title_text: Create Code.rc (GitLab) Account
+    icon_name: ":simple-gitlab:"
+    icon_color: .icon-color-gitlab-orange
+    content: |
+      Need a place to securely store code?
+      Store git repositories in our on-premises GitLab server.
+      Create a Code.rc account today!
+    link_url: "account/code.rc/create.md"
+  rcs:
+    create:
+      title_text: Create Account (RCS / Cheaha)
+      icon_name: ":material-account-plus:"
+      content: |
+        Affiliated with UAB?
+        Need access to Cheaha, Cloud.rc, Code.rc, or other RCS services?
+        Create an RCS account today in minutes!
+      link_url: "account/rcs/create.md"
+    status:
+      title_text: Check Account Status
+      icon_name: ":material-account-cog:"
+      content: |
+        Want to check your RCS account status?
+        Learn about account statuses and what they mean.
+      link_url: "account/rcs/status.md"
+  xias:
+    sponsor_site:
+      title_text: 1. Sponsor — Create Site
+      icon_name: ":material-sitemap:"
+      content: |
+        First, the Sponsor will need to configure a Site.
+        The Site allows configuring Guests.
+      link_url: "account/xias/1_sponsor_manage_sites.md"
+    sponsor_user:
+      title_text: 2. Sponsor — Create User
+      icon_name: ":material-account-multiple-plus:"
+      content: |
+        Second, the Sponsor will need to configure a User for the Guest.
+        User configuration allows Guest account creation.
+      link_url: "account/xias/2_sponsor_manage_users.md"
+    guest_instructions:
+      title_text: 3. Guest — Create XIAS Account
+      icon_name: ":material-clipboard-account:"
+      content: |
+        Third, the Guest should follow these instructions to create their XIAS account.
+      link_url: "account/xias/3_guest_create_xias_account.md"
+    guest_create_rcs:
+      title_text: 4. Guest — Create RCS Account
+      icon_name: ":material-account-plus:"
+      content: |
+        Lastly, the Guest may now create an RCS account.
+      link_url: "account/rcs/create.md"
+    manage_site:
+      title_text: Sponsor — Manage Site
+      icon_name: ":material-cog-sync:"
+      content: |
+        Need to update Site URIs or end date, or add new Users?
+      link_url: "account/xias/1_sponsor_manage_sites.md#how-do-i-manage-a-xias-site"
+    manage_user:
+      title_text: Sponsor — Manage User
+      icon_name: ":material-account-cog:"
+      content: |
+        Need to update User end dates, or add to a new Site?
+      link_url: "account/xias/2_sponsor_manage_users.md#how-do-i-manage-a-xias-user"
+
+news:
+  title_text: UAB RCS News
+  icon_name: ":fontawesome-solid-newspaper:"
+  content: |
+    See what's new with Research Computing System services!
+  link_url: "news/index.md"
+
+platforms:
+  cheaha:
+    ood:
+      overview:
+        title_text: Open OnDemand Web App
+        icon_name: ":octicons-browser-24:"
+        content: |
+          Check out our interactive science apps, right in your browser!
+          Jupyter, RStudio, MATLAB, a virtual desktop, and more!
+        link_url: "cheaha/open_ondemand/index.md"
+    slurm:
+      overview:
+        title_text: Slurm Batch Job Scheduler
+        icon_name: ":material-script-text-play:"
+        content: |
+          Scale up your work!
+          Learn how to schedule batch jobs with Slurm.
+        link_url: "cheaha/slurm/introduction.md"
+
+data:
+  storage_options:
+    title_text: Storage Options
+    icon_name: ":material-server-network:"
+    content: |
+      Did you know researchers can get RCS storage at no charge?
+      Check out our platforms and offerings.
+    link_url: "data_management/index.md"
+  transfer_options:
+    title_text: Transfer Options
+    icon_name: ":material-transfer:"
+    content: |
+      RCS has multiple options for data transfers, within UAB and with other institutions.
+      Globus, rclone, and more!
+    link_url: "data_management/transfer/index.md"
+# personas:
+#   administrative_staff:
+#     title_text: Administrative Staff
+#     icon_name: ":material-office-building:"
+#     content: |
+#     link_url:
+#   core_director:
+#     title_text: Core Director
+#     icon_name: ":material-desk:"
+#   external_collaborator:
+#     title_text: External Collaborator
+#     icon_name: ":material-clipboard-account:"
+#   research_faculty_lab_pi:
+#     title_text: Research Faculty Lab PI
+#     icon_name: ":material-account-group:"
+#   research_staff:
+#     title_text: Research Staff
+#     icon_name: ":material-test-tube:"
+#   student:
+#     title_text: Student
+#     icon_name: ":material-book-education:"

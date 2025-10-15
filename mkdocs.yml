@@ -66,6 +66,11 @@ plugins: # order matters!
       type: date
       strict: false
   - glightbox
+  - macros:
+      module_name: macros
+      on_undefined: strict
+      render_by_default: false
+      verbose: true
   - table-reader:
       data_path: docs
   - title-casing
@@ -107,9 +112,11 @@ plugins: # order matters!
 
 exclude_docs: |
   /**/res/*.md
+  /**/_template/
 
 not_in_nav: |
   /**/res/*.md
+  /**/_template/
 
 nav:
   - Home: index.md
@@ -246,5 +253,7 @@ validation:
     unrecognized_links: warn
 
 watch:
+  - macros
+  - res
   - scripts
   - theme
