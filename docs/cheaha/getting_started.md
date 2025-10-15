@@ -175,3 +175,20 @@ If the software installation instructions tell you to use either `conda install`
 ## How to Get Help
 
 For questions, you can reach out via our various [channels](../help/support.md).
+
+## Frequently Asked Questions
+
+- **What should I do to access shared storages and recognize my group membership after being added to a group on Cheaha?**
+
+    - **Do you have any processes/connections on `cheaha.rc.uab.edu`**?
+
+        - Please exit and log back in.
+        - If you have active Tmux/Screen sessions, you will need to terminate those as well, log out, log back in and start Tmux.
+
+    - **Do you have an active Open OnDemand session?**
+
+        - In Open OnDemand (<https://rc.uab.edu>), navigate to the green navigation bar in the top right corner. Look for the `Help` or `Developer` dropdown menu and click on it. Then, click `Restart Web Server`. Once the restart is complete, please try again.
+
+    - **Do you have one or more OOD HPC Desktops running?**
+
+        - Terminate the desktops and start new ones.

@@ -49,3 +49,13 @@ Please use the following rules when naming entities:
 - Must: use only letters, numbers, dash `-` and underscore `_`.
 - Must: have the first character in the name be a letter.
 - Should: use short, descriptive, memorable names.
+
+## Frequently Asked Questions
+
+- **How Do I Access Cloud.rc?**
+
+    - To access the Cloud.rc, you must be on the campus network.
+    - For off-campus access, use the [UAB Campus VPN](https://www.uab.edu/it/home/tech-solutions/network/vpn), which requires [Duo 2FA](https://www.uab.edu/it/home/security/2-factor).
+    - UAB employees and students can log in using their BlazerID
+    - External Collaborators can use their XIAS email.
+    - For login details, visit our [Cloud.rc](#first-steps) section.
