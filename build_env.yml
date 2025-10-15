@@ -3,18 +3,13 @@ dependencies:
   - conda-forge::click=8.2.1
   - conda-forge::jinja2=3.1.6
   - conda-forge::libffi=3.4.6
-  - conda-forge::markdown=3.8.0
   - conda-forge::markupsafe=3.0.2 # Not semver, be cautious
   - conda-forge::mergedeep=1.3.4
-  - conda-forge::mkdocs=1.6.1
-  - conda-forge::mkdocs-material=9.6.14
-  - conda-forge::mkdocs-material-extensions=1.3.1
   - conda-forge::numpy=2.2.6
   - conda-forge::pandas=2.3.0
   - conda-forge::pandoc=3.7.0.2
   - conda-forge::pip=25.1.1
   - conda-forge::pygments=2.19.1
-  - conda-forge::pymdown-extensions=10.15 # Not semver, be cautious
   - conda-forge::pypandoc=1.15
   - conda-forge::pyparsing=3.0.9
   - conda-forge::python=3.13.3
@@ -31,11 +26,16 @@ dependencies:
   - conda-forge::yaml=0.2.5
   - conda-forge::yamllint=1.37.1
   - pip:
+      - markdown==3.8.0
       - mkdocs-gen-files==0.5.0
       - mkdocs-glightbox==0.3.7
       - mkdocs-git-revision-date-localized-plugin==1.2.6
+      - mkdocs-macros-plugin==1.3.9 # new
+      - mkdocs-material==9.6.14
       - mkdocs-redirects==1.2.1
-      - mkdocs-table-reader-plugin==2.0.3
+      - mkdocs-table-reader-plugin==3.1.0
       - linkchecker==10.4.0
       - pre-commit==3.7.1
+      - pymdown-extensions==10.8.1 # Not semver, be cautious
+      - git+https://github.com/uabrc/mkdocs@888fd28f92a320352f63600c24635231a42e5fac # new
       - git+https://github.com/uabrc/mkdocs-title-casing-plugin.git@stable
