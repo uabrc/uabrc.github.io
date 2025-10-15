@@ -1,0 +1,3 @@
+{% macro link(text, path) -%}
+[{{ text }}]({{ path | to_page_rel_url }})
+{%- endmacro %}

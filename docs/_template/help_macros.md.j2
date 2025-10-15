@@ -1,0 +1,13 @@
+{% from "_template/link.md.j2" import link %}
+
+{% macro contact_support_link() -%}
+{{ link("Contact Support", "help/support.md") }}
+{%- endmacro %}
+
+{% macro _header(title, level) -%}
+{% for i in range(level) -%}{{- "#" -}}{%- endfor %} {{ title }}
+{%- endmacro %}
+
+{% macro help_header(level) -%}
+{{ _header("Help", level) }}
+{%- endmacro %}
