@@ -19,15 +19,20 @@ DEFINITIONS FOR THEMING
   --md-primary-fg-color--dark: var(--uab-color-uab-green);
   --announcement-admonition-bd-color: #90d408;
   --announcement-admonition-bg-color: color-mix(in srgb, var(--announcement-admonition-bd-color) 10%, transparent);
-
-  /* other color usage */
   --construction-admonition-bd-color: #eed202;
   --construction-admonition-bg-color: color-mix(in srgb, var(--construction-admonition-bd-color) 10%, transparent);
+  --important-admonition-bd-color: #ff9100;
+  --important-admonition-bg-color: color-mix(in srgb, var(--important-admonition-bd-color) 10%, transparent);
+  --security-admonition-bd-color: #ff1744;
+  --security-admonition-bg-color: color-mix(in srgb, var(--security-admonition-bd-color) 10%, transparent);
 
   /* OTHER COLORS */
   --support-email-color: #aaaaff;
   --edit-page-icon-color: #5555ff;
   --lightbox-shadow-color: rgba(0, 0, 0, 0.08);
+
+  /* ICONS */
+  --md-admonition-icon--shield-alert: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>shield-alert</title><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5M11,7H13V13H11M11,15H13V17H11" /></svg>')
 }
 
 /* LOGO ADJUSTMENTS */
@@ -152,15 +157,66 @@ remove bottom-border from special cases
   mask-image: var(--md-admonition-icon--warning);
 }
 
-/* lightgallery and image tweaks */
-
-/* image width */
-.md-grid {
-  max-width: 100%;
+/* construction admonition */
+.md-typeset .admonition.construction,
+.md-typeset details.construction {
+  border-color: var(--construction-admonition-bd-color);
 }
 
-/* adds a flexbox to the surrounding div */
-a.glightbox {
+.md-typeset .construction>.admonition-title,
+.md-typeset .construction>summary {
+  background-color: var(--construction-admonition-bg-color);
+  border-color: var(--construction-admonition-bd-color);
+}
+
+.md-typeset .construction>.admonition-title::before,
+.md-typeset .construction>summary::before {
+  background-color: var(--construction-admonition-bd-color);
+  -webkit-mask-image: var(--md-admonition-icon--warning);
+  mask-image: var(--md-admonition-icon--warning);
+}
+
+/* important admonition */
+.md-typeset .admonition.important,
+.md-typeset details.important {
+  border-color: var(--important-admonition-bd-color);
+}
+
+.md-typeset .important>.admonition-title,
+.md-typeset .important>summary {
+  background-color: var(--important-admonition-bg-color);
+  border-color: var(--important-admonition-bd-color);
+}
+
+.md-typeset .important>.admonition-title::before,
+.md-typeset .important>summary::before {
+  background-color: var(--important-admonition-bd-color);
+  -webkit-mask-image: var(--md-admonition-icon--info);
+  mask-image: var(--md-admonition-icon--info);
+}
+
+/* security admonition */
+.md-typeset .admonition.security,
+.md-typeset details.security {
+  border-color: var(--security-admonition-bd-color);
+}
+
+.md-typeset .security>.admonition-title,
+.md-typeset .security>summary {
+  background-color: var(--security-admonition-bg-color);
+  border-color: var(--security-admonition-bd-color);
+}
+
+.md-typeset .security>.admonition-title::before,
+.md-typeset .security>summary::before {
+  background-color: var(--security-admonition-bd-color);
+  -webkit-mask-image: var(--md-admonition-icon--shield-alert);
+  mask-image: var(--md-admonition-icon--shield-alert);
+}
+
+/* GLIGHTBOX ADJUSTMENTS */
+/* image centering in content */
+.md-content a.glightbox {
   display: flex;
   justify-content: center;
 }
