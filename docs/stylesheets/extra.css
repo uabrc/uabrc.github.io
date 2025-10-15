@@ -1,6 +1,12 @@
-/* UAB theming */
+/*
+DEFINITIONS FOR THEMING
+*/
 :root {
-  /* uab colors in approximate order of prioritization */
+  /*
+  UAB COLORS in approximate order of prioritization.
+  Note most colors are not WCAG compliant on white backgrounds.
+  "dragons-lair-green" may be indistinguishable from black on a white background.
+   */
   --uab-color-uab-green: #1a5632;
   --uab-color-uab-gold: #fdb913;
   --uab-color-dragons-lair-green: #033319;
@@ -8,7 +14,7 @@
   --uab-color-ever-loyal-green: #17b045;
   --uab-color-bham-sky-blue: #42caf0;
 
-  /* uab color usage */
+  /* MKDOCS MATERIAL COLOR overrides and definitions. */
   --md-primary-fg-color: var(--uab-color-uab-green);
   --md-primary-fg-color--dark: var(--uab-color-uab-green);
   --announcement-admonition-bd-color: #90d408;
@@ -17,101 +23,116 @@
   /* other color usage */
   --construction-admonition-bd-color: #eed202;
   --construction-admonition-bg-color: color-mix(in srgb, var(--construction-admonition-bd-color) 10%, transparent);
+
+  /* OTHER COLORS */
   --support-email-color: #aaaaff;
   --edit-page-icon-color: #5555ff;
   --lightbox-shadow-color: rgba(0, 0, 0, 0.08);
 }
 
-/* logo fix */
+/* LOGO ADJUSTMENTS */
 .md-header__button.md-logo :is(img, svg) {
   height: 1.2rem;
   width: auto !important;
 }
 
-/* link color correction */
-
-.md-content>:not(.md-sidebar) a,
-.md-content>:not(.md-sidebar) a:visited {
-  color: revert;
-}
-
-.md-content>:not(.md-sidebar) a:hover {
+/* LINK ADJUSTMENTS */
+/* link color and bottom border to ensure element shape consistency on hover */
+.md-content a {
   color: revert;
   border-bottom: 1px solid;
+  border-color: rgba(0, 0, 0, 0)
 }
 
-.md-content a.headerlink:hover {
+/* visible bottom border only on hover */
+.md-content a:hover {
+  border-color: revert;
+}
+
+/*
+remove bottom-border from special cases
+- section anchor link icon
+- images
+- Edit this page on GitHub icon
+*/
+.md-typeset .headerlink,
+.md-content a.glightbox:has(img),
+.md-content a.md-icon[title="Edit this page"] {
   border-bottom: none;
 }
 
-html .md-footer-meta.md-typeset a.supportemail {
+/* special case coloring for supportemail link due to dark background */
+.md-footer .md-copyright a.supportemail {
   color: var(--support-email-color);
 }
 
-/* "Edit on GitHub" button color adjustment */
-.md-icon[title="Edit this page"] svg {
-  fill: var(--edit-page-icon-color);
-}
-
-/* header accessiblity/readability */
-.md-typeset h1 {
+/* HEADER ADJUSTMENTS */
+/* header style consistency */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
   color: var(--md-default-fg-color);
   font-weight: 600;
-  font-size: 2em;
+  line-height: normal;
 }
 
-.md-typeset:not(.md-blog-header) h1 {
+/* h1 adjustments */
+.md-typeset h1 {
+  font-size: 2em;
   margin-bottom: 0;
 }
 
-.md-typeset h2 {
-  font-weight: 600;
-  line-height: normal;
-}
-
-.md-typeset h3 {
-  font-weight: 600;
-  line-height: normal;
-}
-
-.md-typeset h4 {
-  font-weight: 600;
-  line-height: normal;
-}
-
-.md-typeset h5 {
-  font-weight: 600;
-  line-height: normal;
-  color: var(--md-default-fg-color);
-}
-
-.md-typeset :not(h1, h2, h3, h4, h5)+ :is(h2, h3, h4, h5) {
-  margin-top: 44px;
-}
-
-.md-typeset h1+ :is(h2, h3, h4) {
+/* adjust whitespace between h1 and immediate nested headers */
+.md-typeset h1+ :is(h2, h3, h4, h5, h6) {
   margin-top: 0.8em;
 }
 
-/* construction admonition */
-.md-typeset .admonition.construction,
-.md-typeset details.construction {
-  border-color: var(--construction-admonition-bd-color);
+/* increase whitespace between last content of previous section and next header */
+.md-typeset :not(h1, h2, h3, h4, h5, h6)+ :is(h2, h3, h4, h5, h6) {
+  margin-top: 40px;
 }
 
-.md-typeset .construction>.admonition-title,
-.md-typeset .construction>summary {
-  background-color: var(--construction-admonition-bg-color);
-  border-color: var(--construction-admonition-bd-color);
+/* LIST ADJUSTMENTS */
+/* ol, ul more compact */
+.md-typeset ol,
+.md-typeset ul {
+  margin-bottom: revert;
+  margin-top: revert;
 }
 
-.md-typeset .construction>.admonition-title::before,
-.md-typeset .construction>summary::before {
-  background-color: var(--announcement-admonition-bd-color);
-  -webkit-mask-image: var(--md-admonition-icon--warning);
-  mask-image: var(--md-admonition-icon--warning);
+.md-typeset ol li,
+.md-typeset ul li {
+  margin-bottom: 0.0em;
 }
 
+.md-typeset ol li :nth-child(1),
+.md-typeset ul li :nth-child(1) {
+  margin-top: 0.0em;
+}
+
+.md-typeset ol li :last-child:is(p),
+.md-typeset ul li :last-child:is(p) {
+  margin-bottom: 0.0em;
+}
+
+.md-typeset ol li ol,
+.md-typeset ol li ul,
+.md-typeset ul li ol,
+.md-typeset ul li ul {
+  margin-bottom: 0.0em;
+  margin-top: 0.0em;
+}
+
+/* NAV ADJUSTMENTS */
+.md-nav--primary .md-nav__item--active>.md-nav__link>a>span.md-ellipsis,
+.md-nav--primary .md-nav__link--active>span.md-ellipsis {
+  font-weight: bold;
+}
+
+/* CUSTOM ADMONITION DEFINITIONS*/
 /* announcement admonition */
 .md-typeset .admonition.announcement,
 .md-typeset details.announcement {
@@ -144,16 +165,141 @@ a.glightbox {
   justify-content: center;
 }
 
-/* adding the drop shadow,margin and keeping the images at 50 viewport width */
-a.glightbox img {
+/* drop shadow */
+.md-content a.glightbox img {
   max-width: 50vw;
   box-shadow: 5px 5px 13px var(--lightbox-shadow-color);
   margin-bottom: 1rem;
 }
 
-/* 100 viewport width on smaller screens */
+/* media-appropriate widths */
+.md-grid {
+  max-width: 100%;
+}
+
 @media only screen and (max-width: 600px) {
   a.glightbox img {
     max-width: 100%;
   }
+}
+
+/* TABBED CONTENT ADJUSTMENTS */
+/* Give tabs more of a button look */
+.tabbed-labels label {
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-bottom: 0px !important;
+  border-radius: 6px 6px 0 0;
+  box-sizing: border-box;
+  padding: 0.4em 1em;
+  margin-right: 0.3em;
+  cursor: pointer;
+  background: var(--md-default-bg-color);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.tabbed-labels label>a {
+  border-bottom: 0px !important;
+}
+
+/* On hover */
+.tabbed-labels label:hover {
+  background: var(--md-accent-fg-color--transparent);
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+}
+
+/* When active */
+/* .tabbed-labels input:checked+label {
+  background: var(--md-accent-fg-color);
+  color: white;
+  border-color: var(--md-accent-fg-color);
+  font-weight: 600;
+} */
+
+/* Bottom border to mark end of tabbed content */
+/* .tabbed-content {
+  border-bottom: 2px solid var(--md-default-fg-color--lighter);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+} */
+.tabbed-content {
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-top: 1px solid var(--md-default-fg-color--lighter) !important;
+  /* so it connects with the tabs */
+  padding: 1rem;
+  /* margin-bottom: 1.5rem; */
+  border-radius: 0 0 6px 6px;
+}
+
+.md-typeset .tabbed-set>.tabbed-labels.tabbed-labels--linked {
+  box-sizing: border-box;
+  box-shadow: none;
+  border-bottom: 0px !important;
+  /* background-color: rgba(0, 0, 0, 0); */
+  border-bottom: 1px solid var(--md-default-fg-color--lighter);
+}
+
+/* GRID CARDS ADJUSTMENTS */
+/* full-card link styling */
+.md-typeset .grid.cards ul>li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.md-typeset .grid.cards ul>li p:has(.overlay-link) {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.grid.cards .overlay-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* END full-card link styling */
+
+/* separate title icon from title text for consistent spacing */
+.md-typeset .grid.cards ul>li p span.twemoji:after {
+  /* literal "em space" U+2003 character, do not change or delete */
+  content: " ";
+}
+
+/* tail link placement consistency at bottom of card */
+.md-typeset .grid.cards ul>li p:last-child:has(a) {
+  margin-top: auto;
+}
+
+/* EMOJI ICON COLORS */
+.icon-color-uab-green {
+  color: var(--uab-color-uab-green);
+}
+
+.icon-color-dragons-lair-green {
+  color: var(--uab-color-dragons-lair-green)
+}
+
+.icon-color-openstack-red {
+  color: #ed1944
+}
+
+.icon-color-gitlab-orange {
+  color: #fc6d26
+}
+
+.icon-color-globus-blue {
+  color: #32619b
+}
+
+.icon-color-jupyter-orange {
+  color: #f37626
+}
+
+.icon-color-rstudio-blue {
+  color: #75aadb
 }

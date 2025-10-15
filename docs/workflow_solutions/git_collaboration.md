@@ -39,7 +39,7 @@ More in-depth instructions, including for SSH cloning, are provided at the [offi
 
 ### Cloning From GitLab
 
-To do anything with our GitLab instance, you will first need to create an account. Please see our [GitLab Account Management page](../account_management/gitlab_account.md).
+To do anything with Code.rc, you will first need to create an account. Please see our [Code.rc Account Creation page](../account/code.rc/create.md).
 
 To clone a repository, be sure you have the repository URL. Then, using `git` at a terminal, [clone](git.md#cloning) the repository using whatever settings are appropriate. Be sure to append `.git` to the end of the repository or the clone will note be successful. For example, if the URL is `https://code.rc.uab.edu/user/repository` then you will clone `https://code.rc.uab.edu/user/repository.git`. GitLab repository pages look like the example shown below.
 
@@ -64,7 +64,7 @@ An important feature, used extensively for this documentation's GitHub repositor
 - Want to collaborate publicly and outside UAB? Consider using GitHub.
 - Want your project private or internal to UAB? Consider using our GitLab instance.
 
-It is possible to collaborate publicly using GitLab, but there may be additional challenges. While external collaborators can see a public GitLab repository on our instance, they can't make any changes or create issues without a [XIAS Account](../account_management/xias/index.md).
+It is possible to collaborate publicly using GitLab, but there may be additional challenges. While external collaborators can see a public GitLab repository on our instance, they can't make any changes or create issues without a [XIAS Account](../account/code.rc/index.md).
 
 It is possible to collaborate privately using GitHub with no additional hurdles, but if your project contains sensitive or protected information of any kinds, it should not be posted to GitHub, even in private repositories. Please consult with us via [Support](../help/support.md) before
 

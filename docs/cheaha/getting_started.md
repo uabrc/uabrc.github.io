@@ -28,11 +28,11 @@ Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Pl
 
 ## Account Creation
 
-Please visit our [Account Creation page](../account_management/cheaha_account.md) for detailed instructions on creating a Cheaha account.
+Please visit our [Account Creation page](../account/rcs/create.md) for detailed instructions on creating a Cheaha account.
 
 ## Accessing Cheaha
 
-The primary method for accessing Cheaha is through our online portal website, Open OnDemand. To login to our portal, navigate to our <https://rc.uab.edu>, which does not require an on-campus connection nor the UAB Campus VPN. You should be presented with UAB's Single Sign-on page, which will require use of [Duo 2FA](https://www.uab.edu/it/home/security/2-factor). Login using the appropriate credentials laid out at our [Account Creation page](../account_management/cheaha_account.md).
+The primary method for accessing Cheaha is through our online portal website, Open OnDemand. To login to our portal, navigate to our <https://rc.uab.edu>, which does not require an on-campus connection nor the UAB Campus VPN. You should be presented with UAB's Single Sign-on page, which will require use of [Duo 2FA](https://www.uab.edu/it/home/security/2-factor). Login using the appropriate credentials laid out at our [Account Creation page](../account/rcs/create.md).
 
 [SSH](../uab_cloud/remote_access.md#command-line-via-ssh) may be used to access Cheaha. Connect to host `cheaha.rc.uab.edu` on port `22`.
 
@@ -56,7 +56,7 @@ A full list of the available hardware can be found on our [hardware page](./hard
 
 ### Storage
 
-All researchers are granted 5 TB of individual storage when they [create their Research Computing account](../account_management/cheaha_account.md).
+All researchers are granted 5 TB of individual storage when they [create their Research Computing account](../account/rcs/create.md).
 
 Shared storage is available to all Lab Groups and Core Facilities on campus. Shared storage is also available to UAB Administration groups.
 

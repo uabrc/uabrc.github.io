@@ -41,7 +41,7 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 
 ## Tutorial Prerequisites
 
-For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
+For these tutorials, you will need your BlazerID or [XIAS ID](../../../account/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
 
 ## How Do I Get Onto the Globus Web App?
 
@@ -54,7 +54,7 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_m
     <!-- markdownlint-disable MD046 -->
     !!! note
 
-        If you are an external collaborator using a [XIAS account](../../../account_management/xias/index.md) (this is uncommon) to interact with UAB-owned storage you will still need to search for "UAB". Do not use your home institution login to access UAB storage systems, as you will only have access to UAB storage with your XIAS credentials.
+        If you are an external collaborator using a [XIAS account](../../../account/xias/index.md) (this is uncommon) to interact with UAB-owned storage you will still need to search for "UAB". Do not use your home institution login to access UAB storage systems, as you will only have access to UAB storage with your XIAS credentials.
     <!-- markdownlint-enable MD046 -->
 
     ![Globus Web App login search bar with UAB entered and University of Alabama at Birmingham in a red box.](./images/gi-web-app/002-search.png)

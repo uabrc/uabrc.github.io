@@ -16,7 +16,7 @@ The Research Computing System (RCS) provides a framework for sharing research da
 
 ## How Do I Get Started?
 
-Create [your Cheaha Account](./account_management/cheaha_account.md), then check out our [Featured Tutorials](#featured-tutorials) below. If you have a specific goal in mind, try searching our documentation, or see our [Success Stories](#success-stories) for inspiration on what we can do. Represent an internal organization and want to start a collaboration? See our [Outreach](#outreach) section. If you still can't find what you need, please [Contact Us](#how-to-contact-us).
+[Create your RCS Account](./account/rcs/create.md), then check out our [Featured Tutorials](#featured-tutorials). If you have a specific goal in mind, try searching our documentation, or see our [Success Stories](#success-stories) for inspiration on what we can do. Represent an internal organization and want to start a collaboration? See our [Outreach](#outreach) section. If you still can't find what you need, please [Contact Us](#how-to-contact-us).
 
 ### Featured Tutorials
 
