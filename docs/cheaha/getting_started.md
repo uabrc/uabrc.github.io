@@ -4,7 +4,23 @@ toc_depth: 3
 
 # Getting Started
 
-Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing of research computing software. We offer a user-friendly portal website Open OnDemand with graphical interfaces to the most common features, all in one place. Read on to learn more about our resources and how to access them.
+Cheaha is the batch compute cluster platform of the Research Computing System (RCS). Cheaha is intended primarily for batch processing of research computing software. We offer a user-friendly portal website Open OnDemand with graphical interfaces to the most common features, all in one place. Read on to learn more about our resources and how to access them.
+
+Cheaha is appropriate for the following types of workflows:
+
+- High Performance Computing (HPC)
+- High Throughput Computing (HTC)
+- Batch Computing
+- Graphical User Interface (GUI) and other interactive software
+
+Please bear in mind the following expectations when using Cheaha.
+
+- Resources are shared by many researchers.
+- Jobs may take time to start.
+- Jobs, partitions, and researchers all have caps on total resources in use at any one time.
+- All jobs have a maximum time limit.
+
+If your needs go beyond these expectations, please [Contact Support](../help/support.md).
 
 ## Getting Help
 
@@ -50,13 +66,13 @@ Please visit our [Storage page](../data_management/index.md) for detailed inform
 
 Compute nodes are divided into groups called partitions each with specific qualities suitable for different kinds of workflows or software. In order to submit a compute job, a partition must be chosen in the Slurm options. The partitions can be roughly grouped as such:
 
-|  Use | Partition Names | Notes |
-|---|---|---|
-| GPU Processing | pascalnodes, pascalnodes-medium, amperenodes, amperenodes-medium  | These are the only partitions with GPUs |
-| All Purpose | amd-hdr100 | Runs AMD CPUs compared to all other CPU partitions running Intel. [Contact us](../index.md#how-to-contact-us) with issues running on this partition |
-| Shorter time  | express, short, intel-dcb  |  |
-| Medium-long time  | medium, long  |  |
-| Very large memory | largemem, largemem-long |  |
+| Use               | Partition Names                                                  | Notes                                                                                                                                               |
+|-------------------|------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| GPU Processing    | pascalnodes, pascalnodes-medium, amperenodes, amperenodes-medium | These are the only partitions with GPUs                                                                                                             |
+| All Purpose       | amd-hdr100                                                       | Runs AMD CPUs compared to all other CPU partitions running Intel. [Contact us](../index.md#how-to-contact-us) with issues running on this partition |
+| Shorter time      | express, short, intel-dcb                                        |                                                                                                                                                     |
+| Medium-long time  | medium, long                                                     |                                                                                                                                                     |
+| Very large memory | largemem, largemem-long                                          |                                                                                                                                                     |
 
 Please visit our [hardware](hardware.md#cheaha-hpc-cluster) for more details about the partitions.
 
