@@ -65,6 +65,8 @@ Please select the tab that best described your affiliation to UAB to see instruc
 
     {% filter indent(width=4) %}
     {% include "account/_template/not_affiliated_with_uab.md.j2" %}
+
+    {% include "account/_template/xias_need_sponsor.md.j2" %}
     {% endfilter %}
 <!-- markdownlint-enable MD046 -->
 

@@ -55,6 +55,8 @@ You will be asked to login using Single Sign-on (SSO). Please select the tab tha
 
     {% filter indent(4) %}
     {% include "account/_template/not_affiliated_with_uab.md.j2" %}
+
+    {% include "account/_template/xias_need_sponsor.md.j2" %}
     {% endfilter %}
 <!-- markdownlint-enable MD046 -->
 
@@ -85,6 +87,8 @@ When you have authenticated you will be automatically taken to a form to create 
 
     {% filter indent(4) %}
     {% include "account/_template/not_affiliated_with_uab.md.j2" %}
+
+    {% include "account/_template/xias_need_sponsor.md.j2" %}
     {% endfilter %}
 <!-- markdownlint-enable MD046 -->
 
