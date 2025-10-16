@@ -13,7 +13,7 @@ account:
     content: |
       Planning to leave UAB?
       Want to learn happens to your data and system access?
-    link_url: "account/leaving.md"
+    link_url: "account/leaving/index.md"
   responsibilities:
     title_text: Responsibilities and Policies
     icon_name: ":material-clipboard-check-multiple:"

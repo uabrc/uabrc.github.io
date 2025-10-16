@@ -87,7 +87,7 @@ plugins: # order matters!
         account_management/gitlab_account.md: account/code.rc/index.md
         account_management/gitlab_researcher.md: account/code.rc/index.md
         account_management/index.md: account/index.md
-        account_management/leaving_uab.md: account/leaving.md
+        account_management/leaving_uab.md: account/leaving/index.md
         account_management/uab_researcher.md: account/rcs/index.md
         account_management/xias/guest_instructions.md: account/xias/3_guest_create_xias_account.md
         account_management/xias/index.md: account/xias/index.md
@@ -127,10 +127,12 @@ plugins: # order matters!
 
 exclude_docs: |
   /**/res/*.md
+  /**/_macro/
   /**/_template/
 
 not_in_nav: |
   /**/res/*.md
+  /**/_macro/
   /**/_template/
 
 nav:
@@ -154,7 +156,10 @@ nav:
           - 3. Guests — Create XIAS Account: account/xias/3_guest_create_xias_account.md
           - 4. Guests — Create RCS Account: account/rcs/create.md
       - Your Responsibilities: account/responsibilities.md
-      - Leaving UAB: account/leaving.md
+      - Leaving UAB:
+          - account/leaving/index.md
+          - Continuing Collaboration: account/leaving/collaboration.md
+          - Final Steps: account/leaving/final_steps.md
   - Data Management:
       - data_management/index.md
       - Cheaha Storage (GPFS):
