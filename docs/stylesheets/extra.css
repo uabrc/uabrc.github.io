@@ -109,7 +109,9 @@ remove bottom-border from special cases
 }
 
 .md-typeset ol li,
-.md-typeset ul li {
+.md-typeset ol li>p,
+.md-typeset ul li,
+.md-typeset ul li>p {
   margin-bottom: 0.0em;
 }
 
