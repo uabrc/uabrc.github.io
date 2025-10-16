@@ -35,15 +35,11 @@ You will be asked to login using Single Sign-on (SSO). Please select the tab tha
 
     Please login with your BlazerID credentials.
 
-    {% filter indent(4) %}
-    {% include "account/_template/uab_medicine_credentials.md.j2" %}
-    {% endfilter %}
+    {% include "account/_template/uab_medicine_credentials.md.j2" indent content %}
 
 === "External Collaborator (XIAS)"
 
-    {% filter indent(4) %}
-    {% include "account/_template/first_time_2fa.md.j2" %}
-    {% endfilter %}
+    {% include "account/_template/first_time_2fa.md.j2" indent content %}
 
     Please login with your XIAS account credentials. In the "BlazerID" box, put the email you used to register for your XIAS account. In the "Password" box, enter the password you configured when creating your XIAS account.
 
@@ -53,11 +49,9 @@ You will be asked to login using Single Sign-on (SSO). Please select the tab tha
 
 === "Unaffiliated"
 
-    {% filter indent(4) %}
-    {% include "account/_template/not_affiliated_with_uab.md.j2" %}
+    {% include "account/_template/not_affiliated_with_uab.md.j2" indent content %}
 
-    {% include "account/_template/xias_need_sponsor.md.j2" %}
-    {% endfilter %}
+    {% include "account/_template/xias_need_sponsor.md.j2" indent content %}
 <!-- markdownlint-enable MD046 -->
 
 When you have authenticated you will be automatically taken to a form to create your account. Please select the tab that best describes your affiliation to UAB to see form instructions. If you wish to stop, click the "Cancel" button at the bottom of the form, or close your browser.
@@ -85,11 +79,9 @@ When you have authenticated you will be automatically taken to a form to create 
 
 === "Unaffiliated"
 
-    {% filter indent(4) %}
-    {% include "account/_template/not_affiliated_with_uab.md.j2" %}
+    {% include "account/_template/not_affiliated_with_uab.md.j2" indent content %}
 
-    {% include "account/_template/xias_need_sponsor.md.j2" %}
-    {% endfilter %}
+    {% include "account/_template/xias_need_sponsor.md.j2" indent content %}
 <!-- markdownlint-enable MD046 -->
 
 Please fill out the reason you wish to create an account in the form. It would be helpful to include information about your research use cases, needs, and how you believe RCS will help you.

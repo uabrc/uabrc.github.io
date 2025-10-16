@@ -54,9 +54,7 @@ For more information on what to do next, please select the tab below that most c
 
     If you need RCS access beyond the end of the {{ grace_period_time }} grace period, you will need to create a [XIAS Account](../xias/index.md).
 
-    {% filter indent(4) %}
-    {% include "account/_template/xias_need_sponsor.md.j2" %}
-    {% endfilter %}
+    {% include "account/_template/xias_need_sponsor.md.j2" indent content %}
 
     Please see [Continuing Collaboration](collaboration.md)
 

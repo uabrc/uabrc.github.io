@@ -24,9 +24,7 @@ Please select the tab that best described your affiliation to UAB to see instruc
 
     Please select the LDAP tab and authenticate with your BlazerID credentials.
 
-    {% filter indent(4) %}
-    {% include "account/_template/uab_medicine_credentials.md.j2" %}
-    {% endfilter %}
+    {% include "account/_template/uab_medicine_credentials.md.j2" indent content %}
 
     ![!screenshot of code.rc login pane with ldap tab selected](_img/gitlab_researcher_ldap.png)
 
@@ -63,11 +61,9 @@ Please select the tab that best described your affiliation to UAB to see instruc
 
 === "Unaffiliated"
 
-    {% filter indent(width=4) %}
-    {% include "account/_template/not_affiliated_with_uab.md.j2" %}
+    {% include "account/_template/not_affiliated_with_uab.md.j2" indent content%}
 
-    {% include "account/_template/xias_need_sponsor.md.j2" %}
-    {% endfilter %}
+    {% include "account/_template/xias_need_sponsor.md.j2" indent content %}
 <!-- markdownlint-enable MD046 -->
 
 ## Next Steps

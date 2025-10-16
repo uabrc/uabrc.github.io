@@ -78,6 +78,8 @@ plugins: # order matters!
       on_undefined: strict
       render_by_default: false
       verbose: true
+      j2_extensions:
+        - jinja2_workarounds.MultiLineInclude
   - table-reader:
       data_path: docs
   - title-casing
