@@ -375,7 +375,7 @@ dependencies:
     - http://insert_package_link_here  # For URL links
 ```
 
- For git repos, add them under `- pip:` based on examples [here](https://pip.pypa.io/en/stable/cli/pip_install/#examples). See the section [Replicability versus Portability](#replicability-versus-portability) for more information.
+ For git repos, add them under `- pip:`. For examples, please see <https://pip.pypa.io/en/stable/cli/pip_install/#examples>. See the section [Replicability versus Portability](#replicability-versus-portability) for more information.
 
 The above configuration is only for illustration purposes, to show how channels and dependencies can be used. It is best to install all of your packages from conda channels, to avoid your environment breaking. Only packages that are unavailable via conda, should be installed via pip. If you run into challenges please [contact us](../index.md#how-to-contact-us).
 

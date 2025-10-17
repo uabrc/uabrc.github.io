@@ -40,4 +40,4 @@ I have done all of the following:
 - [ ] added redirects in `mkdocs.yml` for any moved headers or pages.
 - [ ] defined new technical terms, jargon, and abbreviations in the glossary.
 - [ ] searched for existing technical terms, jargon, and abbreviations in the glossary and added crosslinks to them.
-- [ ] properly formatted and introduced key branding terms. [List here](https://docs.rc.uab.edu/contributing/contributor_guide/#terminology).
+- [ ] properly formatted and introduced key branding terms. [List here](https://docs.rc.uab.edu/contributing/contributor_guide#terminology).

@@ -79,3 +79,5 @@ NVIDIA
 pascalnodes
 Slurm
 UAB
+s3cmd
+tmp

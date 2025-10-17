@@ -21,13 +21,17 @@ When requesting a job using `sbatch`, you will need to include the Slurm flag `-
 
 <!-- markdownlint-enable MD046 -->
 
+### Accessing GPUs in Singularity Container
+
+If you are running a GPU-enabled software inside a [Singularity container](../../workflow_solutions/getting_containers.md#containers-on-cheaha), you must include the `--nv` flag with your `singularity exec` or `singularity run` command. This ensures that the container has access to the host system’s GPU drivers and CUDA libraries. For more details, refer to the section, [Running Singularity Containers With GPU Support](../../workflow_solutions/getting_containers.md#running-singularity-containers-with-gpu-support)
+
 ### Making the Most of GPUs
 
 #### Ensuring IO Performance With A100 GPUs
 
-If you are using `amperenodes` and the A100 GPUs, then it is highly recommended to move your input files to the [local scratch](../../data_management/cheaha_storage_gpfs/index.md#local-scratch) at `/local/$USER/$SLURM_JOB_ID` prior to running your workflow, to ensure adequate GPU performance. Network file mounts, such as `$USER_SCRATCH`, `/scratch/`, `/data/user/` and `/data/project/`, do not have sufficient bandwidth to keep the GPU busy. So, your processing pipeline will slow down to network speeds, instead of GPU speeds.
+If you are using `amperenodes` and the A100 GPUs, then we strongly recommend moving your input files to [local scratch](../../data_management/cheaha_storage_gpfs/local_scratch.md). Local scratch on the A100 nodes are fast, striped solid state drives (SSDs) and are have enough throughput to keep the A100 GPUs busy. Network storage systems, including [network scratch](../../data_management/cheaha_storage_gpfs/network_scratch.md), [project directories](../../data_management/cheaha_storage_gpfs/project_directories.md), and [individual directories](../../data_management/cheaha_storage_gpfs/individual_directories.md), have lower throughput. To optimize A100 efficiency, use local scratch.
 
-Please see our [Local Scratch Storage section](../../data_management/cheaha_storage_gpfs/index.md#local-scratch) for more details and an example script.
+Please see our [Local Scratch page](../../data_management/cheaha_storage_gpfs/local_scratch.md) for more details and a template script.
 
 #### Using Multiple GPUs
 
@@ -134,7 +138,7 @@ As of 2025-02-25, we offer cuDNN modules for CUDA up to `12.3.0`. If you need a 
 
 ### CUDA Compute Capability and Known Issues
 
-GPU-based software requires a compatible [CUDA Compute Capability](../slurm/gpu.md/#available-devices) to function correctly. Each GPU card has a fixed CUDA Compute Capability version. For the software to run as expected, this version must be at least as large as the minimum CUDA Compute Capability required by the software; otherwise, the software will fail to run as expected, often resulting in runtime errors. Some of the known issues are reported in the [FAQ Entry](#frequently-asked-questions-faq-about-a100-gpus). For more information on CUDA Compute Capability, please refer [here](https://developer.nvidia.com/cuda-gpus).
+GPU-based software requires a compatible [CUDA Compute Capability](../slurm/gpu.md#available-devices) to function correctly. Each GPU card has a fixed CUDA Compute Capability version. For the software to run as expected, this version must be at least as large as the minimum CUDA Compute Capability required by the software; otherwise, the software will fail to run as expected, often resulting in runtime errors. Some of the known issues are reported in the [FAQ Entry](#frequently-asked-questions-faq-about-a100-gpus). For more information on CUDA Compute Capability please see the [official documentation](https://developer.nvidia.com/cuda-gpus).
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -193,6 +197,8 @@ As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct
     - In all cases, be sure to read the section on [Ensuring IO Performance With A100 GPUs](#ensuring-io-performance-with-a100-gpus) to be sure disk read speed doesn't limit your performance gains.
 - **How do I access the A100 GPUs?**
     You can access the A100 GPUs by request jobs in the appropriate partitions. Use `amperenodes` partition for up to 12 hours or `amperenodes-medium` partition for up to 48 hours.
+- **How do I access GPUs within a Singularity Container?**
+    You will have to include the `--nv` flag in your `singularity exec` or `singularity run` command. For more details, please see [Running Singularity Containers With GPU Support](../../workflow_solutions/getting_containers.md#running-singularity-containers-with-gpu-support)
 - **How many GPUs can I request at once?**
     Up to four GPUs may be requested by any one researcher at once. However, there are only two GPUs per node, so requesting four GPUs will allocate two nodes. To make use of multiple nodes, your workflow software must know how to communicate between nodes using software like Horovod or OpenMPI. If you are new to GPUs and aren't sure you need multiple nodes, please limit your request to one or two gpus.
 - **What performance improvements can I expect over the P100 GPUs?**
@@ -208,6 +214,6 @@ As with all jobs, use [`sacct`](job_management.md#reviewing-past-jobs-with-sacct
 - **What else should I be aware of?**
     - Please be sure to clean your data off of `/local/$USER/$SLURM_JOB_ID` as soon as you no longer need it, before the job finishes.
     - We have updated the CUDA and cuDNN modules to improve reliability and ease of use. Please see the section on [CUDA Modules](#cuda-and-cudnn-modules) for more information.
-    - GPU-based software, such as NVIDIA Clara Parabricks, Triton, etc., requires a [CUDA Compute Capability](../slurm/gpu.md/#available-devices) greater than 6.0 for proper execution and should be run on the `amperenodes` partition. Some of the software that encountered runtime errors due to the underlying issues were,
-        - [NVIDIA Clara Parabricks](../../education/case_studies.md/#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus)
+    - GPU-based software, such as NVIDIA Clara Parabricks, Triton, etc., requires a [CUDA Compute Capability](../slurm/gpu.md#available-devices) greater than 6.0 for proper execution and should be run on the `amperenodes` partition. Some of the software that encountered runtime errors due to the underlying issues were,
+        - [NVIDIA Clara Parabricks](../../education/case_studies.md#minimum-hardware-requirements-to-run-parabricks-on-cheaha-gpus)
         - [Triton](https://docs.nvidia.com/deeplearning/triton-inference-server/archives/triton_inference_server_1140/user-guide/docs/build.html#configure-triton-build)

@@ -14,7 +14,7 @@ To report inaccurate information please create an [Inaccuracy Report](https://gi
 
 ## How Do I Report a Bug?
 
-Bug reports are intended to be issues with page appearance and feature functionality. They are _not_ intended for inaccurate information. See [Report Inaccurate Information] to report inaccuracies.
+Bug reports are intended to be issues with page appearance and feature functionality. They are _not_ intended for inaccurate information. See [Report Inaccurate Information](#how-do-i-report-inaccurate-information) to report inaccuracies.
 
 To report a bug please create a [Bug Report](https://github.com/uabrc/uabrc.github.io/issues/new?assignees=&labels=fix%3A+bug&template=bug_report.yml).
 
