@@ -1,17 +1,16 @@
 # JupyterLab
 
-As described on JupyterLab's [documentation page](https://jupyterlab.readthedocs.io/en/latest/)
->JupyterLab is a highly extensible, feature-rich notebook authoring application and editing environment, and is a part of [Project Jupyter](https://docs.jupyter.org/en/latest/), a large umbrella project centered around the goal of providing tools (and [standards](https://docs.jupyter.org/en/latest/#sub-project-documentation)) for interactive computing with computational notebooks. A [computational notebook](https://docs.jupyter.org/en/latest/#what-is-a-notebook) is a shareable document that combines computer code, plain language descriptions, data, rich visualizations like 3D models, charts, graphs and figures, and interactive controls. A notebook, along with an editor like JupyterLab, provides a fast interactive environment for prototyping and explaining code, exploring and visualizing data, and sharing ideas with others.
+As described on JupyterLab's [documentation page](https://jupyterlab.readthedocs.io/en/latest/):
 
-To launch a JupyterLab session, visit [Cheaha's Open On Demand home page](https://rc.uab.edu/), and select the menu items "Interactive Apps -> JupyterLab". The job creation and submission form appears:
+> JupyterLab is a highly extensible, feature-rich notebook authoring application and editing environment, and is a part of [Project Jupyter](https://docs.jupyter.org/en/latest/), a large umbrella project centered around the goal of providing tools (and [standards](https://docs.jupyter.org/en/latest/#sub-project-documentation)) for interactive computing with computational notebooks. A [computational notebook](https://docs.jupyter.org/en/latest/#what-is-a-notebook) is a shareable document that combines computer code, plain language descriptions, data, rich visualizations like 3D models, charts, graphs and figures, and interactive controls. A notebook, along with an editor like JupyterLab, provides a fast interactive environment for prototyping and explaining code, exploring and visualizing data, and sharing ideas with others.
 
-![!JupyterLab home form](./images/ood_jupyterlab_home_form.png)
+To launch a JupyterLab session on Cheaha, visit out [Open OnDemand home page](https://rc.uab.edu/), and select the menu items "Interactive Apps -> JupyterLab". The job submission form appears, as shown below. Select the resources your job needs, and configure the environment and provide extra arguments. Please read on for more information.
 
-As with all interactive apps, you'll need to select the resources required using the job creation form. JupyterLab as with Jupyter Notebook may also require additional initial setup before the app launches.
+![!JupyterLab job submission form](./images/ood_jupyterlab_home_form.png)
 
 ## Environment Setup
 
-To modify the environment that Conda and your JupyterLab will run in, please use the "Environment Setup" field to load modules and modify the environment `$PATH`. Be aware that any changes to the environment made in this window will be inherited by terminals as well as notebooks opened within your JupyterLab session.
+Every software application runs in an environment, including Conda and JupyterLab. To modify the environment, use the "Environment Setup" field to load modules and configure [environment variables](../../workflow_solutions/shell.md). Everything added to this field will be inherited by all terminals and notebooks opened within your JupyterLab session.
 
 ### CUDA
 
@@ -37,7 +36,7 @@ The python icons you see in the image above, are Conda environments that open in
 
 Please see instructions for creating a Conda environment in the [Creating an Environment for use with Jupyter Notebook section](./ood_jupyter_notebook.md#creating-an-environment-for-use-with-jupyter-notebook).
 
-### Changing Environments Using JupyterLab GUI
+### Changing Conda Environments in JupyterLab
 
 1. From the JupyterLab interface, click on the "Kernel" menu in the top navigation bar, and choose the "Change Kernel" option.
 
