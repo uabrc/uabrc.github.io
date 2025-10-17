@@ -100,13 +100,45 @@ Welcome to Cheaha and to Research Computing!
 
 ## Next Steps
 
-CARD GRID GOES HERE, IN TABS
+Please take some time to familiarize yourself with responsibilities, expectations, and policies around use of RCS.
 
-- Check account status
-- Cheaha
-- Data Management
-- Cloud.rc
-- Code.rc
-- Support
+{{
+    renderer.render_cards(
+        cards.account.responsibilities
+    )
+}}
+
+Research Computing has many services available to RCS account holders. To learn more about services that may interest you, please select the role that most closely matches yours.
+
+<!-- markdownlint-disable MD046 -->
+=== "Student | Staff | XIAS Guest"
+
+    {% filter indent(4) %}
+    {{
+        renderer.render_cards(
+            cards.platforms.cheaha.ood.overview,
+            cards.platforms.cheaha.slurm.overview,
+            cards.data.individual_storage,
+            cards.data.transfer_options,
+            cards.account.code_rc_create,
+        )
+    }}
+    {% endfilter %}
+
+=== "Research Faculty Supervisor | Core Director"
+
+    {% filter indent(4) %}
+    {{
+        renderer.render_cards(
+            cards.platforms.cheaha.ood.overview,
+            cards.platforms.cheaha.slurm.overview,
+            cards.data.shared_storage,
+            cards.data.transfer_options,
+            cards.platforms.cloud_rc.overview,
+            cards.account.code_rc_create,
+        )
+    }}
+    {% endfilter %}
+<!-- markdownlint-enable MD046 -->
 
 {% include "_template/base_help_section.md.j2" %}

@@ -74,6 +74,8 @@ plugins: # order matters!
       strict: false
   - glightbox
   - macros:
+      include_yaml:
+        - res/jinja_env.yml
       module_name: macros
       on_undefined: strict
       render_by_default: false
