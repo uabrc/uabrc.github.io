@@ -333,6 +333,39 @@ remove bottom-border from special cases
   margin-top: auto;
 }
 
+/* lists in grid cards */
+.md-typeset .grid.cards ul ul {
+  list-style-type: disc;
+}
+
+.md-typeset .grid.cards ul ul>li {
+  display: list-item;
+}
+
+.md-typeset .grid.cards ul ol {
+  list-style-type: decimal;
+}
+
+.md-typeset .grid.cards ul ol>li {
+  display: list-item;
+}
+
+.md-typeset .grid.cards ul ol ol {
+  list-style-type: lower-alpha;
+}
+
+.md-typeset .grid.cards ul ol ol>li {
+  display: list-item;
+}
+
+.md-typeset .grid.cards ul ol ol ol {
+  list-style-type: lower-roman;
+}
+
+.md-typeset .grid.cards ul ol ol ol>li {
+  display: list-item;
+}
+
 /* EMOJI ICON COLORS */
 .icon-color-uab-green {
   color: var(--uab-color-uab-green);
