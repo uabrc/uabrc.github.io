@@ -14,13 +14,7 @@ It is often a good idea to search the Github repo for an application or pipeline
 
 ## Containers on Cheaha
 
-Using containers on Cheaha bypasses the need to message support to install necessary software. Containers can be downloaded by any user into their personal space and used immediately without admin permission. as mentioned above, you will need to use Singularity containers on Cheaha. You can find all of the Singularity modules using the following command:
-
-``` bash
-module spider Singularity
-```
-
-It's highly recommended to only use Singularity versions 3+.
+Using containers on Cheaha bypasses the need to message support to install necessary software. Containers can be downloaded by any user into their personal space and used immediately without admin permission. As mentioned above, you will need to use Singularity containers on Cheaha. In accordance with the most recent security recommendations, Singularity is installed directly on each node, so module commands are not needed to use Singularity.
 
 ### Pull Singularity Images
 
@@ -51,7 +45,7 @@ It's important to note that both `run` and `exec` enter the container as part of
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    `singularity shell` is not executable via shell scripts. Any singularity commands in a batch script should be `run` or `exec` instead.
+    `singularity shell` is not executable via shell scripts. Any Singularity commands in a batch script should be `run` or `exec` instead.
 <!-- markdownlint-enable MD046 -->
 
 ### Running Singularity Containers With GPU Support
@@ -68,7 +62,7 @@ The `--nv` tells Singularity to bind the NVIDIA driver libraries and GPU devices
 
 ### Singularity Paths
 
-By default, Singularity containers have limited access to the general filesystem. Containers get default access to the `/home` directory as well as the directory the container was run from. If you run the container from `$HOME` but try to access files in `$USER_DATA`, you will see an error. In order to give a container access to other directories, use the `-B` or `--bind` option when invoking the container. For instance, if I wanted to use `run` on a container that had an input option called `-i` and give the container access to a subfolder called `my_data` in a project space called `UABRC`, the singularity command would look like:
+By default, Singularity containers have limited access to the general filesystem. Containers get default access to the `/home` directory as well as the directory the container was run from. If you run the container from `$HOME` but try to access files in `$USER_DATA`, you will see an error. In order to give a container access to other directories, use the `-B` or `--bind` option when invoking the container. For instance, if I wanted to use `run` on a container that had an input option called `-i` and give the container access to a subfolder called `my_data` in a project space called `UABRC`, the Singularity command would look like:
 
 ``` bash
 singularity run --bind /data/project/UABRC/my_data image.sif -i /data/project/UABRC/my_data
