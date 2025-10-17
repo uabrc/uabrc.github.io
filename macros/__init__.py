@@ -14,13 +14,23 @@ from .render import CardRenderer
 def define_env(env: MacrosPlugin) -> None:
     """Define grid card macros for use in docs."""
 
+    def j2_renderer() -> Callable[[str], str]:
+        def fn(_raw: str) -> str:
+            template = env.env.from_string(_raw)
+            return template.render(env.variables)
+
+        return fn
+
     def page_url_getter() -> Callable[[], str]:
         def fn() -> str:
             return _get_page_url().as_posix()
 
         return fn
 
-    renderer = CardRenderer(page_url_getter())
+    renderer = CardRenderer(
+        j2_renderer(),
+        page_url_getter(),
+    )
 
     cards_path = PurePath("res/grid_cards.yml")
     with Path(cards_path).open("r", encoding="utf-8") as f:

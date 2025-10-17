@@ -15,11 +15,13 @@ class CardRenderer:
 
     def __init__(
         self,
+        j2_renderer: Callable[[str], str],
         get_page_url_fn: Callable[[], str],
         *,
         indent: int = 4,
     ) -> None:
         """Initialize new object."""
+        self._j2_renderer: Callable[[str], str] = j2_renderer
         self._get_page_url: Callable[[], str] = get_page_url_fn
         self._indent: int = indent
 
@@ -36,7 +38,9 @@ class CardRenderer:
         card_parts = [part for cards in card_parts for part in cards]
         parts.extend(card_parts)
         parts.append(self._div_close)
-        return "\n\n" + "\n\n".join(parts) + "\n\n"
+
+        template_raw = "\n\n" + "\n\n".join(parts) + "\n\n"
+        return self._j2_renderer(template_raw)
 
     def render_namespace(
         self,
