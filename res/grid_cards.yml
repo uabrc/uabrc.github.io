@@ -18,9 +18,8 @@ account:
     title_text: Responsibilities and Policies
     icon_name: ":material-clipboard-check-multiple:"
     content: |
-      Want to learn who is responsible for what?
-      Learn more about what to expect on our systems.
-      Become familiar with RCS responsibilities and policies.
+      Want to learn who is responsible for what, and what to expect on our systems?
+      Become familiar with RCS responsibilities, expectations, and policies.
     link_url: "account/responsibilities.md"
 
   code_rc_create:
@@ -113,14 +112,32 @@ platforms:
           Scale up your work!
           Learn how to schedule batch jobs with Slurm.
         link_url: "cheaha/slurm/introduction.md"
+  cloud_rc:
+    overview:
+      title_text: Cloud.rc (OpenStack)
+      icon_name: ":material-cloud-braces:"
+      content: |
+        Create virtual infrastructure to serve pages, build containers, and more!
+      link_url: "uab_cloud/index.md"
 
 data:
-  storage_options:
-    title_text: Storage Options
+  individual_storage:
+    title_text: Individual Storage Allocations
     icon_name: ":material-server-network:"
     content: |
-      Did you know researchers can get RCS storage at no charge?
-      Check out our platforms and offerings.
+      Did you know researchers can get no-cost individual storage on RCS?
+
+      - {{ storage.no_cost.individual.gpfs }}
+      - {{ storage.no_cost.individual.lts }}
+    link_url: "data_management/index.md"
+  shared_storage:
+    title_text: Shared Storage Allocations
+    icon_name: ":material-server-network:"
+    content: |
+      Did you know research labs and Cores can get no-cost shared storage on RCS?
+
+      - {{ storage.no_cost.shared.gpfs }}
+      - {{ storage.no_cost.shared.lts }}
     link_url: "data_management/index.md"
   transfer_options:
     title_text: Transfer Options
