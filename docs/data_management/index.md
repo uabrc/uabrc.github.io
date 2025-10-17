@@ -156,6 +156,10 @@ If you wish to discuss other alternatives tailored to your workflow, please [Con
 
 Keep files well-organized and clearly named, back up regularly, and archive or delete unused data.
 
+### How Is My Data Protected Against Disk Failure?
+
+Please see the "Redundancy" row in the [storage table](#what-type-of-storage-do-i-need) to learn how different storage platforms protect data against disk failure.
+
 ### What Are My Responsibilities for Data Management?
 
 Periodically review permissions, clean up unused data, and follow institutional Storage and security policies. Please review our [Research Data Responsibilities](./research_data_responsibilities.md#research-data-responsibilities) page for details.
