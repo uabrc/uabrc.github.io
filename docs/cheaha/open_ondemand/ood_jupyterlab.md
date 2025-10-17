@@ -51,6 +51,10 @@ Please see instructions for creating a Conda environment in the [Creating an Env
 
 ![!JupyterLab notebook interface with the selected kernel highlighted](images/ood_jupyterlab_selectedkernel.png)
 
+### Finding Extensions
+
+Please visit [JupyterLab's official documentation page](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html#extensions) to get more information about JupyterLab Extensions.
+
 ## Common Issues in OOD JupyterLab
 
 ### Python Executable Issues
