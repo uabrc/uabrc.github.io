@@ -44,39 +44,3 @@ The table below is a theoretical analysis of FLOPS (floating point operations pe
 [Download the full table](./res/flops_hpc.csv).
 
 For information on using Cheaha, see our dedicated [section](./getting_started.md).
-
-## Cloud Service at cloud.rc
-
-The Cloud service hardware consists of 5 Intel nodes and 4 DGX-A100 nodes. A description of the available hardware are summarized in the following table.
-
-{{ read_csv('cheaha/res/hardware_short_cloud.csv', keep_default_na=False) }}
-
-[Download the full table](./res/hardware_short_cloud.csv).
-
-The table below is a theoretical analysis of FLOPS (floating point operations per second) based on processor instructions and core counts, and is not a reflection of efficiency in practice.
-
-{{ read_csv('cheaha/res/flops_cloud.csv', keep_default_na=False) }}
-
-[Download the full table](./res/flops_cloud.csv).
-
-For information on using our Cloud service at cloud.rc, see our dedicated [section](../uab_cloud/index.md).
-
-## Kubernetes Container Service
-
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    The Kubernetes fabric is still in deployment and not ready for researcher use. We will be sure to inform you when the service is ready. The following information is planned hardware.
-<!-- markdownlint-enable MD046 -->
-
-The Kubernetes container service hardware consists of 5 Intel nodes and 4 DGX-A100 nodes. A description of the available hardware are summarized in the following table.
-
-{{ read_csv('cheaha/res/hardware_short_container.csv', keep_default_na=False) }}
-
-[Download the full table](./res/hardware_short_container.csv).
-
-The table below is a theoretical analysis of FLOPS (floating point operations per second) based on processor instructions and core counts, and is not a reflection of efficiency in practice.
-
-{{ read_csv('cheaha/res/flops_container.csv', keep_default_na=False) }}
-
-[Download the full table](./res/flops_container.csv).

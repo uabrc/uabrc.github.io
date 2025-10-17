@@ -132,6 +132,27 @@ Style is not automated at this time as the cost is greater than the benefit. Ent
 
 Style is not automated at this time as the cost is greater than the benefit. Entires in the following keys should be sorted alphabetically.
 
+### News Blog Posts
+
+News updates should be added as separate Markdown files in the `/docs/news/` directory. Except for the considerations below, all blog posts should be written using the ordinary article style for this guide.
+
+Each blog post must have a `<!-- more -->` comment or an error will be produced during the build. The comment serves as an "excerpt" indicator when the blog post is included on the main page, or any other page with multiple posts. This helps aggregate pages to be more compact. Try to place the comment after the first paragraph, or at another sensible location.
+
+All posts must have a metadata section at the top of the page, like the following.
+
+```yml
+---
+date: 2024-12-31T09:54:13-05:00
+categories:
+    - <category1>
+    - ...
+---
+```
+
+- The `date` field must be in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601) with time zone info. Please use the `-05:00` indicator (Central Time) for any UAB posts.
+- The `categories` field is a sequence of category labels. These must be selected from the `plugins: blog: categories_allowed:` field of `mkdocs.yml`.
+- If you need to add a new category, be sure to give it appropriate title case, or there will be an error during build.
+
 ### Development
 
 The workflow below assumes you are using VSCode and all of the prerequisites listed above. Some familiarity with git and GitHub are assumed.
@@ -545,7 +566,7 @@ Reviewing a pull request means obtaining a copy of the pull request branch and [
 
 ### Slurm Hardware, Partitions, QoS Tables
 
-Building hardware tables is a semi-automated script based on a manually curated table. The repository is located here: <https://gitlab.rc.uab.edu/rc-data-science/metrics/rc-hardware>. The repository is only accessible to developers at this time.
+Building the hardware tables used in the docs is a semi-automated script based on a manually curated table. The repository is located here: <https://code.rc.uab.edu/rc-data-science/metrics/rc-hardware>. The repository is only accessible to developers at this time.
 
 Building Partition and QoS tables is automated based on `scontrol` output. The repository is located here: <https://github.com/wwarriner/slurm_status_tools>. To use, install the Conda environment at the linked repo, activate it, and run the following commands.
 

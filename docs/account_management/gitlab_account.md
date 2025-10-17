@@ -23,7 +23,7 @@ GitLab can be used:
 
 UAB GitLab is useful for software developers. It is a single application for the entire software development lifecycle. From project planning and source code management to continuous integration (CI) and continuous deployment (CD), monitoring, and security.
 
-Our GitLab instance may be found at <https://gitlab.rc.uab.edu>.
+Our on-premises GitLab instance may be found at <https://code.rc.uab.edu>.
 
 ## UAB GitLab Registration
 
@@ -47,11 +47,11 @@ Please use your BlazerID and BlazerID credentials to sign in following the direc
 
 If you are a collaborator with a XIAS account you'll need to follow a different procedure.
 
-1. Ensure that your sponsor has included `https://gitlab.rc.uab.edu` in the list of approved URIs on the XIAS configuration page.
+1. Ensure that your sponsor has included `https://code.rc.uab.edu` in the list of approved URIs on the XIAS configuration page.
 1. Email <support@listserv.uab.edu> providing your full name, XIAS account email address, and sponsor.
 1. UAB Research Computing will create the account.
-1. You will recieve an email from gitlab.rc.uab.edu with a link to create a password.
-1. Navigate to <https://gitlab.rc.uab.edu>.
+1. You will recieve an email from `code.rc.uab.edu` with a link to create a password.
+1. Navigate to <https://code.rc.uab.edu>.
 1. Click the `Standard` tab.
 1. In the `Username or email` field type the part of your XIAS email address before the `@` symbol. Do not include the `@` symbol or anything after it.
 1. Fill out the `Password` field with the GitLab password you created in Step #4.
@@ -89,7 +89,7 @@ The following instructions are to guide you in creating a group and/or assigning
 
 ### Creating a Group in UAB's GitLab Instance
 
-1. Log in to the [UAB Research Computing GitLab instance](https://gitlab.rc.uab.edu/users/sign_in) using your UAB Credentials.
+1. Log in to the [UAB Research Computing GitLab instance](https://code.rc.uab.edu/users/sign_in) using your UAB Credentials.
 
     ![!image showing UAB RC GitLab Landing Page](./images/uab-gitlab-landingpage.png)
 
@@ -123,7 +123,7 @@ The following instructions are to guide you in creating a group and/or assigning
 
 As a Maintainer or Owner you can create Projects from within a Group. Steps 1 and 2 are same as the instructions for [Creating a Group](#creating-a-group-in-uabs-gitlab-instance), there is a slight deviation at the third step.
 
-1. Log in to the [UAB Research Computing GitLab instance](https://gitlab.rc.uab.edu/users/sign_in) using your UAB Credentials.
+1. Log in to the [UAB Research Computing GitLab instance](https://code.rc.uab.edu/users/sign_in) using your UAB Credentials.
 
     ![!image showing UAB RC GitLab Landing Page](./images/uab-gitlab-landingpage.png)
 

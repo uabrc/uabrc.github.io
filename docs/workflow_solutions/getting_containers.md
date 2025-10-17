@@ -54,6 +54,18 @@ It's important to note that both `run` and `exec` enter the container as part of
     `singularity shell` is not executable via shell scripts. Any singularity commands in a batch script should be `run` or `exec` instead.
 <!-- markdownlint-enable MD046 -->
 
+### Running Singularity Containers With GPU Support
+
+To run GPU-enabled applications within a Singularity container, you must explicitly enable GPU access when launching the container. Singularity provides specific flags to expose the host system’s GPU devices and drivers inside the container.
+
+Both the `Pascalnodes` and `Amperenodes` partitions use NVIDIA GPUs. Therefore, you will have to run Singularity with the `--nv` option to enable GPU support:
+
+```bash
+singularity run --nv [other-run-flags] <image.sif> [image-software-flags]
+```
+
+The `--nv` tells Singularity to bind the NVIDIA driver libraries and GPU devices into the container. This ensures your containerized application can access the GPU as if it were running on the host. An example tutorial demonstrating how to run Parabricks software with GPU support using the `--nv` flag can be found in our [Parabricks Case Study](../education/case_studies.md/#parabricks-testing-on-amperenodes-on-cheaha). For more details on usage of `--nv` flag refer to the [Singulairty Official Documentation](https://docs.sylabs.io/guides/3.5/user-guide/gpu.html).
+
 ### Singularity Paths
 
 By default, Singularity containers have limited access to the general filesystem. Containers get default access to the `/home` directory as well as the directory the container was run from. If you run the container from `$HOME` but try to access files in `$USER_DATA`, you will see an error. In order to give a container access to other directories, use the `-B` or `--bind` option when invoking the container. For instance, if I wanted to use `run` on a container that had an input option called `-i` and give the container access to a subfolder called `my_data` in a project space called `UABRC`, the singularity command would look like:
@@ -301,7 +313,7 @@ We provide community containers that cover a broad range of software to support 
 
 ### Where Can I Find UAB Research Computing Community Containers
 
-Our community containers are housed in our GitLab repository. You can access them at <https://gitlab.rc.uab.edu/rc-data-science/community-containers>
+Our community containers are housed in our on-premises GitLab repository. You can access them at <https://code.rc.uab.edu/rc-data-science/community-containers>
 
 Each container is organized into a folder within the registry repository, making it easy to locate specific software or environments. Every container also includes a README file that provides documentation on its purpose, which software is included, and instructions for setting it up. If you have a container you would like to add to the container registry, please contact us at <support@listserv.uab.edu>, and we will gladly facilitate its inclusion.
 
@@ -322,7 +334,7 @@ The next set of instructions will guide you through how to complete the install 
 On Cheaha, you can pull a container using Singularity by running the `singularity pull` command, an example is shown below. Ensure you are in the preferred location you would like to use the container from.
 
 ``` bash
-singularity pull <preferredName.sif> docker://gitlab.rc.uab.edu:4567/rc-data-science/community-containers/<name of container/name of container:tag>
+singularity pull <preferredName.sif> docker://code.rc.uab.edu:4567/rc-data-science/community-containers/<name of container/name of container:tag>
 ```
 
 In the above command, `<preferredName.sif>` is a file name placeholder you should replace with your preferred container image filename. For example you can rename the file as "`alphafold3.sif`". The **`4567`** is the specific port for our GitLab container registry. For the `<name of container/name of container:tag>` placeholder, you will need to replace this placeholder with the specific path with the image name and tag of the container you want to pull.
@@ -330,7 +342,7 @@ In the above command, `<preferredName.sif>` is a file name placeholder you shoul
 A sample code is shown below
 
 ``` bash
-singularity pull alphafold3.sif docker://gitlab.rc.uab.edu:4567/rc-data-science/community-containers/alphafold3/alphafold3:cd48cee5
+singularity pull alphafold3.sif docker://code.rc.uab.edu:4567/rc-data-science/community-containers/alphafold3/alphafold3:cd48cee5
 ```
 
 After the singularity file (.sif) is created, you can run your container using the `singularity run` or `singularity exec` commands with the appropriate options. Please refer to the `README` file provided in the container repository or look for documentation specific to the container. Please see our [guide for using Containers (with singularity) on Cheaha](#containers-on-cheaha).You should see an output like in the image below.
@@ -342,7 +354,7 @@ After the singularity file (.sif) is created, you can run your container using t
 You can also pull this container using either Docker or Singularity, assuming you are running a Virtual Machine (VM) on a cloud instance or on a Windows machine. You will need to have either Docker or Singularity installed, then pull a container from the registry by running the command in your machine's terminal. The instructions for using Singularity are same as for running [Singularity on Cheaha](#run-uab-rc-community-containers-on-cheaha-using-singularity). See instructions on how to pull a container using Docker in your VM's terminal.
 
 ``` bash
-docker pull docker://gitlab.rc.uab.edu:0000/rc-data-science/community-containers/<name of container>
+docker pull docker://code.rc.uab.edu:0000/rc-data-science/community-containers/<name of container>
 ```
 
 This will pull the image and setup the container for use. As with all containers, `docker run` along with the right flags/option will run the container. Please refer to the `README` file provided in the container repository, or look for documentation specific to the container. Please see our documentation for [using Singularity on a cloud instance](#using-containers-on-uab-rc-cloud-cloudrcuabedu).
@@ -364,7 +376,7 @@ The following steps help you to create a container registry in UAB GitLab:
 1. Login to UAB GitLab Registry using your `registry_name:ID`.
 
     ```bash
-    sudo docker login gitlab.rc.uab.edu:4567
+    sudo docker login code.rc.uab.edu:4567
     ```
 
     !!! note
@@ -373,7 +385,7 @@ The following steps help you to create a container registry in UAB GitLab:
     Note: For securing concerns, use an access token to log in. Create an access token in UAB GitLab to push/pull the docker container in the container registry (Secure token and guidelines to follow are shown next).
 
     ```bash
-    sudo docker login gitlab.rc.uab.edu:4567 -u username –p access_token
+    sudo docker login code.rc.uab.edu:4567 -u username –p access_token
     ```
 
 1. Creating an Access Token: From the UAB GitLab page, you can create an access token instead of using a password to log in to the UAB GitLab registry. Goto Edit profile -> Click `Access Tokens`. Then enter:
@@ -408,7 +420,7 @@ sudo docker images
 - Tag `alpine` to push into UAB GitLab registry. We need to have the UAB GitLab registry name to push. It will show the default command on the container registry page. Copy these commands for future reference. The tag is `test` here.
 
 ```bash
-sudo docker tag alpine:latest gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
+sudo docker tag alpine:latest code.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
 ```
 
 You can see the tag `test` associated with the `alpine` image.
@@ -427,7 +439,7 @@ The below first command is the syntax to push the Docker image to the UAB GitLab
 ```bash
 sudo docker push gitlab_registry_name:ID/gitlab_group_name/project_name:tag
 
-sudo docker push gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
+sudo docker push code.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
 ```
 
 ![!Containers docker push gitlab.](./images/containers_docker_push_gitlab.png)
@@ -449,7 +461,7 @@ sudo docker rmi -f image_id
  In your GitLab's page container registry, copy the pull command from the `test` container registry, and use it to pull the docker container to your system. You can see the image is reflected in the image list.
 
 ```bash
-sudo docker pull gitlab.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
+sudo docker pull code.rc.uab.edu:4567/rc-data-science/build-and-push-container/alpinegitlab:test
 ```
 
 ![!Containers gitlab pull.](./images/containers_gitlab_pull.png)

@@ -8,7 +8,7 @@ If your work is private, or internal to UAB operations, it is probably best to s
 
 ### GitLab
 
-UAB Research Computing maintains a GitLab instance. To gain access, please visit <https://gitlab.rc.uab.edu> and create an [Account](../account_management/gitlab_account.md).
+UAB Research Computing maintains an on-premises GitLab instance. To gain access, please visit <https://code.rc.uab.edu> and create an [Account](../account_management/gitlab_account.md).
 
 ### GitHub
 

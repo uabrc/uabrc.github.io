@@ -8,12 +8,17 @@ The landing page contains information about current updates to the system, a mes
 
 ## File Browser
 
-You can open a file browser in a new tab by clicking the `Files` dropdown and selecting which default directory you would like to access from `HOME`, `USER_DATA`, or `USER_SCRATCH`.
+You can open a file browser in a new tab by clicking the `Files` dropdown and selecting which default directory you would like to access from the following options.
+
+- [Home Directory](../../data_management/cheaha_storage_gpfs/individual_directories.md)
+- [/data/scratch/$USER](../../data_management/cheaha_storage_gpfs/network_scratch.md) (network scratch)
+- [/data/user/$USER](../../data_management/cheaha_storage_gpfs/individual_directories.md)
+- [/scratch/$USER](../../data_management/cheaha_storage_gpfs/network_scratch.md) (network scratch)
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    `USER_SCRATCH` is shown as both `/scratch` and `/data/scratch`. `/data/scratch` is just a symbolic link to `/scratch`. You can use either, but `/scratch` is preferred since it's an actual folder instead of a symlink.
+    "/data/scratch" is a symbolic link to "/scratch", so they point to the same directory.
 <!-- markdownlint-enable MD046 -->
 
 ![!Basic file browser for OOD.](./images/file_browser.png)
