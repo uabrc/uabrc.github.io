@@ -1,11 +1,5 @@
 # UAB Research Computing Policies
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
-
-    This page is a stub and is under construction.
-<!-- markdownlint-enable MD046 -->
-
 ## UAB IT Policies
 
 All users of UAB IT systems, including UAB Research Computing systems, must agree to all UAB relevant UAB IT policies. UAB IT policies may be found at <https://www.uab.edu/it/home/policies>.
@@ -14,7 +8,7 @@ The list of policies below are those that may be most relevant to typical use ca
 
 ### Acceptable Use Policy (AUP)
 
-[Acceptable Use Policy](https://secure2.compliancebridge.com/uab/public/index.php?fuseaction=print.preview&docID=786)
+[Acceptable Use Policy](https://secure4.compliancebridge.com/uab/public/index.php?fuseaction=app.main)
 
 ### Data Classification
 

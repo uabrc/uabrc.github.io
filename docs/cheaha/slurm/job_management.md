@@ -4,7 +4,7 @@ When jobs are submitted, researchers can monitor their status using Slurm comman
 
 In case jobs were submitted by accident or the code was written incorrectly, they can also be cancelled.
 
-## Monitoring Queued Jobs with `squeue`
+## Monitoring Queued Jobs With `squeue`
 
 Currently running jobs can be monitored using the `squeue` command. The basic command to list all jobs for a specific researcher is:
 
@@ -16,13 +16,13 @@ The output of `squeue` will look like:
 
 ![!Output from squeue.](./images/squeue_output.png)
 
-By default the fields displayed are `jobid`, `partition`, `jobname` as `name`, blazerid as `user`, job state as `st`, total run time as `time`, number of nodes as `node`, and the list of nodes as `nodelist`, used for each job a researcher has submitted.
+By default the fields displayed are `jobid`, `partition`, `jobname` as `name`, BlazerID as `user`, job state as `st`, total run time as `time`, number of nodes as `node`, and the list of nodes as `nodelist`, used for each job a researcher has submitted.
 
 For array jobs, the JobID will be formatted as `jobid_arrayid`.
 
 More information is available at the [Official Documentation](https://slurm.schedmd.com/squeue.html).
 
-## Cancelling Jobs with `scancel`
+## Cancelling Jobs With `scancel`
 
 Cancelling queued and currently running jobs can be done using the `scancel` command. Importantly, this will only cancel jobs that were initiated by the researcher running the command. `scancel` is very flexible in how it behaves:
 
@@ -48,7 +48,7 @@ scancel -u $USER
 
 More information is available at the [Official Documentation](https://slurm.schedmd.com/scancel.html).
 
-## Reviewing Past Jobs with `sacct`
+## Reviewing Past Jobs With `sacct`
 
 If you are planning a new set of jobs and are estimating resource requests, it is useful to review similar jobs that have already completed. To list past jobs for a researcher, use the `sacct` command. Common use cases and information are detailed below. Full details are available at the [Official Documentation](https://slurm.schedmd.com/scancel.html).
 
@@ -170,12 +170,12 @@ Durations are reported like the following.
 Job states report on where the job is in the overall Slurm process. If all goes well, you will see jobs move through the following states:
 
 1. `PENDING`
-2. `RUNNING`
-3. A terminal state depending on what happens
+1. `RUNNING`
+1. A terminal state depending on what happens
     1. `COMPLETED` if the job finished normally and returns exit code zero
-    2. `CANCELLED` if the researcher cancels the job
-    3. `FAILED` if there is a software error or non-zero exit code
-    4. `TIMEOUT` if the job had insufficient time
+    1. `CANCELLED` if the researcher cancels the job
+    1. `FAILED` if there is a software error or non-zero exit code
+    1. `TIMEOUT` if the job had insufficient time
 
 Other states are possible. A complete list of job states is available at the [Official Documentation](https://slurm.schedmd.com/sacct.html#SECTION_JOB-STATE-CODES).
 

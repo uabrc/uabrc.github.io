@@ -1,25 +1,19 @@
 # Introduction to Slurm
 
-All work on Cheaha must be submitted to the queueing system, Slurm. This doc gives a basic overview of Slurm and how to use it.
+All work on Cheaha must be submitted to our fair-share job queueing system, Slurm. Slurm is a collection of software packages enabling researchers to use resources on Cheaha. Researchers write job scripts that tell Slurm what commands to run and what resources are needed. Scripts submitted using the `sbatch` command are queued by Slurm. Resources are allocated when as they become available.
 
-Slurm is software that gives researchers fair allocation of the cluster's resources. It schedules jobs based using resource requests such as number of CPUs, maximum memory (RAM) required per CPU, maximum run time, and more.
+The official Slurm documentation can be found at [the Slurm website](https://slurm.schedmd.com/). The official [Slurm Quickstart](https://slurm.schedmd.com/quickstart.html) may help you get oriented.
 
-The main Slurm documentation can be found at [the Slurm site](https://slurm.schedmd.com/). The [Slurm Quickstart](https://slurm.schedmd.com/quickstart.html) can also be helpful for orienting researchers new to queueing systems on the cluster.
+## How Do I Use Slurm?
 
-## Batch Job Workflow
-
-1. Stage data to `$USER_DATA`, `$USER_SCRATCH`, or a `/data/project/...` directory.
-2. Research how to run your directives in 'batch' mode. In other words, how to run your analysis pipeline from the command line, with no GUIs or researcher input.
-3. Identify the appropriate resources necessary to run the jobs (CPUs, time, memory, etc)
-4. Write a job script specifying these parameters using Slurm directives.
-5. Submit the job (`sbatch`)
-6. Monitor the job (`squeue`)
-7. Review the results, and modify/rerun if necessary (`sacct` and `seff`)
-8. Remove data from `$USER_SCRATCH`
-
-For more details, please see [Submitting Jobs](submitting_jobs.md).
-
-For details on managing and reviewing jobs, please see [Job Management](job_management.md).
+1. Understand how to run your software in 'batch' mode, purely from the command line. You may need to review the software documentation.
+1. Stage data to [Cheaha storage](../../data_management/cheaha_storage_gpfs/index.md).
+1. Figure out what resources are needed, such as CPUs, memory, GPUs, and time.
+1. Write a [Slurm job script](./slurm_tutorial.md). Be sure to delete data from local scratch.
+1. [Submit the job](./submitting_jobs.md) with the `sbatch` command.
+1. [Monitor the job](./job_management.md#monitoring-queued-jobs-with-squeue) with the `squeue` command.
+1. Review job information and efficiency with the [`sacct` command](./job_management.md#reviewing-past-jobs-with-sacct) and [`seff` command](../job_efficiency.md).
+1. Remove unneeded data from network scratch.
 
 ## The Slurm Queue
 
@@ -37,4 +31,12 @@ Given two or more jobs with equal priority, the job on the partition with the la
 
 The scheduler cannot predict the future. If a job enters the queue with a higher priority than yours, it will start before yours. This may lead to a situation where your job no longer fits on any of the nodes. If this happens your job will have to wait until sufficient space opens regardless of its priority value. A possible strategy to minimize the risk of preemption is to request fewer resources per node, to more readily fill available space.
 
-If you are unsure of the best queueing strategy for your workflow, please [Contact Us](../../index.md#contact-us) for a consultation, we are happy to help.
+A lot of intelligent people have worked very hard to design the Slurm scheduler to be both smart and fair. Please allow it to do its job. If you have workloads that are very large and want advice or are unsure of the best queueing strategy for your workflow, please [Contact Us](../../index.md#how-to-contact-us) for a consultation, we are happy to help.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Please do not run `squeue`, or any other Slurm command, in a loop. All Slurm commands increase the load on the Slurm controller. Many commands in a short period of time can make Slurm unresponsive, unstable, or require a restart, which negatively impacts all researchers.
+
+    Instead, please simply let the Slurm scheduler do its job of managing.
+<!-- markdownlint-enable MD046 -->

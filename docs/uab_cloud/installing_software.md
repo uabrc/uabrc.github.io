@@ -34,9 +34,9 @@ Most common software packages and NVIDIA drivers are available as `apt` packages
 ### Finding Packages
 
 1. Try using Google to locate the name of the package with something like `ubuntu apt <keywords>`
-2. Try using <https://packages.ubuntu.com>
-3. Try `apt-cache search <keyword>`
-4. Ask [Support](../help/support.md) for help
+1. Try using <https://packages.ubuntu.com>
+1. Try `apt-cache search <keyword>`
+1. Ask [Support](../help/support.md) for help
 
 ### Installing Packages
 
@@ -53,11 +53,11 @@ If you wish to set up server software, you'll need to open ports for that softwa
 If you intend to use your instance as a server host, you'll likely need to set up additional [Security Groups](tutorial/security.md#creating-a-security-group) for any ports the server expects to communicate on. It can be helpful to verify that those ports are open before configuring the server software. Assuming you know which ports are needed, the simplest way to do this is outlined below.
 
 1. Set up [Security Groups](tutorial/security.md#creating-a-security-group) for the ports your server will need to communicate on.
-2. [SSH](#streamlining-ssh) into the instance.
-3. Prepare the `netcat` software command `nc`:
+1. [SSH](remote_access.md#setting-up-a-configuration-file) into the instance.
+1. Prepare the `netcat` software command `nc`:
     - For Ubuntu, the command `nc` should already be available.
     - For other OSes, you may need to [Install](./installing_software.md) `nc` or `netcat`.
-4. For one of your `<port>` of interest, start a TCP listener with `nc -l <port>`.
+1. For one of your `<port>` of interest, start a TCP listener with `nc -l <port>`.
 
     <!-- markdownlint-disable MD046 -->
     !!! note
@@ -69,11 +69,11 @@ If you intend to use your instance as a server host, you'll likely need to set u
         ```
     <!-- markdownlint-enable MD046 -->
 
-5. Open a new terminal on your local machine.
-6. Probe the `<port>`:
+1. Open a new terminal on your local machine.
+1. Probe the `<port>`:
     - Using the Windows command prompt:
         1. Enter the command `telnet <floating-ip> <port>`.
-        2. If the terminal window goes blank, then the connection was successful.
+        1. If the terminal window goes blank, then the connection was successful.
 
             ![!telnet success example](images/port-check-telnet-success.png)
 
@@ -81,17 +81,17 @@ If you intend to use your instance as a server host, you'll likely need to set u
 
             ![!telnet failure example](images/port-check-telnet-failure.png)
 
-        3. To exit `telnet` press ++ctrl+bracket-right++, then type `q`, then press ++enter++.
+        1. To exit `telnet` press ++ctrl+bracket-right++, then type `q`, then press ++enter++.
 
             ![!telnet quit example](images/port-check-telnet-exit.png)
 
     - Using any Linux-based prompt, MacOS, or Git Bash on Windows:
         1. Ensure `nc` is installed locally.
-        2. Enter the command `nc -nvz <floating-ip> <port>`.
+        1. Enter the command `nc -nvz <floating-ip> <port>`.
             - `n` uses numeric output, which minimizes unhelpful warnings about hostname lookups. It is also faster.
             - `v` uses verbose output, i.e., print the output we care about.
             - `z` scans for listeners on the remote.
-        3. If the connection is successful you should see something close to the following, with `<floating-ip>` and `<port>` replaced by the values you supplied earlier.
+        1. If the connection is successful you should see something close to the following, with `<floating-ip>` and `<port>` replaced by the values you supplied earlier.
 
             ```text
             (UNKNOWN) [<floating-ip>] <port> (?) open
@@ -105,7 +105,7 @@ If you intend to use your instance as a server host, you'll likely need to set u
 
 Now you should have more information on whether your VM port configuration was successful. Feel free to repeat the steps above for each port, as needed.
 
-#### Verify Server Software is Listening
+#### Verify Server Software Is Listening
 
 Once you have the server set up, you can check which processes are listening on which ports using the following command.
 
@@ -129,28 +129,28 @@ An example of the output is shown below. The most useful columns for us are `Loc
 
 Below are a few examples of installing certain common softwares that may be useful to scientific applications. We are not able to provide diagnostic or troubleshooting support for installation of any software. If you believe these instructions are outdated or in error, please [reach out and let us know](../contributing/reporting_errors.md#how-do-i-report-inaccurate-information).
 
-#### Installing NVidia Drivers
+#### Installing NVIDIA Drivers
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
-2. `sudo apt install ubuntu-drivers-common`
-3. `ubuntu-drivers devices`
-4. Find the line with "recommended" and install the package on that line with `sudo apt install nvidia-driver-###`
-5. Reboot the instance
+1. `sudo apt install ubuntu-drivers-common`
+1. `ubuntu-drivers devices`
+1. Find the line with "recommended" and install the package on that line with `sudo apt install nvidia-driver-###`
+1. Reboot the instance
 
 #### Installing Miniconda
 
 Miniconda is a lightweight version of Anaconda. While Anaconda's base environment comes with Python, the Scipy stack, and other common packages pre-installed, Miniconda comes with no packages installed. This is an excellent alternative to the full Anaconda installation for environments where minimal space is available or where setup time is important. We recommend installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html) on cloud.rc instances, as opposed to Anaconda, to conserve storage space. For more information on how to use Anaconda see the [Using Anaconda](../workflow_solutions/using_anaconda.md#using-anaconda). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
-2. `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
-3. `bash Miniconda3-latest-Linux-x86_64.sh`
+1. `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+1. `bash Miniconda3-latest-Linux-x86_64.sh`
 
 #### Installing Singularity
 
-Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quick_start.html#install-system-dependencies> under "Debian-based systems".
+Follow the instructions located at <https://docs.sylabs.io/guides/3.9/user-guide/quick_start.html#install-system-dependencies> under "Debian-based systems".
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
-2. Run the following
+1. Run the following
 
     ```bash
     sudo apt-get install -y \
@@ -161,7 +161,7 @@ Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quic
     cryptsetup
     ```
 
-3. Install Go language using the following
+1. Install Go language using the following
 
     ```bash
     export VERSION=1.17.2 OS=linux ARCH=amd64 && \  # Replace the values as needed
@@ -173,7 +173,7 @@ Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quic
     source ~/.bashrc
     ```
 
-4. Download SingularityCE
+1. Download SingularityCE
 
     ```bash
     export VERSION=3.9.5 && # adjust this as necessary \
@@ -182,7 +182,7 @@ Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quic
     cd singularity-ce-${VERSION}
     ```
 
-5. Compile SingularityCE
+1. Compile SingularityCE
 
     ```bash
     ./mconfig && \
@@ -196,7 +196,7 @@ Follow the instructions located at <https://sylabs.io/guides/3.9/user-guide/quic
     For other versions of the Singularity documentation, visit <https://sylabs.io/docs/>.
 <!-- markdownlint-enable MD046 -->
 
-#### Installing Jupyter Notebook Server
+#### Installing Jupyter Server
 
 Jupyter Notebooks are a staple of modern research computing, especially when developing new workflows or evaluating the usefulness of software packages.
 
@@ -205,11 +205,11 @@ The setup process for [cloud.rc](index.md) is more involved than for [Cheaha](..
 To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our [Introduction](index.md) and follow the tutorial completely.
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
-2. A [Cloud Instance](tutorial/instances.md) with attached [Floating IP]network_setup_basic.md#floating-ips).
-3. A [Security Group](tutorial/security.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
-4. [Miniconda installed](#installing-miniconda) on the instance. Miniconda is a lightweight version of Anaconda.
+1. A [Cloud Instance](tutorial/instances.md) with attached [Floating IP]network_setup_basic.md#floating-ips).
+1. A [Security Group](tutorial/security.md#creating-a-security-group) for the intended Jupyter Server port. For the purposes of this tutorial, the port will be set to `9999`.
+1. [Miniconda installed](#installing-miniconda) on the instance. Miniconda is a lightweight version of Anaconda.
 
-Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_anaconda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_anaconda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#>.
+Once the prerequisites are complete, the following steps must be performed to install and setup Jupyter Notebook Server. It is highly recommended to build an [Anaconda Environment](../workflow_solutions/using_anaconda.md#create-an-environment) using a reproducible [Environment File](../workflow_solutions/using_anaconda.md#creating-an-environment-from-a-yaml-file). The steps below belong to the official Jupyter documentation available at <https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html>.
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
@@ -228,10 +228,10 @@ Once the prerequisites are complete, the following steps must be performed to in
         - `r-irkernel` for R users
         - [Optional] `pip`
 
-2. Because floating IPs are, by default, reachable by anyone on the campus network, you'll need to secure the server using the steps below.
-    1. Generate a notebook config file using `jupyter notebook --generate-config`. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#prerequisite-a-notebook-configuration-file)]
-    2. Prepare a password using `jupyter notebook password`. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#automatic-password-setup)]
-    3. Set up SSL for an encrypted connection. For now create a self-signed certificate using the following command. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication)]
+1. Because floating IPs are, by default, reachable by anyone on the UAB Campus Network, you'll need to secure the server using the steps below.
+    1. Generate a notebook config file using `jupyter notebook --generate-config`. [[official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#prerequisite-a-jupyter-server-configuration-file)]
+    1. Prepare a password using `jupyter notebook password`. [[official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#automatic-password-setup)]
+    1. Set up SSL for an encrypted connection. For now create a self-signed certificate using the following command. [[official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#using-ssl-for-encrypted-communication)]
 
         ```bash
         openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem
@@ -240,10 +240,10 @@ Once the prerequisites are complete, the following steps must be performed to in
         <!-- markdownlint-disable MD046 -->
         !!! warning
 
-            When you connect to your Jupyter Server, your browser will warn you that the connection may be insecure. This is because self-signed certificates are not trusted by your operating system's root certificates. It is possible to fix this with some additional work using notes at the [official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#using-ssl-for-encrypted-communication). Generally the security warning can be bypassed without issue _in this case_.
+            When you connect to your Jupyter Server, your browser will warn you that the connection may be insecure. This is because self-signed certificates are not trusted by your operating system's root certificates. It is possible to fix this with some additional work using notes at the [official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#using-ssl-for-encrypted-communication). Generally the security warning can be bypassed without issue _in this case_.
         <!-- markdownlint-enable MD046 -->
 
-3. Configure the notebook server by locating lines like the following in `~/.jupyter/jupyter_notebook_config.py` and updating them with the right-hand side of each variable assignment (equals sign `=`). This file was created as part of the first step of these instructions. [[official docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#running-a-public-notebook-server)]
+1. Configure the notebook server by locating lines like the following in `~/.jupyter/jupyter_notebook_config.py` and updating them with the right-hand side of each variable assignment (equals sign `=`). This file was created as part of the first step of these instructions. [[official docs](https://jupyter-server.readthedocs.io/en/stable/operators/public-server.html#running-a-public-notebook-server)]
 
     <!-- markdownlint-disable MD046 -->
     !!! note
@@ -268,8 +268,8 @@ Once the prerequisites are complete, the following steps must be performed to in
     c.NotebookApp.port = 9999
     ```
 
-4. Start the server with `jupyter notebook`.
-5. Access the server with the browser on your local machine by navigating to `https://<floating-ip>:<port>`. In this case the port was set to be `9999`, and `<floating-ip>` comes from the prerequisites for this section. The port must match that used for the security group to allow traffic between your local machine and the cloud instance. You must also be on the UAB Campus VPN.
+1. Start the server with `jupyter notebook`.
+1. Access the server with the browser on your local machine by navigating to `https://<floating-ip>:<port>`. In this case the port was set to be `9999`, and `<floating-ip>` comes from the prerequisites for this section. The port must match that used for the security group to allow traffic between your local machine and the cloud instance. You must also be on the UAB Campus VPN.
 
 <!-- markdownlint-disable MD046 -->
 !!! important

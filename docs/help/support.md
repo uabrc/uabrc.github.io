@@ -9,17 +9,17 @@ To Create a support ticket, send a descriptive email to <support@listserv.uab.ed
 For general issues:
 
 1. What is your goal?
-2. What steps were taken?
-3. What was expected?
-4. What actually happened?
-5. How was the cluster accessed? Web Portal, SSH, VNC, etc.?
-6. What software were you using? Please be as specific as possible. The command `module list` can be helpful here.
+1. What steps were taken?
+1. What was expected?
+1. What actually happened?
+1. How was the cluster accessed? Web Portal, SSH, VNC, etc.?
+1. What software were you using? Please be as specific as possible. The command `module list` can be helpful here.
 
 For outages:
 
 1. What part of the cluster is affected? Please list any relevant affected nodes or other hardware that is not accessible. If you are unable to access the cluster please state that instead.
-2. What were you working on when you noticed the outage?
-3. How were you accessing the cluster? Web Portal, SSH, VNC, etc.?
+1. What were you working on when you noticed the outage?
+1. How were you accessing the cluster? Web Portal, SSH, VNC, etc.?
 
 ### How Do I Work With Tickets I've Created?
 
@@ -28,9 +28,9 @@ UAB IT and Research Computing use ServiceNow for ticket management. When any ema
 When any email is sent to <support@listserv.uab.edu> the following happens:
 
 1. An RITM ticket is created in ServiceNow and assigned to Research Computing.
-2. The email is routed to Research Computing staff and the ticket creator from the `support@listserv.uab.edu` email list. Please **do not reply**. Replies create additional tickets and cause service delays.
-3. A monitoring email is sent from `support-watch@listserv.uab.edu` to Research Computing staff and the ticket creator. Please **do not reply** to this email. Your email will not make it through, because the email address is closed to Research Computing staff.
-4. A ticket creation email is sent from `askit@uab.edu` to Research Computing staff and the ticket creator. Please _do reply_ to this email. Replies to `askit@uab.edu` with the correct subject line format will add your reply as a comment to the ticket. Before replying, please delete all previous quoted replies to avoid the accumulation of noise in the ticket. The images below show how to, and how not to, reply to `askit@uab.edu` emails.
+1. The email is routed to Research Computing staff and the ticket creator from the `support@listserv.uab.edu` email list. Please **do not reply**. Replies create additional tickets and cause service delays.
+1. A monitoring email is sent from `support-watch@listserv.uab.edu` to Research Computing staff and the ticket creator. Please **do not reply** to this email. Your email will not make it through, because the email address is closed to Research Computing staff.
+1. A ticket creation email is sent from `askit@uab.edu` to Research Computing staff and the ticket creator. Please _do reply_ to this email. Replies to `askit@uab.edu` with the correct subject line format will add your reply as a comment to the ticket. Before replying, please delete all previous quoted replies to avoid the accumulation of noise in the ticket. The images below show how to, and how not to, reply to `askit@uab.edu` emails.
 
     - Please reply like this:
         ![!Image showing reply without extraneous quoted text. Please do this.](images/support-watch-do-reply-like-this.png)
@@ -48,7 +48,7 @@ If you prefer to use the ServiceNow web interface, please click the `RITM0000000
     The UAB email server strips all potentially executable files from emails. This includes attachments with `.log`, `.sh`, `.py` and `.exe` suffixes. Zip files containing those files will also be stripped. If you need to send script examples to us please rename the files to have a `.txt` suffix and inform us of their original nature.
 <!-- markdownlint-enable MD046 -->
 
-### What Types of Files can I Attach to Tickets?
+### What Types of Files Can I Attach to Tickets?
 
 Certain common file extensions are filtered when sent via email or attached to tickets. Generally, any file that is potentially executable is filtered. Below is a list of file extensions known to be filtered, and there may be others.
 
@@ -68,11 +68,23 @@ To ensure your files are attached to tickets as expected, try the following.
 
 Please do not try to attach executable files to tickets. If you have a legitimate need to give us executable files, mention it in the ticket and we can find a path forward on a case-by-case basis.
 
-## How Do I Request Or Change Shared Storage?
+## How Can I Follow Up on ServiceNow Tickets?
 
-Please see our [Storage page](../data_management/storage.md) for more information.
+If you are unable to find a reference or correspondence for your already submitted ServcieNow ticket, you can now visit UAB's [ServiceNow portal](https://uabprod.service-now.com/service_portal) to track and follow up your submitted tickets. At the website, click the "Log in" button to sign in with your UAB SSO (Single Sign On) credentials.
 
-## How do I request new software installed?
+![Landing page of ServiceNow Portal with the "Log in" button highlighted](images/servicenow_landing_page.png)
+
+When logged in you will see in the top right corner a "My tickets" button. Click on this and you will see two options: "View all open tickets" and "View all tickets".
+
+![ServiceNow Portal after Logging in, highlighting "My tickets" options](images/servicenow_landing_page_tickets.png)
+
+Select the option appropriate for your need. The "View all open tickets" will show you a list of tickets you currently have open (i.e. unresolved), while the "View all tickets" option would show you a list of tickets you have ever submitted, open or closed.
+
+## How Do I Request or Change Shared Storage?
+
+Please see our [Storage page](../data_management/index.md) for more information.
+
+## How Do I Request New Software Installed?
 
 Before making a request for new software on Cheaha, please try searching our [modules](../cheaha/software/modules.md) or searching for packages on [Anaconda](../workflow_solutions/using_anaconda.md).
 
@@ -80,7 +92,7 @@ If you are not able to find a suitable module or package and would like software
 
 ## Office Hours
 
-For our office hours links please see [Contact Us](../index.md#contact-us).
+For our office hours links please see [Contact Us](../index.md#how-to-contact-us).
 
 ## Status Updates
 

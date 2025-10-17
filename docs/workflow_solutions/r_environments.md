@@ -2,7 +2,7 @@
 
 When working on multiple projects, it's likely that different sets of external analysis packages and their dependencies will be needed for each project. Managing these different projects is simple in something like [Anaconda](using_anaconda.md) by creating a different virtual environment for each project, but this functionality is not fully built into RStudio by default.
 
-Instead, we suggest to take advantage of [R Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects) and the [renv](https://rstudio.github.io/renv/articles/renv.html) package to keep environments separate for each project you start.
+Instead, we suggest to take advantage of [R Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects) and the [renv](https://rstudio.github.io/renv/articles/renv.html) package to keep environments separate for each project you start.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -24,11 +24,11 @@ To begin, projects start at a parent or root directory within which most, if not
 
     ![!Choose how to initialize the project](images/r_project_wizard.png)
 
-2. Next you will need to choose your project type. There are a number of different preset projects for R packages, Shiny applications, and different implementations of Quarto. The top option will open a generic project, but any of these options can be converted to any other type of project.
+1. Next you will need to choose your project type. There are a number of different preset projects for R packages, Shiny applications, and different implementations of Quarto. The top option will open a generic project, but any of these options can be converted to any other type of project.
 
     ![!Choose which type of project you are wanting to create. This will initialize some files that correspond to specific types of projects depending on what you choose.](images/r_project_type.png)
 
-3. Finally, you will choose your project name, the location for the project directory, as well as choose whether you want to initialize a git repo for the project. In addition, you can choose to use `renv` for package dependency management. Please read more about `renv` [here](#renv). It's highly suggested to use `renv` for future environment reproducibility.
+1. Finally, you will choose your project name, the location for the project directory, as well as choose whether you want to initialize a git repo for the project. In addition, you can choose to use `renv` for package dependency management. More information is available at the [renv section](#renv). It's highly suggested to use `renv` for future environment reproducibility.
 
     ![!Choose the project name and location as well as whether to initialize a git repo and use renv](images/r_name_project.png)
 
@@ -56,24 +56,24 @@ Another useful part of Projects is Git integration. Normally, you would need to 
     To read more about how to get started with Git, please read our [git documentation](git_collaboration.md)
 <!-- markdownlint-enable MD046 -->
 
-1. To begin, you should create an empty repository either at [Github](https://github.com/) or [UAB's Gitlab](https://gitlab.rc.uab.edu/users/sign_in) where your project will be stored. this will open a new page with instructions on linking this remote repository with your local project. Keep these instructions open for later. A picture of the important piece can be seen below.
+1. To begin, you should create an empty repository either at [Github](https://github.com/) or the UAB Research Computing on-premises [Gitlab instance](https://code.rc.uab.edu/users/sign_in) where your project will be stored. this will open a new page with instructions on linking this remote repository with your local project. Keep these instructions open for later. A picture of the important piece can be seen below.
 
     ![! Instructions on how to link an existing local repository with the created remote repository](images/r_push_existing_repo_instructions.png)
 
-2. Then open the Git/SVN tab in the Project Settings. It will have no option set:
+1. Then open the Git/SVN tab in the Project Settings. It will have no option set:
 
     ![! Default Git options](images/r_git_options_1.png)
 
-3. Click the Version Control dropdown menu and select Git. RStudio will ask you if you want to initialize a new git repository. Click Yes. Restart RStudio if it asks you to. Now a new Git tab will be available in the upper right pane
+1. Click the Version Control dropdown menu and select Git. RStudio will ask you if you want to initialize a new git repository. Click Yes. Restart RStudio if it asks you to. Now a new Git tab will be available in the upper right pane
 
     ![! RStudio Git tab](images/r_git_pane.png)
 
-4. You will then need to add a link to the remote repository as the origin.
+1. You will then need to add a link to the remote repository as the origin.
     1. Click the More dropdown in the Files tab in the bottom right pane and select Open New Terminal Here
 
         ![! Open a New Terminal](images/r_open_terminal.png)
 
-    2. Copy the instructions for pushing an existing repository from the Git repo into your terminal. You can see an example of these instructions under step 1, and commands specific to your repository were given after you created your repository. Run these commands to link the local Project to the remote repository. Afterwards, the Origin field in the Git/SVN options will have changed to your remote repository address.
+    1. Copy the instructions for pushing an existing repository from the Git repo into your terminal. You can see an example of these instructions under step 1, and commands specific to your repository were given after you created your repository. Run these commands to link the local Project to the remote repository. Afterwards, the Origin field in the Git/SVN options will have changed to your remote repository address.
 
         ![! Git options are now set](images/r_git_options_2.png)
 
@@ -83,7 +83,7 @@ Projects are designed to be portable and so use relative paths the vast majority
 
 As well, opening a project will automatically set the working directory to be at the top level of the project. It's inadvisable to the change the working directory location while a project is open.
 
-## renv
+## `renv`
 
 Most, if not all, projects will use some combination of the thousands of packages available in R such as the `tidyverse`. The `renv` package helps manage all of your project's package dependencies as well as provide a way to easily share package environments with other researchers. This functionality is very similar to `conda` and `virtualenv` environments for Python users. More information about `renv` can be found on [their site](https://rstudio.github.io/renv/articles/renv.html). It's suggested to keep a record of the packages your project uses with either `renv` or another tool for general reproducibility.
 
@@ -96,10 +96,10 @@ In order to use `renv`, you should install it either through the package install
 You can make a change to your package environment at any point using a variety of installation methods. `renv` keeps track of packages installed from the following locations:
 
 1. CRAN using `install.packages` or the RStudio package installation interface
-2. Bioconductor using `BiocManager::install()`
-3. Github using `devtools::install_github()` or `remotes::install_github()`
-4. Gitlab using `devtools::install_gitlab()` or `remotes::install_gitlab()`
-5. Bitbucket
+1. Bioconductor using `BiocManager::install()`
+1. Github using `devtools::install_github()` or `remotes::install_github()`
+1. Gitlab using `devtools::install_gitlab()` or `remotes::install_gitlab()`
+1. Bitbucket
 
 ### Saving an Environment
 

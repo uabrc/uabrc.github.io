@@ -1,0 +1,4 @@
+Fabric,Generation,Compute Type,Partition,Total Cores,Total Memory Gb,Total Gpus,Cores Per Node,Memory Per Node Gb,Nodes,Cpu Info,Gpu Info
+cloud,1,cpu,,240,1880,,48,376,5,Intel Xeon Gold 6248R 3.00 GHz,
+cloud,1,gpu,,512,4096,32,128,1024,4,AMD Epyc 7742 Rome 2.25 GHz,NVIDIA A100 40 GB
+Total,,,,752,5056,32,,,9,,

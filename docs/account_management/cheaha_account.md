@@ -1,3 +1,7 @@
+---
+toc_depth: 3
+---
+
 # Cheaha Account Management
 
 These instructions are intended to guide researchers on creating new accounts and managing existing accounts.
@@ -35,7 +39,7 @@ If your account is in good standing you should see a page like the following.
 
 ### Account Requires Certification
 
-We review accounts periodically to ensure the system is being used fairly and as intended. Part of this process is to certify that researchers with accounts still wish to make use of Cheaha. Once per year every researcher will be required to certify their account before making use of Cheaha. If your account requires certification, when logging in to our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal you will see the following notification page.
+We review accounts periodically to ensure the system is being used fairly and as intended. Part of this process is to certify that researchers with accounts still wish to make use of Cheaha. Once per year every researcher will be required to certify their account before making use of Cheaha. In addition, all accounts require certification after being placed on hold (see our [Account on Hold section](#account-on-hold)). This way, we ensure users are engaged in the process of reactivating their account to use our resources. If your account requires certification, you will see the below notification page when logging into our [Open OnDemand](../cheaha/open_ondemand/index.md) web portal.
 
 ![!Account certification notification page.](images/uab_certify_001.png).
 
@@ -53,10 +57,14 @@ Mistakes happen, and sometimes what we thought we programmed wasn't quite what w
 
 Other reasons for holds include, but are not limited to:
 
-- Misuse (intentional or not) of Research Computing resources
-- [IT Policy](https://www.uab.edu/it/home/policies) violations
-- [HIPAA](https://www.uab.edu/it/home/policies/compliance/hipaa) or [FERPA](https://www.uab.edu/registrar/ferpa) violations related to use of Cheaha
-- As part of a required investigation
+- Inactivity: extended account inactivity.
+- Affiliation: [end of affiliation with, or employment by, UAB](./leaving_uab.md).
+- Subscription: unsubscribing from the `hpc-announce LISTSERV` mailing list.
+- Non-compliance:
+    - Misuse of Research Computing resources.
+    - [IT Policy](https://www.uab.edu/it/home/policies) non-compliance.
+    - [HIPAA](https://www.uab.edu/it/home/policies/compliance/hipaa) or [FERPA](https://www.uab.edu/registrar/ferpa) non-compliance related to use of Cheaha.
+- Investigation: issues identified as part of a required review of the account.
 
 In rare circumstances, we may also place a hold on your account if you possess the sole copy of data not owned by you.
 
@@ -77,3 +85,61 @@ Periodically, we review all researcher accounts to ensure they are authorized to
 ![!Account authorization error page.](images/uab_auth_error.png)
 
 If you believe this to be in error, please [Contact Support](../help/support.md).
+
+## What Can I Do With My Account?
+
+Research Computing offers services addressing a wide range of needs for researchers at UAB, including students, staff, and faculty, as well as for both Labs and research cores.
+
+We're always happy to provide support for your Research Computing needs, you need only [Contact Support](../index.md#how-to-contact-us).
+
+### For Students, Staff, and Faculty
+
+- [Get Started with Open OnDemand](../cheaha/open_ondemand/index.md)
+- [Additional Learning Resources](../education/training_resources.md)
+- [Data Science Journal Club Course](../education/courses.md#data-science-journal-club-course)
+
+### For Lab PIs and Core Directors
+
+- [No-cost storage offerings](../data_management/index.md#what-type-of-storage-do-i-need)
+    - [GPFS](../data_management/index.md#what-shared-storage-solutions-are-available): Hot storage, compute adjacent, directly accessible from Cheaha
+    - [LTS](../data_management/lts/index.md): Cool storage, large capacity
+    - [Transfer data with Globus](../data_management/transfer/globus.md)
+- [Batch computing](../cheaha/slurm/introduction.md)
+    - [Desktop](../cheaha/open_ondemand/hpc_desktop.md), [Jupyter](../cheaha/open_ondemand/ood_jupyter.md), [RStudio](../cheaha/open_ondemand/ood_rstudio.md), [Matlab](../cheaha/open_ondemand/ood_matlab.md), and more
+    - [GPUs](../cheaha/slurm/gpu.md)
+- [On-prem cloud computing](../uab_cloud/index.md)
+    - [Tutorial](../uab_cloud/tutorial/index.md)
+    - [Web servers](../uab_cloud/remote_access.md#make-instances-publically-accessible-from-the-internet)
+
+  If you are unable to find what you need, please feel free to [Contact Support](../index.md#how-to-contact-us).
+
+## Cheaha Account and Group Membership FAQ
+
+Our Cheaha system is robust, but errors may occur due to general platform connectivity issues or missing components. Below are FAQs for self-service Cheaha account creation and a troubleshooting guide for common issues:
+
+- **Which credentials should I use?** Please visit [How Do I Login to Research Computing Services](../account_management/index.md#how-do-i-login-to-research-computing-services).
+- **What do I do if I'm waiting for it to finish for longer than a couple of minutes?**
+
+    - Try closing and restarting your browser, then trying again.
+    - Try clearing site data for <https://rc.uab.edu>, then trying again.
+    - Try logging in on a Private Browsing window, then trying again.
+    - Try waiting a few hours, then trying again.
+
+- **What should I do to access shared storages and recognize my group membership after being added to a group on Cheaha?**
+
+    - **Do you have any processes/connections on `cheaha.rc.uab.edu`**?
+
+        - Please exit and log back in.
+        - If you have active Tmux/Screen sessions, you will need to terminate those as well, log out, log back in and start Tmux.
+
+    - **Do you have an active Open OnDemand session?**
+
+        - In Open OnDemand (<https://rc.uab.edu>), navigate to the green navigation bar in the top right corner. Look for the `Help` or `Developer` dropdown menu and click on it. Then, click `Restart Web Server`. Once the restart is complete, please try again.
+
+    - **Do you have one or more OOD HPC Desktops running?**
+
+        - Terminate the desktops and start new ones.
+
+## Leaving UAB
+
+Please see our [Leaving UAB page](./leaving_uab.md).

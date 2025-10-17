@@ -1,132 +1,159 @@
 /* UAB theming */
 :root {
-    --md-primary-fg-color: #1e6b52;
-    --md-primary-fg-color--dark: #1e6b52;
+  /* uab colors in approximate order of prioritization */
+  --uab-color-uab-green: #1a5632;
+  --uab-color-uab-gold: #fdb913;
+  --uab-color-dragons-lair-green: #033319;
+  --uab-color-campus-green: #90d408;
+  --uab-color-ever-loyal-green: #17b045;
+  --uab-color-bham-sky-blue: #42caf0;
+
+  /* uab color usage */
+  --md-primary-fg-color: var(--uab-color-uab-green);
+  --md-primary-fg-color--dark: var(--uab-color-uab-green);
+  --announcement-admonition-bd-color: #90d408;
+  --announcement-admonition-bg-color: color-mix(in srgb, var(--announcement-admonition-bd-color) 10%, transparent);
+
+  /* other color usage */
+  --construction-admonition-bd-color: #eed202;
+  --construction-admonition-bg-color: color-mix(in srgb, var(--construction-admonition-bd-color) 10%, transparent);
+  --support-email-color: #aaaaff;
+  --edit-page-icon-color: #5555ff;
+  --lightbox-shadow-color: rgba(0, 0, 0, 0.08);
 }
 
 /* logo fix */
 .md-header__button.md-logo :is(img, svg) {
-    height: 1.2rem;
-    width: auto !important;
+  height: 1.2rem;
+  width: auto !important;
 }
 
 /* link color correction */
-.md-content a,
-.md-content a:visited {
-    color: revert;
+
+.md-content>:not(.md-sidebar) a,
+.md-content>:not(.md-sidebar) a:visited {
+  color: revert;
 }
 
-.md-content a:hover {
-    color: revert;
-    border-bottom: 1px solid;
+.md-content>:not(.md-sidebar) a:hover {
+  color: revert;
+  border-bottom: 1px solid;
 }
 
-.md-typeset .headerlink:hover {
-    border-bottom: none;
+.md-content a.headerlink:hover {
+  border-bottom: none;
 }
 
 html .md-footer-meta.md-typeset a.supportemail {
-    color: #aaaaff;
+  color: var(--support-email-color);
+}
+
+/* "Edit on GitHub" button color adjustment */
+.md-icon[title="Edit this page"] svg {
+  fill: var(--edit-page-icon-color);
 }
 
 /* header accessiblity/readability */
 .md-typeset h1 {
-    color: var(--md-default-fg-color);
-    font-weight: 600;
-    font-size: 2.0em;
-    margin-bottom: 0;
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.md-typeset:not(.md-blog-header) h1 {
+  margin-bottom: 0;
 }
 
 .md-typeset h2 {
-    font-weight: 600;
-    line-height: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .md-typeset h3 {
-    font-weight: 600;
-    line-height: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .md-typeset h4 {
-    font-weight: 600;
-    line-height: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .md-typeset h5 {
-    font-weight: 600;
-    line-height: normal;
-    color: var(--md-default-fg-color);
+  font-weight: 600;
+  line-height: normal;
+  color: var(--md-default-fg-color);
 }
 
-.md-typeset :not(h1, h2, h3, h4, h5)+:is(h2, h3, h4, h5) {
-    margin-top: 44px;
+.md-typeset :not(h1, h2, h3, h4, h5)+ :is(h2, h3, h4, h5) {
+  margin-top: 44px;
 }
 
-.md-typeset h1+:is(h2, h3, h4) {
-    margin-top: 0.8em;
+.md-typeset h1+ :is(h2, h3, h4) {
+  margin-top: 0.8em;
 }
 
 /* construction admonition */
 .md-typeset .admonition.construction,
 .md-typeset details.construction {
-    border-color: #eed202;
+  border-color: var(--construction-admonition-bd-color);
 }
 
 .md-typeset .construction>.admonition-title,
 .md-typeset .construction>summary {
-    background-color: rgba(238, 210, 2, 0.1);
-    border-color: #eed202;
+  background-color: var(--construction-admonition-bg-color);
+  border-color: var(--construction-admonition-bd-color);
 }
 
 .md-typeset .construction>.admonition-title::before,
 .md-typeset .construction>summary::before {
-    background-color: #eed202;
-    -webkit-mask-image: var(--md-admonition-icon--warning);
-    mask-image: var(--md-admonition-icon--warning);
+  background-color: var(--announcement-admonition-bd-color);
+  -webkit-mask-image: var(--md-admonition-icon--warning);
+  mask-image: var(--md-admonition-icon--warning);
 }
 
-/* construction admonition */
+/* announcement admonition */
 .md-typeset .admonition.announcement,
 .md-typeset details.announcement {
-    border-color: #64dd17;
+  border-color: var(--announcement-admonition-bd-color);
 }
 
 .md-typeset .announcement>.admonition-title,
 .md-typeset .announcement>summary {
-    background-color: rgba(100, 221, 23, 0.1);
-    border-color: #64dd17;
+  background-color: var(--announcement-admonition-bg-color);
+  border-color: var(--announcement-admonition-bd-color);
 }
 
 .md-typeset .announcement>.admonition-title::before,
 .md-typeset .announcement>summary::before {
-    background-color: #64dd17;
-    -webkit-mask-image: var(--md-admonition-icon--warning);
-    mask-image: var(--md-admonition-icon--warning);
+  background-color: var(--announcement-admonition-bd-color);
+  -webkit-mask-image: var(--md-admonition-icon--warning);
+  mask-image: var(--md-admonition-icon--warning);
 }
 
 /* lightgallery and image tweaks */
 
 /* image width */
 .md-grid {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 /* adds a flexbox to the surrounding div */
 a.glightbox {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* adding the drop shadow,margin and keeping the images at 50 viewport width */
 a.glightbox img {
-    max-width: 50vw;
-    box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.08);
-    margin-bottom: 1rem;
+  max-width: 50vw;
+  box-shadow: 5px 5px 13px var(--lightbox-shadow-color);
+  margin-bottom: 1rem;
 }
 
 /* 100 viewport width on smaller screens */
-@media only screen and (max-width : 600px) {
-    a.glightbox img {
-        max-width: 100%;
-    }
+@media only screen and (max-width: 600px) {
+  a.glightbox img {
+    max-width: 100%;
+  }
 }
