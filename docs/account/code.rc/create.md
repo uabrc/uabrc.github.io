@@ -68,32 +68,7 @@ Please select the tab that best described your affiliation to UAB to see instruc
 
 ## Next Steps
 
-CARD GRID GOES HERE
+Now that your Code.rc (GitLab) account is created, learn more about how to use GitLab effectively.
 
-- Manage Account
-- Git
-- Cheaha
-- Data Management
-- Cloud.rc
-- Support
-
-### For Students, Staff, and Faculty
-
-- [Get Started with Open OnDemand](../../cheaha/open_ondemand/index.md)
-- [Additional Learning Resources](../../education/training_resources.md)
-- [Data Science Journal Club Course](../../education/courses.md#data-science-journal-club-course)
-
-### For Lab PIs and Core Directors
-
-- [No-cost storage offerings](../../data_management/index.md#what-type-of-storage-do-i-need)
-    - [GPFS](../../data_management/index.md#what-shared-storage-solutions-are-available): Hot storage, compute adjacent, directly accessible from Cheaha
-    - [LTS](../../data_management/lts/index.md): Cool storage, large capacity
-    - [Transfer data with Globus](../../data_management/transfer/globus.md)
-- [Batch computing](../../cheaha/slurm/introduction.md)
-    - [Desktop](../../cheaha/open_ondemand/hpc_desktop.md), [Jupyter](../../cheaha/open_ondemand/ood_jupyter.md), [RStudio](../../cheaha/open_ondemand/ood_rstudio.md), [Matlab](../../cheaha/open_ondemand/ood_matlab.md), and more
-    - [GPUs](../../cheaha/slurm/gpu.md)
-- [On-prem cloud computing](../../uab_cloud/index.md)
-    - [Tutorial](../../uab_cloud/tutorial/index.md)
-    - [Web servers](../../uab_cloud/remote_access.md#make-instances-publicly-accessible-from-the-internet)
-
-{% include "_template/base_help_section.md.j2" %}
+- [Official GitLab Tutorials](https://docs.gitlab.com/tutorials/)
+- [Code.rc](../../code.rc/index.md)
