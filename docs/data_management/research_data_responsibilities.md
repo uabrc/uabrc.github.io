@@ -26,7 +26,13 @@ Researchers and users of Cheaha are responsible to organize data, archive inacti
 
 UAB IT has a process for granting access to data of former researchers or collaborators who are no longer with the institution. This process ensures compliance with regulatory protocols.
 
-To request access to data of former UAB user, the first step is to fill out the [Third-Party Data Access form](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=bd3721e2374c27c0daa253b543990e5d). In the “justification/description” field specify that you are requesting access to data for `<BlazerId>` on GPFS at the Research Computing System. Once submitted this form, a ticket is created and routed to the appropriate reviewers for authorization.
+To request access to data of former UAB user, the first step is to fill out the [Third-Party Data Access form](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=bd3721e2374c27c0daa253b543990e5d). We highly recommend requesting access to all three private storage areas. Consider adding the following to the "Justification/Description" box in the security exception form as you fill it out. Replace `<BlazerID>` with the BlazerID of the user you are requesting access for.
+
+```text
+Please grant access to "/data/user/", "/home/", "/scratch/" directories of `<BlazerID>`.
+```
+
+Once the form is submitted, a Service Request will be created. After the request is reviewed and authorized by appropriate parties, we will reach out to you.
 
 If the owner of the data was your student or staff in your lab, then the first choice is probably best (two-levels up supervisor). If the data owner was in a different department or special approval is required (for example a professor in the dept of medicine wanting access to data from a student in the school of engineering), select "Dean, C-level, or Trusted Designee" for the "Approval Type" field. If written approval can be provided directly by the former personnel, you can bypassed completing the form for request.
 

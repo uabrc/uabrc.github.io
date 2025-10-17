@@ -132,6 +132,27 @@ Style is not automated at this time as the cost is greater than the benefit. Ent
 
 Style is not automated at this time as the cost is greater than the benefit. Entires in the following keys should be sorted alphabetically.
 
+### News Blog Posts
+
+News updates should be added as separate Markdown files in the `/docs/news/` directory. Except for the considerations below, all blog posts should be written using the ordinary article style for this guide.
+
+Each blog post must have a `<!-- more -->` comment or an error will be produced during the build. The comment serves as an "excerpt" indicator when the blog post is included on the main page, or any other page with multiple posts. This helps aggregate pages to be more compact. Try to place the comment after the first paragraph, or at another sensible location.
+
+All posts must have a metadata section at the top of the page, like the following.
+
+```yml
+---
+date: 2024-12-31T09:54:13-05:00
+categories:
+    - <category1>
+    - ...
+---
+```
+
+- The `date` field must be in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601) with time zone info. Please use the `-05:00` indicator (Central Time) for any UAB posts.
+- The `categories` field is a sequence of category labels. These must be selected from the `plugins: blog: categories_allowed:` field of `mkdocs.yml`.
+- If you need to add a new category, be sure to give it appropriate title case, or there will be an error during build.
+
 ### Development
 
 The workflow below assumes you are using VSCode and all of the prerequisites listed above. Some familiarity with git and GitHub are assumed.
@@ -331,8 +352,16 @@ We strive to have CI/CD and pre-commit hooks aligned. This is achieved by using 
 
 ### Configuration Files
 
-- `.github/workflows/ci.yml`: Defines the pipeline used for pull-request validation and the build process.
-- `.linkcheckerrc`: Defines configuration for linkchecker, a non-automated process for identifying broken and redirected URLs in the documentation.
+- `.github/`
+    - `workflows/`
+        - `check_docs.yml`: Defines the pipeline for building the docs to verify integrity as part of pull requests only. Requires `reusable_check_markdown.yml` and `shared/build_docs_pages/action.yml`.
+        - `check_python.yml`: Defines the pipeline for linting python code files.
+        - `check_yaml.yml`: Defines the pipeline for linting yaml files.
+        - `deploy_docs.yml`: Defines the pipeline for deploying the docs to GitHub Pages. Requires `reusable_check_markdown.yml` and `shared/build_docs_pages/action.yml`.
+        - `reusable_check_markdown.yml`: Defines the pipeline for linting Markdown files.
+    - `shared/`
+        - `build_docs_pages/action.yml`: Defines a composite pipeline for building the docs.
+- `.linkcheckerrc`: Defines configuration for linkchecker, a non-automated process for identifying broken and redirected URLs in the documentation. See `verification_scripts/linkchecker.py`.
 - `.markdownlint-cli2.jsonc`: Defines constraints and configuration for the `markdownlint-cli2` command-line application.
 - `.markdownlint.json`: Defines markdownlint rules.
 - `.pre-commit-config.yaml`: Defines configuration of pre-commit hooks.
@@ -341,6 +370,7 @@ We strive to have CI/CD and pre-commit hooks aligned. This is achieved by using 
 - `.ruff.toml`: Defines Python lint rules for the ruff linter.
 - `build_env.yml`: Defines the Conda environment used to support this project's automation.
 - `mkdocs.yml`: Defines the documentation content configuration.
+    - See also `build_scripts/` for scripts used during the mkdocs build process.
 
 ### CI/CD
 
@@ -351,7 +381,7 @@ CI/CD is used to ensure consistency and formatting of markdown and YAML files vi
 
 Relevant files:
 
-- `.github/workflows/ci.yml`
+- `.github/**/*.yml`
 - `.markdownlint-cli2.jsonc`
 - `.markdownlint.json`
 - `.title-casing-ignore`
@@ -536,7 +566,7 @@ Reviewing a pull request means obtaining a copy of the pull request branch and [
 
 ### Slurm Hardware, Partitions, QoS Tables
 
-Building hardware tables is a semi-automated script based on a manually curated table. The repository is located here: <https://gitlab.rc.uab.edu/rc-data-science/metrics/rc-hardware>. The repository is only accessible to developers at this time.
+Building the hardware tables used in the docs is a semi-automated script based on a manually curated table. The repository is located here: <https://code.rc.uab.edu/rc-data-science/metrics/rc-hardware>. The repository is only accessible to developers at this time.
 
 Building Partition and QoS tables is automated based on `scontrol` output. The repository is located here: <https://github.com/wwarriner/slurm_status_tools>. To use, install the Conda environment at the linked repo, activate it, and run the following commands.
 

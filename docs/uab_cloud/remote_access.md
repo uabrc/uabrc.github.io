@@ -37,7 +37,7 @@ There are several options for installing an SSH client on Windows, described bel
 
 #### Windows Subsystem for Linux (WSL)
 
-Follow the instructions starting [here](https://learn.microsoft.com/en-us/windows/wsl/about) to install Windows Subsystem for Linux.
+Follow the [Windows Subsystem for Linux installation instructions](https://learn.microsoft.com/en-us/windows/wsl/about) to install WSL.
 
 WSL shells do not automatically start or share the `ssh-agent`. To fix this we recommend installing `keychain` to automatically manage the `ssh-agent`. Run the following command depending on your Linux distribution.
 
@@ -59,7 +59,7 @@ Then modify the `.*rc` file for your shell, generally `.bashrc` or `.zshrc`, to 
 
 #### OpenSSH for Windows
 
-Follow the instructions [here](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) to install the OpenSSH client. The client software is all that is needed to connect with instances from your Windows PC. Only install the OpenSSH server if you are sure you need it (this is very uncommon). The instructions at the link should work for Windows 10 and Windows 11.
+Follow the [OpenSSH for Windows installation instructions](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) to install the OpenSSH client. The client software is all that is needed to connect with instances from your Windows PC. Only install the OpenSSH server if you are sure you need it (this is very uncommon). The instructions at the link should work for Windows 10 and Windows 11.
 
 Once the OpenSSH client is installed, you'll want to enable the OpenSSH Agent service on your local machine to streamline adding and using keys.
 
@@ -320,7 +320,7 @@ SFTP works differently from [SCP](#scp), as it has an interactive prompt. When c
 
 To connect, use `sftp <user>@<hostname>` where `<user>` is the user you will login as on the remote machine `<hostname>`. If you are using an [SSH Configuration File](#setting-up-a-configuration-file) with Host `<host>`, you may use `sftp <host>`. You may optionally use `sftp <host>:/path/to/dir` to start in a specific directory.
 
-Some examples of commands are given below. A complete list is available [here](https://linux.die.net/man/1/sftp)
+Some examples of commands are given below. A more complete list is available at <https://linux.die.net/man/1/sftp>
 
 ```bash
 # general commands

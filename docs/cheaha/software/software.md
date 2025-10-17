@@ -70,19 +70,19 @@ Cell Ranger is a proprietary software developed by [10x Genomics](https://www.10
 
 - [Register](https://www.10xgenomics.com/products/cell-ranger/downloads/eula?closeUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links&redirectUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links%3Fstart%3Dcellranger-9.0.1.tar.gz) and download the desired version of `Cell Ranger` from the [10X Genomics site](https://www.10xgenomics.com/support/software/cell-ranger/downloads).
 
-- Once registration is complete, you will be redirected to the download page with installation instructions. To begin, use the `curl` or `wget` command to download the `.tar.gz` package.
+- Once registration is complete, you will be redirected to the download page with installation instructions. To begin, use the `curl` or `wget` command to download the `.tar.gz` package as directed in the instructions.
 
 - Next, extract the Cell Ranger package using the command below. In this example, version 9.0.1 is used:
 
     ```bash
-    $tar -zxvf cellranger-9.0.1.tar.gz
+    tar -zxvf cellranger-9.0.1.tar.gz
     ```
 
 - After the extraction is complete, navigate to the cellranger directory’s bin folder and print its path using the `pwd` command, as shown below:
 
     ```bash
-    $cd cellranger-9.0.1/bin
-    $pwd
+    cd cellranger-9.0.1/bin
+    pwd
     ```
 
     The `pwd` command will display the full path to the `bin` directory. For example:
@@ -94,40 +94,40 @@ Cell Ranger is a proprietary software developed by [10x Genomics](https://www.10
         The actual path may vary depending on where the folder is located in your account.
     <!-- markdownlint-enable MD046 -->
 
-- To add the above path to your .bashrc file, run the following command,
+- To add the above path to your .bashrc file, run the following command. This will append the export line to the end of your `$HOME/.bashrc` file.
 
     ```bash
-    $echo "export PATH=\$PATH:/home/$USER/cellranger-9.0.1/bin" >> $HOME/.bashrc
-    ```
-
-    This will append the export line to the end of your .bashrc file. You should see an entry similar to the following:
-
-    ```bash
-    $export PATH=$PATH:/home/$USER/cellranger-9.0.1/bin
+    echo "export PATH=\$PATH:/home/$USER/cellranger-9.0.1/bin" >> $HOME/.bashrc
     ```
 
     You can verify the addition by running:
 
     ```bash
-    $cat $HOME/.bashrc
+    cat $HOME/.bashrc
+    ```
+
+    You should see an entry similar to the following in your `$HOME/.bashrc` file:
+
+    ```bash
+    export PATH=$PATH:/home/$USER/cellranger-9.0.1/bin
     ```
 
 - To apply the changes, either close the terminal and open a new one, or run the following command:
 
     ```bash
-    $source ~/.bashrc
+    source ~/.bashrc
     ```
 
 - Then, verify that Cell Ranger 9.0.1 is correctly installed by running:
 
     ```bash
-    $cellranger --version.
+    cellranger --version
     ```
 
     You should see an output like:
 
     ```bash
-    $cellranger cellranger-9.0.1
+    cellranger cellranger-9.0.1
     ```
 
 ## Singularity Containers
