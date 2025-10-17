@@ -94,6 +94,6 @@ CARD GRID GOES HERE
     - [GPUs](../../cheaha/slurm/gpu.md)
 - [On-prem cloud computing](../../uab_cloud/index.md)
     - [Tutorial](../../uab_cloud/tutorial/index.md)
-    - [Web servers](../../uab_cloud/remote_access.md#make-instances-publically-accessible-from-the-internet)
+    - [Web servers](../../uab_cloud/remote_access.md#make-instances-publicly-accessible-from-the-internet)
 
 {% include "_template/base_help_section.md.j2" %}

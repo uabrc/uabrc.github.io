@@ -94,6 +94,20 @@ news:
     See what's new with Research Computing System services!
   link_url: "news/index.md"
 
+education:
+  training:
+    title_text: Training Resources
+    icon_name: ":material-notebook-edit:"
+    content: |
+      See our collection of internet training resources!
+    link_url: "education/training_resources.md"
+  dsjc:
+    title_text: Data Science Journal Club Course
+    icon_name: ":fontawesome-solid-mortar-board:"
+    content: |
+      We offer a 1 credit hour course: Data Science Journal Club.
+    link_url: "education/courses.md#data-science-journal-club-course"
+
 platforms:
   cheaha:
     ood:
@@ -119,6 +133,12 @@ platforms:
       content: |
         Create virtual infrastructure to serve pages, build containers, and more!
       link_url: "uab_cloud/index.md"
+    web_server:
+      title_text: Web Servers on Cloud.rc
+      icon_name: ":material-web:"
+      content: |
+        Learn how to make your Cloud.rc application public on the internet!
+      link_url: "uab_cloud/remote_access.md#make-instances-publicly-accessible-from-the-internet"
 
 data:
   individual_storage:

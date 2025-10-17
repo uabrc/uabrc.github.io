@@ -113,17 +113,17 @@ Research Computing has many services available to RCS account holders. To learn 
 <!-- markdownlint-disable MD046 -->
 === "Student | Staff | XIAS Guest"
 
-    {% filter indent(4) %}
     {{
         renderer.render_cards(
             cards.platforms.cheaha.ood.overview,
             cards.platforms.cheaha.slurm.overview,
             cards.data.individual_storage,
             cards.data.transfer_options,
+            cards.education.training,
+            cards.education.dsjc,
             cards.account.code_rc_create,
-        )
+        ) | indent(4)
     }}
-    {% endfilter %}
 
 === "Research Faculty Supervisor | Core Director"
 
@@ -135,6 +135,7 @@ Research Computing has many services available to RCS account holders. To learn 
             cards.data.shared_storage,
             cards.data.transfer_options,
             cards.platforms.cloud_rc.overview,
+            cards.platforms.cloud_rc.web_server,
             cards.account.code_rc_create,
         )
     }}
