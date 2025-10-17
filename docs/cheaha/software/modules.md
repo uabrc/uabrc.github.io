@@ -94,7 +94,7 @@ module savelist
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Using `module save` command without a collection name saves the desired modules in the name `default` to the location $HOME/.lmod.d/default, and causes issue in launching [Open On Demand (OOD) HPC desktop job](../../cheaha/open_ondemand/hpc_desktop.md). The user gets a VNC error such as, `Unable to contact settings server` and/or `Unable to load a failsafe session`.  To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/3).
+    Using `module save` command without a collection name saves the desired modules in the name `default` to the location $HOME/.lmod.d/default, and causes issue in launching [Open On Demand (OOD) HPC desktop job](../../cheaha/open_ondemand/hpc_desktop.md). The user gets a VNC error such as, `Unable to contact settings server` and/or `Unable to load a failsafe session`. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/3).
 <!-- markdownlint-enable MD046 -->
 
 ## Best Practice for Loading Modules

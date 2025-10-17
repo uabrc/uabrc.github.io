@@ -6,4 +6,4 @@ Have you encountered problems while using Anaconda on Cheaha? We have provided t
 
 Below is a list of Tutorials we currently have Using Anaconda on Cheaha;
 
-1. Using PyTorch and TensorFlow with Anaconda on Cheaha, click [here.](../tutorial/pytorch_tensorflow.md)
+1. [Using PyTorch and TensorFlow with Anaconda on Cheaha](../tutorial/pytorch_tensorflow.md)
