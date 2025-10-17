@@ -1,0 +1,3 @@
+CUDA version required,Package required,URL
+`11.x` and below (`< 12.0`),`cuda-toolkit`,<https://anaconda.org/conda-forge/cuda-toolkit>
+`12.x` and above (`>= 12.0`),`cuda-cudart`,<https://anaconda.org/conda-forge/cuda-cudart>

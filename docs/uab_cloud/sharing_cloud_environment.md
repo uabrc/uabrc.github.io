@@ -1,4 +1,4 @@
-# What is a Project Space?
+# What Is a Project Space?
 
 UAB's cloud infrastructure is based on [OpenStack](https://docs.openstack.org/2024.1/) cloud software. A project space is referred to as the cloud environment that houses projects on OpenStack. Providing the platform to manage cloud resources for storage, security and networking via a web interface. Every UAB Cloud user has their Individual Cloud Environment that is their personal project space. An individual can also be part of a shared project space which is referred to as a Shared Cloud Environment. Both environments are OpenStack Project Spaces, with the exception that the shared cloud environment allows multiple UAB cloud users to collaborate in the shared project space. Dependent on an individual's UAB status, they can request that a Shared Cloud environment be created for their Lab and/or Core, this shared project space will include members of their research lab, or persons they want to collaborate with. This article provides information on why using a shared cloud environment is important, how to get an additional shared OpenStack Project (Shared Cloud Environment) and how best to utilize this environment.
 
@@ -16,7 +16,7 @@ The benefits of creating and using a Shared Cloud Environment for your Lab/Core 
 
 ## How Do I Create a Shared Cloud Environment for My Lab/Core
 
-To use the shared cloud resources available, you will need to send in a request to the UAB IT Research Computing Team via email [support@listserv.uab.edu](mailto:support@listserv.uab.edu). In the email, please state clearly your needs and the resources you would require for your lab. Your request should also include members of your lab to be included in the Shared Cloud Environment, and a preferred name (usually same as lab project folder on Cheaha). Please follow the naming conventions for requesting a [shared storage](../data_management/storage.md#how-do-i-request-shared-storage) on our platforms in your request.
+To use the shared cloud resources available, you will need to send in a request to the UAB IT Research Computing Team via email <support@listserv.uab.edu>. In the email, please state clearly your needs and the resources you would require for your lab. Your request should also include members of your lab to be included in the Shared Cloud Environment, and a preferred name (usually same as lab project folder on Cheaha). Please follow the naming conventions for requesting a [shared storage](../data_management/index.md#how-do-i-request-shared-storage) on our platforms in your request.
 
 ## How Do I Switch Project Spaces?
 
@@ -70,7 +70,7 @@ The created Image can then be launched, following the same instructions for crea
 
 ### Creating an Image From a Volume
 
-There are detailed instructions on how to create an image from a Volume, [here](snapshots.md#creating-a-volume-snapshot).
+Please see [detailed instructions on how to create an image from a Volume](snapshots.md#creating-a-volume-snapshot).
 
 ### Using a Key Pair to SSH
 

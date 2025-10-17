@@ -28,7 +28,7 @@ Denser and more complete documentation is available at <https://git-scm.com/doc>
     - Repositories are decentralized, so that two people can work independently on parts of the same project and then merge their changes later.
     - A **local repository** is a repository that is housed on the same machine you are working on.
     - A **remote repository** or **remote** is a repository that is housed on a machine other than the one you are working on.
-    - Remotes are often housed on internet repository services like <https://github.com> and <https://about.gitlab.com>. UAB also maintains a private Gitlab instance at <https://gitlab.rc.uab.edu>.
+    - Remotes are often housed on internet repository services like <https://github.com> and <https://about.gitlab.com>. UAB Research Computing also maintains an on-premises Gitlab instance at <https://code.rc.uab.edu>.
 - The **working tree** is the structure used to model repository contents and history.
 - The **index** contains changes since the most recent commit.
 - The **staging area**, a subset of the index, contains changes ready to be committed.
@@ -42,7 +42,7 @@ Denser and more complete documentation is available at <https://git-scm.com/doc>
 - **Pulling** is fetching followed by merging.
 - **Pushing** means communicating changes out to a remote repository.
 
-### How should I configure git?
+### How Should I Configure Git?
 
 Good practice for configuring git includes adding your name and email globally on your local machine so that you received proper attribution when making changes to repositories.
 
@@ -57,7 +57,7 @@ More information is available at the [official git webbook](https://git-scm.com/
 
 [Full documentation](https://git-scm.com/docs/git-config).
 
-### How do I obtain git repositories?
+### How Do I Obtain Git Repositories?
 
 Obtaining repositories is how projects start, or how you might start working on someone else's repository. Substantially more information is available from the [official git webbook](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
 
@@ -75,7 +75,7 @@ Forking a repository is not a git concept, but a concept of remote repository ho
 
 [GitHub fork documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 
-[GitLab fork documentation](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html).
+[GitLab fork documentation](https://docs.gitlab.com/user/project/repository/forking_workflow/).
 
 #### Cloning
 
@@ -101,11 +101,11 @@ git clone <remote-url>
 
 [Full documentation](https://git-scm.com/docs/git-clone).
 
-### How do I interact with remotes?
+### How Do I Interact With Remotes?
 
 A key part of git's usefulness is facilitating collaboration on code and documentation projects. Interacting with independent, remote copies of a repository is central to the purpose of git. Substantially more information is available at the [official git webbook](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
-#### Managing remotes
+#### Managing Remotes
 
 - Check what remotes are available using `git remote -v`
 
@@ -125,7 +125,7 @@ A key part of git's usefulness is facilitating collaboration on code and documen
 
 [Full documentation](https://git-scm.com/docs/git-remote).
 
-#### Fetching and pulling
+#### Fetching and Pulling
 
 Fetching changes from remote repositories without incorporating them:
 
@@ -153,11 +153,11 @@ Push changes to a remote branch on a remote repository using `git push <remote-n
 
 [Full documentation](https://git-scm.com/docs/git-push).
 
-### How do I record changes?
+### How Do I Record Changes?
 
 The key part of git's function is recording changes. Substantially more information is available at the [official git webbook](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository).
 
-#### Checking status of changes
+#### Checking Status of Changes
 
 Use `git status`. It will show your current branch, staged files and unstaged files.
 
@@ -165,7 +165,7 @@ Use `git status`. It will show your current branch, staged files and unstaged fi
 
 [Full documentation](https://git-scm.com/docs/git-status).
 
-#### Staging and committing changes
+#### Staging and Committing Changes
 
 Staging files is done with the `git add` command, committing files with `git commit`.
 
@@ -180,7 +180,7 @@ git commit -m "added new text file"
 
 [Full documentation of `git commit`](https://git-scm.com/docs/git-commit).
 
-#### Stop tracking files
+#### Stop Tracking Files
 
 Use `git rm <file>` if the file has no changes. Despite the name this will not delete the file, only stop git from tracking any future changes. Specifically, it will stage a removal of the file from git tracking, which you will need to commit to stop tracking that file.
 
@@ -195,7 +195,7 @@ If the file has changes:
 
 [Full documentation](https://git-scm.com/docs/git-rm).
 
-#### Ignore files
+#### Ignore Files
 
 Place a file called `.gitignore` at the root directory of your repository. A modified form of [Glob Syntax](shell.md#glob-syntax) may be used, one pattern per line, to indicate files that should be ignored by git. Any files or directories matching a line in the `.gitignore` file will not be tracked, unless the file has already been committed to the working tree.
 
@@ -226,9 +226,9 @@ output/**
 
 [Full documentation](https://git-scm.com/docs/gitignore).
 
-### How do I manage branches?
+### How Do I Manage Branches?
 
-#### Listing branches
+#### Listing Branches
 
 To list local branches use `git branch`.
 
@@ -238,7 +238,7 @@ To list remote branches use `git branch -r`.
 
 ![!git branch -r example](images/git_branch_r.png)
 
-#### Checking out existing branches
+#### Checking Out Existing Branches
 
 To checkout an existing local branch use `git checkout <branch-name>`.
 
@@ -248,7 +248,7 @@ To checkout and track a remote branch use `git checkout --track <remote-name>/<b
 
 ![!git checkout remote example](images/git_checkout_track_remote.png)
 
-#### Creating new branches
+#### Creating New Branches
 
 To create a new local branch use `git branch <branch-name>`.
 
@@ -264,7 +264,7 @@ To create and checkout a new local branch use `git checkout -b <branch-name>`.
     Branches are always created from the HEAD.
 <!-- markdownlint-enable MD046 -->
 
-#### Deleting branches
+#### Deleting Branches
 
 To delete a local branch use `git branch --delete <branch-name>`.
 
@@ -276,7 +276,7 @@ To delete a local branch use `git branch --delete <branch-name>`.
 
 To delete a remote branch use `git push <remote-name> --delete <branch-name>`.
 
-#### Merging branches
+#### Merging Branches
 
 To merge branch `A` into branch `B`, first select branch `B` using `git checkout B`, then merge `A` into `B` using `git merge A`.
 
@@ -284,7 +284,7 @@ Some merges may cause conflicts. Conflict resolution is part art, part science, 
 
 More information on merging is available at the [official git webbook](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
 
-### How do I reset changes?
+### How Do I Reset Changes?
 
 <!-- markdownlint-disable MD046 -->
 !!! danger
@@ -316,7 +316,7 @@ More information is available at the [official git webbook](https://git-scm.com/
 
 [Full documentation](https://git-scm.com/docs/git-reset).
 
-### How do I tag a commit?
+### How Do I Tag a Commit?
 
 Use `git tag`. Tags are useful for tracking software versions or milestones in the history. There are two types, lightweight and annotated. Here we only discuss lightweight tags.
 
@@ -330,13 +330,13 @@ More information is available at the [official git webbook](https://git-scm.com/
 
 [Full documentation](https://git-scm.com/docs/git-tag).
 
-## Help! Something went wrong
+## Help! Something Went Wrong
 
 Stop. Breathe. Don't panic. It's likely that your changes are still cached by git. Don't make any additional changes or run any git commits as this may cause cached files to be deleted. If you have some experience with git, then chances are good you can recover your lost changes. If you do not have much experience with git or do not feel confident recovering, then please contact [Support](../help/support.md).
 
 If you wish to proceed without assistance, then please visit the following two pages depending on your situation.
 
-### I need to undo a change that I've made
+### I Need to Undo a Change That I've Made
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
@@ -348,7 +348,7 @@ Please visit: <https://wwarriner.github.io/gitfix/>, read each card carefully, a
 
 More information is available at the [official git webbook](https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things).
 
-### I've lost changes I made
+### I've Lost Changes I Made
 
 The changes may be lost permanently, or they may be partially recoverable. Git has a garbage collector for old versions of files that is emptied periodically as new commands are run. If you have not run any commands since losing changes, the old versions should still be available.
 

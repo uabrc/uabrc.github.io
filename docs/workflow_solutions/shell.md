@@ -1,3 +1,7 @@
+---
+toc_depth: 4
+---
+
 # Shell Reference
 
 ## Introductory Guides
@@ -17,7 +21,7 @@ The internet has thousands of guides for using the shell. Rather than devise our
 There are also additional resources that aid in learning and verifying shell commands and scripts:
 
 - [Explain Shell](https://explainshell.com/): An educational tool providing detailed explanations of individual commands in relatively reasonably-plain English. This tool doesn't explain what a command does at a high level nor its purpose or intent, only the details of the parts making up the command.
-- [ShellCheck](https://www.shellcheck.net/): An online tool for conducting static analysis checks on shell scripts. The Git repository for this tool can be found [here](https://github.com/koalaman/shellcheck ) and it can also be installed via [Anaconda]( https://anaconda.org/conda-forge/shellcheck).
+- [ShellCheck](https://www.shellcheck.net/): An online tool for conducting static analysis checks on shell scripts. The Git repository for this tool can be found at <https://github.com/koalaman/shellcheck> and it can also be installed via [Anaconda]( https://anaconda.org/conda-forge/shellcheck).
 
 At the shell prompt, you can also use the command `curl cheat.sh/<command>` to get a simple-to-understand explanation of what the command does and how to use it (see [curl](#download-files-from-internet-sources-curl)). Below is an example for the [pwd command](#show-working-directory-pwd).
 
@@ -59,13 +63,13 @@ All commands are run in a process. By default, commands run at the shell prompt 
     Copying commands from rich-text sources, such as `.pdf`, Microsoft Office and webpages, can result in copying special or invisible unicode characters. These characters can cause commands to behave unexpectedly and can be difficult to diagnose. Instead, please try pasting your command into a plain-text editor, like notepad, before copying to the shell prompt.
 <!-- markdownlint-enable MD046 -->
 
-#### How do I regain control of the prompt while a command is running?
+#### How Do I Regain Control of the Prompt While a Command Is Running?
 
 - Running commands may be terminated using ++ctrl+c++. Pressing it once will request a graceful termination of the running command. Pressing it more than one will attempt to immediately kill the program.
 - Open a new shell terminal and use that instead.
 - Start the command as `command [optional] <required> &`. Note the trailing ampersand character `&`, which causes the command to be run asynchronously in the background.
 
-#### How do I terminate a process running asynchronously?
+#### How Do I Terminate a Process Running Asynchronously?
 
 <!-- markdownlint-disable MD046 -->
 !!! danger
@@ -244,13 +248,13 @@ Below is a reference guide to various commands through the lens of problems to b
     It is safest to assume that any command run at the shell _cannot_ be undone. Be especially aware of the `rm` command, which is destructive. We do not maintain backups of any files, so once those files are removed or deleted they cannot be recovered by us under any circumstances. Researchers are responsible for maintaining backups of their files.
 <!-- markdownlint-enable MD046 -->
 
-### Show working directory (`pwd`)
+### Show Working Directory (`pwd`)
 
 Use `pwd`, which stands for present working directory.
 
 ![!example usage of pwd](images/pwd.png)
 
-### List files and directories (`ls`)
+### List Files and Directories (`ls`)
 
 Below are common uses of `ls`, short for "list", used to display directory contents and examine details of files and directories. It may be used to [check file permissions](#how-to-check-permissions) when using [chmod](#manage-permissions-of-files-and-directores-chmod).
 
@@ -270,13 +274,13 @@ Below are common uses of `ls`, short for "list", used to display directory conte
 
     ![!example usage of ls -al](images/ls-al.png)
 
-### Examine disk usage (`du`)
+### Examine Disk Usage (`du`)
 
 Use `du` to examine disk usage of files and directories. By default all values are given in bytes, use the [flag](#command-concepts) `-h` to give values in `K`, `M`, `G` and `T` for kilobytes, megabytes, gigabytes and terabytes, respectively. Use the [flag](#command-concepts) `-s` to summarize space used by directories. Below is an example of `du -sh`. Note that only directories with [read permissions](#manage-permissions-of-files-and-directores-chmod) can be examined by `du`.
 
 When culling files to conserve storage space, it helps to find the largest files and directories. To find the ten largest, use the command `du -sh .[^.]* * | sort -hr | head -n10` in the top-level directory of your data. To better understand this command chain, see also [sort](#sort-file-contents-sort), [head](#examine-start-and-end-of-file-head-tail) and [piping](#piping-and-command-chains).
 
-### Change working directory (`cd`)
+### Change Working Directory (`cd`)
 
 - To change to a different directory, use `cd <directory-path>`.
     - The variable `<path>` may be relative, like `my/path`. This will move to the subdirectory `my/path` within the working directory. Relative directory paths may contain multiple `..` shortcuts to indicate parent directories.
@@ -287,7 +291,7 @@ Below are examples of `cd` usage, tested with [ls](#list-files-and-directories-l
 
 ![!example usage of cd](images/cd.png)
 
-### Copy files and directories (`cp`)
+### Copy Files and Directories (`cp`)
 
 Below are use cases with associated commands, and examples tested using [ls](#list-files-and-directories-ls).
 
@@ -302,7 +306,7 @@ Below are use cases with associated commands, and examples tested using [ls](#li
 
 - Glob: `cp -a <source-path-glob> <destination-directory-path>`.
 
-### Move files and directories `mv`
+### Move Files and Directories (`mv`)
 
 Below are use cases with associated commands, and examples tested using [ls](#list-files-and-directories-ls).
 
@@ -317,7 +321,7 @@ Below are use cases with associated commands, and examples tested using [ls](#li
 
 - Glob: `mv <source-path-glob> <destination-directory-path>`.
 
-### Delete files and directories (`rm`, `rmdir`)
+### Delete Files and Directories (`rm`, `rmdir`)
 
 <!-- markdownlint-disable MD046 -->
 !!! danger
@@ -344,25 +348,25 @@ Below are use cases with associated commands, and examples tested using [ls](#li
     Careless use of the directory and glob forms of `rm` can lead to unwanted data loss. Be sure to double check your commands before executing.
 <!-- markdownlint-enable MD046 -->
 
-### Download files from internet sources (curl)
+### Download Files From Internet Sources (`curl`)
 
 Use `curl` to download files and webpages from internet sources. By default `curl` writes to `STDOUT`. If you wish to save the output to a file, use the `-o <file-path>` command. Note that `curl` does not transform, encode or decode the data in any way, and it is saved exactly as received from the supplied url.
 
 By far the most common usage is to download a file. To do so use `curl -o <file-path> <url>`, where `<file-path>` is the desired local path to save and `<url>` is the web address of the source data.
 
-### Create directories (`mkdir`)
+### Create Directories (`mkdir`)
 
 Use `mkdir <directory-name>`. Example below is tested using [ls](#list-files-and-directories-ls).
 
 ![!example of mkdir](images/mkdir.png)
 
-### Create files (`touch`)
+### Create Files (`touch`)
 
 Use `touch <file-path>`. Example below is tested using [ls](#list-files-and-directories-ls).
 
 ![!example of touch](images/touch.png)
 
-### Edit plain-text files (`nano`)
+### Edit Plain-Text Files (`nano`)
 
 Use `nano <file-path>`. If the file exists, it will be opened. If the file does not exist, it will be stored in memory until saved. If the contents are not saved they will be discarded and cannot be recovered. You may also use just `nano`, without a file path, to create a new empty file.
 
@@ -380,11 +384,11 @@ If you opened `nano` using an existing file, or passed in a file path, then the 
 
 ![!ls result of new file saved in nano](images/nano_004.png)
 
-#### Searching for text in `nano`
+#### Searching for Text in `nano`
 
 Use the key combination ++ctrl+w++ to search for text. Follow the prompts as they appear to navigate.
 
-### Count lines, words and characters (`wc`)
+### Count Lines, Words and Characters (`wc`)
 
 - Lines: `wc -l <file-path>`.
 - Words: `wc -w <file-path>`.
@@ -395,7 +399,7 @@ Below are example outputs of a file named `newfile` containing the text `hello w
 
 ![!example wc output](images/wc.png)
 
-### Display file contents (`cat`, `less`)
+### Display File Contents (`cat`, `less`)
 
 Use `cat <file-path>` to display the contents of the file at `<file-path>`.
 
@@ -409,7 +413,7 @@ Below are two images showing what `less` looks like. Note the last line of each 
 
 ![!example of cat less at the bottom of the text](images/cat_less_2.png)
 
-### Examine start and end of file (`head`, `tail`)
+### Examine Start and End of File (`head`, `tail`)
 
 To display only the first two lines use `head -n 2 <file-path>`. Use `tail` instead of `head` for the last two lines.
 
@@ -417,7 +421,7 @@ Below is an image showing the use of `head` and `tail` on a file with four lines
 
 ![!example of head and tail](images/head_tail.png)
 
-### Sort file contents (`sort`)
+### Sort File Contents (`sort`)
 
 - Alphabetical: `sort <file-path>`.
 - Numeric: `sort -n <file-path>`.
@@ -431,7 +435,7 @@ Below is an image showing the use of `head` and `tail` on a file with four lines
 
 ![!example of sort](images/sort_command.png)
 
-### Test a command (`echo`)
+### Test a Command (`echo`)
 
 Use `echo "<command>"` to see the expanded command without executing it. For example
 
@@ -445,7 +449,7 @@ Use the `-e` flag if you need to interpret escaped characters such as `\t` for t
 
 ![!example of echo used for command test](images/echo.png)
 
-### Search for text (`grep`)
+### Search for Text (`grep`)
 
 Use `grep "<pattern>" "<file-path>"` to search for `<pattern>` in the file at `<file-path>`. Use the `-n` flag to display line numbers with results.
 
@@ -453,21 +457,21 @@ Below is an example of `grep -n` on a file. The number at the start of the resul
 
 ![!example of grep showing line number](images/grep.png)
 
-### Close the session (`exit`)
+### Close the Session (`exit`)
 
 Use `exit`.
 
-### Clear the shell display (`clear`)
+### Clear the Shell Display (`clear`)
 
 Use `clear`.
 
-### Where is a command located? (`which`)
+### Where Is a Command Located? (`which`)
 
 Use `which <command-name>`. The command being searched for is [ls](#list-files-and-directories-ls).
 
 ![!example of which](images/which.png)
 
-### What does a command do? (`whatis`, `man`)
+### What Does a Command Do? (`whatis`, `man`)
 
 For builtin command and aliases there are two distinct options for learning more. The command being examined is [ls](#list-files-and-directories-ls).
 
@@ -476,19 +480,19 @@ For builtin command and aliases there are two distinct options for learning more
 
 ![!example of whatis](images/whatis.png)
 
-### Remotely access shell on other machines (`ssh`)
+### Remotely Access Shell on Other Machines (`ssh`)
 
 See our [SSH Section](../uab_cloud/remote_access.md#command-line-via-ssh) for more detailed information.
 
-### Remotely access or transfer files between machines (`sftp`)
+### Remotely Access or Transfer Files Between Machines (`sftp`)
 
 See our [Remote Access - Data Transfer Section](../uab_cloud/remote_access.md#data-transfer) for more detailed information.
 
-### Submit and manage jobs on Cheaha
+### Submit and Manage Jobs on Cheaha
 
 See our [Slurm Section](../cheaha/slurm/introduction.md) for more detailed information.
 
-### Manage permissions of files and directores (`chmod`)
+### Manage Permissions of Files and Directores (`chmod`)
 
 Use `chmod` with the least permissions needed to accomplish a task.
 
@@ -590,7 +594,7 @@ Two separate patterns can be used to set or change permissions on files and dire
 - `chmod 740 sensitive_directory` make a directory readable by you and your group, and writeable and executable by only you. Other users cannot delete files in this folder.
 - `chmod ug=r notes.txt` followed by `chmod o-rwx notes.txt` makes a file read-only for you and your group and removes all permissions for other users.
 
-### Manage group ownership (`chgrp`)
+### Manage Group Ownership (`chgrp`)
 
 To change group ownership of files and directories use `chgrp`.
 
@@ -606,10 +610,61 @@ To change a directory and all of its contents recursively use `chgrp -hR <new-gr
     When using `chgrp -R`, the default behavior is to walk through the contents of symbolic links. If this is not desired, use `-hR`.
 <!-- markdownlint-enable MD046 -->
 
-### Manage researcher access to files and directories (`getfacl`, `setfacl`)
+### Manage Researcher Access to Files and Directories (`getfacl`, `setfacl`)
 
-<!-- markdownlint-disable MD046 -->
-!!! construction
+In research environments, managing access to files and directories is key for security and collaboration. While the [standard Linux permissions (`rwx`)](#manage-permissions-of-files-and-directores-chmod) are useful, they lack the flexibility required to set different levels of access. Access Control Lists (ACLs) offer a more flexible solution, allowing settings for individual users or groups based on specific needs without affecting the group structure of files and directories. ACLs are particularly useful in research settings, where multiple collaborators may require varying levels of access to the same data.
 
-    Under construction.
-<!-- markdownlint-enable MD046 -->
+{{ read_csv('workflow_solutions/res/acls_and_standard_linux_permission.csv', keep_default_na=False) }}
+
+**Key ACl commands**:
+
+- `getfacl`: Command to get the ACL of a file or directory. This lets you view what the ACLs are set to and see the current permissions for users and groups.
+- `setfacl`: Command to set or modify the ACL of a file or directory. This lets you change or assign specific permissions for individual users or groups without altering the file's ownership or group.
+
+#### Viewing Current ACLs (`getfacl`)
+
+The `getfacl` command is used to view the current ACLs set on a file or directory. When you run this command on a file, for example `test.txt`, the command `getfacl test.txt` will display detailed information about the ACLs, including who has access to the file and what permissions they have.
+
+```bash
+# file: test.txt
+# owner: bhbelay
+# group: rc-datasci
+user::rw-
+group::rw-
+other::r--
+```
+
+The output shows that for the file `test.txt`, the owner is `bhbelay` and the group associated with the file is `rc-datasci`. Both the owner and group have the same read and write (`rw-`) permissions, so there is no difference in their access. The other lines of the output:
+
+- `user::rw-`: specifies the permissions for the owner of the file, `bhbelay`. The owner has read (`r`) and write (`w`) permissions, but no execute permissions (`-`).
+
+- `group::rw-`: specifies the permissions for the group associated with the file, `rc-datasci`. Members of the group have read (`r`) and write (`w`) permissions, but no execute permissions (`-`).
+
+- `other::r--`: specifies the permissions for others (users who are neither the owner nor members of the group). Others have only read (`r`) permission, with no write or execute permissions (`--`).
+
+#### Modifying ACLs (`setfacl`)
+
+The `setfacl` command used to grant or restrict access to files and directories for individual users or groups. The general syntax for the `setfacl` command: `setfacl <options> <permissions> <file/directory>`.
+
+- Options:
+    - `-m`: Modify ACL (add or update permissions).
+    - `-x`: Remove ACL.
+    - `-b`: Remove all ACL entries.
+    - `-d`: Set default ACL (applies to new files/directories).
+    - `-R`: Apply changes recursively.
+- Permissions:
+    - `r`: read
+    - `w`: write (change the contents)
+    - `x`: execute
+
+Below are examples of modifying ACLs (`setfacl`): `<USER>`, `<GROUP>`,and `<DIRY>` represent the user, group, and directory, respectively.
+
+- Grant read and write permissions to a user with `setfacl -m u:<USER>:rw- test.txt`. The `-m` flag modifies the ACL, and `u:<USER>:rw-` grants read and write access to the specified user on the file `test.txt`.
+- Grant read access to all users in the group, `<GROUP>`, with `setfacl -m g:<GROUP>:r-- test.txt`. The `g:<GROUP>:r--` grants read-only (`r`) access to the group `<GROUP>`.
+- Remove ACL for a specific user with `setfacl -x u:<USER> test.txt`. The `-x` flag removes the ACL entry for the user `<USER>` on the file `test.txt`, so they `<USER>` no longer have any permissions on the file `test.txt`.
+- Set default permissions for a directory (i.e it will apply to new files and directories created inside this directory)with `setfacl -d -m u:<USER>:rw- <DIRY>`. The `-d` flag sets a default ACL. Here, `u:<USER>:rw-` grants read (`r`) and write (`W`) access to the user `<USER>` for any new files or directories created within the `<DIRY>` directory ( but it does not apply to existing files in `<DIRY>`).
+- Apply ACL changes recursively to all files and subdirectories within a directory with `setfacl -R -m u:<USER>:rw- <DIRY>`. The `-R` flag applies the ACL changes recursively. This command grants read and write access to the user `<USER>` for all files and subdirectories under `<DIRY>`.
+- Remove all ACL entries for a file or directory with `setfacl -b test.txt`. The `-b` flag removes all ACL entries, restoring the default file system permissions to the file `test.txt`.
+- To remove all ACL entries recursively for all files and subdirectories within a directory `<DIRY>`, use a command `setfacl -bR <DIRY>`. The `-b` flag removes all ACL entries, and `-R` applies it recursively to the directory `<DIRY>` and its contents.
+
+If you need assistance setting permissions, feel free to contact us via <support@listserv.uab.edu>, providing the user's BlazerID and the directory or file you wish to modify, along with the permissions you want to grant or remove.

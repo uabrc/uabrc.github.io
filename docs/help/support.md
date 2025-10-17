@@ -48,7 +48,7 @@ If you prefer to use the ServiceNow web interface, please click the `RITM0000000
     The UAB email server strips all potentially executable files from emails. This includes attachments with `.log`, `.sh`, `.py` and `.exe` suffixes. Zip files containing those files will also be stripped. If you need to send script examples to us please rename the files to have a `.txt` suffix and inform us of their original nature.
 <!-- markdownlint-enable MD046 -->
 
-### What Types of Files can I Attach to Tickets?
+### What Types of Files Can I Attach to Tickets?
 
 Certain common file extensions are filtered when sent via email or attached to tickets. Generally, any file that is potentially executable is filtered. Below is a list of file extensions known to be filtered, and there may be others.
 
@@ -68,11 +68,23 @@ To ensure your files are attached to tickets as expected, try the following.
 
 Please do not try to attach executable files to tickets. If you have a legitimate need to give us executable files, mention it in the ticket and we can find a path forward on a case-by-case basis.
 
-## How Do I Request Or Change Shared Storage?
+## How Can I Follow Up on ServiceNow Tickets?
 
-Please see our [Storage page](../data_management/storage.md) for more information.
+If you are unable to find a reference or correspondence for your already submitted ServcieNow ticket, you can now visit UAB's [ServiceNow portal](https://uabprod.service-now.com/service_portal) to track and follow up your submitted tickets. At the website, click the "Log in" button to sign in with your UAB SSO (Single Sign On) credentials.
 
-## How do I request new software installed?
+![Landing page of ServiceNow Portal with the "Log in" button highlighted](images/servicenow_landing_page.png)
+
+When logged in you will see in the top right corner a "My tickets" button. Click on this and you will see two options: "View all open tickets" and "View all tickets".
+
+![ServiceNow Portal after Logging in, highlighting "My tickets" options](images/servicenow_landing_page_tickets.png)
+
+Select the option appropriate for your need. The "View all open tickets" will show you a list of tickets you currently have open (i.e. unresolved), while the "View all tickets" option would show you a list of tickets you have ever submitted, open or closed.
+
+## How Do I Request or Change Shared Storage?
+
+Please see our [Storage page](../data_management/index.md) for more information.
+
+## How Do I Request New Software Installed?
 
 Before making a request for new software on Cheaha, please try searching our [modules](../cheaha/software/modules.md) or searching for packages on [Anaconda](../workflow_solutions/using_anaconda.md).
 

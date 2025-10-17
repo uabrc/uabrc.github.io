@@ -1,10 +1,10 @@
-Platform,[Long-term Storage](lts/index.md),[User Data and Home Directories](storage.md#user-data-and-home-directories),[Project Directories](storage.md#project-directory),[User Scratch](./storage.md#user-scratch),[Local Scratch](storage.md#local-scratch)
+Platform,[Long-term Storage](lts/index.md),[User Data and Home Directories](./cheaha_storage_gpfs/individual_directories.md#home-and-user-data-directories),[Project Directories](./cheaha_storage_gpfs/project_directories.md),[Network Scratch](./cheaha_storage_gpfs/network_scratch.md),[Local Scratch](./cheaha_storage_gpfs/local_scratch.md)
 Data Use-Case,Data that rarely or never changes. Static data hosting. Acquired data pick-up repository.,General-purpose data storage.,Data to be shared among collaborator group and ready for analysis.,Temporary files created during analysis. Rolling file deletion over time.,Small files created during jobs. Must be deleted at the end of a job.
 Default Quota,Individual: 5 TB<br>Group: 75 TB,5 TB,25 TB,100 TB,Small
 Owner,Individual: per researcher<br>Group: Lab PI or Core Director,Individual Researchers,Lab PI or Core Director,Individual Researchers,Individual Researchers
 Accessible From,- Cheaha<br>- Globus,- Cheaha<br>- Globus,- Cheaha<br>- Globus,Cheaha,Cheaha
-Cheaha Path,No path; see [LTS Interfaces](lts/interfaces.md).,`/home/<BlazerID>` (`$HOME`) and `/data/user/<BlazerID>` (`$USER_DATA`),`/data/project/<name>`,`/scratch/<BlazerID>` (`$USER_SCRATCH`),`/local/$SLURM_JOB_ID`
+Cheaha Path,No path; see [LTS Interfaces](lts/interfaces.md).,`/home/$USER` (`$HOME`) and `/data/user/$USER` (`$USER_DATA`),`/data/project/<name>`,`/scratch/$USER` (`$USER_SCRATCH`),`/local/$SLURM_JOB_ID`
 Read/Write (IO) Speed,Slower,Fast,Fast,Fast,Fastest
 Responsibilities & Procedures,PI/Director responsible for data and access control.,,PI/Director responsible for data and access control.,Data deleted after 30 days.,Data deleted as needed.
-Access Control,[Bucket policies](./lts/policies.md),Self only,[`chmod`](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [ACLs](../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl),Self only,Self only
+Access Control,[Bucket policies](./lts/iam_and_policies.md),Self only,[`chmod`](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [ACLs](../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl),Self only,Self only
 How to Request,Upon request.,Comes with Cheaha account.,Upon request.,Comes with Cheaha account.,Comes with Cheaha account.

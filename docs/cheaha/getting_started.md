@@ -8,7 +8,7 @@ Cheaha is a High Performance Computing (HPC) resource intended primarily for bat
 
 ## Getting Help
 
-Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are [here](../help/support.md), and our frequently asked questions are [here](../help/faq.md).
+Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Please read our [Tips on Getting Effective Support](../help/support.md), and our [Frequently Asked Questions](../help/faq.md).
 
 ## Account Creation
 
@@ -44,7 +44,7 @@ All researchers are granted 5 TB of individual storage when they [create their R
 
 Shared storage is available to all Lab Groups and Core Facilities on campus. Shared storage is also available to UAB Administration groups.
 
-Please visit our [Storage page](../data_management/storage.md) for detailed information about our individual and shared storage options.
+Please visit our [Storage page](../data_management/index.md) for detailed information about our individual and shared storage options.
 
 ### Partitions
 
@@ -64,7 +64,7 @@ Please visit our [hardware](hardware.md#cheaha-hpc-cluster) for more details abo
 
 [Quality-of-Service (QoS) limits](hardware.md#summary) are in place to ensure any one user can't monopolize all resources.
 
-#### Why you should avoid running jobs on Login Nodes
+#### Why You Should Avoid Running Jobs on Login Nodes
 
 To effectively manage and provide high-performance computing (HPC) resources to the University community provided via the clusters, kindly use the terminal from compute nodes in created jobs rather than the terminal from login nodes. Our clusters are essential for conducting this large and complex scientific computations that often times require a significant amount of computing power. These clusters are shared environments, where multiple users execute their research and computing tasks simultaneously. It is important to utilize the structure of these environments properly for efficient and respectful use of the shared resources, so everyone gets a fair chance at using these resources.
 
@@ -94,7 +94,7 @@ You are on compute nodes if:
     If the terminal prompt appears as `bash-4.2$` instead of the user prompt `[$USER@login004]`, please refer to the [FAQ](#how-to-restore-default-terminal-prompt-from-bash-42-to-userlogin004) below to resolve the issue.
 <!-- markdownlint-disable MD046 -->
 
-##### How to Restore Default Terminal Prompt from `bash-4.2$` to `$USER@login004`?
+##### How to Restore Default Terminal Prompt From `bash-4.2$` to `$USER@login004`?
 
 There might be scenarios where you see the terminal prompt display `bash-4.2$` like below, instead of the user prompt `[$USER@login004]`.
 
@@ -138,15 +138,15 @@ Slurm Workload Manager is a widely used open-source job scheduler that manages t
 
 Ideally, only non-intensive tasks like editing files, or managing job submissions should be performed on the login node. Compute-intensive tasks, large data analyses, and simulations should be submitted as Slurm jobs to compute nodes. This approach ensures that the login node remains responsive and available for all users to manage their tasks and submissions. Submitting compute-intensive tasks as Slurm jobs to compute nodes helps to prevent overloading the login node, ensuring a smoother experience for all users of the cluster.
 
-##### How to start SLURM Jobs?
+##### How to Start Slurm Jobs?
 
-There are two straightforward ways to start SLURM jobs on cheaha, and they are detailed below.
+There are two straightforward ways to start Slurm jobs on cheaha, and they are detailed below.
 
 ###### Open OnDemand (OOD)
 
 UAB uses the OOD platform, a web-based interface for providing access to cluster resources without the need for command-line tools. Users can easily submit jobs, manage files, and even use interactive applications directly from their browsers. One of the standout features of OOD is the ability to launch interactive applications, such as a virtual desktop environment. This feature allows users to work within the cluster as if they were on a local desktop, providing a user-friendly interface for managing tasks and running applications. For an overview of how the page works, and to read more details see our docs on [Navigating Open OnDemand](../cheaha/open_ondemand/index.md). After logging into OOD, users can access various applications designed for job management, file editing, and more.
 
-###### Terminal (sbatch Jobs)
+###### Terminal (`sbatch` Jobs)
 
 For users comfortable with the command line, submitting jobs via scripts using `sbatch` is a straightforward process. An `sbatch` script contains the job specifications, such as the number of nodes, execution time, and the command to run. This method provides flexibility and control over job submission and management. For more information on this, please see our docs on [Submitting Jobs with Slurm](../cheaha/slurm/submitting_jobs.md).
 

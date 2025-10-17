@@ -24,7 +24,21 @@ module load cuDNN/8.9.2.26-CUDA-12.2.0
 
 For information on which versions of CUDA to load for Tensorflow and PyTorch, please see [Tensorflow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).
 
-For information on partition and GPU selection, please review our [hardware information page](../hardware.md) and [GPU Page](../slurm/gpu.md)
+For information on partition and GPU selection, please review our [hardware information page](../hardware.md) and [GPU Page](../slurm/gpu.md).
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
+
+For more information on GPU efficiency please see [Making the Most of GPUs](../slurm/gpu.md#making-the-most-of-gpus).
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    April 21, 2025: Currently, GPU-core affinity is not considered for GPU jobs on interactive apps. This may mean selecting multiple GPUs results in some GPUs not being used.
+<!-- markdownlint-enable MD046 -->
 
 ## Extra Jupyter Arguments
 
@@ -32,13 +46,13 @@ The `Extra Jupyter Arguments` field allows you to pass additional arguments to t
 
 ![!Jupyter Notebook job request form Extra jupyter arguments field.](./images/ood_jupyter_notebook_extra_args_box.png)
 
-## Working with other programming languages within Jupyter Notebook
+## Working With Other Programming Languages Within Jupyter Notebook
 
 To work with other programming languages within Jupyter Notebook, you need to install the corresponding kernel for each language, similar to the process used for Python with the `ipykernel`. This can be done using package managers such as `pip` or `conda`, or by following language-specific instructions. For example, to install `R kernel` for the R language, we can run the `conda install -c r r-essentials` command. Please ensure that the kernel is installed in your Anaconda environment. Then, select the desired language environment from the kernel dropdown menu.
 
 Once the necessary kernels are installed, if you wish, you can write and run multiple code cells in different languages within a single notebook. Easily switch between kernels and select the preferred one for each language, and then proceed to run the code cells in their respective languages.
 
-## Working with Anaconda Environments
+## Working With Anaconda Environments
 
 By default, Jupyter notebooks will use the base environment that comes with the Anaconda3 module. This environment contains a large number of popular packages and may useful for something quick, dirty, and simple. However, for any analysis needing specific package versions or special packages, you will need to create your own environment and select it from the `Kernel` menu. For information on creating and managing Anaconda environments please see our [Using Anaconda page](../../workflow_solutions/using_anaconda.md). Then please review our [Cheaha-specific Anaconda page](../software/software.md#anaconda-on-cheaha) for important tips and how to avoid common pitfalls.
 
@@ -46,7 +60,7 @@ To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From
 
 ![! Select your Anaconda environment from the Kernel dropdown menu in Jupyter](images/jupyter_kernel.png)
 
-### Creating an Environment for use with Jupyter Notebook
+### Creating an Environment for Use With Jupyter Notebook
 
 We can create a new environment, that houses all of the packages, modules, and libraries we need for our current Jupyter Notebook to implement functions and operations, run all of its cells and deliver desired outputs. Follow the steps below to accomplish this;
 
@@ -63,7 +77,7 @@ We can create a new environment, that houses all of the packages, modules, and l
 
 1. Go into your working Jupyter Notebook file, and [change to the created environment](#changing-environments-using-jupyter-notebook-gui).
 
-### Changing Environments using Jupyter Notebook GUI
+### Changing Environments Using Jupyter Notebook GUI
 
 1. When your Jupyter Notebook Job has been created on Cheaha, and you want to load an environment you have already created. Select from the dropdown menu "New". You can find this in the top right corner of the Jupyter Notebook landing page. ![!Select Environment](images/selectenvsjupyter.png)
 
@@ -107,13 +121,25 @@ Using `conda init` causes a block of code automatically inserted into the `.bash
 
 ### Pip Installs Packages Outside of Environment
 
-When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` within the same conda environment and use `pip` from that environment. If `pip` is used outside of Anaconda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments, and shows the following error,
+When installing packages within a `conda` environment using `pip`, it's crucial to ensure that you install `pip` first within the same conda environment and use `pip` from that environment. If `pip` is used outside of conda or within an environment without `pip` installed, the packages are installed to `~/.local`. This can lead to unexpected package conflicts, as Python loads packages from `~/.local` before loading from Anaconda environments, and shows the following error,
 
 ```bash
 Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)
 ```
 
-For the above case, resolving errors involve deleting the `~/.local` directory.
+For the above case, deleting the `~/.local` directory and then installing `pip` within an environment, will fix this error. Ensure you input the correct file path, we suggest copying the filepath found in the output "Requirement already satisfied: numpy in /home/$USER/.local/lib/python3.11/site-packages (1.26.3)".
+
+```bash
+rm -rf /home/$USER/.local/lib/python3.xx/site-packages
+```
+
+Replace `python3.11` in the command with the appropriate Python version.
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    Please note, using the `rm -rf` command would permanently delete the specified file or specified directory and its contents.
+<!-- markdownlint-enable MD046 -->
 
 Here's an example of the correct procedure for installing `pip` packages within a `conda`:
 
@@ -122,6 +148,6 @@ Here's an example of the correct procedure for installing `pip` packages within 
 1. Install `pip` within the `conda` environment using `conda install pip` or `conda install python`. `pip` and `python` are packaged together, installing one will always install the other.
 1. Use `pip` when this `conda` environment is active to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_anaconda.md#installing-packages-with-pip)
 
-### Tensorflow and PyTorch GPU issues
+### Tensorflow and PyTorch GPU Issues
 
 If you are using Jupyter with TensorFlow or PyTorch and no GPU is found, please see our Slurm GPU page sections on [TensorFlow Compatibility](../slurm/gpu.md#tensorflow-compatibility) and [PyTorch Compatibility](../slurm/gpu.md#pytorch-compatibility).

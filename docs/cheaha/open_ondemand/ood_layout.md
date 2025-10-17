@@ -8,12 +8,17 @@ The landing page contains information about current updates to the system, a mes
 
 ## File Browser
 
-You can open a file browser in a new tab by clicking the `Files` dropdown and selecting which default directory you would like to access from `HOME`, `USER_DATA`, or `USER_SCRATCH`.
+You can open a file browser in a new tab by clicking the `Files` dropdown and selecting which default directory you would like to access from the following options.
+
+- [Home Directory](../../data_management/cheaha_storage_gpfs/individual_directories.md)
+- [/data/scratch/$USER](../../data_management/cheaha_storage_gpfs/network_scratch.md) (network scratch)
+- [/data/user/$USER](../../data_management/cheaha_storage_gpfs/individual_directories.md)
+- [/scratch/$USER](../../data_management/cheaha_storage_gpfs/network_scratch.md) (network scratch)
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    `USER_SCRATCH` is shown as both `/scratch` and `/data/scratch`. `/data/scratch` is just a symbolic link to `/scratch`. You can use either, but `/scratch` is preferred since it's an actual folder instead of a symlink.
+    "/data/scratch" is a symbolic link to "/scratch", so they point to the same directory.
 <!-- markdownlint-enable MD046 -->
 
 ![!Basic file browser for OOD.](./images/file_browser.png)
@@ -75,7 +80,7 @@ The Interactive Apps dropdown has a list of specific software setup to run on Ch
 The interactive apps have the following fields to customize the resources for your job:
 
 1. Number of Hours: the maximum number of hours the job will run for. Interactive apps will stay allocated for this amount of time unless the job is manually deleted or crashes. The selected number of hours should be less than or equal to the max runtime for your selected partition.
-1. Partition: the partition the job will be allocated in. See [here](../getting_started.md#partitions) for more information about which partition to choose for your job.
+1. Partition: the partition the job will be allocated in. See our [Partitions](../getting_started.md#partitions) section for more information about which partition to choose for your job.
 1. Number of GPUs: Total number of GPUs to request (max of 4 on pascalnodes or 2 on amperenodes)
 1. Numer of CPUs: Total number of CPUs to request
 1. Memory Per CPU (GB): GB of memory multiplied by the requested number of CPUs.
@@ -94,6 +99,14 @@ The interactive apps have the following fields to customize the resources for yo
 
 Every interactive app has resources only allocated on a single node, and resources are shared among all processes running in the app. Make sure the amount of memory you request is less than or equal to the max amount per node for the partition you choose. We have a table with [memory available per node](../hardware.md#cheaha-hpc-cluster) for each partition.
 
+For more information on GPU efficiency please see [Making the Most of GPUs](../slurm/gpu.md#making-the-most-of-gpus).
+
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    April 21, 2025: Currently, GPU-core affinity is not considered for GPU jobs on interactive apps. This may mean selecting multiple GPUs results in some GPUs not being used.
+<!-- markdownlint-enable MD046 -->
+
 #### Environment Setup Window
 
 In addition to requesting general resources, for some apps you will have the option to add commands to be run during job startup in an Environment Setup Window. See below for an example showing how to load CUDA into a Jupyter job so it can use a GPU.
@@ -107,6 +120,12 @@ For jobs such as RStudio and Jupyter, some modules like CUDA need to be loaded b
 
     In the OOD session, the module is automatically reset at the beginning of every session by default. Therefore, avoid using `module reset` in the 'Environment Setup' box. See [best practice for loading modules](../software/modules.md#best-practice-for-loading-modules) for more information.
 <!-- markdownlint-disable MD046 -->
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
 
 #### Launching Interactive Sessions
 
@@ -130,7 +149,7 @@ The My Interactive Sessions page lists the available apps and your current inter
 
 For each job running via Open OnDemand, there will be a card listed on this page:
 
-1. **Job ID**: The jobID assigned by the SLURM scheduler for this specific job.
+1. **Job ID**: The jobID assigned by the Slurm scheduler for this specific job.
 1. **Host**: The node on which the job is currently running.
 1. **Time Remaining**: The amount of time remaining from the total requested time.
 1. **Session ID**: This is the unique ID for the OOD session for this job, which can be clicked to access the OOD log directory for troubleshooting.
@@ -149,7 +168,13 @@ The Job ID and Session ID are important for diagnosing issues you may encounter 
 
 #### Debugging OOD Job Failures
 
-On occasion, interactive jobs created in OOD will crash on startup and cause the job card to disappear. Most of these failures are caused by improper environment setup prior to job creation. If you experiencing OOD job failures, retrieve the OOD job info using the following steps:
+On occasion, interactive jobs created in OOD will crash on startup and cause the job card to disappear. Most of these failures are caused by improper environment setup prior to job creation. To troubleshoot OOD applications, retrieving logs from failed jobs is essential. These logs are stored in `/data/user/$USER/ondemand/batch_connect/sys`, but each log directory is named using a hash value rather than a recognizable `JobID`, making it difficult to identify logs for a specific job after it has ended. To retrieve the correct log directory, use the following command:
+
+`sacct -j <jobid> -o jobid,workdir --parsable`
+
+This command retrieves the job's working directory, where the logs are stored. Replace `<jobid>` with the failed job ID when running the command. Then, you can download the logs, zip them, and attach the ZIP file to a support ticket for our review. If you are unable to run the `sacct` command, please email <support@listserv.uab.edu>, and we will provide you with the necessary download link.
+
+Alternatively, you can create a new job and follow the steps below to retrieve and submit the log files.
 
 1. Create a new job with the same setup as the job that failed.
 1. When the job is in queue, click the link in the `Session ID` field in the job card before the job fails (see the image below for an example). This will open a file browser in a new tab.
@@ -158,7 +183,7 @@ On occasion, interactive jobs created in OOD will crash on startup and cause the
 
 1. Wait for the job to fail. Afterwards, refresh the file browser, select all of the files (do not include the `desktops` or `..` folders), and click `Download`.
 
-   ![!Files to be downloaded and attached to the email](./images/ood_failed_job.png)
+    ![!Files to be downloaded and attached to the email](images/ood_failed_job.png)
 
 1. Take all of the files that were downloaded, put them in a new folder, and zip the folder.
 

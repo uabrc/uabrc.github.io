@@ -4,8 +4,8 @@
 
 - [AI at UAB](https://www.uab.edu/ai/): AI-related resources, available to UAB Employees and the broader community, encompassing safety protocols, ethical principles, and diverse applications of AI, including current trends.
 - [Informatics Club](https://uab.campuslabs.com/engage/organization/informaticsclub): A UAB group for students and trainees to learn more about informatics.
-    - [Code, Chat & Collab](https://calendar.uab.edu/event/code_chat_collab_5718): A recurring meet-up hosted by the Informatics Club where students, staff and faculty can meet to discuss informatics, data analysis, software development, and Cheaha use.
-    - [Events and Resources](https://lnk.bio/5nl5): A collection of useful resources provided by the Informatics club.
+    - [Code, Chat & Collab](https://informaticsclub.github.io/events/): A recurring meet-up hosted by the Informatics Club where students, staff and faculty can meet to discuss informatics, data analysis, software development, and Cheaha use.
+    - [Resources](https://informaticsclub.github.io/resources/): A collection of useful resources provided by the Informatics club.
 - [LinkedIn Learning](https://www.uab.edu/linkedinlearning/): Online courses available for free to UAB employees. Topics include programming, data science, and more.
 
 ## External Resources
@@ -26,13 +26,25 @@ The Carpentries is a 501(c)3 non-profit organization dedicated to educating rese
 
 ### Rigor & Reproducibility Tools
 
-- [Community for Rigor](https://c4r.io/): a group of scientists from various universities and research institutions in the United States has collaborated to develop educational materials aimed at facilitating the teaching and learning of the principles and practices of scientific rigor.
-- [Rigor & Reproducibility Tool Repository](https://c4r.io/new-tool-repo/): Contains various tools related to rigor and reproducibility, along with links to relevant landing pages.
+- [Community for Rigor](https://www.c4r.io/): a group of scientists from various universities and research institutions in the United States has collaborated to develop educational materials aimed at facilitating the teaching and learning of the principles and practices of scientific rigor.
+- [Rigor & Reproducibility Tool Repository](https://c4r.io/new-tool-repo/): Contains various tools related to rigor and reproducibility, along with links to relevant landing pages. **Note:** as of March 2025, the Community for Rigor site is undergoing a transition and this page is not currently available.
 
-### Other External Resources
+### Data Management
+
+- [Globus Events Calendar](https://www.globus.org/events/)
+
+### Data Science and Engineering
+
+- [Datapen.io Free Courses](https://www.datapen.io/resources/free-course-resources)
+
+### Bioinformatics, Genetics, and Genomics
 
 - [Rosalind.info](https://rosalind.info/problems/locations/): A platform for learning bioinformatics and programming.
 - [Transcriptomics](https://diytranscriptomics.com/): A course teaching students to independently analyze high-throughput sequencing data from gene expression (RNA-seq) studies using lightweight, open-source software and the R programming language with Bioconductor packages.
+- [Alphafold](https://www.ebi.ac.uk/training/online/courses/alphafold/): The tutorial is provided by the European Molecular Biology Laboratory (EMBL) under the Creative Commons Attribution 4.0 International (CC BY 4.0) license. The course includes activities, quizzes, and videos designed to help users understand the fundamental concepts behind AlphaFold, learn how to run protein predictions, and explore how AlphaFold has been used to advance research.
+
+### Other External Resources
+
 - [MATLAB upcoming events](https://www.mathworks.com/company/events/search.html): MATLAB offers a range of upcoming events, including data-oriented, programming-oriented, and domain-specific training sessions. Many of these events are free to attend.
 
 ### Suggested Reading

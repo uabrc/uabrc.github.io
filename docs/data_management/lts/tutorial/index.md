@@ -9,4 +9,5 @@ Why use LTS and `s3cmd` for your research data? LTS provides a secure and long t
 
 Below are the tutorials we currently have on using LTS and s3cmd:
 
-- [Basic workflow with Individual LTS and s3cmd](./individual_lts_tutorial.md): This tutorial provides step-by-step instructions for moving files to and from your individual LTS account using the Cheaha system. It covers the installation, configuration and use of the different `s3cmd` commands, as well as setting up access policies.
+- [Basic workflow with Individual LTS and s3cmd](./individual_lts_tutorial.md): This tutorial provides step-by-step instructions for moving files to and from your individual LTS allocation using the Cheaha system. It covers the installation, configuration and use of the different `s3cmd` commands, as well as setting up access policies.
+- [Basic workflow with Shared LTS and s3cmd](./shared_lts_tutorial.md): This tutorial provides step-by-step instructions for configuring a shared LTS allocation using the Cheaha system. It covers bucket management, switching between individual and Shared LTS allocations profiles, using various s3cmd commands, and setting up access policies for shared LTS buckets.

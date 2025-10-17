@@ -1,0 +1,34 @@
+exclude = ["test.py"]
+fix = true
+indent-width = 4
+line-length = 88
+required-version = "==0.12.0"
+show-fixes = true
+
+[lint]
+select = ["ALL"]
+ignore = [
+  "D203",   # prefer conflicting D211
+  "D213",   # prefer conflicting D212
+  "COM819", # prefer conflicting COM812
+  "W191",   # START: conflict with ruff formatting
+  "E111",
+  "E114",
+  "E117",
+  "D206",
+  "D300",
+  "Q000",
+  "Q001",
+  "Q002",
+  "Q003",   # END
+]
+
+[lint.per-file-ignores]
+"build_scripts/*" = ["INP001"]
+"verification_scripts/*" = ["INP001"]
+
+[format]
+indent-style = "space"
+line-ending = "lf"
+quote-style = "double"
+skip-magic-trailing-comma = false

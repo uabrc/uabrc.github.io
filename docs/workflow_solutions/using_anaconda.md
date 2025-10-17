@@ -24,7 +24,7 @@ Anaconda is a package manager, meaning it handles all of the difficult mathemati
 
 Anaconda is structured around environments. Environments are self-contained collections of researcher-selected packages. Environments can be changed out using a simple package without requiring tedious installing and uninstalling of packages or software, and avoiding dependency conflicts with each other. Environments allow researchers to work and collaborate on multiple projects, each with different requirements, all on the same computer. Environments can be installed from the command line, from pre-designed or shared YAML files, and can be modified or updated as needed.
 
-The following subsections detail some of the more common commands and use cases for Anaconda usage. More complete information on this process can be found at the [Anaconda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
+The following subsections detail some of the more common commands and use cases for Anaconda usage. More complete information on this process can be found at the [Anaconda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html). Need some hands-on experience, you can find instructions on how to install PyTorch and TensorFlow using Anaconda in this [tutorial](../cheaha/tutorial/pytorch_tensorflow.md).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -87,7 +87,7 @@ conda install -c <channel> <package><=version>
 
 Generally, if a package needs to be downloaded from a specific conda channel, it will mention that in its installation instructions.
 
-#### Installing Packages with Pip
+#### Installing Packages With Pip
 
 Some packages are not available through Anaconda. Often these packages are available via [PyPI](https://pypi.org/) and thus using the Python built-in Pip package manager. Pip may also be used to install locally-available packages as well.
 
@@ -107,6 +107,12 @@ pip install \<package\>==version
 pip install -r packages.txt
 ```
 
+<!-- markdownlint-disable MD046 -->
+!!! important
+
+    If you see an output message like "Requirement already satisfied: $package in /home/$USER/.local/lib/python3.xx/site-packages". Please see steps [here](../cheaha/open_ondemand/ood_jupyter.md#pip-installs-packages-outside-of-environment) on how to address this.
+<!-- markdownlint-enable MD046 -->
+
 #### Finding Packages
 
 You may use the [Anaconda page](https://anaconda.org/) to search for packages on Anaconda, or use Google with something like `<package name> conda`. To find packages in PyPI, either use the [PyPI page](https://pypi.org/) to search, or use Google with something like `<package name> pip`.
@@ -115,7 +121,15 @@ You may use the [Anaconda page](https://anaconda.org/) to search for packages on
 
 For more information about using Anaconda with Jupyter, see the section [Working with Anaconda Environments](../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
 
-### Update packages in an environment
+#### CUDA and cuDNN Package for GPU Usage
+
+For more information about finding CUDA and cuDNN packages for use with GPUs, see the section [CUDA and cuDNN Modules](../cheaha/slurm/gpu.md#cuda-and-cudnn-modules)
+
+#### Performance Considerations for GPUs
+
+See our [Making the Most of GPUs](../cheaha/slurm/gpu.md#making-the-most-of-gpus) for more information about maximizing the performance of GPUs on Cheaha.
+
+### Update Package in an Environment
 
 To ensure packages and their dependencies are all up to date, it is a best practice to regularly update installed packages, and libraries in your activated environment.
 
@@ -148,7 +162,7 @@ conda env remove —-name <env>
 
 ```
 
-### Working with Environment YAML Files
+### Working With Environment YAML Files
 
 #### Exporting an Environment
 
@@ -162,7 +176,7 @@ conda activate <env>
 conda env export > env.yml
 ```
 
-#### Creating an Environment from a YAML File
+#### Creating an Environment From a YAML File
 
 To create an environment from a YAML file `env.yml`, use the following command.
 
@@ -170,7 +184,7 @@ To create an environment from a YAML file `env.yml`, use the following command.
 conda env create --file env.yml
 ```
 
-#### Sharing your environment file
+#### Sharing Your Environment File
 
 To share your environment for collaboration, there are primarily 3 ways to export environments, the below commands show how to create environment files that can be shared for replication. Remember to replace `<env>` with the existing environment name.
 
@@ -202,7 +216,7 @@ To share your environment for collaboration, there are primarily 3 ways to expor
 
     ```
 
-#### Replicability versus Portability
+#### Replicability Versus Portability
 
 An environment with only `python 3.10.4`, `numpy 1.21.5` and `jinja2 2.11.2` installed will output something like the following file when `conda env export` is used. This file may be used to precisely replicate the environment as it exists on the machine where `conda env export` was run. Note that the versioning for each package contains two `=` signs. The code like `he774522_0` after the second `=` sign contains hyper-specific build information for the compiled libraries for that package. Sharing this exact file with collaborators may result in frustration if they do not have the exact same operating system and hardware as you, and they would not be able to build this environment. We would say that this environment file is not very portable.
 
@@ -284,7 +298,7 @@ Now we can be sure that the correct versions of the software will be installed o
 
 #### Good Practice for Finding Software Packages on Anaconda
 
-Finding Anaconda software packages involves searching through the available “Channels” and repositories to locate the specific packages that contain functions that you need for your environment. Channels are Anaconda's way of organizing packages. Channels instruct Anaconda where to look for packages when installation is to be done. The following are Anaconda Channels that are readily used to house majority of the packages used in scientific research. Anaconda, Conda-Forge, BioConda, other Channels also exist. If you want more information on Anaconda Channels please see their [docs](https://docs.anaconda.com/).
+Finding Anaconda software packages involves searching through the available “Channels” and repositories to locate the specific packages that contain functions that you need for your environment. Channels are Anaconda's way of organizing packages. Channels instruct Anaconda where to look for packages when installation is to be done. The following are Anaconda Channels that are readily used to house majority of the packages used in scientific research. Anaconda, Conda-Forge, BioConda, other Channels also exist. If you want more information on Anaconda Channels please see their [docs](https://www.anaconda.com/docs/main).
 
 In the sections below, you will see information on how to find key packages you intend to use, ensure the packages are up-to-date, figure out the best way to install them, and finally compose an environment file for portability and replicability.
 
@@ -361,11 +375,11 @@ dependencies:
     - http://insert_package_link_here  # For URL links
 ```
 
- For git repos, add them under `- pip:` based on examples [here](https://pip.pypa.io/en/stable/cli/pip_install/#examples). See the section [Replicability versus Portability](#replicability-versus-portability) for more information.
+ For git repos, add them under `- pip:`. For examples, please see <https://pip.pypa.io/en/stable/cli/pip_install/#examples>. See the section [Replicability versus Portability](#replicability-versus-portability) for more information.
 
 The above configuration is only for illustration purposes, to show how channels and dependencies can be used. It is best to install all of your packages from conda channels, to avoid your environment breaking. Only packages that are unavailable via conda, should be installed via pip. If you run into challenges please [contact us](../index.md#how-to-contact-us).
 
-##### Key Things To Remember
+##### Key Things to Remember
 
 1. Exploring Package Documentation: For each package, check the documentation to understand its features, version history, and compatibility. Documentation can often be found on the Anaconda Cloud package page under the "Documentation" or "Homepage" link shared above in this tutorial.
 

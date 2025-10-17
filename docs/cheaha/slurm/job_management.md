@@ -4,7 +4,7 @@ When jobs are submitted, researchers can monitor their status using Slurm comman
 
 In case jobs were submitted by accident or the code was written incorrectly, they can also be cancelled.
 
-## Monitoring Queued Jobs with `squeue`
+## Monitoring Queued Jobs With `squeue`
 
 Currently running jobs can be monitored using the `squeue` command. The basic command to list all jobs for a specific researcher is:
 
@@ -22,7 +22,7 @@ For array jobs, the JobID will be formatted as `jobid_arrayid`.
 
 More information is available at the [Official Documentation](https://slurm.schedmd.com/squeue.html).
 
-## Cancelling Jobs with `scancel`
+## Cancelling Jobs With `scancel`
 
 Cancelling queued and currently running jobs can be done using the `scancel` command. Importantly, this will only cancel jobs that were initiated by the researcher running the command. `scancel` is very flexible in how it behaves:
 
@@ -48,7 +48,7 @@ scancel -u $USER
 
 More information is available at the [Official Documentation](https://slurm.schedmd.com/scancel.html).
 
-## Reviewing Past Jobs with `sacct`
+## Reviewing Past Jobs With `sacct`
 
 If you are planning a new set of jobs and are estimating resource requests, it is useful to review similar jobs that have already completed. To list past jobs for a researcher, use the `sacct` command. Common use cases and information are detailed below. Full details are available at the [Official Documentation](https://slurm.schedmd.com/scancel.html).
 
