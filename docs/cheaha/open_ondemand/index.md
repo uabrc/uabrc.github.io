@@ -28,40 +28,43 @@ If your OOD job cards are disappearing after being allocated or during the job, 
 
 ## Choosing the Right Jupyter Application
 
-Jupyter environments like [Jupyter Notebook](./ood_jupyter_notebook.md) and [JupyterLab](./ood_jupyterlab.md) have revolutionized the way researchers, analysts, and developers interact with code. Whether you're writing Python scripts to visualize genomic data, running simulations, or working through any computational workflow, you've likely encountered one or both of these tools. We provide detailed documentation on how to use them effectively on Cheaha. Both applications are open-source web tools designed for creating and sharing documents that can include your code, equations, visualizations, and narrative text. Their primary purpose is to offer an interactive environment for all phases of your data analysis life cycle including, data exploration, analysis, and visualization. So, how would you choose between Jupyter Notebook and JupyterLab when running your workflow on Cheaha?
+This section compares Jupyter Notebook and JupyterLab to help you decide which works best for your needs.
 
-This article aims to help you decide between using Jupyter Notebook and JupyterLab, by comparing both Jupyter Apps, looking at their strengths and weaknesses, and how they measure up to your needs, especially on Cheaha.
+Jupyter environments like [Jupyter Notebook](./ood_jupyter_notebook.md) and [JupyterLab](./ood_jupyterlab.md) have revolutionized the way researchers, analysts, and developers interact with code.  Both applications are open-source, web-based tools for creating documents with code, equations, visualizations, and narrative text. Both offer can help with preliminary data analysis, including data exploration, analysis, and visualization.Whether you're writing Python scripts to visualize genomic data, running simulations, or working through computational workflows, you've likely encountered one or both of these tools. We provide detailed documentation on using them effectively on Cheaha.
 
-### What They Have in Common
+### What Do They Have in Common?
 
-Before listing out some of the differences, below are similarities between Jupyter NoteBooks and JupyterLab.
+Jupyter Notebook and JupyterLab both have the following features. Both...
 
-- They use the same kernel system, so that notebooks written in one can be used on another.
-- They both support `.ipynb` notebooks.
-- They allow interactive code execution, plotting, markdown, and data visualization.
-- They can run Python, R, Julia, and other supported languages.
-- They are both great for reproducing workflows.
-- You can access both on Cheaha, selecting the configuration and resources required for your workflow.
+- ...have the same kernel system. Notebooks used in one can be migrated to the other.
+- ...allow interactive code execution, plotting, markdown, and data visualization.
+- ...can run Python, R, Julia, and other supported languages.
+- ...can be made portable and reproducible.
+- ...are available on Cheaha.
 
-### Why Choose JupyterLab?
+### How Do I Choose?
 
-JupyterLab is the next-generation interface for Jupyter, designed as a full-featured web-based IDE. While it includes many features typical of traditional integrated development environments (IDEs), its core strength lies in supporting interactive, exploratory workflows.
+#### Jupyter Notebook
 
-The following are reasons why you might choose JupyterLab over Jupyter Notebook.
+Jupyter Notebook (or simply Jupyter) is the classic, streamlined experience focusing on individual notebooks. The Jupyter Notebook interface is useful for teaching, learning, preliminary, or lightweight research tasks. Consider using Jupyter Notebooks if any of the following sound relevant to you.
 
-1. Work with multiple notebooks, terminals, and files in one browser tab.
-1. Organize projects with code, markdown, and outputs side by side.
-1. Customize with extensions (e.g., Git GUI, table of contents, more). Please visit [JupyterLab's official documentation page](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html#extensions) to get more information about JupyterLab Extensions.
+1. Suitable for beginners: simpler interface and faster to learn.
+1. Great for teaching or workshops, with minimal distractions.
+1. Perfect for quick data exploration and visualization. You can start in a few minutes.
 
-![!Screenshot of a JupyterLab interface with an Example Notebook open.](./images/jupyterlabsample.png)
+In the screenshot below, you can see the Jupyter Notebook interface, with sample code and output cells.
+![!Screenshot of Jupyter Notebook with code and output cells.](./images/jupyternotebooksample.png)
 
-### Why Choose Jupyter Notebook?
+Of similar scientific software, Jupyter Notebook's interface is similar to Maple, Mathematica, and R Markdown, but makes use of different syntax and supports multiple programming languages through kernel extensions, e.g., Python, R, and Julia.
 
-Jupyter Notebook offers the classic, streamlined experience that focuses on a single document at a time. The Jupyter Notebook interface is ideal for teaching, learning, or lightweight research tasks. The interface is what many users are already familiar with. The following are reasons why you might use Jupyter Notebook over JupyterLab.
+#### JupyterLab
 
-1. Easy for beginners, it has fewer menus, that are quicker to learn.
-1. Great for teaching or workshops, as there are minimal distractions.
-1. Perfect for quick tests and plots, you can launch and code right away.
+JupyterLab is the next-generation interface for Jupyter, designed as a feature-rich, web-based "interactive development environment". While it includes many features, its core strength lies in supporting interactive, exploratory workflows. Consider using JupyterLab if any of the following sound relevant to you.
 
-In the screenshot below, you can see a Jupyter Notebook, showing a workbook with sample code and output.
-![!Screenshot of Jupyter Notebook showing a single notebook open with code and output.](./images/jupyternotebooksample.png)
+1. Work with multiple notebooks, terminals, and files in one interface, running in one Cheaha job.
+1. Organize software projects with separate files displayed side by side.
+1. Customize behavior with extensions (e.g., Git GUI, table of contents).
+
+![!Screenshot of a JupyterLab interface with a single notebook open.](./images/jupyterlabsample.png)
+
+JupyterLab's interface is similar to IDEs such as RStudio, Microsoft Visual Studio, PyCharm, Spyder, IntelliJ IDEA, Eclipse, and Code::Blocks. It is also similar to VSCode with appropriate extensions.
