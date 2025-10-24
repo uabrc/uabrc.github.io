@@ -1,8 +1,3 @@
----
-render_macros: true
-grace_period_time: thirty (30) day
----
-
 # Leaving UAB
 
 {% from "_macro/support.md.j2" import contact_support_link %}
@@ -31,7 +26,7 @@ UAB research data may not leave UAB systems without a Data Use Agreement (DUA) s
 
 ## What Is the Grace Period?
 
-Researchers have a {{ grace_period_time }} grace period following the end of their relationship with UAB.
+Researchers have a {{ account.leaving.grace_period_time }} grace period following the end of their relationship with UAB.
 
 Due to security requirements imposed by US federal funding agencies, we are unable to extend the grace period.
 
@@ -52,7 +47,7 @@ For more information on what to do next, please select the tab below that most c
 <!-- markdownlint-disable MD046 -->
 === "I Need Continuing Access"
 
-    If you need RCS access beyond the end of the {{ grace_period_time }} grace period, you will need to create a [XIAS Account](../xias/index.md).
+    If you need RCS access beyond the end of the {{ account.leaving.grace_period_time }} grace period, you will need to create a [XIAS Account](../xias/index.md).
 
     {% include "account/_template/xias_need_sponsor.md.j2" indent content %}
 
@@ -66,7 +61,7 @@ For more information on what to do next, please select the tab below that most c
 
 === "I No Longer Need Access"
 
-    If the {{ grace_period_time }} grace period is enough time, then please be aware there are expectations and responsibilities for final handling of your research data.
+    If the {{ account.leaving.grace_period_time }} grace period is enough time, then please be aware there are expectations and responsibilities for final handling of your research data.
 
     Please see [Final Steps For Research Data](final_steps.md)
 <!-- markdownlint-enable MD046 -->

@@ -1,7 +1,3 @@
----
-render_macros: true
----
-
 # Sponsor — Creating and Managing XIAS Users
 
 {% include "_template/uab_employee_use_only.md.j2" %}

@@ -1,3 +1,6 @@
+account:
+  leaving:
+    grace_period_time: thirty (30) day
 storage:
   no_cost:
     individual:

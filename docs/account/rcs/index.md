@@ -1,5 +1,4 @@
 ---
-render_macros: true
 hide:
     toc: true
 ---

@@ -78,7 +78,7 @@ plugins: # order matters!
         - res/jinja_env.yml
       module_name: macros
       on_undefined: strict
-      render_by_default: false
+      render_by_default: true
       verbose: true
       j2_extensions:
         - jinja2_workarounds.MultiLineInclude

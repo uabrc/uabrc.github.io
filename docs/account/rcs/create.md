@@ -1,7 +1,8 @@
 ---
-render_macros: true
-toc_depth: 2
+hide:
+    toc: true
 ---
+
 # Create Your Research Computing Systems (RCS) Account
 
 Creating an RCS account is an automated, self-service process for UAB-affiliated researchers. External collaborators will need to follow a different process.

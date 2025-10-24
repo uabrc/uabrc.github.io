@@ -1,5 +1,6 @@
 ---
-render_macros: true
+hide:
+    toc: true
 ---
 
 # Leaving UAB — Continuing Collaboration

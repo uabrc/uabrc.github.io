@@ -1,6 +1,6 @@
 ---
-render_macros: true
-toc_depth: 2
+hide:
+    toc: true
 ---
 
 # Create Your Code.rc (GitLab) Account

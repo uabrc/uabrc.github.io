@@ -1,5 +1,6 @@
 ---
-render_macros: true
+hide:
+    toc: true
 ---
 
 # Responsibilities, Expectations, and Policies

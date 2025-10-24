@@ -115,4 +115,4 @@ To manage your XIAS account, visit the [XIAS Guest Users page](https://apps.idm.
     XIAS accounts are different from RCS accounts. Managing one does not change the other.
 <!-- markdownlint-enable MD046 -->
 
-{% include "_template/base_help_section.md.j2" }
+{% include "_template/base_help_section.md.j2" %}

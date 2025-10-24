@@ -1,8 +1,3 @@
----
-render_macros: true
-toc_depth: 2
----
-
 # Research Computing System (RCS) Account Status
 
 All Research Computing System (RCS) accounts have a status. Statuses determine whether an account may access RCS services, and what actions may be required to restore access.
