@@ -34,8 +34,8 @@ markdown_extensions:
       generic: true
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.keys
@@ -76,12 +76,12 @@ plugins: # order matters!
   - macros:
       include_yaml:
         - res/jinja_context.yml
+      j2_extensions:
+        - jinja2_workarounds.MultiLineInclude
       module_name: macros
       on_undefined: strict
       render_by_default: true
       verbose: true
-      j2_extensions:
-        - jinja2_workarounds.MultiLineInclude
   - table-reader:
       data_path: docs
   - title-casing
