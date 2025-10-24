@@ -333,6 +333,11 @@ remove bottom-border from special cases
   margin-top: auto;
 }
 
+/* pleasing max width of single cards */
+.md-typeset .grid.cards ul>li:only-child {
+  width: min(100%, 450px);
+}
+
 /* lists in grid cards */
 .md-typeset .grid.cards ul ul {
   list-style-type: disc;
