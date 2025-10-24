@@ -1,0 +1,14 @@
+support:
+  email: support@listserv.uab.edu
+  office_hours:
+    timezone: Central Time
+    url: https://uab.zoom.us/j/81783104592?pwd=L21OOWNlY2doWXova3MzOGFRcE4zQT09
+    events:
+      - day: Monday
+        starttime: 10:00 AM
+        endtime: 12:00 PM
+      - day: Thursday
+        starttime: 10:00 AM
+        endtime: 12:00 PM
+  servicenow_url: https://uabprod.service-now.com/service_portal
+  statuscast_url: https://uabstatus.statuscast.com/#!/incidentlist?componentId=34990

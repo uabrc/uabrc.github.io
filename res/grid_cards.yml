@@ -112,7 +112,7 @@ platforms:
   cheaha:
     ood:
       overview:
-        title_text: Open OnDemand Web App
+        title_text: Open OnDemand Web Interface
         icon_name: ":octicons-browser-24:"
         content: |
           Check out our interactive science apps, right in your browser!
@@ -160,12 +160,50 @@ data:
       - {{ storage.no_cost.shared.lts }}
     link_url: "data_management/index.md"
   transfer_options:
-    title_text: Transfer Options
+    title_text: Data Transfer Options
     icon_name: ":material-transfer:"
     content: |
       RCS has multiple options for data transfers, within UAB and with other institutions.
       Globus, rclone, and more!
     link_url: "data_management/transfer/index.md"
+
+support:
+  email:
+    title_text: Have a Request?
+    icon_name: ":material-help-box:"
+    content: |
+      Have a request? Facing an issue? Want to scale up?
+    link_text: Send us an email!
+    link_icon_name: ":material-email-fast:"
+    link_url: "{{ support.email }}"
+  office_hours:
+    title_text: Want Virtual Face-to-Face Support?
+    icon_name: ":simple-zoom:"
+    content: |
+      Visit our Zoom office hours!
+
+      {% for event in support.office_hours.events %}
+      - {{ event.day }}: {{ event.starttime }} to {{ event.endtime }} {{support.office_hours.timezone }} | [Zoom]({{ support.office_hours.url }})
+      {% endfor %}
+    link_text: null
+    link_icon_name: null
+    link_url: null
+  servicenow:
+    title_text: Check Your Support Requests
+    icon_name: ":material-progress-question:"
+    content: |
+      Create, review, and respond to service requests with the UAB ServiceNow Portal.
+    link_url: "{{ support.servicenow_url }}"
+  statuscast:
+    title_text: RCS Status Monitor
+    icon_name: ":material-bell:"
+    content: |
+      Check our StatusCast page for the latest on upcoming maintenance windows.
+
+      Subscribe by clicking the bell at the StatusCast page.
+    link_text: "Go To Statuscast"
+    link_icon_name: null
+    link_url: "{{ support.statuscast_url }}"
 # personas:
 #   administrative_staff:
 #     title_text: Administrative Staff

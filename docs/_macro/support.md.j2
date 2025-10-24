@@ -11,3 +11,55 @@
 {% macro help_header(level) -%}
 {{ _header("Help", level) }}
 {%- endmacro %}
+
+{% macro support_card_email() -%}
+{{
+    renderer.render_cards(
+        cards.support.email,
+    )
+}}
+{%- endmacro %}
+
+{% macro support_card_office_hours() -%}
+{{
+    renderer.render_cards(
+        cards.support.office_hours,
+    )
+}}
+{%- endmacro %}
+
+{% macro support_card_servicenow() -%}
+{{
+    renderer.render_cards(
+        cards.support.servicenow,
+    )
+}}
+{%- endmacro %}
+
+{% macro support_card_statuscast() -%}
+{{
+    renderer.render_cards(
+        cards.support.statuscast,
+)
+}}
+{%- endmacro %}
+
+{% macro support_cards_direct() -%}
+{{
+    renderer.render_cards(
+        cards.support.email,
+        cards.support.office_hours,
+    )
+}}
+{%- endmacro %}
+
+{% macro support_cards_all() -%}
+{{
+    renderer.render_cards(
+        cards.support.email,
+        cards.support.office_hours,
+        cards.support.servicenow,
+        cards.support.statuscast,
+    )
+}}
+{%- endmacro %}

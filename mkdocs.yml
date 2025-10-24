@@ -76,6 +76,7 @@ plugins: # order matters!
   - macros:
       include_yaml:
         - res/jinja_env.yml
+        - res/support.yml
       module_name: macros
       on_undefined: strict
       render_by_default: true
