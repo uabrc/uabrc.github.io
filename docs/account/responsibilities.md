@@ -4,7 +4,7 @@ render_macros: true
 
 # Responsibilities, Expectations, and Policies
 
-{% from "_macro/help.md.j2" import contact_support_link %}
+{% from "_macro/support.md.j2" import contact_support_link %}
 
 where responsible and professional use of Cheaha accounts, storage, and computational resources is expected to maintain system integrity and support collaborative research. Please refer below for the eligibility requirements and responsibilities of Research Computing services users.
 

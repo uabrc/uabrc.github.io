@@ -4,7 +4,7 @@ render_macros: true
 
 # Leaving UAB — Continuing Collaboration
 
-{% from "_macro/help.md.j2" import contact_support_link %}
+{% from "_macro/support.md.j2" import contact_support_link %}
 
 Because you intend to have a continuing collaboration after leaving UAB, you will need to transition from your current RCS account to a new one.
 

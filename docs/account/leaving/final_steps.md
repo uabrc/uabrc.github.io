@@ -1,6 +1,6 @@
 # Leaving UAB — Final Steps
 
-{% from "_macro/help.md.j2" import contact_support_link %}
+{% from "_macro/support.md.j2" import contact_support_link %}
 
 All UAB students, staff, and faculty should make arrangements to properly manage their data as they prepare to leave UAB.
 

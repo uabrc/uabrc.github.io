@@ -5,7 +5,7 @@ grace_period_time: thirty (30) day
 
 # Leaving UAB
 
-{% from "_macro/help.md.j2" import contact_support_link %}
+{% from "_macro/support.md.j2" import contact_support_link %}
 
 If your life and career plans take you away from UAB, then this article is designed to help you. We hope to give you a better understanding of expectations and responsibilities for your account and data.
 

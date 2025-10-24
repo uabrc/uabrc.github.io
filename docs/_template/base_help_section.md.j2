@@ -1,4 +1,4 @@
-{% import "_macro/help.md.j2" as help %}
-{{ help.help_header(2) }}
+{% from "_macro/support.md.j2" import contact_support_link, help_header %}
+{{ help_header(2) }}
 
-For help, please {{ help.contact_support_link() }}.
+For help, please {{ contact_support_link() }}.
