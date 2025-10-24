@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
-import os
 import textwrap
 from pathlib import PurePath
-from typing import Callable
+from typing import TYPE_CHECKING, Callable
 
 from macros.card import Card, CardNamespace, EmojiSizesCss, EmojiVerticalAlignmentCss
+from macros.util import normalize_page_link
+
+if TYPE_CHECKING:
+    from mkdocs.structure.pages import Page
 
 
 class CardRenderer:
@@ -15,15 +18,12 @@ class CardRenderer:
 
     def __init__(
         self,
-        j2_renderer: Callable[[str], str],
-        get_page_url_fn: Callable[[], str],
-        *,
-        indent: int = 4,
+        render_j2: Callable[[str], str],
+        get_page: Callable[[], Page],
     ) -> None:
         """Initialize new object."""
-        self._j2_renderer: Callable[[str], str] = j2_renderer
-        self._get_page_url: Callable[[], str] = get_page_url_fn
-        self._indent: int = indent
+        self._j2_renderer: Callable[[str], str] = render_j2
+        self._get_page: Callable[[], Page] = get_page
 
     def render_cards(self, *cards: Card) -> str:
         """Render input to markdown string.
@@ -32,7 +32,7 @@ class CardRenderer:
         """
         parts = [self._div_open]
         extractors = [
-            _CardExtractor(self._get_page_url(), card, self._indent) for card in cards
+            _CardExtractor(self._j2_renderer, self._get_page(), card) for card in cards
         ]
         card_parts = [ex.extract() for ex in extractors]
         card_parts = [part for cards in card_parts for part in cards]
@@ -48,7 +48,7 @@ class CardRenderer:
         *,
         recursive: bool = False,
     ) -> str:
-        """Render input namespaceto markdown string.
+        """Render input namespace to markdown string.
 
         Intended for use with mkdocs-material grid cards.
         """
@@ -60,10 +60,11 @@ class CardRenderer:
 
 
 class _CardExtractor:
-    def __init__(self, page_url: str, card: Card, indent: int) -> None:
-        self._page_url: str = page_url
+    def __init__(self, render_j2: Callable[[str], str], page: Page, card: Card) -> None:
+        self._j2_renderer: Callable[[str], str] = render_j2
+        self._page: Page = page
         self._card: Card = card
-        self._indent: int = indent
+        self._indent: int = 4
 
     def extract(self) -> list[str]:
         indented_block = []
@@ -111,7 +112,7 @@ class _CardExtractor:
 
     def _title_url(self) -> str | None:
         url = self._card.title_url
-        return self._to_url_relative_to_page(url) if url else None
+        return self._prepare_url(url) if url else None
 
     ## ICON
     def _icon(self) -> str | None:
@@ -166,7 +167,7 @@ class _CardExtractor:
 
     def _link_url(self) -> str | None:
         url = self._card.link_url
-        return self._to_url_relative_to_page(url) if url else None
+        return self._prepare_url(url) if url else None
 
     #### HELPERS
     def _clean_and_indent(self, s: str) -> str:
@@ -175,13 +176,13 @@ class _CardExtractor:
         out = out.strip()
         return textwrap.indent(out, " " * self._indent)
 
-    def _to_url_relative_to_page(self, start_url: str) -> str:
-        root = PurePath("/root/")
-
-        link = root / start_url
-        page = root / self._page_url
-
-        return PurePath(os.path.relpath(link, page)).as_posix()
+    def _prepare_url(self, link_target: str) -> str:
+        link_target = self._j2_renderer(link_target)
+        return normalize_page_link(
+            page_url=PurePath(self._page.url),
+            link_target=link_target,
+            page_is_index=self._page.is_index,
+        )
 
     def _to_md_internal_link(self, text: str, url: str) -> str:
         return f"[{text}]({url})"

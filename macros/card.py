@@ -78,8 +78,9 @@ class Card(CardElement):
             icon_size=content.get("icon_size"),
             icon_vertical_alignment=content.get("icon_vertical_alignment"),
             content=content.get("content"),
-            link_text=content.get("link_text"),
             link_url=content.get("link_url"),
+            link_text=content.get("link_text"),
+            link_icon_name=content.get("link_icon_name"),
         )
 
 
