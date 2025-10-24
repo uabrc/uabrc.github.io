@@ -103,7 +103,7 @@ education:
     link_url: "education/training_resources.md"
   dsjc:
     title_text: Data Science Journal Club Course
-    icon_name: ":fontawesome-solid-mortar-board:"
+    icon_name: ":octicons-mortar-board-24:"
     content: |
       We offer a 1 credit hour course: Data Science Journal Club.
     link_url: "education/courses.md#data-science-journal-club-course"
