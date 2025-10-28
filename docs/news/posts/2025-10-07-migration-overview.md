@@ -167,6 +167,23 @@ On GPFS 4, all nodes in the interactive/express/short/medium/long (mainline) par
 
 In rare cases, tools compiled on on Intel processor can cause `Illegal Instruction` errors when run on AMD CPUs. If your jobs were submitted to one of the mainline partitions and show this error after migration, please [contact support](../../index.md#how-to-contact-us). As the migration continues, the standard Intel nodes will also be migrated from GPFS 4 to GPFS 5 and added to the mainline partitions.
 
+**Update**: To help mitigate these issues, we are introducing `amd` and `intel` constraint values for all of our nodes after the initial compute migration. Specifying one of these when submitting jobs to heterogeneous partitions will keep the job from running on a node with incompatible hardware. To use these constraints, specify the `constraint` field when submitting your job.
+
+```bash
+# 1. Use in sbatch headers to force job to run on Intel nodes
+#SBATCH --constraint=intel
+
+
+# 2. Add to sbatch headers to force job to run on AMD nodes
+#SBATCH --constraint=amd
+
+
+# 3. Use in srun CLI
+srun --constraint=intel ...
+```
+
+This option will not be available immediately in interactive apps started from the web portal but will be added at a later date.
+
 #### Compute Migration
 
 To best accomodate workload for both migrated and not-yet-migrated users, compute capacity will be moved from GPFS4 to GPFS5 in two stages: at 50% and 100% user migration progress. Due to hardware networking and rack constraints, we have limited options as far as which nodes we can move at which times. See below for a table listing compute capacity for each partition on GPFS 4 and GPFS 5 after the 50% migration stage.
