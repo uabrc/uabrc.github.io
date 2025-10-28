@@ -93,7 +93,9 @@ Some packages are not available through Anaconda. Often these packages are avail
 
 <!-- markdownlint-disable MD046 -->
 !!! important
-    Make sure `pip` is installed within the `conda` environment and use it for installing packages within the `conda` environment to prevent [Pip related issues](../cheaha/open_ondemand/ood_jupyter.md#pip-installs-packages-outside-of-environment).
+    Make sure `pip` is installed within the `conda` environment, and only run pip within `conda` environments, to prevent hard-to-diagnose issues.
+
+    See our [Pip Installs Packages Outside of Environment section](../cheaha/open_ondemand/ood_jupyter_notebook.md#pip-installs-packages-outside-of-environment) for more details and how to fix the issue.
 <!-- markdownlint-disable MD046 -->
 
 ```bash
@@ -110,24 +112,26 @@ pip install -r packages.txt
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    If you see an output message like "Requirement already satisfied: $package in /home/$USER/.local/lib/python3.xx/site-packages". Please see steps [here](../cheaha/open_ondemand/ood_jupyter.md#pip-installs-packages-outside-of-environment) on how to address this.
+    If you see an output message like "Requirement already satisfied: $package in /home/$USER/.local/lib/python3.xx/site-packages".
+
+    To fix the issue, please see our [Pip Installs Packages Outside of Environment section](../cheaha/open_ondemand/ood_jupyter_notebook.md#pip-installs-packages-outside-of-environment).
 <!-- markdownlint-enable MD046 -->
 
 #### Finding Packages
 
 You may use the [Anaconda page](https://anaconda.org/) to search for packages on Anaconda, or use Google with something like `<package name> conda`. To find packages in PyPI, either use the [PyPI page](https://pypi.org/) to search, or use Google with something like `<package name> pip`.
 
-#### Packages for Jupyter
+#### Jupyter Package Management
 
-For more information about using Anaconda with Jupyter, see the section [Working with Anaconda Environments](../cheaha/open_ondemand/ood_jupyter.md#working-with-anaconda-environments).
+For more information about using Anaconda with Jupyter Notebooks and JupyterLab, see the [Working with Anaconda Environments section](../cheaha/open_ondemand/ood_jupyter_notebook.md#working-with-anaconda-environments).
 
 #### CUDA and cuDNN Package for GPU Usage
 
-For more information about finding CUDA and cuDNN packages for use with GPUs, see the section [CUDA and cuDNN Modules](../cheaha/slurm/gpu.md#cuda-and-cudnn-modules)
+For more information about finding CUDA and cuDNN packages for use with GPUs, see the [CUDA and cuDNN Modules section](../cheaha/slurm/gpu.md#cuda-and-cudnn-modules)
 
 #### Performance Considerations for GPUs
 
-See our [Making the Most of GPUs](../cheaha/slurm/gpu.md#making-the-most-of-gpus) for more information about maximizing the performance of GPUs on Cheaha.
+See our [Making the Most of GPUs section](../cheaha/slurm/gpu.md#making-the-most-of-gpus) for more information about maximizing the performance of GPUs on Cheaha.
 
 ### Update Package in an Environment
 

@@ -1,6 +1,6 @@
 # Open OnDemand
 
-[Open OnDemand](https://rc.uab.edu) (OOD) is the web interface to Cheaha HPC resources. We have setup multiple general purpose apps, such as HPC Desktop, Jupyter, RStudio etc, on Cheaha, to make the process of accessing these basic softwares easier. OOD also allows users to setup their own personal applications, as Sandbox apps.
+[Open OnDemand](https://rc.uab.edu) (OOD) is the web interface to Cheaha HPC resources. We have setup multiple general purpose apps, such as HPC Desktop, Jupyter Notebook, JupyterLab, RStudio etc, on Cheaha, to make the process of accessing these basic softwares easier. OOD also allows users to setup their own personal applications, as Sandbox apps.
 
 This article will walk you through how to set up an OOD Sandbox app. For ease of understanding, the article is split into the following sections:
 

@@ -79,6 +79,7 @@ plugins: # order matters!
         cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
         cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
         cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_jupyter.md: cheaha/open_ondemand/ood_jupyter_notebook.md
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
         contributor_guide.md: contributing/contributor_guide.md
         data_management/cheaha_gpfs_storage.md: data_management/cheaha_storage_gpfs/index.md
@@ -173,7 +174,8 @@ nav:
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
           - HPC Desktop: cheaha/open_ondemand/hpc_desktop.md
-          - Jupyter: cheaha/open_ondemand/ood_jupyter.md
+          - Jupyter Notebook: cheaha/open_ondemand/ood_jupyter_notebook.md
+          - JupyterLab: cheaha/open_ondemand/ood_jupyterlab.md
           - RStudio: cheaha/open_ondemand/ood_rstudio.md
           - MATLAB: cheaha/open_ondemand/ood_matlab.md
       - Hardware: cheaha/hardware.md
