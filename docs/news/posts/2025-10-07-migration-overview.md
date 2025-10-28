@@ -195,6 +195,12 @@ During the migration, be aware that job wait times are expected to increase base
 
 Existing quotas on project spaces have not been altered as part of the migration in order to smoothly accommodate existing data. Quotas will be enforced as the sum of storage used across both GPFS and CephFS. Future changes to quotas will be communicated when appropriate.
 
+<!-- markdownlint-disable MD046 -->
+!!! Note
+
+    Quota reports do not currently show the amount of storage used in Ceph, only the total size of the files on GPFS 5. The stubs only contain metadata and so are very small. As you interact with your files, and they are recalled to GPFS 5, your reported storage used will increase by the size of the recalled files.
+<!-- markdownlint-enable MD046 -->
+
 ### Scratch
 
 Network scratch space (`/scratch`) will have a couple of major changes moving forward
