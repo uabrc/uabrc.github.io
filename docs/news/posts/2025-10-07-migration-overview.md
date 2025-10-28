@@ -169,17 +169,21 @@ In rare cases, tools compiled on on Intel processor can cause `Illegal Instructi
 
 #### Compute Migration
 
-To best accomodate workload for both migrated and not-yet-migrated users, compute capacity will be moved from GPFS4 to GPFS5 in two stages: at 50% and 100% user migration progress. Due to hardware networking and rack constraints, we have limited options as far as which nodes we can move at which times. See below for a list of which nodes will be migrated to GPFS 5 at which time.
+To best accomodate workload for both migrated and not-yet-migrated users, compute capacity will be moved from GPFS4 to GPFS5 in two stages: at 50% and 100% user migration progress. Due to hardware networking and rack constraints, we have limited options as far as which nodes we can move at which times. See below for a table listing compute capacity for each partition on GPFS 4 and GPFS 5 after the 50% migration stage.
 
 **50% Migration Completion**:
 
-- All pascalnodes (18 total nodes on GPFS 5, 72 available P100s)
-- 10 amperenodes (15 total on GPFS 5, 30 available A100s)
-
-**100% Migration Completion**:
-
-- 5 amperenodes (20 total on GPFS 5)
-- All largemem nodes (14 total on GPFS 5)
+| Partition | GPFS 4 Nodes | GPFS 5 Nodes | Notes |
+|---|---|---|---|
+| mainline | 25 | 68 | GPFS 4 mainline partitions will use the remaining largemem and amd-hdr100 nodes. Mixed Intel and AMD hardware on both GPFS 4 and GPFS 5 |
+| pascalnodes | 0 | 17 |  |
+| pascalnodes-medium | 0 | 8 |  |
+| amperenodes | 5 (10 A100s) | 15 (30 A100s) |  |
+| amperenodes-medium | 1 (2 A100s) | 7 (14 A100s) |  |
+| largemem | 13 | 0 | Shared with mainline partitions |
+| largemem-long | 5 | 0 | Shared with mainline partitions |
+| amd-hdr100 | 12 | 20 | Shared with mainline partitions |
+| intel-dcb | 9 | 0 |  |
 
 #### Effects on Queue Times
 
