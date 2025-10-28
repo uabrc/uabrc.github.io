@@ -85,7 +85,7 @@ Due to high variability in file structure and content across users and communiti
 - **Thursday, October 9**: Notification of impending migration sent to members of community 1
 - **Saturday, October 11**: Migration for community 1 begins
 
-The migration will proceed through our predefined communities continuously until finished. Beyond the dates given, we cannot predict when each community will be transferred. The full migration is expected to last through the end of October.
+The migration will proceed through our predefined communities continuously until finished. Beyond the dates given, we cannot predict when each community will be transferred. The full migration is expected to last through ~~the end of October~~ November 14.
 
 ## GPFS 5 Data Tiering
 
