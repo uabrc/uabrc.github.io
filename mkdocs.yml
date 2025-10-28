@@ -75,7 +75,7 @@ plugins: # order matters!
   - glightbox
   - macros:
       include_yaml:
-        - res/jinja_context.yml
+        - res/docs_template_context.yml
       j2_extensions:
         - jinja2_workarounds.MultiLineInclude
       module_name: macros
