@@ -23,6 +23,7 @@ The Carpentries is a 501(c)3 non-profit organization dedicated to educating rese
     - [Genomics Curriculum](https://datacarpentry.org/lessons/#genomics-workshop)
     - [Image Processing Curriculum](https://datacarpentry.org/lessons/#image-processing-curriculum)
 - [HPC Carpentries](https://www.hpc-carpentry.org/community-lessons/): a page dedicated to sharing HPC-oriented, high-quality, peer-reviewed lessons following Carpentries' teaching standards. Start your journey into High-Performance Computing with the [Introduction to HPC page](https://carpentries-incubator.github.io/hpc-intro/).
+- [Introduction to Deep Learning](https://carpentries-lab.github.io/deep-learning-intro/): (still in development) a course designed to provide researchers with an introductory first step to deep learning.
 
 ### Rigor & Reproducibility Tools
 

@@ -5,6 +5,7 @@ Owner,Individual: per researcher<br>Group: Lab PI or Core Director,Individual Re
 Accessible From,- Cheaha<br>- Globus,- Cheaha<br>- Globus,- Cheaha<br>- Globus,Cheaha,Cheaha
 Cheaha Path,No path; see [LTS Interfaces](lts/interfaces.md).,`/home/$USER` (`$HOME`) and `/data/user/$USER` (`$USER_DATA`),`/data/project/<name>`,`/scratch/$USER` (`$USER_SCRATCH`),`/local/$SLURM_JOB_ID`
 Read/Write (IO) Speed,Slower,Fast,Fast,Fast,Fastest
+Redundancy,Erasure Coding (9+3),RAID 6,RAID 6,RAID 6,N/A (Ephermal; data may be deleted anytime)
 Responsibilities & Procedures,PI/Director responsible for data and access control.,,PI/Director responsible for data and access control.,Data deleted after 30 days.,Data deleted as needed.
 Access Control,[Bucket policies](./lts/iam_and_policies.md),Self only,[`chmod`](../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [ACLs](../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl),Self only,Self only
 How to Request,Upon request.,Comes with Cheaha account.,Upon request.,Comes with Cheaha account.,Comes with Cheaha account.
