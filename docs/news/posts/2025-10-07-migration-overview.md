@@ -85,7 +85,7 @@ Due to high variability in file structure and content across users and communiti
 - **Thursday, October 9**: Notification of impending migration sent to members of community 1
 - **Saturday, October 11**: Migration for community 1 begins
 
-The migration will proceed through our predefined communities continuously until finished. Beyond the dates given, we cannot predict when each community will be transferred. The full migration is expected to last through the end of October.
+The migration will proceed through our predefined communities continuously until finished. Beyond the dates given, we cannot predict when each community will be transferred. The full migration is expected to last through ~~the end of October~~ November 14.
 
 ## GPFS 5 Data Tiering
 
@@ -167,21 +167,40 @@ On GPFS 4, all nodes in the interactive/express/short/medium/long (mainline) par
 
 In rare cases, tools compiled on on Intel processor can cause `Illegal Instruction` errors when run on AMD CPUs. If your jobs were submitted to one of the mainline partitions and show this error after migration, please [contact support](../../index.md#how-to-contact-us). As the migration continues, the standard Intel nodes will also be migrated from GPFS 4 to GPFS 5 and added to the mainline partitions.
 
-Once the migration is complete, the partitions will return to their current configuration separating AMD nodes into separate partitions from Intel nodes.
+**Update**: To help mitigate these issues, we are introducing `amd` and `intel` constraint values for all of our nodes after the initial compute migration. Specifying one of these when submitting jobs to heterogeneous partitions will keep the job from running on a node with incompatible hardware. To use these constraints, specify the `constraint` field when submitting your job.
+
+```bash
+# 1. Use in sbatch headers to force job to run on Intel nodes
+#SBATCH --constraint=intel
+
+
+# 2. Add to sbatch headers to force job to run on AMD nodes
+#SBATCH --constraint=amd
+
+
+# 3. Use in srun CLI
+srun --constraint=intel ...
+```
+
+This option will not be available immediately in interactive apps started from the web portal but will be added at a later date.
 
 #### Compute Migration
 
-To best accomodate workload for both migrated and not-yet-migrated users, compute capacity will be moved from GPFS4 to GPFS5 in two stages: at 50% and 100% user migration progress. Due to hardware networking and rack constraints, we have limited options as far as which nodes we can move at which times. See below for a list of which nodes will be migrated to GPFS 5 at which time.
+To best accomodate workload for both migrated and not-yet-migrated users, compute capacity will be moved from GPFS4 to GPFS5 in two stages: at 50% and 100% user migration progress. Due to hardware networking and rack constraints, we have limited options as far as which nodes we can move at which times. See below for a table listing compute capacity for each partition on GPFS 4 and GPFS 5 after the 50% migration stage.
 
 **50% Migration Completion**:
 
-- All pascalnodes (18 total nodes on GPFS 5, 72 available P100s)
-- 10 amperenodes (15 total on GPFS 5, 30 available A100s)
-
-**100% Migration Completion**:
-
-- 5 amperenodes (20 total on GPFS 5)
-- All largemem nodes (14 total on GPFS 5)
+| Partition | GPFS 4 Nodes | GPFS 5 Nodes | Notes |
+|---|---|---|---|
+| mainline | 25 | 68 | GPFS 4 mainline partitions will use the remaining largemem and amd-hdr100 nodes. Mixed Intel and AMD hardware on both GPFS 4 and GPFS 5 |
+| pascalnodes | 0 | 17 |  |
+| pascalnodes-medium | 0 | 8 |  |
+| amperenodes | 5 (10 A100s) | 15 (30 A100s) |  |
+| amperenodes-medium | 1 (2 A100s) | 7 (14 A100s) |  |
+| largemem | 13 | 0 | Shared with mainline partitions |
+| largemem-long | 5 | 0 | Shared with mainline partitions |
+| amd-hdr100 | 12 | 20 | Shared with mainline partitions |
+| intel-dcb | 9 | 0 |  |
 
 #### Effects on Queue Times
 
@@ -192,6 +211,12 @@ During the migration, be aware that job wait times are expected to increase base
 ### Quotas
 
 Existing quotas on project spaces have not been altered as part of the migration in order to smoothly accommodate existing data. Quotas will be enforced as the sum of storage used across both GPFS and CephFS. Future changes to quotas will be communicated when appropriate.
+
+<!-- markdownlint-disable MD046 -->
+!!! Note
+
+    Quota reports do not currently show the amount of storage used in Ceph, only the total size of the files on GPFS 5. The stubs only contain metadata and so are very small. As you interact with your files, and they are recalled to GPFS 5, your reported storage used will increase by the size of the recalled files.
+<!-- markdownlint-enable MD046 -->
 
 ### Scratch
 
