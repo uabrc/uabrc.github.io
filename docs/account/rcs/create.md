@@ -128,7 +128,6 @@ Research Computing has many services available to RCS account holders. To learn 
 
 === "Research Faculty Supervisor | Core Director"
 
-    {% filter indent(4) %}
     {{
         renderer.render_cards(
             cards.platforms.cheaha.ood.overview,
@@ -139,8 +138,7 @@ Research Computing has many services available to RCS account holders. To learn 
             cards.platforms.cloud_rc.web_server,
             cards.account.code_rc_create,
         )
-    }}
-    {% endfilter %}
+    }} | indent(4)
 <!-- markdownlint-enable MD046 -->
 
 {% include "_template/base_help_section.md.j2" %}
