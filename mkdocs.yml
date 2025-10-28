@@ -1,6 +1,6 @@
 site_name: Research Computing Documentation
 repo_url: https://github.com/uabrc/uabrc.github.io/
-edit_uri: edit/main/docs/
+edit_uri: blob/main/docs/
 
 theme:
   name: material
@@ -11,6 +11,7 @@ theme:
     - navigation.indexes
     - navigation.instant
     - content.code.copy
+    - content.action.edit
   favicon: images/favicon.png
   logo: images/logo.png
 
@@ -39,19 +40,32 @@ markdown_extensions:
   - toc:
       permalink: true
 
-plugins:
+plugins: # order matters!
   - search
-  - table-reader:
-      data_path: docs
+  - meta
+  - blog:
+      archive_date_format: MMMM yyyy
+      archive_url_date_format: yyyy/MM
+      blog_dir: news
+      blog_toc: true
+      post_date_format: full
+      post_excerpt: required
+      post_readtime: false
+      categories_allowed:
+        - Known Issues
+        - Maintenance
+        - Outreach
+        - Survey
   - gen-files:
       scripts:
         - scripts/pandoc_generator.py
   - git-revision-date-localized:
       strict: false
       type: date
-      strict: false
-  - glightbox:
-      # auto_caption: true
+  - glightbox
+  - table-reader:
+      data_path: docs
+  - title-casing
   - redirects:
       redirect_maps:
         account_management/gitlab_researcher.md: account_management/gitlab_account.md
@@ -61,12 +75,21 @@ plugins:
         account_management/xias_users.md: account_management/xias/pi_guest_management.md
         cheaha/conda.md: cheaha/software/software.md#anaconda-on-cheaha
         cheaha/lmod.md: cheaha/software/modules.md
+        cheaha/open_ondemand/ood_files.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
+        cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
+        cheaha/open_ondemand/ood_jupyter.md: cheaha/open_ondemand/ood_jupyter_notebook.md
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
         contributor_guide.md: contributing/contributor_guide.md
+        data_management/cheaha_gpfs_storage.md: data_management/cheaha_storage_gpfs/index.md
         data_management/LTS/lts.md: data_management/lts/index.md
-        data_management/LTS/sharing.md: data_management/lts/policies.md
+        data_management/LTS/sharing.md: data_management/lts/iam_and_policies.md
         data_management/lts/lts.md: data_management/lts/index.md
-        data_management/lts/sharing.md: data_management/lts/policies.md
+        data_management/lts/policies.md: data_management/lts/iam_and_policies.md
+        data_management/lts/sharing.md: data_management/lts/iam_and_policies.md
+        data_management/cheaha_storage_gpfs/project_directory_organization.md: data_management/cheaha_storage_gpfs/project_directories.md#project-directory-organization
+        data_management/storage.md: data_management/index.md
         environment_management/anaconda_environments.md: workflow_solutions/using_conda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/git_collaboration.md
@@ -79,10 +102,6 @@ plugins:
         welcome/rc_days.md: education/research_computing_days/index.md
         welcome/welcome.md: index.md
         workflow_solutions/getting_software_with_git.md: workflow_solutions/git_collaboration.md
-        cheaha/open_ondemand/ood_main.md: cheaha/open_ondemand/ood_layout.md
-        cheaha/open_ondemand/ood_files.md: cheaha/open_ondemand/ood_layout.md
-        cheaha/open_ondemand/ood_jobs.md: cheaha/open_ondemand/ood_layout.md
-        cheaha/open_ondemand/ood_interactive.md: cheaha/open_ondemand/index.md
         workflow_solutions/using_anaconda.md: workflow_solutions/using_conda.md
 
 exclude_docs: |
@@ -93,6 +112,8 @@ not_in_nav: |
 
 nav:
   - Home: index.md
+  - News:
+      - news/index.md
   - Account Management:
       - account_management/index.md
       - Cheaha Account: account_management/cheaha_account.md
@@ -101,28 +122,40 @@ nav:
           - "For PIs - (1) Managing Projects & Sites": account_management/xias/pi_site_management.md
           - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
           - "For Guests - Account Creation": account_management/xias/guest_instructions.md
-      - Gitlab Account: account_management/gitlab_account.md
+      - GitLab Account: account_management/gitlab_account.md
+      - Leaving UAB: account_management/leaving_uab.md
   - Data Management:
-      - Cheaha Storage: data_management/storage.md
+      - data_management/index.md
+      - Cheaha Storage (GPFS):
+          - data_management/cheaha_storage_gpfs/index.md
+          - User and Home Directories: data_management/cheaha_storage_gpfs/individual_directories.md
+          - Project Directories: data_management/cheaha_storage_gpfs/project_directories.md
+          - Network Scratch: data_management/cheaha_storage_gpfs/network_scratch.md
+          - Local Scratch: data_management/cheaha_storage_gpfs/local_scratch.md
+          - Temporary Files (/tmp/ Directory): data_management/cheaha_storage_gpfs/temporary_files.md
       - Storage Alternatives: data_management/alternate_storage.md
       - Long Term Storage:
           - data_management/lts/index.md
           - Tutorial:
               - data_management/lts/tutorial/index.md
-              - LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
-          - Interfacing with LTS: data_management/lts/interfaces.md
-          - Bucket Permissions: data_management/lts/policies.md
+              - Individual LTS and s3cmd Workflow: data_management/lts/tutorial/individual_lts_tutorial.md
+              - Shared LTS and s3cmd Workflow: data_management/lts/tutorial/shared_lts_tutorial.md
+          - Interfacing With LTS: data_management/lts/interfaces.md
+          - Identity and Access Management: data_management/lts/iam_and_policies.md
           - UAB Core Accounts: data_management/lts/lts_cores.md
           - FAQ: data_management/lts/lts_faq.md
-      - Transfer:
+      - Data Transfer Tools:
+          - data_management/transfer/index.md
           - Tutorial:
               - data_management/transfer/tutorial/index.md
               - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
-              - Globus for Groups: data_management/transfer/tutorial/globus_group_tutorial.md
+              - Globus for Organizations: data_management/transfer/tutorial/globus_organization_tutorial.md
+              - Globus Group Management: data_management/transfer/tutorial/globus_group_management.md
           - Globus: data_management/transfer/globus.md
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
       - Code Storage: data_management/code_storage.md
+      - Research Data Responsibilities: data_management/research_data_responsibilities.md
   - Workflow Solutions:
       - Using the Shell: workflow_solutions/shell.md
       - Using Conda: workflow_solutions/using_conda.md
@@ -131,7 +164,8 @@ nav:
       - Using Git: workflow_solutions/git.md
       - R Projects and Environments: workflow_solutions/r_environments.md
       - Software Containers: workflow_solutions/getting_containers.md
-      - Software Collaboration with GitHub and GitLab: workflow_solutions/git_collaboration.md
+      - Software Collaboration With GitHub and GitLab: workflow_solutions/git_collaboration.md
+      - Creating Sandbox Apps: workflow_solutions/creating_sandbox_apps.md
   - Cheaha Guide:
       - Getting Started: cheaha/getting_started.md
       - Tutorials:
@@ -141,14 +175,15 @@ nav:
           - cheaha/open_ondemand/index.md
           - Using the Web Portal: cheaha/open_ondemand/ood_layout.md
           - HPC Desktop: cheaha/open_ondemand/hpc_desktop.md
-          - Jupyter: cheaha/open_ondemand/ood_jupyter.md
+          - Jupyter Notebook: cheaha/open_ondemand/ood_jupyter_notebook.md
+          - JupyterLab: cheaha/open_ondemand/ood_jupyterlab.md
           - RStudio: cheaha/open_ondemand/ood_rstudio.md
           - MATLAB: cheaha/open_ondemand/ood_matlab.md
       - Hardware: cheaha/hardware.md
       - Software:
-          - Pre-installed Modules: cheaha/software/modules.md
+          - Pre-Installed Modules: cheaha/software/modules.md
           - Self-Installed Software: cheaha/software/software.md
-      - SLURM:
+      - Slurm:
           - Introduction: cheaha/slurm/introduction.md
           - Slurm Tutorial: cheaha/slurm/slurm_tutorial.md
           - Submitting Jobs: cheaha/slurm/submitting_jobs.md
@@ -163,13 +198,16 @@ nav:
           - (1) Networks: uab_cloud/tutorial/networks.md
           - (2) Security Policies: uab_cloud/tutorial/security.md
           - (3) Instances: uab_cloud/tutorial/instances.md
-          - (4) Volumes (optional): uab_cloud/tutorial/volumes.md
+          - (4) Volumes (Optional): uab_cloud/tutorial/volumes.md
       - Remote Access: uab_cloud/remote_access.md
       - Installing Software: uab_cloud/installing_software.md
+      - Hardware: uab_cloud/hardware.md
       - Snapshots and Images: uab_cloud/snapshots.md
       - Sharing Cloud Environment: uab_cloud/sharing_cloud_environment.md
   - UAB Kubernetes Guide:
+      - kubernetes/index.md
       - Startup: kubernetes/startup.md
+      - Hardware: kubernetes/hardware.md
   - National Research Computing Cyberinfrastructure:
       - national_ci/index.md
       - The Open Science Grid: national_ci/osg.md
@@ -177,18 +215,23 @@ nav:
       - NIH Cyberinfrastructure: national_ci/nih.md
   - Grants & Contracts:
       - RC Facilities Description: grants/facilities.md
-      - Acknowlding Us in Publications: grants/publications.md
+      - Acknowledging Us in Publications: grants/publications.md
       - Funding Opportunities: grants/opportunities.md
   - Outreach & Training:
       - Case Studies: education/case_studies.md
+      - Research Computing Courses: education/courses.md
+      - Training Resources: education/training_resources.md
+      - Scientific Domain-Specific Analysis Software:
+          - education/domain_specific_software/index.md
+          - Genetics & Omics: education/domain_specific_software/omics.md
+      - Research Operations Software: education/research_operations_software.md
       - Research Computing Days:
           - education/research_computing_days/index.md
-      - Offered Courses: education/courses.md
-      - Training Resources: education/training_resources.md
   - Policies: policies.md
   - Reporting Documentation Errors: contributing/reporting_errors.md
   - Contributing Content: contributing/contributor_guide.md
   - Help:
+      - help/index.md
       - Support: help/support.md
       - FAQ - Frequently Asked Questions: help/faq.md
 
@@ -205,3 +248,4 @@ validation:
 
 watch:
   - scripts
+  - theme

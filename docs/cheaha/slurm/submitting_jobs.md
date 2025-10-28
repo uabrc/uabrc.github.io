@@ -1,4 +1,4 @@
-# Submitting Jobs with Slurm
+# Submitting Jobs With Slurm
 
 Processing computational tasks with Cheaha at the terminal requires submitting jobs to the Slurm scheduler. Slurm offers two commands to submit jobs: `sbatch` and `srun`. Always use `sbatch` to submit jobs to the scheduler, unless you need an [interactive terminal](#interactive-jobs-with-srun). Otherwise only use `srun` within `sbatch` for submitting job steps within an [`sbatch` script](#batch-jobs-with-sbatch) context.
 
@@ -34,7 +34,9 @@ Please see [Cheaha Hardware](../hardware.md#summary) for more information. Remem
 
 ### Requesting GPUs
 
-Please see the [GPUs page](gpu.md) for more information.
+Please see the [GPUs page](gpu.md) for more information. Take note that you'll need to take special care of how you submit GPU jobs to maximize performance. See our [Making the Most of GPUs Section](./gpu.md#making-the-most-of-gpus)
+
+See our [GPU Jobs Tutorial](./slurm_tutorial.md#example-6-gpu-jobs) for an introduction.
 
 ### Dynamic `--output` and `--error` File Names
 
@@ -49,7 +51,7 @@ For example if using `--job-name=my-job`, then to create an output file like `my
 
 If also using `--array=0-4`, then to create an output file like `my-job-12345678-0` use `--output=%x-%A-%a`.
 
-## Batch Jobs with `sbatch`
+## Batch Jobs With `sbatch`
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -63,7 +65,7 @@ For batch jobs, flags are typically included as directive comments at the top of
 
 ### A Simple Batch Job
 
-Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/storage.md#user-data-and-home-directories) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
+Below is an example batch job script. To test it, copy and paste it into a plain text file `testjob.sh` in your [Home Directory](../../data_management/cheaha_storage_gpfs/individual_directories.md#home-and-user-data-directories) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testjob.sh`. Momentarily, two text files with `.out` and `.err` suffixes will be produced in your home directory.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -100,7 +102,7 @@ There is a lot going on in the above script, so let's break it down. There are t
 
 Building on the job script above, below is an array job. Array jobs are useful when you need to perform the same analysis on slightly different inputs with no interaction between those analyses. We call this situation "pleasingly parallel". We can take advantage of an array job using the variable `$SLURM_ARRAY_TASK_ID`, which will have an integer in the set of values we give to the `--array` flag.
 
-To test the script below, copy and paste it into a plain text file `testarrayjob.sh` in your [Home Directory](../../data_management/storage.md#user-data-and-home-directories) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testarrayjob.sh`. Momentarily, 16 text files with `.out` and `.err` suffixes will be produced in your home directory.
+To test the script below, copy and paste it into a plain text file `testarrayjob.sh` in your [Home Directory](../../data_management/cheaha_storage_gpfs/individual_directories.md#home-and-user-data-directories) on Cheaha. Run it at the terminal by navigating to your home directory by entering `cd ~` and then entering `sbatch testarrayjob.sh`. Momentarily, 16 text files with `.out` and `.err` suffixes will be produced in your home directory.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -141,11 +143,23 @@ For more details on using `sbatch` please see the [official documentation](https
     If you are using bash or shell arrays, it is crucial to note they use 0-based indexing. Plan your `--array` flag indices accordingly.
 <!-- markdownlint-enable MD046 -->
 
+#### Throttling in Slurm Array Jobs
+
+Throttling in Slurm array jobs refers to limiting the number of concurrent jobs that can run simultaneously. This approach prevents the overloading of computing resources and ensures fair distribution of resources among users. From a performance perspective, throttling helps optimize overall job performance by reducing resource contention across the Cheaha cluster. When too many jobs run at the same time, they may compete for CPU, memory, or I/O, which can negatively impact performance. Please [contact us](../../index.md#how-to-contact-us) if your research needs exceed our capacity.
+
+To limit the number of concurrent jobs in a Slurm array, you can use the `%` separator. Here’s how to use it in the above example:
+
+```bash
+sbatch --array=0-9%4 job.sh
+```
+
+In this example, only 4 jobs will run concurrently, regardless of the total number of jobs (10) in the array.
+
 ### Batch Array Jobs With Dynamic or Computed Indices
 
 For a practical example with dynamic indices, please visit our [Practical `sbatch` Examples](practical_sbatch.md)
 
-## Interactive Jobs with `srun`
+## Interactive Jobs With `srun`
 
 Jobs should be submitted to the Slurm job scheduler either using a [batch job](#batch-jobs-with-sbatch) or an [Open OnDemand (OOD) interactive job](../open_ondemand/index.md).
 
@@ -170,7 +184,7 @@ srun: job 21648044 has been allocated resources
 
 The above example allocates a compute node with a 8GB of RAM on a `medium` partition with `--ntasks=2` to run short tasks.
 
-### `srun` for running parallel jobs
+### `srun` for Running Parallel Jobs
 
 `srun` is used to run executables in parallel, and is used within `sbatch` script. Let us see an example where `srun` is used to launch multiple (parallel) instances of a job.
 
@@ -266,6 +280,6 @@ Questions to ask yourself when requesting job resources:
 
 To get the most out of your Cheaha experience and ensure your jobs get through the queue as fast as possible, please read about [Job Efficiency](../job_efficiency.md).
 
-## Faster Queuing with Job Efficiency
+## Faster Queuing With Job Efficiency
 
 Please see our page on [Job Efficiency](../job_efficiency.md) for more information on making the best use of cluster resources to minimize your queue wait times.

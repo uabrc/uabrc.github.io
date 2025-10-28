@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    These instructions are intended for use by UAB-employed PIs to organize external collaborators, also known as guests. UAB PIs: Please direct guests [here](guest_instructions.md) for instructions on creating their accounts.
+    These instructions are intended for use by UAB-employed PIs to organize external collaborators, also known as guests. UAB PIs: Please direct guests to our [Guest Instructions](guest_instructions.md) to create their accounts.
 <!-- markdownlint-enable MD046 -->
 
 XIAS Project/Sites, or simply sites, tie external users to specific resources at UAB. By connecting people to the resource they use, UAB can maintain security and accountability. Creating a site is the first step to giving access to external collaborators, and the process can be thought of as "create once, use many times". All sites must have an expiration date for security reasons. To create a site you'll need at least one Uniform Resource Identifier (URI) relating to resources used by the site. If you aren't sure what URI(s) to list for your site, please contact <UserServices@uab.edu>.
@@ -22,11 +22,12 @@ XIAS Project/Sites, or simply sites, tie external users to specific resources at
     1. **Longer description** - A complete yet concise description of the project or site and its resources.
     1. **Start date** - The start date, can be today.
     1. **End date** - An expiration date for the project or site.
-    1. **URIs** - One or more uniform resource locators (URIs) associated with the site, to increase accountability.
+    1. **URIs** - One or more uniform resource identifier (URIs) associated with the site, to increase accountability.
 
         1. Cheaha URI: `https://rc.uab.edu`
-        1. Cloud URI: `https://cloud.rc.uab.edu`
-        1. GitLab URI: `https://gitlab.rc.uab.edu`
+        1. Cloud.rc URI: `https://cloud.rc.uab.edu`
+        1. GitLab (code.rc) URI: `https://code.rc.uab.edu`
+        1. Long-Term Storage (LTS) URI: `https://s3.lts.rc.uab.edu`
 
     ![!Filled UAB XIAS Project/Site creation form.](./images/xias_sites_add_002.png)
 

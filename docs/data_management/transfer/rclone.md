@@ -62,7 +62,7 @@ To instead install natively on Windows, you will need to use the following instr
 
 Follow the [online instructions](https://rclone.org/install/#macos-brew) for installing with `brew`.
 
-## Setting up Remotes
+## Setting Up Remotes
 
 RClone is capable of interfacing with many remote cloud services, as well as using `sftp` for connecting two personal computers or servers. We will only cover those [cloud services](https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options) relevant to UAB use. We will not cover how to connect to any other cloud services using RClone. More detailed information is available at the [RClone documentation](https://rclone.org/docs/)
 
@@ -78,7 +78,7 @@ RClone is capable of interfacing with many remote cloud services, as well as usi
     RClone has an unusual user interface, using alternating red and green blocks to differentiate list items. The colors do not convey any particular meaning beyond differentiation.
 <!-- markdownlint-enable MD046 -->
 
-### Setting up an SFTP Remote
+### Setting Up an SFTP Remote
 
 RClone connects two personal computers or servers using SFTP which is built on SSH, so a lot of these instructions mirror what would be done with an SSH configuration.
 
@@ -93,9 +93,9 @@ RClone connects two personal computers or servers using SFTP which is built on S
     - `key_file_pass>` The passphrase used to secure the private key file (optional, but highly recommended)
 1. Verify by using `rclone lsd <name>`.
 
-The official docuemntation for `rclone sftp` is [here](https://rclone.org/sftp/).
+The official documentation for `rclone sftp` can be found at <https://rclone.org/sftp/>.
 
-### Setting up UAB Cloud Remotes
+### Setting Up UAB Cloud Remotes
 
 The setup process for UAB cloud remotes is generally the same, except for the specifics of authentication. The instruction template is outlined below and will point you to the authentication section specific to each remote when it becomes relevant.
 

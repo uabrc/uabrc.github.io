@@ -4,7 +4,8 @@
     "editor.formatOnSave": true,
     "editor.indentSize": 2,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "files.eol": "\n"
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features",
@@ -12,35 +13,45 @@
     "editor.indentSize": 2,
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "files.eol": "\n"
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.formatOnSave": true,
     "editor.indentSize": 2,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "files.eol": "\n"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.formatOnSave": true,
     "editor.indentSize": 2,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "files.eol": "\n"
   },
   "[markdown]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.markdownlint": "explicit"
     },
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.formatOnSave": true,
     "editor.indentSize": 4,
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "files.eol": "\n"
+  },
+  "[plaintext]": {
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "files.eol": "\n"
   },
   "[python]": {
     "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
       "source.organizeImports": "explicit"
     },
     "editor.defaultFormatter": "charliermarsh.ruff",
@@ -48,23 +59,46 @@
     "editor.formatOnType": true,
     "editor.indentSize": 4,
     "editor.insertSpaces": true,
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
+    "files.eol": "\n"
+  },
+  "[shellscript]": {
+    "editor.indentSize": 2,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "files.eol": "\n"
   },
   "[snippets]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.formatOnSave": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "files.eol": "\n"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.formatOnSave": true,
+    "editor.indentSize": 2,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "files.eol": "\n"
   },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.formatOnSave": true,
     "editor.indentSize": 2,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "files.eol": "\n"
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/node_modules/*": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/*": true
+  },
   "markdown.extension.bold.indicator": "**",
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.list.indentationSize": "inherit",

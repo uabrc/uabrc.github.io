@@ -28,7 +28,7 @@ To begin, projects start at a parent or root directory within which most, if not
 
     ![!Choose which type of project you are wanting to create. This will initialize some files that correspond to specific types of projects depending on what you choose.](images/r_project_type.png)
 
-1. Finally, you will choose your project name, the location for the project directory, as well as choose whether you want to initialize a git repo for the project. In addition, you can choose to use `renv` for package dependency management. Please read more about `renv` [here](#renv). It's highly suggested to use `renv` for future environment reproducibility.
+1. Finally, you will choose your project name, the location for the project directory, as well as choose whether you want to initialize a git repo for the project. In addition, you can choose to use `renv` for package dependency management. More information is available at the [renv section](#renv). It's highly suggested to use `renv` for future environment reproducibility.
 
     ![!Choose the project name and location as well as whether to initialize a git repo and use renv](images/r_name_project.png)
 
@@ -56,7 +56,7 @@ Another useful part of Projects is Git integration. Normally, you would need to 
     To read more about how to get started with Git, please read our [git documentation](git_collaboration.md)
 <!-- markdownlint-enable MD046 -->
 
-1. To begin, you should create an empty repository either at [Github](https://github.com/) or [UAB's Gitlab](https://gitlab.rc.uab.edu/users/sign_in) where your project will be stored. this will open a new page with instructions on linking this remote repository with your local project. Keep these instructions open for later. A picture of the important piece can be seen below.
+1. To begin, you should create an empty repository either at [Github](https://github.com/) or the UAB Research Computing on-premises [Gitlab instance](https://code.rc.uab.edu/users/sign_in) where your project will be stored. this will open a new page with instructions on linking this remote repository with your local project. Keep these instructions open for later. A picture of the important piece can be seen below.
 
     ![! Instructions on how to link an existing local repository with the created remote repository](images/r_push_existing_repo_instructions.png)
 
@@ -83,7 +83,7 @@ Projects are designed to be portable and so use relative paths the vast majority
 
 As well, opening a project will automatically set the working directory to be at the top level of the project. It's inadvisable to the change the working directory location while a project is open.
 
-## renv
+## `renv`
 
 Most, if not all, projects will use some combination of the thousands of packages available in R such as the `tidyverse`. The `renv` package helps manage all of your project's package dependencies as well as provide a way to easily share package environments with other researchers. This functionality is very similar to `conda` and `virtualenv` environments for Python users. More information about `renv` can be found on [their site](https://rstudio.github.io/renv/articles/renv.html). It's suggested to keep a record of the packages your project uses with either `renv` or another tool for general reproducibility.
 

@@ -41,7 +41,9 @@ Questions to ask yourself before requesting resources:
 
 1. How is the software I'm using programmed?
 
-    - Can it use a GPU? Request one.
+    - Can it use a GPU? Request one. Don't forget to consider...
+        - [Local Scratch](../data_management/cheaha_storage_gpfs/local_scratch.md) for [IO performance](../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
+        - `--ntasks-per-socket` when using [Multiple GPUs](../cheaha/slurm/gpu.md#using-multiple-gpus).
     - Can it use multiple cores? Request more than one core.
     - Is it single-threaded? Request only one core.
     - Does it use MPI? Request multiple nodes.

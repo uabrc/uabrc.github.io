@@ -1,6 +1,6 @@
 name: Article Request
 description: Let us know about articles and sections you would like to see
-labels: ["req: article"]
+labels: ["style: article/section 📝"]
 body:
   - type: markdown
     attributes:
@@ -10,7 +10,10 @@ body:
     id: description
     attributes:
       label: What would you like to see added?
-      description: Please tell us about what article or section you think is missing. Please include images and links as appropriate, and tell us where you think the new content would best fit.
+      description:
+        Please tell us about what article or section you think is missing.
+        Please include images and links as appropriate, and tell us where you
+        think the new content would best fit.
       placeholder: Tell us what you would like to see!
     validations:
       required: true

@@ -1,4 +1,4 @@
-# Why use `conda`?
+# Why Use Conda?
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -44,7 +44,7 @@ Benefits of `conda`:
     CAPITAL LETTERS prefixed by a dollar sign `$` are shell variables and do not need to be substituted.
 <!-- markdownlint-enable MD046 -->
 
-## Using `conda`
+## Using Conda
 
 `conda` is a package manager, meaning it handles all of the difficult mathematics and logistics of figuring out exactly what versions of which packages should be downloaded to meet your needs, or inform you if there is a conflict.
 
@@ -112,7 +112,7 @@ conda install CHANNEL::PACKAGE          # most recent version possible
 conda install CHANNEL::PACKAGE=VERSION  # specified version
 ```
 
-#### Installing Packages with Pip
+#### Installing Packages With Pip
 
 When building a `conda` environment, prefer to get all of your packages through `conda` channels to maximize compatibility. Some packages are not available through `conda` channels. Often these packages are available via [PyPI](https://pypi.org/) and may be installed using the Pip package manager. Pip may also be used to install locally-available packages, and directly from GitHub and GitLab repositories.
 
@@ -149,9 +149,9 @@ For packages in PyPI, repeat the process above but use `pypi` in place of `conda
 
 #### Packages for Jupyter
 
-For more information about using `conda` with Jupyter, see the section [Working with `conda` Environments](../cheaha/open_ondemand/ood_jupyter.md#working-with-conda-environments).
+For more information about using `conda` with Jupyter, see the section [Working with `conda` Environments](../cheaha/open_ondemand/ood_jupyter_notebook.md#working-with-conda-environments).
 
-### Update packages in an environment
+### Update Packages in an Environment
 
 In research, there is a balance to be struck between keeping software up-to-date and ensuring replicability of outputs. Updating software regularly ensures you have the most recent bug fixes and the highest level of security. Not updating software means you can be sure the software will behave consistently across all of your data.
 
@@ -194,7 +194,7 @@ To delete an environment, use the following command.
 conda ENVIRONMENT remove --name <env>
 ```
 
-### Working with Environment YAML Files
+### Working With Environment YAML Files
 
 #### Exporting an Environment
 
@@ -208,7 +208,7 @@ conda activate ENVIRONMENT
 conda env export > environment.yml
 ```
 
-#### Creating an Environment from a YAML File
+#### Creating an Environment From a YAML File
 
 To create an environment from a YAML file `environment.yml`, use the following command.
 
@@ -216,7 +216,7 @@ To create an environment from a YAML file `environment.yml`, use the following c
 conda env create --file environment.yml
 ```
 
-#### Sharing your environment file
+#### Sharing Your Environment File
 
 To share your environment for collaboration, there are three ways to export environments.
 
@@ -231,7 +231,7 @@ conda env export --name ENVIRONMENT > environment.yml
 conda list --name ENVIRONMENT --explicit > environment.yml
 ```
 
-#### Replicability versus Portability
+#### Replicability Versus Portability
 
 An environment with only `python 3.10.4`, `numpy 1.21.5` and `jinja2 2.11.2` installed will output something like the following file when `conda env export` is used. This file may be used to precisely replicate the environment as it exists on the machine where `conda env export` was run. Note that the versioning for each package contains two `=` signs. The code like `he774522_0` after the second `=` sign contains hyper-specific build information for the compiled libraries for that package. Sharing this exact file with collaborators may result in frustration if they do not have the exact same operating system and hardware as you, and they would not be able to build this environment. We would say that this environment file is not very portable.
 
@@ -313,11 +313,11 @@ It is important to be aware that by generalizing the YAML file in this way, the 
     The example above is provided only for illustration purposes. The error has since been fixed, but the example above really happened and is helpful to explain version pinning.
 <!-- markdownlint-enable MD046 -->
 
-#### Good Practice for Finding Software Packages on `conda`
+#### Good Practice for Finding Software Packages on Conda
 
 Finding `conda` software packages involves searching through the available channels and repositories to locate the specific packages that contain functions that you need for your environment. Channels instruct `conda` where to look for packages when installation is to be done. In the sections below, you will see information on how to locate packages important for your work, ensure the packages are up-to-date, figure out the best way to install them, and finally compose an environment file for portability and replicability.
 
-##### Step-by-Step Guide to Finding `conda` Software Packages
+##### Step-by-Step Guide to Finding Conda Software Packages
 
 If we find the package at one of the channel sources mentioned above, we can check the Platform version to ensure it is either "noarch" (if available) or linux. After noting the version, we can click the "source" or "repo" link (if available) or "homepage". Then we try to find the latest version. For a package found on GitHub, click "Releases" on the right-hand side. Verify that the latest Release is the same as, or very close to, the version on the `conda-forge` channel or PyPI. If so, the package is being maintained on `conda-forge` or PyPI and suitable for use. Note the exact software name, version, and channel (if not on PyPI). We prefer searching using the following methods, and usually have the most success in the order listed below.
 
@@ -390,11 +390,11 @@ dependencies:
     - http://insert_package_link_here  # For URL links
 ```
 
- For git repos, add them under `- pip:` based on examples [here](https://pip.pypa.io/en/stable/cli/pip_install/#examples). See the section [Replicability versus Portability](#replicability-versus-portability) for more information.
+Add git repos under `- pip:` as shown in the [official documentation examples](https://pip.pypa.io/en/stable/cli/pip_install/#examples). See the section [Replicability versus Portability](#replicability-versus-portability) for more information.
 
 The above configuration is only for illustration purposes, to show how channels and dependencies can be used. It is best to install all of your packages from conda channels, to avoid your environment breaking. Only packages that are unavailable via conda, should be installed via pip. If you run into challenges please [contact us](../index.md#how-to-contact-us).
 
-##### Key Things To Remember
+##### Key Things to Remember
 
 1. Exploring Package Documentation: For each package, check the documentation to understand its features, version history, and compatibility. Documentation can often be found on the Anaconda Cloud package page under the "Documentation" or "Homepage" link shared above in this tutorial.
 

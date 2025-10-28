@@ -105,7 +105,7 @@ If you intend to use your instance as a server host, you'll likely need to set u
 
 Now you should have more information on whether your VM port configuration was successful. Feel free to repeat the steps above for each port, as needed.
 
-#### Verify Server Software is Listening
+#### Verify Server Software Is Listening
 
 Once you have the server set up, you can check which processes are listening on which ports using the following command.
 
@@ -129,7 +129,7 @@ An example of the output is shown below. The most useful columns for us are `Loc
 
 Below are a few examples of installing certain common softwares that may be useful to scientific applications. We are not able to provide diagnostic or troubleshooting support for installation of any software. If you believe these instructions are outdated or in error, please [reach out and let us know](../contributing/reporting_errors.md#how-do-i-report-inaccurate-information).
 
-#### Installing NVidia Drivers
+#### Installing NVIDIA Drivers
 
 1. Run the commands in [Before Installing Software](#before-installing-software).
 1. `sudo apt install ubuntu-drivers-common`
@@ -137,7 +137,7 @@ Below are a few examples of installing certain common softwares that may be usef
 1. Find the line with "recommended" and install the package on that line with `sudo apt install nvidia-driver-###`
 1. Reboot the instance
 
-#### Installing `conda` via Miniforge
+#### Installing Conda via Miniforge
 
 Miniforge is a free and open-source (FOSS) version of Anaconda. If you are a UAB employee, do not use Anaconda or Miniconda. See our [Conda Migration FAQ](../workflow_solutions/conda_migration_faq.md) to understand why.
 
@@ -202,9 +202,9 @@ Follow the instructions located at <https://docs.sylabs.io/guides/3.9/user-guide
 
 #### Installing Jupyter Server
 
-Jupyter Notebooks are a staple of modern research computing, especially when developing new workflows or evaluating the usefulness of software packages.
+[Jupyter Notebooks](../cheaha/open_ondemand/ood_jupyter_notebook.md) are a staple of modern research computing, especially when developing new workflows or evaluating the usefulness of software packages.
 
-The setup process for [cloud.rc](index.md) is more involved than for [Cheaha](../cheaha/getting_started.md). Before using cloud.rc for Jupyter Notebooks, be sure that [Open OnDemand on Cheaha](../cheaha/open_ondemand/ood_jupyter.md) does not meet your needs.
+The setup process for [cloud.rc](index.md) is more involved than for [Cheaha](../cheaha/getting_started.md).
 
 To install, you will need the following pre-requisites. If you are unfamiliar with the terminology or new to cloud.rc, it is highly recommended to first start with our [Introduction](index.md) and follow the tutorial completely.
 

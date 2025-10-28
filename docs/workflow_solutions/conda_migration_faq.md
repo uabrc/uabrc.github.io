@@ -1,6 +1,6 @@
-# `conda` Migration FAQ
+# Conda Migration FAQ
 
-## Why do I need to stop using Anaconda?
+## Why Do I Need to Stop Using Anaconda?
 
 In April, 2020, Anaconda changed from a free-for-everyone licensing model to a free-for-some licensing model. At that time, Anaconda was free to use by individuals for personal use, non-profit organizations of any size (including UAB), and for-profit organizations up to 200 employees.
 
@@ -8,7 +8,7 @@ In March, 2024, Anaconda further restricted its licensing model. Anaconda is now
 
 Use of Anaconda by UAB employees for research purposes violates the Anaconda Terms of Service.
 
-## What counts as "Use of Anaconda"?
+## What Counts as "Use of Anaconda"?
 
 - Downloading and installing Anaconda Software Distributions, including `anaconda` and `miniconda`.
 - Using the `defaults`, `anaconda`, and `r` channels for packages.
@@ -16,21 +16,21 @@ Use of Anaconda by UAB employees for research purposes violates the Anaconda Ter
 
 Using the `conda` executable does not violate the terms of service, provided it is not used to access the channels listed above.
 
-## What is changing on Cheaha?
+## What Is Changing on Cheaha?
 
 We have installed Minforge as a module. To use it, **run `module load Miniforge3`** wherever you would have used `module load Anaconda3`. At a future date, we plan to archive old `Anaconda3` modules and alias the most recent on to the `Miniforge3`. When that has been completed, `module load Anaconda3` will emit a warning and then load the `Miniforge3` module instead. There will be ample notice as we roll out this change.
 
-## Do I need to learn any new technologies?
+## Do I Need to Learn Any New Technologies?
 
 No. However, to avoid violating the Anaconda Terms of Service, there are some actions you will need to take.
 
-## Does this impact my UAB owned laptop, desktop, workstation, or server?
+## Does This Impact My UAB Owned Laptop, Desktop, Workstation, or Server?
 
 Yes. If you are currently using Anaconda channels or any part of the Anaconda Distribution for work purposes as an employee of UAB, then that use is in violation of the Anaconda Terms of Service, regardless of the device or computer.
 
 To remedy this situation, you will need to transition from Anaconda to Miniforge on the affected machines. For UAB managed machines, please contact your IT representatives for assistance with this process.
 
-## What do I need to do to avoid violating the Terms of Service on Cheaha?
+## What Do I Need to Do to Avoid Violating the Terms of Service on Cheaha?
 
 - Replace `module load Anaconda3` with `module load Miniforge3` in your current projects.
 - Remove `defaults`, `anaconda`, and `r` from your channel lists in environment YAML definition files.
@@ -39,7 +39,7 @@ To remedy this situation, you will need to transition from Anaconda to Miniforge
     - Avoid `conda install defaults::$package`, `... anaconda::$package`, and `... r::$package`.
 - If you encounter any errors building environments, please contact support.
 
-## How can I migrate my existing environments?
+## How Can I Migrate My Existing Environments?
 
 - Export existing environments using `conda env export --name $env_name > $env_name.yml` to produce a written record of the environment packages.
 - Open the `$env_name.yml` file in a text editor
@@ -49,7 +49,7 @@ To remedy this situation, you will need to transition from Anaconda to Miniforge
 
 If you encounter any errors please contact support.
 
-## How can I install a new environment from a file?
+## How Can I Install a New Environment From a File?
 
 <!-- markdownlint-disable MD046 -->
 !!! danger
@@ -65,16 +65,16 @@ If you encounter any errors please contact support.
 
 If you encounter any errors please contact support.
 
-## What are good practices to minimize impacts in the future?
+## What Are Good Practices to Minimize Impacts in the Future?
 
 - Record your packages and versions in environment YAML files to make your environments reproducible. `<link>`
 - Store your environment YAML files in a git repository on GitHub or GitLab to make your environments shareable and collaborative. `<link>`
 
-## What do I do if I use Anaconda Navigator to build environments?
+## What Do I Do if I Use Anaconda Navigator to Build Environments?
 
 At this time there does not appear to be a free-to-use alternative to Anaconda Navigator. You will need to use the terminal to create and manage environments. We have a tutorial and ample documentation covering this `<links>`. If you would like further assistance, please contact support.
 
-## What do all of the terms relating to `conda` mean?
+## What Do All of the Terms Relating to Conda Mean?
 
 - **Anaconda** - An ambiguous term that may refer to the company, its package distribution channels, or its software distribution. Sometimes used to reference the package management software `conda`, though this is not correct.
 - **Anaconda Inc.** - The for-profit company that created the well-known ecosystem for scientific python packages. Website: <https://www.anaconda.com/>

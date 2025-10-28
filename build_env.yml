@@ -1,36 +1,35 @@
 name: mkdocs
-channels:
-  - conda-forge
 dependencies:
-  - click=8.1.7
-  - jinja2=3.1.2
-  - libffi=3.4.2
-  - markdown=3.5.2
-  - markupsafe=2.1.4
-  - mergedeep=1.3.4
-  - mkdocs=1.6.0
-  - mkdocs-material=9.5.4
-  - mkdocs-material-extensions=1.3.1
-  - numpy=1.26.3
-  - pandas=2.1.4
-  - pandoc=3.5
-  - pip=23.3.1
-  - pygments=2.17.2
-  - pymdown-extensions=10.7
-  - pypandoc=1.14
-  - pyparsing=3.0.9
-  - python=3.11.7
-  - python-dateutil=2.8.2
-  - python-dotenv=1.0.1
-  - pytz=2023.3
-  - pyyaml=6.0.1
-  - setuptools=69.0.3
-  - six=1.16.0
-  - sqlite=3.44.2
-  - tabulate=0.9.0
-  - tk=8.6.13
-  - xz=5.2.6
-  - yaml=0.2.5
+  - conda-forge::click=8.2.1
+  - conda-forge::jinja2=3.1.6
+  - conda-forge::libffi=3.4.6
+  - conda-forge::markdown=3.8.0
+  - conda-forge::markupsafe=3.0.2 # Not semver, be cautious
+  - conda-forge::mergedeep=1.3.4
+  - conda-forge::mkdocs=1.6.1
+  - conda-forge::mkdocs-material=9.6.14
+  - conda-forge::mkdocs-material-extensions=1.3.1
+  - conda-forge::numpy=2.2.6
+  - conda-forge::pandas=2.3.0
+  - conda-forge::pandoc=3.7.0.2
+  - conda-forge::pip=25.1.1
+  - conda-forge::pygments=2.19.1
+  - conda-forge::pymdown-extensions=10.15 # Not semver, be cautious
+  - conda-forge::pypandoc=1.15
+  - conda-forge::pyparsing=3.0.9
+  - conda-forge::python=3.13.3
+  - conda-forge::python-dateutil=2.9.0
+  - conda-forge::pytz=2025.2
+  - conda-forge::pyyaml=6.0.2
+  - conda-forge::ruff=0.12.0
+  - conda-forge::setuptools=80.9.0
+  - conda-forge::six=1.17.0
+  - conda-forge::sqlite=3.50.0
+  - conda-forge::tabulate=0.9.0
+  - conda-forge::tk=8.6.13
+  - conda-forge::xz=5.8.1
+  - conda-forge::yaml=0.2.5
+  - conda-forge::yamllint=1.37.1
   - pip:
       - mkdocs-gen-files==0.5.0
       - mkdocs-glightbox==0.3.7
@@ -39,4 +38,4 @@ dependencies:
       - mkdocs-table-reader-plugin==2.0.3
       - linkchecker==10.4.0
       - pre-commit==3.7.1
-      - python-dotenv[cli]==1.0.1
+      - git+https://github.com/uabrc/mkdocs-title-casing-plugin.git@stable

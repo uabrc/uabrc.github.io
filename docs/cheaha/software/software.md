@@ -1,22 +1,22 @@
 # Software Installation
 
-## `conda` on Cheaha
+## Conda on Cheaha
 
 For additional general information on using `conda` please see our [Using `conda` page](../../workflow_solutions/using_conda.md).
 
 If you are using Jupyter Notebook, please see our section on [Packages for Jupyter](../../workflow_solutions/using_conda.md#packages-for-jupyter).
 
-### Loading `conda`
+### Loading Conda
 
 `conda` is installed on Cheaha as a family of modules, and does not need to be installed by Researchers. Instead, the most recent version of `conda` installed on Cheaha may be loaded using the command `module load Miniforge3`.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    If you are using [Open OnDemand Jupyter Notebook](../open_ondemand/ood_jupyter.md) you should not use the `module load` command as part of creating the job.
+    If you are using [Open OnDemand Jupyter Notebook](../open_ondemand/ood_jupyter_notebook.md) you do not need to use the `module load` command as part of creating the job.
 <!-- markdownlint-enable MD046 -->
 
-### Using `conda`
+### Using Conda
 
 Once you have loaded the Miniforge module, `conda` on Cheaha works similarly to how it does on other computers. There are a couple of important differences in the callouts below.
 
@@ -55,10 +55,10 @@ Once you have loaded the Miniforge module, `conda` on Cheaha works similarly to 
 
     Using `pip install` in the `base` environment will cause the same hard-to-diagnose errors and broken workflows.
 
-    Read more about this issue, and how to resolve it, [here](#installing-pip-packages-outside-of-your-environments).
+    Read more about this issue, and how to resolve it, at our [Installing pip Packages Section](#installing-pip-packages-outside-of-your-environments).
 <!-- markdownlint-enable MD046 -->
 
-For more information on usage with examples, see [`conda` Environments](../../workflow_solutions/using_conda.md). Need some hands-on experience? You can find instructions on how to install PyTorch and TensorFlow using `conda` in this [tutorial](../tutorial/pytorch_tensorflow.md).
+For more information on usage with examples, see [Conda Environments](../../workflow_solutions/using_conda.md). Need some hands-on experience? You can find instructions on how to install PyTorch and TensorFlow using Conda in this [tutorial](../tutorial/pytorch_tensorflow.md).
 
 ### Installing Pip Packages Outside of Your Environments
 
@@ -76,6 +76,88 @@ Here's an example of the correct procedure for installing `pip` packages within 
 1. Create or activate the desired `conda` environment. Please refer to the [`conda` documentation](../../workflow_solutions/using_conda.md#create-an-environment)
 1. Install `pip` within the `conda` environment using `conda install pip` or `conda install python`. `pip` and `python` are packaged together, installing one will always install the other.
 1. Use `pip` when this `conda` environment is active to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_conda.md#installing-packages-with-pip)
+
+### Obtaining the Latest CUDA and cuDNN Modules
+
+Please see our [CUDA and cuDNN section of the GPU page](../slurm/gpu.md#cuda-and-cudnn-modules).
+
+## Cell Ranger
+
+Cell Ranger is a proprietary software developed by [10x Genomics](https://www.10xgenomics.com/support/software/cell-ranger/latest).
+
+### Licensing
+
+(i) Usage of Cell Ranger is governed by the terms of their [End User License Agreement (EULA)](https://www.10xgenomics.com/legal/end-user-software-license-agreement).
+
+(ii) Cell Ranger is strictly licensed for use with data generated on 10x Genomics instruments and may not be used with data from other platforms.
+
+### Installation
+
+ Cell Ranger can be installed within a researcher’s individual user account on Cheaha. Installation instructions are available on the official [10x Genomics website](https://www.10xgenomics.com/support/software/cell-ranger/latest/tutorials/cr-tutorial-in#download). You will have to use a compute node in Cheaha to install and run the software. For more information refer to [Login Vs Compute Nodes](../../cheaha/getting_started.md#login-vs-compute-nodes).
+
+ Following are steps to install Cell Ranger in Cheaha, based on the instructions provided in the official site, linked above, as of 2025-06-01. Actual instruction steps may change over time.
+
+- [Register](https://www.10xgenomics.com/products/cell-ranger/downloads/eula?closeUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links&redirectUrl=%2Fsupport%2Fsoftware%2Fcell-ranger%2Fdownloads%23download-links%3Fstart%3Dcellranger-9.0.1.tar.gz) and download the desired version of `Cell Ranger` from the [10X Genomics site](https://www.10xgenomics.com/support/software/cell-ranger/downloads).
+
+- Once registration is complete, you will be redirected to the download page with installation instructions. To begin, use the `curl` or `wget` command to download the `.tar.gz` package as directed in the instructions.
+
+- Next, extract the Cell Ranger package using the command below. In this example, version 9.0.1 is used:
+
+    ```bash
+    tar -zxvf cellranger-9.0.1.tar.gz
+    ```
+
+- After the extraction is complete, navigate to the cellranger directory’s bin folder and print its path using the `pwd` command, as shown below:
+
+    ```bash
+    cd cellranger-9.0.1/bin
+    pwd
+    ```
+
+    The `pwd` command will display the full path to the `bin` directory. For example:
+    `/home/$USER/cellranger-9.0.1/bin`
+
+    <!-- markdownlint-disable MD046 -->
+    !!! note
+
+        The actual path may vary depending on where the folder is located in your account.
+    <!-- markdownlint-enable MD046 -->
+
+- To add the above path to your .bashrc file, run the following command. This will append the export line to the end of your `$HOME/.bashrc` file.
+
+    ```bash
+    echo "export PATH=\$PATH:/home/$USER/cellranger-9.0.1/bin" >> $HOME/.bashrc
+    ```
+
+    You can verify the addition by running:
+
+    ```bash
+    cat $HOME/.bashrc
+    ```
+
+    You should see an entry similar to the following in your `$HOME/.bashrc` file:
+
+    ```bash
+    export PATH=$PATH:/home/$USER/cellranger-9.0.1/bin
+    ```
+
+- To apply the changes, either close the terminal and open a new one, or run the following command:
+
+    ```bash
+    source ~/.bashrc
+    ```
+
+- Then, verify that Cell Ranger 9.0.1 is correctly installed by running:
+
+    ```bash
+    cellranger --version
+    ```
+
+    You should see an output like:
+
+    ```bash
+    cellranger cellranger-9.0.1
+    ```
 
 ## Singularity Containers
 

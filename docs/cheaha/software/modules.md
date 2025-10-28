@@ -1,4 +1,4 @@
-# Pre-installed Modules
+# Pre-Installed Modules
 
 Most software available on Cheaha is installed as modules, managed by the Lmod system. This document will provide a basic rundown of using Lmod commands to customize a software environment. `module` is the main command used to interface with module files in Lmod.
 
@@ -61,9 +61,9 @@ If you want to revert to the default modules, you can use:
 module reset
 ```
 
-## Saving Modules using Collections
+## Saving Modules Using Collections
 
-To save time in typing in long list of modules everytime you work on a project, you can save the desired list of modules using module collection. To acheive this, load the desired modules and save them to a collection using a module collection name, as shown below.
+To save time typing in a long list of modules everytime you work on a project, you can save the desired list of modules using module collection. To achieve this, load the desired modules and save them to a collection using a module collection name, as shown below.
 
 ```bash
 module load module_1 module_2 ...
@@ -94,7 +94,7 @@ module savelist
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Using `module save` command without a collection name saves the desired modules in the name `default` to the location $HOME/.lmod.d/default, and causes issue in launching [Open On Demand (OOD) HPC desktop job](../../cheaha/open_ondemand/hpc_desktop.md). The user gets a VNC error such as, `Unable to contact settings server` and/or `Unable to load a failsafe session`.  To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/3).
+    Using `module save` command without a collection name saves the desired modules in the name `default` to the location $HOME/.lmod.d/default, and causes issue in launching [Open On Demand (OOD) HPC desktop job](../../cheaha/open_ondemand/hpc_desktop.md). The user gets a VNC error such as, `Unable to contact settings server` and/or `Unable to load a failsafe session`. To address this issue, it is recommended to follow the instructions outlined in the [FAQ entry](https://ask.cyberinfrastructure.org/t/why-do-i-get-an-error-when-launching-an-open-ondemand-hpc-interactive-session/2496/3).
 <!-- markdownlint-enable MD046 -->
 
 ## Best Practice for Loading Modules
@@ -156,6 +156,12 @@ When using modules in Cheaha, we recommend users to follow these best practices 
 
 Using `module reset` before loading modules separates what software is loaded in the working shell from the software loaded in the script shell. Be aware that forked processes (like scripts) and Slurm commands inherit the environment variables of the working shell, including loaded modules. Here is an example that shows module conflict between cuda11.8 and cuda11.4 versions that may lead to unexpected behavior or an erroneous output.
 
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    The latest CUDA and cuDNN are now available from [Conda](../slurm/gpu.md#cuda-and-cudnn-modules).
+<!-- markdownlint-enable MD046 -->
+
 ```bash
 # Working shell where you may try testing module load and your run script
 $ module load cuda11.4/toolkit
@@ -211,7 +217,7 @@ Use of these software packages without authorization may be a violation of the [
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Versions of IGV prior to `2.11.9` use a compromised version of log4j. Those versions are affected by a serious [remote code execution issue](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44832). Please transition your software to use versions of IGV >= `2.11.9`.
+    Versions of IGV prior to `2.11.9` use a compromised version of log4j. Those versions are affected by a serious [remote code execution issue](https://www.cve.org/CVERecord?id=CVE-2021-44832). Please transition your software to use versions of IGV >= `2.11.9`.
 <!-- markdownlint-enable MD046 -->
 
 ### GSEA
@@ -222,9 +228,17 @@ Use of these software packages without authorization may be a violation of the [
     Versions of GSEA prior to `4.2.3` use a compromised version of log4j. Those versions are affected by a serious [remote code execution issue](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44832). Please transition your software to use versions of GSEA >= `4.2.3`.
 <!-- markdownlint-enable MD046 -->
 
+### Rsync
+
+<!-- markdownlint-disable MD046 -->
+!!! danger
+
+    Versions of Rsync prior to `3.4.0` contain [six known vulnerabilities](https://www.openwall.com/lists/oss-security/2025/01/14/3), some of which allow for arbitrary code execution. The risk to our system is minimal because of scoped user permissions. Nevertheless, Cheaha is now using version 3.4.1. Older versions have been removed, apologies for any inconvenience.
+<!-- markdownlint-enable MD046 -->
+
 ## Known Issues
 
-### Matlab Issues
+### MATLAB Issues
 
 There is a critical, hard-to-diagnose MATLAB parpool bug in versions before R2022a.
 
