@@ -167,8 +167,6 @@ On GPFS 4, all nodes in the interactive/express/short/medium/long (mainline) par
 
 In rare cases, tools compiled on on Intel processor can cause `Illegal Instruction` errors when run on AMD CPUs. If your jobs were submitted to one of the mainline partitions and show this error after migration, please [contact support](../../index.md#how-to-contact-us). As the migration continues, the standard Intel nodes will also be migrated from GPFS 4 to GPFS 5 and added to the mainline partitions.
 
-Once the migration is complete, the partitions will return to their current configuration separating AMD nodes into separate partitions from Intel nodes.
-
 #### Compute Migration
 
 To best accomodate workload for both migrated and not-yet-migrated users, compute capacity will be moved from GPFS4 to GPFS5 in two stages: at 50% and 100% user migration progress. Due to hardware networking and rack constraints, we have limited options as far as which nodes we can move at which times. See below for a list of which nodes will be migrated to GPFS 5 at which time.
