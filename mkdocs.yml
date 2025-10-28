@@ -60,8 +60,8 @@ plugins: # order matters!
       scripts:
         - scripts/pandoc_generator.py
   - git-revision-date-localized:
-      type: date
       strict: false
+      type: date
   - glightbox
   - table-reader:
       data_path: docs
@@ -90,7 +90,7 @@ plugins: # order matters!
         data_management/lts/sharing.md: data_management/lts/iam_and_policies.md
         data_management/cheaha_storage_gpfs/project_directory_organization.md: data_management/cheaha_storage_gpfs/project_directories.md#project-directory-organization
         data_management/storage.md: data_management/index.md
-        environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
+        environment_management/anaconda_environments.md: workflow_solutions/using_conda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/git_collaboration.md
         uab_cloud/cloud_remote_access.md: uab_cloud/remote_access.md
@@ -102,6 +102,7 @@ plugins: # order matters!
         welcome/rc_days.md: education/research_computing_days/index.md
         welcome/welcome.md: index.md
         workflow_solutions/getting_software_with_git.md: workflow_solutions/git_collaboration.md
+        workflow_solutions/using_anaconda.md: workflow_solutions/using_conda.md
 
 exclude_docs: |
   /**/res/*.md
@@ -157,7 +158,8 @@ nav:
       - Research Data Responsibilities: data_management/research_data_responsibilities.md
   - Workflow Solutions:
       - Using the Shell: workflow_solutions/shell.md
-      - Using Anaconda: workflow_solutions/using_anaconda.md
+      - Using Conda: workflow_solutions/using_conda.md
+      - Conda Migration FAQ: workflow_solutions/conda_migration_faq.md
       - Using Workflow Managers: workflow_solutions/using_workflow_managers.md
       - Using Git: workflow_solutions/git.md
       - R Projects and Environments: workflow_solutions/r_environments.md

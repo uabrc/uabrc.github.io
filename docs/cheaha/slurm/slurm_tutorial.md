@@ -131,15 +131,15 @@ This example illustrate a Slurm job that runs a Python script involving [NumPy](
 #SBATCH --output=%x_%j.out          ### Slurm Output file, %x is job name, %j is job id
 #SBATCH --error=%x_%j.err           ### Slurm Error file, %x is job name, %j is job id
 
-### Loading Anaconda3 module to activate `pytools-env` conda environment
-module load Anaconda3
+### Loading Miniforge3 module to activate `pytools-env` conda environment
+module load Miniforge3
 conda activate pytools-env
 
 ### Run the script `python_test.py`
 python python_test.py
 ```
 
-The batch job requires an input file `python_test.py` (line 17) for execution. Copy the input file from the [Containers page](../../workflow_solutions/getting_containers.md#create-your-own-docker-container). Place this file in the same folder as the `numpy.job`. This python script performs numerical integration and data visualization tasks, and it relies on the following packages: numpy, matplotlib, scipy for successful execution. These dependencies can be installed using [Anaconda](../../workflow_solutions/using_anaconda.md) within a `conda` environment named `pytools-env`. Prior to running the script, load the `Anaconda3` module and activate the `pytools-env` environment (line 13 and 14). Once job is successfully completed, check the slurm output file for results. Additionally, a plot named `testing.png` will be generated.
+ The batch job requires an input file `python_test.py` (line 17) for execution. Copy the input file from the [Containers page](../../workflow_solutions/getting_containers.md/#create-your-own-docker-container). Place this file in the same folder as the `numpy.job`. This python script performs numerical integration and data visualization tasks, and it relies on the following packages: numpy, matplotlib, scipy for successful execution. These dependencies can be installed using [`conda`](../../workflow_solutions/using_conda.md) within a `conda` environment named `pytools-env`. Prior to running the script, load the `Miniforge3` module and activate the `pytools-env` environment (line 13 and 14).  Once job is successfully completed, check the slurm output file for results. Additionally, a plot named `testing.png` will be generated.
 
 ```bash
 $ ls
@@ -187,8 +187,8 @@ Multiple jobs or tasks can be executed simultaneously using `srun` within a sing
 #SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id
 #SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id
 
-### Loading Anaconda3 module to activate `pytools-env` conda environment
-module load Anaconda3
+### Loading Miniforge3 module to activate `pytools-env` conda environment
+module load Miniforge3
 conda activate pytools-env
 
 ### Runs the script `python_test.py` in parallel with distinct inputs and ensures synchronization
@@ -330,8 +330,8 @@ The python script (line 24) runs individual array task concurrently on respectiv
 #SBATCH --error=logs/%x_%A_%a.err
 #SBATCH --array=0-2                  ### Array job with 3 tasks (indexed from 0 to 2)
 
-### Loading Anaconda3 module to activate `pytools-env` conda environment
-module load Anaconda3
+### Loading Miniforge3 module to activate `pytools-env` conda environment
+module load Miniforge3
 conda activate pytools-env
 
 ### Calculate the input range for this task
@@ -765,7 +765,7 @@ if gpus:
     print(matmul_sum)
 ```
 
-We will also need to set up a [Conda environment](../software/software.md#anaconda-on-cheaha) suitable for executing this Tensorflow-based code. Please do not try to install Pip packages outside of a Conda environment, as it can result in [hard-to-diagnose errors](../../workflow_solutions/using_anaconda.md#). Copy the following into a file `environment.yml`.
+We will also need to set up a [Conda environment](../software/software.md#conda-on-cheaha) suitable for executing this Tensorflow-based code. Please do not try to install Pip packages outside of a Conda environment, as it can result in [hard-to-diagnose errors](../../workflow_solutions/using_conda.md#). Copy the following into a file `environment.yml`.
 
 ```yaml
 name: tensorflow
@@ -776,7 +776,7 @@ dependencies:
     - tensorflow==2.15.0
 ```
 
-To create the environment, run the following commands. This is a one-time setup for this tutorial. Please see our [Module page](../software/modules.md) and our [Conda page](../software/software.md#anaconda-on-cheaha) for more information about each.
+To create the environment, run the following commands. This is a one-time setup for this tutorial. Please see our [Module page](../software/modules.md) and our [Conda page](../software/software.md#conda-on-cheaha) for more information about each.
 
 ```bash
 module load Anaconda3

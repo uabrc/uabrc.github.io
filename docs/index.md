@@ -5,9 +5,11 @@ The Research Computing System (RCS) provides a framework for sharing research da
 ## News
 
 <!-- markdownlint-disable MD046 -->
-!!! announcement
+!!! important
 
-    Research Computing will be performing a data migration for Cheaha beginning Saturday, October 11 and lasting through the end of the month. Please see our [migration overview](./news/posts/2025-10-07-migration-overview.md) for more information on what to expect during this time.
+    Anaconda has changed its [Terms of Service]. As a consequence, UAB employees are no longer allowed to use the Anaconda Distribution and Anaconda channels within the `conda` software. We are in the process of replacing Anaconda on Cheaha with Miniforge.
+
+    Read more about how this may affect you at our [Conda Migration FAQ](workflow_solutions/conda_migration_faq.md).
 <!-- markdownlint-enable MD046 -->
 
 **Check our [News page](./news/index.md) for recent developments.**

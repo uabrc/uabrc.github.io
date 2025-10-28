@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    These instructions are intended for use by UAB-employed PIs to organize external collaborators, also known as guests. UAB PIs: Please direct guests [here](guest_instructions.md) for instructions on creating their accounts.
+    These instructions are intended for use by UAB-employed PIs to organize external collaborators, also known as guests. UAB PIs: Please direct guests to our [Guest Instructions](guest_instructions.md) to create their accounts.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->

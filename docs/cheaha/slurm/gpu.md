@@ -128,13 +128,13 @@ You will need to load a CUDA module to make use of GPUs on Cheaha. Depending on 
 module -r spider 'CUDA/*'
 ```
 
-As of 2025-02-25, we offer CUDA modules up to version `12.6.0`. If you need a newer version, please use [Conda](../software/software.md#anaconda-on-cheaha) to install CUDA software from the `conda-forge` channel. The packages and relevant commands to install into your newly created [environment](../../workflow_solutions/using_anaconda.md#create-an-environment) are available at the URLs in the following table. Note that you should use different packages depending on the CUDA version you need for your software!
+As of 2025-02-25, we offer CUDA modules up to version `12.6.0`. If you need a newer version, please use [Conda](../software/software.md#conda-on-cheaha) to install CUDA software from the `conda-forge` channel. The packages and relevant commands to install into your newly created [environment](../../workflow_solutions/using_conda.md#create-an-environment) are available at the URLs in the following table. Note that you should use different packages depending on the CUDA version you need for your software!
 
 {{ read_csv('cheaha/slurm/res/cuda_conda_package_versions.csv', keep_default_na=False) }}
 
 If you are working with deep neural networks (DNNs, CNNs, LSTMs, LLMs, AI, etc.), you will also need to load a `cuDNN`. The `cuDNN` modules are built to be compatible with a sibling `CUDA` module and are named with the corresponding `CUDA` version. For example, if you are loading `CUDA/12.2.0`, you will also need to load `cuDNN/8.9.2.26-CUDA-12.2.0`. Note the trailing `12.2.0`.
 
-As of 2025-02-25, we offer cuDNN modules for CUDA up to `12.3.0`. If you need a newer version, please use [Conda](../software/software.md#anaconda-on-cheaha) to install cuDNN software from the `conda-forge` channel. More details on how to install `CUDA` and `cuDNN` into your [environment](../../workflow_solutions/using_anaconda.md#create-an-environment) are available at <https://anaconda.org/conda-forge/cudnn>.
+As of 2025-02-25, we offer cuDNN modules for CUDA up to `12.3.0`. If you need a newer version, please use [Conda](../software/software.md#conda-on-cheaha) to install cuDNN software from the `conda-forge` channel. More details on how to install `CUDA` and `cuDNN` into your [environment](../../workflow_solutions/using_conda.md#create-an-environment) are available at <https://anaconda.org/conda-forge/cudnn>.
 
 ### CUDA Compute Capability and Known Issues
 
@@ -160,7 +160,7 @@ To check which CUDA Module version is required for your version of Tensorflow, s
 
 PyTorch does not maintain a simple compatibility table for CUDA versions. Instead, please manually check their ["get started" page](https://pytorch.org/get-started/locally/#start-locally) for the latest PyTorch version compatibility, and their ["previous versions" page](https://pytorch.org/get-started/previous-versions/) for older PyTorch version compatibility. Assume that a CUDA version is not compatible if it is not listed for a specific PyTorch version.
 
-To use GPUs prior to PyTorch version 1.13 you _must_ select a `cudatoolkit` version from the PyTorch channel when you install PyTorch using Anaconda. It is how PyTorch knows to install a GPU compatible flavor, as opposed to the CPU only flavor. See below for templates of CPU and GPU installs for PyTorch versions prior to 1.13. Be sure to check the compatibility links above for your selected version. Note `torchaudio` is also available for signal processing.
+To use GPUs prior to PyTorch version 1.13 you _must_ select a `cudatoolkit` version from the PyTorch channel when you install PyTorch using `conda`. It is how PyTorch knows to install a GPU compatible flavor, as opposed to the CPU only flavor. See below for templates of CPU and GPU installs for PyTorch versions prior to 1.13. Be sure to check the compatibility links above for your selected version. Note `torchaudio` is also available for signal processing.
 
 - CPU Version: `conda install pytorch==... torchvision==... -c pytorch`
 - GPU Version: `conda install pytorch==... torchvision==... cudatoolkit=... -c pytorch`

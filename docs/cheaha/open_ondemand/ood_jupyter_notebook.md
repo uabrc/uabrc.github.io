@@ -1,6 +1,6 @@
 # Jupyter Notebook
 
-Jupyter Notebooks and [Jupyter Lab](./ood_jupyterlab.md) are both available as standalone apps in OOD. Jupyter is commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-anaconda-environments) below before continuing here.
+Jupyter Notebooks and [Jupyter Lab](./ood_jupyterlab.md) are both available as standalone apps in OOD. Jupyter is commonly used with Anaconda environments. If you are unfamiliar with Anaconda environments please see the [Working with Anaconda Environments section](#working-with-conda-environments) below before continuing here.
 
 To launch the Jupyter Notebook, select the menus 'Interactive Apps -> Jupyter Notebook'. The job creation and submission form appears:
 
@@ -54,9 +54,9 @@ To work with other programming languages within Jupyter Notebook, you need to in
 
 Once the necessary kernels are installed, if you wish, you can write and run multiple code cells in different languages within a single notebook. Easily switch between kernels and select the preferred one for each language, and then proceed to run the code cells in their respective languages.
 
-## Working With Anaconda Environments
+## Working With Conda Environments
 
-By default, Jupyter Notebooks will use the base environment that comes with the Anaconda3 module. This environment contains a large number of popular packages and may useful for something quick, dirty, and simple. However, for any analysis needing specific package versions or special packages, you will need to create your own environment and select it from the `Kernel` menu. For information on creating and managing Anaconda environments please see our [Using Anaconda page](../../workflow_solutions/using_anaconda.md). Then please review our [Cheaha-specific Anaconda page](../software/software.md#anaconda-on-cheaha) for important tips and how to avoid common pitfalls.
+By default, Jupyter Notebooks will use the base environment that comes with the Anaconda3 module. This environment contains a large number of popular packages and may useful for something quick, dirty, and simple. However, for any analysis needing specific package versions or special packages, you will need to create your own environment and select it from the `Kernel` menu. For information on creating and managing Anaconda environments please see our [Using Anaconda page](../../workflow_solutions/using_conda.md). Then please review our [Cheaha-specific Anaconda page](../software/software.md#conda-on-cheaha) for important tips and how to avoid common pitfalls.
 
 To change the kernel, use the `Kernel` dropdown and select `Change Kernel`. From the list, choose the kernel corresponding to your desired Anaconda environment (see below for an example). If your environment isn't appearing, you may be missing the ipykernel package. To do so, use `conda install ipykernel` to get the `ipykernel` package installed into your environment, so Jupyter can recognize your environment.
 
@@ -71,9 +71,9 @@ We can create a new environment, that houses all of the packages, modules, and l
     - [OOD Terminal](./ood_layout.md#opening-a-terminal). Be sure to run the following steps in a job!
     - [OOD HPC Desktop Job Terminal](./hpc_desktop.md). This method will ensure terminal commands are run in a job.
 
-1. [Create](../../workflow_solutions/using_anaconda.md#create-an-environment) and [activate](../../workflow_solutions/using_anaconda.md#activate-an-environment) your new environment, following the linked steps.
+1. [Create](../../workflow_solutions/using_conda.md#create-an-environment) and [activate](../../workflow_solutions/using_conda.md#activate-an-environment) your new environment, following the linked steps.
 
-1. [Install your desired packages into your activated environment](../../workflow_solutions/using_anaconda.md#install-packages).
+1. [Install your desired packages into your activated environment](../../workflow_solutions/using_conda.md#install-packages).
 
 1. Remember to install `ipykernel` in your activated environment, using `conda install ipykernel`.
 
@@ -146,9 +146,9 @@ Replace `python3.11` in the command with the appropriate Python version.
 Here's an example of the correct procedure for installing `pip` packages within a `conda`:
 
 1. Load the `Anaconda3` module using `module load Anaconda3`.
-1. Create or activate the desired Anaconda environment. Please refer to the [Anaconda documentation](../../workflow_solutions/using_anaconda.md#create-an-environment)
+1. Create or activate the desired Anaconda environment. Please refer to the [Anaconda documentation](../../workflow_solutions/using_conda.md#create-an-environment)
 1. Install `pip` within the `conda` environment using `conda install pip` or `conda install python`. `pip` and `python` are packaged together, installing one will always install the other.
-1. Use `pip` when this `conda` environment is active to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_anaconda.md#installing-packages-with-pip)
+1. Use `pip` when this `conda` environment is active to install packages. Please refer to [Installing packages with `pip`](../../workflow_solutions/using_conda.md#installing-packages-with-pip)
 
 ### Tensorflow and PyTorch GPU Issues
 

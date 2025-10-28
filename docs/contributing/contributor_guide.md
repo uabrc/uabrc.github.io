@@ -38,7 +38,7 @@ We are using Visual Studio Code (VSCode) for development with several extensions
 
 VSCode may be obtained from [Visual Studio Code](https://code.visualstudio.com/) and documentation is available at [VSCode: Docs](https://code.visualstudio.com/docs). The extensions should automatically show up as recommendations when opening the repo, or they can be downloaded using the VSCode Extensions menu (++ctrl+shift+x++ on Windows or ++command+shift+x++ on Mac).
 
-We assume you have a `conda` distribution on your local machine. If you are affiliated with UAB, please install [Miniforge](https://conda-forge.org/miniforge/). For detailed installation instructions, see here: <https://github.com/conda-forge/miniforge/?tab=readme-ov-file#install>. For more information on using `conda`, see our [Anaconda page](../workflow_solutions/using_anaconda.md).
+We assume you have a `conda` distribution on your local machine. If you are affiliated with UAB, please install [Miniforge](https://conda-forge.org/miniforge/) and _do not_ install Anaconda nor Miniconda. For more information on why, please see our [Conda Migration FAQ](../workflow_solutions/conda_migration_faq.md#why-do-i-need-to-stop-using-anaconda). For detailed installation instructions on installing Miniforge, see here: <https://github.com/conda-forge/miniforge/?tab=readme-ov-file#install>. For more information on using `conda`, see our [`conda` page](../workflow_solutions/using_conda.md).
 
 ### Style Guide
 
@@ -227,7 +227,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
 ##### Verify Your Changes
 
-1. [Activate](../workflow_solutions/using_anaconda.md#activate-an-environment) your conda environment.
+1. [Activate](../workflow_solutions/using_conda.md#activate-an-environment) your conda environment.
     1. Open the file `test.py` in the repository to start the Python extension.
     1. Select the interpreter using <https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment>
 1. Open a VSCode terminal using ++ctrl+shift+grave++.
@@ -284,7 +284,7 @@ We will do our best to check information for accuracy, as well as proofread the 
 - Main headings are based on [UAB Research Computing services](https://www.uab.edu/it/home/research-computing/research-digital-marketplace)
 - Favor placing new pages and information into an existing navigation section over creating a new section.
 - Approach documentation from a problem solving angle rather than a technology. Examples:
-    - Section title "Installing Software Yourself with Anaconda" vs "Anaconda"
+    - Section title "Installing Software Yourself with `conda`" vs "`conda`"
     - Section title "Running Analysis Jobs" vs "Slurm"
 - Add redirects for any pages that move, in case someone has bookmarked a page, see [redirects](#redirects)
 - Images for a given page must be placed in a directory called `images/` at the same level as the page itself.

@@ -1,6 +1,6 @@
-# Anaconda Environment Tutorial for PyTorch and TensorFlow
+# Conda Environment Tutorial for PyTorch and TensorFlow
 
-The below tutorial would show you steps on how to create an Anaconda environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using an Anaconda environment on Cheaha. There are also steps on how to access the terminal, as well as using Jupyter Notebook's Graphical User Interface (GUI) to work with these Anaconda environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../open_ondemand/ood_layout.md#interactive-apps)
+The below tutorial will show you how to create a `conda` environment, activate, and install libraries/packages for machine and deep learning (PyTorch and Tensorflow) using a `conda` environment on Cheaha. There are also steps on how to access the terminal, as well as using Jupyter Notebook's Graphical User Interface (GUI) to work with `conda` environments. There are detailed steps here to guide your creation of a [Jupyter Notebook job.](../open_ondemand/ood_layout.md#interactive-apps)
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -14,7 +14,7 @@ The below tutorial would show you steps on how to create an Anaconda environment
     Be mindful that there are special considerations when submitting GPU jobs to maximize performance. See [Making the Most of GPUs](../slurm/gpu.md#making-the-most-of-gpus) for more information. This is not necessary for the tutorial in this page, but may benefit your research computation.
 <!-- markdownlint-enable MD046 -->
 
-## Installing Anaconda Environments Using the Terminal
+## Installing Conda Environments Using the Terminal
 
 To access the terminal (shell), please do the following.
 
@@ -50,7 +50,18 @@ Please see our [Training Resources page](../../education/training_resources.md#t
 
 There are two instances of PyTorch that can be installed, one requiring GPUs, and another utilizing only CPUs. The use of GPUs improve compute speeds and are preferred. For both instances of pytorch, please follow these steps;
 
-1. For a correct installation of pytorch using GPUs, we have to ensure some conditions are met (Request a partition that has GPUs, and then load the requisite `CUDA` module). You can see our [documentation](../hardware.md#details) for details on our Partition offerings. The command below shows how to load the CUDA toolkit in your environment setup form (see image below) when requesting for resources.
+1. [Create](../../workflow_solutions/using_conda.md#create-an-environment) and [activate](../../workflow_solutions/using_conda.md#activate-an-environment) an environment as stated in these links.
+
+1. Access the terminal following the steps at our [Installing Conda Environments Using the Terminal section](#installing-conda-environments-using-the-terminal).
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    When installing packages, modules and libraries into environments, remember to also install `ipykernel` using `conda install ipykernel`. This way your activated environment would appear in the list of kernels in your Jupyter Notebook.
+
+<!-- markdownlint-enable MD046 -->
+
+For a correct installation of pytorch, we have to ensure some conditions are met. See partition [docs](../hardware.md#details) for a guide. One of such conditions, is to load CUDA toolkit using the below command in your environment setup form (see image below).
 
 ```bash
 module load CUDA/11.8.0
@@ -66,16 +77,16 @@ module load CUDA/11.8.0
 
 ![!nvidia-smi output](images/CudaVersion.png)
 
-1. [Access the terminal](#installing-anaconda-environments-using-the-terminal).
+1. [Access the terminal](#installing-conda-environments-using-the-terminal).
 
-1. [Create an Environment](../../workflow_solutions/using_anaconda.md#create-an-environment) and [Activate the Environment](../../workflow_solutions/using_anaconda.md#activate-an-environment).
+1. [Create an Environment](../../workflow_solutions/using_conda.md#create-an-environment) and [Activate the Environment](../../workflow_solutions/using_conda.md#activate-an-environment).
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
     When installing packages, modules, and libraries into environments, remember to also install `ipykernel` using `conda install ipykernel`. The `ipykernel` package must be installed for Jupyter to find it.
 
-    See our [Working With Anaconda Enironments section](../../cheaha/open_ondemand/ood_jupyter_notebook.md#working-with-anaconda-environments) for how to switch environments in [Jupyter Noteooks](../../cheaha/open_ondemand/ood_jupyter_notebook.md).
+    See our [Working With Conda Enironments section](../../cheaha/open_ondemand/ood_jupyter_notebook.md#working-with-conda-environments) for how to switch environments in [Jupyter Noteooks](../../cheaha/open_ondemand/ood_jupyter_notebook.md).
 
 <!-- markdownlint-enable MD046 -->
 
@@ -161,4 +172,4 @@ The image below shows an output that the TensorFlow library will utilize the ava
     The information (I) and warning (W) outputs notifies you of the installed Tensorflow binary and how it would function. The I output informs you that the installed Tensorflow library will utilize your CPU for additional speed when GPUs are not the most efficient way to do processing for these operations. The W output tells you TensorRT is not available, please note TensorRT is not currently supported on our systems.
 <!-- markdownlint-enable MD046 -->
 
-Now that you have completed the tutorial, you can find more Anaconda information here, [Using Anaconda page](../../workflow_solutions/using_anaconda.md#anaconda).
+Now that you have completed the tutorial, you can find more `conda` information at our [Using `conda` page](../../workflow_solutions/using_conda.md#why-use-conda).

@@ -78,7 +78,7 @@ Owners can assign stewards either when requesting LTS allocation creation or at 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Do not share your access and secret keys with anyone! See [here](#key-handling-and-ownership) for more information.
+    Do not share your access and secret keys with anyone! See [Key Handling and Ownership](#key-handling-and-ownership) for more information.
 <!-- markdownlint-enable MD046 -->
 
 There are multiple ways to share data with LTS:
