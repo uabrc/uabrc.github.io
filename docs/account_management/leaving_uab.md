@@ -14,11 +14,11 @@ If you have questions, concerns, or any doubt after reading this page, we highly
 
 ## What Happens to My Cheaha Account?
 
-Your Cheaha account will be available and accessible for 30 days following your last day in a UAB-affiliated position. The purpose of this grace period is to give you time to execute and finalize data transfers.
+Your Cheaha account will be available and accessible for 30 days following your last day in a UAB-affiliated position. This 30-day grace period is a temporary extension of access that allows faculty/students leaving UAB in good standing to read and transfer their data from the Cheaha system before the account is deactivated.
 
-The same grace period applies to all other Research Computing platform accounts.
+The same 30-day grace period applies to all other Research Computing platform accounts.
 
-If you anticipate needing more than 30 days to finalize transfers, [contact us](../help/support.md) as soon as possible so we can make arrangements or work to improve data transfer efficiency.
+If you anticipate needing more than 30 days to complete your data transfers, [contact us](../help/support.md) as soon as possible so we can make arrangements or work to improve data transfer efficiency.
 
 ## What Happens to Data in My Individual Storage Allocations?
 
