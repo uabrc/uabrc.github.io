@@ -170,7 +170,7 @@ data:
 support:
   email:
     title_text: Have a Request?
-    icon_name: ":material-help-box:"
+    icon_name: ":material-email-edit:"
     content: |
       Have a request? Facing an issue? Want to scale up?
     link_text: Send us an email!
@@ -204,6 +204,12 @@ support:
     link_text: "Go To Statuscast"
     link_icon_name: null
     link_url: "{{ support.statuscast_url }}"
+  page:
+    title_text: Need Support Details?
+    icon_name: ":material-help-network:"
+    content: |
+      Want to learn more about how to get Research Computing support?
+    link_url: "help/support.md"
 # personas:
 #   administrative_staff:
 #     title_text: Administrative Staff

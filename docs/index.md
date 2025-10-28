@@ -2,21 +2,54 @@
 
 The Research Computing System (RCS) provides a framework for sharing research data, accessing computing power, and collaborating with peers on campus and around the globe. We have deployed a dynamic "network of services" to facilitate organizing, studying, and sharing research data.
 
-## News
+## Announcements
 
 <!-- markdownlint-disable MD046 -->
-<!--
-!!! announcement
-
-    Put important announcements here and remove the surrounding comments.
--->
+<!-- markdownlint-disable no-inline-html -->
+{% if announcements %}
+    {% for announcement in announcements %}
+    ???+ announcement "Announcement: {{ announcement.title }}"
+        {{ announcement.content | indent(4) }}
+        <hr>
+        <div class="dates">
+            <div class="effective-dates">
+                **Effective:**
+                {%- if announcement.start_date %}
+                {{ announcement.start_date }}
+                {% endif -%}
+                {%- if announcement.start_date and announcement.end_date -%}
+                —
+                {%- endif -%}
+                {%- if announcement.end_date %}
+                {{ announcement.end_date }}
+                {% endif -%}
+            </div>
+            <div class="posted-date">
+                _Posted: {{ announcement.posted_date }}_
+            </div>
+        </div>
+    {% else %}
+        {{ no_announcements }}
+    {% endfor %}
+{% else %}
+    {{ no_announcements }}
+{% endif %}
+<!-- markdownlint-enable no-inline-html -->
 <!-- markdownlint-enable MD046 -->
-
-**Check our [News page](./news/index.md) for recent developments.**
 
 ## How Do I Get Started?
 
-[Create your RCS Account](./account/rcs/create.md), then check out our [Featured Tutorials](#featured-tutorials). If you have a specific goal in mind, try searching our documentation, or see our [Success Stories](#success-stories) for inspiration on what we can do. Represent an internal organization and want to start a collaboration? See our [Outreach](#outreach) section. If you still can't find what you need, please [Contact Us](#how-to-contact-us).
+{{
+    renderer.render_cards(
+        cards.news,
+        cards.account.rcs.create,
+        cards.platforms.cheaha.ood.overview,
+        cards.platforms.cheaha.slurm.overview,
+        cards.data.individual_storage,
+        cards.data.shared_storage,
+        cards.data.transfer_options,
+    )
+}}
 
 ### Featured Tutorials
 
@@ -58,17 +91,13 @@ If you would like to build a collaborative effort with Research Computing, pleas
 
 ## How to Contact Us
 
-Please reach out to us via email at <support@listserv.uab.edu> to create a support ticket.
-
-For face-to-face support please visit us in our Zoom office hours held weekly:
-
-- Mondays 10:00 AM to 12:00 PM:
-[Zoom](https://uab.zoom.us/j/81783104592?pwd=L21OOWNlY2doWXova3MzOGFRcE4zQT09)
-
-- Thursdays 10:00 AM to 12:00 PM:
-[Zoom](https://uab.zoom.us/j/81783104592?pwd=L21OOWNlY2doWXova3MzOGFRcE4zQT09)
-
-For additional information please see our [Support Page](./help/support.md).
+{{
+    renderer.render_cards(
+        cards.support.email,
+        cards.support.office_hours,
+        cards.support.page,
+    )
+}}
 
 ## About Us
 

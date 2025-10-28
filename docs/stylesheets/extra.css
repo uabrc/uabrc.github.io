@@ -32,7 +32,10 @@ DEFINITIONS FOR THEMING
   --lightbox-shadow-color: rgba(0, 0, 0, 0.08);
 
   /* ICONS */
-  --md-admonition-icon--shield-alert: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>shield-alert</title><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5M11,7H13V13H11M11,15H13V17H11" /></svg>')
+  --md-admonition-icon--material-bullhorn: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>bullhorn</title><path d="M12,8H4A2,2 0 0,0 2,10V14A2,2 0 0,0 4,16H5V20A1,1 0 0,0 6,21H8A1,1 0 0,0 9,20V16H12L17,20V4L12,8M21.5,12C21.5,13.71 20.54,15.26 19,16V8C20.53,8.75 21.5,10.3 21.5,12Z" /></svg>');
+  --md-admonition-icon--material-crane: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>crane</title><path d="M20,6V5A1,1 0 0,0 19,4H9V3H6V4H5V6H6V15H5V13H3V15H2V17H3V21H5V17H10V21H12V19.92L12,17H13V15H12V13H10V15H9V6H17V10.62C16.53,10.79 16.19,11.23 16.19,11.76C16.19,12.2 16.43,12.6 16.8,12.82V14H17.42C17.76,14 18.03,14.28 18.03,14.62C18.03,14.96 17.76,15.24 17.42,15.24C17.2,15.24 17,15.12 16.89,14.93C16.71,14.64 16.34,14.54 16.05,14.71C15.75,14.87 15.65,15.25 15.82,15.55C16.15,16.11 16.76,16.47 17.42,16.47C18.43,16.47 19.26,15.64 19.26,14.62C19.26,13.84 18.76,13.14 18.03,12.88V12.82C18.41,12.6 18.65,12.2 18.65,11.76C18.65,11.3 18.38,10.91 18,10.7V6H20M8,13.66L7,14.66V13.24L8,12.24V13.66M8,10.71L7,11.71V10.29L8,9.29V10.71M7,8.71V7.29L8,6.29V7.71L7,8.71Z" /></svg>');
+  --md-admonition-icon--material-decagram-alert: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>alert-decagram</title><path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M13,17H11V15H13V17M13,13H11V7H13V13Z" /></svg>');
+  --md-admonition-icon--material-shield-alert: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>shield-alert</title><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5M11,7H13V13H11M11,15H13V17H11" /></svg>');
 }
 
 /* LOGO ADJUSTMENTS */
@@ -155,9 +158,51 @@ remove bottom-border from special cases
 .md-typeset .announcement>.admonition-title::before,
 .md-typeset .announcement>summary::before {
   background-color: var(--announcement-admonition-bd-color);
-  -webkit-mask-image: var(--md-admonition-icon--warning);
-  mask-image: var(--md-admonition-icon--warning);
+  -webkit-mask-image: var(--md-admonition-icon--material-bullhorn);
+  mask-image: var(--md-admonition-icon--material-bullhorn);
 }
+
+
+.md-typeset details.announcement {
+  font-size: 0.8rem;
+}
+
+.md-typeset details.announcement summary {
+  font-size: 1.25em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.md-typeset details.announcement summary::before,
+.md-typeset details.announcement summary::after {
+  height: 1.25em;
+  width: 1.25em;
+}
+
+.md-typeset details.announcement p,
+.md-typeset details.announcement hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.md-typeset details.announcement div.dates {
+  align-items: stretch;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.md-typeset details.announcement div.effective-dates {
+  float: left;
+  text-align: left;
+}
+
+.md-typeset details.announcement div.posted-date {
+  float: right;
+  text-align: right;
+}
+
 
 /* construction admonition */
 .md-typeset .admonition.construction,
@@ -174,8 +219,8 @@ remove bottom-border from special cases
 .md-typeset .construction>.admonition-title::before,
 .md-typeset .construction>summary::before {
   background-color: var(--construction-admonition-bd-color);
-  -webkit-mask-image: var(--md-admonition-icon--warning);
-  mask-image: var(--md-admonition-icon--warning);
+  -webkit-mask-image: var(--md-admonition-icon--material-crane);
+  mask-image: var(--md-admonition-icon--material-crane);
 }
 
 /* important admonition */
@@ -193,8 +238,8 @@ remove bottom-border from special cases
 .md-typeset .important>.admonition-title::before,
 .md-typeset .important>summary::before {
   background-color: var(--important-admonition-bd-color);
-  -webkit-mask-image: var(--md-admonition-icon--info);
-  mask-image: var(--md-admonition-icon--info);
+  -webkit-mask-image: var(--md-admonition-icon--material-decagram-alert);
+  mask-image: var(--md-admonition-icon--material-decagram-alert);
 }
 
 /* security admonition */
@@ -212,8 +257,8 @@ remove bottom-border from special cases
 .md-typeset .security>.admonition-title::before,
 .md-typeset .security>summary::before {
   background-color: var(--security-admonition-bd-color);
-  -webkit-mask-image: var(--md-admonition-icon--shield-alert);
-  mask-image: var(--md-admonition-icon--shield-alert);
+  -webkit-mask-image: var(--md-admonition-icon--material-shield-alert);
+  mask-image: var(--md-admonition-icon--material-shield-alert);
 }
 
 /* GLIGHTBOX ADJUSTMENTS */

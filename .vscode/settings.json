@@ -127,7 +127,8 @@
     "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
   ],
   "yaml.schemas": {
-    "./res/.grid_cards_schema.yml": "/res/grid_cards.yml"
+    "./res/.grid_cards_schema.yml": "/res/grid_cards.yml",
+    "./res/.announcements_schema.yml": "/res/announcements.yml"
     // "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
   }
 }
