@@ -1,9 +1,9 @@
-Name,Description
-Anaconda3,"Software that can install the Python language, Python packages, and other research software. Learn more about using Anaconda at our [Anaconda on Cheaha page](software.md#anaconda-on-cheaha). You may be interested in our [OpenOnDemand Jupyter Notebook interactive app](../open_ondemand/ood_jupyter.md)."
-"CUDA, cuDNN",Libraries for developing and using deep learning and AI models with NVidia GPUs. Commonly used with TensorFlow and PyTorch. See our [GPU page](../slurm/gpu.md) for more information.
-"Mathematica",Mathematical CAS and numerical computing software. Try our [Open OnDemand HPC Desktop interactive app](../open_ondemand/hpc_desktop.md).
-Matlab,Matlab language and development environment. We recommend using our [Open OnDemand Matlab interactive app](../open_ondemand/ood_matlab.md).
-"R, Rstudio",R language and RStudio IDE. We recommend using our [Open OnDemand RStudio interactive app](../open_ondemand/ood_rstudio.md).
-"SAS",Statistical analysis software. Try our [Open OnDemand HPC Desktop interactive app](../open_ondemand/hpc_desktop.md).
-"Singularity",Software container engine. See our [Containers](../../workflow_solutions/getting_containers.md) page for more information.
-"Stata",Statistical analysis software. Try our [Open OnDemand HPC Desktop interactive app](../open_ondemand/hpc_desktop.md).
+Name          ,Description
+Anaconda3     ,"Software that can install the Python language, Python packages, and other research software. Learn more about using Anaconda at our [Anaconda on Cheaha page](software.md#anaconda-on-cheaha). You may be interested in our [OpenOnDemand Jupyter Notebook interactive app](../open_ondemand/ood_jupyter_notebook.md)."
+"CUDA, cuDNN" ,Libraries for developing and using deep learning and AI models with NVidia GPUs. Commonly used with TensorFlow and PyTorch. See our [GPU page](../slurm/gpu.md) for more information.
+"Mathematica" ,Mathematical CAS and numerical computing software. Try our [Open OnDemand HPC Desktop interactive app](../open_ondemand/hpc_desktop.md).
+Matlab        ,Matlab language and development environment. We recommend using our [Open OnDemand Matlab interactive app](../open_ondemand/ood_matlab.md).
+"R, Rstudio"  ,R language and RStudio IDE. We recommend using our [Open OnDemand RStudio interactive app](../open_ondemand/ood_rstudio.md).
+"SAS"         ,Statistical analysis software. Try our [Open OnDemand HPC Desktop interactive app](../open_ondemand/hpc_desktop.md).
+"Singularity" ,Software container engine. See our [Containers](../../workflow_solutions/getting_containers.md) page for more information.
+"Stata"       ,Statistical analysis software. Try our [Open OnDemand HPC Desktop interactive app](../open_ondemand/hpc_desktop.md).

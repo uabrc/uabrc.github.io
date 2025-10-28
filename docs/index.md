@@ -7,30 +7,30 @@ The Research Computing System (RCS) provides a framework for sharing research da
 <!-- markdownlint-disable MD046 -->
 <!-- markdownlint-disable no-inline-html -->
 {% if announcements %}
-    {% for announcement in announcements %}
-    ???+ announcement "Announcement: {{ announcement.title }}"
-        {{ announcement.content | indent(4) }}
-        <hr>
-        <div class="dates">
-            <div class="effective-dates">
-                **Effective:**
-                {%- if announcement.start_date %}
-                {{ announcement.start_date }}
-                {% endif -%}
-                {%- if announcement.start_date and announcement.end_date -%}
-                —
-                {%- endif -%}
-                {%- if announcement.end_date %}
-                {{ announcement.end_date }}
-                {% endif -%}
-            </div>
-            <div class="posted-date">
-                _Posted: {{ announcement.posted_date }}_
-            </div>
+{% for announcement in announcements %}
+???+ announcement "Announcement: {{ announcement.title }}"
+    {{ announcement.content | indent(4) }}
+    <hr>
+    <div class="dates">
+        <div class="effective-dates">
+            **Effective:**
+            {%- if announcement.start_date %}
+            {{ announcement.start_date }}
+            {% endif -%}
+            {%- if announcement.start_date and announcement.end_date -%}
+            —
+            {%- endif -%}
+            {%- if announcement.end_date %}
+            {{ announcement.end_date }}
+            {% endif -%}
         </div>
-    {% else %}
-        {{ no_announcements }}
-    {% endfor %}
+        <div class="posted-date">
+            _Posted: {{ announcement.posted_date }}_
+        </div>
+    </div>
+{% else %}
+    {{ no_announcements }}
+{% endfor %}
 {% else %}
     {{ no_announcements }}
 {% endif %}

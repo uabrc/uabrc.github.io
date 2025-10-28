@@ -22,7 +22,7 @@ Please bear in mind the following expectations when using Cheaha.
 
 If your needs go beyond these expectations, please [Contact Support](../help/support.md).
 
-## Getting Help
+## What if I Need Help?
 
 Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Please read our [Tips on Getting Effective Support](../help/support.md), and our [Frequently Asked Questions](../help/faq.md).
 
@@ -48,7 +48,18 @@ An alternative method suited for developers using VSCode, is to use the "Remote 
 
 ## Open OnDemand Features
 
-The Open OnDemand portal features a [file browser](./open_ondemand/ood_layout.md#file-browser) and various interactive applications including a [remote desktop](./open_ondemand/hpc_desktop.md), [Jupyter](./open_ondemand/ood_jupyter.md), [RStudio](./open_ondemand/ood_rstudio.md) and [MATLAB](./open_ondemand/ood_matlab.md), among others. There is also a [terminal](./open_ondemand/ood_layout.md#opening-a-terminal) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](./open_ondemand/index.md).
+The Open OnDemand portal features a [terminal](./open_ondemand/ood_layout.md#opening-a-terminal) usable directly in the browser for basic functions such as file management.
+
+Interactive apps are available directly in your browser, including the following.
+
+- [File Browser](./open_ondemand/ood_layout.md#file-browser)
+- [Remote Desktop](./open_ondemand/hpc_desktop.md)
+- [Jupyter Notebook](./open_ondemand/ood_jupyter_notebook.md)
+- [Jupyter Lab](./open_ondemand/ood_jupyterlab.md)
+- [RStudio](./open_ondemand/ood_rstudio.md)
+- [MATLAB](./open_ondemand/ood_matlab.md)
+
+More detailed documentation can be found on our [Open OnDemand page](./open_ondemand/index.md).
 
 ## Hardware
 
@@ -187,10 +198,6 @@ For new software installation, please try searching [Anaconda](../workflow_solut
 A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see our [Anaconda page](./software/software.md#anaconda-on-cheaha).
 
 If the software installation instructions tell you to use either `conda install` or `pip install` commands, the software and its dependencies can be installed using a virtual environment.
-
-## How to Get Help
-
-For questions, you can reach out via our various [channels](../help/support.md).
 
 ## Frequently Asked Questions
 
