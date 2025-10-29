@@ -1,0 +1,233 @@
+account:
+  xias_create:
+    title_text: Create Account (External)
+    icon_name: ":material-account-network:"
+    content: |
+      Are you an external collaborator?
+      Do you need to sponsor an external collaborator?
+      Create an external collaborator (XIAS) account today!
+    link_url: "account/xias/index.md"
+  leaving:
+    title_text: Leaving UAB?
+    icon_name: ":material-account-off:"
+    content: |
+      Planning to leave UAB?
+      Want to learn happens to your data and system access?
+    link_url: "account/leaving/index.md"
+  responsibilities:
+    title_text: Responsibilities and Policies
+    icon_name: ":material-clipboard-check-multiple:"
+    content: |
+      Want to learn who is responsible for what, and what to expect on our systems?
+      Become familiar with RCS responsibilities, expectations, and policies.
+    link_url: "account/responsibilities.md"
+
+  code_rc_create:
+    title_text: Create Code.rc (GitLab) Account
+    icon_name: ":simple-gitlab:"
+    icon_color: .icon-color-gitlab-orange
+    content: |
+      Need a place to securely store code?
+      Store git repositories in our on-premises GitLab server.
+      Create a Code.rc account today!
+    link_url: "account/code.rc/create.md"
+  rcs:
+    create:
+      title_text: Create Account (RCS / Cheaha)
+      icon_name: ":material-account-plus:"
+      content: |
+        Affiliated with UAB?
+        Need access to Cheaha, Cloud.rc, Code.rc, or other RCS services?
+        Create an RCS account today in minutes!
+      link_url: "account/rcs/create.md"
+    status:
+      title_text: Check Account Status
+      icon_name: ":material-account-cog:"
+      content: |
+        Want to check your RCS account status?
+        Learn about account statuses and what they mean.
+      link_url: "account/rcs/status.md"
+  xias:
+    sponsor_site:
+      title_text: 1. Sponsor — Create Site
+      icon_name: ":material-sitemap:"
+      content: |
+        First, the Sponsor will need to configure a Site.
+        The Site allows configuring Guests.
+      link_url: "account/xias/1_sponsor_manage_sites.md"
+    sponsor_user:
+      title_text: 2. Sponsor — Create User
+      icon_name: ":material-account-multiple-plus:"
+      content: |
+        Second, the Sponsor will need to configure a User for the Guest.
+        User configuration allows Guest account creation.
+      link_url: "account/xias/2_sponsor_manage_users.md"
+    guest_instructions:
+      title_text: 3. Guest — Create XIAS Account
+      icon_name: ":material-clipboard-account:"
+      content: |
+        Third, the Guest should follow these instructions to create their XIAS account.
+      link_url: "account/xias/3_guest_create_xias_account.md"
+    guest_create_rcs:
+      title_text: 4. Guest — Create RCS Account
+      icon_name: ":material-account-plus:"
+      content: |
+        Lastly, the Guest may now create an RCS account.
+      link_url: "account/rcs/create.md"
+    manage_site:
+      title_text: Sponsor — Manage Site
+      icon_name: ":material-cog-sync:"
+      content: |
+        Need to update Site URIs or end date, or add new Users?
+      link_url: "account/xias/1_sponsor_manage_sites.md#how-do-i-manage-a-xias-site"
+    manage_user:
+      title_text: Sponsor — Manage User
+      icon_name: ":material-account-cog:"
+      content: |
+        Need to update User end dates, or add to a new Site?
+      link_url: "account/xias/2_sponsor_manage_users.md#how-do-i-manage-a-xias-user"
+
+news:
+  title_text: UAB RCS News
+  icon_name: ":fontawesome-solid-newspaper:"
+  content: |
+    See what's new with Research Computing System services!
+  link_url: "news/index.md"
+
+education:
+  training:
+    title_text: Training Resources
+    icon_name: ":material-notebook-edit:"
+    content: |
+      See our collection of internet training resources!
+    link_url: "education/training_resources.md"
+  dsjc:
+    title_text: Data Science Journal Club Course
+    icon_name: ":octicons-mortar-board-24:"
+    content: |
+      We offer a 1 credit hour course: Data Science Journal Club.
+    link_url: "education/courses.md#data-science-journal-club-course"
+
+platforms:
+  cheaha:
+    ood:
+      overview:
+        title_text: Open OnDemand Web Interface
+        icon_name: ":octicons-browser-24:"
+        content: |
+          Check out our interactive science apps, right in your browser!
+          Jupyter, RStudio, MATLAB, a virtual desktop, and more!
+        link_url: "cheaha/open_ondemand/index.md"
+    slurm:
+      overview:
+        title_text: Slurm Batch Job Scheduler
+        icon_name: ":material-script-text-play:"
+        content: |
+          Scale up your work!
+          Learn how to schedule batch jobs with Slurm.
+        link_url: "cheaha/slurm/introduction.md"
+  cloud_rc:
+    overview:
+      title_text: Cloud.rc (OpenStack)
+      icon_name: ":material-cloud-braces:"
+      content: |
+        Create virtual infrastructure to serve pages, build containers, and more!
+      link_url: "uab_cloud/index.md"
+    web_server:
+      title_text: Web Servers on Cloud.rc
+      icon_name: ":material-web:"
+      content: |
+        Learn how to make your Cloud.rc application public on the internet!
+      link_url: "uab_cloud/remote_access.md#make-instances-publicly-accessible-from-the-internet"
+
+data:
+  individual_storage:
+    title_text: Individual Storage Allocations
+    icon_name: ":material-server-network:"
+    content: |
+      Did you know researchers can get no-cost individual storage on RCS?
+
+      - {{ storage.no_cost.individual.gpfs }}
+      - {{ storage.no_cost.individual.lts }}
+    link_url: "data_management/index.md"
+  shared_storage:
+    title_text: Shared Storage Allocations
+    icon_name: ":material-server-network:"
+    content: |
+      Did you know research labs and Cores can get no-cost shared storage on RCS?
+
+      - {{ storage.no_cost.shared.gpfs }}
+      - {{ storage.no_cost.shared.lts }}
+    link_url: "data_management/index.md"
+  transfer_options:
+    title_text: Data Transfer Options
+    icon_name: ":material-transfer:"
+    content: |
+      RCS has multiple options for data transfers, within UAB and with other institutions.
+      Globus, rclone, and more!
+    link_url: "data_management/transfer/index.md"
+
+support:
+  email:
+    title_text: Have a Request?
+    icon_name: ":material-email-edit:"
+    content: |
+      Have a request? Facing an issue? Want to scale up?
+    link_text: Send us an email!
+    link_icon_name: ":material-email-fast:"
+    link_url: "{{ support.email }}"
+  office_hours:
+    title_text: Want Virtual Face-to-Face Support?
+    icon_name: ":simple-zoom:"
+    content: |
+      Visit our Zoom office hours!
+
+      {% for event in support.office_hours.events %}
+      - {{ event.day }}: {{ event.starttime }} to {{ event.endtime }} {{support.office_hours.timezone }} | [Zoom]({{ support.office_hours.url }})
+      {% endfor %}
+    link_text: null
+    link_icon_name: null
+    link_url: null
+  servicenow:
+    title_text: Check Your Support Requests
+    icon_name: ":material-progress-question:"
+    content: |
+      Create, review, and respond to service requests with the UAB ServiceNow Portal.
+    link_url: "{{ support.servicenow_url }}"
+  statuscast:
+    title_text: RCS Status Monitor
+    icon_name: ":material-bell:"
+    content: |
+      Check our StatusCast page for the latest on upcoming maintenance windows.
+
+      Subscribe by clicking the bell at the StatusCast page.
+    link_text: "Go To Statuscast"
+    link_icon_name: null
+    link_url: "{{ support.statuscast_url }}"
+  page:
+    title_text: Need Support Details?
+    icon_name: ":material-help-network:"
+    content: |
+      Want to learn more about how to get Research Computing support?
+    link_url: "help/support.md"
+# personas:
+#   administrative_staff:
+#     title_text: Administrative Staff
+#     icon_name: ":material-office-building:"
+#     content: |
+#     link_url:
+#   core_director:
+#     title_text: Core Director
+#     icon_name: ":material-desk:"
+#   external_collaborator:
+#     title_text: External Collaborator
+#     icon_name: ":material-clipboard-account:"
+#   research_faculty_lab_pi:
+#     title_text: Research Faculty Lab PI
+#     icon_name: ":material-account-group:"
+#   research_staff:
+#     title_text: Research Staff
+#     icon_name: ":material-test-tube:"
+#   student:
+#     title_text: Student
+#     icon_name: ":material-book-education:"

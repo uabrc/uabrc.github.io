@@ -169,7 +169,9 @@ shopt -s nullglob
 
 input_files=(../inputs/**/dice.csv)
 
+{% raw %}
 FILE_COUNT=${#input_files[@]}
+{% endraw %}
 FILE_COUNT=$(( $FILE_COUNT - 1 ))
 
 sbatch --array=0-$FILE_COUNT%4 job.sh
@@ -181,7 +183,7 @@ sbatch --array=0-$FILE_COUNT%4 job.sh
 
 1. The line `input_files=(../inputs/**/dice.csv)` uses the glob pattern `../inputs/**/dice.csv` to create a shell array of paths to files in our dataset. The details of this are discussed above in [File Extraction](#file-extraction).
 
-1. The line `FILE_COUNT=${#input_files[@]}` gets all entries from the `input_files` array using the special index `@` (for all elements), then counting them with the prefix symbol `#`.
+1. The line {% raw %}`FILE_COUNT=${#input_files[@]}`{% endraw %} gets all entries from the `input_files` array using the special index `@` (for all elements), then counting them with the prefix symbol `#`.
 
     <!-- markdownlint-disable MD046 -->
     !!! tip
@@ -264,7 +266,9 @@ shopt -s nullglob
 
 input_files=(../inputs/**/dice.csv)
 
+{% raw %}
 FILE_COUNT=${#input_files[@]}
+{% endraw %}
 FILE_COUNT=$(( $FILE_COUNT - 1 ))
 
 sbatch --array=0-$FILE_COUNT%4 job.sh

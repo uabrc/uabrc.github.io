@@ -78,7 +78,7 @@ To request shared Project Storage or Long-Term Storage, please contact [Support]
 - Requests must come from one of the proposed owners (a Lab PI, a Research Core director, or both).
 - The role of Lab PI entitles a person to a project space for that lab.
 - The role of Research Core director entitles a person to a project space for that core. If one person has both roles, they may have two shared Storage spaces, one for each role.
-- All proposed owners must have created their [Research Computing accounts](../account_management/cheaha_account.md) at the time of the request.
+- All proposed owners must have created their [Research Computing accounts](../account/rcs/create.md) at the time of the request.
 
 Please provide the following information. Missing information can delay allocation of Shared Storage as we either look up the information, or ask followup questions.
 

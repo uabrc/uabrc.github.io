@@ -1,8 +1,12 @@
 # How to Request Support
 
+{% import "_macro/support.md.j2" as sp with context %}
+
 Before reaching out to us, try searching this documentation for keywords related to your issue. If you aren't able to find anything, please try checking our FAQ located on [ask.cyberinfrastructure](https://ask.cyberinfrastructure.org/c/locales-data-centers-and-campus-rc/uab/52). If you still need help, please read on for how to send in a ticket and how to work with our ticketing system.
 
 ## How Do I Create a Support Ticket?
+
+{{ sp.support_card_email() }}
 
 To Create a support ticket, send a descriptive email to <support@listserv.uab.edu> to create a ticket. Bonus points for including the following details.
 
@@ -70,6 +74,8 @@ Please do not try to attach executable files to tickets. If you have a legitimat
 
 ## How Can I Follow Up on ServiceNow Tickets?
 
+{{ sp.support_card_servicenow() }}
+
 If you are unable to find a reference or correspondence for your already submitted ServcieNow ticket, you can now visit UAB's [ServiceNow portal](https://uabprod.service-now.com/service_portal) to track and follow up your submitted tickets. At the website, click the "Log in" button to sign in with your UAB SSO (Single Sign On) credentials.
 
 ![Landing page of ServiceNow Portal with the "Log in" button highlighted](images/servicenow_landing_page.png)
@@ -92,12 +98,8 @@ If you are not able to find a suitable module or package and would like software
 
 ## Office Hours
 
-For our office hours links please see [Contact Us](../index.md#how-to-contact-us).
+{{ sp.support_card_office_hours() }}
 
 ## Status Updates
 
-For status updates affecting our systems or services please visit <https://uabstatus.statuscast.com/#!/incidentlist?componentId=34990>.
-
-At this page you can subscribe to notifications using the bell icon next to the name "Research Computing" near the top-left of the page.
-
-![!subscribe button on status update page](images/support_status_update_subscribe.png)
+{{ sp.support_card_statuscast() }}
