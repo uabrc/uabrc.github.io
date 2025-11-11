@@ -8,7 +8,7 @@ Cheaha is a High Performance Computing (HPC) resource intended primarily for bat
 
 ## Getting Help
 
-Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are available in the [Support Guide](../help/support.md), and answers to common questions can be found in our section for [frequently asked questions](../help/faq.md).
+Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are available in the [Support Guide](../help/support.md), and answers to common questions can be found in our section for [Frequently Asked Questions(FAQ)](../help/faq.md).
 
 ## Account Creation
 
@@ -22,12 +22,15 @@ The primary method for accessing Cheaha is through our online portal website, Op
 
 ### With Integrated Development Environments (IDEs)
 
-An alternative method suited for developers is to use IDEs like VSCode, using the "Remote - Tunnels" extension to connect to an [HPC Desktop Interactive Job](./open_ondemand/hpc_desktop.md). You can find more information for setting this up in the [VSCode Tunnel](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel) section.
+An alternative method suited for developers is to use IDEs like VSCode, using the "Remote - Tunnels" extension, to connect to an [HPC Desktop Interactive Job](./open_ondemand/hpc_desktop.md). You can find more information for setting this up in the [VSCode Tunnel section](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Please do not use IDEs like VSCode "Remote - SSH" or Cursor Server to connect to Cheaha. These methods run all of their processes on the login node, which are automatically terminated. Instead, use "Remote - Tunnel" as described in the [VSCode Tunnel](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel) section.
+    Please do not use IDEs like VSCode "Remote - SSH" or Cursor Server to connect to Cheaha. These methods run all of their processes on the login node, which are automatically terminated. Instead, use "Remote - Tunnel" as described in the [VSCode Tunnel section](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel). Please read [additional information](../cheaha/getting_started.md#why-you-should-avoid-running-jobs-on-login-nodes) about working on the login node. Please see examples of processes that are automatically terminated on the login node, they are not limited to these.
+{{ read_csv('cheaha/res/ide_use.csv', keep_default_na=False) }}
+<!-- fix headers -->
+
 <!-- markdownlint-enable MD046 -->
 
 ## Open OnDemand Features
