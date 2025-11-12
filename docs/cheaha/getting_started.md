@@ -6,7 +6,7 @@ toc_depth: 3
 
 Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing of research computing software. We offer a user-friendly portal website Open OnDemand with graphical interfaces to the most common features, all in one place. Read on to learn more about our resources and how to access them.
 
-## Getting Help
+## What if I Need Help?
 
 Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are available in the [Support Guide](../help/support.md), and answers to common questions can be found in our section for [Frequently Asked Questions(FAQ)](../help/faq.md).
 
@@ -35,7 +35,18 @@ An alternative method suited for developers is to use IDEs like VSCode, using th
 
 ## Open OnDemand Features
 
-The Open OnDemand portal features a [file browser](./open_ondemand/ood_layout.md#file-browser) and various interactive applications including a [remote desktop](./open_ondemand/hpc_desktop.md), [Jupyter](./open_ondemand/ood_jupyter.md), [RStudio](./open_ondemand/ood_rstudio.md) and [MATLAB](./open_ondemand/ood_matlab.md), among others. There is also a [terminal](./open_ondemand/ood_layout.md#opening-a-terminal) usable directly in the browser for very basic functions such as file management. More detailed documentation may be found on our [Open OnDemand page](./open_ondemand/index.md).
+The Open OnDemand portal features a [terminal](./open_ondemand/ood_layout.md#opening-a-terminal) usable directly in the browser for basic functions such as file management.
+
+Interactive apps are available directly in your browser, including the following.
+
+- [File Browser](./open_ondemand/ood_layout.md#file-browser)
+- [Remote Desktop](./open_ondemand/hpc_desktop.md)
+- [Jupyter Notebook](./open_ondemand/ood_jupyter_notebook.md)
+- [Jupyter Lab](./open_ondemand/ood_jupyterlab.md)
+- [RStudio](./open_ondemand/ood_rstudio.md)
+- [MATLAB](./open_ondemand/ood_matlab.md)
+
+More detailed documentation can be found on our [Open OnDemand page](./open_ondemand/index.md).
 
 ## Hardware
 

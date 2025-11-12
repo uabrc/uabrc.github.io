@@ -105,7 +105,12 @@ We're always happy to provide support for your Research Computing needs, you nee
     - [LTS](../data_management/lts/index.md): Cool storage, large capacity
     - [Transfer data with Globus](../data_management/transfer/globus.md)
 - [Batch computing](../cheaha/slurm/introduction.md)
-    - [Desktop](../cheaha/open_ondemand/hpc_desktop.md), [Jupyter](../cheaha/open_ondemand/ood_jupyter.md), [RStudio](../cheaha/open_ondemand/ood_rstudio.md), [Matlab](../cheaha/open_ondemand/ood_matlab.md), and more
+    - Interactive applications in [Open OnDemand](../cheaha/open_ondemand/index.md)
+        - [HPC Desktop](../cheaha/open_ondemand/hpc_desktop.md)
+        - [Jupyter Notebook](../cheaha/open_ondemand/ood_jupyter_notebook.md)
+        - [JupyterLab](../cheaha/open_ondemand/ood_jupyterlab.md)
+        - [RStudio](../cheaha/open_ondemand/ood_rstudio.md)
+        - [Matlab](../cheaha/open_ondemand/ood_matlab.md)
     - [GPUs](../cheaha/slurm/gpu.md)
 - [On-prem cloud computing](../uab_cloud/index.md)
     - [Tutorial](../uab_cloud/tutorial/index.md)
@@ -121,7 +126,7 @@ Our Cheaha system is robust, but errors may occur due to general platform connec
 - **What do I do if I'm waiting for it to finish for longer than a couple of minutes?**
 
     - Try closing and restarting your browser, then trying again.
-    - Try clearing site data for [https://rc.uab.edu](https://rc.uab.edu), then trying again.
+    - Try clearing site data for <https://rc.uab.edu>, then trying again.
     - Try logging in on a Private Browsing window, then trying again.
     - Try waiting a few hours, then trying again.
 
@@ -134,7 +139,7 @@ Our Cheaha system is robust, but errors may occur due to general platform connec
 
     - **Do you have an active Open OnDemand session?**
 
-        - In Open OnDemand ([https://rc.uab.edu](https://rc.uab.edu)), navigate to the green navigation bar in the top right corner. Look for the `Help` or `Developer` dropdown menu and click on it. Then, click `Restart Web Server`. Once the restart is complete, please try again.
+        - In Open OnDemand (<https://rc.uab.edu>), navigate to the green navigation bar in the top right corner. Look for the `Help` or `Developer` dropdown menu and click on it. Then, click `Restart Web Server`. Once the restart is complete, please try again.
 
     - **Do you have one or more OOD HPC Desktops running?**
 
