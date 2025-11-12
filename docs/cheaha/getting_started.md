@@ -27,8 +27,9 @@ An alternative method suited for developers is to use IDEs like VSCode, using th
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Please do not use IDEs like VSCode "Remote - SSH" or Cursor Server to connect to Cheaha. These methods run all of their processes on the login node, which are automatically terminated. Instead, use "Remote - Tunnel" as described in the [VSCode Tunnel section](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel). Please read [additional information](../cheaha/getting_started.md#why-you-should-avoid-running-jobs-on-login-nodes) about working on the login node. Please see examples of processes that are automatically terminated on the login node, they are not limited to these.
-{{ read_csv('cheaha/res/ide_use.csv', keep_default_na=False) }}
+    Please do not use IDEs like VSCode "Remote - SSH" or Cursor Server to connect to Cheaha. These methods run all of their processes on the login node, which are automatically terminated. Instead, use "Remote - Tunnel" as described in the [VSCode Tunnel section](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel). Please read [additional information](../cheaha/getting_started.md#why-you-should-avoid-running-jobs-on-login-nodes) about working on the login node. See examples of processes that are automatically terminated on the login node, they are not limited to these.
+
+    {{ read_csv('cheaha/res/ide_use.csv', keep_default_na=False) }}
 <!-- fix headers -->
 
 <!-- markdownlint-enable MD046 -->
