@@ -1,4 +1,4 @@
 Technology,Process,Acceptable,Result
-"VS Code with "Remote - Tunnels","Runs from a compute node","✔️ Yes","Process is allowed to run on compute node"
-"VS Code with "Remote - SSH","Runs on a login node","❌ No","Process is automatically terminated"
-"Cursor Server","Runs on a login node","❌ No","Process is automatically terminated"
+"VS Code with "Remote - Tunnels","Runs from a compute node","✔️ Yes","Process runs normally"
+"VS Code with "Remote - SSH","Runs on a login node","❌ No","Process is terminated"
+"Cursor Server","Runs on a login node","❌ No","Process is terminated"
