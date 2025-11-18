@@ -85,7 +85,7 @@ To use this method you will need either a GitHub account or Microsoft account. M
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Do not use "Remote - SSH" to access Cheaha, as all processes run on the login node. VSCode Server, and associated processes, running on the login node may be shut down at any time to free login node resources. Instead, please use "Remote - Tunnels" as described below.
+    Please do not use technologies like VSCode "Remote - SSH" (extension on VSCode) or Cursor Server to connect to Cheaha. These methods run all of their processes on the login node, so they are automatically terminated. Instead, use "Remote - Tunnels" as described below. See [additional information](../getting_started.md#why-you-should-avoid-running-jobs-on-login-nodes) about running jobs on the Login node.
 <!-- markdownlint-enable MD046 -->
 
 ### What Security Does VSCode Remote Tunnel Use?

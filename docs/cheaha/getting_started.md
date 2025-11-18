@@ -8,7 +8,7 @@ Cheaha is a High Performance Computing (HPC) resource intended primarily for bat
 
 ## What if I Need Help?
 
-Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Please read our [Tips on Getting Effective Support](../help/support.md), and our [Frequently Asked Questions](../help/faq.md).
+Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Tips on getting effective support are available in the [Support Guide](../help/support.md), and answers to common questions can be found in our section for [Frequently Asked Questions (FAQ)](../help/faq.md).
 
 ## Account Creation
 
@@ -20,15 +20,13 @@ The primary method for accessing Cheaha is through our online portal website, Op
 
 [SSH](../uab_cloud/remote_access.md#command-line-via-ssh) may be used to access Cheaha. Connect to host `cheaha.rc.uab.edu` on port `22`.
 
-### With VSCode
+### With Integrated Development Environments (IDEs)
 
-An alternative method suited for developers using VSCode, is to use the "Remote - Tunnels" extension to connect to an [HPC Desktop Interactive Job](./open_ondemand/hpc_desktop.md). More details on this process are available in the [VSCode Tunnel](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel) section.
+An alternative method suited for developers is to use IDEs like VSCode, using the "Remote - Tunnels" extension, to connect to an [HPC Desktop Interactive Job](./open_ondemand/hpc_desktop.md). You can find more information for setting this up in the [VSCode Tunnel section](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel).
 
-<!-- markdownlint-disable MD046 -->
-!!! important
+Please do not use IDEs like VSCode "Remote - SSH" or Cursor Server to connect to Cheaha. These methods run all of their processes on the login node, which are automatically terminated. Instead, use "Remote - Tunnel" as described in the [VSCode Tunnel section](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel). Please read [additional information](../cheaha/getting_started.md#why-you-should-avoid-running-jobs-on-login-nodes) about working on the login node. See examples of processes that are automatically terminated on the login node, please note they are not limited to the items in the table below.
 
-    Please do not use VSCode "Remote - SSH" to connect to Cheaha. All processes happen on the login node. Use the link above to use "Remote - Tunnel" instead.
-<!-- markdownlint-enable MD046 -->
+{{ read_csv('cheaha/res/ide_use.csv', keep_default_na=False) }}
 
 ## Open OnDemand Features
 
@@ -182,3 +180,7 @@ For new software installation, please try searching [Anaconda](../workflow_solut
 A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see our [Anaconda page](./software/software.md#anaconda-on-cheaha).
 
 If the software installation instructions tell you to use either `conda install` or `pip install` commands, the software and its dependencies can be installed using a virtual environment.
+
+## How to Get Help
+
+For questions, you can reach out via our various [channels](../help/support.md).
