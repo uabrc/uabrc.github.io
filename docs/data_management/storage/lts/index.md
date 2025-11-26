@@ -5,7 +5,7 @@ UAB Long-term storage (LTS) is an S3 object-storage platform hosted at UAB. This
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    [Globus](../transfer/globus.md#long-term-storage-s3-lts-connector) may be used to transfer data with LTS.
+    [Globus](../../transfer/globus.md#long-term-storage-s3-lts-connector) may be used to transfer data with LTS.
 <!-- markdownlint-enable MD046 -->
 
 ## Terminology
@@ -24,13 +24,13 @@ When talking about S3 storage, some terms are different compared to a normal fil
 
     Never give access and secret keys for individual or shared allocations to anyone! Treat them as usename and password, respectively.
 
-    If you need to give elevated permissions to other users to view, upload, download, delete, etc. any data from a bucket, those permissions can be changed via [bucket policies](iam_and_policies.md) without giving out keys. Please [contact Research Computing](../../index.md#how-to-contact-us) for help setting up and applying policies if you need it
+    If you need to give elevated permissions to other users to view, upload, download, delete, etc. any data from a bucket, those permissions can be changed via [bucket policies](iam_and_policies.md) without giving out keys. Please [contact Research Computing](../../../index.md#how-to-contact-us) for help setting up and applying policies if you need it
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    If you lose your access and secret keys, please submit a [support ticket](../../index.md#how-to-contact-us) to <support@listserv.uab.edu> to request your keys. Keys will only be given to an allocation owner as verified by RC staff.
+    If you lose your access and secret keys, please submit a [support ticket](../../../index.md#how-to-contact-us) to <support@listserv.uab.edu> to request your keys. Keys will only be given to an allocation owner as verified by RC staff.
 <!-- markdownlint-enable MD046 -->
 
 This documentation will use the standard file and path terms since those are more easily understood by most users. Just be aware that documentation such as [AWS CLI](https://docs.aws.amazon.com/cli/latest/) will use terms prefix, object, and others that are not standard in a typical filesystem.
@@ -49,4 +49,4 @@ Better practice when naming buckets is to use a short, descriptive and memorable
 
 ## What to Do With Data When I Leave UAB?
 
-See our [Leaving UAB page](../../account_management/leaving_uab.md).
+See our [Leaving UAB page](../../../account_management/leaving_uab.md).

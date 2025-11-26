@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD046 -->
 !!! announcement
 
-    We are aware of reduced transfer speed into and out of [Long-Term Storage (LTS)] when using Globus and are working on a solution. For some use cases, [`s5cmd`](../lts/interfaces.md#s5cmd) may be a faster alternative. Please see [Our News Section](../../news/posts/2025-04-07-reduced-lts-transfer-speeds-on-globus.md) for more information.
+    We are aware of reduced transfer speed into and out of [Long-Term Storage (LTS)] when using Globus and are working on a solution. For some use cases, [`s5cmd`](../../data_management//storage/lts/interfaces.md#s5cmd) may be a faster alternative. Please see [Our News Section](../../news/posts/2025-04-07-reduced-lts-transfer-speeds-on-globus.md) for more information.
 <!-- markdownlint-enable MD046 -->
 
 Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is recommended for most single-use, day-to-day data transfer use-cases.
@@ -126,7 +126,7 @@ Below the "Transfer Settings", there are additional options available that you c
 
 ### Project Space Permissions
 
-Globus does not preserve permissions nor ownership when data is transferred, instead using whatever permissions are default at the target location, and making the owner the authenticated user who initiated the transfer. Typically this is not an issue, but may cause problems for [Project Storage directories](../index.md#what-shared-storage-solutions-are-available). Please see our [Project Directory Permissions Section](../cheaha_storage_gpfs/project_directories.md#project-directory-permissions) for more information.
+Globus does not preserve permissions nor ownership when data is transferred, instead using whatever permissions are default at the target location, and making the owner the authenticated user who initiated the transfer. Typically this is not an issue, but may cause problems for [Project Storage directories](../storage/index.md#what-shared-storage-solutions-are-available). Please see our [Project Directory Permissions Section](../../data_management/storage/cheaha_storage_gpfs/project_directories.md#project-directory-permissions) for more information.
 
 ### More Information
 
@@ -145,16 +145,16 @@ To use the UAB Box Connector, [search for a collection/endpoint](#moving-data-be
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    [LTS](../lts/index.md) behaves differently from other file systems and comes with a few possible pitfalls. Keep in mind the following three rules: (1) all data must be in buckets, (2) buckets are only allowed in the root folder, and (3) buckets must have unique names.
+    [LTS](../../data_management/storage/lts/index.md) behaves differently from other file systems and comes with a few possible pitfalls. Keep in mind the following three rules: (1) all data must be in buckets, (2) buckets are only allowed in the root folder, and (3) buckets must have unique names.
 <!-- markdownlint-enable MD046 -->
 
-To use the UAB [LTS](../lts/index.md) Connector, [search for a collection/endpoint](#moving-data-between-collections) like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a [bucket](../lts/index.md#terminology) in LTS. To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.
+To use the UAB [LTS](../../data_management/storage/lts/index.md) Connector, [search for a collection/endpoint](#moving-data-between-collections) like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a [bucket](../../data_management/storage/lts/index.md#terminology) in LTS. To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.
 
   ![create bucket via globus](./images/globus-create-lts-bucket.png)
 
 #### Adding LTS Allocation Credentials
 
-Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../lts/index.md#requesting-an-allocation) to the LTS endpoint. To do so, please follow the instructions given below.
+Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../../data_management/storage/lts/index.md#requesting-an-allocation) to the LTS endpoint. To do so, please follow the instructions given below.
 
 1. In your browser, navigate to <https://app.globus.org> and login using UAB SSO.
 1. Click "Collections" in the left-hand navigation pane.
@@ -206,11 +206,11 @@ Server: 138.26.220.68:443
 Message: Path '/first-test-bucket/' already exists
 ```
 
-At first glance, requiring unique names across all buckets on the system may sound very restrictive, but it is necessary for LTS to be as fast as it is. Fortunately, there is an easy way to deal with the limitation. See our LTS section on [good naming practice](../lts/index.md#avoiding-duplicate-names-for-buckets) for how to avoid duplicate names. For example, if you want to name a bucket `ai-lab` for storing data related to the entire AI lab or a specific dataset, you can append a universally unique identifier (UUID) to the name. To generate a UUID, visit <https://www.uuidgenerator.net/>, and a 16-byte UUID will be automatically generated. You can then copy it and append it to the name `ai-lab`, as shown below.
+At first glance, requiring unique names across all buckets on the system may sound very restrictive, but it is necessary for LTS to be as fast as it is. Fortunately, there is an easy way to deal with the limitation. See our LTS section on [good naming practice](../storage/lts/index.md#avoiding-duplicate-names-for-buckets) for how to avoid duplicate names. For example, if you want to name a bucket `ai-lab` for storing data related to the entire AI lab or a specific dataset, you can append a universally unique identifier (UUID) to the name. To generate a UUID, visit <https://www.uuidgenerator.net/>, and a 16-byte UUID will be automatically generated. You can then copy it and append it to the name `ai-lab`, as shown below.
 
 ![!large error message in small space](images/globus-uuid.png)
 
-Similarly, if an invalid bucket name, such as `first_test_bucket`, is entered (due to the use of an underscore, which doesn’t follow LTS bucket naming rules), an error will also be displayed as shown below. To avoid this, please refer to the guidelines for [valid bucket name in LTS](../lts/lts_faq.md#what-are-valid-bucket-names-in-lts).
+Similarly, if an invalid bucket name, such as `first_test_bucket`, is entered (due to the use of an underscore, which doesn’t follow LTS bucket naming rules), an error will also be displayed as shown below. To avoid this, please refer to the guidelines for [valid bucket name in LTS](../storage/lts/lts_faq.md#what-are-valid-bucket-names-in-lts).
 
 ![!large invalid error message in small space](images/globus_lts_invalid_name_error_001.png)
 
@@ -233,7 +233,7 @@ Uploading a top-level folder that does not follow the bucket naming rules will c
 
 ![!large error message in small space](images/globus_lts_upload_error_001.png)
 
-Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata. For guidance on defining policies for your bucket, please refer to our documentation on [policy structure](../lts/iam_and_policies.md#policy-structure) and [applying a policy](../lts/iam_and_policies.md#applying-a-policy).
+Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata. For guidance on defining policies for your bucket, please refer to our documentation on [policy structure](../storage/lts/iam_and_policies.md#policy-structure) and [applying a policy](../storage/lts/iam_and_policies.md#applying-a-policy).
 
 ## Using Bookmarks
 

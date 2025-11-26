@@ -31,7 +31,7 @@ While these are two simple solutions, a combination of both can be implemented w
 
 ## Are Automatic Backups to LTS Available?
 
-Automatic backups are not available by default. If you would like to periodically sync your bucket to a directory on your local machine or Cheaha, you will need to set up a cron task to submit a Slurm job that will run a sync. IF you would like to implement this for your own bucket, please [contact us](../../index.md#how-to-contact-us).
+Automatic backups are not available by default. If you would like to periodically sync your bucket to a directory on your local machine or Cheaha, you will need to set up a cron task to submit a Slurm job that will run a sync. IF you would like to implement this for your own bucket, please [contact us](../../../index.md#how-to-contact-us).
 
 ## Why Can I Not Interact With a File in My Bucket?
 
@@ -125,4 +125,4 @@ The following policy file will give read permission to all LTS users for all obj
 
 ## Can I Change Permissions on a Bucket via Globus?
 
-As of now, there is no way to change permissions on a bucket via [Globus](../transfer/globus.md). The only way to change permissions is via the command line.
+As of now, there is no way to change permissions on a bucket via [Globus](../../transfer/globus.md). The only way to change permissions is via the command line.

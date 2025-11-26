@@ -8,11 +8,11 @@ At this time you will need to make local scratch subdirectories yourself with `m
 
 Some known examples of tasks benefiting from local scratch, not an exhaustive list:
 
-- AI and deep learning training on [A100 GPUs](../../cheaha/slurm/gpu.md).
+- AI and deep learning training on [A100 GPUs](../../../cheaha/slurm/gpu.md).
 - Large-scale genome annotation.
 - Reading/writing hundreds of thousands or more files in a single job.
 
-If you are using `amperenodes` and the A100 GPUs, then you should use local scratch for your data to ensure adequate GPU performance. Using [network scratch](./network_scratch.md), or other network file locations, will starve the GPU of data, resulting in poor GPU performance. For more information please see [Ensuring IO Performance With A100 GPUs](../../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
+If you are using `amperenodes` and the A100 GPUs, then you should use local scratch for your data to ensure adequate GPU performance. Using [network scratch](./network_scratch.md), or other network file locations, will starve the GPU of data, resulting in poor GPU performance. For more information please see [Ensuring IO Performance With A100 GPUs](../../../cheaha/slurm/gpu.md#ensuring-io-performance-with-a100-gpus).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -20,7 +20,7 @@ If you are using `amperenodes` and the A100 GPUs, then you should use local scra
     Be sure to clean up `/local/$USER/$SLURM_JOB_ID` after your job is complete!
 <!-- markdownlint-enable MD046 -->
 
-An example script to automate this process is shown below. This example shows how you can wrap your workflow with deployment and cleanup of local scratch. The following sample script only applies if you are running a small number of jobs (less than one hundred). If you need to run many jobs all using the same data, such as with a large array using the `--array` flag, please [contact us](../../help/support.md) about preloading the data onto your desired nodes. This will avoid the per-job overhead of copying and deleting files.
+An example script to automate this process is shown below. This example shows how you can wrap your workflow with deployment and cleanup of local scratch. The following sample script only applies if you are running a small number of jobs (less than one hundred). If you need to run many jobs all using the same data, such as with a large array using the `--array` flag, please [contact us](../../../help/support.md) about preloading the data onto your desired nodes. This will avoid the per-job overhead of copying and deleting files.
 
 ```bash
 #!/bin/bash
@@ -52,7 +52,7 @@ rm -rf "$TMPDIR"
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Using `/local/$USER/$SLURM_JOB_ID` with MPI jobs takes additional consideration. If you do not need MPI, please use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node. If you need the performance of `/local/$USER/$SLURM_JOB_ID` in an MPI job, please contact [Support](../../help/support.md) and read about the Slurm commands `sbcast` and `sgather`.
+    Using `/local/$USER/$SLURM_JOB_ID` with MPI jobs takes additional consideration. If you do not need MPI, please use the `#SBATCH --nodes=1` slurm directive to specify that all requested cores are on the same node. If you need the performance of `/local/$USER/$SLURM_JOB_ID` in an MPI job, please contact [Support](../../../help/support.md) and read about the Slurm commands `sbcast` and `sgather`.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
@@ -65,8 +65,8 @@ rm -rf "$TMPDIR"
 
 ## What if My Data Won't Fit in Local Scratch?
 
-Be sure that your files will fit in `/local/` before starting. You can determine disk size and current usage using `df -h | grep "local"`. Most nodes have 1.0 TB total capacity, while the `amperenodes` have 6.0 TB. If you data won't fit in the current usage, or on the drives, please [Contact Us](../../help/support.md). We can work with you to identify a solution.
+Be sure that your files will fit in `/local/` before starting. You can determine disk size and current usage using `df -h | grep "local"`. Most nodes have 1.0 TB total capacity, while the `amperenodes` have 6.0 TB. If you data won't fit in the current usage, or on the drives, please [Contact Us](../../../help/support.md). We can work with you to identify a solution.
 
 ## What if I Have a Large Amount of Data for Local Scratch?
 
-If you have a large amount of data but each job takes very little time to run, performance can be further improved by avoiding frequent data copies and deletions. In these cases, preloading the data onto local scratch only once and then reusing it makes more sense. If this is the case for you, or you think you might benefit, please [Contact Us](../../help/support.md) and we can discuss creating a temporary node reservation to allow one-time data preloading.
+If you have a large amount of data but each job takes very little time to run, performance can be further improved by avoiding frequent data copies and deletions. In these cases, preloading the data onto local scratch only once and then reusing it makes more sense. If this is the case for you, or you think you might benefit, please [Contact Us](../../../help/support.md) and we can discuss creating a temporary node reservation to allow one-time data preloading.

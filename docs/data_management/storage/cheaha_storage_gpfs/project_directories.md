@@ -14,11 +14,11 @@ Every project directory has a group that is unique system-wide, and not used any
     Some early group names may not match their project directory, but should be reasonably close.
 <!-- markdownlint-enable MD046 -->
 
-Members of the project directory group have permissions to access that project directory. Adding and removing members from the project directory group is how Research Computing controls access to, and ownership of, project directories. We do not use access control lists (ACLs) to manage permissions ourselves, but use of ACLs is allowed and encouraged for PIs and project administrators who want more fine-grained control. Please see our [section on ACLs](../../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl) for more information.
+Members of the project directory group have permissions to access that project directory. Adding and removing members from the project directory group is how Research Computing controls access to, and ownership of, project directories. We do not use access control lists (ACLs) to manage permissions ourselves, but use of ACLs is allowed and encouraged for PIs and project administrators who want more fine-grained control. Please see our [section on ACLs](../../../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl) for more information.
 
 Be default, project space permissions are set up in the following way:
 
-{{ read_csv('data_management/res/project_space_permissions.csv', keep_default_na=False) }}
+{{ read_csv('data_management/storage/res/project_space_permissions.csv', keep_default_na=False) }}
 
 Having `setgid` enabled on directories means new files and directories created within will inherit group ownership and the `setgid` bit. The `setgid` bit is reflected by the `2` in the numeric permissions and the `s` in the symbolic permissions. The `setgid` bit and per-directory project groups is how Research Computing controls access to each project directory.
 
@@ -35,7 +35,7 @@ There are some known issues surrounding project directory permissions when files
 For PIs and project administrators:
 
 - Please educate your staff and collaborators about the above permission setups, and any additional ACLs you may have in place, to minimize future challenges.
-- If you have issues with permissions, please contact [Support](../../help/support.md). We can guide you through [Managing Permissions](../../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../../workflow_solutions/shell.md#manage-group-ownership-chgrp).
+- If you have issues with permissions, please contact [Support](../../../help/support.md). We can guide you through [Managing Permissions](../../../workflow_solutions/shell.md#manage-permissions-of-files-and-directores-chmod) and [Managing Group Ownership](../../../workflow_solutions/shell.md#manage-group-ownership-chgrp).
 
 ## Project Directory Organization
 
@@ -118,9 +118,9 @@ To provide a clearer picture, here is how all the components fit together in the
 
 ## Permissions and Access Control
 
-Permissions for each directory can be managed by either being a member of the group associated with the top-level project directory or by using [Linux permissions](../cheaha_storage_gpfs/project_directories.md#project-directory-permissions) or [Access Control Lists (ACLs)](../../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl). Managing proper permissions ensures that team members can access only the resources they need, while protecting sensitive data.
+Permissions for each directory can be managed by either being a member of the group associated with the top-level project directory or by using [Linux permissions](../cheaha_storage_gpfs/project_directories.md#project-directory-permissions) or [Access Control Lists (ACLs)](../../../workflow_solutions/shell.md#manage-researcher-access-to-files-and-directories-getfacl-setfacl). Managing proper permissions ensures that team members can access only the resources they need, while protecting sensitive data.
 
-If you plan managing multiple projects and would like assistance with organizing your project directories or managing permissions, please send us a [support ticket](../../help/support.md#how-do-i-create-a-support-ticket).
+If you plan managing multiple projects and would like assistance with organizing your project directories or managing permissions, please send us a [support ticket](../../../help/support.md#how-do-i-create-a-support-ticket).
 
 ## How Much Space Do I Have Left?
 
@@ -131,7 +131,7 @@ To check the storage space left from your project directory, use the command `pr
 This section outlines key storage policies and exceptions, including access control and data management, conditions for administrative access or quota increases in Project directory.
 
 - Storage Entitlement: A shared project allocation of 25 TB is available to research labs led by a PI and to Core Facilities headed by a Director. A shared project allocation is intended to support active research and collaboration.
-- Quota Increase: At this time, we do not provide additional quota increase for shared project allocation. If you require more storage for your work, please consider requesting and using an [LTS](../../data_management/lts/index.md).
+- Quota Increase: At this time, we do not provide additional quota increase for shared project allocation. If you require more storage for your work, please consider requesting and using an [LTS](../lts/index.md).
 - Data Management: The owner the shared Project allocation is responsible for organizing, cleaning, and backing up their data in their shared Project allocation.
 - Permission and Access Control Management: Access to shared project allocation can be managed using Access Control Lists (ACLs). New members can be added to or removed from the group access based on PI approval.
-- HIPAA Compliance: Shared project allocation is HIPAA compliant and can accept Protected Health Information (PHI) data. For HIPAA Compliance and UAB policies surrounding PHI data, please refer the [HIPAA Compliance](../../data_management/index.md#hipaa-compliance)page.
+- HIPAA Compliance: Shared project allocation is HIPAA compliant and can accept Protected Health Information (PHI) data. For HIPAA Compliance and UAB policies surrounding PHI data, please refer the [HIPAA Compliance](../index.md#hipaa-compliance)page.

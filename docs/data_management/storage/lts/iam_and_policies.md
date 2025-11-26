@@ -32,9 +32,9 @@ Everyone is responsible for managing their own keys and ensuring they use the co
 
 ### How Can I Recover My Keys?
 
-If you have lost your LTS keys, you can request a reset by creating a support ticket via [Contact Us](../../index.md#how-to-contact-us). Please include your BlazerID and specify the LTS allocation (individual and/or shared) for which you need the key reset, so we can process your request accordingly. Then you will receive an email with a link to a UAB Box text file containing the corresponding keys (access key and secret key).
+If you have lost your LTS keys, you can request a reset by creating a support ticket via [Contact Us](../../../index.md#how-to-contact-us). Please include your BlazerID and specify the LTS allocation (individual and/or shared) for which you need the key reset, so we can process your request accordingly. Then you will receive an email with a link to a UAB Box text file containing the corresponding keys (access key and secret key).
 
-If you, as a Lab/Core PI, do not wish to manage the LTS space yourself, we recommend assigning data Steward permissions to someone who is both trustworthy and has knowledge of, or willingness to learn, [JSON](https://docs.fileformat.com/web/json/#google_vignette) and parts of the [Amazon AWS S3 API](https://docs.aws.amazon.com/AmazonS3/latest/API/Type_API_Reference.html). If you need help or have concerns about making this decision, please [Contact Us](../../index.md#how-to-contact-us).
+If you, as a Lab/Core PI, do not wish to manage the LTS space yourself, we recommend assigning data Steward permissions to someone who is both trustworthy and has knowledge of, or willingness to learn, [JSON](https://docs.fileformat.com/web/json/#google_vignette) and parts of the [Amazon AWS S3 API](https://docs.aws.amazon.com/AmazonS3/latest/API/Type_API_Reference.html). If you need help or have concerns about making this decision, please [Contact Us](../../../index.md#how-to-contact-us).
 
 ## IAM Names
 
@@ -46,21 +46,21 @@ IAM Names are case-sensitive identifiers for allocations and allow granting othe
 
 ## Individual LTS Allocations
 
-Individual LTS allocations are intended for personal use and are available to all UAB affiliated individuals and their external collaborators (via a [XIAS account](../../account_management/xias/index.md)). These allocations are tied to the individual’s primary UAB email and provide 5 TB of storage.
+Individual LTS allocations are intended for personal use and are available to all UAB affiliated individuals and their external collaborators (via a [XIAS account](../../../account_management/xias/index.md)). These allocations are tied to the individual’s primary UAB email and provide 5 TB of storage.
 
 We recommend following the [Individual LTS Tutorial](./tutorial/individual_lts_tutorial.md) to familiarize yourself with working with LTS at the command line.
 
-{{ read_csv('data_management/res/individual_allocation_functional_roles.csv', keep_default_na=False) }}
+{{ read_csv('data_management/storage/res/individual_allocation_functional_roles.csv', keep_default_na=False) }}
 
 ## Shared LTS Allocations
 
-Shared LTS allocations are data storage designed for collaborative use by groups and are available to Lab PIs and Core Directors. If a PI is also a Core Director, they are eligible for independent storage allocations for each organization: one for the Lab and one for the Core. Each shared LTS allocation provides 75 TB of storage. These allocations can be named according to the preference of the Lab PI or Core Director. For recommended naming guidelines, refer to our [Naming Shared Storage](../../data_management/index.md#how-do-i-request-shared-storage) documentation.
+Shared LTS allocations are data storage designed for collaborative use by groups and are available to Lab PIs and Core Directors. If a PI is also a Core Director, they are eligible for independent storage allocations for each organization: one for the Lab and one for the Core. Each shared LTS allocation provides 75 TB of storage. These allocations can be named according to the preference of the Lab PI or Core Director. For recommended naming guidelines, refer to our [Naming Shared Storage](../index.md#how-do-i-request-shared-storage) documentation.
 
-{{ read_csv('data_management/res/shared_allocation_functional_roles.csv', keep_default_na=False) }}
+{{ read_csv('data_management/storage/res/shared_allocation_functional_roles.csv', keep_default_na=False) }}
 
 ### How Do I Assign a Steward?
 
-Owners can assign stewards either when requesting LTS allocation creation or at a later time by sending a request via [Contact Us](../../index.md#how-to-contact-us). The request should include the steward's BlazerID and specify the LTS allocation they should manage. Once assigned, stewards will have the same management permissions as the owner, except for the ability to assign other stewards.
+Owners can assign stewards either when requesting LTS allocation creation or at a later time by sending a request via [Contact Us](../../../index.md#how-to-contact-us). The request should include the steward's BlazerID and specify the LTS allocation they should manage. Once assigned, stewards will have the same management permissions as the owner, except for the ability to assign other stewards.
 
 ### Who Can Have What Role?
 
@@ -84,7 +84,7 @@ Owners can assign stewards either when requesting LTS allocation creation or at 
 There are multiple ways to share data with LTS:
 
 - With [Bucket Policies](#bucket-policies)
-- Using [Globus Guest Collections](../transfer/tutorial/globus_organization_tutorial.md#how-do-i-share-a-collection-with-others)
+- Using [Globus Guest Collections](../../transfer/tutorial/globus_organization_tutorial.md#how-do-i-share-a-collection-with-others)
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -432,7 +432,7 @@ s3cmd delpolicy s3://<bucket>
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Policies can be very complicated depending on how many people need access to the bucket and how you want to tier permissions (i.e. which people are read-only, read-write, admin-esq priveleges, etc.). If you need help structuring your policy files please [visit us during office hours](../../help/support.md#office-hours) and we will be happy to help structure your policy file to your needs.
+    Policies can be very complicated depending on how many people need access to the bucket and how you want to tier permissions (i.e. which people are read-only, read-write, admin-esq priveleges, etc.). If you need help structuring your policy files please [visit us during office hours](../../../help/support.md#office-hours) and we will be happy to help structure your policy file to your needs.
 <!-- markdownlint-enable MD046 -->
 
 #### Admin-Like Priveleges
@@ -447,4 +447,4 @@ For Labs using LTS to store data from their Cheaha Project Storage directory, it
 
 Some groups on campus may distribute datasets to other research groups using LTS. If you are distributing data to multiple groups, and those groups should not have access to each other's data, it is highly advised to store those datasets in separate buckets as opposed to separate directories in a single bucket.
 
-An idiosyncrasy of buckets involves the fact that all objects are stored in the top level of the bucket, and once permissions are given to someone to see the bucket, they will be able to see all objects within the bucket without restrictions even if they are not given download permissions for some objects. If any identifying or priveleged information is given in file names on LTS, it could constitute an IRB violation. Additionally, managing permissions for groups to access data only from specific folders makes the policy file much more complicated and prone to errors. When sharing multiple datasets with multiple different groups, it's advised to keep these data in separate buckets and have individual policy files for each bucket to make policy management simpler and less prone to error.
+An idiosyncrasy of buckets involves the fact that all objects are stored in the top level of the bucket, and once permissions are given to someone to see the bucket, they will be able to see all objects within the bucket without restrictions even if they are not given download permissions for some objects. If any identifying or privileged information is given in file names on LTS, it could constitute an IRB violation. Additionally, managing permissions for groups to access data only from specific folders makes the policy file much more complicated and prone to errors. When sharing multiple datasets with multiple different groups, it's advised to keep these data in separate buckets and have individual policy files for each bucket to make policy management simpler and less prone to error.

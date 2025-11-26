@@ -82,7 +82,7 @@ Select the option appropriate for your need. The "View all open tickets" will sh
 
 ## How Do I Request or Change Shared Storage?
 
-Please see our [Storage page](../data_management/index.md) for more information.
+Please see our [Storage page](../data_management/storage/index.md) for more information.
 
 ## How Do I Request New Software Installed?
 

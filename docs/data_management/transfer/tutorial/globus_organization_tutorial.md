@@ -27,7 +27,7 @@ Topics covered:
 Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions. Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
 
 - Straight-forward, browser-based interface.
-- Compatible with [Long-Term Storage](../../lts/index.md).
+- Compatible with [Long-Term Storage](../../storage/lts/index.md).
 - Can be used to share data with Research Core customers.
 - Can be used to transfer data between lab workstations, servers, and Cheaha.
 - Transfers are automatically retried in the event of network or computer system outages.

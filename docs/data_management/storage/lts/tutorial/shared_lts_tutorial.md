@@ -27,7 +27,7 @@ The screenshot below shows the full terminal output of `s3cmd --configure -c $HO
 
 Once the configuration is complete, `s3cmd` will generate a file in your home directory `$HOME` using the profile name you provided. For example, if you name your shared LTS profile `my-lab`, the configuration file will be saved as `$HOME/my-lab`. This will be in addition to the default `.s3cfg` file that was previously configured for your individual LTS, as shown below.
 
-The screenshot displays a window listing files in the user's home directory. Among the listed files, `.s3cfg` appears alongside other dotfiles, and `my-lab` appears as a separate, non-hidden file. These entries confirm the presence of both configuration files created by `s3cmd`. To locate your home directory on Cheaha and view  both the `.s3cfg`  and `my-lab`files, follow the instructions on our [Navigating Open OnDemand](../../../cheaha/open_ondemand/ood_layout.md#navigating-open-ondemand) page. Make sure to enable the "Show Dotfiles" option in the top-right corner of the Open OnDemand (OOD) file browser to make hidden files visible.
+The screenshot displays a window listing files in the user's home directory. Among the listed files, `.s3cfg` appears alongside other dotfiles, and `my-lab` appears as a separate, non-hidden file. These entries confirm the presence of both configuration files created by `s3cmd`. To locate your home directory on Cheaha and view  both the `.s3cfg`  and `my-lab`files, follow the instructions on our [Navigating Open OnDemand](../../../../cheaha/open_ondemand/ood_layout.md#navigating-open-ondemand) page. Make sure to enable the "Show Dotfiles" option in the top-right corner of the Open OnDemand (OOD) file browser to make hidden files visible.
 
 ![s3cmd config files for shared and individual LTS profiles shown in your home directory in the OOD file browser.](../images/my-lab.png)
 
@@ -47,4 +47,4 @@ Here are examples for creating and listing buckets, and apply bucket policies:
 
 To manage your shared LTS buckets, repeat what you did with your [individual buckets](./individual_lts_tutorial.md#managing-buckets), and add the `-c my-lab` option.
 
-If you have any questions about configuring LTS, switching between LTS allocations, or managing bucket access across multiple LTS profiles, please [Contact Us](../../../index.md#how-to-contact-us).
+If you have any questions about configuring LTS, switching between LTS allocations, or managing bucket access across multiple LTS profiles, please [Contact Us](../../../../index.md#how-to-contact-us).

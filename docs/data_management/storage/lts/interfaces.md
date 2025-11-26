@@ -8,7 +8,7 @@ LTS is not available as a mounted filesystem on local computers or Cheaha. You m
 
 ## Globus
 
-[Globus](../transfer/globus.md#long-term-storage-s3-lts-connector) is a general file transfer system that operates through a web browser and is recommended for most file transfer needs. UAB has an S3 connector for Globus that can transfer data to and from LTS as long as the user has access to the desired buckets.
+[Globus](../../transfer/globus.md#long-term-storage-s3-lts-connector) is a general file transfer system that operates through a web browser and is recommended for most file transfer needs. UAB has an S3 connector for Globus that can transfer data to and from LTS as long as the user has access to the desired buckets.
 
 To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in the search bar and enter your access and secret keys given to you by Research Computing staff. You will be able to see the buckets owned by the allocation associated with the keys you entered.
 
@@ -24,7 +24,7 @@ Globus is very useful for single transfers of data either to or from LTS and is 
 
 ### Managing LTS Credentials on Globus
 
-See our [Globus - Adding LTS Allocation Credentials](../transfer/globus.md#adding-lts-allocation-credentials) section for more information.
+See our [Globus - Adding LTS Allocation Credentials](../../transfer/globus.md#adding-lts-allocation-credentials) section for more information.
 
 ## Command Line
 
@@ -35,7 +35,7 @@ While globus is the recommended tool for most data transfers, command line tools
 
 ### Installation of `s3cmd` and `s5cmd` on Cheaha
 
-To install the tools on Cheaha, you can request a compute node through Cheaha's [Open OnDemand web portal](../../cheaha/open_ondemand/ood_layout.md#creating-an-interactive-job).Once your job is launched, open a terminal to execute the commands listed below. You do not need to install both tools if they aren't necessary. Both are available to install into [Anaconda](../../workflow_solutions/using_anaconda.md) environments. It's suggested to create a single environment named `s3` and install both s3cmd and s5cmd into it for easy access to both tools. Specific install and usage commands for each are given in their respective sections. You can create the general environment using the following commands:
+To install the tools on Cheaha, you can request a compute node through Cheaha's [Open OnDemand web portal](../../../cheaha/open_ondemand/ood_layout.md#creating-an-interactive-job).Once your job is launched, open a terminal to execute the commands listed below. You do not need to install both tools if they aren't necessary. Both are available to install into [Anaconda](../../../workflow_solutions/using_anaconda.md) environments. It's suggested to create a single environment named `s3` and install both s3cmd and s5cmd into it for easy access to both tools. Specific install and usage commands for each are given in their respective sections. You can create the general environment using the following commands:
 
 ``` bash
 module load Anaconda3
@@ -261,7 +261,7 @@ Replace `<shared-allocation-profile-name>` with the profile name defined for you
 
 ### Installation of `s3cmd` and `s5cmd` on Individual Systems Without Anaconda
 
-The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems. You may also use [Anaconda](../../workflow_solutions/using_anaconda.md) to install either or both packages.
+The installation instructions and software dependencies may differ depending on the operating system being used. Following are the installation instructions tested for different operating systems. You may also use [Anaconda](../../../workflow_solutions/using_anaconda.md) to install either or both packages.
 
 #### Ubuntu
 
@@ -272,7 +272,7 @@ sudo apt update
 sudp apt install s3cmd
 ```
 
-To install `s5cmd`, you will have to first install `go` software version `>=1.19`. Please refer to the [Download page](https://go.dev/dl/), and [installation instruction](https://go.dev/doc/install) for further details. After intalling `go`, you can build `s5cmd` in your `$HOME` directory using the below steps.
+To install `s5cmd`, you will have to first install `go` software version `>=1.19`. Please refer to the [Download page](https://go.dev/dl/), and [installation instruction](https://go.dev/doc/install) for further details. After installing `go`, you can build `s5cmd` in your `$HOME` directory using the below steps.
 
 ```bash
 cd $HOME
@@ -303,10 +303,10 @@ brew install gnupg
 
 #### Windows
 
-To install `s3cmd` and `s5cmd` on a Windows system, you will first need to install [Windows Subsystem for Linux (WSL)](../../uab_cloud/remote_access.md#windows-subsystem-for-linux-wsl). Once WSL is installed, you can use the command line instructions for [Ubuntu](#ubuntu) to install `s3cmd` and `s5cmd`.
+To install `s3cmd` and `s5cmd` on a Windows system, you will first need to install [Windows Subsystem for Linux (WSL)](../../../uab_cloud/remote_access.md#windows-subsystem-for-linux-wsl). Once WSL is installed, you can use the command line instructions for [Ubuntu](#ubuntu) to install `s3cmd` and `s5cmd`.
 
 For more information on `s3cmd` and `s5cmd`, please refer to the official [s3tools Page](https://s3tools.org/download), and [s5cmd page](https://github.com/peak/s5cmd?tab=readme-ov-file).
 
 ## Alternatives
 
-There are other tools for interfacing with LTS such as rclone. Please see our [rclone documentation](../transfer/rclone.md) for more details.
+There are other tools for interfacing with LTS such as rclone. Please see our [rclone documentation](../../transfer/rclone.md) for more details.

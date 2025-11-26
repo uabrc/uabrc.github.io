@@ -7,21 +7,21 @@ In this tutorial, we will guide you through using `s3cmd` on the Cheaha system t
 
 ## Prerequisites
 
-To get up to speed, you should have a basic understanding of how to use the shell/terminal. If you’re not familiar with these concepts, we recommend checking out our [learning resources on basic shell usage](../../../workflow_solutions/shell.md#shell-reference).
+To get up to speed, you should have a basic understanding of how to use the shell/terminal. If you’re not familiar with these concepts, we recommend checking out our [learning resources on basic shell usage](../../../../workflow_solutions/shell.md#shell-reference).
 
-You will also need an individual LTS allocation created by our team. If you believe you need an allocation but do not have one, please [contact us](../../../index.md#how-to-contact-us).
+You will also need an individual LTS allocation created by our team. If you believe you need an allocation but do not have one, please [contact us](../../../../index.md#how-to-contact-us).
 
 ## Setting Up Your Environment
 
 ### Install `s3cmd` Within Conda Environment on Cheaha
 
-To interact with LTS (Long-Term Storage) using [S3 (Simple Storage Service)](https://aws.amazon.com/s3/), you need the `s3cmd` tool installed.[`s3cmd`](https://s3tools.org/s3cmd) is a command-line tool for managing files in cloud storage systems like S3. It's recommended to install it using `pip`, the standard package installer for Python, which allows you to install packages from the [Python Package Index (PyPI)](https://pypi.org/), within a [Conda environment](../../../workflow_solutions/using_anaconda.md#create-an-environment) on Cheaha.
+To interact with LTS (Long-Term Storage) using [S3 (Simple Storage Service)](https://aws.amazon.com/s3/), you need the `s3cmd` tool installed.[`s3cmd`](https://s3tools.org/s3cmd) is a command-line tool for managing files in cloud storage systems like S3. It's recommended to install it using `pip`, the standard package installer for Python, which allows you to install packages from the [Python Package Index (PyPI)](https://pypi.org/), within a [Conda environment](../../../../workflow_solutions/using_anaconda.md#create-an-environment) on Cheaha.
 
 Please avoid using `conda install s3cmd`, as that version will not work as expected. Instead, follow the steps below to install `s3cmd` using `pip` within your Conda environment.
 
-First, access our interactive Open OnDemand (OOD) portal at <https://rc.uab.edu> and create a job on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on [installing and setting Conda environment](../../../cheaha/tutorial/pytorch_tensorflow.md#installing-anaconda-environments-using-the-terminal).
+First, access our interactive Open OnDemand (OOD) portal at <https://rc.uab.edu> and create a job on Cheaha using one of our interactive applications. For guidance, refer to our tutorial on [installing and setting Conda environment](../../../../cheaha/tutorial/pytorch_tensorflow.md#installing-anaconda-environments-using-the-terminal).
 
-Once your interactive apps session is launched, open the terminal as described in [step 5 of the Anaconda tutorial page](../../../cheaha/tutorial/pytorch_tensorflow.md#installing-anaconda-environments-using-the-terminal) and run the below commands.
+Once your interactive apps session is launched, open the terminal as described in [step 5 of the Anaconda tutorial page](../../../../cheaha/tutorial/pytorch_tensorflow.md#installing-anaconda-environments-using-the-terminal) and run the below commands.
 
 ```bash
 module load Anaconda3
@@ -36,7 +36,7 @@ Once these steps are completed, verify the installation by running `pip list | g
 
 ### Install `s3cmd` on Your Local Systems
 
-To install s3cmd on your local machine, please follow the instructions provided in [our s3cmd documentation for local installation](../../../data_management/lts/interfaces.md#installation-of-s3cmd-and-s5cmd-on-individual-systems-without-anaconda).
+To install s3cmd on your local machine, please follow the instructions provided in [our s3cmd documentation for local installation](../interfaces.md#installation-of-s3cmd-and-s5cmd-on-individual-systems-without-anaconda).
 
 ### Configuring `s3cmd` for LTS Buckets
 
@@ -52,7 +52,7 @@ This will prompt you to enter the access key and secret key associated with your
 
 ![image-s3cmd](../images/config-s3cmd.png)
 
-Once the configuration is complete, `s3cmd` will generate a `.s3cfg` file in your home directory (`$HOME`), as shown below. To find your home directory in Cheaha and view the `.s3cfg` file, follow the instructions on our [Navigating Open OnDemand](../../../cheaha/open_ondemand/ood_layout.md#navigating-open-ondemand) page. Be sure to check the **Show Dotfiles** option in the top right corner to make hidden files visible.
+Once the configuration is complete, `s3cmd` will generate a `.s3cfg` file in your home directory (`$HOME`), as shown below. To find your home directory in Cheaha and view the `.s3cfg` file, follow the instructions on our [Navigating Open OnDemand](../../../../cheaha/open_ondemand/ood_layout.md#navigating-open-ondemand) page. Be sure to check the **Show Dotfiles** option in the top right corner to make hidden files visible.
 
 ![config-file](../images/s3cfg.png)
 

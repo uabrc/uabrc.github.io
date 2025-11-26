@@ -29,7 +29,7 @@ Globus is a data transfer ecosystem that simplifies the process of transferring,
 
 - Straight-forward, browser-based, graphical interface.
 - Compatible with [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
-- Compatible with [Long-Term Storage](../../lts/index.md).
+- Compatible with [Long-Term Storage](../../../data_management/storage/lts/index.md).
 - Can be used with your laptop, desktop, or lab workstation via Globus Connect Personal (GCP).
 - Transfers are automatically retried in the event of network or computer system outages.
 - Transfers are encrypted end-to-end. Globus never sees your data.
@@ -135,8 +135,8 @@ If you can't find a particular Collection this way, but know it was shared with 
 
 UAB offers [multiple storage resources](../../index.md). The following resources may be accessed through Globus Collections.
 
-- Cheaha file system (GPFS) including [individual directories](../../index.md#what-individual-storage-solutions-are-available) and [project directories](../../cheaha_storage_gpfs/project_directories.md).
-- [Long-Term Storage (LTS)](../../lts/index.md).
+- Cheaha file system (GPFS) including [individual directories](../../storage/index.md#what-individual-storage-solutions-are-available) and [project directories](../../../data_management/storage/cheaha_storage_gpfs/project_directories.md).
+- [Long-Term Storage (LTS)](../../storage/lts/index.md).
 - [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
 
 To find these resources on Globus, use the following steps.
@@ -203,7 +203,7 @@ Proceed on to learn how to transfer between Collections.
 
 ## How Do I Transfer Between a Collection and Cheaha?
 
-Please use the following instructions to transfer data from a Collection to [Cheaha GPFS](../../index.md#what-type-of-storage-do-i-need). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
+Please use the following instructions to transfer data from a Collection to [Cheaha GPFS](../../storage/cheaha_storage_gpfs/index.md). These instructions may also be used for other buckets on LTS, provided you have access and know their file path.
 
 The direction of transfer may also be reversed to transfer data from Cheaha to a Collection. Note that some Collections may not allow you to transfer data back, such as some of those provided by Research Cores.
 
@@ -255,7 +255,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 
 ## How Do I Transfer Between a Collection and LTS?
 
-Please use the following instructions to transfer data from a Collection to a [bucket on LTS](../../lts/index.md). These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.
+Please use the following instructions to transfer data from a Collection to a [bucket on LTS](../../../data_management/storage/lts/index.md). These instructions may also be used for other directories on Cheaha, provided you have access and know their file path.
 
 The direction of transfer may also be reversed to transfer data from LTS to the destination Collection. Note that some Collections may not allow you to transfer data back, such as some of those provided by Research Cores.
 
@@ -300,7 +300,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 
 ## How Do I Transfer Between LTS and Cheaha?
 
-Please use the following instructions to transfer data from a [bucket on LTS](../../lts/index.md) to a project directory on Cheaha. These instructions may also be used for other buckets on LTS and directories on Cheaha, provided you have access and know their file paths.
+Please use the following instructions to transfer data from a [bucket on LTS](../../storage/lts/index.md) to a project directory on Cheaha. These instructions may also be used for other buckets on LTS and directories on Cheaha, provided you have access and know their file paths.
 
 The direction of transfer may also be reversed to transfer data from Cheaha to LTS.
 

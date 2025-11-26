@@ -8,14 +8,14 @@ If your work is private, or internal to UAB operations, it is probably best to s
 
 ### GitLab
 
-UAB Research Computing maintains an on-premises GitLab instance. To gain access, please visit <https://code.rc.uab.edu> and create an [Account](../account_management/gitlab_account.md).
+UAB Research Computing maintains an on-premises GitLab instance. To gain access, please visit <https://code.rc.uab.edu> and create an [Account](../../account_management/gitlab_account.md).
 
 ### GitHub
 
 Please visit <https://github.com>.
 
-For UAB Research Computing's GitHub repositories, please see our [Social Media](../education/training_resources.md#our-social-media-presence) page.
+For UAB Research Computing's GitHub repositories, please see our [Social Media](../../education/training_resources.md#our-social-media-presence) page.
 
 ## How Do I Effectively Use Git, GitHub, and GitLab for Collaboration?
 
-Please see our page on [Collaborating with Git](../workflow_solutions/git_collaboration.md).
+Please see our page on [Collaborating with Git](../../workflow_solutions/git_collaboration.md).
