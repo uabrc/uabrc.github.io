@@ -50,7 +50,7 @@ For each dataset or project, which option is ideal depends on the state of the p
 - Transfer responsibility of the data to a successor (retiring)?
 
     1. Make the appropriate arrangements with relevant administrative units (e.g., Office of Research and OSP).
-    1. [Globus](../data_management/transfer/globus.md) may be used to efficiently and robustly transfer the data from one directory on Cheaha to another. Please [contact us](../help/support.md) for more details.
+    1. [Globus](../data_management/transfer/globus/index.md) may be used to efficiently and robustly transfer the data from one directory on Cheaha to another. Please [contact us](../help/support.md) for more details.
 
 - Transfer the data to a new instutition (moving)?
 
@@ -73,6 +73,6 @@ If the Core will continue operating, then it is assumed there will be a successo
 - [GPFS (Cheaha) shared allocation](../data_management/storage/cheaha_storage_gpfs/project_directories.md).
 - [LTS shared allocation](../data_management/storage/lts/index.md).
 - [OpenStack Shared Projects](../uab_cloud/sharing_cloud_environment.md).
-- Service account, shared mailboxes, and other shared resources not managed by Research Computing, but which may have an impact on Core operations relating to Research Data acquisition and transfer, such as [Globus](../data_management/transfer/globus.md).
+- Service account, shared mailboxes, and other shared resources not managed by Research Computing, but which may have an impact on Core operations relating to Research Data acquisition and transfer, such as [Globus](../data_management/transfer/globus/index.md).
 
 If the Core will cease operating, please [contact us](../help/support.md) to make arrangements to ensure final disposition of all research data.

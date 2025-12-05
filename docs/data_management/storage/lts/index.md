@@ -5,7 +5,7 @@ UAB Long-term storage (LTS) is an S3 object-storage platform hosted at UAB. This
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    [Globus](../../transfer/globus.md#long-term-storage-s3-lts-connector) may be used to transfer data with LTS.
+    [Globus](../../transfer/globus/index.md#long-term-storage-s3-lts-connector) may be used to transfer data with LTS.
 <!-- markdownlint-enable MD046 -->
 
 ## Terminology

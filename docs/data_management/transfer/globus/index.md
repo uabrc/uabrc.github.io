@@ -3,7 +3,7 @@
 <!-- markdownlint-disable MD046 -->
 !!! announcement
 
-    We are aware of reduced transfer speed into and out of [Long-Term Storage (LTS)] when using Globus and are working on a solution. For some use cases, [`s5cmd`](../../data_management//storage/lts/interfaces.md#s5cmd) may be a faster alternative. Please see [Our News Section](../../news/posts/2025-04-07-reduced-lts-transfer-speeds-on-globus.md) for more information.
+    We are aware of reduced transfer speed into and out of [Long-Term Storage (LTS)] when using Globus and are working on a solution. For some use cases, [`s5cmd`](../../../data_management/storage/lts/interfaces.md#s5cmd) may be a faster alternative. Please see [Our News Section](../../../news/posts/2025-04-07-reduced-lts-transfer-speeds-on-globus.md) for more information.
 <!-- markdownlint-enable MD046 -->
 
 Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is recommended for most single-use, day-to-day data transfer use-cases.
@@ -13,7 +13,7 @@ UAB Research Computing uses High Assurance Endpoints, meaning there are addition
 1. You will be prompted to prove authorization each time you access a UAB Research Computing endpoint or attempt to download files to your local machine from such an endpoint. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.
 1. Bookmarks are not allowed in High Assurance endpoints.
 1. In the newer version, Globus "Endpoints" have been moved under "Console", which can be located in the left-hand navigation pane.
-       ![!Globus endpoints moved under console](./images/globus_108_console_endpoint.png)
+       ![!Globus endpoints moved under console](../images/globus_108_console_endpoint.png)
 
 For more detailed information on High Assurance please see the Globus official pages below:
 
@@ -45,19 +45,19 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
 
 1. Log in to the Globus App online at <https://app.globus.org> using UAB Single Sign-On (SSO). Start typing "University of Alabama at Birmingham" into the "Use your existing organizational login" text box and selected it when it appears in the list.
 
-    ![!Globus login page with University of Alabama at Birmingham entered into the text box](./images/globus_001_login.png)
+    ![!Globus login page with University of Alabama at Birmingham entered into the text box](../images/globus_001_login.png)
 
 1. Click File Manager in the left-hand navigation pane.
 
-    ![!Navigation pane with File Manager selected.](./images/globus_002_nav_pane_file_manager.png)
+    ![!Navigation pane with File Manager selected.](../images/globus_002_nav_pane_file_manager.png)
 
 1. Ensure the center icon for the "Panels" selection is picked.
 
-    ![!Panels selection widget with center icon selected. Center icon appears to be two side-by-side panes.](./images/globus_003_panels.png)
+    ![!Panels selection widget with center icon selected. Center icon appears to be two side-by-side panes.](../images/globus_003_panels.png)
 
 1. Click the "Search" icon in the "Collection" text box near the top-left or top-right of the page to locate an endpoint/collection. An endpoint is a server that provides access to data stored in a cluster. A Collection can be a Mapped Collection or Guest Collection, which represents a user's own collection of files or directories mapped from storage endpoints to their Globus account for easy management, sharing and accessing. Please refer to the [Globus endpoints and collections](https://docs.globus.org/guides/overviews/collections-and-endpoints/) to know more. There are multiple ways to find an endpoint. For some endpoints you may be asked to log in, which is true of all UAB endpoints. Some UAB endpoints may also require that you be on the UAB Campus VPN.
 
-    ![!Globus File Manager interface with mouse pointer over left-hand Collection Search box.](./images/globus_004_search_bar.png)
+    ![!Globus File Manager interface with mouse pointer over left-hand Collection Search box.](../images/globus_004_search_bar.png)
 
     1. Begin typing in the box to search for an endpoint. To find UAB-related endpoints, search for "UAB". There are two Cheaha endpoints
 
@@ -66,33 +66,33 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
 
     1. The "Recent" tab shows endpoints/collections that have most recently been used.
 
-        ![!Globus Collection Search Recent tab showing two endpoints.](./images/globus_005_recent_tab.png)
+        ![!Globus Collection Search Recent tab showing two endpoints.](../images/globus_005_recent_tab.png)
 
     1. The "Bookmarks" tab shows a list of collection bookmarks. Bookmarks may not reference folders within UAB Research Computing or other High Assurance endpoints.
 
-        ![!Globus Collection Search Bookmarks tab showing four bookmarks.](./images/globus_006_bookmarks_tab.png)
+        ![!Globus Collection Search Bookmarks tab showing four bookmarks.](../images/globus_006_bookmarks_tab.png)
 
     1. The "Your Collections" tab shows all collections owned by you. For most researchers this will be one or more Globus Connect Personal collections.
 
-        ![!Globus Collection Search Your Collections tab showing one endpoint.](./images/globus_007_your_collections_tab.png)
+        ![!Globus Collection Search Your Collections tab showing one endpoint.](../images/globus_007_your_collections_tab.png)
 
     1. The "Shared With You" tab shows any private collections that have been shared with you by other users, possibly collaborators.
 
 1. When an endpoint/collection has been selected you will see a list of folders and files on the default path for that endpoint/collection in the bottom box. You can use the "Path" box to type a path to find the files you are looking for.
 
-    ![!Globus File Manager interface with one endpoint selected showing files of default directory.](./images/globus_010_one_endpoint_done.png)
+    ![!Globus File Manager interface with one endpoint selected showing files of default directory.](../images/globus_010_one_endpoint_done.png)
 
 1. Repeat the process of selecting an endpoint/collection for the other "Collection" text box.
 
-    ![!Globus File Manager interface with both endpoints selected showing files for both default directories.](./images/globus_011_two_endpoint_done.png)
+    ![!Globus File Manager interface with both endpoints selected showing files for both default directories.](../images/globus_011_two_endpoint_done.png)
 
 1. When both endpoints have been selected and you have chosen the correct paths for each collection, select files and/or folders on the side you wish to transfer FROM. We will call this side the source collection, and the other side the target collection. Selections may be made by clicking the checkboxes that appear when you hover over each file or folder.
 
-    ![!Globus File Manager interface with files selected in left endpoint.](./images/globus_012_selected_files.png)
+    ![!Globus File Manager interface with files selected in left endpoint.](../images/globus_012_selected_files.png)
 
 1. When all files and folders have been selected from the source collection, click the "Start" button on the source collection side. This will start a transfer process from source to target. The files will be placed in the currently open path on the target collection.
 
-    ![!Pop-up showing Transfer request submitted successfully. Pop-up contains link to View details.](./images/globus_013_popup.png)
+    ![!Pop-up showing Transfer request submitted successfully. Pop-up contains link to View details.](../images/globus_013_popup.png)
 
 1. A green pop-up notification will appear indicating the transfer has started. Click "View details \>" to be taken to the status of the transfer. You can also check on the status of any transfers by clicking the "Activity" button in the left-hand navigation pane.
 
@@ -106,7 +106,7 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
 
 Between the two "Start" buttons on the "File Manager" page is a "Transfer & Timer Options" drop down menu. Click that button to change the options. More information on each option. A brief summary of the options under "Transfer Settings" are...
 
-![!Transfer and Timer Options pane showing multiple options.](./images/globus_040_transfer_and_sync_options.png)
+![!Transfer and Timer Options pane showing multiple options.](../images/globus_040_transfer_and_sync_options.png)
 
 1. sync - Sync files only, rather than create new files.
 1. delete files - Delete any files on the target that are not on the source. Useful for forcing identical filesystems when syncing.
@@ -126,7 +126,7 @@ Below the "Transfer Settings", there are additional options available that you c
 
 ### Project Space Permissions
 
-Globus does not preserve permissions nor ownership when data is transferred, instead using whatever permissions are default at the target location, and making the owner the authenticated user who initiated the transfer. Typically this is not an issue, but may cause problems for [Project Storage directories](../storage/index.md#what-shared-storage-solutions-are-available). Please see our [Project Directory Permissions Section](../../data_management/storage/cheaha_storage_gpfs/project_directories.md#project-directory-permissions) for more information.
+Globus does not preserve permissions nor ownership when data is transferred, instead using whatever permissions are default at the target location, and making the owner the authenticated user who initiated the transfer. Typically this is not an issue, but may cause problems for [Project Storage directories](../../storage/index.md#what-shared-storage-solutions-are-available). Please see our [Project Directory Permissions Section](../../../data_management/storage/cheaha_storage_gpfs/project_directories.md#project-directory-permissions) for more information.
 
 ### More Information
 
@@ -145,32 +145,32 @@ To use the UAB Box Connector, [search for a collection/endpoint](#moving-data-be
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    [LTS](../../data_management/storage/lts/index.md) behaves differently from other file systems and comes with a few possible pitfalls. Keep in mind the following three rules: (1) all data must be in buckets, (2) buckets are only allowed in the root folder, and (3) buckets must have unique names.
+    [LTS](../../../data_management/storage/lts/index.md) behaves differently from other file systems and comes with a few possible pitfalls. Keep in mind the following three rules: (1) all data must be in buckets, (2) buckets are only allowed in the root folder, and (3) buckets must have unique names.
 <!-- markdownlint-enable MD046 -->
 
-To use the UAB [LTS](../../data_management/storage/lts/index.md) Connector, [search for a collection/endpoint](#moving-data-between-collections) like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a [bucket](../../data_management/storage/lts/index.md#terminology) in LTS. To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.
+To use the UAB [LTS](../../../data_management/storage/lts/index.md) Connector, [search for a collection/endpoint](#moving-data-between-collections) like usual and enter "UAB LTS" into the search box. Select the endpoint labeled "UAB Research Computing LTS (Long Term Storage aka S3)". If you have stored data within LTS already you should see a list of folders, otherwise you will see an empty space where folders may be placed. Each folder corresponds to a [bucket](../../../data_management/storage/lts/index.md#terminology) in LTS. To create a bucket, click "New Folder" in the "File Manager" window in Globus. Note that buckets must have globally unique names. Read on for more information about possible pitfalls.
 
-  ![create bucket via globus](./images/globus-create-lts-bucket.png)
+  ![create bucket via globus](../images/globus-create-lts-bucket.png)
 
 #### Adding LTS Allocation Credentials
 
-Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../../data_management/storage/lts/index.md#requesting-an-allocation) to the LTS endpoint. To do so, please follow the instructions given below.
+Before you can manage an LTS allocation using Globus, you'll need to add the [LTS S3 Access and Secret Keys](../../../data_management/storage/lts/index.md#requesting-an-allocation) to the LTS endpoint. To do so, please follow the instructions given below.
 
 1. In your browser, navigate to <https://app.globus.org> and login using UAB SSO.
 1. Click "Collections" in the left-hand navigation pane.
 1. In the search field at the top of the "Collection" page, enter "UAB LTS" and then click the search button. Be sure to uncheck "Recently Used" if it is checked. You should see a collection titled "UAB Research Computing LTS (Long Term Storage aka S3)" appear in the search results.
 1. Click the right arrow indicator at the right-hand side of the "UAB Research Computing LTS" result. You should be taken to the Overview page for the "UAB Research Computing LTS" endpoint.
 
-    ![!Image showing Globus collections page with UAB LTS in search box, UAB Research Computing LTS endpoint visible in results, and right arrow highlighted.](./images/globus-lts-s3-credentials-01.png)
+    ![!Image showing Globus collections page with UAB LTS in search box, UAB Research Computing LTS endpoint visible in results, and right arrow highlighted.](../images/globus-lts-s3-credentials-01.png)
 
 1. Near the top of the Overview page, click the "Credentials" tab". After some time, you should see a form requesting your "AWS IAM Access Key ID" and "AWS IAM Secret Key".
 1. Enter the two requested keys in the appropriate boxes, then press "Continue". For data security reasons, you may be asked to authenticate again with your UAB SSO credentials. If you have more than one set of keys, you will need to choose which to enter. At this time, there doesn't appear to be a way to enter or use more than one set of credentials at a time with Globus.
 
-    ![!Image showing Register a Credential form on the UAB Research Computing LTS endpoint Overview page showing artificial keys entered into the appropriate text fields.](./images/globus-lts-s3-credentials-02.png)
+    ![!Image showing Register a Credential form on the UAB Research Computing LTS endpoint Overview page showing artificial keys entered into the appropriate text fields.](../images/globus-lts-s3-credentials-02.png)
 
 1. You should be taken back to the UAB Research Computing LTS endpoint Overview page with the Credentials tab selected. There should now be one entry on this page showing your AWS IAM Access Key ID and your Globus Identity (i.e., your `BlazerID@uab.edu` email address). If you have multiple Access Keys and ever wish to change which one is being used with Globus, then click the "Trash Can" icon next to the entry on this page to delete it, and start the key entry process over from the previous step.
 
-    ![!Image showing UAB Research Computing LTS endpoint Overview page showing Access Credentials entry with AWS IAM Access Key ID and Globus Identity.](./images/globus-lts-s3-credentials-03.png)
+    ![!Image showing UAB Research Computing LTS endpoint Overview page showing Access Credentials entry with AWS IAM Access Key ID and Globus Identity.](../images/globus-lts-s3-credentials-03.png)
 
 At this point you are able to access the LTS allocation associated with the Access Key you entered, and any buckets which have granted access to that Access Key. If you have more than one Access Key, e.g. for each of your personal and project allocations, you will need to choose which key to enter above. If you ever wish to change credentials, then click the "Trash Can" icon next to the entry shown in step 6, above, and start the key entry process over.
 
@@ -178,11 +178,11 @@ At this point you are able to access the LTS allocation associated with the Acce
 
 All data transferred to LTS must be placed in a bucket, and may _not_ be placed directly into the root directory. Attempting to move data to the root directory will result in an unhelpful error message in the "Activity" window.
 
-![!unhelpful error message for data placed in the root LTS directory](images/globus_lts_no_bucket_error_001.png)
+![!unhelpful error message for data placed in the root LTS directory](../images/globus_lts_no_bucket_error_001.png)
 
 Clicking on the "view event log" link shows the following.
 
-![!unhelpful event log message](images/globus_lts_no_bucket_error_002.png)
+![!unhelpful event log message](../images/globus_lts_no_bucket_error_002.png)
 
 ```text
 Error (transfer)
@@ -197,7 +197,7 @@ Details: an end-of-file was reached\nglobus_xio: An end of file occurred\n
 
 When creating new buckets, the name must be unique across all buckets on the system. If a duplicate bucket name, for example `first-test-bucket`, is entered, a long error message will appear in a small space next to the new bucket name. For readability, the expanded message is shown below.
 
-![!large error message in small space](images/globus_lts_duplicate_name_error_001.png)
+![!large error message in small space](../images/globus_lts_duplicate_name_error_001.png)
 
 ```text
 Remote Endpoint Failure: Path already exists, Error (mkdir)
@@ -206,13 +206,13 @@ Server: 138.26.220.68:443
 Message: Path '/first-test-bucket/' already exists
 ```
 
-At first glance, requiring unique names across all buckets on the system may sound very restrictive, but it is necessary for LTS to be as fast as it is. Fortunately, there is an easy way to deal with the limitation. See our LTS section on [good naming practice](../storage/lts/index.md#avoiding-duplicate-names-for-buckets) for how to avoid duplicate names. For example, if you want to name a bucket `ai-lab` for storing data related to the entire AI lab or a specific dataset, you can append a universally unique identifier (UUID) to the name. To generate a UUID, visit <https://www.uuidgenerator.net/>, and a 16-byte UUID will be automatically generated. You can then copy it and append it to the name `ai-lab`, as shown below.
+At first glance, requiring unique names across all buckets on the system may sound very restrictive, but it is necessary for LTS to be as fast as it is. Fortunately, there is an easy way to deal with the limitation. See our LTS section on [good naming practice](../../storage/lts/index.md#avoiding-duplicate-names-for-buckets) for how to avoid duplicate names. For example, if you want to name a bucket `ai-lab` for storing data related to the entire AI lab or a specific dataset, you can append a universally unique identifier (UUID) to the name. To generate a UUID, visit <https://www.uuidgenerator.net/>, and a 16-byte UUID will be automatically generated. You can then copy it and append it to the name `ai-lab`, as shown below.
 
-![!large error message in small space](images/globus-uuid.png)
+![!large error message in small space](../images/globus-uuid.png)
 
-Similarly, if an invalid bucket name, such as `first_test_bucket`, is entered (due to the use of an underscore, which doesn’t follow LTS bucket naming rules), an error will also be displayed as shown below. To avoid this, please refer to the guidelines for [valid bucket name in LTS](../storage/lts/lts_faq.md#what-are-valid-bucket-names-in-lts).
+Similarly, if an invalid bucket name, such as `first_test_bucket`, is entered (due to the use of an underscore, which doesn’t follow LTS bucket naming rules), an error will also be displayed as shown below. To avoid this, please refer to the guidelines for [valid bucket name in LTS](../../storage/lts/lts_faq.md#what-are-valid-bucket-names-in-lts).
 
-![!large invalid error message in small space](images/globus_lts_invalid_name_error_001.png)
+![!large invalid error message in small space](../images/globus_lts_invalid_name_error_001.png)
 
 ```text
 Bad Gateway: Endpoint Error, Error (mkdir)
@@ -227,23 +227,23 @@ Error accessing "": ErrorInvalidBucketName: ErrorInvalidBucketName: \r\n
 
 To cancel or dismiss these errors, click the `refresh list` button on the Globus collection panel, or scroll all the way to the right in the red area of the error message and click the `x` symbol as shown below.
 
-![!large error message cancellation](images/globus_lts_cancele_name_error_001.png)
+![!large error message cancellation](../images/globus_lts_cancele_name_error_001.png)
 
 Uploading a top-level folder that does not follow the bucket naming rules will cause an error similar to the one encountered when creating a bucket with an invalid name. When uploading a folder with a name similar to a bucket in your LTS, Globus will sync and save all sub-folders and files into that bucket. Subfolders also need to follow naming rules, but they inherit the uniqueness from the parent name. This is part of why we recommend random UUIDs. If you attempt to upload a folder with a name that matches an existing bucket in someone else's space, you will encounter a `permission denied error`, as shown below.
 
-![!large error message in small space](images/globus_lts_upload_error_001.png)
+![!large error message in small space](../images/globus_lts_upload_error_001.png)
 
-Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata. For guidance on defining policies for your bucket, please refer to our documentation on [policy structure](../storage/lts/iam_and_policies.md#policy-structure) and [applying a policy](../storage/lts/iam_and_policies.md#applying-a-policy).
+Globus can create buckets. By default, buckets are created without a policy, meaning only you can access them until a policy is added. However, Globus cannot be used to modify or add policies. In addition, files transferred to a bucket will become objects with the same name, as long as the name is valid and not duplicated. Globus does not recognize or handle metadata, so you cannot use it to view or modify metadata. For guidance on defining policies for your bucket, please refer to our documentation on [policy structure](../../storage/lts/iam_and_policies.md#policy-structure) and [applying a policy](../../storage/lts/iam_and_policies.md#applying-a-policy).
 
 ## Using Bookmarks
 
 To save a bookmark, use the File Manager interface to select a collection and navigate to a path on that collection. Then click the "Create Bookmarks" button as shown below.
 
-![!Globus File Manager interface with mouse pointer hovering over Bookmark icon.](./images/globus_060_create_bookmark.png)
+![!Globus File Manager interface with mouse pointer hovering over Bookmark icon.](../images/globus_060_create_bookmark.png)
 
 To manage bookmarks, click on the Collection search bar, then select the Bookmarks tab. To edit a bookmark, click the 'Pencil' icon. To delete a bookmark, click the 'Trash Bin' icon.
 
-![!Globus Bookmarks interface showing four bookmarks.](./images/globus_061_manage_bookmarks.png)
+![!Globus Bookmarks interface showing four bookmarks.](../images/globus_061_manage_bookmarks.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -261,19 +261,19 @@ It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public a
 
 1. Click the "Administered By You" tab (or) you can search for the collections in search.
 
-    ![!Globus Endpoints page with Administered by You selected, showing two endpoints. One of the endpoints is a shared endpoint.](./images/globus_100_shared_search_collections.png)
+    ![!Globus Endpoints page with Administered by You selected, showing two endpoints. One of the endpoints is a shared endpoint.](../images/globus_100_shared_search_collections.png)
 
 1. In the table, find the collections you wish to share data from and click its name. You will be taken to the page for that collection.
 
 1. Click the "Collections" tab.
 
-    ![!Globus UAB RC Work Laptop page with Guest Collections tab selected showing one collection.](./images/globus_101_shared_collections.png)
+    ![!Globus UAB RC Work Laptop page with Guest Collections tab selected showing one collection.](../images/globus_101_shared_collections.png)
 
 1. Click the "Add a Guest Collection" button.
 
 1. Fill out the form.
 
-    ![!Create New Guest Collection form.](./images/globus_102_shared_collection_form.png)
+    ![!Create New Guest Collection form.](../images/globus_102_shared_collection_form.png)
 
     1. Manually enter a path or click the Browse button to select a folder.
     1. Give a short but memorable name for your Guest Collection. This information will be useful for your collaborators.
@@ -286,13 +286,13 @@ It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public a
 
 1. Make sure you are on the "Permissions" tab. You should see a permissions table with your name in it.
 
-    ![!Newly created test endpoint page with Permissions tab selected.](./images/globus_103_shared_permissions.png)
+    ![!Newly created test endpoint page with Permissions tab selected.](../images/globus_103_shared_permissions.png)
 
 1. Click "Add Permissions -- Share With" to share your Guest Collection with other users.
 
 1. Fill out the form.
 
-    ![!Test endpoint Add Permissions Share With form.](./images/globus_104_shared_add_permissions.png)
+    ![!Test endpoint Add Permissions Share With form.](../images/globus_104_shared_add_permissions.png)
 
     1. Optionally enter a path within the shared endpoint or use the Browse button. If you leave the path as just a slash, the entire shared endpoint will be shared with the permitted users.
     1. Select who to share with.
@@ -326,17 +326,17 @@ It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public a
 
 1. Click the "Administered By You" tab.
 
-    ![!Globus Endpoints page with Administered by You tab selected, showing two endpoints.](./images/globus_105_shared_collections.png)
+    ![!Globus Endpoints page with Administered by You tab selected, showing two endpoints.](../images/globus_105_shared_collections.png)
 
 1. Click the right caret ">" icon at the right side of the row with the collection you wish to delete. You will be taken to the information page for that collection.
 
-    ![!Globus Endpoints page with Shared Collection Overview.](./images/globus_106_shared_collection_overview.png)
+    ![!Globus Endpoints page with Shared Collection Overview.](../images/globus_106_shared_collection_overview.png)
 
 1. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the Guest Collection, or to cancel.
 
-    ![!Delete Collection confirmation dialog banner.](./images/globus_107_shared_delete.png)
+    ![!Delete Collection confirmation dialog banner.](../images/globus_107_shared_delete.png)
 
 ## Where Can I Learn More About Globus?
 
-- See our [Tutorials](./tutorial/index.md)
+- See our [Tutorials](../tutorial/index.md)
 - Visit the [Globus Events Calendar](https://www.globus.org/events) for official learning opportunities.

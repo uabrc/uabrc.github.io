@@ -1,6 +1,4 @@
-# Data Transfer Tutorials
-
-## Globus
+# Globus Tutorials
 
 To learn how to use Globus, everyone should start with the [Globus for Individuals Tutorials](./globus_individual_tutorial.md) to become familiar with how to get on Globus and how it works.
 

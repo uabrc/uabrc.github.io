@@ -8,7 +8,7 @@ LTS is not available as a mounted filesystem on local computers or Cheaha. You m
 
 ## Globus
 
-[Globus](../../transfer/globus.md#long-term-storage-s3-lts-connector) is a general file transfer system that operates through a web browser and is recommended for most file transfer needs. UAB has an S3 connector for Globus that can transfer data to and from LTS as long as the user has access to the desired buckets.
+[Globus](../../transfer/globus/index.md#long-term-storage-s3-lts-connector) is a general file transfer system that operates through a web browser and is recommended for most file transfer needs. UAB has an S3 connector for Globus that can transfer data to and from LTS as long as the user has access to the desired buckets.
 
 To connect to the LTS endpoint in Globus, search `UAB Research Computing LTS` in the search bar and enter your access and secret keys given to you by Research Computing staff. You will be able to see the buckets owned by the allocation associated with the keys you entered.
 
@@ -24,7 +24,7 @@ Globus is very useful for single transfers of data either to or from LTS and is 
 
 ### Managing LTS Credentials on Globus
 
-See our [Globus - Adding LTS Allocation Credentials](../../transfer/globus.md#adding-lts-allocation-credentials) section for more information.
+See our [Globus - Adding LTS Allocation Credentials](../../transfer/globus/index.md#adding-lts-allocation-credentials) section for more information.
 
 ## Command Line
 

@@ -103,7 +103,7 @@ We're always happy to provide support for your Research Computing needs, you nee
 - [No-cost storage offerings](../data_management/storage/index.md#what-type-of-storage-do-i-need)
     - [GPFS](../data_management/storage/index.md#what-shared-storage-solutions-are-available): Hot storage, compute adjacent, directly accessible from Cheaha
     - [LTS](../data_management/storage/lts/index.md): Cool storage, large capacity
-    - [Transfer data with Globus](../data_management/transfer/globus.md)
+    - [Transfer data with Globus](../data_management/transfer/globus/index.md)
 - [Batch computing](../cheaha/slurm/introduction.md)
     - Interactive applications in [Open OnDemand](../cheaha/open_ondemand/index.md)
         - [HPC Desktop](../cheaha/open_ondemand/hpc_desktop.md)

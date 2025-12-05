@@ -147,15 +147,17 @@ nav:
           - Storage Alternatives: data_management/storage/alternate_storage.md
       - Data Transfer Tools:
           - data_management/transfer/index.md
-          - Tutorial:
-              - data_management/transfer/tutorial/index.md
-              - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
-              - Globus for Organizations: data_management/transfer/tutorial/globus_organization_tutorial.md
-              - Globus Group Management: data_management/transfer/tutorial/globus_group_management.md
-          - Globus: data_management/transfer/globus.md
+          - Globus:
+              - data_management/transfer/globus/index.md
+              - Tutorial:
+                  - data_management/transfer/tutorial/index.md
+                  - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
+                  - Globus for Organizations: data_management/transfer/tutorial/globus_organization_tutorial.md
+                  - Globus Group Management: data_management/transfer/tutorial/globus_group_management.md
+              - Install Globus Connect Personal: data_management/transfer/globus/install_gcp.md
+              - Globus Connect Personal: data_management/transfer/globus/globus_connect_personal.md
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
-
       - Research Data Responsibilities: data_management/research_data_responsibilities.md
   - Workflow Solutions:
       - Using the Shell: workflow_solutions/shell.md

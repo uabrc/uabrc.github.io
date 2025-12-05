@@ -52,7 +52,7 @@ Data can be uploaded from your local machine using this interface. Use the `Uplo
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    This should be limited to small files only (< 1 MB). For large files or datasets, please use [Globus](../../data_management/transfer/globus.md) instead.
+    This should be limited to small files only (< 1 MB). For large files or datasets, please use [Globus](../../data_management/transfer/globus/index.md) instead.
 <!-- markdownlint-enable MD046 -->
 
 #### Opening a Terminal

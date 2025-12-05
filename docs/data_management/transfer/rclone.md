@@ -1,6 +1,6 @@
 # RClone
 
-[RClone](https://rclone.org/) is a powerful command line tool for transferring and synchronizing files over the internet between various machines, servers and cloud storage services. It is highly recommended for small to moderate amounts of data. For very large amounts of data consider using [Globus](globus.md) for increased robustness against failure. Where Globus is not available, `rclone` is still suitable.
+[RClone](https://rclone.org/) is a powerful command line tool for transferring and synchronizing files over the internet between various machines, servers and cloud storage services. It is highly recommended for small to moderate amounts of data. For very large amounts of data consider using [Globus](globus/index.md) for increased robustness against failure. Where Globus is not available, `rclone` is still suitable.
 
 RClone requires a modest amount of setup time on local machines, but once setup can be used fairly easily. RClone uses the concepts of "remotes", which is an abstract term for any storage service or device that is not physically part of the local machine. Many remotes are offered, including [SFTP](../../uab_cloud/remote_access.md#sftp) and various [UAB Cloud Storage Solutions](https://www.uab.edu/it/home/tech-solutions/file-storage/storage-options). SFTP may be used to access Cheaha, cloud.rc and other laptop and desktop computers.
 
