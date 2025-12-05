@@ -89,6 +89,7 @@ plugins: # order matters!
         data_management/lts/lts.md: data_management/storage/lts/index.md
         data_management/lts/policies.md: data_management/storage/lts/iam_and_policies.md
         data_management/lts/sharing.md: data_management/storage/lts/iam_and_policies.md
+        data_management/transfer/globus.md: data_management/transfer/globus/index.md
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/git_collaboration.md

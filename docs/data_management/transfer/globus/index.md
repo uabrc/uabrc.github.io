@@ -20,13 +20,6 @@ For more detailed information on High Assurance please see the Globus official p
 - [High Assurance Security Overview](https://docs.globus.org/guides/overviews/security/high-assurance-overview/)
 - [High Assurance Collections](https://docs.globus.org/guides/overviews/high-assurance/)
 
-## Setting Up Globus Connect Personal
-
-[Globus Connect Personal](https://www.globus.org/globus-connect-personal) is software meant to be installed on local machines such as laptops, desktops,
-workstations and self-owned, local-scale servers. Globus maintains excellent documentation for installation on [MacOS](https://docs.globus.org/globus-connect-personal/install/mac/), [Linux](https://docs.globus.org/globus-connect-personal/install/linux/) and [Windows](https://docs.globus.org/globus-connect-personal/install/windows/).
-
-To verify your installation is complete, please visit <https://app.globus.org> and log in. Click "Collections" in the left-hand navigation pane and then click the "Administered By You" tab. Look in the table for the Guest Collection you just created.
-
 ## Managing Identities
 
 Globus Identities is a concept helping to map Globus Accounts (one per person) to institutions (one or more per person).
@@ -251,7 +244,7 @@ To manage bookmarks, click on the Collection search bar, then select the Bookmar
     It is not possible to create bookmarks within High Assurance Endpoints.
 <!-- markdownlint-enable MD046 -->
 
-## Managing Guest Collections From a Globus Connect Personal Endpoint
+## Managing Guest Collections From a Globus Endpoint
 
 It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal Collection than for a Guest Collection. Guest collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use Guest Collections!
 
