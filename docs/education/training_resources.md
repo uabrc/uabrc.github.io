@@ -52,7 +52,9 @@ The Carpentries is a 501(c)3 non-profit organization dedicated to educating rese
 
 ## UAB Research Resources
 
-UAB provides a robust network of Core Facilities and University-Wide Interdisciplinary Research Centers that support research across disciplines. These resources help researchers access specialized expertise, equipment, and data services essential for research. Below are some key offices, programs, and directories that connect researchers to these resources.
+UAB provides a broad set of research support services that fall primarily under two research administrative groups: the Office of Research and the Institutional Research Core Program (IRCP). These groups oversee compliance offices, shared facilities, interdisciplinary research programs, and research infrastructure that support UAB researchers across disciplines. The resources below are organized according to the group that manages them
+
+### Resources Under the Office of Research
 
 - **[Office of Research](https://www.uab.edu/research/)** oversees university-wide research operations, including compliance, funding, and partnerships.
 
@@ -60,11 +62,13 @@ UAB provides a robust network of Core Facilities and University-Wide Interdiscip
 
 - **[Institutional Animal Care and Use Committee (IACUC)](https://www.uab.edu/research/home/iacuc)** oversees research involving animal subjects to ensure humane care and compliance.
 
-- The **Institutional Research Core Program (IRCP)** coordinates university-wide investment in shared research infrastructure. You can visit the **[IRCP main site](https://www.uab.edu/cores/ircp/)** for program overviews. Or access their **[IRCP Core Facilities listing](https://www.uab.edu/cores/ircp/uab-ircp-core-facilities)** for specialized labs and instrumentation.
+- **[University-Wide Interdisciplinary Research Centers Program (UWIRC Program) Directory](https://www.uab.edu/research/home/uwirc/directory)** lists centers that promote cross-disciplinary collaboration across UAB. Each center fosters partnerships, provides shared facilities, and supports pilot funding or training programs.
 
 - **[Core Facility Directory](https://www.uab.edu/research/home/core-facility-directory)** to find and contact available shared research resources at UAB.
 
-- **[University-Wide Interdisciplinary Research Centers Program (UWIRC Program) Directory](https://www.uab.edu/research/home/uwirc/directory)** lists centers that promote cross-disciplinary collaboration across UAB. Each center fosters partnerships, provides shared facilities, and supports pilot funding or training programs.
+### Resources Under the Institutional Research Core Program (IRCP)
+
+- The **Institutional Research Core Program (IRCP)** coordinates university-wide investment in shared research infrastructure. You can visit the **[IRCP main site](https://www.uab.edu/cores/ircp/)** for program overviews. Or access their **[IRCP Core Facilities listing](https://www.uab.edu/cores/ircp/uab-ircp-core-facilities)** for specialized labs and instrumentation.
 
 - **[Electronic Health Record (EHR) Data Resource](https://www.uab.edu/ccts/research-resources/informatics/uab-ehr-data-resources)** provides de-identified and limited data sets from electronic health records for approved research projects.
 
