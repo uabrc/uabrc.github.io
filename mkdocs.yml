@@ -149,13 +149,12 @@ nav:
           - data_management/transfer/index.md
           - Globus:
               - data_management/transfer/globus/index.md
-              - Tutorial:
-                  - data_management/transfer/tutorial/index.md
-                  - Globus for Individuals: data_management/transfer/tutorial/globus_individual_tutorial.md
-                  - Globus for Organizations: data_management/transfer/tutorial/globus_organization_tutorial.md
-                  - Globus Group Management: data_management/transfer/tutorial/globus_group_management.md
-              - Install Globus Connect Personal: data_management/transfer/globus/install_gcp.md
-              - Globus Connect Personal: data_management/transfer/globus/globus_connect_personal.md
+              - Getting Started: data_management/transfer/globus/login_to_globus.md
+              - Install Globus Connect Personal: data_management/transfer/globus/gcp_install.md
+              - Set Up Globus Connect Personal: data_management/transfer/globus/gcp_setup.md
+              - Globus for Individuals: data_management/transfer/globus/globus_individual_tutorial.md
+              - Globus for Organizations: data_management/transfer/globus/globus_organization_tutorial.md
+              - Globus Group Management: data_management/transfer/globus/globus_group_management.md
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
       - Research Data Responsibilities: data_management/research_data_responsibilities.md
