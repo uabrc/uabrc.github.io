@@ -11,5 +11,5 @@ We covered the following topics:
     - [UAB LTS](./storage/lts/index.md).
     - [Code Storage](./storage/code_storage.md).
     - [Alternative Storage Options](./storage/alternate_storage.md).
-- [Data Transfer Tools](./transfer/index.md): Various tools are available for transferring data to, from, and between our storage systems, including: [Globus](./transfer/globus/index.md), [Rclone](./transfer/rclone.md), and [FileZilla](./transfer/filezilla.md). Step-by-step tutorials for [Globus](./transfer/tutorial/index.md) are also provided to help you transfer data between our storage systems.
+- [Data Transfer Tools](./transfer/index.md): Various tools are available for transferring data to, from, and between our storage systems, including: [Globus](./transfer/globus/index.md), [Rclone](./transfer/rclone.md), and [FileZilla](./transfer/filezilla.md). Step-by-step tutorials for [Globus](./transfer/globus/index.md) are also provided to help you transfer data between our storage systems.
 - [Research Data Responsibilities](./research_data_responsibilities.md): This section  explains the roles and responsibilities in research data management. It covers the responsibilities of researchers and research computing teams, provides guidelines for managing, sharing, and preserving research data, and describes good practices for handling shared allocations.

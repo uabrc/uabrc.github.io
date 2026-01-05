@@ -6,10 +6,6 @@ We currently support the following tools on Cheaha to manage data transfers. You
 1. [Filezilla](./filezilla.md)
 1. [Rclone](./rclone.md)
 
-We also have tutorials to guide your data transfer needs;
-
-1. [Data Transfer (Globus)](../transfer/tutorial/index.md)
-
 ## What Data Sharing Method Works Best for My Collaboration?
 
 Choosing the right data sharing tool/method depends on how often you transfer data and who needs access to it. Below are some common scenarios and our recommendations.
@@ -23,8 +19,8 @@ If you are sending data infrequently, for example, to share results with a colla
 
 - **Recommended method:** [Globus](../transfer/globus/index.md) is the easiest and most robust option. It is also simple to restrict who has access.
     - Place your data in a directory you want to share.
-    - [Create a shared Globus collection](../transfer/globus/index.md#creating-a-guest-collection).
-    - [Share the collection](../transfer/tutorial/globus_organization_tutorial.md#how-do-i-share-a-collection-with-others) to the intended recipient.
+    - [Create a shared Globus collection](../transfer/globus/login_to_globus.md#creating-a-guest-collection).
+    - [Share the collection](../transfer/globus/globus_organization_tutorial.md#how-do-i-share-a-collection-with-others) to the intended recipient.
 
 If you expect your collaboration to expand in the future, use a shared storage allocation ([GPFS](../../data_management/storage/cheaha_storage_gpfs/project_directories.md) or [LTS](../../data_management/storage/lts/index.md)). See our [Which Platform I Need](../../data_management/storage/index.md#which-platform-do-i-need-an-allocation-for) page to choose the shared storage allocation that better fits your needs. This option allows ongoing collaboration but requires more attention to access control, especially if your data falls under security requirements such as HIPAA, NIST 800-171, or ITAR.  Collaborations using shared allocations can be managed in two ways.
 
