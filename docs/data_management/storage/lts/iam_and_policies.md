@@ -84,7 +84,7 @@ Owners can assign stewards either when requesting LTS allocation creation or at 
 There are multiple ways to share data with LTS:
 
 - With [Bucket Policies](#bucket-policies)
-- Using [Globus Guest Collections](../../transfer/tutorial/globus_organization_tutorial.md#how-do-i-share-a-collection-with-others)
+- Using [Globus Guest Collections](../../transfer/globus/globus_organization_tutorial.md#how-do-i-share-a-collection-with-others)
 
 <!-- markdownlint-disable MD046 -->
 !!! note
