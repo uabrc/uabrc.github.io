@@ -190,3 +190,88 @@ Before sharing a Collection with others, you will need to first [create a Collec
 If you manage data for a Research Core, please [Contact Support](../../../help/support.md#how-to-request-support) to start a conversation. The answer to this question is currently being developed, so we will need to work together to find the ideal solution.
 
 [Return to the top](#globus-tutorials-for-uab-research-organizations).
+
+## Managing Guest Collections From a Globus Endpoint
+
+It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal Collection than for a Guest Collection. Guest collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use Guest Collections!
+
+### Creating a Guest Collection
+
+1. Click "Collections" in the left-hand navigation pane.
+
+1. Click the "Administered By You" tab (or) you can search for the collections in search.
+
+    ![!Globus Endpoints page with Administered by You selected, showing two endpoints. One of the endpoints is a shared endpoint.](../images/globus_100_shared_search_collections.png)
+
+1. In the table, find the collections you wish to share data from and click its name. You will be taken to the page for that collection.
+
+1. Click the "Collections" tab.
+
+    ![!Globus UAB RC Work Laptop page with Guest Collections tab selected showing one collection.](../images/globus_101_shared_collections.png)
+
+1. Click the "Add a Guest Collection" button.
+
+1. Fill out the form.
+
+    ![!Create New Guest Collection form.](../images/globus_102_shared_collection_form.png)
+
+    1. Manually enter a path or click the Browse button to select a folder.
+    1. Give a short but memorable name for your Guest Collection. This information will be useful for your collaborators.
+    1. Optionally fill in a more detailed description of the Guest Collection for your records.
+    1. Optionally fill in searchable keywords.
+    1. Other additional options include, information link, contact email, organization/department.
+    1. Default directory, if left empty, is equivalent to the first field "Directory".
+
+1. Click "Create Collection" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged Guest Collection. Any further references to "an endpoint" will be about the newly created, Guest Collection.
+
+1. Make sure you are on the "Permissions" tab. You should see a permissions table with your name in it.
+
+    ![!Newly created test endpoint page with Permissions tab selected.](../images/globus_103_shared_permissions.png)
+
+1. Click "Add Permissions -- Share With" to share your Guest Collection with other users.
+
+1. Fill out the form.
+
+    ![!Test endpoint Add Permissions Share With form.](../images/globus_104_shared_add_permissions.png)
+
+    1. Optionally enter a path within the shared endpoint or use the Browse button. If you leave the path as just a slash, the entire shared endpoint will be shared with the permitted users.
+    1. Select who to share with.
+        1. User - One or more users.
+        1. Group - All members of a group.
+        1. All Users - All globus users.
+        1. Public - Makes data accessible to everyone.
+
+            <!-- markdownlint-disable MD046 -->
+            !!! danger
+
+                It is important to note that options (iii) and (iv) poses a high risk in terms of security. Therefore, we strongly advise against this practice.This will expose information to everyone on Globus!
+            <!-- markdownlint-disable MD046 -->
+
+    1. Search for users to add, or a group, depending on your choice above. You should be able to find any globus user using the search box.
+
+        <!-- markdownlint-disable MD046 -->
+        !!! warning
+
+            Be certain of which user you are selecting! Check the email address domain.
+        <!-- markdownlint-disable MD046 -->
+
+    1. If adding users, optionally enter a message so they know why they are being added.
+    1. Select permissions. Read is automatically selected and cannot be changed. Write permissions are optional.
+
+1. Click "Add Permission" to add permissions for these users or groups. You will be returned to the page for the Guest Collection and should be on the "Permissions" tab and should see the user or group in the table.
+
+### Deleting a Guest Collection
+
+1. Click "Collections" in the left-hand navigation pane, then
+
+1. Click the "Administered By You" tab.
+
+    ![!Globus Endpoints page with Administered by You tab selected, showing two endpoints.](../images/globus_105_shared_collections.png)
+
+1. Click the right caret ">" icon at the right side of the row with the collection you wish to delete. You will be taken to the information page for that collection.
+
+    ![!Globus Endpoints page with Shared Collection Overview.](../images/globus_106_shared_collection_overview.png)
+
+1. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the Guest Collection, or to cancel.
+
+    ![!Delete Collection confirmation dialog banner.](../images/globus_107_shared_delete.png)
