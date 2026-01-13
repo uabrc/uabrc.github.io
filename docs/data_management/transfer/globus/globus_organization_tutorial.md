@@ -1,8 +1,8 @@
-# Globus Tutorials for UAB Research Organizations
+# Globus for UAB Research Organizations
 
-This tutorial is designed to guide UAB research managers, such as Lab PIs, Core Directors, and their management staff, to help them set up and use Globus Connect Personal (GCP) for secure data sharing on their local/personal computers. GCP allows you to share data with collaborators efficiently meeting security and compliance standards for file sharing.
+This guide is intended for UAB research managers such as Lab PIs, Core Directors, and their administrative staff. It provides instructions on how to create and search collections and securely share data with collaborators in compliance with security and policy requirements for file sharing.
 
-If you are new to Globus, we recommend starting with our [Globus Tutorials for Individual Researchers](../globus/globus_individual_tutorial.md) first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the tutorials on this page in order from start to finish, as later tutorials assume the previous tutorials have been completed.
+If you are new to Globus, we recommend starting with our [Getting Started] [Globus for Individual Researchers](../globus/globus_individual_tutorial.md) guides first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the guide on this page in order from start to finish, as each guide assume that the previous ones have been completed.
 
 Topics covered:
 
@@ -40,7 +40,7 @@ For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_m
 
 To learn how to get onto the Globus Web App [Globus Tutorials for Individual Researchers Page](../globus/login_to_globus.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
 
-[Return to the top](#globus-tutorials-for-uab-research-organizations).
+[Return to the top](#globus-for-uab-research-organizations).
 
 ## How Do I Find Collections I Created or Own?
 
@@ -68,7 +68,7 @@ To find a Collection you own, use the following steps.
 
         ![Collectionm details page with overview tab selected.](../images/go-my-collections/005-collection-details-page.png)
 
-[Return to the top](#globus-tutorials-for-uab-research-organizations).
+[Return to the top](#globus-for-uab-research-organizations).
 
 ## How Do I Enable Collection Sharing for My Globus Account?
 
@@ -109,7 +109,7 @@ To join the UAB HA group, we need to receive both a UAB support request, and a r
 
 When you have completed the steps in this section, proceed to [creating a Collection](#how-do-i-create-a-collection).
 
-[Return to the top](#globus-tutorials-for-uab-research-organizations).
+[Return to the top](#globus-for-uab-research-organizations).
 
 ## How Do I Create a Collection?
 
@@ -147,7 +147,7 @@ The instructions below assume you are starting from an existing Collection. The 
 
 When you have created a Collection, you are ready to [share the Collection with others](#how-do-i-share-a-collection-with-others).
 
-[Return to the top](#globus-tutorials-for-uab-research-organizations).
+[Return to the top](#globus-for-uab-research-organizations).
 
 ## How Do I Share a Collection With Others?
 
@@ -183,13 +183,13 @@ Before sharing a Collection with others, you will need to first [create a Collec
 
     ![Collection details page permissions tab showing new entry.](../images/go-share-collection/005-colection-details-permissions-after.png)
 
-[Return to the top](#globus-tutorials-for-uab-research-organizations).
+[Return to the top](#globus-for-uab-research-organizations).
 
 ## How Do I Share Data With a Research Core Customer?
 
 If you manage data for a Research Core, please [Contact Support](../../../help/support.md#how-to-request-support) to start a conversation. The answer to this question is currently being developed, so we will need to work together to find the ideal solution.
 
-[Return to the top](#globus-tutorials-for-uab-research-organizations).
+[Return to the top](#globus-for-uab-research-organizations).
 
 ## Managing Guest Collections From a Globus Endpoint
 

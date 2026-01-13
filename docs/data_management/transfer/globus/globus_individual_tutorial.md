@@ -2,9 +2,7 @@
 
 Do you have data and need to move it to a different computer system? Want to use a graphical interface to do it? Want a service that will attempt to resume interrupted transfers? Want enforced encryption for your transfers? Then Globus is right for you.
 
-If you are new to Globus, you are in the right place. If you represent a group looking to share data with others we recommend following these tutorials with our [Globus for Research Groups](../globus/globus_organization_tutorial.md).
-
-These guides are intended for individual researchers who need to move data from one location to another. If you manage a Research Core or lab and have never used Globus before, you'll want to start on this page. Then you will want to proceed to [Globus for Research Groups](../globus/globus_organization_tutorial.md).
+These guides are intended for individual researchers who need to move data from one location to another. If you represet a group, manage a Research Core or lab and have never used Globus before, you'll want to start on this page. Then you will want to proceed to [Globus for Research Groups](../globus/globus_organization_tutorial.md).
 
 The resource below will teach you how to effectively use Globus for managing and transferring research data. We will explore what Globus is, why you might use it, how it works, and we'll walk you through the essential steps to get started. You will learn how to set up your Globus account, access the Globus application, find Collections shared with you, and search for Collections by name.
 
@@ -66,8 +64,6 @@ Please follow these instructions to search for a specific Collection by name.
 
 If you can't find a particular Collection this way, but know it was shared with you, try [finding Collections shared with me](#how-do-i-find-collections-shared-with-me). Proceed on to learn [how to find UAB storage Collections](#how-do-i-find-uab-storage-collections).
 
-[Return to the top](#globus-for-individual-researchers).
-
 ## How Do I Find UAB Storage Collections?
 
 UAB offers [multiple storage resources](../../index.md). The following resources may be accessed through Globus Collections.
@@ -102,8 +98,6 @@ To find these resources on Globus, use the following steps.
         ![UAB Box search results.](../images/gi-uab-collections/003-box.png)
 
 Proceed on to learn [how to find Collections shared with you](#how-do-i-find-uab-storage-collections).
-
-[Return to the top](#globus-for-individual-researchers).
 
 ## How Do I Find Collections Shared With Me?
 
@@ -179,8 +173,6 @@ From here you can proceed to other related tutorials to initiate other transfers
 - [How Do I Transfer Between a Collection and LTS?](#how-do-i-transfer-between-a-collection-and-lts)
 - [How Do I Transfer Between LTS and Cheaha?](#how-do-i-transfer-between-lts-and-cheaha)
 
-[Return to the top](#globus-for-individual-researchers).
-
 ### How Do I Transfer Between a Collection and LTS?
 
 <!-- markdownlint-disable MD046 -->
@@ -229,8 +221,6 @@ From here you can proceed to other related tutorials to initiate other transfers
 - [How do I check transfer status?](#how-do-i-check-transfer-status)
 - [How Do I Transfer Between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
 - [How Do I Transfer Between LTS and Cheaha?](#how-do-i-transfer-between-lts-and-cheaha)
-
-[Return to the top](#globus-for-individual-researchers).
 
 ### How Do I Transfer Between LTS and Cheaha?
 
@@ -282,8 +272,6 @@ From here you can proceed to other related tutorials to initiate other transfers
 - [How Do I Transfer Between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
 - [How Do I Transfer Between a Collection and LTS?](#how-do-i-transfer-between-a-collection-and-lts)
 
-[Return to the top](#globus-for-individual-researchers).
-
 ## How Do I Check Transfer Status?
 
 To check the status of your transfers, please follow the instructions below.
@@ -297,8 +285,6 @@ To check the status of your transfers, please follow the instructions below.
 1. To see more details about a transfer, click the transfer title. There will be two tabs. The Overview tab will have information and statistics about the transfer. The Event Log tab will have information about events that occurred during transfer, including start, stop, and any errors. The Event Log is useful for diagnosing issues with failed transfers.
 
     ![Overview page for unsuccessful transfer.](../images/gi-check-transfer-status/002-status.png)
-
-[Return to the top](#globus-for-individual-researchers).
 
 <!-- markdownlint-disable MD046 -->
 !!! note
