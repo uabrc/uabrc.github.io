@@ -2,13 +2,13 @@
 
 This guide is intended for UAB research managers such as Lab PIs, Core Directors, and their administrative staff. It provides instructions on how to create and search collections and securely share data with collaborators in compliance with security and policy requirements for file sharing.
 
-If you are new to Globus, we recommend starting with our [Getting Started] [Globus for Individual Researchers](../globus/globus_individual_tutorial.md) guides first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the guide on this page in order from start to finish, as each guide assume that the previous ones have been completed.
+If you are new to Globus, we recommend starting with our [Getting Started](./login_to_globus.md) and [Globus for Individual Researchers](../globus/globus_individual_tutorial.md) pages first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the guide on this page in order from start to finish, as each guide assume that the previous ones have been completed.
 
 Topics covered:
 
 1. [Why Globus?](#why-globus)
 1. [How Does Globus Work?](#how-does-globus-work)
-1. [Tutorial Prerequisites](#tutorial-prerequisites)
+1. [Prerequisites](#prerequisites)
 1. [How Do I Get onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
 1. [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
 1. [How Do I Enable Sharing for My Globus Account?](#how-do-i-enable-collection-sharing-for-my-globus-account)
@@ -32,15 +32,13 @@ Globus is a data transfer ecosystem that simplifies the process of transferring,
 
 Globus is an ecosystem of software intended to make research data transfer simpler. The Globus Web Application (Web App) at <https://app.globus.org> allows you to initiate transfers between any two Collections you have authorization to access. The Globus Connect Personal (GCP) and Globus Connect Server (GCS) software let you turn any computer into a Globus Collection. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two Collections, the Globus application tells the two Collections that they need to talk to each other and data is sent directly between them. The Collections update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between Collections is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
 
-## Tutorial Prerequisites
+## Prerequisites
 
-For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
+For these guides, you will need your BlazerID or [XIAS ID](../../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
 
 ## How Do I Get Onto the Globus Web App?
 
-To learn how to get onto the Globus Web App [Globus Tutorials for Individual Researchers Page](../globus/login_to_globus.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
-
-[Return to the top](#globus-for-uab-research-organizations).
+To learn how to get onto the Globus Web App [Getting Started](./login_to_globus.md#how-do-i-get-onto-the-globus-web-app). Please visit that link and then return here when you have finished.
 
 ## How Do I Find Collections I Created or Own?
 
@@ -67,8 +65,6 @@ To find a Collection you own, use the following steps.
     1. Click the three dots icon at the right side of the entry to be taken to the Collection details page.
 
         ![Collectionm details page with overview tab selected.](../images/go-my-collections/005-collection-details-page.png)
-
-[Return to the top](#globus-for-uab-research-organizations).
 
 ## How Do I Enable Collection Sharing for My Globus Account?
 
@@ -109,8 +105,6 @@ To join the UAB HA group, we need to receive both a UAB support request, and a r
 
 When you have completed the steps in this section, proceed to [creating a Collection](#how-do-i-create-a-collection).
 
-[Return to the top](#globus-for-uab-research-organizations).
-
 ## How Do I Create a Collection?
 
 There are three ways to create a Collection.
@@ -147,8 +141,6 @@ The instructions below assume you are starting from an existing Collection. The 
 
 When you have created a Collection, you are ready to [share the Collection with others](#how-do-i-share-a-collection-with-others).
 
-[Return to the top](#globus-for-uab-research-organizations).
-
 ## How Do I Share a Collection With Others?
 
 Before sharing a Collection with others, you will need to first [create a Collection](#how-do-i-create-a-collection) you administer. If the Collection is a [Globus Connect Personal Collection](../globus/gcp_install.md#how-to-install-globus-connect-personal-gcp), then you will also need to [enable Collection sharing for your Globus account](#how-do-i-enable-collection-sharing-for-my-globus-account). If these prerequisites have been met, then you are ready to setup a Collection to be shared with others. Please follow the instructions below.
@@ -183,13 +175,9 @@ Before sharing a Collection with others, you will need to first [create a Collec
 
     ![Collection details page permissions tab showing new entry.](../images/go-share-collection/005-colection-details-permissions-after.png)
 
-[Return to the top](#globus-for-uab-research-organizations).
-
 ## How Do I Share Data With a Research Core Customer?
 
 If you manage data for a Research Core, please [Contact Support](../../../help/support.md#how-to-request-support) to start a conversation. The answer to this question is currently being developed, so we will need to work together to find the ideal solution.
-
-[Return to the top](#globus-for-uab-research-organizations).
 
 ## Managing Guest Collections From a Globus Endpoint
 

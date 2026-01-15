@@ -39,7 +39,7 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 
 ## Prerequisites
 
-For these tutorials, you will need your BlazerID or [XIAS ID](../../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
+For these guides, you will need your BlazerID or [XIAS ID](../../../account_management/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
 
 ## How Do I Search for Collections by Name?
 
