@@ -2,7 +2,7 @@
 
 Organizations can manage students, staff, collaborators, and customers in Globus using the Group feature. Representatives can create groups and subgroups to manage and document associations between related people. With a Group, you can grant access to a Guest Collection to many people at once.
 
-If you are new to Globus, we recommend starting with our [Globus Tutorials for Individual Researchers](../globus/globus_individual_tutorial.md) first to familiarize yourself with how Globus is used.
+If you are new to Globus, we recommend starting with our [Getting Started](./login_to_globus.md) and [Globus for Individual Researchers](../globus/globus_individual_tutorial.md) first to familiarize yourself with how Globus is used.
 
 Below is a list of topics covered in this article.
 

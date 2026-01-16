@@ -1,26 +1,26 @@
 
 # Logging in to Globus
 
-UAB has a subscription to Globus, and you can set up a Globus account with your UAB credentials.
-
-## Managing Identity
-
-Globus Identity is a concept helping to map Globus Accounts (one per person) to institutions (one or more per person). Most UAB researchers will have a single identity, their UAB identity, tied to their BlazerID. Some researchers may have external collaborations or appointments that provide additional entities which need access to other endpoints on Globus.
-
-To manage your identities, navigate to <https://app.globus.org/account/identities> and sign in.
+UAB has a subscription to Globus,allowing you to set up a Globus account using your UAB credentials. Follow the steps below to log in and complete your Globus account setup.
 
 ## How Do I Get Onto the Globus Web App?
 
-1. Use your browser to navigate to <https://app.globus.org>. You should see a login page like below.
+1. Use your browser to navigate to <https://app.globus.org>. You should see a login page similar to the one shown below. Click "LOG IN".
 
     ![Globus Web App login page.](../images/gi-web-app/001-login.png)
 
-1. To login, first you must find and select our institution. Type "UAB" or "University of Alabama at Birmingham" into the search bar to locate UAB in the list. The image below shows the correct choice in a red box.
+1. After clicking "LOG IN", the organization search page will appear, as shown below.
+
+   ![Globus organization search page.](../images/gi-web-app/002-login.png)
+
+1. Find and select our institution. Type "UAB" or "University of Alabama at Birmingham" into the search bar to locate UAB in the list. The image below shows the correct choice in a red box.
 
     <!-- markdownlint-disable MD046 -->
     !!! note
 
-        If you are an external collaborator using a [XIAS account](../../../account_management/xias/index.md) (this is uncommon) to interact with UAB-owned storage you will still need to search for "UAB". Do not use your home institution login to access UAB storage systems, as you will only have access to UAB storage with your XIAS credentials.
+        If you are an external collaborator using an [XIAS account](../../../account_management/xias/index.md) (this is uncommon) to access UAB-owned storage, do not use your home institution login. You will only be able to access UAB storage systems using your XIAS credentials.
+
+        XIAS accounts are not currently able to access XD storage via Globus. Please use [Other Data Transfer Options](../index.md#data-management-and-transfer-tools) for supported alternatives.
     <!-- markdownlint-enable MD046 -->
 
     ![Globus Web App login search bar with UAB entered and University of Alabama at Birmingham in a red box.](../images/gi-web-app/002-search.png)
@@ -69,6 +69,12 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
 The File Manager page will be your most frequently-visited page when using Globus for data transfers. It is central to usage of the Globus Web Application. Please take some time to familiarize yourself with its look and feel. As you progress in the tutorials, please take time to experiment with transferring data to better understand how the interface works. Feel free to return here for guidance.
 
 From here you can proceed to [How Do I Search for Collections by Name?](./globus_individual_tutorial.md#how-do-i-search-for-collections-by-name) and [How Do I Transfer Data Between Collections?](./globus_individual_tutorial.md#how-do-i-transfer-data-between-collections)
+
+## Managing Identity
+
+Globus Identity is a concept helping to map Globus Accounts (one per person) to institutions (one or more per person). Most UAB researchers will have a single identity, their UAB identity, tied to their BlazerID. Some researchers may have external collaborations or appointments that provide additional entities which need access to other endpoints on Globus.
+
+To manage your identities, navigate to <https://app.globus.org/account/identities> and sign in.
 
 ## Where Can I Learn More About Globus?
 

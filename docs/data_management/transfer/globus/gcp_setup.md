@@ -1,6 +1,8 @@
 # How to Use Globus Connect Personal (GCP)
 
-Globus Connect Personal (GCP) is a tool that lets you turn your personal computer into a Globus endpoint so you can transfer data to and from the Globus ecosystem.
+Globus Connect Personal (GCP) is a tool that lets you turn your local computer into a Globus endpoint so you can transfer data to and from the Globus ecosystem.
+
+To set up a local (personal) endpoint and use GCP, you must first install it by following the instructions on our [installation GCP](./gcp_install.md) page.
 
 ## How Do I Choose Specific Folders to Share Using Globus Connect Personal?
 
