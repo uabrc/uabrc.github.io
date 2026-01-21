@@ -376,7 +376,7 @@ dependencies:
   - pip:
     - numpy==1.26.4  # Pinned version for pip
     - git+https://github.com/user/repo.git  # Example of installing from a Git repo
-    - http://insert_package_link_here  # For URL links
+    - https://insert_package_link_here  # For URL links
 ```
 
  For git repos, add them under `- pip:`. For examples, please see <https://pip.pypa.io/en/stable/cli/pip_install/#examples>. See the section [Replicability versus Portability](#replicability-versus-portability) for more information.

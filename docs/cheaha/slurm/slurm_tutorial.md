@@ -948,9 +948,9 @@ Program PWSCF v.6.3MaX starts on  8Mar2024 at 13:18:37
      for quantum simulation of materials; please cite
          "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
          "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
-          URL http://www.quantum-espresso.org",
+          URL https://www.quantum-espresso.org",
      in publications or presentations arising from this work. More details at
-     http://www.quantum-espresso.org/quote
+     https://www.quantum-espresso.org/quote
 
      Parallel version (MPI & OpenMP), running on       4 processor cores
      Number of MPI processes:                 4
