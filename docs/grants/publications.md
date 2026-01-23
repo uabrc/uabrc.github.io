@@ -1,4 +1,4 @@
-# Acknoweldgement in Publications
+# Acknowledgement in Publications
 
 To acknowledge the use of Cheaha in published work, for compute time or
 substantial technical assistance, please consider adding the following
