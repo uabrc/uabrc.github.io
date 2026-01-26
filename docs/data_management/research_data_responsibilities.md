@@ -10,17 +10,17 @@ A shared allocation is owned by a PI of a Lab or director of Core facility. It i
 
 Shared storage owners, staff and students are responsible for overseeing and managing the allocations, including granting access to specific folders. However, Research Computing may provide support in certain cases. For example, if a folder becomes "locked" (i.e., no group members can change its permissions or access it), the owner of the allocation or the folder should submit a request for us to fix the issue. In addition, if you need assistance configuring or reconfiguring permissions, we can provide support as a convenience. Simply send us a request via <support@listserv.uab.edu>.
 
-{{ read_csv('data_management/res/cheaha_project_directory.csv', keep_default_na=False) }}
+{{ read_csv('data_management/storage/res/cheaha_project_directory.csv', keep_default_na=False) }}
 
 ## Individual Allocation
 
 Individual allocations are intended for personal or individual use and are available to all UAB affiliated individuals or UAB employee's sponsored Collaborator. It is tied to the individual’s email and provide 5 TB of home/user directory on Cheaha and additional 5 TB of LTS allocation.
 
-{{ read_csv('data_management/res/cheaha_individual_account.csv', keep_default_na=False) }}
+{{ read_csv('data_management/storage/res/cheaha_individual_account.csv', keep_default_na=False) }}
 
 ## Data Archival and Backup Procedures
 
-Researchers and users of Cheaha are responsible to organize data, archive inactive files, and back up critical data. For backup and archival solutions, please review our [Data Responsibilities and Procedures](./index.md#data-responsibilities-and-procedures) page. If you need backup and Archival assistance, we can discuss options based on your use cases. Please send us a support ticket via <support@listserv.uab.edu>.
+Researchers and users of Cheaha are responsible to organize data, archive inactive files, and back up critical data. For backup and archival solutions, please review our [Data Responsibilities and Procedures](../data_management/storage/index.md#data-responsibilities-and-procedures) page. If you need backup and Archival assistance, we can discuss options based on your use cases. Please send us a support ticket via <support@listserv.uab.edu>.
 
 ## Security Exceptions for Accessing Former UAB Personnel Data
 
