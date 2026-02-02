@@ -42,10 +42,7 @@ MARKDOWN_FILE = "document"
 
 
 def run_linkchecker() -> None:
-    """Run the linkchecker application.
-
-    We are ok with running
-    """
+    """Run the linkchecker application."""
     with Path(LINKCHECKER_LOG).open("wb", buffering=0) as f:
         subprocess.run(  # noqa: S603
             [_get_linkchecker_path(), "--config", ".linkcheckerrc", "docs"],
@@ -69,7 +66,7 @@ def load_output() -> pd.DataFrame:
     )
 
 
-def replace_lines_containing(
+def replace_rows(
     _s: pd.Series,
     _containing: str,
     _with: str,
@@ -98,7 +95,7 @@ def drop_ok_with_no_redirects(_df: pd.DataFrame) -> pd.DataFrame:
     return _df[~drop]
 
 
-def drop_rows_containing(
+def drop_rows(
     _df: pd.DataFrame,
     _in: str,
     _containing: str,
@@ -149,66 +146,60 @@ def _get_linkchecker_path() -> PurePath:
 
 if __name__ == "__main__":
     run_linkchecker()
-    linkchecker_results = load_output()
+    results = load_output()
 
-    # drop good urls
-    linkchecker_results = drop_ok_with_no_redirects(linkchecker_results)
+    ### drop good urls
+    results = drop_ok_with_no_redirects(results)
 
+    ### replace unhelpful error messages
     # change 200 OK to 300 Redirect for human clarity
-    linkchecker_results[RESULT] = replace_lines_containing(
-        linkchecker_results[RESULT],
-        "200 OK",
-        "300 Redirect",
-    )
-
+    results[RESULT] = replace_rows(results[RESULT], "200 OK", "300 Redirect")
     # replace long error messages with short codes
-    linkchecker_results[RESULT] = replace_lines_containing(
-        linkchecker_results[RESULT],
-        "ConnectTimeout",
-        "408 Timeout",
-    )
-
+    results[RESULT] = replace_rows(results[RESULT], "ConnectTimeout", "408 Timeout")
     # special code for SSO urls
-    linkchecker_results[RESULT] = replace_lines_containing(
-        linkchecker_results[RESULT],
+    results[RESULT] = replace_rows(
+        results[RESULT],
         "https://padlock.idm.uab.edu",
         "423 Locked",
-        find_in=linkchecker_results[URL_AFTER_REDIRECTION],
+        find_in=results[URL_AFTER_REDIRECTION],
     )
 
-    # special ignore rules
-    linkchecker_results = drop_rows_containing(
-        linkchecker_results,
+    ### special url ignore rules
+    # doi.org always redirects, that's its purpose, so we ignore
+    results = drop_rows(
+        results,
         URL_IN_MARKDOWN,
         "https://doi.org",
         if_result_code="300",
-    )  # doi.org always redirects, that's its purpose, so we ignore
-    linkchecker_results = drop_rows_containing(
-        linkchecker_results,
+    )
+    # if anaconda.org goes down we'll surely hear about it
+    results = drop_rows(
+        results,
         URL_IN_MARKDOWN,
         "https://anaconda.org",
         if_result_code="403",
-    )  # if anaconda.org goes down we'll surely hear about it
-    linkchecker_results = drop_rows_containing(
-        linkchecker_results,
-        URL_AFTER_REDIRECTION,
-        "https://padlock.idm.uab.edu",
+    )
+    # UAB specific requiring login
+    results = drop_rows(
+        results,
+        URL_IN_MARKDOWN,
+        "https://idm.uab.edu/cgi-cas/xrmi/sites",
         if_result_code="423",
     )
 
-    # modify file uris
-    linkchecker_results[MARKDOWN_FILE] = modify_file_uris(
-        linkchecker_results[MARKDOWN_FILE],
-    )
+    ### modify file uris to improve readability
+    results[MARKDOWN_FILE] = modify_file_uris(results[MARKDOWN_FILE])
 
-    # organize
-    linkchecker_results = linkchecker_results.sort_values(
+    ### organize
+    results = results.sort_values(
         by=[RESULT, URL_IN_MARKDOWN, MARKDOWN_FILE, LINE, COLUMN],
     )
 
-    # output
-    linkchecker_results.to_csv(LINKCHECKER_OUT_CSV, index=False)
+    ### output
+    # csv
+    results.to_csv(LINKCHECKER_OUT_CSV, index=False)
 
-    records = linkchecker_results.to_dict(orient="records")
+    # yml
+    records = results.to_dict(orient="records")
     with Path(LINKCHECKER_OUT_YAML).open("w") as f:
         yaml.safe_dump(records, f, sort_keys=False)
