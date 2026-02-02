@@ -64,7 +64,7 @@ Both the `Pascalnodes` and `Amperenodes` partitions use NVIDIA GPUs. Therefore, 
 singularity run --nv [other-run-flags] <image.sif> [image-software-flags]
 ```
 
-The `--nv` tells Singularity to bind the NVIDIA driver libraries and GPU devices into the container. This ensures your containerized application can access the GPU as if it were running on the host. An example tutorial demonstrating how to run Parabricks software with GPU support using the `--nv` flag can be found in our [Parabricks Case Study](../education/case_studies.md/#parabricks-testing-on-amperenodes-on-cheaha). For more details on usage of `--nv` flag refer to the [Singulairty Official Documentation](https://docs.sylabs.io/guides/3.5/user-guide/gpu.html).
+The `--nv` tells Singularity to bind the NVIDIA driver libraries and GPU devices into the container. This ensures your containerized application can access the GPU as if it were running on the host. An example tutorial demonstrating how to run Parabricks software with GPU support using the `--nv` flag can be found in our [Parabricks Case Study](../education/case_studies.md#parabricks-testing-on-amperenodes-on-cheaha). For more details on usage of `--nv` flag refer to the [Singulairty Official Documentation](https://docs.sylabs.io/guides/3.5/user-guide/gpu.html).
 
 ### Singularity Paths
 

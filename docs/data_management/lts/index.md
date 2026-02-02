@@ -33,7 +33,7 @@ When talking about S3 storage, some terms are different compared to a normal fil
     If you lose your access and secret keys, please submit a [support ticket](../../index.md#how-to-contact-us) to <support@listserv.uab.edu> to request your keys. Keys will only be given to an allocation owner as verified by RC staff.
 <!-- markdownlint-enable MD046 -->
 
-This documentation will use the standard file and path terms since those are more easily understood by most users. Just be aware that documentation such as [AWS CLI](https://awscli.amazonaws.com/v2/documentation/api/latest/index.html) will use terms prefix, object, and others that are not standard in a typical filesystem.
+This documentation will use the standard file and path terms since those are more easily understood by most users. Just be aware that documentation such as [AWS CLI](https://docs.aws.amazon.com/cli/latest/) will use terms prefix, object, and others that are not standard in a typical filesystem.
 
 ## Requesting an Allocation
 

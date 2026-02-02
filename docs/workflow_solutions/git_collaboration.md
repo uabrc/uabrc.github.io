@@ -57,7 +57,7 @@ GitHub and GitLab can both be used for software project management, and have hel
 
 Both services use organizations to manage projects across a team of people: [GitHub docs page](https://docs.github.com/en/organizations), [GitLab docs page](https://docs.gitlab.com/topics/set_up_organization/). Within a GitHub organization, people and repositories can be arranged into [teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams). GitLab allows arrangement of people and repositories with [projects](https://docs.gitlab.com/user/project/).
 
-An important feature, used extensively for this documentation's GitHub repository, is the issue tracker. Both [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) and [GitLab](https://docs.gitlab.com/user/project/issues/) have per-repository issue trackers. Collaborators can create and manage issues, label them, and resolve them.
+An important feature, used extensively for this documentation's GitHub repository, is the issue tracker. Both [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/about-issues) and [GitLab](https://docs.gitlab.com/user/project/issues/) have per-repository issue trackers. Collaborators can create and manage issues, label them, and resolve them.
 
 ### How Do I Choose Between GitHub and GitLab?
 
@@ -113,7 +113,7 @@ Sometimes merging will be blocked because of a merge conflict. One programmer ma
 
 ### Effective Issue Tracking
 
-Effective use of issue tracking can greatly reduce cognitive load and simplify code management. It gives a central location where users and maintainers can report bugs, make feature requests, and ask for clarifications on usage and documentation. These issues are tracked over time, can be labeled and organized, and closed and reopened. [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues), [GitLab](https://docs.gitlab.com/user/project/issues/)
+Effective use of issue tracking can greatly reduce cognitive load and simplify code management. It gives a central location where users and maintainers can report bugs, make feature requests, and ask for clarifications on usage and documentation. These issues are tracked over time, can be labeled and organized, and closed and reopened. [GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/about-issues), [GitLab](https://docs.gitlab.com/user/project/issues/)
 
 The typical issue lifecycle, at a high level, is something like below.
 

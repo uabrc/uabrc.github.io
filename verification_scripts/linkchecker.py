@@ -8,6 +8,7 @@ import sys
 from pathlib import Path, PurePath
 
 import pandas as pd
+import yaml
 
 """
 How to use:
@@ -24,6 +25,7 @@ Path(OUTPUT).mkdir(exist_ok=True)
 LINKCHECKER_LOG = OUTPUT / "linkchecker.log"
 LINKCHECKER_RAW_CSV = OUTPUT / "linkchecker-raw.csv"
 LINKCHECKER_OUT_CSV = OUTPUT / "linkchecker-out.csv"
+LINKCHECKER_OUT_YAML = OUTPUT / "linkchecker-out.yml"
 
 # COLUMNS
 ## ORIGINAL
@@ -206,3 +208,7 @@ if __name__ == "__main__":
 
     # output
     linkchecker_results.to_csv(LINKCHECKER_OUT_CSV, index=False)
+
+    records = linkchecker_results.to_dict(orient="records")
+    with Path(LINKCHECKER_OUT_YAML).open("w") as f:
+        yaml.safe_dump(records, f, sort_keys=False)

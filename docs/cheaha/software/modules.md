@@ -225,7 +225,7 @@ Use of these software packages without authorization may be a violation of the [
 <!-- markdownlint-disable MD046 -->
 !!! danger
 
-    Versions of GSEA prior to `4.2.3` use a compromised version of log4j. Those versions are affected by a serious [remote code execution issue](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44832). Please transition your software to use versions of GSEA >= `4.2.3`.
+    Versions of GSEA prior to `4.2.3` use a compromised version of log4j. Those versions are affected by a serious [remote code execution issue](https://www.cve.org/CVERecord?id=CVE-2021-44832). Please transition your software to use versions of GSEA >= `4.2.3`.
 <!-- markdownlint-enable MD046 -->
 
 ### Rsync

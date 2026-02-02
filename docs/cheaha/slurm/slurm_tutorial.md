@@ -294,7 +294,7 @@ for i in {1..5}; do
 done
 ```
 
-You can execute the `generate_input.sh` script as shown below. The first command `chmod` grants execute permission to the script so it can be run directly. The second command runs the script to generate the required input files. For more details on usage of bash scripting, refer to [Script Concepts](../../workflow_solutions/shell.md/#script-concepts)
+You can execute the `generate_input.sh` script as shown below. The first command `chmod` grants execute permission to the script so it can be run directly. The second command runs the script to generate the required input files. For more details on usage of bash scripting, refer to [Script Concepts](../../workflow_solutions/shell.md#script-concepts)
 
 ```bash
 chmod +x generate_input.sh
