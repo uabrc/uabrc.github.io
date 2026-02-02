@@ -88,6 +88,7 @@ plugins: # order matters!
   - title-casing
   - redirects:
       redirect_maps:
+        account/xias/4_guest_create_rcs_account.md: account/rcs/index.md
         account_management/cheaha_account.md: account/rcs/index.md
         account_management/gitlab_account.md: account/code.rc/index.md
         account_management/gitlab_researcher.md: account/code.rc/index.md
@@ -160,7 +161,7 @@ nav:
           - 1. Sponsor — Manage Sites: account/xias/1_sponsor_manage_sites.md
           - 2. Sponsor — Manage Users: account/xias/2_sponsor_manage_users.md
           - 3. Guests — Create XIAS Account: account/xias/3_guest_create_xias_account.md
-          - 4. Guests — Create RCS Account: account/rcs/create.md
+          - 4. Guests — Create RCS Account: account/xias/4_guest_create_rcs_account.md
       - Your Responsibilities: account/responsibilities.md
       - Leaving UAB:
           - account/leaving/index.md
