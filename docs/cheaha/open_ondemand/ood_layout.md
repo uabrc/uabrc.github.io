@@ -24,9 +24,9 @@ You can open a file browser in a new tab by clicking the `Files` dropdown and se
 ![!Basic file browser for OOD.](./images/file_browser.png)
 
 1. **Quick Access Directories**: These button provide you a one click navigation to your most common workspaces (your Home, Data, or Scratch directory).
-1. **Operations Control Bar**: This bar packed with action-oriented buttons that allow you to quickly open in Terminal, Create new file, and new directory, or Upload, Download, Copy/Move, or Delete files.
-1. **Path Control Bar**: The control bar that displays your current location and allows. The change directory option allow you to quickly jump to any path including the parent directories.
-1. **Custom view and metadata**: check "show dotfiles" to view hidden files, and owner/Mode to view permission of the directory/file.
+1. **Operations Control Bar**: This bar packed with action-oriented buttons that allow you to quickly open in Terminal, Create new file, and new directory, or upload, download, copy/move, or Delete files or directories.
+1. **Path Control Bar**: The control bar that displays your current location. The change directory option allow you to quickly jump to any path including the parent directories while the copy path button allow you to copy your current working path.
+1. **Custom view and metadata**: check "Show Dotfiles" to view hidden files, and Owner/Mode to view permission of the directory/file.
 1. **File and Folders List**: The interactive area where you can open folders or select files to edit.
 
 ### Renaming File
