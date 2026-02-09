@@ -23,7 +23,11 @@ You can open a file browser in a new tab by clicking the `Files` dropdown and se
 
 ![!Basic file browser for OOD.](./images/file_browser.png)
 
-You can see the current working directory at the top (green) along with its file and folder list (black). There are also control bars for both working with files (blue) as well as the file browser itself (orange).
+1. **Quick Access Directories**: These button provide you a one click navigation to your most common workspaces (your Home, Data, or Scratch directory).
+1. **Operations Control Bar**: This bar packed with action-oriented buttons that allow you to quickly open in Terminal, Create new file, and new directory, or Upload, Download, Copy/Move, or Delete files.
+1. **Path Control Bar**: The control bar that displays your current location and allows. The change directory option allow you to quickly jump to any path including the parent directories.
+1. **Custom view and metadata**: check "show dotfiles" to view hidden files, and owner/Mode to view permission of the directory/file.
+1. **File and Folders List**: The interactive area where you can open folders or select files to edit.
 
 ### Renaming File
 
@@ -37,7 +41,7 @@ To rename a file, open the three-dot menu next to the file name and select `Rena
     Use clear, valid filenames when naming or renaming files. The filename field cannot be left empty.
 <!-- markdownlint-enable MD046 -->
 
-Below is an example that shows how leaving the box empty while renaming the folder "test_rename" results in the loss of the folder itself.
+Below is an example that shows how leaving the box empty while renaming the folder "test_rename".
 
 ![!An image showing the Rename/Move button left empty on Cheaha File Browser](images/file_browser_rename_move_empty.png)
 
