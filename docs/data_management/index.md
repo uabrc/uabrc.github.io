@@ -57,9 +57,18 @@ In contrast, [Long-Term Storage](./lts/index.md) is best-suited for unchanging o
 - Hosting data for the public internet
 - "Pick-up" and "drop-off" locations for data as part of a workflow
 
-Shared Storage is available for labs headed by a PI _and_ for Core facilities headed by a director.
+There are two entitlements for Shared Storage: Labs and Core facilities.
 
-Shared Storage is allocated on a per-organization basis, not on a per-person basis. If an individual researcher manages both a lab and a Core, they may request independent storage allocations for each organization. Each organization may request both Project Storage and Long-Term Storage.
+- Lab:
+    Owned by a UAB faculty member with professor-level title who manages a lab of staff and students for the purposes of funded research at UAB. Labs receive Shared Storage on a per-person basis (i.e., one allocation per Principal Investigator).
+
+- Core:
+    Owned by a UAB staff or faculty member with director-level title who manages a Core (or Core-like organization) which provides research services to UAB researchers and is grant funded to provide those services. Core facilities receive Shared Storage on a per-organization basis.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+    If an individual researcher manages both a Lab and a Core, they may request separate storage allocations for each entitlement. Each Lab or Core may request both Project Storage and Long-Term Storage.
+<!-- markdownlint-enable MD046 -->
 
 ### Which Platform Do I Need an Allocation For?
 
