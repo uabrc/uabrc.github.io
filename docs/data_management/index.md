@@ -60,10 +60,10 @@ In contrast, [Long-Term Storage](./lts/index.md) is best-suited for unchanging o
 There are two entitlements for Shared Storage: Labs and Core facilities.
 
 - Lab:
-    Owned by a UAB faculty member with professor-level title who manages a lab of staff and students for the purposes of funded research at UAB. Labs receive Shared Storage on a per-person basis (i.e., one allocation per Principal Investigator).
+    Owned by a UAB faculty member with professor-level title, except adjunct, who manages a lab of staff and students for the purposes of funded research at UAB. A lab may have one Shared Storage allocation on each platform. Lab supervisors cannot own more than one Shared Storage allocation on each platform.
 
 - Core:
-    Owned by a UAB staff or faculty member with director-level title who manages a Core (or Core-like organization) which provides research services to UAB researchers and is grant funded to provide those services. Core facilities receive Shared Storage on a per-organization basis.
+    Owned by a UAB staff or faculty member with director-level title who manages a Core (or Core-like organization) which provides services to research faculty at UAB. Services must be open and available to all UAB faculty. Services may also be available to staff, students, and external collaborators, and is financially and legally accountable to UAB. To be eligible, Cores must adhere to [UAB Service Center regulations](https://www.uab.edu/financialaffairs/procedures/service-center-regulations). Core facilities receive Shared Storage on a per-organization basis.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
