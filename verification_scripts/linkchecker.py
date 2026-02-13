@@ -152,7 +152,7 @@ if __name__ == "__main__":
     results = drop_ok_with_no_redirects(results)
 
     ### replace unhelpful error messages
-    # change 200 OK to 300 Redirect for human clarity
+    # change 200 OK to 300 Redirect for human clarity on successful redirects
     results[RESULT] = replace_rows(results[RESULT], "200 OK", "300 Redirect")
     # replace long error messages with short codes
     results[RESULT] = replace_rows(results[RESULT], "ConnectTimeout", "408 Timeout")
