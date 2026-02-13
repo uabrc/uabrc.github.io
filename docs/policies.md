@@ -23,10 +23,10 @@ All use of AI-powered tools, whether inside IDEs or via web interfaces, must com
 Do not use any cloud-based AI service (where data is sent to external servers) with sensitive or restricted data unless you’ve received formal approval.
 
 Examples of prohibited services without approval include:
-    - Web Chat AI Tools: [ChatGPT](http://chatgpt.com), [Gemini](https://gemini.google.com), [Claude](https://claude.ai), [Grok](https://grok.com), [DeepSeek](https://www.deepseek.com).
+    - Web Chat AI Tools: [ChatGPT](https://chatgpt.com), [Gemini](https://gemini.google.com), [Claude](https://claude.ai/login), [Grok](https://grok.com), [DeepSeek](https://www.deepseek.com).
     - IDE Extensions and AI Assistants: [Cursor](https://cursor.com), [Cline](https://cline.bot), [Windsurf](https://windsurf.com), [Trae](https://www.trae.ai).
 
-To request approval for AI usage in your project, complete the [UAB IT AI Request Form](https://uabprod.service-now.com/now/nav/ui/classic/params/target/com.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D421769291b8502506bd68552604bcba5).
+To request approval for AI usage in your project, complete the [UAB IT AI Request Form](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=421769291b8502506bd68552604bcba5).
 
 The following AI tools are permitted for use with UAB Single Sign-On (SSO) credentials, as they offer enterprise-grade protections for institutional data:
     - [Copilot Web](https://copilot.microsoft.com/)

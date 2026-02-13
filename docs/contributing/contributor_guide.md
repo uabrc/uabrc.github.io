@@ -132,7 +132,7 @@ Style is not automated at this time as the cost is greater than the benefit. Ent
 
 Style is not automated at this time as the cost is greater than the benefit. Entires in the following keys should be sorted alphabetically.
 
-### News Blog Posts
+#### News Blog Posts
 
 News updates should be added as separate Markdown files in the `/docs/news/` directory. Except for the considerations below, all blog posts should be written using the ordinary article style for this guide.
 
@@ -152,6 +152,12 @@ categories:
 - The `date` field must be in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601) with time zone info. Please use the `-05:00` indicator (Central Time) for any UAB posts.
 - The `categories` field is a sequence of category labels. These must be selected from the `plugins: blog: categories_allowed:` field of `mkdocs.yml`.
 - If you need to add a new category, be sure to give it appropriate title case, or there will be an error during build.
+
+#### Conventions
+
+##### External URLs
+
+- Use only `https://`, never `http://`, unless absolutely required (this is rare).
 
 ### Development
 
@@ -235,7 +241,7 @@ You'll need to add, remove or otherwise modify files as appropriate to implement
 
     ![!example mkdocs serve usage](images/contrib-workflow-mkdocs-serve.png)
 
-1. If a new browser tab does not open automatically, use your browser to navigate to `http://localhost:8000`.
+1. If a new browser tab does not open automatically, use your browser to navigate to `https://localhost:8000`.
 1. Ensure your changes look and function as expected.
 
     ![!browser with changes made](images/contrib-workflow-verify-changes-in-browser.png)
