@@ -49,4 +49,4 @@ Better practice when naming buckets is to use a short, descriptive and memorable
 
 ## What to Do With Data When I Leave UAB?
 
-See our [Leaving UAB page](../../account_management/leaving_uab.md).
+See our [Leaving UAB page](../../account/leaving/index.md).

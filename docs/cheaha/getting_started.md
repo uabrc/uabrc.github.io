@@ -4,7 +4,23 @@ toc_depth: 3
 
 # Getting Started
 
-Cheaha is a High Performance Computing (HPC) resource intended primarily for batch processing of research computing software. We offer a user-friendly portal website Open OnDemand with graphical interfaces to the most common features, all in one place. Read on to learn more about our resources and how to access them.
+Cheaha is the batch compute cluster platform of the Research Computing System (RCS). Cheaha is intended primarily for batch processing of research computing software. We offer a user-friendly portal website Open OnDemand with graphical interfaces to the most common features, all in one place. Read on to learn more about our resources and how to access them.
+
+Cheaha is appropriate for the following types of workflows:
+
+- High Performance Computing (HPC)
+- High Throughput Computing (HTC)
+- Batch Computing
+- Graphical User Interface (GUI) and other interactive software
+
+Please bear in mind the following expectations when using Cheaha.
+
+- Resources are shared by many researchers.
+- Jobs may take time to start.
+- Jobs, partitions, and researchers all have caps on total resources in use at any one time.
+- All jobs have a maximum time limit.
+
+If your needs go beyond these expectations, please [Contact Support](../help/support.md).
 
 ## What if I Need Help?
 
@@ -12,11 +28,11 @@ Please [Contact Us](../index.md#how-to-contact-us) with requests for support. Ti
 
 ## Account Creation
 
-Please visit our [Account Creation page](../account_management/cheaha_account.md) for detailed instructions on creating a Cheaha account.
+Please visit our [Account Creation page](../account/rcs/create.md) for detailed instructions on creating a Cheaha account.
 
 ## Accessing Cheaha
 
-The primary method for accessing Cheaha is through our online portal website, Open OnDemand. To login to our portal, navigate to our <https://rc.uab.edu>, which does not require an on-campus connection nor the UAB Campus VPN. You should be presented with UAB's Single Sign-on page, which will require use of [Duo 2FA](https://www.uab.edu/it/home/security/2-factor). Login using the appropriate credentials laid out at our [Account Creation page](../account_management/cheaha_account.md).
+The primary method for accessing Cheaha is through our online portal website, Open OnDemand. To login to our portal, navigate to our <https://rc.uab.edu>, which does not require an on-campus connection nor the UAB Campus VPN. You should be presented with UAB's Single Sign-on page, which will require use of [Duo 2FA](https://www.uab.edu/it/home/security/2-factor). Login using the appropriate credentials laid out at our [Account Creation page](../account/rcs/create.md).
 
 [SSH](../uab_cloud/remote_access.md#command-line-via-ssh) may be used to access Cheaha. Connect to host `cheaha.rc.uab.edu` on port `22`.
 
@@ -49,7 +65,7 @@ A full list of the available hardware can be found on our [hardware page](./hard
 
 ### Storage
 
-All researchers are granted 5 TB of individual storage when they [create their Research Computing account](../account_management/cheaha_account.md).
+All researchers are granted 5 TB of individual storage when they [create their Research Computing account](../account/rcs/create.md).
 
 Shared storage is available to all Lab Groups and Core Facilities on campus. Shared storage is also available to UAB Administration groups.
 
@@ -59,13 +75,13 @@ Please visit our [Storage page](../data_management/index.md) for detailed inform
 
 Compute nodes are divided into groups called partitions each with specific qualities suitable for different kinds of workflows or software. In order to submit a compute job, a partition must be chosen in the Slurm options. The partitions can be roughly grouped as such:
 
-|  Use | Partition Names | Notes |
-|---|---|---|
-| GPU Processing | pascalnodes, pascalnodes-medium, amperenodes, amperenodes-medium  | These are the only partitions with GPUs |
-| All Purpose | amd-hdr100 | Runs AMD CPUs compared to all other CPU partitions running Intel. [Contact us](../index.md#how-to-contact-us) with issues running on this partition |
-| Shorter time  | express, short, intel-dcb  |  |
-| Medium-long time  | medium, long  |  |
-| Very large memory | largemem, largemem-long |  |
+| Use               | Partition Names                                                  | Notes                                                                                                                                               |
+|-------------------|------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| GPU Processing    | pascalnodes, pascalnodes-medium, amperenodes, amperenodes-medium | These are the only partitions with GPUs                                                                                                             |
+| All Purpose       | amd-hdr100                                                       | Runs AMD CPUs compared to all other CPU partitions running Intel. [Contact us](../index.md#how-to-contact-us) with issues running on this partition |
+| Shorter time      | express, short, intel-dcb                                        |                                                                                                                                                     |
+| Medium-long time  | medium, long                                                     |                                                                                                                                                     |
+| Very large memory | largemem, largemem-long                                          |                                                                                                                                                     |
 
 Please visit our [hardware](hardware.md#cheaha-hpc-cluster) for more details about the partitions.
 
@@ -180,6 +196,23 @@ For new software installation, please try searching [Anaconda](../workflow_solut
 A significant amount of open-source software is distributed as Anaconda or Python libraries. These libraries can be installed by the user without permission from Research Computing using Anaconda environments. To read more about using Anaconda virtual environments see our [Anaconda page](./software/software.md#anaconda-on-cheaha).
 
 If the software installation instructions tell you to use either `conda install` or `pip install` commands, the software and its dependencies can be installed using a virtual environment.
+
+## Frequently Asked Questions
+
+- **What should I do to access shared storages and recognize my group membership after being added to a group on Cheaha?**
+
+    - **Do you have any processes/connections on `cheaha.rc.uab.edu`**?
+
+        - Please exit and log back in.
+        - If you have active Tmux/Screen sessions, you will need to terminate those as well, log out, log back in and start Tmux.
+
+    - **Do you have an active Open OnDemand session?**
+
+        - In Open OnDemand (<https://rc.uab.edu>), navigate to the green navigation bar in the top right corner. Look for the `Help` or `Developer` dropdown menu and click on it. Then, click `Restart Web Server`. Once the restart is complete, please try again.
+
+    - **Do you have one or more OOD HPC Desktops running?**
+
+        - Terminate the desktops and start new ones.
 
 ## How to Get Help
 

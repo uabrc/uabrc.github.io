@@ -32,4 +32,4 @@ Once you have completed the tutorial, you might read over some of the following 
 - [Remote Access](../remote_access.md) - Different ways to access instances.
 - [Installing Software](../installing_software.md) - Good practices and examples of installing common software.
 - [Snapshots](../snapshots.md) - Creating reusable custom images based on VMs you've spent time configuring.
-- [Make an instance accessible by the public Internet](../remote_access.md#make-instances-publically-accessible-from-the-internet).
+- [Make an instance accessible by the public Internet](../remote_access.md#make-instances-publicly-accessible-from-the-internet).

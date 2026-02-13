@@ -1,0 +1,23 @@
+announcements:
+  # Add announcements like the example. You can have multiple announcements.
+  # Copy-paste the example announcement under this key for each announcement.
+  - title: Ongoing Cheaha (GPFS) Data Migration
+    content: |
+      Research Computing will be performing a data migration for Cheaha.
+      Please see our [migration overview](./news/posts/2025-10-07-migration-overview.md)
+      for more information on what to expect.
+    posted_date: 2025-10-07
+    start_date: 2025-10-11
+    end_date: 2025-11-30
+
+no_announcements: '!!! info "Look for future announcements here."'
+
+_example_announcement_do_not_use:
+  - title: Title
+    content: |
+      Content
+
+      More Content
+    posted_date: 2025-10-17
+    start_date: 2025-11-10
+    end_date: 2025-11-25

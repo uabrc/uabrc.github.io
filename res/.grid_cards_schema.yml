@@ -1,0 +1,154 @@
+$ref: "#/definitions/namespace"
+
+definitions:
+  namespace:
+    type: object
+    title: Namespace
+    description: |
+      A namespace for organizing grid cards.
+    minProperties: 1
+    propertyNames:
+      pattern: "^(?!^title_text|name|parent|_children$).*$"
+    patternProperties:
+      "^(?!^title_text|name|parent|_children$).*$":
+        oneOf:
+          - $ref: "#/definitions/namespace"
+          - $ref: "#/definitions/content_card"
+          - $ref: "#/definitions/title_card"
+
+  content_card:
+    type: object
+    title: Content Card
+    description: |
+      The definition for a card with descriptive content.
+      Content and a link url are both required.
+      All fields are allowed except the title URL.
+    required:
+      - title_text
+      - content
+      - link_url
+    additionalProperties: false
+    properties:
+      title_text:
+        ref: "#/definitions/title_text"
+      icon_name:
+        ref: "#/definitions/icon_name"
+      icon_color:
+        ref: "#/definitions/icon_color"
+      icon_size:
+        ref: "#/definitions/icon_size"
+      icon_vertical_alignment:
+        ref: "#/definitions/icon_vertical_alignment"
+      content:
+        ref: "#/definitions/content"
+      link_text:
+        ref: "#/definitions/link_text"
+      link_url:
+        ref: "#/definitions/link_url"
+      link_icon_name:
+        ref: "#/definitions/icon_name"
+
+  title_card:
+    type: object
+    title: Title-only Card
+    description: |
+      The definition for a card with only a title line.
+      A URL must be supplied so the title links to a page or section.
+      Icon information may be supplied.
+      No other information is allowed.
+    required:
+      - title_text
+      - title_url
+    additionalProperties: false
+    properties:
+      title_text:
+        ref: "#/definitions/title_text"
+      title_url:
+        ref: "#/definitions/link_url"
+      icon_name:
+        ref: "#/definitions/icon_name"
+      icon_color:
+        ref: "#/definitions/icon_color"
+      icon_size:
+        ref: "#/definitions/icon_size"
+      icon_vertical_alignment:
+        ref: "#/definitions/icon_vertical_alignment"
+
+  title_text:
+    type: string
+    title: Card Title Text
+    description: |
+      A brief, descriptive, single-line title for the card.
+      Inline Markdown formatting may be used, such as links.
+    minLength: 1
+
+  content:
+    type: string
+    title: Card Markdown Content
+    description: |
+      Markdown content to describe the card.
+      Inline and block Markdown formatting may be used.
+      Links to other pages are encouraged.
+      Please keep it relatively brief.
+      Nested blocks are not recommended.
+    minLength: 1
+
+  link_text:
+    type: string
+    title: Absolute Internal Link Text
+    description: |
+      Optional text to use as link text for "link_url".
+      Defaults to "Read more".
+    minLength: 1
+
+  link_url:
+    type: string
+    title: Absolute Internal Link URL
+    description: |
+      Absolute url from within "docs_dir" to referenced page or section.
+    minLength: 1
+
+  icon_name:
+    type: string
+    title: Mkdocs Material Theme Icon Name
+    description: |
+      Icon name, formatted like ":icon-name:".
+      Icons come from https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/?h=emoji.
+      An eye-catching, relevant icon is recommended.
+    minLength: 1
+    pattern: "^:([a-z0-9]+)(-[a-z0-9]+)*:$"
+
+  icon_color:
+    type: string
+    title: Icon Color CSS Class
+    description: |
+      Icon color.
+      The icon color must be formatted like ".icon-name-...".
+      Colors must be defined as CSS classes in "docs/stylesheets/extra.css"
+    minLength: 13
+    pattern: "^\\.icon-color-[a-z0-9]+[a-z0-9-]*$"
+
+  icon_size:
+    type: string
+    title: Icon Size
+    description: |
+      Icon size.
+      A CSS class indicating desired icon size.
+      These come from the Mkdocs Material theme.
+    enum:
+      - ""
+      - ".lg"
+      - ".xlg"
+      - ".xxlg"
+      - ".xxxlg"
+
+  icon_vertical_alignment:
+    type: string
+    title: Icon Vertical Alignment
+    description: |
+      Icon vertical alignment.
+      A CSS class indicating desired icon vertical alignment.
+      These come from the Mkdocs Material theme.
+    enum:
+      - ""
+      - ".middle"
