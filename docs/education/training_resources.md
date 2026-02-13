@@ -50,6 +50,30 @@ The Carpentries is a 501(c)3 non-profit organization dedicated to educating rese
 - [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510): a set of good computing practices that every researcher can adopt, regardless of their current level of computational skill. Further reading available at [Software Carpentries github](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf)
 - [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/): an adaptable project structure for performing and sharing data science works.
 
+## UAB Research Resources
+
+UAB provides a broad set of research support services that fall primarily under two research administrative groups: the Office of Research and the Institutional Research Core Program (IRCP). These groups oversee compliance offices, shared facilities, interdisciplinary research programs, and research infrastructure that support UAB researchers across disciplines. The resources below are organized according to the group that manages them
+
+### Resources Under the Office of Research
+
+- **[Office of Research](https://www.uab.edu/research/)** oversees university-wide research operations, including compliance, funding, and partnerships.
+
+- **[Institutional Review Board (IRB)](https://www.uab.edu/research/home/irb)** ensures that research involving human participants upholds ethical and regulatory standards. If you need to submit new protocols, review training requirements, access forms and templates for your research please reach out to them.
+
+- **[Institutional Animal Care and Use Committee (IACUC)](https://www.uab.edu/research/home/iacuc)** oversees research involving animal subjects to ensure humane care and compliance.
+
+- **[University-Wide Interdisciplinary Research Centers Program (UWIRC Program) Directory](https://www.uab.edu/research/home/uwirc/directory)** lists centers that promote cross-disciplinary collaboration across UAB. Each center fosters partnerships, provides shared facilities, and supports pilot funding or training programs.
+
+- **[Core Facility Directory](https://www.uab.edu/research/home/core-facility-directory)** to find and contact available shared research resources at UAB.
+
+### Resources Under the Institutional Research Core Program (IRCP)
+
+- The **Institutional Research Core Program (IRCP)** coordinates university-wide investment in shared research infrastructure. You can visit the **[IRCP main site](https://www.uab.edu/cores/ircp/)** for program overviews. Or access their **[IRCP Core Facilities listing](https://www.uab.edu/cores/ircp/uab-ircp-core-facilities)** for specialized labs and instrumentation.
+
+- **[Electronic Health Record (EHR) Data Resource](https://www.uab.edu/ccts/research-resources/informatics/uab-ehr-data-resources)** provides de-identified and limited data sets from electronic health records for approved research projects.
+
+- **[UAB Biomedical Data Science (UBDS)](https://www.uab.edu/cores/ircp/bds)** provides computational biology and biomedical data science services that include data analysis, interpretation, training, and grant support, with a focus on genomics, transcriptomics, systems biology, and translational medicine.
+
 ## Our Social Media Presence
 
 - [YouTube](https://www.youtube.com/channel/UCZoOS2e699Ge0DND1oy1BJQ)
