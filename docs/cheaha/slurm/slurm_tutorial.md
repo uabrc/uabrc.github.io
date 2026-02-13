@@ -939,6 +939,7 @@ srun --mpi=pmix_v3 -N 2 pw.x -nk 4 -i pw.scf.silicon.in
 
 The below output shows that the workflow has been distributed across 2 nodes, with a total of 4 pools. The computations are performed based on these above-mentioned parallel execution configuration. Also, displays the metrics such as parallelization, overall performance, and successful job completion status. Note that the results only display essential information to aid in understanding the execution of this multi-node job. And, the `sacct` report indicates that the job is allocated with 4 CPUs across 2 nodes, and was completed successfully.
 
+<!-- http://www.quantum-espresso.org is literal program output provided to create a consistent user experience. Do not change these to `https:` -->
 ```bash
 $ cat multinode_27108398.out
 
@@ -948,9 +949,9 @@ Program PWSCF v.6.3MaX starts on  8Mar2024 at 13:18:37
      for quantum simulation of materials; please cite
          "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
          "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
-          URL https://www.quantum-espresso.org",
+          URL http://www.quantum-espresso.org",
      in publications or presentations arising from this work. More details at
-     https://www.quantum-espresso.org/quote
+     http://www.quantum-espresso.org/quote
 
      Parallel version (MPI & OpenMP), running on       4 processor cores
      Number of MPI processes:                 4
