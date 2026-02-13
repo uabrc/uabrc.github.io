@@ -137,8 +137,8 @@ Research Computing has many services available to RCS account holders. To learn 
             cards.platforms.cloud_rc.overview,
             cards.platforms.cloud_rc.web_server,
             cards.account.code_rc_create,
-        )
-    }} | indent(4)
+        ) | indent(4)
+    }}
 <!-- markdownlint-enable MD046 -->
 
 {% include "_template/base_help_section.md.j2" %}
