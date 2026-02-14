@@ -27,7 +27,7 @@ You can open a file browser in a new tab by clicking the `Files` dropdown and se
 1. **Operations Control Bar**: This bar contains buttons that allow you to open the login node terminal, create a new file or directory, and upload, download, copy/move, or delete files and directories. You can find more information in the [OOD Command Menu](#ood-command-menu) section.
 1. **Path Control Bar**: The control bar that displays your current location. The change directory option allow you to quickly jump to any path including the parent directories while the copy path button allow you to copy the current displayed path as text.
 1. **Custom view and metadata**: check "Show Dotfiles" to view hidden files, and "Owner/Mode" to view permission of the directory/file.
-1. **File and Folders List**: The interactive area where you can open folders or select files to edit,RE.
+1. **File and Folders List**: The interactive area where you can open folders or select files to view, edit, rename, download, or delete.
 
 ### Renaming File
 
