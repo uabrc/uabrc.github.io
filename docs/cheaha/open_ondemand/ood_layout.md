@@ -23,25 +23,27 @@ You can open a file browser in a new tab by clicking the `Files` dropdown and se
 
 ![!Basic file browser for OOD.](./images/file_browser.png)
 
-You can see the current working directory at the top (green) along with its file and folder list (black). There are also control bars for both working with files (blue) as well as the file browser itself (orange).
+1. **Quick Access Directories**: These links provide you with one click navigation to your most common workspaces (your Home, Data, or Scratch directory).
+1. **Operations Control Bar**: This bar contains buttons that allow you to open the login node terminal, create a new file or directory, and upload, download, copy/move, or delete files and directories. You can find more information in the [OOD Command Menu](#ood-command-menu) section.
+1. **Path Control Bar**: The control bar that displays your current location. The change directory option allow you to quickly jump to any path including the parent directories while the copy path button allow you to copy the current displayed path as text.
+1. **Custom view and metadata**: check "Show Dotfiles" to view hidden files, and "Owner/Mode" to view permission of the directory/file.
+1. **File and Folders List**: The interactive area where you can open folders or select files to view, edit, rename, download, or delete.
 
-### Renaming/Moving File
+### Renaming File
 
-You can use the `Rename/Move` button in the control bar to either `rename` a selected file with a desired name or `move` it to a preferred location by specifying the full path of the destination.
+To rename a file, open the three-dot menu next to the file name and select `Rename`, then enter the new name.
 
-![!An image showing the Rename/Move options on Cheaha File Browser](images/file_browser_rename_move.png)
+![!An image showing the Rename options on Cheaha File Browser](images/file_browser_rename.png)
 
 <!-- markdownlint-disable MD046 -->
-!!! danger
+!!! note
 
-    Make sure you never leave the box empty while renaming the files! If it's left empty, you risk losing the files, which cannot be recovered. This problem has been noted in OOD version < 2.0.0.
+    Use clear, valid filenames when naming or renaming files. The filename field cannot be left empty.
 <!-- markdownlint-enable MD046 -->
 
-Below is an example that shows how leaving the box empty while renaming the folder "test_rename" results in the loss of the folder itself.
+Below is an example that shows how leaving the box empty while renaming the folder "test_rename".
 
 ![!An image showing the Rename/Move button left empty on Cheaha File Browser](images/file_browser_rename_move_empty.png)
-
-![!An image showing the file lost on Cheaha File Browser](images/file_browser_rename_move_file_lost.png)
 
 ### OOD Command Menu
 
