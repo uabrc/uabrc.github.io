@@ -208,7 +208,7 @@ The following software have license restrictions that may preclude some research
 
 {{ read_csv('cheaha/software/res/restricted_software.csv', keep_default_na=False) }}
 
-Use of these software packages without authorization may be a violation of the [UAB IT Acceptable Use Policy](../../policies.md#acceptable-use-policy-aup).
+Use of these software packages without authorization may be a violation of the [UAB IT Acceptable Use Policy](../../policies.md#acceptable-use-policy-aup). All restrictively licensed software may only be used for the purposes of teaching and research, and not for commercial use or for profit.
 
 ## Security Issues
 
