@@ -1,4 +1,3 @@
-
 # Logging in to Globus
 
 UAB has a subscription to Globus,allowing you to set up a Globus account using your UAB credentials. Follow the steps below to log in and complete your Globus account setup.
@@ -20,7 +19,7 @@ UAB has a subscription to Globus,allowing you to set up a Globus account using y
 
         If you are an external collaborator using an [XIAS account](../../../account/xias/index.md) (this is uncommon) to access UAB-owned storage, do not use your home institution login. You will only be able to access UAB storage systems using your XIAS credentials.
 
-        XIAS accounts are not currently able to access XD storage via Globus. Please use [Other Data Transfer Options](../index.md#data-management-and-transfer-tools) for supported alternatives.
+        XIAS accounts are not currently able to access RC storages via Globus. Please use [Other Data Transfer Options](../index.md#data-management-and-transfer-tools) for supported alternatives.
     <!-- markdownlint-enable MD046 -->
 
     ![Globus Web App login search bar with UAB entered and University of Alabama at Birmingham in a red box.](../images/gi-web-app/002-search.png)

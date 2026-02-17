@@ -112,12 +112,16 @@ plugins: # order matters!
         cheaha/slurm/sbatch_usage.md: cheaha/slurm/submitting_jobs.md
         contributor_guide.md: contributing/contributor_guide.md
         data_management/cheaha_gpfs_storage.md: data_management/storage/cheaha_storage_gpfs/index.md
+        data_management/cheaha_storage_gpfs/index.md: data_management/storage/cheaha_storage_gpfs/index.md
         data_management/cheaha_storage_gpfs/project_directory_organization.md: data_management/storage/cheaha_storage_gpfs/project_directories.md#project-directory-organization
         data_management/LTS/lts.md: data_management/storage/lts/index.md
+        data_management/lts/index.md: data_management/storage/lts/index.md
         data_management/LTS/sharing.md: data_management/storage/lts/iam_and_policies.md
+        data_management/lts/iam_and_policies.md: data_management/storage/lts/iam_and_policies.md
         data_management/lts/lts.md: data_management/storage/lts/index.md
         data_management/lts/policies.md: data_management/storage/lts/iam_and_policies.md
         data_management/lts/sharing.md: data_management/storage/lts/iam_and_policies.md
+        data_management/storage.md: data_management/storage/index.md
         data_managment/transfer/tutorial/globus_individual_tutorial.md: data_management/transfer/globus/globus_individual_tutorial.md
         data_managment/transfer/tutorial/globus_organization_tutorial.md: data_management/transfer/globus/globus_organization_tutorial.md
         data_managment/transfer/tutorial/globus_group_management.md: data_management/transfer/globus/globus_group_management.md

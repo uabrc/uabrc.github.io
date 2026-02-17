@@ -10,19 +10,15 @@
 
 Globus is a powerful tool for robustly and securely managing data transfers to and from collaborators and within UAB Research Computing. Globus is a GUI-based application and recommended for most single-use and day-to-day data transfer needs.
 
-<!-- markdownlint-disable MD046 -->
-!!! note
+ UAB Research Computing uses High Assurance Endpoints, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions/changes.
 
-    UAB Research Computing uses High Assurance Endpoints, meaning there are additional security measures in place to reduce risk and move toward HIPAA compliance. Generally speaking, if you have used Globus in the past, the data transfer interface has not changed, but there are a few new restrictions/changes.
+1. You will be prompted to prove authorization each time you access a UAB Research Computing endpoint or attempt to download files to your local machine from such an endpoint. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.
+1. Bookmarks are not allowed in High Assurance endpoints.
 
-    1. You will be prompted to prove authorization each time you access a UAB Research Computing endpoint or attempt to download files to your local machine from such an endpoint. If you are already logged in with Single Sign-On (SSO) the process is simple. If not, you will need to authenticate with SSO.
-    1. Bookmarks are not allowed in High Assurance endpoints.
+For more detailed information on High Assurance please see the Globus official pages below:
 
-    For more detailed information on High Assurance please see the Globus official pages below:
-
-    - [High Assurance Security Overview](https://docs.globus.org/guides/overviews/security/high-assurance-overview/)
-    - [High Assurance Collections](https://docs.globus.org/guides/overviews/high-assurance/)
-<!-- markdownlint-enable MD046 -->
+- [High Assurance Security Overview](https://docs.globus.org/guides/overviews/security/high-assurance-overview/)
+- [High Assurance Collections](https://docs.globus.org/guides/overviews/high-assurance/)
 
 ## Globus Endpoints
 

@@ -232,4 +232,4 @@ For UAB policies surrounding PHI data, please see the following URLs.
     It is the responsibility of researchers to make sure PHI is accessible _only_ to people on the relevant IRB, with a demonstrated need to know. If PHI is stored in a project directory where some researchers are not on the IRB, their access to those files should be restricted using Access Control Lists (ACLs). Access control should be planned in advance of moving PHI data to Cheaha. If you need assistance setting up ACLs properly, please contact [Support](../../help/support.md).
 <!-- markdownlint-enable MD046 -->
 
-Managing PHI data can be challenging. There are experts on Campus who can provide assistance. Please contact [Support](../../help/support.md) if you intend to use Research Computing services in combination with PHI and PHI-derived data.
+Managing PHI data can be challenging. There are experts on campus who can provide assistance. Please contact [Support](../../help/support.md) if you intend to use Research Computing services in combination with PHI and PHI-derived data.
