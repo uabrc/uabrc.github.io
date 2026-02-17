@@ -299,9 +299,9 @@ python python_test.py
 
 More lessons on Docker can be found in this link: [Introduction to Docker](https://christinalk.github.io/docker-introduction/) and [Docker Documentation](https://docs.docker.com/reference/dockerfile/).
 
-## How to Access and Use Community Containers in the GitLab Container Registry
+## How to Access and Use Community Containers in the Code.rc Container Registry
 
-In the UAB Research Computing [GitLab instance](../account_management/gitlab_account.md#uab-gitlab-registration), we provide prebuilt community containers. These containers are standardized environments that grant you access to a variety of software tools. In the sections below we share information for what you will find in the gitlab community container project, and how you can access them.
+In [Code.rc](../account/code.rc/index.md), we provide prebuilt community containers. These containers are standardized environments that grant you access to a variety of software tools. In the sections below we share information for what you will find in the gitlab community container project, and how you can access them.
 
 ### Software We Support in Building Community Containers
 
@@ -365,7 +365,7 @@ If you prefer to share your container with a particular team/group, then the UAB
 
 The following steps help you to create a container registry in UAB GitLab:
 
-1. Create a UAB Gitlab account following the guidelines from the [UAB GitLab page](../account_management/gitlab_account.md).
+1. Create a Code.rc account following the guidelines from the [Code.rc page](../account/code.rc/create.md).
 1. Create a `new_project` on UAB GitLab and click `Package and Registries`, and then go to `Container Registry`. Initially, the container registry looks empty because there are no container images in the registry.
 
     ![!Containers registry.](./images/containers_registry.png)

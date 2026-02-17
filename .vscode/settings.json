@@ -16,6 +16,15 @@
     "editor.wordWrap": "on",
     "files.eol": "\n"
   },
+  "[jinja-md]": {
+    "editor.defaultFormatter": "samuelcolvin.jinjahtml",
+    "editor.formatOnSave": true,
+    "editor.indentSize": 4,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on",
+    "files.eol": "\n"
+  },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.formatOnSave": true,
@@ -90,12 +99,12 @@
     "editor.tabSize": 2,
     "files.eol": "\n"
   },
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
   "files.exclude": {
     "**/node_modules/*": true
   },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
   "files.watcherExclude": {
     "**/node_modules/*": true
   },
@@ -107,5 +116,19 @@
   "markdown.extension.tableFormatter.enabled": false,
   "markdown.extension.toc.updateOnSave": false,
   "markdown.validate.unusedLinkDefinitions.enabled": "warning",
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "yaml.customTags": [
+    "!ENV scalar",
+    "!ENV sequence",
+    "!relative scalar",
+    "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+    "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
+    "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format",
+    "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
+  ],
+  "yaml.schemas": {
+    "./res/.grid_cards_schema.yml": "/res/grid_cards.yml",
+    "./res/.announcements_schema.yml": "/res/announcements.yml"
+    // "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+  }
 }

@@ -1,0 +1,9 @@
+<!-- markdownlint-disable first-line-heading -->
+{% from "_macro/support.md.j2" import contact_support_link, help_header %}
+{{ help_header(2) }}
+
+For support with the XIAS web app and XIAS account management, please contact <askit@uab.edu>.
+
+For support with this documentation, please {{ contact_support_link() }}.
+
+{% include "account/xias/_template/revoke_access.md.j2" %}

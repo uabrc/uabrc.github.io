@@ -46,7 +46,7 @@ IAM Names are case-sensitive identifiers for allocations and allow granting othe
 
 ## Individual LTS Allocations
 
-Individual LTS allocations are intended for personal use and are available to all UAB affiliated individuals and their external collaborators (via a [XIAS account](../../../account_management/xias/index.md)). These allocations are tied to the individual’s primary UAB email and provide 5 TB of storage.
+Individual LTS allocations are intended for personal use and are available to all UAB affiliated individuals and their external collaborators (via a [XIAS account](../../../account/xias/index.md)). These allocations are tied to the individual’s primary UAB email and provide 5 TB of storage.
 
 We recommend following the [Individual LTS Tutorial](./tutorial/individual_lts_tutorial.md) to familiarize yourself with working with LTS at the command line.
 

@@ -1,6 +1,12 @@
-/* UAB theming */
+/*
+DEFINITIONS FOR THEMING
+*/
 :root {
-  /* uab colors in approximate order of prioritization */
+  /*
+  UAB COLORS in approximate order of prioritization.
+  Note most colors are not WCAG compliant on white backgrounds.
+  "dragons-lair-green" may be indistinguishable from black on a white background.
+   */
   --uab-color-uab-green: #1a5632;
   --uab-color-uab-gold: #fdb913;
   --uab-color-dragons-lair-green: #033319;
@@ -8,110 +14,135 @@
   --uab-color-ever-loyal-green: #17b045;
   --uab-color-bham-sky-blue: #42caf0;
 
-  /* uab color usage */
+  /* MKDOCS MATERIAL COLOR overrides and definitions. */
   --md-primary-fg-color: var(--uab-color-uab-green);
   --md-primary-fg-color--dark: var(--uab-color-uab-green);
   --announcement-admonition-bd-color: #90d408;
   --announcement-admonition-bg-color: color-mix(in srgb, var(--announcement-admonition-bd-color) 10%, transparent);
-
-  /* other color usage */
   --construction-admonition-bd-color: #eed202;
   --construction-admonition-bg-color: color-mix(in srgb, var(--construction-admonition-bd-color) 10%, transparent);
+  --important-admonition-bd-color: #ff9100;
+  --important-admonition-bg-color: color-mix(in srgb, var(--important-admonition-bd-color) 10%, transparent);
+  --security-admonition-bd-color: #ff1744;
+  --security-admonition-bg-color: color-mix(in srgb, var(--security-admonition-bd-color) 10%, transparent);
+
+  /* OTHER COLORS */
   --support-email-color: #aaaaff;
   --edit-page-icon-color: #5555ff;
   --lightbox-shadow-color: rgba(0, 0, 0, 0.08);
+
+  /* ICONS */
+  --md-admonition-icon--material-bullhorn: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>bullhorn</title><path d="M12,8H4A2,2 0 0,0 2,10V14A2,2 0 0,0 4,16H5V20A1,1 0 0,0 6,21H8A1,1 0 0,0 9,20V16H12L17,20V4L12,8M21.5,12C21.5,13.71 20.54,15.26 19,16V8C20.53,8.75 21.5,10.3 21.5,12Z" /></svg>');
+  --md-admonition-icon--material-crane: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>crane</title><path d="M20,6V5A1,1 0 0,0 19,4H9V3H6V4H5V6H6V15H5V13H3V15H2V17H3V21H5V17H10V21H12V19.92L12,17H13V15H12V13H10V15H9V6H17V10.62C16.53,10.79 16.19,11.23 16.19,11.76C16.19,12.2 16.43,12.6 16.8,12.82V14H17.42C17.76,14 18.03,14.28 18.03,14.62C18.03,14.96 17.76,15.24 17.42,15.24C17.2,15.24 17,15.12 16.89,14.93C16.71,14.64 16.34,14.54 16.05,14.71C15.75,14.87 15.65,15.25 15.82,15.55C16.15,16.11 16.76,16.47 17.42,16.47C18.43,16.47 19.26,15.64 19.26,14.62C19.26,13.84 18.76,13.14 18.03,12.88V12.82C18.41,12.6 18.65,12.2 18.65,11.76C18.65,11.3 18.38,10.91 18,10.7V6H20M8,13.66L7,14.66V13.24L8,12.24V13.66M8,10.71L7,11.71V10.29L8,9.29V10.71M7,8.71V7.29L8,6.29V7.71L7,8.71Z" /></svg>');
+  --md-admonition-icon--material-decagram-alert: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>alert-decagram</title><path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M13,17H11V15H13V17M13,13H11V7H13V13Z" /></svg>');
+  --md-admonition-icon--material-shield-alert: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>shield-alert</title><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5M11,7H13V13H11M11,15H13V17H11" /></svg>');
 }
 
-/* logo fix */
+/* LOGO ADJUSTMENTS */
 .md-header__button.md-logo :is(img, svg) {
   height: 1.2rem;
   width: auto !important;
 }
 
-/* link color correction */
-
-.md-content>:not(.md-sidebar) a,
-.md-content>:not(.md-sidebar) a:visited {
-  color: revert;
-}
-
-.md-content>:not(.md-sidebar) a:hover {
+/* LINK ADJUSTMENTS */
+/* link color and bottom border to ensure element shape consistency on hover */
+.md-content a {
   color: revert;
   border-bottom: 1px solid;
+  border-color: rgba(0, 0, 0, 0)
 }
 
-.md-content a.headerlink:hover {
+/* visible bottom border only on hover */
+.md-content a:hover {
+  border-color: revert;
+}
+
+/*
+remove bottom-border from special cases
+- section anchor link icon
+- images
+- Edit this page on GitHub icon
+*/
+.md-typeset .headerlink,
+.md-content a.glightbox:has(img),
+.md-content a.md-icon[title="Edit this page"] {
   border-bottom: none;
 }
 
-html .md-footer-meta.md-typeset a.supportemail {
+/* special case coloring for supportemail link due to dark background */
+.md-footer .md-copyright a.supportemail {
   color: var(--support-email-color);
 }
 
-/* "Edit on GitHub" button color adjustment */
-.md-icon[title="Edit this page"] svg {
-  fill: var(--edit-page-icon-color);
-}
-
-/* header accessiblity/readability */
-.md-typeset h1 {
+/* HEADER ADJUSTMENTS */
+/* header style consistency */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
   color: var(--md-default-fg-color);
   font-weight: 600;
-  font-size: 2em;
+  line-height: normal;
 }
 
-.md-typeset:not(.md-blog-header) h1 {
+/* h1 adjustments */
+.md-typeset h1 {
+  font-size: 2em;
   margin-bottom: 0;
 }
 
-.md-typeset h2 {
-  font-weight: 600;
-  line-height: normal;
-}
-
-.md-typeset h3 {
-  font-weight: 600;
-  line-height: normal;
-}
-
-.md-typeset h4 {
-  font-weight: 600;
-  line-height: normal;
-}
-
-.md-typeset h5 {
-  font-weight: 600;
-  line-height: normal;
-  color: var(--md-default-fg-color);
-}
-
-.md-typeset :not(h1, h2, h3, h4, h5)+ :is(h2, h3, h4, h5) {
-  margin-top: 44px;
-}
-
-.md-typeset h1+ :is(h2, h3, h4) {
+/* adjust whitespace between h1 and immediate nested headers */
+.md-typeset h1+ :is(h2, h3, h4, h5, h6) {
   margin-top: 0.8em;
 }
 
-/* construction admonition */
-.md-typeset .admonition.construction,
-.md-typeset details.construction {
-  border-color: var(--construction-admonition-bd-color);
+/* increase whitespace between last content of previous section and next header */
+.md-typeset :not(h1, h2, h3, h4, h5, h6)+ :is(h2, h3, h4, h5, h6) {
+  margin-top: 40px;
 }
 
-.md-typeset .construction>.admonition-title,
-.md-typeset .construction>summary {
-  background-color: var(--construction-admonition-bg-color);
-  border-color: var(--construction-admonition-bd-color);
+/* LIST ADJUSTMENTS */
+/* ol, ul more compact */
+.md-typeset ol,
+.md-typeset ul {
+  margin-bottom: revert;
+  margin-top: revert;
 }
 
-.md-typeset .construction>.admonition-title::before,
-.md-typeset .construction>summary::before {
-  background-color: var(--announcement-admonition-bd-color);
-  -webkit-mask-image: var(--md-admonition-icon--warning);
-  mask-image: var(--md-admonition-icon--warning);
+.md-typeset ol li,
+.md-typeset ol li>p,
+.md-typeset ul li,
+.md-typeset ul li>p {
+  margin-bottom: 0.0em;
 }
 
+.md-typeset ol li :nth-child(1),
+.md-typeset ul li :nth-child(1) {
+  margin-top: 0.0em;
+}
+
+.md-typeset ol li :last-child:is(p),
+.md-typeset ul li :last-child:is(p) {
+  margin-bottom: 0.0em;
+}
+
+.md-typeset ol li ol,
+.md-typeset ol li ul,
+.md-typeset ul li ol,
+.md-typeset ul li ul {
+  margin-bottom: 0.0em;
+  margin-top: 0.0em;
+}
+
+/* NAV ADJUSTMENTS */
+.md-nav--primary .md-nav__item--active>.md-nav__link>a>span.md-ellipsis,
+.md-nav--primary .md-nav__link--active>span.md-ellipsis {
+  font-weight: bold;
+}
+
+/* CUSTOM ADMONITION DEFINITIONS*/
 /* announcement admonition */
 .md-typeset .admonition.announcement,
 .md-typeset details.announcement {
@@ -127,33 +158,289 @@ html .md-footer-meta.md-typeset a.supportemail {
 .md-typeset .announcement>.admonition-title::before,
 .md-typeset .announcement>summary::before {
   background-color: var(--announcement-admonition-bd-color);
-  -webkit-mask-image: var(--md-admonition-icon--warning);
-  mask-image: var(--md-admonition-icon--warning);
+  -webkit-mask-image: var(--md-admonition-icon--material-bullhorn);
+  mask-image: var(--md-admonition-icon--material-bullhorn);
 }
 
-/* lightgallery and image tweaks */
 
-/* image width */
-.md-grid {
-  max-width: 100%;
+.md-typeset details.announcement {
+  font-size: 0.8rem;
 }
 
-/* adds a flexbox to the surrounding div */
-a.glightbox {
+.md-typeset details.announcement summary {
+  font-size: 1.25em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.md-typeset details.announcement summary::before,
+.md-typeset details.announcement summary::after {
+  height: 1.25em;
+  width: 1.25em;
+}
+
+.md-typeset details.announcement p,
+.md-typeset details.announcement hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.md-typeset details.announcement div.dates {
+  align-items: stretch;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.md-typeset details.announcement div.effective-dates {
+  float: left;
+  text-align: left;
+}
+
+.md-typeset details.announcement div.posted-date {
+  float: right;
+  text-align: right;
+}
+
+
+/* construction admonition */
+.md-typeset .admonition.construction,
+.md-typeset details.construction {
+  border-color: var(--construction-admonition-bd-color);
+}
+
+.md-typeset .construction>.admonition-title,
+.md-typeset .construction>summary {
+  background-color: var(--construction-admonition-bg-color);
+  border-color: var(--construction-admonition-bd-color);
+}
+
+.md-typeset .construction>.admonition-title::before,
+.md-typeset .construction>summary::before {
+  background-color: var(--construction-admonition-bd-color);
+  -webkit-mask-image: var(--md-admonition-icon--material-crane);
+  mask-image: var(--md-admonition-icon--material-crane);
+}
+
+/* important admonition */
+.md-typeset .admonition.important,
+.md-typeset details.important {
+  border-color: var(--important-admonition-bd-color);
+}
+
+.md-typeset .important>.admonition-title,
+.md-typeset .important>summary {
+  background-color: var(--important-admonition-bg-color);
+  border-color: var(--important-admonition-bd-color);
+}
+
+.md-typeset .important>.admonition-title::before,
+.md-typeset .important>summary::before {
+  background-color: var(--important-admonition-bd-color);
+  -webkit-mask-image: var(--md-admonition-icon--material-decagram-alert);
+  mask-image: var(--md-admonition-icon--material-decagram-alert);
+}
+
+/* security admonition */
+.md-typeset .admonition.security,
+.md-typeset details.security {
+  border-color: var(--security-admonition-bd-color);
+}
+
+.md-typeset .security>.admonition-title,
+.md-typeset .security>summary {
+  background-color: var(--security-admonition-bg-color);
+  border-color: var(--security-admonition-bd-color);
+}
+
+.md-typeset .security>.admonition-title::before,
+.md-typeset .security>summary::before {
+  background-color: var(--security-admonition-bd-color);
+  -webkit-mask-image: var(--md-admonition-icon--material-shield-alert);
+  mask-image: var(--md-admonition-icon--material-shield-alert);
+}
+
+/* GLIGHTBOX ADJUSTMENTS */
+/* image centering in content */
+.md-content a.glightbox {
   display: flex;
   justify-content: center;
 }
 
-/* adding the drop shadow,margin and keeping the images at 50 viewport width */
-a.glightbox img {
+/* drop shadow */
+.md-content a.glightbox img {
   max-width: 50vw;
   box-shadow: 5px 5px 13px var(--lightbox-shadow-color);
   margin-bottom: 1rem;
 }
 
-/* 100 viewport width on smaller screens */
+/* media-appropriate widths */
+.md-grid {
+  max-width: 100%;
+}
+
 @media only screen and (max-width: 600px) {
   a.glightbox img {
     max-width: 100%;
   }
+}
+
+/* TABBED CONTENT ADJUSTMENTS */
+/* Give tabs more of a button look */
+.tabbed-labels label {
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-bottom: 0px !important;
+  border-radius: 6px 6px 0 0;
+  box-sizing: border-box;
+  padding: 0.4em 1em;
+  margin-right: 0.3em;
+  cursor: pointer;
+  background: var(--md-default-bg-color);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.tabbed-labels label>a {
+  border-bottom: 0px !important;
+}
+
+/* On hover */
+.tabbed-labels label:hover {
+  background: var(--md-accent-fg-color--transparent);
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+}
+
+/* When active */
+/* .tabbed-labels input:checked+label {
+  background: var(--md-accent-fg-color);
+  color: white;
+  border-color: var(--md-accent-fg-color);
+  font-weight: 600;
+} */
+
+/* Bottom border to mark end of tabbed content */
+/* .tabbed-content {
+  border-bottom: 2px solid var(--md-default-fg-color--lighter);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+} */
+.tabbed-content {
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-top: 1px solid var(--md-default-fg-color--lighter) !important;
+  /* so it connects with the tabs */
+  padding: 1rem;
+  /* margin-bottom: 1.5rem; */
+  border-radius: 0 0 6px 6px;
+}
+
+.md-typeset .tabbed-set>.tabbed-labels.tabbed-labels--linked {
+  box-sizing: border-box;
+  box-shadow: none;
+  border-bottom: 0px !important;
+  /* background-color: rgba(0, 0, 0, 0); */
+  border-bottom: 1px solid var(--md-default-fg-color--lighter);
+}
+
+/* GRID CARDS ADJUSTMENTS */
+/* full-card link styling */
+.md-typeset .grid.cards ul>li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.md-typeset .grid.cards ul>li p:has(.overlay-link) {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.grid.cards .overlay-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* END full-card link styling */
+
+/* separate title icon from title text for consistent spacing */
+.md-typeset .grid.cards ul>li p span.twemoji:after {
+  /* literal "em space" U+2003 character, do not change or delete */
+  content: " ";
+}
+
+/* tail link placement consistency at bottom of card */
+.md-typeset .grid.cards ul>li p:last-child:has(a) {
+  margin-top: auto;
+}
+
+/* pleasing max width of single cards */
+.md-typeset .grid.cards ul>li:only-child {
+  width: min(100%, 450px);
+}
+
+/* lists in grid cards */
+.md-typeset .grid.cards ul ul {
+  list-style-type: disc;
+}
+
+.md-typeset .grid.cards ul ul>li {
+  display: list-item;
+}
+
+.md-typeset .grid.cards ul ol {
+  list-style-type: decimal;
+}
+
+.md-typeset .grid.cards ul ol>li {
+  display: list-item;
+}
+
+.md-typeset .grid.cards ul ol ol {
+  list-style-type: lower-alpha;
+}
+
+.md-typeset .grid.cards ul ol ol>li {
+  display: list-item;
+}
+
+.md-typeset .grid.cards ul ol ol ol {
+  list-style-type: lower-roman;
+}
+
+.md-typeset .grid.cards ul ol ol ol>li {
+  display: list-item;
+}
+
+/* EMOJI ICON COLORS */
+.icon-color-uab-green {
+  color: var(--uab-color-uab-green);
+}
+
+.icon-color-dragons-lair-green {
+  color: var(--uab-color-dragons-lair-green)
+}
+
+.icon-color-openstack-red {
+  color: #ed1944
+}
+
+.icon-color-gitlab-orange {
+  color: #fc6d26
+}
+
+.icon-color-globus-blue {
+  color: #32619b
+}
+
+.icon-color-jupyter-orange {
+  color: #f37626
+}
+
+.icon-color-rstudio-blue {
+  color: #75aadb
 }

@@ -1,0 +1,25 @@
+account:
+  leaving:
+    grace_period_time: thirty (30) day
+storage:
+  no_cost:
+    individual:
+      gpfs: 5 TB on Cheaha (GPFS)
+      lts: 5 TB on Long-Term Storage (LTS)
+    shared:
+      gpfs: 25 TB on Cheaha (GPFS)
+      lts: 75 TB on Long-Term Storage (LTS)
+support:
+  email: support@listserv.uab.edu
+  office_hours:
+    timezone: Central Time
+    url: https://uab.zoom.us/j/81783104592?pwd=L21OOWNlY2doWXova3MzOGFRcE4zQT09
+    events:
+      - day: Monday
+        starttime: 10:00 AM
+        endtime: 12:00 PM
+      - day: Thursday
+        starttime: 10:00 AM
+        endtime: 12:00 PM
+  servicenow_url: https://uabprod.service-now.com/service_portal
+  statuscast_url: https://uabstatus.statuscast.com/#!/incidentlist?componentId=34990

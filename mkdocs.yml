@@ -12,6 +12,7 @@ theme:
     - navigation.instant
     - content.code.copy
     - content.action.edit
+    - content.tabs.link
   favicon: images/favicon.png
   logo: images/logo.png
 
@@ -32,10 +33,19 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.keys
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - tables
   - toc:
       permalink: true
@@ -63,16 +73,35 @@ plugins: # order matters!
       type: date
       strict: false
   - glightbox
+  - macros:
+      include_yaml:
+        - res/announcements.yml
+        - res/docs_template_context.yml
+      j2_extensions:
+        - jinja2_workarounds.MultiLineInclude
+      module_name: macros
+      on_undefined: strict
+      render_by_default: true
+      verbose: true
   - table-reader:
       data_path: docs
   - title-casing
   - redirects:
       redirect_maps:
-        account_management/gitlab_researcher.md: account_management/gitlab_account.md
-        account_management/uab_researcher.md: account_management/cheaha_account.md
-        account_management/xias_guest.md: account_management/xias/guest_instructions.md
-        account_management/xias_sites.md: account_management/xias/pi_site_management.md
-        account_management/xias_users.md: account_management/xias/pi_guest_management.md
+        account/xias/4_guest_create_rcs_account.md: account/rcs/index.md
+        account_management/cheaha_account.md: account/rcs/index.md
+        account_management/gitlab_account.md: account/code.rc/index.md
+        account_management/gitlab_researcher.md: account/code.rc/index.md
+        account_management/index.md: account/index.md
+        account_management/leaving_uab.md: account/leaving/index.md
+        account_management/uab_researcher.md: account/rcs/index.md
+        account_management/xias/guest_instructions.md: account/xias/3_guest_create_xias_account.md
+        account_management/xias/index.md: account/xias/index.md
+        account_management/xias/pi_guest_management.md: account/xias/2_sponsor_manage_users.md
+        account_management/xias/pi_site_management.md: account/xias/1_sponsor_manage_sites.md
+        account_management/xias_guest.md: account/xias/3_guest_create_xias_account.md
+        account_management/xias_sites.md: account/xias/1_sponsor_manage_sites.md
+        account_management/xias_users.md: account/xias/2_sponsor_manage_users.md
         cheaha/conda.md: cheaha/software/software.md#anaconda-on-cheaha
         cheaha/lmod.md: cheaha/software/modules.md
         cheaha/open_ondemand/ood_files.md: cheaha/open_ondemand/ood_layout.md
@@ -107,24 +136,39 @@ plugins: # order matters!
 
 exclude_docs: |
   /**/res/*.md
+  /**/_macro/
+  /**/_template/
 
 not_in_nav: |
   /**/res/*.md
+  /**/_macro/
+  /**/_template/
 
 nav:
   - Home: index.md
   - News:
       - news/index.md
   - Account Management:
-      - account_management/index.md
-      - Cheaha Account: account_management/cheaha_account.md
-      - External Collaborator Accounts (XIAS):
-          - account_management/xias/index.md
-          - "For PIs - (1) Managing Projects & Sites": account_management/xias/pi_site_management.md
-          - "For PIs - (2) Managing Guests": account_management/xias/pi_guest_management.md
-          - "For Guests - Account Creation": account_management/xias/guest_instructions.md
-      - GitLab Account: account_management/gitlab_account.md
-      - Leaving UAB: account_management/leaving_uab.md
+      - account/index.md
+      - Research Computing System (RCS):
+          - account/rcs/index.md
+          - Create: account/rcs/create.md
+          - Status: account/rcs/status.md
+      - Code.rc (GitLab):
+          - account/code.rc/index.md
+          - Create: account/code.rc/create.md
+          - Manage: account/code.rc/manage.md
+      - External Collaborators:
+          - account/xias/index.md
+          - 1. Sponsor — Manage Sites: account/xias/1_sponsor_manage_sites.md
+          - 2. Sponsor — Manage Users: account/xias/2_sponsor_manage_users.md
+          - 3. Guests — Create XIAS Account: account/xias/3_guest_create_xias_account.md
+          - 4. Guests — Create RCS Account: account/xias/4_guest_create_rcs_account.md
+      - Your Responsibilities: account/responsibilities.md
+      - Leaving UAB:
+          - account/leaving/index.md
+          - Continuing Collaboration: account/leaving/collaboration.md
+          - Final Steps: account/leaving/final_steps.md
   - Data Management:
       - data_management/index.md
       - Storage:
@@ -212,6 +256,8 @@ nav:
       - kubernetes/index.md
       - Startup: kubernetes/startup.md
       - Hardware: kubernetes/hardware.md
+  - Code.rc (GitLab) Guide:
+      - code.rc/index.md
   - National Research Computing Cyberinfrastructure:
       - national_ci/index.md
       - The Open Science Grid: national_ci/osg.md
@@ -251,5 +297,7 @@ validation:
     unrecognized_links: warn
 
 watch:
+  - macros
+  - res
   - scripts
   - theme

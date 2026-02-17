@@ -18,7 +18,7 @@ UAB has a subscription to Globus,allowing you to set up a Globus account using y
     <!-- markdownlint-disable MD046 -->
     !!! note
 
-        If you are an external collaborator using an [XIAS account](../../../account_management/xias/index.md) (this is uncommon) to access UAB-owned storage, do not use your home institution login. You will only be able to access UAB storage systems using your XIAS credentials.
+        If you are an external collaborator using an [XIAS account](../../../account/xias/index.md) (this is uncommon) to access UAB-owned storage, do not use your home institution login. You will only be able to access UAB storage systems using your XIAS credentials.
 
         XIAS accounts are not currently able to access XD storage via Globus. Please use [Other Data Transfer Options](../index.md#data-management-and-transfer-tools) for supported alternatives.
     <!-- markdownlint-enable MD046 -->

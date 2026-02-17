@@ -4,11 +4,11 @@ Unlike with traditional raw data storage, code evolves over time, often rapidly.
 
 ## UAB GitLab vs the Third-Party GitHub: Which Should I Choose?
 
-If your work is private, or internal to UAB operations, it is probably best to store it in our [GitLab](#gitlab) instance, hosted on-premises as UAB. In contrast, if you must collaborate with external researchers, it might make more sense to store code in [GitHub](#github), instead. GitLab has more feature-rich project management tooling in support of code collaboration, but GitHub is more widely known, recognized and can more readily travel with you as you progress in your career.
+If your work is private, or internal to UAB operations, it is probably best to store it in our [Code.rc](../../account/code.rc/index.md) server, hosted on-premises as UAB. In contrast, if you must collaborate with external researchers, it might make more sense to store code in [GitHub](#github), instead. GitLab has more feature-rich project management tooling in support of code collaboration, but GitHub is more widely known, recognized and can more readily travel with you as you progress in your career.
 
 ### GitLab
 
-UAB Research Computing maintains an on-premises GitLab instance. To gain access, please visit <https://code.rc.uab.edu> and create an [Account](../../account_management/gitlab_account.md).
+UAB Research Computing maintains an on-premises GitLab instance. To gain access, please visit <https://code.rc.uab.edu> and create an [Account](../../account/code.rc/create.md).
 
 ### GitHub
 
