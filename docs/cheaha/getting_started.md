@@ -36,6 +36,31 @@ The primary method for accessing Cheaha is through our online portal website, Op
 
 [SSH](../uab_cloud/remote_access.md#command-line-via-ssh) may be used to access Cheaha. Connect to host `cheaha.rc.uab.edu` on port `22`.
 
+### Enabling SSH Key Authentication on Cheaha
+SSH key authentication allows you to log in to Cheaha without entering a password each time. This improves security and enables passwordless login for both SSH and Open OnDemand (OOD) shell access.
+
+#### SSH Key Setup on Cheaha
+
+If you have already set up your SSH keys on your local machine [see Local Machine CLI Setup], you can enable passwordless login on Cheaha as follows:
+
+1. Add your public key to authorized_keys:
+
+On login006, append your ECDSA public key:
+
+```bash
+cat ~/.ssh/id_ecdsa.pub >> ~/.ssh/authorized_keys
+```
+
+2. Set correct permissions
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+
+3. Test SSH login
+```bash
+ssh $USER$@cheaha.rc.uab.edu
+```
+You should now be able to log in without a password. Once this works, Open OnDemand (OOD) shell access should also no longer prompt for a password.
+
 ### With Integrated Development Environments (IDEs)
 
 An alternative method suited for developers is to use IDEs like VSCode, using the "Remote - Tunnels" extension, to connect to an [HPC Desktop Interactive Job](./open_ondemand/hpc_desktop.md). You can find more information for setting this up in the [VSCode Tunnel section](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel).
