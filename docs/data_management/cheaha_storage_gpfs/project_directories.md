@@ -132,6 +132,6 @@ This section outlines key storage policies and exceptions, including access cont
 
 - Storage Entitlement: A shared project allocation of 25 TB is available to research labs led by a PI and to Core Facilities headed by a Director. A shared project allocation is intended to support active research and collaboration.
 - Quota Increase: At this time, we do not provide additional quota increase for shared project allocation. If you require more storage for your work, please consider requesting and using an [LTS](../../data_management/lts/index.md).
-- Data Management: The owner the shared Project allocation is responsible for organizing, cleaning, and backing up their data in their shared Project allocation.
-- Permission and Access Control Management: Access to shared project allocation can be managed using Access Control Lists (ACLs). New members can be added to or removed from the group access based on PI approval.
-- HIPAA Compliance: Shared project allocation is HIPAA compliant and can accept Protected Health Information (PHI) data. For HIPAA Compliance and UAB policies surrounding PHI data, please refer the [HIPAA Compliance](../../data_management/index.md#hipaa-compliance)page.
+- Data Management: The owner of a shared Project allocation is responsible for organizing, cleaning, and backing up their data in their shared Project allocation.
+- Permission and Access Control Management: Access to shared project allocations is primarily managed through group membership, with users added or removed based on Principal Investigator (PI) approval. Access Control Lists (ACLs) may be used only for exceptions requiring finer control.
+- HIPAA Compliance: Shared project allocation is HIPAA compliant and can store Protected Health Information (PHI) data. For HIPAA Compliance and UAB policies surrounding PHI data, please refer to the [HIPAA Compliance](../../data_management/index.md#hipaa-compliance) page.
