@@ -46,26 +46,37 @@ If you have already set up your SSH keys on your local machine [see Local Machin
 
 (i) Add your public key to authorized_keys:
 
-On login006, append your ECDSA public key:
+- First, log in to Cheaha. You can do this either: Using a terminal with SSH and your password (shown below) Or via Open OnDemand (OOD) shell access.
+
+```bash
+ssh $USER$@cheaha.rc.uab.edu
+```
+
+- Then, append your ECDSA public key to authorized_keys:
 
 ```bash
 cat ~/.ssh/id_ecdsa.pub >> ~/.ssh/authorized_keys
 ```
 
+This ensures that your public key is registered on the server so future SSH and OOD logins can use passwordless authentication.
+
 (ii) Set correct permissions
 
+After adding your public key to authorized_keys, you need to make sure both the file and the .ssh directory have the correct permissions. This is important because SSH will refuse to use files or directories that are accessible by other users, which can prevent passwordless login from working.
+
 ```bash
+# Set read/write access for the account owner only on authorized_keys
 chmod 600 ~/.ssh/authorized_keys
+# Set full access for the account owner only on the .ssh directory
 chmod 700 ~/.ssh
 ```
 
 (iii) Test SSH login
+After adding your public key and setting the correct permissions, you should verify that SSH key authentication works correctly. This ensures that future logins to Cheaha, including Open OnDemand (OOD) shell access will not prompt for a password.
 
 ```bash
-    ssh $USER$@cheaha.rc.uab.edu
+ssh $USER@cheaha.rc.uab.edu
 ```
-
-You should now be able to log in without a password. Once this works, Open OnDemand (OOD) shell access should also no longer prompt for a password.
 
 ### With Integrated Development Environments (IDEs)
 
