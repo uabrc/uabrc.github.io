@@ -134,13 +134,15 @@ If you wish to have further discussion of options for expanding your GPFS alloca
 
 ### How Can I Get a Larger LTS Lab Allocation?
 
-At this time, due to constraints on total [LTS](./lts/index.md) storage, increasing an LTS allocation requires purchasing additional hardware. Below are some facts about purchasing additional storage nodes.
+At this time, due to constraints on total [LTS](./lts/index.md) storage, increasing an LTS allocation requires purchasing additional hardware. Below are key details about purchasing additional storage nodes.
 
 - Allocation increases occur by purchasing whole storage nodes.
-- Each node has 133 TB of usable storage.
-- Nodes are purchased with researcher funds at vendor cost.
-- No markups are added to the cost of nodes.
-- Purchased nodes are racked with existing hardware in our data centers.
+- As of our most recent quote (July 2025), each node provides approximately **432 TB** of usable storage.
+- Nodes are purchased with researcher funds at vendor cost, with no markup applied.
+- To obtain current pricing, please contact us to request a quote from our hardware vendor.
+- Quotes are valid for 30 days from the date of receipt. A new quote is required after 30 days.
+- Please allow 2–3 business days to receive a quote.
+- Purchased nodes are racked alongside existing hardware in our data centers.
 - Purchased nodes are maintained by Research Computing with the same level of service as other hardware.
 - Purchased nodes are supported for 5 years from date of purchase, the industry standard for commercial datacenter hardware.
 - Once an order is placed with the vendor, we can provide additional storage immediately _if_ free storage is available, regardless of lead-time.
