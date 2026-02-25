@@ -132,20 +132,25 @@ At this time, due to constraints on total GPFS storage, we are not able to incre
 
 If you wish to have further discussion of options for expanding your GPFS allocation and other workarounds tailored to your workflow, please [Contact Support](../help/support.md). Please also note that project storage is not just for a single project only, it is meant as a storage for multiple projects.
 
-### How Can I Get a Larger LTS Lab Allocation?
+### How Can I Get a Larger LTS Shared Allocation?
 
-At this time, due to constraints on total [LTS](./lts/index.md) storage, increasing an LTS allocation requires purchasing additional hardware. Below are some facts about purchasing additional storage nodes.
+Increasing [LTS](./lts/index.md) shared allocation storage requires purchasing additional hardware. Below are key details about purchasing additional storage nodes.
 
-- Allocation increases occur by purchasing whole storage nodes.
-- Each node has 133 TB of usable storage.
-- Nodes are purchased with researcher funds at vendor cost.
-- No markups are added to the cost of nodes.
-- Purchased nodes are racked with existing hardware in our data centers.
-- Purchased nodes are maintained by Research Computing with the same level of service as other hardware.
-- Purchased nodes are supported for 5 years from date of purchase, the industry standard for commercial datacenter hardware.
-- Once an order is placed with the vendor, we can provide additional storage immediately _if_ free storage is available, regardless of lead-time.
+Researchers may purchase whole storage nodes at cost from our vendor. We are unable to sell storage a la carte at this time. Purchases must be made with our involvement.
 
-If you have additional questions _or_ wish to discuss further, please [Contact Support](../help/support.md).
+For current pricing, please contact us to request a vendor quote. Quotes are valid for 30 days from issue date. Please allow 2–3 business days to receive a quote.
+
+As of our most recent quote (July 2025), nodes have **400 TB** of usable storage. Prices and storage may vary over time.
+
+If a purchase is made, the node will be delivered to our data center and racked alongside our existing hardware. The node will be maintained by Research Computing with the same level of service as our hardware. Nodes are supported for 5 years from date of purchase, the industry standard for commercial datacenter hardware.
+
+When a purchase is confirmed by the vendor, we can provide additional storage immediately _if_ sufficient system storage is available, regardless of actual purchase lead-time.
+
+If you have additional questions or wish to discuss further, please [Contact Support](../help/support.md).
+
+!!! important
+
+    Due to security constraints, we are not allowed to support or connect researcher-provided hardware. All hardware to be installed must be delivered directly from the vendor to UAB IT receiving.
 
 ### If I Can't Get a Larger Allocation, What Alternatives Are There?
 
