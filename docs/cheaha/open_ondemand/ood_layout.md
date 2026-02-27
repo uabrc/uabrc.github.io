@@ -23,27 +23,17 @@ You can open a file browser in a new tab by clicking the `Files` dropdown and se
 
 ![!Basic file browser for OOD.](./images/file_browser.png)
 
-1. **Quick Access Directories**: These links provide you with one click navigation to your most common workspaces (your Home, Data, or Scratch directory).
-1. **Operations Control Bar**: This bar contains buttons that allow you to open the login node terminal, create a new file or directory, and upload, download, copy/move, or delete files and directories. You can find more information in the [OOD Command Menu](#ood-command-menu) section.
-1. **Path Control Bar**: The control bar that displays your current location. The change directory option allow you to quickly jump to any path including the parent directories while the copy path button allow you to copy the current displayed path as text.
-1. **Custom view and metadata**: check "Show Dotfiles" to view hidden files, and "Owner/Mode" to view permission of the directory/file.
-1. **File and Folders List**: The interactive area where you can open folders or select files to view, edit, rename, download, or delete.
+1. **Operations Control Bar**: The operations control bar contains buttons for managing files and directories. The buttons allow you to open the login node terminal, create a new file, create a new file directory, and upload, download, copy/move, or delete files and directories. You can find more information in the [OOD Command Menu](#ood-command-menu) section.
+1. **Quick Access Directories**: The quick access directories area provides links for one click navigation to your most common workspaces (your Home, Data, or Scratch directory).
+1. **Path Control Bar**: The path control bar that displays your current location. The change directory option allow you to quickly jump to any path including the parent directories while the copy path button allow you to copy the current displayed path as text.
+1. **Custom view and metadata**: In the custom view and metadata section, check the "Show Dotfiles" option to display hidden files. Check the "Owner/Mode" option to view the permissions of files and directories. You can also filter the displayed files and folders by entering a search keyword in the filter box.
+1. **File and Folders List**: The interactive area where you can open folders or select files. You can view, edit, rename, download, or delete files from this area.
 
 ### Renaming File
 
-To rename a file, open the three-dot menu next to the file name and select `Rename`, then enter the new name.
+To rename a file, click the three-dot menu next to the file name in the unlabeled Actions column, select Rename, and then enter the new name.
 
 ![!An image showing the Rename options on Cheaha File Browser](images/file_browser_rename.png)
-
-<!-- markdownlint-disable MD046 -->
-!!! note
-
-    Use clear, valid filenames when naming or renaming files. The filename field cannot be left empty.
-<!-- markdownlint-enable MD046 -->
-
-Below is an example that shows how leaving the box empty while renaming the folder "test_rename".
-
-![!An image showing the Rename/Move button left empty on Cheaha File Browser](images/file_browser_rename_move_empty.png)
 
 ### OOD Command Menu
 
