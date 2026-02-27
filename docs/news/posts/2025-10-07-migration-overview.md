@@ -94,7 +94,7 @@ To effectively manage growing storage needs while controlling the costs associat
 ### What GPFS Tiering IS NOT
 
 1. **Tiering is NOT a replacement for LTS**.
-    1. Data you know you will not use for an extended period of time should be moved to [LTS](../../data_management/lts/index.md).
+    1. Data you know you will not use for an extended period of time should be moved to [LTS](../../data_management/storage/lts/index.md).
     1. Storage quotas will be enforced regardless of a given file's storage tier. This means for a standard project quota, only 25 TiB can be stored in a project across both GPFS and Ceph.
 1. **Tiering is NOT a backup**
     1. A file's data will only exist on one tier, CephFS or GPFS, **never on both**.
@@ -109,7 +109,7 @@ To effectively manage growing storage needs while controlling the costs associat
 <!-- markdownlint-disable MD046 -->
 !!! critical
 
-    It is imperative to understand that tiered storage does not equal a backup. We do not provide a traditional, automatic backup for data stored on Cheaha. All data are erasure-encoded in case of hardware failure, they are not backed up in case of user error. Please see information about [LTS](../../data_management/lts/index.md) for a potential backup solution.
+    It is imperative to understand that tiered storage does not equal a backup. We do not provide a traditional, automatic backup for data stored on Cheaha. All data are erasure-encoded in case of hardware failure, they are not backed up in case of user error. Please see information about [LTS](../../data_management/storage/lts/index.md) for a potential backup solution.
 <!-- markdownlint-enable MD046 -->
 
 ### What CephFS IS

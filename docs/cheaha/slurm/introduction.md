@@ -7,7 +7,7 @@ The official Slurm documentation can be found at [the Slurm website](https://slu
 ## How Do I Use Slurm?
 
 1. Understand how to run your software in 'batch' mode, purely from the command line. You may need to review the software documentation.
-1. Stage data to [Cheaha storage](../../data_management/cheaha_storage_gpfs/index.md).
+1. Stage data to [Cheaha storage](../../data_management/storage/cheaha_storage_gpfs/index.md).
 1. Figure out what resources are needed, such as CPUs, memory, GPUs, and time.
 1. Write a [Slurm job script](./slurm_tutorial.md). Be sure to delete data from local scratch.
 1. [Submit the job](./submitting_jobs.md) with the `sbatch` command.

@@ -59,8 +59,8 @@ The Research Computing System (RCS) provides a framework for sharing research da
     - [PyTorch and Tensorflow on Cheaha with Anaconda](./cheaha/tutorial/pytorch_tensorflow.md)
     - [Getting Started with Cloud.RC for On-Premises Cloud Computing](./uab_cloud/tutorial/index.md)
 - Data Management
-    - [How Do I Use Globus for Data Transfer?](./data_management/transfer/tutorial/index.md)
-    - [What Type of Storage Do I Need?](./data_management/index.md#what-type-of-storage-do-i-need)
+    - [How Do I Use Globus for Data Transfer?](./data_management/transfer/globus/index.md)
+    - [What Type of Storage Do I Need?](./data_management/storage/index.md#what-type-of-storage-do-i-need)
 
 ### Success Stories
 
