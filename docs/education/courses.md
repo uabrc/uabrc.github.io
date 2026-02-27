@@ -24,4 +24,4 @@ If you have questions about the course please feel free to reach out to [Support
 
 ### Syllabus
 
-The syllabus is available as a public webpage at <https://s3.lts.rc.uab.edu/uab-rc-dsjc/syllabus.html>, hosted on [LTS](../data_management/lts/index.md).
+The syllabus is available as a public webpage at <https://s3.lts.rc.uab.edu/uab-rc-dsjc/syllabus.html>, hosted on [LTS](../data_management/storage/lts/index.md).
