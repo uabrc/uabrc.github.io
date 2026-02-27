@@ -27,11 +27,7 @@ You can open a file browser in a new tab by clicking the `Files` dropdown and se
 1. **Quick Access Directories**: The quick access directories area provides links for one click navigation to your most common workspaces (your Home, Data, or Scratch directory).
 1. **Path Control Bar**: The path control bar that displays your current location. The change directory option allow you to quickly jump to any path including the parent directories while the copy path button allow you to copy the current displayed path as text.
 1. **Custom view and metadata**: In the custom view and metadata section, check the "Show Dotfiles" option to display hidden files. Check the "Owner/Mode" option to view the permissions of files and directories. You can also filter the displayed files and folders by entering a search keyword in the filter box.
-1. **File and Folders List**: The interactive area where you can open folders or select files. You can view, edit, rename, download, or delete files from this area.
-
-### Renaming File
-
-To rename a file, click the three-dot menu next to the file name in the unlabeled Actions column, select Rename, and then enter the new name.
+1. **File and Folders List**: The interactive area allows you to open folders or select files, where you can view, edit, rename, download, or delete them. For example, to rename a file, click the three-dot menu next to its name in the unlabeled Actions column, select Rename, and enter the new name.
 
 ![!An image showing the Rename options on Cheaha File Browser](images/file_browser_rename.png)
 
