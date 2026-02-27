@@ -11,7 +11,10 @@ on: # yamllint disable-line rule:truthy
       - "mkdocs.yml"
       - "build_scripts/**"
       - "docs/**"
-  workflow_dispatch:
+
+concurrency:
+  group: "deploy-docs.rc.uab.edu-pages"
+  cancel-in-progress: false
 
 jobs:
   check_markdown:
