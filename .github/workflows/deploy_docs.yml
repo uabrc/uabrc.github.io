@@ -11,6 +11,7 @@ on: # yamllint disable-line rule:truthy
       - "mkdocs.yml"
       - "build_scripts/**"
       - "docs/**"
+  workflow_dispatch: # enables manual docs deployment in case of GitHub service issue
 
 concurrency:
   group: "deploy-docs.rc.uab.edu-pages"
