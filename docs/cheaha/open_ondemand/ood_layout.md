@@ -16,7 +16,7 @@ The file browser allows you to view and manage files stored on the Cheaha system
 
 The following items describe groups of controls shown in the image. Each group is numbered in keyboard navigation order, matching the labels in the screenshot.
 
-1. **Operations Control Buttons**: The operations control button group provides options for managing files and directories. The available buttons include: <!-- markdownlint-disable-next-line MD033 -->
+1. **Operations Control Buttons**: The operations control button group provides options for managing files and directories. The  buttons included in this group are: <!-- markdownlint-disable-next-line MD033 -->
     1. **<span id="terminal" tabindex="-1">Opening in Terminal</span>**: Click the `>_Open in Terminal` button to open a bash terminal in the current directory. This should only be used for small tasks since the terminal is running on the login node. For compute-intensive work, request an interactive session in the terminal or HPC Desktop session through [Interactive Apps](#interactive-apps).
     1. **Create a New File**: Click `New File` button to create a new file in the current directory.
     1. **Create a New Directory**: Click  `New Directory` button to create a new folder in the current directory.
@@ -32,11 +32,11 @@ The following items describe groups of controls shown in the image. Each group i
     1. **Copy/Move**: Select files by clicking the checkbox immediately to the left of the file name in the first, unlabeled column of the [File and Folders Table](#file-table), then click the `Copy/Move` button to copy or move them to another directory.
     1. **Delete**: Select files by clicking the checkbox immediately to the left of the file name in the first, unlabeled column of the [File and Folders Table](#file-table), then click `Delete` button to remove them from the current directory.
 
-1. **Quick Access Directories**: The quick access directories links provide one click navigation to your most common work spaces,which include:
+1. **Quick Access Directories**: The quick access directories links provide one click navigation to your most common work spaces which include:
     1. **Home Directory**: Click the `Home Directory` link to quickly navigate to your personal home folder.
     1. **Data Directory** (`/data/user/$USER`): Click the `Data` link to navigate to your main working data space.
     1. **Scratch Directory** (`/scratch/$USER`): Click the `/scratch/$USER` link to navigate to your scratch directory.
-1. **Path Control Buttons**: The path control buttons display your current directory path and allow you to navigate or copy paths The buttons in this group include:
+1. **Path Control Buttons**: The path control buttons display your current directory path and allow you to navigate or copy paths. The buttons in this group include:
     1. **Change Directory**: Click `Change Directory` button to jump to any other directories.
     1. **Copy Path**: Click `Copy Path` button to copy the currently displayed path as text.
 1. **Custom view and metadata Controls**: The custom view and metadata controls group consists of checkboxes and a text field that allow you to adjust how files and folders are displayed. The control includes:
