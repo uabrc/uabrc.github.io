@@ -20,7 +20,7 @@ where responsible and professional use of Cheaha accounts, storage, and computat
     {% include "account/_template/responsibilities_security.md.j2" indent content %}
     - Responsible and accountable for all [XIAS Guest](xias/index.md) actions and behavior.
     - Research data lifecycle management
-        - Migrate unused data to [LTS](../data_management/lts/index.md) or archive.
+        - Migrate unused data to [LTS](../data_management/storage/lts/index.md) or archive.
         - Backup critical data.
         - {{ contact_support_link() }} to discuss.
 

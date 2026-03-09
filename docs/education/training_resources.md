@@ -28,7 +28,6 @@ The Carpentries is a 501(c)3 non-profit organization dedicated to educating rese
 ### Rigor & Reproducibility Tools
 
 - [Community for Rigor](https://www.c4r.io/): a group of scientists from various universities and research institutions in the United States has collaborated to develop educational materials aimed at facilitating the teaching and learning of the principles and practices of scientific rigor.
-- [Rigor & Reproducibility Tool Repository](https://c4r.io/new-tool-repo/): Contains various tools related to rigor and reproducibility, along with links to relevant landing pages. **Note:** as of March 2025, the Community for Rigor site is undergoing a transition and this page is not currently available.
 
 ### Data Management
 
@@ -56,22 +55,16 @@ UAB provides a broad set of research support services that fall primarily under 
 
 ### Resources Under the Office of Research
 
-- **[Office of Research](https://www.uab.edu/research/)** oversees university-wide research operations, including compliance, funding, and partnerships.
-
+- **[Office of Research](https://www.uab.edu/research/home/)** oversees university-wide research operations, including compliance, funding, and partnerships.
 - **[Institutional Review Board (IRB)](https://www.uab.edu/research/home/irb)** ensures that research involving human participants upholds ethical and regulatory standards. If you need to submit new protocols, review training requirements, access forms and templates for your research please reach out to them.
-
 - **[Institutional Animal Care and Use Committee (IACUC)](https://www.uab.edu/research/home/iacuc)** oversees research involving animal subjects to ensure humane care and compliance.
-
 - **[University-Wide Interdisciplinary Research Centers Program (UWIRC Program) Directory](https://www.uab.edu/research/home/uwirc/directory)** lists centers that promote cross-disciplinary collaboration across UAB. Each center fosters partnerships, provides shared facilities, and supports pilot funding or training programs.
-
 - **[Core Facility Directory](https://www.uab.edu/research/home/core-facility-directory)** to find and contact available shared research resources at UAB.
 
 ### Resources Under the Institutional Research Core Program (IRCP)
 
 - The **Institutional Research Core Program (IRCP)** coordinates university-wide investment in shared research infrastructure. You can visit the **[IRCP main site](https://www.uab.edu/cores/ircp/)** for program overviews. Or access their **[IRCP Core Facilities listing](https://www.uab.edu/cores/ircp/uab-ircp-core-facilities)** for specialized labs and instrumentation.
-
 - **[Electronic Health Record (EHR) Data Resource](https://www.uab.edu/ccts/research-resources/informatics/uab-ehr-data-resources)** provides de-identified and limited data sets from electronic health records for approved research projects.
-
 - **[UAB Biomedical Data Science (UBDS)](https://www.uab.edu/cores/ircp/bds)** provides computational biology and biomedical data science services that include data analysis, interpretation, training, and grant support, with a focus on genomics, transcriptomics, systems biology, and translational medicine.
 
 ## Our Social Media Presence

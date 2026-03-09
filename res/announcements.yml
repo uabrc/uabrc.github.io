@@ -1,14 +1,16 @@
 announcements:
   # Add announcements like the example. You can have multiple announcements.
   # Copy-paste the example announcement under this key for each announcement.
-  - title: Ongoing Cheaha (GPFS) Data Migration
+  - title: Maintenance - Code.rc (GitLab)
     content: |
-      Research Computing will be performing a data migration for Cheaha.
-      Please see our [migration overview](./news/posts/2025-10-07-migration-overview.md)
-      for more information on what to expect.
-    posted_date: 2025-10-07
-    start_date: 2025-10-11
-    end_date: 2025-11-30
+      Code.rc (GitLab) will be unavailable the weekend of 2026-03-15 for planned
+      maintenance.
+
+      Please see our [news post](./news/posts/2026-03-15-code-rc-host-upgrade.md)
+      for more information.
+    posted_date: 2026-02-27
+    start_date: 2026-03-15
+    end_date: 2026-03-17
 
 no_announcements: '!!! info "Look for future announcements here."'
 
