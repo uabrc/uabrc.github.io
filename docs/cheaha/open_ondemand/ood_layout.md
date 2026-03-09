@@ -1,59 +1,52 @@
 # Navigating Open OnDemand
 
-After creating your Cheaha account, going to [rc.uab.edu](https://rc.uab.edu) will take you to the Open OnDemand (OOD) homepage:
+After creating your Cheaha account, going to [rc.uab.edu](https://rc.uab.edu) will take you to the Open OnDemand (OOD) homepage.
 
-![!Landing page for Open OnDemand.](./images/ood_homepage.png)
+![Screenshot of the Open OnDemand homepage.](./images/ood_homepage.png)
 
-The landing page contains information about current updates to the system, a message of the day with links to our support email and documentation, as well as a helpful [partition table](../getting_started.md#partitions) to help you determine which partition to submit your jobs to. You can access all of the different features of OOD using the navigation tabs at the top of the screen. The most commonly used features are covered below.
+The Open OnDemand homepage contains information about the main navigation tabs located at the top of the page, current updates to the system and a message of the day with links to our support email and documentation. The homepage also includes a [partition table](../getting_started.md#partitions) that helps you to determine the appropriate partition when submitting your jobs.
+
+You can access all Open OnDemand features using the navigation tabs at the top of the page. The features most commonly used by researchers are described in the following sections.
 
 ## File Browser
 
-You can open a file browser in a new tab by clicking the `Files` dropdown and selecting which default directory you would like to access from the following options.
+The file browser allows you to view and manage files stored on the Cheaha system. To open the file browser, select `Files` from the navigation bar to open the dropdown menu, and then choose one of the available directories such as the [Home Directory](../../data_management/storage/cheaha_storage_gpfs/individual_directories.md), [Data directory](../../data_management/storage/cheaha_storage_gpfs/individual_directories.md) (`/data/user/$USER`), or [scratch directory](../../data_management/storage/cheaha_storage_gpfs/network_scratch.md) (`/scratch/$USER`). Selecting one of these directories from the dropdown menu opens the file browser for that directory.
 
-- [Home Directory](../../data_management/storage/cheaha_storage_gpfs/individual_directories.md)
-- [/data/scratch/$USER](../../data_management/storage/cheaha_storage_gpfs/network_scratch.md) (network scratch)
-- [/data/user/$USER](../../data_management/storage/cheaha_storage_gpfs/individual_directories.md)
-- [/scratch/$USER](../../data_management/storage/cheaha_storage_gpfs/network_scratch.md) (network scratch)
+![Screenshot of the Open OnDemand file browser.](./images/file_browser.png)
 
-<!-- markdownlint-disable MD046 -->
-!!! note
+The following items describe groups of controls shown in the image. Each group is numbered in keyboard navigation order, matching the labels in the screenshot.
 
-    "/data/scratch" is a symbolic link to "/scratch", so they point to the same directory.
-<!-- markdownlint-enable MD046 -->
+1. **Operations Control Buttons**: The operations control button group provides options for managing files and directories. The available buttons include: <!-- markdownlint-disable-next-line MD033 -->
+    1. **<span id="terminal" tabindex="-1">Opening in Terminal</span>**: Click the `>_Open in Terminal` button to open a bash terminal in the current directory. This should only be used for small tasks since the terminal is running on the login node. For compute-intensive work, request an interactive session in the terminal or HPC Desktop session through [Interactive Apps](#interactive-apps).
+    1. **Create a New File**: Click `New File` button to create a new file in the current directory.
+    1. **Create a New Directory**: Click  `New Directory` button to create a new folder in the current directory.
+    1. **Uploading Data**: Click the `Upload` button to select and upload files from your local machine.
 
-![!Basic file browser for OOD.](./images/file_browser.png)
+        <!-- markdownlint-disable MD046 -->
+        !!! important
 
-1. **Operations Control Bar**: The operations control bar contains buttons for managing files and directories. The buttons allow you to open the login node terminal, create a new file, create a new file directory, and upload, download, copy/move, or delete files and directories. You can find more information in the [OOD Command Menu](#ood-command-menu) section.
-1. **Quick Access Directories**: The quick access directories area provides links for one click navigation to your most common workspaces (your Home, Data, or Scratch directory).
-1. **Path Control Bar**: The path control bar that displays your current location. The change directory option allow you to quickly jump to any path including the parent directories while the copy path button allow you to copy the current displayed path as text.
-1. **Custom view and metadata**: In the custom view and metadata section, check the "Show Dotfiles" option to display hidden files. Check the "Owner/Mode" option to view the permissions of files and directories. You can also filter the displayed files and folders by entering a search keyword in the filter box.
-1. **File and Folders List**: The interactive area allows you to open folders or select files, where you can view, edit, rename, download, or delete them. For example, to rename a file, click the three-dot menu next to its name in the unlabeled Actions column, select Rename, and enter the new name.
+            This button should be used only to upload small files (< 1 MB). For large files or datasets, please use [Globus](../../data_management/transfer/globus/index.md) instead.
+        <!-- markdownlint-enable MD046 -->
 
-![!An image showing the Rename options on Cheaha File Browser](images/file_browser_rename.png)
+    1. **Download**: Select files by clicking the checkbox immediately to the left of the file name in the first, unlabeled column of the [File and Folders Table](#file-table), then click the `Download` button to save them to your local machine..
+    1. **Copy/Move**: Select files by clicking the checkbox immediately to the left of the file name in the first, unlabeled column of the [File and Folders Table](#file-table), then click the `Copy/Move` button to copy or move them to another directory.
+    1. **Delete**: Select files by clicking the checkbox immediately to the left of the file name in the first, unlabeled column of the [File and Folders Table](#file-table), then click `Delete` button to remove them from the current directory.
 
-### OOD Command Menu
+1. **Quick Access Directories**: The quick access directories links provide one click navigation to your most common work spaces,which include:
+    1. **Home Directory**: Click the `Home Directory` link to quickly navigate to your personal home folder.
+    1. **Data Directory** (`/data/user/$USER`): Click the `Data` link to navigate to your main working data space.
+    1. **Scratch Directory** (`/scratch/$USER`): Click the `/scratch/$USER` link to navigate to your scratch directory.
+1. **Path Control Buttons**: The path control buttons display your current directory path and allow you to navigate or copy paths The buttons in this group include:
+    1. **Change Directory**: Click `Change Directory` button to jump to any other directories.
+    1. **Copy Path**: Click `Copy Path` button to copy the currently displayed path as text.
+1. **Custom view and metadata Controls**: The custom view and metadata controls group consists of checkboxes and a text field that allow you to adjust how files and folders are displayed. The control includes:
+    1. **Show Owner/Mode**: Select `Show Owner/Mode` checkbox to display file modification dates, file permissions (mode), and file/directory owner (owner) Unix IDs. The permissions (`mode`) can be used to investigate permission issues in shared spaces like `/data/project` directories.
+    1. **Show Dotfiles**: Select `Show Dotfiles` checkbox to display hidden files (those beginning with `.`) in the current directory.
+    1. **Filter Text Field**: Enter a keyword in the text field to filter the displayed files and folders. <!-- markdownlint-disable-next-line MD033 -->
+1. **<span id="file-table" tabindex="-1">File and Folders Table</span>**: This table displays the folders and files in the current directory and allows you to select items. For each file or folder, you can view, edit, rename, download, or delete it using the Actions menu.
 
-#### Uploading Data
-
-Data can be uploaded from your local machine using this interface. Use the `Upload` button in the OOD Command Menu at the top right to select files from your local browser.
-
-<!-- markdownlint-disable MD046 -->
-!!! important
-
-    This should be limited to small files only (< 1 MB). For large files or datasets, please use [Globus](../../data_management/transfer/globus/index.md) instead.
-<!-- markdownlint-enable MD046 -->
-
-#### Opening a Terminal
-
-You can also open a bash terminal in the current directory using the `>_Open in Terminal` command. This should only be used for small tasks since the terminal is running on the login node. For compute-intensive tasks, either request an interactive session in the terminal or request an HPC Desktop session through the Interactive Apps and use the terminal there.
-
-#### Show Dotfiles
-
-Selecting the `Show Dotfiles` option will show the hidden files (those beginning with `.`) in the current folder.
-
-#### Show Owner
-
-Selecting the `Show Owner/Mode` option will show the permissions for the files in the working directory. These permissions (`mode`) can be used to investigate permission issues in shared spaces like `/data/project` directories. The `owner` column shows the Unix ID for the user who owns the file or directory. There is not a known way to change it to the username so its use is limited.
+    1. **Rename a File**: Click the three-dot menu next to the file name in the unlabeled Actions column, select `Rename` from the dropdown options, and enter the new name.
+    1. **Other options Actions**: To view, edit, download, or delete a file, click the three-dot menu next to the file name in the unlabeled Actions column and select your preferred action.
 
 ## Interactive Apps
 
