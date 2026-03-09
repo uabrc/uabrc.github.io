@@ -136,7 +136,7 @@ If you wish to have further discussion of options for expanding your GPFS alloca
 
 Increasing [LTS](./lts/index.md) shared allocation storage requires purchasing additional hardware. Below are key details about purchasing additional storage nodes.
 
-Researchers may purchase whole storage nodes at cost from our vendor. We are unable to sell storage a la carte at this time. Purchases must be made with our involvement.
+Researchers may purchase whole storage nodes at cost from our vendor. We are unable to sell storage individually (per terabyte) at this time. Purchases must be made with our involvement.
 
 For current pricing, please contact us to request a vendor quote. Quotes are valid for 30 days from issue date. Please allow 2–3 business days to receive a quote.
 
