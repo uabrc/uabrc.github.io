@@ -38,45 +38,45 @@ The primary method for accessing Cheaha is through our online portal website, Op
 
 ### Enabling SSH Key Authentication on Cheaha
 
-SSH key authentication allows you to log in to Cheaha without entering a password each time. This improves security and enables passwordless login for both SSH and Open OnDemand (OOD) shell access.
+SSH key authentication allows you to log in to Cheaha from your personal computer (PC) using the command-line interface (CLI) without entering a password each time. This improves security and enables passwordless login.
 
 #### SSH Key Setup on Cheaha
 
 If you have already set up your SSH keys on your local machine [see Local Machine CLI Setup](../uab_cloud/remote_access.md#command-line-via-ssh), you can enable passwordless login on Cheaha as follows:
 
-(i) Add your public key to authorized_keys:
+1. Add your public key to authorized_keys:
 
-- First, log in to Cheaha. You can do this either: Using a terminal with SSH and your password (shown below) Or via Open OnDemand (OOD) shell access.
+    1. First, log in to Cheaha. You can do this either: Using a terminal with SSH and your password from you PC (as shown below) Or via [Open OnDemand (OOD) shell access](../cheaha/open_ondemand/ood_layout.md#clusters).
 
-```bash
-ssh $USER$@cheaha.rc.uab.edu
-```
+        ```bash
+        ssh $USER@cheaha.rc.uab.edu
+        ```
 
-- Then, append your ECDSA public key to authorized_keys:
+    2. After you login in to Cheaha, append your ECDSA public key to authorized_keys:
 
-```bash
-cat ~/.ssh/id_ecdsa.pub >> ~/.ssh/authorized_keys
-```
+        ```bash
+        [$USER$@login006 ~] cat ~/.ssh/id_ecdsa.pub >> ~/.ssh/authorized_keys
+        ```
 
-This ensures that your public key is registered on the server so future SSH and OOD logins can use passwordless authentication.
+    This ensures that your public key is registered on the server so future SSH logins can use passwordless authentication.
 
-(ii) Set correct permissions
+1. Set correct permissions
 
-After adding your public key to authorized_keys, you need to make sure both the file and the .ssh directory have the correct permissions. This is important because SSH will refuse to use files or directories that are accessible by other users, which can prevent passwordless login from working.
+    After adding your public key to authorized_keys, you need to make sure both the file and the .ssh directory have the correct permissions. This is important because SSH will refuse to use files or directories that are accessible by other users, which can prevent passwordless login from working.
 
-```bash
-# Set read/write access for the account owner only on authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-# Set full access for the account owner only on the .ssh directory
-chmod 700 ~/.ssh
-```
+        ```bash
+        # Set read/write access for the account owner only on authorized_keys
+        chmod 600 ~/.ssh/authorized_keys
+        # Set full access for the account owner only on the .ssh directory
+        chmod 700 ~/.ssh
+        ```
 
-(iii) Test SSH login
-After adding your public key and setting the correct permissions, you should verify that SSH key authentication works correctly. This ensures that future logins to Cheaha, including Open OnDemand (OOD) shell access will not prompt for a password.
+1. Test SSH login
+    After adding your public key and setting the correct permissions, you should verify that SSH key authentication works correctly. This ensures that future logins to Cheaha, including Open OnDemand (OOD) shell access will not prompt for a password.
 
-```bash
-ssh $USER@cheaha.rc.uab.edu
-```
+        ```bash
+        ssh $USER@cheaha.rc.uab.edu
+        ```
 
 ### With Integrated Development Environments (IDEs)
 
