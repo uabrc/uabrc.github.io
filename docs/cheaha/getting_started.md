@@ -52,10 +52,10 @@ If you have already set up your SSH keys on your local machine [see Local Machin
         ssh $USER@cheaha.rc.uab.edu
         ```
 
-    2. After you login in to Cheaha, append your ECDSA public key to authorized_keys:
+    1. After you login in to Cheaha, append your ECDSA public key to authorized_keys:
 
         ```bash
-        [$USER$@login006 ~] cat ~/.ssh/id_ecdsa.pub >> ~/.ssh/authorized_keys
+        [$USER@login006 ~] cat ~/.ssh/id_ecdsa.pub >> ~/.ssh/authorized_keys
         ```
 
     This ensures that your public key is registered on the server so future SSH logins can use passwordless authentication.
@@ -64,19 +64,19 @@ If you have already set up your SSH keys on your local machine [see Local Machin
 
     After adding your public key to authorized_keys, you need to make sure both the file and the .ssh directory have the correct permissions. This is important because SSH will refuse to use files or directories that are accessible by other users, which can prevent passwordless login from working.
 
-        ```bash
-        # Set read/write access for the account owner only on authorized_keys
-        chmod 600 ~/.ssh/authorized_keys
-        # Set full access for the account owner only on the .ssh directory
-        chmod 700 ~/.ssh
-        ```
+    ```bash
+    # Set read/write access for the account owner only on authorized_keys
+    chmod 600 ~/.ssh/authorized_keys
+    # Set full access for the account owner only on the .ssh directory
+    chmod 700 ~/.ssh
+    ```
 
 1. Test SSH login
     After adding your public key and setting the correct permissions, you should verify that SSH key authentication works correctly. This ensures that future logins to Cheaha, including Open OnDemand (OOD) shell access will not prompt for a password.
 
-        ```bash
-        ssh $USER@cheaha.rc.uab.edu
-        ```
+    ```bash
+    ssh $USER@cheaha.rc.uab.edu
+    ```
 
 ### With Integrated Development Environments (IDEs)
 
