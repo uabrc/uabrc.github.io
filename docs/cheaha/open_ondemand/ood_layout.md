@@ -68,6 +68,7 @@ Selecting the `Show Dotfiles` option will show the hidden files (those beginning
 Selecting the `Show Owner/Mode` option will show the permissions for the files in the working directory. These permissions (`mode`) can be used to investigate permission issues in shared spaces like `/data/project` directories. The `owner` column shows the Unix ID for the user who owns the file or directory. There is not a known way to change it to the username so its use is limited.
 
 ## Clusters
+
 The ">_Cheaha Shell Access" option is available under the "Clusters" menu in OOD.Cheaha Shell Access provides browser-based terminal access to the Cheaha cluster. It allows users to run commands, manage files, submit jobs, and troubleshoot workflows directly from the web interface without requiring a local SSH client.
 
 ![!An image showing the Clusters dropbdown from OOD Layout](images/ood_clusters.png)
