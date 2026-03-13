@@ -16,13 +16,20 @@ The benefits of creating and using a Shared Cloud Environment for your Lab/Core 
 
 ## How Do I Create a Shared Cloud Environment for My Lab/Core
 
-To use the shared cloud resources available, you will need to send in a request to the UAB IT Research Computing Team via email <support@listserv.uab.edu>. In the email, please state clearly your needs and the resources you would require for your lab. Your request should also include members of your lab to be included in the Shared Cloud Environment, and a preferred name (usually same as lab project folder on Cheaha). Please follow the naming conventions for requesting a [shared storage](../data_management/storage/index.md#how-do-i-request-shared-storage) on our platforms in your request.
+To use the shared cloud resources available, you will need to send in a request to the UAB IT Research Computing Team via email <support@listserv.uab.edu>. In the email, please state clearly your needs and the resources you would require for your lab. Your request should also include members of your lab to be included in the Shared Cloud Environment, and a preferred name (usually same as lab project folder on Cheaha). Please follow the naming conventions for requesting [shared storage](../data_management/storage/index.md#how-do-i-request-shared-storage).
 
 ## How Do I Switch Project Spaces?
 
 As a UAB Cloud user, you can easily switch between your Individual Cloud Environment and other Shared Cloud Environments you are a part of. From the dashboard of the homepage after login, navigate to the "Domain" and "Projects" drop down button, located in the top pane (upper left quadrant of the page) as shown in the image below. You can then select from the list of project spaces you belong to.
 
-![!RC Dashboard Screenshot showing Project Spaces](images/rc_move_project.png)
+![!UAB Cloud OpenStack project selection menu](images/rc_move_project.png)
+
+This interface allows users to switch between different OpenStack project environments.
+
+The following items describe groups of controls shown in the image. Each group is numbered in keyboard navigation order.
+
+1. **Project selection control group:** Allows the user to select which OpenStack project environment is currently active.
+1. **Projects drop-down menu:** Displays the list of project spaces available to the user. Selecting an item switches the dashboard to that project.
 
 The project space with your `BlazerID` is your Individual Cloud Environment, other project spaces listed are the Shared Cloud Environments for Labs, Cores or Projects you are a part of. As of this time only a Lab Principal Investigator (PI), and/or a Research Core Director can request for a shared Shared Cloud Environment.
 
@@ -32,14 +39,20 @@ The steps for creating an Instance in a project are the same as creating an Inst
 
 All members of a Shared Cloud Environment can see (and manage) all Instances within the Shared Cloud Environment. They can do this by navigating through the landing page that doubles as the dashboard, the image below highlights the exact section. While members can see and create images or snapshots of an Instance, not all members can access the Instance. To do this, SSH key pairs would have to be created and added, see section on [Using a Key Pair to SSH](#using-a-key-pair-to-ssh).
 
-![!UAB Cloud.rc Dashboard Screenshot showing Project Space Name](images/rc_proj_dashboard.png)
+![!UAB Cloud OpenStack Dashboard compute menu](images/rc_proj_dashboard.png)
+
+This interface allows users to view and manage virtual machine instances within a project. The following items describe groups of controls shown in the image.
+
+1. **Navigation control group:** Provides access to resource categories such as Compute, Network, and Storage
+1. **Compute navigation link:** Opens the compute resource section.
+1. **Instances navigation link:** Displays the list of virtual machines associated with the active project.
 
 When in the Shared Cloud Environment, select "Compute" and then "Instances" to see available Instances in your Shared Cloud Environment.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Please note, all members of your Shared Cloud Environment, can create, and delete Instances. In essence, all members of the Shared Cloud Environment, have the same user privileges.
+    Please note, all members of your Shared Cloud Environment, can create, and delete Instances. All members of the Shared Cloud Environment, have the same user privileges.
 <!-- markdownlint-enable MD046 -->
 
 ## Sharing an Instance in a Shared Cloud Environment
@@ -52,32 +65,47 @@ Snapshots in OpenStack are used like Images, thereby making it relatively easy t
 
 1. Go to the Compute pane and then navigate to the "Instances" tab in your Shared Cloud Environment dashboard. You will then see a list of available Instances.
 
-    ![!Screenshot showing Compute and Instance Buttons](images/rc_comp_instance.png)
+    ![!Compute instances navigation](images/rc_comp_instance.png)
+
+    This interface allows users to access the list of virtual machine instances.
+
+    1. **Navigation control group:** Provides links to resource categories.
+    1. **Instances navigation link:** Opens the table of available virtual machines.
 
 1. Select the Instance you want to create an Image for. Under the Actions, click on "Create Snapshot".
 
-    ![!Create Snapshot Button](images/rc_snapshot_button.png)
+    ![!Instance actions menu](images/rc_snapshot_button.png)
+    This interface provides management actions for a selected instance.
+
+    1. **Instance table control group:** Displays all instances in the project.
+    1. **Actions drop-down menu:** Contains management operations for the instance.
+    1. **Create Snapshot menu item:** Opens the snapshot creation dialog.
 
 1. Insert a name for the Snapshot, and then click "Create Snapshot".
 
-    ![!Menu Box to create Snapshot](images/rc_instance_snapshot.png)
+    ![!Create snapshot dialog](images/rc_instance_snapshot.png)
+    This dialog allows the user to create an image snapshot of an instance.
+
+    1. **Snapshot name text field:** Allows the user to specify a name for the snapshot.
+    1. **Create Snapshot button:** Creates the snapshot image.
 
 1. You will be redirected to the `Images` page, where you newly created Image will appear amongst a list of other available images.
 
-    ![!Screenshot showing created Images](images/rc_created_image.png)
+    ![!Image list with snapshots](images/rc_created_image.png)
 
 The created Image can then be launched, following the same instructions for creating an [Instance](../uab_cloud/tutorial/instances.md). This method would be most ideal if you want to recreate an environment for performing an analysis, but would prefer the workflow be run on different VMs, or to separate datasets or create some form of access restriction on particular research.
 
 ### Creating an Image From a Volume
 
-Please see [detailed instructions on how to create an image from a Volume](snapshots.md#creating-a-volume-snapshot).
+Please see detailed instructions on how to create an [image from a Volume](snapshots.md#creating-a-volume-snapshot).
 
 ### Using a Key Pair to SSH
 
 Another way to access a created Instance would be to create a public key and private key for your local machine, and then share this public key with the creator of the Instance. As creator of the Instance you would need to add individual public keys of persons who you would want to access the created VM into the `authorized_keys` file. You can edit this file by using the command below, add the shared public key in a new line inside the file (copy and paste). Save the file and follow instructions here for remote accessing your Instance using [SSH](remote_access.md).
 
+To edit this file
+
 ```bash
-# access and edit the file using
 
 nano cd ~/.ssh/authorized_keys
 
@@ -104,5 +132,5 @@ Alternatively you can share the private key file you created for the Instance, w
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Please note Images created from an Instance would inherit the key-pair of the parent Instance.
+    Images created from an Instance would inherit the key-pair of the parent Instance.
 <!-- markdownlint-enable MD046 -->
