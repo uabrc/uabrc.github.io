@@ -11,12 +11,12 @@ Before starting, you'll need the following prerequisites.
 
 ## How Do I Create a XIAS Account?
 
-1. After your Sponsor completes their phases, you should receive an email from `UserServices@uab.edu` that looks like the following.
+1. After your Sponsor completes their phases, you should receive your first email from `UserServices@uab.edu` (UAB Identity Management). This email may take a few minutes to arrive. The image below shows an example of this email. A second email will be sent later with additional instructions.
 
-    ![!Screenshot of first email.](_img/xias_guest_001.png)
+    ![Screenshot of the first email from UAB Identity Management](_img/xias_guest_001.png)
 
     <!-- markdownlint-disable MD046 -->
-    ??? note "Email Contents"
+    ??? note "Contents of the first email from UAB Identity Management"
 
         > Subject: UAB online resource access
         >
@@ -31,12 +31,12 @@ Before starting, you'll need the following prerequisites.
         > If you have any questions, do not hesitate to contact us via the AskIT Helpdesk at 205-996-5555 or e-mail `AskIT@uab.edu`.
     <!-- markdownlint-enable MD046 -->
 
-1. You should receive a second email from `UserServices@uab.edu` that looks like the following.
+1. You should receive a second email from `UserServices@uab.edu`(UAB Identity Management) within approximately one hour. This email will contain a code that you will need to use later. An example of this email is shown in the image below.
 
-    ![!Screenshot of second email.](_img/xias_guest_002.png)
+    ![Screenshot of the second email from UAB Identity Management](_img/xias_guest_002.png)
 
     <!-- markdownlint-disable MD046 -->
-    ??? note "Email Contents"
+    ??? note "Contents of the second email from UAB Identity Management"
 
         > Subject: UAB External ID (XIAS) registration
         >
@@ -67,19 +67,21 @@ Before starting, you'll need the following prerequisites.
         Never click links in emails! Phishing emails target people who click links in emails. Read more about [UAB IT Security Awareness](https://www.uab.edu/it/home/security/awareness).
     <!-- markdownlint-enable MD046 -->
 
-    If you did not receive this email, or are missing the code, please visit <https://apps.idm.uab.edu/xias/top> and click "Resend Invite Code". If this still does not work, please contact <AskIT@uab.edu> for assistance.
+    If you did not receive this email, or are missing the code, please visit <https://apps.idm.uab.edu/xias/top> and click "Resend Invite Code" from the left-hand navigation menu. If this still does not work, please contact <AskIT@uab.edu> for assistance.
 
-1. Use your browser to navigate to the link in the email, or click the following link <https://apps.idm.uab.edu/xias/top>. You should see a page that looks like the following.
+1. Use your browser to navigate to the link in the email, or click the following link <https://apps.idm.uab.edu/xias/top>. This will take you to the UAB Guest User Account (XIAS) page. An example of this page is shown in the image below.
 
-    ![!Screenshot of XIAS Guest Users page.](_img/xias_guest_003.png)
+    ![Screenshot of UAB Guest User Account (XIAS) page.](_img/xias_guest_003.png)
 
-1. Click the "Enter Invite or Reset Code" link in the left-hand navigation menu. You will be taken to the "Register XIAS Account" page.
+1. Click the "Enter Invite or Reset Code" link in the left-hand navigation menu. On the right side of the page, under "Register XIAS Account", complete the form:
 
-    Enter the email address you gave to your Sponsor to create this account in the "E-mail address" field. Enter the code from the second email in the "Invite (or reset) code" field.
+    - In the E-mail address field, enter the email address you provided to your Sponsor.
 
-    ![!Screenshot of Invite or Reset Code form with email and code entry fields.](_img/xias_guest_004.png)
+    - In the Invite (or reset) code field, enter the code you received in the second email.
 
-1. Click Proceed. You will be taken to a second form. Enter your first name (given name) and last name (surname).
+    ![Screenshot of Invite or Reset Code form with E-mail address and Invite code fields.](_img/xias_guest_004.png)
+
+1. Click Proceed. On the next form, enter your first name (given name) and last name (surname).
 
     ![!Screenshot of form with name entry fields.](_img/xias_guest_006.png)
 
