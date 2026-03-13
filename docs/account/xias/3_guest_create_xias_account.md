@@ -16,7 +16,7 @@ Before starting, you'll need the following prerequisites.
     ![Screenshot of the first email from UAB Identity Management](_img/xias_guest_001.png)
 
     <!-- markdownlint-disable MD046 -->
-    ??? note "Contents of the first email from UserServices@uab.edu"
+    ??? note "Contents of the first email from UAB Identity Management"
 
         > Subject: UAB online resource access
         >
@@ -36,7 +36,7 @@ Before starting, you'll need the following prerequisites.
     ![Screenshot of the second email from UAB Identity Management](_img/xias_guest_002.png)
 
     <!-- markdownlint-disable MD046 -->
-    ??? note "Contents of the second email from UserServices@uab.edu"
+    ??? note "Contents of the second email from UAB Identity Management"
 
         > Subject: UAB External ID (XIAS) registration
         >
