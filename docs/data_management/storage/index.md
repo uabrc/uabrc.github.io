@@ -146,7 +146,7 @@ If a purchase is made, the node will be delivered to our data center and racked 
 
 When a purchase is confirmed by the vendor, we can provide additional storage immediately _if_ sufficient system storage is available, regardless of actual purchase lead-time.
 
-If you have additional questions or wish to discuss further, please [Contact Support](../help/support.md).
+If you have additional questions or wish to discuss further, please [Contact Support](../../help/support.md).
 
 !!! important
 
