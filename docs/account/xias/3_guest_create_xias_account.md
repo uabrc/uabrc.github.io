@@ -13,7 +13,7 @@ Before starting, you'll need the following prerequisites.
 
 1. After your Sponsor completes their phases, you should receive your first email from `UserServices@uab.edu` (UAB Identity Management). This email may take a few minutes to arrive. The image below shows an example of this email. A second email will be sent later with additional instructions.
 
-    ![Screenshot of the first email from UAB Identity Management (UserServices@uab.edu)](_img/xias_guest_001.png)
+    ![Screenshot of the first email from UAB Identity Management](_img/xias_guest_001.png)
 
     <!-- markdownlint-disable MD046 -->
     ??? note "Contents of the first email from UserServices@uab.edu"
@@ -33,7 +33,7 @@ Before starting, you'll need the following prerequisites.
 
 1. You should receive a second email from `UserServices@uab.edu`(UAB Identity Management) within approximately one hour. This email will contain a code that you will need to use later. An example of this email is shown in the image below.
 
-    ![Screenshot of the second email from UAB Identity Management (UserServices@uab.edu)](_img/xias_guest_002.png)
+    ![Screenshot of the second email from UAB Identity Management](_img/xias_guest_002.png)
 
     <!-- markdownlint-disable MD046 -->
     ??? note "Contents of the second email from UserServices@uab.edu"
