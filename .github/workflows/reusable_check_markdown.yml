@@ -28,7 +28,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # 4.2.2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # 6.0.2
       - name: Configure Globs
         id: globs
         run: |
@@ -50,7 +50,7 @@ jobs:
           echo "globs<<EOF" >> "$GITHUB_OUTPUT"
           echo "$NEWLINE_DELIMITED_GLOBS" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
-      - uses: DavidAnson/markdownlint-cli2-action@992badcdf24e3b8eb7e87ff9287fe931bcb00c6e # 20.0.0
+      - uses: DavidAnson/markdownlint-cli2-action@07035fd053f7be764496c0f8d8f9f41f98305101 # 22.0.0
         with:
           config: ".markdownlint-cli2.jsonc"
           globs: "${{ steps.globs.outputs.globs }}"
