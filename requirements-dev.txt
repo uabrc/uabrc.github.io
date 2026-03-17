@@ -1,0 +1,9 @@
+attrs==25.4.0
+linkchecker==10.6.0
+mkdocs-gen-files==0.6.1
+pandas==2.3.3
+pre-commit==4.5.1
+pypandoc==1.17
+pyyaml==6.0.3
+ruff==0.15.6
+yamllint==1.38.0

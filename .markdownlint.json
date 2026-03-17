@@ -125,5 +125,9 @@
       "above",
       "below"
     ]
+  },
+  "MD060": {
+    "style": "aligned",
+    "aligned_delimiter": true
   }
 }

@@ -222,13 +222,13 @@ ssh <user>@<remote_ip> -i <private_key_file>
 
 Where `user` is the remote username, `remote_ip` is the IP address of the remote machine, and `<private_key_file>` is the private key file used for access the remote machine. See [Generating Key Pairs](#generating-key-pairs) for general instructions on creating a key pair, or [Creating a Key Pair](tutorial/security.md#creating-a-key-pair) for cloud.rc specific instructions.
 
-## Make Instances Publically Accessible From the Internet
+## Make Instances Publicly Accessible From the Internet
 
-It is possible to make [instances](./tutorial/instances.md) publically accessible from the external internet. [Floating IPs](./tutorial/networks.md#floating-ips) are pulled from a limited and fixed pool of public IP addresses assigned from the overall UAB IP pool. By default, these IP addresses are unable to communicate beyond the UAB Internet Border firewall, for security reasons. To make your instance publically accessible, a Firewall Security Exception must be filed. The result of the security exception is to create a firewall rule to allow traffic between the internet and an application on your instance. This section will go over how to make your instance publically accessible.
+It is possible to make [instances](./tutorial/instances.md) publicly accessible from the external internet. [Floating IPs](./tutorial/networks.md#floating-ips) are pulled from a limited and fixed pool of public IP addresses assigned from the overall UAB IP pool. By default, these IP addresses are unable to communicate beyond the UAB Internet Border firewall, for security reasons. To make your instance publicly accessible, a Firewall Security Exception must be filed. The result of the security exception is to create a firewall rule to allow traffic between the internet and an application on your instance. This section will go over how to make your instance publicly accessible.
 
 ### Expectations
 
-The expectation of making an instance publically accessible is to advance UAB's mission, so be sure you've configured and thoroughly tested your instance in the UAB Campus Network before proceeding. The following list is intended as a helpful reminder.
+The expectation of making an instance publicly accessible is to advance UAB's mission, so be sure you've configured and thoroughly tested your instance in the UAB Campus Network before proceeding. The following list is intended as a helpful reminder.
 
 - Have an instance with some research application or server that advances UAB's mission.
 - The instance is configured with a floating IP address.

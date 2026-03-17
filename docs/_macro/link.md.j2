@@ -1,0 +1,3 @@
+{% macro link(text, path) -%}
+[{{ text }}]({{ path | normalize_link }})
+{%- endmacro %}

@@ -1,0 +1,82 @@
+type: object
+required:
+  - announcements
+  - no_announcements
+  - _example_announcement_do_not_use
+additionalProperties: false
+properties:
+  announcements:
+    ref: "#/definitions/announcements"
+  no_announcements:
+    ref: "#/definitions/announcements"
+  _example_announcement_do_not_use:
+    ref: "#/definitions/example_announcement"
+
+definitions:
+  announcements:
+    type: array
+    title: Announcements
+    description: |
+      A list of Announcement objects.
+    items:
+      ref: "#/definitions/announcement"
+
+  no_announcements:
+    type: string
+    title: No Announcements
+    description: |
+      A string displayed as the title of an empty "info" admonition.
+      Only displayed when Announcements is empty.
+
+  example_announcement:
+    ref: "#/definitions/announcement"
+
+  announcement:
+    type: object
+    title: Announcement
+    description: |
+      An announcement to be displayed on the front page.
+    required:
+      - title
+      - content
+      - posted_date
+    optional:
+      - end_date
+      - start_date
+    additionalProperties: false
+    properties:
+      title:
+        ref: "#/definitions/title"
+      content:
+        ref: "#/definitions/content"
+      posted_date:
+        ref: "#/definitions/date"
+      end_date:
+        ref: "#/definitions/date"
+      start_date:
+        ref: "#/definitions/date"
+
+  title:
+    type: string
+    title: Announcement Title
+    description: |
+      A brief, descriptive, single-line title for the announcement.
+      Will appear as "Announcement: ...".
+    minLength: 1
+
+  content:
+    type: string
+    title: Announcement Content
+    description: |
+      Markdown content to describe the card.
+      Inline Markdown formatting may be used.
+      Links to other pages are allowed.
+      Please keep it relatively brief.
+    minLength: 1
+
+  date:
+    type: string
+    title: Date
+    description: |
+      An ISO 8601 compliant date (YYYY-MM-DD).
+    pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
