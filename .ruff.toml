@@ -31,6 +31,8 @@ per-file-ignores = { "test/*" = [
 ], "**/*.ipynb" = [
   "T201",
   "ANN401",
+], "**/__init__.py" = [
+  "D104",
 ] }
 
 [format]

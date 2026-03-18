@@ -126,7 +126,7 @@ def modify_file_uris(_s: pd.Series) -> pd.Series:
     splits = _s.str.split("repos/uabrc.github.io", expand=True)
 
     fixes = splits.iloc[:, -1][keep]
-    fixes = fixes.apply(lambda x: PurePath(x))  # pyright: ignore[reportCallIssue,reportArgumentType]
+    fixes = fixes.apply(PurePath)  # pyright: ignore[reportCallIssue,reportArgumentType]
     fixes = fixes.astype(str)
     fixes = fixes.str.lstrip(os.sep)
 

@@ -17,6 +17,7 @@ repos:
     hooks:
       - id: ruff-check
       - id: ruff-format
+        args: [--check, --diff]
   # check mkdocs-specific issues
   - repo: local
     hooks:
