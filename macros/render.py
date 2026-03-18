@@ -4,12 +4,14 @@ from __future__ import annotations
 
 import textwrap
 from pathlib import PurePath
-from typing import TYPE_CHECKING, Callable
+from typing import TYPE_CHECKING
 
 from macros.card import Card, CardNamespace, EmojiSizesCss, EmojiVerticalAlignmentCss
 from macros.util import normalize_page_link
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
+
     from mkdocs.structure.pages import Page
 
 
@@ -145,7 +147,7 @@ class _CardExtractor:
 
     def _icon_color(self) -> str:
         color = self._card.icon_color
-        return color if color else self._DEFAULT_ICON_COLOR
+        return color or self._DEFAULT_ICON_COLOR
 
     #### CONTENT PART
     def _content_part(self) -> str | None:
@@ -159,11 +161,11 @@ class _CardExtractor:
 
     def _link_text(self) -> str:
         text = self._card.link_text
-        return text if text else self._DEFAULT_LINK_TEXT
+        return text or self._DEFAULT_LINK_TEXT
 
     def _link_icon(self) -> str:
         name = self._card.link_icon_name
-        return name if name else self._DEFAULT_LINK_ICON_NAME
+        return name or self._DEFAULT_LINK_ICON_NAME
 
     def _link_url(self) -> str | None:
         url = self._card.link_url
