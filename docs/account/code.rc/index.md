@@ -5,7 +5,7 @@ hide:
 
 # Create and Manage Code.rc (GitLab) Accounts
 
-UAB Research Computing maintains an on-premises GitLab server, part of the Research Computing System (RCS), called **Code.rc**. Generally speaking, [GitLab](https://about.gitlab.com/) is a service designed for collaborating on software development projects and is similar in structure and purpose to [GitHub](https://github.com/). In contrast to the Git hosting services [GitLab.com](https://gitlab.com) and [GitHub.com](https://github.com), Code.rc is hosted on-premises and stored in a secure physical environment on UAB Campus.
+UAB Research Computing maintains an on-premises GitLab server, part of the Research Computing System (RCS), called **Code.rc**. Generally speaking, [GitLab](https://about.gitlab.com/) is a service designed for collaborating on software development projects and is similar in structure and purpose to [GitHub](https://github.com/). In contrast to the Git hosting services [GitLab.com](https://about.gitlab.com) and [GitHub.com](https://github.com), Code.rc is hosted on-premises and stored in a secure physical environment on UAB Campus.
 
 <!-- markdownlint-disable MD046 -->
 !!! important
