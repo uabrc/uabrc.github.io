@@ -5,6 +5,20 @@ required-version = ">=0.15.6"
 show-fixes = true
 
 [lint]
+per-file-ignores = { "test/*" = [
+  "ANN201",
+  "ANN202",
+  "D101",
+  "D102",
+  "D100",
+  "PT",
+], "**/*.ipynb" = [
+  "T201",
+  "ANN401",
+], "**/__init__.py" = [
+  "D104",
+] }
+
 ignore = [
   "D203",   # prefer conflicting D211
   "D213",   # prefer conflicting D212
@@ -21,18 +35,6 @@ ignore = [
   "Q003",   # END
 ]
 select = ["ALL"]
-per-file-ignores = { "test/*" = [
-  "ANN201",
-  "ANN202",
-  "D101",
-  "D102",
-  "D100",
-  "PT",
-], "**/*.ipynb" = [
-  "T201",
-  "ANN401",
-] }
-
 [format]
 indent-style = "space"
 line-ending = "lf"
