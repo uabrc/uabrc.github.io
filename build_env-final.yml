@@ -1,9 +1,0 @@
-name: mkdocs
-dependencies:
-  - conda-forge::libffi=3.5.2
-  - conda-forge::pandoc=3.7.0.2
-  - conda-forge::pip=26.0.1
-  - conda-forge::python=3.13.12
-  - pip: #
-      - -r requirements-build.txt
-      - -r requirements-dev.txt

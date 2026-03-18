@@ -35,6 +35,7 @@ ignore = [
   "Q003",   # END
 ]
 select = ["ALL"]
+
 [format]
 indent-style = "space"
 line-ending = "lf"
