@@ -89,9 +89,9 @@ Before starting, you'll need the following prerequisites.
 
     ![Screenshot of Register XIAS Account form with Password fields.](_img/xias_guest_007.png)
 
-1. Click Proceed. You will be taken to a confirmation page showing the XIAS e-mail, Name, and Password you entered. These fields are read-only. If you are not satisfied, click the Edit button next to the Name or Password field to make changes.
+1. Click Proceed. You will be taken to a summary page showing the XIAS e-mail, Name, and Password you entered. These fields are read-only. If you are not satisfied, click the Edit button next to the Name or Password field to make changes.
 
-    ![Screenshot of Register XIAS Account Confirmation Page.](_img/xias_guest_008.png)
+    ![Screenshot of Register XIAS Account Summary Page.](_img/xias_guest_008.png)
 
 1. When you are satisfied, click Proceed. You will be taken to a success page showing a confirmation that your XIAS account has been updated, along with your e-mail address and Primary ID. Please read the information carefully and follow any instructions provided.
 
