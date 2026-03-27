@@ -81,21 +81,21 @@ Before starting, you'll need the following prerequisites.
 
     ![Screenshot of Invite or Reset Code form with E-mail address and Invite code fields.](_img/xias_guest_004.png)
 
-1. Click Proceed. On the next form, enter your first name (given name) and last name (surname).
+1. Click Proceed. On the next form, under "Register XIAS Account" form contains text fields labeled 'First Name' and 'Last Name'. Type your first and last name in the corresponding fields.
 
-    ![!Screenshot of form with name entry fields.](_img/xias_guest_006.png)
+    ![Screenshot of Register XIAS Account form with First and Last Name fields.](_img/xias_guest_006.png)
 
-1. Click Proceed. You will be taken to a third, final form. Enter a password according to the requirements shown on the page.
+1. Click Proceed. You will be taken to a third, final form. Enter a password in the text field labeled 'Password' following the requirements on the page, then type the same password in the text field labeled 'Re-enter password'.
 
-    ![!Screenshot of form with password fields.](_img/xias_guest_007.png)
+    ![Screenshot of Register XIAS Account form with Password fields.](_img/xias_guest_007.png)
 
-1. Click Proceed. You will be taken to a confirmation page. If you are not satisfied, click the Edit buttons to change the information.
+1. Click Proceed. You will be taken to a confirmation page showing the XIAS e-mail, Name, and Password you entered. These fields are read-only. If you are not satisfied, click the Edit button next to the Name or Password field to make changes.
 
-    ![!Screenshot of confirmation page.](_img/xias_guest_008.png)
+    ![Screenshot of Register XIAS Account Confirmation Page.](_img/xias_guest_008.png)
 
-1. When you are satisfied, click Proceed. You should be taken to a success page. Please read the page and follow any instructions.
+1. When you are satisfied, click Proceed. You will be taken to a success page showing a confirmation that your XIAS account has been updated, along with your e-mail address and Primary ID. Please read the information carefully and follow any instructions provided.
 
-    ![!Registration success page with additional instructions and suggestions.](_img/xias_guest_009.png).
+    ![Screenshot of XIAS success page with account confirmation.](_img/xias_guest_009.png).
 
 ## Next Steps
 
