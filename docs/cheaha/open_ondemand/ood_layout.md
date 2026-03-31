@@ -69,12 +69,12 @@ Selecting the `Show Owner/Mode` option will show the permissions for the files i
 
 ## Clusters
 
-The ">_Cheaha Shell Access" option is available under the "Clusters" menu in OOD.Cheaha Shell Access provides browser-based terminal access to the Cheaha cluster. It allows users to run commands, manage files, submit jobs, and troubleshoot workflows directly from the web interface without requiring a local SSH client.
+The "Cheaha Shell Access" option is available under the "Clusters" menu in OOD. Cheaha Shell Access provides browser-based terminal access to the Cheaha cluster. It allows users to run commands, manage files, submit jobs, and troubleshoot workflows directly from the web interface without requiring a local SSH client.
 
-![!An image showing the Clusters dropbdown from OOD Layout](images/ood_clusters.png)
+![Screenshot of the OOD “Clusters” menu showing Cheaha Shell Access](images/ood_clusters.png)
 
 !!! imporatant
-    Note that Cheaha shell prompt to a login node. Do not run heavy-load jobs on the login node, instead you will have to use a compute node.
+    Note that Cheaha shell prompt to a login node. Do not run heavy-load jobs on the login node, instead you will have to use a [compute node](../../cheaha/getting_started.md#login-vs-compute-nodes). You will not typically be prompted for a password. If you are prompted, refer to [Enabling SSH Key Authentication on Cheaha](../../cheaha/getting_started.md/#enabling-ssh-key-authentication-on-cheaha).
 
 ## Interactive Apps
 
