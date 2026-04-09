@@ -9,7 +9,7 @@ on: # yamllint disable-line rule:truthy
       - main
     paths:
       - "**.md"
-      - "!docs/**" # covered by check_docs.yml
+      - "!docs/**" # covered by deploy_docs.yml
   pull_request:
     branches:
       - main
