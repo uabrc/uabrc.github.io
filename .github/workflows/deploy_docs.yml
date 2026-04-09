@@ -6,11 +6,6 @@ on: # yamllint disable-line rule:truthy
   push:
     branches:
       - main
-    paths:
-      - "build_env.yml"
-      - "mkdocs.yml"
-      - "build_scripts/**"
-      - "docs/**"
   workflow_dispatch: # enables manual docs deployment in case of GitHub service issue
 
 concurrency:
