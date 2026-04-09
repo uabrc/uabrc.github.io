@@ -7,7 +7,7 @@ on: # yamllint disable-line rule:truthy
     branches:
       - main
     paths:
-      - "build_env.yml"
+      - "env_build.yml"
       - "mkdocs.yml"
       - "build_scripts/**"
       - "docs/**"

@@ -8,8 +8,8 @@ runs:
   steps:
     - uses: conda-incubator/setup-miniconda@fc2d68f6413eb2d87b895e92f8584b5b94a10167 # 3.3.0
       with:
-        environment-file: build_env.yml
-        activate-environment: mkdocs
+        environment-file: env_build.yml
+        activate-environment: mkdocs-build
         miniforge-version: latest
 
     - name: Build Pages # this is both a build and check step
