@@ -1,16 +1,6 @@
 announcements:
-  # Add announcements like the example. You can have multiple announcements.
-  # Copy-paste the example announcement under this key for each announcement.
-  - title: Maintenance - Code.rc (GitLab)
-    content: |
-      Code.rc (GitLab) will be unavailable the weekend of 2026-03-15 for planned
-      maintenance.
-
-      Please see our [news post](./news/posts/2026-03-15-code-rc-host-upgrade.md)
-      for more information.
-    posted_date: 2026-02-27
-    start_date: 2026-03-15
-    end_date: 2026-03-17
+# Add announcements like the example. You can have multiple announcements.
+# Copy-paste the example announcement under this key for each announcement.
 
 no_announcements: '!!! info "Look for future announcements here."'
 

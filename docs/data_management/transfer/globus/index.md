@@ -3,8 +3,6 @@
 <!-- markdownlint-disable MD046 -->
 !!! announcement
 
-    We are aware of reduced transfer speed into and out of [Long-Term Storage (LTS)](../../storage/lts/index.md) when using Globus and are working on a solution. For some use cases, [`s5cmd`]( ../../storage/lts/interfaces.md#s5cmd) may be a faster alternative. Please see [Our News Section](../../../news/posts/2025-04-07-reduced-lts-transfer-speeds-on-globus.md) for more information.
-
      Access to Cheaha storage (GPFS) is now available through the new Globus mapped collection "**UAB RCS Cheaha HPC**" for both on-campus and off-campus connections. The new mapped collection replaces the previous "Cheaha cluster on-campus (UAB Science DMZ)" and "Cheaha cluster off-campus (UAB Science DMZ)" mapped collections. This change comes from our recently completed GPFS5 migration and unifies access to Cheaha storage via Globus.
 <!-- markdownlint-enable MD046 -->
 
