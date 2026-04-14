@@ -36,6 +36,48 @@ The primary method for accessing Cheaha is through our online portal website, Op
 
 [SSH](../uab_cloud/remote_access.md#command-line-via-ssh) may be used to access Cheaha. Connect to host `cheaha.rc.uab.edu` on port `22`.
 
+### Enabling SSH Key Authentication on Cheaha
+
+SSH key authentication allows you to log in to Cheaha from your personal computer (PC) using the command-line interface (CLI) without entering a password each time. This improves security and enables passwordless login.
+
+#### SSH Key Setup on Cheaha
+
+If you have already set up your SSH keys on your local machine, [see Local Machine CLI Setup](../uab_cloud/remote_access.md#command-line-via-ssh), you can enable passwordless login on Cheaha as follows:
+
+1. Add your public key to authorized_keys:
+
+    1. First, log in to Cheaha. You can do this either: Using a terminal with SSH and your password from you PC (as shown below) Or via [OOD Cheaha shell access](../cheaha/open_ondemand/ood_layout.md#clusters).
+
+        ```bash
+        ssh $USER@cheaha.rc.uab.edu
+        ```
+
+    1. After you login in to Cheaha, append your ECDSA public key to authorized_keys:
+
+        ```bash
+        [$USER@login006 ~] cat ~/.ssh/id_ecdsa.pub >> ~/.ssh/authorized_keys
+        ```
+
+    This ensures that your public key is registered on the server so future SSH logins can use passwordless authentication.
+
+1. Set correct permissions
+
+    After adding your public key to authorized_keys, you need to make sure both the authorized_keys file and the .ssh directory have the correct permissions. This is important because SSH will refuse to use files or directories that are accessible by other users, which can prevent passwordless login from working.
+
+    ```bash
+    # Set read/write access for the account owner only on authorized_keys
+    chmod 600 ~/.ssh/authorized_keys
+    # Set full access for the account owner only on the .ssh directory
+    chmod 700 ~/.ssh
+    ```
+
+1. Test SSH login
+    After adding your public key and setting the correct permissions, you should verify that SSH key authentication works correctly. This ensures that future logins to Cheaha, including [OOD Cheaha shell access](../cheaha/open_ondemand/ood_layout.md#clusters) will not prompt for a password.
+
+    ```bash
+    ssh $USER@cheaha.rc.uab.edu
+    ```
+
 ### With Integrated Development Environments (IDEs)
 
 An alternative method suited for developers is to use IDEs like VSCode, using the "Remote - Tunnels" extension, to connect to an [HPC Desktop Interactive Job](./open_ondemand/hpc_desktop.md). You can find more information for setting this up in the [VSCode Tunnel section](./open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel).
@@ -213,6 +255,10 @@ If the software installation instructions tell you to use either `conda install`
     - **Do you have one or more OOD HPC Desktops running?**
 
         - Terminate the desktops and start new ones.
+
+- **Why should I use SSH key–based login for Cheaha?**
+
+    SSH key–based login not only allows passwordless access but also helps avoid account lockouts or cool-off periods caused by multiple incorrect password attempts. It provides a more secure and reliable way to connect to Cheaha. For setup instructions, see [Enabling SSH Key Authentication on Cheaha](#enabling-ssh-key-authentication-on-cheaha).
 
 ## How to Get Help
 
