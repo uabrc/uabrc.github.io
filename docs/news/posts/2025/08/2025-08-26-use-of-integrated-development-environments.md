@@ -10,4 +10,4 @@ Please do not use technologies like VSCode "Remote - SSH" or Cursor Server to co
 
 <!-- more -->
 
-Instead, use "Remote - Tunnel" as described in the [VSCode Tunnel section](../../cheaha/open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel). See [additional information](../../cheaha/getting_started.md#why-you-should-avoid-running-jobs-on-login-nodes) about running jobs on the Login node.
+Instead, use "Remote - Tunnel" as described in the [VSCode Tunnel section](../../../../cheaha/open_ondemand/hpc_desktop.md#visual-studio-code-remote-tunnel). See [additional information](../../../../cheaha/getting_started.md#why-you-should-avoid-running-jobs-on-login-nodes) about running jobs on the Login node.

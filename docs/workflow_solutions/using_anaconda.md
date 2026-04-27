@@ -45,7 +45,7 @@ If you are trying to replicate a pipeline or analysis from another person, you c
 
 ```bash
 # replicate an environment from a YAML file named env.yml
-conda create -n <env> -f <path/to/env.yml>
+conda env create -f <path/to/env.yml>
 ```
 
 By default, all of your conda environments are stored in `/home/<user>/.conda/envs`.
