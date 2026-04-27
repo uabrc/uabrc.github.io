@@ -10,6 +10,7 @@ mkdocs-redirects==1.2.2
 mkdocs-table-reader-plugin==3.1.0
 pymdown-extensions==10.21.2
 pypandoc-binary==1.17
+pyyaml==6.0.3
 git+https://github.com/wwarriner/mkdocs-macros-plugin@d445c98dcc14ecae48ddf53b4758f3942ed706b8
 git+https://github.com/uabrc/mkdocs@888fd28f92a320352f63600c24635231a42e5fac
 git+https://github.com/uabrc/mkdocs-title-casing-plugin.git@stable
