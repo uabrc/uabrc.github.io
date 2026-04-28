@@ -1,7 +1,6 @@
 yaml-files:
-  - "*.yaml"
-  - "*.yml"
-  - ".yamllint"
+  - "**.yaml"
+  - "**.yml"
 
 rules:
   anchors: enable
@@ -34,6 +33,6 @@ rules:
   truthy:
     level: warning
 
-ignore:
-  - .git/
-  - site/
+ignore-from-file:
+  - .gitignore
+  - .yamllint-ignore

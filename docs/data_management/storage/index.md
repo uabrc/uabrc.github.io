@@ -190,7 +190,7 @@ Periodically review permissions, clean up unused data, and follow institutional 
 
 At this time, Research Computing does not offer a method of archival. If you have need for archival, please feel free to contact [Support](../../help/support.md) to start a conversation.
 
-A possible external resource for archival is available through University of Oklahoma (OU) Supercomputing Center for Education and Research (OSCER). Please see the following link for details: <https://www.ou.edu/oscer/resources/ourrstore--ou---regional-research-store>.
+A possible external resource for archival is available through University of Oklahoma (OU) Supercomputing Center for Education and Research (OSCER). Please see the following link for details: <https://ou.edu/oscer/storage/ourrstore--ou---regional-research-store>.
 
 ### Backups
 

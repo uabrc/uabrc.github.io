@@ -1,0 +1,10 @@
+drop:
+  https://doi.org: 300
+  https://anaconda.org: 403
+  https://claude.ai: 403
+  https://idm.uab.edu/cgi-cas/xrmi/sites: 423
+  https://idm.uab.edu/cgi-cas/xrmi/users: 423
+replace:
+  200 OK: [300 Redirect, result]
+  ConnectTimeout: [408 Timeout, result]
+  https://padlock.idm.uab.edu: [423 Locked, url-after-redirection]
