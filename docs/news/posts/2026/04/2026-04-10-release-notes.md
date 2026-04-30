@@ -6,8 +6,11 @@ categories:
 
 # Sprint 26-07 Release Notes
 
+Starting: 2026-03-30
+Ending: 2026-04-10
+
 - XNAT: Version upgraded from `1.8.1` to `1.9.1`.
 - XNAT: BlazerID credentials now used to login.
-- CODE.RC: GitLab upgraded from `17.7.7` to `18.2.8`
+- CODE.RC: GitLab upgraded from `17.7.7` to `18.2.8`.
 
 <!-- more -->
