@@ -10,5 +10,6 @@ Starting: 2026-04-13
 Ending: 2026-04-24
 
 - CODE.RC: GitLab upgraded from `18.2.8` to `18.9.5`.
+- CHEAHA: Default channel of `conda` in `Anaconda3` module is now `conda-forge`.
 
 <!-- more -->
