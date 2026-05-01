@@ -54,7 +54,7 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
     - **Owner Identity:** is the person responsible for this Collection. This field should already be filled with UAB Campus or XIAS email address. If not, please select that email address here.
     - **Collection Name:** is the name for the Collection. This should be filled with the name of the Collection from the previous step.
     - **Description:** Feel free to enter descriptive information about the Collection here. This information will be displayed in the Globus Web App when the Collection is viewed by others.
-    - **High Assurance:** Only check this box if the Collection has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
+    - **High Assurance:** Only check this box if the Collection has or will have PHI, HIPAA, or other protected data, or if you need to transfer data [between GCP collections](./globus_individual_tutorial.md#how-do-i-transfer-between-gcp-collections). If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
 
     ![GCP Setup Collection details](../images/go-gcp-install/common/collection-details.png)
 
@@ -105,9 +105,15 @@ The following steps will guide you to install Globus Connect Personal (GCP) on y
     - **Owner Identity:** is the person responsible for this Collection. This field should already be filled with UAB Campus or XIAS email address. If not, please select that email address here.
     - **Collection Name:** is the name for the Collection. This should be filled with the name of the Collection from the previous step.
     - **Description:** Feel free to enter descriptive information about the Collection here. This information will be displayed in the Globus Web App when the Collection is viewed by others.
-    - **High Assurance:** Only check this box if the Collection has or will have PHI, HIPAA, or other protected data. If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
+    - **High Assurance:** Only check this box if the Collection has or will have PHI, HIPAA, or other protected data, or if you need to [transfer data between two GCP collections](./globus_individual_tutorial.md#how-do-i-transfer-between-gcp-collections). If this is the case, please ensure that you have already completed a risk assessment with UAB Enterprise IT.
 
-    ![GCP Setup Collection details](../images/go-gcp-install/common/collection-details.png)
+    Screenshot of GCP default setup (High Assurance not selected):
+    ![ Screenshot of default GCP Collection configuration](../images/go-gcp-install/common/collection-details.png)
+
+    Screenshot of GCP High Assurance (HA) enabled:
+    ![Screenshot of High Assurance  GCP Collection configuration](../images/go-gcp-install/common/gcp-ha.png)
+
+    - When High Assurance is enabled (checked), you must also configure the authentication timeout. This defines how long (in minutes) a user's authentication remains valid. Shorter durations improve security. In this example, 10 minutes is set (you may choose a value that fits your needs).
 
 1. GCP Setup is now complete on your computer. Your computer is now serving your new Globus Collection and may be used to transfer data. Click "Exit Setup" to close the window.
 
