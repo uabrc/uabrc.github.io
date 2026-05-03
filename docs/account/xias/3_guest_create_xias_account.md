@@ -11,7 +11,7 @@ Before starting, you'll need the following prerequisites.
 
 ## How Do I Create a XIAS Account?
 
-1. After your Sponsor completes their phases, you should receive your first email from `UserServices@uab.edu` (UAB Identity Management). This email may take a few minutes to arrive. The image below shows an example of this email. A second email will be sent later with additional instructions.
+1. After your Sponsor completes their phases, you will receive two emails from UAB Identity Management. The first email will come from UAB Identity Management (email address will be: `UserServices@uab.edu`). This email may take a few minutes to arrive. The image below shows an example of this email. A second email will be sent later with additional instructions.
 
     ![Screenshot of the first email from UAB Identity Management](_img/xias_guest_001.png)
 
@@ -67,29 +67,25 @@ Before starting, you'll need the following prerequisites.
         Never click links in emails! Phishing emails target people who click links in emails. Read more about [UAB IT Security Awareness](https://www.uab.edu/it/home/security/awareness).
     <!-- markdownlint-enable MD046 -->
 
-    If you did not receive this email, or are missing the code, please visit <https://apps.idm.uab.edu/xias/top> and click "Resend Invite Code" from the left-hand navigation menu. If this still does not work, please contact <AskIT@uab.edu> for assistance.
+    If you did not receive this email, or are missing the code, please visit <https://idm.uab.edu/xias/ivc>. On this page, you will be asked to enter your registered email address and select proceed. If this still does not work, please contact <AskIT@uab.edu> for assistance.
 
-1. Use your browser to navigate to the link in the email, or click the following link <https://apps.idm.uab.edu/xias/top>. This will take you to the UAB Guest User Account (XIAS) page. An example of this page is shown in the image below.
-
-    ![Screenshot of UAB Guest User Account (XIAS) page.](_img/xias_guest_003.png)
-
-1. Click the "Enter Invite or Reset Code" link in the left-hand navigation menu. On the right side of the page, under "Register XIAS Account", complete the form:
+1. To enter the invite code received in the mail, please visit <https://idm.uab.edu/xias/reg>. On this page, fill in the form to complete the registration process. A semantic form element is used on the page.
 
     - In the E-mail address field, enter the email address you provided to your Sponsor.
 
     - In the Invite (or reset) code field, enter the code you received in the second email.
 
-    ![Screenshot of Invite or Reset Code form with E-mail address and Invite code fields.](_img/xias_guest_004.png)
+    ![Screenshot of Invite or Reset Code form.](_img/xias_guest_004.png)
 
-1. Click Proceed. On the next form, under "Register XIAS Account" form contains text fields labeled 'First Name' and 'Last Name'. Type your first and last name in the corresponding fields.
+1. Click Proceed. On the next form, you will be asked to enter 'First Name' and 'Last Name' in the form fields.
 
     ![Screenshot of Register XIAS Account form with First and Last Name fields.](_img/xias_guest_006.png)
 
-1. Click Proceed. You will be taken to a third, final form. Enter a password in the text field labeled 'Password' following the requirements on the page, then type the same password in the text field labeled 'Re-enter password'.
+1. Click Proceed. Then, you will be asked to enter and confirm your password in the form fields.
 
     ![Screenshot of Register XIAS Account form with Password fields.](_img/xias_guest_007.png)
 
-1. Click Proceed. You will be taken to a summary page showing the XIAS e-mail, Name, and Password you entered. These fields are read-only. If you are not satisfied, click the Edit button next to the Name or Password field to make changes.
+1. Click Proceed. You will be taken to a summary page showing the XIAS e-mail, Name, and Password you entered. These fields are read-only. If you need to make changes, select Edit following the name or password field.
 
     ![Screenshot of Register XIAS Account Summary Page.](_img/xias_guest_008.png)
 
