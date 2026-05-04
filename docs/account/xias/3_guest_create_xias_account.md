@@ -31,7 +31,7 @@ Before starting, you'll need the following prerequisites.
         > If you have any questions, do not hesitate to contact us via the AskIT Helpdesk at 205-996-5555 or e-mail `AskIT@uab.edu`.
     <!-- markdownlint-enable MD046 -->
 
-1. You should receive a second email from `UserServices@uab.edu`(UAB Identity Management) within approximately one hour. This email will contain a code that you will need to use later. An example of this email is shown in the image below.
+1. You should receive a second email from UAB Identity Management (email address will be: `UserServices@uab.edu`) within approximately one hour. This email will contain a code that you will need to use later. An example of this email is shown in the image below.
 
     ![Screenshot of the second email from UAB Identity Management](_img/xias_guest_002.png)
 
@@ -69,7 +69,7 @@ Before starting, you'll need the following prerequisites.
 
     If you did not receive this email, or are missing the code, please visit <https://idm.uab.edu/xias/ivc>. On this page, you will be asked to enter your registered email address and select proceed. If this still does not work, please contact <AskIT@uab.edu> for assistance.
 
-1. To enter the invite code received in the mail, please visit <https://idm.uab.edu/xias/reg>. On this page, fill in the form to complete the registration process. A semantic form element is used on the page.
+1. To enter the invite code received in the mail, please visit <https://idm.uab.edu/xias/reg>. On this page, fill in the form to complete the registration process.
 
     - In the E-mail address field, enter the email address you provided to your Sponsor.
 
