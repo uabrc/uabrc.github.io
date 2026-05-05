@@ -11,12 +11,12 @@ Before starting, you'll need the following prerequisites.
 
 ## How Do I Create a XIAS Account?
 
-1. After your Sponsor completes their phases, you should receive an email from `UserServices@uab.edu` that looks like the following.
+1. After your Sponsor completes their phases, you will receive two emails from UAB Identity Management. The first email will come from UAB Identity Management (email address will be: `UserServices@uab.edu`). This email may take a few minutes to arrive. The image below shows an example of this email. A second email will be sent later with additional instructions.
 
-    ![!Screenshot of first email.](_img/xias_guest_001.png)
+    ![Screenshot of the first email from UAB Identity Management](_img/xias_guest_001.png)
 
     <!-- markdownlint-disable MD046 -->
-    ??? note "Email Contents"
+    ??? note "Contents of the first email from UAB Identity Management"
 
         > Subject: UAB online resource access
         >
@@ -31,12 +31,12 @@ Before starting, you'll need the following prerequisites.
         > If you have any questions, do not hesitate to contact us via the AskIT Helpdesk at 205-996-5555 or e-mail `AskIT@uab.edu`.
     <!-- markdownlint-enable MD046 -->
 
-1. You should receive a second email from `UserServices@uab.edu` that looks like the following.
+1. You should receive a second email from UAB Identity Management (email address will be: `UserServices@uab.edu`) within approximately one hour. This email will contain a code that you will need to use later. An example of this email is shown in the image below.
 
-    ![!Screenshot of second email.](_img/xias_guest_002.png)
+    ![Screenshot of the second email from UAB Identity Management](_img/xias_guest_002.png)
 
     <!-- markdownlint-disable MD046 -->
-    ??? note "Email Contents"
+    ??? note "Contents of the second email from UAB Identity Management"
 
         > Subject: UAB External ID (XIAS) registration
         >
@@ -67,33 +67,33 @@ Before starting, you'll need the following prerequisites.
         Never click links in emails! Phishing emails target people who click links in emails. Read more about [UAB IT Security Awareness](https://www.uab.edu/it/home/security/awareness).
     <!-- markdownlint-enable MD046 -->
 
-    If you did not receive this email, or are missing the code, please visit <https://apps.idm.uab.edu/xias/top> and click "Resend Invite Code". If this still does not work, please contact <AskIT@uab.edu> for assistance.
+    If you did not receive this email, or are missing the code, please visit <https://idm.uab.edu/xias/ivc>. On this page, you will be asked to enter your registered email address and select proceed. If this still does not work, please contact <AskIT@uab.edu> for assistance.
 
-1. Use your browser to navigate to the link in the email, or click the following link <https://apps.idm.uab.edu/xias/top>. You should see a page that looks like the following.
+    ![Screenshot of Resend Invite Code form](_img/xias_guest_003.png)
 
-    ![!Screenshot of XIAS Guest Users page.](_img/xias_guest_003.png)
+1. To enter the invite code received in the mail, please visit <https://idm.uab.edu/xias/reg>. On this page, fill in the form to complete the registration process.
 
-1. Click the "Enter Invite or Reset Code" link in the left-hand navigation menu. You will be taken to the "Register XIAS Account" page.
+    - In the E-mail address field, enter the email address you provided to your Sponsor.
 
-    Enter the email address you gave to your Sponsor to create this account in the "E-mail address" field. Enter the code from the second email in the "Invite (or reset) code" field.
+    - In the Invite (or reset) code field, enter the code you received in the second email.
 
-    ![!Screenshot of Invite or Reset Code form with email and code entry fields.](_img/xias_guest_004.png)
+    ![Screenshot of Registration form](_img/xias_guest_004.png)
 
-1. Click Proceed. You will be taken to a second form. Enter your first name (given name) and last name (surname).
+1. Click Proceed. On the next form, you will be asked to enter 'First Name' and 'Last Name' in the form fields.
 
-    ![!Screenshot of form with name entry fields.](_img/xias_guest_006.png)
+    ![Screenshot of Form to register XIAS account displaying name fields](_img/xias_guest_006.png)
 
-1. Click Proceed. You will be taken to a third, final form. Enter a password according to the requirements shown on the page.
+1. Click Proceed. Then, you will be asked to enter and confirm your password in the form fields.
 
-    ![!Screenshot of form with password fields.](_img/xias_guest_007.png)
+    ![Screenshot of Register XIAS Account form with Password fields](_img/xias_guest_007.png)
 
-1. Click Proceed. You will be taken to a confirmation page. If you are not satisfied, click the Edit buttons to change the information.
+1. Click Proceed. You will be taken to a summary page showing the XIAS e-mail, Name, and Password you entered. These fields are read-only. If you need to make changes, select Edit following the name or password field.
 
-    ![!Screenshot of confirmation page.](_img/xias_guest_008.png)
+    ![Screenshot of Register XIAS Account Summary Page.](_img/xias_guest_008.png)
 
-1. When you are satisfied, click Proceed. You should be taken to a success page. Please read the page and follow any instructions.
+1. When you are satisfied, click Proceed. You will be taken to a success page showing a confirmation that your XIAS account has been updated, along with your e-mail address and Primary ID. Please read the information carefully and follow any instructions provided.
 
-    ![!Registration success page with additional instructions and suggestions.](_img/xias_guest_009.png).
+    ![Screenshot of XIAS success page with account confirmation](_img/xias_guest_009.png).
 
 ## Next Steps
 
