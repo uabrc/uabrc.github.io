@@ -69,21 +69,23 @@ Before starting, you'll need the following prerequisites.
 
     If you did not receive this email, or are missing the code, please visit <https://idm.uab.edu/xias/ivc>. On this page, you will be asked to enter your registered email address and select proceed. If this still does not work, please contact <AskIT@uab.edu> for assistance.
 
+    ![Screenshot of Resend Invite Code form](_img/xias_guest_003.png)
+
 1. To enter the invite code received in the mail, please visit <https://idm.uab.edu/xias/reg>. On this page, fill in the form to complete the registration process.
 
     - In the E-mail address field, enter the email address you provided to your Sponsor.
 
     - In the Invite (or reset) code field, enter the code you received in the second email.
 
-    ![Screenshot of Invite or Reset Code form.](_img/xias_guest_004.png)
+    ![Screenshot of Registration form](_img/xias_guest_004.png)
 
 1. Click Proceed. On the next form, you will be asked to enter 'First Name' and 'Last Name' in the form fields.
 
-    ![Screenshot of Register XIAS Account form with First and Last Name fields.](_img/xias_guest_006.png)
+    ![Screenshot of Form to register XIAS account displaying name fields](_img/xias_guest_006.png)
 
 1. Click Proceed. Then, you will be asked to enter and confirm your password in the form fields.
 
-    ![Screenshot of Register XIAS Account form with Password fields.](_img/xias_guest_007.png)
+    ![Screenshot of Register XIAS Account form with Password fields](_img/xias_guest_007.png)
 
 1. Click Proceed. You will be taken to a summary page showing the XIAS e-mail, Name, and Password you entered. These fields are read-only. If you need to make changes, select Edit following the name or password field.
 
@@ -91,7 +93,7 @@ Before starting, you'll need the following prerequisites.
 
 1. When you are satisfied, click Proceed. You will be taken to a success page showing a confirmation that your XIAS account has been updated, along with your e-mail address and Primary ID. Please read the information carefully and follow any instructions provided.
 
-    ![Screenshot of XIAS success page with account confirmation.](_img/xias_guest_009.png).
+    ![Screenshot of XIAS success page with account confirmation](_img/xias_guest_009.png).
 
 ## Next Steps
 
