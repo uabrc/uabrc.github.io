@@ -23,7 +23,10 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
 
-copyright: Copyright &copy; 2021-2024 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
+copyright: Copyright &copy; 2021-2024 The University of Alabama at
+  Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a
+  href="mailto:support@listserv.uab.edu"
+  class="supportemail">support@listserv.uab.edu</a>
 
 markdown_extensions:
   - admonition
@@ -49,7 +52,8 @@ markdown_extensions:
   - toc:
       permalink: true
 
-plugins: # order matters!
+plugins:
+  # order matters!
   - search
   - meta
   - blog:
@@ -113,7 +117,8 @@ plugins: # order matters!
         contributor_guide.md: contributing/contributor_guide.md
         data_management/cheaha_gpfs_storage.md: data_management/storage/cheaha_storage_gpfs/index.md
         data_management/cheaha_storage_gpfs/index.md: data_management/storage/cheaha_storage_gpfs/index.md
-        data_management/cheaha_storage_gpfs/project_directory_organization.md: data_management/storage/cheaha_storage_gpfs/project_directories.md#project-directory-organization
+        data_management/cheaha_storage_gpfs/project_directory_organization.md:
+          data_management/storage/cheaha_storage_gpfs/project_directories.md#project-directory-organization
         data_management/LTS/lts.md: data_management/storage/lts/index.md
         data_management/lts/index.md: data_management/storage/lts/index.md
         data_management/LTS/sharing.md: data_management/storage/lts/iam_and_policies.md
@@ -182,6 +187,7 @@ nav:
               - Project Directories: data_management/storage/cheaha_storage_gpfs/project_directories.md
               - Network Scratch: data_management/storage/cheaha_storage_gpfs/network_scratch.md
               - Local Scratch: data_management/storage/cheaha_storage_gpfs/local_scratch.md
+              - GPFS Snapshots: data_management/storage/cheaha_storage_gpfs/gpfs_snapshots.md
               - Temporary Files (/tmp/ Directory): data_management/storage/cheaha_storage_gpfs/temporary_files.md
           - Long Term Storage:
               - data_management/storage/lts/index.md
