@@ -6,15 +6,20 @@ If you are new to Globus, we recommend starting with our [Getting Started](./log
 
 Topics covered:
 
-1. [Why Globus?](#why-globus)
-1. [How Does Globus Work?](#how-does-globus-work)
-1. [Prerequisites](#prerequisites)
-1. [How Do I Get onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
-1. [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
-1. [How Do I Enable Sharing for My Globus Account?](#how-do-i-enable-collection-sharing-for-my-globus-account)
-1. [How Do I Create a Collection?](#how-do-i-create-a-collection)
-1. [How Do I Share a Collection with Others?](#how-do-i-share-a-collection-with-others)
-1. [How Do I Share Data with a Research Core Customer?](#how-do-i-share-data-with-a-research-core-customer)
+- [Why Globus?](#why-globus)
+- [How Does Globus Work?](#how-does-globus-work)
+- [Prerequisites](#prerequisites)
+- [How Do I Get Onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
+- [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
+- [How Do I Enable Collection Sharing for My Globus Account?](#how-do-i-enable-collection-sharing-for-my-globus-account)
+- [How Do I Create a Collection?](#how-do-i-create-a-collection)
+- [How Do I Share a Collection With Others?](#how-do-i-share-a-collection-with-others)
+- [How Do I Share Data With a Research Core Customer?](#how-do-i-share-data-with-a-research-core-customer)
+- [Managing Guest Collections From a Globus Endpoint](#managing-guest-collections-from-a-globus-endpoint)
+    - [Creating a Guest Collection](#creating-a-guest-collection)
+    - [Deleting a Guest Collection](#deleting-a-guest-collection)
+    - [How Do I Add a Role to a Guest Collection?](#how-do-i-add-a-role-to-a-guest-collection)
+    - [How Do I Change a Role?](#how-do-i-change-a-role)
 
 ## Why Globus?
 
@@ -186,19 +191,16 @@ It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public a
 ### Creating a Guest Collection
 
 1. Click "Collections" in the left-hand navigation pane.
-
 1. Click the "Administered By You" tab (or) you can search for the collections in search.
 
     ![!Globus Endpoints page with Administered by You selected, showing two endpoints. One of the endpoints is a shared endpoint.](../images/globus_100_shared_search_collections.png)
 
 1. In the table, find the collections you wish to share data from and click its name. You will be taken to the page for that collection.
-
 1. Click the "Collections" tab.
 
     ![!Globus UAB RC Work Laptop page with Guest Collections tab selected showing one collection.](../images/globus_101_shared_collections.png)
 
 1. Click the "Add a Guest Collection" button.
-
 1. Fill out the form.
 
     ![!Create New Guest Collection form.](../images/globus_102_shared_collection_form.png)
@@ -211,13 +213,11 @@ It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public a
     1. Default directory, if left empty, is equivalent to the first field "Directory".
 
 1. Click "Create Collection" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged Guest Collection. Any further references to "an endpoint" will be about the newly created, Guest Collection.
-
 1. Make sure you are on the "Permissions" tab. You should see a permissions table with your name in it.
 
     ![!Newly created test endpoint page with Permissions tab selected.](../images/globus_103_shared_permissions.png)
 
 1. Click "Add Permissions -- Share With" to share your Guest Collection with other users.
-
 1. Fill out the form.
 
     ![!Test endpoint Add Permissions Share With form.](../images/globus_104_shared_add_permissions.png)
@@ -263,3 +263,18 @@ It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public a
 1. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the Guest Collection, or to cancel.
 
     ![!Delete Collection confirmation dialog banner.](../images/globus_107_shared_delete.png)
+
+### How Do I Add a Role to a Guest Collection?
+
+Role assignments to a Globus Guest collections help organizations to delegate management responsibilities while maintaining proper access control. The table below contains more details about the available roles and their permissions.
+
+{{ read_csv('data_management/transfer/globus/res/globus-organization-roles.csv', keep_default_na=False, colalign=("left","center","center","center")) }}
+
+### How Do I Change a Role?
+
+1. Click the "Asign New Role" button to assigne a role to an identity.
+    ![Screenshot of roles and permissions overview page.](../images/gg-modify-role-add/002-assigne-role.png)
+
+1. Search for a Globus identity for the person who will be assigned a role, then  select the appropriate option.
+
+    ![Screenshot of Globus guest collection role assignments page.](../images/gg-modify-role-add/001-modify-role.png)
