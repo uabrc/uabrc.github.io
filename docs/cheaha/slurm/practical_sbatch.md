@@ -241,6 +241,11 @@ For reference, here are the full scripts.
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=1G
 
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
+
 shopt -s nullglob
 
 input_files=(../inputs/**/dice.csv)

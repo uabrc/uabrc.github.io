@@ -80,6 +80,11 @@ Below is an example batch job script. To test it, copy and paste it into a plain
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
 
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
+
 echo "Hello World"
 echo "Hello Error" 1>&2
 ```
@@ -95,8 +100,9 @@ There is a lot going on in the above script, so let's break it down. There are t
     - Line 9: The job will be no longer than 10 minutes, and will be terminated if it runs over.
     - Line 10: Any standard output (`stdout`) will be written to the file `test_$SLURM_JOB_ID.out` in the same directory as the script, whatever the `$SLURM_JOB_ID` happens to be when the job is submitted. The name comes from `%x` equal to `test`, the `--job-name`, and `%j` equal to the Job ID.
     - Line 11: Any error output (`stderr`) will be written to a different file `test_$SLURM_JOB_ID.err` in the same directory.
+    - Lines 15 and 16 configure Slurm to send job notification emails to the specified address for all job events, including start, end, failure, and cancellation.
 
-1. Lines 13 and 14 are the payload, or tasks to be run. They will be executed in order from top to bottom just like any shell script. In this case, it is simply writing "Hello World" to the `--output` file and "Hello Error" to the `--error` file. The `1>&2` Means redirect a copy (`>&`) of `stdout` to `stderr`.
+1. Lines 18 and 19 are the payload, or tasks to be run. They will be executed in order from top to bottom just like any shell script. In this case, it is simply writing "Hello World" to the `--output` file and "Hello Error" to the `--error` file. The `1>&2` Means redirect a copy (`>&`) of `stdout` to `stderr`.
 
 ### Batch Array Jobs With Known Indices
 
@@ -117,6 +123,11 @@ To test the script below, copy and paste it into a plain text file `testarrayjob
 #SBATCH --output=%x_%A_%a.out
 #SBATCH --error=%x_%A_%a.err
 #SBATCH --array=0-9
+
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
 
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 ```
