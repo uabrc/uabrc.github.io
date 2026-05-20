@@ -8,8 +8,9 @@ Snapshots are read-only, point-in-time copies of your project directory that are
 
 - Snapshots are created daily
 - Retains approximately 14 days of history
-- Snapshots are located in a hidden directory within the `/gpfs` directory for user files stored in `/data/user/$USER`
-- They are located at `/data/project/<Project-Directory-Name>/.snapshots` within your project directory
+- Snapshots for files from your `/home/$USER` are stored in the `/home/$USER/.snapshots` directory
+- Snapshots for files stored in `/data/user/$USER` are located in a hidden directory within the `/gpfs/.snapshots` directory
+- Project directory snapshots are located at `/data/project/<Project-Directory-Name>/.snapshots` within your project directory
 - Files are restored by copying them out of the snapshot. Use the `cp` command
 - Snapshots are a self-service recovery mechanism
 
@@ -30,10 +31,16 @@ Access a terminal using one of the following methods:
 
 ### Navigating to Your Project or User Snapshot Directory
 
-Snapshots are available for your user directory files (i.e. `/data/user/$USER`), and project directory files. These files are located in different locations. To access your project directory files, please change directory into your project directory:
+Snapshots are available for your home and user directory files (i.e.`/home/$USER` and `/data/user/$USER`), and project directory files. These files are located in different locations. To access your project directory files, please change directory into your project directory:
 
 ```bash
 cd /data/project/<project_directory>
+```
+
+To access files from your home directory, you will need to change directory into your `/home` directory.
+
+```bash
+cd /home/$USER/
 ```
 
 To access files from your data user directory, you will need to change directory into the `/gpfs` directory.
@@ -44,19 +51,27 @@ cd /gpfs/
 
 ### Accessing the Snapshot Directory
 
-For both locations, snapshots are stored in a hidden directory named `.snapshots`. You can list the directories in your project or user directory by running the `ls -a` command, this applies if you are already within the project or `/gpfs/` directory. You can also use the absolute path to the respective directory.
+For all locations, snapshots are stored in a hidden directory named `.snapshots`. For your project and user files, you can list files and directories by running the `ls -a` command within your respective project or user snapshot directories. However, if you try the same `ls -a` command within your home directory (`/home/$USER`), the `.snapshots` directory will not be visible. To access it, you can go directly to it by using the absolute path to the `.snapshots` directory. This approach works with all locations.
+
+For a project directory
 
 ```bash
-ls -a /data/project/my_lab/
+ls -a /data/project/my_lab/.snapshots
+```
+
+For your home directory
+
+```bash
+ls -a /home/$USER/.snapshots
 ```
 
 For a user directory, you will run
 
 ```bash
-ls -a /gpfs/
+ls -a /gpfs/.snapshots
 ```
 
-You should see a `.snapshots` directory listed. To access the snapshots located in your project directory, run the command. Remember to replace "my_lab" with the name of your project directory.
+This should list the content of your `.snapshots` directory showing timestamped snapshot directories. To access the snapshots located in your project directory, run the corresponding `ls` command. Remember to replace "my_lab" with the name of your project directory.
 
 ```bash
 cd /data/project/my_lab/.snapshots/
@@ -82,7 +97,7 @@ Use the `ls` command within the `.snapshots` directory to view available snapsho
 ls
 ```
 
-![!Image of a Terminal showing commands to naviagte a directory and files listed in the `.snapshots` directory](../images/files-listed-snapshots-directory.png)
+![!Image of a Terminal showing commands to navigate a directory and files listed in the `.snapshots` directory](../images/files-listed-snapshots-directory.png)
 
 <!-- markdownlint-disable MD046 -->
 !!! tip
@@ -102,6 +117,12 @@ For instance, if you need to access files in your project directory from April 2
 
 ```bash
 cd /data/project/.snapshots/@GMT-2026.04.23-07.35.14
+```
+
+To access files located in your home directory snapshot, you will run the below command (you can replace "$USER" with your BlazerID which doubles as your user ID).
+
+```bash
+cd /home/$USER/.snapshots/@GMT-2026.04.23-07.35.14/
 ```
 
 To access files located in your user directory snapshot, you will run the command.
@@ -134,6 +155,12 @@ cp <source> <destination>
 cp -r /data/project/.snapshots/@GMT-YYYY.MM.DD-HH.MM.SS/directoryORfilename /data/project/restoredDirectoryOrFilename
 ```
 
+In the case of your home directory.
+
+```bash
+cp -r /home/$USER/.snapshots/directoryORfilename /home/$USER/restoredDirectoryOrFilename
+```
+
 Or in the case of your user directory.
 
 ```bash
@@ -143,7 +170,7 @@ cp -r /gpfs/.snapshots/directoryORfilename /data/user/$USER/restoredDirectoryOrF
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Snapshots are **read-only**. Files must be copied out to be restored, before they can be used.
+    Snapshots are **read-only**. Files must be copied out to be restored, before they can be used. Your files in the snapshot directory may not reflect the actual file size until it is copied out.
 <!-- markdownlint-disable MD046 -->
 
 ## Accessing Snapshots via Open OnDemand (OOD)
