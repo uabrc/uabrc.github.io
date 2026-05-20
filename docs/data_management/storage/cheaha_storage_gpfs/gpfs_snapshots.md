@@ -6,19 +6,19 @@ How do you recover data you deleted in error on the cluster? With our new GPFS f
 
 Snapshots are read-only, point-in-time copies of your project directory that are created automatically.
 
-- Snapshots are created daily
-- Retains approximately 14 days of history
-- Snapshots for files from your `/home/$USER` are stored in the `/home/$USER/.snapshots` directory
-- Snapshots for files stored in `/data/user/$USER` are located in a hidden directory within the `/gpfs/.snapshots` directory
-- Project directory snapshots are located at `/data/project/<Project-Directory-Name>/.snapshots` within your project directory
-- Files are restored by copying them out of the snapshot. Use the `cp` command
-- Snapshots are a self-service recovery mechanism
+- Snapshots are created daily.
+- Retains approximately 14 days of history.
+- Snapshots for files from your `/home/$USER` are stored in the `/home/$USER/.snapshots` directory or in `/gpfs/.snapshots/<snapshots_id>/user/home/<username>`.
+- Snapshots for files stored in `/data/user/$USER` are located in a hidden directory within the `/gpfs/.snapshots` directory.
+- Project directory snapshots are located at `/data/project/<Project-Directory-Name>/.snapshots` within your project directory.
+- Files are restored by copying them out of the snapshot. Use the `cp` command.
+- Snapshots are a self-service recovery mechanism.
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Snapshots provide short-term recovery only. For long-term backups, condsider using [Long Term Storage (LTS)](../lts/index.md).
-<!-- markdownlint-disable MD046 -->
+    Snapshots provide short-term recovery only. For long-term backups, consider using [Long Term Storage (LTS)](../lts/index.md).
+<!-- markdownlint-enable MD046 -->
 
 ## Accessing Snapshots via the Terminal
 
@@ -26,32 +26,12 @@ Snapshots are read-only, point-in-time copies of your project directory that are
 
 Access a terminal using one of the following methods:
 
-- Launch an HPC Desktop session through [Open OnDemand](../../../cheaha/open_ondemand/hpc_desktop.md#accessing-the-terminal)
-- [Connect via SSH to Cheaha](../../../cheaha/getting_started.md#accessing-cheaha)
+- Launch an HPC Desktop session through [Open OnDemand](../../../cheaha/open_ondemand/hpc_desktop.md#accessing-the-terminal).
+- [Connect via SSH to Cheaha](../../../cheaha/getting_started.md#accessing-cheaha).
 
-### Navigating to Your Project or User Snapshot Directory
+### Navigating to Your Project, Home or User Snapshot Directory
 
-Snapshots are available for your home and user directory files (i.e.`/home/$USER` and `/data/user/$USER`), and project directory files. These files are located in different locations. To access your project directory files, please change directory into your project directory:
-
-```bash
-cd /data/project/<project_directory>
-```
-
-To access files from your home directory, you will need to change directory into your `/home` directory.
-
-```bash
-cd /home/$USER/
-```
-
-To access files from your data user directory, you will need to change directory into the `/gpfs` directory.
-
-```bash
-cd /gpfs/
-```
-
-### Accessing the Snapshot Directory
-
-For all locations, snapshots are stored in a hidden directory named `.snapshots`. For your project and user files, you can list files and directories by running the `ls -a` command within your respective project or user snapshot directories. However, if you try the same `ls -a` command within your home directory (`/home/$USER`), the `.snapshots` directory will not be visible. To access it, you can go directly to it by using the absolute path to the `.snapshots` directory. This approach works with all locations.
+Snapshots are available for your home and user directory files (i.e.`/home/$USER` and `/data/user/$USER`), and project directory files (`/data/project`). These files are located in different locations. For all locations, snapshots are stored in a hidden directory named `.snapshots`. For your project and user files, you can list hidden files and directories by running the `ls -a` command within your respective project or user directories. However, if you try the same `ls -a` command within your home directory (`/home/$USER`), the `.snapshots` directory will not be visible. You can directly list it by using the absolute path to the `.snapshots` directory. This approach works with all locations.
 
 For a project directory
 
@@ -65,29 +45,35 @@ For your home directory
 ls -a /home/$USER/.snapshots
 ```
 
-For a user directory, you will run
+For your user directory, run.
 
 ```bash
-ls -a /gpfs/.snapshots
+ls -a /gpfs/.snapshots/<snapshots_id>/user/$USER
 ```
 
-This should list the content of your `.snapshots` directory showing timestamped snapshot directories. To access the snapshots located in your project directory, run the corresponding `ls` command. Remember to replace "my_lab" with the name of your project directory.
+This should list the contents of your `.snapshots` directory, including timestamped snapshot directories. To go into the snapshots located in your project directory, home directory or user directory, run the corresponding `cd` command. Remember to replace "my_lab" with the name of your project directory, and "snapshots_id" with the actual timestamped directory.
 
 ```bash
-cd /data/project/my_lab/.snapshots/
+cd /data/project/my_lab/.snapshots/snapshots_id
+```
+
+To access your home directory run the command
+
+```bash
+cd /home/$USER/.snapshots/snapshots_id
 ```
 
 To access your user directory run the command
 
 ```bash
-cd /gpfs/.snapshots/
+cd /gpfs/.snapshots/snapshots_id/user/$USER
 ```
 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Only files available in your `/data/user/$USER` directory, are saved in the snapshot directory located in `/gpfs` for you to retrieve.
-<!-- markdownlint-disable MD046 -->
+    Files in your `/home/$USER` directory, are saved in the snapshot directory located in `/home/$USER/.snapshots` for you to retrieve. They are also available here `/gpfs/.snapshots/snapshots_id/user/home/$USER`. For snapshot files stored for your /data/user/ files, you will need to access them by going through the snapshots_id before accessing your files (i.e. `/gpfs/.snapshots/snapshots_id/user/$USER/`), for the other locations this is not the case.
+<!-- markdownlint-enable MD046 -->
 
 ### List Available Snapshots
 
@@ -99,30 +85,34 @@ ls
 
 ![!Image of a Terminal showing commands to navigate a directory and files listed in the `.snapshots` directory](../images/files-listed-snapshots-directory.png)
 
+Snapshots follow a timestamp based naming convention. `snapshots_id = @GMT-YYYY.MM.DD-HH.MM.SS`. For example `@GMT-2026.04.23-07.35.14`
+
+You will use the `snapshots_id` value when navigating to a snapshot directory or restoring files.
+
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
     Choose a snapshot created before the file was deleted or modified.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 ### Enter a Snapshot Directory
 
-Navigate into a snapshot directory, and note the date format. The files in the directory are named in the format "@GMT-YYYY.MM.DD-07.35.14". All snapshot directories are saved at **7.35.14 GMT**, so all directories listed here, will have that timestamp suffix.
+Navigate into a snapshot directory, using the `snapshots_id` listed in the `.snapshots` directory.
 
 ```bash
-cd /path/to/files/in/snapshots/directory/@GMT-YYYY.MM.DD-07.35.14
+cd /path/to/files/in/snapshots/directory/snapshots_id
 ```
 
-For instance, if you need to access files in your project directory from April 23, 2026, those files can be accessed by running the command.
+For instance, if you need to access files in your project directory (for example "my_lab") from April 23, 2026, those files can be accessed by running the command. Make sure the `snapshots_id` you enter falls within the 14 day period, and is listed as one of the files in the snapshot directory.
 
 ```bash
-cd /data/project/.snapshots/@GMT-2026.04.23-07.35.14
+cd /data/project/my_lab/.snapshots/@GMT-2026.04.23-07.35.14
 ```
 
-To access files located in your home directory snapshot, you will run the below command (you can replace "$USER" with your BlazerID which doubles as your user ID).
+To access files located in your home directory snapshot, you will run the below command (you can replace "$USER" with your BlazerID which doubles as your username).
 
 ```bash
-cd /home/$USER/.snapshots/@GMT-2026.04.23-07.35.14/
+cd /home/$USER/.snapshots/@GMT-2026.04.23-07.35.14
 ```
 
 To access files located in your user directory snapshot, you will run the command.
@@ -130,8 +120,6 @@ To access files located in your user directory snapshot, you will run the comman
 ```bash
 cd /gpfs/.snapshots/@GMT-2026.04.23-07.35.14/user/$USER/
 ```
-
-Make sure the date you enter falls within the 14 day period, and is listed as one of the files in the snapshot directory.
 
 ### Locate Your File
 
@@ -143,39 +131,39 @@ cd path/to/files/in/snapshot/directory
 ls
 ```
 
-Remember to replace the above path with the actual project directory or user directory path.
+Remember to replace the above path with the actual project directory, home or user directory path.
 
 ### Restore the File
 
-To restore a file, copy it from the snapshot directory into your project or user directory with the `cp` command:
+To restore a file, copy it from the snapshot directory into your preferred location outside the snapshots directory with the `cp` command:
 
 ```bash
 cp <source> <destination>
 
-cp -r /data/project/.snapshots/@GMT-YYYY.MM.DD-HH.MM.SS/directoryORfilename /data/project/restoredDirectoryOrFilename
+cp -r /data/project/.snapshots/<snapshots_id>/directoryORfilename /data/project/restoredDirectoryOrFilename
 ```
 
 In the case of your home directory.
 
 ```bash
-cp -r /home/$USER/.snapshots/directoryORfilename /home/$USER/restoredDirectoryOrFilename
+cp -r /home/$USER/.snapshots/<snapshots_id>/directoryORfilename /home/$USER/restoredDirectoryOrFilename
 ```
 
 Or in the case of your user directory.
 
 ```bash
-cp -r /gpfs/.snapshots/directoryORfilename /data/user/$USER/restoredDirectoryOrFilename
+cp -r /gpfs/.snapshots/<snapshots_id>/user/$USER/directoryORfilename /data/user/$USER/restoredDirectoryOrFilename
 ```
 
 <!-- markdownlint-disable MD046 -->
 !!! important
 
     Snapshots are **read-only**. Files must be copied out to be restored, before they can be used. Your files in the snapshot directory may not reflect the actual file size until it is copied out.
-<!-- markdownlint-disable MD046 -->
+<!-- markdownlint-enable MD046 -->
 
 ## Accessing Snapshots via Open OnDemand (OOD)
 
-At this time, you can only access your snapshots via the Terminal, trying to access the snapshots via OOD will return an error.
+At this time, snapshots can only be accessed via the Terminal, trying to access the snapshots via Open OnDeman (OOD) will return an error.
 
 ![!Error message show when trying to access snapshots via OOD](../images/snapshots-error-message-ood.png)
 
@@ -183,19 +171,19 @@ At this time, you can only access your snapshots via the Terminal, trying to acc
 
 Avoid the following:
 
-- Attempting to modify files inside `.snapshots` directory
-- Selecting a snapshot created **after** the file was deleted
-- Using an incorrect directory path
-- Attempting to restore Ceph-stubbed files directly
+- Attempting to modify files inside `.snapshots` directory.
+- Selecting a snapshot created **after** the file was deleted.
+- Using an incorrect directory path.
+- Attempting to restore Ceph-stubbed files directly.
 
 ## When to Contact Support
 
 Contact Research Computing if:
 
-- You receive an **"Operation not permitted"** error
-- The file is not present in any snapshot
-- You are unsure whether your data is GPFS or Ceph-resident
-- You need help restoring large or complex datasets
+- You receive an **"Operation not permitted"** error.
+- The file is not present in any snapshot.
+- You are unsure whether your data is GPFS or Ceph-resident.
+- You need help restoring large or complex datasets.
 
 For critical data that needs to be archived, consider using [Long Term Storage (LTS)](../lts/index.md), snapshots are not intended for use as an archive.
 
