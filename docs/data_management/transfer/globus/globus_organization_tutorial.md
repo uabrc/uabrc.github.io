@@ -19,7 +19,7 @@ Topics covered:
     - [Creating a Guest Collection](#creating-a-guest-collection)
     - [Deleting a Guest Collection](#deleting-a-guest-collection)
     - [How Do I Add a Role to a Guest Collection?](#how-do-i-add-a-role-to-a-guest-collection)
-    - [How Do I Change a Role?](#how-do-i-change-a-role)
+    - [How Do I Change a Role for a Guest Collection?](#how-do-i-change-a-role-for-a-guest-collection)
 
 ## Why Globus?
 
@@ -270,11 +270,14 @@ Role assignments to a Globus Guest collections help organizations to delegate ma
 
 {{ read_csv('data_management/transfer/globus/res/globus-organization-roles.csv', keep_default_na=False, colalign=("left","center","center","center")) }}
 
-### How Do I Change a Role?
+### How Do I Change a Role for a Guest Collection?
 
-1. Click the "Asign New Role" button to assigne a role to an identity.
+1. On the guest collection roles and permission page, click on "Asign New Role".
     ![Screenshot of roles and permissions overview page.](../images/gg-modify-role-add/002-assigne-role.png)
 
-1. Search for a Globus identity for the person who will be assigned a role, then  select the appropriate option.
+1. In the search field, enter the Globus identity for the person who will be assigned a role, then  select the appropriate identity from the search results.
 
     ![Screenshot of Globus guest collection role assignments page.](../images/gg-modify-role-add/001-modify-role.png)
+1. Then choose the appropriate role, and click on the "Add Role" button.
+
+If you have any questions or run into any issues, feel free to [Contact Us](../../../help/support.md#how-to-request-support).
