@@ -203,7 +203,7 @@ nav:
               - Install Globus Connect Personal: data_management/transfer/globus/gcp_install.md
               - Set Up Globus Connect Personal: data_management/transfer/globus/gcp_setup.md
               - Globus for Individuals: data_management/transfer/globus/globus_individual_tutorial.md
-              - Globus for Organsizations: data_management/transfer/globus/globus_organization_tutorial.md
+              - Globus for Organizations: data_management/transfer/globus/globus_organization_tutorial.md
               - Globus Group Management: data_management/transfer/globus/globus_group_management.md
           - RClone: data_management/transfer/rclone.md
           - FileZilla: data_management/transfer/filezilla.md
