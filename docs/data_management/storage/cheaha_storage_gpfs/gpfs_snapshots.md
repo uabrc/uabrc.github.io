@@ -1,6 +1,6 @@
 # Access GPFS Snapshots on Cheaha
 
-How do you recover data that was deleted in error on the cluster? With our new GPFS filesystem, you can recover deleted files using GPFS Snapshots. GPFS Snapshots on Cheaha allow you to recover deleted or modified files without needing to contact Research Computing support. These Snapshots function similarly to tools like Time Machine on macOS or Timeshift on Linux, and are accessed directly through the filesystem.
+How do you recover data that was deleted by mistake on the cluster? With our new GPFS filesystem, you can recover deleted files using GPFS Snapshots. GPFS Snapshots on Cheaha allow you to recover deleted or modified files without needing to contact Research Computing support. These Snapshots function similarly to tools like Time Machine on macOS or Timeshift on Linux, and are accessed directly through the filesystem.
 
 ## Overview
 
