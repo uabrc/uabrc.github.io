@@ -22,7 +22,7 @@ Below is a list of topics covered in this article.
             - [How Do I Make My Group Invite Only?](#how-do-i-make-a-group-invite-only)
             - [How Do I Hide My Group from Others?](#how-do-i-hide-a-group-from-others)
             - [How Do I Keep Members from Seeing Each Other?](#how-do-i-keep-group-members-from-seeing-each-other)
-        - [How Do I Delete a Group or Subgroup?](#how-do-i-delete-a-group-or-subgroup)
+            - [How Do I Delete a Group or Subgroup?](#how-do-i-delete-a-group-or-subgroup)
     - Managing Group Members and Roles
         - [How Do I Invite Others to a Group?](#how-do-i-invite-others-to-a-group)
         - [How Do I See Group Members?](#how-do-i-see-group-members)

@@ -1,4 +1,9 @@
-"""Runs linkchecker on docs and produces human-readable output."""
+"""Runs linkchecker on docs and produces human-readable output.
+
+Install with `pip install -r requirements-dev.txt`.
+
+Use with `python ./verification_scripts/linkchecker.py`.
+"""
 
 from __future__ import annotations
 
@@ -9,23 +14,7 @@ from pathlib import Path, PurePath
 
 import pandas as pd
 import yaml
-
-"""
-How to use:
-
-python ./scripts/linkchecker.py
-"""
-
-# Cleans up output of linkchecker
-
-OUTPUT = PurePath("out")
-Path(OUTPUT).mkdir(exist_ok=True)
-
-# FILE PATHS
-LINKCHECKER_LOG = OUTPUT / "linkchecker.log"
-LINKCHECKER_RAW_CSV = OUTPUT / "linkchecker-raw.csv"
-LINKCHECKER_OUT_CSV = OUTPUT / "linkchecker-out.csv"
-LINKCHECKER_OUT_YAML = OUTPUT / "linkchecker-out.yml"
+from attrs import define
 
 # COLUMNS
 ## ORIGINAL
@@ -41,9 +30,10 @@ URL_AFTER_REDIRECTION = "url-after-redirection"
 MARKDOWN_FILE = "document"
 
 
-def run_linkchecker() -> None:
+# READ
+def _run_linkchecker(path: PurePath) -> None:
     """Run the linkchecker application."""
-    with Path(LINKCHECKER_LOG).open("wb", buffering=0) as f:
+    with Path(path).open("wb", buffering=0) as f:
         subprocess.run(  # noqa: S603
             [_get_linkchecker_path(), "--config", ".linkcheckerrc", "docs"],
             stdout=f,
@@ -51,9 +41,14 @@ def run_linkchecker() -> None:
         )
 
 
-def load_output() -> pd.DataFrame:
+def _get_linkchecker_path() -> PurePath:
+    return PurePath(sys.executable).parent / "Scripts" / "linkchecker"
+
+
+# PROCESS
+def _load_results(path: PurePath) -> pd.DataFrame:
     """Load the raw linkchecker output dataframe."""
-    raw_linkchecker_data = pd.read_csv(LINKCHECKER_RAW_CSV)
+    raw_linkchecker_data = pd.read_csv(path)
     raw_linkchecker_data = raw_linkchecker_data[
         [RESULT, URLNAME, URL, PARENTNAME, LINE, COLUMN]
     ]
@@ -66,7 +61,77 @@ def load_output() -> pd.DataFrame:
     )
 
 
-def replace_rows(
+def _drop_ok_with_no_redirects(_df: pd.DataFrame) -> pd.DataFrame:
+    """Drop rows with OK code (200) if there is no redirection."""
+    same_url = _df[URL_IN_MARKDOWN] == _df[URL_AFTER_REDIRECTION]
+    result_ok = _df[RESULT].str.startswith("200")
+    drop = same_url & result_ok
+    return _df[~drop]
+
+
+@define
+class Drop:
+    """Information about rows to drop from linkchecker output."""
+
+    url: str
+    code: str
+
+
+@define
+class Replace:
+    """Information about rows to replace in linkchecker output."""
+
+    find: str
+    replace: str
+    where: str
+
+
+@define
+class Cases:
+    """All special case information."""
+
+    drops: list[Drop]
+    replacements: list[Replace]
+
+
+def _read_special_cases() -> Cases:
+    with Path(".linkcheckerrc-special.yaml").open("r") as f:
+        data = yaml.safe_load(f)
+
+    drops = [Drop(url, str(code)) for url, code in data["drop"].items()]
+    replaces = [Replace(pattern, v[0], v[1]) for pattern, v in data["replace"].items()]
+    return Cases(drops, replaces)
+
+
+def _file_uris_to_paths(_s: pd.Series) -> pd.Series:
+    """Modify file URIs to a normalized format.
+
+    Example:
+    file:///D|/repos/uabrc.github.io/dir/file.md -> dir/file.md
+
+    """
+    if _s.empty:
+        return _s
+
+    keep = _s.str.startswith("file:") & _s.str.contains("repos/uabrc.github.io")
+    splits = _s.str.split("repos/uabrc.github.io", expand=True)
+
+    fixes = splits.iloc[:, -1][keep]
+    fixes = fixes.apply(PurePath)  # type: ignore[reportCallIssue,reportArgumentType]
+    fixes = fixes.astype(str)
+    fixes = fixes.str.lstrip(os.sep)
+
+    out = _s.copy()
+    out[keep] = fixes
+    return out
+
+
+def _find_rows_containing(_s: pd.Series, _containing: str) -> pd.Series:
+    """Find rows containing the supplied string in the supplied series."""
+    return _s.str.contains(_containing)
+
+
+def _replace_rows(
     _s: pd.Series,
     _containing: str,
     _with: str,
@@ -87,15 +152,7 @@ def replace_rows(
     return out
 
 
-def drop_ok_with_no_redirects(_df: pd.DataFrame) -> pd.DataFrame:
-    """Drop rows with OK code (200) if there is no redirection."""
-    same_url = _df[URL_IN_MARKDOWN] == _df[URL_AFTER_REDIRECTION]
-    result_ok = _df[RESULT].str.startswith("200")
-    drop = same_url & result_ok
-    return _df[~drop]
-
-
-def drop_rows(
+def _drop_rows(
     _df: pd.DataFrame,
     _in: str,
     _containing: str,
@@ -115,91 +172,54 @@ def drop_rows(
     return _df[~contains]
 
 
-def modify_file_uris(_s: pd.Series) -> pd.Series:
-    """Modify file URIs to a normalized format.
+def _handle_special_cases(results: pd.DataFrame) -> pd.DataFrame:
+    cases = _read_special_cases()
+    for replace in cases.replacements:
+        results[RESULT] = _replace_rows(
+            results[RESULT],
+            replace.find,
+            replace.replace,
+            find_in=results[replace.where],
+        )
 
-    Example:
-    file:///D|/repos/uabrc.github.io/dir/file.md -> dir/file.md
+    for drop in cases.drops:
+        results = _drop_rows(results, URL_IN_MARKDOWN, drop.url, drop.code)
 
-    """
-    keep = _s.str.startswith("file:") & _s.str.contains("repos/uabrc.github.io")
-    splits = _s.str.split("repos/uabrc.github.io", expand=True)
-
-    fixes = splits.iloc[:, -1][keep]
-    fixes = fixes.apply(lambda x: PurePath(x))  # pyright: ignore[reportCallIssue,reportArgumentType]
-    fixes = fixes.astype(str)
-    fixes = fixes.str.lstrip(os.sep)
-
-    out = _s.copy()
-    out[keep] = fixes
-    return out
+    return results
 
 
-def _find_rows_containing(_s: pd.Series, _containing: str) -> pd.Series:
-    """Find rows containing the supplied string in the supplied series."""
-    return _s.str.contains(_containing)
+# WRITE
+def _to_csv(results: pd.DataFrame, path: PurePath) -> None:
+    results.to_csv(path, index=False)
 
 
-def _get_linkchecker_path() -> PurePath:
-    return PurePath(sys.executable).parent / "Scripts" / "linkchecker"
+def _to_yaml(results: pd.DataFrame, path: PurePath) -> None:
+    records = results.to_dict(orient="records") if not results.empty else ""
+    with Path(path).open("w") as f:
+        yaml.safe_dump(records, f, sort_keys=False)
+
+
+# ENTRY POINT
+def main() -> None:
+    """Primary entrypoint."""
+    # config
+    output_path = PurePath("out")
+    Path(output_path).mkdir(exist_ok=True)
+
+    # generate input
+    _run_linkchecker(output_path / "linkchecker.log")
+    results = _load_results(output_path / "linkchecker-raw.csv")
+
+    # process
+    results = _drop_ok_with_no_redirects(results)
+    results = _handle_special_cases(results)
+    results[MARKDOWN_FILE] = _file_uris_to_paths(results[MARKDOWN_FILE])
+    results = results.sort_values(by=[RESULT, MARKDOWN_FILE, LINE, COLUMN])
+
+    # write output
+    _to_csv(results, output_path / "linkchecker-out.csv")
+    _to_yaml(results, output_path / "linkchecker-out.yml")
 
 
 if __name__ == "__main__":
-    run_linkchecker()
-    results = load_output()
-
-    ### drop good urls
-    results = drop_ok_with_no_redirects(results)
-
-    ### replace unhelpful error messages
-    # change 200 OK to 300 Redirect for human clarity on successful redirects
-    results[RESULT] = replace_rows(results[RESULT], "200 OK", "300 Redirect")
-    # replace long error messages with short codes
-    results[RESULT] = replace_rows(results[RESULT], "ConnectTimeout", "408 Timeout")
-    # special code for SSO urls
-    results[RESULT] = replace_rows(
-        results[RESULT],
-        "https://padlock.idm.uab.edu",
-        "423 Locked",
-        find_in=results[URL_AFTER_REDIRECTION],
-    )
-
-    ### special url ignore rules
-    # doi.org always redirects, that's its purpose, so we ignore
-    results = drop_rows(
-        results,
-        URL_IN_MARKDOWN,
-        "https://doi.org",
-        if_result_code="300",
-    )
-    # if anaconda.org goes down we'll surely hear about it
-    results = drop_rows(
-        results,
-        URL_IN_MARKDOWN,
-        "https://anaconda.org",
-        if_result_code="403",
-    )
-    # UAB specific requiring login
-    results = drop_rows(
-        results,
-        URL_IN_MARKDOWN,
-        "https://idm.uab.edu/cgi-cas/xrmi/sites",
-        if_result_code="423",
-    )
-
-    ### modify file uris to improve readability
-    results[MARKDOWN_FILE] = modify_file_uris(results[MARKDOWN_FILE])
-
-    ### organize
-    results = results.sort_values(
-        by=[RESULT, URL_IN_MARKDOWN, MARKDOWN_FILE, LINE, COLUMN],
-    )
-
-    ### output
-    # csv
-    results.to_csv(LINKCHECKER_OUT_CSV, index=False)
-
-    # yml
-    records = results.to_dict(orient="records")
-    with Path(LINKCHECKER_OUT_YAML).open("w") as f:
-        yaml.safe_dump(records, f, sort_keys=False)
+    main()

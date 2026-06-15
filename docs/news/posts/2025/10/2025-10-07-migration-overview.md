@@ -153,13 +153,13 @@ Compute nodes are only able to run jobs from one of GPFS 4 or GPFS 5 so compute 
 
 **Current GPFS 5 Compute Capacity Pre-Migration**:
 
-| Partition | Available Nodes | Notes |
-|---|---|---|
-| mainline | 20 (2560 cores) | Include AMD CPUs. See the [list of changes](#changes-to-mainline-partitions) for details |
-| pascalnodes | 0 | All pascalnodes will be moved during the 1st compute migration |
-| amperenodes | 5 (10 A100s) | 10 amperenodes will be added during the 1st compute migration with the remaining 5 added once the migration completes |
-| amperenodes-medium | 1 (2 A100s) | Nodes will be added to the amperenodes-medium partition during both compute migrations |
-| largemem | 0 | largemem and largmem-long nodes will remain on GPFS 4 until the full migration completes. If you require access to the 1.5 TiB RAM nodes, contact support |
+| Partition          | Available Nodes | Notes                                                                                                                                                     |
+|--------------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| mainline           | 20 (2560 cores) | Include AMD CPUs. See the [list of changes](#changes-to-mainline-partitions) for details                                                                  |
+| pascalnodes        | 0               | All pascalnodes will be moved during the 1st compute migration                                                                                            |
+| amperenodes        | 5 (10 A100s)    | 10 amperenodes will be added during the 1st compute migration with the remaining 5 added once the migration completes                                     |
+| amperenodes-medium | 1 (2 A100s)     | Nodes will be added to the amperenodes-medium partition during both compute migrations                                                                    |
+| largemem           | 0               | largemem and largmem-long nodes will remain on GPFS 4 until the full migration completes. If you require access to the 1.5 TiB RAM nodes, contact support |
 
 #### Changes to Mainline Partitions
 
@@ -190,17 +190,17 @@ To best accomodate workload for both migrated and not-yet-migrated users, comput
 
 **50% Migration Completion**:
 
-| Partition | GPFS 4 Nodes | GPFS 5 Nodes | Notes |
-|---|---|---|---|
-| mainline | 25 | 68 | GPFS 4 mainline partitions will use the remaining largemem and amd-hdr100 nodes. Mixed Intel and AMD hardware on both GPFS 4 and GPFS 5 |
-| pascalnodes | 0 | 17 |  |
-| pascalnodes-medium | 0 | 8 |  |
-| amperenodes | 5 (10 A100s) | 15 (30 A100s) |  |
-| amperenodes-medium | 1 (2 A100s) | 7 (14 A100s) |  |
-| largemem | 13 | 0 | Shared with mainline partitions |
-| largemem-long | 5 | 0 | Shared with mainline partitions |
-| amd-hdr100 | 12 | 20 | Shared with mainline partitions |
-| intel-dcb | 9 | 0 |  |
+| Partition          | GPFS 4 Nodes | GPFS 5 Nodes  | Notes                                                                                                                                   |
+|--------------------|--------------|---------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| mainline           | 25           | 68            | GPFS 4 mainline partitions will use the remaining largemem and amd-hdr100 nodes. Mixed Intel and AMD hardware on both GPFS 4 and GPFS 5 |
+| pascalnodes        | 0            | 17            |                                                                                                                                         |
+| pascalnodes-medium | 0            | 8             |                                                                                                                                         |
+| amperenodes        | 5 (10 A100s) | 15 (30 A100s) |                                                                                                                                         |
+| amperenodes-medium | 1 (2 A100s)  | 7 (14 A100s)  |                                                                                                                                         |
+| largemem           | 13           | 0             | Shared with mainline partitions                                                                                                         |
+| largemem-long      | 5            | 0             | Shared with mainline partitions                                                                                                         |
+| amd-hdr100         | 12           | 20            | Shared with mainline partitions                                                                                                         |
+| intel-dcb          | 9            | 0             |                                                                                                                                         |
 
 #### Effects on Queue Times
 

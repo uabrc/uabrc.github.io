@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path, PurePath
-from typing import TYPE_CHECKING, Callable
+from typing import TYPE_CHECKING
 
 import yaml
 
@@ -13,6 +13,8 @@ from .card import CardNamespace
 from .render import CardRenderer
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
+
     from mkdocs.structure.pages import Page
     from mkdocs_macros.plugin import MacrosPlugin
 

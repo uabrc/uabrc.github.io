@@ -1,12 +1,24 @@
-exclude = ["test.py"]
 fix = true
 indent-width = 4
 line-length = 88
-required-version = "==0.12.0"
+required-version = ">=0.15.6"
 show-fixes = true
 
 [lint]
-select = ["ALL"]
+per-file-ignores = { "test/*" = [
+  "ANN201",
+  "ANN202",
+  "D101",
+  "D102",
+  "D100",
+  "PT",
+], "**/*.ipynb" = [
+  "T201",
+  "ANN401",
+], "**/__init__.py" = [
+  "D104",
+] }
+
 ignore = [
   "D203",   # prefer conflicting D211
   "D213",   # prefer conflicting D212
@@ -22,10 +34,7 @@ ignore = [
   "Q002",
   "Q003",   # END
 ]
-
-[lint.per-file-ignores]
-"build_scripts/*" = ["INP001"]
-"verification_scripts/*" = ["INP001"]
+select = ["ALL"]
 
 [format]
 indent-style = "space"
