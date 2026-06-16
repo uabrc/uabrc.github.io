@@ -21,9 +21,9 @@ When you have different types of data with varying storage needs, choosing the r
     - If you are new to Cheaha and working with small personal projects, you do not need a complex storage solution. [User Data](./cheaha_storage_gpfs/individual_directories.md#home-and-user-data-directories) is a simple and accessible option for beginners and smaller datasets.
     - If you find your project growing, or you need to collaborate with others at UAB, consider a shared allocation on [GPFS](./cheaha_storage_gpfs/index.md) and/or [LTS](./lts/index.md). Please refer to the instructions on [how to request a shared allocation](#how-do-i-request-shared-storage).
 - **I need somewhere to store lots of temporary files while I do my processing**:
-    - If you need a place to store large amounts of temporary data while processing data, [Network Scratch](./cheaha_storage_gpfs/network_scratch.md) is the best option.
+    - If you need a place to store large amounts of temporary data while processing data, [Network Scratch](./cheaha_storage_gpfs/network_scratch.md) is the best option. Network scratch is temporary storage. Files in network scratch are deleted when their creation time and last access time are both 90 or more days ago. Do not use network scratch for the only copy of important data or for long-term storage.
 - **I am working with high-throughput or I/O bound applications, like AI training or evaluation, or I have many very small files**:
-    - For high-performance tasks, like AI training, [Local Scratch](./cheaha_storage_gpfs/local_scratch.md) provides fast and optimized data access for intensive I/O workloads..
+    - For high-performance tasks, like AI training, [Local Scratch](./cheaha_storage_gpfs/local_scratch.md) provides fast and optimized data access for intensive I/O workloads. Local scratch is temporary node-local storage. Files in local scratch are subject to deletion at any time. Review and deletion are performed as needed when a compute node is experiencing performance degradation or when its local scratch partition is nearly full.
 - **I have a combination of needs and am unsure of how to proceed**:
     - If your use case spans across multiple types of storage needs, [Contact Us](../../help/support.md#how-to-request-support) to discuss your requirements, and we wll help you find the best solution.
 
