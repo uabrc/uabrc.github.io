@@ -80,4 +80,8 @@ pascalnodes
 Slurm
 UAB
 s3cmd
+<<<<<<< HEAD
+SAS
+=======
 tmp
+>>>>>>> main
