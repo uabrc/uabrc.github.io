@@ -210,6 +210,18 @@ The following software have license restrictions that may preclude some research
 
 Use of these software packages without authorization may be a violation of the [UAB IT Acceptable Use Policy](../../policies.md#acceptable-use-policy-aup).
 
+### Obtaining an Amber License
+
+Amber provides a free, non-commercial license for individuals through their site. This license authorizes access to all current and prior Amber versions regardless of whether those versions were released under this current license type. If you need access to Amber for any reason, please follow these instructions:
+
+1. Go to [Amber's site](https://ambermd.org/GetAmber.php) and scroll down to "Getting Amber26 for non-commercial use"
+1. Fill out your name and organization for a non-commercial license and click "Accept non-commercial license and download"
+1. A tar file will be downloaded. Decompress that tar file and find the **LICENSE_cmake_version** file in the following directory: "./pmemd26_src/cmake-packaging"
+    1. If you have trouble extracting the tar file on your local machine, you can download the tar file to Cheaha and run `tar xvfj pmemd26.tar.bz2`.
+1. Create a [Support](../../help/support.md) ticket requesting access to the Amber modules and attach the license file from the previous step.
+
+Once we've verified the license file, you will be given access to the Amber modules on Cheaha.
+
 ## Security Issues
 
 ### IGV
