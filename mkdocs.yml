@@ -158,6 +158,7 @@ nav:
           - account/rcs/index.md
           - Create: account/rcs/create.md
           - Status: account/rcs/status.md
+          - PI Onboarding: account/rcs/pi_onboarding.md
       - Code.rc (GitLab):
           - account/code.rc/index.md
           - Create: account/code.rc/create.md
