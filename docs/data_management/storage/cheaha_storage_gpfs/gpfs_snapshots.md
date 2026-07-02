@@ -7,7 +7,7 @@ How do you recover data that was deleted by mistake on the cluster? With our new
 Snapshots are read-only, point-in-time copies of your directories (`$HOME`, `/data/user`, `/data/project`, `/scratch`) that are created automatically.
 
 - Snapshots are created daily.
-- Retains approximately 14 days of history.
+- Retains the most recent 14 days and the past 4 Saturdays.
 - Snapshots for files from your `/home/$USER` are stored in the `/home/$USER/.snapshots` directory.
 - Snapshots for files stored in `/data/user/$USER` are located in a hidden directory within the `/data/user/$USER/.snapshots` directory.
 - Project directory Snapshots are located at `/data/project/<Project-Directory-Name>/.snapshots` within your project directory.
