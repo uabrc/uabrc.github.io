@@ -12,7 +12,7 @@ import subprocess
 import sys
 from pathlib import Path, PurePath
 
-import pandas as pd
+import polars as pl
 import yaml
 from attrs import define
 
@@ -46,14 +46,14 @@ def _get_linkchecker_path() -> PurePath:
 
 
 # PROCESS
-def _load_results(path: PurePath) -> pd.DataFrame:
+def _load_results(path: PurePath) -> pl.DataFrame:
     """Load the raw linkchecker output dataframe."""
-    raw_linkchecker_data = pd.read_csv(path)
+    raw_linkchecker_data = pl.read_csv(str(path))
     raw_linkchecker_data = raw_linkchecker_data[
         [RESULT, URLNAME, URL, PARENTNAME, LINE, COLUMN]
     ]
     return raw_linkchecker_data.rename(
-        columns={
+        mapping={
             URLNAME: URL_IN_MARKDOWN,
             URL: URL_AFTER_REDIRECTION,
             PARENTNAME: MARKDOWN_FILE,
@@ -61,12 +61,12 @@ def _load_results(path: PurePath) -> pd.DataFrame:
     )
 
 
-def _drop_ok_with_no_redirects(_df: pd.DataFrame) -> pd.DataFrame:
+def _drop_ok_with_no_redirects(_df: pl.DataFrame) -> pl.DataFrame:
     """Drop rows with OK code (200) if there is no redirection."""
     same_url = _df[URL_IN_MARKDOWN] == _df[URL_AFTER_REDIRECTION]
-    result_ok = _df[RESULT].str.startswith("200")
+    result_ok = _df[RESULT].str.starts_with("200")
     drop = same_url & result_ok
-    return _df[~drop]
+    return _df.filter(~drop)
 
 
 @define
@@ -103,41 +103,36 @@ def _read_special_cases() -> Cases:
     return Cases(drops, replaces)
 
 
-def _file_uris_to_paths(_s: pd.Series) -> pd.Series:
+def _file_uris_to_paths(_s: pl.Series) -> pl.Series:
     """Modify file URIs to a normalized format.
 
     Example:
     file:///D|/repos/uabrc.github.io/dir/file.md -> dir/file.md
 
     """
-    if _s.empty:
+    if _s.is_empty():
         return _s
 
-    keep = _s.str.startswith("file:") & _s.str.contains("repos/uabrc.github.io")
-    splits = _s.str.split("repos/uabrc.github.io", expand=True)
+    keep = _s.str.starts_with("file:") & _s.str.contains("repos/uabrc.github.io")
+    fixes = _s.str.splitn("repos/uabrc.github.io", n=2).struct[1]
+    fixes = fixes.str.strip_chars_start(os.sep)
 
-    fixes = splits.iloc[:, -1][keep]
-    fixes = fixes.apply(PurePath)  # type: ignore[reportCallIssue,reportArgumentType]
-    fixes = fixes.astype(str)
-    fixes = fixes.str.lstrip(os.sep)
-
-    out = _s.copy()
-    out[keep] = fixes
-    return out
+    out = _s.clone()
+    return out.to_frame().select(pl.when(keep).then(fixes).otherwise(out)).to_series()
 
 
-def _find_rows_containing(_s: pd.Series, _containing: str) -> pd.Series:
+def _find_rows_containing(_s: pl.Series, _containing: str) -> pl.Series:
     """Find rows containing the supplied string in the supplied series."""
     return _s.str.contains(_containing)
 
 
 def _replace_rows(
-    _s: pd.Series,
+    _s: pl.Series,
     _containing: str,
     _with: str,
     /,
-    find_in: pd.Series | None = None,
-) -> pd.Series:
+    find_in: pl.Series | None = None,
+) -> pl.Series:
     """Replace entries in series.
 
     If _containing is found in an entry, then the entry is replaced with _with.
@@ -147,18 +142,18 @@ def _replace_rows(
         find_in = _s
 
     contains = _find_rows_containing(find_in, _containing)
-    out = _s.copy()
+    out = _s.clone()
     out[contains] = _with
     return out
 
 
 def _drop_rows(
-    _df: pd.DataFrame,
+    _df: pl.DataFrame,
     _in: str,
     _containing: str,
     /,
     if_result_code: str | None = None,
-) -> pd.DataFrame:
+) -> pl.DataFrame:
     """Drop rows containing supplied string if found in _in column.
 
     Allows optional refinement conditional on result code.
@@ -169,17 +164,19 @@ def _drop_rows(
     if if_result_code is not None:
         contains &= _df[RESULT].str.contains(if_result_code)
 
-    return _df[~contains]
+    return _df.filter(~contains)
 
 
-def _handle_special_cases(results: pd.DataFrame) -> pd.DataFrame:
+def _handle_special_cases(results: pl.DataFrame) -> pl.DataFrame:
     cases = _read_special_cases()
     for replace in cases.replacements:
-        results[RESULT] = _replace_rows(
-            results[RESULT],
-            replace.find,
-            replace.replace,
-            find_in=results[replace.where],
+        results = results.with_columns(
+            _replace_rows(
+                results[RESULT],
+                replace.find,
+                replace.replace,
+                find_in=results[replace.where],
+            ).alias(RESULT),
         )
 
     for drop in cases.drops:
@@ -189,12 +186,12 @@ def _handle_special_cases(results: pd.DataFrame) -> pd.DataFrame:
 
 
 # WRITE
-def _to_csv(results: pd.DataFrame, path: PurePath) -> None:
-    results.to_csv(path, index=False)
+def _to_csv(results: pl.DataFrame, path: PurePath) -> None:
+    results.write_csv(str(path))
 
 
-def _to_yaml(results: pd.DataFrame, path: PurePath) -> None:
-    records = results.to_dict(orient="records") if not results.empty else ""
+def _to_yaml(results: pl.DataFrame, path: PurePath) -> None:
+    records = results.to_dicts() if not results.is_empty() else ""
     with Path(path).open("w") as f:
         yaml.safe_dump(records, f, sort_keys=False)
 
@@ -213,8 +210,10 @@ def main() -> None:
     # process
     results = _drop_ok_with_no_redirects(results)
     results = _handle_special_cases(results)
-    results[MARKDOWN_FILE] = _file_uris_to_paths(results[MARKDOWN_FILE])
-    results = results.sort_values(by=[RESULT, MARKDOWN_FILE, LINE, COLUMN])
+    results = results.with_columns(
+        _file_uris_to_paths(results[MARKDOWN_FILE]).alias(MARKDOWN_FILE),
+    )
+    results = results.sort(by=[RESULT, MARKDOWN_FILE, LINE, COLUMN])
 
     # write output
     _to_csv(results, output_path / "linkchecker-out.csv")
