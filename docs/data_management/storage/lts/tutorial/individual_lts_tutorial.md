@@ -1,6 +1,7 @@
 ---
 toc_depth: 3
 ---
+
 # Basic Workflow With Individual LTS and `s3cmd`
 
 In this tutorial, we will guide you through using `s3cmd` on the Cheaha system to effectively manage and interact with your individual LTS allocation. We will cover the installation and configuration of `s3cmd`, and demonstrate essential operations, including creating buckets, listing, copying, downloading, and deleting [buckets and objects](../index.md#terminology) in your LTS allocation. In addition, we will show you how to set and manage read and write access for other allocations to your LTS buckets and objects.
