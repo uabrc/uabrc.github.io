@@ -444,7 +444,7 @@ Relevant files:
 
 We are using [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) for markdown linting.
 
-To run this command in isolation, without `pre-commit`, takes additional setup. The command-line interface and engine are not available through Conda. Instead you will need the Node Package Manager on your system. See the repo referenced above for installation instructions.
+To run this command in isolation, without `pre-commit`, takes additional setup. The command-line interface and engine are not available through Conda. Instead you will need the Node Package Manager on your system. See the repo referenced above for installation instructions. We have a `package.json` in this repo with the version.
 
 Run `markdownlint-cli2 "**/*.md" "#node_modules" 2> markdownlint-cli2-out.log` and review the output.
 
@@ -452,6 +452,8 @@ Relevant files:
 
 - `.markdownlint-cli2.jsonc`
 - `.markdownlint.json`
+- `package-lock.json`
+- `package.json`
 
 #### Manual YAML Linting
 
