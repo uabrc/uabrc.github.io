@@ -244,6 +244,8 @@ Click "Delete Volume" again to delete the volume permanently.
 
 ## Deleting Data From Volume
 
+Data can be deleted from a volume at any time to free space within the VM filesystem. However, deleting files does not automatically reduce the physical storage consumed by the volume.
+
 All block storage volumes in Cloud.rc are thin provisioned. This means that the physical storage consumed by a volume depends on the amount of data written to it, not the provisioned volume size.
 
 For example, a 160 GB volume containing 5 GB of data consumes approximately 5 GB of physical storage. As additional data is written, more physical storage is allocated until the volume reaches its maximum provisioned size of 160 GB.
@@ -252,6 +254,6 @@ When data is deleted:
 
 - The VM operating system marks the deleted space as available.
 - The provisioned volume size remains unchanged.
-- Reclaiming the released space on the backend (TBD).
+- The backend storage used by the data in the volume is not automatically reclaimed.
 
-Therefore, deleting files does not automatically reduce the physical storage consumed by the volume. Filesystem usage provides an indication of the data stored on the volume and the required volume size.
+Therefore, deleting files does not automatically reduce the physical storage consumed by the volume.
