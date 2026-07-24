@@ -58,9 +58,9 @@ This user guide provides comprehensive insight into different types of batch job
 
 ### Example 1: A Simple Slurm Batch Job
 
-Let us start with a simple example to print `hostname` of the node where your job is submitted. You will have to request for the required resources to run your job using Slurm parameters (lines 5-10). To learn more about individual Slurm parameters given in the example, please refer to [Slurm flag and environment variables](../slurm/submitting_jobs.md#slurm-flags-and-environment-variables) and the official [Slurm documentation](https://slurm.schedmd.com/).
-o
-To test this example, copy the below script in a file named `hostname.job`. This job executes the `hostname` command (line 15) on a single node, using one task, one CPU core, 1 gigabyte of memory, with a time limit of 10 minutes. The output and error logs are directed to separate files with names based on their job name and ID (line 11 and 12). For a more detailed understanding of the individual parameters used in this script, please refer to the section on [Simple Batch Job](../slurm/submitting_jobs.md#a-simple-batch-job). The following script includes comments, marked with `###`, describing their functions. We will utilize this notation for annotating comments in subsequent examples.
+Let us start with a simple example to print `hostname` of the node where your job is submitted. In this script, the required resources are specified using Slurm directives (#SBATCH options). These include the job name, number of nodes and tasks, CPU and memory requirements, partition, and time limit. To learn more about individual Slurm parameters given in the example, please refer to [Slurm flag and environment variables](../slurm/submitting_jobs.md#slurm-flags-and-environment-variables) and the official [Slurm documentation](https://slurm.schedmd.com/).
+
+To test this example, copy the below script in a file named `hostname.job`. This job executes the `hostname` command on a single node, using one task, one CPU core, 1 gigabyte of memory, with a time limit of 10 minutes. The output and error logs are directed to separate files with names based on their job name and ID. Email notifications can be enabled to receive updates when a job starts, completes, fails, or reaches the requested time limit. For a more detailed understanding of the individual parameters used in this script, please refer to the section on [Simple Batch Job](../slurm/submitting_jobs.md#a-simple-batch-job). The following script includes comments, marked with `###`, describing their functions. We will utilize this notation for annotating comments in subsequent examples.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -75,6 +75,11 @@ To test this example, copy the below script in a file named `hostname.job`. This
 #SBATCH --time=00:10:00         ### Estimated Time of Completion, 10 minutes
 #SBATCH --output=%x_%j.out      ### Slurm Output file, %x is job name, %j is job id
 #SBATCH --error=%x_%j.err       ### Slurm Error file, %x is job name, %j is job id
+
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
 
 ### Running the command `hostname`
 hostname
@@ -131,6 +136,11 @@ This example illustrate a Slurm job that runs a Python script involving [NumPy](
 #SBATCH --output=%x_%j.out          ### Slurm Output file, %x is job name, %j is job id
 #SBATCH --error=%x_%j.err           ### Slurm Error file, %x is job name, %j is job id
 
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
+
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
 module load Anaconda3
 conda activate pytools-env
@@ -139,7 +149,7 @@ conda activate pytools-env
 python python_test.py
 ```
 
-The batch job requires an input file `python_test.py` (line 17) for execution. Copy the input file from the [Containers page](../../workflow_solutions/getting_containers.md#create-your-own-docker-container). Place this file in the same folder as the `numpy.job`. This python script performs numerical integration and data visualization tasks, and it relies on the following packages: numpy, matplotlib, scipy for successful execution. These dependencies can be installed using [Anaconda](../../workflow_solutions/using_anaconda.md) within a `conda` environment named `pytools-env`. Prior to running the script, load the `Anaconda3` module and activate the `pytools-env` environment (line 13 and 14). Once job is successfully completed, check the slurm output file for results. Additionally, a plot named `testing.png` will be generated.
+The batch job requires an input file `python_test.py` for execution. Copy the input file from the [Containers page](../../workflow_solutions/getting_containers.md#create-your-own-docker-container). Place this file in the same folder as the `numpy.job`. This python script performs numerical integration and data visualization tasks, and it relies on the following packages: numpy, matplotlib, scipy for successful execution. These dependencies can be installed using [Anaconda](../../workflow_solutions/using_anaconda.md) within a `conda` environment named `pytools-env`. Prior to running the script, load the `Anaconda3` module and activate the `pytools-env` environment. Once job is successfully completed, check the slurm output file for results. Additionally, a plot named `testing.png` will be generated.
 
 ```bash
 $ ls
@@ -173,7 +183,7 @@ $ sacct -j 26127143
 
 ### Example 3: Parallel Jobs
 
-Multiple jobs or tasks can be executed simultaneously using `srun` within a single batch script. In this example, the same executable `python_script_new.py` is run in parallel with distinct inputs (line 17-19). The `&` symbol at the end of each line run these commands in background. The `wait` command (line 20) performs synchronization and ensures that all background processes and parallel tasks are completed before finishing. In Line 4, three tasks are requested as there are three executables to be run in parallel. The overall job script is allocated with three CPUs, and in lines(17-19), each `srun` script utilizes 1 CPU to perform their respective task. Copy the batch script into a file named `multijob.job`. Use the same `conda` environment `pytools-env` shown in [example2](../slurm/slurm_tutorial.md#example-2-sequential-job).
+Multiple jobs or tasks can be executed simultaneously using `srun` within a single batch script. In this example, the same executable `python_script_new.py` is run in parallel with distinct inputs. The `&` symbol at the end of each line run these commands in background. The `wait` command performs synchronization and ensures that all background processes and parallel tasks are completed before finishing. Three tasks are requested as there are three executable commands to be run in parallel. The overall job script is allocated with three CPUs, each `srun` script utilizes 1 CPU to perform their respective task. Copy the batch script into a file named `multijob.job`. Use the same `conda` environment `pytools-env` shown in [example2](../slurm/slurm_tutorial.md#example-2-sequential-job).
 
 ```bash linenums="1"
 #!/bin/bash
@@ -186,6 +196,11 @@ Multiple jobs or tasks can be executed simultaneously using `srun` within a sing
 #SBATCH --time=01:00:00                 ### Estimated Time of Completion, 1 hour
 #SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id
 #SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id
+
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
 
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
 module load Anaconda3
@@ -201,6 +216,7 @@ wait
 Copy the following python script and call it as `python_script_new.py`. The input file takes two command-line arguments i.e. the `start` and `end` values. The script uses these values to creates an array and compute the sum of its elements using numpy. The above batch script runs three parallel instances of this Python script with different inputs.
 
 ```bash linenums="1"
+### File Name: python_script_new.py
 import sys
 import numpy as np
 
@@ -305,9 +321,9 @@ Now that the general environment setup is complete, the following sections will 
 
 #### Example 4.1: Running Parallel Python Tasks With Dynamic Input Ranges
 
-The following Slurm script is an example of how you might convert the previous [parallel job example](#example-3-parallel-jobs) script to an array job. To start, copy and save the below script to a file named, `slurm_array.job` within the `array_example` folder. The script requires the input file `python_script_new.py` and the `conda` environment `pytools-env`, similar to those used in [Sequential Job](../slurm/slurm_tutorial.md#example-2-sequential-job) and [Parallel Job](../slurm/slurm_tutorial.md#example-3-parallel-jobs). Line 11 specifies the script as an array job, treating each task within the array as an independent job. For each task, lines 20–21 calculate the input range. `SLURM_ARRAY_TASK_ID` identifies the specific task being executed and is automatically set by SLURM when the array job runs. Array indexes in SLURM are explicitly defined using the --array option (e.g., --array=0-2 in this script), and are typically zero-based unless you explicitly choose to start at 1.
+The following Slurm script is an example of how you might convert the previous [parallel job example](#example-3-parallel-jobs) script to an array job. To start, copy and save the below script to a file named, `slurm_array.job` within the `array_example` folder. The script requires the input file `python_script_new.py` and the `conda` environment `pytools-env`, similar to those used in [Sequential Job](../slurm/slurm_tutorial.md#example-2-sequential-job) and [Parallel Job](../slurm/slurm_tutorial.md#example-3-parallel-jobs). The script is configured as an Slurm array job, where each task in the array runs independently. The `SLURM_ARRAY_TASK_ID` identifies the specific task being executed and is automatically set by Slurm when the array job runs. Array indexes in Slurm are explicitly defined using the --array option (e.g., --array=0-2 in this script), and are typically zero-based unless you explicitly choose to start at 1.
 
-The python script (line 24) runs individual array task concurrently on respective input range. The command `awk` is used to prepend each output line with the unique task identifier and then append the results to the file, `output_all_tasks.txt`. For more details on on parameters of array jobs, please refer to [Batch Array Jobs](../slurm/submitting_jobs.md#batch-array-jobs-with-known-indices) and [Practical Batch Array Jobs](../slurm/practical_sbatch.md#).
+The python script runs individual array task concurrently on respective input range. The command `awk` is used to prepend each output line with the unique task identifier and then append the results to the file, `output_all_tasks.txt`. For more details on on parameters of array jobs, please refer to [Batch Array Jobs](../slurm/submitting_jobs.md#batch-array-jobs-with-known-indices) and [Practical Batch Array Jobs](../slurm/practical_sbatch.md#).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -329,6 +345,11 @@ The python script (line 24) runs individual array task concurrently on respectiv
 ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --error=logs/%x_%A_%a.err
 #SBATCH --array=0-2                  ### Array job with 3 tasks (indexed from 0 to 2)
+
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
 
 ### Loading Anaconda3 module to activate `pytools-env` conda environment
 module load Anaconda3
@@ -401,6 +422,11 @@ The following Slurm job script processes a text file line by line using an array
 ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --error=logs/%x_%A_%a.err
 
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
+
 ### Define the input file, for instance, random_file_2.txt
 INPUT_FILE="$HOME/array_example/input_files/random_file_2.txt"
 
@@ -459,6 +485,11 @@ This example job script performs the same function as the previous example [Line
 #SBATCH --output=logs/%x_%A_%a.out
 ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --error=logs/%x_%A_%a.err
+
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
 
 ### Define working directory
 WORKDIR="$HOME/array_example/input_files"
@@ -561,6 +592,11 @@ Copy the following Slurm array job script to a file naming `file_list_word_count
 ### Slurm Error file, %x is job name, %A is array job id, %a is array job index
 #SBATCH --error=logs/%x_%A_%a.err
 
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
+
 ### Define working directory
 WORKDIR="$HOME/array_example/input_files"
 FILELIST="file_list.txt"
@@ -603,7 +639,7 @@ The output generated will be similar to example [dynamic-word-count-multiple-fil
 
 ### Example 5: Multithreaded or Multicore Job
 
-This Slurm script illustrates execution of a MATLAB script in a multithread/multicore environemnt. Save the script as `multithread.job`. The `%` symbol in this script denotes comments within MATLAB code. Line 16 runs the MATLAB script `parfor_sum_array`, with an input array size `100` passed as argument, using 4 CPU cores (as specified in Line 5).
+This Slurm script illustrates execution of a MATLAB script in a multithread/multicore environemnt. Save the script as `multithread.job`. The `%` symbol in this script denotes comments within MATLAB code. The job then runs the MATLAB function `parfor_sum_array`, with an input array size `100`, utilizing 4 CPU cores as defined in the Slurm configuration.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -617,6 +653,11 @@ This Slurm script illustrates execution of a MATLAB script in a multithread/mult
 #SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id
 #SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id
 
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
+
 ### Loading required MATLAB module
 module load rc/matlab/R2023b
 
@@ -624,7 +665,7 @@ module load rc/matlab/R2023b
 matlab -nosplash -nodesktop -r "parfor_sum_array(100); quit;"
 ```
 
-Copy the below MATLAB script as `parfor_sum_array.m`. At the beginning, the script defines a function `sum_array` and variable `array_size` is passed as an input argument. This function uses multithreading with the `parfor` option to calculate the sum of elements in an array. On Line 10, the number of workers (`num_workers`) is set to the value of the environment variable `SLURM_CPUS_PER_TASK` i.e. 4. The script then creates a parallel pool using lines 13-17, utilizing the specified number of workers. The parallel computation of summing up of array elements is performed using a `parfor` loop in lines 23-27. By using `parfor` with a pool of workers, operations are run in parallel for improved performance. More insights on usage of `parfor` can be found in the official [MATLAB page](https://www.mathworks.com/help/matlab/ref/parfor.html).
+Copy the below MATLAB script as `parfor_sum_array.m`. At the beginning, the script defines a function `sum_array` and variable `array_size` is passed as an input argument. This function uses multithreading with the `parfor` option to calculate the sum of elements in an array. The number of workers (`num_workers`) is set to the value of the environment variable `SLURM_CPUS_PER_TASK` i.e. 4. The script then creates a parallel pool, utilizing the specified number of workers. The parallel computation of summing up of array elements is performed using a `parfor` loop. By using `parfor` with a pool of workers, operations are run in parallel for improved performance. More insights on usage of `parfor` can be found in the official [MATLAB page](https://www.mathworks.com/help/matlab/ref/parfor.html).
 
 <!-- markdownlint-disable MD046 -->
 !!! important
@@ -792,7 +833,7 @@ conda activate tensorflow
 
 #### Example 6a: Single GPU Job
 
-The following slurm script can be used to run our script with a single GPU. The Slurm parameter `--gres=gpu:1` in line 6 requests the GPU. In line 8, note that in order to run GPU-based jobs, either the `amperenodes` or `pascalnodes` partition must be used (please refer to our [GPU page](../slurm/gpu.md) for more information). Lines 14-15 load the necessary modules, while lines 18-19 load the Anaconda module and activate a Conda environment called `tensorflow`.The last line executes the python script from the introduction.
+The following slurm script can be used to run our script with a single GPU. The Slurm parameter `--gres=gpu:1` requests the GPU. Note that in order to run GPU-based jobs, either the `amperenodes` or `pascalnodes` partition must be used (please refer to our [GPU page](../slurm/gpu.md) for more information). The required modules are loaded first, followed by the Anaconda module and activation of the Conda environment named `tensorflow`. Finally, the Python script from the introduction is executed within this environment.
 
 As before, copy this script to a new file `gpu-single.job`.
 
@@ -810,6 +851,11 @@ As before, copy this script to a new file `gpu-single.job`.
 # Slurm Output and Error files, %x is job name, %j is job id
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
+
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
 
 ### Loading the required CUDA and cuDNN modules
 module load CUDA/12.2.0
@@ -870,6 +916,10 @@ Let us save this script as `gpu-multiple.job`.
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
 
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
 ### Loading the required CUDA and cuDNN modules
 module load CUDA/12.2.0
 module load cuDNN/8.9.2.26-CUDA-12.2.0
@@ -916,7 +966,7 @@ $ sacct -j 27107694 --format=JobID,JobName,Partition,Account,AllocCPUS,allocgres
 
 ### Example 7: Multinode Jobs
 
-The below Slurm script runs a Quantum Expresso job using the `pw.x` executable on multiple nodes. In this example, we request for 2 nodes on `amd-hdr100` partition in lines 4 and 7. The suitable Quantum Expresso module is loaded in line 13. The last line is configured for a parallel computation of Quantum Expresso simulation across 2 nodes `N 2` and 4 MPI processes `-nk 4` for the input parameters in `pw.scf.silicon.in`. The input file `pw.scf.silicon.in` and psuedo potential file is taken from the [github page](https://pranabdas.github.io/espresso/hands-on/scf/). However this input is subject to change, hence according to your use case you can change the inputs.
+The below Slurm script runs a Quantum Expresso job using the `pw.x` executable on multiple nodes. In this example, we request for 2 nodes on `amd-hdr100` partition, and the suitable Quantum Expresso module is loaded. The execution script is configured for a parallel computation of Quantum Expresso simulation across 2 nodes `N 2` and 4 MPI processes `-nk 4` for the input parameters in `pw.scf.silicon.in`. The input file `pw.scf.silicon.in` and psuedo potential file is taken from the [github page](https://pranabdas.github.io/espresso/hands-on/scf/). However this input is subject to change, hence according to your use case you can change the inputs.
 
 ```bash linenums="1"
 #!/bin/bash
@@ -929,6 +979,11 @@ The below Slurm script runs a Quantum Expresso job using the `pw.x` executable o
 #SBATCH --time=12:00:00                 ### Estimated Time of Completion, 12 hour
 #SBATCH --output=%x_%j.out              ### Slurm Output file, %x is job name, %j is job id
 #SBATCH --error=%x_%j.err               ### Slurm Error file, %x is job name, %j is job id
+
+### Optional: Email notifications for job status updates
+### Sends email when the job begins, ends, fails, or hits the time limit
+#SBATCH --mail-user=myemail@example.com
+#SBATCH --mail-type=ALL
 
 ### Load the suitable Quantum Expresso module
 module load QuantumESPRESSO/6.3-foss-2018b

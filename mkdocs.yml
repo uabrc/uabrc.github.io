@@ -23,7 +23,7 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
 
-copyright: Copyright &copy; 2021-2024 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
+copyright: Copyright &copy; 2021-2024 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <ahref="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
 
 markdown_extensions:
   - admonition
@@ -184,6 +184,7 @@ nav:
               - Project Directories: data_management/storage/cheaha_storage_gpfs/project_directories.md
               - Network Scratch: data_management/storage/cheaha_storage_gpfs/network_scratch.md
               - Local Scratch: data_management/storage/cheaha_storage_gpfs/local_scratch.md
+              - GPFS Snapshots: data_management/storage/cheaha_storage_gpfs/gpfs_snapshots.md
               - Temporary Files (/tmp/ Directory): data_management/storage/cheaha_storage_gpfs/temporary_files.md
           - Long Term Storage:
               - data_management/storage/lts/index.md
