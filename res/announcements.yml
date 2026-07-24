@@ -1,6 +1,19 @@
 announcements:
-# Add announcements like the example. You can have multiple announcements.
-# Copy-paste the example announcement under this key for each announcement.
+  # Add announcements like the example. You can have multiple announcements.
+  # Copy-paste the example announcement under this key for each announcement.
+  - title: Code.rc (GitLab) DoS, access restricted to campus network and VPN
+    content: |
+      [Code.rc (on-premises GitLab)](https://code.rc.uab.edu/) is experiencing
+      intermittent denial of service (DoS).
+
+      To prevent the impact of DoS, we have configured GitLab to be accessible only
+      from the UAB Campus Network. If you are working off campus and need access, you
+      will need to use the [UAB
+      VPN](https://www.uab.edu/it/home/tech-solutions/network/vpn).
+
+      We are investigating options to restore performance and access. We believe the
+      DoS is unintentional and caused by web crawlers accessing public repositories.
+    posted_date: 2026-07-24
 
 no_announcements: '!!! info "Look for future announcements here."'
 
