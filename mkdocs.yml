@@ -158,7 +158,6 @@ nav:
           - account/rcs/index.md
           - Create: account/rcs/create.md
           - Status: account/rcs/status.md
-          - PI Onboarding: account/rcs/pi_onboarding.md
       - Code.rc (GitLab):
           - account/code.rc/index.md
           - Create: account/code.rc/create.md
@@ -169,6 +168,7 @@ nav:
           - 2. Sponsor — Manage Users: account/xias/2_sponsor_manage_users.md
           - 3. Guests — Create XIAS Account: account/xias/3_guest_create_xias_account.md
           - 4. Guests — Create RCS Account: account/xias/4_guest_create_rcs_account.md
+      - Onboarding: account/rcs/onboarding.md
       - Your Responsibilities: account/responsibilities.md
       - Leaving UAB:
           - account/leaving/index.md
