@@ -34,7 +34,7 @@ Everyone is responsible for managing their own keys and ensuring they use the co
 
 If you have lost your LTS keys, you can request a reset by creating a support ticket via [Contact Us](../../../index.md#how-to-contact-us). Please include your BlazerID and specify the LTS allocation (individual and/or shared) for which you need the key reset, so we can process your request accordingly. Then you will receive an email with a link to a UAB Box text file containing the corresponding keys (access key and secret key).
 
-If you, as a Lab/Core PI, do not wish to manage the LTS space yourself, we recommend assigning data Steward permissions to someone who is both trustworthy and has knowledge of, or willingness to learn, [JSON](https://docs.fileformat.com/web/json/#google_vignette) and parts of the [Amazon AWS S3 API](https://docs.aws.amazon.com/AmazonS3/latest/API/Type_API_Reference.html). If you need help or have concerns about making this decision, please [Contact Us](../../../index.md#how-to-contact-us).
+If you, as a Lab/Core PI, do not wish to manage the LTS space yourself, we recommend assigning data Steward permissions to someone who is both trustworthy and has knowledge of, or willingness to learn, [JSON](https://docs.fileformat.com/web/json/#google_vignette) and parts of the [Amazon AWS S3 API](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Types.html). If you need help or have concerns about making this decision, please [Contact Us](../../../index.md#how-to-contact-us).
 
 ## IAM Names
 

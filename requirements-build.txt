@@ -4,13 +4,13 @@ markdown==3.10.2
 markupsafe==3.0.3  # not semver, be cautious
 mkdocs-gen-files==0.6.1
 mkdocs-glightbox==0.5.2
-mkdocs-git-revision-date-localized-plugin==1.5.1
+mkdocs-git-revision-date-localized-plugin==1.5.3
+mkdocs-macros-plugin==1.5.0
 mkdocs-material==9.7.5
-mkdocs-redirects==1.2.2
+mkdocs-redirects==1.2.3
 mkdocs-table-reader-plugin==3.1.0
-pymdown-extensions==10.21.2
+pymdown-extensions==10.21.3  # 11.0 has a breaking change needing review
 pypandoc-binary==1.17
 pyyaml==6.0.3
-git+https://github.com/wwarriner/mkdocs-macros-plugin@d445c98dcc14ecae48ddf53b4758f3942ed706b8
 git+https://github.com/uabrc/mkdocs@888fd28f92a320352f63600c24635231a42e5fac
 git+https://github.com/uabrc/mkdocs-title-casing-plugin.git@stable

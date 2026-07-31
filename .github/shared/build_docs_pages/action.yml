@@ -6,12 +6,17 @@ description: Build Docs Pages for mkdocs workflows.
 runs:
   using: composite
   steps:
-    - uses: conda-incubator/setup-miniconda@fc2d68f6413eb2d87b895e92f8584b5b94a10167 # 3.3.0
+    - uses: conda-incubator/setup-miniconda@8ee1f361103df19b6f8c8655fd3967a8ecb162d5 # 4.0.1
       with:
         environment-file: env_build.yml
         activate-environment: mkdocs-build
-        miniforge-version: latest
+        miniforge-version: 26.3.2-3
+        run-init: false
+        remove-profiles: false
 
     - name: Build Pages # this is both a build and check step
-      run: mkdocs build --strict
-      shell: bash -l {0} # must have -l because conda requires login shell to function in subsequent steps
+      shell: bash
+      run: |
+        source "$CONDA/etc/profile.d/conda.sh"
+        conda activate mkdocs-build
+        mkdocs build --strict

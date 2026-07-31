@@ -4,7 +4,7 @@
     "DavidAnson.vscode-markdownlint",
     "ms-python.python",
     "redhat.vscode-yaml",
-    "samuelcolvin.jinjahtml",
+    "hongquan.dragon-jinja",
     "tamasfe.even-better-toml",
     "yzhang.markdown-all-in-one",
   ]

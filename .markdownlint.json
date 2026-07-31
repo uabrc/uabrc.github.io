@@ -28,6 +28,7 @@
   "MD020": true,
   "MD021": true,
   "MD022": {
+    "include_front_matter": true,
     "lines_above": 1,
     "lines_below": 1
   },
