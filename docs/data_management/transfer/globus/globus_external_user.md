@@ -16,8 +16,27 @@ If the collaborator's institution participates in Globus and has an approved ide
 
 ### Option 2: OAuth Identity Providers
 
-Collaborators may authenticate using supported Open Authentication (OAuth) providers, including:
+Globus uses OpenID Connect (OIDC) and OAuth 2.0 to provide secure authentication through trusted identity providers. Instead of creating a separate Globus username and password, you sign in using an existing identity, such as your university account, Google account, GitHub account, or another supported provider. This approach allows users to securely access Globus services while their credentials remain managed by their chosen identity provider. Collaborators may authenticate using supported Open Authentication (OAuth) providers, including:
 
 - Google
 - GitHub
 - ORCID
+
+![Screenshot of Chosing Desired Open Authentication Providers](../images/gg-external-user/open_authentication.png)
+
+#### Google
+
+If your institution or organization is not listed as a Globus identity provider, or if you prefer using a personal account, you can sign in to Globus with your Google account. Globus supports Google authentication, allowing external users to securely access shared collections and transfer data.
+
+![Screenshot of Chosing Google Authentication for Login](../images/gg-external-user/google_authentication.png)
+
+On the Globus login page:
+
+- Under Use your organizational login, select Google from the drop-down menu.
+Click Continue.
+- You will be redirected to the Google sign-in page to authenticate with your Google account.
+- After successful authentication, you will be returned to Globus to continue accessing shared resources.
+
+#### Globus ID
+
+![Screenshot of Chosing Globus ID for Login](../images/gg-external-user/Globus_id.png)
