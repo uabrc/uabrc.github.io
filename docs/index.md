@@ -12,27 +12,25 @@ The Research Computing System (RCS) provides a framework for sharing research da
     {{ announcement.content | indent(4) }}
     <hr>
     <div class="dates">
+        {%- if "start_date" in announcement %}
         <div class="effective-dates">
             **Effective:**
-            {%- if announcement.start_date %}
             {{ announcement.start_date }}
-            {% endif -%}
-            {%- if announcement.start_date and announcement.end_date -%}
+            {%- if "end_date" in announcement -%}
             —
-            {%- endif -%}
-            {%- if announcement.end_date %}
             {{ announcement.end_date }}
             {% endif -%}
         </div>
+        {% endif -%}
         <div class="posted-date">
             _Posted: {{ announcement.posted_date }}_
         </div>
     </div>
 {% else %}
-    {{ no_announcements }}
+    {{- no_announcements }}
 {% endfor %}
 {% else %}
-    {{ no_announcements }}
+    {{- no_announcements }}
 {% endif %}
 <!-- markdownlint-enable no-inline-html -->
 <!-- markdownlint-enable MD046 -->

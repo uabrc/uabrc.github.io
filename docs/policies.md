@@ -18,22 +18,22 @@ The list of policies below are those that may be most relevant to typical use ca
 
 ### AI Usage Guidelines for IDEs and Cloud Services
 
-All use of AI-powered tools, whether inside IDEs or via web interfaces, must comply with UAB’s [AI Guidelines](https://www.uab.edu/ai/guidelines-principles/generative-ai-and-uab-policy) and other [IT Policies](https://www.uab.edu/ai/guidelines-principles).
+All use of AI-powered tools, whether inside IDEs or via web interfaces, must comply with UAB’s [Responsible AI Use page](https://www.uab.edu/ai/responsible-ai).
 
-Do not use any cloud-based AI service (where data is sent to external servers) with sensitive or restricted data unless you’ve received formal approval.
+#### What AI Tools Can I Use on UAB Systems?
 
-Examples of prohibited services without approval include:
-    - Web Chat AI Tools: [ChatGPT](https://chatgpt.com), [Gemini](https://gemini.google.com), [Claude](https://claude.ai/login), [Grok](https://grok.com), [DeepSeek](https://www.deepseek.com).
-    - IDE Extensions and AI Assistants: [Cursor](https://cursor.com), [Cline](https://cline.bot), [Windsurf](https://windsurf.com), [Trae](https://www.trae.ai).
-
-To request approval for AI usage in your project, complete the [UAB IT AI Request Form](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=421769291b8502506bd68552604bcba5).
+Only AI tools listed at the [UAB AI Tools page](https://www.uab.edu/ai/tools) are permitted for use with UAB systems. **Important Note** the page has incorrect information about local LLMs as of 2026-07-01. Local LLMs are not permitted for use on UAB systems without [Prior Approval](#how-can-i-get-approval-for-my-ai-tools), including Cloud.rc.
 
 The following AI tools are permitted for use with UAB Single Sign-On (SSO) credentials, as they offer enterprise-grade protections for institutional data:
     - [Copilot Web](https://copilot.microsoft.com/)
     - Copilot 365 in Office 365. Requires a paid subscription see relevant [section](https://www.uab.edu/it/home/tech-solutions/ai/copilot-365)
 
 <!-- markdownlint-disable MD046 -->
-!!! note
+!!! danger
 
-    GitHub Copilot is currently not approved for use on Cheaha.
+    AI Tools can consume significant resources and pose serious security risks. To ensure fairness, all unapproved use of AI Tools on RC platforms will be halted, when discovered, without warning.
 <!-- markdownlint-enable MD046 -->
+
+#### How Can I Get Approval for My AI Tools?
+
+To request approval for AI usage in your project, complete the [UAB IT AI Request Form](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=421769291b8502506bd68552604bcba5).

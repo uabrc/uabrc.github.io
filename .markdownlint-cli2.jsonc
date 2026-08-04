@@ -1,6 +1,10 @@
 {
   "fix": false,
+  "globs": [
+    "**/*.md"
+  ],
   "ignores": [
-    "theme/"
+    "theme/",
+    "node_modules/"
   ]
 }

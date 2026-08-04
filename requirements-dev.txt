@@ -1,6 +1,6 @@
-attrs==25.4.0
+attrs==26.1.0
 linkchecker==10.6.0
-pandas==2.3.3
-pre-commit==4.5.1
-ruff==0.15.6
+polars==1.42.1
+pre-commit==4.6.0
+ruff==0.15.20
 yamllint==1.38.0

@@ -263,13 +263,13 @@ Dynamic web pages may be served from OpenStack instances. Doing so requires the 
 
 #### HTTPS and Web Page Applications Require an SSL Certificate
 
-If your application serves a web page over HTTPS, you will need to obtain an SSL Certificate. UAB IT provides this service at no additional cost. To obtain a certificate, please visit the [UAB IT SSL Server Certificate service page](https://uabprod.service-now.com/service_portal?id=sc_cat_item&sys_id=500f425737109b0024a67c1643990e80) and follow the instructions there.
+If your application serves a web page over HTTPS, you will need to obtain an SSL Certificate. UAB IT provides this service. To obtain a certificate, please visit the [UAB IT InCommon SSL Certificate Requests page](https://uabprod.service-now.com/service_portal?id=kb_article_view&sysparm_article=KB0014770) and follow the instructions there.
 
 #### Custom Domains for HTTPS and Web Page Applications
 
 For applications serving a web pages over HTTPS, it is possible to request a custom domain name like "department.uab.edu". This type of domain name is called a third-level domain, and there is a one-time fee charged by UAB IT to set this up. Once the third-level domain is set up, fourth-level domains like "group.department.uab.edu" may be set up at no additional cost.
 
-To learn more about setting up a third-level domain, please have your department's IT Network Contact visit the [ServiceNow Knowledge Base Article](https://uabprod.service-now.com/service_portal?sys_kb_id=b0a8301637ff8200daa253b543990e5e&id=kb_article_view&sysparm_rank=2&sysparm_tsqueryId=0d90b0aa97240e100917316bf253af4e).
+To learn more about setting up a custom domain, please visit the [Domain Name Registrations page](https://www.uab.edu/marcomm/services/web/domain-name-registrations).
 
 <!-- markdownlint-disable MD046 -->
 !!! note

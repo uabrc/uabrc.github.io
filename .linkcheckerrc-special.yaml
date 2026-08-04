@@ -8,3 +8,4 @@ replace:
   200 OK: [300 Redirect, result]
   ConnectTimeout: [408 Timeout, result]
   https://padlock.idm.uab.edu: [423 Locked, url-after-redirection]
+  ConnectionError: [503 Service Unavailable, result]
