@@ -65,6 +65,7 @@ plugins: # order matters!
         - Maintenance
         - Outreach
         - Releases
+        - Security Issues
         - Survey
   - gen-files:
       scripts:
