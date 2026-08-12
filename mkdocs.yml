@@ -269,9 +269,7 @@ nav:
       - NSF Cyberinfrastructure: national_ci/nsf_access.md
       - NIH Cyberinfrastructure: national_ci/nih.md
   - Grants & Contracts:
-      - RC Facilities Description: grants/facilities.md
-      - Acknowledging Us in Publications: grants/publications.md
-      - Funding Opportunities: grants/opportunities.md
+      - grants/index.md
   - Outreach & Training:
       - Case Studies: education/case_studies.md
       - Research Computing Courses: education/courses.md
