@@ -25,16 +25,17 @@ If your life and career plans take you away from UAB, then this article is desig
 
     ## Final Checklist
 
-    - [ ] Notify supervisor/sponsor
-    - [ ] Transfer required data and personal files
+    - Notify supervisor/sponsor
+    - Make sure you copied required data and personal files
+    - Review the [What is Next step](#what-are-my-next-steps) section and choose the option that best matches your next situation.
 
 === "Research Faculty Supervisor | Core Director"
 
     ## Before You Leave
 
-    - Notify your supervisor/sponsor.
     - Complete required project handover.
     - Copy or transfer any required files.
+    - Review the [What is Next step](#what-are-my-next-steps) section and choose the option that best matches your next situation.
 
     ## RCS Accounts
 
@@ -48,13 +49,8 @@ If your life and career plans take you away from UAB, then this article is desig
 
     ## Projects and Resources
 
-    - Review my Responsibilities for [Lab Shared Allocations](./final_steps.md#what-are-my-responsibilities-for-lab-shared-allocations) and [Core Shared Allocations](./final_steps.md#what-are-my-responsibilities-for-lab-shared-allocations) .
-    - Close completed projects.
+    - Review my Responsibilities for [Lab Shared Allocations](./final_steps.md#what-are-my-responsibilities-for-lab-shared-allocations) and [Core Shared Allocations](./final_steps.md#what-are-my-responsibilities-for-lab-shared-allocations).
 
-    ## Final Checklist
-
-    - [ ] Data transfer completed
-    - [ ] --
 <!-- markdownlint-enable MD046 -->
 All [research data](#what-is-research-data) produced as part of UAB research operations is owned by UAB. Funding agencies (e.g., NIH, NSF) often have strict data retention and sharing regulations. Transferring UAB-owned and/or agency funded data requires involvement of the [Office of Sponsored Programs (OSP)](https://www.uab.edu/research/home/osp-about/contact).
 
