@@ -11,7 +11,7 @@ These instructions are intended for researchers who want to setup a persistent v
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Virtual machines are disposable! If you get stuck at any point, or things don't seem like they're working as expected, etc., feel free to delete the instance and start over.
+    Virtual Machine (VM) are disposable! If you get stuck at any point, or things don't seem like they're working as expected, etc., feel free to delete the instance and start over.
 <!-- markdownlint-enable MD046 -->
 
 ## Creating a Volume
@@ -242,9 +242,9 @@ Click "Delete Volume" again to delete the volume permanently.
     It will not be possible to delete a volume if it has an associated [volume snapshot](../snapshots.md). The snapshot will need to be deleted first.
 <!-- markdownlint-enable MD046 -->
 
-## Deleting Data From Volume
+## Deleting Data From a Volume
 
-Data can be deleted from a volume at any time to free space within the VM filesystem. However, deleting files does not automatically reduce the physical storage consumed by the volume.
+Data can be deleted from a volume at any time to free space within the Virtual Machine (VM) filesystem. However, deleting files does not automatically reduce the physical storage consumed by the volume.
 
 All block storage volumes in Cloud.rc are thin provisioned. This means that the physical storage consumed by a volume depends on the amount of data written to it, not the provisioned volume size.
 
