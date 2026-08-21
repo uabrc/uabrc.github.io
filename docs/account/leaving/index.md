@@ -2,7 +2,7 @@
 
 {% from "_macro/support.md.j2" import contact_support_link %}
 
-If your life and career plans take you away from UAB, then this article is designed to help you. We hope to give you a better understanding of expectations and responsibilities for your account and data, as well as the required action plans based on your role.
+If you are departing UAB, then this article is designed to help you. We hope to give you a better understanding of expectations and responsibilities for your account and data, as well as the required action plans based on your role.
 
 <!-- markdownlint-disable MD046 -->
 === "Student | Staff | XIAS Guest"
