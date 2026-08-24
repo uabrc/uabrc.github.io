@@ -8,7 +8,7 @@ Additionally, many third-party services require users to accept Terms of Use or 
 
 ## Globus Access Options
 
-External collaborators who need access to Globus should use one of the following authentication methods. UAB-affiliated users should continue using their BlazerID credentials.
+External collaborators who need access to Globus should use one of the following authentication methods. UAB-affiliated users should continue using their BlazerID credentials. For instructions on getting started with Globus, see [Getting Started with Globus].
 
 ### Option 1: Institutional Credentials
 
@@ -30,13 +30,18 @@ If your institution or organization is not listed as a Globus identity provider,
 
 ![Screenshot of Chosing Google Authentication for Login](../images/gg-external-user/google_authentication.png)
 
-On the Globus login page:
+On the Globus login page,
 
-- Under Use your organizational login, select Google from the drop-down menu.
-Click Continue.
-- You will be redirected to the Google sign-in page to authenticate with your Google account.
-- After successful authentication, you will be returned to Globus to continue accessing shared resources.
+1. Use your browser to navigate to [Globus Login Page](https://app.globus.org). You should see a login page similar to the one shown below. Click "LOG IN".
+1. After clicking "LOG IN", the organization search page will appear, as shown below.
+1. Under Use your organizational login, select Google from the drop-down menu. Then, Click Continue.
+1. You will be redirected to the Google sign-in page to authenticate with your Google account.
+1. After successful authentication, you will be returned to Globus to continue accessing shared resources.
+
+If you want to move data to or from your own computer, you will need to install Globus Connect Personal. The [Install Globus Connect Personal](../globus/gcp_install.md) and [Set Up Globus Connect Personal](../globus/gcp_setup.md) walk you through that process. Please note that the owner identity will be based on the Open Authentication you chose.
 
 #### Globus ID
 
 ![Screenshot of Chosing Globus ID for Login](../images/gg-external-user/Globus_id.png)
+
+To access files shared by a UAB collaborator, please ask your UAB collaborator to follow the instructions in [How do I share a collection with others?](../globus/globus_organization_tutorial.md/#how-do-i-share-a-collection-with-others). External collaborator can also share your files with a UAB collaborator using the same process, provided the environment where your data is hosted is accessible through Globus. The data storage environment must have a Globus endpoint configured to enable file transfers.
