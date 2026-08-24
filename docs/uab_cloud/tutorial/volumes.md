@@ -11,7 +11,7 @@ These instructions are intended for researchers who want to setup a persistent v
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Virtual Machine (VM) are disposable! If you get stuck at any point, or things don't seem like they're working as expected, etc., feel free to delete the instance and start over.
+    Virtual Machines (VM) are disposable! If you get stuck at any point, or things don't seem like they're working as expected, etc., feel free to delete the instance and start over.
 <!-- markdownlint-enable MD046 -->
 
 ## Creating a Volume
