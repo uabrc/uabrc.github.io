@@ -244,7 +244,7 @@ Click "Delete Volume" again to delete the volume permanently.
 
 ## Deleting Data From a Volume
 
-Data can be deleted from a volume at any time to free space within the Virtual Machine (VM) filesystem. However, deleting files does not automatically reduce the physical storage consumed by the volume.
+Data can be deleted from a volume at any time to free space within the VM filesystem. However, deleting files does not automatically reduce the physical storage consumed by the volume.
 
 All block storage volumes in Cloud.rc are thin provisioned. This means that the physical storage consumed by a volume depends on the amount of data written to it, not the provisioned volume size.
 
