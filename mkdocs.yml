@@ -128,6 +128,8 @@ plugins: # order matters!
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/git_collaboration.md
+        grants/opportunities.md: grants/index.md#funding-opportunities
+        grants/publications.md: grants/index.md#acknowledgement-in-publications
         uab_cloud/cloud_remote_access.md: uab_cloud/remote_access.md
         uab_cloud/instance_setup_basic.md: uab_cloud/tutorial/instances.md
         uab_cloud/introduction.md: uab_cloud/index.md
