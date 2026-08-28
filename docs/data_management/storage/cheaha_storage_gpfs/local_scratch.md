@@ -17,7 +17,7 @@ If you are using `amperenodes` and the A100 GPUs, then you should use local scra
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Be sure to clean up `/local/$USER/$SLURM_JOB_ID` after your job is complete!
+Be sure to clean up `/local/$USER/$SLURM_JOB_ID` after your job is complete. Files in local scratch are subject to deletion at any time and should not be used for persistent storage.
 <!-- markdownlint-enable MD046 -->
 
 An example script to automate this process is shown below. This example shows how you can wrap your workflow with deployment and cleanup of local scratch. The following sample script only applies if you are running a small number of jobs (less than one hundred). If you need to run many jobs all using the same data, such as with a large array using the `--array` flag, please [contact us](../../../help/support.md) about preloading the data onto your desired nodes. This will avoid the per-job overhead of copying and deleting files.
@@ -70,3 +70,7 @@ Be sure that your files will fit in `/local/` before starting. You can determine
 ## What if I Have a Large Amount of Data for Local Scratch?
 
 If you have a large amount of data but each job takes very little time to run, performance can be further improved by avoiding frequent data copies and deletions. In these cases, preloading the data onto local scratch only once and then reusing it makes more sense. If this is the case for you, or you think you might benefit, please [Contact Us](../../../help/support.md) and we can discuss creating a temporary node reservation to allow one-time data preloading.
+
+## Local Scratch Data Retention Policy
+
+Files in [local scratch](#local-scratch) are subject to deletion at any time. Review and deletion are performed on an as-needed basis for compute nodes that are experiencing performance degradation or when their local scratch partition is nearly full. The purpose of this policy is to ensure local scratch and compute nodes remain performant and available for all researchers using the Cheaha platform. Local scratch is temporary, node-local storage. It is not intended for long-term storage, shared project data, or the only copy of important data. Copy any data that must be retained back to an appropriate persistent storage location, such as `/data/project/<project>`, `/data/user/$USER`, or Long-Term Storage (LTS), before the job ends.
