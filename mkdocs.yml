@@ -128,6 +128,9 @@ plugins: # order matters!
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/git_collaboration.md
+        grants/facilities.md: grants/index.md#uab-it-research-computing-uabrc-resources-and-cybersecurity-facilities-document
+        grants/opportunities.md: grants/index.md#funding-opportunities
+        grants/publications.md: grants/index.md#acknowledgement-in-publications
         uab_cloud/cloud_remote_access.md: uab_cloud/remote_access.md
         uab_cloud/instance_setup_basic.md: uab_cloud/tutorial/instances.md
         uab_cloud/introduction.md: uab_cloud/index.md
@@ -270,9 +273,7 @@ nav:
       - NSF Cyberinfrastructure: national_ci/nsf_access.md
       - NIH Cyberinfrastructure: national_ci/nih.md
   - Grants & Contracts:
-      - RC Facilities Description: grants/facilities.md
-      - Acknowledging Us in Publications: grants/publications.md
-      - Funding Opportunities: grants/opportunities.md
+      - grants/index.md
   - Outreach & Training:
       - Case Studies: education/case_studies.md
       - Research Computing Courses: education/courses.md
