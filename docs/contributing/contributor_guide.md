@@ -128,7 +128,7 @@ Style is not automated at this time as the cost is greater than the benefit. Ent
 - `plugins:`
 - `plugins: redirects: redirect-maps:`
 
-#### `build_env.yml`
+#### `env_build.yml`
 
 Style is not automated at this time as the cost is greater than the benefit. Entires in the following keys should be sorted alphabetically.
 
@@ -176,10 +176,10 @@ With the repository open for editing in VSCode, open a VSCode terminal window an
 1. Configure the Conda environment. This is the backbone of everything that makes the documentation work.
     1. Install `conda` on your machine using [Miniforge](https://conda-forge.org/miniforge/), if you haven't already.
     1. Configure `conda` to be visible to VSCode. The Miniforge default install choices will help do this correctly for your operating system. **Important:** On Windows, do _not_ add `conda` to your `PATH` variable as it can disrupt proper operating system functioning.
-    1. Install the conda environment from `build_env.yml` using the following command.
+    1. Install the conda environment from `env_build.yml` using the following command.
 
         ```shell
-        conda env create --file build_env.yml
+        conda env create --file env_build.yml
         ```
 
 1. Register the Conda environment with this repository in VSCode. Once this is done, the Conda environment should automatically load and be used when viewing any Python files, and should automatically activate in any new terminal windows within VSCode.
@@ -206,7 +206,7 @@ To build the documentation locally, press ++f5++ in VSCode to start a local serv
 Run the following command to update the existing environment.
 
 ```shell
-conda env update --name mkdocs --file build_env.yml --prune
+conda env update --name mkdocs --file env_build.yml --prune
 ```
 
 #### Development Workflow
@@ -374,7 +374,7 @@ We strive to have CI/CD and pre-commit hooks aligned. This is achieved by using 
 - `.title-casing-ignore`: List of words and terms to ignore for the [title case checking plugin](#title-casing-plugin).
 - `.yamllint.yaml`: Defines yaml lint rules.
 - `.ruff.toml`: Defines Python lint rules for the ruff linter.
-- `build_env.yml`: Defines the Conda environment used to support this project's automation.
+- `env_build.yml`: Defines the Conda environment used to support this project's automation.
 - `mkdocs.yml`: Defines the documentation content configuration.
     - See also `build_scripts/` for scripts used during the mkdocs build process.
 
@@ -393,7 +393,7 @@ Relevant files:
 - `.title-casing-ignore`
 - `.yamllint.yaml`
 - `.ruff.toml`
-- `build_env.yml`
+- `env_build.yml`
 - `mkdocs.yml`
 
 ### Pre-Commit Hooks
@@ -406,7 +406,7 @@ We use [pre-commit hooks](https://pre-commit.com/) to ensure contributions match
 
 The `mkdocs-htmlproofer-plugin` can take substantial time to run. To disable it modify the file `.htmlproofer.env` to read `ENABLED_HTMLPROOFER=False`. Be sure not to commit this change! It is recommended to discard this change and re-run validaitions before submitting a pull request.
 
-To use the pre-commit hooks, you _must_ have `conda` on your system `PATH` and have installed the bundled `build_env.yml` environment.
+To use the pre-commit hooks, you _must_ have `conda` on your system `PATH` and have installed the bundled `env_build.yml` environment.
 
 Relevant files:
 
@@ -416,7 +416,7 @@ Relevant files:
 - `.title-casing-ignore`
 - `.yamllint.yaml`
 - `.ruff.toml`
-- `build_env.yml`
+- `env_build.yml`
 - `mkdocs.yml`
 
 ### Mkdocs Plugins
