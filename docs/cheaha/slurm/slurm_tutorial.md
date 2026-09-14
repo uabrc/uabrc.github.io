@@ -676,7 +676,7 @@ Copy the below MATLAB script as `parfor_sum_array.m`. At the beginning, the scri
 <!-- markdownlint-disable MD046 -->
 !!! bug
 
-    There is a known issue with `parpool` and other related multi-core parallel features such as `parfor` affecting R2022a and earlier. See our [Modules Known Issues section](../software/modules.md#matlab-issues) for more information.
+    There is a known issue with `parpool` and other related multi-core parallel features such as `parfor` affecting R2022a and earlier. See our [Modules Known Issues section](../../news/posts/2026/08/2026-08-12-matlab-parpool-bug-r2022a.md) for more information.
 <!-- markdownlint-enable MD046 -->
 
 ```bash linenums="1"
