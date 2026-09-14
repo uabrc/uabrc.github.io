@@ -1,0 +1,9 @@
+Feature,Administrator,Access Manager,Activity Manager,Activity Monitor
+Modify guest collection definition,Yes ✔️,,,
+Delete the guest collection,Yes ✔️,,,
+Manage roles,Yes ✔️,,,
+Perform file system operations and transfers,Yes ✔️,,,
+"View, add, and delete all access rules on the guest collection",Yes ✔️,Yes ✔️,,
+Implicitly has read/write access to the root of the guest collection,Yes ✔️,Yes ✔️,,
+"View and control (e.g pause/resume, cancel) tasks and other guest collection activity",Yes ✔️,Yes ✔️,Yes ✔️,
+View tasks and other activity to or from the guest collection,Yes ✔️,Yes ✔️,Yes ✔️,Yes ✔️
