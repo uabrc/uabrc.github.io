@@ -5,13 +5,13 @@ Network scratch, also known as global scratch or user scratch, provides temporar
 <!-- markdownlint-disable MD046 -->
 !!! important
 
-    Starting January 2023, scratch data will have limited retention. See [Scratch Retention Policy](#policies-and-expectations) for more information.
+    Files in network scratch are deleted when their creation time and last access time are both 90 or more days ago. The purpose of this policy is to ensure network scratch and Cheaha remain performant and available for all researchers using the platform. Network scratch is temporary storage. It is not intended for archiving data or storing the only copy of important data. Please move data that must be retained to `/data/project/<project>`, `/data/user/$USER`, or Long-Term Storage (LTS), depending on the use case.
 <!-- markdownlint-enable MD046 -->
 
 <!-- markdownlint-disable MD046 -->
 !!! warning
 
-    Research Computing expects each user to keep their scratch areas clean. **The cluster scratch areas are not to be used for archiving data.** In order to keep scratch clear and usable for everyone, files older than 30 days will be eligible for deletion.
+    Research Computing expects each user to keep their scratch areas clean. **The cluster scratch areas are not to be used for archiving data.**
 <!-- markdownlint-enable MD046 -->
 
 ## Policies and Expectations
@@ -19,4 +19,6 @@ Network scratch, also known as global scratch or user scratch, provides temporar
 Data stored in `/scratch` is subject to two limited retention policies.
 
 - Each user will have a quota of 100 TB of scratch storage.
-- Files will be retained for a maximum of 30 days, after which they become eligible for deletion.
+- Files in network scratch are deleted when their creation time and last access time are both 90 or more days ago.
+- Network scratch is temporary storage and should not be used for archiving data.
+- Research Computing expects each user to keep their scratch area clean and remove unneeded files as soon as possible.

@@ -153,7 +153,13 @@ Click "Launch Instance" to launch the instance.
 1. The instance will take some time to build and boot. When the
     Status column entry says "Active" please move to the next steps.
 
-    ![!The task column of the Instances table reads none indicating the instance is ready for use.](./images/instances_015.png)
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    Some images, particularly Windows images, are large and require substantial time to copy. As a result, spawning an instance using these images may take several minutes. Please allow sufficient time for the instance to become Active.
+<!-- markdownlint-enable MD046 -->
+
+![!The task column of the Instances table reads none indicating the instance is ready for use.](./images/instances_015.png)
 
 ### Associate a Floating IP
 

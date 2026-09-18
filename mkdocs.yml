@@ -127,6 +127,9 @@ plugins: # order matters!
         environment_management/anaconda_environments.md: workflow_solutions/using_anaconda.md
         environment_management/containers.md: workflow_solutions/getting_containers.md
         environment_management/git.md: workflow_solutions/git_collaboration.md
+        grants/facilities.md: grants/index.md#uab-it-research-computing-uabrc-resources-and-cybersecurity-facilities-document
+        grants/opportunities.md: grants/index.md#funding-opportunities
+        grants/publications.md: grants/index.md#acknowledgement-in-publications
         uab_cloud/cloud_remote_access.md: uab_cloud/remote_access.md
         uab_cloud/instance_setup_basic.md: uab_cloud/tutorial/instances.md
         uab_cloud/introduction.md: uab_cloud/index.md
@@ -167,6 +170,7 @@ nav:
           - 2. Sponsor — Manage Users: account/xias/2_sponsor_manage_users.md
           - 3. Guests — Create XIAS Account: account/xias/3_guest_create_xias_account.md
           - 4. Guests — Create RCS Account: account/xias/4_guest_create_rcs_account.md
+      - Onboarding: account/onboarding.md
       - Your Responsibilities: account/responsibilities.md
       - Leaving UAB:
           - account/leaving/index.md
@@ -268,9 +272,7 @@ nav:
       - NSF Cyberinfrastructure: national_ci/nsf_access.md
       - NIH Cyberinfrastructure: national_ci/nih.md
   - Grants & Contracts:
-      - RC Facilities Description: grants/facilities.md
-      - Acknowledging Us in Publications: grants/publications.md
-      - Funding Opportunities: grants/opportunities.md
+      - grants/index.md
   - Outreach & Training:
       - Case Studies: education/case_studies.md
       - Research Computing Courses: education/courses.md

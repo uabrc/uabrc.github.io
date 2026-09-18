@@ -9,7 +9,7 @@ Some software packages default to using `/tmp/` without warning or documentation
 
     Do not use `/tmp/` for temporary file storage.
 
-    Do use [local scratch](./local_scratch.md) or [network scratch](./network_scratch.md).
+    Do use [local scratch](./local_scratch.md) or [network scratch](./network_scratch.md). When using scratch storage, remember that both network scratch and local scratch are temporary. Network scratch files are deleted when their creation time and last access time are both 90 or more days ago. Local scratch files are subject to deletion at any time and should be removed when your job is complete.
 <!-- markdownlint-enable MD046 -->
 
 ## Software Known to Use `/tmp/`
