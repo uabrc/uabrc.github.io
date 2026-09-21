@@ -88,7 +88,7 @@ Please do not use IDEs like VSCode "Remote - SSH" or Cursor Server to connect to
 
 ## Open OnDemand Features
 
-The Open OnDemand portal features a [terminal](./open_ondemand/ood_layout.md#opening-a-terminal) usable directly in the browser for basic functions such as file management.
+The Open OnDemand portal features a [terminal](./open_ondemand/ood_layout.md#terminal) usable directly in the browser for basic functions such as file management.
 
 Interactive apps are available directly in your browser, including the following.
 
