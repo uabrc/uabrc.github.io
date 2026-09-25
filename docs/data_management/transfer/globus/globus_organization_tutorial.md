@@ -4,19 +4,6 @@ This guide is intended for UAB research managers such as Lab PIs, Core Directors
 
 If you are new to Globus, we recommend starting with our [Getting Started](./login_to_globus.md) and [Globus for Individual Researchers](../globus/globus_individual_tutorial.md) pages first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the guide on this page in order from start to finish, as each guide assume that the previous ones have been completed.
 
-Topics covered:
-
-- [Why Globus?](#why-globus)
-- [How Does Globus Work?](#how-does-globus-work)
-- [Prerequisites](#prerequisites)
-- [How Do I Get onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
-- [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
-- [How Do I Enable Sharing for My Globus Account?](#how-do-i-enable-collection-sharing-for-my-globus-account)
-- [How Do I Create a Collection?](#how-do-i-create-a-collection)
-- [How Do I Share a Collection with Others?](#how-do-i-share-a-collection-with-others)
-- [How Do I Share Data with a Research Core Customer?](#how-do-i-share-data-with-a-research-core-customer)
-- [Managing Guest Collections From a Globus Endpoint](#managing-guest-collections-from-a-globus-endpoint)
-
 ## Why Globus?
 
 Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions. Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
@@ -187,19 +174,16 @@ It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public a
 ### Creating a Guest Collection
 
 1. Click "Collections" in the left-hand navigation pane.
-
 1. Click the "Administered By You" tab (or) you can search for the collections in search.
 
     ![!Globus Endpoints page with Administered by You selected, showing two endpoints. One of the endpoints is a shared endpoint.](../images/globus_100_shared_search_collections.png)
 
 1. In the table, find the collections you wish to share data from and click its name. You will be taken to the page for that collection.
-
 1. Click the "Collections" tab.
 
     ![!Globus UAB RC Work Laptop page with Guest Collections tab selected showing one collection.](../images/globus_101_shared_collections.png)
 
 1. Click the "Add a Guest Collection" button.
-
 1. Fill out the form.
 
     ![!Create New Guest Collection form.](../images/globus_102_shared_collection_form.png)
@@ -212,13 +196,11 @@ It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public a
     1. Default directory, if left empty, is equivalent to the first field "Directory".
 
 1. Click "Create Collection" to move to the next step. You will be taken to the page for the newly created collection, which is now a full-fledged Guest Collection. Any further references to "an endpoint" will be about the newly created, Guest Collection.
-
 1. Make sure you are on the "Permissions" tab. You should see a permissions table with your name in it.
 
     ![!Newly created test endpoint page with Permissions tab selected.](../images/globus_103_shared_permissions.png)
 
 1. Click "Add Permissions -- Share With" to share your Guest Collection with other users.
-
 1. Fill out the form.
 
     ![!Test endpoint Add Permissions Share With form.](../images/globus_104_shared_add_permissions.png)
@@ -264,3 +246,28 @@ It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public a
 1. Click "X Delete Collection" and a confirmation dialog will open at the top of the page. Respond to the dialog to delete the Guest Collection, or to cancel.
 
     ![!Delete Collection confirmation dialog banner.](../images/globus_107_shared_delete.png)
+
+### How Do I Add a Role to a Guest Collection?
+
+Role assignments for a Globus Guest Collection allow the collection owner or organization to control what users or groups can do with the collection.  Each role provides different levels of access and permissions, as described below.
+
+- **Administrator**: Has full administrative control over the collection, including managing roles and permissions.
+- **Access Manager**: Can manage access permissions for the collection.
+- **Activity Manager**: Can manage and control transfer and activity tasks associated with the collection.
+- **Activity Monitor**: Can view transfer and activity information for the collection.
+
+The table below provides more details about the permissions associated with each role.
+
+{{ read_csv('data_management/transfer/globus/res/globus-organization-roles.csv', keep_default_na=False, colalign=("left","center","center","center")) }}
+
+### How Do I Change a Role for a Guest Collection?
+
+1. On the guest collection roles and permission page, click on "Asign New Role".
+    ![Screenshot of roles and permissions overview page.](../images/gg-modify-role-add/002-assigne-role.png)
+
+1. In the search field, enter the Globus identity for the person who will be assigned a role, then  select the appropriate identity from the search results.
+
+    ![Screenshot of Globus guest collection role assignments page.](../images/gg-modify-role-add/001-modify-role.png)
+1. Then choose the appropriate role, and click on the "Add Role" button.
+
+If you have any questions or run into any issues, feel free to [Contact Us](../../../help/support.md#how-to-request-support).
