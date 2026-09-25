@@ -45,4 +45,4 @@ For more information on GPU efficiency please see [Making the Most of GPUs](../s
 
 ## Known Issues
 
-There is a known issue with `parpool` and other related multi-core parallel features such as `parfor` affecting R2022a and earlier. See our [Modules Known Issues section](../software/modules.md#matlab-issues) for more information.
+There is a known issue with `parpool` and other related multi-core parallel features such as `parfor` affecting R2022a and earlier. See our blog on [Known Issues](../../news/posts/2026/08/2026-08-12-matlab-parpool-bug-r2022a.md) for more information.
