@@ -110,7 +110,7 @@ When you have completed the steps in this section, proceed to [creating a Collec
 
 There are three ways to create a Collection.
 
-- Start from [an existing Collection you created or own](#how-do-i-find-collections-i-created-or-own).
+- Start from [an existing Collection that you have access to](#how-do-i-find-collections-i-created-or-own).
 - [Install Globus Connect Personal](../globus/gcp_install.md#how-to-install-globus-connect-personal-gcp) and [share a folder](../globus/gcp_setup.md#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to create a Collection.
 - Install and configure one or more Collections with Globus Connect Server. To do this, please [Contact Support](../../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
 
