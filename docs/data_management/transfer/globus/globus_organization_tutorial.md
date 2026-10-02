@@ -4,35 +4,6 @@ This guide is intended for UAB research managers such as Lab PIs, Core Directors
 
 If you are new to Globus, we recommend starting with our [Getting Started](./login_to_globus.md) and [Globus for Individual Researchers](../globus/globus_individual_tutorial.md) pages first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the guide on this page in order from start to finish, as each guide assume that the previous ones have been completed.
 
-Topics covered:
-
-- [Why Globus?](#why-globus)
-- [How Does Globus Work?](#how-does-globus-work)
-- [Prerequisites](#prerequisites)
-- [How Do I Get onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
-- [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
-- [How Do I Enable Sharing for My Globus Account?](#how-do-i-enable-collection-sharing-for-my-globus-account)
-- [How Do I Create a Collection?](#how-do-i-create-a-collection)
-- [How Do I Share a Collection with Others?](#how-do-i-share-a-collection-with-others)
-- [How Do I Share Data with a Research Core Customer?](#how-do-i-share-data-with-a-research-core-customer)
-- [Managing Guest Collections From a Globus Endpoint](#managing-guest-collections-from-a-globus-endpoint)
-
-## Why Globus?
-
-Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions. Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
-
-- Straight-forward, browser-based interface.
-- Compatible with [Long-Term Storage](../../storage/lts/index.md).
-- Can be used to share data with Research Core customers.
-- Can be used to transfer data between lab workstations, servers, and Cheaha.
-- Transfers are automatically retried in the event of network or computer system outages.
-- Transfers are encrypted end-to-end. Globus never sees your data.
-- Suitable for transferring PHI and HIPAA data. Note: a UAB Enterprise IT risk assessment is required.
-
-## How Does Globus Work?
-
-Globus is an ecosystem of software intended to make research data transfer simpler. The Globus Web Application (Web App) at <https://app.globus.org> allows you to initiate transfers between any two Collections you have authorization to access. The Globus Connect Personal (GCP) and Globus Connect Server (GCS) software let you turn any computer into a Globus Collection. At no point do Globus servers touch your research data. Instead, when you initiate a transfer between two Collections, the Globus application tells the two Collections that they need to talk to each other and data is sent directly between them. The Collections update the application with information you may need to know, such as how much data has transferred so far, how fast the transfer is proceeding, and any errors that occur. If the connection between Collections is interrupted for any reason, the Globus application will attempt to restart the transfer from where it left off.
-
 ## Prerequisites
 
 For these guides, you will need your BlazerID or [XIAS ID](../../../account/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
@@ -110,8 +81,8 @@ When you have completed the steps in this section, proceed to [creating a Collec
 
 There are three ways to create a Collection.
 
-- Start from [an existing Collection you created or own](#how-do-i-find-collections-i-created-or-own).
-- [Install Globus Connect Personal](../globus/gcp_install.md#how-to-install-globus-connect-personal-gcp) and [share a folder](../globus/gcp_setup.md#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to create a Collection.
+- Start from [an existing Collection that you have access to](#how-do-i-find-collections-i-created-or-own).
+- [Install Globus Connect Personal](../globus/gcp_install.md#how-to-install-globus-connect-personal-gcp) and [share a folder](../globus/gcp_setup.md#how-do-i-configure-gcp-to-access-specific-folders-or-drives-on-my-local-computer) to create a Collection.
 - Install and configure one or more Collections with Globus Connect Server. To do this, please [Contact Support](../../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
 
 The instructions below assume you are starting from an existing Collection. The instructions will work to create a subset of your Globus Connect Personal Collection.
@@ -164,7 +135,7 @@ Before sharing a Collection with others, you will need to first [create a Collec
     - **Email Notification** checkbox. We recommend sending an email notification as a convenience.
         - **To** entry field: who to send the email to. We recommend the same person as the "User" selected earlier. There may be future cases where you want to notify others, such as a supervisor, as well.
         - **Message** text entry field: the optional content to send in the email message.
-    - **Permissions** The "read" permission must be granted, as that is the point of sharing the Collection. You may additionally give "write" permission to create a two-way collaboration. We recommend Research Cores not grant "write" permission. If you are using a Globus Connect Personal Collection, then "write" permission requires you to correctly [configure your Collection](../globus/gcp_setup.md#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal) to make your shared folder writable.
+    - **Permissions** The "read" permission must be granted, as that is the point of sharing the Collection. You may additionally give "write" permission to create a two-way collaboration. We recommend Research Cores not grant "write" permission. If you are using a Globus Connect Personal Collection, then "write" permission requires you to correctly [configure your Collection](../globus/gcp_setup.md#how-do-i-configure-gcp-to-access-specific-folders-or-drives-on-my-local-computer) to make your shared folder writable.
 
     ![Add permissions form.](../images/go-share-collection/003-add-permissions-form.png)
 

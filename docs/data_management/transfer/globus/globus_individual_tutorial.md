@@ -6,29 +6,6 @@ These guides are intended for individual researchers who need to move data from 
 
 The resource below will teach you how to effectively use Globus for managing and transferring research data. We will explore what Globus is, why you might use it, how it works, and we'll walk you through the essential steps to get started. You will learn how to set up your Globus account, access the Globus application, find Collections shared with you, and search for Collections by name.
 
-Topics covered:
-
-- [Why Globus?](#why-globus)
-- [How Does Globus Work?](#how-does-globus-work)
-- [Prerequisites](#prerequisites)
-- [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name)
-- [How Do I Find UAB Storage Collections?](#how-do-i-find-uab-storage-collections)
-- [How Do I Find Collections Shared With Me?](#how-do-i-find-collections-shared-with-me)
-- [How Do I Transfer Data Between Collections?](#how-do-i-transfer-data-between-collections)
-    - [How Do I Transfer Between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
-    - [How Do I Transfer Between GCP Collections?](#how-do-i-transfer-between-gcp-collections)
-    - [How Do I Transfer Between a Collection and LTS?](#how-do-i-transfer-between-a-collection-and-lts)
-    - [How Do I Transfer Between LTS and Cheaha?](#how-do-i-transfer-between-lts-and-cheaha)
-- [How Do I Check Transfer Status?](#how-do-i-check-transfer-status)
-- [Transfer and Sync Options](#transfer-and-sync-options)
-    - [Common Errors](#common-errors)
-    - [More Information](#more-information)
-- [Long-Term Storage S3 (LTS) Connector](#long-term-storage-s3-lts-connector)
-    - [Adding LTS Allocation Credentials](#adding-lts-allocation-credentials)
-    - [Data Must Be in Buckets](#data-must-be-in-buckets)
-    - [Buckets Must Have Globally Unique Names](#buckets-must-have-globally-unique-names)
-- [Using Bookmarks in Globus](#using-bookmarks-in-globus)
-
 ## Why Globus?
 
 Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions. Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
@@ -153,7 +130,7 @@ These instructions can be generalized to any two Collections you have access to 
 
 1. Once you have selected the Collection you wish to transfer data from, repeat the process to [search](#how-do-i-search-for-collections-by-name) for a Cheaha Collection in the Collection Search bar on the right side of the file manager page. Search for "UAB Cheaha" to find and select the "UAB RCS Cheaha HPC", the  collection currently supported.
 
-1. When you select a Cheaha Collection, or any other High Assurance (HA) Collection or Guest Collection, you will be prompted to re-authenticate. Click the Continue button to do so, then select your UAB email address.
+1. When you select a Cheaha Collection, or any other High Assurance (HA) Collection or Guest collection, you will be prompted to re-authenticate. Click the Continue button to do so, then select your UAB email address.
 
     ![High Assurance request for reauthentication.](../images/common/ha-authenticate.png)
 
