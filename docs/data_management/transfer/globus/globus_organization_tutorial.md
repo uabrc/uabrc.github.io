@@ -4,19 +4,6 @@ This guide is intended for UAB research managers such as Lab PIs, Core Directors
 
 If you are new to Globus, we recommend starting with our [Getting Started](./login_to_globus.md) and [Globus for Individual Researchers](../globus/globus_individual_tutorial.md) pages first to familiarize yourself with how Globus is used. When those are complete, we then recommend following the guide on this page in order from start to finish, as each guide assume that the previous ones have been completed.
 
-Topics covered:
-
-- [Why Globus?](#why-globus)
-- [How Does Globus Work?](#how-does-globus-work)
-- [Prerequisites](#prerequisites)
-- [How Do I Get onto the Globus Web App?](#how-do-i-get-onto-the-globus-web-app)
-- [How Do I Find Collections I Created or Own?](#how-do-i-find-collections-i-created-or-own)
-- [How Do I Enable Sharing for My Globus Account?](#how-do-i-enable-collection-sharing-for-my-globus-account)
-- [How Do I Create a Collection?](#how-do-i-create-a-collection)
-- [How Do I Share a Collection with Others?](#how-do-i-share-a-collection-with-others)
-- [How Do I Share Data with a Research Core Customer?](#how-do-i-share-data-with-a-research-core-customer)
-- [Managing Guest Collections From a Globus Endpoint](#managing-guest-collections-from-a-globus-endpoint)
-
 ## Why Globus?
 
 Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions. Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
