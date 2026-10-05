@@ -21,7 +21,7 @@ The following software are known to use `/tmp/` by default, and can be worked ar
 - [Java](https://docs.oracle.com/cd/E63231_01/doc/BIAIN/GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1.htm#BIAIN-GUID-94C6B992-1488-4FC7-85EC-91E410D6E7D1): `java * -Djava.io.tmpdir=/local/$USER/$SLURM_JOB_ID`
 - [MACS2](https://manpages.org/macs2_callpeak): `macs2 callpeak * --tempdir /local/$USER/$SLURM_JOB_ID`
 - [NVIDIA Clara Parabricks](https://docs.nvidia.com/clara/parabricks/latest/gettingstarted.html): `pbrun * --tmp-dir=/local/$USER/$SLURM_JOB_ID`.
-- [QIIME Tool](https://docs.nvidia.com/clara/parabricks/latest/gettingstarted.html)
+- [QIIME2 Tool](https://forum.qiime2.org/t/still-default-behavior-after-setting-tmpdir/32926): Create a temporary directory and set `TMPDIR` before running QIIME2: `mkdir -p $HOME/tmp_qiime2` followed by `export TMPDIR=$HOME/tmp_qiime2`
 - [Samtools Sort](http://www.htslib.org/doc/samtools-sort.html): `samtools sort * -T /local/$USER/$SLURM_JOB_ID`
 - [Samtools Collate](https://www.htslib.org/doc/samtools-collate.html): `samtools collate * -T /local/$USER/$SLURM_JOB_ID`
 - [Samtools Markdup](https://www.htslib.org/doc/samtools-markdup.html): `samtools markdup * -T /local/$USER/$SLURM_JOB_ID`
