@@ -217,6 +217,30 @@ If you are following the tutorial, then at this stage you should be able to SSH 
     Reusing a floating IP for a new instance can result in a "Remote Host Identification Has Changed" error, preventing connection. Please see [Remove an Invalid Host Fingerprint](../remote_access.md#remove-an-invalid-host-fingerprint).
 <!-- markdownlint-enable MD046 -->
 
+### Using Multiple SSH Keys
+
+When an instance is created, an SSH key pair is selected to provide initial SSH access. If you need to access the same instance from multiple computers using different SSH keys, you can add additional public keys to the instance after it has been created.
+
+<!-- markdownlint-disable MD046 -->
+!!! note
+
+    SSH private keys should never be shared between users or computers. Each user or computer should use its own key pair.
+<!-- markdownlint-enable MD046 -->
+
+After you have successfully connected to the instance using the original key pair:
+
+- Create an SSH key pair on the additional computer, if needed. See [Creating a Key Pair](security.md#creating-a-key-pair) for instructions.
+- Copy the public key (.pub file) from the additional computer.
+- On the instance, add the public key to the ~/.ssh/authorized_keys file.
+- Add the new public key on a new line and save the file.
+- From the additional computer, connect to the instance using the corresponding private key:
+
+    ```bash
+    ssh ubuntu@<floating_ip> -i ~/.ssh/<private_key_file>
+    ```
+
+Replace ubuntu with the appropriate username for your operating system. Each public key in authorized_keys provides an independent way to authenticate to the same user account. This allows multiple users or computers to access the instance without sharing private keys.
+
 ### Streamlining SSH
 
 Refer to [Setting up a Configuration File](../remote_access.md#setting-up-a-configuration-file) in [Cloud Remote Access](../remote_access.md).
