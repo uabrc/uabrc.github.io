@@ -224,7 +224,8 @@ When an instance is created, an SSH key pair is selected to provide initial SSH 
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    SSH private keys should never be shared between users or computers. Each user or computer should use its own key pair.
+    SSH private keys should never be shared between users or computers.
+    Each user or computer should use its own key pair.
 <!-- markdownlint-enable MD046 -->
 
 After you have successfully connected to the instance using the original key pair:
