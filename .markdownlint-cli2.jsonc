@@ -4,6 +4,7 @@
     "**/*.md"
   ],
   "ignores": [
+    ".conda/",
     "theme/",
     "node_modules/"
   ]
