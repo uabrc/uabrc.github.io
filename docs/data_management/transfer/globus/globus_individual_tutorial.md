@@ -24,7 +24,7 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 
 ## Prerequisites
 
-For these guides, you will need your BlazerID or [XIAS ID](../../../account/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
+For these guides, you will need your BlazerID and password to authenticate using UAB Single Sign-On (SSO).
 
 ## How Do I Search for Collections by Name?
 
@@ -53,7 +53,7 @@ If you can't find a particular Collection this way, but know it was shared with 
 
 UAB offers [multiple storage resources](../../index.md). The following resources may be accessed through Globus Collections.
 
-- Cheaha file system (GPFS) including [individual directories](../../storage/index.md#what-individual-storage-solutions-are-available) and [project directories](../../storage/cheaha_storage_gpfs/project_directories.md).
+- [Cheaha file system (GPFS)](../../storage/cheaha_storage_gpfs/index.md) including [individual directories](../../storage/index.md#what-individual-storage-solutions-are-available) and [project directories](../../storage/cheaha_storage_gpfs/project_directories.md).
 - [Long-Term Storage (LTS)](../../storage/lts/index.md).
 - [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
 
@@ -219,6 +219,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 [return to the index](#globus-for-individual-researchers).
 
 - [How do I check transfer status?](#how-do-i-check-transfer-status)
+- [How Do I Transfer Between GCP collections](#how-do-i-transfer-between-gcp-collections)
 - [How Do I Transfer Between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
 - [How Do I Transfer Between LTS and Cheaha?](#how-do-i-transfer-between-lts-and-cheaha)
 
@@ -269,6 +270,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 [return to the index](#globus-for-individual-researchers).
 
 - [How do I check transfer status?](#how-do-i-check-transfer-status)
+- [How Do I Transfer Between GCP collections](#how-do-i-transfer-between-gcp-collections)
 - [How Do I Transfer Between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
 - [How Do I Transfer Between a Collection and LTS?](#how-do-i-transfer-between-a-collection-and-lts)
 
