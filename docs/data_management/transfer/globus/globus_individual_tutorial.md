@@ -169,7 +169,7 @@ To transfer data between GCP collections, you must be a member of a Globus Subsc
 Requirements and expectations for joining:
 
 - You must register using your `BlazerID@uab.edu` email address.
-- You must provide a reason when submitting your membership request, please refer [how to join the UAB HA group](./globus_organization_tutorial.md#how-do-i-enable-collection-sharing-for-my-globus-account) page.
+- You must provide a reason when submitting your membership request, please refer [how to join the UAB HA group](./globus_organization_tutorial.md#how-do-i-enable-gcp-collection-sharing-for-my-globus-account) page.
 - Any GCP endpoints or collections you create must be marked as "High Assurance (HA)" at creation time if the Collection contains or will contain PHI, HIPAA‑regulated data, or other protected information. This setting cannot be changed later. If you have a standard GCP installation, you will need to reinstall the GCP software to enable HA. Please refer to our [GCP installation guide for enabling High Assurance (HA)](./gcp_install.md#how-to-install-globus-connect-personal-gcp) page.
 - Only UAB employees (including graduate students) are eligible to join, in accordance with our Globus subscription terms. Users from other institutions (e.g XIAS users or external identities) are not eligible.
 

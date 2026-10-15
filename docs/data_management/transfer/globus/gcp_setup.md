@@ -86,6 +86,6 @@ You can also find your collection under the "Your Collections" tab by following 
 
 Making folders or drives from your local computer accessible through GCP does not automatically make them available to other users. To share your data, you must create a Guest Collection and configure the appropriate permissions. GCP must also be running on your local computer for users to access or transfer files through the Guest Collection created from your local collection.
 
-To create and share a Guest Collection from a collection on your local computer, you must be a member of the "University of Alabama at Birmingham (HA)" subscription group. Please see [How Do I Enable Collection Sharing for My Globus Account?](../globus/globus_organization_tutorial.md#how-do-i-enable-collection-sharing-for-my-globus-account) page for instructions on how to request the UAB HA subscription group membership.
+To create and share a Guest Collection from a collection on your local computer, you must be a member of the "University of Alabama at Birmingham (HA)" subscription group. Please see [How Do I Enable Collection Sharing for My Globus Account?](../globus/globus_organization_tutorial.md#how-do-i-enable-gcp-collection-sharing-for-my-globus-account) page for instructions on how to request the UAB HA subscription group membership.
 
 If you have any questions, please [Contact Us](../../../help/support.md#how-to-request-support).

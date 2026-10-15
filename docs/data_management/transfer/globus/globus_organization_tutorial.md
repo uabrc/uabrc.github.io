@@ -6,7 +6,7 @@ If you are new to Globus, we recommend starting with our [Getting Started](./log
 
 ## Prerequisites
 
-For these guides, you will need your BlazerID or [XIAS ID](../../../account/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
+For these guides, you will need your BlazerID and password to authenticate using UAB Single Sign-On (SSO).
 
 ## How Do I Get Onto the Globus Web App?
 
@@ -38,7 +38,7 @@ To find a Collection you own, use the following steps.
 
         ![Collectionm details page with overview tab selected.](../images/go-my-collections/005-collection-details-page.png)
 
-## How Do I Enable Collection Sharing for My Globus Account?
+## How Do I Enable GCP Collection Sharing for My Globus Account?
 
 Before you can share Collections from your Globus Connect Personal (GCP) Collection with others, you must do a one-time setup for your account. You will need to join the "University of Alabama at Birmingham (HA)" (UAB HA) subscription group. Sharing any Collection requires a paid subscription with Globus. UAB Research Computing has a subscription, but Globus does not know your BlazerID is part of our subscription until you join the subscription group. So, Globus also does not know the GCP Collection you created is part of our subscription. By joining our UAB HA group, you and your GCP Collection are confirmed to be part of our subscription, and you can share Collections from the GCP Collection.
 
@@ -81,9 +81,9 @@ When you have completed the steps in this section, proceed to [creating a Collec
 
 There are three ways to create a Collection.
 
-- Start from [an existing Collection that you have access to](#how-do-i-find-collections-i-created-or-own).
-- [Install Globus Connect Personal](../globus/gcp_install.md#how-to-install-globus-connect-personal-gcp) and [share a folder](../globus/gcp_setup.md#how-do-i-configure-gcp-to-access-specific-folders-or-drives-on-my-local-computer) to create a Collection.
-- Install and configure one or more Collections with Globus Connect Server. To do this, please [Contact Support](../../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
+- Use an existing Collection: start from [an existing Collection that you have access to](#how-do-i-find-collections-i-created-or-own).
+- Use Globus Connect Personal: [install Globus Connect Personal](../globus/gcp_install.md#how-to-install-globus-connect-personal-gcp) on your computer and then configure it to [share a specific folder or drive](../globus/gcp_setup.md#how-do-i-configure-gcp-to-access-specific-folders-or-drives-on-my-local-computer) to create a Collection.
+- Use Globus Connect Server: install and configure one or more Collections with Globus Connect Server. To do this, please [Contact Support](../../../help/support.md#how-do-i-create-a-support-ticket) to start a discussion.
 
 The instructions below assume you are starting from an existing Collection. The instructions will work to create a subset of your Globus Connect Personal Collection.
 
@@ -115,7 +115,7 @@ When you have created a Collection, you are ready to [share the Collection with 
 
 ## How Do I Share a Collection With Others?
 
-Before sharing a Collection with others, you will need to first [create a Collection](#how-do-i-create-a-collection) you administer. If the Collection is a [Globus Connect Personal Collection](../globus/gcp_install.md#how-to-install-globus-connect-personal-gcp), then you will also need to [enable Collection sharing for your Globus account](#how-do-i-enable-collection-sharing-for-my-globus-account). If these prerequisites have been met, then you are ready to setup a Collection to be shared with others. Please follow the instructions below.
+Before sharing a Collection with others, you will need to first [create a Collection](#how-do-i-create-a-collection) you administer. If the Collection is a [Globus Connect Personal Collection](../globus/gcp_install.md#how-to-install-globus-connect-personal-gcp), then you will also need to [enable Collection sharing for your Globus account](#how-do-i-enable-gcp-collection-sharing-for-my-globus-account). If these prerequisites have been met, then you are ready to setup a Collection to be shared with others. Please follow the instructions below.
 
 1. [Get onto the Globus Web App](#how-do-i-get-onto-the-globus-web-app).
 1. [Find the Collection](#how-do-i-find-collections-i-created-or-own) you wish to share. In this case we are looking for the "customer-share" Collection.
@@ -153,7 +153,7 @@ If you manage data for a Research Core, please [Contact Support](../../../help/s
 
 ## Managing Guest Collections From a Globus Endpoint
 
-It is NOT RECOMMENDED to make Globus Connect Personal Guest Collections public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal Collection than for a Guest Collection. Guest collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use Guest Collections!
+It is NOT RECOMMENDED to make Globus Connect Personal Collections public as this is insecure. It is more difficult to manage access controls for the entire Globus Connect Personal Collection than for a Guest Collection. Guest collections make it simpler to share different data with distinct collaborators, and to manage who has access to what data. Be secure, use Guest Collections!
 
 ### Creating a Guest Collection
 
