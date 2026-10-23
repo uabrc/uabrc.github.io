@@ -232,15 +232,11 @@ After you have successfully connected to the instance using the original key pai
 
 - Create an SSH key pair on the additional computer, if needed. See [Creating a Key Pair](security.md#creating-a-key-pair) for instructions.
 - Copy the public key (.pub file) from the additional computer.
-- On the instance, add the public key to the ~/.ssh/authorized_keys file.
+- On the instance, add the public key to the `~/.ssh/authorized_keys` file.
 - Add the new public key on a new line and save the file.
-- From the additional computer, connect to the instance using the corresponding private key:
+- From the additional computer, [SSH to the instance](#ssh-into-the-instance) using the corresponding private key.
 
-    ```bash
-    ssh ubuntu@<floating_ip> -i ~/.ssh/<private_key_file>
-    ```
-
-Replace ubuntu with the appropriate username for your operating system. Each public key in authorized_keys provides an independent way to authenticate to the same user account. This allows multiple users or computers to access the instance without sharing private keys.
+Each public key in `~/.ssh/authorized_keys` provides an independent way to authenticate to the same user account. This allows multiple users or computers to access the instance without sharing private keys.
 
 ### Streamlining SSH
 
