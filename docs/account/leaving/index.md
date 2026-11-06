@@ -47,7 +47,7 @@ If you are departing UAB, then this article is designed to help you. We hope to 
     - Verify research data transfer.
     - Confirm project storage ownership.
 
-    ## Projects and Resources
+    ## Projects and Other Resources
 
     - Review my Responsibilities for [Lab Shared Allocations](./final_steps.md#what-are-my-responsibilities-for-lab-shared-allocations) and [Core Shared Allocations](./final_steps.md#what-are-my-responsibilities-for-lab-shared-allocations).
 

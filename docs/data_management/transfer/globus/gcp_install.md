@@ -6,7 +6,7 @@
 - [Windows](https://docs.globus.org/globus-connect-personal/install/windows/)
 - [Linux](https://docs.globus.org/globus-connect-personal/install/linux/)
 
-We do not cover Linux installation here; please refer to the official documentation if you need to install GCP on a Linux system. Below are the GCP installation instructions for Windows and MacOS:
+We do not cover Linux installation here; please refer to the [official documentation](https://docs.globus.org/globus-connect-personal/install/linux/) if you need to install GCP on a Linux system. Below are the GCP installation instructions for Windows and MacOS:
 
 <!-- markdownlint-disable MD046 -->
 === "Windows"
@@ -94,7 +94,7 @@ We do not cover Linux installation here; please refer to the official documentat
 
       ![GCP Icon in Windows system tray.](../images/go-gcp-install/win/009-system-tray-icon.png)
 
-    By default your Documents folder (typically `C:/Users/%username%/Documents`) is listed in your new Globus Collection. To change it continue on with [How Do I Choose Specific Folders Using Globus Connect Personal?](../globus/gcp_setup.md#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal).
+    By default your Documents folder (typically `C:/Users/%username%/Documents`) is listed in your new Globus Collection. To change it continue on with [How Do I Choose Specific Folders Using GCP?](../globus/gcp_setup.md#how-do-i-configure-gcp-to-access-specific-folders-or-drives-on-my-local-computer).
     <!-- markdownlint-enable MD029 -->
 === "MacOS"
     <!-- markdownlint-disable MD029 -->
@@ -102,7 +102,7 @@ We do not cover Linux installation here; please refer to the official documentat
 
     ![GCP Icon in MacOS notification area.](../images/go-gcp-install/mac/009-notification-area-icon.png)
 
-     By default the `/Users/` folder is listed in your new Globus Collection. To change it continue on with [How Do I Share Specific Folders Using Globus Connect Personal?](../globus/gcp_setup.md#how-do-i-choose-specific-folders-to-share-using-globus-connect-personal).
+     By default the `/Users/` folder is listed in your new Globus Collection. To change it continue on with [How Do I Share Specific Folders Using GCP?](../globus/gcp_setup.md#how-do-i-configure-gcp-to-access-specific-folders-or-drives-on-my-local-computer).
 
 <!-- markdownlint-enable MD046 -->
 

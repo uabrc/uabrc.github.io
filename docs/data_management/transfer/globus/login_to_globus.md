@@ -1,6 +1,6 @@
 # Logging in to Globus
 
-UAB has a subscription to Globus,allowing you to set up a Globus account using your UAB credentials. Follow the steps below to log in and complete your Globus account setup.
+UAB has a subscription to Globus, allowing you to set up a Globus account using your UAB credentials. Follow the steps below to log in and complete your Globus account setup.
 
 ## How Do I Get Onto the Globus Web App?
 
@@ -79,6 +79,6 @@ To manage your identities, navigate to <https://app.globus.org/account/identitie
 
 - Visit the [Globus Events Calendar](https://www.globus.org/events) for official learning opportunities.
 
-At this point, you can already start using Globus through your browser to move data between existing endpoints.
+At this point, you can already start using Globus through your browser to move data between [existing Globus endpoints](./index.md#globus-endpoints).
 
 However, if you want to move data to or from your own computer, you will need to install Globus Connect Personal. The [Install Globus Connect Personal](./gcp_install.md) and [Set Up Globus Connect Personal](./gcp_setup.md) walk you through that process.

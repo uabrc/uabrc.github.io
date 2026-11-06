@@ -6,29 +6,6 @@ These guides are intended for individual researchers who need to move data from 
 
 The resource below will teach you how to effectively use Globus for managing and transferring research data. We will explore what Globus is, why you might use it, how it works, and we'll walk you through the essential steps to get started. You will learn how to set up your Globus account, access the Globus application, find Collections shared with you, and search for Collections by name.
 
-Topics covered:
-
-- [Why Globus?](#why-globus)
-- [How Does Globus Work?](#how-does-globus-work)
-- [Prerequisites](#prerequisites)
-- [How Do I Search for Collections by Name?](#how-do-i-search-for-collections-by-name)
-- [How Do I Find UAB Storage Collections?](#how-do-i-find-uab-storage-collections)
-- [How Do I Find Collections Shared With Me?](#how-do-i-find-collections-shared-with-me)
-- [How Do I Transfer Data Between Collections?](#how-do-i-transfer-data-between-collections)
-    - [How Do I Transfer Between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
-    - [How Do I Transfer Between GCP Collections?](#how-do-i-transfer-between-gcp-collections)
-    - [How Do I Transfer Between a Collection and LTS?](#how-do-i-transfer-between-a-collection-and-lts)
-    - [How Do I Transfer Between LTS and Cheaha?](#how-do-i-transfer-between-lts-and-cheaha)
-- [How Do I Check Transfer Status?](#how-do-i-check-transfer-status)
-- [Transfer and Sync Options](#transfer-and-sync-options)
-    - [Common Errors](#common-errors)
-    - [More Information](#more-information)
-- [Long-Term Storage S3 (LTS) Connector](#long-term-storage-s3-lts-connector)
-    - [Adding LTS Allocation Credentials](#adding-lts-allocation-credentials)
-    - [Data Must Be in Buckets](#data-must-be-in-buckets)
-    - [Buckets Must Have Globally Unique Names](#buckets-must-have-globally-unique-names)
-- [Using Bookmarks in Globus](#using-bookmarks-in-globus)
-
 ## Why Globus?
 
 Globus is a data transfer ecosystem that simplifies the process of transferring, sharing, and managing large datasets. It is used by research institutions around the world to move research data between different storage devices, computer systems, and institutions. Globus has many research data oriented features, making it ideal for many research data transfer scenarios. Below is a list of features.
@@ -47,7 +24,7 @@ Globus is an ecosystem of software intended to make research data transfer simpl
 
 ## Prerequisites
 
-For these guides, you will need your BlazerID or [XIAS ID](../../../account/xias/index.md) and password to authenticate using UAB Single Sign-On (SSO).
+For these guides, you will need your BlazerID and password to authenticate using UAB Single Sign-On (SSO).
 
 ## How Do I Search for Collections by Name?
 
@@ -76,7 +53,7 @@ If you can't find a particular Collection this way, but know it was shared with 
 
 UAB offers [multiple storage resources](../../index.md). The following resources may be accessed through Globus Collections.
 
-- Cheaha file system (GPFS) including [individual directories](../../storage/index.md#what-individual-storage-solutions-are-available) and [project directories](../../storage/cheaha_storage_gpfs/project_directories.md).
+- [Cheaha file system (GPFS)](../../storage/cheaha_storage_gpfs/index.md) including [individual directories](../../storage/index.md#what-individual-storage-solutions-are-available) and [project directories](../../storage/cheaha_storage_gpfs/project_directories.md).
 - [Long-Term Storage (LTS)](../../storage/lts/index.md).
 - [UAB Box](https://www.uab.edu/it/home/tech-solutions/file-storage/box).
 
@@ -153,7 +130,7 @@ These instructions can be generalized to any two Collections you have access to 
 
 1. Once you have selected the Collection you wish to transfer data from, repeat the process to [search](#how-do-i-search-for-collections-by-name) for a Cheaha Collection in the Collection Search bar on the right side of the file manager page. Search for "UAB Cheaha" to find and select the "UAB RCS Cheaha HPC", the  collection currently supported.
 
-1. When you select a Cheaha Collection, or any other High Assurance (HA) Collection or Guest Collection, you will be prompted to re-authenticate. Click the Continue button to do so, then select your UAB email address.
+1. When you select a Cheaha Collection, or any other High Assurance (HA) Collection or Guest collection, you will be prompted to re-authenticate. Click the Continue button to do so, then select your UAB email address.
 
     ![High Assurance request for reauthentication.](../images/common/ha-authenticate.png)
 
@@ -192,7 +169,7 @@ To transfer data between GCP collections, you must be a member of a Globus Subsc
 Requirements and expectations for joining:
 
 - You must register using your `BlazerID@uab.edu` email address.
-- You must provide a reason when submitting your membership request, please refer [how to join the UAB HA group](./globus_organization_tutorial.md#how-do-i-enable-collection-sharing-for-my-globus-account) page.
+- You must provide a reason when submitting your membership request, please refer [how to join the UAB HA group](./globus_organization_tutorial.md#how-do-i-enable-gcp-collection-sharing-for-my-globus-account) page.
 - Any GCP endpoints or collections you create must be marked as "High Assurance (HA)" at creation time if the Collection contains or will contain PHI, HIPAA‑regulated data, or other protected information. This setting cannot be changed later. If you have a standard GCP installation, you will need to reinstall the GCP software to enable HA. Please refer to our [GCP installation guide for enabling High Assurance (HA)](./gcp_install.md#how-to-install-globus-connect-personal-gcp) page.
 - Only UAB employees (including graduate students) are eligible to join, in accordance with our Globus subscription terms. Users from other institutions (e.g XIAS users or external identities) are not eligible.
 
@@ -242,6 +219,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 [return to the index](#globus-for-individual-researchers).
 
 - [How do I check transfer status?](#how-do-i-check-transfer-status)
+- [How Do I Transfer Between GCP collections](#how-do-i-transfer-between-gcp-collections)
 - [How Do I Transfer Between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
 - [How Do I Transfer Between LTS and Cheaha?](#how-do-i-transfer-between-lts-and-cheaha)
 
@@ -292,6 +270,7 @@ From here you can proceed to other related tutorials to initiate other transfers
 [return to the index](#globus-for-individual-researchers).
 
 - [How do I check transfer status?](#how-do-i-check-transfer-status)
+- [How Do I Transfer Between GCP collections](#how-do-i-transfer-between-gcp-collections)
 - [How Do I Transfer Between a Collection and Cheaha?](#how-do-i-transfer-between-a-collection-and-cheaha)
 - [How Do I Transfer Between a Collection and LTS?](#how-do-i-transfer-between-a-collection-and-lts)
 
