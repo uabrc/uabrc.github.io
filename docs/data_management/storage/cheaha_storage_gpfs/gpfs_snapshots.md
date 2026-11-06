@@ -19,7 +19,7 @@ Snapshots are read-only, point-in-time copies of your directories (`$HOME`, `/da
 <!-- markdownlint-disable MD046 -->
 !!! note
 
-    Snapshots provide short-term recovery only. For long-term backups, consider using [Long Term Storage (LTS)](../lts/index.md).
+    Snapshots provide short-term recovery only. For long-term backups, consider using [Long-Term Storage (LTS)](../lts/index.md).
 <!-- markdownlint-enable MD046 -->
 
 ## Accessing Snapshots via Open OnDemand (OOD)
@@ -253,6 +253,6 @@ Contact Research Computing if:
 - You are unsure whether your data is GPFS or Ceph-resident.
 - You need help restoring large or complex datasets.
 
-For critical data that needs to be archived, consider using [Long Term Storage (LTS)](../lts/index.md), Snapshots are not intended for use as an archive.
+For critical data that needs to be archived, consider using [Long-Term Storage (LTS)](../lts/index.md), Snapshots are not intended for use as an archive.
 
 {% include "_template/base_help_section.md.j2" %}

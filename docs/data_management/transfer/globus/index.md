@@ -23,7 +23,7 @@ For more detailed information on High Assurance please see the Globus official p
 The following Globus collection (endpoints) are currently available and supported by UAB Research Computing for transferring data to and from collections within the UAB Research Computing storage systems:
 
 - Remote Globus Collection (Endpoints): UAB Research Computing currently supports the following three remote Globus endpoints.
-    - UAB Research Computing LTS (Long Term Storage aka S3): Access data on [Long Term Storage (LTS)](../../storage/lts/index.md).
+    - UAB Research Computing LTS (Long Term Storage aka S3): Access data on [Long-Term Storage (LTS)](../../storage/lts/index.md).
     - UAB RCS Cheaha HPC: Access data on GPFS, including [User Data and Home directories](../../storage/cheaha_storage_gpfs/individual_directories.md), [Scratch](../../storage/cheaha_storage_gpfs/network_scratch.md), and [Project Directories](../../storage/cheaha_storage_gpfs/project_directories.md).
     - UAB Box: Access data on [UAB Box](../../storage/alternate_storage.md#box-storage).
 

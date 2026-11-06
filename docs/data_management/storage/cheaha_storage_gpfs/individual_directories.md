@@ -24,7 +24,7 @@ Quota reports are updated nightly, so they may be out of date if you move data a
 <!-- markdownlint-disable MD046 -->
 !!! tip
 
-    Running out of Cheaha Storage space? Can't afford to remove any data? Please consider using our [Long Term Storage (LTS) system](../lts/index.md).
+    Running out of Cheaha Storage space? Can't afford to remove any data? Please consider using our [Long-Term Storage (LTS) system](../lts/index.md).
 <!-- markdownlint-enable MD046 -->
 
 ## Policies & Expectations
