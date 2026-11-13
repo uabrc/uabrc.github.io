@@ -3,7 +3,6 @@
 We currently support the following tools on Cheaha to manage data transfers. You can find information for the following tools and services we support;
 
 1. [Globus](./globus/index.md)
-1. [Filezilla](./filezilla.md)
 1. [Rclone](./rclone.md)
 
 ## What Data Sharing Method Works Best for My Collaboration?
