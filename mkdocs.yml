@@ -151,6 +151,7 @@ not_in_nav: |
   /**/res/*.md
   /**/_macro/
   /**/_template/
+  cheaha/talladega_beta_guide.md
 
 nav:
   - Home: index.md
