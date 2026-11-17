@@ -23,9 +23,9 @@ This guide covers the experience available when the Talladega beta opens. Contin
 - [3. Software](#3-software)
 - [4. Service](#4-service)
 
-## 1. Cluster access and hardware
+## 1. Cluster Access and Hardware
 
-### Connect through SSH
+### Connect Through SSH
 
 <!-- markdownlint-disable MD046 -->
 !!! note
@@ -39,7 +39,7 @@ Talladega is currently only accessible from Cheaha. We expect Talladega to be ac
 
 The hostname for Talladega's login node is `login007`. Please make sure you're connected to the correct login node when trying to use either Talladega or Cheaha.
 
-#### Example connection
+#### Example Connection
 
 ```bash
 # Initial connection to Cheaha
@@ -49,13 +49,13 @@ The hostname for Talladega's login node is `login007`. Please make sure you're c
 [blazerid@login006 ~]$ ssh $USER@talladega.rc.uab.edu
 ```
 
-### Interactive jobs and graphical interfaces
+### Interactive Jobs and Graphical Interfaces
 
 Support for Open OnDemand (OOD) and interactive graphical (GUI) software will be provided in a future update.
 
 All interactive jobs should be submitted using `srun --pty /bin/bash` along with the corresponding `srun` parameters. Submit batch jobs with `sbatch` as usual after making the modifications detailed in [section 2](#2-update-existing-job-scripts).
 
-### The GPFS filesystem is shared
+### The GPFS Filesystem Is Shared
 
 GPFS paths are identical on both clusters. Both systems access the same filesystem, so file changes made through Talladega are immediately reflected on Cheaha, and vice versa. No data copy is needed between the two clusters for files already on GPFS.
 
@@ -69,7 +69,7 @@ export TMPDIR=/scratch/local
 
 Node-local scratch is separate from shared GPFS storage. Continue using GPFS paths for data that needs to be accessible from both clusters.
 
-### Current beta hardware
+### Current Beta Hardware
 
 | Node class | Nodes | Cores per node | RAM per node | GPUs per node          |
 | ---------- | ----- | -------------- | ------------ | ---------------------- |
@@ -77,7 +77,7 @@ Node-local scratch is separate from shared GPFS storage. Continue using GPFS pat
 | A100       | 1     | 128            | 512 GiB      | 2 × A100, 80 GiB each  |
 | H200       | 4     | 192            | 1.5 TiB      | 8 × H200, 140 GiB each |
 
-### Provisional per-user resource limits
+### Provisional Per-User Resource Limits
 
 | Resource  | Total across your Talladega jobs |
 | --------- | -------------------------------- |
@@ -87,15 +87,15 @@ Node-local scratch is separate from shared GPFS storage. Continue using GPFS pat
 
 These are provisional limits at the start of beta and will likely change before full migration. These limits apply only to Talladega. Cheaha and Talladega jobs do not count toward each other’s limits. Actual allocation also depends on available hardware.
 
-## 2. Update existing job scripts
+## 2. Update Existing Job Scripts
 
 Due to changes in our Slurm configuration, some updates to job scripts and Slurm commands may be necessary.
 
-### Partition automatically assigned
+### Partition Automatically Assigned
 
 To reduce complexity of job submissions, we have removed the need to specify a partition at job submission. Instead, the partition will be automatically determined by the resource request. Remove all partition specifications from your job script. Currently, jobs specifying a partition are rejected at submission time.
 
-### Typed GPU requests
+### Typed GPU Requests
 
 Use either request style below, replacing `TYPE` with `a100` or `h200` and `COUNT` with the number of GPUs:
 
@@ -110,7 +110,7 @@ Use either request style below, replacing `TYPE` with `a100` or `h200` and `COUN
 - `--gpus=h200:2` requests two H200 GPUs across the job
     - Specify the node count in the job submission (i.e., `--nodes=1`) when using this parameter.
 
-### Summary table: Job submission changes
+### Summary Table: Job Submission Changes
 
 | Setting in your script or command       | Required beta change                                                                                                                                                        |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -120,7 +120,7 @@ Use either request style below, replacing `TYPE` with `a100` or `h200` and `COUN
 | Hardware constraints and node selection | Remove old `--constraint`, `--nodelist` and `--exclude` settings. In particular, remove `--constraint=intel`; Talladega has no Intel CPUs and those jobs will not schedule. |
 | Wall time                               | Set `--time` within the CPU or GPU maximum below.                                                                                                                           |
 
-### Job duration and array size
+### Job Duration and Array Size
 
 | Job type or setting       | Beta limit                                                            |
 | ------------------------- | --------------------------------------------------------------------- |
@@ -134,17 +134,17 @@ Please continue making realistic CPU, memory, and time requests.
 
 ## 3. Software
 
-### Operating system upgrade
+### Operating System Upgrade
 
 Talladega runs Rocky Linux 9 instead of CentOS 7. The newer GLIBC allows native software installations that were blocked by the older GLIBC on Cheaha. If existing self-installed software has compatibility problems, its environment may need to be recreated.
 
-### Software and containers
+### Software and Containers
 
 Modules will not be available during the initial beta. Anaconda and Apptainer will be available by default on all compute nodes. Remove `module load` commands that depend on the Cheaha module system and use your existing Anaconda environment or container workflow.
 
 Talladega now uses Apptainer as a drop-in replacement for Cheaha's SingularityCE. These software are closely related forks and share much if not all of the same functionality. The `singularity` command remains available as a symlink to the `apptainer` binary so existing container commands should continue to work. Existing Singularity images and Anaconda environments are expected to work as-is. Report unexpected container behavior; recreate a self-installed environment if compatibility issues require it.
 
-### Queue and accounting output
+### Queue and Accounting Output
 
 All users will belong to the base account `users`. The `Account` field in `squeue` or `sacct` will show `users` instead of your username; update any filters or scripts that depend on that field to `User`.
 
@@ -152,7 +152,7 @@ You will be able to see all jobs in the queue. Cheaha job history will not be av
 
 ## 4. Service
 
-### Service interruptions and support
+### Service Interruptions and Support
 
 This is a closed beta. Expect occasional service interruptions while configuration is finalized. The team will keep interruptions to a minimum. If planned work will affect pending or running jobs, we will notify all beta participants in advance with enough time to adjust any pending or planned jobs. Slurm policies and resource limits may change during beta; follow the current beta notices.
 
