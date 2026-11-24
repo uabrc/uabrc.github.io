@@ -32,14 +32,20 @@ This guide covers the experience available when the Talladega beta opens. Contin
     Talladega access is through SSH only during the initial beta phase. Access through the web portal will be added in the next beta phase. Your username and SSH keys stay the same.
 <!-- markdownlint-enable MD046 -->
 
-Talladega is currently only accessible from Cheaha. We expect Talladega to be accessible from the wider UAB network soon. Until that time, please SSH to Cheaha first and then connect to Talladega using either the IP or hostname below.
+Talladega is accessible from the UAB Campus Network as well as from Cheaha. Please follow the [UAB VPN instructions](https://www.uab.edu/it/home/tech-solutions/network/vpn) to connect to the UAB network from off-campus.
 
 - **Talladega address:** `164.111.161.61`
 - **Talladega hostname:** `talladega.rc.uab.edu`
 
 The hostname for Talladega's login node is `login007`. Please make sure you're connected to the correct login node when trying to use either Talladega or Cheaha.
 
-#### Example Connection
+#### Example Connection From Local Machine
+
+```bash
+[username@local-machine ~]$ ssh blazerid@talladega.rc.uab.edu
+```
+
+#### Example Connection From Cheaha
 
 ```bash
 # Initial connection to Cheaha
