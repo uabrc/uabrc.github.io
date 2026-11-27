@@ -54,13 +54,7 @@ Parbaricks 4.x are available as containers in the [NGC Catalog](https://catalog.
 
 Parabricks 4.x container images can be installed on Cheaha using a Singularity container. More details on usage of Singularity container on Cheaha can be found in the [Containers Page](../workflow_solutions/getting_containers.md).
 
-To install Parabricks using Singulairty, load the `Singularity 3.x` module from Cheaha as follows.
-
-```bash
-module load Singularity/3.5.2-GCC-5.4.0-2.26
-```
-
-Go to the NGC catalog page and copy the image path to pull the desired containers of Parabricks using Singularity. Here, the generic container is pulled using Singularity. The image path is in “nvcr.io/nvidia/clara/clara-parabricks" and the tag is 4.2.0-1. The container image name `parabricks-4.2.0-1.sif` is an user-derived name.
+Singularity is installed directly on all nodes, in accordance with the latest security recommendations. To install Parabricks using Singularity, there is no need to load a module. Go to the NGC catalog page and copy the image path to pull the desired containers of Parabricks using Singularity. Here, the generic container is pulled using Singularity.  The image path is in “nvcr.io/nvidia/clara/clara-parabricks" and the tag is 4.2.0-1. The container image name `parabricks-4.2.0-1.sif` is an user-derived name.
 
 ![!Parabricks container.](./images/parabricks_container.png)
 
@@ -68,7 +62,7 @@ Go to the NGC catalog page and copy the image path to pull the desired container
 singularity pull parabricks-4.2.0-1.sif docker://nvcr.io/nvidia/clara/clara-parabricks:4.2.0-1
 ```
 
-After the image `parabricks-4.2.0-1.sif` is successfully created, you can run singularity image `parabricks-4.2.0-1.sif` with all input and output parameters. Various ways of running singularity image can be found in the [Containers Page](../workflow_solutions/getting_containers.md).
+After the image `parabricks-4.2.0-1.sif` is successfully created, you can run Singularity image `parabricks-4.2.0-1.sif` with all input and output parameters. Various ways of running Singularity image can be found in the [Containers Page](../workflow_solutions/getting_containers.md).
 
 Running `singularity shell` helps to navigate through the containers directory to verify the path of the software executable and later use the path outside the container to run the software. Following are the commands to run the container using `singularity shell` and traverse through the directories inside the contianer.
 
@@ -136,8 +130,8 @@ You can execute Parabricks on Cheaha using `amperenodes` partition. Maximum numb
 module load Singularity/3.5.2-GCC-5.4.0-2.26
 module load CUDA/11.6.0
 
-#Run the "pbrun" executable from the singularity image "parabricks-4.2.0-1.sif", and pass the CUDA lib path to make it accessible within the container
-singularity run --nv parabricks-4.2.0-1.sif pbrun fq2bam \
+#Run the "pbrun" executable from the Singularity image "parabricks-4.2.0-1.sif", and pass the CUDA lib path to make it accessible within the container
+singularity run --nv parabricks-4.2.0-1.sif /bin/pbrun fq2bam \
 --ref parabricks_sample/Ref/Homo_sapiens_assembly38.fasta \
 --in-fq parabricks_sample/Data/sample_1.fq.gz parabricks_sample/Data/sample_2.fq.gz \
 --out-bam output.bam
